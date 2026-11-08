@@ -21,6 +21,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_bounty_target.dart';
@@ -799,7 +800,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
-                  padding: EdgeInsets.all(32.r),
+                  padding: EdgeInsets.all(AppSpacing.cardSpacious),
                   decoration: BoxDecoration(
                     color: isDark
                         ? Colors.black.withValues(alpha: 0.6)
@@ -927,7 +928,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
-                  padding: EdgeInsets.all(32.r),
+                  padding: EdgeInsets.all(AppSpacing.cardSpacious),
                   decoration: BoxDecoration(
                     color: isDark
                         ? Colors.black.withValues(alpha: 0.6)

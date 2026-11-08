@@ -6,6 +6,7 @@ import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // EVENTS
@@ -398,6 +399,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     if (nextIndex >= state.totalWords) {
       // Session complete
       await _service.completeDailySession();
+      DiscoveryDeck.notifySequenceCompleted();
       try {
         final dueWordsList =
             _service.wordsForReview.map((w) => w.word).toList();
@@ -437,6 +439,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     Emitter<DailyWordsState> emit,
   ) async {
     await _service.completeDailySession();
+    DiscoveryDeck.notifySequenceCompleted();
     emit(
       state.copyWith(
         status: DailyWordsStatus.sessionComplete,

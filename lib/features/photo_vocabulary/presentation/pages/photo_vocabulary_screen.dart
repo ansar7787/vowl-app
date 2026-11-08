@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -822,7 +823,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
           child: Center(
             child: Container(
-              padding: EdgeInsets.all(28.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.6)
@@ -940,7 +941,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
           child: Center(
             child: Container(
-              padding: EdgeInsets.all(28.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.6)

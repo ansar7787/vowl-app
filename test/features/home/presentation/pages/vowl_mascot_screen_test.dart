@@ -347,8 +347,8 @@ void main() {
 
       expect(find.text('COMPANION'), findsOneWidget);
       expect(find.text('BOUTIQUE'), findsOneWidget);
-      expect(find.text('SYNCHRONIZED ELITES'), findsOneWidget);
-      expect(find.text('CYBERNETIC AUGMENTS'), findsNothing);
+      expect(find.text('BUDDY COLLECTION'), findsOneWidget);
+      expect(find.text('ACCESSORIES BOUTIQUE'), findsNothing);
     });
 
     testWidgets('tapping BOUTIQUE switches view and plays selection haptic', (
@@ -361,8 +361,8 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.selection()).called(1);
-      expect(find.text('CYBERNETIC AUGMENTS'), findsOneWidget);
-      expect(find.text('SYNCHRONIZED ELITES'), findsNothing);
+      expect(find.text('ACCESSORIES BOUTIQUE'), findsOneWidget);
+      expect(find.text('BUDDY COLLECTION'), findsNothing);
     });
 
     testWidgets('tapping COMPANION switches view back to companion grid', (
@@ -374,15 +374,15 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('CYBERNETIC AUGMENTS'), findsOneWidget);
+      expect(find.text('ACCESSORIES BOUTIQUE'), findsOneWidget);
 
       await tester.tap(find.text('COMPANION'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.selection()).called(2);
-      expect(find.text('SYNCHRONIZED ELITES'), findsOneWidget);
-      expect(find.text('CYBERNETIC AUGMENTS'), findsNothing);
+      expect(find.text('BUDDY COLLECTION'), findsOneWidget);
+      expect(find.text('ACCESSORIES BOUTIQUE'), findsNothing);
     });
   });
 
@@ -395,10 +395,10 @@ void main() {
     ) async {
       await pumpMascotScreen(tester);
 
-      expect(find.text('VOWL PRIME'), findsWidgets);
-      expect(find.text('SILVER WING'), findsOneWidget);
-      expect(find.text('CRYSTAL SWAN'), findsOneWidget);
-      expect(find.text('NEON PARROT'), findsOneWidget);
+      expect(find.text('BARNABY'), findsWidgets);
+      expect(find.text('ZEPHYR'), findsOneWidget);
+      expect(find.text('LUNA'), findsOneWidget);
+      expect(find.text('ECHO'), findsOneWidget);
       expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
     });
 
@@ -407,7 +407,7 @@ void main() {
     ) async {
       await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('SILVER WING'));
+      await tester.tap(find.text('ZEPHYR'));
       await tester.pump();
       await tester.pump(const Duration(seconds: 4));
 
@@ -424,10 +424,10 @@ void main() {
     ) async {
       await pumpMascotScreen(tester);
 
-      await tester.ensureVisible(find.text('NIGHT ORACLE BAT'));
+      await tester.ensureVisible(find.text('NYX'));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('NIGHT ORACLE BAT'));
+      await tester.tap(find.text('NYX'));
       await tester.pump();
       await tester.pump(const Duration(seconds: 4));
 
@@ -448,10 +448,10 @@ void main() {
 
       await pumpMascotScreen(tester);
 
-      await tester.ensureVisible(find.text('NIGHT ORACLE BAT'));
+      await tester.ensureVisible(find.text('NYX'));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('NIGHT ORACLE BAT'));
+      await tester.tap(find.text('NYX'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -462,30 +462,30 @@ void main() {
         ),
       );
       expect(
-        find.text('Insufficient Elite credits for this augment'),
+        find.text('Not enough coins to unlock this buddy.'),
         findsOneWidget,
       );
 
       await tester.pump(const Duration(seconds: 4));
     });
 
-    testWidgets('renders Elite Neural Link section with equipped mascot details', (
+    testWidgets('renders Active Companion section with equipped mascot details', (
       tester,
     ) async {
       await pumpMascotScreen(tester);
 
       await tester.scrollUntilVisible(
-        find.text('ELITE NEURAL LINK'),
+        find.text('ACTIVE COMPANION'),
         300,
         scrollable: find.byType(Scrollable).first,
       );
 
-      expect(find.text('ELITE NEURAL LINK'), findsOneWidget);
-      expect(find.text('ELITE INTERFACE:'), findsOneWidget);
-      expect(find.text('NO AUGMENTATIONS'), findsOneWidget);
+      expect(find.text('ACTIVE COMPANION'), findsOneWidget);
+      expect(find.text('CURRENT BUDDY:'), findsOneWidget);
+      expect(find.text('No accessory equipped'), findsOneWidget);
     });
 
-    testWidgets('renders equipped accessory in Elite Neural Link when present', (
+    testWidgets('renders equipped accessory in Active Companion when present', (
       tester,
     ) async {
       when(() => mockAuthBloc.state).thenReturn(
@@ -495,12 +495,12 @@ void main() {
       await pumpMascotScreen(tester);
 
       await tester.scrollUntilVisible(
-        find.text('ELITE NEURAL LINK'),
+        find.text('ACTIVE COMPANION'),
         300,
         scrollable: find.byType(Scrollable).first,
       );
 
-      expect(find.text('ELITE NEURAL LINK'), findsOneWidget);
+      expect(find.text('ACTIVE COMPANION'), findsOneWidget);
       expect(find.text("Scholar's Cap"), findsOneWidget);
     });
   });
@@ -523,7 +523,7 @@ void main() {
       expect(find.text('CYBER VISOR'), findsOneWidget);
     });
 
-    testWidgets('owned unequipped accessory displays LINK and dispatches ProfileEquipVowlAccessoryRequested', (
+    testWidgets('owned unequipped accessory displays EQUIP and dispatches ProfileEquipVowlAccessoryRequested', (
       tester,
     ) async {
       await pumpMascotScreen(tester);
@@ -532,7 +532,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      final linkButton = find.text('LINK');
+      final linkButton = find.text('EQUIP');
       expect(linkButton, findsOneWidget);
 
       await tester.tap(linkButton);
@@ -547,7 +547,7 @@ void main() {
       ).called(1);
     });
 
-    testWidgets('equipped accessory displays DISCONNECT and dispatches null equip', (
+    testWidgets('equipped accessory displays REMOVE and dispatches null equip', (
       tester,
     ) async {
       when(() => mockAuthBloc.state).thenReturn(
@@ -560,7 +560,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      final disconnectButton = find.text('DISCONNECT');
+      final disconnectButton = find.text('REMOVE');
       expect(disconnectButton, findsOneWidget);
 
       await tester.tap(disconnectButton);
@@ -626,7 +626,7 @@ void main() {
         ),
       );
       expect(
-        find.text('Insufficient Elite credits for this augment'),
+        find.text('Not enough coins to unlock this accessory.'),
         findsOneWidget,
       );
 
@@ -654,7 +654,7 @@ void main() {
 
       await pumpMascotScreen(tester);
 
-      expect(find.text('Mascot Linked!'), findsOneWidget);
+      expect(find.text('Buddy unlocked!'), findsOneWidget);
       verify(() => mockHapticService.success()).called(1);
       verify(
         () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
@@ -663,7 +663,7 @@ void main() {
       await tester.pump(const Duration(seconds: 4));
     });
 
-    testWidgets('displays success SnackBar when accessory augment succeeds', (
+    testWidgets('displays success SnackBar when accessory purchase succeeds', (
       tester,
     ) async {
       whenListen(
@@ -679,7 +679,7 @@ void main() {
 
       await pumpMascotScreen(tester);
 
-      expect(find.text('Augment Integrated!'), findsOneWidget);
+      expect(find.text('Accessory unlocked!'), findsOneWidget);
       verify(() => mockHapticService.success()).called(1);
       verify(
         () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
@@ -719,7 +719,7 @@ void main() {
     ) async {
       await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('SILVER WING'));
+      await tester.tap(find.text('ZEPHYR'));
       await tester.pump();
 
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
@@ -734,13 +734,13 @@ void main() {
   // GROUP 7: STATUS OVERLAY & ACCESSIBILITY SEMANTICS
   // ===========================================================================
   group('Group 7: Status Overlay & Accessibility Semantics', () {
-    testWidgets('renders elite status bar overlay with Status OK and security icon', (
+    testWidgets('renders without telemetry status bar overlay for clean distraction-free UI', (
       tester,
     ) async {
       await pumpMascotScreen(tester);
 
-      expect(find.byIcon(Icons.security_rounded), findsOneWidget);
-      expect(find.text('Status OK'), findsOneWidget);
+      expect(find.byIcon(Icons.security_rounded), findsNothing);
+      expect(find.text('Status OK'), findsNothing);
     });
 
     testWidgets('provides accessible semantics for back button, tabs, and headers', (

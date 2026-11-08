@@ -598,7 +598,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Sentence Order'), findsOneWidget);
+      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

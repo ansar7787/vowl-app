@@ -465,7 +465,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Sound Detective!'), findsOneWidget);
+      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
     });
 
     testWidgets('15. Game over state renders with zero lives', (tester) async {

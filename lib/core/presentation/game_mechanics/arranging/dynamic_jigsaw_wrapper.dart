@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -275,7 +276,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
         valueListenable: _hasError,
         builder: (context, hasError, child) {
           return Container(
-            padding: EdgeInsets.fromLTRB(20.w, 18.h, 20.w, 24.h),
+            padding: EdgeInsets.fromLTRB(AppSpacing.cardSpacious, 18.h, AppSpacing.cardSpacious, 24.h),
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: widget.isPositioned

@@ -36,6 +36,9 @@ void main() {
       'streak_7',
       'master_speaking', // Legendary badge
     ],
+    unlockedLevels: {
+      'vocabulary': 21,
+    },
   );
 
   setUpAll(() {
@@ -95,6 +98,13 @@ void main() {
           builder: (context, state) {
             navigatedRoutes.add('/home');
             return const Scaffold(body: Text('Home Screen Placeholder'));
+          },
+        ),
+        GoRoute(
+          path: '/category-games',
+          builder: (context, state) {
+            navigatedRoutes.add('/category-games');
+            return const Scaffold(body: Text('Category Games Screen Placeholder'));
           },
         ),
       ],
@@ -184,7 +194,7 @@ void main() {
 
   group('Group 3: Empty State / Status Message', () {
     testWidgets('renders empty status message when user has zero badges', (tester) async {
-      final userZero = testUser.copyWith(badges: []);
+      final userZero = testUser.copyWith(badges: [], unlockedLevels: {});
       when(() => mockAuthBloc.state)
           .thenReturn(AuthState.authenticated(userZero));
 
@@ -193,7 +203,7 @@ void main() {
 
       expect(find.textContaining('0 / 50', findRichText: true), findsOneWidget);
       expect(
-        find.text('No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!'),
+        find.text('No trophies yet. Complete lessons to unlock your first trophy!'),
         findsOneWidget,
       );
 
@@ -217,12 +227,60 @@ void main() {
       final earnedBadge = find.widgetWithText(ScaleButton, 'NOVICE');
       expect(earnedBadge, findsOneWidget);
 
-      await tester.tap(earnedBadge);
+      await tester.tap(earnedBadge, warnIfMissed: false);
       await tester.pumpAndSettle();
     });
   });
 
-  group('Group 5: Responsiveness & Themes', () {
+  group('Group 5: Hero Pedestal, Next In Reach Radar & Dossier', () {
+    testWidgets('renders showcase pedestal and goal accelerator when in-flight progress exists', (tester) async {
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pumpAndSettle();
+
+      // Hero Pedestal
+      expect(find.text('FEATURED TROPHIES'), findsOneWidget);
+      expect(find.text('Your Highlights'), findsOneWidget);
+
+      // Goal accelerator radar (vocabulary level 21/25 -> 84%)
+      expect(find.text('NEXT TROPHY'), findsOneWidget);
+      expect(find.text('84%'), findsOneWidget);
+    });
+
+    testWidgets('tapping showcase pedestal opens Trophy Dossier Sheet', (tester) async {
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pumpAndSettle();
+
+      // Tap speaking pedestal
+      final speakingPod = find.text('SPEAKING').first;
+      await tester.tap(speakingPod, warnIfMissed: false);
+      await tester.pumpAndSettle();
+
+      expect(find.text('XP REWARD'), findsOneWidget);
+      expect(find.text('COIN REWARD'), findsOneWidget);
+    });
+
+    testWidgets('switches between subcategory filter chips', (tester) async {
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pumpAndSettle();
+
+      expect(find.text('All (40)'), findsOneWidget);
+      expect(find.text('Skills (27)'), findsOneWidget);
+      expect(find.text('Streaks (3)'), findsOneWidget);
+      expect(find.text('Milestones (10)'), findsOneWidget);
+
+      // Tap Streaks subcategory
+      await tester.tap(find.text('Streaks (3)'), warnIfMissed: false);
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+
+      // Tap Milestones subcategory
+      await tester.tap(find.text('Milestones (10)'), warnIfMissed: false);
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('Group 6: Responsiveness & Themes', () {
     testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
       await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
       await tester.pumpAndSettle();

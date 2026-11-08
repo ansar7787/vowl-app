@@ -68,8 +68,8 @@ class KidsGameDialogs {
                         child: KidsDialogContainer(
                           primaryColor: primaryColor,
                           title: context.tr(
-                            'games.kids_level_up',
-                            fallback: 'LEVEL UP!',
+                            'games.level_complete_caps',
+                            fallback: 'LEVEL COMPLETE!',
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,

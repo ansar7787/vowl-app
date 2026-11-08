@@ -13,6 +13,21 @@ class _LocalPalette {
   static const Color colorfef08a = Color(0xFFFEF08A);
 }
 
+/// Visual equipment slot for positioning accessories on buddy avatars.
+enum AccessorySlot {
+  /// Sits atop the head (e.g. caps, crowns, visors).
+  head,
+
+  /// Sits around the lower neck/chest (e.g. scarves, bells).
+  neck,
+
+  /// Ambient background particles or energy aura behind the buddy.
+  aura,
+
+  /// Equipment pin/badge held or floating on the lower flank (e.g. wands, gems, amulets).
+  charm,
+}
+
 /// Centralised, immutable asset registry for Vowl mascots and accessories.
 ///
 /// All public map constants are `const` — zero runtime allocation.
@@ -41,32 +56,32 @@ class VowlAssets {
       'assets/images/mascot/vowly_thinking.webp';
   static const String vowlyWorried = 'assets/images/mascot/vowly_worried.webp';
 
-  // ── Mascot display names ─────────────────────────────────────────────────
+  // ── Mascot display names (Friendly, memorable 1-word character names) ──
   static const Map<String, String> mascotNames = {
-    'vowl_prime': 'Vowl Prime',
-    'silver_wing': 'Silver Wing',
-    'crystal_swan': 'Crystal Swan',
-    'neon_parrot': 'Neon Parrot',
-    'night_bat': 'Night Oracle Bat',
-    'emerald_peacock': 'Emerald Peacock',
-    'golden_dragon': 'Golden Dragon',
-    'shadow_wolf': 'Shadow Wolf',
-    'frost_penguin': 'Frost Penguin',
-    'cosmic_unicorn': 'Cosmic Unicorn',
+    'vowl_prime': 'Barnaby',
+    'silver_wing': 'Zephyr',
+    'crystal_swan': 'Luna',
+    'neon_parrot': 'Echo',
+    'night_bat': 'Nyx',
+    'emerald_peacock': 'Beau',
+    'golden_dragon': 'Blaze',
+    'shadow_wolf': 'Shadow',
+    'frost_penguin': 'Pippin',
+    'cosmic_unicorn': 'Nova',
   };
 
-  // ── Mascot lore traits ───────────────────────────────────────────────────
+  // ── Mascot learning traits ───────────────────────────────────────────────
   static const Map<String, String> mascotTraits = {
-    'vowl_prime': 'Ancient Sage of Vowels',
-    'silver_wing': 'Master of the Swift Skies',
-    'crystal_swan': 'Grace of the Pure Syllable',
-    'neon_parrot': 'Echo of the Cyber Jungle',
-    'night_bat': 'Watcher of the Moonlit Nest',
-    'emerald_peacock': 'Keeper of the Vibrant Feathers',
-    'golden_dragon': 'Oracle of the Golden Flame',
-    'shadow_wolf': 'Spirit of the Silent Forest',
-    'frost_penguin': 'Navigator of the Ice Tundra',
-    'cosmic_unicorn': 'Traveler of the Infinite Stars',
+    'vowl_prime': 'Wise Guide of English',
+    'silver_wing': 'Swift Master of Reading',
+    'crystal_swan': 'Grace of Pure Grammar',
+    'neon_parrot': 'Echo of Fluent Speech',
+    'night_bat': 'Guardian of Night Study',
+    'emerald_peacock': 'Keeper of Rich Vocabulary',
+    'golden_dragon': 'Spark of Bold Confidence',
+    'shadow_wolf': 'Spirit of Calm Focus',
+    'frost_penguin': 'Champion of Daily Streaks',
+    'cosmic_unicorn': 'Explorer of Boundless Words',
   };
 
   // ── Mascot prices (Vowl Coins) ────────────────────────────────────────
@@ -130,6 +145,26 @@ class VowlAssets {
     'starlight_aura': 85000,
     'mystic_amulet': 100000,
   };
+
+  // ── Accessory slot classification ────────────────────────────────────────
+  static const Map<String, AccessorySlot> accessorySlots = {
+    'scholar_cap': AccessorySlot.head,
+    'red_scarf': AccessorySlot.neck,
+    'cyber_visor': AccessorySlot.head,
+    'magic_wand': AccessorySlot.charm,
+    'golden_bell': AccessorySlot.neck,
+    'frost_aura': AccessorySlot.aura,
+    'wind_whistler': AccessorySlot.aura,
+    'phoenix_wings': AccessorySlot.aura,
+    'dragon_gem': AccessorySlot.charm,
+    'golden_crown': AccessorySlot.head,
+    'starlight_aura': AccessorySlot.aura,
+    'mystic_amulet': AccessorySlot.charm,
+  };
+
+  /// Resolves the visual equipment slot for an accessory [key].
+  static AccessorySlot getAccessorySlot(String key) =>
+      accessorySlots[key] ?? AccessorySlot.charm;
 
   // ── Item theme colours ───────────────────────────────────────────────────
   static const Map<String, Color> itemColors = {

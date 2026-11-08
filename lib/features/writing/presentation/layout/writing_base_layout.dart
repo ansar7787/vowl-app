@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_game_header.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_peeking_mascot.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Base layout container for writing games, providing standard headers, feedback cards, and mascot overlays.
 class WritingBaseLayout extends StatelessWidget {
@@ -80,6 +81,7 @@ class WritingBaseLayout extends StatelessWidget {
       useScrolling: useScrolling,
       disablePadding: disablePadding,
       resizeToAvoidBottomInset: true,
+      horizontalPadding: AppSpacing.compact,
     );
 
     return GameBaseLayout<WritingBloc, WritingState>(

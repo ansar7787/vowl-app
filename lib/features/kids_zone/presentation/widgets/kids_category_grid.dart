@@ -15,6 +15,7 @@ import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
 class _LocalPalette {
@@ -691,7 +692,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
       backgroundColor: AppColors.slate800,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.r)),
       child: Padding(
-        padding: EdgeInsets.all(32.r),
+        padding: EdgeInsets.all(AppSpacing.cardSpacious),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

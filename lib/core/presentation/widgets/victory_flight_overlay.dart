@@ -63,9 +63,9 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: IgnorePointer(
+    return IgnorePointer(
+      child: Material(
+        color: Colors.transparent,
         child: RepaintBoundary(
           child: Stack(
             children: [

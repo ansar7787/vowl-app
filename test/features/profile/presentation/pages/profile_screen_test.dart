@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -21,7 +22,6 @@ import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
-import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/features/profile/presentation/pages/profile_screen.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.dart';
@@ -364,15 +364,16 @@ void main() {
   });
 
   group('Group 2: SliverAppBar & Hero Header', () {
-    testWidgets('renders ProfileHeader with display name, email, and rank title',
+    testWidgets('renders ProfileHeader with display name, edit pill, and rank title',
         (tester) async {
       await pumpProfileScreen(tester);
       await tester.pumpAndSettle();
 
       expect(find.text('Aria Stark'), findsWidgets);
-      expect(find.text('aria.stark@vowl.app'), findsOneWidget);
-      // Level 26 -> SCHOLAR
+      expect(find.text('EDIT'), findsOneWidget);
+      // Level 27 -> SCHOLAR
       expect(find.text('SCHOLAR'), findsOneWidget);
+      expect(find.text('LVL 27'), findsOneWidget);
     });
 
     testWidgets('displays immediate photo from ProfileState when present for matching user',
@@ -470,21 +471,27 @@ void main() {
     });
   });
 
-  group('Group 4: Companion / Vowl Mascot Card', () {
-    testWidgets('renders VowlMascotCard in profile scroll view',
+  group('Group 4: Companion / Vowl Mascot Companion Pod', () {
+    testWidgets('renders Mascot pod in ProfileHeader and tapping navigates to mascot screen',
         (tester) async {
       await pumpProfileScreen(tester);
 
-      expect(find.byType(VowlMascotCard), findsOneWidget);
+      expect(find.byType(VowlMascot), findsWidgets);
+      expect(find.text('BUDDY'), findsOneWidget);
+
+      await tester.tap(find.text('BUDDY'));
+      await tester.pumpAndSettle();
+
+      expect(navigatedRoutes, contains(AppRouter.vowlMascotRoute));
+      verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
     });
   });
 
   group('Group 5: Adventure Stats & Bento Grid', () {
-    testWidgets('renders Adventure Stats header and ProfileBentoStats',
+    testWidgets('renders ProfileBentoStats with stats cards',
         (tester) async {
       await pumpProfileScreen(tester);
 
-      expect(find.text('Adventure Stats'), findsOneWidget);
       expect(find.byType(ProfileBentoStats), findsOneWidget);
       expect(find.text('CURRENT LEVEL'), findsOneWidget);
       expect(find.text('Lvl 27'), findsOneWidget);
@@ -497,8 +504,7 @@ void main() {
         (tester) async {
       await pumpProfileScreen(tester);
 
-      await tester.tap(find.text('CURRENT LEVEL'));
-      await tester.pumpAndSettle();
+      await scrollToAndTap(tester, find.text('CURRENT LEVEL'));
 
       expect(navigatedRoutes, contains(AppRouter.levelRoute));
       verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
@@ -577,9 +583,11 @@ void main() {
   });
 
   group('Group 7: Golden Keys Shop Banner', () {
-    testWidgets('renders Golden Keys banner and user key count',
+    testWidgets('renders Golden Keys banner and user key count in Vault tab',
         (tester) async {
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       expect(find.text('Golden Keys'), findsOneWidget);
       expect(find.text('4'), findsWidgets);
@@ -588,6 +596,8 @@ void main() {
     testWidgets('tapping Golden Keys banner opens KeyShopBottomSheet',
         (tester) async {
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       await scrollToAndTap(tester, find.text('Golden Keys'));
 
@@ -596,33 +606,40 @@ void main() {
   });
 
   group('Group 8: Hall of Fame (ProfileBadgesList)', () {
-    testWidgets('renders ProfileBadgesList and earned badges',
+    testWidgets('renders ProfileBadgesList and earned badges in Trophies tab',
         (tester) async {
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Trophies'));
+      await tester.pumpAndSettle();
 
       expect(find.byType(ProfileBadgesList), findsOneWidget);
     });
 
-    testWidgets('renders empty state message when no badges earned',
+    testWidgets('renders collection progress counter in Trophies tab',
         (tester) async {
-      final noBadgesUser = testUser.copyWith(claimedLevelMilestones: []);
+      final noBadgesUser = testUser.copyWith(
+        badges: [],
+        claimedLevelMilestones: [],
+        totalExp: 0,
+      );
       when(() => mockAuthBloc.state)
           .thenReturn(AuthState.authenticated(noBadgesUser));
 
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Trophies'));
+      await tester.pumpAndSettle();
 
-      expect(find.text('HALL OF FAME VACANT'), findsOneWidget);
-      expect(
-        find.text('Embark on adventures to unlock legendary badges.'),
-        findsOneWidget,
-      );
+      expect(find.text('Collection Progress'), findsOneWidget);
+      expect(find.text('0 of 8'), findsOneWidget);
     });
   });
 
   group('Group 9: Kids Zone (Conditional Rendering)', () {
-    testWidgets('renders Kids Zone section when stickers exist',
+    testWidgets('renders Kids Zone section when stickers exist in Vault tab',
         (tester) async {
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       expect(find.text('Kids Zone'), findsOneWidget);
       expect(find.text('Kids Room'), findsOneWidget);
@@ -644,6 +661,8 @@ void main() {
           .thenReturn(AuthState.authenticated(adultUser));
 
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       expect(find.text('Kids Zone'), findsNothing);
       expect(find.text('Kids Room'), findsNothing);
@@ -652,13 +671,15 @@ void main() {
   });
 
   group('Group 10: Premium CTA Banner', () {
-    testWidgets('renders UPGRADE TO PREMIUM when user is not premium',
+    testWidgets('renders UPGRADE TO PREMIUM when user is not premium in Vault tab',
         (tester) async {
       final freeUser = testUser.copyWith(isPremium: false);
       when(() => mockAuthBloc.state)
           .thenReturn(AuthState.authenticated(freeUser));
 
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       final upgradeFinder = find.text('UPGRADE TO PREMIUM');
       expect(upgradeFinder, findsOneWidget);
@@ -669,13 +690,15 @@ void main() {
       verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('renders Premium Active when user is premium',
+    testWidgets('renders Premium Active when user is premium in Vault tab',
         (tester) async {
       final premUser = testUser.copyWith(isPremium: true);
       when(() => mockAuthBloc.state)
           .thenReturn(AuthState.authenticated(premUser));
 
       await pumpProfileScreen(tester);
+      await tester.tap(find.text('Vault'));
+      await tester.pumpAndSettle();
 
       final activeFinder = find.text('Premium Active');
       expect(activeFinder, findsOneWidget);
@@ -688,17 +711,18 @@ void main() {
   });
 
   group('Group 11: Preferences Navigation', () {
-    testWidgets('renders Settings tile in preferences and tapping routes to settings',
+    testWidgets('renders Settings button in AppBar and tapping routes to settings',
         (tester) async {
       await pumpProfileScreen(tester);
 
-      final settingsTile = find.text('Settings');
-      expect(settingsTile, findsOneWidget);
+      final settingsButton = find.byIcon(Icons.settings_rounded);
+      expect(settingsButton, findsOneWidget);
 
-      await scrollToAndTap(tester, settingsTile);
+      await tester.tap(settingsButton);
+      await tester.pumpAndSettle();
 
       expect(navigatedRoutes, contains(AppRouter.settingsRoute));
-      verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
+      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
     });
 
     testWidgets('omits redundant sign out button from profile screen',

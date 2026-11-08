@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -59,8 +60,8 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
     return Dialog(
       backgroundColor: surfaceColor,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.r),
-        side: BorderSide(color: borderColor, width: 1.w),
+        borderRadius: BorderRadius.circular(24.r),
+        side: BorderSide(color: borderColor, width: 1.0),
       ),
       insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
       child: SingleChildScrollView(
@@ -76,12 +77,16 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
                 width: 48.w,
                 height: 48.w,
                 decoration: BoxDecoration(
-                  color: AppColors.indigo500.withValues(alpha: 0.15),
+                  color: AppColors.indigo500.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.25),
+                    width: 1.0,
+                  ),
                 ),
                 child: Icon(
-                  LucideIcons.gift,
-                  size: 24.sp,
+                  Icons.card_giftcard_rounded,
+                  size: 24.r,
                   color: AppColors.indigo500,
                 ),
               ),
@@ -91,18 +96,22 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
               'Enter Invite Code',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w700,
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w900,
                 color: textPrimary,
+                letterSpacing: -0.3,
               ),
             ),
             SizedBox(height: 6.h),
             Text(
-              'Enter a friend\'s ambassador code to unlock 100 Bonus Coins and a 1-Day VIP Trial.',
+              'Enter your friend\'s invite code to unlock 100 Bonus Coins and 1 Day of VIP access.',
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 color: textSecondary,
+                height: 1.35,
               ),
             ),
             SizedBox(height: 18.h),
@@ -167,56 +176,63 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
             Row(
               children: [
                 Expanded(
-                  child: TextButton(
-                    onPressed: widget.isLoading ? null : () => Navigator.of(context).pop(),
-                    style: TextButton.styleFrom(
+                  child: ScaleButton(
+                    onTap: widget.isLoading ? () {} : () => Navigator.of(context).pop(),
+                    child: Container(
                       padding: EdgeInsets.symmetric(vertical: 12.h),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.r),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : AppColors.slate100,
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(color: borderColor),
                       ),
-                    ),
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: textSecondary,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w700,
+                          color: textSecondary,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(width: 10.w),
                 Expanded(
-                  child: ElevatedButton(
-                    onPressed: widget.isLoading
-                        ? null
+                  child: ScaleButton(
+                    onTap: widget.isLoading
+                        ? () {}
                         : () {
                             final code = _controller.text.trim();
                             if (code.isNotEmpty) {
                               widget.onClaim(code);
                             }
                           },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.indigo500,
-                      foregroundColor: Colors.white,
+                    child: Container(
                       padding: EdgeInsets.symmetric(vertical: 12.h),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.indigo500,
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
-                      elevation: 0,
-                    ),
-                    child: widget.isLoading
-                        ? VowlMicroLoader(
-                            size: 16.w,
-                            color: Colors.white,
-                          )
-                        : Text(
-                            'Claim Reward',
-                            style: TextStyle(
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w700,
+                      alignment: Alignment.center,
+                      child: widget.isLoading
+                          ? VowlMicroLoader(
+                              size: 16.w,
+                              color: Colors.white,
+                            )
+                          : Text(
+                              'Claim Reward',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
+                    ),
                   ),
                 ),
               ],

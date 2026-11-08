@@ -9,7 +9,7 @@ import 'package:vowl/features/onboarding/onboarding_screen.dart';
 
 /// Production-grade full-screen onboarding experience presenting Vowl's core ecosystem.
 ///
-/// Integrates the finished 4-slide layered SVG artwork with motion choreography,
+/// Integrates the finished 5-slide layered SVG artwork with motion choreography,
 /// pre-warmed vector caching, and zero-latency routing completion.
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});

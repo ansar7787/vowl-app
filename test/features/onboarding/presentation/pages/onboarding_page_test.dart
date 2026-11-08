@@ -1,6 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -54,9 +55,12 @@ void main() {
   });
 
   Widget buildTestableWidget() {
-    return BlocProvider<AuthBloc>.value(
-      value: mockAuthBloc,
-      child: const MaterialApp(home: OnboardingPage()),
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      builder: (context, child) => BlocProvider<AuthBloc>.value(
+        value: mockAuthBloc,
+        child: const MaterialApp(home: OnboardingPage()),
+      ),
     );
   }
 
@@ -68,7 +72,7 @@ void main() {
       await tester.pump();
 
       expect(find.text('Speak English With Confidence'), findsOneWidget);
-      expect(find.text('1 of 4'), findsOneWidget);
+      expect(find.text('1 of 5'), findsOneWidget);
       expect(find.text('Skip'), findsOneWidget);
       expect(find.text('Continue'), findsOneWidget);
     });
@@ -90,7 +94,7 @@ void main() {
     });
 
     testWidgets(
-      'tapping Continue steps through all 4 slides and completes on Get Started',
+      'tapping Continue steps through all 5 slides and completes on Get Started',
       (tester) async {
         await OnboardingService.resetOnboarding();
         expect(OnboardingService.isCompletedCached, isFalse);
@@ -99,28 +103,35 @@ void main() {
         await tester.pump();
 
         // Slide 1
-        expect(find.text('1 of 4'), findsOneWidget);
+        expect(find.text('1 of 5'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
         // Slide 2
-        expect(find.text('2 of 4'), findsOneWidget);
+        expect(find.text('2 of 5'), findsOneWidget);
         expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
         // Slide 3
-        expect(find.text('3 of 4'), findsOneWidget);
+        expect(find.text('3 of 5'), findsOneWidget);
         expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
         // Slide 4
-        expect(find.text('4 of 4'), findsOneWidget);
+        expect(find.text('4 of 5'), findsOneWidget);
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Slide 5
+        expect(find.text('5 of 5'), findsOneWidget);
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
 
         // Tap Get Started

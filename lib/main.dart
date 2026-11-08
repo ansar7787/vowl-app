@@ -288,11 +288,14 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
   }
 
   await runSafe('ConsentService', () => ConsentService.requestConsent());
+  await Future<void>.delayed(const Duration(milliseconds: 160));
   await runSafe('AdService', () => di.sl<AdService>().init());
+  await Future<void>.delayed(const Duration(milliseconds: 160));
   await runSafe(
     'RemoteConfigService',
     () => di.sl<RemoteConfigService>().init(),
   );
+  await Future<void>.delayed(const Duration(milliseconds: 160));
   await runSafe('DailyWordsReminder', () async {
     final dailyWordsService = di.sl<DailyWordsService>();
     await dailyWordsService.init();

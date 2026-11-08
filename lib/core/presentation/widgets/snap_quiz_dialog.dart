@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/praise_service.dart';
@@ -150,13 +151,16 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
       canPop: false,
       child: Dialog(
         backgroundColor: Colors.transparent,
-        insetPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+        insetPadding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.compact,
+          vertical: 24.h,
+        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(28.r),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
             child: Container(
-              padding: EdgeInsets.all(24.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: isDark
                     ? const Color(0xFF0F172A).withValues(alpha: 0.96)
@@ -175,9 +179,12 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
                   ),
                 ],
               ),
-              child: _isCompleted
-                  ? _buildCompletionContent(context, isDark)
-                  : _buildQuestionContent(context, isDark),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: _isCompleted
+                    ? _buildCompletionContent(context, isDark)
+                    : _buildQuestionContent(context, isDark),
+              ),
             ),
           ),
         ),

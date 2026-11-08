@@ -51,6 +51,7 @@ void main() {
             totalQuestions: 5,
             timeRemaining: 1,
             isDark: true,
+            animateTimer: false,
           ),
         ),
       );
@@ -80,6 +81,7 @@ void main() {
             rivalName: 'Emperor Napoleon Bonaparte the Emperor',
             payoutCoins: 50,
             roomCode: 'VOWL-DUEL-999',
+            showConfetti: false,
             onRematch: () {},
             onClose: () {},
           ),
@@ -173,6 +175,7 @@ void main() {
                     totalQuestions: 5,
                     timeRemaining: 7,
                     isDark: true,
+                    animateTimer: false,
                   ),
                   const SizedBox(height: 16),
                   // Question Card

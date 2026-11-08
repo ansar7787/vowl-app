@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -39,6 +39,7 @@ class DailyWordsService {
   // â”€â”€ Cached state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   bool _isInitialized = false;
+  String? _userId;
   int _currentDay = 1;
   int _completedDay = 0;
   int _streak = 0;
@@ -48,6 +49,9 @@ class DailyWordsService {
   String _lastCompletedDate = '';
   DailyWordSet? _cachedWordSet;
   Map<String, WordProgress> _wordBank = {};
+
+  String _userKey(String base) =>
+      (_userId != null && _userId!.isNotEmpty) ? '${base}_$_userId' : base;
 
   // â”€â”€ Public getters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -128,21 +132,37 @@ class DailyWordsService {
 
   // â”€â”€ Initialisation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  /// Loads persisted state from SharedPreferences. Call once at app start.
-  Future<void> init() async {
-    if (_isInitialized) return;
+  /// Loads persisted state from SharedPreferences. Call once at app start or user change.
+  Future<void> init({String? userId}) async {
+    if (_isInitialized && _userId == userId) return;
+    _userId = userId;
     try {
       final prefs = await SharedPreferences.getInstance();
-      _currentDay = prefs.getInt(_keyCurrentDay) ?? 1;
-      _completedDay = prefs.getInt(_keyCompletedDay) ?? 0;
-      _lastOpenDate = prefs.getString(_keyLastOpenDate) ?? '';
-      _lastCompletedDate = prefs.getString(_keyLastCompletedDate) ?? '';
-      _streak = prefs.getInt(_keyStreak) ?? 0;
-      _longestStreak = prefs.getInt(_keyLongestStreak) ?? 0;
-      _totalWordsLearned = prefs.getInt(_keyTotalWordsLearned) ?? 0;
+      _currentDay = prefs.getInt(_userKey(_keyCurrentDay)) ??
+          prefs.getInt(_keyCurrentDay) ??
+          1;
+      _completedDay = prefs.getInt(_userKey(_keyCompletedDay)) ??
+          prefs.getInt(_keyCompletedDay) ??
+          0;
+      _lastOpenDate = prefs.getString(_userKey(_keyLastOpenDate)) ??
+          prefs.getString(_keyLastOpenDate) ??
+          '';
+      _lastCompletedDate = prefs.getString(_userKey(_keyLastCompletedDate)) ??
+          prefs.getString(_keyLastCompletedDate) ??
+          '';
+      _streak = prefs.getInt(_userKey(_keyStreak)) ??
+          prefs.getInt(_keyStreak) ??
+          0;
+      _longestStreak = prefs.getInt(_userKey(_keyLongestStreak)) ??
+          prefs.getInt(_keyLongestStreak) ??
+          0;
+      _totalWordsLearned = prefs.getInt(_userKey(_keyTotalWordsLearned)) ??
+          prefs.getInt(_keyTotalWordsLearned) ??
+          0;
 
       // Load word bank
-      final bankJson = prefs.getString(_keyWordBank);
+      final bankJson = prefs.getString(_userKey(_keyWordBank)) ??
+          prefs.getString(_keyWordBank);
       if (bankJson != null && bankJson.isNotEmpty) {
         final Map<String, dynamic> decoded = jsonDecode(bankJson);
         _wordBank = decoded.map(
@@ -151,6 +171,8 @@ class DailyWordsService {
             WordProgress.fromJson(value as Map<String, dynamic>),
           ),
         );
+      } else {
+        _wordBank = {};
       }
 
       // Handle daily rollover
@@ -468,9 +490,11 @@ class DailyWordsService {
 
   // â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  /// Resets all daily words progress. Called on account deletion / logout.
-  Future<void> reset() async {
+  /// Resets in-memory cached state so learned words do not leak across account sessions,
+  /// while preserving persisted progress on disk. Called on user logout / session switch.
+  void resetInMemory() {
     _isInitialized = false;
+    _userId = null;
     _currentDay = 1;
     _completedDay = 0;
     _streak = 0;
@@ -480,9 +504,32 @@ class DailyWordsService {
     _lastCompletedDate = '';
     _cachedWordSet = null;
     _wordBank.clear();
+  }
+
+  /// Resets all daily words progress on disk. Called on account deletion.
+  Future<void> reset() async {
+    final currentScopedDayKey = _userKey(_keyCurrentDay);
+    final currentScopedCompletedDayKey = _userKey(_keyCompletedDay);
+    final currentScopedLastOpenKey = _userKey(_keyLastOpenDate);
+    final currentScopedLastCompletedKey = _userKey(_keyLastCompletedDate);
+    final currentScopedBankKey = _userKey(_keyWordBank);
+    final currentScopedStreakKey = _userKey(_keyStreak);
+    final currentScopedLongestKey = _userKey(_keyLongestStreak);
+    final currentScopedTotalKey = _userKey(_keyTotalWordsLearned);
+
+    resetInMemory();
 
     try {
       final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(currentScopedDayKey);
+      await prefs.remove(currentScopedCompletedDayKey);
+      await prefs.remove(currentScopedLastOpenKey);
+      await prefs.remove(currentScopedLastCompletedKey);
+      await prefs.remove(currentScopedBankKey);
+      await prefs.remove(currentScopedStreakKey);
+      await prefs.remove(currentScopedLongestKey);
+      await prefs.remove(currentScopedTotalKey);
+
       await prefs.remove(_keyCurrentDay);
       await prefs.remove(_keyCompletedDay);
       await prefs.remove(_keyLastOpenDate);
@@ -514,19 +561,31 @@ class DailyWordsService {
   Future<void> _persist() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setInt(_keyCurrentDay, _currentDay);
-      await prefs.setInt(_keyCompletedDay, _completedDay);
-      await prefs.setString(_keyLastOpenDate, _lastOpenDate);
-      await prefs.setString(_keyLastCompletedDate, _lastCompletedDate);
-      await prefs.setInt(_keyStreak, _streak);
-      await prefs.setInt(_keyLongestStreak, _longestStreak);
-      await prefs.setInt(_keyTotalWordsLearned, _totalWordsLearned);
+      await prefs.setInt(_userKey(_keyCurrentDay), _currentDay);
+      await prefs.setInt(_userKey(_keyCompletedDay), _completedDay);
+      await prefs.setString(_userKey(_keyLastOpenDate), _lastOpenDate);
+      await prefs.setString(_userKey(_keyLastCompletedDate), _lastCompletedDate);
+      await prefs.setInt(_userKey(_keyStreak), _streak);
+      await prefs.setInt(_userKey(_keyLongestStreak), _longestStreak);
+      await prefs.setInt(_userKey(_keyTotalWordsLearned), _totalWordsLearned);
 
       // Persist word bank as JSON string
       final bankMap = _wordBank.map(
         (key, value) => MapEntry(key, value.toJson()),
       );
-      await prefs.setString(_keyWordBank, jsonEncode(bankMap));
+      await prefs.setString(_userKey(_keyWordBank), jsonEncode(bankMap));
+
+      // Also persist legacy un-scoped key if _userId is null or empty
+      if (_userId == null || _userId!.isEmpty) {
+        await prefs.setInt(_keyCurrentDay, _currentDay);
+        await prefs.setInt(_keyCompletedDay, _completedDay);
+        await prefs.setString(_keyLastOpenDate, _lastOpenDate);
+        await prefs.setString(_keyLastCompletedDate, _lastCompletedDate);
+        await prefs.setInt(_keyStreak, _streak);
+        await prefs.setInt(_keyLongestStreak, _longestStreak);
+        await prefs.setInt(_keyTotalWordsLearned, _totalWordsLearned);
+        await prefs.setString(_keyWordBank, jsonEncode(bankMap));
+      }
     } catch (e) {
       if (kDebugMode) {
         debugPrint('DailyWordsService: persist failed: $e');

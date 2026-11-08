@@ -51,9 +51,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-    'listening.games.audio_sentence_order_title',
-    fallback: 'Sentence Order',
-  );
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ScrollController _scrollController = ScrollController();
 

@@ -8,28 +8,36 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
+import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 
 class MockLocaleService extends Mock implements LocaleService {}
 
+class MockDailyWordsService extends Mock implements DailyWordsService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHapticService mockHapticService;
   late MockLocaleService mockLocaleService;
+  late MockDailyWordsService mockDailyWordsService;
   late List<String> navigatedRoutes;
 
   setUp(() {
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
+    mockDailyWordsService = MockDailyWordsService();
     navigatedRoutes = [];
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
+    when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
+    when(() => mockDailyWordsService.currentDay).thenReturn(1);
     when(
       () => mockLocaleService.tr(
         any(),
@@ -52,6 +60,11 @@ void main() {
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
+
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      di.sl.unregister<DailyWordsService>();
+    }
+    di.sl.registerSingleton<DailyWordsService>(mockDailyWordsService);
   });
 
   tearDown(() {
@@ -60,6 +73,9 @@ void main() {
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      di.sl.unregister<DailyWordsService>();
     }
   });
 
@@ -132,28 +148,28 @@ void main() {
       ],
     );
 
-    return ScreenUtilInit(
-      designSize: const Size(390, 844),
-      minTextAdapt: true,
-      builder: (context, child) {
-        return MediaQuery(
-          data: MediaQueryData(
-            size: Size(width, height),
-            textScaler: TextScaler.linear(textScale),
-          ),
-          child: MaterialApp.router(
+    return MediaQuery(
+      data: MediaQueryData(
+        size: Size(width, height),
+        textScaler: TextScaler.linear(textScale),
+      ),
+      child: ScreenUtilInit(
+        designSize: const Size(390, 844),
+        minTextAdapt: true,
+        builder: (context, child) {
+          return MaterialApp.router(
             routerConfig: router,
             themeMode: themeMode,
             theme: ThemeData.light(),
             darkTheme: ThemeData.dark(),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 
   group('Piece 8: ToolsStrip Core Rendering & Architecture Tests', () {
-    testWidgets('renders Swiss cards: Kids Zone and Daily Words', (tester) async {
+    testWidgets('renders 3 Swiss Horizon cards: Kids Zone, Daily Words, and Translate', (tester) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -164,9 +180,13 @@ void main() {
       expect(find.text('Daily Words'), findsOneWidget);
       expect(find.text('5 new words today'), findsOneWidget);
       expect(find.text('TODAY'), findsOneWidget);
+
+      expect(find.text('Translate'), findsOneWidget);
+      expect(find.text('Offline translation for 50+ languages'), findsOneWidget);
+      expect(find.text('OFFLINE'), findsOneWidget);
     });
 
-    testWidgets('renders 2x2 Bento grid with all 4 superpower tools', (tester) async {
+    testWidgets('renders 2-column Bento row: Photo Vocab & Scan & Learn', (tester) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -179,27 +199,20 @@ void main() {
       expect(find.text('Scan & Learn'), findsOneWidget);
       expect(find.text('Text Reader'), findsOneWidget);
       expect(find.text('OCR SCAN'), findsOneWidget);
-
-      // Cell 3: Translate
-      expect(find.text('Translate'), findsOneWidget);
-      expect(find.text('50+ Languages'), findsOneWidget);
-      expect(find.text('OFFLINE'), findsOneWidget);
-
-      // Cell 4: Word Games
-      expect(find.text('Word Games'), findsOneWidget);
-      expect(find.text('Snap & Mixer'), findsOneWidget);
-      expect(find.text('GAMES'), findsOneWidget);
     });
 
-    testWidgets('renders sleek 32px Directory capsule pill trigger', (tester) async {
+    testWidgets('renders Arcade Vault strip with 2 speed word games hidden', (tester) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
-      expect(find.text('Directory (7 Tools)'), findsOneWidget);
+      expect(find.text('ARCADE VAULT'), findsOneWidget);
+      expect(find.text('2 GAMES'), findsOneWidget);
+      expect(find.text('Speed vocabulary & anagram challenges'), findsOneWidget);
+      expect(find.text('Unfold +2'), findsOneWidget);
     });
   });
 
-  group('Piece 8: ToolsStrip Navigation & Modal Sheet Tests', () {
+  group('Piece 8: ToolsStrip Navigation & Inline Expansion Tests', () {
     testWidgets('tapping Kids Zone navigates to kidsZoneRoute', (tester) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
@@ -218,6 +231,16 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(navigatedRoutes, contains(AppRouter.dailyWordsRoute));
+    });
+
+    testWidgets('tapping Translate navigates to translateRoute', (tester) async {
+      await tester.pumpWidget(createSubject());
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Translate'));
+      await tester.pumpAndSettle();
+
+      expect(navigatedRoutes, contains(AppRouter.translateRoute));
     });
 
     testWidgets('tapping Photo Vocab navigates to photoVocabularyRoute', (tester) async {
@@ -240,65 +263,38 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.scanAndLearnRoute));
     });
 
-    testWidgets('tapping Translate navigates to translateRoute', (tester) async {
+    testWidgets('tapping Unfold +2 expands and reveals inline bento cells for Word Snap and Word Mixer', (tester) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Translate'));
+      // Tap unfold
+      await tester.tap(find.text('Unfold +2'));
       await tester.pumpAndSettle();
 
-      expect(navigatedRoutes, contains(AppRouter.translateRoute));
-    });
+      expect(find.text('ACTIVE'), findsOneWidget);
+      expect(find.text('Fold'), findsOneWidget);
 
-    testWidgets('tapping Word Games opens bottom sheet with Word Snap & Word Mixer', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Word Games'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Brain Word Games'), findsOneWidget);
+      // Now Word Snap and Word Mixer exist as expanded bento sub-cells
       expect(find.text('Word Snap'), findsOneWidget);
       expect(find.text('Word Mixer'), findsOneWidget);
+      expect(find.text('MEMORY MATCH'), findsOneWidget);
+      expect(find.text('ANAGRAM SPRINT'), findsOneWidget);
 
-      // Tap Word Snap in sheet
+      // Tap Fold to collapse
+      await tester.ensureVisible(find.text('Fold'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Fold'));
+      await tester.pumpAndSettle();
+      expect(find.text('Unfold +2'), findsOneWidget);
+
+      // Re-unfold and tap Word Snap to test navigation
+      await tester.tap(find.text('Unfold +2'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Word Snap'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('Word Snap'));
       await tester.pumpAndSettle();
-
       expect(navigatedRoutes, contains(AppRouter.wordSnapRoute));
-    });
-
-    testWidgets('tapping Word Mixer in Word Games sheet navigates to wordMixerRoute', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Word Games'));
-      await tester.pumpAndSettle();
-
-      // Tap Word Mixer in sheet
-      await tester.tap(find.text('Word Mixer'));
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains(AppRouter.wordMixerRoute));
-    });
-
-    testWidgets('tapping Directory pill opens Tools Directory sheet showing all 7 tools', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Directory (7 Tools)'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Tools & Utilities (7)'), findsOneWidget);
-      // All 7 tools listed in directory
-      expect(find.text('Kids Zone'), findsWidgets);
-      expect(find.text('Daily Words'), findsWidgets);
-      expect(find.text('Photo Vocab'), findsWidgets);
-      expect(find.text('Scan & Learn'), findsWidgets);
-      expect(find.text('Translate'), findsWidgets);
-      expect(find.text('Word Snap'), findsWidgets);
-      expect(find.text('Word Mixer'), findsWidgets);
-      expect(find.text('Browse 100+ Games & Full App Catalog'), findsOneWidget);
     });
   });
 
@@ -337,6 +333,20 @@ void main() {
 
       expect(find.byType(ToolsStrip), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('dynamically updates when DiscoveryDeck.notifySequenceCompleted() is invoked', (tester) async {
+      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
+      await tester.pumpWidget(createSubject());
+      await tester.pumpAndSettle();
+
+      expect(find.text('TODAY'), findsOneWidget);
+
+      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(true);
+      DiscoveryDeck.notifySequenceCompleted();
+      await tester.pumpAndSettle();
+
+      expect(find.text('COMPLETED ✓'), findsOneWidget);
     });
   });
 }

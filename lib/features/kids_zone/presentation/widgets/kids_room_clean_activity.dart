@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -186,8 +187,8 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                             child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 20.w),
-                              padding: EdgeInsets.all(32.r),
+                              margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                              padding: EdgeInsets.all(AppSpacing.cardSpacious),
                               decoration: BoxDecoration(
                                 color: Colors.white.withValues(alpha: 0.7),
                                 borderRadius: BorderRadius.circular(40.r),

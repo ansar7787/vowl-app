@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Adventure store carousel presenting streak freezes, XP boosts, and item purchases.
 class AdventureStoreSection extends StatelessWidget {
@@ -368,7 +369,7 @@ class AdventureStoreSection extends StatelessWidget {
         backgroundColor: Colors.transparent,
         child: GlassTile(
           blur: 0,
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.all(AppSpacing.cardSpacious),
           borderRadius: BorderRadius.circular(28.r),
           child: Column(
             mainAxisSize: MainAxisSize.min,

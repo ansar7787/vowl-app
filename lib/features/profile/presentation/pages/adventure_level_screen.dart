@@ -21,6 +21,7 @@ import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
@@ -268,7 +269,7 @@ class AdventureLevelScreen extends StatelessWidget {
 
     return GlassTile(
       blur: 0,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(32.r),
       child: Column(
         children: [

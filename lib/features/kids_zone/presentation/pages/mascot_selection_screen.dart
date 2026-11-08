@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
@@ -66,7 +67,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 elevation: 0,
                 leadingWidth: 80.w,
                 leading: Padding(
-                  padding: EdgeInsets.only(left: 20.w, top: 8.h, bottom: 8.h),
+                  padding: EdgeInsets.only(left: AppSpacing.screen, top: 8.h, bottom: 8.h),
                   child: ScaleButton(
                     onTap: () => context.pop(),
                     child: Container(
@@ -99,7 +100,7 @@ class MascotSelectionScreen extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: Column(
                     children: [
                       SizedBox(height: 10.h),
@@ -137,7 +138,7 @@ class MascotSelectionScreen extends StatelessWidget {
                       SizedBox(height: 30.h),
                       LayoutBuilder(
                         builder: (context, constraints) {
-                          final cardWidth = (constraints.maxWidth - 20.w) / 2;
+                          final cardWidth = (constraints.maxWidth - AppSpacing.screen) / 2;
                           return Column(
                             children: [
                               Row(
@@ -153,7 +154,7 @@ class MascotSelectionScreen extends StatelessWidget {
                                       index: 0,
                                     ),
                                   ),
-                                  SizedBox(width: 20.w),
+                                  SizedBox(width: AppSpacing.screen),
                                   SizedBox(
                                     width: cardWidth,
                                     child: KidsMascotCard(
@@ -252,7 +253,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
 
         return Container(
               width: double.infinity,
-              padding: EdgeInsets.all(14.r),
+              padding: EdgeInsets.all(AppSpacing.card),
               decoration: BoxDecoration(
                 color: isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(32.r),

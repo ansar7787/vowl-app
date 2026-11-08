@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -121,7 +122,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
       case 1:
         return context.tr(
           'leaderboard.champion_title_1',
-          fallback: 'LEAGUE CHAMPION 👑',
+          fallback: 'LEAGUE CHAMPION 🏆',
         );
       case 2:
         return context.tr(
@@ -231,7 +232,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     return Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      insetPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
       child: Stack(
         alignment: Alignment.center,
         clipBehavior: Clip.none,
@@ -262,7 +263,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
               borderRadius: BorderRadius.circular(30.r),
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 24.h),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -331,7 +332,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                     // Prize Cards Breakdown
                     if (widget.vipDays > 0) ...[
                       _buildRewardRow(
-                        icon: LucideIcons.crown,
+                        icon: LucideIcons.sparkles,
                         iconColor: IllustrationColors.premiumGold,
                         title: isCurrentlyVip
                             ? '+${widget.vipDays} Days VIP Extended!'
@@ -350,7 +351,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                         iconColor: AppColors.amber500,
                         title: '+${widget.coins} Quest Coins',
                         subtitle:
-                            'Added directly to your treasury for duels & hints',
+                            'Added directly to your treasury for power-ups & hints',
                         isDark: isDark,
                       ),
                       SizedBox(height: 10.h),
@@ -359,17 +360,17 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                     // Permanent / Weekly Flex Badge
                     _buildRewardRow(
                       icon: widget.rank == 1
-                          ? LucideIcons.sparkles
+                          ? LucideIcons.trophy
                           : LucideIcons.medal,
                       iconColor: _accentColor,
                       title: widget.rank == 1
-                          ? 'Golden Crown Avatar Aura'
+                          ? 'Golden Champion Avatar Aura'
                           : (widget.rank <= 3
                               ? 'Podium Laurels Profile Badge'
                               : 'Division Finisher Ribbons'),
                       subtitle: widget.rank == 1
                           ? 'Glows around your avatar in the league all week'
-                          : 'Showcased across your global profile and arena',
+                          : 'Showcased across your global profile and rankings',
                       isDark: isDark,
                     ),
 
@@ -389,13 +390,10 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                             ],
                           ),
                           borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: _accentColor.withValues(alpha: 0.4),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            width: 1,
+                          ),
                         ),
                         alignment: Alignment.center,
                         child: _isClaiming

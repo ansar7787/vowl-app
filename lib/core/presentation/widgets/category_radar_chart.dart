@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -110,8 +111,8 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
-      padding: EdgeInsets.all(24.r),
+      margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface

@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -168,7 +169,7 @@ class StoryDialogueBox extends StatelessWidget {
     );
 
     return Padding(
-      padding: EdgeInsets.all(32.r),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacious, vertical: 32.h),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

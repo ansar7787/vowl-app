@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/leaderboard/presentation/pages/leaderboard_screen.dart';
 
 /// Compact 4-item telemetry shelf on the home screen (The Apex Telemetry Shelf).
 ///
@@ -132,7 +133,8 @@ class UnifiedStatsRow extends StatelessWidget {
                 value: globalRank != null ? '#$globalRank' : '—',
                 icon: Icons.public_rounded,
                 color: AppColors.indigo500,
-                route: AppRouter.leaderboardRoute,
+                route: '${AppRouter.leaderboardRoute}?tab=global',
+                extra: LeaderboardTimeframe.allTime,
                 isLoadingValue: isRankLoading,
               ),
             ),
@@ -162,6 +164,7 @@ class UnifiedStatsRow extends StatelessWidget {
     required IconData icon,
     required Color color,
     required String route,
+    Object? extra,
     bool isLoadingValue = false,
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -199,7 +202,7 @@ class UnifiedStatsRow extends StatelessWidget {
           try {
             di.sl<HapticService>().selection();
           } catch (_) {}
-          context.push(route);
+          context.push(route, extra: extra);
         },
         child: ExcludeSemantics(
           child: Container(

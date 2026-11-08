@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -186,7 +187,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                     sliver: SliverToBoxAdapter(
                       child: Column(
                         children: [
@@ -207,7 +208,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                     sliver: SliverToBoxAdapter(
                       child: KidsMagicChest(
                         onClaimed: _spawnCoins,
@@ -233,8 +234,8 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           // FLOATING QUICK MENU
           Positioned(
             bottom: 24.h,
-            left: 20.w,
-            right: 20.w,
+            left: AppSpacing.screen,
+            right: AppSpacing.screen,
             child: Container(
               decoration: BoxDecoration(
                 color: isDark ? AppColors.slate800 : Colors.white,
@@ -442,7 +443,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         Center(child: _buildKeyShopButton(context)),
         SizedBox(width: 8.w),
         Padding(
-          padding: EdgeInsets.only(right: 20.w),
+          padding: EdgeInsets.only(right: AppSpacing.screen),
           child: Center(child: _buildCoinBadge(context, coins, contrastColor)),
         ),
       ],

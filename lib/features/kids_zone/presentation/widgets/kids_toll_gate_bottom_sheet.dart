@@ -67,6 +67,8 @@ class KidsTollGateBottomSheet {
 
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (sheetContext) {

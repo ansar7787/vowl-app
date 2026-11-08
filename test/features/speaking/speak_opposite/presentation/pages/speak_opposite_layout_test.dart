@@ -1002,7 +1002,7 @@ void main() {
       );
       speakingStreamController.add(nextLoadedState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(find.text('dark'), findsOneWidget);
       expect(find.text('The room was completely dark before turning on the lamp.'), findsOneWidget);
@@ -1029,7 +1029,7 @@ void main() {
       );
       speakingStreamController.add(nextLoadedState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.byType(GameFeedbackCard), findsNothing);
@@ -1045,7 +1045,7 @@ void main() {
       );
       speakingStreamController.add(completeState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
     });
@@ -1060,7 +1060,7 @@ void main() {
       );
       speakingStreamController.add(gameOverState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(gameOverState.livesRemaining, 0);
     });

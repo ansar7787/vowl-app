@@ -2,13 +2,12 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 abstract class ArenaRepository {
-  /// Quick match: polls live Firestore queue for 3 seconds.
+  /// Quick match: polls live Firestore queue for an opponent.
   /// If another live player is waiting, pairs immediately.
-  /// Otherwise, falls back instantly to a Ghost Rival chosen from [leaderboardUsers]
-  /// playing at their real accuracy rating (0-second wait time!).
+  /// Otherwise, falls back to a calibrated Computer/AI opponent via
+  /// 3-Pillar Skill-Based Matchmaking (SBMM).
   Future<ArenaDuelSession> quickMatch({
     required UserEntity currentUser,
-    required List<UserEntity> leaderboardUsers,
   });
 
   /// Challenges a specific player picked from the Leaderboard as a Ghost Rival
@@ -52,6 +51,17 @@ abstract class ArenaRepository {
   /// Forfeits match on disconnect / rage-quit. Remaining player awarded 50 Coins.
   Future<void> forfeitMatch({
     required String roomCode,
+    required String userId,
+  });
+
+  /// Refunds the 30-coin entry stake if matchmaking or a waiting room is dissolved before the match starts.
+  Future<void> refundStake({
+    required String userId,
+  });
+
+  /// Immediately cancels an active matchmaking search, removes any queue ticket from Firestore,
+  /// and terminates background listeners for [userId].
+  Future<void> cancelMatchmaking({
     required String userId,
   });
 }

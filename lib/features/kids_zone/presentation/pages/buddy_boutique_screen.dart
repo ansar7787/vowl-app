@@ -18,6 +18,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
@@ -348,8 +349,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   Theme.of(context).scaffoldBackgroundColor ==
                       AppColors.midnightBase);
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-            padding: EdgeInsets.all(24.r),
+            margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 10.h),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             decoration: BoxDecoration(
               color: isMidnight
                   ? AppColors.midnightSurface
@@ -734,16 +735,21 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (sheetContext) {
+        final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
+
         return Container(
-          padding: EdgeInsets.fromLTRB(
-            24.w,
-            24.h,
-            24.w,
-            24.h + MediaQuery.paddingOf(sheetContext).bottom,
-          ),
+          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 24.h, AppSpacing.screen, safeBottom),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
@@ -948,7 +954,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             );
           },
           child: Container(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [AppColors.red500, _LocalPalette.color991b1b],

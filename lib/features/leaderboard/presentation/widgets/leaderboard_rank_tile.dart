@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,46 +99,52 @@ class LeaderboardRankTile extends StatelessWidget {
             onTap: onTap,
             borderRadius: BorderRadius.circular(18.r),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacing.cardCompact,
+                vertical: 12.h,
+              ),
               child: Row(
                 children: [
             // Rank number & Change Indicator
             SizedBox(
-              width: 44.w,
+              width: 32.w,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    '$rank',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: -1,
-                      color: isDark
-                          ? tierColor.withValues(alpha: 0.9)
-                          : tierColor.withValues(alpha: 0.8),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      '$rank',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -1,
+                        color: isDark
+                            ? tierColor.withValues(alpha: 0.9)
+                            : tierColor.withValues(alpha: 0.8),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                  if (!isKids && isWeekly && user.previousRank != null) ...[
+                  if (!isKids && isWeekly) ...[
                     SizedBox(height: 2.h),
-                    _buildRankChangeIndicator(user.previousRank!, rank),
+                    _buildRankChangeIndicator(user.previousRank ?? rank, rank),
                   ],
                 ],
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             // Avatar
             UserAvatar(
               photoUrl: user.photoUrl,
-              size: 40.r,
+              size: 36.r,
               border: Border.all(
                 color: tierColor.withValues(alpha: 0.25),
                 width: 1.5,
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             // Name & XP row
             Expanded(
               child: Column(
@@ -151,7 +158,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 13.sp,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w900,
                             color: MeshGradientBackground.getContrastColor(
                               context,
                             ),
@@ -189,10 +196,10 @@ class LeaderboardRankTile extends StatelessWidget {
                                 context.tr('leaderboard.you', fallback: 'You'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 7.sp,
+                                  fontSize: 8.5.sp,
                                   fontWeight: FontWeight.w900,
                                   color: _LocalPalette.color60a5fa,
-                                  letterSpacing: 1,
+                                  letterSpacing: 0.5,
                                 ),
                               ),
                             ),
@@ -212,7 +219,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                             color: isDark ? AppColors.slate400 : AppColors.slate600,
                           ),
                           overflow: TextOverflow.ellipsis,
@@ -239,19 +246,22 @@ class LeaderboardRankTile extends StatelessWidget {
                   color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.25),
                 ),
               ),
-              child: Text(
-                isKids
-                    ? '${user.kidsCoins} ⭐'
-                    : context.tr(
-                        'leaderboard.lvs',
-                        fallback: 'Lv. {0}',
-                        args: [levelsCleared.toString()],
-                      ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isKids ? AppColors.amber500 : tierColor,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  isKids
+                      ? '${user.kidsCoins} ⭐'
+                      : context.tr(
+                          'leaderboard.lvs',
+                          fallback: 'Lv. {0}',
+                          args: [levelsCleared.toString()],
+                        ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isKids ? AppColors.amber500 : tierColor,
+                  ),
                 ),
               ),
             ),
@@ -268,52 +278,60 @@ class LeaderboardRankTile extends StatelessWidget {
     final diff = previousRank - currentRank;
     if (diff > 0) {
       // Improved rank (e.g. from 10 to 5)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_upward_rounded,
-            color: AppColors.emerald500,
-            size: 10.r,
-          ),
-          Text(
-            '$diff',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.sp,
-              fontWeight: FontWeight.w800,
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_upward_rounded,
               color: AppColors.emerald500,
+              size: 10.r,
             ),
-          ),
-        ],
+            Text(
+              '$diff',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.emerald500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
       );
     } else if (diff < 0) {
       // Dropped rank (e.g. from 5 to 10)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_downward_rounded,
-            color: AppColors.red500,
-            size: 10.r,
-          ),
-          Text(
-            '${diff.abs()}',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.sp,
-              fontWeight: FontWeight.w800,
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_downward_rounded,
               color: AppColors.red500,
+              size: 10.r,
             ),
-          ),
-        ],
+            Text(
+              '${diff.abs()}',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.red500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
       );
     } else {
       // No change
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
+      return SizedBox(
+        height: 12.h,
+        child: Center(
+          child: Container(
             width: 6.w,
             height: 2.h,
             decoration: BoxDecoration(
@@ -321,7 +339,7 @@ class LeaderboardRankTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(2.r),
             ),
           ),
-        ],
+        ),
       );
     }
   }

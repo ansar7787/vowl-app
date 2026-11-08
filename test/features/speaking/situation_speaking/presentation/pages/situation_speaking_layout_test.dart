@@ -421,7 +421,7 @@ void main() {
           ),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
       },

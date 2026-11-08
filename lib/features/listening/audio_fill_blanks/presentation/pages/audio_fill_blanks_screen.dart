@@ -63,9 +63,9 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
   int get level => widget.level;
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-    'listening.games.audio_fill_blanks_title',
-    fallback: 'AUDITORY ACE!',
-  );
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final _controller = TextEditingController();
   final ValueNotifier<double> _revealProgress = ValueNotifier(0.0);

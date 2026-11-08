@@ -1,20 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Discovery Hub widget presenting curated quest sequences in an Apex Cockpit layout:
-/// - Flagship Hero Card: Adaptive "For You" smart recommendation.
-/// - 3-Cell Superpower Row: Daily Duo, Speed Blitz, and Grammar Pro.
+/// Discovery Hub / Daily Practice widget presenting curated quest sequences in an Apex Cockpit layout:
+/// - Flagship Hero Card: Adaptive "Smart Focus" recommendation.
+/// - 3-Cell Superpower Row: Daily Workout, Rapid Recall, and Sentence Lab.
 ///
-/// 100% visible with zero horizontal swiping, zero battery-draining loops,
-/// and zero text clipping or ellipses on narrow viewports.
-class DiscoveryDeck extends StatelessWidget {
+/// Features real-world daily completion status:
+/// - Completing a sequence records today's date in local storage.
+/// - Cards reflect "COMPLETED TODAY ✓" / "COMPLETED ✓" with emerald accents.
+/// - Automatically resets the next day at midnight (date-based comparison).
+/// - Unlocked for unlimited re-practice at any time without blocking eager learners.
+/// - 100% visible with zero horizontal swiping, zero battery-draining loops,
+///   and zero text clipping or ellipses on narrow viewports.
+class DiscoveryDeck extends StatefulWidget {
+  /// Global notifier to trigger UI refresh across any mounted [DiscoveryDeck]
+  /// when a sequence finishes without needing full route rebuilding.
+  static final ValueNotifier<int> dailyCompletionNotifier = ValueNotifier<int>(
+    0,
+  );
+
+  /// Notifies all active [DiscoveryDeck] instances to refresh their daily completion state.
+  static void notifySequenceCompleted() {
+    dailyCompletionNotifier.value++;
+  }
+
   /// Current authenticated [user] entity.
   final UserEntity user;
 
@@ -28,6 +46,70 @@ class DiscoveryDeck extends StatelessWidget {
     required this.onLaunchQuest,
   });
 
+  @override
+  State<DiscoveryDeck> createState() => _DiscoveryDeckState();
+}
+
+class _DiscoveryDeckState extends State<DiscoveryDeck> {
+  Map<String, bool> _completedSequences = const {
+    'smart_focus': false,
+    'daily_workout': false,
+    'rapid_recall': false,
+    'sentence_lab': false,
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    DiscoveryDeck.dailyCompletionNotifier.addListener(_refreshCompletion);
+    _refreshCompletion();
+  }
+
+  @override
+  void didUpdateWidget(DiscoveryDeck oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.user.id != widget.user.id) {
+      _refreshCompletion();
+    }
+  }
+
+  @override
+  void dispose() {
+    DiscoveryDeck.dailyCompletionNotifier.removeListener(_refreshCompletion);
+    super.dispose();
+  }
+
+  Future<void> _refreshCompletion() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      final userId = widget.user.id;
+      final newMap = <String, bool>{};
+      for (final id in [
+        'smart_focus',
+        'daily_workout',
+        'rapid_recall',
+        'sentence_lab',
+      ]) {
+        final legacyId = DiscoveryHelper.legacySequenceId(id);
+        final val =
+            prefs.getString('vowl_sequence_completed_${id}_$userId') ??
+            prefs.getString('vowl_sequence_completed_${id}_guest');
+        final legacyVal =
+            prefs.getString('vowl_sequence_completed_${legacyId}_$userId') ??
+            prefs.getString('vowl_sequence_completed_${legacyId}_guest');
+        newMap[id] = val == todayStr || legacyVal == todayStr;
+      }
+      if (mounted) {
+        setState(() {
+          _completedSequences = newMap;
+        });
+      }
+    } catch (_) {}
+  }
+
   void _triggerHaptic() {
     try {
       di.sl<HapticService>().selection();
@@ -37,6 +119,10 @@ class DiscoveryDeck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isSmartFocusDone = _completedSequences['smart_focus'] ?? false;
+    final isDailyWorkoutDone = _completedSequences['daily_workout'] ?? false;
+    final isRapidRecallDone = _completedSequences['rapid_recall'] ?? false;
+    final isSentenceLabDone = _completedSequences['sentence_lab'] ?? false;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -44,18 +130,30 @@ class DiscoveryDeck extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // 1. Flagship Hero Card: Adaptive "For You"
+          // 1. Flagship Hero Card: Adaptive "Smart Focus"
           _HeroFlagshipQuestCard(
             isDark: isDark,
-            title: context.tr('home.discovery_foryou_title', fallback: 'For You'),
-            badge: context.tr('home.discovery_diff_adaptive', fallback: 'Adaptive'),
+            isCompleted: isSmartFocusDone,
+            title: context.tr(
+              'home.discovery_smartfocus_title',
+              fallback: 'Smart Focus',
+            ),
+            badge: isSmartFocusDone
+                ? context.tr(
+                    'home.discovery_completed_badge',
+                    fallback: 'COMPLETED TODAY ✓',
+                  )
+                : context.tr(
+                    'home.discovery_smartfocus_badge',
+                    fallback: 'Adaptive AI',
+                  ),
             subtitle: context.tr(
-              'home.discovery_foryou_subtitle',
-              fallback: 'Personalized to your practice',
+              'home.discovery_smartfocus_subtitle',
+              fallback: 'Targeted practice for your weakest skills',
             ),
             onTap: () {
               _triggerHaptic();
-              onLaunchQuest('smart_recommendation');
+              widget.onLaunchQuest('smart_focus');
             },
           ),
 
@@ -64,70 +162,85 @@ class DiscoveryDeck extends StatelessWidget {
           // 2. 3-Cell Superpower Row
           Row(
             children: [
-              // Cell 1: Daily Duo
+              // Cell 1: Daily Workout
               Expanded(
                 child: _DiscoverySubCell(
                   isDark: isDark,
+                  isCompleted: isDailyWorkoutDone,
                   icon: Icons.auto_awesome_motion_rounded,
                   color: const Color(0xFF06B6D4), // Cyan
                   title: context.tr(
-                    'home.discovery_dailyduo_title',
-                    fallback: 'Daily Duo',
+                    'home.discovery_dailyworkout_title',
+                    fallback: 'Daily Workout',
                   ),
-                  tag: context.tr(
-                    'home.quests_count',
-                    fallback: '2 Quests',
-                    args: ['2'],
-                  ),
+                  tag: isDailyWorkoutDone
+                      ? context.tr(
+                          'home.discovery_completed_today',
+                          fallback: 'COMPLETED ✓',
+                        )
+                      : context.tr(
+                          'home.discovery_dailyworkout_tag',
+                          fallback: '2 Steps',
+                        ),
                   onTap: () {
                     _triggerHaptic();
-                    onLaunchQuest('daily_duo');
+                    widget.onLaunchQuest('daily_workout');
                   },
                 ),
               ),
               SizedBox(width: 8.w),
 
-              // Cell 2: Speed Blitz
+              // Cell 2: Rapid Recall
               Expanded(
                 child: _DiscoverySubCell(
                   isDark: isDark,
+                  isCompleted: isRapidRecallDone,
                   icon: Icons.bolt_rounded,
                   color: IllustrationColors.warmOrange,
                   title: context.tr(
-                    'home.discovery_speedblitz_title',
-                    fallback: 'Speed Blitz',
+                    'home.discovery_rapidrecall_title',
+                    fallback: 'Rapid Recall',
                   ),
-                  tag: context.tr(
-                    'home.quests_count',
-                    fallback: '3 Quests',
-                    args: ['3'],
-                  ),
+                  tag: isRapidRecallDone
+                      ? context.tr(
+                          'home.discovery_completed_today',
+                          fallback: 'COMPLETED ✓',
+                        )
+                      : context.tr(
+                          'home.discovery_rapidrecall_tag',
+                          fallback: 'Speed Drill',
+                        ),
                   onTap: () {
                     _triggerHaptic();
-                    onLaunchQuest('speed_blitz');
+                    widget.onLaunchQuest('rapid_recall');
                   },
                 ),
               ),
               SizedBox(width: 8.w),
 
-              // Cell 3: Grammar Pro
+              // Cell 3: Sentence Lab
               Expanded(
                 child: _DiscoverySubCell(
                   isDark: isDark,
-                  icon: Icons.verified_user_rounded,
+                  isCompleted: isSentenceLabDone,
+                  icon: Icons.architecture_rounded,
                   color: AppColors.emerald500,
                   title: context.tr(
-                    'home.discovery_grammarpro_title',
-                    fallback: 'Grammar Pro',
+                    'home.discovery_sentencelab_title',
+                    fallback: 'Sentence Lab',
                   ),
-                  tag: context.tr(
-                    'home.quests_count',
-                    fallback: '3 Quests',
-                    args: ['3'],
-                  ),
+                  tag: isSentenceLabDone
+                      ? context.tr(
+                          'home.discovery_completed_today',
+                          fallback: 'COMPLETED ✓',
+                        )
+                      : context.tr(
+                          'home.discovery_sentencelab_tag',
+                          fallback: 'Syntax',
+                        ),
                   onTap: () {
                     _triggerHaptic();
-                    onLaunchQuest('grammar_pro');
+                    widget.onLaunchQuest('sentence_lab');
                   },
                 ),
               ),
@@ -142,6 +255,7 @@ class DiscoveryDeck extends StatelessWidget {
 /// Hero flagship horizon card for personalized adaptive recommendations.
 class _HeroFlagshipQuestCard extends StatelessWidget {
   final bool isDark;
+  final bool isCompleted;
   final String title;
   final String badge;
   final String subtitle;
@@ -153,12 +267,13 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
     required this.badge,
     required this.subtitle,
     required this.onTap,
+    this.isCompleted = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title, $badge, $subtitle. Double tap to start quest sequence.',
@@ -172,41 +287,93 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
                 : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: isMidnight
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+              color: isCompleted
+                  ? AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.22 : 0.16,
+                    )
+                  : (isMidnight
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100)),
               width: 1.r,
             ),
           ),
           child: Row(
             children: [
-              // Leading Halo Icon
-              Container(
-                width: 42.r,
-                height: 42.r,
-                decoration: BoxDecoration(
-                  color: AppColors.indigo500.withValues(
-                    alpha: isDark ? 0.18 : 0.12,
-                  ),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: AppColors.indigo500.withValues(
-                      alpha: isDark ? 0.35 : 0.25,
+              // Leading Halo Icon with overlaid completion badge
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 42.r,
+                    height: 42.r,
+                    decoration: BoxDecoration(
+                      color: isCompleted
+                          ? AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.20 : 0.14,
+                            )
+                          : AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.18 : 0.12,
+                            ),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.45 : 0.30,
+                              )
+                            : AppColors.indigo500.withValues(
+                                alpha: isDark ? 0.35 : 0.25,
+                              ),
+                        width: 1.r,
+                      ),
                     ),
-                    width: 1.r,
+                    child: Center(
+                      child: Icon(
+                        Icons.lightbulb_rounded,
+                        size: 22.r,
+                        color: isDark
+                            ? const Color(0xFFA5B4FC)
+                            : AppColors.indigo500,
+                      ),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.lightbulb_rounded,
-                    size: 22.r,
-                    color: isDark
-                        ? const Color(0xFFA5B4FC)
-                        : AppColors.indigo500,
-                  ),
-                ),
+                  if (isCompleted)
+                    Positioned(
+                      top: -4.r,
+                      right: -4.r,
+                      child: Container(
+                        width: 16.r,
+                        height: 16.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isDark
+                                ? const Color(0xFF111827)
+                                : Colors.white,
+                            width: 2.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.5,
+                              ),
+                              blurRadius: 6,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            size: 10.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               SizedBox(width: 12.w),
 
@@ -216,34 +383,38 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Row(
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: 6.w,
+                      runSpacing: 2.h,
                       children: [
-                        Flexible(
-                          child: Text(
-                            title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.5.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? const Color(0xFFF8FAFC)
-                                  : const Color(0xFF0F172A),
-                              letterSpacing: -0.2,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                        Text(
+                          title,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.5.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark
+                                ? const Color(0xFFF8FAFC)
+                                : const Color(0xFF0F172A),
+                            letterSpacing: -0.2,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(width: 6.w),
                         Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 6.w,
                             vertical: 2.h,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(
-                              alpha: isDark ? 0.20 : 0.12,
-                            ),
+                            color: isCompleted
+                                ? AppColors.emerald500.withValues(
+                                    alpha: isDark ? 0.22 : 0.14,
+                                  )
+                                : AppColors.indigo500.withValues(
+                                    alpha: isDark ? 0.20 : 0.12,
+                                  ),
                             borderRadius: BorderRadius.circular(5.r),
                           ),
                           child: Text(
@@ -252,9 +423,13 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 9.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? const Color(0xFFA5B4FC)
-                                  : AppColors.indigo500,
+                              color: isCompleted
+                                  ? (isDark
+                                        ? const Color(0xFF6EE7B7)
+                                        : AppColors.emerald500)
+                                  : (isDark
+                                        ? const Color(0xFFA5B4FC)
+                                        : AppColors.indigo500),
                               letterSpacing: 0.5,
                             ),
                             maxLines: 1,
@@ -288,7 +463,9 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                 decoration: BoxDecoration(
-                  color: AppColors.indigo500,
+                  color: isCompleted
+                      ? AppColors.emerald500
+                      : AppColors.indigo500,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
                 child: Row(
@@ -305,8 +482,10 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
                     ),
                     SizedBox(width: 3.w),
                     Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 9.r,
+                      isCompleted
+                          ? Icons.replay_rounded
+                          : Icons.arrow_forward_ios_rounded,
+                      size: isCompleted ? 12.r : 9.r,
                       color: Colors.white,
                     ),
                   ],
@@ -323,6 +502,7 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
 /// Compact superpower quest cell for the 3-column row.
 class _DiscoverySubCell extends StatelessWidget {
   final bool isDark;
+  final bool isCompleted;
   final IconData icon;
   final Color color;
   final String title;
@@ -336,12 +516,13 @@ class _DiscoverySubCell extends StatelessWidget {
     required this.title,
     required this.tag,
     required this.onTap,
+    this.isCompleted = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title, $tag. Double tap to start quest.',
@@ -355,11 +536,15 @@ class _DiscoverySubCell extends StatelessWidget {
                 : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isMidnight
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+              color: isCompleted
+                  ? AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.22 : 0.16,
+                    )
+                  : (isMidnight
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100)),
               width: 1.r,
             ),
           ),
@@ -367,21 +552,67 @@ class _DiscoverySubCell extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Halo Icon
-              Container(
-                width: 30.r,
-                height: 30.r,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: isDark ? 0.16 : 0.10),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: color.withValues(alpha: isDark ? 0.32 : 0.20),
-                    width: 1.r,
+              // Halo Icon with overlaid completion badge
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 30.r,
+                    height: 30.r,
+                    decoration: BoxDecoration(
+                      color: isCompleted
+                          ? color.withValues(alpha: isDark ? 0.20 : 0.12)
+                          : color.withValues(alpha: isDark ? 0.16 : 0.10),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.40 : 0.25,
+                              )
+                            : color.withValues(alpha: isDark ? 0.32 : 0.20),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(icon, size: 16.r, color: color),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Icon(icon, size: 16.r, color: color),
-                ),
+                  if (isCompleted)
+                    Positioned(
+                      top: -4.r,
+                      right: -4.r,
+                      child: Container(
+                        width: 14.r,
+                        height: 14.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isDark
+                                ? const Color(0xFF111827)
+                                : Colors.white,
+                            width: 1.5.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.5,
+                              ),
+                              blurRadius: 5,
+                              offset: const Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            size: 9.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               SizedBox(height: 6.h),
 
@@ -404,19 +635,46 @@ class _DiscoverySubCell extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
 
-              // Tag / Quest Count
+              // Tag / Quest Count / Completion Status
               FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Text(
-                  tag,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    color: color,
-                  ),
-                  maxLines: 1,
-                ),
+                child: isCompleted
+                    ? Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.check_circle_rounded,
+                            size: 11.r,
+                            color: isDark
+                                ? const Color(0xFF6EE7B7)
+                                : AppColors.emerald500,
+                          ),
+                          SizedBox(width: 3.w),
+                          Text(
+                            tag,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark
+                                  ? const Color(0xFF6EE7B7)
+                                  : AppColors.emerald500,
+                            ),
+                            maxLines: 1,
+                          ),
+                        ],
+                      )
+                    : Text(
+                        tag,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w700,
+                          color: color,
+                        ),
+                        maxLines: 1,
+                      ),
               ),
             ],
           ),

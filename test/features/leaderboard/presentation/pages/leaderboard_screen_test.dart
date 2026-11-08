@@ -222,6 +222,7 @@ void main() {
 
   Widget buildTestWidget({
     bool isKids = false,
+    bool? showBackButton,
     ThemeData? theme,
     double fontScale = 1.0,
     Size screenSize = const Size(390, 844),
@@ -240,7 +241,10 @@ void main() {
           ),
           home: BlocProvider<AuthBloc>.value(
             value: mockAuthBloc,
-            child: LeaderboardScreen(isKids: isKids),
+            child: LeaderboardScreen(
+              isKids: isKids,
+              showBackButton: showBackButton,
+            ),
           ),
         ),
       ),
@@ -317,8 +321,9 @@ void main() {
     });
 
     testWidgets('renders empty placeholder under podium when users length <= 3', (tester) async {
-      // Top 3 only
+      // Top 3 only, with currentUser in the top 3 so total count <= 3
       final top3Only = testUsersList.take(3).toList();
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(top3Only.first));
       when(() => mockLeaderboardBloc.state)
           .thenReturn(LeaderboardLoaded(top3Only, now, isKids: false));
 
@@ -382,7 +387,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       // Scroll down to reveal ranks in the list
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -750));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -550));
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(seconds: 1));
 
@@ -440,7 +445,7 @@ void main() {
 
       expect(find.byType(RivalChallengeSheet), findsOneWidget);
       expect(find.text('Bob The Master'), findsOneWidget);
-      expect(find.text('Challenge to 1v1 Arena Duel'), findsOneWidget);
+      expect(find.text('Sprint Quests to Overtake'), findsOneWidget);
     });
   });
 
@@ -455,18 +460,23 @@ void main() {
 
       // Initially in Weekly League mode
       expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+      expect(find.textContaining('Weekly XP'), findsWidgets);
 
       // Tap Hall of Fame
       await tester.tap(find.text('Hall of Fame'));
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Hall of Fame Masters'), findsOneWidget);
+      // In Hall of Fame, weekly rewards banner is absent and standing shows Lifetime XP
+      expect(find.byType(WeeklyLeagueRewardsBanner), findsNothing);
+      expect(find.textContaining('Lifetime XP'), findsWidgets);
 
       // Tap Weekly League back
       await tester.tap(find.text('Weekly League'));
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(seconds: 1));
 
       expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+      expect(find.textContaining('Weekly XP'), findsWidgets);
     });
 
     testWidgets('renders Kids Leaderboard header, back button, and Levels label when isKids is true', (tester) async {
@@ -478,9 +488,27 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('Kids Leaderboard'), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
       expect(find.text('Weekly League'), findsNothing);
       expect(find.textContaining('Levels'), findsWidgets);
+    });
+
+    testWidgets('renders back button and Home label when showBackButton is true on main leaderboard', (tester) async {
+      await tester.pumpWidget(buildTestWidget(showBackButton: true));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+      expect(find.text('Home'), findsOneWidget);
+    });
+
+    testWidgets('hides back button when showBackButton is false on main leaderboard', (tester) async {
+      await tester.pumpWidget(buildTestWidget(showBackButton: false));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsNothing);
+      expect(find.text('Home'), findsNothing);
     });
   });
 

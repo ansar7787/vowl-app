@@ -158,7 +158,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
-                                LucideIcons.crown,
+                                LucideIcons.star,
                                 size: (size * 0.14).r,
                                 color: const Color(0xFF78350F),
                               ),

@@ -97,6 +97,13 @@ void main() {
         'date': now.subtract(const Duration(days: 8)).toIso8601String(),
       },
       {
+        'titleKey': 'coin_history.trophy_reward',
+        'params': {'trophyName': 'Novice Speaking'},
+        'amount': 10,
+        'isEarned': true,
+        'date': now.subtract(const Duration(hours: 1)).toIso8601String(),
+      },
+      {
         'title': 'Legacy Raw Title',
         'amount': 50,
         'isEarned': true,
@@ -522,6 +529,7 @@ void main() {
 
       expect(find.text('COIN LEDGER'), findsOneWidget);
       expect(find.text('Beginner Discovery Quests Reward'), findsOneWidget);
+      expect(find.text('Trophy Bounty – Novice Speaking'), findsOneWidget);
       expect(find.text('Purchased Hint Pack'), findsOneWidget);
       expect(find.text('Ad Reward'), findsOneWidget);
       expect(find.text('Legacy Raw Title'), findsOneWidget);

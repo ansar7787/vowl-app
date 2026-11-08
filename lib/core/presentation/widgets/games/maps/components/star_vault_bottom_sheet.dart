@@ -42,6 +42,8 @@ class StarVaultBottomSheet extends StatefulWidget {
   ) {
     return showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       barrierColor: Colors.black.withValues(alpha: 0.6),

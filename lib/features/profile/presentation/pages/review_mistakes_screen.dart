@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -959,7 +960,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       physics: const AlwaysScrollableScrollPhysics(
         parent: BouncingScrollPhysics(),
       ),
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 28.h, bottom: 4.h),
+      padding: EdgeInsets.only(left: AppSpacing.screen, right: AppSpacing.screen, top: 28.h, bottom: 4.h),
       child: Row(
         children: [
           _buildChip(
@@ -1072,18 +1073,23 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
     await showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
       enableDrag: false,
-      builder: (context) {
+      builder: (sheetContext) {
+        final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
+
         return Container(
-          padding: EdgeInsets.fromLTRB(
-            20.w,
-            32.h,
-            20.w,
-            24.h + MediaQuery.paddingOf(context).bottom,
-          ),
+          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 32.h, AppSpacing.screen, safeBottom),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),

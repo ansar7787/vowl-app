@@ -19,6 +19,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/toll_gate_bottom_sheet.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/tts_text_cleaner.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -155,6 +156,11 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               _buddyMessageNotifier.value!,
               style: TextStyle(
                 fontFamily: 'Outfit',
+                fontFamilyFallback: const [
+                  'Noto Color Emoji',
+                  'Apple Color Emoji',
+                  'Segoe UI Emoji',
+                ],
                 color: Colors.white,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w700,
@@ -205,49 +211,41 @@ class _ModernMapNodeState extends State<ModernMapNode> {
           final mascotName = _formatMascotName(mascotId);
 
           final messageKeys = [
-            'category_map.cheer_unstoppable',
-            'category_map.cheer_impressed',
-            'category_map.cheer_magic',
-            'category_map.cheer_genius',
-            'category_map.cheer_rock',
-            'category_map.cheer_winning',
-            'category_map.cheer_boom',
-            'category_map.cheer_smart',
-            'category_map.cheer_momentum',
-            'category_map.cheer_breathtaking',
+            'category_map.cheer_ready',
+            'category_map.cheer_got_this',
+            'category_map.cheer_next_up',
+            'category_map.cheer_do_this',
+            'category_map.cheer_looking_good',
+            'category_map.cheer_on_a_roll',
+            'category_map.cheer_here_we_go',
+            'category_map.cheer_with_you',
+            'category_map.cheer_waiting',
+            'category_map.cheer_time_for',
           ];
           const fallbacks = [
-            "Level {0}! You're unstoppable, Superstar! ⭐",
-            "Level {0}! {1} is impressed! 🚀",
-            "Level {0}! Pure linguistic magic! ✨",
-            "Level {0}! Absolute genius energy! 🧠",
-            "Level {0}! You rock this stage! 🎸",
-            "Level {0}! We're winning big! 🏆",
-            "Level {0}! Boom! Perfect progress! 💥",
-            "Level {0}! {1} says: You're so smart! 🦉",
-            "Level {0}! Keep that momentum! 🏃‍♂️",
-            "Level {0}! Wow! Simply breathtaking! 🎈",
+            "Ready for Level {0}? Let's go! 🚀",
+            "You've got this! ⭐",
+            "Nice work! Level {0} is up! 🎯",
+            "Let's do this! 💪",
+            "Looking good! Let's play! ✨",
+            "On a roll! Keep it up! 🏃",
+            "Level {0}, here we go! 🌟",
+            "{1} is ready when you are! 🦉",
+            "Great job! Next one's waiting! 🔥",
+            "Time for Level {0}! 🎈",
           ];
           final pick = math.Random().nextInt(messageKeys.length);
           final message = context.tr(
             messageKeys[pick],
-            args: [widget.unlockedLevels.toString(), mascotName],
+            args: [widget.levelNumber.toString(), mascotName],
             fallback: fallbacks[pick]
-                .replaceAll('{0}', widget.unlockedLevels.toString())
+                .replaceAll('{0}', widget.levelNumber.toString())
                 .replaceAll('{1}', mascotName),
           );
 
           _buddyMessageNotifier.value = message;
 
-          final cleanMessage = message
-              .replaceAll(
-                RegExp(
-                  r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2B50}]',
-                  unicode: true,
-                ),
-                '',
-              )
-              .trim();
+          final cleanMessage = TtsTextCleaner.clean(message);
           di.sl<TtsService>().speak(cleanMessage);
 
           HapticFeedback.lightImpact();

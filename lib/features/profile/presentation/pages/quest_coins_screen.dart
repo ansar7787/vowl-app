@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
@@ -414,7 +415,7 @@ class VowlCoinsScreen extends StatelessWidget {
 
     return GlassTile(
       blur: 0,
-      padding: EdgeInsets.all(32.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
@@ -1110,7 +1111,7 @@ class VowlCoinsScreen extends StatelessWidget {
         if (recentHistory.isEmpty)
           GlassTile(
             blur: 0,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(24.r),
             borderColor: isDark
                 ? Colors.white.withValues(alpha: 0.05)
@@ -1322,6 +1323,7 @@ class VowlCoinsScreen extends StatelessWidget {
     final params = txn['params'] as Map<String, dynamic>?;
     final gameType = params?['gameType'] as String? ?? '';
     final milestone = params?['milestone']?.toString() ?? '';
+    final trophyName = params?['trophyName'] as String? ?? '';
 
     switch (rawKey) {
       case 'coin_history.beginner_quest_reward':
@@ -1385,6 +1387,14 @@ class VowlCoinsScreen extends StatelessWidget {
           args: [milestone],
           fallback:
               'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''}',
+        );
+      case 'coin_history.trophy_reward':
+      case 'coin_history.badge_reward':
+        return context.tr(
+          'coin_history.trophy_reward',
+          args: [trophyName],
+          fallback:
+              'Trophy Bounty${trophyName.isNotEmpty ? ' – $trophyName' : ''}',
         );
       case 'coin_history.ad_reward':
         return context.tr('coin_history.ad_reward', fallback: 'Ad Reward');

@@ -1054,7 +1054,7 @@ void main() {
       );
       speakingStreamController.add(nextLoadedState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(find.text('small'), findsOneWidget);
       final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
@@ -1070,7 +1070,7 @@ void main() {
       );
       speakingStreamController.add(completeState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
     });

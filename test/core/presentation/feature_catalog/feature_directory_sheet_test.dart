@@ -5,12 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/feature_catalog/first_time_welcome_showcase.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class MockHapticService implements HapticService {
@@ -47,13 +45,6 @@ void main() {
     mockEconomyBloc = MockEconomyBloc();
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
   });
-
-  const testUser = UserEntity(
-    id: 'user_123',
-    email: 'test@vowl.app',
-    completedLevels: {},
-    totalExp: 100,
-  );
 
   Widget wrapWidget(
     Widget child, {
@@ -178,100 +169,6 @@ void main() {
       expect(find.text('Explore All Features'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
-  });
-
-  group('BeginnerDiscoveryCard', () {
-    testWidgets('displays quests, progress bar, and dismisses on close tap', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(390, 844);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
-
-      await tester.pumpWidget(
-        wrapWidget(
-          const BeginnerDiscoveryCard(user: testUser),
-          scrollable: true,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.text('Beginner Discovery Quests'), findsOneWidget);
-      expect(find.text('Complete 1 Lesson'), findsOneWidget);
-      expect(find.text('Try Photo Vocabulary'), findsOneWidget);
-      expect(find.text('Buddy Boutique & Pet'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-
-      // Tap dismiss
-      await tester.tap(find.byTooltip('Dismiss'));
-      await tester.pumpAndSettle();
-
-      // Card disappears
-      expect(find.text('Beginner Discovery Quests'), findsNothing);
-    });
-
-    testWidgets(
-      'shows Claim 150 Coins button when all quests complete and triggers celebration',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({
-          'beginner_discovery_quest_first_game': true,
-          'beginner_discovery_quest_photo_vocab': true,
-          'beginner_discovery_quest_translate': true,
-          'beginner_discovery_quest_boutique': true,
-          'beginner_discovery_quest_reports': true,
-          'beginner_discovery_reward_claimed': false,
-        });
-
-        tester.view.physicalSize = const Size(390, 844);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() {
-          tester.view.resetPhysicalSize();
-          tester.view.resetDevicePixelRatio();
-        });
-
-        await tester.pumpWidget(
-          wrapWidget(
-            const BeginnerDiscoveryCard(user: testUser),
-            scrollable: true,
-          ),
-        );
-        await tester.pumpAndSettle();
-
-        expect(find.text('Claim 150 Coins Reward'), findsOneWidget);
-
-        await tester.tap(find.text('Claim 150 Coins Reward'));
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-
-        verify(
-          () => mockEconomyBloc.add(
-            const EconomyAddCoinsRequested(
-              150,
-              title: 'coin_history.beginner_quest_reward',
-            ),
-          ),
-        ).called(1);
-
-        expect(find.text('150 COINS CLAIMED!'), findsOneWidget);
-        expect(find.text('AWESOME'), findsOneWidget);
-
-        await tester.tap(find.text('AWESOME'));
-        await tester.pumpAndSettle();
-
-        // Card completes eating collapse animation and automatically disappears
-        expect(
-          find.text('Claim 150 Coins Reward'),
-          findsNothing,
-        );
-        expect(
-          find.text('150 Coins Claimed'),
-          findsNothing,
-        );
-      },
-    );
   });
 
   group('FirstTimeWelcomeShowcase', () {

@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart'
 import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/app_router.dart';
 
 // ---------------------------------------------------------------------------
@@ -163,7 +164,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 20.w,
+                                        horizontal: AppSpacing.spacious,
                                         vertical: 10.h,
                                       ),
                                       child: Form(

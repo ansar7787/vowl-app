@@ -5,11 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'onboarding_illustrations.dart';
 
-/// Four-slide onboarding.
+/// Five-slide onboarding.
 ///
 /// Designed to fit 100% of the screen height on standard viewports, with a
 /// sliver/scrollable fallback for smaller screens or larger accessibility text.
@@ -25,7 +26,7 @@ class OnboardingScreen extends StatefulWidget {
   /// "Skip" – go to wherever your current onboarding Skip goes.
   final VoidCallback onSkip;
 
-  /// "Get Started" on slide 4.
+  /// "Get Started" on slide 5.
   final VoidCallback onGetStarted;
 
   /// Optional callback for login route (kept for API compatibility).
@@ -103,6 +104,16 @@ const _slides = <_Slide>[
       _Feature(Icons.public_rounded, 'US & UK Voices'),
     ],
   ),
+  _Slide(
+    headline: 'Clash in Real-Time 1v1 Duels',
+    subtitle:
+        'Challenge live players worldwide or sharpen your skills against smart AI in lightning word battles.',
+    features: [
+      _Feature(Icons.sports_esports_rounded, 'Real-Time Arena'),
+      _Feature(Icons.timer_rounded, 'Lightning Rounds'),
+      _Feature(Icons.emoji_events_rounded, 'Trophies & Coins'),
+    ],
+  ),
 ];
 
 // ── screen state ───────────────────────────────────────────────────────────
@@ -165,6 +176,16 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       'assets/illustrations/onb_progress_chip3.svg',
       'assets/illustrations/onb_progress_waves.svg',
     ],
+    [
+      'assets/illustrations/duel_base.svg',
+      'assets/illustrations/duel_cardA.svg',
+      'assets/illustrations/duel_cardB.svg',
+      'assets/illustrations/duel_trophy.svg',
+      'assets/illustrations/duel_vs.svg',
+      'assets/illustrations/duel_bubbleA.svg',
+      'assets/illustrations/duel_bubbleB.svg',
+      'assets/illustrations/duel_timer.svg',
+    ],
   ];
 
   final Set<int> _warmedSlides = {};
@@ -182,7 +203,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
         vg.loadPicture(loader, null, onError: (e, stack) {});
       } catch (_) {}
     }
-    if (index == 3 && mounted) {
+    if ((index == 3 || index == 4) && mounted) {
       try {
         precacheImage(const AssetImage(kVowlyHead), context);
       } catch (_) {}
@@ -384,7 +405,7 @@ class _Header extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 6, 12, 0),
+      padding: EdgeInsets.fromLTRB(AppSpacing.spacious, 6, 12, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -468,7 +489,7 @@ class _SlidePageState extends State<_SlidePage>
 
         return SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: AppSpacing.spaciousPadding,
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: c.maxHeight),
             child: IntrinsicHeight(
@@ -522,7 +543,7 @@ class _SlidePageState extends State<_SlidePage>
                     ],
                   ),
                   const SizedBox(height: 18),
-                  // Gamified Tag Cloud: symmetrical 2-and-1 pyramid layout across ALL 4 slides
+                  // Gamified Tag Cloud: symmetrical 2-and-1 pyramid layout across ALL 5 slides
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Column(
@@ -779,7 +800,7 @@ class _BottomBar extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : slide.ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+      padding: EdgeInsets.fromLTRB(AppSpacing.spacious, 12, AppSpacing.spacious, 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

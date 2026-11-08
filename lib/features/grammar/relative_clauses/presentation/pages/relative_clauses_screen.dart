@@ -1,4 +1,5 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +48,10 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'Level Complete!';
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ValueNotifier<Offset?> _hookPoint = ValueNotifier(null);
   final ValueNotifier<int> _targetFish = ValueNotifier(-1);

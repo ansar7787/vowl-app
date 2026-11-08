@@ -102,16 +102,21 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Gold Division'), findsOneWidget);
+    expect(find.text('Weekly Rewards'), findsOneWidget);
     expect(find.text('Live'), findsOneWidget);
     expect(find.text('1st'), findsOneWidget);
-    expect(find.text('7d VIP\n+500c'), findsOneWidget);
+    expect(find.text('7d VIP'), findsOneWidget);
+    expect(find.text('+500'), findsOneWidget);
     expect(find.text('2nd'), findsOneWidget);
-    expect(find.text('3d VIP\n+300c'), findsOneWidget);
+    expect(find.text('3d VIP'), findsOneWidget);
+    expect(find.text('+300'), findsOneWidget);
     expect(find.text('3rd'), findsOneWidget);
-    expect(find.text('1d VIP\n+200c'), findsOneWidget);
+    expect(find.text('1d VIP'), findsOneWidget);
+    expect(find.text('+200'), findsOneWidget);
     expect(find.text('4-10th'), findsOneWidget);
-    expect(find.text('100\nCoins'), findsOneWidget);
+    expect(find.text('Top 10'), findsOneWidget);
+    expect(find.text('+100'), findsOneWidget);
+    expect(find.byIcon(Icons.monetization_on_rounded), findsNWidgets(4));
 
     // Unclaimed banner
     expect(find.text('Rank #1 Last Week! 🏆'), findsOneWidget);

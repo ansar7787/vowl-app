@@ -39,6 +39,8 @@ class PremiumStoreBottomSheet extends StatefulWidget {
   }) {
     return showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => PremiumStoreBottomSheet(isKidsMode: isKidsMode),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -595,8 +596,8 @@ class _ContentArea extends StatelessWidget {
   EdgeInsets _buildPadding(BuildContext context) {
     if (disablePadding) return EdgeInsets.zero;
     return EdgeInsets.only(
-      left: 24.w,
-      right: 24.w,
+      left: AppSpacing.screen,
+      right: AppSpacing.screen,
       top: 20.h,
       bottom:
           (isAnswered ? 200.h : 40.h) +

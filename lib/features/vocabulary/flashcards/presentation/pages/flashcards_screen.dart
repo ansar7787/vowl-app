@@ -47,8 +47,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) =>
-      context.tr('instructions.flashcards.completed', fallback: 'Practice Complete!');
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   late final FlashcardController _controller;
   late ThemeResult _theme;

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -238,12 +239,21 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     await showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (sheetContext) {
         final isDark = Theme.of(sheetContext).brightness == Brightness.dark;
+        final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
         return Container(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 32.h, AppSpacing.screen, safeBottom),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
@@ -781,15 +791,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.tr(
-                'translation.downloading',
-                fallback: 'Downloading language model... Please wait.',
-              ),
-            ),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'translation.downloading',
+            fallback: 'Downloading language model... Please wait.',
           ),
+          type: CustomSnackBarType.info,
         );
       }
     }
@@ -919,7 +927,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(24.w),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
         child: Column(
           children: [
             SizedBox(height: 40.h),
@@ -976,7 +984,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 8.h),
                 child: Row(
                   children: [
                     Semantics(
@@ -1131,7 +1139,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
+                    horizontal: AppSpacing.screen,
                     vertical: 12.h,
                   ),
                   child: SlideTransition(

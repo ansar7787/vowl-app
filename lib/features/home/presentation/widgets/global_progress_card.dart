@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/leaderboard/presentation/pages/leaderboard_screen.dart';
 
 /// A precision telemetry card displaying macro curriculum mastery and global leaderboard rank.
 ///
@@ -113,7 +114,10 @@ class GlobalProgressCard extends StatelessWidget {
       child: ScaleButton(
         onTap: () {
           _triggerHaptic();
-          context.push(AppRouter.leaderboardRoute);
+          context.push(
+            '${AppRouter.leaderboardRoute}?tab=global',
+            extra: LeaderboardTimeframe.allTime,
+          );
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),

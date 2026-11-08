@@ -26,6 +26,15 @@ class AmbassadorLeaderboardItem {
     if (rank <= 10) return AmbassadorRewardTier.topTen;
     return AmbassadorRewardTier.participant;
   }
+
+  /// The prize tier corresponding to this rank position.
+  AmbassadorRewardTier get rankRewardTier {
+    if (rank == 1) return AmbassadorRewardTier.gold;
+    if (rank == 2) return AmbassadorRewardTier.silver;
+    if (rank == 3) return AmbassadorRewardTier.bronze;
+    if (rank <= 10) return AmbassadorRewardTier.topTen;
+    return AmbassadorRewardTier.participant;
+  }
 }
 
 /// Tiered reward definitions for the Monthly Ambassador Cup.
@@ -35,7 +44,7 @@ enum AmbassadorRewardTier {
   bronze(vipDays: 3, coins: 500, title: '🥉 3rd Place', prizeDescription: '500 Coins + 3 Days VIP'),
   topTen(vipDays: 0, coins: 200, title: '🏅 Top 10', prizeDescription: '200 Coins'),
   participant(vipDays: 0, coins: 0, title: 'Ambassador', prizeDescription: 'Community Badge'),
-  none(vipDays: 0, coins: 0, title: 'No Referrals', prizeDescription: '1+ referrals needed to qualify');
+  none(vipDays: 0, coins: 0, title: 'No Referrals', prizeDescription: 'Locked');
 
   final int vipDays;
   final int coins;

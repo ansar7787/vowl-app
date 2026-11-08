@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -542,8 +543,12 @@ void main() {
         expect(find.text('QUEST ARENA'), findsOneWidget);
         expect(find.text('Pick up where you left off'), findsOneWidget);
 
+        final questArenaHeader = find.ancestor(
+          of: find.text('QUEST ARENA'),
+          matching: find.byType(HomeSectionHeader),
+        );
         final seeAllButton = find.descendant(
-          of: find.byType(HomeSectionHeader),
+          of: questArenaHeader,
           matching: find.text('SEE ALL'),
         );
         expect(seeAllButton, findsOneWidget);
@@ -560,6 +565,9 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
+        homeScrollController.jumpTo(300);
+        await tester.pumpAndSettle();
+
         expect(find.byType(BentoArena), findsOneWidget);
         expect(find.text('See All 9 Categories'), findsOneWidget);
       },
@@ -570,7 +578,12 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
+        homeScrollController.jumpTo(950);
+        await tester.pumpAndSettle();
+
         final expandButton = find.text('See All 9 Categories');
+        expect(expandButton, findsOneWidget);
+
         await tester.tap(expandButton);
         await tester.pumpAndSettle();
 
@@ -677,9 +690,27 @@ void main() {
               ),
             );
 
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setStringList('vowl_local_error_journal', [
+          jsonEncode({
+            'id': 'test_mistake_1',
+            'gameType': 'vocabulary',
+            'question': 'What is an apple?',
+            'userAnswer': 'A vegetable',
+            'correctAnswer': 'A fruit',
+            'level': 1,
+            'timestamp': DateTime.now().toIso8601String(),
+          }),
+        ]);
+        ErrorJournalCollector.updateNotifier.value++;
+        addTearDown(() async {
+          final p = await SharedPreferences.getInstance();
+          await p.remove('vowl_local_error_journal');
+        });
+
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(350);
+        homeScrollController.jumpTo(550);
         await tester.pumpAndSettle();
 
         final mistakeCard = find.byType(ReviewMistakesHomeCard);
@@ -728,7 +759,7 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(750);
+        homeScrollController.jumpTo(1100);
         await tester.pumpAndSettle();
 
         expect(find.text('EXPLORE & TOOLS'), findsOneWidget);
@@ -737,20 +768,23 @@ void main() {
     );
 
     testWidgets(
-      'tapping See All in Explore & Tools opens Tools Directory bottom sheet',
+      'tapping Unfold +2 in ToolsStrip expands gaming drawer',
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(750);
+        homeScrollController.jumpTo(1200);
         await tester.pumpAndSettle();
 
-        final seeAllButtons = find.text('SEE ALL');
-        expect(seeAllButtons, findsWidgets);
-
-        await tester.tap(seeAllButtons.last);
+        final unfoldBtn = find.text('Unfold +2');
+        expect(unfoldBtn, findsOneWidget);
+        await tester.ensureVisible(unfoldBtn);
         await tester.pumpAndSettle();
 
-        expect(find.text('Tools & Utilities (7)'), findsOneWidget);
+        await tester.tap(unfoldBtn);
+        await tester.pumpAndSettle();
+
+        expect(find.text('Word Snap'), findsOneWidget);
+        expect(find.text('Word Mixer'), findsOneWidget);
       },
     );
   });
@@ -761,14 +795,10 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        await tester.scrollUntilVisible(
-          find.byType(DiscoveryDeck),
-          300,
-          scrollable: find.byType(Scrollable).first,
-        );
+        homeScrollController.jumpTo(150);
         await tester.pumpAndSettle();
 
-        expect(find.text('DISCOVERY HUB'), findsOneWidget);
+        expect(find.text('DAILY PRACTICE'), findsOneWidget);
         expect(find.byType(DiscoveryDeck), findsOneWidget);
       },
     );
@@ -1021,7 +1051,7 @@ void main() {
         expect(find.byType(BeginnerMilestoneCard), findsNothing);
         expect(find.byType(BentoArena), findsOneWidget);
 
-        homeScrollController.jumpTo(650);
+        homeScrollController.jumpTo(1100);
         await tester.pumpAndSettle();
         expect(find.byType(ToolsStrip), findsOneWidget);
       },

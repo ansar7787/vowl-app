@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
 import 'package:vowl/features/referral/presentation/bloc/referral_cubit.dart';
 import 'package:vowl/features/referral/presentation/bloc/referral_state.dart';
@@ -18,15 +22,20 @@ import 'package:vowl/features/social_share/presentation/widgets/share_card_previ
 
 class ReferralHubScreen extends StatelessWidget {
   final String? initialInviteCode;
+  final int initialTab;
 
   const ReferralHubScreen({
     super.key,
     this.initialInviteCode,
+    this.initialTab = 0,
   });
 
-  static Route<void> route({String? initialInviteCode}) {
+  static Route<void> route({String? initialInviteCode, int initialTab = 0}) {
     return MaterialPageRoute(
-      builder: (_) => ReferralHubScreen(initialInviteCode: initialInviteCode),
+      builder: (_) => ReferralHubScreen(
+        initialInviteCode: initialInviteCode,
+        initialTab: initialTab,
+      ),
     );
   }
 
@@ -43,15 +52,19 @@ class ReferralHubScreen extends StatelessWidget {
         }
         return cubit;
       },
-      child: _ReferralHubView(initialInviteCode: initialInviteCode),
+      child: _ReferralHubView(
+        initialInviteCode: initialInviteCode,
+        initialTab: initialTab,
+      ),
     );
   }
 }
 
 class _ReferralHubView extends StatefulWidget {
   final String? initialInviteCode;
+  final int initialTab;
 
-  const _ReferralHubView({this.initialInviteCode});
+  const _ReferralHubView({this.initialInviteCode, this.initialTab = 0});
 
   @override
   State<_ReferralHubView> createState() => _ReferralHubViewState();
@@ -59,6 +72,13 @@ class _ReferralHubView extends StatefulWidget {
 
 class _ReferralHubViewState extends State<_ReferralHubView> {
   bool _hasTriggeredAutoClaim = false;
+  late int _selectedTab;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedTab = widget.initialTab.clamp(0, 1);
+  }
 
   void _checkAutoClaim(UserEntity user) {
     if (_hasTriggeredAutoClaim || widget.initialInviteCode == null) return;
@@ -69,6 +89,120 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         _showClaimDialog(context, user, initialCode: widget.initialInviteCode);
       }
     });
+  }
+
+  Widget _buildSegmentedSwitcher(
+    bool isDark,
+    bool isMidnight,
+    Color borderColor,
+    Color textPrimary,
+    Color textSecondary,
+  ) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: AppSpacing.compact, vertical: 8.h),
+      padding: EdgeInsets.all(4.r),
+      decoration: BoxDecoration(
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? const Color(0xFF131A29)
+                : Colors.black.withValues(alpha: 0.04)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: borderColor,
+          width: 1.0,
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: _buildTabButton(
+              index: 0,
+              icon: Icons.card_giftcard_rounded,
+              label: 'Invite & Earn',
+              isSelected: _selectedTab == 0,
+              isDark: isDark,
+            ),
+          ),
+          SizedBox(width: 4.w),
+          Expanded(
+            child: _buildTabButton(
+              index: 1,
+              icon: LucideIcons.trophy,
+              label: 'Monthly Cup',
+              isSelected: _selectedTab == 1,
+              isDark: isDark,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTabButton({
+    required int index,
+    required IconData icon,
+    required String label,
+    required bool isSelected,
+    required bool isDark,
+  }) {
+    return ScaleButton(
+      onTap: () {
+        if (_selectedTab == index) return;
+        di.sl<HapticService>().selection();
+        setState(() => _selectedTab = index);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeInOut,
+        padding: EdgeInsets.symmetric(vertical: 9.h),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? (isDark ? AppColors.indigo500 : Colors.white)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.08),
+                    blurRadius: 6,
+                    offset: const Offset(0, 2),
+                  ),
+                ]
+              : null,
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
+                  size: 15.r,
+                  color: isSelected
+                      ? (isDark ? Colors.white : AppColors.indigo500)
+                      : (isDark ? Colors.white54 : AppColors.slate500),
+                ),
+                SizedBox(width: 6.w),
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.5.sp,
+                    fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
+                    color: isSelected
+                        ? (isDark ? Colors.white : AppColors.slate900)
+                        : (isDark ? Colors.white54 : AppColors.slate600),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -96,159 +230,168 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(LucideIcons.arrowLeft, size: 20.sp, color: textPrimary),
-          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back_ios_new_rounded, size: 18.r, color: textPrimary),
+          onPressed: () {
+            di.sl<HapticService>().light();
+            Navigator.of(context).pop();
+          },
         ),
         title: Text(
           'Ambassador Hub',
           style: TextStyle(
-            fontSize: 17.sp,
-            fontWeight: FontWeight.w700,
+            fontFamily: 'Outfit',
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w900,
             color: textPrimary,
+            letterSpacing: -0.3,
           ),
         ),
         centerTitle: true,
       ),
-      body: BlocConsumer<ReferralCubit, ReferralState>(
-        listener: (context, state) {
-          if (state.claimSuccess != null) {
-            context.read<AuthBloc>().add(const AuthReloadUser());
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: AppColors.emerald500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  state.claimSuccess!.message,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
-            );
-          }
-          if (state.cupRewardClaimResult != null) {
-            if (state.cupRewardClaimResult!.success) {
-              context.read<AuthBloc>().add(const AuthReloadUser());
-            }
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: state.cupRewardClaimResult!.success
-                    ? AppColors.emerald500
-                    : AppColors.rose500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  state.cupRewardClaimResult!.message,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
-            );
-          }
-          if (state.syncedAmbassadorRewardCount != null && state.syncedAmbassadorRewardCount! > 0) {
-            context.read<AuthBloc>().add(const AuthReloadUser());
-            final count = state.syncedAmbassadorRewardCount!;
-            final coins = count * 100;
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: AppColors.emerald500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  '🎉 $count invited friend(s) finished Adventure Level 1! You received +$coins Coins & +$count Day VIP Pass!',
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          final authState = context.watch<AuthBloc>().state;
-          final user = authState.status == AuthStatus.authenticated ? authState.user : null;
+      body: Column(
+        children: [
+          _buildSegmentedSwitcher(isDark, isMidnight, borderColor, textPrimary, textSecondary),
+          Expanded(
+            child: BlocConsumer<ReferralCubit, ReferralState>(
+              listener: (context, state) {
+                if (state.claimSuccess != null) {
+                  context.read<AuthBloc>().add(const AuthReloadUser());
+                  CustomSnackBar.show(
+                    context: context,
+                    message: state.claimSuccess!.message,
+                    type: CustomSnackBarType.success,
+                  );
+                }
+                if (state.cupRewardClaimResult != null) {
+                  if (state.cupRewardClaimResult!.success) {
+                    context.read<AuthBloc>().add(const AuthReloadUser());
+                  }
+                  CustomSnackBar.show(
+                    context: context,
+                    message: state.cupRewardClaimResult!.message,
+                    type: state.cupRewardClaimResult!.success
+                        ? CustomSnackBarType.success
+                        : CustomSnackBarType.error,
+                  );
+                }
+                if (state.syncedAmbassadorRewardCount != null && state.syncedAmbassadorRewardCount! > 0) {
+                  context.read<AuthBloc>().add(const AuthReloadUser());
+                  final count = state.syncedAmbassadorRewardCount!;
+                  final coins = count * 100;
+                  CustomSnackBar.show(
+                    context: context,
+                    message:
+                        '🎉 $count friend(s) completed Level 1! You unlocked +$coins Coins & +$count Day VIP!',
+                    type: CustomSnackBarType.success,
+                  );
+                }
+              },
+              builder: (context, state) {
+                final authState = context.watch<AuthBloc>().state;
+                final user = authState.status == AuthStatus.authenticated ? authState.user : null;
 
-          if (user == null) {
-            return Center(
-              child: Text(
-                'Please sign in to access Ambassador Hub',
-                style: TextStyle(color: textSecondary, fontSize: 14.sp),
-              ),
-            );
-          }
-
-          if (state.isLoading && state.referralCode == null) {
-            return Center(
-              child: Padding(
-                padding: EdgeInsets.all(24.w),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(LucideIcons.sparkles, size: 32.sp, color: AppColors.indigo500),
-                    SizedBox(height: 12.h),
-                    Text(
-                      'Loading Ambassador Hub...',
-                      style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700, color: textPrimary),
+                if (user == null) {
+                  return Center(
+                    child: Text(
+                      'Please sign in to view invite rewards',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: textSecondary,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  ],
-                ),
-              ),
-            );
-          }
+                  );
+                }
 
-          final code = state.referralCode ?? 'VOWL-XXXX';
-          _checkAutoClaim(user);
+                if (state.isLoading && state.referralCode == null) {
+                  return Center(
+                    child: Padding(
+                      padding: AppSpacing.spaciousPadding,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.auto_awesome_rounded, size: 30.r, color: AppColors.indigo500),
+                          SizedBox(height: 12.h),
+                          Text(
+                            'Loading your rewards...',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: textPrimary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }
 
-          return RefreshIndicator(
-            onRefresh: () => context.read<ReferralCubit>().init(user),
-            child: SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Referral Stats & Code Box
-                  ReferralStatsCard(
-                    referralCode: code,
-                    lifetimeCount: user.totalReferralsCount,
-                    monthlyCount: user.activeMonthlyReferralsCount,
-                    hasClaimedReferral: user.hasClaimedReferral,
-                    pendingReferralCode: user.pendingReferralCode,
-                    referredBy: user.referredBy,
-                    hasActivePremium: user.hasActivePremium,
-                    premiumExpiryDate: user.premiumExpiryDate,
-                    isCopied: state.copiedToClipboard,
-                    onCopy: () => context.read<ReferralCubit>().copyCode(code),
-                    onShare: () {
-                      ShareCardPreviewModal.show(
-                        context: context,
-                        data: ShareCardData.fromReferral(
-                          userName: user.safeDisplayName,
-                          userPhotoUrl: user.photoUrl,
-                          referralCode: code,
-                        ),
-                      );
-                    },
-                    onEnterCode: () => _showClaimDialog(context, user),
+                final code = state.referralCode ?? 'VOWL-XXXX';
+                _checkAutoClaim(user);
+
+                return RefreshIndicator(
+                  onRefresh: () => context.read<ReferralCubit>().init(user),
+                  child: SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact, vertical: 8.h),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        if (_selectedTab == 0) ...[
+                          // Referral Stats & Code Box
+                          ReferralStatsCard(
+                            referralCode: code,
+                            lifetimeCount: user.totalReferralsCount,
+                            monthlyCount: user.activeMonthlyReferralsCount,
+                            hasClaimedReferral: user.hasClaimedReferral,
+                            pendingReferralCode: user.pendingReferralCode,
+                            referredBy: user.referredBy,
+                            hasActivePremium: user.hasActivePremium,
+                            premiumExpiryDate: user.premiumExpiryDate,
+                            isCopied: state.copiedToClipboard,
+                            onCopy: () => context.read<ReferralCubit>().copyCode(code),
+                            onShare: () {
+                              ShareCardPreviewModal.show(
+                                context: context,
+                                data: ShareCardData.fromReferral(
+                                  userName: user.safeDisplayName,
+                                  userPhotoUrl: user.photoUrl,
+                                  referralCode: code,
+                                ),
+                              );
+                            },
+                            onEnterCode: () => _showClaimDialog(context, user),
+                          ),
+                          SizedBox(height: 16.h),
+                          // How It Works Rules Card
+                          _buildHowItWorksCard(isDark, isMidnight, borderColor, textPrimary, textSecondary),
+                        ] else ...[
+                          // Monthly Ambassador Cup Leaderboard
+                          MonthlyCupLeaderboard(
+                            items: state.ambassadorLeaderboard,
+                            isLoading: state.isLoading,
+                            currentUserId: user.id,
+                            myMonthlyReferrals: user.activeMonthlyReferralsCount,
+                            onClaimPastMonth: () => context.read<ReferralCubit>().claimMonthlyCupReward(user),
+                            isClaimingPastMonth: state.isClaimingCupReward,
+                            hasUnclaimedPastMonth: user.activeMonthlyReferralsCount > 0,
+                            onInviteTap: () {
+                              di.sl<HapticService>().selection();
+                              setState(() => _selectedTab = 0);
+                            },
+                          ),
+                        ],
+                        SizedBox(height: 24.h),
+                      ],
+                    ),
                   ),
-
-                  SizedBox(height: 16.h),
-
-                  // How It Works Rules Card
-                  _buildHowItWorksCard(isDark, isMidnight, borderColor, textPrimary, textSecondary),
-
-                  SizedBox(height: 16.h),
-
-                  // Monthly Ambassador Cup Leaderboard
-                  MonthlyCupLeaderboard(
-                    items: state.ambassadorLeaderboard,
-                    isLoading: state.isLoading,
-                    currentUserId: user.id,
-                    myMonthlyReferrals: user.activeMonthlyReferralsCount,
-                    onClaimPastMonth: () => context.read<ReferralCubit>().claimMonthlyCupReward(user),
-                    isClaimingPastMonth: state.isClaimingCupReward,
-                    hasUnclaimedPastMonth: user.activeMonthlyReferralsCount > 0,
-                  ),
-
-                  SizedBox(height: 24.h),
-                ],
-              ),
+                );
+              },
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }
@@ -261,27 +404,29 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
     Color textSecondary,
   ) {
     return Container(
-      padding: EdgeInsets.all(18.w),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? AppColors.slate800 : Colors.white),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: borderColor, width: 1.w),
+            : (isDark ? AppColors.slate900 : Colors.white),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: borderColor, width: 1.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(LucideIcons.sparkles, size: 16.sp, color: AppColors.indigo500),
+              Icon(Icons.auto_awesome_rounded, size: 18.r, color: AppColors.indigo500),
               SizedBox(width: 8.w),
               Text(
                 'How Rewards Work',
                 style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w900,
                   color: textPrimary,
+                  letterSpacing: -0.2,
                 ),
               ),
             ],
@@ -289,8 +434,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           SizedBox(height: 14.h),
           _buildStepRow(
             step: '1',
-            title: 'Share your code',
-            description: 'Send your invite code or link to friends learning English.',
+            title: 'Share your code or link',
+            description: 'Send your invite code to friends, classmates, or family learning English.',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -299,7 +444,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           _buildStepRow(
             step: '2',
             title: 'Friend completes Level 1',
-            description: 'You both receive 100 Coins + 1 Day VIP Trial immediately.',
+            description: 'When they finish their first pronunciation lesson, both of you unlock rewards.',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -307,8 +452,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           SizedBox(height: 12.h),
           _buildStepRow(
             step: '3',
-            title: 'Compete in the Monthly Cup',
-            description: 'Top 10 ambassadors win 1 Month VIP, 1 Week VIP, and bonus coin pots at month-end.',
+            title: 'Unlock 100 Coins & 1 Day VIP',
+            description: 'Coins and VIP time are credited instantly, and you rank up in the Monthly Cup!',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -330,18 +475,23 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 22.w,
-          height: 22.w,
+          width: 24.r,
+          height: 24.r,
           decoration: BoxDecoration(
-            color: AppColors.indigo500.withValues(alpha: 0.15),
+            color: AppColors.indigo500.withValues(alpha: 0.12),
             shape: BoxShape.circle,
+            border: Border.all(
+              color: AppColors.indigo500.withValues(alpha: 0.25),
+              width: 1.0,
+            ),
           ),
           alignment: Alignment.center,
           child: Text(
             step,
             style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 11.sp,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w900,
               color: AppColors.indigo500,
             ),
           ),
@@ -354,8 +504,9 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Outfit',
+                  fontSize: 13.5.sp,
+                  fontWeight: FontWeight.w800,
                   color: textPrimary,
                 ),
               ),
@@ -363,9 +514,10 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
               Text(
                 description,
                 style: TextStyle(
-                  fontSize: 11.sp,
+                  fontFamily: 'Outfit',
+                  fontSize: 11.5.sp,
                   color: textSecondary,
-                  height: 1.3,
+                  height: 1.35,
                 ),
               ),
             ],

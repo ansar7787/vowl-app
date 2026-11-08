@@ -118,7 +118,7 @@ class GameDialogHelper {
 
     final resolvedTitle =
         title ??
-        context.tr('games.level_complete', fallback: 'Level Complete!');
+        context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
     final resolvedButtonText =
         buttonText ?? context.tr('common.ok', fallback: 'OK').toUpperCase();
 
@@ -187,7 +187,15 @@ class GameDialogHelper {
                     Navigator.of(dialogCtx).pop();
                     if (context.mounted) {
                       context.read<AuthBloc>().add(const AuthRefreshUser());
-                      Navigator.of(context).pop(popResult);
+                      try {
+                        if (router.canPop()) {
+                          router.pop(popResult);
+                        } else {
+                          Navigator.of(context).pop(popResult);
+                        }
+                      } catch (_) {
+                        Navigator.of(context).pop(popResult);
+                      }
                       Future.delayed(const Duration(milliseconds: 300), () {
                         router.push('/review-mistakes');
                       });
@@ -212,7 +220,15 @@ class GameDialogHelper {
                   isPremium: isPremium,
                   onDismissed: () {
                     if (context.mounted) {
-                      Navigator.of(context).pop(popResult);
+                      try {
+                        if (GoRouter.of(context).canPop()) {
+                          GoRouter.of(context).pop(popResult);
+                        } else {
+                          Navigator.of(context).pop(popResult);
+                        }
+                      } catch (_) {
+                        Navigator.of(context).pop(popResult);
+                      }
                     }
                   },
                 );
@@ -252,7 +268,15 @@ class GameDialogHelper {
                             color: AppColors.emerald500,
                           );
                         }
-                        Navigator.of(context).pop(popResult);
+                        try {
+                          if (GoRouter.of(context).canPop()) {
+                            GoRouter.of(context).pop(popResult);
+                          } else {
+                            Navigator.of(context).pop(popResult);
+                          }
+                        } catch (_) {
+                          Navigator.of(context).pop(popResult);
+                        }
                       },
                     );
                   }

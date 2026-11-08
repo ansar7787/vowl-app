@@ -166,6 +166,9 @@ class UserEntity {
   /// Level milestones already claimed.
   final List<int> claimedLevelMilestones;
 
+  /// Trophy and badge bounty rewards already claimed.
+  final List<String> claimedBadgeRewards;
+
   /// Audit history log of coin transactions.
   final List<Map<String, dynamic>> coinHistory;
 
@@ -311,6 +314,7 @@ class UserEntity {
     this.vowlOwnedMascots = UserGameConstants.kDefaultVowlOwnedMascots,
     this.claimedStreakMilestones = const [],
     this.claimedLevelMilestones = const [],
+    this.claimedBadgeRewards = const [],
     this.coinHistory = const [],
     this.hasPermanentXPBoost = false,
     this.keys = 0,
@@ -582,6 +586,7 @@ class UserEntity {
     Map<String, int>? categoryStats,
     List<int>? claimedLevelMilestones,
     List<int>? claimedStreakMilestones,
+    List<String>? claimedBadgeRewards,
     List<Map<String, dynamic>>? coinHistory,
     int? coins,
     Map<String, List<int>>? completedLevels,
@@ -660,6 +665,8 @@ class UserEntity {
           claimedLevelMilestones ?? this.claimedLevelMilestones,
       claimedStreakMilestones:
           claimedStreakMilestones ?? this.claimedStreakMilestones,
+      claimedBadgeRewards:
+          claimedBadgeRewards ?? this.claimedBadgeRewards,
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
@@ -827,6 +834,7 @@ class UserEntity {
           claimedStreakMilestones,
         ) &&
         _listEq.equals(other.claimedLevelMilestones, claimedLevelMilestones) &&
+        _listEq.equals(other.claimedBadgeRewards, claimedBadgeRewards) &&
         _deepEq.equals(other.coinHistory, coinHistory) &&
         other.hasPermanentXPBoost == hasPermanentXPBoost &&
         _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
@@ -910,6 +918,7 @@ class UserEntity {
       _listEq.hash(vowlOwnedMascots),
       _listEq.hash(claimedStreakMilestones),
       _listEq.hash(claimedLevelMilestones),
+      _listEq.hash(claimedBadgeRewards),
       _deepEq.hash(coinHistory),
     ]);
     final h3 = Object.hashAll([

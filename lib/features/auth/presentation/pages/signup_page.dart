@@ -22,6 +22,7 @@ import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Screen providing user account registration options.
 class SignUpPage extends StatelessWidget {
@@ -265,7 +266,7 @@ class _SignUpViewState extends State<SignUpView> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 20.w,
+                                    horizontal: AppSpacing.spacious,
                                     vertical: 10.h,
                                   ),
                                   child: Form(

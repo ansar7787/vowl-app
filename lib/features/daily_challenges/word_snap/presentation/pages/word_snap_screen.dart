@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -13,6 +14,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_snap/domain/models/word_snap_puzzle.dart';
@@ -112,7 +114,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       if (mounted) {
         GameDialogHelper.showCompletion(
           context,
-          xp: 15,
+          xp: 0,
           coins: 0,
           title: context.tr(
             'vocabulary.practice_complete',
@@ -144,9 +146,13 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       ),
     );
 
+    if (di.sl.isRegistered<IncrementXp>()) {
+      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    }
+
     GameDialogHelper.showCompletion(
       context,
-      xp: 50,
+      xp: 5,
       coins: 10,
       title: context.tr(
         'vocabulary.word_snap_master',
@@ -289,7 +295,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
         if (isPractice)
           SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
+              margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 4.h),
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: _kPrimaryColor.withValues(alpha: 0.1),
@@ -335,7 +341,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
         // 3. Main Gameplay Cards in SliverList with smooth padding
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w).copyWith(
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen).copyWith(
             top: 6.h,
             bottom: MediaQuery.of(context).padding.bottom + 32.h,
           ),

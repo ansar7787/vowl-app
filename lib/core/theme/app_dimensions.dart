@@ -1,4 +1,7 @@
 /// Standard spacing, elevation, radius, and icon dimensions across the application.
+///
+/// NOTE: For responsive screen horizontal insets, card interior paddings,
+/// and edge insets, prefer [AppSpacing] (`package:vowl/core/theme/app_spacing.dart`).
 class AppDimensions {
   AppDimensions._();
 

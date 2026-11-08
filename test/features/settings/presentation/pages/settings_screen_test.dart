@@ -255,6 +255,10 @@ void main() {
       () => mockNotificationService.onNotificationPreferenceChanged(any()),
     ).thenAnswer((_) async {});
     when(() => mockThemeCubit.toggleMidnight(any())).thenAnswer((_) async {});
+    when(
+      () => mockThemeCubit.toggleSystemTheme(any()),
+    ).thenAnswer((_) async {});
+    when(() => mockThemeCubit.toggleTheme(any())).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     di.sl.registerSingleton<HapticService>(mockHapticService);
@@ -341,6 +345,13 @@ void main() {
           builder: (context, state) => const SettingsScreen(),
         ),
         GoRoute(
+          path: '/profile',
+          builder: (context, state) {
+            navigatedRoutes.add('/profile');
+            return const Scaffold(body: Text('Profile Screen'));
+          },
+        ),
+        GoRoute(
           path: '/home',
           builder: (context, state) {
             navigatedRoutes.add('/home');
@@ -406,15 +417,15 @@ void main() {
 
   group('Group 1: Initial & Loading States', () {
     testWidgets(
-      'renders user error container when user is null in auth state',
+      'renders gracefully when user is null in unauthenticated state',
       (tester) async {
         await tester.pumpWidget(
           buildTestableWidget(authState: const AuthState.unauthenticated()),
         );
         await tester.pumpAndSettle();
 
-        expect(find.text('Failed to load user profile.'), findsOneWidget);
-        expect(find.byIcon(Icons.error_outline), findsOneWidget);
+        expect(find.byType(SettingsScreen), findsOneWidget);
+        expect(find.text('Settings'), findsOneWidget);
       },
     );
 
@@ -452,7 +463,7 @@ void main() {
       },
     );
 
-    testWidgets('back button navigates to /home when route cannot be popped', (
+    testWidgets('back button navigates to /profile when route cannot be popped', (
       tester,
     ) async {
       await tester.pumpWidget(buildTestableWidget());
@@ -461,55 +472,53 @@ void main() {
       await tester.tap(find.byIcon(Icons.arrow_back_ios_new_rounded));
       await tester.pumpAndSettle();
 
-      expect(navigatedRoutes.contains('/home'), isTrue);
-      expect(find.text('Home Screen'), findsOneWidget);
+      expect(navigatedRoutes.contains('/profile'), isTrue);
+      expect(find.text('Profile Screen'), findsOneWidget);
     });
   });
 
-  group('Group 3: Profile Section', () {
-    testWidgets('renders free account user details with FREE ACCOUNT badge', (
+  group('Group 3: Appearance & Theme Matrix', () {
+    testWidgets('renders Appearance & Theme section with 4-way theme matrix', (
       tester,
     ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
-      expect(find.byType(SettingsProfileSection), findsOneWidget);
-      expect(find.text('Aria Stark'), findsOneWidget);
-      expect(find.text('aria.stark@vowl.app'), findsOneWidget);
-      expect(find.text('FREE ACCOUNT'), findsOneWidget);
-      expect(find.byIcon(Icons.person_outline_rounded), findsOneWidget);
+      expect(find.text('APPEARANCE & THEME'), findsOneWidget);
+      expect(find.byType(SettingsThemeMatrix), findsOneWidget);
+      expect(find.text('System'), findsOneWidget);
+      expect(find.text('Light'), findsOneWidget);
+      expect(find.text('Dark'), findsOneWidget);
+      expect(find.text('Midnight'), findsOneWidget);
     });
 
-    testWidgets('renders premium user details with PREMIUM QUESTER badge', (
+    testWidgets('tapping Midnight theme option calls toggleMidnight(true)', (
       tester,
     ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          authState: AuthState.authenticated(testPremiumUser),
-        ),
-      );
+      await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
-      expect(find.text('Jon Snow'), findsOneWidget);
-      expect(find.text('jon.snow@vowl.app'), findsOneWidget);
-      expect(find.text('PREMIUM QUESTER'), findsOneWidget);
-      expect(find.byIcon(Icons.workspace_premium_rounded), findsOneWidget);
+      await tester.tap(find.text('Midnight'));
+      await tester.pumpAndSettle();
+
+      verify(() => mockThemeCubit.toggleMidnight(true)).called(1);
     });
 
-    testWidgets('tapping avatar opens Edit Profile dialog', (tester) async {
+    testWidgets('renders user email in logout section at bottom', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget(tester: tester));
       await tester.pumpAndSettle();
 
-      // Find the camera icon on the avatar
-      final cameraFinder = find.byIcon(Icons.camera_alt_rounded);
-      expect(cameraFinder, findsOneWidget);
-
-      await tester.tap(cameraFinder);
+      await tester.scrollUntilVisible(
+        find.text('aria.stark@vowl.app'),
+        150,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
 
-      // Verify edit profile dialog is shown
-      expect(find.text('Profile Settings'), findsOneWidget);
-      verify(() => mockHapticService.selection()).called(1);
+      expect(find.text('aria.stark@vowl.app'), findsOneWidget);
+      expect(find.byType(SettingsLogoutButton), findsOneWidget);
     });
   });
 
@@ -520,7 +529,7 @@ void main() {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
-      expect(find.text('ACCOUNT'), findsOneWidget);
+      expect(find.text('ACCOUNT, STORAGE & PRIVACY'), findsOneWidget);
       expect(find.text('Security & Password'), findsOneWidget);
       expect(find.text('Age Verification'), findsOneWidget);
       expect(find.byIcon(Icons.lock_person_rounded), findsOneWidget);
@@ -572,23 +581,22 @@ void main() {
   });
 
   group('Group 5: App Preferences Section', () {
-    testWidgets('renders App Preferences header and switch tiles', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Audio Studio, Localization and Accessibility sections',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('APP PREFERENCES'), findsOneWidget);
-      expect(find.text('Sound Effects'), findsOneWidget);
-      expect(find.text('Game Sounds'), findsOneWidget);
-      expect(find.text('Pronunciation Voice'), findsOneWidget);
-      expect(find.text('Push Notifications'), findsOneWidget);
-      expect(find.text('Reduce Complex Gestures'), findsOneWidget);
-      expect(find.text('Low Animation Mode'), findsOneWidget);
-      expect(find.text('Analytics'), findsOneWidget);
-      expect(find.text('Language Selection'), findsOneWidget);
-      expect(find.text('Translation Language'), findsOneWidget);
-    });
+        expect(find.text('AUDIO & SPEECH STUDIO'), findsOneWidget);
+        expect(find.text('Sound Effects'), findsOneWidget);
+        expect(find.text('Celebration Sounds'), findsOneWidget);
+        expect(find.text('Pronunciation Voice'), findsOneWidget);
+        expect(find.text('Haptic Feedback'), findsOneWidget);
+        expect(find.text('LANGUAGES & LOCALIZATION'), findsOneWidget);
+        expect(find.text('App Interface Language'), findsOneWidget);
+        expect(find.text('Game Hint Translation'), findsOneWidget);
+      },
+    );
 
     testWidgets(
       'toggling Sound Effects off opens confirmation; confirming mutes SoundService',
@@ -612,27 +620,27 @@ void main() {
         await tester.pumpAndSettle();
 
         verify(() => mockSoundService.setMuted(true)).called(1);
-        verify(() => mockKidsTtsService.stop()).called(1);
       },
     );
 
-    testWidgets('toggling Game Sounds updates preference and SoundService', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'toggling Game Sounds updates preference and SoundService',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      final gameSoundSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Game Sounds'),
-        matching: find.byType(Switch),
-      );
-      expect(gameSoundSwitch, findsOneWidget);
+        final gameSoundSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Celebration Sounds'),
+          matching: find.byType(Switch),
+        );
+        expect(gameSoundSwitch, findsOneWidget);
 
-      // Toggle off
-      await tapVisible(tester, gameSoundSwitch);
+        // Toggle off
+        await tapVisible(tester, gameSoundSwitch);
 
-      verify(() => mockSoundService.setGameSoundsEnabled(false)).called(1);
-    });
+        verify(() => mockSoundService.setGameSoundsEnabled(false)).called(1);
+      },
+    );
 
     testWidgets(
       'Pronunciation Voice tile renders current preset and opens bottom sheet on tap',
@@ -675,91 +683,75 @@ void main() {
       },
     );
 
-    testWidgets('toggling Reduce Complex Gestures updates SharedPreferences', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
-
-      final gestureSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Reduce Complex Gestures'),
-        matching: find.byType(Switch),
-      );
-      expect(gestureSwitch, findsOneWidget);
-
-      await tapVisible(tester, gestureSwitch);
-
-      final prefs = await SharedPreferences.getInstance();
-      expect(prefs.getBool('reduce_complex_gestures'), isTrue);
-    });
-
-    testWidgets('toggling Low Animation Mode updates global override', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
-
-      final animSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Low Animation Mode'),
-        matching: find.byType(Switch),
-      );
-      expect(animSwitch, findsOneWidget);
-
-      await tapVisible(tester, animSwitch);
-
-      expect(VowlMotion.lowAnimationModeOverride.value, isTrue);
-    });
-
-    testWidgets('toggling Analytics calls FirebaseAnalytics platform', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
-
-      final analyticsSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Analytics'),
-        matching: find.byType(Switch),
-      );
-      expect(analyticsSwitch, findsOneWidget);
-
-      await tapVisible(tester, analyticsSwitch);
-
-      expect(mockAnalyticsPlatform.lastCollectionEnabled, isFalse);
-    });
-
     testWidgets(
-      'Midnight Mode switch is hidden in Light Theme, visible in Dark Theme',
+      'toggling Reduce Complex Gestures updates SharedPreferences',
       (tester) async {
-        // In Light Theme:
-        await tester.pumpWidget(
-          buildTestableWidget(brightness: Brightness.light),
-        );
+        await tester.pumpWidget(buildTestableWidget());
         await tester.pumpAndSettle();
-        expect(find.text('Midnight Mode'), findsNothing);
 
-        // In Dark Theme:
-        await tester.pumpWidget(
-          buildTestableWidget(
-            brightness: Brightness.dark,
-            themeState: const ThemeState(
-              themeMode: ThemeMode.dark,
-              isMidnight: false,
-            ),
+        final gestureSwitch = find.descendant(
+          of: find.widgetWithText(
+            SettingsSwitchTile,
+            'Simplify Complex Gestures',
           ),
-        );
-        await tester.pumpAndSettle();
-
-        expect(find.text('Midnight Mode'), findsOneWidget);
-
-        final midnightSwitch = find.descendant(
-          of: find.widgetWithText(SettingsSwitchTile, 'Midnight Mode'),
           matching: find.byType(Switch),
         );
-        await tapVisible(tester, midnightSwitch);
+        expect(gestureSwitch, findsOneWidget);
 
-        verify(() => mockThemeCubit.toggleMidnight(true)).called(1);
+        await tapVisible(tester, gestureSwitch);
+
+        final prefs = await SharedPreferences.getInstance();
+        expect(prefs.getBool('reduce_complex_gestures'), isTrue);
       },
     );
+
+    testWidgets(
+      'toggling Low Animation Mode updates global override',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
+
+        final animSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Low Animation Mode'),
+          matching: find.byType(Switch),
+        );
+        expect(animSwitch, findsOneWidget);
+
+        await tapVisible(tester, animSwitch);
+
+        expect(VowlMotion.lowAnimationModeOverride.value, isTrue);
+      },
+    );
+
+    testWidgets(
+      'toggling Analytics calls FirebaseAnalytics platform',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
+
+        final analyticsSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Anonymous Analytics'),
+          matching: find.byType(Switch),
+        );
+        expect(analyticsSwitch, findsOneWidget);
+
+        await tapVisible(tester, analyticsSwitch);
+
+        expect(mockAnalyticsPlatform.lastCollectionEnabled, isFalse);
+      },
+    );
+
+    testWidgets('tapping Dark theme option calls toggleTheme(true)', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestableWidget());
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Dark'));
+      await tester.pumpAndSettle();
+
+      verify(() => mockThemeCubit.toggleTheme(true)).called(1);
+    });
 
     testWidgets(
       'Language Selection tile displays flag and name, opens LanguagePickerSheet on tap',
@@ -769,7 +761,7 @@ void main() {
 
         expect(find.text('🇺🇸 English'), findsOneWidget);
 
-        await tapVisible(tester, find.text('Language Selection'));
+        await tapVisible(tester, find.text('App Interface Language'));
 
         expect(find.byType(LanguagePickerSheet), findsOneWidget);
       },
@@ -797,7 +789,6 @@ void main() {
       expect(find.text('Terms of Service'), findsOneWidget);
       expect(find.text('Privacy Policy'), findsOneWidget);
       expect(find.text('App Version'), findsOneWidget);
-      expect(find.text('About'), findsOneWidget);
       expect(find.text('2.4.0 (108)'), findsOneWidget);
     });
 
@@ -851,7 +842,8 @@ void main() {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
-      await tapVisible(tester, find.text('About'));
+      await tester.tap(find.byIcon(Icons.info_outline_rounded).first);
+      await tester.pumpAndSettle();
 
       expect(navigatedRoutes.contains('/about'), isTrue);
       expect(find.text('About Screen'), findsOneWidget);

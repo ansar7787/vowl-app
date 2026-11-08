@@ -329,31 +329,43 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
 
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (sheetContext) => Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(
-          color: isDark
-              ? AppColors.slate900.withValues(alpha: 0.96)
-              : Colors.white.withValues(alpha: 0.97),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-          border: Border(
-            top: BorderSide(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : Colors.black.withValues(alpha: 0.08),
-              width: 1.5,
+      builder: (sheetContext) {
+        final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
+
+        return Container(
+          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, safeBottom),
+          decoration: BoxDecoration(
+            color: isDark
+                ? AppColors.slate900.withValues(alpha: 0.96)
+                : Colors.white.withValues(alpha: 0.97),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border(
+              top: BorderSide(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : Colors.black.withValues(alpha: 0.08),
+                width: 1.5,
+              ),
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 20,
+                offset: const Offset(0, -4),
+              ),
+            ],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              blurRadius: 20,
-              offset: const Offset(0, -4),
-            ),
-          ],
-        ),
-            child: Column(
+          child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
@@ -468,11 +480,11 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.viewPaddingOf(context).bottom),
               ],
             ),
-          ),
-    );
+          );
+        },
+      );
   }
 
   void _executePurchase(

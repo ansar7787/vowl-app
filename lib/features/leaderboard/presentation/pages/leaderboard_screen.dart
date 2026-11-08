@@ -1,6 +1,8 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -17,18 +19,16 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_header.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
-import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
@@ -40,14 +40,38 @@ import 'package:vowl/features/social_share/presentation/widgets/share_card_previ
 /// personal rank card, and toggleable standard/kids leaderboards.
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
-  const LeaderboardScreen({super.key, this.isKids = false});
+  final LeaderboardTimeframe initialTimeframe;
+  final bool? showBackButton;
+
+  const LeaderboardScreen({
+    super.key,
+    this.isKids = false,
+    this.initialTimeframe = LeaderboardTimeframe.thisWeek,
+    this.showBackButton,
+  });
 
   @override
   State<LeaderboardScreen> createState() => _LeaderboardScreenState();
 }
 
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
-  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
+  late LeaderboardTimeframe _timeframe;
+
+  @override
+  void initState() {
+    super.initState();
+    _timeframe = widget.initialTimeframe;
+  }
+
+  @override
+  void didUpdateWidget(covariant LeaderboardScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.initialTimeframe != oldWidget.initialTimeframe) {
+      setState(() {
+        _timeframe = widget.initialTimeframe;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,79 +100,134 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
               children: [
                 const MeshGradientBackground(showLetters: false),
 
-                // Content Layer
-                Column(
-                  children: [
-                    if (widget.isKids) ...[
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).padding.top + 6.h,
-                          left: 8.w,
-                          right: 20.w,
-                          bottom: 4.h,
-                        ),
-                        child: Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.arrow_back_rounded),
-                              color: isDark ? Colors.white : AppColors.slate900,
-                              tooltip: context.tr('common.back', fallback: 'Back to Kids Zone'),
-                              onPressed: () => Navigator.of(context).pop(),
-                            ),
-                            Text(
-                              'Kids Zone',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark ? Colors.white70 : AppColors.slate600,
+                // Content Layer — guarded by top SafeArea so sticky header & content never overlap the status bar
+                SafeArea(
+                  bottom: false,
+                  child: Column(
+                    children: [
+                      if (widget.showBackButton ?? widget.isKids) ...[
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 6.h,
+                            left: 12.w,
+                            right: AppSpacing.screen,
+                            bottom: 4.h,
+                          ),
+                          child: Row(
+                            children: [
+                              Semantics(
+                                button: true,
+                                label: context.tr(
+                                  'common.back',
+                                  fallback: widget.isKids
+                                      ? 'Back to Kids Zone'
+                                      : 'Back to Home',
+                                ),
+                                child: GestureDetector(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTap: () {
+                                    if (context.canPop()) {
+                                      context.pop();
+                                    } else {
+                                      context.go(widget.isKids
+                                          ? AppRouter.kidsZoneRoute
+                                          : AppRouter.homeRoute);
+                                    }
+                                  },
+                                  child: Container(
+                                    constraints: BoxConstraints(
+                                      minHeight: 44.r,
+                                      minWidth: 44.r,
+                                    ),
+                                    alignment: Alignment.centerLeft,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Directionality.of(context) ==
+                                                  TextDirection.rtl
+                                              ? Icons.arrow_forward_ios_rounded
+                                              : Icons.arrow_back_ios_new_rounded,
+                                          color: isDark
+                                              ? Colors.white
+                                              : AppColors.slate900,
+                                          size: 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          widget.isKids
+                                              ? 'Kids Zone'
+                                              : context.tr(
+                                                  'nav.home',
+                                                  fallback: 'Home',
+                                                ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : AppColors.slate600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ] else ...[
-                      SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
-                          vertical: 4.h,
+                      ],
+                      if (!widget.isKids &&
+                          (state is LeaderboardLoading ||
+                              state is LeaderboardInitial)) ...[
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSpacing.screen,
+                            vertical: 8.h,
+                          ),
+                          child: _LeaderboardHeroSwitch(
+                            timeframe: _timeframe,
+                            onChanged: (selected) {
+                              setState(() => _timeframe = selected);
+                            },
+                          ),
                         ),
-                        child: _LeaderboardHeroSwitch(
-                          timeframe: _timeframe,
-                          onChanged: (selected) {
-                            setState(() => _timeframe = selected);
+                      ],
+
+                      Expanded(
+                        child: Builder(
+                          builder: (context) {
+                            if (state is LeaderboardLoaded) {
+                              return _LeaderboardContent(
+                                state: state,
+                                currentUser: currentUser,
+                                timeframe: _timeframe,
+                                showBackButton:
+                                    widget.showBackButton ?? widget.isKids,
+                                onTimeframeChanged: (selected) {
+                                  setState(() => _timeframe = selected);
+                                },
+                              );
+                            } else if (state is LeaderboardLoading ||
+                                state is LeaderboardInitial) {
+                              return const LeaderboardShimmerLoading();
+                            } else if (state is LeaderboardError) {
+                              return _LeaderboardErrorView(
+                                message: state.message,
+                                onRetry: () =>
+                                    context.read<LeaderboardBloc>().add(
+                                      LoadLeaderboard(isKids: widget.isKids),
+                                    ),
+                              );
+                            }
+                            return const SizedBox.shrink();
                           },
                         ),
                       ),
                     ],
-
-                    Expanded(
-                      child: Builder(
-                        builder: (context) {
-                          if (state is LeaderboardLoaded) {
-                            return _LeaderboardContent(
-                              state: state,
-                              currentUser: currentUser,
-                              timeframe: _timeframe,
-                            );
-                          } else if (state is LeaderboardLoading ||
-                              state is LeaderboardInitial) {
-                            return const LeaderboardShimmerLoading();
-                          } else if (state is LeaderboardError) {
-                            return _LeaderboardErrorView(
-                              message: state.message,
-                              onRetry: () =>
-                                  context.read<LeaderboardBloc>().add(
-                                    LoadLeaderboard(isKids: widget.isKids),
-                                  ),
-                            );
-                          }
-                          return const SizedBox.shrink();
-                        },
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ],
             );
@@ -166,11 +245,15 @@ class _LeaderboardContent extends StatefulWidget {
   final LeaderboardLoaded state;
   final UserEntity? currentUser;
   final LeaderboardTimeframe timeframe;
+  final ValueChanged<LeaderboardTimeframe>? onTimeframeChanged;
+  final bool showBackButton;
 
   const _LeaderboardContent({
     required this.state,
     required this.currentUser,
     this.timeframe = LeaderboardTimeframe.thisWeek,
+    this.onTimeframeChanged,
+    this.showBackButton = false,
   });
 
   @override
@@ -200,47 +283,27 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
-  /// Deterministic sort ensuring consistency across timeframes:
+  /// Deterministic sort ensuring consistency across timeframes via [LeaderboardRankingHelper]:
   /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
   /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
   /// - All-Time: Lifetime total XP (primary), daily streak (tie-breaker), levels
   List<UserEntity> get _sortedUsers {
-    final list = List<UserEntity>.from(widget.state.users);
     if (widget.state.isKids) {
-      list.sort((a, b) {
-        final aLevels = a.kidsTotalLevelsCompleted;
-        final bLevels = b.kidsTotalLevelsCompleted;
-        if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        return b.kidsCoins.compareTo(a.kidsCoins);
-      });
+      return LeaderboardRankingHelper.sortKids(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     } else if (widget.timeframe == LeaderboardTimeframe.thisWeek) {
-      list.sort((a, b) {
-        final aWeekly = a.currentWeeklyExp;
-        final bWeekly = b.currentWeeklyExp;
-        if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
-          return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
-        }
-        return b.totalExp.compareTo(a.totalExp);
-      });
+      return LeaderboardRankingHelper.sortWeekly(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     } else {
-      list.sort((a, b) {
-        if (b.totalExp != a.totalExp) {
-          return b.totalExp.compareTo(a.totalExp);
-        }
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
-      });
+      return LeaderboardRankingHelper.sortAllTime(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     }
-    return list;
   }
 
   /// Smoothly scrolls the viewport so that the current user's card lands
@@ -255,23 +318,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
     if (rankIndex < 0) {
       HapticFeedback.lightImpact();
-      ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.tr(
-              'leaderboard.unranked_info',
-              fallback: 'Complete lessons to join the global leaderboard!',
-            ),
-            style: const TextStyle(fontFamily: 'Outfit'),
-          ),
-          backgroundColor: AppColors.slate800,
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-          duration: const Duration(seconds: 3),
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'leaderboard.unranked_info',
+          fallback: 'Complete lessons to join the global leaderboard!',
         ),
+        type: CustomSnackBarType.info,
       );
       return;
     }
@@ -292,24 +345,45 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
     // Responsive height of the podium (matches LeaderboardPodium formula)
     final screenHeight = MediaQuery.sizeOf(context).height;
-    final podiumHeight = (screenHeight * 0.40).clamp(220.0, 320.0);
+    final podiumHeight = (screenHeight * 0.24).clamp(185.0, 210.0);
+    final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
+    final bannerHeight =
+        (!widget.state.isKids && isWeekly) ? 106.h : 0.0;
+    final overtakeHudHeight =
+        (!widget.state.isKids && widget.currentUser != null) ? 96.h : 0.0;
+
+    final switchHeight = widget.state.isKids ? 0.0 : (48.h + 18.h);
+    final topPadding = widget.state.isKids ? 16.h : 8.h;
 
     // Exact cumulative overhead before rank 4-N SliverList:
-    // topPadding(16.h) + header(~52.h) + spacing(24.h) + podium + spacing(12.h)
-    // + stickyHeaderMaxExtent(145.h) + sectionDivider(38.h)
-    final overhead = 16.h + 52.h + 24.h + podiumHeight + 12.h + 145.h + 38.h;
+    // topPadding + header(~52.h) + switch(66.h) + banner + spacing(14.h) + podium + spacing(12.h)
+    // + stickyHeaderMaxExtent(106.h) + overtakeHud + sectionDivider(38.h)
+    final overhead = topPadding +
+        52.h +
+        switchHeight +
+        bannerHeight +
+        14.h +
+        podiumHeight +
+        12.h +
+        106.h +
+        overtakeHudHeight +
+        38.h;
 
     // Each rank tile slot in SliverList (card height + 10.h bottom spacing)
     final tileHeight = 74.h;
     final tileIndex = rankIndex - 3;
-    final tileCenterOffset = overhead + (tileIndex * tileHeight) + (tileHeight / 2.0);
+    final divisionDividerOffset =
+        (!widget.state.isKids && isWeekly && tileIndex >= 7) ? 20.h : 0.0;
+    final tileCenterOffset =
+        overhead + divisionDividerOffset + (tileIndex * tileHeight) + (tileHeight / 2.0);
 
     // Visible viewport dimensions
     final viewportHeight = _scrollController.position.hasViewportDimension
         ? _scrollController.position.viewportDimension
         : screenHeight;
-    final pinnedHeaderHeight = 88.h;
-    final bottomBarPadding = 104.h + MediaQuery.paddingOf(context).bottom;
+    final pinnedHeaderHeight = 82.h;
+    final bottomBarPadding = (widget.showBackButton ? 24.h : 110.h) +
+        MediaQuery.paddingOf(context).bottom;
 
     // Center point in visible viewport between pinned top header and bottom bar
     final visibleCenter = pinnedHeaderHeight +
@@ -379,14 +453,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         }
         context.read<AuthBloc>().add(const AuthRefreshUser());
         context.read<AuthBloc>().add(const AuthReloadUser());
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: AppColors.emerald500,
-            content: Text(
-              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-            ),
-          ),
+        CustomSnackBar.show(
+          context: context,
+          message: '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+          type: CustomSnackBarType.success,
         );
       }
     } catch (e) {
@@ -395,294 +465,47 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   }
 
   void _handleTileTap(UserEntity user, int rank, bool isMe) {
+    final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
     if (isMe) {
       PrestigeTrophySheet.show(
         context: context,
         user: user,
         rank: rank,
+        isWeekly: isWeekly,
         onShareRank: () => _showShareCard(user, rank),
       );
     } else if (!widget.state.isKids && widget.currentUser != null) {
+      final myRank =
+          _sortedUsers.indexWhere((u) => u.id == widget.currentUser!.id) + 1;
       RivalChallengeSheet.show(
         context: context,
         rival: user,
         rivalRank: rank,
         currentUser: widget.currentUser!,
-        onStartDuel: () => _startDuelWithRival(user, rank),
-        onShareRoomCode: () => _shareRoomCodeChallenge(user),
-      );
-    }
-  }
-
-  void _startDuelWithRival(UserEntity rival, int rank) async {
-    final currentUser = widget.currentUser;
-    if (currentUser == null) return;
-
-    if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
-      return;
-    }
-
-    try {
-      final repo = di.sl<ArenaRepository>();
-      final session = await repo.challengeRivalDirectly(
-        currentUser: currentUser,
-        rival: rival,
-        rivalRank: rank,
-      );
-      if (mounted) {
-        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-      }
-    } catch (e) {
-      debugPrint('[LeaderboardScreen] Start duel error: $e');
-    }
-  }
-
-  void _startQuickMatch() async {
-    final currentUser = widget.currentUser;
-    if (currentUser == null) return;
-
-    if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
-      return;
-    }
-
-    try {
-      final repo = di.sl<ArenaRepository>();
-      final session = await repo.quickMatch(
-        currentUser: currentUser,
-        leaderboardUsers: _sortedUsers,
-      );
-      if (mounted) {
-        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-      }
-    } catch (e) {
-      debugPrint('[LeaderboardScreen] Quick match error: $e');
-    }
-  }
-
-  void _shareRoomCodeChallenge(UserEntity rival) async {
-    final currentUser = widget.currentUser;
-    if (currentUser == null) return;
-
-    if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to create a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
-      return;
-    }
-
-    try {
-      final repo = di.sl<ArenaRepository>();
-      final session = await repo.createRoomCode(currentUser: currentUser);
-      final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
-          'Enter room code ${session.roomCode} in Vowl to duel me now, or tap:\n'
-          'https://vowl-acbc5.web.app/duel/${session.roomCode}';
-      await SharePlus.instance.share(
-        ShareParams(
-          text: message,
-          subject: '1v1 English Duel Challenge!',
-        ),
-      );
-      if (mounted) {
-        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-      }
-    } catch (e) {
-      debugPrint('[LeaderboardScreen] Share room code error: $e');
-    }
-  }
-
-  void _showJoinRoomDialog() {
-    final currentUser = widget.currentUser;
-    if (currentUser == null) return;
-
-    if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
-      return;
-    }
-
-    final controller = TextEditingController();
-    bool isJoining = false;
-
-    showDialog(
-      context: context,
-      builder: (dialogCtx) => StatefulBuilder(
-        builder: (ctx, setDialogState) {
-          final isDark = Theme.of(ctx).brightness == Brightness.dark;
-          final isMidnight = isDark && Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
-          final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
-          final textPrimary = isDark ? Colors.white : AppColors.slate900;
-          final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
-          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
-
-          return Dialog(
-            backgroundColor: cardBg,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
-            child: Padding(
-              padding: EdgeInsets.all(20.r),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Icon(LucideIcons.swords, color: const Color(0xFFF59E0B), size: 18.sp),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                        'Join 1v1 Arena Duel',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: textPrimary,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    'Enter the room code shared by your friend to join the 30-coin duel:',
-                    style: TextStyle(fontSize: 12.sp, color: textSecondary, height: 1.4),
-                  ),
-                  SizedBox(height: 16.h),
-                  TextField(
-                    controller: controller,
-                    textCapitalization: TextCapitalization.characters,
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                      color: textPrimary,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'e.g. VOWL-DUEL-882',
-                      hintStyle: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                        color: textSecondary.withValues(alpha: 0.6),
-                      ),
-                      filled: true,
-                      fillColor: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: BorderSide(color: borderCol),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: BorderSide(color: borderCol),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: const BorderSide(color: AppColors.indigo500, width: 1.5),
-                      ),
-                      suffixIcon: IconButton(
-                        icon: Icon(LucideIcons.clipboard, size: 16.sp, color: textSecondary),
-                        onPressed: () async {
-                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
-                          if (clip?.text != null) {
-                            controller.text = clip!.text!.trim().toUpperCase();
-                          }
-                        },
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 18.h),
-                  ElevatedButton(
-                    onPressed: isJoining
-                        ? null
-                        : () async {
-                            final code = controller.text.trim().toUpperCase();
-                            if (code.isEmpty) return;
-
-                            setDialogState(() => isJoining = true);
-                            try {
-                              final repo = di.sl<ArenaRepository>();
-                              final session = await repo.joinRoom(
-                                roomCode: code,
-                                currentUser: currentUser,
-                              );
-                              if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
-                              if (mounted) {
-                                Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-                              }
-                            } catch (e) {
-                              setDialogState(() => isJoining = false);
-                              if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Could not join room: ${e.toString().replaceAll("Exception: ", "")}'),
-                                    backgroundColor: AppColors.rose500,
-                                  ),
-                                );
-                              }
-                            }
-                          },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF59E0B),
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 12.h),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-                    ),
-                    child: isJoining
-                        ? SizedBox(
-                            width: 18.r,
-                            height: 18.r,
-                            child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                          )
-                        : Text(
-                            'Enter Duel (30🪙)',
-                            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w800),
-                          ),
-                  ),
-                  SizedBox(height: 6.h),
-                  TextButton(
-                    onPressed: () => Navigator.of(dialogCtx).pop(),
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(fontSize: 12.sp, color: textSecondary),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
+        currentUserRank: myRank > 0 ? myRank : null,
+        isWeekly: isWeekly,
+        onStartDuel: () {
+          if (di.sl.isRegistered<HapticService>()) {
+            di.sl<HapticService>().selection();
+          }
+          context.go(AppRouter.gamesRoute);
         },
-      ),
-    );
+        onShareChallenge: () => _showShareCard(
+          widget.currentUser!,
+          myRank > 0 ? myRank : 1,
+        ),
+      );
+    }
   }
 
   void _showShareCard(UserEntity user, int rank) {
+    final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
+    final xp = isWeekly ? user.currentWeeklyExp : user.totalExp;
     final data = ShareCardData.fromRank(
       userName: user.safeDisplayName,
       userPhotoUrl: user.photoUrl,
       rank: rank,
-      totalXp: user.totalExp,
+      totalXp: xp,
       streak: user.currentStreak,
       referralCode: user.referralCode,
     );
@@ -692,6 +515,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
     if (widget.state.users.isEmpty) {
       return RefreshIndicator(
         onRefresh: () async {
@@ -699,10 +525,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           context.read<LeaderboardBloc>().add(
             LoadLeaderboard(completer: completer, isKids: widget.state.isKids),
           );
+          context.read<AuthBloc>().add(const AuthRefreshUser());
           await completer.future;
         },
-        backgroundColor: Colors.transparent,
         color: AppColors.indigo500,
+        backgroundColor: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate800 : Colors.white),
+        displacement: 36.h,
         child: CustomScrollView(
           controller: _scrollController,
           physics: const AlwaysScrollableScrollPhysics(
@@ -769,55 +599,80 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 isKids: widget.state.isKids,
               ),
             );
+            context.read<AuthBloc>().add(const AuthRefreshUser());
             await completer.future;
           },
-          backgroundColor: Colors.transparent,
           color: AppColors.indigo500,
+          backgroundColor: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate800 : Colors.white),
+          displacement: 36.h,
           child: CustomScrollView(
             controller: _scrollController,
             physics: const AlwaysScrollableScrollPhysics(
               parent: BouncingScrollPhysics(),
             ),
             slivers: [
-              // Padding to push content slightly below AppBar
-              SliverToBoxAdapter(child: SizedBox(height: 16.h)),
+              // Top spacing
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: widget.state.isKids ? 16.h : 8.h,
+                ),
+              ),
 
-              // Header with last-updated timestamp
+              // 1. Header with last-updated timestamp
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
+                    onSync: () async {
+                      final completer = Completer<void>();
+                      context.read<LeaderboardBloc>().add(
+                        LoadLeaderboard(
+                          isKids: widget.state.isKids,
+                          completer: completer,
+                        ),
+                      );
+                      await completer.future;
+                    },
                   ),
                 ),
               ),
 
-              // Weekly League Podium Rewards Banner (Visible in Weekly mode)
+              // 2. Timeframe Hero Switch (Weekly League vs Hall of Fame)
+              if (!widget.state.isKids && widget.onTimeframeChanged != null)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      left: AppSpacing.screen,
+                      right: AppSpacing.screen,
+                      top: 14.h,
+                      bottom: 4.h,
+                    ),
+                    child: _LeaderboardHeroSwitch(
+                      timeframe: widget.timeframe,
+                      onChanged: widget.onTimeframeChanged!,
+                    ),
+                  ),
+                ),
+
+              // 3. Weekly League Podium Rewards Banner (Visible in Weekly mode)
               if (!widget.state.isKids && isWeekly)
                 SliverToBoxAdapter(
                   child: WeeklyLeagueRewardsBanner(
                     currentUser: widget.currentUser,
                     onClaimReward: _handleClaimWeeklyLeagueReward,
-                    onQuickMatch: _startQuickMatch,
                   ),
                 ),
 
-              // All-Time Hall of Fame Banner (Visible in All-Time mode)
-              if (!widget.state.isKids && !isWeekly)
-                SliverToBoxAdapter(
-                  child: _HallOfFameBanner(
-                    onChallenge: _startQuickMatch,
-                    onJoinCode: _showJoinRoomDialog,
-                  ),
-                ),
-
-              SliverToBoxAdapter(child: SizedBox(height: 18.h)),
+              SliverToBoxAdapter(child: SizedBox(height: 14.h)),
 
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: LeaderboardPodium(
                     top3: users.take(3).toList(),
                     isKids: widget.state.isKids,
@@ -834,8 +689,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverPersistentHeader(
                 pinned: true,
                 delegate: _StickyRankCardDelegate(
-                  minHeight: 88.h,
-                  maxHeight: 145.h,
+                  minHeight: 82.h,
+                  maxHeight: 106.h,
+                  isWeekly: isWeekly,
                   child: LeaderboardRankCard(
                     allUsers: users,
                     isKids: widget.state.isKids,
@@ -852,7 +708,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                     allUsers: users,
                     currentUser: widget.currentUser!,
                     isWeekly: isWeekly,
-                    onOvertakeTap: () => context.push(AppRouter.gamesRoute),
+                    onOvertakeTap: () => context.go(AppRouter.gamesRoute),
                   ),
                 ),
 
@@ -860,7 +716,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
+                    horizontal: AppSpacing.screen,
                     vertical: 12.h,
                   ),
                   child: Row(
@@ -914,7 +770,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Rank 4-N list
               if (users.length > 3)
                 SliverPadding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
@@ -929,15 +785,60 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       final reduceMotion = VowlMotion.shouldReduceMotion(
                         context,
                       );
+                      Widget? dividerBeforeTile;
+                      if (!widget.state.isKids && isWeekly && rank == 11) {
+                        dividerBeforeTile = Padding(
+                          padding: EdgeInsets.only(top: 4.h, bottom: 10.h),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 6.r,
+                                height: 6.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: isDark ? AppColors.slate500 : AppColors.slate400,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Text(
+                                '🏃 Contender Zone · Push for Top 10',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.8,
+                                  color: isDark ? AppColors.slate400 : AppColors.slate500,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: Container(
+                                  height: 1,
+                                  color: (isDark ? Colors.white : Colors.black)
+                                      .withValues(alpha: 0.08),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+
                       final tile = Padding(
                         padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
-                        child: LeaderboardRankTile(
-                          user: user,
-                          rank: rank,
-                          isMe: isMe,
-                          isKids: widget.state.isKids,
-                          isWeekly: isWeekly,
-                          onTap: () => _handleTileTap(user, rank, isMe),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            ?dividerBeforeTile,
+                            LeaderboardRankTile(
+                              user: user,
+                              rank: rank,
+                              isMe: isMe,
+                              isKids: widget.state.isKids,
+                              isWeekly: isWeekly,
+                              onTap: () => _handleTileTap(user, rank, isMe),
+                            ),
+                          ],
                         ),
                       );
 
@@ -1066,7 +967,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 120.h + MediaQuery.paddingOf(context).bottom,
+                  height: (widget.showBackButton ? 36.h : 120.h) +
+                      MediaQuery.paddingOf(context).bottom,
                 ),
               ),
             ],
@@ -1076,8 +978,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         // "Find Me" FAB — only visible when user's rank is deep in the list
         if (showFindMe)
           Positioned(
-            bottom: 104.h + MediaQuery.paddingOf(context).bottom,
-            right: 20.w,
+            bottom: (widget.showBackButton ? 24.h : 104.h) +
+                MediaQuery.paddingOf(context).bottom,
+            right: AppSpacing.screen,
             child: Semantics(
               button: true,
               label: context.tr(
@@ -1101,15 +1004,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                               ],
                             ),
                             borderRadius: BorderRadius.circular(24.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(
-                                  0xFF6366F1,
-                                ).withValues(alpha: 0.4),
-                                blurRadius: 16,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.3),
+                              width: 1.5,
+                            ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -1154,11 +1052,13 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
   final double minHeight;
   final double maxHeight;
   final Widget child;
+  final bool isWeekly;
 
   _StickyRankCardDelegate({
     required this.minHeight,
     required this.maxHeight,
     required this.child,
+    this.isWeekly = true,
   });
 
   @override
@@ -1201,8 +1101,8 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
           // Rank card content
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 12.h - (4.h * collapseProgress),
+              horizontal: AppSpacing.screen,
+              vertical: 8.h - (2.h * collapseProgress),
             ),
             child: OverflowBox(
               minHeight: 0,
@@ -1211,6 +1111,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
               child: LeaderboardRankCard(
                 allUsers: (child as LeaderboardRankCard).allUsers,
                 isKids: (child as LeaderboardRankCard).isKids,
+                isWeekly: isWeekly,
                 collapseProgress: collapseProgress,
                 onTap: (child as LeaderboardRankCard).onTap,
               ),
@@ -1250,6 +1151,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(_StickyRankCardDelegate oldDelegate) {
     return maxHeight != oldDelegate.maxHeight ||
         minHeight != oldDelegate.minHeight ||
+        isWeekly != oldDelegate.isWeekly ||
         child != oldDelegate.child;
   }
 }
@@ -1440,7 +1342,7 @@ class _LeaderboardHeroSwitch extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        LucideIcons.crown,
+                        LucideIcons.trophy,
                         size: 15.sp,
                         color: !isWeekly
                             ? Colors.white
@@ -1468,158 +1370,6 @@ class _LeaderboardHeroSwitch extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// All-Time Hall of Fame Banner
-// ---------------------------------------------------------------------------
-
-class _HallOfFameBanner extends StatelessWidget {
-  final VoidCallback? onChallenge;
-  final VoidCallback? onJoinCode;
-  const _HallOfFameBanner({this.onChallenge, this.onJoinCode});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight =
-        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final surfaceColor = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
-    final borderColor = isMidnight
-        ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
-    final titleColor = isDark ? Colors.white : AppColors.slate900;
-    final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
-
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: surfaceColor,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: borderColor, width: 1.r),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(8.r),
-            decoration: BoxDecoration(
-              color: AppColors.amber500.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Icon(LucideIcons.crown, color: AppColors.amber500, size: 18.sp),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Hall of Fame Masters',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
-                    color: titleColor,
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  'Lifetime XP earned across all quests & practice duels',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    color: subColor,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          if (onChallenge != null || onJoinCode != null) ...[
-            SizedBox(width: 8.w),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (onChallenge != null)
-                  ElevatedButton(
-                    onPressed: () {
-                      if (di.sl.isRegistered<HapticService>()) {
-                        di.sl<HapticService>().light();
-                      }
-                      onChallenge?.call();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.amber500,
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
-                      minimumSize: Size.zero,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
-                      elevation: 0,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(LucideIcons.swords, size: 11.sp, color: Colors.white),
-                        SizedBox(width: 3.w),
-                        Text(
-                          'Duel',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                if (onJoinCode != null) ...[
-                  SizedBox(width: 6.w),
-                  OutlinedButton(
-                    onPressed: () {
-                      if (di.sl.isRegistered<HapticService>()) {
-                        di.sl<HapticService>().light();
-                      }
-                      onJoinCode?.call();
-                    },
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: titleColor,
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
-                      minimumSize: Size.zero,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      side: BorderSide(color: borderColor),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(LucideIcons.keyRound, size: 11.sp, color: titleColor),
-                        SizedBox(width: 3.w),
-                        Text(
-                          'Join',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ],
         ],
       ),
     );

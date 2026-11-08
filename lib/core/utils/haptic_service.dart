@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Abstract interface representing the haptic feedback coordinator for Vowl.
 ///
@@ -41,7 +42,11 @@ abstract class HapticService {
 /// Implements future memoization to avoid redundant platform channel crossings,
 /// global haptic configuration controls, and robust exception boundaries.
 class HapticServiceImpl implements HapticService {
-  HapticServiceImpl._internal();
+  static const String _prefKey = 'haptics_enabled';
+
+  HapticServiceImpl._internal() {
+    _loadPersistedPreference();
+  }
 
   static final HapticServiceImpl _instance = HapticServiceImpl._internal();
 
@@ -51,11 +56,25 @@ class HapticServiceImpl implements HapticService {
   bool _isHapticsEnabled = true;
   Future<bool>? _vibrationSupportFuture;
 
+  Future<void> _loadPersistedPreference() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _isHapticsEnabled = prefs.getBool(_prefKey) ?? true;
+    } catch (_) {}
+  }
+
   @override
   bool get isHapticsEnabled => _isHapticsEnabled;
 
   @override
-  set isHapticsEnabled(bool value) => _isHapticsEnabled = value;
+  set isHapticsEnabled(bool value) {
+    if (_isHapticsEnabled != value) {
+      _isHapticsEnabled = value;
+      SharedPreferences.getInstance().then((prefs) {
+        prefs.setBool(_prefKey, value);
+      }).catchError((_) {});
+    }
+  }
 
   /// Verifies platform vibration support safely, caching the future
   /// to prevent concurrent channel crossings.

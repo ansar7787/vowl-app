@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 
 /// Shared confirmation dialog for spending Vowl Coins on hints.
@@ -62,10 +63,10 @@ class HintPurchaseDialog {
       context: context,
       builder: (ctx) => Center(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20.w),
+          margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           child: GlassTile(
             borderRadius: BorderRadius.circular(32.r),
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderColor: AppColors.amber500.withValues(alpha: 0.3),
             color: ctx.isMidnight
                 ? AppColors.midnightSurface

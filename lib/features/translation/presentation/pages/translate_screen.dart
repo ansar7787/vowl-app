@@ -12,7 +12,9 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -209,17 +211,14 @@ class _TranslateScreenState extends State<TranslateScreen> {
       final hasPerm = await _speech.initializeStt();
       if (!hasPerm) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                context.tr(
-                  'translation.mic_permission_required',
-                  fallback:
-                      'Microphone permission is required for voice input.',
-                ),
-              ),
-              behavior: SnackBarBehavior.floating,
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'translation.mic_permission_required',
+              fallback:
+                  'Microphone permission is required for voice input.',
             ),
+            type: CustomSnackBarType.warning,
           );
         }
         return;
@@ -402,7 +401,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 child: SingleChildScrollView(
                                   controller: _scrollController,
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 20.w,
+                                    horizontal: AppSpacing.screen,
                                   ),
                                   physics: const BouncingScrollPhysics(),
                                   child: Column(
@@ -520,7 +519,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
     TranslationState state,
   ) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 8.h),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        12.h,
+        AppSpacing.screen,
+        8.h,
+      ),
       child: Row(
         children: [
           Semantics(
@@ -919,7 +923,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
       child: ValueListenableBuilder<bool>(
         valueListenable: _isFocused,
         builder: (context, focused, child) => GlassTile(
-          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.card,
+            14.h,
+            AppSpacing.card,
+            14.h,
+          ),
           borderColor: focused
               ? AppColors.indigo500.withValues(alpha: 0.5)
               : (isDark
@@ -1359,7 +1368,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
         final targetLang = state.currentTargetLanguage ?? 'Spanish';
 
         return GlassTile(
-          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.card,
+            14.h,
+            AppSpacing.card,
+            14.h,
+          ),
           borderColor: isDark
               ? Colors.white.withValues(alpha: 0.08)
               : AppColors.slate200.withValues(alpha: 0.8),
@@ -1452,27 +1466,15 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               ClipboardData(text: state.translatedText),
                             );
                             _haptics.success();
-                            ScaffoldMessenger.of(context)
-                              ..clearSnackBars()
-                              ..showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    context.tr(
-                                      'common.copied',
-                                      fallback: 'Copied to clipboard',
-                                    ),
-                                    style: const TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
-                                  duration: const Duration(seconds: 2),
-                                ),
-                              );
+                            CustomSnackBar.show(
+                              context: context,
+                              message: context.tr(
+                                'common.copied',
+                                fallback: 'Copied to clipboard',
+                              ),
+                              type: CustomSnackBarType.success,
+                              duration: const Duration(seconds: 2),
+                            );
                           },
                           borderRadius: BorderRadius.circular(16.r),
                           child: Container(

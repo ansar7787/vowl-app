@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -25,6 +26,7 @@ class ArenaResultDialog extends StatelessWidget {
   final int payoutCoins;
   final String roomCode;
   final bool isAiRival;
+  final bool showConfetti;
   final VoidCallback onRematch;
   final VoidCallback onClose;
 
@@ -47,6 +49,7 @@ class ArenaResultDialog extends StatelessWidget {
     required this.payoutCoins,
     this.roomCode = '',
     this.isAiRival = false,
+    this.showConfetti = true,
     required this.onRematch,
     required this.onClose,
   });
@@ -67,20 +70,20 @@ class ArenaResultDialog extends StatelessWidget {
         : (isWinner ? AppColors.emerald500 : AppColors.rose500);
 
     final statusTitle = isSpeedTieBreak
-        ? (isWinner ? '⚡ SPEED VICTORY!' : '⚡ SPLIT-SECOND LOSS')
+        ? (isWinner ? '⚡ SPEED VICTORY!' : '⚡ TIME TIEBREAKER')
         : (isWinner ? 'VICTORY!' : 'DEFEAT');
 
     final statusSubtitle = isSpeedTieBreak
         ? (isWinner
-            ? 'Tied on score! You answered ${speedDiffSeconds.toStringAsFixed(1)}s faster!'
-            : 'Tied on score! Rival answered ${speedDiffSeconds.toStringAsFixed(1)}s faster.')
+            ? 'Tied on points! You were ${speedDiffSeconds.toStringAsFixed(1)}s faster!'
+            : 'Tied on points! Rival was ${speedDiffSeconds.toStringAsFixed(1)}s faster.')
         : (isWinner
-            ? 'Decisive triumph! +$payoutCoins coins awarded.'
-            : 'Tough match! +$payoutCoins coins consolation returned.');
+            ? 'Great match! +$payoutCoins coins won.'
+            : 'Good match! +$payoutCoins coins returned.');
 
     final netCoins = isWinner ? 20 : -20;
 
-    return Dialog(
+    final dialog = Dialog(
       backgroundColor: surfaceColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24.r),
@@ -180,18 +183,21 @@ class ArenaResultDialog extends StatelessWidget {
                               ),
                               SizedBox(width: 4.w),
                               if (isWinner) ...[
-                                Icon(LucideIcons.crown, size: 12.sp, color: const Color(0xFFF59E0B)),
-                                SizedBox(width: 2.w),
+                                Icon(LucideIcons.trophy, size: 12.sp, color: const Color(0xFFF59E0B)),
+                                SizedBox(width: 3.w),
                               ],
                               Flexible(
-                                child: Text(
-                                  myName.isNotEmpty ? myName : 'You',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: textSecondary,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    myName.isNotEmpty ? myName : 'You',
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: textSecondary,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -283,37 +289,22 @@ class ArenaResultDialog extends StatelessWidget {
                                       : null,
                                 ),
                               SizedBox(width: 4.w),
-                              if (isAiRival) ...[
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF06B6D4).withValues(alpha: 0.15),
-                                    borderRadius: BorderRadius.circular(3.r),
-                                  ),
-                                  child: Text(
-                                    'AI',
-                                    style: TextStyle(
-                                      fontSize: 7.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: const Color(0xFF06B6D4),
-                                    ),
-                                  ),
-                                ),
+                              if (!isWinner) ...[
+                                Icon(LucideIcons.trophy, size: 12.sp, color: const Color(0xFFF59E0B)),
                                 SizedBox(width: 3.w),
                               ],
-                              if (!isWinner) ...[
-                                Icon(LucideIcons.crown, size: 12.sp, color: const Color(0xFFF59E0B)),
-                                SizedBox(width: 2.w),
-                              ],
                               Flexible(
-                                child: Text(
-                                  rivalName.isNotEmpty ? rivalName : 'Rival',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: textSecondary,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    rivalName.isNotEmpty ? rivalName : 'Rival',
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: textSecondary,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -352,7 +343,7 @@ class ArenaResultDialog extends StatelessWidget {
 
               SizedBox(height: 12.h),
 
-              // 3. Economic Settlement Ledger ("What You Get / What You Lose")
+              // 3. Match Rewards Ledger ("What You Get / What You Lose")
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
                 decoration: BoxDecoration(
@@ -367,15 +358,18 @@ class ArenaResultDialog extends StatelessWidget {
                         Icon(LucideIcons.coins, size: 14.sp, color: const Color(0xFFF59E0B)),
                         SizedBox(width: 6.w),
                         Flexible(
-                          child: Text(
-                            'COIN SETTLEMENT',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 1.1,
-                              color: textSecondary,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'MATCH REWARDS',
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.1,
+                                color: textSecondary,
+                              ),
                             ),
                           ),
                         ),
@@ -389,7 +383,7 @@ class ArenaResultDialog extends StatelessWidget {
                             borderRadius: BorderRadius.circular(6.r),
                           ),
                           child: Text(
-                            isWinner ? '+$netCoins COINS NET' : '$netCoins COINS NET',
+                            isWinner ? '+$netCoins COINS' : '$netCoins COINS',
                             style: TextStyle(
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w800,
@@ -405,11 +399,11 @@ class ArenaResultDialog extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
+                        Expanded(
                           child: Text(
-                            'Stake Paid',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            'Entry Fee',
+                            maxLines: 2,
+                            softWrap: true,
                             style: TextStyle(fontSize: 11.sp, color: textSecondary),
                           ),
                         ),
@@ -421,11 +415,11 @@ class ArenaResultDialog extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
+                        Expanded(
                           child: Text(
-                            isWinner ? 'Prize Claimed' : 'Consolation Return',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            isWinner ? 'Coins Won' : 'Coins Returned',
+                            maxLines: 2,
+                            softWrap: true,
                             style: TextStyle(fontSize: 11.sp, color: textSecondary),
                           ),
                         ),
@@ -445,11 +439,11 @@ class ArenaResultDialog extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Flexible(
+                          Expanded(
                             child: Text(
-                              'Victory Duel Bonus',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
+                              'Win Bonus',
+                              maxLines: 2,
+                              softWrap: true,
                               style: TextStyle(fontSize: 11.sp, color: textSecondary),
                             ),
                           ),
@@ -520,7 +514,7 @@ class ArenaResultDialog extends StatelessWidget {
                         userPhotoUrl: myPhotoUrl,
                         myScore: myScore,
                         rivalScore: rivalScore,
-                        rivalName: isAiRival ? 'Vowl AI Challenger' : rivalName,
+                        rivalName: rivalName.isNotEmpty ? rivalName : 'Challenger',
                         roomCode: code,
                         payoutCoins: payoutCoins,
                         isAiRival: isAiRival,
@@ -543,7 +537,7 @@ class ArenaResultDialog extends StatelessWidget {
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              'Share Victory Card (Photo & Code)',
+                              'Share Victory Card',
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w700,
@@ -565,11 +559,13 @@ class ArenaResultDialog extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFEA580C),
+                    gradient: const LinearGradient(
+                      colors: [AppColors.indigo500, AppColors.indigo600],
+                    ),
                     borderRadius: BorderRadius.circular(12.r),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFEA580C).withValues(alpha: 0.25),
+                        color: AppColors.indigo500.withValues(alpha: 0.35),
                         blurRadius: 8.r,
                         offset: Offset(0, 3.r),
                       ),
@@ -578,14 +574,15 @@ class ArenaResultDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.flame, size: 18.sp, color: Colors.white),
+                      Icon(LucideIcons.swords, size: 18.sp, color: Colors.white),
                       SizedBox(width: 8.w),
                       Flexible(
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            '🔥 Rematch (Double or Nothing!)',
+                            'Rematch (30🪙)',
                             style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -600,13 +597,13 @@ class ArenaResultDialog extends StatelessWidget {
 
               SizedBox(height: 6.h),
 
-              // Back to Games Hub Button
+              // Back to Arena Hub Button
               ScaleButton(
                 onTap: onClose,
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.h),
                   child: Text(
-                    'Back to Arena Hub',
+                    'Back to Arena',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 13.sp,
@@ -620,6 +617,30 @@ class ArenaResultDialog extends StatelessWidget {
           ),
         ),
       ),
+    );
+
+    final content = (!isWinner || !showConfetti)
+        ? dialog
+        : Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              dialog,
+              const Positioned.fill(
+                child: IgnorePointer(
+                  child: RepaintBoundary(child: GameConfetti(shouldPop: true)),
+                ),
+              ),
+            ],
+          );
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        onClose();
+      },
+      child: content,
     );
   }
 }

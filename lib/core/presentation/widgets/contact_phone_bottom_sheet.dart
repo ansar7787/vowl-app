@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -37,6 +38,8 @@ class ContactPhoneBottomSheet extends StatefulWidget {
     return showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (sheetContext) => const ContactPhoneBottomSheet(),
     );
@@ -69,13 +72,19 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isValid = _controller.text.trim().length == 10;
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
 
     return Container(
       padding: EdgeInsets.only(
-        left: 24.w,
-        right: 24.w,
+        left: AppSpacing.screen,
+        right: AppSpacing.screen,
         top: 20.h,
-        bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
+        bottom: safeBottom,
       ),
       decoration: BoxDecoration(
         color: isDark

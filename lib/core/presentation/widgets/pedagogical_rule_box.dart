@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -64,8 +65,8 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
         final displayText = translatedTextValue ?? widget.rule;
 
         return Container(
-          width: 342.w,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
           decoration: BoxDecoration(
             color: widget.shadowColor.withValues(
               alpha: widget.isDark ? 0.08 : 0.05,

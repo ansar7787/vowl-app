@@ -1008,11 +1008,24 @@ function resolveDisplayName(data) {
 }
 
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
-exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
+// Runs daily at 00:00 UTC to establish clean daily rank deltas with minimal read cost.
+exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
   const db = admin.firestore();
   console.log('Starting scheduled leaderboard update...');
 
   try {
+    const cacheRef = db.collection('metadata').doc('leaderboard_cache');
+    const oldCacheSnap = await cacheRef.get();
+    const oldRankMap = {};
+    if (oldCacheSnap.exists) {
+      const oldUsers = oldCacheSnap.data().users || [];
+      oldUsers.forEach((u, i) => {
+        if (u && u.id) {
+          oldRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+        }
+      });
+    }
+
     const snapshot = await db
       .collection('users')
       .orderBy('totalExp', 'desc')
@@ -1022,13 +1035,19 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
     const usersData = [];
     const now = new Date();
 
-    snapshot.forEach((doc) => {
+    snapshot.docs.forEach((doc, index) => {
       const data = doc.data();
       const isUserPremium =
         data.isPremium === true &&
         (!data.premiumExpiryDate ||
           (data.premiumExpiryDate.toDate &&
             data.premiumExpiryDate.toDate() > now));
+
+      const currentRank = index + 1;
+      const prevRank =
+        oldRankMap[doc.id] !== undefined
+          ? oldRankMap[doc.id]
+          : data.previousRank || currentRank;
 
       usersData.push({
         id: doc.id,
@@ -1039,10 +1058,10 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
         completedLevels: data.completedLevels || {},
         dailyXpHistory: data.dailyXpHistory || {},
         isPremium: isUserPremium,
+        currentRank: currentRank,
+        previousRank: prevRank,
       });
     });
-
-    const cacheRef = db.collection('metadata').doc('leaderboard_cache');
 
     await cacheRef.set(
       {
@@ -1057,6 +1076,20 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
     );
 
     // Also update kids leaderboard cache
+    const kidsCacheRef = db
+      .collection('metadata')
+      .doc('kids_leaderboard_cache');
+    const oldKidsSnap = await kidsCacheRef.get();
+    const oldKidsRankMap = {};
+    if (oldKidsSnap.exists) {
+      const oldKids = oldKidsSnap.data().users || [];
+      oldKids.forEach((u, i) => {
+        if (u && u.id) {
+          oldKidsRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+        }
+      });
+    }
+
     const kidsSnapshot = await db
       .collection('users')
       .orderBy('kidsCoins', 'desc')
@@ -1065,7 +1098,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
 
     const kidsData = [];
 
-    kidsSnapshot.forEach((doc) => {
+    kidsSnapshot.docs.forEach((doc, index) => {
       const data = doc.data();
       const isKidsUserPremium =
         data.isPremium === true &&
@@ -1073,21 +1106,28 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
           (data.premiumExpiryDate.toDate &&
             data.premiumExpiryDate.toDate() > now));
 
+      const currentRank = index + 1;
+      const prevRank =
+        oldKidsRankMap[doc.id] !== undefined
+          ? oldKidsRankMap[doc.id]
+          : data.previousRank || currentRank;
+
       kidsData.push({
         id: doc.id,
         displayName: resolveDisplayName(data),
         photoUrl: data.photoUrl || null,
         kidsCoins: data.kidsCoins || 0,
-        kidsTotalLevelsCompleted: typeof data.kidsTotalLevelsCompleted === 'number' ? data.kidsTotalLevelsCompleted : 0,
+        kidsTotalLevelsCompleted:
+          typeof data.kidsTotalLevelsCompleted === 'number'
+            ? data.kidsTotalLevelsCompleted
+            : 0,
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
         isPremium: isKidsUserPremium,
+        currentRank: currentRank,
+        previousRank: prevRank,
       });
     });
-
-    const kidsCacheRef = db
-      .collection('metadata')
-      .doc('kids_leaderboard_cache');
 
     await kidsCacheRef.set(
       {

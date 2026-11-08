@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/email_launcher.dart';
@@ -250,11 +251,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                       child: Center(
                         child: SingleChildScrollView(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 20.w,
+                            horizontal: AppSpacing.spacious,
                             vertical: 24.h,
                           ),
                           child: HolographicCard(
-                            padding: 24,
                             borderRadius: 32,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,

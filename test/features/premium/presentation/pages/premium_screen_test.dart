@@ -656,7 +656,14 @@ void main() {
       expect(find.text('VERIFIED PRO'), findsOneWidget);
       expect(find.byIcon(Icons.workspace_premium_rounded), findsOneWidget);
       expect(find.byType(PremiumHero), findsOneWidget);
-      expect(find.byIcon(LucideIcons.crown), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byType(PremiumHero),
+          matching: find.byIcon(LucideIcons.shieldCheck),
+        ),
+        findsOneWidget,
+      );
+      expect(find.byIcon(LucideIcons.crown), findsNothing);
 
       await tester.pumpWidget(const SizedBox());
     });
@@ -1304,10 +1311,10 @@ void main() {
   });
 
   // =========================================================================
-  // GROUP 7: Restore Purchases & Offline Connectivity Handling
+  // GROUP 7: Zero Restore Policy & Offline Connectivity Handling
   // =========================================================================
-  group('Group 7: Restore Purchases & Offline Connectivity Handling', () {
-    testWidgets('Restore Purchases calls restorePurchases when shouldUseIAP is true', (
+  group('Group 7: Zero Restore Policy & Offline Connectivity Handling', () {
+    testWidgets('Restore Purchases button is not rendered (Zero Restore Policy, Account-Linked)', (
       tester,
     ) async {
       InAppPurchaseService.setCachedCountryCodeForTesting('US');
@@ -1322,24 +1329,13 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      final restoreBtn = find.text('Restore Purchases');
-      await scrollAndTap(tester, restoreBtn);
+      expect(find.text('Restore Purchases'), findsNothing);
+      expect(find.text('Restore'), findsNothing);
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(mockInAppPurchasePlatform.restorePurchasesCalled, isTrue);
-
-      // Trigger restored callback
-      InAppPurchaseService.instance.onPurchaseRestored?.call();
-      await tester.pump();
-
-      verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
-      expect(find.text('Purchases restored successfully.'), findsOneWidget);
-
-      await tester.pump(const Duration(seconds: 4));
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('Restore Purchases shows info snackbar when in India (account-linked)', (
+    testWidgets('Premium is account-bound to Firebase UID without manual restore button in India', (
       tester,
     ) async {
       InAppPurchaseService.setCachedCountryCodeForTesting('IN');
@@ -1353,18 +1349,9 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      final restoreBtn = find.text('Restore Purchases');
-      await scrollAndTap(tester, restoreBtn);
+      expect(find.text('Restore Purchases'), findsNothing);
+      expect(find.text('Restore'), findsNothing);
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(
-        find.text(
-          'Your premium is linked to your account and restored automatically when you sign in. Contact support if you need help.',
-        ),
-        findsOneWidget,
-      );
-
-      await tester.pump(const Duration(seconds: 4));
       await tester.pumpWidget(const SizedBox());
     });
 

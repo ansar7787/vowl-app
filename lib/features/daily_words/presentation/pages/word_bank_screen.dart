@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -239,7 +240,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             : AppColors.slate200);
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 6.h),
       child: Container(
         decoration: BoxDecoration(
           color: cardBg,
@@ -302,7 +303,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
   Widget _buildMasteryStats(Map<String, int> stats, bool isDark) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 6.h),
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 12.h, AppSpacing.screen, 6.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -367,7 +368,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 8.h),
       child: Row(
         children: [
           _buildFilterChip(
@@ -573,7 +574,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       }
       return [
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(matches[index], isDark),
@@ -600,7 +601,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       return [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: "Today's Words",
               count: todayWords.length,
@@ -611,7 +612,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(todayWords[index], isDark),
@@ -638,7 +639,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       return [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Learning',
               count: learningWords.length,
@@ -649,7 +650,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(learningWords[index], isDark),
@@ -676,7 +677,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       return [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Reviewing',
               count: reviewingWords.length,
@@ -687,7 +688,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(reviewingWords[index], isDark),
@@ -714,7 +715,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       return [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Mastered',
               count: masteredWords.length,
@@ -725,7 +726,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(masteredWords[index], isDark),
@@ -749,7 +750,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       slivers.add(
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Learning',
               count: learningWords.length,
@@ -762,7 +763,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       );
       slivers.add(
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(learningWords[index], isDark),
@@ -777,7 +778,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       slivers.add(
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Reviewing',
               count: reviewingWords.length,
@@ -790,7 +791,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       );
       slivers.add(
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(reviewingWords[index], isDark),
@@ -805,7 +806,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       slivers.add(
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: _buildSectionHeader(
               title: 'Mastered',
               count: masteredWords.length,
@@ -818,7 +819,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       );
       slivers.add(
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _buildWordCard(masteredWords[index], isDark),
@@ -957,6 +958,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
       await showModalBottomSheet<void>(
         context: context,
+        useRootNavigator: true,
+        useSafeArea: true,
         isScrollControlled: true,
         enableDrag: true,
         isDismissible: true,
@@ -981,7 +984,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
               top: false,
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.fromLTRB(24.w, 14.h, 24.w, 24.h),
+                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 24.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
@@ -1303,6 +1306,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
     await showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (modalContext) {
@@ -1318,7 +1323,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
               top: false,
               child: SingleChildScrollView(
                 physics: const ClampingScrollPhysics(),
-                padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 24.h),
+                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 16.h, AppSpacing.screen, 24.h),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
@@ -124,7 +125,8 @@ class GameScaffold<S> extends StatelessWidget {
                                       padding: config.disablePadding
                                           ? EdgeInsets.zero
                                           : EdgeInsets.symmetric(
-                                              horizontal: 20.w,
+                                              horizontal: config.horizontalPadding ??
+                                                  AppSpacing.screen,
                                             ),
                                       child: config.child,
                                     ),
@@ -133,7 +135,8 @@ class GameScaffold<S> extends StatelessWidget {
                                       ? config.child
                                       : Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: config.horizontalPadding ??
+                                                AppSpacing.screen,
                                           ),
                                           child: config.child,
                                         )),
@@ -142,7 +145,7 @@ class GameScaffold<S> extends StatelessWidget {
                         if (mascotBuilder != null)
                           Positioned(
                             top: -10.h,
-                            right: 20.w,
+                            right: config.horizontalPadding ?? AppSpacing.screen,
                             child: mascotBuilder!(context, state, _lives),
                           ),
                       ],

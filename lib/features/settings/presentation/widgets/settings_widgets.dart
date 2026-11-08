@@ -1,4 +1,7 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,34 +35,34 @@ class SettingsSectionTitle extends StatelessWidget {
     final effectiveColor =
         tintColor ??
         (isDark
-            ? Colors.white.withValues(alpha: 0.5)
-            : AppColors.slate900.withValues(alpha: 0.4));
+            ? Colors.white70
+            : AppColors.slate700);
     return Padding(
-      padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
+      padding: EdgeInsets.only(left: 4.w, bottom: 12.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            title.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
+          Container(
+            width: 4.w,
+            height: 20.h,
+            decoration: BoxDecoration(
               color: effectiveColor,
-              letterSpacing: 1.5,
+              borderRadius: BorderRadius.circular(2.r),
             ),
           ),
-          SizedBox(height: 8.h),
-          Container(
-            height: 0.5,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  effectiveColor.withValues(alpha: 0.3),
-                  effectiveColor.withValues(alpha: 0.0),
-                ],
+          SizedBox(width: 10.w),
+          Expanded(
+            child: Text(
+              title.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: effectiveColor,
+                letterSpacing: 1.2,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
@@ -81,8 +84,18 @@ class SettingsGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return GlassTile(
-      borderRadius: BorderRadius.circular(28.r),
+      borderRadius: BorderRadius.circular(24.r),
+      borderColor: borderColor,
+      borderWidth: 1.0,
       blur: 0,
       child: Column(
         children: [
@@ -341,12 +354,391 @@ class SettingsSwitchTile extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
+// SettingsThemeMatrix
+// ---------------------------------------------------------------------------
+
+/// Visual 2x2 Bento matrix allowing users to pick System (Auto), Light, Dark,
+/// or OLED Midnight appearance with one-tap clarity.
+class SettingsThemeMatrix extends StatelessWidget {
+  final ThemeState themeState;
+  final ValueChanged<ThemeMode> onThemeModeChanged;
+  final ValueChanged<bool> onMidnightChanged;
+  final ValueChanged<bool> onSystemThemeChanged;
+
+  const SettingsThemeMatrix({
+    super.key,
+    required this.themeState,
+    required this.onThemeModeChanged,
+    required this.onMidnightChanged,
+    required this.onSystemThemeChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
+    final platformBrightness = MediaQuery.platformBrightnessOf(context);
+    final isPlatformDark = platformBrightness == Brightness.dark;
+
+    final isSystemActive = themeState.isSystem;
+    final isMidnightActive =
+        !themeState.isSystem && themeState.isDark && themeState.isMidnight;
+    final isDarkActive =
+        !themeState.isSystem && themeState.isDark && !themeState.isMidnight;
+    final isLightActive = !themeState.isSystem && !themeState.isDark;
+
+    return GlassTile(
+      borderRadius: BorderRadius.circular(24.r),
+      borderColor: borderColor,
+      borderWidth: 1.0,
+      blur: 0,
+      padding: EdgeInsets.all(AppSpacing.card),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // ── Row 1: System (Auto-sync) & Light ──
+          Row(
+            children: [
+              Expanded(
+                child: _ThemeOptionCard(
+                  title: context.tr('settings.theme_system', fallback: 'System'),
+                  subtitle: isSystemActive
+                      ? (isPlatformDark
+                          ? context.tr(
+                              'settings.theme_auto_dark',
+                              fallback: 'Auto (Dark)',
+                            )
+                          : context.tr(
+                              'settings.theme_auto_light',
+                              fallback: 'Auto (Light)',
+                            ))
+                      : context.tr(
+                          'settings.theme_system_sub',
+                          fallback: 'Match Device',
+                        ),
+                  icon: Icons.brightness_auto_rounded,
+                  iconColor: AppColors.blue500,
+                  isSelected: isSystemActive,
+                  badgeText: isSystemActive
+                      ? (isPlatformDark ? 'DARK' : 'LIGHT')
+                      : null,
+                  onTap: () {
+                    di.sl<HapticService>().selection();
+                    onSystemThemeChanged(true);
+                    onMidnightChanged(false);
+                  },
+                ),
+              ),
+              SizedBox(width: 10.w),
+              Expanded(
+                child: _ThemeOptionCard(
+                  title: context.tr('settings.theme_light', fallback: 'Light'),
+                  subtitle: context.tr(
+                    'settings.theme_light_sub',
+                    fallback: 'Always Bright',
+                  ),
+                  icon: Icons.light_mode_rounded,
+                  iconColor: AppColors.amber500,
+                  isSelected: isLightActive,
+                  onTap: () {
+                    di.sl<HapticService>().selection();
+                    onSystemThemeChanged(false);
+                    onMidnightChanged(false);
+                    onThemeModeChanged(ThemeMode.light);
+                  },
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10.h),
+
+          // ── Row 2: Dark (Slate) & Midnight (OLED) ──
+          Row(
+            children: [
+              Expanded(
+                child: _ThemeOptionCard(
+                  title: context.tr('settings.theme_dark', fallback: 'Dark'),
+                  subtitle: context.tr(
+                    'settings.theme_dark_sub',
+                    fallback: 'Deep Slate',
+                  ),
+                  icon: Icons.dark_mode_rounded,
+                  iconColor: AppColors.indigo400,
+                  isSelected: isDarkActive,
+                  onTap: () {
+                    di.sl<HapticService>().selection();
+                    onSystemThemeChanged(false);
+                    onMidnightChanged(false);
+                    onThemeModeChanged(ThemeMode.dark);
+                  },
+                ),
+              ),
+              SizedBox(width: 10.w),
+              Expanded(
+                child: _ThemeOptionCard(
+                  title: context.tr(
+                    'settings.theme_midnight',
+                    fallback: 'Midnight',
+                  ),
+                  subtitle: context.tr(
+                    'settings.theme_midnight_sub',
+                    fallback: 'Pure OLED Black',
+                  ),
+                  icon: Icons.nightlight_round,
+                  iconColor: Colors.purpleAccent,
+                  isSelected: isMidnightActive,
+                  badgeText: 'OLED',
+                  onTap: () {
+                    di.sl<HapticService>().selection();
+                    onSystemThemeChanged(false);
+                    onThemeModeChanged(ThemeMode.dark);
+                    onMidnightChanged(true);
+                  },
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+
+          // ── Live Status Banner ──
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 9.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.04)
+                  : Colors.black.withValues(alpha: 0.03),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : Colors.black.withValues(alpha: 0.04),
+                width: 1.0,
+              ),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  isSystemActive ? Icons.sync_rounded : Icons.tune_rounded,
+                  size: 15.r,
+                  color: isSystemActive
+                      ? AppColors.blue500
+                      : (isDark ? Colors.white60 : AppColors.slate600),
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: Text(
+                    isSystemActive
+                        ? context.tr(
+                            'settings.theme_status_system',
+                            fallback:
+                                'Automatically syncing with device settings ({0})',
+                            args: [isPlatformDark ? 'Dark Mode' : 'Light Mode'],
+                          )
+                        : context.tr(
+                            'settings.theme_status_manual',
+                            fallback:
+                                'Manual appearance locked. Tap System to re-sync.',
+                          ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white70 : AppColors.slate700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ThemeOptionCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color iconColor;
+  final bool isSelected;
+  final String? badgeText;
+  final VoidCallback onTap;
+
+  const _ThemeOptionCard({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.iconColor,
+    required this.isSelected,
+    this.badgeText,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
+    return ScaleButton(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 220),
+        curve: Curves.easeOutCubic,
+        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? AppColors.indigo500.withValues(alpha: isDark ? 0.20 : 0.10)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.04)
+                  : Colors.black.withValues(alpha: 0.03)),
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(
+            color: isSelected ? AppColors.indigo500 : borderColor,
+            width: isSelected ? 1.5 : 1.0,
+          ),
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.25 : 0.15,
+                    ),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ]
+              : null,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(7.r),
+                  decoration: BoxDecoration(
+                    color: iconColor.withValues(alpha: isDark ? 0.18 : 0.12),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Icon(icon, color: iconColor, size: 20.r),
+                ),
+                if (isSelected)
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.5.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.indigo500,
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.check_rounded,
+                          color: Colors.white,
+                          size: 11.r,
+                        ),
+                        if (badgeText != null) ...[
+                          SizedBox(width: 3.w),
+                          Text(
+                            badgeText!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  )
+                else if (badgeText != null)
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : Colors.black.withValues(alpha: 0.06),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: Text(
+                      badgeText!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 9.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white60 : AppColors.slate600,
+                        letterSpacing: 0.4,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Text(
+              title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.5.sp,
+                fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                color: isSelected
+                    ? (isDark ? Colors.white : AppColors.slate900)
+                    : (isDark ? Colors.white70 : AppColors.slate700),
+              ),
+            ),
+            SizedBox(height: 2.h),
+            Text(
+              subtitle,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w500,
+                color: isSelected
+                    ? AppColors.indigo500
+                    : (isDark ? Colors.white38 : AppColors.slate400),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // SettingsLogoutButton
 // ---------------------------------------------------------------------------
 
 /// Styled action button that presents the account sign-out confirmation dialog.
 class SettingsLogoutButton extends StatelessWidget {
-  const SettingsLogoutButton({super.key});
+  final String? email;
+
+  const SettingsLogoutButton({super.key, this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -370,7 +762,7 @@ class SettingsLogoutButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: Colors.red.withValues(alpha: 0.25),
-                width: 1.5,
+                width: 1.0,
               ),
             ),
             child: Material(
@@ -382,7 +774,7 @@ class SettingsLogoutButton extends StatelessWidget {
                 },
                 borderRadius: BorderRadius.circular(24.r),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.h),
+                  padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 16.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -398,23 +790,43 @@ class SettingsLogoutButton extends StatelessWidget {
                           color: Colors.red,
                         ),
                       ),
-                      SizedBox(width: 16.w),
+                      SizedBox(width: 14.w),
                       Flexible(
-                        child: AutoSizeText(
-                          context.tr(
-                            'settings.sign_out',
-                            fallback: 'SIGN OUT ACCOUNT',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.red,
-                            letterSpacing: 0.5,
-                          ),
-                          maxLines: 1,
-                          minFontSize: 8,
-                          overflow: TextOverflow.ellipsis,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              context.tr(
+                                'settings.sign_out',
+                                fallback: 'SIGN OUT ACCOUNT',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.red,
+                                letterSpacing: 0.5,
+                              ),
+                              maxLines: 1,
+                              minFontSize: 10,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            if (email != null && email!.trim().isNotEmpty) ...[
+                              SizedBox(height: 2.h),
+                              Text(
+                                email!.trim(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.red.withValues(alpha: 0.75),
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ],
                         ),
                       ),
                     ],
@@ -457,7 +869,7 @@ class SettingsProfileSection extends StatelessWidget {
           '${context.tr("settings.tap_to_edit_profile", fallback: "Tap to edit profile")}',
       button: true,
       child: GlassTile(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(AppSpacing.cardSpacious),
         borderRadius: BorderRadius.circular(32.r),
         blur: 0,
         child: Row(

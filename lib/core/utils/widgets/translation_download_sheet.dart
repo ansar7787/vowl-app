@@ -45,6 +45,8 @@ class TranslationDownloadSheet extends StatefulWidget {
 
     return showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isDismissible: true,
       enableDrag: true,
       backgroundColor: Colors.transparent,

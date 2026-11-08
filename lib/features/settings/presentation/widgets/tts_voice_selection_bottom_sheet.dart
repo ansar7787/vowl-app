@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -38,6 +39,8 @@ class TtsVoiceSelectionBottomSheet extends StatefulWidget {
   }) async {
     final result = await showModalBottomSheet<TtsVoicePreset>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => TtsVoiceSelectionBottomSheet(
@@ -290,122 +293,165 @@ class _TtsVoiceSelectionBottomSheetState
     Navigator.of(context).pop(safePreset);
   }
 
+  Future<void> _openTtsStore() async {
+    di.sl<HapticService>().selection();
+    final marketUri = Uri.parse('market://details?id=com.google.android.tts');
+    final webUri = Uri.parse('https://play.google.com/store/apps/details?id=com.google.android.tts');
+    try {
+      if (await canLaunchUrl(marketUri)) {
+        await launchUrl(marketUri, mode: LaunchMode.externalApplication);
+      } else {
+        await launchUrl(webUri, mode: LaunchMode.externalApplication);
+      }
+    } catch (_) {
+      try {
+        await launchUrl(webUri, mode: LaunchMode.externalApplication);
+      } catch (_) {}
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bottomInset = MediaQuery.of(context).padding.bottom;
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
     final isUserPremium = _isPremium;
+
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final sheetBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return Container(
       constraints: BoxConstraints(
         maxHeight: MediaQuery.of(context).size.height * 0.88,
       ),
       decoration: BoxDecoration(
-        color: isDark
-            ? const Color(0xFF13141C).withValues(alpha: 0.96)
-            : Colors.white.withValues(alpha: 0.97),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-        border: Border(
-          top: BorderSide(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : Colors.black.withValues(alpha: 0.06),
-          ),
+        color: sheetBg,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+        border: Border.all(
+          color: borderColor,
+          width: 1.0,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
+            blurRadius: 28,
+            offset: const Offset(0, -8),
+          ),
+        ],
       ),
       padding: EdgeInsets.only(
         left: 20.w,
         right: 20.w,
         top: 14.h,
-        bottom: bottomInset + 16.h,
+        bottom: safeBottom,
       ),
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(
           parent: BouncingScrollPhysics(),
         ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Top drag handle
+            Center(
+              child: Container(
+                width: 40.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.2)
+                      : Colors.black.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(2.r),
+                ),
+              ),
+            ),
+            SizedBox(height: 16.h),
+
+            // Sheet Header
+            Row(
               children: [
-                // Top drag handle
-                Center(
-                  child: Container(
-                    width: 36.w,
-                    height: 4.h,
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.2)
-                          : Colors.black.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(2.r),
+                Container(
+                  width: 42.r,
+                  height: 42.r,
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(14.r),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      LucideIcons.mic,
+                      color: AppColors.indigo500,
+                      size: 22.r,
                     ),
                   ),
                 ),
-                SizedBox(height: 16.h),
-
-                // Sheet Header
-                Row(
-                  children: [
-                    Container(
-                      width: 38.r,
-                      height: 38.r,
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
+                SizedBox(width: 14.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Pronunciation Voice',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      child: Icon(
-                        LucideIcons.mic,
-                        color: AppColors.indigo500,
-                        size: 20.r,
+                      SizedBox(height: 2.h),
+                      Text(
+                        'Natural on-device voices for lessons & games',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: isDark ? Colors.white60 : AppColors.slate600,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Pronunciation Voice',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Theme.of(context).colorScheme.onSurface,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            'Natural on-device voices for lessons & games',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white60 : Colors.black54,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    IconButton(
-                      onPressed: _closeSheet,
-                      icon: Icon(
-                        Icons.close_rounded,
-                        size: 20.r,
-                        color: isDark ? Colors.white54 : Colors.black45,
-                      ),
-                      padding: EdgeInsets.zero,
-                      constraints: BoxConstraints(
-                        minWidth: 32.r,
-                        minHeight: 32.r,
-                      ),
-                      tooltip: 'Close',
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                SizedBox(height: 18.h),
+                SizedBox(width: 8.w),
+                ScaleButton(
+                  onTap: _closeSheet,
+                  child: Container(
+                    width: 36.r,
+                    height: 36.r,
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.close_rounded,
+                        size: 18.r,
+                        color: isDark ? Colors.white70 : AppColors.slate700,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 18.h),
 
                 // No Engine Warning Banner (Empty/Degraded State)
                 if (di.sl.isRegistered<TtsService>() &&
@@ -421,24 +467,94 @@ class _TtsVoiceSelectionBottomSheetState
                         color: AppColors.rose500.withValues(alpha: 0.35),
                       ),
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.warning_amber_rounded,
-                          color: AppColors.rose500,
-                          size: 20.r,
-                        ),
-                        SizedBox(width: 10.w),
-                        Expanded(
-                          child: Text(
-                            'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed in system settings.',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white70 : Colors.black87,
-                              height: 1.35,
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.warning_amber_rounded,
+                              color: AppColors.rose500,
+                              size: 20.r,
                             ),
-                          ),
+                            SizedBox(width: 10.w),
+                            Expanded(
+                              child: Text(
+                                'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed.',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  height: 1.35,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10.h),
+                        Wrap(
+                          spacing: 8.w,
+                          runSpacing: 8.h,
+                          children: [
+                            ScaleButton(
+                              onTap: _openTtsStore,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: AppColors.rose500,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.download_rounded, color: Colors.white, size: 16.r),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Install Speech Services',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ScaleButton(
+                              onTap: () async {
+                                di.sl<HapticService>().selection();
+                                if (di.sl.isRegistered<TtsService>()) {
+                                  await di.sl<TtsService>().reloadVoice();
+                                  if (mounted) setState(() {});
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: isDark ? Colors.white12 : Colors.black12,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.refresh_rounded, color: isDark ? Colors.white70 : Colors.black87, size: 16.r),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Check Again',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isDark ? Colors.white70 : Colors.black87,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -466,50 +582,50 @@ class _TtsVoiceSelectionBottomSheetState
                           ),
                           decoration: BoxDecoration(
                             color: isSelected
-                                ? (isDark
-                                      ? const Color(0xFF1E2235)
-                                      : const Color(0xFFF0F3FF))
-                                : (isDark
-                                      ? const Color(0xFF1A1C26)
-                                      : const Color(0xFFF8FAFC)),
-                            borderRadius: BorderRadius.circular(16.r),
+                                ? AppColors.indigo500.withValues(
+                                    alpha: isDark ? 0.15 : 0.08,
+                                  )
+                                : (isMidnight
+                                    ? const Color(0xFF0F1523)
+                                    : (isDark
+                                        ? const Color(0xFF161F33)
+                                        : AppColors.slate50)),
+                            borderRadius: BorderRadius.circular(18.r),
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.indigo500
-                                  : (isDark
-                                        ? Colors.white.withValues(alpha: 0.07)
-                                        : Colors.black.withValues(alpha: 0.06)),
-                              width: isSelected ? 1.5 : 1.0,
+                                  : borderColor,
+                              width: 1.0,
                             ),
                           ),
                           child: Row(
                             children: [
                               // Preset Icon
                               Container(
-                                width: 38.r,
-                                height: 38.r,
+                                width: 40.r,
+                                height: 40.r,
                                 decoration: BoxDecoration(
                                   color: isSelected
                                       ? AppColors.indigo500.withValues(
-                                          alpha: 0.15,
+                                          alpha: 0.18,
                                         )
                                       : (isDark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.06,
-                                              )
-                                            : Colors.black.withValues(
-                                                alpha: 0.04,
-                                              )),
-                                  borderRadius: BorderRadius.circular(11.r),
+                                          ? Colors.white.withValues(
+                                              alpha: 0.06,
+                                            )
+                                          : Colors.black.withValues(
+                                              alpha: 0.04,
+                                            )),
+                                  borderRadius: BorderRadius.circular(12.r),
                                 ),
                                 child: Icon(
                                   preset.icon,
-                                  size: 19.r,
+                                  size: 20.r,
                                   color: isSelected
                                       ? AppColors.indigo500
                                       : (isDark
-                                            ? Colors.white70
-                                            : Colors.black54),
+                                          ? Colors.white70
+                                          : AppColors.slate700),
                                 ),
                               ),
                               SizedBox(width: 12.w),
@@ -577,7 +693,7 @@ class _TtsVoiceSelectionBottomSheetState
                                         if (preset.isPremium)
                                           Container(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 6.w,
+                                              horizontal: 7.w,
                                               vertical: 2.h,
                                             ),
                                             decoration: BoxDecoration(
@@ -585,7 +701,7 @@ class _TtsVoiceSelectionBottomSheetState
                                                   ? const Color(0xFF261D0C)
                                                   : const Color(0xFFFEF3C7),
                                               borderRadius:
-                                                  BorderRadius.circular(5.r),
+                                                  BorderRadius.circular(6.r),
                                               border: Border.all(
                                                 color: isDark
                                                     ? const Color(0xFF453314)
@@ -593,36 +709,19 @@ class _TtsVoiceSelectionBottomSheetState
                                                 width: 0.8,
                                               ),
                                             ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Icon(
-                                                  LucideIcons.crown,
-                                                  size: 9.r,
-                                                  color: isDark
-                                                      ? const Color(0xFFFBBF24)
-                                                      : const Color(0xFFD97706),
-                                                ),
-                                                SizedBox(width: 3.w),
-                                                Text(
-                                                  isUserPremium
-                                                      ? 'UNLOCKED'
-                                                      : 'PRO',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 9.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    letterSpacing: 0.5,
-                                                    color: isDark
-                                                        ? const Color(
-                                                            0xFFFBBF24,
-                                                          )
-                                                        : const Color(
-                                                            0xFFD97706,
-                                                          ),
-                                                  ),
-                                                ),
-                                              ],
+                                            child: Text(
+                                              isUserPremium
+                                                  ? 'UNLOCKED'
+                                                  : 'PRO',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 9.5.sp,
+                                                fontWeight: FontWeight.w900,
+                                                letterSpacing: 0.8,
+                                                color: isDark
+                                                    ? const Color(0xFFFBBF24)
+                                                    : const Color(0xFFD97706),
+                                              ),
                                             ),
                                           ),
                                       ],
@@ -728,22 +827,30 @@ class _TtsVoiceSelectionBottomSheetState
                 // Bottom Action Button
                 SizedBox(
                   width: double.infinity,
-                  height: 48.h,
+                  height: 50.h,
                   child: ScaleButton(
                     onTap: _closeSheet,
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: AppColors.indigo500,
-                        borderRadius: BorderRadius.circular(14.r),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(alpha: 0.35),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: Text(
                         'Done',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
+                          letterSpacing: 0.3,
                         ),
                       ),
                     ),

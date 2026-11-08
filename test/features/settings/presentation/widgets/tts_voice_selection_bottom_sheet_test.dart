@@ -103,6 +103,7 @@ void main() {
 
       // Verify no RenderFlex overflow error was triggered
       expect(tester.takeException(), isNull);
+      await tester.pump(const Duration(milliseconds: 500));
     },
   );
 

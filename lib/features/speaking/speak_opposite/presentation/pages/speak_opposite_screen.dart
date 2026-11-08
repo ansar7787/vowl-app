@@ -114,12 +114,11 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       hapticService.error();
       soundService.playWrong();
 

@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -271,7 +272,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
             valueListenable: _hasError,
             builder: (context, hasError, child) {
               return Container(
-                padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+                padding: EdgeInsets.fromLTRB(AppSpacing.cardSpacious, 20.h, AppSpacing.cardSpacious, 32.h),
                 decoration: BoxDecoration(
                   color: bgColor,
                   borderRadius: widget.isPositioned

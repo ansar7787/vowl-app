@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -10,37 +11,50 @@ class RivalChallengeSheet extends StatelessWidget {
   final UserEntity rival;
   final int rivalRank;
   final UserEntity currentUser;
+  final int? currentUserRank;
+  final bool isWeekly;
   final VoidCallback onStartDuel;
-  final VoidCallback onShareRoomCode;
+  final VoidCallback onShareChallenge;
 
   const RivalChallengeSheet({
     super.key,
     required this.rival,
     required this.rivalRank,
     required this.currentUser,
+    this.currentUserRank,
+    this.isWeekly = true,
     required this.onStartDuel,
-    required this.onShareRoomCode,
-  });
+    VoidCallback? onShareChallenge,
+    VoidCallback? onShareRoomCode,
+  }) : onShareChallenge = onShareChallenge ?? onShareRoomCode ?? _defaultNoop;
+
+  static void _defaultNoop() {}
 
   static Future<void> show({
     required BuildContext context,
     required UserEntity rival,
     required int rivalRank,
     required UserEntity currentUser,
+    int? currentUserRank,
+    bool isWeekly = true,
     required VoidCallback onStartDuel,
-    required VoidCallback onShareRoomCode,
+    VoidCallback? onShareChallenge,
+    VoidCallback? onShareRoomCode,
   }) {
     return showModalBottomSheet(
       context: context,
       useRootNavigator: true,
-      useSafeArea: true,
+      useSafeArea: false,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => RivalChallengeSheet(
         rival: rival,
         rivalRank: rivalRank,
         currentUser: currentUser,
+        currentUserRank: currentUserRank,
+        isWeekly: isWeekly,
         onStartDuel: onStartDuel,
+        onShareChallenge: onShareChallenge,
         onShareRoomCode: onShareRoomCode,
       ),
     );
@@ -56,18 +70,30 @@ class RivalChallengeSheet extends StatelessWidget {
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : (tokens?.surface ?? Colors.white));
+    final cardBgColor = isMidnight
+        ? const Color(0xFF0F172A)
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
-    final hasEnoughCoins = currentUser.coins >= 30;
-
     // Resilient safe-area clearance for older 3-button navigation, gesture bars & keyboards
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
-    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
-    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 24.h) + bottomInset + 12.h;
+    final systemBottomPadding = math.max(
+      MediaQuery.paddingOf(context).bottom,
+      MediaQuery.viewPaddingOf(context).bottom,
+    );
+    // Guarantees at least 20dp cushion above ANY system navigation bar or gesture pill
+    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 16.h) + 20.h + bottomInset;
+
+    final myXp = isWeekly ? currentUser.currentWeeklyExp : currentUser.totalExp;
+    final rivalXp = isWeekly ? rival.currentWeeklyExp : rival.totalExp;
+    final xpDiff = (rivalXp - myXp).abs();
+
+    final totalXpCombined = math.max(myXp + rivalXp, 1);
+    final myRatio = (myXp / totalXpCombined).clamp(0.10, 0.90);
 
     return Container(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, safeBottom),
@@ -95,212 +121,297 @@ class RivalChallengeSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 18.h),
+              SizedBox(height: 16.h),
 
-              // Rival Profile Header Card
+              // Authentic Head-to-Head Confrontation & Stats Card
               Container(
-                padding: EdgeInsets.all(14.w),
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-                  borderRadius: BorderRadius.circular(16.r),
+                  color: cardBgColor,
+                  borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(color: borderColor),
                 ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Stack(
-                      clipBehavior: Clip.none,
+                    // Title and XP gap badge (Safe with Expanded)
+                    Row(
                       children: [
-                        UserAvatar(
-                          photoUrl: rival.photoUrl,
-                          size: 56.r,
-                          border: Border.all(
-                            color: AppColors.indigo500.withValues(alpha: 0.6),
-                            width: 2.w,
+                        Expanded(
+                          child: Text(
+                            'Head-to-Head Comparison',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w800,
+                              color: textPrimary,
+                            ),
                           ),
                         ),
-                        Positioned(
-                          bottom: -2,
-                          right: -2,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
-                            decoration: BoxDecoration(
+                        SizedBox(width: 8.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(alpha: isDark ? 0.2 : 0.1),
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                          child: Text(
+                            rivalXp >= myXp ? '+$xpDiff XP Gap' : '$xpDiff XP Ahead',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
                               color: AppColors.indigo500,
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              '#$rivalRank',
-                              style: TextStyle(
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(width: 14.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
+
+                    SizedBox(height: 14.h),
+
+                    // Side-by-side Player confrontation banner (YOU vs RIVAL)
+                    Row(
+                      children: [
+                        // Left Player: Current User (YOU)
+                        Expanded(
+                          child: Row(
                             children: [
-                              Flexible(
-                                child: Text(
-                                  rival.safeDisplayName,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: textPrimary,
-                                  ),
+                              UserAvatar(
+                                photoUrl: currentUser.photoUrl,
+                                size: 36.r,
+                              ),
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          child: Text(
+                                            currentUser.safeDisplayName,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w800,
+                                              color: textPrimary,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 4.w),
+                                        Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.w,
+                                            vertical: 1.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: AppColors.indigo500.withValues(
+                                              alpha: 0.15,
+                                            ),
+                                            borderRadius: BorderRadius.circular(4.r),
+                                          ),
+                                          child: Text(
+                                            'YOU',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 7.5.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: AppColors.indigo500,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 2.h),
+                                    Text(
+                                      currentUserRank != null
+                                          ? 'Rank #$currentUserRank'
+                                          : 'Contender',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: textSecondary,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              if (rival.isPremium) ...[
-                                SizedBox(width: 4.w),
-                                Icon(Icons.verified_rounded, size: 16.sp, color: const Color(0xFFF59E0B)),
-                              ],
                             ],
                           ),
-                          SizedBox(height: 4.h),
-                          Wrap(
-                            spacing: 6.w,
-                            runSpacing: 4.h,
+                        ),
+
+                        // Center: VS Pill (Solid brand primary, zero AI gradients)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 6.w),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                            decoration: BoxDecoration(
+                              color: AppColors.indigo500,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Text(
+                              'VS',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        // Right Player: Rival
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              _buildPill(
-                                icon: LucideIcons.zap,
-                                label: '${rival.totalExp} XP',
-                                color: AppColors.indigo500,
-                                isDark: isDark,
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        if (rival.isPremium) ...[
+                                          Icon(
+                                            Icons.verified_rounded,
+                                            size: 13.sp,
+                                            color: const Color(0xFFF59E0B),
+                                          ),
+                                          SizedBox(width: 3.w),
+                                        ],
+                                        Flexible(
+                                          child: Text(
+                                            rival.safeDisplayName,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w800,
+                                              color: textPrimary,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 2.h),
+                                    Text(
+                                      'Rank #$rivalRank',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              _buildPill(
-                                icon: LucideIcons.flame,
-                                label: '${rival.currentStreak}d streak',
-                                color: const Color(0xFFF97316),
-                                isDark: isDark,
+                              SizedBox(width: 8.w),
+                              UserAvatar(
+                                photoUrl: rival.photoUrl,
+                                size: 36.r,
                               ),
                             ],
                           ),
-                        ],
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 14.h),
+                    Container(height: 1, color: borderColor),
+                    SizedBox(height: 12.h),
+
+                    // Metrics Comparison Rows
+                    _buildCompareRow(
+                      label: isWeekly ? 'Weekly XP' : 'Lifetime XP',
+                      myValue: '$myXp',
+                      rivalValue: '$rivalXp',
+                      isWinner: myXp >= rivalXp,
+                      textPrimary: textPrimary,
+                      textSecondary: textSecondary,
+                    ),
+                    SizedBox(height: 9.h),
+                    _buildCompareRow(
+                      label: 'Day Streak',
+                      myValue: '${currentUser.currentStreak}d',
+                      rivalValue: '${rival.currentStreak}d',
+                      isWinner: currentUser.currentStreak >= rival.currentStreak,
+                      textPrimary: textPrimary,
+                      textSecondary: textSecondary,
+                    ),
+                    SizedBox(height: 9.h),
+                    _buildCompareRow(
+                      label: 'Quests Completed',
+                      myValue: '${currentUser.totalLevelsCompleted}',
+                      rivalValue: '${rival.totalLevelsCompleted}',
+                      isWinner: currentUser.totalLevelsCompleted >= rival.totalLevelsCompleted,
+                      textPrimary: textPrimary,
+                      textSecondary: textSecondary,
+                    ),
+
+                    SizedBox(height: 14.h),
+
+                    // Visual XP Duel Progress Bar
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(2.r),
+                      child: SizedBox(
+                        height: 4.h,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: (myRatio * 100).toInt(),
+                              child: Container(
+                                color: AppColors.indigo500,
+                              ),
+                            ),
+                            Container(width: 1.5.w, color: surfaceColor),
+                            Expanded(
+                              flex: ((1.0 - myRatio) * 100).toInt(),
+                              child: Container(
+                                color: const Color(0xFFF59E0B),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: 16.h),
+              SizedBox(height: 18.h),
 
-              // Stakes & Match Arena Card
-              Container(
-                padding: EdgeInsets.all(16.w),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      AppColors.indigo500.withValues(alpha: isDark ? 0.12 : 0.06),
-                      AppColors.blue500.withValues(alpha: isDark ? 0.08 : 0.03),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: AppColors.indigo500.withValues(alpha: 0.25),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Flexible(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: _buildStakeColumn('Entry Stake', '30 Coins', const Color(0xFFF59E0B), isDark),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 6.w),
-                          child: Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: AppColors.indigo500.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(LucideIcons.swords, size: 20.sp, color: AppColors.indigo500),
-                          ),
-                        ),
-                        Flexible(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: _buildStakeColumn('Winner Takes', '50 Coins', const Color(0xFF10B981), isDark),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 12.h),
-                    Divider(color: borderColor, height: 1.h),
-                    SizedBox(height: 10.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(LucideIcons.shieldCheck, size: 14.sp, color: textSecondary),
-                        SizedBox(width: 6.w),
-                        Flexible(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              'Consolation: +10 Coins to runner-up • Instant 60s duel',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w500,
-                                color: textSecondary,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 12.h),
-
-              // User Balance Pill
-              Center(
-                child: Text(
-                  'Your Balance: ${currentUser.coins} Coins',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: hasEnoughCoins ? (isDark ? AppColors.slate300 : AppColors.slate700) : AppColors.rose500,
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 14.h),
-
-              // Start Duel Button
+              // Action Button 1: Sprint Quests to Overtake (Single vector zap icon, zero duplicate thunder emoji)
               ElevatedButton.icon(
-                onPressed: hasEnoughCoins ? () {
+                onPressed: () {
                   Navigator.of(context).pop();
                   onStartDuel();
-                } : null,
-                icon: Icon(LucideIcons.swords, size: 18.sp),
+                },
+                icon: Icon(LucideIcons.zap, size: 18.sp),
                 label: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    hasEnoughCoins ? 'Challenge to 1v1 Arena Duel' : 'Need 30 Coins to Duel',
-                    style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w800),
+                    'Sprint Quests to Overtake',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.indigo500,
                   foregroundColor: Colors.white,
-                  disabledBackgroundColor: isDark ? AppColors.slate800 : AppColors.slate200,
-                  disabledForegroundColor: isDark ? AppColors.slate500 : AppColors.slate400,
                   padding: EdgeInsets.symmetric(vertical: 14.h),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14.r),
@@ -311,21 +422,22 @@ class RivalChallengeSheet extends StatelessWidget {
 
               SizedBox(height: 8.h),
 
-              // Room Code Button
+              // Action Button 2: Share Challenge Card (Uses our official Share Card modal, zero match codes)
               OutlinedButton.icon(
-                onPressed: hasEnoughCoins ? () {
+                onPressed: () {
                   Navigator.of(context).pop();
-                  onShareRoomCode();
-                } : null,
-                icon: Icon(LucideIcons.share2, size: 16.sp, color: hasEnoughCoins ? textPrimary : textSecondary),
+                  onShareChallenge();
+                },
+                icon: Icon(LucideIcons.share2, size: 16.sp, color: textPrimary),
                 label: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    'Share Room Code Challenge',
+                    'Share Challenge Card',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 13.sp,
-                      fontWeight: FontWeight.w600,
-                      color: hasEnoughCoins ? textPrimary : textSecondary,
+                      fontWeight: FontWeight.w700,
+                      color: textPrimary,
                     ),
                   ),
                 ),
@@ -344,57 +456,57 @@ class RivalChallengeSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildPill({
-    required IconData icon,
+  Widget _buildCompareRow({
     required String label,
-    required Color color,
-    required bool isDark,
+    required String myValue,
+    required String rivalValue,
+    required bool isWinner,
+    required Color textPrimary,
+    required Color textSecondary,
   }) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.15 : 0.1),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 11.sp, color: color),
-          SizedBox(width: 4.w),
-          Text(
-            label,
+    return Row(
+      children: [
+        // Current User Value (Left Column)
+        Expanded(
+          child: Text(
+            myValue,
+            textAlign: TextAlign.left,
             style: TextStyle(
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w700,
-              color: color,
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w800,
+              color: isWinner ? AppColors.emerald500 : textPrimary,
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildStakeColumn(String title, String value, Color color, bool isDark) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 11.sp,
-            color: isDark ? AppColors.slate400 : const Color(0xFF64748B),
+        ),
+        // Metric Label (Center Column)
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w700,
+              color: textSecondary,
+            ),
           ),
         ),
-        SizedBox(height: 2.h),
-        Text(
-          value,
-          style: TextStyle(
-            fontSize: 15.sp,
-            fontWeight: FontWeight.w800,
-            color: color,
+        // Rival Value (Right Column)
+        Expanded(
+          child: Text(
+            rivalValue,
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w800,
+              color: !isWinner ? AppColors.indigo500 : textPrimary,
+            ),
           ),
         ),
       ],
     );
   }
 }
-

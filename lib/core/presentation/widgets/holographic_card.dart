@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Clean, high-end container card for authentication and interactive forms.
 ///
@@ -10,13 +11,15 @@ import 'package:vowl/core/theme/app_colors.dart';
 class HolographicCard extends StatelessWidget {
   final Widget child;
   final double borderRadius;
-  final double padding;
+  final double? padding;
+  final EdgeInsetsGeometry? insets;
 
   const HolographicCard({
     super.key,
     required this.child,
     this.borderRadius = 40,
-    this.padding = 24,
+    this.padding,
+    this.insets,
   });
 
   @override
@@ -33,13 +36,16 @@ class HolographicCard extends StatelessWidget {
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? AppColors.slate700 : AppColors.slate100);
 
+    final effectivePadding = insets ??
+        EdgeInsets.all(padding?.r ?? AppSpacing.cardSpacious);
+
     return Container(
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius.r),
         border: Border.all(color: borderColor, width: 1.0),
       ),
-      padding: EdgeInsets.all(padding.r),
+      padding: effectivePadding,
       child: child,
     );
   }

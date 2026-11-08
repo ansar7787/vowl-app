@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -27,7 +28,7 @@ class AdventureTotalXpCard extends StatelessWidget {
 
     return GlassTile(
       blur: 0,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(32.r),
       child: Column(
         children: [

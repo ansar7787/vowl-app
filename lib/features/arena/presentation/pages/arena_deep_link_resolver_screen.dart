@@ -5,11 +5,16 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_matching_loader.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Transparent deep link landing screen for resolving and entering 1v1 duel invites.
@@ -28,6 +33,8 @@ class ArenaDeepLinkResolverScreen extends StatefulWidget {
 class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScreen> {
   bool _isLoading = true;
   String? _errorMessage;
+  bool _isCoinRefuelNeeded = false;
+  bool _isAuthNeeded = false;
 
   @override
   void initState() {
@@ -38,6 +45,13 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
   }
 
   Future<void> _resolveAndJoin() async {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+      _isCoinRefuelNeeded = false;
+      _isAuthNeeded = false;
+    });
+
     final authState = context.read<AuthBloc>().state;
     final user = authState.user;
 
@@ -45,7 +59,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       if (mounted) {
         setState(() {
           _isLoading = false;
-          _errorMessage = 'Please sign in or create an account to accept this Arena duel.';
+          _isAuthNeeded = true;
+          _errorMessage = 'Please sign in or create an account to accept this 1v1 duel.';
         });
       }
       return;
@@ -57,7 +72,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         if (mounted) {
           setState(() {
             _isLoading = false;
-            _errorMessage = 'An active internet connection is required to join an Arena Duel. Please check your network connection and try again.';
+            _errorMessage = 'An active internet connection is required to join an Arena Duel. Please check your connection and try again.';
           });
         }
         return;
@@ -68,7 +83,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       if (mounted) {
         setState(() {
           _isLoading = false;
-          _errorMessage = 'You need at least 30 coins to enter this duel stake. Your current balance is ${user.coins} coins.';
+          _isCoinRefuelNeeded = true;
+          _errorMessage = null;
         });
       }
       return;
@@ -82,7 +98,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       );
 
       if (mounted) {
-        Navigator.of(context).pushReplacement(
+        Navigator.of(context, rootNavigator: true).pushReplacement(
           ArenaDuelScreen.route(session: session),
         );
       }
@@ -96,14 +112,78 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
     }
   }
 
+  void _watchAdForRefuel() async {
+    final authState = context.read<AuthBloc>().state;
+    final user = authState.user;
+    if (user == null) return;
+
+    if (user.isPremium) {
+      try {
+        if (di.sl.isRegistered<UpdateUserCoins>()) {
+          await di.sl<UpdateUserCoins>()(
+            const UpdateUserCoinsParams(
+              amountChange: 30,
+              title: 'VIP Arena Refuel',
+            ),
+          );
+        }
+        if (mounted) {
+          context.read<AuthBloc>().add(const AuthRefreshUser());
+          CustomSnackBar.show(
+            context: context,
+            message: '👑 +30 VIP Coins added! Entering the duel...',
+            type: CustomSnackBarType.success,
+          );
+          _resolveAndJoin();
+        }
+      } catch (e) {
+        debugPrint('[ArenaDeepLinkResolverScreen] VIP Refuel error: $e');
+      }
+      return;
+    }
+
+    final adService = di.sl<AdService>();
+    adService.showRewardedAd(
+      context: context,
+      isPremium: user.isPremium,
+      onDismissed: () {},
+      onUserEarnedReward: (_) async {
+        try {
+          if (di.sl.isRegistered<UpdateUserCoins>()) {
+            await di.sl<UpdateUserCoins>()(
+              const UpdateUserCoinsParams(
+                amountChange: 30,
+                title: 'Arena Duel Refuel',
+              ),
+            );
+          }
+          if (mounted) {
+            context.read<AuthBloc>().add(const AuthRefreshUser());
+            CustomSnackBar.show(
+              context: context,
+              message: '+30 Coins added! Entering the duel...',
+              type: CustomSnackBarType.success,
+            );
+            _resolveAndJoin();
+          }
+        } catch (e) {
+          debugPrint('[ArenaDeepLinkResolverScreen] Refuel reward error: $e');
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final bgColor = isMidnight ? Colors.black : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
-    final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? const Color(0xFF1E293B) : Colors.white);
+    final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? const Color(0xFF131A29) : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+    final borderColor = isDark
+        ? AppColors.indigo500.withValues(alpha: 0.22)
+        : AppColors.indigo500.withValues(alpha: 0.16);
 
     if (_isLoading) {
       return Scaffold(
@@ -111,7 +191,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         body: SafeArea(
           child: ArenaMatchingLoader(
             roomCode: widget.roomCode.toUpperCase(),
-            customMessage: 'Entering Arena Duel chamber...',
+            customMessage: 'Connecting to 1v1 duel room...',
           ),
         ),
       );
@@ -122,21 +202,18 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacious),
             child: Container(
-              padding: EdgeInsets.all(28.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: cardBg,
                 borderRadius: BorderRadius.circular(24.r),
-                border: Border.all(
-                  color: isDark ? AppColors.slate700 : AppColors.slate200,
-                  width: 1.r,
-                ),
+                border: Border.all(color: borderColor, width: 1.r),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
+                    color: AppColors.indigo500.withValues(alpha: isDark ? 0.10 : 0.05),
                     blurRadius: 20,
-                    offset: const Offset(0, 10),
+                    offset: const Offset(0, 8),
                   ),
                 ],
               ),
@@ -147,18 +224,22 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     width: 68.r,
                     height: 68.r,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xFFF59E0B),
-                          Color(0xFFD97706),
-                        ],
+                      gradient: LinearGradient(
+                        colors: _isCoinRefuelNeeded
+                            ? [const Color(0xFFF59E0B), const Color(0xFFD97706)]
+                            : (_errorMessage != null
+                                ? [AppColors.rose500, AppColors.rose700]
+                                : [AppColors.indigo500, AppColors.indigo600]),
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.35),
+                          color: (_isCoinRefuelNeeded
+                                  ? const Color(0xFFF59E0B)
+                                  : (_errorMessage != null ? AppColors.rose500 : AppColors.indigo500))
+                              .withValues(alpha: 0.35),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
                         ),
@@ -166,15 +247,19 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     ),
                     child: Center(
                       child: Icon(
-                        _errorMessage != null ? LucideIcons.alertCircle : LucideIcons.swords,
-                        size: 32.sp,
+                        _isCoinRefuelNeeded
+                            ? LucideIcons.coins
+                            : (_errorMessage != null ? LucideIcons.alertCircle : LucideIcons.swords),
+                        size: 30.sp,
                         color: Colors.white,
                       ),
                     ),
                   ),
                   SizedBox(height: 20.h),
                   Text(
-                    _errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!',
+                    _isCoinRefuelNeeded
+                        ? 'Not Enough Coins'
+                        : (_errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 20.sp,
@@ -188,6 +273,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     decoration: BoxDecoration(
                       color: isDark ? const Color(0xFF070A12) : const Color(0xFFEEF2FF),
                       borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: AppColors.indigo500.withValues(alpha: 0.25),
+                      ),
                     ),
                     child: Text(
                       'ROOM CODE: ${widget.roomCode.toUpperCase()}',
@@ -195,13 +283,166 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w800,
-                        letterSpacing: 1.2,
-                        color: const Color(0xFF6366F1),
+                        letterSpacing: 1.5,
+                        color: isDark ? Colors.white : AppColors.indigo600,
                       ),
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  if (_errorMessage != null) ...[
+                  if (_isCoinRefuelNeeded) ...[
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+                        borderRadius: BorderRadius.circular(14.r),
+                        border: Border.all(color: borderColor),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'YOUR BALANCE',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.8,
+                                    color: textSecondary,
+                                  ),
+                                ),
+                                SizedBox(height: 3.h),
+                                Text(
+                                  '${context.watch<AuthBloc>().state.user?.coins ?? 0} 🪙',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: AppColors.amber500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(width: 1.w, height: 26.h, color: borderColor),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'ENTRY FEE',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.8,
+                                    color: textSecondary,
+                                  ),
+                                ),
+                                SizedBox(height: 3.h),
+                                Text(
+                                  '30 🪙',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: textPrimary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      context.watch<AuthBloc>().state.user?.isPremium == true
+                          ? 'As a VIP member, refuel 30 coins instantly with zero ads.'
+                          : 'Watch a short video to get 30 coins and accept this duel.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.5.sp,
+                        fontWeight: FontWeight.w500,
+                        color: textSecondary,
+                        height: 1.35,
+                      ),
+                    ),
+                    SizedBox(height: 20.h),
+                    ScaleButton(
+                      onTap: _watchAdForRefuel,
+                      child: Container(
+                        height: 46.h,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          gradient: context.watch<AuthBloc>().state.user?.isPremium == true
+                              ? const LinearGradient(
+                                  colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
+                          borderRadius: BorderRadius.circular(12.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: (context.watch<AuthBloc>().state.user?.isPremium == true
+                                      ? const Color(0xFF6366F1)
+                                      : const Color(0xFFF59E0B))
+                                  .withValues(alpha: 0.32),
+                              blurRadius: 8,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              context.watch<AuthBloc>().state.user?.isPremium == true
+                                  ? LucideIcons.crown
+                                  : LucideIcons.video,
+                              size: 16.sp,
+                              color: Colors.white,
+                            ),
+                            SizedBox(width: 8.w),
+                            Text(
+                              context.watch<AuthBloc>().state.user?.isPremium == true
+                                  ? 'VIP Instant Refuel (+30🪙)'
+                                  : 'Watch Video (+30🪙)',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    ScaleButton(
+                      onTap: () => context.go(AppRouter.homeRoute),
+                      child: Container(
+                        height: 36.h,
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Go Home',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w700,
+                            color: textSecondary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ] else if (_errorMessage != null) ...[
                     Text(
                       _errorMessage!,
                       textAlign: TextAlign.center,
@@ -213,6 +454,24 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                       ),
                     ),
                     SizedBox(height: 24.h),
+
+                    if (_isAuthNeeded) ...[
+                      ElevatedButton(
+                        onPressed: () => context.go(AppRouter.loginRoute),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.indigo500,
+                          foregroundColor: Colors.white,
+                          minimumSize: Size(double.infinity, 44.h),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: const Text('Sign In to Join Duel'),
+                      ),
+                      SizedBox(height: 10.h),
+                    ],
+
                     Row(
                       children: [
                         Expanded(
@@ -228,27 +487,23 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                             child: const Text('Go Home'),
                           ),
                         ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                _isLoading = true;
-                                _errorMessage = null;
-                              });
-                              _resolveAndJoin();
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.amber500,
-                              foregroundColor: Colors.white,
-                              padding: EdgeInsets.symmetric(vertical: 12.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.r),
+                        if (!_isAuthNeeded) ...[
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: _resolveAndJoin,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.indigo500,
+                                foregroundColor: Colors.white,
+                                padding: EdgeInsets.symmetric(vertical: 12.h),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                ),
                               ),
+                              child: const Text('Retry'),
                             ),
-                            child: const Text('Retry'),
                           ),
-                        ),
+                        ],
                       ],
                     ),
                   ],
@@ -261,4 +516,3 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
     );
   }
 }
-

@@ -52,8 +52,10 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) =>
-      context.tr('speaking_games.pronunciation_focus_complete', fallback: 'PHONETIC MASTER!');
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ValueNotifier<double> _heatLevel = ValueNotifier(0.0);
 

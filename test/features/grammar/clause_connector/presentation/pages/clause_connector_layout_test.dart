@@ -358,7 +358,7 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
-        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockHapticService.success()).called(1);
         verify(() => mockSoundService.playCorrect()).called(1);
 
         expect(find.byKey(const ValueKey('connector_option_1')), findsNothing);

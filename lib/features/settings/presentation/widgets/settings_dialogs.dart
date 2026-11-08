@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -17,6 +16,7 @@ import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/image_utils.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 /// All settings-related dialogs in one place.
 ///
@@ -99,10 +99,8 @@ class SettingsDialogs {
       pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -201,10 +199,8 @@ class SettingsDialogs {
       pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -314,10 +310,8 @@ class SettingsDialogs {
       pageBuilder: (ctx, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -417,10 +411,8 @@ class SettingsDialogs {
       pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -536,10 +528,8 @@ class SettingsDialogs {
       pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -676,10 +666,8 @@ class SettingsDialogs {
       pageBuilder: (ctx, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
+          child: _SettingsModalCard(
             width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -743,7 +731,49 @@ class SettingsDialogs {
 // Private reusable dialog sub-widgets
 // ===========================================================================
 
-/// Standard icon badge used in all dialogs.
+/// Crisp solid modal surface container replacing legacy muddy glassmorphism.
+class _SettingsModalCard extends StatelessWidget {
+  final double width;
+  final Widget child;
+
+  const _SettingsModalCard({required this.width, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final dialogBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+
+    return Container(
+      width: width,
+      padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 26.h),
+      decoration: BoxDecoration(
+        color: dialogBg,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: borderColor,
+          width: 1.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.6 : 0.14),
+            blurRadius: 32,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: child,
+    );
+  }
+}
+
+/// Standard high-contrast icon badge used in confirmation dialogs.
 class _DialogIcon extends StatelessWidget {
   final IconData icon;
   final Color color;
@@ -752,18 +782,26 @@ class _DialogIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
-      padding: EdgeInsets.all(20.r),
+      width: 58.r,
+      height: 58.r,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: color.withValues(alpha: isDark ? 0.14 : 0.08),
         shape: BoxShape.circle,
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.3 : 0.2),
+          width: 1.0,
+        ),
       ),
-      child: Icon(icon, color: color, size: 40.r),
+      child: Center(
+        child: Icon(icon, color: color, size: 28.r),
+      ),
     );
   }
 }
 
-/// Full-width filled CTA button.
+/// Full-width filled CTA button with tactile haptics.
 class _PrimaryButton extends StatelessWidget {
   final String label;
   final Color color;
@@ -779,23 +817,33 @@ class _PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          foregroundColor: Colors.white,
-          disabledBackgroundColor: color.withValues(alpha: 0.2),
-          padding: EdgeInsets.symmetric(vertical: 16.h),
-          shape: RoundedRectangleBorder(
+      child: ScaleButton(
+        onTap: onPressed,
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 14.h),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: onPressed != null ? color : color.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(16.r),
+            boxShadow: onPressed != null
+                ? [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.35),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ]
+                : null,
           ),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontWeight: FontWeight.w900,
-            fontSize: 16.sp,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontWeight: FontWeight.w800,
+              fontSize: 15.sp,
+              color: Colors.white,
+              letterSpacing: 0.3,
+            ),
           ),
         ),
       ),
@@ -803,7 +851,7 @@ class _PrimaryButton extends StatelessWidget {
   }
 }
 
-/// Subtle cancel/secondary TextButton.
+/// Crisp cancel/secondary action button.
 class _SecondaryTextButton extends StatelessWidget {
   final String label;
   final bool isDark;
@@ -817,21 +865,33 @@ class _SecondaryTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(
-        label,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          color: isDark ? Colors.white38 : Colors.black38,
-          fontWeight: FontWeight.w700,
+    return ScaleButton(
+      onTap: onPressed,
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 12.h),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : AppColors.slate100,
+          borderRadius: BorderRadius.circular(14.r),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: isDark ? Colors.white70 : AppColors.slate700,
+            fontWeight: FontWeight.w700,
+            fontSize: 13.5.sp,
+          ),
         ),
       ),
     );
   }
 }
 
-/// Destructive (red) TextButton for irreversible secondary actions.
+/// Destructive (red) button for irreversible secondary actions.
 class _DestructiveTextButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
@@ -840,14 +900,24 @@ class _DestructiveTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(
-        label,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          color: Colors.red.withValues(alpha: 0.8),
-          fontWeight: FontWeight.w700,
+    return ScaleButton(
+      onTap: onPressed,
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 12.h),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.red.withValues(alpha: 0.08),
+          borderRadius: BorderRadius.circular(14.r),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: Colors.red,
+            fontWeight: FontWeight.w800,
+            fontSize: 13.5.sp,
+          ),
         ),
       ),
     );
@@ -894,10 +964,8 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return GlassTile(
+    return _SettingsModalCard(
       width: widget.dialogWidth,
-      padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(40.r),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1177,17 +1245,15 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           return PopScope(
             canPop: !isDeleting,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(40.r),
+              borderRadius: BorderRadius.circular(24.r),
               child: LoadingOverlay(
                 isLoading: isDeleting,
                 message: context.tr(
                   'settings_dialogs.deleting_account',
                   fallback: 'Deleting account...',
                 ),
-                child: GlassTile(
+                child: _SettingsModalCard(
                   width: widget.dialogWidth,
-                  padding: EdgeInsets.all(32.r),
-                  borderRadius: BorderRadius.circular(40.r),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,

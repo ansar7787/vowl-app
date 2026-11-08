@@ -6,32 +6,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
   final DateTime lastUpdated;
   final bool isKids;
+  final Future<void> Function()? onSync;
 
   const LeaderboardHeader({
     super.key,
     required this.lastUpdated,
     this.isKids = false,
+    this.onSync,
   });
 
   @override
   State<LeaderboardHeader> createState() => _LeaderboardHeaderState();
 }
 
-class _LeaderboardHeaderState extends State<LeaderboardHeader> {
+class _LeaderboardHeaderState extends State<LeaderboardHeader>
+    with SingleTickerProviderStateMixin {
   Timer? _countdownTimer;
+  late final AnimationController _syncAnimController;
+  bool _isSyncing = false;
 
   @override
   void initState() {
     super.initState();
-    // Refresh countdown badge every 30 seconds to keep remaining time accurate
-    _countdownTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+    _syncAnimController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    );
+    // Refresh time-ago timestamp badge every minute to keep display accurate
+    _countdownTimer = Timer.periodic(const Duration(minutes: 1), (_) {
       if (mounted) setState(() {});
     });
   }
@@ -39,48 +48,71 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
   @override
   void dispose() {
     _countdownTimer?.cancel();
+    _syncAnimController.dispose();
     super.dispose();
   }
 
-  void _showUpdateInfo(BuildContext context) {
+  Future<void> _handleSync() async {
+    if (_isSyncing) return;
+    HapticFeedback.mediumImpact();
+
+    if (widget.onSync == null) {
+      _showUpdateInfo();
+      return;
+    }
+
+    setState(() => _isSyncing = true);
+    _syncAnimController.repeat();
+
+    try {
+      await widget.onSync!();
+      if (!mounted) return;
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'leaderboard.sync_success',
+          fallback: 'Leaderboard updated with latest scores!',
+        ),
+        type: CustomSnackBarType.success,
+        duration: const Duration(seconds: 2),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'leaderboard.sync_error',
+          fallback: 'Unable to refresh leaderboard. Please try again.',
+        ),
+        type: CustomSnackBarType.error,
+        duration: const Duration(seconds: 3),
+      );
+    } finally {
+      if (mounted) {
+        _syncAnimController.stop();
+        _syncAnimController.reset();
+        setState(() => _isSyncing = false);
+      }
+    }
+  }
+
+  void _showUpdateInfo() {
     HapticFeedback.lightImpact();
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(Icons.info_outline_rounded, color: Colors.white, size: 20.r),
-            SizedBox(width: 10.w),
-            Expanded(
-              child: Text(
-                context.tr(
-                  'leaderboard.updates_info',
-                  fallback:
-                      'Rankings refresh automatically every 4 hours. Play quests to climb the leaderboard in the next update!',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: AppColors.slate800,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14.r),
-        ),
-        duration: const Duration(seconds: 4),
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr(
+        'leaderboard.updates_info',
+        fallback:
+            'Rankings update daily at midnight. Play quests to climb the leaderboard today!',
       ),
+      type: CustomSnackBarType.info,
+      duration: const Duration(seconds: 4),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeUntilNext = LeaderboardCountdownHelper.getRemainingFormatted();
     final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
 
     final header = Semantics(
@@ -144,9 +176,14 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                             ),
                           ),
                         ),
-                        ExcludeSemantics(
+                        Semantics(
+                          button: true,
+                          label: context.tr(
+                            'leaderboard.live_sync_tooltip',
+                            fallback: 'Sync leaderboard',
+                          ),
                           child: GestureDetector(
-                            onTap: () => _showUpdateInfo(context),
+                            onTap: _handleSync,
                             child: Container(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 9.w,
@@ -175,22 +212,29 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(
-                                    Icons.update_rounded,
-                                    color: isDark
-                                        ? AppColors.blue300
-                                        : AppColors.indigo500,
-                                    size: 12.r,
+                                  RotationTransition(
+                                    turns: _syncAnimController,
+                                    child: Icon(
+                                      Icons.update_rounded,
+                                      color: isDark
+                                          ? AppColors.blue300
+                                          : AppColors.indigo500,
+                                      size: 12.r,
+                                    ),
                                   ),
                                   SizedBox(width: 4.w),
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Text(
-                                      context.tr(
-                                        'leaderboard.next_update_in',
-                                        fallback: 'Next in {0}',
-                                        args: [timeUntilNext],
-                                      ),
+                                      _isSyncing
+                                          ? context.tr(
+                                              'leaderboard.syncing',
+                                              fallback: 'Syncing...',
+                                            )
+                                          : context.tr(
+                                              'leaderboard.live_sync',
+                                              fallback: 'Live Sync',
+                                            ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
@@ -223,7 +267,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white60 : AppColors.slate600,
                       ),
                     ),

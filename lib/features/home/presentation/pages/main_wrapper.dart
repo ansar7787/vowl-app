@@ -79,21 +79,21 @@ class _MainWrapperState extends State<MainWrapper> {
                             color: isMidnight
                                 ? Colors.black.withValues(alpha: 0.96)
                                 : (isDark
-                                      ? AppColors.slate900.withValues(alpha: 0.94)
+                                      ? const Color(0xFF0B101D).withValues(alpha: 0.95)
                                       : Colors.white.withValues(alpha: 0.96)),
                             borderRadius: BorderRadius.circular(24.r),
                             border: Border.all(
                               color: isMidnight
                                   ? Colors.white.withValues(alpha: 0.12)
                                   : (isDark
-                                        ? AppColors.slate700
-                                        : AppColors.slate100),
+                                        ? Colors.white.withValues(alpha: 0.10)
+                                        : AppColors.slate200),
                               width: 1.0,
                             ),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withValues(
-                                  alpha: isDark ? 0.35 : 0.08,
+                                  alpha: isDark ? 0.40 : 0.08,
                                 ),
                                 blurRadius: 24,
                                 offset: const Offset(0, 8),
@@ -104,28 +104,28 @@ class _MainWrapperState extends State<MainWrapper> {
                       : ClipRRect(
                           borderRadius: BorderRadius.circular(24.r),
                           child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                             child: Container(
                               height: 65.h,
                               decoration: BoxDecoration(
                                 color: isMidnight
                                     ? Colors.black.withValues(alpha: 0.88)
                                     : (isDark
-                                          ? AppColors.slate900.withValues(alpha: 0.85)
+                                          ? const Color(0xFF0B101D).withValues(alpha: 0.88)
                                           : Colors.white.withValues(alpha: 0.90)),
                                 borderRadius: BorderRadius.circular(24.r),
                                 border: Border.all(
                                   color: isMidnight
                                       ? Colors.white.withValues(alpha: 0.12)
                                       : (isDark
-                                            ? AppColors.slate700.withValues(alpha: 0.6)
-                                            : AppColors.slate100),
+                                            ? Colors.white.withValues(alpha: 0.10)
+                                            : AppColors.slate200),
                                   width: 1.0,
                                 ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withValues(
-                                      alpha: isDark ? 0.35 : 0.08,
+                                      alpha: isDark ? 0.40 : 0.08,
                                     ),
                                     blurRadius: 24,
                                     offset: const Offset(0, 8),

@@ -199,13 +199,12 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
   void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (isAnsweredNotifier.value || !_isSnapped.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
       showConfettiNotifier.value = true;
       submitCorrectAnswer();
     } else {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       hapticService.error();
       soundService.playWrong();
 

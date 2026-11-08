@@ -78,12 +78,11 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   void _submitVerbalEvaluation(bool nailedIt, String textToSpeak) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       hapticService.error();
       soundService.playWrong();
 

@@ -59,6 +59,7 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
       context: context,
       isScrollControlled: true,
       useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => LanguageSelectionBottomSheet(
         isSource: isSource,
@@ -388,14 +389,29 @@ class _LanguageSelectionBottomSheetState
             fallback: 'Fast offline translation • One-time setup per language',
           );
 
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final sheetBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Container(
       height: MediaQuery.of(context).size.height * 0.85,
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
+        color: sheetBg,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+        border: Border.all(
+          color: borderColor,
+          width: 1.0,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
@@ -856,6 +872,14 @@ class _LanguageSelectionBottomSheetState
     final flag = TranslationService.getFlag(lang);
     final isDownloading = downloadProgress != null;
 
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final rowBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
       child: Material(
@@ -869,17 +893,17 @@ class _LanguageSelectionBottomSheetState
             decoration: BoxDecoration(
               color: isActive
                   ? AppColors.indigo500.withValues(alpha: isDark ? 0.15 : 0.08)
-                  : (isDark
-                        ? Colors.white.withValues(alpha: 0.03)
-                        : AppColors.slate100),
+                  : (isMidnight
+                      ? const Color(0xFF0F1523)
+                      : (isDark
+                          ? const Color(0xFF161F33)
+                          : AppColors.slate50)),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isActive
-                    ? AppColors.indigo500.withValues(alpha: 0.5)
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.06)
-                          : AppColors.slate200.withValues(alpha: 0.6)),
-                width: isActive ? 1.5 : 1.0,
+                    ? AppColors.indigo500
+                    : rowBorder,
+                width: 1.0,
               ),
             ),
             child: Row(

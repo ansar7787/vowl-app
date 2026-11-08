@@ -15,6 +15,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
@@ -159,8 +160,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     bool isMidnight,
   ) {
     return Container(
-          margin: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 10.h),
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+          margin: EdgeInsets.fromLTRB(AppSpacing.screen, 10.h, AppSpacing.screen, 10.h),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 16.h),
           decoration: BoxDecoration(
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.05)
@@ -206,7 +207,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                   ),
                   Container(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
+                          horizontal: AppSpacing.cardSpacious,
                           vertical: 12.h,
                         ),
                         decoration: BoxDecoration(
@@ -360,7 +361,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         controller: _tabController,
         isScrollable: true,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
         indicatorSize: TabBarIndicatorSize.label,
         labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
         dividerColor: Colors.transparent,
@@ -406,7 +407,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                     : Colors.grey.shade300;
 
                 return Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     // Cross-fade the unselected pill background to transparent as the Orange TabBar indicator slides behind it
@@ -490,7 +491,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     final earnedStickers = state.user?.kidsStickers ?? [];
 
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 12.h),
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

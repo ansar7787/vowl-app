@@ -79,6 +79,7 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             'currentStreak': data['currentStreak'],
             'completedLevels': data['completedLevels'],
             'isPremium': data['isPremium'] ?? false,
+            'previousRank': data['previousRank'] ?? users.length,
           });
         } catch (e) {
           if (kDebugMode) debugPrint('LeaderboardRepo: Corrupted user doc: $e');
@@ -178,6 +179,7 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             'currentStreak': data['currentStreak'],
             'completedLevels': data['completedLevels'],
             'isPremium': data['isPremium'] ?? false,
+            'previousRank': data['previousRank'] ?? users.length,
           });
         } catch (e) {
           if (kDebugMode) debugPrint('LeaderboardRepo: Corrupted user doc: $e');

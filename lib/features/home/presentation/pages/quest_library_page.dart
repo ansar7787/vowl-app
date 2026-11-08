@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -470,9 +471,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
         child: Container(
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.all(AppSpacing.card),
           decoration: BoxDecoration(
             color: cardBg,
             borderRadius: BorderRadius.circular(24.r),

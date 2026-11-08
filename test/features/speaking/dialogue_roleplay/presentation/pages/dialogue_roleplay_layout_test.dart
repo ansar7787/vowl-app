@@ -450,7 +450,7 @@ void main() {
         expect(find.byType(DialogueRoleplayScreen), findsOneWidget);
       });
 
-      testWidgets('1.8 getCompletionTitle returns DIALOGUE EXPERT!', (
+      testWidgets('1.8 getCompletionTitle returns LEVEL COMPLETE!', (
         tester,
       ) async {
         await pumpDialogueRoleplayScreen(tester);
@@ -461,7 +461,7 @@ void main() {
           (state as dynamic).getCompletionTitle(
             tester.element(find.byType(DialogueRoleplayScreen)),
           ),
-          equals('DIALOGUE EXPERT!'),
+          equals('LEVEL COMPLETE!'),
         );
       });
     });
@@ -1318,7 +1318,7 @@ void main() {
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 600));
 
-          expect(find.text('DIALOGUE EXPERT!'), findsOneWidget);
+          expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
         },
       );
 

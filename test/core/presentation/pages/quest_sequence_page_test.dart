@@ -4,8 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -28,6 +32,8 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
+class MockAdService extends Mock implements AdService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -37,6 +43,7 @@ void main() {
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
   late MockNetworkInfo mockNetworkInfo;
+  late MockAdService mockAdService;
 
   const testUser = UserEntity(
     id: 'user_quest_test',
@@ -54,12 +61,24 @@ void main() {
   }
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
     mockLocale = MockLocaleService();
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockNetworkInfo = MockNetworkInfo();
+    mockAdService = MockAdService();
+
+    when(() => mockAdService.recordLevelCompletion()).thenReturn(false);
+    when(() => mockAdService.showInterstitialAd(
+      onDismissed: any(named: 'onDismissed'),
+      isPremium: any(named: 'isPremium'),
+      force: any(named: 'force'),
+    )).thenAnswer((invocation) {
+      final callback = invocation.namedArguments[#onDismissed] as VoidCallback;
+      callback();
+    });
 
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
     when(() => mockLocale.tr(
@@ -110,10 +129,14 @@ void main() {
     if (di.sl.isRegistered<AuthBloc>()) di.sl.unregister<AuthBloc>();
     di.sl.registerLazySingleton<AuthBloc>(() => mockAuthBloc);
 
+    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
+    di.sl.registerLazySingleton<AdService>(() => mockAdService);
+
     initLocaleServiceReference(mockLocale);
   });
 
   tearDown(() {
+    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
@@ -229,7 +252,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('DAILY DUO'), findsOneWidget);
+      expect(find.text('DAILY WORKOUT'), findsOneWidget);
       expect(find.text('Part 1 of 2'), findsOneWidget);
       expect(find.text('quest_sequences.repeat_sentence'), findsOneWidget);
       expect(find.text('Start Part 1'), findsOneWidget);
@@ -246,7 +269,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('SPEED BLITZ'), findsOneWidget);
+      expect(find.text('RAPID RECALL'), findsOneWidget);
     });
 
     testWidgets('renders grammar_pro title correctly', (tester) async {
@@ -259,7 +282,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('GRAMMAR PRO'), findsOneWidget);
+      expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
     testWidgets('renders default fallback title for unknown sequenceId', (tester) async {
@@ -285,7 +308,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('DAILY DUO'), findsOneWidget);
+      expect(find.text('DAILY WORKOUT'), findsOneWidget);
       expect(find.text('Completed'), findsOneWidget);
       expect(find.text('SUMMARY'), findsOneWidget);
       expect(find.text('All parts completed!'), findsOneWidget);
@@ -325,8 +348,10 @@ void main() {
       ];
 
       for (var i = 0; i < iconQuests.length; i++) {
+        SharedPreferences.setMockInitialValues({});
+        DiscoveryHelper.clearTrackCache();
         await tester.pumpWidget(buildQuestSequenceHarness(
-          sequenceId: 'daily_duo',
+          sequenceId: 'icon_seq_$i',
           quests: [iconQuests[i]],
         ));
         await tester.pump();
@@ -464,9 +489,13 @@ void main() {
       // Complete Part 1
       await tester.tap(find.byKey(const Key('complete_game_btn')).last);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(); // Executes post-frame callback that triggers _startNextGame()
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Part 1 is completed, road map now presents Start Part 2
+      expect(find.text('Start Part 2'), findsOneWidget);
+      await tester.tap(find.text('Start Part 2'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
       // Complete Part 2
       expect(find.byKey(const Key('complete_game_btn')), findsWidgets);
@@ -548,7 +577,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(tester.takeException(), isNull);
-      expect(find.text('SPEED BLITZ'), findsOneWidget);
+      expect(find.text('RAPID RECALL'), findsOneWidget);
     });
 
     testWidgets('tablet layout (800x1280) renders without overflow', (tester) async {
@@ -563,7 +592,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(tester.takeException(), isNull);
-      expect(find.text('GRAMMAR PRO'), findsOneWidget);
+      expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
     testWidgets('dark theme applies AppColors.slate900 background', (tester) async {
@@ -611,6 +640,366 @@ void main() {
       await tester.pump();
 
       expect(tester.takeException(), isNull);
+    });
+  });
+
+  // =========================================================================
+  // GROUP 7: Daily Step & Quest Progress Persistence
+  // =========================================================================
+  group('Group 7: Daily Step & Quest Progress Persistence', () {
+    testWidgets('restores today saved step progress to resume at Part 2', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
+      });
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Part 2 should be active now
+      expect(find.text('Start Part 2'), findsOneWidget);
+      expect(find.text('Part 2 of 2'), findsOneWidget);
+    });
+
+    testWidgets('completing Part 1 saves step progress to SharedPreferences', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Tap Start Part 1
+      await tester.tap(find.text('Start Part 1'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      // Complete game
+      await tester.tap(find.byKey(const Key('complete_game_btn')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      final prefs = await SharedPreferences.getInstance();
+      final savedStep = prefs.getString('vowl_sequence_step_daily_duo_user_quest_test');
+      expect(savedStep, equals('${todayStr}_1'));
+    });
+
+    testWidgets('completing Part 1 via GameDialogHelper advances to Part 2 seamlessly', (tester) async {
+      setViewport(tester, const Size(390, 950));
+
+      final router = GoRouter(
+        initialLocation: '/sequence',
+        routes: [
+          GoRoute(
+            path: '/sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (gameCtx, state) {
+              return Scaffold(
+                body: Center(
+                  child: ElevatedButton(
+                    key: const Key('trigger_completion_btn'),
+                    onPressed: () {
+                      GameDialogHelper.showCompletion(
+                        gameCtx,
+                        xp: 15,
+                        coins: 10,
+                        gameType: 'repeatSentence',
+                        level: 1,
+                      );
+                    },
+                    child: const Text('TRIGGER COMPLETION'),
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Tap Start Part 1
+      await tester.tap(find.text('Start Part 1'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      // Trigger completion dialog
+      await tester.tap(find.byKey(const Key('trigger_completion_btn')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1500));
+
+      // The dialog is visible! Find OK / CONTINUE button on ModernGameDialog
+      final okBtn = find.text('OK');
+      expect(okBtn, findsOneWidget);
+
+      // Tap OK
+      await tester.tap(okBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1000));
+
+      // NOW: We should be back on QuestSequencePage!
+      // And Part 2 should be active!
+      expect(find.text('Start Part 2'), findsOneWidget);
+    });
+
+    testWidgets('completing Part 2 finishes sequence and shows QUEST COMPLETED! dialog', (tester) async {
+      setViewport(tester, const Size(390, 950));
+
+      final router = GoRouter(
+        initialLocation: '/sequence',
+        routes: [
+          GoRoute(
+            path: '/sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (gameCtx, state) {
+              return Scaffold(
+                body: Center(
+                  child: ElevatedButton(
+                    key: const Key('trigger_completion_btn_part2'),
+                    onPressed: () {
+                      GameDialogHelper.showCompletion(
+                        gameCtx,
+                        xp: 15,
+                        coins: 10,
+                        gameType: 'readAndAnswer',
+                        level: 1,
+                      );
+                    },
+                    child: const Text('TRIGGER PART 2 COMPLETION'),
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
+      );
+
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
+      });
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('Start Part 2'), findsOneWidget);
+
+      await tester.tap(find.text('Start Part 2'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      await tester.tap(find.byKey(const Key('trigger_completion_btn_part2')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1500));
+
+      final okBtn = find.text('OK');
+      expect(okBtn, findsOneWidget);
+      await tester.tap(okBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1000));
+
+      expect(find.text('QUEST COMPLETED!'), findsOneWidget);
+    });
+
+    testWidgets('fully completed sequence restores all steps completed today', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_daily_duo_user_quest_test': todayStr,
+      });
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('FINISH'), findsOneWidget);
+    });
+
+    testWidgets('tapping a completed part card allows replay / practice mode', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_daily_duo_user_quest_test': todayStr,
+      });
+
+      bool gamePushed = false;
+      final router = GoRouter(
+        initialLocation: '/quest-sequence',
+        routes: [
+          GoRoute(
+            path: '/quest-sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (context, state) {
+              gamePushed = true;
+              return const Scaffold(body: Text('GAME SCREEN'));
+            },
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('PRACTICE AGAIN'), findsNWidgets(2));
+
+      // Tap on the first completed step card
+      await tester.tap(find.text('Repeat Sentence'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(gamePushed, isTrue);
+      expect(find.text('GAME SCREEN'), findsOneWidget);
+    });
+
+    testWidgets('tapping bottom dock FINISH button when finished records completion and pops safely', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      // Start with no completion recorded, but steps finished
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_workout_user_quest_test': '${todayStr}_2',
+      });
+
+      final router = GoRouter(
+        initialLocation: '/home',
+        routes: [
+          GoRoute(
+            path: '/home',
+            builder: (context, state) => Scaffold(
+              body: TextButton(
+                onPressed: () => context.push('/quest-sequence'),
+                child: const Text('GO TO QUEST'),
+              ),
+            ),
+          ),
+          GoRoute(
+            path: '/quest-sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_workout',
+              quests: sampleQuests,
+            ),
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Go from Home to Quest Sequence
+      await tester.tap(find.text('GO TO QUEST'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('FINISH'), findsOneWidget);
+
+      // Tap FINISH button
+      await tester.tap(find.text('FINISH'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      final prefs = await SharedPreferences.getInstance();
+      expect(
+        prefs.getString('vowl_sequence_completed_daily_workout_user_quest_test'),
+        equals(todayStr),
+      );
+      expect(
+        prefs.getString('vowl_sequence_completed_daily_duo_user_quest_test'),
+        equals(todayStr),
+      );
+      expect(find.text('GO TO QUEST'), findsOneWidget);
     });
   });
 }

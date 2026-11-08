@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/services/daily_challenge_service.dart';
@@ -13,6 +14,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
@@ -132,7 +134,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
       // Practice mode reward dialog
       GameDialogHelper.showCompletion(
         context,
-        xp: 20,
+        xp: 0,
         coins: 0,
         title: context.tr('home.practice_complete', fallback: 'Practice Complete!'),
         description: context.tr(
@@ -160,9 +162,13 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
       ),
     );
 
+    if (di.sl.isRegistered<IncrementXp>()) {
+      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    }
+
     GameDialogHelper.showCompletion(
       context,
-      xp: 50,
+      xp: 5,
       coins: 10,
       title: context.tr(
         'home.word_mixer_master',
@@ -282,7 +288,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
 
         // ── Main Game Content ───────────────────────────────────────────────
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
               SizedBox(height: 8.h),

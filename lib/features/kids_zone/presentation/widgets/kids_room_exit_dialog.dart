@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +38,7 @@ class KidsRoomExitDialog extends StatelessWidget {
           width: 320.w,
           child:
               Container(
-                    padding: EdgeInsets.all(24.r),
+                    padding: EdgeInsets.all(AppSpacing.cardSpacious),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30.r),
