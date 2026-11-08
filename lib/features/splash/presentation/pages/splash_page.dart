@@ -166,10 +166,38 @@ class _SplashPageState extends State<SplashPage> {
                   width: 120,
                   height: 120,
                   fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) => const Icon(
-                    Icons.auto_awesome,
-                    size: 60,
-                    color: AppColors.indigo500,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    width: 90,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: const LinearGradient(
+                        colors: [AppColors.indigo500, AppColors.blue500],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.indigo500.withValues(
+                            alpha: isDark ? 0.40 : 0.25,
+                          ),
+                          blurRadius: 20,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'V',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 48,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: -1,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
