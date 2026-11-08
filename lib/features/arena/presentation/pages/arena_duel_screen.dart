@@ -1441,11 +1441,10 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 ),
                                 border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
                               ),
-                              child: Center(
-                                child: Icon(
-                                  LucideIcons.bot,
-                                  color: Colors.white,
-                                  size: 26.r,
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'assets/images/vowly_head.webp',
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             )

@@ -266,7 +266,12 @@ class ArenaResultDialog extends StatelessWidget {
                                       colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
                                     ),
                                   ),
-                                  child: Icon(LucideIcons.bot, size: 12.sp, color: Colors.white),
+                                  child: ClipOval(
+                                    child: Image.asset(
+                                      'assets/images/vowly_head.webp',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 )
                               else
                                 CircleAvatar(
