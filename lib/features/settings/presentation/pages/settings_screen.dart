@@ -1034,6 +1034,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                               isLoading: _isLoadingVal,
                                               onChanged: _toggleNotifications,
                                             ),
+                                            if (Platform.isAndroid)
+                                              SettingsTile(
+                                                title: context.tr(
+                                                  'settings.battery_optimization',
+                                                  fallback:
+                                                      'Background Delivery & Battery',
+                                                ),
+                                                subtitle: context.tr(
+                                                  'settings.battery_optimization_subtitle',
+                                                  fallback:
+                                                      'Ensure reminders arrive on Xiaomi, POCO & Samsung',
+                                                ),
+                                                icon: Icons.battery_saver_rounded,
+                                                color: AppColors.amber500,
+                                                onTap: () => SettingsDialogs
+                                                    .showBatteryOptimizationHelp(
+                                                  context,
+                                                ),
+                                              ),
                                             SettingsSwitchTile(
                                               title: context.tr(
                                                 'settings.analytics',

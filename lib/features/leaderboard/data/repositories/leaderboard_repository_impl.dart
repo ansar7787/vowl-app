@@ -56,7 +56,7 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       // ======================================================================
       final snapshot = await firestore
           .collection('users')
-          .orderBy('totalExp', descending: true)
+          .orderBy('currentWeeklyExp', descending: true)
           .limit(limit)
           .get()
           .timeout(_kNetworkTimeout);
@@ -86,21 +86,10 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         }
       }
 
-      // Seed the cache so future reads are O(1) single-document fetches.
-      // Wrapped in try-catch because clients may lack write permissions on
-      // the metadata collection in stricter Firestore security rule configs.
-      try {
-        await cacheDocRef
-            .set({
-              'lastUpdated': FieldValue.serverTimestamp(),
-              'users': usersData,
-            }, SetOptions(merge: true))
-            .timeout(_kNetworkTimeout);
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('LeaderboardRepo: Failed to seed metadata cache: $e');
-        }
-      }
+      // NOTE: Cache seeding removed — security rules block client writes to
+      // the metadata collection (allow write: if false). The Cloud Function
+      // handles cache population. The previous client-side write was dead code
+      // that always failed silently.
 
       return Right(LeaderboardResult(users: users, lastUpdated: fetchTime));
     } on TimeoutException {

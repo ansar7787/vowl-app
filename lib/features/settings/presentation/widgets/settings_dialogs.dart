@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/image_utils.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 /// All settings-related dialogs in one place.
 ///
@@ -379,6 +380,95 @@ class SettingsDialogs {
                   SizedBox(height: 12.h),
                   _SecondaryTextButton(
                     label: context.tr('common.cancel', fallback: 'CANCEL'),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(ctx),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      transitionBuilder: (_, anim1, anim2, child) =>
+          _dialogTransition(anim1, child),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Battery & Background Optimization Guide (MIUI / Redmi / POCO / Samsung)
+  // ---------------------------------------------------------------------------
+
+  static void showBatteryOptimizationHelp(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    di.sl<HapticService>().selection();
+    final width = _dialogWidth(context, 340.w);
+
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (ctx, anim1, anim2) => Center(
+        child: Material(
+          color: Colors.transparent,
+          child: _SettingsModalCard(
+            width: width,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const _DialogIcon(
+                    icon: Icons.battery_saver_rounded,
+                    color: Colors.amber,
+                  ),
+                  SizedBox(height: 20.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.battery_optimization_title',
+                      fallback: 'Notification Reliability',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                  ),
+                  SizedBox(height: 12.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.battery_optimization_body',
+                      fallback:
+                          'Xiaomi, Redmi, POCO & Samsung devices restrict background alarms to save battery, which may delay streak reminders.\n\nTo ensure alerts arrive on time:\n• Open App Info settings\n• Set Battery Saver to "No restrictions"\n• Enable "Autostart" (if available)',
+                    ),
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      height: 1.45,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                  _PrimaryButton(
+                    label: context.tr(
+                      'settings_dialogs.open_app_settings',
+                      fallback: 'Open App Settings',
+                    ),
+                    color: AppColors.violet500,
+                    onPressed: () {
+                      Navigator.pop(ctx);
+                      openAppSettings();
+                    },
+                  ),
+                  SizedBox(height: 10.h),
+                  _SecondaryTextButton(
+                    label: context.tr(
+                      'settings_dialogs.got_it',
+                      fallback: 'Got It',
+                    ),
                     isDark: isDark,
                     onPressed: () => Navigator.pop(ctx),
                   ),
