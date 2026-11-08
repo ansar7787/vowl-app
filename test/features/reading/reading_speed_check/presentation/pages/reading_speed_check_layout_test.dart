@@ -165,8 +165,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -178,12 +179,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -261,9 +264,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: ReadingSpeedCheckScreen(level: level),
-            ),
+            home: Scaffold(body: ReadingSpeedCheckScreen(level: level)),
           ),
         ),
       ),
@@ -273,26 +274,34 @@ void main() {
   }
 
   group('ReadingSpeedCheckScreen Layout & Interactions', () {
-    testWidgets('1. Initial layout renders passage, timer, pulse stop button, and instruction', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '1. Initial layout renders passage, timer, pulse stop button, and instruction',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      expect(find.byType(ReadingSpeedCheckScreen), findsOneWidget);
-      expect(find.byType(ReadingSpeedInstruction), findsOneWidget);
-      expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(find.byType(ReadingSpeedCheckScreen), findsOneWidget);
+        expect(find.byType(ReadingSpeedInstruction), findsOneWidget);
+        expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
 
-      expect(find.textContaining('Community pool: open Monday to Friday'), findsOneWidget);
-      expect(find.text('Tap Stop when finished reading'), findsOneWidget);
-      expect(find.text('Target: 90 WPM'), findsOneWidget);
-      expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.format_size_rounded), findsOneWidget);
+        expect(
+          find.textContaining('Community pool: open Monday to Friday'),
+          findsOneWidget,
+        );
+        expect(find.text('Tap Stop when finished reading'), findsOneWidget);
+        expect(find.text('Target: 90 WPM'), findsOneWidget);
+        expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.format_size_rounded), findsOneWidget);
 
-      // Question area and options are not yet revealed
-      expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
-      expect(find.byType(ReadingSpeedOption), findsNothing);
-    });
+        // Question area and options are not yet revealed
+        expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
+        expect(find.byType(ReadingSpeedOption), findsNothing);
+      },
+    );
 
-    testWidgets('2. Text size toggle enlarges passage font and toggles icon', (tester) async {
+    testWidgets('2. Text size toggle enlarges passage font and toggles icon', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester);
 
       final toggleButton = find.byIcon(Icons.format_size_rounded);
@@ -311,102 +320,131 @@ void main() {
       expect(find.byIcon(Icons.format_size_rounded), findsOneWidget);
     });
 
-    testWidgets('3. Tapping pulse stop button reveals question and option cards', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '3. Tapping pulse stop button reveals question and option cards',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      final stopButton = find.byIcon(Icons.stop_circle_rounded);
-      expect(stopButton, findsOneWidget);
+        final stopButton = find.byIcon(Icons.stop_circle_rounded);
+        expect(stopButton, findsOneWidget);
 
-      await tester.tap(stopButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(stopButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
-      expect(find.text('On which days is the pool closed?'), findsOneWidget);
-      expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
-      expect(find.text('ANSWER THE QUESTION'), findsOneWidget);
+        expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
+        expect(find.text('On which days is the pool closed?'), findsOneWidget);
+        expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
+        expect(find.text('ANSWER THE QUESTION'), findsOneWidget);
 
-      // Passage zone and timer are no longer in the tree
-      expect(find.byType(ReadingSpeedPulseZone), findsNothing);
-      expect(find.byType(SpeedChallengeTimer), findsNothing);
-    });
+        // Passage zone and timer are no longer in the tree
+        expect(find.byType(ReadingSpeedPulseZone), findsNothing);
+        expect(find.byType(SpeedChallengeTimer), findsNothing);
+      },
+    );
 
-    testWidgets('4. Timer onTimeUp auto-reveals question without manual stop tap', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '4. Timer onTimeUp auto-reveals question without manual stop tap',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
+        expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
 
-      // Advance time beyond the 25-second limit to trigger onTimeUp
-      await tester.pump(const Duration(seconds: 26));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Advance time beyond the 25-second limit to trigger onTimeUp
+        await tester.pump(const Duration(seconds: 26));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
-      expect(find.text('On which days is the pool closed?'), findsOneWidget);
-      expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
-    });
+        expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
+        expect(find.text('On which days is the pool closed?'), findsOneWidget);
+        expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
+      },
+    );
 
-    testWidgets('5. Selecting correct answer triggers success and highlights option', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '5. Selecting correct answer triggers success and highlights option',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      // Stop reading to reveal options
-      await tester.tap(find.byIcon(Icons.stop_circle_rounded));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Stop reading to reveal options
+        await tester.tap(find.byIcon(Icons.stop_circle_rounded));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final correctOption = find.widgetWithText(ReadingSpeedOption, 'Saturday and Sunday');
-      expect(correctOption, findsOneWidget);
+        final correctOption = find.widgetWithText(
+          ReadingSpeedOption,
+          'Saturday and Sunday',
+        );
+        expect(correctOption, findsOneWidget);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      expect(find.text('CONTINUE'), findsOneWidget);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        expect(find.text('CONTINUE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('6. Selecting wrong answer triggers error and displays correct styling', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '6. Selecting wrong answer triggers error and displays correct styling',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      await tester.tap(find.byIcon(Icons.stop_circle_rounded));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byIcon(Icons.stop_circle_rounded));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final wrongOption = find.widgetWithText(ReadingSpeedOption, 'Only on Sunday');
-      expect(wrongOption, findsOneWidget);
+        final wrongOption = find.widgetWithText(
+          ReadingSpeedOption,
+          'Only on Sunday',
+        );
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-      expect(find.text('TRY AGAIN'), findsOneWidget);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+        expect(find.text('TRY AGAIN'), findsOneWidget);
+      },
+    );
 
-    testWidgets('7. Answer lockout prevents double submission and option switching', (tester) async {
-      await pumpReadingSpeedCheck(tester);
+    testWidgets(
+      '7. Answer lockout prevents double submission and option switching',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester);
 
-      await tester.tap(find.byIcon(Icons.stop_circle_rounded));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byIcon(Icons.stop_circle_rounded));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final option1 = find.widgetWithText(ReadingSpeedOption, 'Saturday and Sunday');
-      final option2 = find.widgetWithText(ReadingSpeedOption, 'Friday and Saturday');
+        final option1 = find.widgetWithText(
+          ReadingSpeedOption,
+          'Saturday and Sunday',
+        );
+        final option2 = find.widgetWithText(
+          ReadingSpeedOption,
+          'Friday and Saturday',
+        );
 
-      await tester.tap(option1);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(option1);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap another option
-      await tester.tap(option2, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Tap another option
+        await tester.tap(option2, warnIfMissed: false);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Only 1 success called, no error called
-      verify(() => mockHapticService.success()).called(1);
-      verifyNever(() => mockHapticService.error());
-    });
+        // Only 1 success called, no error called
+        verify(() => mockHapticService.success()).called(1);
+        verifyNever(() => mockHapticService.error());
+      },
+    );
 
-    testWidgets('8. Initial answered state loads immediately revealed', (tester) async {
+    testWidgets('8. Initial answered state loads immediately revealed', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester, state: testAnsweredState);
 
       expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
@@ -414,38 +452,45 @@ void main() {
       expect(find.text('ANSWER THE QUESTION'), findsOneWidget);
     });
 
-    testWidgets('9. Question reset resets revealed status and clears selected index', (tester) async {
-      final stateController = StreamController<ReadingState>.broadcast();
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+    testWidgets(
+      '9. Question reset resets revealed status and clears selected index',
+      (tester) async {
+        final stateController = StreamController<ReadingState>.broadcast();
+        when(
+          () => mockReadingBloc.stream,
+        ).thenAnswer((_) => stateController.stream);
 
-      await pumpReadingSpeedCheck(tester, state: testLoadedState);
+        await pumpReadingSpeedCheck(tester, state: testLoadedState);
 
-      // Reveal options
-      await tester.tap(find.byIcon(Icons.stop_circle_rounded));
-      await tester.pump(const Duration(milliseconds: 500));
-      expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
+        // Reveal options
+        await tester.tap(find.byIcon(Icons.stop_circle_rounded));
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
 
-      // Transition to next question
-      final nextState = ReadingLoaded(
-        quests: const [testSpeedQuest, testNextSpeedQuest],
-        currentIndex: 1,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+        // Transition to next question
+        final nextState = ReadingLoaded(
+          quests: const [testSpeedQuest, testNextSpeedQuest],
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      when(() => mockReadingBloc.state).thenReturn(nextState);
-      stateController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        when(() => mockReadingBloc.state).thenReturn(nextState);
+        stateController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
-      expect(find.text('Second passage content goes here.'), findsOneWidget);
-      expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
+        expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
+        expect(find.text('Second passage content goes here.'), findsOneWidget);
+        expect(find.byType(ReadingSpeedQuestionArea), findsNothing);
 
-      await stateController.close();
-    });
+        await stateController.close();
+      },
+    );
 
-    testWidgets('10. Hint button usage dispatches ReadingHintUsed event', (tester) async {
+    testWidgets('10. Hint button usage dispatches ReadingHintUsed event', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -454,16 +499,22 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(any(that: isA<ReadingHintUsed>()))).called(1);
+      verify(
+        () => mockReadingBloc.add(any(that: isA<ReadingHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('11. Continue button dispatches NextQuestion event', (tester) async {
+    testWidgets('11. Continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester);
 
       await tester.tap(find.byIcon(Icons.stop_circle_rounded));
       await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.tap(find.widgetWithText(ReadingSpeedOption, 'Saturday and Sunday'));
+      await tester.tap(
+        find.widgetWithText(ReadingSpeedOption, 'Saturday and Sunday'),
+      );
       await tester.pump(const Duration(milliseconds: 500));
 
       final continueButton = find.text('CONTINUE');
@@ -472,37 +523,46 @@ void main() {
       await tester.tap(continueButton);
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(any(that: isA<NextQuestion>()))).called(1);
+      verify(
+        () => mockReadingBloc.add(any(that: isA<NextQuestion>())),
+      ).called(1);
     });
 
-    testWidgets('12. Shimmer loading renders when state is ReadingInitial', (tester) async {
+    testWidgets('12. Shimmer loading renders when state is ReadingInitial', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester, state: const ReadingInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(ReadingSpeedPulseZone), findsNothing);
     });
 
-    testWidgets('13. Game briefing layer displays Velocity Reader briefing and dismisses on action', (tester) async {
-      await pumpReadingSpeedCheck(tester, level: 1);
+    testWidgets(
+      '13. Game briefing layer displays Velocity Reader briefing and dismisses on action',
+      (tester) async {
+        await pumpReadingSpeedCheck(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('VELOCITY READER'), findsOneWidget);
-      final startBtn = find.text('RACE TIMER');
-      expect(startBtn, findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('VELOCITY READER'), findsOneWidget);
+        final startBtn = find.text('RACE TIMER');
+        expect(startBtn, findsOneWidget);
 
-      await tester.ensureVisible(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.ensureVisible(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.tap(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-      expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+        expect(find.byType(ReadingSpeedPulseZone), findsOneWidget);
+      },
+    );
 
-    testWidgets('14. Dark theme renders cleanly without contrast issues', (tester) async {
+    testWidgets('14. Dark theme renders cleanly without contrast issues', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(ReadingSpeedCheckScreen), findsOneWidget);
@@ -510,7 +570,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('15. Small screen (320x640) renders without layout overflow', (tester) async {
+    testWidgets('15. Small screen (320x640) renders without layout overflow', (
+      tester,
+    ) async {
       await pumpReadingSpeedCheck(tester, width: 320, height: 640);
 
       expect(find.byType(ReadingSpeedCheckScreen), findsOneWidget);

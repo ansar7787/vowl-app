@@ -93,8 +93,7 @@ void main() {
     String id = 'quest_dialogue_1',
     String? partnerDialogue =
         'Could you please help me find the nearest subway station?',
-    String instruction =
-        'Listen to your partner and choose the best response.',
+    String instruction = 'Listen to your partner and choose the best response.',
     List<String>? acceptedSynonyms = const [
       'Sure, it is just around the corner on Main Street.',
       'Certainly, follow this road straight ahead.',
@@ -232,7 +231,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/dialogue_roleplay_test.m4a');
@@ -246,9 +247,12 @@ void main() {
         isLocalUser: any(named: 'isLocalUser'),
       ),
     ).thenReturn(null);
-    when(
-      () => mockSmartReplyService.getSuggestions(),
-    ).thenAnswer((_) async => ['Sure, it is right around the corner.', 'Yes, go straight down this street.']);
+    when(() => mockSmartReplyService.getSuggestions()).thenAnswer(
+      (_) async => [
+        'Sure, it is right around the corner.',
+        'Yes, go straight down this street.',
+      ],
+    );
     when(() => mockSmartReplyService.dispose()).thenReturn(null);
 
     when(
@@ -357,14 +361,8 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQueryData(
-                size: size,
-                disableAnimations: reduceMotion,
-              ),
-              child: DialogueRoleplayScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              data: MediaQueryData(size: size, disableAnimations: reduceMotion),
+              child: DialogueRoleplayScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -416,9 +414,7 @@ void main() {
       ) async {
         await pumpDialogueRoleplayScreen(tester);
         verify(
-          () => mockSpeakingBloc.add(
-            any(that: isA<FetchSpeakingQuests>()),
-          ),
+          () => mockSpeakingBloc.add(any(that: isA<FetchSpeakingQuests>())),
         ).called(1);
       });
 
@@ -454,9 +450,7 @@ void main() {
         tester,
       ) async {
         await pumpDialogueRoleplayScreen(tester);
-        final state = tester.state<State>(
-          find.byType(DialogueRoleplayScreen),
-        );
+        final state = tester.state<State>(find.byType(DialogueRoleplayScreen));
         expect(
           (state as dynamic).getCompletionTitle(
             tester.element(find.byType(DialogueRoleplayScreen)),
@@ -502,22 +496,21 @@ void main() {
         },
       );
 
-      testWidgets(
-        '2.4 tapping ENTER SCENE button dismisses briefing overlay',
-        (tester) async {
-          SharedPreferences.setMockInitialValues({
-            'has_seen_briefing_dialogueRoleplay': false,
-          });
-          await pumpDialogueRoleplayScreen(tester, level: 1);
-          expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      testWidgets('2.4 tapping ENTER SCENE button dismisses briefing overlay', (
+        tester,
+      ) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_dialogueRoleplay': false,
+        });
+        await pumpDialogueRoleplayScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
-          await tester.tap(find.text('ENTER SCENE'));
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('ENTER SCENE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-          expect(find.byType(QuestBriefingOverlay), findsNothing);
-        },
-      );
+        expect(find.byType(QuestBriefingOverlay), findsNothing);
+      });
 
       testWidgets('2.5 does not show QuestBriefingOverlay when level is 2', (
         tester,
@@ -556,10 +549,7 @@ void main() {
         '3.3 displays Icons.record_voice_over_rounded icon in header',
         (tester) async {
           await pumpDialogueRoleplayScreen(tester);
-          expect(
-            find.byIcon(Icons.record_voice_over_rounded),
-            findsOneWidget,
-          );
+          expect(find.byIcon(Icons.record_voice_over_rounded), findsOneWidget);
         },
       );
 
@@ -633,7 +623,9 @@ void main() {
       ) async {
         await pumpDialogueRoleplayScreen(tester);
         expect(
-          find.text('Could you please help me find the nearest subway station?'),
+          find.text(
+            'Could you please help me find the nearest subway station?',
+          ),
           findsOneWidget,
         );
       });
@@ -814,9 +806,9 @@ void main() {
           );
           await tester.pump();
 
-          verify(() => mockSoundService.playTts(any())).called(
-            greaterThanOrEqualTo(1),
-          );
+          verify(
+            () => mockSoundService.playTts(any()),
+          ).called(greaterThanOrEqualTo(1));
         },
       );
 
@@ -985,20 +977,21 @@ void main() {
     // 8. Hint System (SpeakingHintUsed) (4 tests)
     // -------------------------------------------------------------------------
     group('8. Hint System (SpeakingHintUsed)', () {
-      testWidgets('8.1 tapping header hint button dispatches SpeakingHintUsed', (
-        tester,
-      ) async {
-        await pumpDialogueRoleplayScreen(tester);
-        final hintButton = find.byType(QuestHintButton);
-        expect(hintButton, findsOneWidget);
+      testWidgets(
+        '8.1 tapping header hint button dispatches SpeakingHintUsed',
+        (tester) async {
+          await pumpDialogueRoleplayScreen(tester);
+          final hintButton = find.byType(QuestHintButton);
+          expect(hintButton, findsOneWidget);
 
-        await tester.tap(hintButton);
-        await tester.pump();
+          await tester.tap(hintButton);
+          await tester.pump();
 
-        verify(
-          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(greaterThanOrEqualTo(1));
-      });
+          verify(
+            () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+          ).called(greaterThanOrEqualTo(1));
+        },
+      );
 
       testWidgets('8.2 dispatches hint when hint count is positive', (
         tester,
@@ -1018,19 +1011,12 @@ void main() {
         await tester.tap(hintButton);
         await tester.pump();
 
-        verify(
-          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(1);
+        verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(1);
       });
 
-      testWidgets('8.4 renders hint button with proper icon', (
-        tester,
-      ) async {
+      testWidgets('8.4 renders hint button with proper icon', (tester) async {
         await pumpDialogueRoleplayScreen(tester);
-        expect(
-          find.byIcon(Icons.lightbulb_rounded),
-          findsOneWidget,
-        );
+        expect(find.byIcon(Icons.lightbulb_rounded), findsOneWidget);
       });
     });
 
@@ -1176,10 +1162,7 @@ void main() {
           await tester.pump(const Duration(milliseconds: 600));
 
           verify(
-            () => mockSmartReplyService.addMessage(
-              any(),
-              isLocalUser: true,
-            ),
+            () => mockSmartReplyService.addMessage(any(), isLocalUser: true),
           ).called(1);
         },
       );
@@ -1338,54 +1321,34 @@ void main() {
     // 12. Viewport Responsiveness, Theming & Accessibility (5 tests)
     // -------------------------------------------------------------------------
     group('12. Viewport Responsiveness, Theming & Accessibility', () {
-      testWidgets(
-        '12.1 renders cleanly on compact mobile viewport (320x568)',
-        (tester) async {
-          await pumpDialogueRoleplayScreen(
-            tester,
-            size: const Size(320, 568),
-          );
-          expect(tester.takeException(), isNull);
-        },
-      );
+      testWidgets('12.1 renders cleanly on compact mobile viewport (320x568)', (
+        tester,
+      ) async {
+        await pumpDialogueRoleplayScreen(tester, size: const Size(320, 568));
+        expect(tester.takeException(), isNull);
+      });
 
       testWidgets('12.2 renders cleanly on tablet viewport (768x1024)', (
         tester,
       ) async {
-        await pumpDialogueRoleplayScreen(
-          tester,
-          size: const Size(768, 1024),
-        );
+        await pumpDialogueRoleplayScreen(tester, size: const Size(768, 1024));
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('12.3 renders cleanly in Light Theme mode', (
-        tester,
-      ) async {
-        await pumpDialogueRoleplayScreen(
-          tester,
-          themeMode: ThemeMode.light,
-        );
+      testWidgets('12.3 renders cleanly in Light Theme mode', (tester) async {
+        await pumpDialogueRoleplayScreen(tester, themeMode: ThemeMode.light);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('12.4 renders cleanly in Dark Theme mode', (
-        tester,
-      ) async {
-        await pumpDialogueRoleplayScreen(
-          tester,
-          themeMode: ThemeMode.dark,
-        );
+      testWidgets('12.4 renders cleanly in Dark Theme mode', (tester) async {
+        await pumpDialogueRoleplayScreen(tester, themeMode: ThemeMode.dark);
         expect(tester.takeException(), isNull);
       });
 
       testWidgets(
         '12.5 suppresses animations and repeating timers when reduceMotion is active',
         (tester) async {
-          await pumpDialogueRoleplayScreen(
-            tester,
-            reduceMotion: true,
-          );
+          await pumpDialogueRoleplayScreen(tester, reduceMotion: true);
           expect(tester.takeException(), isNull);
         },
       );

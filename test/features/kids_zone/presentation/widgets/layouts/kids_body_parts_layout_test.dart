@@ -81,7 +81,8 @@ void main() {
     emoji: '🎵',
     explanation:
         'Your ears catch the music, your brain reacts to it, and the brain sends a signal.',
-    funFact: 'About half of all people say they sometimes get chills from music.',
+    funFact:
+        'About half of all people say they sometimes get chills from music.',
   );
 
   const testLoadedStateShort = KidsLoaded(
@@ -116,8 +117,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedStateShort);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -129,14 +131,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -144,23 +149,31 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
@@ -222,8 +235,9 @@ void main() {
   }
 
   group('KidsBodyPartsLayout - Component Rendering', () {
-    testWidgets('renders X-Ray scanner lightbox with riddle and audio button',
-        (tester) async {
+    testWidgets('renders X-Ray scanner lightbox with riddle and audio button', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester);
 
       expect(find.text('X-RAY SCANNER'), findsOneWidget);
@@ -238,8 +252,9 @@ void main() {
       );
     });
 
-    testWidgets('renders 3 pill band-aid options for short body parts',
-        (tester) async {
+    testWidgets('renders 3 pill band-aid options for short body parts', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester);
 
       expect(find.text('Eyes 👀'), findsOneWidget);
@@ -247,8 +262,9 @@ void main() {
       expect(find.text('Hair 🦱'), findsOneWidget);
     });
 
-    testWidgets('renders wide bandage strips when options are sensory chains',
-        (tester) async {
+    testWidgets('renders wide bandage strips when options are sensory chains', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester, state: testLoadedStateLong);
 
       expect(find.text('Ears → brain → skin 🎵'), findsOneWidget);
@@ -259,63 +275,71 @@ void main() {
 
   group('KidsBodyPartsLayout - Interaction & Submission', () {
     testWidgets(
-        'tap on correct band-aid submits SubmitKidsAnswer(true) and speaks part',
-        (tester) async {
-      await pumpBodyPartsLayout(tester);
+      'tap on correct band-aid submits SubmitKidsAnswer(true) and speaks part',
+      (tester) async {
+        await pumpBodyPartsLayout(tester);
 
-      final correctOption = find.text('Eyes 👀');
-      expect(correctOption, findsOneWidget);
-      await tester.ensureVisible(correctOption);
+        final correctOption = find.text('Eyes 👀');
+        expect(correctOption, findsOneWidget);
+        await tester.ensureVisible(correctOption);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockTTSService.speak('Eyes', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(() => mockTTSService.speak('Eyes', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
     testWidgets(
-        'tap on incorrect band-aid submits SubmitKidsAnswer(false) and triggers error haptic',
-        (tester) async {
+      'tap on incorrect band-aid submits SubmitKidsAnswer(false) and triggers error haptic',
+      (tester) async {
+        await pumpBodyPartsLayout(tester);
+
+        final wrongOption = find.text('Hair 🦱');
+        expect(wrongOption, findsOneWidget);
+        await tester.ensureVisible(wrongOption);
+
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+        verify(() => mockTTSService.speak('Hair', force: true)).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      'tapping speaker icon on band-aid pronounces part without submitting',
+      (tester) async {
+        await pumpBodyPartsLayout(tester);
+
+        final hearButton = find.byKey(
+          const ValueKey('speaker_bandaid_Eyes 👀'),
+        );
+        expect(hearButton, findsOneWidget);
+        await tester.ensureVisible(hearButton);
+
+        await tester.tap(hearButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        verify(() => mockTTSService.speak('Eyes', force: true)).called(1);
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
+
+    testWidgets('tapping audio replay button in lightbox invokes TTS', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester);
 
-      final wrongOption = find.text('Hair 🦱');
-      expect(wrongOption, findsOneWidget);
-      await tester.ensureVisible(wrongOption);
-
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-      verify(() => mockTTSService.speak('Hair', force: true)).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('tapping speaker icon on band-aid pronounces part without submitting',
-        (tester) async {
-      await pumpBodyPartsLayout(tester);
-
-      final hearButton = find.byKey(const ValueKey('speaker_bandaid_Eyes 👀'));
-      expect(hearButton, findsOneWidget);
-      await tester.ensureVisible(hearButton);
-
-      await tester.tap(hearButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockTTSService.speak('Eyes', force: true)).called(1);
-      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-    });
-
-    testWidgets('tapping audio replay button in lightbox invokes TTS',
-        (tester) async {
-      await pumpBodyPartsLayout(tester);
-
-      final replayButton =
-          find.byKey(const ValueKey('body_parts_audio_replay_btn'));
+      final replayButton = find.byKey(
+        const ValueKey('body_parts_audio_replay_btn'),
+      );
       expect(replayButton, findsOneWidget);
       await tester.ensureVisible(replayButton);
 
@@ -327,8 +351,9 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('drag-and-drop band-aid to X-Ray lightbox submits answer',
-        (tester) async {
+    testWidgets('drag-and-drop band-aid to X-Ray lightbox submits answer', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester);
 
       final eyesFinder = find.text('Eyes 👀');
@@ -355,49 +380,53 @@ void main() {
 
   group('KidsBodyPartsLayout - Feedback & Lifeline Scaffolding', () {
     testWidgets(
-        'displays celebratory reveal with emoji and answer when answered correctly',
-        (tester) async {
-      const correctState = KidsLoaded(
-        quests: [testQuestShort],
-        originalTotalQuests: 1,
-        gameType: 'body_parts',
-        level: 2,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+      'displays celebratory reveal with emoji and answer when answered correctly',
+      (tester) async {
+        const correctState = KidsLoaded(
+          quests: [testQuestShort],
+          originalTotalQuests: 1,
+          gameType: 'body_parts',
+          level: 2,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpBodyPartsLayout(tester, state: correctState);
+        await pumpBodyPartsLayout(tester, state: correctState);
 
-      expect(find.text('👀'), findsWidgets);
-      expect(find.text('Eyes 👀'), findsWidgets);
-      expect(find.byIcon(Icons.check_circle_rounded), findsWidgets);
-    });
+        expect(find.text('👀'), findsWidgets);
+        expect(find.text('Eyes 👀'), findsWidgets);
+        expect(find.byIcon(Icons.check_circle_rounded), findsWidgets);
+      },
+    );
 
-    testWidgets('hint lifeline dims distractor band-aid when hintUsed is true',
-        (tester) async {
-      const hintState = KidsLoaded(
-        quests: [testQuestShort],
-        originalTotalQuests: 1,
-        gameType: 'body_parts',
-        level: 2,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: true,
-      );
+    testWidgets(
+      'hint lifeline dims distractor band-aid when hintUsed is true',
+      (tester) async {
+        const hintState = KidsLoaded(
+          quests: [testQuestShort],
+          originalTotalQuests: 1,
+          gameType: 'body_parts',
+          level: 2,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: true,
+        );
 
-      await pumpBodyPartsLayout(tester, state: hintState);
+        await pumpBodyPartsLayout(tester, state: hintState);
 
-      final opacities = tester.widgetList<Opacity>(find.byType(Opacity));
-      final hasDimmedDistractor = opacities.any((o) => o.opacity == 0.35);
-      expect(hasDimmedDistractor, isTrue);
-    });
+        final opacities = tester.widgetList<Opacity>(find.byType(Opacity));
+        final hasDimmedDistractor = opacities.any((o) => o.opacity == 0.35);
+        expect(hasDimmedDistractor, isTrue);
+      },
+    );
   });
 
   group('KidsBodyPartsLayout - Responsive Layout Safety', () {
-    testWidgets('renders cleanly without overflow on narrow 320dp screen',
-        (tester) async {
+    testWidgets('renders cleanly without overflow on narrow 320dp screen', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester, width: 320, height: 600);
 
       expect(find.text('X-RAY SCANNER'), findsOneWidget);
@@ -405,8 +434,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders cleanly without overflow on tablet 600dp screen',
-        (tester) async {
+    testWidgets('renders cleanly without overflow on tablet 600dp screen', (
+      tester,
+    ) async {
       await pumpBodyPartsLayout(tester, width: 600, height: 960);
 
       expect(find.text('X-RAY SCANNER'), findsOneWidget);
@@ -415,4 +445,3 @@ void main() {
     });
   });
 }
-

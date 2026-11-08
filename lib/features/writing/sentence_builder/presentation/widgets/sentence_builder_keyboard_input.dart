@@ -66,7 +66,9 @@ class _SentenceBuilderKeyboardInputState
         boxShadow: [
           BoxShadow(
             color: widget.color.withValues(
-              alpha: widget.isDark ? (isFocused ? 0.15 : 0.05) : (isFocused ? 0.12 : 0.05),
+              alpha: widget.isDark
+                  ? (isFocused ? 0.15 : 0.05)
+                  : (isFocused ? 0.12 : 0.05),
             ),
             blurRadius: isFocused ? 16 : 10,
             offset: const Offset(0, 4),

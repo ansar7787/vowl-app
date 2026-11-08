@@ -111,7 +111,8 @@ void main() {
 
   EliteMasteryQuest createSampleQuest({
     String id = 'quest_as_1',
-    String instruction = 'Listen closely and shadow the phrase with native rhythm.',
+    String instruction =
+        'Listen closely and shadow the phrase with native rhythm.',
     int difficulty = 1,
     String text = 'Water flows gently through the river valley.',
     String? textToSpeak,
@@ -249,7 +250,9 @@ void main() {
     // Audio Recorder
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/mock/audio.m4a');
@@ -285,8 +288,12 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics & Ads
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -300,9 +307,9 @@ void main() {
     });
 
     // Theme mock
-    when(
-      () => mockThemeCubit.state,
-    ).thenReturn(const ThemeState(themeMode: ThemeMode.dark, isMidnight: false));
+    when(() => mockThemeCubit.state).thenReturn(
+      const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
+    );
     when(
       () => mockThemeCubit.stream,
     ).thenAnswer((_) => const Stream<ThemeState>.empty());
@@ -319,13 +326,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -432,70 +441,71 @@ void main() {
   // GROUP 1: Initial Rendering & Layout Hierarchy
   // ═══════════════════════════════════════════════════════════════════════════
   group('AccentShadowingScreen - 1. Initial Rendering & Layout Hierarchy', () {
-    testWidgets('renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(EliteBaseLayout), findsOneWidget);
-      expect(find.byType(EliteGameHeader), findsOneWidget);
-      expect(
-        find.byKey(const Key('accent_shadowing_scroll_view')),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('accent_shadowing_instruction_banner')),
-        findsOneWidget,
-      );
-      expect(
-        find.text(sampleQuestModeA.instruction),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(
+          find.byKey(const Key('accent_shadowing_scroll_view')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('accent_shadowing_instruction_banner')),
+          findsOneWidget,
+        );
+        expect(find.text(sampleQuestModeA.instruction), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders AccentShadowingTargetPanel with target words and listen button', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders AccentShadowingTargetPanel with target words and listen button',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      expect(
-        find.byKey(const Key('accent_shadowing_listen_button')),
-        findsOneWidget,
-      );
-      expect(find.text('Water'), findsOneWidget);
-      expect(find.text('flows'), findsOneWidget);
-      expect(find.text('gently'), findsOneWidget);
-    });
+        expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+        expect(
+          find.byKey(const Key('accent_shadowing_listen_button')),
+          findsOneWidget,
+        );
+        expect(find.text('Water'), findsOneWidget);
+        expect(find.text('flows'), findsOneWidget);
+        expect(find.text('gently'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders AccentShadowingOptionsPanel in Mode A when options exist', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders AccentShadowingOptionsPanel in Mode A when options exist',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
-      expect(find.text('water'), findsOneWidget);
-      expect(find.text('wa·ter'), findsOneWidget);
-      expect(find.text('vah-ter'), findsOneWidget);
-    });
+        expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
+        expect(find.text('water'), findsOneWidget);
+        expect(find.text('wa·ter'), findsOneWidget);
+        expect(find.text('vah-ter'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders AccentSelfEvaluationPanel in Mode B when options are null/empty', (
-      tester,
-    ) async {
-      final stateModeB = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeB],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+    testWidgets(
+      'renders AccentSelfEvaluationPanel in Mode B when options are null/empty',
+      (tester) async {
+        final stateModeB = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [sampleQuestModeB],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      await pumpScreen(tester, state: stateModeB);
+        await pumpScreen(tester, state: stateModeB);
 
-      expect(find.byType(AccentShadowingOptionsPanel), findsNothing);
-      expect(find.byType(AccentSelfEvaluationPanel), findsOneWidget);
-      expect(find.text('YOUR TURN TO SPEAK'), findsOneWidget);
-    });
+        expect(find.byType(AccentShadowingOptionsPanel), findsNothing);
+        expect(find.byType(AccentSelfEvaluationPanel), findsOneWidget);
+        expect(find.text('YOUR TURN TO SPEAK'), findsOneWidget);
+      },
+    );
 
     testWidgets('renders ShimmerLoading when EliteMasteryLoading is active', (
       tester,
@@ -510,592 +520,611 @@ void main() {
       expect(find.byType(AccentShadowingOptionsPanel), findsNothing);
     });
 
-    testWidgets('renders GameErrorView on EliteMasteryError and retries on tap', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        state: const EliteMasteryError('Network failure occurred'),
-      );
+    testWidgets(
+      'renders GameErrorView on EliteMasteryError and retries on tap',
+      (tester) async {
+        await pumpScreen(
+          tester,
+          state: const EliteMasteryError('Network failure occurred'),
+        );
 
-      expect(find.byType(GameErrorView), findsOneWidget);
+        expect(find.byType(GameErrorView), findsOneWidget);
 
-      final retryBtn = find.text('TRY AGAIN');
-      if (retryBtn.evaluate().isNotEmpty) {
-        await tester.tap(retryBtn);
-        await tester.pump();
-        verify(
-          () => mockEliteBloc.add(
-            const FetchEliteMasteryQuests(
-              gameType: GameSubtype.accentShadowing,
-              level: 2,
+        final retryBtn = find.text('TRY AGAIN');
+        if (retryBtn.evaluate().isNotEmpty) {
+          await tester.tap(retryBtn);
+          await tester.pump();
+          verify(
+            () => mockEliteBloc.add(
+              const FetchEliteMasteryQuests(
+                gameType: GameSubtype.accentShadowing,
+                level: 2,
+              ),
             ),
-          ),
-        ).called(greaterThanOrEqualTo(1));
-      }
-    });
+          ).called(greaterThanOrEqualTo(1));
+        }
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 2: Audio & Pronunciation TTS Interactions
   // ═══════════════════════════════════════════════════════════════════════════
-  group('AccentShadowingScreen - 2. Audio & Pronunciation TTS Interactions', () {
-    testWidgets('tapping listen button plays TTS with default 0.4 speed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+  group(
+    'AccentShadowingScreen - 2. Audio & Pronunciation TTS Interactions',
+    () {
+      testWidgets('tapping listen button plays TTS with default 0.4 speed', (
+        tester,
+      ) async {
+        await pumpScreen(tester);
 
-      final listenButton = find.byKey(
-        const Key('accent_shadowing_listen_button'),
+        final listenButton = find.byKey(
+          const Key('accent_shadowing_listen_button'),
+        );
+        expect(listenButton, findsOneWidget);
+
+        await tester.tap(listenButton);
+        await tester.pump();
+
+        verify(
+          () => mockSoundService.playTts(sampleQuestModeA.text!, speed: 0.4),
+        ).called(1);
+      });
+
+      testWidgets('tapping listen button respects custom speedMultiplier', (
+        tester,
+      ) async {
+        final fastQuest = createSampleQuest(
+          id: 'quest_as_fast',
+          speedMultiplier: 0.75,
+          text: 'Fast native speech drill.',
+        );
+        final customSpeedState = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [fastQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
+
+        await pumpScreen(tester, state: customSpeedState);
+
+        await tester.tap(
+          find.byKey(const Key('accent_shadowing_listen_button')),
+        );
+        await tester.pump();
+
+        verify(
+          () => mockSoundService.playTts(
+            'Fast native speech drill.',
+            speed: 0.75,
+          ),
+        ).called(1);
+      });
+
+      testWidgets(
+        'falls back gracefully when quest text and textToSpeak are empty',
+        (tester) async {
+          final stateFallback = EliteMasteryLoaded(
+            gameType: GameSubtype.accentShadowing,
+            level: 2,
+            quests: [sampleFallbackTextQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+          );
+
+          await pumpScreen(tester, state: stateFallback);
+
+          expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+          final panel = tester.widget<AccentShadowingTargetPanel>(
+            find.byType(AccentShadowingTargetPanel),
+          );
+          expect(panel.text, 'Listen and repeat the phrase.');
+          expect(find.text('Listen'), findsOneWidget);
+          expect(find.text('repeat'), findsOneWidget);
+        },
       );
-      expect(listenButton, findsOneWidget);
-
-      await tester.tap(listenButton);
-      await tester.pump();
-
-      verify(
-        () => mockSoundService.playTts(
-          sampleQuestModeA.text!,
-          speed: 0.4,
-        ),
-      ).called(1);
-    });
-
-    testWidgets('tapping listen button respects custom speedMultiplier', (
-      tester,
-    ) async {
-      final fastQuest = createSampleQuest(
-        id: 'quest_as_fast',
-        speedMultiplier: 0.75,
-        text: 'Fast native speech drill.',
-      );
-      final customSpeedState = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [fastQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
-
-      await pumpScreen(tester, state: customSpeedState);
-
-      await tester.tap(find.byKey(const Key('accent_shadowing_listen_button')));
-      await tester.pump();
-
-      verify(
-        () => mockSoundService.playTts('Fast native speech drill.', speed: 0.75),
-      ).called(1);
-    });
-
-    testWidgets('falls back gracefully when quest text and textToSpeak are empty', (
-      tester,
-    ) async {
-      final stateFallback = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleFallbackTextQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
-
-      await pumpScreen(tester, state: stateFallback);
-
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      final panel = tester.widget<AccentShadowingTargetPanel>(
-        find.byType(AccentShadowingTargetPanel),
-      );
-      expect(panel.text, 'Listen and repeat the phrase.');
-      expect(find.text('Listen'), findsOneWidget);
-      expect(find.text('repeat'), findsOneWidget);
-    });
-  });
+    },
+  );
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 3: Mode A Option Selection & Stage 2 Transition
   // ═══════════════════════════════════════════════════════════════════════════
-  group('AccentShadowingScreen - 3. Mode A Option Selection & Stage 2 Transition', () {
-    testWidgets('tapping wrong option marks it wrong and dispatches SubmitEliteAnswer(false)', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+  group(
+    'AccentShadowingScreen - 3. Mode A Option Selection & Stage 2 Transition',
+    () {
+      testWidgets(
+        'tapping wrong option marks it wrong and dispatches SubmitEliteAnswer(false)',
+        (tester) async {
+          await pumpScreen(tester);
 
-      // 'vah-ter' is incorrect (correctAnswerIndex is 0 -> 'water')
-      final wrongOption = find.text('vah-ter');
-      expect(wrongOption, findsOneWidget);
+          // 'vah-ter' is incorrect (correctAnswerIndex is 0 -> 'water')
+          final wrongOption = find.text('vah-ter');
+          expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+          await tester.tap(wrongOption);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 350));
+          await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(false))).called(1);
+          verify(() => mockHapticService.error()).called(1);
+          verify(() => mockSoundService.playWrong()).called(1);
+          verify(
+            () => mockEliteBloc.add(const SubmitEliteAnswer(false)),
+          ).called(1);
 
-      // Stage 2 overlay is NOT shown on wrong answer
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
-
-    testWidgets('tapping correct option triggers stage 2, revealing insights and SpeakToConfirmOverlay', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      // 'water' is correct answer (index 0)
-      final correctOption = find.text('water');
-      expect(correctOption, findsOneWidget);
-
-      await tester.tap(correctOption);
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playClick()).called(1);
-
-      // Stage 2 insights and speaking overlay are now visible!
-      expect(
-        find.byKey(const Key('accent_shadowing_insights_panel')),
-        findsOneWidget,
+          // Stage 2 overlay is NOT shown on wrong answer
+          expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+        },
       );
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('SPEAK TO SHADOW'), findsOneWidget);
-    });
 
-    testWidgets('insights panel renders all detailed pedagogical annotations', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+      testWidgets(
+        'tapping correct option triggers stage 2, revealing insights and SpeakToConfirmOverlay',
+        (tester) async {
+          await pumpScreen(tester);
 
-      await tester.tap(find.text('water'));
-      await tester.pumpAndSettle();
+          // 'water' is correct answer (index 0)
+          final correctOption = find.text('water');
+          expect(correctOption, findsOneWidget);
 
-      final insightsFinder = find.byKey(
-        const Key('accent_shadowing_insights_panel'),
+          await tester.tap(correctOption);
+          await tester.pumpAndSettle();
+
+          verify(() => mockHapticService.selection()).called(1);
+          verify(() => mockSoundService.playClick()).called(1);
+
+          // Stage 2 insights and speaking overlay are now visible!
+          expect(
+            find.byKey(const Key('accent_shadowing_insights_panel')),
+            findsOneWidget,
+          );
+          expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+          expect(find.text('SPEAK TO SHADOW'), findsOneWidget);
+        },
       );
-      await tester.scrollUntilVisible(insightsFinder, 200);
 
-      expect(find.text('Pronunciation Notes'), findsOneWidget);
-      expect(find.text('Target Sound'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.targetAccent!), findsOneWidget);
-      expect(find.text('Sound Pattern'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.shadowingFocus!), findsOneWidget);
-      expect(find.text('Everyday Context'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.usageContext!), findsOneWidget);
-      expect(find.text('Spelling Note'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.spellingRule!), findsOneWidget);
-      expect(find.text('Speech Flow'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.sequenceLogic!), findsOneWidget);
-      expect(find.text('Explanation'), findsOneWidget);
-      expect(find.text(sampleQuestModeA.explanation!), findsOneWidget);
-    });
-  });
+      testWidgets(
+        'insights panel renders all detailed pedagogical annotations',
+        (tester) async {
+          await pumpScreen(tester);
+
+          await tester.tap(find.text('water'));
+          await tester.pumpAndSettle();
+
+          final insightsFinder = find.byKey(
+            const Key('accent_shadowing_insights_panel'),
+          );
+          await tester.scrollUntilVisible(insightsFinder, 200);
+
+          expect(find.text('Pronunciation Notes'), findsOneWidget);
+          expect(find.text('Target Sound'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.targetAccent!), findsOneWidget);
+          expect(find.text('Sound Pattern'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.shadowingFocus!), findsOneWidget);
+          expect(find.text('Everyday Context'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.usageContext!), findsOneWidget);
+          expect(find.text('Spelling Note'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.spellingRule!), findsOneWidget);
+          expect(find.text('Speech Flow'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.sequenceLogic!), findsOneWidget);
+          expect(find.text('Explanation'), findsOneWidget);
+          expect(find.text(sampleQuestModeA.explanation!), findsOneWidget);
+        },
+      );
+    },
+  );
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 4: Confirmation, Skip & Self-Evaluation (Stage 2 & Mode B)
   // ═══════════════════════════════════════════════════════════════════════════
   group('AccentShadowingScreen - 4. Confirmation, Skip & Self-Evaluation', () {
-    testWidgets('Stage 2: confirming via GameSkipBypassButton completes verbal evaluation', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: confirming via GameSkipBypassButton completes verbal evaluation',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // 1. Pass Stage 1
-      await tester.tap(find.text('water'));
-      await tester.pumpAndSettle();
+        // 1. Pass Stage 1
+        await tester.tap(find.text('water'));
+        await tester.pumpAndSettle();
 
-      // 2. Locate Stage 2 SpeakToConfirmOverlay & GameSkipBypassButton
-      final bypassButton = find.byType(GameSkipBypassButton);
-      await tester.scrollUntilVisible(bypassButton, 200);
-      expect(bypassButton, findsOneWidget);
+        // 2. Locate Stage 2 SpeakToConfirmOverlay & GameSkipBypassButton
+        final bypassButton = find.byType(GameSkipBypassButton);
+        await tester.scrollUntilVisible(bypassButton, 200);
+        expect(bypassButton, findsOneWidget);
 
-      // Tap SKIP (premium user bypasses directly to confirmed)
-      await tester.tap(find.text('SKIP'));
-      await tester.pumpAndSettle();
+        // Tap SKIP (premium user bypasses directly to confirmed)
+        await tester.tap(find.text('SKIP'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Stage 2: record speech and tap Nailed It submits correct verbal evaluation', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: record speech and tap Nailed It submits correct verbal evaluation',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // 1. Pass Stage 1
-      await tester.tap(find.text('water'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        // 1. Pass Stage 1
+        await tester.tap(find.text('water'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      await tester.drag(
-        find.byKey(const Key('accent_shadowing_scroll_view')),
-        const Offset(0, -400),
-      );
-      await tester.pumpAndSettle();
+        await tester.drag(
+          find.byKey(const Key('accent_shadowing_scroll_view')),
+          const Offset(0, -400),
+        );
+        await tester.pumpAndSettle();
 
-      // 2. Switch to manual evaluation and start recording
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      expect(manualEvalBtn, findsOneWidget);
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // 2. Switch to manual evaluation and start recording
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        expect(manualEvalBtn, findsOneWidget);
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micButton, findsOneWidget);
-      await tester.tap(micButton);
-      await tester.pump();
-      verify(() => mockAudioRecorder.startRecording()).called(1);
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micButton, findsOneWidget);
+        await tester.tap(micButton);
+        await tester.pump();
+        verify(() => mockAudioRecorder.startRecording()).called(1);
 
-      // 3. Stop recording
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
-      verify(() => mockAudioRecorder.stopRecording()).called(1);
+        // 3. Stop recording
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
+        verify(() => mockAudioRecorder.stopRecording()).called(1);
 
-      // 4. Tap "Nailed It"
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pumpAndSettle();
+        // 4. Tap "Nailed It"
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Stage 2: record speech and tap Needs Work submits wrong verbal evaluation', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: record speech and tap Needs Work submits wrong verbal evaluation',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // 1. Pass Stage 1
-      await tester.tap(find.text('water'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        // 1. Pass Stage 1
+        await tester.tap(find.text('water'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      await tester.drag(
-        find.byKey(const Key('accent_shadowing_scroll_view')),
-        const Offset(0, -400),
-      );
-      await tester.pumpAndSettle();
+        await tester.drag(
+          find.byKey(const Key('accent_shadowing_scroll_view')),
+          const Offset(0, -400),
+        );
+        await tester.pumpAndSettle();
 
-      // 2. Switch to manual evaluation and start recording
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      expect(manualEvalBtn, findsOneWidget);
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // 2. Switch to manual evaluation and start recording
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        expect(manualEvalBtn, findsOneWidget);
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micButton, findsOneWidget);
-      await tester.tap(micButton);
-      await tester.pump();
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micButton, findsOneWidget);
+        await tester.tap(micButton);
+        await tester.pump();
 
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
 
-      // 3. Tap "Needs Work"
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pumpAndSettle();
+        // 3. Tap "Needs Work"
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(false)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Mode B: AccentSelfEvaluationPanel Nailed It flow dispatches correct answer', (
-      tester,
-    ) async {
-      final stateModeB = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeB],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
-      await pumpScreen(tester, state: stateModeB);
+    testWidgets(
+      'Mode B: AccentSelfEvaluationPanel Nailed It flow dispatches correct answer',
+      (tester) async {
+        final stateModeB = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [sampleQuestModeB],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
+        await pumpScreen(tester, state: stateModeB);
 
-      // Scroll down to AccentSelfEvaluationPanel
-      await tester.drag(
-        find.byKey(const Key('accent_shadowing_scroll_view')),
-        const Offset(0, -350),
-      );
-      await tester.pumpAndSettle();
+        // Scroll down to AccentSelfEvaluationPanel
+        await tester.drag(
+          find.byKey(const Key('accent_shadowing_scroll_view')),
+          const Offset(0, -350),
+        );
+        await tester.pumpAndSettle();
 
-      // Switch to manual evaluation and record
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      expect(manualEvalBtn, findsOneWidget);
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // Switch to manual evaluation and record
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        expect(manualEvalBtn, findsOneWidget);
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micButton, findsOneWidget);
-      await tester.tap(micButton);
-      await tester.pump();
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micButton, findsOneWidget);
+        await tester.tap(micButton);
+        await tester.pump();
 
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
 
-      // Tap "Nailed It"
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pumpAndSettle();
+        // Tap "Nailed It"
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Mode B: AccentSelfEvaluationPanel Needs Work flow dispatches wrong answer', (
-      tester,
-    ) async {
-      final stateModeB = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeB],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
-      await pumpScreen(tester, state: stateModeB);
+    testWidgets(
+      'Mode B: AccentSelfEvaluationPanel Needs Work flow dispatches wrong answer',
+      (tester) async {
+        final stateModeB = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [sampleQuestModeB],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
+        await pumpScreen(tester, state: stateModeB);
 
-      // Scroll down to AccentSelfEvaluationPanel
-      await tester.drag(
-        find.byKey(const Key('accent_shadowing_scroll_view')),
-        const Offset(0, -350),
-      );
-      await tester.pumpAndSettle();
+        // Scroll down to AccentSelfEvaluationPanel
+        await tester.drag(
+          find.byKey(const Key('accent_shadowing_scroll_view')),
+          const Offset(0, -350),
+        );
+        await tester.pumpAndSettle();
 
-      // Switch to manual evaluation and record
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      expect(manualEvalBtn, findsOneWidget);
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // Switch to manual evaluation and record
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        expect(manualEvalBtn, findsOneWidget);
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micButton, findsOneWidget);
-      await tester.tap(micButton);
-      await tester.pump();
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micButton, findsOneWidget);
+        await tester.tap(micButton);
+        await tester.pump();
 
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
 
-      // Tap "Needs Work"
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pumpAndSettle();
+        // Tap "Needs Work"
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(false)),
+        ).called(1);
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 5: Game Lifecycle, Hints & State Transitions
   // ═══════════════════════════════════════════════════════════════════════════
-  group('AccentShadowingScreen - 5. Game Lifecycle, Hints & State Transitions', () {
-    testWidgets('tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+  group(
+    'AccentShadowingScreen - 5. Game Lifecycle, Hints & State Transitions',
+    () {
+      testWidgets(
+        'tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint',
+        (tester) async {
+          await pumpScreen(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+          final hintButton = find.byType(QuestHintButton);
+          expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
+          await tester.tap(hintButton);
+          await tester.pump();
 
-      verify(() => mockEliteBloc.add(const MarkEliteHintUsed())).called(1);
-      verify(() => mockEliteBloc.add(const ShowEliteHint())).called(1);
-    });
-
-    testWidgets('displays EliteHintCard when isHintVisible is true', (
-      tester,
-    ) async {
-      final hintVisibleState = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeA],
-        currentIndex: 0,
-        livesRemaining: 3,
-        isHintVisible: true,
-        isHintUsed: true,
+          verify(() => mockEliteBloc.add(const MarkEliteHintUsed())).called(1);
+          verify(() => mockEliteBloc.add(const ShowEliteHint())).called(1);
+        },
       );
 
-      await pumpScreen(tester, state: hintVisibleState);
+      testWidgets('displays EliteHintCard when isHintVisible is true', (
+        tester,
+      ) async {
+        final hintVisibleState = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [sampleQuestModeA],
+          currentIndex: 0,
+          livesRemaining: 3,
+          isHintVisible: true,
+          isHintUsed: true,
+        );
 
-      expect(find.byType(EliteHintCard), findsOneWidget);
-      expect(
-        find.text(sampleQuestModeA.hint!),
-        findsOneWidget,
-      );
-    });
+        await pumpScreen(tester, state: hintVisibleState);
 
-    testWidgets('GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
-      tester,
-    ) async {
-      final answeredState = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeA, sampleQuestModeB],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+        expect(find.byType(EliteHintCard), findsOneWidget);
+        expect(find.text(sampleQuestModeA.hint!), findsOneWidget);
+      });
 
-      await pumpScreen(tester, state: answeredState);
+      testWidgets(
+        'GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion',
+        (tester) async {
+          final answeredState = EliteMasteryLoaded(
+            gameType: GameSubtype.accentShadowing,
+            level: 2,
+            quests: [sampleQuestModeA, sampleQuestModeB],
+            currentIndex: 0,
+            livesRemaining: 3,
+            answerStatus: AnswerStatus.correct,
+          );
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
+          await pumpScreen(tester, state: answeredState);
 
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
+          expect(find.byType(GameFeedbackCard), findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pumpAndSettle();
+          final continueButton = find.text('CONTINUE');
+          expect(continueButton, findsOneWidget);
 
-      verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
-    });
+          await tester.tap(continueButton);
+          await tester.pumpAndSettle();
 
-    testWidgets('EliteMasteryGameComplete triggers game completion dialog', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      // Emit game complete event
-      eliteStreamController.add(
-        const EliteMasteryGameComplete(
-          xpEarned: 5,
-          coinsEarned: 10,
-          questCount: 3,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-
-      // Clean up dialog
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(seconds: 4));
-    });
-
-    testWidgets('EliteMasteryGameOver renders dimmed view with zero lives', (
-      tester,
-    ) async {
-      final gameOverState = EliteMasteryGameOver(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: [sampleQuestModeA],
-        currentIndex: 0,
+          verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
+        },
       );
 
-      await pumpScreen(tester, state: gameOverState);
+      testWidgets('EliteMasteryGameComplete triggers game completion dialog', (
+        tester,
+      ) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(AbsorbPointer), findsWidgets);
-    });
+        // Emit game complete event
+        eliteStreamController.add(
+          const EliteMasteryGameComplete(
+            xpEarned: 5,
+            coinsEarned: 10,
+            questCount: 3,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-    testWidgets('gracefully handles empty quests list without throwing', (
-      tester,
-    ) async {
-      final emptyQuestsState = EliteMasteryLoaded(
-        gameType: GameSubtype.accentShadowing,
-        level: 2,
-        quests: const [],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      await pumpScreen(tester, state: emptyQuestsState);
+        // Clean up dialog
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(seconds: 4));
+      });
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AccentShadowingScreen), findsOneWidget);
-    });
-  });
+      testWidgets('EliteMasteryGameOver renders dimmed view with zero lives', (
+        tester,
+      ) async {
+        final gameOverState = EliteMasteryGameOver(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: [sampleQuestModeA],
+          currentIndex: 0,
+        );
+
+        await pumpScreen(tester, state: gameOverState);
+
+        expect(find.byType(AbsorbPointer), findsWidgets);
+      });
+
+      testWidgets('gracefully handles empty quests list without throwing', (
+        tester,
+      ) async {
+        final emptyQuestsState = EliteMasteryLoaded(
+          gameType: GameSubtype.accentShadowing,
+          level: 2,
+          quests: const [],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
+
+        await pumpScreen(tester, state: emptyQuestsState);
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(AccentShadowingScreen), findsOneWidget);
+      });
+    },
+  );
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 6: Responsive Layout, Text Scaling & Accessibility
   // ═══════════════════════════════════════════════════════════════════════════
-  group('AccentShadowingScreen - 6. Responsive Layout, Text Scaling & Accessibility', () {
-    testWidgets('renders cleanly on compact screen (320x568) without overflow', (
-      tester,
-    ) async {
-      await pumpScreen(
+  group(
+    'AccentShadowingScreen - 6. Responsive Layout, Text Scaling & Accessibility',
+    () {
+      testWidgets(
+        'renders cleanly on compact screen (320x568) without overflow',
+        (tester) async {
+          await pumpScreen(tester, surfaceSize: const Size(320, 568));
+
+          expect(tester.takeException(), isNull);
+          expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+          expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
+        },
+      );
+
+      testWidgets('renders cleanly on tablet viewport (800x1280)', (
         tester,
-        surfaceSize: const Size(320, 568),
-      );
+      ) async {
+        await pumpScreen(tester, surfaceSize: const Size(800, 1280));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+        expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
+      });
 
-    testWidgets('renders cleanly on tablet viewport (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
+      testWidgets('renders properly with enlarged textScaler (1.3x)', (
         tester,
-        surfaceSize: const Size(800, 1280),
+      ) async {
+        await pumpScreen(tester, textScaleFactor: 1.3);
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+        expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
+      });
+
+      testWidgets('renders without error in Light Theme mode', (tester) async {
+        when(() => mockThemeCubit.state).thenReturn(
+          const ThemeState(themeMode: ThemeMode.light, isMidnight: false),
+        );
+
+        await pumpScreen(tester, themeMode: ThemeMode.light);
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
+        expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
+      });
+
+      testWidgets(
+        'accessible semantics: listen button and target panel have proper labels',
+        (tester) async {
+          await pumpScreen(tester);
+
+          final listenButton = find.byKey(
+            const Key('accent_shadowing_listen_button'),
+          );
+          final listenSemantics = tester.getSemantics(listenButton);
+          expect(listenSemantics.flagsCollection.isButton, isTrue);
+          expect(listenSemantics.label, contains('Play pronunciation example'));
+        },
       );
-
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
-    });
-
-    testWidgets('renders properly with enlarged textScaler (1.3x)', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        textScaleFactor: 1.3,
-      );
-
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
-    });
-
-    testWidgets('renders without error in Light Theme mode', (
-      tester,
-    ) async {
-      when(
-        () => mockThemeCubit.state,
-      ).thenReturn(const ThemeState(themeMode: ThemeMode.light, isMidnight: false));
-
-      await pumpScreen(
-        tester,
-        themeMode: ThemeMode.light,
-      );
-
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AccentShadowingTargetPanel), findsOneWidget);
-      expect(find.byType(AccentShadowingOptionsPanel), findsOneWidget);
-    });
-
-    testWidgets('accessible semantics: listen button and target panel have proper labels', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      final listenButton = find.byKey(
-        const Key('accent_shadowing_listen_button'),
-      );
-      final listenSemantics = tester.getSemantics(listenButton);
-      expect(listenSemantics.flagsCollection.isButton, isTrue);
-      expect(
-        listenSemantics.label,
-        contains('Play pronunciation example'),
-      );
-    });
-  });
+    },
+  );
 }
-

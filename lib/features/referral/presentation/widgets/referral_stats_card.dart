@@ -58,7 +58,7 @@ class ReferralStatsCard extends StatelessWidget {
       'Sep',
       'Oct',
       'Nov',
-      'Dec'
+      'Dec',
     ];
     return '${months[local.month - 1]} ${local.day}, ${local.year}';
   }
@@ -66,22 +66,22 @@ class ReferralStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? AppColors.slate900 : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     final nowUtc = DateTime.now().toUtc();
     final nextMonthUtc = DateTime.utc(nowUtc.year, nowUtc.month + 1, 1);
-    final daysRemainingInMonth =
-        nextMonthUtc.difference(nowUtc).inDays.clamp(0, 31);
+    final daysRemainingInMonth = nextMonthUtc
+        .difference(nowUtc)
+        .inDays
+        .clamp(0, 31);
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 16.h),
@@ -298,9 +298,7 @@ class ReferralStatsCard extends StatelessWidget {
             child: Row(
               children: [
                 Icon(
-                  hasActivePremium
-                      ? Icons.star_rounded
-                      : Icons.bolt_rounded,
+                  hasActivePremium ? Icons.star_rounded : Icons.bolt_rounded,
                   size: 16.r,
                   color: hasActivePremium
                       ? AppColors.amber500
@@ -318,11 +316,11 @@ class ReferralStatsCard extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: hasActivePremium
                           ? (isDark
-                              ? const Color(0xFFFCD34D)
-                              : const Color(0xFFB45309))
+                                ? const Color(0xFFFCD34D)
+                                : const Color(0xFFB45309))
                           : (isDark
-                              ? const Color(0xFFA5B4FC)
-                              : const Color(0xFF4338CA)),
+                                ? const Color(0xFFA5B4FC)
+                                : const Color(0xFF4338CA)),
                     ),
                   ),
                 ),
@@ -452,7 +450,9 @@ class ReferralStatsCard extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 10.5.sp,
                             fontWeight: FontWeight.w600,
-                            color: isDark ? AppColors.slate400 : AppColors.slate600,
+                            color: isDark
+                                ? AppColors.slate400
+                                : AppColors.slate600,
                           ),
                         ),
                       ],

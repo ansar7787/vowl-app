@@ -96,8 +96,9 @@ void main() {
     mockAdService = MockAdService();
     mockLogger = MockAppLogger();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -105,8 +106,9 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
 
-    when(() => mockTtsService.speak(any(), rate: any(named: 'rate')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockTtsService.speak(any(), rate: any(named: 'rate')),
+    ).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
@@ -116,11 +118,13 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -187,9 +191,7 @@ void main() {
     );
 
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-      ],
+      providers: [BlocProvider<AuthBloc>.value(value: mockAuthBloc)],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
         minTextAdapt: true,
@@ -211,7 +213,9 @@ void main() {
   }
 
   group('Group 1: Empty State', () {
-    testWidgets('renders empty state when error journal has zero mistakes', (tester) async {
+    testWidgets('renders empty state when error journal has zero mistakes', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[],
       });
@@ -221,91 +225,114 @@ void main() {
 
       expect(find.byIcon(Icons.verified_rounded), findsOneWidget);
       expect(find.text("You're All Caught Up!"), findsOneWidget);
-      expect(find.text('You have mastered all your past challenges.'), findsOneWidget);
+      expect(
+        find.text('You have mastered all your past challenges.'),
+        findsOneWidget,
+      );
     });
   });
 
   group('Group 2: Populated State & Card Rendering', () {
-    testWidgets('renders mistake cards with question, answer, level, and timestamp', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'mistake_1',
-            gameType: 'consonantClarity',
-            question: 'Pronounce the "th" consonant clearly',
-            userAnswer: 'f',
-            correctAnswer: 'th',
-            level: 2,
-          )),
-          jsonEncode(makeEntryJson(
-            id: 'mistake_2',
-            gameType: 'articleInsertion',
-            question: 'Choose the correct article for "apple"',
-            userAnswer: 'a',
-            correctAnswer: 'an',
-            level: 1,
-          )),
-        ],
-      });
+    testWidgets(
+      'renders mistake cards with question, answer, level, and timestamp',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'mistake_1',
+                gameType: 'consonantClarity',
+                question: 'Pronounce the "th" consonant clearly',
+                userAnswer: 'f',
+                correctAnswer: 'th',
+                level: 2,
+              ),
+            ),
+            jsonEncode(
+              makeEntryJson(
+                id: 'mistake_2',
+                gameType: 'articleInsertion',
+                question: 'Choose the correct article for "apple"',
+                userAnswer: 'a',
+                correctAnswer: 'an',
+                level: 1,
+              ),
+            ),
+          ],
+        });
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('Pronounce the "th" consonant clearly'), findsOneWidget);
-      expect(find.text('Choose the correct article for "apple"'), findsOneWidget);
-      expect(find.text('Lv.2'), findsOneWidget);
-      expect(find.text('Lv.1'), findsOneWidget);
-      expect(find.text('Tap to Reveal Answer'), findsNWidgets(2));
-    });
+        expect(
+          find.text('Pronounce the "th" consonant clearly'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Choose the correct article for "apple"'),
+          findsOneWidget,
+        );
+        expect(find.text('Lv.2'), findsOneWidget);
+        expect(find.text('Lv.1'), findsOneWidget);
+        expect(find.text('Tap to Reveal Answer'), findsNWidgets(2));
+      },
+    );
   });
 
   group('Group 3: Card Interaction (Reveal & Audio TTS)', () {
-    testWidgets('tapping card reveals correct answer and speaker icon plays TTS audio', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'mistake_tts_1',
-            gameType: 'consonantClarity',
-            question: 'Say "thoughtful"',
-            userAnswer: 'thoughtful_miss',
-            correctAnswer: 'thoughtful',
-            level: 3,
-          )),
-        ],
-      });
+    testWidgets(
+      'tapping card reveals correct answer and speaker icon plays TTS audio',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'mistake_tts_1',
+                gameType: 'consonantClarity',
+                question: 'Say "thoughtful"',
+                userAnswer: 'thoughtful_miss',
+                correctAnswer: 'thoughtful',
+                level: 3,
+              ),
+            ),
+          ],
+        });
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('Tap to Reveal Answer'), findsOneWidget);
-      expect(find.text('thoughtful'), findsNothing);
+        expect(find.text('Tap to Reveal Answer'), findsOneWidget);
+        expect(find.text('thoughtful'), findsNothing);
 
-      // Tap card to reveal
-      await tester.tap(find.text('Tap to Reveal Answer'));
-      await tester.pumpAndSettle();
+        // Tap card to reveal
+        await tester.tap(find.text('Tap to Reveal Answer'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('thoughtful'), findsOneWidget);
-      expect(find.byIcon(LucideIcons.volume2), findsOneWidget);
+        expect(find.text('thoughtful'), findsOneWidget);
+        expect(find.byIcon(LucideIcons.volume2), findsOneWidget);
 
-      // Tap volume button to speak
-      await tester.tap(find.byIcon(LucideIcons.volume2));
-      await tester.pumpAndSettle();
+        // Tap volume button to speak
+        await tester.tap(find.byIcon(LucideIcons.volume2));
+        await tester.pumpAndSettle();
 
-      verify(() => mockTtsService.speak('thoughtful')).called(1);
-    });
+        verify(() => mockTtsService.speak('thoughtful')).called(1);
+      },
+    );
   });
 
   group('Group 4: Dismissing Mistakes via Swipe', () {
     testWidgets('swiping card dismisses it from journal', (tester) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'dismiss_entry_1',
-            gameType: 'consonantClarity',
-            question: 'Mistake to Dismiss',
-            userAnswer: 'wrong_ans',
-            correctAnswer: 'right_ans',
-          )),
+          jsonEncode(
+            makeEntryJson(
+              id: 'dismiss_entry_1',
+              gameType: 'consonantClarity',
+              question: 'Mistake to Dismiss',
+              userAnswer: 'wrong_ans',
+              correctAnswer: 'right_ans',
+            ),
+          ),
         ],
       });
 
@@ -322,173 +349,212 @@ void main() {
       expect(find.text("You're All Caught Up!"), findsOneWidget);
     });
 
-    testWidgets('swipe background has solid red color and white trash icon without gradient', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'dismiss_entry_bg',
-            gameType: 'consonantClarity',
-            question: 'Mistake Background Test',
-            userAnswer: 'wrong_ans',
-            correctAnswer: 'right_ans',
-          )),
-        ],
-      });
+    testWidgets(
+      'swipe background has solid red color and white trash icon without gradient',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'dismiss_entry_bg',
+                gameType: 'consonantClarity',
+                question: 'Mistake Background Test',
+                userAnswer: 'wrong_ans',
+                correctAnswer: 'right_ans',
+              ),
+            ),
+          ],
+        });
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      final dismissible = tester.widget<Dismissible>(find.byType(Dismissible));
-      final background = dismissible.background as Container;
-      final decoration = background.decoration as BoxDecoration;
-      expect(decoration.color, AppColors.red500);
-      expect(decoration.gradient, isNull);
+        final dismissible = tester.widget<Dismissible>(
+          find.byType(Dismissible),
+        );
+        final background = dismissible.background as Container;
+        final decoration = background.decoration as BoxDecoration;
+        expect(decoration.color, AppColors.red500);
+        expect(decoration.gradient, isNull);
 
-      final icon = background.child as Icon;
-      expect(icon.icon, LucideIcons.trash2);
-      expect(icon.color, Colors.white);
-    });
+        final icon = background.child as Icon;
+        expect(icon.icon, LucideIcons.trash2);
+        expect(icon.color, Colors.white);
+      },
+    );
   });
 
   group('Group 5: Category Filter Chips', () {
-    testWidgets('formats elite_mastery category as "Elite Mastery" without underscore', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'entry_elite',
-            gameType: 'storyBuilder',
-            question: 'Elite Story Question',
-            userAnswer: 'wrong',
-            correctAnswer: 'right',
-          )),
-        ],
-      });
+    testWidgets(
+      'formats elite_mastery category as "Elite Mastery" without underscore',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'entry_elite',
+                gameType: 'storyBuilder',
+                question: 'Elite Story Question',
+                userAnswer: 'wrong',
+                correctAnswer: 'right',
+              ),
+            ),
+          ],
+        });
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('All'), findsOneWidget);
-      expect(find.text('Elite Mastery'), findsOneWidget);
-      expect(find.text('Elite_Mastery'), findsNothing);
-      expect(find.text('Elite_mastery'), findsNothing);
+        expect(find.text('All'), findsOneWidget);
+        expect(find.text('Elite Mastery'), findsOneWidget);
+        expect(find.text('Elite_Mastery'), findsNothing);
+        expect(find.text('Elite_mastery'), findsNothing);
 
-      // Tap Elite Mastery chip
-      await tester.tap(find.text('Elite Mastery'));
-      await tester.pumpAndSettle();
-      expect(find.text('Elite Story Question'), findsOneWidget);
-    });
+        // Tap Elite Mastery chip
+        await tester.tap(find.text('Elite Mastery'));
+        await tester.pumpAndSettle();
+        expect(find.text('Elite Story Question'), findsOneWidget);
+      },
+    );
 
-    testWidgets('filtering by category displays only matching mistakes and resetting restores all', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'entry_accent',
-            gameType: 'consonantClarity',
-            question: 'Accent Drill Question',
-            userAnswer: 'a_wrong',
-            correctAnswer: 'a_right',
-          )),
-          jsonEncode(makeEntryJson(
-            id: 'entry_grammar',
-            gameType: 'articleInsertion',
-            question: 'Grammar Question',
-            userAnswer: 'g_wrong',
-            correctAnswer: 'g_right',
-          )),
-        ],
-      });
+    testWidgets(
+      'filtering by category displays only matching mistakes and resetting restores all',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'entry_accent',
+                gameType: 'consonantClarity',
+                question: 'Accent Drill Question',
+                userAnswer: 'a_wrong',
+                correctAnswer: 'a_right',
+              ),
+            ),
+            jsonEncode(
+              makeEntryJson(
+                id: 'entry_grammar',
+                gameType: 'articleInsertion',
+                question: 'Grammar Question',
+                userAnswer: 'g_wrong',
+                correctAnswer: 'g_right',
+              ),
+            ),
+          ],
+        });
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('All'), findsOneWidget);
-      expect(find.text('Accent Drill Question'), findsOneWidget);
-      expect(find.text('Grammar Question'), findsOneWidget);
+        expect(find.text('All'), findsOneWidget);
+        expect(find.text('Accent Drill Question'), findsOneWidget);
+        expect(find.text('Grammar Question'), findsOneWidget);
 
-      // Tap Grammar chip
-      await tester.tap(find.text('Grammar'));
-      await tester.pumpAndSettle();
+        // Tap Grammar chip
+        await tester.tap(find.text('Grammar'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Grammar Question'), findsOneWidget);
-      expect(find.text('Accent Drill Question'), findsNothing);
+        expect(find.text('Grammar Question'), findsOneWidget);
+        expect(find.text('Accent Drill Question'), findsNothing);
 
-      // Tap All chip to reset
-      await tester.tap(find.text('All'));
-      await tester.pumpAndSettle();
+        // Tap All chip to reset
+        await tester.tap(find.text('All'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Accent Drill Question'), findsOneWidget);
-      expect(find.text('Grammar Question'), findsOneWidget);
-    });
+        expect(find.text('Accent Drill Question'), findsOneWidget);
+        expect(find.text('Grammar Question'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 6: Pagination', () {
-    testWidgets('renders pagination controls and navigating forward/backward updates page', (tester) async {
-      tester.view.physicalSize = const Size(390 * 3, 844 * 3);
-      tester.view.devicePixelRatio = 3.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'renders pagination controls and navigating forward/backward updates page',
+      (tester) async {
+        tester.view.physicalSize = const Size(390 * 3, 844 * 3);
+        tester.view.devicePixelRatio = 3.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      final List<String> twelveEntries = [];
-      for (int i = 1; i <= 12; i++) {
-        twelveEntries.add(jsonEncode(makeEntryJson(
-          id: 'entry_page_$i',
-          gameType: 'consonantClarity',
-          question: 'Question Number $i',
-          userAnswer: 'u_$i',
-          correctAnswer: 'c_$i',
-        )));
-      }
+        final List<String> twelveEntries = [];
+        for (int i = 1; i <= 12; i++) {
+          twelveEntries.add(
+            jsonEncode(
+              makeEntryJson(
+                id: 'entry_page_$i',
+                gameType: 'consonantClarity',
+                question: 'Question Number $i',
+                userAnswer: 'u_$i',
+                correctAnswer: 'c_$i',
+              ),
+            ),
+          );
+        }
 
-      await setJournalEntries(twelveEntries);
+        await setJournalEntries(twelveEntries);
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
-
-      // Scroll down to pagination controls at bottom
-      for (int i = 0; i < 4; i++) {
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
+        await tester.pumpWidget(buildTestWidget());
         await tester.pumpAndSettle();
-      }
 
-      expect(find.text('1 / 2'), findsOneWidget);
-      expect(find.byIcon(Icons.chevron_right_rounded), findsOneWidget);
+        // Scroll down to pagination controls at bottom
+        for (int i = 0; i < 4; i++) {
+          await tester.drag(
+            find.byType(CustomScrollView),
+            const Offset(0, -500),
+          );
+          await tester.pumpAndSettle();
+        }
 
-      // Tap next page
-      await tester.tap(find.byIcon(Icons.chevron_right_rounded));
-      await tester.pumpAndSettle();
+        expect(find.text('1 / 2'), findsOneWidget);
+        expect(find.byIcon(Icons.chevron_right_rounded), findsOneWidget);
 
-      for (int i = 0; i < 4; i++) {
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
+        // Tap next page
+        await tester.tap(find.byIcon(Icons.chevron_right_rounded));
         await tester.pumpAndSettle();
-      }
 
-      expect(find.text('2 / 2'), findsOneWidget);
+        for (int i = 0; i < 4; i++) {
+          await tester.drag(
+            find.byType(CustomScrollView),
+            const Offset(0, -500),
+          );
+          await tester.pumpAndSettle();
+        }
 
-      // Tap previous page
-      await tester.tap(find.byIcon(Icons.chevron_left_rounded));
-      await tester.pumpAndSettle();
+        expect(find.text('2 / 2'), findsOneWidget);
 
-      for (int i = 0; i < 4; i++) {
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
+        // Tap previous page
+        await tester.tap(find.byIcon(Icons.chevron_left_rounded));
         await tester.pumpAndSettle();
-      }
 
-      expect(find.text('1 / 2'), findsOneWidget);
-    });
+        for (int i = 0; i < 4; i++) {
+          await tester.drag(
+            find.byType(CustomScrollView),
+            const Offset(0, -500),
+          );
+          await tester.pumpAndSettle();
+        }
+
+        expect(find.text('1 / 2'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 7: Start Mastery Training Button', () {
-    testWidgets('tapping Start Mastery Training navigates to game screen', (tester) async {
+    testWidgets('tapping Start Mastery Training navigates to game screen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'training_1',
-            gameType: 'consonantClarity',
-            question: 'Practice item',
-            userAnswer: 'wrong',
-            correctAnswer: 'right',
-            level: 3,
-          )),
+          jsonEncode(
+            makeEntryJson(
+              id: 'training_1',
+              gameType: 'consonantClarity',
+              question: 'Practice item',
+              userAnswer: 'wrong',
+              correctAnswer: 'right',
+              level: 3,
+            ),
+          ),
         ],
       });
 
@@ -501,12 +567,21 @@ void main() {
       await tester.tap(trainingButton);
       await tester.pumpAndSettle();
 
-      expect(navigatedRoutes.any((r) => r.startsWith('/game?category=accent&subtype=consonantClarity&level=3')), isTrue);
+      expect(
+        navigatedRoutes.any(
+          (r) => r.startsWith(
+            '/game?category=accent&subtype=consonantClarity&level=3',
+          ),
+        ),
+        isTrue,
+      );
     });
   });
 
   group('Group 8: AppBar & Back Navigation', () {
-    testWidgets('tapping back button in SliverAppBar pops screen', (tester) async {
+    testWidgets('tapping back button in SliverAppBar pops screen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[],
       });
@@ -530,64 +605,76 @@ void main() {
   });
 
   group('Group 9: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'comp_1',
+                gameType: 'consonantClarity',
+                question: 'Compact Question',
+                userAnswer: 'u',
+                correctAnswer: 'c',
+              ),
+            ),
+          ],
+        });
+
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': <String>[
+            jsonEncode(
+              makeEntryJson(
+                id: 'tab_1',
+                gameType: 'consonantClarity',
+                question: 'Tablet Question',
+                userAnswer: 'u',
+                correctAnswer: 'c',
+              ),
+            ),
+          ],
+        });
+
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'comp_1',
-            gameType: 'consonantClarity',
-            question: 'Compact Question',
-            userAnswer: 'u',
-            correctAnswer: 'c',
-          )),
+          jsonEncode(
+            makeEntryJson(
+              id: 'a11y_1',
+              gameType: 'consonantClarity',
+              question: 'A11y Question',
+              userAnswer: 'u',
+              correctAnswer: 'c',
+            ),
+          ),
         ],
       });
 
-      await tester.pumpWidget(buildTestWidget(
-        screenSize: const Size(320, 568),
-      ));
-      await tester.pumpAndSettle();
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'tab_1',
-            gameType: 'consonantClarity',
-            question: 'Tablet Question',
-            userAnswer: 'u',
-            correctAnswer: 'c',
-          )),
-        ],
-      });
-
-      await tester.pumpWidget(buildTestWidget(
-        screenSize: const Size(800, 1280),
-      ));
-      await tester.pumpAndSettle();
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'a11y_1',
-            gameType: 'consonantClarity',
-            question: 'A11y Question',
-            userAnswer: 'u',
-            correctAnswer: 'c',
-          )),
-        ],
-      });
-
-      await tester.pumpWidget(buildTestWidget(
-        textScaleFactor: 1.3,
-      ));
+      await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);
@@ -596,19 +683,19 @@ void main() {
     testWidgets('renders cleanly in dark theme mode', (tester) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'dark_1',
-            gameType: 'consonantClarity',
-            question: 'Dark Question',
-            userAnswer: 'u',
-            correctAnswer: 'c',
-          )),
+          jsonEncode(
+            makeEntryJson(
+              id: 'dark_1',
+              gameType: 'consonantClarity',
+              question: 'Dark Question',
+              userAnswer: 'u',
+              correctAnswer: 'c',
+            ),
+          ),
         ],
       });
 
-      await tester.pumpWidget(buildTestWidget(
-        themeMode: ThemeMode.dark,
-      ));
+      await tester.pumpWidget(buildTestWidget(themeMode: ThemeMode.dark));
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);
@@ -617,13 +704,15 @@ void main() {
     testWidgets('renders cleanly in midnight theme mode', (tester) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
-          jsonEncode(makeEntryJson(
-            id: 'mid_1',
-            gameType: 'consonantClarity',
-            question: 'Midnight Question',
-            userAnswer: 'u',
-            correctAnswer: 'c',
-          )),
+          jsonEncode(
+            makeEntryJson(
+              id: 'mid_1',
+              gameType: 'consonantClarity',
+              question: 'Midnight Question',
+              userAnswer: 'u',
+              correctAnswer: 'c',
+            ),
+          ),
         ],
       });
 
@@ -643,9 +732,7 @@ void main() {
 
       await tester.pumpWidget(
         MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-          ],
+          providers: [BlocProvider<AuthBloc>.value(value: mockAuthBloc)],
           child: ScreenUtilInit(
             designSize: const Size(390, 844),
             minTextAdapt: true,

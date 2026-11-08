@@ -183,9 +183,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   scrolledUnderElevation: 0,
                                   surfaceTintColor: Colors.transparent,
                                   flexibleSpace: FlexibleSpaceBar(
-                                    titlePadding: EdgeInsets.only(
-                                      bottom: 12.h,
-                                    ),
+                                    titlePadding: EdgeInsets.only(bottom: 12.h),
                                     title: FittedBox(
                                       fit: BoxFit.scaleDown,
                                       child: Column(
@@ -960,7 +958,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       physics: const AlwaysScrollableScrollPhysics(
         parent: BouncingScrollPhysics(),
       ),
-      padding: EdgeInsets.only(left: AppSpacing.screen, right: AppSpacing.screen, top: 28.h, bottom: 4.h),
+      padding: EdgeInsets.only(
+        left: AppSpacing.screen,
+        right: AppSpacing.screen,
+        top: 28.h,
+        bottom: 4.h,
+      ),
       child: Row(
         children: [
           _buildChip(
@@ -1081,15 +1084,21 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       enableDrag: false,
       builder: (sheetContext) {
         final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          sheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
             12.h;
 
         return Container(
-          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 32.h, AppSpacing.screen, safeBottom),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            32.h,
+            AppSpacing.screen,
+            safeBottom,
+          ),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),

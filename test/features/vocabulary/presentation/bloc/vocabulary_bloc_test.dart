@@ -193,7 +193,10 @@ void main() {
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit state with answerStatus: AnswerStatus.correct when answer is correct',
       build: () {
-        when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async => {});
+        when(
+          () =>
+              mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+        ).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
         return bloc;
       },
@@ -201,7 +204,10 @@ void main() {
       act: (bloc) => bloc.add(SubmitAnswer(true)),
       expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
       verify: (_) {
-        verify(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).called(1);
+        verify(
+          () =>
+              mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+        ).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );

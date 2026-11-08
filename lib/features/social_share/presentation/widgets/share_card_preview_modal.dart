@@ -37,26 +37,30 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
     final String shareText;
     if (widget.data.type == ShareCardType.arenaVictory) {
       final code = widget.data.roomCode ?? 'VOWL';
-      shareText = '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
+      shareText =
+          '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
           'Can you beat my score? Enter room code: $code in the app, or tap:\n'
           'https://vowl-acbc5.web.app/duel/$code';
     } else if (widget.data.type == ShareCardType.arenaInvite) {
       final code = widget.data.roomCode ?? 'VOWL';
-      shareText = '⚔️ You\'ve been challenged to a 1v1 English Duel on Vowl!\n'
+      shareText =
+          '⚔️ You\'ve been challenged to a 1v1 English Duel on Vowl!\n'
           'Room Code: $code\n'
           'Winner takes 50 Coins + 5 XP!\n\n'
           'Tap to join the duel:\n'
           'https://vowl-acbc5.web.app/duel/$code';
     } else if (widget.data.type == ShareCardType.referral) {
       final code = widget.data.referralCode ?? '';
-      shareText = '🚀 Join me on Vowl to level up your English skills!\n'
+      shareText =
+          '🚀 Join me on Vowl to level up your English skills!\n'
           'Use my invite code $code to unlock 100 Bonus Coins + Free VIP access immediately:\n'
           'https://vowl-acbc5.web.app/invite/$code';
     } else {
       final inviteCopy = widget.data.referralCode != null
           ? 'Join me on Vowl using code ${widget.data.referralCode} to claim 100 Bonus Coins & Free VIP!'
           : 'Leveling up my English skills on Vowl!';
-      shareText = '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\nhttps://vowl-acbc5.web.app';
+      shareText =
+          '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\nhttps://vowl-acbc5.web.app';
     }
 
     await SocialShareRasterizer.captureAndShare(
@@ -106,8 +110,13 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
                     ? const VowlMicroLoader(size: 16, color: Colors.white)
                     : Icon(LucideIcons.share2, size: 18.sp),
                 label: Text(
-                  _isSharing ? 'Generating Image...' : 'Share Card to Stories / WhatsApp',
-                  style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
+                  _isSharing
+                      ? 'Generating Image...'
+                      : 'Share Card to Stories / WhatsApp',
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.indigo500,
@@ -126,4 +135,3 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
     );
   }
 }
-

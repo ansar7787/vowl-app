@@ -77,4 +77,3 @@ class ChalkSignaturePainter extends CustomPainter {
         oldDelegate.strokes.length != strokes.length;
   }
 }
-

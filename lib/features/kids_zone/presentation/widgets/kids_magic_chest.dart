@@ -151,9 +151,14 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                           ? 'last_kids_daily_reward_time_$userId'
                           : 'last_kids_daily_reward_time';
                       unawaited(
-                        SharedPreferences.getInstance().then((prefs) {
-                          prefs.setInt(key, claimTime.millisecondsSinceEpoch);
-                        }).catchError((_) {}),
+                        SharedPreferences.getInstance()
+                            .then((prefs) {
+                              prefs.setInt(
+                                key,
+                                claimTime.millisecondsSinceEpoch,
+                              );
+                            })
+                            .catchError((_) {}),
                       );
 
                       widget

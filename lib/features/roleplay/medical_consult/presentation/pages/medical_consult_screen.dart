@@ -359,8 +359,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest =
-            (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
+        final quest = (state is RoleplayLoaded)
+            ? state.currentQuestOrNull
+            : null;
         final symptoms = quest?.symptoms ?? [];
 
         return ListenableBuilder(
@@ -484,7 +485,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
 
                                           // Submit controls
                                           if (!isAnsweredNotifier.value &&
-                                              !isFirstStagePassedNotifier.value &&
+                                              !isFirstStagePassedNotifier
+                                                  .value &&
                                               _diagnosedSymptoms
                                                   .value
                                                   .isNotEmpty)
@@ -561,7 +563,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                 SizedBox(height: 12.h),
                                                 // Reset Button
                                                 ScaleButton(
-                                                  key: const Key('medical_consult_reset_button'),
+                                                  key: const Key(
+                                                    'medical_consult_reset_button',
+                                                  ),
                                                   onTap: _clearDiagnosis,
                                                   child: Container(
                                                     width: double.infinity,
@@ -574,7 +578,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                     decoration: BoxDecoration(
                                                       color: theme.primaryColor
                                                           .withValues(
-                                                            alpha: isDark ? 0.12 : 0.08,
+                                                            alpha: isDark
+                                                                ? 0.12
+                                                                : 0.08,
                                                           ),
                                                       borderRadius:
                                                           BorderRadius.circular(

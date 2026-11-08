@@ -117,7 +117,9 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
                   ]
                 : [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.15 : 0.04,
+                      ),
                       blurRadius: 6,
                       offset: const Offset(0, 2),
                     ),

@@ -535,7 +535,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                   SizedBox(height: 24.h),
                                   if (!_showSpeakToConfirm.value && !isAnswered)
                                     ScaleButton(
-                                      key: const Key('describe_situation_submit_button'),
+                                      key: const Key(
+                                        'describe_situation_submit_button',
+                                      ),
                                       onTap: () => _submitAnswer(
                                         minWords,
                                         allKeywordPool,

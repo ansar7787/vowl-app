@@ -84,8 +84,9 @@ void main() {
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
 
-    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 

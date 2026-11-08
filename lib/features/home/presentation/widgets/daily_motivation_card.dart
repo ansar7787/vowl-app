@@ -233,8 +233,8 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       builder: (context, _) {
         final theme = Theme.of(context);
         final isDark = theme.brightness == Brightness.dark;
-        final isMidnight = isDark &&
-            theme.scaffoldBackgroundColor == Colors.black;
+        final isMidnight =
+            isDark && theme.scaffoldBackgroundColor == Colors.black;
         final locale = Localizations.localeOf(context).toString();
         final now = DateTime.now();
         final dateString = _formatToday(locale, now);
@@ -256,8 +256,8 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100),
                 width: 1.r,
               ),
             ),
@@ -477,7 +477,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     );
   }
 }
-
 
 class _ShimmerBlock extends StatefulWidget {
   final double width;

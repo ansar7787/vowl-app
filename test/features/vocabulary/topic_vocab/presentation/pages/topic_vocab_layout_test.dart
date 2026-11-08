@@ -167,10 +167,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const VocabularyHintUsed());
     registerFallbackValue(
-      const FetchVocabularyQuests(
-        gameType: GameSubtype.topicVocab,
-        level: 2,
-      ),
+      const FetchVocabularyQuests(gameType: GameSubtype.topicVocab, level: 2),
     );
     registerFallbackValue(const RestoreLife());
     registerFallbackValue(const EconomyAddCoinsRequested(10));
@@ -225,18 +222,21 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Default BLoC mock
     when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
-    when(() => mockVocabularyBloc.stream)
-        .thenAnswer((_) => vocabularyStreamController.stream);
+    when(
+      () => mockVocabularyBloc.stream,
+    ).thenAnswer((_) => vocabularyStreamController.stream);
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -320,20 +320,29 @@ void main() {
   Finder findRightBin() => find.byType(TopicContainmentBin).last;
 
   group('Group 1: Component Rendering & Initial State', () {
-    testWidgets('renders TopicVocabScreen with VocabularyLoaded state', (tester) async {
+    testWidgets('renders TopicVocabScreen with VocabularyLoaded state', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester);
       expect(find.byType(TopicVocabScreen), findsOneWidget);
     });
 
-    testWidgets('displays TopicBatchCounter with initial count (0 / total)', (tester) async {
+    testWidgets('displays TopicBatchCounter with initial count (0 / total)', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester);
       expect(find.byType(TopicBatchCounter), findsOneWidget);
       expect(find.textContaining('0 / 2'), findsOneWidget);
     });
 
-    testWidgets('displays instruction banner with instruction text', (tester) async {
+    testWidgets('displays instruction banner with instruction text', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester);
-      expect(find.textContaining('SORT WORDS INTO CORRECT TOPIC'), findsOneWidget);
+      expect(
+        find.textContaining('SORT WORDS INTO CORRECT TOPIC'),
+        findsOneWidget,
+      );
     });
 
     testWidgets('displays TopicMachineHead with topic emoji', (tester) async {
@@ -342,125 +351,155 @@ void main() {
       expect(find.text('🔬'), findsOneWidget);
     });
 
-    testWidgets('displays left containment bin with bucket label and Semantics action', (tester) async {
-      await pumpTopicScreen(tester);
-      expect(find.text('SCIENCE'), findsOneWidget);
-      expect(
-        find.byWidgetPredicate(
-          (w) => w is Semantics && w.properties.label == 'Sort into Science',
-        ),
-        findsOneWidget,
-      );
-    });
+    testWidgets(
+      'displays left containment bin with bucket label and Semantics action',
+      (tester) async {
+        await pumpTopicScreen(tester);
+        expect(find.text('SCIENCE'), findsOneWidget);
+        expect(
+          find.byWidgetPredicate(
+            (w) => w is Semantics && w.properties.label == 'Sort into Science',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('displays right containment bin with bucket label and Semantics action', (tester) async {
-      await pumpTopicScreen(tester);
-      expect(find.text('ART'), findsOneWidget);
-      expect(
-        find.byWidgetPredicate(
-          (w) => w is Semantics && w.properties.label == 'Sort into Art',
-        ),
-        findsOneWidget,
-      );
-    });
+    testWidgets(
+      'displays right containment bin with bucket label and Semantics action',
+      (tester) async {
+        await pumpTopicScreen(tester);
+        expect(find.text('ART'), findsOneWidget);
+        expect(
+          find.byWidgetPredicate(
+            (w) => w is Semantics && w.properties.label == 'Sort into Art',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('displays initial TopicDraggableWord matching one of the options', (tester) async {
-      await pumpTopicScreen(tester);
-      expect(find.byType(TopicDraggableWord), findsOneWidget);
-      final wordFinder = find.byType(TopicDraggableWord);
-      final wordWidget = tester.widget<TopicDraggableWord>(wordFinder);
-      expect(['physics', 'painting'].contains(wordWidget.word), isTrue);
-    });
+    testWidgets(
+      'displays initial TopicDraggableWord matching one of the options',
+      (tester) async {
+        await pumpTopicScreen(tester);
+        expect(find.byType(TopicDraggableWord), findsOneWidget);
+        final wordFinder = find.byType(TopicDraggableWord);
+        final wordWidget = tester.widget<TopicDraggableWord>(wordFinder);
+        expect(['physics', 'painting'].contains(wordWidget.word), isTrue);
+      },
+    );
 
-    testWidgets('displays tutorial arrows on initial mount before any action', (tester) async {
+    testWidgets('displays tutorial arrows on initial mount before any action', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester);
       expect(find.byIcon(Icons.touch_app_rounded), findsWidgets);
-      expect(find.byIcon(Icons.keyboard_double_arrow_left_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.keyboard_double_arrow_right_rounded), findsOneWidget);
+      expect(
+        find.byIcon(Icons.keyboard_double_arrow_left_rounded),
+        findsOneWidget,
+      );
+      expect(
+        find.byIcon(Icons.keyboard_double_arrow_right_rounded),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('displays GameShimmerLoading when state is VocabularyLoading', (tester) async {
+    testWidgets('displays GameShimmerLoading when state is VocabularyLoading', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester, initialState: const VocabularyLoading());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
   });
 
   group('Group 2: Containment Bin Sorting Mechanics (Tap-to-Sort)', () {
-    testWidgets('tapping left containment bin sorts word belonging to left bucket', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'tapping left containment bin sorts word belonging to left bucket',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      // Tap left bin (Science)
-      await tester.tap(findLeftBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap left bin (Science)
+        await tester.tap(findLeftBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
 
-    testWidgets('sorting a word advances currentWordIndex and updates batch counter', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'sorting a word advances currentWordIndex and updates batch counter',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      expect(find.textContaining('0 / 3'), findsOneWidget);
+        expect(find.textContaining('0 / 3'), findsOneWidget);
 
-      await tester.tap(findLeftBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findLeftBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.textContaining('1 / 3'), findsOneWidget);
-    });
+        expect(find.textContaining('1 / 3'), findsOneWidget);
+      },
+    );
 
-    testWidgets('sorted word appears inside the destination containment bin word list', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'sorted word appears inside the destination containment bin word list',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      // Find initial word being displayed
-      final draggableWord = tester.widget<TopicDraggableWord>(
-        find.byType(TopicDraggableWord),
-      );
-      final sortedWordUpper = draggableWord.word.toUpperCase();
+        // Find initial word being displayed
+        final draggableWord = tester.widget<TopicDraggableWord>(
+          find.byType(TopicDraggableWord),
+        );
+        final sortedWordUpper = draggableWord.word.toUpperCase();
 
-      // Tap left bin
-      await tester.tap(findLeftBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap left bin
+        await tester.tap(findLeftBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // After sorting, word is now in bin 0
-      final leftBinFinder = find.ancestor(
-        of: find.text('SCIENCE'),
-        matching: find.byType(TopicContainmentBin),
-      );
-      final binWidget = tester.widget<TopicContainmentBin>(leftBinFinder);
-      expect(binWidget.words.contains(draggableWord.word), isTrue);
-      expect(find.text(sortedWordUpper), findsWidgets);
-    });
+        // After sorting, word is now in bin 0
+        final leftBinFinder = find.ancestor(
+          of: find.text('SCIENCE'),
+          matching: find.byType(TopicContainmentBin),
+        );
+        final binWidget = tester.widget<TopicContainmentBin>(leftBinFinder);
+        expect(binWidget.words.contains(draggableWord.word), isTrue);
+        expect(find.text(sortedWordUpper), findsWidgets);
+      },
+    );
 
-    testWidgets('tapping wrong containment bin triggers wrong answer flow', (tester) async {
+    testWidgets('tapping wrong containment bin triggers wrong answer flow', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -477,77 +516,97 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockSoundService.playWrong(),
+      ).called(greaterThanOrEqualTo(1));
       verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('wrong sort dispatches SubmitAnswer(false) with quest and user answer', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'wrong sort dispatches SubmitAnswer(false) with quest and user answer',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('tapping right containment bin sorts word belonging to right bucket', (tester) async {
-      final artQuest = createAllArtQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [artQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'tapping right containment bin sorts word belonging to right bucket',
+      (tester) async {
+        final artQuest = createAllArtQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [artQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
 
-    testWidgets('completing all words in the batch dispatches SubmitAnswer(true)', (tester) async {
-      final artQuest = createAllArtQuest(); // options: ['painting', 'sculpture'], length 2
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [artQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'completing all words in the batch dispatches SubmitAnswer(true)',
+      (tester) async {
+        final artQuest =
+            createAllArtQuest(); // options: ['painting', 'sculpture'], length 2
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [artQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      // Sort word 1
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Sort word 1
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Sort word 2 (completes the batch)
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Sort word 2 (completes the batch)
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
+      },
+    );
   });
 
   group('Group 3: Draggable Word Flick Mechanics (Swipe-to-Sort)', () {
-    testWidgets('dragging word left with offset < -60 triggers left sort', (tester) async {
+    testWidgets('dragging word left with offset < -60 triggers left sort', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -567,7 +626,9 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('dragging word right with offset > 60 triggers right sort', (tester) async {
+    testWidgets('dragging word right with offset > 60 triggers right sort', (
+      tester,
+    ) async {
       final artQuest = createAllArtQuest();
       await pumpTopicScreen(
         tester,
@@ -587,7 +648,9 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('flinging word with velocity < -500 triggers left flick', (tester) async {
+    testWidgets('flinging word with velocity < -500 triggers left flick', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -607,7 +670,9 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('flinging word with velocity > 500 triggers right flick', (tester) async {
+    testWidgets('flinging word with velocity > 500 triggers right flick', (
+      tester,
+    ) async {
       final artQuest = createAllArtQuest();
       await pumpTopicScreen(
         tester,
@@ -627,7 +692,9 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('small drag under threshold does not trigger sorting', (tester) async {
+    testWidgets('small drag under threshold does not trigger sorting', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -653,7 +720,9 @@ void main() {
   });
 
   group('Group 4: Hint System & Guidance', () {
-    testWidgets('tapping hint button activates hint state in controller', (tester) async {
+    testWidgets('tapping hint button activates hint state in controller', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -675,39 +744,44 @@ void main() {
       verify(() => mockSoundService.playHint()).called(1);
     });
 
-    testWidgets('target containment bin highlights with active hint when hint is active', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'target containment bin highlights with active hint when hint is active',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      final hintButton = find.byType(QuestHintButton);
-      await tester.tap(hintButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final hintButton = find.byType(QuestHintButton);
+        await tester.tap(hintButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final leftBinFinder = find.ancestor(
-        of: find.text('SCIENCE'),
-        matching: find.byType(TopicContainmentBin),
-      );
-      final leftBin = tester.widget<TopicContainmentBin>(leftBinFinder);
-      expect(leftBin.isHinted, isTrue);
+        final leftBinFinder = find.ancestor(
+          of: find.text('SCIENCE'),
+          matching: find.byType(TopicContainmentBin),
+        );
+        final leftBin = tester.widget<TopicContainmentBin>(leftBinFinder);
+        expect(leftBin.isHinted, isTrue);
 
-      final rightBinFinder = find.ancestor(
-        of: find.text('ART'),
-        matching: find.byType(TopicContainmentBin),
-      );
-      final rightBin = tester.widget<TopicContainmentBin>(rightBinFinder);
-      expect(rightBin.isHinted, isFalse);
-    });
+        final rightBinFinder = find.ancestor(
+          of: find.text('ART'),
+          matching: find.byType(TopicContainmentBin),
+        );
+        final rightBin = tester.widget<TopicContainmentBin>(rightBinFinder);
+        expect(rightBin.isHinted, isFalse);
+      },
+    );
 
-    testWidgets('successfully sorting the hinted word resets hint state', (tester) async {
+    testWidgets('successfully sorting the hinted word resets hint state', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -725,7 +799,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       // Dismiss the hint snackbar to prevent it from obstructing bottom containment bins
-      ScaffoldMessenger.of(tester.element(find.byType(TopicVocabScreen))).removeCurrentSnackBar();
+      ScaffoldMessenger.of(
+        tester.element(find.byType(TopicVocabScreen)),
+      ).removeCurrentSnackBar();
       await tester.pump();
 
       // Sort word into Science
@@ -744,119 +820,137 @@ void main() {
   });
 
   group('Group 5: Answer State, Feedback & Question Reset', () {
-    testWidgets('correct batch completion renders GameFeedbackCard with success styling', (tester) async {
-      final artQuest = createAllArtQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [artQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'correct batch completion renders GameFeedbackCard with success styling',
+      (tester) async {
+        final artQuest = createAllArtQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [artQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      // Sort word 1
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      // Sort word 2
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Sort word 1
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        // Sort word 2
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isTrue);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isTrue);
+      },
+    );
 
-    testWidgets('feedback card continue button dispatches NextQuestion() event', (tester) async {
-      final artQuest = createAllArtQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [artQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'feedback card continue button dispatches NextQuestion() event',
+      (tester) async {
+        final artQuest = createAllArtQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [artQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Find continue button
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
-      await tester.tap(continueButton);
-      await tester.pump();
+        // Find continue button
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
+        await tester.tap(continueButton);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('incorrect sort renders GameFeedbackCard with failure styling', (tester) async {
-      final scienceQuest = createAllScienceQuest();
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [scienceQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+    testWidgets(
+      'incorrect sort renders GameFeedbackCard with failure styling',
+      (tester) async {
+        final scienceQuest = createAllScienceQuest();
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [scienceQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      await tester.tap(findRightBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(findRightBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isFalse);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isFalse);
+      },
+    );
 
-    testWidgets('emitting new VocabularyLoaded state resets controller and bins', (tester) async {
-      final quest1 = createAllScienceQuest(id: 'q1');
-      final quest2 = createAllArtQuest(id: 'q2');
+    testWidgets(
+      'emitting new VocabularyLoaded state resets controller and bins',
+      (tester) async {
+        final quest1 = createAllScienceQuest(id: 'q1');
+        final quest2 = createAllArtQuest(id: 'q2');
 
-      await pumpTopicScreen(
-        tester,
-        initialState: VocabularyLoaded(
-          quests: [quest1, quest2],
-          currentIndex: 0,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
+        await pumpTopicScreen(
+          tester,
+          initialState: VocabularyLoaded(
+            quests: [quest1, quest2],
+            currentIndex: 0,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
 
-      // Sort word into Science on quest 1
-      await tester.tap(findLeftBin());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      expect(find.textContaining('1 / 3'), findsOneWidget);
+        // Sort word into Science on quest 1
+        await tester.tap(findLeftBin());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(find.textContaining('1 / 3'), findsOneWidget);
 
-      // Emit new loaded state with quest 2
-      vocabularyStreamController.add(
-        VocabularyLoaded(
-          quests: [quest1, quest2],
-          currentIndex: 1,
-          livesRemaining: 3,
-          wrongCount: 0,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Emit new loaded state with quest 2
+        vocabularyStreamController.add(
+          VocabularyLoaded(
+            quests: [quest1, quest2],
+            currentIndex: 1,
+            livesRemaining: 3,
+            wrongCount: 0,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Controller should now reflect quest 2 with 0 / 2 progress
-      expect(find.textContaining('0 / 2'), findsOneWidget);
-      expect(find.text('🎨'), findsOneWidget);
-    });
+        // Controller should now reflect quest 2 with 0 / 2 progress
+        expect(find.textContaining('0 / 2'), findsOneWidget);
+        expect(find.text('🎨'), findsOneWidget);
+      },
+    );
 
-    testWidgets('does not process bin taps once already answered', (tester) async {
+    testWidgets('does not process bin taps once already answered', (
+      tester,
+    ) async {
       final scienceQuest = createAllScienceQuest();
       await pumpTopicScreen(
         tester,
@@ -873,7 +967,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockSoundService.playWrong(),
+      ).called(greaterThanOrEqualTo(1));
 
       // Attempt tapping again
       await tester.tap(findRightBin(), warnIfMissed: false);
@@ -887,7 +983,9 @@ void main() {
   });
 
   group('Group 6: Responsive Layout & Accessibility', () {
-    testWidgets('renders without overflow on compact screen (320x568)', (tester) async {
+    testWidgets('renders without overflow on compact screen (320x568)', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester, size: const Size(320, 568));
       expect(tester.takeException(), isNull);
       expect(find.byType(TopicVocabScreen), findsOneWidget);
@@ -899,19 +997,25 @@ void main() {
       expect(find.byType(TopicVocabScreen), findsOneWidget);
     });
 
-    testWidgets('renders properly in landscape orientation (800x480)', (tester) async {
+    testWidgets('renders properly in landscape orientation (800x480)', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester, size: const Size(800, 480));
       expect(tester.takeException(), isNull);
       expect(find.byType(TopicVocabScreen), findsOneWidget);
     });
 
-    testWidgets('renders properly with large text scale factor (1.5x)', (tester) async {
+    testWidgets('renders properly with large text scale factor (1.5x)', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester, textScale: 1.5);
       expect(tester.takeException(), isNull);
       expect(find.byType(TopicVocabScreen), findsOneWidget);
     });
 
-    testWidgets('supports both dark theme and light theme styling', (tester) async {
+    testWidgets('supports both dark theme and light theme styling', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester, themeMode: ThemeMode.light);
       expect(tester.takeException(), isNull);
       expect(find.byType(TopicVocabScreen), findsOneWidget);
@@ -921,7 +1025,9 @@ void main() {
       expect(find.byType(TopicVocabScreen), findsOneWidget);
     });
 
-    testWidgets('containment bins have accessible Semantics labels', (tester) async {
+    testWidgets('containment bins have accessible Semantics labels', (
+      tester,
+    ) async {
       await pumpTopicScreen(tester);
       expect(
         find.byWidgetPredicate(

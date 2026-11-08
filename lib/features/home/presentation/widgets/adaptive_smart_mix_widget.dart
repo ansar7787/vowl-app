@@ -115,11 +115,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     );
     final displayColor = theme.primaryColor;
 
-    Widget icon = Icon(
-      Icons.auto_awesome,
-      color: displayColor,
-      size: 20.r,
-    );
+    Widget icon = Icon(Icons.auto_awesome, color: displayColor, size: 20.r);
     if (!reduceMotion) {
       icon = icon
           .animate(onPlay: (controller) => controller.repeat())
@@ -172,7 +168,10 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
         children: [
           reduceMotion
               ? titleRow
-              : titleRow.animate().fadeIn(duration: 400.ms).slideX(begin: -0.1, end: 0),
+              : titleRow
+                    .animate()
+                    .fadeIn(duration: 400.ms)
+                    .slideX(begin: -0.1, end: 0),
           SizedBox(height: 8.h),
           reduceMotion
               ? subtitle
@@ -227,16 +226,14 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     String tierLabel,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
     final cardBorderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return ScaleButton(
       onTap: () async {

@@ -66,7 +66,10 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
 
         return Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacing.card,
+            vertical: 12.h,
+          ),
           decoration: BoxDecoration(
             color: widget.shadowColor.withValues(
               alpha: widget.isDark ? 0.08 : 0.05,

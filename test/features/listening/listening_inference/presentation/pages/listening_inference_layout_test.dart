@@ -89,13 +89,14 @@ void main() {
       'It is going to rain',
       'A sunny afternoon',
       'The bus has arrived',
-      'He lost his keys'
+      'He lost his keys',
     ],
     correctAnswerIndex: 0,
     correctAnswer: 'It is going to rain',
     emoji: '🌧️',
     hint: 'Dark skies and missing umbrella point to bad weather.',
-    explanation: 'A dark sky suggests incoming rain and without an umbrella he will get wet.',
+    explanation:
+        'A dark sky suggests incoming rain and without an umbrella he will get wet.',
   );
 
   const sampleQuest2 = ListeningQuest(
@@ -105,10 +106,7 @@ void main() {
     subtype: GameSubtype.listeningInference,
     textToSpeak: 'https://example.com/audio/flight_delay.mp3',
     question: 'What is the speaker feeling?',
-    options: [
-      'Impatient',
-      'Excited'
-    ],
+    options: ['Impatient', 'Excited'],
     correctAnswerIndex: 0,
     correctAnswer: 'Impatient',
     emoji: '⌚',
@@ -127,7 +125,7 @@ void main() {
       'A tropical beach',
       'A snowy mountain',
       'A desert safari',
-      'A theme park'
+      'A theme park',
     ],
     correctAnswerIndex: 1,
     correctAnswer: 'A snowy mountain',
@@ -172,8 +170,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -206,10 +205,12 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playUrl(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(
-      any(),
-      pauseMarkers: any(named: 'pauseMarkers'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(
+        any(),
+        pauseMarkers: any(named: 'pauseMarkers'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
@@ -220,12 +221,15 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
-      final fallback = invocation.namedArguments[const Symbol('fallback')] as String?;
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
+      final fallback =
+          invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
       return fallback ?? key;
     });
@@ -241,7 +245,8 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
 
@@ -315,40 +320,67 @@ void main() {
   }
 
   group('ListeningInferenceScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, radar core, show text button, question, and grid', (tester) async {
+    testWidgets(
+      '1. Initial layout renders instruction, timer, radar core, show text button, question, and grid',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const Key('listening_inference_instruction')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('listening_inference_radar_core')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('listening_inference_show_text_btn')),
+          findsOneWidget,
+        );
+        expect(find.text('What is about to happen?'), findsOneWidget);
+        expect(
+          find.byKey(const Key('listening_inference_grid')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('2. Initial instruction displays formatted instruction', (
+      tester,
+    ) async {
       await pumpListeningInferenceScreen(tester);
 
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_instruction')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_radar_core')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_show_text_btn')), findsOneWidget);
-      expect(find.text('What is about to happen?'), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_grid')), findsOneWidget);
+      expect(
+        find.text('Listen carefully and deduce what is implied.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('2. Initial instruction displays formatted instruction', (tester) async {
-      await pumpListeningInferenceScreen(tester);
+    testWidgets(
+      '3. Radar core button tap triggers TTS playback and selection haptic',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
 
-      expect(find.text('Listen carefully and deduce what is implied.'), findsOneWidget);
-    });
+        final radarBtn = find.byKey(const Key('listening_inference_radar_btn'));
+        expect(radarBtn, findsOneWidget);
 
-    testWidgets('3. Radar core button tap triggers TTS playback and selection haptic', (tester) async {
-      await pumpListeningInferenceScreen(tester);
+        await tester.tap(radarBtn);
+        await tester.pump();
 
-      final radarBtn = find.byKey(const Key('listening_inference_radar_btn'));
-      expect(radarBtn, findsOneWidget);
+        verify(
+          () => mockSoundService.playTts(
+            'I left my umbrella at home, and the sky turned pitch black.',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-      await tester.tap(radarBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.playTts(
-        'I left my umbrella at home, and the sky turned pitch black.',
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('4. Radar core button tap with URL audio triggers playUrl', (tester) async {
+    testWidgets('4. Radar core button tap with URL audio triggers playUrl', (
+      tester,
+    ) async {
       final urlState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -361,49 +393,71 @@ void main() {
       await tester.tap(radarBtn);
       await tester.pump();
 
-      verify(() => mockSoundService.playUrl('https://example.com/audio/flight_delay.mp3')).called(1);
+      verify(
+        () => mockSoundService.playUrl(
+          'https://example.com/audio/flight_delay.mp3',
+        ),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('5. Audio fallback cascade uses prompt when textToSpeak is missing', (tester) async {
-      final fallbackState = ListeningLoaded(
-        quests: const [sampleQuest3],
-        currentIndex: 0,
-        livesRemaining: 3,
+    testWidgets(
+      '5. Audio fallback cascade uses prompt when textToSpeak is missing',
+      (tester) async {
+        final fallbackState = ListeningLoaded(
+          quests: const [sampleQuest3],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
+
+        await pumpListeningInferenceScreen(tester, state: fallbackState);
+
+        final radarBtn = find.byKey(const Key('listening_inference_radar_btn'));
+        await tester.tap(radarBtn);
+        await tester.pump();
+
+        verify(
+          () => mockSoundService.playTts(
+            'We need to pack warm coats and thermal boots.',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '6. Radar core displays psychology icon initially and emoji when answered correctly',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        expect(find.byIcon(Icons.psychology_rounded), findsOneWidget);
+        expect(
+          find.byKey(const Key('listening_inference_emoji')),
+          findsNothing,
+        );
+
+        // Select correct answer (index 0)
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('listening_inference_emoji')),
+          findsOneWidget,
+        );
+        expect(find.text('🌧️'), findsOneWidget);
+      },
+    );
+
+    testWidgets('7. Show Text button tap opens audio transcript bottom sheet', (
+      tester,
+    ) async {
+      await pumpListeningInferenceScreen(tester);
+
+      final showTextBtn = find.byKey(
+        const Key('listening_inference_show_text_btn'),
       );
-
-      await pumpListeningInferenceScreen(tester, state: fallbackState);
-
-      final radarBtn = find.byKey(const Key('listening_inference_radar_btn'));
-      await tester.tap(radarBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.playTts(
-        'We need to pack warm coats and thermal boots.',
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('6. Radar core displays psychology icon initially and emoji when answered correctly', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      expect(find.byIcon(Icons.psychology_rounded), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_emoji')), findsNothing);
-
-      // Select correct answer (index 0)
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('listening_inference_emoji')), findsOneWidget);
-      expect(find.text('🌧️'), findsOneWidget);
-    });
-
-    testWidgets('7. Show Text button tap opens audio transcript bottom sheet', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      final showTextBtn = find.byKey(const Key('listening_inference_show_text_btn'));
       expect(showTextBtn, findsOneWidget);
 
       await tester.tap(showTextBtn);
@@ -411,39 +465,64 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('Audio Transcript'), findsOneWidget);
-      expect(find.text('I left my umbrella at home, and the sky turned pitch black.'), findsOneWidget);
+      expect(
+        find.text(
+          'I left my umbrella at home, and the sky turned pitch black.',
+        ),
+        findsOneWidget,
+      );
       expect(find.text('Close'), findsOneWidget);
     });
 
-    testWidgets('8. Closing audio transcript bottom sheet dismisses the sheet', (tester) async {
-      await pumpListeningInferenceScreen(tester);
+    testWidgets(
+      '8. Closing audio transcript bottom sheet dismisses the sheet',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
 
-      await tester.tap(find.byKey(const Key('listening_inference_show_text_btn')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(
+          find.byKey(const Key('listening_inference_show_text_btn')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Audio Transcript'), findsOneWidget);
+        expect(find.text('Audio Transcript'), findsOneWidget);
 
-      await tester.tap(find.text('Close'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text('Close'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Audio Transcript'), findsNothing);
-    });
+        expect(find.text('Audio Transcript'), findsNothing);
+      },
+    );
 
-    testWidgets('9. Inference grid displays all option choices with indicators', (tester) async {
-      await pumpListeningInferenceScreen(tester);
+    testWidgets(
+      '9. Inference grid displays all option choices with indicators',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
 
-      expect(find.byKey(const Key('listening_inference_option_0')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_option_1')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_option_2')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_option_3')), findsOneWidget);
+        expect(
+          find.byKey(const Key('listening_inference_option_0')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('listening_inference_option_1')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('listening_inference_option_2')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('listening_inference_option_3')),
+          findsOneWidget,
+        );
 
-      expect(find.text('It is going to rain'), findsOneWidget);
-      expect(find.text('A sunny afternoon'), findsOneWidget);
-      expect(find.text('The bus has arrived'), findsOneWidget);
-      expect(find.text('He lost his keys'), findsOneWidget);
-    });
+        expect(find.text('It is going to rain'), findsOneWidget);
+        expect(find.text('A sunny afternoon'), findsOneWidget);
+        expect(find.text('The bus has arrived'), findsOneWidget);
+        expect(find.text('He lost his keys'), findsOneWidget);
+      },
+    );
 
     testWidgets('10. Two-option quest renders options in grid', (tester) async {
       final twoOptionState = ListeningLoaded(
@@ -454,177 +533,238 @@ void main() {
 
       await pumpListeningInferenceScreen(tester, state: twoOptionState);
 
-      expect(find.byKey(const Key('listening_inference_option_0')), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_option_1')), findsOneWidget);
-      expect(find.text('Impatient'), findsOneWidget);
-      expect(find.text('Excited'), findsOneWidget);
-    });
-
-    testWidgets('11. Tapping correct option submits SubmitAnswer(true), plays sound, and triggers haptic', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      final correctOption = find.byKey(const Key('listening_inference_option_0'));
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('12. Tapping correct option stops the SpeedChallengeTimer', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
-      expect(timerState.remainingSeconds, greaterThan(0));
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(timerState.remainingSeconds, greaterThan(0));
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('13. Tapping wrong option submits SubmitAnswer(false) with userAnswer', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      final wrongOption = find.byKey(const Key('listening_inference_option_1'));
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('14. Tapping wrong option stops the SpeedChallengeTimer', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('15. Answer lockout: secondary taps on options are ignored once answered', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      // Tap first option
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      // Tap second option
-      await tester.tap(find.byKey(const Key('listening_inference_option_2')), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-
-    testWidgets('16. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('17. In answered state, correct option is highlighted with verified icon', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byIcon(Icons.verified_user_rounded), findsOneWidget);
-    });
-
-    testWidgets('18. In answered state with wrong choice, chosen option shows report_problem icon', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byIcon(Icons.report_problem_rounded), findsOneWidget);
-    });
-
-    testWidgets('19. In answered state with explanation present, explanation card is displayed', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      expect(find.byKey(const Key('listening_inference_explanation')), findsNothing);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byType(ListeningInferenceExplanation), findsOneWidget);
-      expect(find.text('Explanation'), findsOneWidget);
       expect(
-        find.descendant(
-          of: find.byType(ListeningInferenceExplanation),
-          matching: find.text(
-            'A dark sky suggests incoming rain and without an umbrella he will get wet.',
-          ),
-        ),
+        find.byKey(const Key('listening_inference_option_0')),
         findsOneWidget,
       );
-    });
-
-    testWidgets('20. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      final continueFinder = find.text('CONTINUE');
-      if (continueFinder.evaluate().isNotEmpty) {
-        await tester.tap(continueFinder.first);
-        await tester.pump();
-
-        verify(() => mockListeningBloc.add(any(that: isA<NextQuestion>()))).called(1);
-      }
-    });
-
-    testWidgets('21. Question transition clears selections, updates options, and restarts timer without crash', (tester) async {
-      await pumpListeningInferenceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final nextState = const ListeningLoaded(
-        quests: [sampleQuest1, sampleQuest2, sampleQuest3],
-        currentIndex: 1,
-        livesRemaining: 3,
+      expect(
+        find.byKey(const Key('listening_inference_option_1')),
+        findsOneWidget,
       );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
       expect(find.text('Impatient'), findsOneWidget);
       expect(find.text('Excited'), findsOneWidget);
-
-      await tester.pump(const Duration(milliseconds: 500));
     });
 
-    testWidgets('22. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets(
+      '11. Tapping correct option submits SubmitAnswer(true), plays sound, and triggers haptic',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        final correctOption = find.byKey(
+          const Key('listening_inference_option_0'),
+        );
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets('12. Tapping correct option stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
+      await pumpListeningInferenceScreen(tester);
+
+      final timerState = tester.state<SpeedChallengeTimerState>(
+        find.byType(SpeedChallengeTimer),
+      );
+      expect(timerState.remainingSeconds, greaterThan(0));
+
+      await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(timerState.remainingSeconds, greaterThan(0));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+      '13. Tapping wrong option submits SubmitAnswer(false) with userAnswer',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        final wrongOption = find.byKey(
+          const Key('listening_inference_option_1'),
+        );
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets('14. Tapping wrong option stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
+      await pumpListeningInferenceScreen(tester);
+
+      await tester.tap(find.byKey(const Key('listening_inference_option_1')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+      '15. Answer lockout: secondary taps on options are ignored once answered',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        // Tap first option
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        // Tap second option
+        await tester.tap(
+          find.byKey(const Key('listening_inference_option_2')),
+          warnIfMissed: false,
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verifyNever(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
+
+    testWidgets(
+      '16. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        final SpeedChallengeTimer timerWidget = tester.widget(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '17. In answered state, correct option is highlighted with verified icon',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byIcon(Icons.verified_user_rounded), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '18. In answered state with wrong choice, chosen option shows report_problem icon',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        await tester.tap(find.byKey(const Key('listening_inference_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byIcon(Icons.report_problem_rounded), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '19. In answered state with explanation present, explanation card is displayed',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        expect(
+          find.byKey(const Key('listening_inference_explanation')),
+          findsNothing,
+        );
+
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byType(ListeningInferenceExplanation), findsOneWidget);
+        expect(find.text('Explanation'), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byType(ListeningInferenceExplanation),
+            matching: find.text(
+              'A dark sky suggests incoming rain and without an umbrella he will get wet.',
+            ),
+          ),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '20. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        final continueFinder = find.text('CONTINUE');
+        if (continueFinder.evaluate().isNotEmpty) {
+          await tester.tap(continueFinder.first);
+          await tester.pump();
+
+          verify(
+            () => mockListeningBloc.add(any(that: isA<NextQuestion>())),
+          ).called(1);
+        }
+      },
+    );
+
+    testWidgets(
+      '21. Question transition clears selections, updates options, and restarts timer without crash',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester);
+
+        await tester.tap(find.byKey(const Key('listening_inference_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final nextState = const ListeningLoaded(
+          quests: [sampleQuest1, sampleQuest2, sampleQuest3],
+          currentIndex: 1,
+          livesRemaining: 3,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('Impatient'), findsOneWidget);
+        expect(find.text('Excited'), findsOneWidget);
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('22. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpListeningInferenceScreen(tester);
 
       clearInteractions(mockListeningBloc);
@@ -636,68 +776,84 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1100));
 
-      verify(() => mockListeningBloc.add(any(that: isA<ListeningHintUsed>()))).called(1);
+      verify(
+        () => mockListeningBloc.add(any(that: isA<ListeningHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('23. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpListeningInferenceScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '23. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpListeningInferenceScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('listening_inference_radar_core')), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(
+          find.byKey(const Key('listening_inference_radar_core')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('24. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpListeningInferenceScreen(
-        tester,
-        state: const ListeningGameComplete(
-          xpEarned: 100,
-          coinsEarned: 20,
-          questCount: 5,
-        ),
-      );
+    testWidgets(
+      '24. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpListeningInferenceScreen(
+          tester,
+          state: const ListeningGameComplete(
+            xpEarned: 100,
+            coinsEarned: 20,
+            questCount: 5,
+          ),
+        );
 
-      expect(find.byType(ListeningInferenceScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ListeningInferenceScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('25. Game over state renders with zero lives', (tester) async {
       await pumpListeningInferenceScreen(
         tester,
-        state: const ListeningGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-        ),
+        state: const ListeningGameOver(quests: [sampleQuest1], currentIndex: 0),
       );
 
       expect(find.byType(ListeningInferenceScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('26. Level 1 briefing dialog displays INFERENCE LENS and dismisses on FOCUS LENS tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_listeningInference': false,
-      });
+    testWidgets(
+      '26. Level 1 briefing dialog displays INFERENCE LENS and dismisses on FOCUS LENS tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_listeningInference': false,
+        });
 
-      await pumpListeningInferenceScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpListeningInferenceScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('INFERENCE LENS'), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('INFERENCE LENS'), findsOneWidget);
 
-      final actionBtn = find.text('FOCUS LENS');
-      expect(actionBtn, findsOneWidget);
+        final actionBtn = find.text('FOCUS LENS');
+        expect(actionBtn, findsOneWidget);
 
-      await tester.tap(actionBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('27. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('27. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpListeningInferenceScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(ListeningInferenceScreen), findsOneWidget);
 
@@ -705,36 +861,37 @@ void main() {
       expect(find.byType(ListeningInferenceScreen), findsOneWidget);
     });
 
-    testWidgets('28. Small mobile screen (320x568) renders with zero overflow', (tester) async {
-      await pumpListeningInferenceScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+    testWidgets(
+      '28. Small mobile screen (320x568) renders with zero overflow',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester, size: const Size(320, 568));
+        expect(find.byType(ListeningInferenceScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('29. Tablet viewport (768x1024) renders with zero overflow', (
+      tester,
+    ) async {
+      await pumpListeningInferenceScreen(tester, size: const Size(768, 1024));
       expect(find.byType(ListeningInferenceScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('29. Tablet viewport (768x1024) renders with zero overflow', (tester) async {
-      await pumpListeningInferenceScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
-      expect(find.byType(ListeningInferenceScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '30. Reduced motion mode suppresses radar pulse rings and semantics present',
+      (tester) async {
+        await pumpListeningInferenceScreen(tester, reduceMotion: true);
 
-    testWidgets('30. Reduced motion mode suppresses radar pulse rings and semantics present', (tester) async {
-      await pumpListeningInferenceScreen(tester, reduceMotion: true);
+        expect(find.byType(ListeningInferenceRadarCore), findsOneWidget);
+        expect(find.byType(ListeningInferenceGrid), findsOneWidget);
 
-      expect(find.byType(ListeningInferenceRadarCore), findsOneWidget);
-      expect(find.byType(ListeningInferenceGrid), findsOneWidget);
+        final radarSemantics = find.bySemanticsLabel('Play audio inference');
+        expect(radarSemantics, findsOneWidget);
 
-      final radarSemantics = find.bySemanticsLabel('Play audio inference');
-      expect(radarSemantics, findsOneWidget);
-
-      final option0Semantics = find.bySemanticsLabel('It is going to rain');
-      expect(option0Semantics, findsOneWidget);
-    });
+        final option0Semantics = find.bySemanticsLabel('It is going to rain');
+        expect(option0Semantics, findsOneWidget);
+      },
+    );
   });
 }
-

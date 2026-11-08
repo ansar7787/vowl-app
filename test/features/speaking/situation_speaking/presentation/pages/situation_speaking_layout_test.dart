@@ -130,7 +130,8 @@ void main() {
       'rebooking',
       'agent',
     ],
-    hint: 'State the delay problem clearly and inquire about alternate flights.',
+    hint:
+        'State the delay problem clearly and inquire about alternate flights.',
   );
 
   final testLoadedState = SpeakingLoaded(
@@ -194,18 +195,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => 'mock_situation_rec.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => 'mock_situation_rec.m4a');
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
     when(() => mockSpeechService.isListening).thenReturn(false);
@@ -301,10 +307,7 @@ void main() {
                 textScaler: TextScaler.linear(textScaleFactor),
                 disableAnimations: reduceMotion,
               ),
-              child: SituationSpeakingScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              child: SituationSpeakingScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -319,10 +322,7 @@ void main() {
     testWidgets('renders GameShimmerLoading on SpeakingInitial state', (
       tester,
     ) async {
-      await pumpSituationSpeakingScreen(
-        tester,
-        state: const SpeakingInitial(),
-      );
+      await pumpSituationSpeakingScreen(tester, state: const SpeakingInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(SituationSpeakingHeader), findsNothing);
@@ -332,10 +332,7 @@ void main() {
     testWidgets('renders GameShimmerLoading on SpeakingLoading state', (
       tester,
     ) async {
-      await pumpSituationSpeakingScreen(
-        tester,
-        state: const SpeakingLoading(),
-      );
+      await pumpSituationSpeakingScreen(tester, state: const SpeakingLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(SituationSpeakingHeader), findsNothing);
@@ -350,7 +347,10 @@ void main() {
         expect(find.byType(GameShimmerLoading), findsNothing);
         expect(find.byType(SituationSpeakingHeader), findsOneWidget);
         expect(find.byType(SituationSpeakingBriefingCard), findsOneWidget);
-        expect(find.byKey(const Key('situation_speaking_header')), findsOneWidget);
+        expect(
+          find.byKey(const Key('situation_speaking_header')),
+          findsOneWidget,
+        );
         expect(
           find.byKey(const Key('situation_speaking_briefing_card')),
           findsOneWidget,
@@ -439,41 +439,39 @@ void main() {
       expect(find.text('START SITUATION'), findsOneWidget);
     });
 
-    testWidgets(
-      'displays scenario rules in QuestBriefingOverlay on Level 1',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({});
+    testWidgets('displays scenario rules in QuestBriefingOverlay on Level 1', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({});
 
-        await pumpSituationSpeakingScreen(tester, level: 1);
+      await pumpSituationSpeakingScreen(tester, level: 1);
 
-        expect(find.text('Listen to the scenario context'), findsOneWidget);
-        expect(find.text('Think about what you would say'), findsOneWidget);
-        expect(find.text('Hold the mic and speak naturally'), findsOneWidget);
-      },
-    );
+      expect(find.text('Listen to the scenario context'), findsOneWidget);
+      expect(find.text('Think about what you would say'), findsOneWidget);
+      expect(find.text('Hold the mic and speak naturally'), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping "Start Situation" button dismisses briefing overlay',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({});
+    testWidgets('tapping "Start Situation" button dismisses briefing overlay', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({});
 
-        await pumpSituationSpeakingScreen(tester, level: 1);
+      await pumpSituationSpeakingScreen(tester, level: 1);
 
-        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
-        final startBtn = find.text('START SITUATION');
-        expect(startBtn, findsOneWidget);
-        await tester.ensureVisible(startBtn);
-        await tester.tap(startBtn);
+      final startBtn = find.text('START SITUATION');
+      expect(startBtn, findsOneWidget);
+      await tester.ensureVisible(startBtn);
+      await tester.tap(startBtn);
 
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
-        await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+      await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.byType(QuestBriefingOverlay), findsNothing);
-        expect(find.byType(SituationSpeakingBriefingCard), findsOneWidget);
-      },
-    );
+      expect(find.byType(QuestBriefingOverlay), findsNothing);
+      expect(find.byType(SituationSpeakingBriefingCard), findsOneWidget);
+    });
 
     testWidgets('bypasses briefing overlay on Level 2 or higher', (
       tester,
@@ -503,7 +501,10 @@ void main() {
       expect(textFinder, findsOneWidget);
 
       final textWidget = tester.widget<Text>(textFinder);
-      expect(textWidget.data, 'LISTEN TO THE SITUATION AND SPEAK YOUR RESPONSE.');
+      expect(
+        textWidget.data,
+        'LISTEN TO THE SITUATION AND SPEAK YOUR RESPONSE.',
+      );
       expect(textWidget.textAlign, TextAlign.center);
       expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
     });
@@ -512,9 +513,7 @@ void main() {
       await pumpSituationSpeakingScreen(tester);
 
       final headerSemantics = find.byWidgetPredicate(
-        (widget) =>
-            widget is Semantics &&
-            widget.properties.header == true,
+        (widget) => widget is Semantics && widget.properties.header == true,
       );
       expect(headerSemantics, findsOneWidget);
     });
@@ -534,23 +533,24 @@ void main() {
       },
     );
 
-    testWidgets('handles extremely long instruction without RenderFlex overflow', (
-      tester,
-    ) async {
-      final longInstructionQuest = createQuest(
-        instruction:
-            'This is an exceptionally detailed and long instruction designed to test the layout bounds and ellipsis formatting of the SituationSpeakingHeader under constrained viewport conditions.',
-      );
-      final state = testLoadedState.copyWith(quests: [longInstructionQuest]);
+    testWidgets(
+      'handles extremely long instruction without RenderFlex overflow',
+      (tester) async {
+        final longInstructionQuest = createQuest(
+          instruction:
+              'This is an exceptionally detailed and long instruction designed to test the layout bounds and ellipsis formatting of the SituationSpeakingHeader under constrained viewport conditions.',
+        );
+        final state = testLoadedState.copyWith(quests: [longInstructionQuest]);
 
-      await pumpSituationSpeakingScreen(tester, state: state);
+        await pumpSituationSpeakingScreen(tester, state: state);
 
-      expect(tester.takeException(), isNull);
-      expect(
-        find.byKey(const Key('situation_speaking_header_text')),
-        findsOneWidget,
-      );
-    });
+        expect(tester.takeException(), isNull);
+        expect(
+          find.byKey(const Key('situation_speaking_header_text')),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('Group 4: SituationSpeakingBriefingCard & Typewriter Mechanics', () {
@@ -576,9 +576,7 @@ void main() {
     ) async {
       await pumpSituationSpeakingScreen(tester);
 
-      final bodyFinder = find.byKey(
-        const Key('situation_speaking_body_text'),
-      );
+      final bodyFinder = find.byKey(const Key('situation_speaking_body_text'));
       expect(bodyFinder, findsOneWidget);
       final textWidget = tester.widget<Text>(bodyFinder);
       expect(
@@ -592,10 +590,7 @@ void main() {
       (tester) async {
         VowlMotion.lowAnimationModeOverride.value = false;
 
-        await pumpSituationSpeakingScreen(
-          tester,
-          reduceMotion: false,
-        );
+        await pumpSituationSpeakingScreen(tester, reduceMotion: false);
 
         expect(
           find.byKey(const Key('situation_speaking_briefing_card')),
@@ -613,10 +608,7 @@ void main() {
       (tester) async {
         VowlMotion.lowAnimationModeOverride.value = false;
 
-        await pumpSituationSpeakingScreen(
-          tester,
-          reduceMotion: false,
-        );
+        await pumpSituationSpeakingScreen(tester, reduceMotion: false);
 
         final cardFinder = find.byKey(
           const Key('situation_speaking_briefing_card_gesture'),
@@ -825,7 +817,10 @@ void main() {
         (widget) =>
             widget is Semantics &&
             widget.container == true &&
-            (widget.properties.label?.contains('Speaking guide hint: Use a polite opener') ?? false),
+            (widget.properties.label?.contains(
+                  'Speaking guide hint: Use a polite opener',
+                ) ??
+                false),
       );
       expect(hintSemantics, findsOneWidget);
     });
@@ -847,22 +842,23 @@ void main() {
       },
     );
 
-    testWidgets('handles quest with null hint cleanly without mounting hint container', (
-      tester,
-    ) async {
-      final questNoHint = createQuest(hint: null);
-      final hintState = testLoadedState.copyWith(
-        quests: [questNoHint],
-        hintUsed: true,
-      );
+    testWidgets(
+      'handles quest with null hint cleanly without mounting hint container',
+      (tester) async {
+        final questNoHint = createQuest(hint: null);
+        final hintState = testLoadedState.copyWith(
+          quests: [questNoHint],
+          hintUsed: true,
+        );
 
-      await pumpSituationSpeakingScreen(tester, state: hintState);
+        await pumpSituationSpeakingScreen(tester, state: hintState);
 
-      expect(
-        find.byKey(const Key('situation_speaking_hint_container')),
-        findsNothing,
-      );
-    });
+        expect(
+          find.byKey(const Key('situation_speaking_hint_container')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   group('Group 7: SpeakToConfirmOverlay Integration', () {
@@ -1122,10 +1118,7 @@ void main() {
     testWidgets(
       'renders cleanly without RenderFlex overflow on compact mobile (320x568)',
       (tester) async {
-        await pumpSituationSpeakingScreen(
-          tester,
-          size: const Size(320, 568),
-        );
+        await pumpSituationSpeakingScreen(tester, size: const Size(320, 568));
 
         expect(tester.takeException(), isNull);
         expect(find.byType(SituationSpeakingHeader), findsOneWidget);
@@ -1136,10 +1129,7 @@ void main() {
     testWidgets(
       'renders cleanly without RenderFlex overflow on tablet viewport (768x1024)',
       (tester) async {
-        await pumpSituationSpeakingScreen(
-          tester,
-          size: const Size(768, 1024),
-        );
+        await pumpSituationSpeakingScreen(tester, size: const Size(768, 1024));
 
         expect(tester.takeException(), isNull);
         expect(find.byType(SituationSpeakingHeader), findsOneWidget);
@@ -1148,20 +1138,14 @@ void main() {
     );
 
     testWidgets('renders cleanly under Light Theme', (tester) async {
-      await pumpSituationSpeakingScreen(
-        tester,
-        themeMode: ThemeMode.light,
-      );
+      await pumpSituationSpeakingScreen(tester, themeMode: ThemeMode.light);
 
       expect(tester.takeException(), isNull);
       expect(find.byType(SituationSpeakingBriefingCard), findsOneWidget);
     });
 
     testWidgets('renders cleanly under Dark Theme', (tester) async {
-      await pumpSituationSpeakingScreen(
-        tester,
-        themeMode: ThemeMode.dark,
-      );
+      await pumpSituationSpeakingScreen(tester, themeMode: ThemeMode.dark);
 
       expect(tester.takeException(), isNull);
       expect(find.byType(SituationSpeakingBriefingCard), findsOneWidget);
@@ -1170,10 +1154,7 @@ void main() {
     testWidgets(
       'clamps extreme text scale (1.3x) safely to 1.1x without overflow',
       (tester) async {
-        await pumpSituationSpeakingScreen(
-          tester,
-          textScaleFactor: 1.3,
-        );
+        await pumpSituationSpeakingScreen(tester, textScaleFactor: 1.3);
 
         expect(tester.takeException(), isNull);
         expect(find.byType(SituationSpeakingHeader), findsOneWidget);

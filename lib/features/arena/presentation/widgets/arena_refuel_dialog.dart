@@ -49,11 +49,12 @@ class ArenaRefuelDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
     final borderColor = isDark
@@ -113,7 +114,7 @@ class ArenaRefuelDialog extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+                  color: isDark ? AppColors.slate900 : AppColors.slate50,
                   borderRadius: BorderRadius.circular(14.r),
                   border: Border.all(color: borderColor),
                 ),
@@ -148,11 +149,7 @@ class ArenaRefuelDialog extends StatelessWidget {
                     ),
 
                     // Divider
-                    Container(
-                      width: 1.w,
-                      height: 26.h,
-                      color: borderColor,
-                    ),
+                    Container(width: 1.w, height: 26.h, color: borderColor),
 
                     // Required Stake
                     Expanded(
@@ -212,22 +209,23 @@ class ArenaRefuelDialog extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: isPremium
                         ? const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                            colors: [AppColors.indigo500, AppColors.indigo600],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           )
                         : const LinearGradient(
-                            colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                            colors: [AppColors.amber500, AppColors.amber600],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                     borderRadius: BorderRadius.circular(12.r),
                     boxShadow: [
                       BoxShadow(
-                        color: (isPremium
-                                ? const Color(0xFF6366F1)
-                                : const Color(0xFFF59E0B))
-                            .withValues(alpha: 0.32),
+                        color:
+                            (isPremium
+                                    ? AppColors.indigo500
+                                    : AppColors.amber500)
+                                .withValues(alpha: 0.32),
                         blurRadius: 8,
                         offset: const Offset(0, 3),
                       ),
@@ -287,4 +285,3 @@ class ArenaRefuelDialog extends StatelessWidget {
     );
   }
 }
-

@@ -30,15 +30,26 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_map_node.dart'
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockStoryService extends Mock implements StoryService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockRewardLimitService extends Mock implements RewardLimitService {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockPurchaseLevelUnlock extends Mock implements PurchaseLevelUnlock {}
 
 class FakeBuildContext extends Fake implements BuildContext {}
@@ -77,10 +88,7 @@ void main() {
       'alphabet': [1],
     },
     starRatings: {
-      'alphabet': {
-        '1': 3,
-        'magic_stars': 2,
-      },
+      'alphabet': {'1': 3, 'magic_stars': 2},
     },
   );
 
@@ -109,9 +117,12 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
-    if (di.sl.isRegistered<RewardLimitService>()) di.sl.unregister<RewardLimitService>();
-    if (di.sl.isRegistered<UpdateUserRewards>()) di.sl.unregister<UpdateUserRewards>();
-    if (di.sl.isRegistered<PurchaseLevelUnlock>()) di.sl.unregister<PurchaseLevelUnlock>();
+    if (di.sl.isRegistered<RewardLimitService>())
+      di.sl.unregister<RewardLimitService>();
+    if (di.sl.isRegistered<UpdateUserRewards>())
+      di.sl.unregister<UpdateUserRewards>();
+    if (di.sl.isRegistered<PurchaseLevelUnlock>())
+      di.sl.unregister<PurchaseLevelUnlock>();
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
@@ -137,20 +148,24 @@ void main() {
     );
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockStoryService.getStoryBeat(any(), any(), any())).thenReturn(null);
+    when(
+      () => mockStoryService.getStoryBeat(any(), any(), any()),
+    ).thenReturn(null);
     when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
   });
 
   tearDown(() {
@@ -353,88 +368,83 @@ void main() {
       },
     );
 
-    testWidgets(
-      'tapping back button navigates to /home when cannot pop',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping back button navigates to /home when cannot pop', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
-        expect(backBtn, findsOneWidget);
+      final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
+      expect(backBtn, findsOneWidget);
 
-        await tester.tap(backBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+      await tester.tap(backBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
 
-        expect(navigatedRoutes, contains('/home'));
+      expect(navigatedRoutes, contains('/home'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'tapping Star Vault FAB opens KidsStarVaultBottomSheet',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping Star Vault FAB opens KidsStarVaultBottomSheet', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final starVaultBtn = find.byIcon(Icons.lock_outline_rounded);
-        await tester.tap(starVaultBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+      final starVaultBtn = find.byIcon(Icons.lock_outline_rounded);
+      await tester.tap(starVaultBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.byType(KidsStarVaultBottomSheet), findsOneWidget);
+      expect(find.byType(KidsStarVaultBottomSheet), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'tapping Golden Keys FAB opens KeyShopBottomSheet modal',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping Golden Keys FAB opens KeyShopBottomSheet modal', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        // Find Golden Keys ScaleButton
-        final keysFab = find.ancestor(
-          of: find.byIcon(Icons.key_rounded).first,
-          matching: find.byType(ScaleButton),
-        );
-        expect(keysFab, findsOneWidget);
+      // Find Golden Keys ScaleButton
+      final keysFab = find.ancestor(
+        of: find.byIcon(Icons.key_rounded).first,
+        matching: find.byType(ScaleButton),
+      );
+      expect(keysFab, findsOneWidget);
 
-        await tester.tap(keysFab, warnIfMissed: false);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+      await tester.tap(keysFab, warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
 
-        // KeyShopBottomSheet displays 'Golden Key' title
-        expect(find.text('Golden Key'), findsOneWidget);
+      // KeyShopBottomSheet displays 'Golden Key' title
+      expect(find.text('Golden Key'), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
   });
 
   group('KidsLevelMap - Visuals & Responsive Layout', () {
-    testWidgets(
-      'renders cleanly in dark mode without contrast issues',
-      (tester) async {
-        await pumpScreen(tester, themeMode: ThemeMode.dark);
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
+      await pumpScreen(tester, themeMode: ThemeMode.dark);
 
-        expect(find.byType(KidsLevelMap), findsOneWidget);
-        expect(find.text('Alphabet Adventure'), findsOneWidget);
+      expect(find.byType(KidsLevelMap), findsOneWidget);
+      expect(find.text('Alphabet Adventure'), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'renders on compact 320dp width without RenderFlex overflow',
-      (tester) async {
-        await pumpScreen(tester, width: 320, height: 568);
+    testWidgets('renders on compact 320dp width without RenderFlex overflow', (
+      tester,
+    ) async {
+      await pumpScreen(tester, width: 320, height: 568);
 
-        expect(find.byType(KidsLevelMap), findsOneWidget);
-        expect(tester.takeException(), isNull);
+      expect(find.byType(KidsLevelMap), findsOneWidget);
+      expect(tester.takeException(), isNull);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
     testWidgets(
       'tapping buddy triggers TTS cheer and displays speech bubble within screen bounds without overflow',
@@ -448,7 +458,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        final captured = verify(() => mockTtsService.speak(captureAny())).captured;
+        final captured = verify(
+          () => mockTtsService.speak(captureAny()),
+        ).captured;
         expect(captured, isNotEmpty);
         final spokenText = captured.last as String;
 
@@ -480,21 +492,19 @@ void main() {
       },
     );
 
-    testWidgets(
-      'tapping playable level node stops active TTS playback',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping playable level node stops active TTS playback', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final level2Finder = find.text('2');
-        expect(level2Finder, findsOneWidget);
+      final level2Finder = find.text('2');
+      expect(level2Finder, findsOneWidget);
 
-        await tester.tap(level2Finder, warnIfMissed: false);
-        await tester.pump();
+      await tester.tap(level2Finder, warnIfMissed: false);
+      await tester.pump();
 
-        verify(() => mockTtsService.stop()).called(greaterThanOrEqualTo(1));
-        await cleanUp(tester);
-      },
-    );
+      verify(() => mockTtsService.stop()).called(greaterThanOrEqualTo(1));
+      await cleanUp(tester);
+    });
   });
 }
-

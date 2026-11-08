@@ -123,6 +123,7 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -154,8 +155,9 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
             final availableWidth = constraints.maxWidth;
             final isNarrow = availableWidth < 360;
 
-            final observatoryWidth =
-                (availableWidth * 0.88).clamp(240.0, 340.0).w;
+            final observatoryWidth = (availableWidth * 0.88)
+                .clamp(240.0, 340.0)
+                .w;
             final observatoryHeight = 175.h;
 
             return Center(
@@ -193,7 +195,8 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
                             Icon(
                               Icons.touch_app_rounded,
                               size: 15.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : _LocalPalette.color0284c7,
@@ -210,7 +213,8 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.9)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -366,12 +370,14 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         final isAnswered = state.answerStatus.isAnswered;
-        final isCorrectAnswer = (_selectedOption == quest.correctAnswer) ||
+        final isCorrectAnswer =
+            (_selectedOption == quest.correctAnswer) ||
             (state.answerStatus == AnswerStatus.correct);
 
         Color canvasBg = isHovering ? AppColors.slate800 : AppColors.slate900;
-        Color borderColor =
-            isHovering ? _LocalPalette.color38bdf8 : AppColors.slate600;
+        Color borderColor = isHovering
+            ? _LocalPalette.color38bdf8
+            : AppColors.slate600;
 
         if (isAnswered) {
           if (isCorrectAnswer) {
@@ -483,8 +489,9 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
                               )
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  _LocalPalette.color38bdf8
-                                      .withValues(alpha: 0.4),
+                                  _LocalPalette.color38bdf8.withValues(
+                                    alpha: 0.4,
+                                  ),
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -584,8 +591,8 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
 
       // Fallback to quest text analysis
       bool isCorrect = text == quest.correctAnswer;
-      final questText =
-          '${quest.instruction ?? ''} ${quest.explanation ?? ''}'.toLowerCase();
+      final questText = '${quest.instruction ?? ''} ${quest.explanation ?? ''}'
+          .toLowerCase();
       int dayScore = dayWords.where((w) => questText.contains(w)).length;
       int nightScore = nightWords.where((w) => questText.contains(w)).length;
 
@@ -617,10 +624,8 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
 
     // Day = Sunny Sky colors, Night = Deep Space colors
     Color color = isDay ? _LocalPalette.color38bdf8 : AppColors.slate800;
-    Color borderColor =
-        isDay ? _LocalPalette.color7dd3fc : AppColors.slate700;
-    Color shadowColor =
-        isDay ? _LocalPalette.color0284c7 : AppColors.slate900;
+    Color borderColor = isDay ? _LocalPalette.color7dd3fc : AppColors.slate700;
+    Color shadowColor = isDay ? _LocalPalette.color0284c7 : AppColors.slate900;
 
     if (isAnswered) {
       if (isSelected) {
@@ -647,10 +652,7 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: borderColor,
-          width: isSelected ? 2.5.w : 2.r,
-        ),
+        border: Border.all(color: borderColor, width: isSelected ? 2.5.w : 2.r),
         boxShadow: [
           BoxShadow(
             color: shadowColor.withValues(alpha: 0.3),
@@ -670,11 +672,11 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
                   isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
                   color: isAnswered
                       ? (isCorrect
-                          ? _LocalPalette.successBorder
-                          : _LocalPalette.errorBorder)
+                            ? _LocalPalette.successBorder
+                            : _LocalPalette.errorBorder)
                       : (isDay
-                          ? _LocalPalette.colorfef08a
-                          : AppColors.slate200),
+                            ? _LocalPalette.colorfef08a
+                            : AppColors.slate200),
                   size: 26.r,
                 ),
                 SizedBox(height: 6.h),
@@ -686,8 +688,8 @@ class _KidsDayNightLayoutState extends State<KidsDayNightLayout> {
                     fontWeight: FontWeight.w700,
                     color: isAnswered
                         ? (isCorrect
-                            ? _LocalPalette.successBorder
-                            : _LocalPalette.errorBorder)
+                              ? _LocalPalette.successBorder
+                              : _LocalPalette.errorBorder)
                         : Colors.white,
                     height: 1.2,
                   ),

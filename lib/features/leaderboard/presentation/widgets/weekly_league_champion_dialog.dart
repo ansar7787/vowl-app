@@ -62,14 +62,15 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
           child: FadeTransition(opacity: anim1, child: child),
         );
       },
-      pageBuilder: (context, animation, secondaryAnimation) => WeeklyLeagueChampionDialog(
-        user: user,
-        rank: rank,
-        vipDays: vipDays,
-        coins: coins,
-        weekKey: weekKey,
-        onClaim: onClaim,
-      ),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          WeeklyLeagueChampionDialog(
+            user: user,
+            rank: rank,
+            vipDays: vipDays,
+            coins: coins,
+            weekKey: weekKey,
+            onClaim: onClaim,
+          ),
     );
   }
 
@@ -232,7 +233,10 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     return Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      insetPadding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 24.h,
+      ),
       child: Stack(
         alignment: Alignment.center,
         clipBehavior: Clip.none,
@@ -263,7 +267,10 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
               borderRadius: BorderRadius.circular(30.r),
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 24.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSpacing.cardSpacious,
+                  vertical: 24.h,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -294,7 +301,9 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                     LaurelTrophy3DArtwork(
                       rank: widget.rank,
                       size: 155,
-                      rotationController: reduceMotion ? null : _rotationController,
+                      rotationController: reduceMotion
+                          ? null
+                          : _rotationController,
                     ),
 
                     SizedBox(height: 16.h),
@@ -366,8 +375,8 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                       title: widget.rank == 1
                           ? 'Golden Champion Avatar Aura'
                           : (widget.rank <= 3
-                              ? 'Podium Laurels Profile Badge'
-                              : 'Division Finisher Ribbons'),
+                                ? 'Podium Laurels Profile Badge'
+                                : 'Division Finisher Ribbons'),
                       subtitle: widget.rank == 1
                           ? 'Glows around your avatar in the league all week'
                           : 'Showcased across your global profile and rankings',
@@ -402,8 +411,9 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                                 height: 22.r,
                                 child: const CircularProgressIndicator(
                                   strokeWidth: 2.5,
-                                  valueColor:
-                                      AlwaysStoppedAnimation(Colors.white),
+                                  valueColor: AlwaysStoppedAnimation(
+                                    Colors.white,
+                                  ),
                                 ),
                               )
                             : Row(
@@ -526,4 +536,3 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     );
   }
 }
-

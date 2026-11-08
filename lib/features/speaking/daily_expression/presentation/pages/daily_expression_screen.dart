@@ -82,7 +82,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final bool reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_glowController.isAnimating) {
@@ -155,10 +156,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      submitWrongAnswer(
-        quest: quest,
-        userAnswer: '[Failed Speak to Confirm]',
-      );
+      submitWrongAnswer(quest: quest, userAnswer: '[Failed Speak to Confirm]');
     }
   }
 
@@ -175,7 +173,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
     final mediaQuery = MediaQuery.of(context);
 
-    final bool reduceMotion = mediaQuery.disableAnimations ||
+    final bool reduceMotion =
+        mediaQuery.disableAnimations ||
         VowlMotion.lowAnimationModeOverride.value;
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
@@ -260,9 +259,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.1),
                                                 borderRadius:
-                                                    BorderRadius.circular(
-                                                      16.r,
-                                                    ),
+                                                    BorderRadius.circular(16.r),
                                                 border: Border.all(
                                                   color: theme.primaryColor
                                                       .withValues(alpha: 0.3),
@@ -295,9 +292,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                             return reduceMotion
                                                 ? hintWidget
                                                 : hintWidget
-                                                    .animate()
-                                                    .fadeIn(duration: 300.ms)
-                                                    .slideY(begin: -0.1);
+                                                      .animate()
+                                                      .fadeIn(duration: 300.ms)
+                                                      .slideY(begin: -0.1);
                                           }(),
                                         DailyExpressionScratchPanel(
                                           quest: quest,
@@ -325,17 +322,17 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                           () {
                                             final usagePanel =
                                                 DailyExpressionUsagePanel(
-                                              quest: quest,
-                                              primaryColor:
-                                                  theme.primaryColor,
-                                              isDark: isDark,
-                                            );
+                                                  quest: quest,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  isDark: isDark,
+                                                );
                                             return reduceMotion
                                                 ? usagePanel
                                                 : usagePanel
-                                                    .animate()
-                                                    .fadeIn(duration: 300.ms)
-                                                    .slideY(begin: 0.1);
+                                                      .animate()
+                                                      .fadeIn(duration: 300.ms)
+                                                      .slideY(begin: 0.1);
                                           }(),
                                       ],
                                     );

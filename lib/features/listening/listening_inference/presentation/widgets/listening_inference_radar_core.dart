@@ -93,18 +93,19 @@ class ListeningInferenceRadarCore extends StatelessWidget {
                 ),
                 child: isCorrectState == true && emoji != null
                     ? (reduceMotion
-                        ? Text(
-                            emoji!,
-                            key: const Key('listening_inference_emoji'),
-                            style: TextStyle(fontSize: 38.sp),
-                          )
-                        : Text(
-                            emoji!,
-                            key: const Key('listening_inference_emoji'),
-                            style: TextStyle(fontSize: 38.sp),
-                          )
-                            .animate()
-                            .scale(duration: 400.ms, curve: Curves.easeOutCubic))
+                          ? Text(
+                              emoji!,
+                              key: const Key('listening_inference_emoji'),
+                              style: TextStyle(fontSize: 38.sp),
+                            )
+                          : Text(
+                              emoji!,
+                              key: const Key('listening_inference_emoji'),
+                              style: TextStyle(fontSize: 38.sp),
+                            ).animate().scale(
+                              duration: 400.ms,
+                              curve: Curves.easeOutCubic,
+                            ))
                     : Icon(
                         Icons.psychology_rounded,
                         size: 38.r,

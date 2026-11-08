@@ -48,17 +48,12 @@ void main() {
     currentStreak: 7,
     totalExp: 2400,
     coins: 180,
-    unlockedLevels: {
-      'readAndAnswer': 3,
-    },
+    unlockedLevels: {'readAndAnswer': 3},
     completedLevels: {
       'readAndAnswer': [1, 2],
     },
     starRatings: {
-      'readAndAnswer': {
-        '1': 3,
-        '2': 2,
-      },
+      'readAndAnswer': {'1': 3, '2': 2},
     },
   );
 
@@ -115,9 +110,9 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
 
     when(
       () => mockAssetQuestService.preloadBatch(any(), any()),
@@ -148,9 +143,9 @@ void main() {
     UserEntity? customUser,
   }) {
     if (customUser != null) {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(customUser),
-      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(customUser));
     }
 
     final router = GoRouter(
@@ -168,9 +163,7 @@ void main() {
           builder: (context, state) {
             final uri = state.uri.toString();
             navigatedRoutes.add(uri);
-            return Scaffold(
-              body: Text('Game Screen: $uri'),
-            );
+            return Scaffold(body: Text('Game Screen: $uri'));
           },
         ),
         GoRoute(
@@ -218,20 +211,23 @@ void main() {
       expect(find.byType(ModernMapNode), findsWidgets);
     });
 
-    testWidgets('invokes AssetQuestService preloadBatch for current unlocked level', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 1200);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'invokes AssetQuestService preloadBatch for current unlocked level',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 1200);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAssetQuestService.preloadBatch('readAndAnswer', 3)).called(1);
-    });
+        verify(
+          () => mockAssetQuestService.preloadBatch('readAndAnswer', 3),
+        ).called(1);
+      },
+    );
   });
 
   group('ModernCategoryMap - Node Progression & Level States', () {
@@ -258,32 +254,33 @@ void main() {
   });
 
   group('ModernCategoryMap - Tap Interaction & Routing', () {
-    testWidgets('tapping unlocked level node pushes /game with category and level', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 1600);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'tapping unlocked level node pushes /game with category and level',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 1600);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Find the node for Level 1 (completed/unlocked) and tap it
-      final level1Finder = find.widgetWithText(ScaleButton, '1');
-      if (level1Finder.evaluate().isNotEmpty) {
-        await tester.tap(level1Finder.first);
+        await tester.pumpWidget(createWidgetUnderTest());
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
-        expect(navigatedRoutes, isNotEmpty);
-        expect(navigatedRoutes.first, contains('/game'));
-        expect(navigatedRoutes.first, contains('category=reading'));
-        expect(navigatedRoutes.first, contains('gameType=readAndAnswer'));
-        expect(navigatedRoutes.first, contains('level=1'));
-      }
-    });
+        // Find the node for Level 1 (completed/unlocked) and tap it
+        final level1Finder = find.widgetWithText(ScaleButton, '1');
+        if (level1Finder.evaluate().isNotEmpty) {
+          await tester.tap(level1Finder.first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 500));
+
+          expect(navigatedRoutes, isNotEmpty);
+          expect(navigatedRoutes.first, contains('/game'));
+          expect(navigatedRoutes.first, contains('category=reading'));
+          expect(navigatedRoutes.first, contains('gameType=readAndAnswer'));
+          expect(navigatedRoutes.first, contains('level=1'));
+        }
+      },
+    );
 
     testWidgets('tapping back button pops route or navigates to /home', (
       tester,
@@ -293,10 +290,7 @@ void main() {
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
 
-      const level1User = UserEntity(
-        id: 'u_fresh',
-        email: 'fresh@vowl.app',
-      );
+      const level1User = UserEntity(id: 'u_fresh', email: 'fresh@vowl.app');
 
       await tester.pumpWidget(createWidgetUnderTest(customUser: level1User));
       await tester.pump();
@@ -367,7 +361,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        final captured = verify(() => mockTtsService.speak(captureAny())).captured;
+        final captured = verify(
+          () => mockTtsService.speak(captureAny()),
+        ).captured;
         expect(captured, isNotEmpty);
         final spokenText = captured.last as String;
 
@@ -399,4 +395,3 @@ void main() {
     );
   });
 }
-

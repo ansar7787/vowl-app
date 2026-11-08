@@ -20,11 +20,11 @@ class ArenaCurriculumEngine {
   static const List<String> kSupportedGameTypes = [
     'synonymSearch', // Word Clash: Synonyms
     'antonymSearch', // Word Clash: Antonyms
-    'collocations',  // Phrase Duel: Natural word pairs
-    'idioms',        // Phrase Duel: Idioms & expressions
-    'academicWord',  // Sentence Strike: Academic vocabulary
-    'contextClues',  // Context Blitz: Deductive sentence reasoning
-    'phrasalVerbs',  // Phrase Duel: Particles & phrasal verbs
+    'collocations', // Phrase Duel: Natural word pairs
+    'idioms', // Phrase Duel: Idioms & expressions
+    'academicWord', // Sentence Strike: Academic vocabulary
+    'contextClues', // Context Blitz: Deductive sentence reasoning
+    'phrasalVerbs', // Phrase Duel: Particles & phrasal verbs
   ];
 
   static const List<Map<String, dynamic>> _kQuestionBank = [
@@ -33,154 +33,216 @@ class ArenaCurriculumEngine {
       'question': 'Which word is closest in meaning to "enormous"?',
       'options': ['Tiny', 'Huge', 'Quiet', 'Narrow'],
       'correctIndex': 1,
-      'explanation': 'Enormous means extremely large in scale or size; "huge" is its closest direct synonym.',
+      'explanation':
+          'Enormous means extremely large in scale or size; "huge" is its closest direct synonym.',
       'discipline': 'word_clash',
+      'difficulty': 'medium',
     },
     {
       'question': 'What is the exact opposite of "ancient"?',
       'options': ['Historic', 'Old-fashioned', 'Fragile', 'Modern'],
       'correctIndex': 3,
-      'explanation': 'Ancient refers to times long past; modern describes present or contemporary times.',
+      'explanation':
+          'Ancient refers to times long past; modern describes present or contemporary times.',
       'discipline': 'word_clash',
+      'difficulty': 'medium',
     },
     {
       'question': 'Which word is closest in meaning to "resilient"?',
       'options': ['Fragile', 'Enduring', 'Hesitant', 'Trivial'],
       'correctIndex': 1,
-      'explanation': 'Resilient means able to withstand or recover quickly from challenging conditions.',
+      'explanation':
+          'Resilient means able to withstand or recover quickly from challenging conditions.',
       'discipline': 'word_clash',
+      'difficulty': 'medium',
     },
     {
       'question': 'What is the exact opposite of "authentic"?',
       'options': ['Genuine', 'Spurious', 'Credible', 'Legitimate'],
       'correctIndex': 1,
-      'explanation': 'Spurious means deceitful, fake, or counterfeit — the opposite of authentic.',
+      'explanation':
+          'Spurious means deceitful, fake, or counterfeit — the opposite of authentic.',
       'discipline': 'word_clash',
+      'difficulty': 'medium',
     },
     {
       'question': 'Which word is closest in meaning to "meticulous"?',
       'options': ['Careless', 'Thorough', 'Impatient', 'Slapdash'],
       'correctIndex': 1,
-      'explanation': 'Meticulous means displaying rigorous attention to fine detail and high precision.',
+      'explanation':
+          'Meticulous means displaying rigorous attention to fine detail and high precision.',
       'discipline': 'word_clash',
+      'difficulty': 'medium',
     },
 
     // 🎯 PHRASE DUEL: Natural Collocations & Idioms
     {
-      'question': 'Please ______ close attention to the safety instructions before departure.',
+      'question':
+          'Please ______ close attention to the safety instructions before departure.',
       'options': ['make', 'do', 'pay', 'hold'],
       'correctIndex': 2,
-      'explanation': 'In natural English collocation, we "pay attention", never "make" or "do" it.',
+      'explanation':
+          'In natural English collocation, we "pay attention", never "make" or "do" it.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The committee struggled to ______ a final decision on the budget proposal.',
+      'question':
+          'The committee struggled to ______ a final decision on the budget proposal.',
       'options': ['make', 'do', 'have', 'put'],
       'correctIndex': 0,
-      'explanation': '"Make a decision" is the standard native collocation for reaching a choice.',
+      'explanation':
+          '"Make a decision" is the standard native collocation for reaching a choice.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
     {
       'question': 'Could you ______ me a quick favour and hold the door open?',
       'options': ['make', 'give', 'do', 'take'],
       'correctIndex': 2,
-      'explanation': '"Do someone a favour" is the standard idiomatic expression for requesting assistance.',
+      'explanation':
+          '"Do someone a favour" is the standard idiomatic expression for requesting assistance.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The manager decided to bite the ______ and deliver the difficult report directly.',
+      'question':
+          'The manager decided to bite the ______ and deliver the difficult report directly.',
       'options': ['bullet', 'apple', 'tongue', 'dust'],
       'correctIndex': 0,
-      'explanation': '"Bite the bullet" means facing an unavoidable hardship with composure and resolve.',
+      'explanation':
+          '"Bite the bullet" means facing an unavoidable hardship with composure and resolve.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
     {
-      'question': 'Marta opened the workshop with a lighthearted joke to break the ______.',
+      'question':
+          'Marta opened the workshop with a lighthearted joke to break the ______.',
       'options': ['glass', 'ice', 'silence', 'wall'],
       'correctIndex': 1,
-      'explanation': '"Break the ice" means easing social tension and making unfamiliar people comfortable.',
+      'explanation':
+          '"Break the ice" means easing social tension and making unfamiliar people comfortable.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
     {
-      'question': 'She stayed up late burning the midnight ______ to finish her thesis on time.',
+      'question':
+          'She stayed up late burning the midnight ______ to finish her thesis on time.',
       'options': ['candle', 'oil', 'wood', 'paper'],
       'correctIndex': 1,
-      'explanation': '"Burn the midnight oil" originates from late-night oil lamps and means studying or working late.',
+      'explanation':
+          '"Burn the midnight oil" originates from late-night oil lamps and means studying or working late.',
       'discipline': 'phrase_duel',
+      'difficulty': 'medium',
     },
 
     // 💥 SENTENCE STRIKE: Academic Vocabulary & Sentence Precision
     {
-      'question': 'The researcher\'s breakthrough theory was thoroughly ______ by empirical laboratory evidence.',
+      'question':
+          'The researcher\'s breakthrough theory was thoroughly ______ by empirical laboratory evidence.',
       'options': ['contradicted', 'validated', 'neglected', 'delayed'],
       'correctIndex': 1,
-      'explanation': 'Validated means confirmed or substantiated with rigorous factual proof.',
+      'explanation':
+          'Validated means confirmed or substantiated with rigorous factual proof.',
       'discipline': 'sentence_strike',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The board reached a unanimous ______ after reviewing the financial audit.',
+      'question':
+          'The board reached a unanimous ______ after reviewing the financial audit.',
       'options': ['consensus', 'dispute', 'dilemma', 'hesitation'],
       'correctIndex': 0,
-      'explanation': 'Consensus represents collective, widespread agreement across members of a governing body.',
+      'explanation':
+          'Consensus represents collective, widespread agreement across members of a governing body.',
       'discipline': 'sentence_strike',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The department enforced ______ security protocols to safeguard confidential client data.',
+      'question':
+          'The department enforced ______ security protocols to safeguard confidential client data.',
       'options': ['stringent', 'lenient', 'fragile', 'careless'],
       'correctIndex': 0,
-      'explanation': 'Stringent describes rigorous, strict, and tightly binding rules or requirements.',
+      'explanation':
+          'Stringent describes rigorous, strict, and tightly binding rules or requirements.',
       'discipline': 'sentence_strike',
+      'difficulty': 'medium',
     },
     {
-      'question': 'Her explanation was both ______ and insightful, leaving no ambiguity for the team.',
+      'question':
+          'Her explanation was both ______ and insightful, leaving no ambiguity for the team.',
       'options': ['ambiguous', 'lucid', 'repetitive', 'vague'],
       'correctIndex': 1,
-      'explanation': 'Lucid means expressed clearly and transparently; easy to perceive and comprehend.',
+      'explanation':
+          'Lucid means expressed clearly and transparently; easy to perceive and comprehend.',
       'discipline': 'sentence_strike',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The sudden policy revision provoked ______ debate across international trade symposiums.',
+      'question':
+          'The sudden policy revision provoked ______ debate across international trade symposiums.',
       'options': ['heated', 'silent', 'lukewarm', 'mild'],
       'correctIndex': 0,
-      'explanation': 'Heated debate signifies intense, animated, and passionate discussion on contentious topics.',
+      'explanation':
+          'Heated debate signifies intense, animated, and passionate discussion on contentious topics.',
       'discipline': 'sentence_strike',
+      'difficulty': 'medium',
     },
 
     // 🧠 CONTEXT BLITZ: Deductive Reasoning & Situational Clues
     {
-      'question': 'After three hours on the tarmac with no updates from the flight crew, passengers grew increasingly ______, sighing and checking watches.',
+      'question':
+          'After three hours on the tarmac with no updates from the flight crew, passengers grew increasingly ______, sighing and checking watches.',
       'options': ['generous', 'restless', 'relieved', 'curious'],
       'correctIndex': 1,
-      'explanation': 'Sighing and constantly checking watches are textbook behavioral clues indicating restlessness and impatience.',
+      'explanation':
+          'Sighing and constantly checking watches are textbook behavioral clues indicating restlessness and impatience.',
       'discipline': 'context_blitz',
+      'difficulty': 'medium',
     },
     {
-      'question': 'Maya\'s presentation was so ______ that even complete newcomers followed each phase of the plan without hesitation.',
-      'options': ['straightforward', 'overcomplicated', 'impenetrable', 'long-winded'],
+      'question':
+          'Maya\'s presentation was so ______ that even complete newcomers followed each phase of the plan without hesitation.',
+      'options': [
+        'straightforward',
+        'overcomplicated',
+        'impenetrable',
+        'long-winded',
+      ],
       'correctIndex': 0,
-      'explanation': 'When beginners follow complex material without confusion, the delivery is straightforward and clear.',
+      'explanation':
+          'When beginners follow complex material without confusion, the delivery is straightforward and clear.',
       'discipline': 'context_blitz',
+      'difficulty': 'medium',
     },
     {
-      'question': 'Despite managing the entire division, Julian never boasts and thanks every staff member by name; he is remarkably ______.',
+      'question':
+          'Despite managing the entire division, Julian never boasts and thanks every staff member by name; he is remarkably ______.',
       'options': ['ambitious', 'humble', 'impatient', 'stubborn'],
       'correctIndex': 1,
-      'explanation': 'Expressing quiet gratitude without self-promotion denotes a genuinely humble character.',
+      'explanation':
+          'Expressing quiet gratitude without self-promotion denotes a genuinely humble character.',
       'discipline': 'context_blitz',
+      'difficulty': 'medium',
     },
     {
-      'question': 'When the vendor suggested a cheaper alternative, the lead engineer was ______ to accept it without strict quality testing.',
+      'question':
+          'When the vendor suggested a cheaper alternative, the lead engineer was ______ to accept it without strict quality testing.',
       'options': ['grateful', 'reluctant', 'delighted', 'eager'],
       'correctIndex': 1,
-      'explanation': 'Insisting on quality verification before accepting an untested substitute demonstrates hesitation or reluctance.',
+      'explanation':
+          'Insisting on quality verification before accepting an untested substitute demonstrates hesitation or reluctance.',
       'discipline': 'context_blitz',
+      'difficulty': 'medium',
     },
     {
-      'question': 'The ancient inscription was so ______ that archaeologists required ultraviolet imaging to decipher the eroded lettering.',
+      'question':
+          'The ancient inscription was so ______ that archaeologists required ultraviolet imaging to decipher the eroded lettering.',
       'options': ['fragile', 'obscure', 'ordinary', 'vibrant'],
       'correctIndex': 1,
-      'explanation': 'Eroded script requiring specialized ultraviolet equipment points directly to obscure, hard-to-distinguish text.',
+      'explanation':
+          'Eroded script requiring specialized ultraviolet equipment points directly to obscure, hard-to-distinguish text.',
       'discipline': 'context_blitz',
+      'difficulty': 'medium',
     },
   ];
 
@@ -203,7 +265,8 @@ class ArenaCurriculumEngine {
     QuestService? questService,
   }) async {
     final rand = Random(seed ?? DateTime.now().millisecondsSinceEpoch);
-    final service = questService ??
+    final service =
+        questService ??
         (di.sl.isRegistered<AssetQuestService>()
             ? di.sl<AssetQuestService>()
             : null);
@@ -225,7 +288,8 @@ class ArenaCurriculumEngine {
     if (service != null && questions.length < count) {
       try {
         // Shuffle disciplines to ensure cross-discipline blitz
-        final shuffledGameTypes = List<String>.from(kSupportedGameTypes)..shuffle(rand);
+        final shuffledGameTypes = List<String>.from(kSupportedGameTypes)
+          ..shuffle(rand);
 
         for (final gameType in shuffledGameTypes) {
           if (questions.length >= count) break;
@@ -234,11 +298,14 @@ class ArenaCurriculumEngine {
           try {
             final quests = await service.getQuests(gameType, level);
             if (quests.isEmpty) continue;
-            final shuffledQuests = List<Map<String, dynamic>>.from(quests)..shuffle(rand);
+            final shuffledQuests = List<Map<String, dynamic>>.from(quests)
+              ..shuffle(rand);
             for (final q in shuffledQuests) {
               final converted = _tryConvertCurriculumQuest(q, gameType, rand);
               if (converted != null &&
-                  !questions.any((existing) => existing.question == converted.question)) {
+                  !questions.any(
+                    (existing) => existing.question == converted.question,
+                  )) {
                 questions.add(converted);
                 if (questions.length >= count) break;
               }
@@ -250,16 +317,28 @@ class ArenaCurriculumEngine {
 
         // If we still need more questions, sample additional random levels
         if (questions.length < count) {
-          for (int attempt = 0; attempt < 15 && questions.length < count; attempt++) {
-            final randomType = kSupportedGameTypes[rand.nextInt(kSupportedGameTypes.length)];
+          for (
+            int attempt = 0;
+            attempt < 15 && questions.length < count;
+            attempt++
+          ) {
+            final randomType =
+                kSupportedGameTypes[rand.nextInt(kSupportedGameTypes.length)];
             final randomLevel = rand.nextInt(200) + 1;
             try {
               final quests = await service.getQuests(randomType, randomLevel);
-              final shuffledQuests = List<Map<String, dynamic>>.from(quests)..shuffle(rand);
+              final shuffledQuests = List<Map<String, dynamic>>.from(quests)
+                ..shuffle(rand);
               for (final q in shuffledQuests) {
-                final converted = _tryConvertCurriculumQuest(q, randomType, rand);
+                final converted = _tryConvertCurriculumQuest(
+                  q,
+                  randomType,
+                  rand,
+                );
                 if (converted != null &&
-                    !questions.any((existing) => existing.question == converted.question)) {
+                    !questions.any(
+                      (existing) => existing.question == converted.question,
+                    )) {
                   questions.add(converted);
                   if (questions.length >= count) break;
                 }
@@ -268,7 +347,9 @@ class ArenaCurriculumEngine {
           }
         }
       } catch (e) {
-        debugPrint('[ArenaCurriculumEngine] Curriculum quest load fallback: $e');
+        debugPrint(
+          '[ArenaCurriculumEngine] Curriculum quest load fallback: $e',
+        );
       }
     }
 
@@ -291,9 +372,75 @@ class ArenaCurriculumEngine {
     return generateQuestions(count: count, seed: seed);
   }
 
+  /// Generates questions with a progressive difficulty curve:
+  /// Round 1-2: Easy (or untagged fallback)
+  /// Round 3-4: Medium
+  /// Round 5: Hard
+  static Future<List<ArenaQuestion>> generateProgressiveQuestionsAsync({
+    int count = 5,
+    int? seed,
+    QuestService? questService,
+  }) async {
+    final questions = await generateQuestionsAsync(
+      count: count * 2, // Get extra to have selection pool
+      seed: seed,
+      questService: questService,
+    );
+
+    if (questions.length < count) return questions;
+
+    // Sort by difficulty: easy first, then medium, then hard
+    final easy = questions.where((q) => q.difficulty == 'easy').toList();
+    final medium = questions.where((q) => q.difficulty == 'medium').toList();
+    final hard = questions.where((q) => q.difficulty == 'hard').toList();
+    final untagged = questions.where((q) => q.difficulty == null).toList();
+
+    // Progressive curve: easy, easy, medium, medium, hard
+    final progressive = <ArenaQuestion>[];
+    // Round 1-2: easy (or untagged fallback)
+    final easyPool = [...easy, ...untagged];
+    for (int i = 0; i < 2 && easyPool.isNotEmpty; i++) {
+      progressive.add(easyPool.removeAt(0));
+    }
+    // Round 3-4: medium (or remaining easy/untagged)
+    final medPool = [...medium, ...easyPool];
+    for (
+      int i = 0;
+      i < 2 && medPool.isNotEmpty && progressive.length < 4;
+      i++
+    ) {
+      final q = medPool.removeAt(0);
+      if (!progressive.any((p) => p.question == q.question)) {
+        progressive.add(q);
+      }
+    }
+    // Round 5: hard (or remaining medium)
+    final hardPool = [...hard, ...medPool];
+    for (final q in hardPool) {
+      if (progressive.length >= count) break;
+      if (!progressive.any((p) => p.question == q.question)) {
+        progressive.add(q);
+        break;
+      }
+    }
+
+    // Fill any remaining with whatever's available
+    for (final q in questions) {
+      if (progressive.length >= count) break;
+      if (!progressive.any((p) => p.question == q.question)) {
+        progressive.add(q);
+      }
+    }
+
+    return progressive.take(count).toList();
+  }
+
   /// Loads dedicated 1v1 Arena batches from `assets/curriculum/arena/`
   /// supporting up to 20 batches per discipline, aiming for [count] questions.
-  static Future<List<ArenaQuestion>> _loadDedicatedArenaBatches(Random rand, {int count = 5}) async {
+  static Future<List<ArenaQuestion>> _loadDedicatedArenaBatches(
+    Random rand, {
+    int count = 5,
+  }) async {
     try {
       const modes = [
         'word_clash',
@@ -402,8 +549,9 @@ class ArenaCurriculumEngine {
       if (optionsRaw is! List || optionsRaw.length < 2) return null;
       final options = optionsRaw.map((e) => e.toString().trim()).toList();
 
-      final correctAnswer =
-          (quest['correctAnswer'] ?? quest['answer'] ?? '').toString().trim();
+      final correctAnswer = (quest['correctAnswer'] ?? quest['answer'] ?? '')
+          .toString()
+          .trim();
       if (correctAnswer.isEmpty) return null;
 
       final originalCorrectIndex = options.indexWhere(
@@ -427,17 +575,24 @@ class ArenaCurriculumEngine {
           quest['prompt'] != null &&
           quest['prompt'].toString().trim().isNotEmpty) {
         questionText = quest['prompt'].toString().trim();
-      } else if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
+      } else if (gameType == 'synonymSearch' &&
+          word != null &&
+          word.isNotEmpty) {
         questionText = 'What is the closest synonym for "$word"?';
-      } else if (gameType == 'antonymSearch' && word != null && word.isNotEmpty) {
+      } else if (gameType == 'antonymSearch' &&
+          word != null &&
+          word.isNotEmpty) {
         questionText = 'What is the opposite of "$word"?';
       } else if (gameType == 'idioms') {
         if (instruction != null && instruction.contains('___')) {
           questionText = instruction;
         } else if (word != null && word.isNotEmpty) {
           questionText = 'What does the idiom "$word" mean?';
-        } else if (hint != null && hint.toUpperCase().startsWith('DEFINITION:')) {
-          questionText = hint.replaceFirst(RegExp(r'DEFINITION:\s*', caseSensitive: false), '').trim();
+        } else if (hint != null &&
+            hint.toUpperCase().startsWith('DEFINITION:')) {
+          questionText = hint
+              .replaceFirst(RegExp(r'DEFINITION:\s*', caseSensitive: false), '')
+              .trim();
         } else {
           questionText = instruction ?? 'Select the correct idiom:';
         }
@@ -447,7 +602,8 @@ class ArenaCurriculumEngine {
         } else if (word != null && word.isNotEmpty) {
           questionText = 'Complete the natural collocation with "$word":';
         } else {
-          questionText = instruction ?? 'Choose the word that forms a natural pair:';
+          questionText =
+              instruction ?? 'Choose the word that forms a natural pair:';
         }
       } else if (gameType == 'phrasalVerbs') {
         if (contextSentence != null && contextSentence.contains('___')) {
@@ -465,7 +621,8 @@ class ArenaCurriculumEngine {
         } else if (word != null && word.isNotEmpty) {
           questionText = 'Choose the academic definition for "$word":';
         } else {
-          questionText = instruction ?? 'Select the best word to complete the sentence:';
+          questionText =
+              instruction ?? 'Select the best word to complete the sentence:';
         }
       } else if (gameType == 'context_blitz' || gameType == 'contextClues') {
         if (sentence != null && sentence.contains('[TARGET]')) {
@@ -475,7 +632,8 @@ class ArenaCurriculumEngine {
         } else if (word != null && word.isNotEmpty) {
           questionText = 'Infer the contextual meaning of "$word":';
         } else {
-          questionText = instruction ?? 'Analyze the sentence to deduce the meaning:';
+          questionText =
+              instruction ?? 'Analyze the sentence to deduce the meaning:';
         }
       } else {
         questionText = (instruction != null && instruction.isNotEmpty)
@@ -483,11 +641,12 @@ class ArenaCurriculumEngine {
             : 'Choose the correct answer:';
       }
 
-      final explanation = (quest['explanation'] ??
-              quest['detail'] ??
-              quest['hint'] ??
-              'Vowl authentic curriculum challenge.')
-          .toString();
+      final explanation =
+          (quest['explanation'] ??
+                  quest['detail'] ??
+                  quest['hint'] ??
+                  'Vowl authentic curriculum challenge.')
+              .toString();
 
       // Deterministically shuffle options using rand to eliminate positional bias
       final shuffledOptions = List<String>.from(options)..shuffle(rand);
@@ -495,12 +654,17 @@ class ArenaCurriculumEngine {
         (opt) => opt.toLowerCase() == correctAnswer.toLowerCase(),
       );
 
+      final difficulty = (quest['difficulty'] as String?)?.toLowerCase();
+
       return ArenaQuestion(
         question: questionText,
         options: shuffledOptions,
-        correctIndex: newCorrectIndex != -1 ? newCorrectIndex : originalCorrectIndex,
+        correctIndex: newCorrectIndex != -1
+            ? newCorrectIndex
+            : originalCorrectIndex,
         explanation: explanation,
         discipline: resolveDiscipline(gameType),
+        difficulty: difficulty,
       );
     } catch (_) {
       return null;

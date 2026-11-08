@@ -52,7 +52,10 @@ class KidsAudioService {
       await _sfxPlayer.play(AssetSource(assetToPlay), volume: 0.85);
     } catch (e) {
       if (di.sl.isRegistered<AppLogger>()) {
-        di.sl<AppLogger>().warning("Kids SFX Success Error: $e", tag: 'KidsZone');
+        di.sl<AppLogger>().warning(
+          "Kids SFX Success Error: $e",
+          tag: 'KidsZone',
+        );
       }
     }
   }
@@ -66,7 +69,10 @@ class KidsAudioService {
       await _sfxPlayer.play(AssetSource('sounds/wrong.mp3'), volume: 0.85);
     } catch (e) {
       if (di.sl.isRegistered<AppLogger>()) {
-        di.sl<AppLogger>().warning("Kids SFX Failure Error: $e", tag: 'KidsZone');
+        di.sl<AppLogger>().warning(
+          "Kids SFX Failure Error: $e",
+          tag: 'KidsZone',
+        );
       }
     }
   }
@@ -96,13 +102,13 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.play(
-        AssetSource('sounds/game_over.mp3'),
-        volume: 0.85,
-      );
+      await _sfxPlayer.play(AssetSource('sounds/game_over.mp3'), volume: 0.85);
     } catch (e) {
       if (di.sl.isRegistered<AppLogger>()) {
-        di.sl<AppLogger>().warning("Kids SFX Game Over Error: $e", tag: 'KidsZone');
+        di.sl<AppLogger>().warning(
+          "Kids SFX Game Over Error: $e",
+          tag: 'KidsZone',
+        );
       }
     }
   }

@@ -158,8 +158,8 @@ class _HintButton extends StatelessWidget {
 
     final String? hintText =
         (quest?.hint != null && (quest!.hint as String).trim().isNotEmpty)
-            ? (quest!.hint as String).trim()
-            : null;
+        ? (quest!.hint as String).trim()
+        : null;
 
     Widget button = QuestHintButton(
       used: used,

@@ -12,7 +12,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-
 /// Sentence rearrangement jigsaw mechanic that presents shuffled word blocks.
 class DynamicJigsawWrapper extends StatefulWidget {
   final String expectedText;
@@ -276,7 +275,12 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
         valueListenable: _hasError,
         builder: (context, hasError, child) {
           return Container(
-            padding: EdgeInsets.fromLTRB(AppSpacing.cardSpacious, 18.h, AppSpacing.cardSpacious, 24.h),
+            padding: EdgeInsets.fromLTRB(
+              AppSpacing.cardSpacious,
+              18.h,
+              AppSpacing.cardSpacious,
+              24.h,
+            ),
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: widget.isPositioned
@@ -576,7 +580,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                           tile.word,
                                                           maxLines: 1,
                                                           minFontSize: 10,
-                                                          overflow: TextOverflow.visible,
+                                                          overflow: TextOverflow
+                                                              .visible,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
@@ -594,7 +599,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                             isCorrectPos
                                                                 ? Icons
                                                                       .check_circle_rounded
-                                                                : Icons.cancel_rounded,
+                                                                : Icons
+                                                                      .cancel_rounded,
                                                             color: tileColor,
                                                             size: 16.r,
                                                             semanticLabel:

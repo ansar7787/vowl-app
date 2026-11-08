@@ -38,19 +38,19 @@ class LeaderboardRankTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids
-        ? user.kidsTotalLevelsCompleted
+        ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        ? '⭐'
         : (isWeekly
-            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-            : context.tr('leaderboard.xp', fallback: 'XP'));
+              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+              : context.tr('leaderboard.xp', fallback: 'XP'));
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10
@@ -87,8 +87,8 @@ class LeaderboardRankTile extends StatelessWidget {
             : (isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100)),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100)),
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark ? const Color(0xFF131A29) : Colors.white),
@@ -105,173 +105,192 @@ class LeaderboardRankTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-            // Rank number & Change Indicator
-            SizedBox(
-              width: 32.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '$rank',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: -1,
-                        color: isDark
-                            ? tierColor.withValues(alpha: 0.9)
-                            : tierColor.withValues(alpha: 0.8),
-                      ),
-                      textAlign: TextAlign.center,
+                  // Rank number & Change Indicator
+                  SizedBox(
+                    width: 32.w,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            '$rank',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 22.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -1,
+                              color: isDark
+                                  ? tierColor.withValues(alpha: 0.9)
+                                  : tierColor.withValues(alpha: 0.8),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        if (!isKids && isWeekly) ...[
+                          SizedBox(height: 2.h),
+                          _buildRankChangeIndicator(
+                            user.previousRank ?? rank,
+                            rank,
+                          ),
+                        ],
+                      ],
                     ),
                   ),
-                  if (!isKids && isWeekly) ...[
-                    SizedBox(height: 2.h),
-                    _buildRankChangeIndicator(user.previousRank ?? rank, rank),
-                  ],
-                ],
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Avatar
-            UserAvatar(
-              photoUrl: user.photoUrl,
-              size: 36.r,
-              border: Border.all(
-                color: tierColor.withValues(alpha: 0.25),
-                width: 1.5,
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Name & XP row
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          displayName,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w900,
-                            color: MeshGradientBackground.getContrastColor(
-                              context,
-                            ),
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      if (user.isPremium)
-                        Padding(
-                          padding: EdgeInsets.only(left: 4.w),
-                          child: Icon(
-                            Icons.verified_rounded,
-                            color: AppColors.amber500,
-                            size: 14.r,
-                          ),
-                        ),
-                      if (isMe)
-                        Padding(
-                          padding: EdgeInsets.only(left: 6.w),
-                          child: ExcludeSemantics(
-                            // Already covered by the parent Semantics label.
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 2.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: const Color(
-                                  0xFF6366F1,
-                                ).withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(6.r),
-                              ),
-                              child: Text(
-                                context.tr('leaderboard.you', fallback: 'You'),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 8.5.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: _LocalPalette.color60a5fa,
-                                  letterSpacing: 0.5,
+                  SizedBox(width: 8.w),
+                  // Avatar
+                  UserAvatar(
+                    photoUrl: user.photoUrl,
+                    size: 36.r,
+                    border: Border.all(
+                      color: tierColor.withValues(alpha: 0.25),
+                      width: 1.5,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  // Name & XP row
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  displayName,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color:
+                                        MeshGradientBackground.getContrastColor(
+                                          context,
+                                        ),
+                                  ),
+                                  maxLines: 1,
                                 ),
                               ),
                             ),
-                          ),
+                            if (user.isPremium)
+                              Padding(
+                                padding: EdgeInsets.only(left: 4.w),
+                                child: Icon(
+                                  Icons.verified_rounded,
+                                  color: AppColors.amber500,
+                                  size: 14.r,
+                                ),
+                              ),
+                            if (isMe)
+                              Padding(
+                                padding: EdgeInsets.only(left: 6.w),
+                                child: ExcludeSemantics(
+                                  // Already covered by the parent Semantics label.
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(
+                                        0xFF6366F1,
+                                      ).withValues(alpha: 0.2),
+                                      borderRadius: BorderRadius.circular(6.r),
+                                    ),
+                                    child: Text(
+                                      context.tr(
+                                        'leaderboard.you',
+                                        fallback: 'You',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 8.5.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: _LocalPalette.color60a5fa,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          ],
                         ),
-                    ],
+                        SizedBox(height: 2.h),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                isKids
+                                    ? '${user.kidsTotalStars} ⭐ · ${user.kidsTotalLevelsCompleted} Levels'
+                                    : '$score $scoreLabel · ${user.currentStreak}',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark
+                                      ? AppColors.slate400
+                                      : AppColors.slate600,
+                                ),
+                                softWrap: true,
+                              ),
+                            ),
+                            SizedBox(width: 3.w),
+                            Icon(
+                              isKids ? Icons.star_rounded : LucideIcons.flame,
+                              size: 12.r,
+                              color: isKids
+                                  ? AppColors.amber500
+                                  : IllustrationColors.warmOrange,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 2.h),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Flexible(
-                        child: Text(
-                          isKids
-                              ? '$score Levels · ${user.kidsCoins} Stars'
-                              : '$score $scoreLabel · ${user.currentStreak}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: isDark ? AppColors.slate400 : AppColors.slate600,
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                  // Levels cleared / Stars badge
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: (isKids ? AppColors.amber500 : tierColor)
+                          .withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: (isKids ? AppColors.amber500 : tierColor)
+                            .withValues(alpha: 0.25),
+                      ),
+                    ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        isKids
+                            ? '${user.kidsCoins} ⭐'
+                            : context.tr(
+                                'leaderboard.lvs',
+                                fallback: 'Lv. {0}',
+                                args: [levelsCleared.toString()],
+                              ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isKids ? AppColors.amber500 : tierColor,
                         ),
                       ),
-                      SizedBox(width: 3.w),
-                      Icon(
-                        isKids ? Icons.star_rounded : LucideIcons.flame,
-                        size: 12.r,
-                        color: isKids ? AppColors.amber500 : IllustrationColors.warmOrange,
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
-            // Levels cleared / Stars badge
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.25),
-                ),
-              ),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  isKids
-                      ? '${user.kidsCoins} ⭐'
-                      : context.tr(
-                          'leaderboard.lvs',
-                          fallback: 'Lv. {0}',
-                          args: [levelsCleared.toString()],
-                        ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isKids ? AppColors.amber500 : tierColor,
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  ),
-),
-);
+    );
   }
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {

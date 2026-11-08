@@ -52,8 +52,8 @@ class LeaderboardOvertakeHud extends StatelessWidget {
           borderColor: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
               : (isDark
-                  ? const Color(0xFFF59E0B).withValues(alpha: 0.25)
-                  : const Color(0xFFF59E0B).withValues(alpha: 0.35)),
+                    ? const Color(0xFFF59E0B).withValues(alpha: 0.25)
+                    : const Color(0xFFF59E0B).withValues(alpha: 0.35)),
           color: isMidnight
               ? AppColors.midnightSurface
               : (isDark ? const Color(0xFF131A29) : Colors.white),
@@ -131,7 +131,10 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 5.h,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10.r),
@@ -139,7 +142,11 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(LucideIcons.trophy, size: 12.sp, color: const Color(0xFFF59E0B)),
+                        Icon(
+                          LucideIcons.trophy,
+                          size: 12.sp,
+                          color: const Color(0xFFF59E0B),
+                        ),
                         SizedBox(width: 4.w),
                         Text(
                           'Defending',
@@ -209,13 +216,19 @@ class LeaderboardOvertakeHud extends StatelessWidget {
     // -------------------------------------------------------------------------
     final rivalAhead = allUsers[myIndex - 1];
     final rivalRank = myRank - 1;
-    final myScore = isWeekly ? currentUser.currentWeeklyExp : currentUser.totalExp;
-    final rivalScore = isWeekly ? rivalAhead.currentWeeklyExp : rivalAhead.totalExp;
+    final myScore = isWeekly
+        ? currentUser.currentWeeklyExp
+        : currentUser.totalExp;
+    final rivalScore = isWeekly
+        ? rivalAhead.currentWeeklyExp
+        : rivalAhead.totalExp;
     final xpDiff = (rivalScore - myScore).clamp(1, 999999);
     final rivalName = rivalAhead.safeDisplayName;
 
     // Relative progress toward rival's score
-    final progress = rivalScore > 0 ? (myScore / rivalScore).clamp(0.08, 0.98) : 0.5;
+    final progress = rivalScore > 0
+        ? (myScore / rivalScore).clamp(0.08, 0.98)
+        : 0.5;
 
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -229,8 +242,8 @@ class LeaderboardOvertakeHud extends StatelessWidget {
         borderColor: isMidnight
             ? Colors.white.withValues(alpha: 0.12)
             : (isDark
-                ? AppColors.indigo500.withValues(alpha: 0.3)
-                : AppColors.indigo500.withValues(alpha: 0.2)),
+                  ? AppColors.indigo500.withValues(alpha: 0.3)
+                  : AppColors.indigo500.withValues(alpha: 0.2)),
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark ? const Color(0xFF131A29) : Colors.white),
@@ -333,7 +346,10 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                     },
                     borderRadius: BorderRadius.circular(10.r),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 7.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 7.h,
+                      ),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [AppColors.indigo500, Color(0xFF4F46E5)],
@@ -354,7 +370,11 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 3.w),
-                          Icon(LucideIcons.zap, size: 12.sp, color: Colors.white),
+                          Icon(
+                            LucideIcons.zap,
+                            size: 12.sp,
+                            color: Colors.white,
+                          ),
                         ],
                       ),
                     ),
@@ -420,9 +440,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
-                      color: isDark
-                          ? AppColors.indigo400
-                          : AppColors.indigo600,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                     ),
                   ),
                 ),

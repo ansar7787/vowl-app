@@ -80,8 +80,9 @@ void main() {
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
 
-    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
@@ -192,12 +193,15 @@ void main() {
     blocTest<ReadingBloc, ReadingState>(
       'emits ReadingGameComplete and triggers updateUserRewards immediately on last question',
       build: () {
-        when(() => mockUpdateUserRewards(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockAwardBadge(any()))
-            .thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
 
         bloc.currentGameType = 'trueFalseReading';
         bloc.currentLevel = 1;

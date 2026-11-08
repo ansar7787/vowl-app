@@ -116,11 +116,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              iconData,
-              color: iconColor,
-              size: 20.r,
-            ),
+            Icon(iconData, color: iconColor, size: 20.r),
             SizedBox(width: 12.w),
             Expanded(
               child: Text(

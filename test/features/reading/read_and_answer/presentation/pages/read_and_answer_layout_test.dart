@@ -68,12 +68,7 @@ void main() {
     passage:
         '[Library Notice] The library is open from 9 a.m. to 6 p.m. on weekdays. On Saturday it closes at noon. It is closed on Sunday.',
     question: 'At what time does the library close on Saturday?',
-    options: [
-      'At noon',
-      'At 6 p.m.',
-      'At 9 a.m.',
-      'At 5 p.m.',
-    ],
+    options: ['At noon', 'At 6 p.m.', 'At 9 a.m.', 'At 5 p.m.'],
     correctAnswer: 'At noon',
     correctAnswerIndex: 0,
     hint: 'Read the second sentence closely.',
@@ -90,12 +85,7 @@ void main() {
     passage:
         '[Library Notice] The library is open from 9 a.m. to 6 p.m. on weekdays. On Saturday it closes at noon. It is closed on Sunday.',
     question: 'Which day is the library closed?',
-    options: [
-      'Saturday',
-      'Friday',
-      'Sunday',
-      'Monday',
-    ],
+    options: ['Saturday', 'Friday', 'Sunday', 'Monday'],
     correctAnswer: 'Sunday',
     correctAnswerIndex: 2,
     hint: 'The last sentence names the closed day.',
@@ -147,12 +137,14 @@ void main() {
     mockLogger = MockAppLogger();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -166,8 +158,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
@@ -201,12 +194,16 @@ void main() {
     when(() => mockHapticService.heavy()).thenAnswer((_) async {});
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -260,9 +257,7 @@ void main() {
           splitScreenMode: true,
           builder: (context, child) => MaterialApp(
             theme: AppTheme.lightTheme,
-            home: const Scaffold(
-              body: ReadAndAnswerScreen(level: 2),
-            ),
+            home: const Scaffold(body: ReadAndAnswerScreen(level: 2)),
           ),
         ),
       ),
@@ -272,8 +267,9 @@ void main() {
   }
 
   group('ReadAndAnswerScreen - Production Layout & Mechanics Tests', () {
-    testWidgets('1. Initial rendering of question, passage, and buoy options',
-        (tester) async {
+    testWidgets('1. Initial rendering of question, passage, and buoy options', (
+      tester,
+    ) async {
       await pumpReadAndAnswer(tester);
 
       // Verify instruction / topic badge
@@ -316,8 +312,9 @@ void main() {
       await pumpReadAndAnswer(tester);
 
       // Tap question TTS button
-      final questionTtsBtn =
-          find.byKey(const ValueKey('read_and_answer_tts_question_button'));
+      final questionTtsBtn = find.byKey(
+        const ValueKey('read_and_answer_tts_question_button'),
+      );
       expect(questionTtsBtn, findsOneWidget);
       await tester.tap(questionTtsBtn);
       await tester.pump(const Duration(milliseconds: 50));
@@ -329,8 +326,9 @@ void main() {
       ).called(1);
 
       // Tap passage TTS button
-      final passageTtsBtn =
-          find.byKey(const ValueKey('read_and_answer_tts_passage_button'));
+      final passageTtsBtn = find.byKey(
+        const ValueKey('read_and_answer_tts_passage_button'),
+      );
       expect(passageTtsBtn, findsOneWidget);
       await tester.tap(passageTtsBtn);
       await tester.pump(const Duration(milliseconds: 50));
@@ -343,76 +341,84 @@ void main() {
     });
 
     testWidgets(
-        '3. Tap-to-answer correct path dispatches SubmitAnswer(true) and haptics',
-        (tester) async {
-      await pumpReadAndAnswer(tester);
+      '3. Tap-to-answer correct path dispatches SubmitAnswer(true) and haptics',
+      (tester) async {
+        await pumpReadAndAnswer(tester);
 
-      final correctOptionTap =
-          find.byKey(const ValueKey('read_and_answer_option_tap_0'));
-      expect(correctOptionTap, findsOneWidget);
+        final correctOptionTap = find.byKey(
+          const ValueKey('read_and_answer_option_tap_0'),
+        );
+        expect(correctOptionTap, findsOneWidget);
 
-      await tester.tap(correctOptionTap);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctOptionTap);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Verify selection haptic and correct submission
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
-
-    testWidgets(
-        '4. Tap-to-answer incorrect path dispatches SubmitAnswer(false), wrong SFX, and error haptics',
-        (tester) async {
-      await pumpReadAndAnswer(tester);
-
-      final wrongOptionTap =
-          find.byKey(const ValueKey('read_and_answer_option_tap_1'));
-      expect(wrongOptionTap, findsOneWidget);
-
-      await tester.tap(wrongOptionTap);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify selection haptic and correct submission
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
     testWidgets(
-        '5. Drag-and-drop interaction accepts option drop onto anchor point',
-        (tester) async {
-      await pumpReadAndAnswer(tester);
+      '4. Tap-to-answer incorrect path dispatches SubmitAnswer(false), wrong SFX, and error haptics',
+      (tester) async {
+        await pumpReadAndAnswer(tester);
 
-      final optionDraggable =
-          find.byKey(const ValueKey('read_and_answer_option_0'));
-      final anchorTarget =
-          find.byKey(const ValueKey('read_and_answer_drag_target'));
+        final wrongOptionTap = find.byKey(
+          const ValueKey('read_and_answer_option_tap_1'),
+        );
+        expect(wrongOptionTap, findsOneWidget);
 
-      expect(optionDraggable, findsOneWidget);
-      expect(anchorTarget, findsOneWidget);
+        await tester.tap(wrongOptionTap);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Drag option 0 upwards onto the anchor point target
-      final gesture = await tester.startGesture(
-        tester.getCenter(optionDraggable),
-      );
-      await tester.pump(const Duration(milliseconds: 50));
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-      await gesture.moveTo(tester.getCenter(anchorTarget));
-      await tester.pump(const Duration(milliseconds: 50));
+    testWidgets(
+      '5. Drag-and-drop interaction accepts option drop onto anchor point',
+      (tester) async {
+        await pumpReadAndAnswer(tester);
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final optionDraggable = find.byKey(
+          const ValueKey('read_and_answer_option_0'),
+        );
+        final anchorTarget = find.byKey(
+          const ValueKey('read_and_answer_drag_target'),
+        );
 
-      // Dropping correct answer on anchor target triggers answer flow
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        expect(optionDraggable, findsOneWidget);
+        expect(anchorTarget, findsOneWidget);
 
-    testWidgets('6. Evidence phase triggers when evidenceLine is present',
-        (tester) async {
+        // Drag option 0 upwards onto the anchor point target
+        final gesture = await tester.startGesture(
+          tester.getCenter(optionDraggable),
+        );
+        await tester.pump(const Duration(milliseconds: 50));
+
+        await gesture.moveTo(tester.getCenter(anchorTarget));
+        await tester.pump(const Duration(milliseconds: 50));
+
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        // Dropping correct answer on anchor target triggers answer flow
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
+
+    testWidgets('6. Evidence phase triggers when evidenceLine is present', (
+      tester,
+    ) async {
       final evidenceState = const ReadingLoaded(
         quests: [testEvidenceQuest],
         currentIndex: 0,
@@ -423,8 +429,9 @@ void main() {
       await pumpReadAndAnswer(tester, state: evidenceState);
 
       // Option 2 ('Sunday') is correct for testEvidenceQuest
-      final option2Tap =
-          find.byKey(const ValueKey('read_and_answer_option_tap_2'));
+      final option2Tap = find.byKey(
+        const ValueKey('read_and_answer_option_tap_2'),
+      );
       await tester.ensureVisible(option2Tap);
       await tester.tap(option2Tap);
       await tester.pump();
@@ -434,54 +441,49 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
 
       // Verify instruction to tap evidence words appears
-      expect(
-        find.text('Tap the words that prove your answer'),
-        findsOneWidget,
-      );
+      expect(find.text('Tap the words that prove your answer'), findsOneWidget);
     });
 
     testWidgets(
-        '7. Long content / story problem adaptability without truncation',
-        (tester) async {
-      final longContentState = const ReadingLoaded(
-        quests: [testLongStoryQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+      '7. Long content / story problem adaptability without truncation',
+      (tester) async {
+        final longContentState = const ReadingLoaded(
+          quests: [testLongStoryQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpReadAndAnswer(tester, state: longContentState);
+        await pumpReadAndAnswer(tester, state: longContentState);
 
-      expect(find.text('ANCIENT MARITIME EXPEDITIONS'), findsOneWidget);
-      expect(
-        find.textContaining('During the third epoch of the coastal dynasties'),
-        findsOneWidget,
-      );
-      expect(
-        find.text(
-          'Celestial navigation and avian migratory corridors',
-        ),
-        findsOneWidget,
-      );
+        expect(find.text('ANCIENT MARITIME EXPEDITIONS'), findsOneWidget);
+        expect(
+          find.textContaining(
+            'During the third epoch of the coastal dynasties',
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Celestial navigation and avian migratory corridors'),
+          findsOneWidget,
+        );
 
-      // Scroll smoothly down the CustomScrollView to verify layout
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-        warnIfMissed: false,
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        // Scroll smoothly down the CustomScrollView to verify layout
+        await tester.drag(
+          find.byType(CustomScrollView),
+          const Offset(0, -300),
+          warnIfMissed: false,
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('8. Small screen (320dp width) zero-overflow layout safety',
-        (tester) async {
-      await pumpReadAndAnswer(
-        tester,
-        width: 320,
-        height: 568,
-      );
+    testWidgets('8. Small screen (320dp width) zero-overflow layout safety', (
+      tester,
+    ) async {
+      await pumpReadAndAnswer(tester, width: 320, height: 568);
 
       // Verify no RenderFlex overflow occurs on ultra-compact 320dp screen
       expect(tester.takeException(), isNull);

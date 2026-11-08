@@ -41,11 +41,7 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.search_rounded,
-            color: color,
-            size: 16.r,
-          ),
+          Icon(Icons.search_rounded, color: color, size: 16.r),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(
@@ -67,4 +63,3 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
     );
   }
 }
-

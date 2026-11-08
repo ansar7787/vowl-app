@@ -259,29 +259,21 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               reduceMotion
-                  ? Text(
-                      emoji,
-                      style: TextStyle(fontSize: 24.sp),
-                    )
-                  : Text(
-                      emoji,
-                      style: TextStyle(fontSize: 24.sp),
-                    )
-                      .animate(target: (isCorrect || isWrong) ? 1 : 0)
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.15, 1.15),
-                        curve: Curves.easeOutBack,
-                      ),
+                  ? Text(emoji, style: TextStyle(fontSize: 24.sp))
+                  : Text(emoji, style: TextStyle(fontSize: 24.sp))
+                        .animate(target: (isCorrect || isWrong) ? 1 : 0)
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.15, 1.15),
+                          curve: Curves.easeOutBack,
+                        ),
               SizedBox(height: 4.h),
               Flexible(
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   alignment: Alignment.center,
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: 120.w,
-                    ),
+                    constraints: BoxConstraints(maxWidth: 120.w),
                     child: Text(
                       text,
                       textAlign: TextAlign.center,

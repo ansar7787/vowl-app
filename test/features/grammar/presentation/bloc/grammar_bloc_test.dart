@@ -75,8 +75,9 @@ void main() {
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
 
-    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
@@ -233,20 +234,22 @@ void main() {
       build: () {
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
-        when(() => mockUpdateUserRewards(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateUnlockedLevel(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockAwardBadge(any()))
-            .thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUnlockedLevel(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
-      seed: () => GrammarGameOver(
-        quests: [...tQuests, tQuests[2]],
-        currentIndex: 2,
-      ),
+      seed: () =>
+          GrammarGameOver(quests: [...tQuests, tQuests[2]], currentIndex: 2),
       act: (bloc) {
         bloc.add(const RestoreLife());
         bloc.add(const SubmitAnswer(true));

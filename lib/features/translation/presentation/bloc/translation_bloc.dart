@@ -303,7 +303,13 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
 
     // Require at least 2 characters to trigger translation to avoid burning tokens on initial keystrokes
     if (text.length < 2) {
-      emit(state.copyWith(sourceText: text, isTranslating: false, errorMessage: null));
+      emit(
+        state.copyWith(
+          sourceText: text,
+          isTranslating: false,
+          errorMessage: null,
+        ),
+      );
       return;
     }
 
@@ -319,17 +325,35 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     if (!event.isPremium &&
         state.freeTranslationsRemaining <= 0 &&
         isFreshTranslation) {
-      emit(state.copyWith(sourceText: text, isLimitReached: true, isTranslating: false));
+      emit(
+        state.copyWith(
+          sourceText: text,
+          isLimitReached: true,
+          isTranslating: false,
+        ),
+      );
       return;
     }
 
     if (state.currentTargetLanguage == null) {
-      emit(state.copyWith(sourceText: text, errorMessage: 'translation.error_select_target', isTranslating: false));
+      emit(
+        state.copyWith(
+          sourceText: text,
+          errorMessage: 'translation.error_select_target',
+          isTranslating: false,
+        ),
+      );
       return;
     }
 
     if (state.currentSourceLanguage == state.currentTargetLanguage) {
-      emit(state.copyWith(sourceText: text, translatedText: text, isTranslating: false));
+      emit(
+        state.copyWith(
+          sourceText: text,
+          translatedText: text,
+          isTranslating: false,
+        ),
+      );
       return;
     }
 

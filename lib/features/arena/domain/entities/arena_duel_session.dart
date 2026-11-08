@@ -8,6 +8,7 @@ class ArenaQuestion {
   final int correctIndex;
   final String explanation;
   final String? discipline;
+  final String? difficulty; // "easy", "medium", "hard"
 
   const ArenaQuestion({
     required this.question,
@@ -15,6 +16,7 @@ class ArenaQuestion {
     required this.correctIndex,
     required this.explanation,
     this.discipline,
+    this.difficulty,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,19 +26,22 @@ class ArenaQuestion {
       'correctIndex': correctIndex,
       'explanation': explanation,
       if (discipline != null) 'discipline': discipline,
+      if (difficulty != null) 'difficulty': difficulty,
     };
   }
 
   factory ArenaQuestion.fromMap(Map<String, dynamic> map) {
     return ArenaQuestion(
       question: map['question'] as String? ?? '',
-      options: (map['options'] as List<dynamic>?)
+      options:
+          (map['options'] as List<dynamic>?)
               ?.map((e) => e.toString())
               .toList() ??
           const [],
       correctIndex: (map['correctIndex'] as num?)?.toInt() ?? 0,
       explanation: map['explanation'] as String? ?? '',
       discipline: map['discipline'] as String?,
+      difficulty: map['difficulty'] as String?,
     );
   }
 }
@@ -153,4 +158,3 @@ class ArenaDuelSession {
     };
   }
 }
-

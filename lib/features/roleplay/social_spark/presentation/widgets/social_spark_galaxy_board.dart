@@ -8,7 +8,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_painter.dart';
 
-
 /// Interactive starry constellation board for chaining words into conversation sparks.
 class SocialSparkGalaxyBoard extends StatelessWidget {
   /// Available words or phrases placed as stars in the galaxy.
@@ -50,7 +49,8 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     return LayoutBuilder(
@@ -90,9 +90,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
           double cx = startX + (col * (nodeWidth + hSpacing)) + (nodeWidth / 2);
           double cy =
-              topPadding +
-              (row * (nodeHeight + vSpacing)) +
-              (nodeHeight / 2);
+              topPadding + (row * (nodeHeight + vSpacing)) + (nodeHeight / 2);
 
           starOffsets.add(Offset(cx, cy));
         }
@@ -107,8 +105,8 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                    ? AppColors.slate900
-                    : Colors.black.withValues(alpha: 0.02)),
+                      ? AppColors.slate900
+                      : Colors.black.withValues(alpha: 0.02)),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
               color: isDark
@@ -262,10 +260,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 8.w,
-                  vertical: 4.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 child: Center(
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
@@ -300,13 +295,13 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
       child: reduceMotion
           ? nodeWidget
           : nodeWidget
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1.0, 1.0),
-                end: const Offset(1.02, 1.02),
-                duration: (2.0 + (index % 3) * 0.4).seconds,
-                curve: Curves.easeInOut,
-              ),
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1.0, 1.0),
+                  end: const Offset(1.02, 1.02),
+                  duration: (2.0 + (index % 3) * 0.4).seconds,
+                  curve: Curves.easeInOut,
+                ),
     );
   }
 }

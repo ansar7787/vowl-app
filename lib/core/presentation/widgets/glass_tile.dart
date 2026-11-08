@@ -74,8 +74,10 @@ class GlassTile extends StatelessWidget {
               borderColor ??
               (isDark
                   ? (isMidnight
-                      ? const Color(0x24FFFFFF)
-                      : const Color(0xFF334155)) // Crisp Slate 700 standard border
+                        ? const Color(0x24FFFFFF)
+                        : const Color(
+                            0xFF334155,
+                          )) // Crisp Slate 700 standard border
                   : const Color(
                       0xFF0F172A,
                     ).withValues(alpha: borderOpacity ?? 0.08)),
@@ -174,7 +176,8 @@ class _GlassOverlay extends StatelessWidget {
         ? const Color(0xFF0B0F19)
         : const Color(0xFF1E293B);
 
-    final isWhiteBased = color != null &&
+    final isWhiteBased =
+        color != null &&
         (color == Colors.white ||
             (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
 
@@ -186,9 +189,7 @@ class _GlassOverlay extends StatelessWidget {
       final opacity =
           glassOpacity ?? (isDark ? (isMidnight ? 0.98 : 0.94) : 1.0);
 
-      return Container(
-        color: baseColor.withValues(alpha: opacity),
-      );
+      return Container(color: baseColor.withValues(alpha: opacity));
     }
 
     if (isDark) {
@@ -206,35 +207,26 @@ class _GlassOverlay extends StatelessWidget {
                           c.withValues(alpha: 0.10),
                         ]
                       : (isMidnight
-                          ? const [
-                              Color(0xFF141926),
-                              Color(0xFF0B0F19),
-                              Color(0xFF070A11),
-                            ]
-                          : const [
-                              Color(0xFF243044),
-                              Color(0xFF1E293B),
-                              Color(0xFF16202E),
-                            ]),
+                            ? const [
+                                Color(0xFF141926),
+                                Color(0xFF0B0F19),
+                                Color(0xFF070A11),
+                              ]
+                            : const [
+                                Color(0xFF243044),
+                                Color(0xFF1E293B),
+                                Color(0xFF16202E),
+                              ]),
                   stops: const [0.0, 0.5, 1.0],
                 )
               : LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: c != null
-                      ? [
-                          c.withValues(alpha: 0.25),
-                          c.withValues(alpha: 0.12),
-                        ]
+                      ? [c.withValues(alpha: 0.25), c.withValues(alpha: 0.12)]
                       : (isMidnight
-                          ? const [
-                              Color(0xFF101622),
-                              Color(0xFF0B0F19),
-                            ]
-                          : const [
-                              Color(0xFF222D3E),
-                              Color(0xFF1E293B),
-                            ]),
+                            ? const [Color(0xFF101622), Color(0xFF0B0F19)]
+                            : const [Color(0xFF222D3E), Color(0xFF1E293B)]),
                 ),
         ),
       );

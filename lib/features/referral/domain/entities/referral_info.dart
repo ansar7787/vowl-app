@@ -39,11 +39,36 @@ class AmbassadorLeaderboardItem {
 
 /// Tiered reward definitions for the Monthly Ambassador Cup.
 enum AmbassadorRewardTier {
-  gold(vipDays: 30, coins: 0, title: '🥇 1st Place', prizeDescription: '1 Month Free VIP'),
-  silver(vipDays: 7, coins: 0, title: '🥈 2nd Place', prizeDescription: '1 Week Free VIP'),
-  bronze(vipDays: 3, coins: 500, title: '🥉 3rd Place', prizeDescription: '500 Coins + 3 Days VIP'),
-  topTen(vipDays: 0, coins: 200, title: '🏅 Top 10', prizeDescription: '200 Coins'),
-  participant(vipDays: 0, coins: 0, title: 'Ambassador', prizeDescription: 'Community Badge'),
+  gold(
+    vipDays: 30,
+    coins: 0,
+    title: '🥇 1st Place',
+    prizeDescription: '1 Month Free VIP',
+  ),
+  silver(
+    vipDays: 7,
+    coins: 0,
+    title: '🥈 2nd Place',
+    prizeDescription: '1 Week Free VIP',
+  ),
+  bronze(
+    vipDays: 3,
+    coins: 500,
+    title: '🥉 3rd Place',
+    prizeDescription: '500 Coins + 3 Days VIP',
+  ),
+  topTen(
+    vipDays: 0,
+    coins: 200,
+    title: '🏅 Top 10',
+    prizeDescription: '200 Coins',
+  ),
+  participant(
+    vipDays: 0,
+    coins: 0,
+    title: 'Ambassador',
+    prizeDescription: 'Community Badge',
+  ),
   none(vipDays: 0, coins: 0, title: 'No Referrals', prizeDescription: 'Locked');
 
   final int vipDays;
@@ -86,7 +111,8 @@ class ReferralClaimResult {
     return ReferralClaimResult(
       success: true,
       isPending: false,
-      message: 'Invite code accepted! Enjoy $coinsAwarded coins and $vipDaysAwarded day VIP trial.',
+      message:
+          'Invite code accepted! Enjoy $coinsAwarded coins and $vipDaysAwarded day VIP trial.',
       coinsAwarded: coinsAwarded,
       vipDaysAwarded: vipDaysAwarded,
       referrerName: referrerName,
@@ -100,7 +126,9 @@ class ReferralClaimResult {
     return ReferralClaimResult(
       success: true,
       isPending: true,
-      message: message ?? 'Invite code saved! Complete Adventure Level 1 to activate your 100 Bonus Coins and 1 Day VIP pass.',
+      message:
+          message ??
+          'Invite code saved! Complete Adventure Level 1 to activate your 100 Bonus Coins and 1 Day VIP pass.',
       referrerName: referrerName,
     );
   }
@@ -141,7 +169,8 @@ class AmbassadorRewardClaimResult {
   }) {
     return AmbassadorRewardClaimResult(
       success: true,
-      message: 'Congratulations! You claimed your $monthKey Ambassador Cup reward: $coinsAwarded coins & $vipDaysAwarded VIP days!',
+      message:
+          'Congratulations! You claimed your $monthKey Ambassador Cup reward: $coinsAwarded coins & $vipDaysAwarded VIP days!',
       rank: rank,
       coinsAwarded: coinsAwarded,
       vipDaysAwarded: vipDaysAwarded,
@@ -150,10 +179,6 @@ class AmbassadorRewardClaimResult {
   }
 
   factory AmbassadorRewardClaimResult.failure(String error) {
-    return AmbassadorRewardClaimResult(
-      success: false,
-      message: error,
-    );
+    return AmbassadorRewardClaimResult(success: false, message: error);
   }
 }
-

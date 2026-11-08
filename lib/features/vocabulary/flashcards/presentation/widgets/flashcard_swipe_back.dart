@@ -208,8 +208,12 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         vertical: 3.h,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: widget.color.withValues(alpha: 0.08),
-                                        borderRadius: BorderRadius.circular(8.r),
+                                        color: widget.color.withValues(
+                                          alpha: 0.08,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
                                       ),
                                       child: Text(
                                         'Definition',
@@ -339,8 +343,12 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                           vertical: 3.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: widget.color.withValues(alpha: 0.08),
-                                          borderRadius: BorderRadius.circular(8.r),
+                                          color: widget.color.withValues(
+                                            alpha: 0.08,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            8.r,
+                                          ),
                                         ),
                                         child: Text(
                                           'Example',

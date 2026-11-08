@@ -119,7 +119,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     GameQuest quest,
   ) {
     final grammarState = context.read<GrammarBloc>().state;
-    final isAlreadyAnswered = isAnsweredNotifier.value ||
+    final isAlreadyAnswered =
+        isAnsweredNotifier.value ||
         _pendingJigsaw.value ||
         (grammarState is GrammarLoaded &&
             grammarState.answerStatus != AnswerStatus.unanswered);
@@ -226,10 +227,12 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                   .trim();
             }
 
-            final isAnswered = isAnsweredNotifier.value ||
+            final isAnswered =
+                isAnsweredNotifier.value ||
                 (state is GrammarLoaded &&
                     state.answerStatus != AnswerStatus.unanswered);
-            final isCorrect = isCorrectNotifier.value ??
+            final isCorrect =
+                isCorrectNotifier.value ??
                 (state is GrammarLoaded &&
                     state.answerStatus == AnswerStatus.correct);
 
@@ -306,15 +309,15 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                           // 2. Main Game Stage (Sentence Board + Bricks grouped together)
                                           Expanded(
                                             child: LayoutBuilder(
-                                              builder:
-                                                  (context, stageConstraints) {
+                                              builder: (context, stageConstraints) {
                                                 return SingleChildScrollView(
                                                   physics:
                                                       const BouncingScrollPhysics(),
                                                   child: ConstrainedBox(
                                                     constraints: BoxConstraints(
-                                                      minHeight: stageConstraints
-                                                          .maxHeight,
+                                                      minHeight:
+                                                          stageConstraints
+                                                              .maxHeight,
                                                     ),
                                                     child: Column(
                                                       mainAxisAlignment:
@@ -359,13 +362,13 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                           isCompact: isCompact,
                                                           isAnswered:
                                                               isAnswered ||
-                                                                  _pendingJigsaw
-                                                                      .value,
-                                                          onBrickTapped:
-                                                              (brickText) {
+                                                              _pendingJigsaw
+                                                                  .value,
+                                                          onBrickTapped: (brickText) {
                                                             final index =
                                                                 options.indexOf(
-                                                                    brickText);
+                                                                  brickText,
+                                                                );
                                                             if (index != -1) {
                                                               _onBridge(
                                                                 brickText,
@@ -427,14 +430,15 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
 
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: MediaQuery.of(
+                                      height:
+                                          MediaQuery.of(
                                                 context,
                                               ).viewInsets.bottom >
                                               0
                                           ? MediaQuery.of(
                                                   context,
                                                 ).viewInsets.bottom +
-                                              30.h
+                                                30.h
                                           : 40.h,
                                     ),
                                   ),
@@ -475,9 +479,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         color: isDark ? const Color(0xFF1E222B) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: primaryColor.withValues(
-            alpha: isDark ? 0.22 : 0.16,
-          ),
+          color: primaryColor.withValues(alpha: isDark ? 0.22 : 0.16),
           width: 1.5,
         ),
       ),
@@ -514,9 +516,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                     gradient: LinearGradient(
                       colors: [
                         primaryColor.withValues(alpha: 0.0),
-                        primaryColor.withValues(
-                          alpha: isDark ? 0.35 : 0.22,
-                        ),
+                        primaryColor.withValues(alpha: isDark ? 0.35 : 0.22),
                       ],
                     ),
                   ),
@@ -542,9 +542,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        primaryColor.withValues(
-                          alpha: isDark ? 0.35 : 0.22,
-                        ),
+                        primaryColor.withValues(alpha: isDark ? 0.35 : 0.22),
                         primaryColor.withValues(alpha: 0.0),
                       ],
                     ),
@@ -592,29 +590,19 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   ) {
     return Container(
       key: const ValueKey('conjunction_rule_box'),
-      padding: EdgeInsets.symmetric(
-        horizontal: 14.w,
-        vertical: 8.h,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(
-          alpha: isDark ? 0.12 : 0.08,
-        ),
+        color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.08),
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
-          color: primaryColor.withValues(
-            alpha: isDark ? 0.25 : 0.18,
-          ),
+          color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.18),
           width: 1.0,
         ),
       ),
       child: Column(
         children: [
           Text(
-            _formatRule(
-              quest.grammarRule,
-              quest.conjunctionPurpose,
-            ),
+            _formatRule(quest.grammarRule, quest.conjunctionPurpose),
             textAlign: TextAlign.center,
             softWrap: true,
             style: TextStyle(
@@ -631,15 +619,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
               alignment: WrapAlignment.center,
               spacing: 6.w,
               runSpacing: 4.h,
-              children: [
-                "For",
-                "And",
-                "Nor",
-                "But",
-                "Or",
-                "Yet",
-                "So",
-              ]
+              children: ["For", "And", "Nor", "But", "Or", "Yet", "So"]
                   .map(
                     (word) => Container(
                       padding: EdgeInsets.symmetric(
@@ -692,8 +672,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                   ? AppColors.gameCorrect
                   : AppColors.gameIncorrect)
             : (isHighlight
-                ? primaryColor
-                : primaryColor.withValues(alpha: 0.45));
+                  ? primaryColor
+                  : primaryColor.withValues(alpha: 0.45));
 
         return Container(
           constraints: BoxConstraints(
@@ -728,20 +708,17 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           child: Center(
             child: isPlaced
                 ? Text(
-                    _placedBrick.value!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 16.sp : 18.sp,
-                      fontWeight: FontWeight.w700,
-                      color: nodeColor,
-                    ),
-                  )
-                    .animate(target: shouldReduceMotion ? 0 : 1)
-                    .scale(
-                      duration: 300.ms,
-                      curve: Curves.easeOutBack,
-                    )
+                        _placedBrick.value!,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 16.sp : 18.sp,
+                          fontWeight: FontWeight.w700,
+                          color: nodeColor,
+                        ),
+                      )
+                      .animate(target: shouldReduceMotion ? 0 : 1)
+                      .scale(duration: 300.ms, curve: Curves.easeOutBack)
                 : Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,

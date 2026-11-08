@@ -75,8 +75,9 @@ class SentenceOrderReadingStoneSlab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final unselectedBorderColor =
-        isDark ? Colors.white.withValues(alpha: 0.12) : const Color(0xFFE2E8F0);
+    final unselectedBorderColor = isDark
+        ? Colors.white.withValues(alpha: 0.12)
+        : const Color(0xFFE2E8F0);
     final unselectedBgColor = isDark
         ? const Color(0xFF1E293B).withValues(alpha: 0.6)
         : Colors.white;

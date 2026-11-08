@@ -96,8 +96,8 @@ class WordSnapHintCard extends StatelessWidget {
                 color: isExpanded
                     ? primaryColor.withValues(alpha: 0.45)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : AppColors.slate200),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : AppColors.slate200),
                 width: isExpanded ? 1.5.w : 1.w,
               ),
             ),
@@ -109,7 +109,10 @@ class WordSnapHintCard extends StatelessWidget {
                   onTap: () => _onTapHeader(context),
                   borderRadius: BorderRadius.circular(18.r),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 14.h,
+                    ),
                     child: Row(
                       children: [
                         Container(
@@ -142,11 +145,13 @@ class WordSnapHintCard extends StatelessWidget {
                                   fontWeight: FontWeight.w700,
                                   color: isExpanded
                                       ? primaryColor
-                                      : (isDark ? Colors.white : AppColors.slate800),
+                                      : (isDark
+                                            ? Colors.white
+                                            : AppColors.slate800),
                                   letterSpacing: 0.2,
                                 ),
                               ),
-                                if (!isExpanded) ...[
+                              if (!isExpanded) ...[
                                 SizedBox(height: 1.h),
                                 Text(
                                   isPremium
@@ -156,7 +161,9 @@ class WordSnapHintCard extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 11.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: isDark ? Colors.white54 : AppColors.slate500,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : AppColors.slate500,
                                   ),
                                 ),
                               ],
@@ -168,7 +175,10 @@ class WordSnapHintCard extends StatelessWidget {
                         // Reward / Free badge pill
                         if (!isExpanded)
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 3.h,
+                            ),
                             decoration: BoxDecoration(
                               color: isPremium
                                   ? AppColors.amber500.withValues(alpha: 0.14)
@@ -189,7 +199,9 @@ class WordSnapHintCard extends StatelessWidget {
                                       ? Icons.star_rounded
                                       : Icons.play_circle_outline_rounded,
                                   size: 11.r,
-                                  color: isPremium ? AppColors.amber500 : primaryColor,
+                                  color: isPremium
+                                      ? AppColors.amber500
+                                      : primaryColor,
                                 ),
                                 SizedBox(width: 3.w),
                                 Text(
@@ -198,7 +210,9 @@ class WordSnapHintCard extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: isPremium ? AppColors.amber500 : primaryColor,
+                                    color: isPremium
+                                        ? AppColors.amber500
+                                        : primaryColor,
                                     letterSpacing: 0.4,
                                   ),
                                 ),
@@ -238,7 +252,9 @@ class WordSnapHintCard extends StatelessWidget {
                             vertical: 9.h,
                           ),
                           decoration: BoxDecoration(
-                            color: primaryColor.withValues(alpha: isDark ? 0.14 : 0.08),
+                            color: primaryColor.withValues(
+                              alpha: isDark ? 0.14 : 0.08,
+                            ),
                             borderRadius: BorderRadius.circular(12.r),
                             border: Border.all(
                               color: primaryColor.withValues(alpha: 0.2),
@@ -271,12 +287,16 @@ class WordSnapHintCard extends StatelessWidget {
                                 child: ScaleButton(
                                   onTap: () {
                                     hapticService.selection();
-                                    soundService.playTts(puzzle.playableSentence);
+                                    soundService.playTts(
+                                      puzzle.playableSentence,
+                                    );
                                   },
                                   child: Container(
                                     padding: EdgeInsets.all(6.r),
                                     decoration: BoxDecoration(
-                                      color: primaryColor.withValues(alpha: 0.15),
+                                      color: primaryColor.withValues(
+                                        alpha: 0.15,
+                                      ),
                                       borderRadius: BorderRadius.circular(8.r),
                                     ),
                                     child: Icon(
@@ -295,7 +315,12 @@ class WordSnapHintCard extends StatelessWidget {
 
                         // Definition Section
                         Text(
-                          context.tr('vocabulary.full_definition', fallback: 'Definition').toUpperCase(),
+                          context
+                              .tr(
+                                'vocabulary.full_definition',
+                                fallback: 'Definition',
+                              )
+                              .toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.5.sp,

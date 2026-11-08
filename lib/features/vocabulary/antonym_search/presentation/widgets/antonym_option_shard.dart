@@ -79,14 +79,10 @@ class AntonymOptionShard extends StatelessWidget {
       width: cardWidth,
       height: cardHeight,
       decoration: BoxDecoration(
-        color: isDark
-            ? Theme.of(context).colorScheme.surface
-            : Colors.white,
+        color: isDark ? Theme.of(context).colorScheme.surface : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: active
-              ? color
-              : color.withValues(alpha: isDark ? 0.35 : 0.25),
+          color: active ? color : color.withValues(alpha: isDark ? 0.35 : 0.25),
           width: active ? 2.2 : 1.2,
         ),
         boxShadow: [
@@ -94,8 +90,8 @@ class AntonymOptionShard extends StatelessWidget {
             color: active
                 ? color.withValues(alpha: isDragging ? 0.35 : 0.25)
                 : (isDark
-                    ? Colors.black.withValues(alpha: 0.25)
-                    : color.withValues(alpha: 0.08)),
+                      ? Colors.black.withValues(alpha: 0.25)
+                      : color.withValues(alpha: 0.08)),
             blurRadius: isDragging ? 20 : (active ? 14 : 8),
             offset: isDragging ? const Offset(0, 10) : const Offset(0, 4),
           ),
@@ -105,10 +101,7 @@ class AntonymOptionShard extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 10.w,
-              vertical: 6.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
@@ -131,10 +124,7 @@ class AntonymOptionShard extends StatelessWidget {
               child: Container(
                 width: 14.r,
                 height: 14.r,
-                decoration: BoxDecoration(
-                  color: color,
-                  shape: BoxShape.circle,
-                ),
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
                 child: Icon(
                   Icons.check_rounded,
                   size: 10.r,

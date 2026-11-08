@@ -117,9 +117,7 @@ void main() {
       build: () {
         when(
           () => mockForgotPassword('reset@example.com'),
-        ).thenAnswer(
-          (_) async => const Left(ServerFailure('user-not-found')),
-        );
+        ).thenAnswer((_) async => const Left(ServerFailure('user-not-found')));
         return cubit;
       },
       seed: () => validSeed,
@@ -153,4 +151,3 @@ void main() {
     });
   });
 }
-

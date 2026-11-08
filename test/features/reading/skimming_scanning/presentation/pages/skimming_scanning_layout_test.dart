@@ -90,7 +90,8 @@ void main() {
         'Astronomers observed a massive solar flare erupting from the active region of the star, releasing unprecedented bursts of radiation across the solar system.',
     timeLimit: 25,
     hint: 'Look for two-word celestial phenomena.',
-    explanation: 'The passage explicitly describes a massive solar flare erupting.',
+    explanation:
+        'The passage explicitly describes a massive solar flare erupting.',
   );
 
   const testNextScanQuest = ReadingQuest(
@@ -153,8 +154,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -166,12 +168,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -262,63 +266,67 @@ void main() {
   }
 
   group('SkimmingScanningScreen Layout & Interactions', () {
-    testWidgets('1. Initial layout renders target badge, timer, instruction, and terminal', (
-      tester,
-    ) async {
-      await pumpSkimmingScanning(tester);
+    testWidgets(
+      '1. Initial layout renders target badge, timer, instruction, and terminal',
+      (tester) async {
+        await pumpSkimmingScanning(tester);
 
-      expect(find.byType(SkimmingScanningTargetBadge), findsOneWidget);
-      expect(find.text('FIND: SOLAR FLARE'), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.text('Tap the target in the text below'), findsOneWidget);
-      expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
-      expect(find.text('solar flare'), findsOneWidget);
-    });
+        expect(find.byType(SkimmingScanningTargetBadge), findsOneWidget);
+        expect(find.text('FIND: SOLAR FLARE'), findsOneWidget);
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(find.text('Tap the target in the text below'), findsOneWidget);
+        expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
+        expect(find.text('solar flare'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. Multi-word target combines into single tappable chunk in terminal', (
-      tester,
-    ) async {
-      await pumpSkimmingScanning(tester);
+    testWidgets(
+      '2. Multi-word target combines into single tappable chunk in terminal',
+      (tester) async {
+        await pumpSkimmingScanning(tester);
 
-      expect(find.text('solar flare'), findsOneWidget);
-      expect(find.text('flare'), findsNothing);
-    });
+        expect(find.text('solar flare'), findsOneWidget);
+        expect(find.text('flare'), findsNothing);
+      },
+    );
 
-    testWidgets('3. Tapping correct target word dispatches SubmitAnswer(true) with success feedback', (
-      tester,
-    ) async {
-      await pumpSkimmingScanning(tester);
+    testWidgets(
+      '3. Tapping correct target word dispatches SubmitAnswer(true) with success feedback',
+      (tester) async {
+        await pumpSkimmingScanning(tester);
 
-      final targetWordFinder = find.text('solar flare');
-      expect(targetWordFinder, findsOneWidget);
+        final targetWordFinder = find.text('solar flare');
+        expect(targetWordFinder, findsOneWidget);
 
-      await tester.tap(targetWordFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(targetWordFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('4. Tapping incorrect word dispatches SubmitAnswer(false) with error feedback', (
-      tester,
-    ) async {
-      await pumpSkimmingScanning(tester);
+    testWidgets(
+      '4. Tapping incorrect word dispatches SubmitAnswer(false) with error feedback',
+      (tester) async {
+        await pumpSkimmingScanning(tester);
 
-      final wrongWordFinder = find.text('Astronomers');
-      expect(wrongWordFinder, findsOneWidget);
+        final wrongWordFinder = find.text('Astronomers');
+        expect(wrongWordFinder, findsOneWidget);
 
-      await tester.tap(wrongWordFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(wrongWordFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
     testWidgets('5. Countdown timer expiry auto-submits incorrect answer', (
       tester,
@@ -342,7 +350,9 @@ void main() {
       tester,
     ) async {
       final stateController = StreamController<ReadingState>.broadcast();
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+      when(
+        () => mockReadingBloc.stream,
+      ).thenAnswer((_) => stateController.stream);
 
       await pumpSkimmingScanning(tester);
 
@@ -368,23 +378,26 @@ void main() {
       await stateController.close();
     });
 
-    testWidgets('7. Continue button dispatches NextQuestion event in answered state', (
+    testWidgets(
+      '7. Continue button dispatches NextQuestion event in answered state',
+      (tester) async {
+        await pumpSkimmingScanning(tester, state: testAnsweredState);
+        await tester.pump(const Duration(milliseconds: 600));
+
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
+
+        await tester.tap(continueButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
+      },
+    );
+
+    testWidgets('8. Hint button in header dispatches ReadingHintUsed', (
       tester,
     ) async {
-      await pumpSkimmingScanning(tester, state: testAnsweredState);
-      await tester.pump(const Duration(milliseconds: 600));
-
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
-
-      await tester.tap(continueButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
-    });
-
-    testWidgets('8. Hint button in header dispatches ReadingHintUsed', (tester) async {
       await pumpSkimmingScanning(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -393,7 +406,9 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(any(that: isA<ReadingHintUsed>()))).called(1);
+      verify(
+        () => mockReadingBloc.add(any(that: isA<ReadingHintUsed>())),
+      ).called(1);
     });
 
     testWidgets('9. Shimmer loading renders when state is ReadingInitial', (
@@ -405,40 +420,42 @@ void main() {
       expect(find.byType(SkimmingScanningTerminal), findsNothing);
     });
 
-    testWidgets('10. Game briefing layer renders on Level 1 and dismisses on action', (
-      tester,
-    ) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_skimmingScanning': false,
-      });
+    testWidgets(
+      '10. Game briefing layer renders on Level 1 and dismisses on action',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_skimmingScanning': false,
+        });
 
-      await pumpSkimmingScanning(tester, level: 1);
+        await pumpSkimmingScanning(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('SKIM & SCAN'), findsOneWidget);
-      final startBtn = find.text('START SCANNING');
-      expect(startBtn, findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('SKIM & SCAN'), findsOneWidget);
+        final startBtn = find.text('START SCANNING');
+        expect(startBtn, findsOneWidget);
 
-      await tester.ensureVisible(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.ensureVisible(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.tap(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-      expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+        expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
+      },
+    );
 
-    testWidgets('11. Dark theme renders cleanly without visual contrast defects', (
-      tester,
-    ) async {
-      await pumpSkimmingScanning(tester, themeMode: ThemeMode.dark);
+    testWidgets(
+      '11. Dark theme renders cleanly without visual contrast defects',
+      (tester) async {
+        await pumpSkimmingScanning(tester, themeMode: ThemeMode.dark);
 
-      expect(find.byType(SkimmingScanningTargetBadge), findsOneWidget);
-      expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
-    });
+        expect(find.byType(SkimmingScanningTargetBadge), findsOneWidget);
+        expect(find.byType(SkimmingScanningTerminal), findsOneWidget);
+      },
+    );
 
     testWidgets('12. Small screen (320x640) renders without layout overflow', (
       tester,
@@ -454,7 +471,9 @@ void main() {
       tester,
     ) async {
       final stateController = StreamController<ReadingState>.broadcast();
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+      when(
+        () => mockReadingBloc.stream,
+      ).thenAnswer((_) => stateController.stream);
 
       await pumpSkimmingScanning(tester);
       expect(find.text('FIND: SOLAR FLARE'), findsOneWidget);
@@ -476,59 +495,61 @@ void main() {
       await stateController.close();
     });
 
-    testWidgets('14. Multi-line instruction and interaction prompt wrap with centered text and no ellipses', (
-      tester,
-    ) async {
-      const longInstructionQuest = ReadingQuest(
-        id: 'RDG_SKIMSCAN_LONG_Q',
-        instruction:
-            'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
-        difficulty: 1,
-        subtype: GameSubtype.skimmingScanning,
-        targetItem: 'auroral arc display',
-        correctAnswer: 'auroral arc display',
-        passage:
-            'The arctic research team recorded a distinct auroral arc display expanding across the northern sky at midnight.',
-        timeLimit: 30,
-      );
+    testWidgets(
+      '14. Multi-line instruction and interaction prompt wrap with centered text and no ellipses',
+      (tester) async {
+        const longInstructionQuest = ReadingQuest(
+          id: 'RDG_SKIMSCAN_LONG_Q',
+          instruction:
+              'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
+          difficulty: 1,
+          subtype: GameSubtype.skimmingScanning,
+          targetItem: 'auroral arc display',
+          correctAnswer: 'auroral arc display',
+          passage:
+              'The arctic research team recorded a distinct auroral arc display expanding across the northern sky at midnight.',
+          timeLimit: 30,
+        );
 
-      await pumpSkimmingScanning(
-        tester,
-        state: const ReadingLoaded(
-          quests: [longInstructionQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-        ),
-        width: 320,
-        height: 640,
-      );
+        await pumpSkimmingScanning(
+          tester,
+          state: const ReadingLoaded(
+            quests: [longInstructionQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+          ),
+          width: 320,
+          height: 640,
+        );
 
-      // Verify no overflow exception was thrown
-      expect(tester.takeException(), isNull);
+        // Verify no overflow exception was thrown
+        expect(tester.takeException(), isNull);
 
-      // Verify instruction text exists and has TextAlign.center
-      final instructionFinder = find.text(
-        'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
-      );
-      expect(instructionFinder, findsOneWidget);
-      final instructionWidget = tester.widget<Text>(instructionFinder);
-      expect(instructionWidget.textAlign, TextAlign.center);
-      expect(instructionWidget.overflow, isNot(TextOverflow.ellipsis));
+        // Verify instruction text exists and has TextAlign.center
+        final instructionFinder = find.text(
+          'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
+        );
+        expect(instructionFinder, findsOneWidget);
+        final instructionWidget = tester.widget<Text>(instructionFinder);
+        expect(instructionWidget.textAlign, TextAlign.center);
+        expect(instructionWidget.overflow, isNot(TextOverflow.ellipsis));
 
-      // Verify interaction prompt text exists and has TextAlign.center with no ellipsis
-      final promptFinder = find.text('Tap the target in the text below');
-      expect(promptFinder, findsOneWidget);
-      final promptWidget = tester.widget<Text>(promptFinder);
-      expect(promptWidget.textAlign, TextAlign.center);
-      expect(promptWidget.overflow, isNot(TextOverflow.ellipsis));
+        // Verify interaction prompt text exists and has TextAlign.center with no ellipsis
+        final promptFinder = find.text('Tap the target in the text below');
+        expect(promptFinder, findsOneWidget);
+        final promptWidget = tester.widget<Text>(promptFinder);
+        expect(promptWidget.textAlign, TextAlign.center);
+        expect(promptWidget.overflow, isNot(TextOverflow.ellipsis));
 
-      // Verify target badge text has TextAlign.center with no ellipsis
-      final targetBadgeTextFinder = find.text('FIND: AURORAL ARC DISPLAY');
-      expect(targetBadgeTextFinder, findsOneWidget);
-      final targetBadgeTextWidget = tester.widget<Text>(targetBadgeTextFinder);
-      expect(targetBadgeTextWidget.textAlign, TextAlign.center);
-      expect(targetBadgeTextWidget.overflow, isNot(TextOverflow.ellipsis));
-    });
+        // Verify target badge text has TextAlign.center with no ellipsis
+        final targetBadgeTextFinder = find.text('FIND: AURORAL ARC DISPLAY');
+        expect(targetBadgeTextFinder, findsOneWidget);
+        final targetBadgeTextWidget = tester.widget<Text>(
+          targetBadgeTextFinder,
+        );
+        expect(targetBadgeTextWidget.textAlign, TextAlign.center);
+        expect(targetBadgeTextWidget.overflow, isNot(TextOverflow.ellipsis));
+      },
+    );
   });
 }
-

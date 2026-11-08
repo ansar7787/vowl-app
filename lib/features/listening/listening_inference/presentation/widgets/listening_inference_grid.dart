@@ -107,7 +107,9 @@ class ListeningInferenceGrid extends StatelessWidget {
               key: Key('listening_inference_option_$index'),
               onTap: isAnswered ? null : () => onSubmitAnswer(index),
               child: AnimatedContainer(
-                duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 200),
+                duration: reduceMotion
+                    ? Duration.zero
+                    : const Duration(milliseconds: 200),
                 curve: Curves.easeOutCubic,
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 decoration: BoxDecoration(
@@ -115,23 +117,29 @@ class ListeningInferenceGrid extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: getBorderColor(),
-                    width: isSelected || isChoiceCorrect || isChoiceWrong ? 2.0 : 1.2,
+                    width: isSelected || isChoiceCorrect || isChoiceWrong
+                        ? 2.0
+                        : 1.2,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: isDark ? 0.22 : 0.04),
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.22 : 0.04,
+                      ),
                       offset: Offset(0, 3.h),
                       blurRadius: 8,
                     ),
                     if (isSelected || isChoiceCorrect || isChoiceWrong)
                       BoxShadow(
-                        color: (isChoiceCorrect
-                                ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
-                                : (isChoiceWrong
-                                    ? (tokens?.gameIncorrect ??
-                                        AppColors.gameIncorrect)
-                                    : color))
-                            .withValues(alpha: 0.25),
+                        color:
+                            (isChoiceCorrect
+                                    ? (tokens?.gameCorrect ??
+                                          AppColors.gameCorrect)
+                                    : (isChoiceWrong
+                                          ? (tokens?.gameIncorrect ??
+                                                AppColors.gameIncorrect)
+                                          : color))
+                                .withValues(alpha: 0.25),
                         blurRadius: 14,
                         spreadRadius: 1,
                       ),
@@ -148,8 +156,8 @@ class ListeningInferenceGrid extends StatelessWidget {
                         color: isChoiceCorrect || isChoiceWrong
                             ? Colors.white.withValues(alpha: 0.2)
                             : (isSelected
-                                ? color.withValues(alpha: 0.18)
-                                : color.withValues(alpha: 0.08)),
+                                  ? color.withValues(alpha: 0.18)
+                                  : color.withValues(alpha: 0.08)),
                         shape: BoxShape.circle,
                       ),
                       child: isChoiceCorrect
@@ -159,20 +167,22 @@ class ListeningInferenceGrid extends StatelessWidget {
                               size: 18.r,
                             )
                           : (isChoiceWrong
-                              ? Icon(
-                                  Icons.report_problem_rounded,
-                                  color: Colors.white,
-                                  size: 18.r,
-                                )
-                              : Text(
-                                  letterLabel,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: isSelected ? color : (isDark ? Colors.white70 : color),
-                                  ),
-                                )),
+                                ? Icon(
+                                    Icons.report_problem_rounded,
+                                    color: Colors.white,
+                                    size: 18.r,
+                                  )
+                                : Text(
+                                    letterLabel,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: isSelected
+                                          ? color
+                                          : (isDark ? Colors.white70 : color),
+                                    ),
+                                  )),
                     ),
                     SizedBox(width: 14.w),
                     // Option Text
@@ -184,7 +194,9 @@ class ListeningInferenceGrid extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
-                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                          fontWeight: isSelected
+                              ? FontWeight.w700
+                              : FontWeight.w600,
                           color: getTextColor(),
                           height: 1.35,
                           letterSpacing: 0.1,

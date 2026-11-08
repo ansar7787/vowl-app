@@ -218,7 +218,10 @@ class EliteBaseLayout extends StatelessWidget {
               quest.usageContext!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.menu_book_rounded,
-              title: context.tr('games.semantic_usage_context_title', fallback: 'Usage Context'),
+              title: context.tr(
+                'games.semantic_usage_context_title',
+                fallback: 'Usage Context',
+              ),
               rule: quest.usageContext!,
             ),
           if (showPedagogy &&
@@ -226,7 +229,10 @@ class EliteBaseLayout extends StatelessWidget {
               quest.spellingRule!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.spellcheck_rounded,
-              title: context.tr('games.semantic_spelling_pattern_title', fallback: 'Spelling Rule'),
+              title: context.tr(
+                'games.semantic_spelling_pattern_title',
+                fallback: 'Spelling Rule',
+              ),
               rule: quest.spellingRule!,
             ),
           if (showPedagogy &&
@@ -234,7 +240,10 @@ class EliteBaseLayout extends StatelessWidget {
               quest.sequenceLogic!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.alt_route_rounded,
-              title: context.tr('games.semantic_sequence_logic_title', fallback: 'Sequence Logic'),
+              title: context.tr(
+                'games.semantic_sequence_logic_title',
+                fallback: 'Sequence Logic',
+              ),
               rule: quest.sequenceLogic!,
             ),
           if (showPedagogy &&
@@ -242,7 +251,10 @@ class EliteBaseLayout extends StatelessWidget {
               quest.shadowingFocus!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.record_voice_over_rounded,
-              title: context.tr('games.semantic_shadowing_focus_title', fallback: 'Shadowing Focus'),
+              title: context.tr(
+                'games.semantic_shadowing_focus_title',
+                fallback: 'Shadowing Focus',
+              ),
               rule: quest.shadowingFocus!,
             ),
           if (showPedagogy &&
@@ -250,15 +262,18 @@ class EliteBaseLayout extends StatelessWidget {
               quest.targetAccent!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.language_rounded,
-              title: context.tr('games.semantic_target_sound_title', fallback: 'Target Accent'),
+              title: context.tr(
+                'games.semantic_target_sound_title',
+                fallback: 'Target Accent',
+              ),
               rule: quest.targetAccent!,
             ),
         ];
 
         final String? resolvedCorrectAnswer =
             (!isSuccess && dynamicState.isFinalFailure)
-                ? _resolveCorrectAnswer(quest)
-                : null;
+            ? _resolveCorrectAnswer(quest)
+            : null;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

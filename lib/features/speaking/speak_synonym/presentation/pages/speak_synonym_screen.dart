@@ -155,7 +155,11 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   @visibleForTesting
   ValueNotifier<double> get bloomProgressNotifier => _bloomProgress;
 
-  void _extractTargetWord(String text, List<String> synonyms, String? correctAnswer) {
+  void _extractTargetWord(
+    String text,
+    List<String> synonyms,
+    String? correctAnswer,
+  ) {
     if (synonyms.isNotEmpty) {
       _acceptedSyns = List<String>.from(synonyms);
     } else if (correctAnswer != null && correctAnswer.trim().isNotEmpty) {
@@ -216,7 +220,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
           }
         }
 
-        final reduceMotion = (mediaQuery.disableAnimations) ||
+        final reduceMotion =
+            (mediaQuery.disableAnimations) ||
             VowlMotion.lowAnimationModeOverride.value;
         if (reduceMotion && !_ttsFinished.value) {
           _ttsFinished.value = true;
@@ -276,7 +281,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                     ),
                                     SizedBox(height: 24.h),
                                     SpeakSynonymSentencePanel(
-                                      key: const Key('speak_synonym_sentence_panel'),
+                                      key: const Key(
+                                        'speak_synonym_sentence_panel',
+                                      ),
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
@@ -297,7 +304,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                     if (hintUsed && quest.hint != null) ...[
                                       SizedBox(height: 16.h),
                                       Container(
-                                        key: const Key('speak_synonym_hint_card'),
+                                        key: const Key(
+                                          'speak_synonym_hint_card',
+                                        ),
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 16.w,
                                           vertical: 14.h,
@@ -320,7 +329,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                           children: [
                                             Icon(
                                               Icons.lightbulb_outline,
-                                              key: const Key('speak_synonym_hint_icon'),
+                                              key: const Key(
+                                                'speak_synonym_hint_icon',
+                                              ),
                                               color: theme.primaryColor,
                                               size: 20.r,
                                             ),
@@ -328,14 +339,18 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                             Expanded(
                                               child: Text(
                                                 quest.hint!,
-                                                key: const Key('speak_synonym_hint_text'),
+                                                key: const Key(
+                                                  'speak_synonym_hint_text',
+                                                ),
                                                 softWrap: true,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 14.sp,
                                                   fontWeight: FontWeight.w500,
                                                   color: isDark
-                                                      ? Colors.white.withValues(alpha: 0.88)
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.88,
+                                                        )
                                                       : const Color(0xFF334155),
                                                   height: 1.45,
                                                 ),

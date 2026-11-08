@@ -16,7 +16,9 @@ import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_top_bar.dart';
 
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
 
 void main() {
@@ -63,37 +65,40 @@ void main() {
       value: mockAuthBloc,
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
-        builder: (context, _) => MaterialApp(
-          theme: AppTheme.lightTheme,
-          home: child,
-        ),
+        builder: (context, _) =>
+            MaterialApp(theme: AppTheme.lightTheme, home: child),
       ),
     );
   }
 
-  testWidgets('WordMixerScreen loads puzzle and renders board without crashing', (tester) async {
-    await tester.runAsync(() async {
-      await tester.pumpWidget(wrapScreen(const WordMixerScreen()));
-      await Future.delayed(const Duration(milliseconds: 500));
-    });
-    await tester.pump();
-    await tester.pump(const Duration(seconds: 2));
+  testWidgets(
+    'WordMixerScreen loads puzzle and renders board without crashing',
+    (tester) async {
+      await tester.runAsync(() async {
+        await tester.pumpWidget(wrapScreen(const WordMixerScreen()));
+        await Future.delayed(const Duration(milliseconds: 500));
+      });
+      await tester.pump();
+      await tester.pump(const Duration(seconds: 2));
 
-    expect(find.byType(WordMixerScreen), findsOneWidget);
-    expect(find.byType(GameShimmerLoading), findsNothing);
-  });
+      expect(find.byType(WordMixerScreen), findsOneWidget);
+      expect(find.byType(GameShimmerLoading), findsNothing);
+    },
+  );
 
-  testWidgets('WordSnapScreen loads puzzle and renders board without crashing', (tester) async {
-    await tester.runAsync(() async {
-      await tester.pumpWidget(wrapScreen(const WordSnapScreen(level: 1)));
-      await Future.delayed(const Duration(milliseconds: 500));
-    });
-    await tester.pump();
-    await tester.pump(const Duration(seconds: 2));
+  testWidgets(
+    'WordSnapScreen loads puzzle and renders board without crashing',
+    (tester) async {
+      await tester.runAsync(() async {
+        await tester.pumpWidget(wrapScreen(const WordSnapScreen(level: 1)));
+        await Future.delayed(const Duration(milliseconds: 500));
+      });
+      await tester.pump();
+      await tester.pump(const Duration(seconds: 2));
 
-    expect(find.byType(WordSnapScreen), findsOneWidget);
-    expect(find.byType(WordSnapTopBar), findsOneWidget);
-    expect(find.byType(GameShimmerLoading), findsNothing);
-  });
+      expect(find.byType(WordSnapScreen), findsOneWidget);
+      expect(find.byType(WordSnapTopBar), findsOneWidget);
+      expect(find.byType(GameShimmerLoading), findsNothing);
+    },
+  );
 }
-

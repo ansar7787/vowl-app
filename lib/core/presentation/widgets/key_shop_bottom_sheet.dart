@@ -127,22 +127,26 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                   24.h + MediaQuery.paddingOf(context).bottom,
                 ),
                 decoration: BoxDecoration(
-                  color: (Theme.of(context).brightness == Brightness.dark &&
-                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                  color:
+                      (Theme.of(context).brightness == Brightness.dark &&
+                          Theme.of(context).scaffoldBackgroundColor ==
+                              Colors.black)
                       ? AppColors.midnightSurface
                       : (Theme.of(context).brightness == Brightness.dark
-                          ? AppColors.slate800
-                          : Colors.white),
+                            ? AppColors.slate800
+                            : Colors.white),
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(32.r),
                   ),
                   border: Border.all(
-                    color: (Theme.of(context).brightness == Brightness.dark &&
-                            Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                    color:
+                        (Theme.of(context).brightness == Brightness.dark &&
+                            Theme.of(context).scaffoldBackgroundColor ==
+                                Colors.black)
                         ? Colors.white.withValues(alpha: 0.12)
                         : (Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : AppColors.slate100),
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100),
                     width: 1.0,
                   ),
                   boxShadow: [

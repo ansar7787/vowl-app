@@ -109,11 +109,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       alternativeDetectedWords: alts,
     );
 
-    SnapQuizDialog.show(
-      context,
-      quests: quests,
-      title: 'SIGN CHALLENGE',
-    );
+    SnapQuizDialog.show(context, quests: quests, title: 'SIGN CHALLENGE');
   }
 
   late final AnimationController _scannerController;
@@ -230,9 +226,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 'vocabulary.snippet_removed_from_notebook',
                 fallback: 'Removed from Vocab Notebook',
               ),
-        type: willSave
-            ? CustomSnackBarType.success
-            : CustomSnackBarType.info,
+        type: willSave ? CustomSnackBarType.success : CustomSnackBarType.info,
       );
     }
   }
@@ -247,7 +241,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           context: context,
           message: context.tr(
             'vocabulary.camera_permission_error',
-            fallback: 'Camera or photo permission denied. Please grant access in settings.',
+            fallback:
+                'Camera or photo permission denied. Please grant access in settings.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -556,37 +551,37 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 physics: const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics(),
                 ),
-              slivers: [
-                _buildSliverAppBar(context, isDark),
-                SliverToBoxAdapter(
-                  child: ScanBountyTarget(
-                    currentBounty: _currentBountyVal,
-                    bountyFound: _bountyFoundVal,
-                    dailyCount: _dailyBountyCount,
-                    onShuffle: _onShuffleBounty,
+                slivers: [
+                  _buildSliverAppBar(context, isDark),
+                  SliverToBoxAdapter(
+                    child: ScanBountyTarget(
+                      currentBounty: _currentBountyVal,
+                      bountyFound: _bountyFoundVal,
+                      dailyCount: _dailyBountyCount,
+                      onShuffle: _onShuffleBounty,
+                    ),
                   ),
-                ),
-                if (_imagePathVal == null)
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: ScanEmptyState(onPickImage: _pickAndScanImage),
-                  )
-                else ...[
-                  // Scan summary header
-                  if (!_isProcessingVal &&
-                      !_hasErrorVal &&
-                      _recognizedTextVal != null &&
-                      _recognizedTextVal!.blocks.isNotEmpty) ...[
-                    _buildScanSummary(isDark),
-                    _buildInteractiveOcrReaderSliver(isDark),
+                  if (_imagePathVal == null)
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: ScanEmptyState(onPickImage: _pickAndScanImage),
+                    )
+                  else ...[
+                    // Scan summary header
+                    if (!_isProcessingVal &&
+                        !_hasErrorVal &&
+                        _recognizedTextVal != null &&
+                        _recognizedTextVal!.blocks.isNotEmpty) ...[
+                      _buildScanSummary(isDark),
+                      _buildInteractiveOcrReaderSliver(isDark),
+                    ],
+                    _buildSliverResults(isDark),
                   ],
-                  _buildSliverResults(isDark),
-                ],
 
-                SliverToBoxAdapter(child: SizedBox(height: 120.h)),
-              ],
+                  SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                ],
+              ),
             ),
-          ),
 
             Align(
               alignment: Alignment.topCenter,
@@ -678,7 +673,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       title: Column(
         children: [
           Text(
-            context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
+            context.tr(
+              'translation.scan_learn_title',
+              fallback: 'Scan & Learn',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,
@@ -689,7 +687,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
             ),
           ),
           Text(
-            context.tr('translation.scan_learn_subtitle', fallback: 'Sign & Document Reader'),
+            context.tr(
+              'translation.scan_learn_subtitle',
+              fallback: 'Sign & Document Reader',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 11.sp,
@@ -969,7 +970,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                         icon: LucideIcons.type,
                         text: context.tr(
                           'translation.tip_clear_text',
-                          fallback: 'Use printed signs or book text, not handwriting',
+                          fallback:
+                              'Use printed signs or book text, not handwriting',
                         ),
                       ),
                       SizedBox(height: 8.h),
@@ -1352,19 +1354,16 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.document_scanner_rounded,
-                          color: const Color(
-                            0xFF6366F1,
-                          ).withValues(alpha: 0.9),
-                          size: 48.r,
-                        )
+                              Icons.document_scanner_rounded,
+                              color: const Color(
+                                0xFF6366F1,
+                              ).withValues(alpha: 0.9),
+                              size: 48.r,
+                            )
                             .animate(
                               onPlay: (controller) => controller.repeat(),
                             )
-                            .shimmer(
-                              duration: 1.seconds,
-                              color: Colors.white,
-                            ),
+                            .shimmer(duration: 1.seconds, color: Colors.white),
                         SizedBox(height: 16.h),
                         const _AnimatedScannerText(),
                       ],

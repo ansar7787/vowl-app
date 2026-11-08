@@ -156,7 +156,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                 final double angle = dynamicOptions.isEmpty
                     ? 0.0
                     : (index * 2 * math.pi / dynamicOptions.length) -
-                        math.pi / 2;
+                          math.pi / 2;
                 final bool isPulled = selectedWord == word;
 
                 final double currentDist = isPulled
@@ -215,7 +215,9 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: isPulled
                                   ? Colors.white
-                                  : (isDark ? Colors.white : AppColors.slate900),
+                                  : (isDark
+                                        ? Colors.white
+                                        : AppColors.slate900),
                               letterSpacing: 0.5,
                             ),
                           ),

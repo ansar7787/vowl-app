@@ -142,13 +142,13 @@ class _PodiumSlot extends StatelessWidget {
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids
-        ? user.kidsTotalLevelsCompleted
+        ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        ? '⭐'
         : (isWeekly
-            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-            : context.tr('leaderboard.xp', fallback: 'XP'));
+              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+              : context.tr('leaderboard.xp', fallback: 'XP'));
     final isMe = currentUserId != null && user.id == currentUserId;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
@@ -302,8 +302,8 @@ class _PodiumSlot extends StatelessWidget {
                               height: 1.1,
                             ),
                             maxLines: 1,
-                            minFontSize: 8,
-                            overflow: TextOverflow.ellipsis,
+                            minFontSize: 7,
+                            softWrap: false,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -321,7 +321,9 @@ class _PodiumSlot extends StatelessWidget {
                     SizedBox(height: 2.h),
                     // Primary score — single metric, high-contrast across light/dark
                     AutoSizeText(
-                      isKids ? '$score Levels · ${user.kidsCoins} ⭐' : '$score $scoreLabel',
+                      isKids
+                          ? '${user.kidsTotalStars} ⭐ · ${user.kidsTotalLevelsCompleted} Levels'
+                          : '$score $scoreLabel',
                       maxLines: 1,
                       minFontSize: 7,
                       style: TextStyle(
@@ -330,15 +332,18 @@ class _PodiumSlot extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                         color: rank == 2
                             ? (isDark
-                                ? _LocalPalette.colorc0c0c0
-                                : AppColors.slate700)
+                                  ? _LocalPalette.colorc0c0c0
+                                  : AppColors.slate700)
                             : colors[0].withValues(alpha: 0.9),
                         height: 1.1,
                       ),
                     ),
                     if (!isKids && isWeekly) ...[
                       SizedBox(height: 2.h),
-                      _buildRankChangeIndicator(user.previousRank ?? rank, rank),
+                      _buildRankChangeIndicator(
+                        user.previousRank ?? rank,
+                        rank,
+                      ),
                     ],
                   ],
                 ),

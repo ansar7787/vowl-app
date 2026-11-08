@@ -58,17 +58,12 @@ void main() {
         'Which one do you carry on your back to bring your things to school?',
     question: '?',
     correctAnswer: 'Backpack 🎒',
-    options: [
-      'Lunchbox 🍱',
-      'Backpack 🎒',
-      'Pencil Case 👝',
-    ],
+    options: ['Lunchbox 🍱', 'Backpack 🎒', 'Pencil Case 👝'],
     hint: 'Look for the one with two straps that go over your shoulders.',
     emoji: '🎒',
     explanation:
         'A backpack holds your books and supplies, and the straps keep your hands free.',
-    funFact:
-        'Wearing a backpack on both shoulders spreads its weight evenly.',
+    funFact: 'Wearing a backpack on both shoulders spreads its weight evenly.',
   );
 
   const testBatch20Quest = KidsQuest(
@@ -112,9 +107,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer(
-      (_) => const Stream<KidsState>.empty(),
-    );
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -126,27 +121,45 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer(
-      (_) => const Stream<AuthState>.empty(),
-    );
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
     when(() => mockTTSService.stop()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX()).thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(any(), error: any(named: 'error'), stackTrace: any(named: 'stackTrace'), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    when(() => mockLocaleService.tr(any())).thenAnswer((inv) => inv.positionalArguments[0] as String);
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments[0] as String);
 
     if (di.sl.isRegistered<KidsTTSService>()) {
       di.sl.unregister<KidsTTSService>();
@@ -172,8 +185,10 @@ void main() {
   });
 
   tearDown(() {
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsAudioService>())
+      di.sl.unregister<KidsAudioService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
@@ -253,10 +268,7 @@ void main() {
       final parsed = SchoolOptionData.parse(
         "'Dear Ms. Rao, I was unwell. What did I miss?' ✉️",
       );
-      expect(
-        parsed.title,
-        "'Dear Ms. Rao, I was unwell. What did I miss?'",
-      );
+      expect(parsed.title, "'Dear Ms. Rao, I was unwell. What did I miss?'");
       expect(parsed.emoji, '✉️');
     });
 
@@ -311,17 +323,19 @@ void main() {
       },
     );
 
-    testWidgets(
-      'unanswered state does not spoil answer emoji silhouette',
-      (tester) async {
-        await pumpSchoolLayout(tester);
+    testWidgets('unanswered state does not spoil answer emoji silhouette', (
+      tester,
+    ) async {
+      await pumpSchoolLayout(tester);
 
-        // The answer emoji "🎒" must not be displayed inside the chalkboard target during unanswered state
-        // It should only appear on the Backpack option card
-        final emojiFinders = find.text('🎒');
-        expect(emojiFinders, findsOneWidget); // Only on the option card, not inside chalkboard!
-      },
-    );
+      // The answer emoji "🎒" must not be displayed inside the chalkboard target during unanswered state
+      // It should only appear on the Backpack option card
+      final emojiFinders = find.text('🎒');
+      expect(
+        emojiFinders,
+        findsOneWidget,
+      ); // Only on the option card, not inside chalkboard!
+    });
 
     testWidgets(
       'correct state reveals triumphant celebration with answer emoji and well done banner',
@@ -425,7 +439,9 @@ void main() {
         expect(targetFinder, findsOneWidget);
 
         final dragLocation = tester.getCenter(targetFinder);
-        final gesture = await tester.startGesture(tester.getCenter(draggableFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
         await tester.pump(const Duration(milliseconds: 100));
 
         await gesture.moveTo(dragLocation);
@@ -469,44 +485,41 @@ void main() {
       },
     );
 
-    testWidgets(
-      'dims an incorrect distractor when hintUsed is active',
-      (tester) async {
-        const hintState = KidsLoaded(
-          quests: [testQuest],
-          originalTotalQuests: 1,
-          gameType: 'school',
-          level: 1,
-          currentIndex: 0,
-          livesRemaining: 3,
-          hintUsed: true,
-          answerStatus: AnswerStatus.unanswered,
-        );
+    testWidgets('dims an incorrect distractor when hintUsed is active', (
+      tester,
+    ) async {
+      const hintState = KidsLoaded(
+        quests: [testQuest],
+        originalTotalQuests: 1,
+        gameType: 'school',
+        level: 1,
+        currentIndex: 0,
+        livesRemaining: 3,
+        hintUsed: true,
+        answerStatus: AnswerStatus.unanswered,
+      );
 
-        await pumpSchoolLayout(tester, state: hintState);
+      await pumpSchoolLayout(tester, state: hintState);
 
-        // One distractor should be wrapped in Opacity(opacity: 0.35)
-        final opacityWidgets = tester.widgetList<Opacity>(find.byType(Opacity));
-        final hasDimmed = opacityWidgets.any((op) => op.opacity == 0.35);
-        expect(hasDimmed, isTrue);
-      },
-    );
+      // One distractor should be wrapped in Opacity(opacity: 0.35)
+      final opacityWidgets = tester.widgetList<Opacity>(find.byType(Opacity));
+      final hasDimmed = opacityWidgets.any((op) => op.opacity == 0.35);
+      expect(hasDimmed, isTrue);
+    });
 
-    testWidgets(
-      'renders cleanly on compact 360x640 phone without overflow',
-      (tester) async {
-        await pumpSchoolLayout(tester, width: 360, height: 640);
-        expect(tester.takeException(), isNull);
-      },
-    );
+    testWidgets('renders cleanly on compact 360x640 phone without overflow', (
+      tester,
+    ) async {
+      await pumpSchoolLayout(tester, width: 360, height: 640);
+      expect(tester.takeException(), isNull);
+    });
 
-    testWidgets(
-      'renders cleanly on large 430x932 phone without overflow',
-      (tester) async {
-        await pumpSchoolLayout(tester, width: 430, height: 932);
-        expect(tester.takeException(), isNull);
-      },
-    );
+    testWidgets('renders cleanly on large 430x932 phone without overflow', (
+      tester,
+    ) async {
+      await pumpSchoolLayout(tester, width: 430, height: 932);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly on ultra-narrow 320x568 phone without overflow',
@@ -516,33 +529,32 @@ void main() {
       },
     );
 
-    testWidgets(
-      'already answered state disables re-submitting upon taps',
-      (tester) async {
-        const answeredState = KidsLoaded(
-          quests: [testQuest],
-          originalTotalQuests: 1,
-          gameType: 'school',
-          level: 1,
-          currentIndex: 0,
-          livesRemaining: 3,
-          answerStatus: AnswerStatus.correct,
-        );
+    testWidgets('already answered state disables re-submitting upon taps', (
+      tester,
+    ) async {
+      const answeredState = KidsLoaded(
+        quests: [testQuest],
+        originalTotalQuests: 1,
+        gameType: 'school',
+        level: 1,
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.correct,
+      );
 
-        await pumpSchoolLayout(tester, state: answeredState);
+      await pumpSchoolLayout(tester, state: answeredState);
 
-        // In answered state, options are not wrapped in Draggable
-        expect(find.byType(Draggable<String>), findsNothing);
+      // In answered state, options are not wrapped in Draggable
+      expect(find.byType(Draggable<String>), findsNothing);
 
-        final backpackFinders = find.text('Backpack');
-        expect(backpackFinders, findsWidgets);
-        await tester.tap(backpackFinders.last, warnIfMissed: false);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 100));
+      final backpackFinders = find.text('Backpack');
+      expect(backpackFinders, findsWidgets);
+      await tester.tap(backpackFinders.last, warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
 
-        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-      },
-    );
+      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+    });
 
     testWidgets(
       'interaction triggers structured debug logs via AppLogger with KidsSchoolLayout tag',
@@ -605,44 +617,38 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders 4 options in 2x2 grid cleanly without overflow',
-      (tester) async {
-        const fourOptionsQuest = KidsQuest(
-          id: 'KIDS_SCHOOL_L1_4OPTS',
-          gameType: 'school',
-          level: 1,
-          instruction: 'Which tool do you use to measure length?',
-          question: '?',
-          correctAnswer: 'Ruler 📏',
-          options: [
-            'Ruler 📏',
-            'Eraser 🧼',
-            'Pencil ✏️',
-            'Book 📖',
-          ],
-          emoji: '📏',
-        );
+    testWidgets('renders 4 options in 2x2 grid cleanly without overflow', (
+      tester,
+    ) async {
+      const fourOptionsQuest = KidsQuest(
+        id: 'KIDS_SCHOOL_L1_4OPTS',
+        gameType: 'school',
+        level: 1,
+        instruction: 'Which tool do you use to measure length?',
+        question: '?',
+        correctAnswer: 'Ruler 📏',
+        options: ['Ruler 📏', 'Eraser 🧼', 'Pencil ✏️', 'Book 📖'],
+        emoji: '📏',
+      );
 
-        const fourOptsState = KidsLoaded(
-          quests: [fourOptionsQuest],
-          originalTotalQuests: 1,
-          gameType: 'school',
-          level: 1,
-          currentIndex: 0,
-          livesRemaining: 3,
-          answerStatus: AnswerStatus.unanswered,
-        );
+      const fourOptsState = KidsLoaded(
+        quests: [fourOptionsQuest],
+        originalTotalQuests: 1,
+        gameType: 'school',
+        level: 1,
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.unanswered,
+      );
 
-        await pumpSchoolLayout(tester, state: fourOptsState);
+      await pumpSchoolLayout(tester, state: fourOptsState);
 
-        expect(find.text('Ruler'), findsOneWidget);
-        expect(find.text('Eraser'), findsOneWidget);
-        expect(find.text('Pencil'), findsOneWidget);
-        expect(find.text('Book'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.text('Ruler'), findsOneWidget);
+      expect(find.text('Eraser'), findsOneWidget);
+      expect(find.text('Pencil'), findsOneWidget);
+      expect(find.text('Book'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('School Game Service Integration Tests', () {
@@ -716,12 +722,9 @@ void main() {
       },
     );
 
-    test(
-      'KidsRoutes defines canonical School title and route',
-      () {
-        expect(KidsRoutes.getKidsGameTitle('school'), 'School');
-        expect(KidsRoutes.kidsSchoolRoute, '/kids-school');
-      },
-    );
+    test('KidsRoutes defines canonical School title and route', () {
+      expect(KidsRoutes.getKidsGameTitle('school'), 'School');
+      expect(KidsRoutes.kidsSchoolRoute, '/kids-school');
+    });
   });
 }

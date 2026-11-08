@@ -19,8 +19,8 @@ class ShortAnswerInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String displayInstruction = (instruction != null &&
-            instruction!.trim().isNotEmpty)
+    final String displayInstruction =
+        (instruction != null && instruction!.trim().isNotEmpty)
         ? instruction!
         : context.tr(
             'games.short_answer_writing_instruction',

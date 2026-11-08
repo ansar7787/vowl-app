@@ -339,8 +339,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                     text: displayPassage,
                                     color: theme.primaryColor,
                                     isDark: isDark,
-                                    onPlayAudio: () =>
-                                        _playTts(displayPassage),
+                                    onPlayAudio: () => _playTts(displayPassage),
                                   ),
                                   SizedBox(height: 16.h),
 
@@ -352,7 +351,8 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                     question: quest.question ?? '',
                                     color: theme.primaryColor,
                                     isDark: isDark,
-                                    isAnswered: isAnsweredNotifier.value ||
+                                    isAnswered:
+                                        isAnsweredNotifier.value ||
                                         _pendingSelectedIndex.value != null,
                                     onPlayAudio: () =>
                                         _playTts(quest.question ?? ''),

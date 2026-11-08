@@ -107,9 +107,7 @@ void main() {
       totalExp: 9500,
       dailyXpHistory: {todayKey: 9500},
       currentStreak: 8,
-      completedLevels: {
-        'reading': List.generate(60, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(60, (i) => i + 1)},
     ),
     UserEntity(
       id: 'user_5',
@@ -118,9 +116,7 @@ void main() {
       totalExp: 9100,
       dailyXpHistory: {todayKey: 9100},
       currentStreak: 6,
-      completedLevels: {
-        'reading': List.generate(55, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(55, (i) => i + 1)},
     ),
     UserEntity(
       id: 'user_6',
@@ -129,9 +125,7 @@ void main() {
       totalExp: 8800,
       dailyXpHistory: {todayKey: 8800},
       currentStreak: 12,
-      completedLevels: {
-        'reading': List.generate(50, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(50, (i) => i + 1)},
     ),
     testCurrentUser, // Rank 7 (index 6) -> triggers showFindMe!
     UserEntity(
@@ -141,9 +135,7 @@ void main() {
       totalExp: 7500,
       dailyXpHistory: {todayKey: 7500},
       currentStreak: 4,
-      completedLevels: {
-        'reading': List.generate(35, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(35, (i) => i + 1)},
     ),
     UserEntity(
       id: 'user_9',
@@ -152,9 +144,7 @@ void main() {
       totalExp: 6800,
       dailyXpHistory: {todayKey: 6800},
       currentStreak: 5,
-      completedLevels: {
-        'reading': List.generate(30, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(30, (i) => i + 1)},
     ),
     UserEntity(
       id: 'user_10',
@@ -163,9 +153,7 @@ void main() {
       totalExp: 6200,
       dailyXpHistory: {todayKey: 6200},
       currentStreak: 3,
-      completedLevels: {
-        'reading': List.generate(25, (i) => i + 1),
-      },
+      completedLevels: {'reading': List.generate(25, (i) => i + 1)},
     ),
   ];
 
@@ -175,12 +163,15 @@ void main() {
     mockLocaleService = MockLocaleService();
     leaderboardStateController = StreamController<LeaderboardState>.broadcast();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testCurrentUser));
-    when(() => mockLeaderboardBloc.state)
-        .thenReturn(LeaderboardLoaded(testUsersList, now, isKids: false));
-    when(() => mockLeaderboardBloc.stream)
-        .thenAnswer((_) => leaderboardStateController.stream);
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testCurrentUser));
+    when(
+      () => mockLeaderboardBloc.state,
+    ).thenReturn(LeaderboardLoaded(testUsersList, now, isKids: false));
+    when(
+      () => mockLeaderboardBloc.stream,
+    ).thenAnswer((_) => leaderboardStateController.stream);
 
     if (di.sl.isRegistered<LeaderboardBloc>()) {
       di.sl.unregister<LeaderboardBloc>();
@@ -191,11 +182,13 @@ void main() {
       di.sl.unregister<LocaleService>();
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((inv) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((inv) {
       final fallback = inv.namedArguments[#fallback] as String?;
       if (fallback != null) {
         final args = inv.namedArguments[#args] as List<String>? ?? [];
@@ -252,298 +245,383 @@ void main() {
   }
 
   group('Group 1: Initial & Loading States', () {
-    testWidgets('renders LeaderboardShimmerLoading when state is LeaderboardLoading', (tester) async {
-      when(() => mockLeaderboardBloc.state).thenReturn(const LeaderboardLoading());
+    testWidgets(
+      'renders LeaderboardShimmerLoading when state is LeaderboardLoading',
+      (tester) async {
+        when(
+          () => mockLeaderboardBloc.state,
+        ).thenReturn(const LeaderboardLoading());
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(LeaderboardShimmerLoading), findsOneWidget);
-      expect(find.text('Weekly League'), findsOneWidget);
-      expect(find.text('Hall of Fame'), findsOneWidget);
-      expect(find.text('Kids Zone'), findsNothing);
-      verify(() => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false))).called(1);
-    });
+        expect(find.byType(LeaderboardShimmerLoading), findsOneWidget);
+        expect(find.text('Weekly League'), findsOneWidget);
+        expect(find.text('Hall of Fame'), findsOneWidget);
+        expect(find.text('Kids Zone'), findsNothing);
+        verify(
+          () => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('renders LeaderboardShimmerLoading when state is LeaderboardInitial', (tester) async {
-      when(() => mockLeaderboardBloc.state).thenReturn(const LeaderboardInitial());
+    testWidgets(
+      'renders LeaderboardShimmerLoading when state is LeaderboardInitial',
+      (tester) async {
+        when(
+          () => mockLeaderboardBloc.state,
+        ).thenReturn(const LeaderboardInitial());
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(LeaderboardShimmerLoading), findsOneWidget);
-    });
+        expect(find.byType(LeaderboardShimmerLoading), findsOneWidget);
+      },
+    );
   });
 
   group('Group 2: Error State & Retry Flow', () {
-    testWidgets('renders error view with retry button and tapping retry dispatches LoadLeaderboard', (tester) async {
-      when(() => mockLeaderboardBloc.state)
-          .thenReturn(const LeaderboardError('Failed to synchronize leaderboard rankings.'));
+    testWidgets(
+      'renders error view with retry button and tapping retry dispatches LoadLeaderboard',
+      (tester) async {
+        when(() => mockLeaderboardBloc.state).thenReturn(
+          const LeaderboardError('Failed to synchronize leaderboard rankings.'),
+        );
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byIcon(Icons.cloud_off_rounded), findsOneWidget);
-      expect(find.text('Failed to synchronize leaderboard rankings.'), findsOneWidget);
-      final retryButton = find.text('Retry');
-      expect(retryButton, findsOneWidget);
+        expect(find.byIcon(Icons.cloud_off_rounded), findsOneWidget);
+        expect(
+          find.text('Failed to synchronize leaderboard rankings.'),
+          findsOneWidget,
+        );
+        final retryButton = find.text('Retry');
+        expect(retryButton, findsOneWidget);
 
-      await tester.tap(retryButton);
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(retryButton);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Initial add on create + 1 tap on retry = 2 calls
-      verify(() => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false))).called(2);
-    });
+        // Initial add on create + 1 tap on retry = 2 calls
+        verify(
+          () => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false)),
+        ).called(2);
+      },
+    );
   });
 
   group('Group 3: Empty State Handling', () {
     testWidgets('renders empty state when users list is empty', (tester) async {
-      when(() => mockLeaderboardBloc.state)
-          .thenReturn(LeaderboardLoaded(const [], now, isKids: false));
+      when(
+        () => mockLeaderboardBloc.state,
+      ).thenReturn(LeaderboardLoaded(const [], now, isKids: false));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
       expect(find.text('No rankings yet'), findsOneWidget);
-      expect(find.text('Complete lessons to appear on the leaderboard!'), findsOneWidget);
+      expect(
+        find.text('Complete lessons to appear on the leaderboard!'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('renders kids empty state when users list is empty in kids mode', (tester) async {
-      when(() => mockLeaderboardBloc.state)
-          .thenReturn(LeaderboardLoaded(const [], now, isKids: true));
+    testWidgets(
+      'renders kids empty state when users list is empty in kids mode',
+      (tester) async {
+        when(
+          () => mockLeaderboardBloc.state,
+        ).thenReturn(LeaderboardLoaded(const [], now, isKids: true));
 
-      await tester.pumpWidget(buildTestWidget(isKids: true));
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(buildTestWidget(isKids: true));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
-      expect(find.text('No rankings yet'), findsOneWidget);
-    });
+        expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
+        expect(find.text('No rankings yet'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders empty placeholder under podium when users length <= 3', (tester) async {
-      // Top 3 only, with currentUser in the top 3 so total count <= 3
-      final top3Only = testUsersList.take(3).toList();
-      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(top3Only.first));
-      when(() => mockLeaderboardBloc.state)
-          .thenReturn(LeaderboardLoaded(top3Only, now, isKids: false));
+    testWidgets(
+      'renders empty placeholder under podium when users length <= 3',
+      (tester) async {
+        // Top 3 only, with currentUser in the top 3 so total count <= 3
+        final top3Only = testUsersList.take(3).toList();
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(top3Only.first));
+        when(
+          () => mockLeaderboardBloc.state,
+        ).thenReturn(LeaderboardLoaded(top3Only, now, isKids: false));
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Complete more quests to climb the ranks!'), findsOneWidget);
-      expect(find.text('See how you rank globally!'), findsWidgets);
-    });
+        expect(
+          find.text('Complete more quests to climb the ranks!'),
+          findsOneWidget,
+        );
+        expect(find.text('See how you rank globally!'), findsWidgets);
+      },
+    );
   });
 
   group('Group 4: Populated Leaderboard — Header, Podium & Rank Card', () {
-    testWidgets('renders LeaderboardHeader, LeaderboardPodium, and LeaderboardRankCard', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      'renders LeaderboardHeader, LeaderboardPodium, and LeaderboardRankCard',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(LeaderboardHeader), findsOneWidget);
-      expect(find.byType(LeaderboardPodium), findsOneWidget);
+        expect(find.byType(LeaderboardHeader), findsOneWidget);
+        expect(find.byType(LeaderboardPodium), findsOneWidget);
 
-      // Verify Header details
-      expect(find.text('Leaderboard'), findsOneWidget);
-      expect(find.byIcon(Icons.leaderboard_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.update_rounded), findsOneWidget);
+        // Verify Header details
+        expect(find.text('Leaderboard'), findsOneWidget);
+        expect(find.byIcon(Icons.leaderboard_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.update_rounded), findsOneWidget);
 
-      // Verify Podium Top 3 details (podium slot displays first word of displayName)
-      expect(find.text('Bob'), findsOneWidget);
-      expect(find.text('Charlie'), findsOneWidget);
-      expect(find.text('Diana'), findsOneWidget);
-      expect(find.textContaining('15200'), findsOneWidget);
-      expect(find.textContaining('12100'), findsOneWidget);
-      expect(find.textContaining('10500'), findsOneWidget);
+        // Verify Podium Top 3 details (podium slot displays first word of displayName)
+        expect(find.text('Bob'), findsOneWidget);
+        expect(find.text('Charlie'), findsOneWidget);
+        expect(find.text('Diana'), findsOneWidget);
+        expect(find.textContaining('15200'), findsOneWidget);
+        expect(find.textContaining('12100'), findsOneWidget);
+        expect(find.textContaining('10500'), findsOneWidget);
 
-      // Scroll down slightly so sticky LeaderboardRankCard enters layout
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -250));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(seconds: 1));
-      expect(find.byType(LeaderboardRankCard), findsOneWidget);
+        // Scroll down slightly so sticky LeaderboardRankCard enters layout
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -250));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(seconds: 1));
+        expect(find.byType(LeaderboardRankCard), findsOneWidget);
 
-      // Verify Sticky Rank Card details for currentUser (Rank 7)
-      expect(find.text('Your Standing'), findsOneWidget);
-      expect(find.text('#7'), findsWidgets); // In rank card and rank tile/FindMe
-      expect(
-        find.descendant(
-          of: find.byType(LeaderboardRankCard),
-          matching: find.text('8400 Weekly XP'),
-        ),
-        findsOneWidget,
-      );
-    });
+        // Verify Sticky Rank Card details for currentUser (Rank 7)
+        expect(find.text('Your Standing'), findsOneWidget);
+        expect(
+          find.text('#7'),
+          findsWidgets,
+        ); // In rank card and rank tile/FindMe
+        expect(
+          find.descendant(
+            of: find.byType(LeaderboardRankCard),
+            matching: find.text('8400 Weekly XP'),
+          ),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
-  group('Group 5: Populated Leaderboard — Rank 4-N List & Current User Highlighting', () {
-    testWidgets('renders Top Challengers section and ranks 4 to 10 with current user highlight', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+  group(
+    'Group 5: Populated Leaderboard — Rank 4-N List & Current User Highlighting',
+    () {
+      testWidgets(
+        'renders Top Challengers section and ranks 4 to 10 with current user highlight',
+        (tester) async {
+          await tester.pumpWidget(buildTestWidget());
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pump(const Duration(milliseconds: 500));
 
-      // Scroll down to reveal ranks in the list
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -550));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(seconds: 1));
+          // Scroll down to reveal ranks in the list
+          await tester.drag(
+            find.byType(CustomScrollView),
+            const Offset(0, -550),
+          );
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pump(const Duration(seconds: 1));
 
-      expect(find.text('Top Challengers'), findsOneWidget);
+          expect(find.text('Top Challengers'), findsOneWidget);
 
-      // Rank 4 & 5
-      expect(find.text('Evan Great'), findsOneWidget);
-      expect(find.text('Fiona Swift'), findsOneWidget);
+          // Rank 4 & 5
+          expect(find.text('Evan Great'), findsOneWidget);
+          expect(find.text('Fiona Swift'), findsOneWidget);
 
-      // Current user appears in Sticky RankCard and in RankTile list
-      expect(find.text('Alice Champion'), findsNWidgets(2));
-      expect(
-        find.descendant(
-          of: find.byType(LeaderboardRankCard),
-          matching: find.text('Alice Champion'),
-        ),
-        findsOneWidget,
+          // Current user appears in Sticky RankCard and in RankTile list
+          expect(find.text('Alice Champion'), findsNWidgets(2));
+          expect(
+            find.descendant(
+              of: find.byType(LeaderboardRankCard),
+              matching: find.text('Alice Champion'),
+            ),
+            findsOneWidget,
+          );
+
+          // Find RankTile with Key for currentUser
+          final meTileFinder = find.byKey(const ValueKey('rank_tile_user_me'));
+          expect(meTileFinder, findsOneWidget);
+          expect(
+            find.descendant(
+              of: meTileFinder,
+              matching: find.text('Alice Champion'),
+            ),
+            findsOneWidget,
+          );
+
+          // Verify 'You' badge on currentUser tile
+          expect(
+            find.descendant(of: meTileFinder, matching: find.text('You')),
+            findsOneWidget,
+          );
+        },
       );
 
-      // Find RankTile with Key for currentUser
-      final meTileFinder = find.byKey(const ValueKey('rank_tile_user_me'));
-      expect(meTileFinder, findsOneWidget);
-      expect(
-        find.descendant(
-          of: meTileFinder,
-          matching: find.text('Alice Champion'),
-        ),
-        findsOneWidget,
-      );
+      testWidgets('tapping podium slot opens RivalChallengeSheet for rivals', (
+        tester,
+      ) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Verify 'You' badge on currentUser tile
-      expect(
-        find.descendant(
-          of: meTileFinder,
-          matching: find.text('You'),
-        ),
-        findsOneWidget,
-      );
-    });
+        // Scroll so Bob on the podium is visible within 800x600 test viewport
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -180));
+        await tester.pump(const Duration(milliseconds: 500));
 
-    testWidgets('tapping podium slot opens RivalChallengeSheet for rivals', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Tap Bob (Rank 1 champion on podium)
+        expect(find.text('Bob'), findsOneWidget);
+        await tester.tap(find.text('Bob'));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Scroll so Bob on the podium is visible within 800x600 test viewport
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -180));
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Tap Bob (Rank 1 champion on podium)
-      expect(find.text('Bob'), findsOneWidget);
-      await tester.tap(find.text('Bob'));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byType(RivalChallengeSheet), findsOneWidget);
-      expect(find.text('Bob The Master'), findsOneWidget);
-      expect(find.text('Sprint Quests to Overtake'), findsOneWidget);
-    });
-  });
+        expect(find.byType(RivalChallengeSheet), findsOneWidget);
+        expect(find.text('Bob The Master'), findsOneWidget);
+        expect(find.text('Sprint Quests to Overtake'), findsOneWidget);
+      });
+    },
+  );
 
   group('Group 6: Main Leaderboard Hero Switch & Dedicated Kids Leaderboard', () {
-    testWidgets('toggles between Weekly League and Hall of Fame views on main leaderboard', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      'toggles between Weekly League and Hall of Fame views on main leaderboard',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Weekly League'), findsOneWidget);
-      expect(find.text('Hall of Fame'), findsOneWidget);
-      expect(find.text('Kids Zone'), findsNothing);
+        expect(find.text('Weekly League'), findsOneWidget);
+        expect(find.text('Hall of Fame'), findsOneWidget);
+        expect(find.text('Kids Zone'), findsNothing);
 
-      // Initially in Weekly League mode
-      expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
-      expect(find.textContaining('Weekly XP'), findsWidgets);
+        // Initially in Weekly League mode
+        expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+        expect(find.textContaining('Weekly XP'), findsWidgets);
 
-      // Tap Hall of Fame
-      await tester.tap(find.text('Hall of Fame'));
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap Hall of Fame
+        await tester.tap(find.text('Hall of Fame'));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // In Hall of Fame, weekly rewards banner is absent and standing shows Lifetime XP
-      expect(find.byType(WeeklyLeagueRewardsBanner), findsNothing);
-      expect(find.textContaining('Lifetime XP'), findsWidgets);
+        // In Hall of Fame, weekly rewards banner is absent and standing shows Lifetime XP
+        expect(find.byType(WeeklyLeagueRewardsBanner), findsNothing);
+        expect(find.textContaining('Lifetime XP'), findsWidgets);
 
-      // Tap Weekly League back
-      await tester.tap(find.text('Weekly League'));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(seconds: 1));
+        // Tap Weekly League back
+        await tester.tap(find.text('Weekly League'));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(seconds: 1));
 
-      expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
-      expect(find.textContaining('Weekly XP'), findsWidgets);
-    });
+        expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+        expect(find.textContaining('Weekly XP'), findsWidgets);
+      },
+    );
 
-    testWidgets('renders Kids Leaderboard header, back button, and Levels label when isKids is true', (tester) async {
-      when(() => mockLeaderboardBloc.state)
-          .thenReturn(LeaderboardLoaded(testUsersList, now, isKids: true));
+    testWidgets(
+      'renders Kids Leaderboard header, back button, and Levels label when isKids is true',
+      (tester) async {
+        when(
+          () => mockLeaderboardBloc.state,
+        ).thenReturn(LeaderboardLoaded(testUsersList, now, isKids: true));
 
-      await tester.pumpWidget(buildTestWidget(isKids: true));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpWidget(buildTestWidget(isKids: true));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Kids Leaderboard'), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-      expect(find.text('Weekly League'), findsNothing);
-      expect(find.textContaining('Levels'), findsWidgets);
-    });
+        expect(find.text('Kids Leaderboard'), findsOneWidget);
+        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+        expect(find.text('Weekly League'), findsNothing);
+        expect(find.textContaining('Levels'), findsWidgets);
+      },
+    );
 
-    testWidgets('renders back button and Home label when showBackButton is true on main leaderboard', (tester) async {
-      await tester.pumpWidget(buildTestWidget(showBackButton: true));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      'renders back button and Home label when showBackButton is true on main leaderboard',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget(showBackButton: true));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-      expect(find.text('Home'), findsOneWidget);
-    });
+        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+        expect(find.text('Home'), findsOneWidget);
+      },
+    );
 
-    testWidgets('hides back button when showBackButton is false on main leaderboard', (tester) async {
-      await tester.pumpWidget(buildTestWidget(showBackButton: false));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      'hides back button when showBackButton is false on main leaderboard',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget(showBackButton: false));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsNothing);
-      expect(find.text('Home'), findsNothing);
-    });
+        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsNothing);
+        expect(find.text('Home'), findsNothing);
+      },
+    );
   });
 
   group('Group 7: Pull-To-Refresh', () {
-    testWidgets('pull to refresh dispatches LoadLeaderboard event', (tester) async {
+    testWidgets('pull to refresh dispatches LoadLeaderboard event', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 500));
 
       // Fling down from podium to trigger RefreshIndicator
-      await tester.fling(find.byType(LeaderboardPodium), const Offset(0, 300), 1000);
+      await tester.fling(
+        find.byType(LeaderboardPodium),
+        const Offset(0, 300),
+        1000,
+      );
       await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockLeaderboardBloc.add(any(that: isA<LoadLeaderboard>()))).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockLeaderboardBloc.add(any(that: isA<LoadLeaderboard>())),
+      ).called(greaterThanOrEqualTo(1));
     });
   });
 
   group('Group 8: "Find Me" Floating Action Button', () {
-    testWidgets('renders Find Me button when current user is rank 7 and tapping scrolls to user', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      'renders Find Me button when current user is rank 7 and tapping scrolls to user',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Find Me FAB is visible for rankIndex = 6 (Rank 7 >= 6)
-      expect(find.byIcon(Icons.my_location_rounded), findsOneWidget);
-      expect(find.descendant(of: find.byType(Positioned), matching: find.text('#7')), findsOneWidget);
+        // Find Me FAB is visible for rankIndex = 6 (Rank 7 >= 6)
+        expect(find.byIcon(Icons.my_location_rounded), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byType(Positioned),
+            matching: find.text('#7'),
+          ),
+          findsOneWidget,
+        );
 
-      // Tap Find Me button
-      await tester.tap(find.byIcon(Icons.my_location_rounded));
-      await tester.pump(const Duration(milliseconds: 600));
-    });
+        // Tap Find Me button
+        await tester.tap(find.byIcon(Icons.my_location_rounded));
+        await tester.pump(const Duration(milliseconds: 600));
+      },
+    );
 
-    testWidgets('hides Find Me button when current user is in top 3 podium', (tester) async {
+    testWidgets('hides Find Me button when current user is in top 3 podium', (
+      tester,
+    ) async {
       // Set current user as Bob (Rank 1)
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(testUsersList[0]));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(testUsersList[0]));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 500));
@@ -552,7 +630,9 @@ void main() {
       expect(find.byIcon(Icons.my_location_rounded), findsNothing);
     });
 
-    testWidgets('tapping LeaderboardRankCard triggers smooth scroll to user', (tester) async {
+    testWidgets('tapping LeaderboardRankCard triggers smooth scroll to user', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(milliseconds: 500));
@@ -569,33 +649,45 @@ void main() {
   });
 
   group('Group 9: Responsive Viewports, Accessibility & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      tester.view.physicalSize = const Size(320 * 2, 568 * 2);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320 * 2, 568 * 2);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(LeaderboardScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(LeaderboardScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
-      tester.view.devicePixelRatio = 1.5;
-      addTearDown(() => tester.view.resetPhysicalSize());
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
+        tester.view.devicePixelRatio = 1.5;
+        addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(800, 1280)));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(LeaderboardScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(LeaderboardScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(fontScale: 1.3));
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(milliseconds: 500));
@@ -623,4 +715,3 @@ void main() {
     });
   });
 }
-

@@ -41,9 +41,7 @@ class ProfileVaultSection extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     final code = user.referralCode ?? 'VOWL-HERO';
     final hasKidsData =
@@ -82,7 +80,9 @@ class ProfileVaultSection extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.r),
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.indigo500.withValues(alpha: 0.25),
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.25,
+                              ),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -132,7 +132,10 @@ class ProfileVaultSection extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
                         decoration: BoxDecoration(
                           color: isDark
                               ? Colors.white.withValues(alpha: 0.06)
@@ -148,14 +151,18 @@ class ProfileVaultSection extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w800,
-                                color: isDark ? AppColors.slate300 : AppColors.slate700,
+                                color: isDark
+                                    ? AppColors.slate300
+                                    : AppColors.slate700,
                               ),
                             ),
                             SizedBox(width: 4.w),
                             Icon(
                               Icons.arrow_forward_ios_rounded,
                               size: 10.r,
-                              color: isDark ? AppColors.slate400 : AppColors.slate600,
+                              color: isDark
+                                  ? AppColors.slate400
+                                  : AppColors.slate600,
                             ),
                           ],
                         ),
@@ -168,9 +175,14 @@ class ProfileVaultSection extends StatelessWidget {
                 // Mutual Perk Callout Pill
                 Container(
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 8.h,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: isDark ? 0.12 : 0.08),
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.12 : 0.08,
+                    ),
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: AppColors.indigo500.withValues(alpha: 0.20),
@@ -195,7 +207,9 @@ class ProfileVaultSection extends StatelessWidget {
                                 WidgetSpan(
                                   alignment: PlaceholderAlignment.middle,
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 2.w),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 2.w,
+                                    ),
                                     child: Icon(
                                       LucideIcons.coins,
                                       size: 13.r,
@@ -213,7 +227,9 @@ class ProfileVaultSection extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 11.5.sp,
                               fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : AppColors.indigo950,
+                              color: isDark
+                                  ? Colors.white
+                                  : AppColors.indigo950,
                             ),
                           ),
                         ),
@@ -225,7 +241,10 @@ class ProfileVaultSection extends StatelessWidget {
 
                 // Dedicated Full-Width Invite Code Box (Zero Ellipsis Guaranteed)
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 10.h,
+                  ),
                   decoration: BoxDecoration(
                     color: isDark
                         ? Colors.white.withValues(alpha: 0.04)
@@ -252,7 +271,9 @@ class ProfileVaultSection extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 9.5.sp,
                                 fontWeight: FontWeight.w900,
-                                color: isDark ? AppColors.slate400 : AppColors.slate500,
+                                color: isDark
+                                    ? AppColors.slate400
+                                    : AppColors.slate500,
                                 letterSpacing: 0.8,
                               ),
                             ),
@@ -284,12 +305,17 @@ class ProfileVaultSection extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 8.h,
+                          ),
                           decoration: BoxDecoration(
                             color: AppColors.indigo500.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(10.r),
                             border: Border.all(
-                              color: AppColors.indigo500.withValues(alpha: 0.25),
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.25,
+                              ),
                             ),
                           ),
                           child: Row(
@@ -340,14 +366,19 @@ class ProfileVaultSection extends StatelessWidget {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [AppColors.indigo500, AppColors.violet500],
+                              colors: [
+                                AppColors.indigo500,
+                                AppColors.violet500,
+                              ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             ),
                             borderRadius: BorderRadius.circular(12.r),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.indigo500.withValues(alpha: 0.30),
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.30,
+                                ),
                                 blurRadius: 6,
                                 offset: const Offset(0, 2),
                               ),
@@ -366,7 +397,10 @@ class ProfileVaultSection extends StatelessWidget {
                                 ),
                                 SizedBox(width: 5.w),
                                 Text(
-                                  context.tr('common.share', fallback: 'Share Link'),
+                                  context.tr(
+                                    'common.share',
+                                    fallback: 'Share Link',
+                                  ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
@@ -512,7 +546,8 @@ class ProfileVaultSection extends StatelessWidget {
               ),
               subtitle: context.tr(
                 'profile.premium_active_subtitle',
-                fallback: 'Unlimited lives, double streak protection & VIP perks.',
+                fallback:
+                    'Unlimited lives, double streak protection & VIP perks.',
               ),
               onTap: () {
                 di.sl<HapticService>().selection();
@@ -534,7 +569,8 @@ class ProfileVaultSection extends StatelessWidget {
               ),
               subtitle: context.tr(
                 'profile.upgrade_to_premium_subtitle',
-                fallback: 'Unlock all features, remove limits & enjoy VIP gifts.',
+                fallback:
+                    'Unlock all features, remove limits & enjoy VIP gifts.',
               ),
               onTap: () {
                 di.sl<HapticService>().selection();

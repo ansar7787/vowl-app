@@ -87,7 +87,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
   void dispose() {
     _scrollController.dispose();
     _selectedIndex.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -129,7 +129,8 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -145,7 +146,8 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -242,7 +244,8 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!isFirstStagePassedNotifier.value &&
+                              physics:
+                                  (!isFirstStagePassedNotifier.value &&
                                       remainingHeight >= 0)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
@@ -267,15 +270,14 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                             ),
                                             Semantics(
                                               liveRegion: true,
-                                              child:
-                                                  ConsonantClarityInstruction(
+                                              child: ConsonantClarityInstruction(
                                                 primaryColor:
                                                     theme.primaryColor,
                                                 instruction:
                                                     isFirstStagePassedNotifier
-                                                            .value
-                                                        ? "Now speak the word out loud."
-                                                        : quest.instruction,
+                                                        .value
+                                                    ? "Now speak the word out loud."
+                                                    : quest.instruction,
                                               ),
                                             ),
                                             SizedBox(

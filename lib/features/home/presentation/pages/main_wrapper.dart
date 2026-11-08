@@ -79,7 +79,9 @@ class _MainWrapperState extends State<MainWrapper> {
                             color: isMidnight
                                 ? Colors.black.withValues(alpha: 0.96)
                                 : (isDark
-                                      ? const Color(0xFF0B101D).withValues(alpha: 0.95)
+                                      ? const Color(
+                                          0xFF0B101D,
+                                        ).withValues(alpha: 0.95)
                                       : Colors.white.withValues(alpha: 0.96)),
                             borderRadius: BorderRadius.circular(24.r),
                             border: Border.all(
@@ -111,14 +113,20 @@ class _MainWrapperState extends State<MainWrapper> {
                                 color: isMidnight
                                     ? Colors.black.withValues(alpha: 0.88)
                                     : (isDark
-                                          ? const Color(0xFF0B101D).withValues(alpha: 0.88)
-                                          : Colors.white.withValues(alpha: 0.90)),
+                                          ? const Color(
+                                              0xFF0B101D,
+                                            ).withValues(alpha: 0.88)
+                                          : Colors.white.withValues(
+                                              alpha: 0.90,
+                                            )),
                                 borderRadius: BorderRadius.circular(24.r),
                                 border: Border.all(
                                   color: isMidnight
                                       ? Colors.white.withValues(alpha: 0.12)
                                       : (isDark
-                                            ? Colors.white.withValues(alpha: 0.10)
+                                            ? Colors.white.withValues(
+                                                alpha: 0.10,
+                                              )
                                             : AppColors.slate200),
                                   width: 1.0,
                                 ),
@@ -246,22 +254,22 @@ class _MainWrapperState extends State<MainWrapper> {
                           size: 24.r,
                         )
                       : Icon(
-                          isSelected ? activeIcon : inactiveIcon,
-                          color: isSelected
-                              ? accentColor
-                              : (isDark ? Colors.white54 : Colors.black45),
-                          size: 24.r,
-                        )
-                          .animate(target: isSelected ? 1 : 0)
-                          .shimmer(
-                            delay: 400.ms,
-                            duration: 1200.ms,
-                            color: Colors.white24,
-                          )
-                          .scale(
-                            begin: const Offset(1, 1),
-                            end: const Offset(1.1, 1.1),
-                          ),
+                              isSelected ? activeIcon : inactiveIcon,
+                              color: isSelected
+                                  ? accentColor
+                                  : (isDark ? Colors.white54 : Colors.black45),
+                              size: 24.r,
+                            )
+                            .animate(target: isSelected ? 1 : 0)
+                            .shimmer(
+                              delay: 400.ms,
+                              duration: 1200.ms,
+                              color: Colors.white24,
+                            )
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                            ),
 
                   if (isSelected) ...[
                     SizedBox(width: 4.w),
@@ -309,17 +317,19 @@ class _MainWrapperState extends State<MainWrapper> {
       final String? controllerName = switch (index) {
         0 => 'home',
         1 => 'games',
-        2 => di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')
-            ? 'leaderboard'
-            : 'ranks',
+        2 =>
+          di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')
+              ? 'leaderboard'
+              : 'ranks',
         3 => 'profile',
         _ => null,
       };
 
       if (controllerName != null &&
           di.sl.isRegistered<ScrollController>(instanceName: controllerName)) {
-        final controller =
-            di.sl<ScrollController>(instanceName: controllerName);
+        final controller = di.sl<ScrollController>(
+          instanceName: controllerName,
+        );
         if (controller.hasClients) {
           controller.animateTo(
             0.0,

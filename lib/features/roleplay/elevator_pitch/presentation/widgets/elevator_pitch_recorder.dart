@@ -456,7 +456,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 fontFamily: 'Outfit',
                 fontSize: 36.sp,
                 fontWeight: FontWeight.w700,
-                color: seconds <= 5 ? AppColors.gameIncorrect : widget.primaryColor,
+                color: seconds <= 5
+                    ? AppColors.gameIncorrect
+                    : widget.primaryColor,
               ),
             );
           },
@@ -627,8 +629,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   }
 
   Widget _buildEvaluatingState(BuildContext context, bool isDark) {
-    final statusColor =
-        _passedAutoGrade ? AppColors.gameCorrect : AppColors.gameIncorrect;
+    final statusColor = _passedAutoGrade
+        ? AppColors.gameCorrect
+        : AppColors.gameIncorrect;
 
     return Column(
       key: const ValueKey('evaluating'),
@@ -797,8 +800,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     required bool passed,
     required bool isDark,
   }) {
-    final statusColor =
-        passed ? AppColors.gameCorrect : AppColors.gameIncorrect;
+    final statusColor = passed
+        ? AppColors.gameCorrect
+        : AppColors.gameIncorrect;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,

@@ -99,7 +99,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -381,14 +382,21 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                       child: Builder(
                                         builder: (context) {
                                           final arrowColor = isDark
-                                              ? Colors.white.withValues(alpha: 0.5)
-                                              : theme.primaryColor.withValues(alpha: 0.5);
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.5,
+                                                )
+                                              : theme.primaryColor.withValues(
+                                                  alpha: 0.5,
+                                                );
                                           final handIconColor = isDark
-                                              ? Colors.white.withValues(alpha: 0.9)
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.9,
+                                                )
                                               : theme.primaryColor;
 
                                           final leftArrow = Icon(
-                                            Icons.keyboard_double_arrow_left_rounded,
+                                            Icons
+                                                .keyboard_double_arrow_left_rounded,
                                             color: arrowColor,
                                             size: 24.r,
                                           );
@@ -398,7 +406,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                             size: 32.r,
                                           );
                                           final rightArrow = Icon(
-                                            Icons.keyboard_double_arrow_right_rounded,
+                                            Icons
+                                                .keyboard_double_arrow_right_rounded,
                                             color: arrowColor,
                                             size: 24.r,
                                           );
@@ -409,34 +418,43 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                               reduceMotion
                                                   ? leftArrow
                                                   : leftArrow
-                                                      .animate(
-                                                        onPlay: (c) => c.repeat(),
-                                                      )
-                                                      .fadeIn(duration: 500.ms)
-                                                      .fadeOut(delay: 500.ms),
+                                                        .animate(
+                                                          onPlay: (c) =>
+                                                              c.repeat(),
+                                                        )
+                                                        .fadeIn(
+                                                          duration: 500.ms,
+                                                        )
+                                                        .fadeOut(delay: 500.ms),
                                               SizedBox(width: 8.w),
                                               reduceMotion
                                                   ? handIcon
                                                   : handIcon
-                                                      .animate(
-                                                        onPlay: (c) =>
-                                                            c.repeat(reverse: true),
-                                                      )
-                                                      .moveX(
-                                                        begin: -25.w,
-                                                        end: 25.w,
-                                                        duration: 1200.ms,
-                                                        curve: Curves.easeInOutSine,
-                                                      ),
+                                                        .animate(
+                                                          onPlay: (c) =>
+                                                              c.repeat(
+                                                                reverse: true,
+                                                              ),
+                                                        )
+                                                        .moveX(
+                                                          begin: -25.w,
+                                                          end: 25.w,
+                                                          duration: 1200.ms,
+                                                          curve: Curves
+                                                              .easeInOutSine,
+                                                        ),
                                               SizedBox(width: 8.w),
                                               reduceMotion
                                                   ? rightArrow
                                                   : rightArrow
-                                                      .animate(
-                                                        onPlay: (c) => c.repeat(),
-                                                      )
-                                                      .fadeIn(duration: 500.ms)
-                                                      .fadeOut(delay: 500.ms),
+                                                        .animate(
+                                                          onPlay: (c) =>
+                                                              c.repeat(),
+                                                        )
+                                                        .fadeIn(
+                                                          duration: 500.ms,
+                                                        )
+                                                        .fadeOut(delay: 500.ms),
                                             ],
                                           );
 
@@ -527,7 +545,8 @@ class _TopicInstructionBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final rawInstruction = InstructionHelper.getInstruction(quest).trim();
@@ -565,9 +584,9 @@ class _TopicInstructionBanner extends StatelessWidget {
     return reduceMotion
         ? bannerContent
         : bannerContent
-            .animate()
-            .fadeIn(duration: 400.ms)
-            .slideY(begin: -0.15, end: 0, curve: Curves.easeOut);
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .slideY(begin: -0.15, end: 0, curve: Curves.easeOut);
   }
 }
 

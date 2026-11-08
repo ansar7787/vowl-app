@@ -199,25 +199,25 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               valueListenable: _buddyMessage,
               builder: (context, message, _) {
                 return VowlMascot(
-                  size: 55.r,
-                  state: state,
-                  useFloatingAnimation: true,
-                  isKidsMode: true,
-                )
-                .animate(target: message != null ? 1 : 0)
-                .shake(hz: 10, curve: Curves.easeInOut)
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.2, 1.2),
-                  duration: 200.ms,
-                  curve: Curves.easeOutCubic,
-                )
-                .then()
-                .scale(
-                  begin: const Offset(1.2, 1.2),
-                  end: const Offset(1, 1),
-                  duration: 200.ms,
-                );
+                      size: 55.r,
+                      state: state,
+                      useFloatingAnimation: true,
+                      isKidsMode: true,
+                    )
+                    .animate(target: message != null ? 1 : 0)
+                    .shake(hz: 10, curve: Curves.easeInOut)
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.2, 1.2),
+                      duration: 200.ms,
+                      curve: Curves.easeOutCubic,
+                    )
+                    .then()
+                    .scale(
+                      begin: const Offset(1.2, 1.2),
+                      end: const Offset(1, 1),
+                      duration: 200.ms,
+                    );
               },
             );
           },
@@ -231,56 +231,59 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     required bool isTailOnRight,
     required double maxWidth,
   }) {
-    Widget bubble = GestureDetector(
-      onTap: _handleBuddyTap,
-      child: Container(
-        constraints: BoxConstraints(maxWidth: maxWidth),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(24.r),
-            topRight: Radius.circular(24.r),
-            bottomLeft: isTailOnRight
-                ? Radius.circular(24.r)
-                : Radius.circular(2.r),
-            bottomRight: isTailOnRight
-                ? Radius.circular(2.r)
-                : Radius.circular(24.r),
-          ),
-          border: Border.all(color: widget.primaryColor, width: 3.5.r),
-          boxShadow: [
-            BoxShadow(
-              color: widget.primaryColor.withValues(alpha: 0.25),
-              blurRadius: 14.r,
-              offset: Offset(0, 6.h),
+    Widget bubble =
+        GestureDetector(
+          onTap: _handleBuddyTap,
+          child: Container(
+            constraints: BoxConstraints(maxWidth: maxWidth),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24.r),
+                topRight: Radius.circular(24.r),
+                bottomLeft: isTailOnRight
+                    ? Radius.circular(24.r)
+                    : Radius.circular(2.r),
+                bottomRight: isTailOnRight
+                    ? Radius.circular(2.r)
+                    : Radius.circular(24.r),
+              ),
+              border: Border.all(color: widget.primaryColor, width: 3.5.r),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.primaryColor.withValues(alpha: 0.25),
+                  blurRadius: 14.r,
+                  offset: Offset(0, 6.h),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: AutoSizeText(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontFamilyFallback: const [
-              'Noto Color Emoji',
-              'Apple Color Emoji',
-              'Segoe UI Emoji',
-            ],
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w900,
-            color: AppColors.slate800,
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontFamilyFallback: const [
+                  'Noto Color Emoji',
+                  'Apple Color Emoji',
+                  'Segoe UI Emoji',
+                ],
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: AppColors.slate800,
+              ),
+              textAlign: TextAlign.center,
+              minFontSize: 10,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
-          textAlign: TextAlign.center,
-          minFontSize: 10,
-          maxLines: 4,
-          overflow: TextOverflow.ellipsis,
-        ),
-      ),
-    ).animate().scale(
-      alignment: isTailOnRight ? Alignment.bottomRight : Alignment.bottomLeft,
-      curve: Curves.elasticOut,
-      duration: 500.ms,
-    );
+        ).animate().scale(
+          alignment: isTailOnRight
+              ? Alignment.bottomRight
+              : Alignment.bottomLeft,
+          curve: Curves.elasticOut,
+          duration: 500.ms,
+        );
 
     if (!VowlMotion.shouldReduceMotion(context)) {
       bubble = bubble
@@ -407,10 +410,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                     args: ['$level', tierName],
                     fallback: "LVL $level $tierName",
                   )
-                : context.tr(
-                    'kids_zone.sticker_won',
-                    fallback: 'STICKER WON!',
-                  ),
+                : context.tr('kids_zone.sticker_won', fallback: 'STICKER WON!'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 9.sp,
@@ -544,9 +544,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                     confettiController: widget.confettiController,
                     blastDirectionality: BlastDirectionality.explosive,
                     shouldLoop: false,
-                    emissionFrequency: isMilestone ? 0.05 : 0.1,
-                    numberOfParticles: isMilestone ? 20 : 5,
-                    gravity: isMilestone ? 0.1 : 0.2,
+                    emissionFrequency: isMilestone ? 0.04 : 0.08,
+                    numberOfParticles: isMilestone ? 35 : 20,
+                    gravity: 0.15,
                     colors: const [
                       Colors.green,
                       Colors.blue,
@@ -648,9 +648,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                                     height: 1.0,
                                   ),
                                 ),
-                                if (widget.isCompleted ||
-                                    widget.isPlayable) ...[
-                                  SizedBox(height: 2.h),
+                                if (widget.isCompleted) ...[
                                   Builder(
                                     builder: (context) {
                                       final earnedStars =
@@ -662,19 +660,25 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                                               .gameType]?[widget.level
                                               .toString()] ??
                                           0;
-                                      return Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: List.generate(3, (index) {
-                                          final isEarned = index < earnedStars;
-                                          return Icon(
-                                            Icons.star_rounded,
-                                            size: index == 1 ? 14.r : 10.r,
-                                            color: isEarned
-                                                ? Colors.amber
-                                                : Colors.white38,
-                                          );
-                                        }),
+                                      if (earnedStars <= 0) {
+                                        return const SizedBox.shrink();
+                                      }
+                                      return Padding(
+                                        padding: EdgeInsets.only(top: 2.h),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: List.generate(3, (index) {
+                                            final isEarned = index < earnedStars;
+                                            return Icon(
+                                              Icons.star_rounded,
+                                              size: index == 1 ? 14.r : 10.r,
+                                              color: isEarned
+                                                  ? Colors.amber
+                                                  : Colors.white.withValues(alpha: 0.35),
+                                            );
+                                          }),
+                                        ),
                                       );
                                     },
                                   ),
@@ -686,13 +690,62 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 ),
               );
 
+              if (widget.isCurrent) {
+                return AnimatedBuilder(
+                  animation: widget.glowController,
+                  builder: (context, child) {
+                    final glowValue = Curves.easeInOutSine.transform(
+                      widget.glowController.value,
+                    );
+                    return Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: (112 + 16 * glowValue).r,
+                          height: (112 + 16 * glowValue).r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: widget.primaryColor.withValues(
+                              alpha: 0.14 * (1.0 - glowValue * 0.5),
+                            ),
+                            border: Border.all(
+                              color: widget.primaryColor.withValues(
+                                alpha: 0.30 + 0.25 * glowValue,
+                              ),
+                              width: 2.5.r,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.18 + 0.15 * glowValue,
+                                ),
+                                blurRadius: 20.r + 10.r * glowValue,
+                                spreadRadius: 3.r + 3.r * glowValue,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(0, -6.h * glowValue),
+                          child: Transform.scale(
+                            scale: 1.0 + 0.06 * glowValue,
+                            child: child!,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                  child: disk,
+                );
+              }
+
               if (!VowlMotion.shouldReduceMotion(context)) {
                 disk = disk
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .moveY(
-                      begin: -5.r,
-                      end: 5.r,
-                      duration: 2.seconds,
+                      begin: -3.r,
+                      end: 3.r,
+                      duration: 2.5.seconds,
                       curve: Curves.easeInOutSine,
                     );
               }
@@ -700,70 +753,6 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               return disk;
             },
           ),
-
-          // 3. Current Level – Double-Ring Glow Beacon
-          if (widget.isCurrent)
-            Builder(
-              builder: (context) {
-                Widget innerRing = Container(
-                  width: 115.r,
-                  height: 115.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.4),
-                      width: 3.r,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: widget.primaryColor.withValues(alpha: 0.15),
-                        blurRadius: 20.r,
-                        spreadRadius: 4.r,
-                      ),
-                    ],
-                  ),
-                );
-
-                Widget outerRing = Container(
-                  width: 130.r,
-                  height: 130.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.2),
-                      width: 2.r,
-                    ),
-                  ),
-                );
-
-                if (!VowlMotion.shouldReduceMotion(context)) {
-                  innerRing = innerRing
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scale(
-                        begin: const Offset(0.92, 0.92),
-                        end: const Offset(1.05, 1.05),
-                        duration: 1.8.seconds,
-                        curve: Curves.easeInOutSine,
-                      )
-                      .fadeIn(begin: 0.5);
-
-                  outerRing = outerRing
-                      .animate(onPlay: (c) => c.repeat())
-                      .scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.3, 1.3),
-                        duration: 2.seconds,
-                        curve: Curves.easeOut,
-                      )
-                      .fadeOut(duration: 2.seconds);
-                }
-
-                return Stack(
-                  alignment: Alignment.center,
-                  children: [innerRing, outerRing],
-                );
-              },
-            ),
         ],
       ),
     );
@@ -826,7 +815,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final bool isNodeOnRight = (widget.currentOffset + 50.r) > (screenWidth / 2);
+    final bool isNodeOnRight =
+        (widget.currentOffset + 50.r) > (screenWidth / 2);
 
     // Buddy sits on the inner/opposite side of the node towards the screen center
     final double buddyLeft = isNodeOnRight

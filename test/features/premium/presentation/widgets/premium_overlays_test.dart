@@ -17,8 +17,9 @@ Widget _wrap(Widget child, {ThemeData? theme}) {
 
 void main() {
   group('PremiumFailureOverlay', () {
-    testWidgets('renders in light mode with proper text contrast and actions',
-        (tester) async {
+    testWidgets('renders in light mode with proper text contrast and actions', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1170, 2532);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() {
@@ -62,10 +63,7 @@ void main() {
     testWidgets('renders in dark mode without crashing', (tester) async {
       await tester.pumpWidget(
         _wrap(
-          PremiumFailureOverlay(
-            onRetry: () {},
-            onClose: () {},
-          ),
+          PremiumFailureOverlay(onRetry: () {}, onClose: () {}),
           theme: ThemeData.dark(),
         ),
       );
@@ -79,10 +77,7 @@ void main() {
     testWidgets('renders in OLED midnight mode', (tester) async {
       await tester.pumpWidget(
         _wrap(
-          PremiumFailureOverlay(
-            onRetry: () {},
-            onClose: () {},
-          ),
+          PremiumFailureOverlay(onRetry: () {}, onClose: () {}),
           theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: Colors.black,
           ),
@@ -95,43 +90,43 @@ void main() {
   });
 
   group('PremiumSuccessOverlay', () {
-    testWidgets('renders in light mode with high contrast and triggers action',
-        (tester) async {
-      bool adventureBegun = false;
+    testWidgets(
+      'renders in light mode with high contrast and triggers action',
+      (tester) async {
+        bool adventureBegun = false;
 
-      await tester.pumpWidget(
-        _wrap(
-          PremiumSuccessOverlay(
-            transactionId: 'TXN_9988776655',
-            onBeginAdventure: () => adventureBegun = true,
+        await tester.pumpWidget(
+          _wrap(
+            PremiumSuccessOverlay(
+              transactionId: 'TXN_9988776655',
+              onBeginAdventure: () => adventureBegun = true,
+            ),
+            theme: ThemeData.light(),
           ),
-          theme: ThemeData.light(),
-        ),
-      );
-      await tester.pump(const Duration(milliseconds: 700));
+        );
+        await tester.pump(const Duration(milliseconds: 700));
 
-      expect(find.text('UPGRADE SUCCESSFUL'), findsOneWidget);
-      expect(
-        find.text(
-          'Your upgrade was successful. All elite features are now unlocked.',
-        ),
-        findsOneWidget,
-      );
-      expect(find.text('TRANSACTION ID'), findsOneWidget);
-      expect(find.text('TXN_9988776655'), findsOneWidget);
-      expect(find.text('BEGIN ADVENTURE'), findsOneWidget);
-      expect(find.byIcon(LucideIcons.sparkles), findsOneWidget);
+        expect(find.text('UPGRADE SUCCESSFUL'), findsOneWidget);
+        expect(
+          find.text(
+            'Your upgrade was successful. All elite features are now unlocked.',
+          ),
+          findsOneWidget,
+        );
+        expect(find.text('TRANSACTION ID'), findsOneWidget);
+        expect(find.text('TXN_9988776655'), findsOneWidget);
+        expect(find.text('BEGIN ADVENTURE'), findsOneWidget);
+        expect(find.byIcon(LucideIcons.sparkles), findsOneWidget);
 
-      await tester.tap(find.text('BEGIN ADVENTURE'));
-      expect(adventureBegun, isTrue);
-    });
+        await tester.tap(find.text('BEGIN ADVENTURE'));
+        expect(adventureBegun, isTrue);
+      },
+    );
 
     testWidgets('renders in dark mode and OLED midnight mode', (tester) async {
       await tester.pumpWidget(
         _wrap(
-          PremiumSuccessOverlay(
-            onBeginAdventure: () {},
-          ),
+          PremiumSuccessOverlay(onBeginAdventure: () {}),
           theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: Colors.black,
           ),

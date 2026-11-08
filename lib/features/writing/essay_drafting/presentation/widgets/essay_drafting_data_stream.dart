@@ -78,8 +78,8 @@ class EssayDraftingDataStream extends StatelessWidget {
                 color: isFeedback
                     ? Colors.white
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.95)
-                        : Colors.black87),
+                          ? Colors.white.withValues(alpha: 0.95)
+                          : Colors.black87),
                 fontSize: 14.5.sp,
                 fontWeight: FontWeight.w500,
                 height: 1.4,

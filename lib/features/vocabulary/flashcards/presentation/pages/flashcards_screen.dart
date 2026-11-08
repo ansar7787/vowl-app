@@ -47,10 +47,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   late final FlashcardController _controller;
   late ThemeResult _theme;
@@ -194,9 +192,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != lastProcessedIndex;
       final isRetry =
-          !isNew &&
-          !state.answerStatus.isAnswered &&
-          _controller.isAnswered;
+          !isNew && !state.answerStatus.isAnswered && _controller.isAnswered;
 
       onVocabularyStateChanged(context, state);
 

@@ -99,7 +99,8 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
     _bankTiles = List.from(_allTiles)..shuffle(rand);
 
     // If inadvertently shuffled into the solved word, swap first two distinct chars
-    if (_bankTiles.map((t) => t.char).join() == rawWord && _bankTiles.length > 1) {
+    if (_bankTiles.map((t) => t.char).join() == rawWord &&
+        _bankTiles.length > 1) {
       for (int i = 0; i < _bankTiles.length - 1; i++) {
         if (_bankTiles[i].char != _bankTiles[i + 1].char) {
           final temp = _bankTiles[i];
@@ -202,10 +203,7 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
               const Color(0xFF1E1035).withValues(alpha: 0.8),
               const Color(0xFF0F172A).withValues(alpha: 0.9),
             ]
-          : [
-              Colors.white,
-              const Color(0xFFFAF5FF),
-            ],
+          : [Colors.white, const Color(0xFFFAF5FF)],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );
@@ -220,8 +218,10 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
           color: _isSuccess
               ? AppColors.emerald500
               : (_isWrong
-                  ? AppColors.red500.withValues(alpha: 0.8)
-                  : widget.primaryColor.withValues(alpha: isDark ? 0.35 : 0.22)),
+                    ? AppColors.red500.withValues(alpha: 0.8)
+                    : widget.primaryColor.withValues(
+                        alpha: isDark ? 0.35 : 0.22,
+                      )),
           width: 1.5.w,
         ),
       ),
@@ -355,8 +355,8 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                   color: _isSuccess
                       ? AppColors.emerald500
                       : (_isWrong
-                          ? AppColors.red500.withValues(alpha: 0.8)
-                          : widget.primaryColor.withValues(alpha: 0.2)),
+                            ? AppColors.red500.withValues(alpha: 0.8)
+                            : widget.primaryColor.withValues(alpha: 0.2)),
                   width: 1.5.w,
                 ),
               ),
@@ -390,12 +390,16 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                                       : LinearGradient(
                                           colors: isDark
                                               ? [
-                                                  widget.primaryColor.withValues(alpha: 0.45),
-                                                  widget.primaryColor.withValues(alpha: 0.25),
+                                                  widget.primaryColor
+                                                      .withValues(alpha: 0.45),
+                                                  widget.primaryColor
+                                                      .withValues(alpha: 0.25),
                                                 ]
                                               : [
-                                                  widget.primaryColor.withValues(alpha: 0.15),
-                                                  widget.primaryColor.withValues(alpha: 0.08),
+                                                  widget.primaryColor
+                                                      .withValues(alpha: 0.15),
+                                                  widget.primaryColor
+                                                      .withValues(alpha: 0.08),
                                                 ],
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
@@ -405,8 +409,10 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                                     color: _isSuccess
                                         ? AppColors.emerald500
                                         : (_isWrong
-                                            ? AppColors.red500
-                                            : widget.primaryColor.withValues(alpha: 0.4)),
+                                              ? AppColors.red500
+                                              : widget.primaryColor.withValues(
+                                                  alpha: 0.4,
+                                                )),
                                     width: 1.5.w,
                                   ),
                                   boxShadow: [
@@ -454,7 +460,9 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                                   width: 8.r,
                                   height: 2.h,
                                   decoration: BoxDecoration(
-                                    color: isDark ? Colors.white30 : Colors.black26,
+                                    color: isDark
+                                        ? Colors.white30
+                                        : Colors.black26,
                                     borderRadius: BorderRadius.circular(2.r),
                                   ),
                                 ),
@@ -473,7 +481,9 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
           Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.primaryColor.withValues(alpha: isDark ? 0.08 : 0.04),
+              color: widget.primaryColor.withValues(
+                alpha: isDark ? 0.08 : 0.04,
+              ),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: widget.primaryColor.withValues(alpha: 0.12),
@@ -487,7 +497,8 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                       child: Text(
                         context.tr(
                           'home.all_letters_used',
-                          fallback: 'All letters placed. Tap any letter above to remove it.',
+                          fallback:
+                              'All letters placed. Tap any letter above to remove it.',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -514,7 +525,9 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(12.r),
                             border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.35),
+                              color: widget.primaryColor.withValues(
+                                alpha: 0.35,
+                              ),
                               width: 1.2.w,
                             ),
                             boxShadow: [
@@ -567,8 +580,8 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                 color: isComplete
                     ? null
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : Colors.black.withValues(alpha: 0.06)),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : Colors.black.withValues(alpha: 0.06)),
                 borderRadius: BorderRadius.circular(16.r),
                 boxShadow: isComplete
                     ? [
@@ -587,7 +600,9 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        _isSuccess ? Icons.check_circle_rounded : Icons.check_rounded,
+                        _isSuccess
+                            ? Icons.check_circle_rounded
+                            : Icons.check_rounded,
                         color: isComplete
                             ? Colors.white
                             : (isDark ? Colors.white30 : Colors.black26),
@@ -597,7 +612,10 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                       Text(
                         _isSuccess
                             ? context.tr('common.correct', fallback: 'SOLVED!')
-                            : context.tr('common.check_answer', fallback: 'CHECK ANSWER'),
+                            : context.tr(
+                                'common.check_answer',
+                                fallback: 'CHECK ANSWER',
+                              ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
@@ -619,4 +637,3 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
     );
   }
 }
-

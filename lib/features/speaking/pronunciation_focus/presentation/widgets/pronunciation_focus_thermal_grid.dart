@@ -42,8 +42,8 @@ class PronunciationFocusThermalGrid extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDark
               ? (context.isMidnight
-                  ? AppColors.midnightSurface
-                  : _LocalPalette.color0c0c16)
+                    ? AppColors.midnightSurface
+                    : _LocalPalette.color0c0c16)
               : Colors.black.withValues(alpha: 0.02),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(

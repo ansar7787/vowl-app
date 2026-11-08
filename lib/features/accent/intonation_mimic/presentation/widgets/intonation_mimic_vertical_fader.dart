@@ -160,7 +160,11 @@ class IntonationMimicVerticalFader extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(iconData, color: textColor.withValues(alpha: 0.85), size: 22.r),
+            Icon(
+              iconData,
+              color: textColor.withValues(alpha: 0.85),
+              size: 22.r,
+            ),
             SizedBox(width: 12.w),
             Expanded(
               child: Text(
@@ -191,11 +195,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     return optionCard;
   }
 
-  Widget _buildVerticalSliderBar(
-    int correct,
-    Color color,
-    bool reduceMotion,
-  ) {
+  Widget _buildVerticalSliderBar(int correct, Color color, bool reduceMotion) {
     Widget sliderBar = Container(
       height: 136.h,
       width: 50.w,
@@ -236,10 +236,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     );
 
     if (!reduceMotion) {
-      sliderBar = sliderBar
-          .animate()
-          .fadeIn(delay: 200.ms)
-          .slideY(begin: 0.2);
+      sliderBar = sliderBar.animate().fadeIn(delay: 200.ms).slideY(begin: 0.2);
     }
 
     return sliderBar;

@@ -125,7 +125,8 @@ class GameScaffold<S> extends StatelessWidget {
                                       padding: config.disablePadding
                                           ? EdgeInsets.zero
                                           : EdgeInsets.symmetric(
-                                              horizontal: config.horizontalPadding ??
+                                              horizontal:
+                                                  config.horizontalPadding ??
                                                   AppSpacing.screen,
                                             ),
                                       child: config.child,
@@ -135,7 +136,8 @@ class GameScaffold<S> extends StatelessWidget {
                                       ? config.child
                                       : Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: config.horizontalPadding ??
+                                            horizontal:
+                                                config.horizontalPadding ??
                                                 AppSpacing.screen,
                                           ),
                                           child: config.child,
@@ -145,7 +147,8 @@ class GameScaffold<S> extends StatelessWidget {
                         if (mascotBuilder != null)
                           Positioned(
                             top: -10.h,
-                            right: config.horizontalPadding ?? AppSpacing.screen,
+                            right:
+                                config.horizontalPadding ?? AppSpacing.screen,
                             child: mascotBuilder!(context, state, _lives),
                           ),
                       ],

@@ -33,16 +33,19 @@ void main() {
       expect(user.hasActivePremium, true);
     });
 
-    test('returns false when isPremium is true but expiry date is in the past (Critical Fix)', () {
-      final user = UserEntity(
-        id: 'u1',
-        email: 'test@vowl.com',
-        isPremium: true,
-        // Expired in Oct 2026
-        premiumExpiryDate: DateTime.now().subtract(const Duration(days: 10)),
-      );
-      expect(user.hasActivePremium, false);
-    });
+    test(
+      'returns false when isPremium is true but expiry date is in the past (Critical Fix)',
+      () {
+        final user = UserEntity(
+          id: 'u1',
+          email: 'test@vowl.com',
+          isPremium: true,
+          // Expired in Oct 2026
+          premiumExpiryDate: DateTime.now().subtract(const Duration(days: 10)),
+        );
+        expect(user.hasActivePremium, false);
+      },
+    );
 
     test('correctly retains pendingReferralCode through copyWith', () {
       const user = UserEntity(

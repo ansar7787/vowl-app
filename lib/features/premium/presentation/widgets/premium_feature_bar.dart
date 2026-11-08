@@ -72,8 +72,14 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                     children: [
                       Text(
                         _isExpanded
-                            ? context.tr('premium.show_less', fallback: 'Show Less')
-                            : context.tr('premium.view_all_14', fallback: 'View All 14'),
+                            ? context.tr(
+                                'premium.show_less',
+                                fallback: 'Show Less',
+                              )
+                            : context.tr(
+                                'premium.view_all_14',
+                                fallback: 'View All 14',
+                              ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           color: AppColors.indigo500,
@@ -83,7 +89,9 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                       ),
                       SizedBox(width: 4.w),
                       Icon(
-                        _isExpanded ? LucideIcons.chevronUp : LucideIcons.chevronDown,
+                        _isExpanded
+                            ? LucideIcons.chevronUp
+                            : LucideIcons.chevronDown,
                         color: AppColors.indigo500,
                         size: 13.sp,
                       ),
@@ -224,93 +232,136 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                 _buildListFeature(
                   context,
                   icon: LucideIcons.bot,
-                  title: context.tr('premium.feature_smart_reply', fallback: 'AI Smart Reply'),
+                  title: context.tr(
+                    'premium.feature_smart_reply',
+                    fallback: 'AI Smart Reply',
+                  ),
                   color: IllustrationColors.brightBlue,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.camera,
-                  title: context.tr('premium.feature_photo_vocab', fallback: 'Photo Vocabulary'),
+                  title: context.tr(
+                    'premium.feature_photo_vocab',
+                    fallback: 'Photo Vocabulary',
+                  ),
                   color: AppColors.teal500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.scan,
-                  title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn'),
+                  title: context.tr(
+                    'premium.feature_scan_learn',
+                    fallback: 'Scan & Learn',
+                  ),
                   color: AppColors.indigo500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.sparkles,
-                  title: context.tr('premium.feature_translations', fallback: 'Instant AI Translations'),
+                  title: context.tr(
+                    'premium.feature_translations',
+                    fallback: 'Instant AI Translations',
+                  ),
                   color: AppColors.rose500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.volume2,
-                  title: context.tr('premium.feature_world_accents', fallback: 'World Voice Accents (British, US, AU & IN)'),
+                  title: context.tr(
+                    'premium.feature_world_accents',
+                    fallback: 'World Voice Accents (British, US, AU & IN)',
+                  ),
                   color: AppColors.violet500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.shieldCheck,
-                  title: context.tr('premium.feature_zero_ads', fallback: 'ZERO ADS'),
+                  title: context.tr(
+                    'premium.feature_zero_ads',
+                    fallback: 'ZERO ADS',
+                  ),
                   color: AppColors.emerald500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.swords,
-                  title: context.tr('premium.feature_arena_refuel', fallback: 'Instant 1v1 Arena Refuel (Zero Ads)'),
+                  title: context.tr(
+                    'premium.feature_arena_refuel',
+                    fallback: 'Instant 1v1 Arena Refuel (Zero Ads)',
+                  ),
                   color: AppColors.indigo500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.flame,
-                  title: context.tr('premium.feature_streak_repair', fallback: 'VIP Streak Repair'),
+                  title: context.tr(
+                    'premium.feature_streak_repair',
+                    fallback: 'VIP Streak Repair',
+                  ),
                   color: AppColors.amber500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.wifiOff,
-                  title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'),
+                  title: context.tr(
+                    'premium.feature_play_offline',
+                    fallback: 'Play Offline Anywhere',
+                  ),
                   color: AppColors.slate500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.unlock,
-                  title: context.tr('premium.feature_unlimited_levels', fallback: 'UNLIMITED PROGRESS'),
+                  title: context.tr(
+                    'premium.feature_unlimited_levels',
+                    fallback: 'UNLIMITED PROGRESS',
+                  ),
                   color: _LocalPalette.color06b6d4,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.gift,
-                  title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'),
+                  title: context.tr(
+                    'premium.feature_vip_loot',
+                    fallback: '100 Free Bonus Coins Daily',
+                  ),
                   color: IllustrationColors.vibrantPink,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.calendarClock,
-                  title: context.tr('premium.feature_unlimited_daily_words', fallback: 'Unlimited Daily Words'),
+                  title: context.tr(
+                    'premium.feature_unlimited_daily_words',
+                    fallback: 'Unlimited Daily Words',
+                  ),
                   color: AppColors.violet500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.dumbbell,
-                  title: context.tr('premium.feature_unlimited_practice', fallback: 'Unlimited Mastery Training'),
+                  title: context.tr(
+                    'premium.feature_unlimited_practice',
+                    fallback: 'Unlimited Mastery Training',
+                  ),
                   color: AppColors.orange500,
                 ),
                 _buildListFeature(
                   context,
                   icon: LucideIcons.award,
-                  title: context.tr('premium.feature_vip_badges', fallback: 'VIP BADGES'),
+                  title: context.tr(
+                    'premium.feature_vip_badges',
+                    fallback: 'VIP BADGES',
+                  ),
                   color: _LocalPalette.coloreab308,
                   isLast: true,
                 ),
               ],
             ),
           ),
-          crossFadeState:
-              _isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+          crossFadeState: _isExpanded
+              ? CrossFadeState.showSecond
+              : CrossFadeState.showFirst,
           duration: const Duration(milliseconds: 250),
         ),
       ],
@@ -396,7 +447,8 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
         formattedTitle.endsWith('。')) {
       formattedTitle = formattedTitle.substring(0, formattedTitle.length - 1);
     }
-    if (formattedTitle.isNotEmpty && formattedTitle == formattedTitle.toUpperCase()) {
+    if (formattedTitle.isNotEmpty &&
+        formattedTitle == formattedTitle.toUpperCase()) {
       formattedTitle = formattedTitle
           .split(' ')
           .map((word) {

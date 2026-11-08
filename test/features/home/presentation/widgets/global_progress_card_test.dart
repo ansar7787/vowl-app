@@ -73,9 +73,7 @@ void main() {
     }
   });
 
-  UserEntity buildUser({
-    int totalLevelsCompleted = 0,
-  }) {
+  UserEntity buildUser({int totalLevelsCompleted = 0}) {
     return UserEntity(
       id: 'test_user_prog',
       email: 'test@vowl.app',
@@ -103,10 +101,7 @@ void main() {
           path: '/',
           builder: (context, _) => Scaffold(
             body: SingleChildScrollView(
-              child: GlobalProgressCard(
-                user: user,
-                globalRank: globalRank,
-              ),
+              child: GlobalProgressCard(user: user, globalRank: globalRank),
             ),
           ),
         ),
@@ -156,21 +151,26 @@ void main() {
   }
 
   group('GlobalProgressCard - Visual Rendering & Mathematical Accuracy', () {
-    testWidgets('renders completed levels count, total curriculum levels, and rank badge', (tester) async {
-      final user = buildUser(totalLevelsCompleted: 38);
-      await pumpSubject(tester, user: user, globalRank: 14);
+    testWidgets(
+      'renders completed levels count, total curriculum levels, and rank badge',
+      (tester) async {
+        final user = buildUser(totalLevelsCompleted: 38);
+        await pumpSubject(tester, user: user, globalRank: 14);
 
-      expect(find.text('Curriculum Mastery'), findsOneWidget);
-      expect(find.text('Global Journey & Rank'), findsOneWidget);
-      expect(find.text('38'), findsOneWidget);
-      expect(find.textContaining('20000 Levels'), findsOneWidget);
-      expect(find.text('#14'), findsOneWidget);
-      expect(find.text('Rank'), findsOneWidget);
-      expect(find.text('Stage 1: Foundation'), findsOneWidget);
-      expect(find.text('12 to Next Target'), findsOneWidget);
-    });
+        expect(find.text('Curriculum Mastery'), findsOneWidget);
+        expect(find.text('Global Journey & Rank'), findsOneWidget);
+        expect(find.text('38'), findsOneWidget);
+        expect(find.textContaining('20000 Levels'), findsOneWidget);
+        expect(find.text('#14'), findsOneWidget);
+        expect(find.text('Rank'), findsOneWidget);
+        expect(find.text('Stage 1: Foundation'), findsOneWidget);
+        expect(find.text('12 to Next Target'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders unranked badge when globalRank is null', (tester) async {
+    testWidgets('renders unranked badge when globalRank is null', (
+      tester,
+    ) async {
       final user = buildUser(totalLevelsCompleted: 0);
       await pumpSubject(tester, user: user, globalRank: null);
 
@@ -182,7 +182,9 @@ void main() {
       expect(find.text('50 to Next Target'), findsOneWidget);
     });
 
-    testWidgets('renders advanced stage for higher completed count', (tester) async {
+    testWidgets('renders advanced stage for higher completed count', (
+      tester,
+    ) async {
       final user = buildUser(totalLevelsCompleted: 250);
       await pumpSubject(tester, user: user, globalRank: 5);
 
@@ -194,23 +196,28 @@ void main() {
   });
 
   group('GlobalProgressCard - Interaction & Navigation', () {
-    testWidgets('tapping card triggers selection haptics and navigates to /leaderboard', (tester) async {
-      final user = buildUser(totalLevelsCompleted: 42);
-      await pumpSubject(tester, user: user, globalRank: 8);
+    testWidgets(
+      'tapping card triggers selection haptics and navigates to /leaderboard',
+      (tester) async {
+        final user = buildUser(totalLevelsCompleted: 42);
+        await pumpSubject(tester, user: user, globalRank: 8);
 
-      final cardButton = find.byType(ScaleButton);
-      expect(cardButton, findsOneWidget);
+        final cardButton = find.byType(ScaleButton);
+        expect(cardButton, findsOneWidget);
 
-      await tester.tap(cardButton);
-      await tester.pumpAndSettle();
+        await tester.tap(cardButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains('/leaderboard'));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(navigatedRoutes, contains('/leaderboard'));
+      },
+    );
   });
 
   group('GlobalProgressCard - Responsive Viewports & Accessibility', () {
-    testWidgets('renders without overflow on compact 320dp screen', (tester) async {
+    testWidgets('renders without overflow on compact 320dp screen', (
+      tester,
+    ) async {
       final user = buildUser(totalLevelsCompleted: 95);
       await pumpSubject(
         tester,
@@ -240,23 +247,27 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders cleanly under 1.3x accessibility text scaling without overflow', (tester) async {
-      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
-      addTearDown(() => tester.platformDispatcher.clearTextScaleFactorTestValue());
+    testWidgets(
+      'renders cleanly under 1.3x accessibility text scaling without overflow',
+      (tester) async {
+        tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+        addTearDown(
+          () => tester.platformDispatcher.clearTextScaleFactorTestValue(),
+        );
 
-      final user = buildUser(totalLevelsCompleted: 120);
-      await pumpSubject(
-        tester,
-        user: user,
-        globalRank: 19,
-        width: 320,
-        height: 568,
-      );
+        final user = buildUser(totalLevelsCompleted: 120);
+        await pumpSubject(
+          tester,
+          user: user,
+          globalRank: 19,
+          width: 320,
+          height: 568,
+        );
 
-      expect(find.text('Curriculum Mastery'), findsOneWidget);
-      expect(find.text('#19'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.text('Curriculum Mastery'), findsOneWidget);
+        expect(find.text('#19'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

@@ -76,10 +76,7 @@ void main() {
           path: '/',
           builder: (context, _) => Scaffold(
             body: SingleChildScrollView(
-              child: BentoArena(
-                user: user,
-                collapsed: collapsed,
-              ),
+              child: BentoArena(user: user, collapsed: collapsed),
             ),
           ),
         ),
@@ -87,7 +84,9 @@ void main() {
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) {
             final cat = state.uri.queryParameters['category'] ?? '';
-            navigatedRoutes.add('${AppRouter.categoryGamesRoute}?category=$cat');
+            navigatedRoutes.add(
+              '${AppRouter.categoryGamesRoute}?category=$cat',
+            );
             return Scaffold(body: Text('Category Games: $cat'));
           },
         ),
@@ -131,13 +130,15 @@ void main() {
     addTearDown(() => tester.view.resetPhysicalSize());
     addTearDown(() => tester.view.resetDevicePixelRatio());
 
-    await tester.pumpWidget(createSubject(
-      user: user,
-      collapsed: collapsed,
-      themeMode: themeMode,
-      width: width,
-      height: height,
-    ));
+    await tester.pumpWidget(
+      createSubject(
+        user: user,
+        collapsed: collapsed,
+        themeMode: themeMode,
+        width: width,
+        height: height,
+      ),
+    );
     await tester.pumpAndSettle();
   }
 
@@ -157,7 +158,9 @@ void main() {
   );
 
   group('BentoArena - Layout & Rendering', () {
-    testWidgets('renders Hero Card for Step 1 (Vocabulary) with real stats', (tester) async {
+    testWidgets('renders Hero Card for Step 1 (Vocabulary) with real stats', (
+      tester,
+    ) async {
       await pumpSubject(tester, user: baseUser);
 
       expect(find.text('Vocabulary Arena'), findsOneWidget);
@@ -166,109 +169,133 @@ void main() {
       expect(find.text('CURRENT FOCUS'), findsOneWidget);
     });
 
-    testWidgets('renders core 2-column bento cells (Listening, Reading, Grammar, Writing)', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'renders core 2-column bento cells (Listening, Reading, Grammar, Writing)',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      expect(find.text('Listening'), findsOneWidget);
-      expect(find.text('Reading'), findsOneWidget);
-      expect(find.text('Grammar'), findsOneWidget);
-      expect(find.text('Writing'), findsOneWidget);
+        expect(find.text('Listening'), findsOneWidget);
+        expect(find.text('Reading'), findsOneWidget);
+        expect(find.text('Grammar'), findsOneWidget);
+        expect(find.text('Writing'), findsOneWidget);
 
-      // Advanced steps should not be in grid in collapsed mode
-      expect(find.text('Accent'), findsNothing);
-      expect(find.text('Roleplay'), findsNothing);
-    });
+        // Advanced steps should not be in grid in collapsed mode
+        expect(find.text('Accent'), findsNothing);
+        expect(find.text('Roleplay'), findsNothing);
+      },
+    );
 
-    testWidgets('renders Discipline Bubble Dock with upcoming category bubbles', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'renders Discipline Bubble Dock with upcoming category bubbles',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      expect(find.text('More Arenas'), findsOneWidget);
-      expect(find.text('4 arenas ready to explore'), findsOneWidget);
-      expect(find.text('See All 9 Categories'), findsOneWidget);
+        expect(find.text('More Arenas'), findsOneWidget);
+        expect(find.text('4 arenas ready to explore'), findsOneWidget);
+        expect(find.text('See All 9 Categories'), findsOneWidget);
 
-      // Bubbles for Speaking, Accent, Roleplay, Elite Mastery
-      expect(find.bySemanticsLabel('Speaking discipline'), findsOneWidget);
-      expect(find.bySemanticsLabel('Accent discipline'), findsOneWidget);
-      expect(find.bySemanticsLabel('Roleplay discipline'), findsOneWidget);
-      expect(find.bySemanticsLabel('Elite Mastery discipline'), findsOneWidget);
-    });
+        // Bubbles for Speaking, Accent, Roleplay, Elite Mastery
+        expect(find.bySemanticsLabel('Speaking discipline'), findsOneWidget);
+        expect(find.bySemanticsLabel('Accent discipline'), findsOneWidget);
+        expect(find.bySemanticsLabel('Roleplay discipline'), findsOneWidget);
+        expect(
+          find.bySemanticsLabel('Elite Mastery discipline'),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('BentoArena - Expansion & Interaction', () {
-    testWidgets('tapping See All 9 Categories expands grid to show all 9 arenas and Show Less toggle', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'tapping See All 9 Categories expands grid to show all 9 arenas and Show Less toggle',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      final expandPill = find.text('See All 9 Categories');
-      expect(expandPill, findsOneWidget);
+        final expandPill = find.text('See All 9 Categories');
+        expect(expandPill, findsOneWidget);
 
-      await tester.tap(expandPill);
-      await tester.pumpAndSettle();
+        await tester.tap(expandPill);
+        await tester.pumpAndSettle();
 
-      // Now all 9 are visible in grid
-      expect(find.text('All 9 Arenas Active'), findsOneWidget);
-      expect(find.text('Show Less'), findsOneWidget);
-      expect(find.text('Speaking'), findsOneWidget);
-      expect(find.text('Accent'), findsOneWidget);
-      expect(find.text('Roleplay'), findsOneWidget);
-      expect(find.text('Elite Mastery'), findsOneWidget);
+        // Now all 9 are visible in grid
+        expect(find.text('All 9 Arenas Active'), findsOneWidget);
+        expect(find.text('Show Less'), findsOneWidget);
+        expect(find.text('Speaking'), findsOneWidget);
+        expect(find.text('Accent'), findsOneWidget);
+        expect(find.text('Roleplay'), findsOneWidget);
+        expect(find.text('Elite Mastery'), findsOneWidget);
 
-      // Bubbles row is hidden during full grid expansion
-      expect(find.bySemanticsLabel('Speaking discipline'), findsNothing);
+        // Bubbles row is hidden during full grid expansion
+        expect(find.bySemanticsLabel('Speaking discipline'), findsNothing);
 
-      // Wait for ScaleButton 500ms debounce guard to clear
-      await tester.pump(const Duration(milliseconds: 600));
+        // Wait for ScaleButton 500ms debounce guard to clear
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Show Less to collapse back
-      final showLessFinder = find.text('Show Less');
-      await tester.ensureVisible(showLessFinder);
-      await tester.tap(showLessFinder);
-      await tester.pumpAndSettle();
+        // Tap Show Less to collapse back
+        final showLessFinder = find.text('Show Less');
+        await tester.ensureVisible(showLessFinder);
+        await tester.tap(showLessFinder);
+        await tester.pumpAndSettle();
 
-      expect(find.text('More Arenas'), findsOneWidget);
-      expect(find.text('See All 9 Categories'), findsOneWidget);
-      expect(find.bySemanticsLabel('Speaking discipline'), findsOneWidget);
-    });
+        expect(find.text('More Arenas'), findsOneWidget);
+        expect(find.text('See All 9 Categories'), findsOneWidget);
+        expect(find.bySemanticsLabel('Speaking discipline'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping Hero Card triggers selection haptic and navigates to vocabulary', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'tapping Hero Card triggers selection haptic and navigates to vocabulary',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      await tester.tap(find.text('Vocabulary Arena'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Vocabulary Arena'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains('/category-games?category=vocabulary'));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(
+          navigatedRoutes,
+          contains('/category-games?category=vocabulary'),
+        );
+      },
+    );
 
-    testWidgets('tapping a category grid cell navigates to that category route', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'tapping a category grid cell navigates to that category route',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      await tester.tap(find.text('Listening'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Listening'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains('/category-games?category=listening'));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(navigatedRoutes, contains('/category-games?category=listening'));
+      },
+    );
 
-    testWidgets('tapping an upcoming bubble in dock navigates directly to that category', (tester) async {
-      await pumpSubject(tester, user: baseUser);
+    testWidgets(
+      'tapping an upcoming bubble in dock navigates directly to that category',
+      (tester) async {
+        await pumpSubject(tester, user: baseUser);
 
-      final eliteBubble = find.bySemanticsLabel('Elite Mastery discipline');
-      await tester.tap(eliteBubble);
-      await tester.pumpAndSettle();
+        final eliteBubble = find.bySemanticsLabel('Elite Mastery discipline');
+        await tester.tap(eliteBubble);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains('/category-games?category=eliteMastery'));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(
+          navigatedRoutes,
+          contains('/category-games?category=eliteMastery'),
+        );
+      },
+    );
   });
 
   group('BentoArena - Screen Size Resilience', () {
-    testWidgets('renders cleanly on compact 320dp screen without overflow', (tester) async {
-      await pumpSubject(
-        tester,
-        user: baseUser,
-        width: 320,
-        height: 600,
-      );
+    testWidgets('renders cleanly on compact 320dp screen without overflow', (
+      tester,
+    ) async {
+      await pumpSubject(tester, user: baseUser, width: 320, height: 600);
 
       expect(tester.takeException(), isNull);
       expect(find.text('Vocabulary Arena'), findsOneWidget);
@@ -276,11 +303,7 @@ void main() {
     });
 
     testWidgets('renders cleanly in light mode', (tester) async {
-      await pumpSubject(
-        tester,
-        user: baseUser,
-        themeMode: ThemeMode.light,
-      );
+      await pumpSubject(tester, user: baseUser, themeMode: ThemeMode.light);
 
       expect(tester.takeException(), isNull);
       expect(find.text('Vocabulary Arena'), findsOneWidget);

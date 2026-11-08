@@ -62,10 +62,8 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
   @override
   int get level => widget.level;
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final _controller = TextEditingController();
   final ValueNotifier<double> _revealProgress = ValueNotifier(0.0);
@@ -257,12 +255,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
     if (!showBlindDictation) {
       return 15;
     }
-    final targetText = (quest.correctAnswer?.isNotEmpty == true
-            ? quest.correctAnswer!
-            : (quest.missingWord?.isNotEmpty == true
-                ? quest.missingWord!
-                : (quest.textToSpeak ?? '')))
-        .trim();
+    final targetText =
+        (quest.correctAnswer?.isNotEmpty == true
+                ? quest.correctAnswer!
+                : (quest.missingWord?.isNotEmpty == true
+                      ? quest.missingWord!
+                      : (quest.textToSpeak ?? '')))
+            .trim();
     final wordCount = targetText.isNotEmpty
         ? targetText.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length
         : 1;
@@ -298,9 +297,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                       primaryColor: theme.primaryColor,
                       onTimeUp: () {
                         if (isAnswered) return;
-                        onBlindSubmit(
-                          false,
-                        ); // Default to wrong on time out
+                        onBlindSubmit(false); // Default to wrong on time out
                       },
                     ),
                   ),
@@ -321,8 +318,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     builder: (context, progress, _) {
                       return AudioFillBlanksCanvas(
                         key: const ValueKey('audio_fill_blanks_canvas'),
-                        text:
-                            (isCorrect == true && quest.textToSpeak != null)
+                        text: (isCorrect == true && quest.textToSpeak != null)
                             ? quest.textToSpeak!
                             : (quest.textWithBlanks ?? ''),
                         revealProgress: (isAnswered && isCorrect == true)
@@ -363,11 +359,12 @@ class _AudioFillBlanksContent extends StatelessWidget {
                       child: showBlindDictation
                           ? BlindDictationWrapper(
                               key: ValueKey('dictation_${quest.id}'),
-                              expectedText: quest.correctAnswer?.isNotEmpty == true
+                              expectedText:
+                                  quest.correctAnswer?.isNotEmpty == true
                                   ? quest.correctAnswer!
                                   : (quest.missingWord?.isNotEmpty == true
-                                      ? quest.missingWord!
-                                      : (quest.textToSpeak ?? '')),
+                                        ? quest.missingWord!
+                                        : (quest.textToSpeak ?? '')),
                               primaryColor: theme.primaryColor,
                               isPositioned: false,
                               onReplayAudio: onPlayAudio,
@@ -438,7 +435,9 @@ class _AudioFillBlanksContent extends StatelessWidget {
                       ? theme.primaryColor.withValues(alpha: 0.16)
                       : Colors.white,
                   border: Border.all(
-                    color: theme.primaryColor.withValues(alpha: isDark ? 0.45 : 0.35),
+                    color: theme.primaryColor.withValues(
+                      alpha: isDark ? 0.45 : 0.35,
+                    ),
                     width: 1.5.w,
                   ),
                   boxShadow: isDark

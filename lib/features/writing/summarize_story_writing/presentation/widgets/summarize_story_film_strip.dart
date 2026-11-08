@@ -86,7 +86,9 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                                   ? color.withValues(alpha: 0.06)
                                   : (isDark
                                         ? Colors.white.withValues(alpha: 0.04)
-                                        : Colors.black.withValues(alpha: 0.02))),
+                                        : Colors.black.withValues(
+                                            alpha: 0.02,
+                                          ))),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                           color: text != null

@@ -312,7 +312,9 @@ class _CompleteSentenceBody extends StatelessWidget {
                     SizedBox(height: 24.h),
                     if (level >= 6) ...[
                       GestureDetector(
-                        key: const Key('complete_sentence_disabled_ammo_touch_zone'),
+                        key: const Key(
+                          'complete_sentence_disabled_ammo_touch_zone',
+                        ),
                         onTap: () {
                           CustomSnackBar.show(
                             context: context,

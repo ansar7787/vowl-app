@@ -57,15 +57,11 @@ void main() {
 
   setUpAll(() {
     registerFallbackValue(const ProfileClearPurchaseFeedback());
-    registerFallbackValue(
-      const ProfileUpdateVowlMascotRequested('vowl_prime'),
-    );
+    registerFallbackValue(const ProfileUpdateVowlMascotRequested('vowl_prime'));
     registerFallbackValue(
       const ProfileBuyVowlMascotRequested('night_bat', 5000),
     );
-    registerFallbackValue(
-      const ProfileEquipVowlAccessoryRequested(null),
-    );
+    registerFallbackValue(const ProfileEquipVowlAccessoryRequested(null));
     registerFallbackValue(
       const ProfileBuyVowlAccessoryRequested('scholar_cap', 1500),
     );
@@ -119,12 +115,10 @@ void main() {
       return result;
     });
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
-    when(() => mockProfileBloc.state).thenReturn(
-      const ProfileState(),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(() => mockProfileBloc.state).thenReturn(const ProfileState());
   });
 
   tearDown(() {
@@ -141,7 +135,8 @@ void main() {
     GoRouter? routerConfig,
     double textScaleFactor = 1.0,
   }) {
-    final router = routerConfig ??
+    final router =
+        routerConfig ??
         GoRouter(
           initialLocation: initialLocation,
           routes: [
@@ -175,13 +170,14 @@ void main() {
           routerConfig: router,
           builder: (context, routerChild) {
             return MediaQuery(
-              data: MediaQuery.of(context).copyWith(
-                textScaler: TextScaler.linear(textScaleFactor),
-              ),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: TextScaler.linear(textScaleFactor)),
               child: routerChild!,
             );
           },
-          theme: theme ??
+          theme:
+              theme ??
               ThemeData(
                 useMaterial3: true,
                 brightness: Brightness.light,
@@ -225,18 +221,19 @@ void main() {
   // GROUP 1: AUTHENTICATION & LOADING STATES
   // ===========================================================================
   group('Group 1: Authentication & Loading States', () {
-    testWidgets('renders HomeShimmerLoading when user is unauthenticated (null)', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        const AuthState.unauthenticated(),
-      );
+    testWidgets(
+      'renders HomeShimmerLoading when user is unauthenticated (null)',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(const AuthState.unauthenticated());
 
-      await pumpMascotScreen(tester);
+        await pumpMascotScreen(tester);
 
-      expect(find.byType(HomeShimmerLoading), findsOneWidget);
-      expect(find.byType(CustomScrollView), findsNothing);
-    });
+        expect(find.byType(HomeShimmerLoading), findsOneWidget);
+        expect(find.byType(CustomScrollView), findsNothing);
+      },
+    );
 
     testWidgets('renders CustomScrollView and full screen when authenticated', (
       tester,
@@ -326,9 +323,9 @@ void main() {
     testWidgets('formats coin balance with decimal thousand separators', (
       tester,
     ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUser.copyWith(coins: 1234567)),
-      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(testUser.copyWith(coins: 1234567)));
 
       await pumpMascotScreen(tester);
 
@@ -340,16 +337,17 @@ void main() {
   // GROUP 3: TAB SWITCHER (COMPANION VS BOUTIQUE)
   // ===========================================================================
   group('Group 3: Tab Switcher (COMPANION vs BOUTIQUE)', () {
-    testWidgets('renders COMPANION and BOUTIQUE tabs with COMPANION active by default', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'renders COMPANION and BOUTIQUE tabs with COMPANION active by default',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      expect(find.text('COMPANION'), findsOneWidget);
-      expect(find.text('BOUTIQUE'), findsOneWidget);
-      expect(find.text('BUDDY COLLECTION'), findsOneWidget);
-      expect(find.text('ACCESSORIES BOUTIQUE'), findsNothing);
-    });
+        expect(find.text('COMPANION'), findsOneWidget);
+        expect(find.text('BOUTIQUE'), findsOneWidget);
+        expect(find.text('BUDDY COLLECTION'), findsOneWidget);
+        expect(find.text('ACCESSORIES BOUTIQUE'), findsNothing);
+      },
+    );
 
     testWidgets('tapping BOUTIQUE switches view and plays selection haptic', (
       tester,
@@ -402,95 +400,99 @@ void main() {
       expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
     });
 
-    testWidgets('tapping owned unequipped mascot dispatches ProfileUpdateVowlMascotRequested', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'tapping owned unequipped mascot dispatches ProfileUpdateVowlMascotRequested',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('ZEPHYR'));
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 4));
+        await tester.tap(find.text('ZEPHYR'));
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 4));
 
-      verify(() => mockHapticService.light()).called(1);
-      verify(
-        () => mockProfileBloc.add(
-          const ProfileUpdateVowlMascotRequested('silver_wing'),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.light()).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileUpdateVowlMascotRequested('silver_wing'),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('tapping affordable unowned mascot dispatches ProfileBuyVowlMascotRequested', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'tapping affordable unowned mascot dispatches ProfileBuyVowlMascotRequested',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      await tester.ensureVisible(find.text('NYX'));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.text('NYX'));
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('NYX'));
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 4));
+        await tester.tap(find.text('NYX'));
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 4));
 
-      verify(() => mockHapticService.light()).called(1);
-      verify(
-        () => mockProfileBloc.add(
-          const ProfileBuyVowlMascotRequested('night_bat', 5000),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.light()).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileBuyVowlMascotRequested('night_bat', 5000),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('tapping unaffordable unowned mascot triggers error haptic and snackbar', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUser.copyWith(coins: 0)),
-      );
+    testWidgets(
+      'tapping unaffordable unowned mascot triggers error haptic and snackbar',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(testUser.copyWith(coins: 0)));
 
-      await pumpMascotScreen(tester);
+        await pumpMascotScreen(tester);
 
-      await tester.ensureVisible(find.text('NYX'));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.text('NYX'));
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('NYX'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('NYX'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verifyNever(
-        () => mockProfileBloc.add(
-          any(that: isA<ProfileBuyVowlMascotRequested>()),
-        ),
-      );
-      expect(
-        find.text('Not enough coins to unlock this buddy.'),
-        findsOneWidget,
-      );
+        verify(() => mockHapticService.error()).called(1);
+        verifyNever(
+          () => mockProfileBloc.add(
+            any(that: isA<ProfileBuyVowlMascotRequested>()),
+          ),
+        );
+        expect(
+          find.text('Not enough coins to unlock this buddy.'),
+          findsOneWidget,
+        );
 
-      await tester.pump(const Duration(seconds: 4));
-    });
+        await tester.pump(const Duration(seconds: 4));
+      },
+    );
 
-    testWidgets('renders Active Companion section with equipped mascot details', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'renders Active Companion section with equipped mascot details',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      await tester.scrollUntilVisible(
-        find.text('ACTIVE COMPANION'),
-        300,
-        scrollable: find.byType(Scrollable).first,
-      );
+        await tester.scrollUntilVisible(
+          find.text('ACTIVE COMPANION'),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
 
-      expect(find.text('ACTIVE COMPANION'), findsOneWidget);
-      expect(find.text('CURRENT BUDDY:'), findsOneWidget);
-      expect(find.text('No accessory equipped'), findsOneWidget);
-    });
+        expect(find.text('ACTIVE COMPANION'), findsOneWidget);
+        expect(find.text('CURRENT BUDDY:'), findsOneWidget);
+        expect(find.text('No accessory equipped'), findsOneWidget);
+      },
+    );
 
     testWidgets('renders equipped accessory in Active Companion when present', (
       tester,
     ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUserWithAccessory),
-      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(testUserWithAccessory));
 
       await pumpMascotScreen(tester);
 
@@ -509,9 +511,7 @@ void main() {
   // GROUP 5: BOUTIQUE TAB — CYBERNETIC AUGMENTS & ACCESSORY EQUIPPING
   // ===========================================================================
   group('Group 5: Boutique Tab — Cybernetic Augments & Accessory Equipping', () {
-    testWidgets('displays cybernetic augments in boutique tab', (
-      tester,
-    ) async {
+    testWidgets('displays cybernetic augments in boutique tab', (tester) async {
       await pumpMascotScreen(tester);
 
       await tester.tap(find.text('BOUTIQUE'));
@@ -523,251 +523,267 @@ void main() {
       expect(find.text('CYBER VISOR'), findsOneWidget);
     });
 
-    testWidgets('owned unequipped accessory displays EQUIP and dispatches ProfileEquipVowlAccessoryRequested', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'owned unequipped accessory displays EQUIP and dispatches ProfileEquipVowlAccessoryRequested',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('BOUTIQUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('BOUTIQUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final linkButton = find.text('EQUIP');
-      expect(linkButton, findsOneWidget);
+        final linkButton = find.text('EQUIP');
+        expect(linkButton, findsOneWidget);
 
-      await tester.tap(linkButton);
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 4));
+        await tester.tap(linkButton);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 4));
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockProfileBloc.add(
-          const ProfileEquipVowlAccessoryRequested('scholar_cap'),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileEquipVowlAccessoryRequested('scholar_cap'),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('equipped accessory displays REMOVE and dispatches null equip', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUserWithAccessory),
-      );
+    testWidgets(
+      'equipped accessory displays REMOVE and dispatches null equip',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(testUserWithAccessory));
 
-      await pumpMascotScreen(tester);
+        await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('BOUTIQUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('BOUTIQUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final disconnectButton = find.text('REMOVE');
-      expect(disconnectButton, findsOneWidget);
+        final disconnectButton = find.text('REMOVE');
+        expect(disconnectButton, findsOneWidget);
 
-      await tester.tap(disconnectButton);
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 4));
+        await tester.tap(disconnectButton);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 4));
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockProfileBloc.add(
-          const ProfileEquipVowlAccessoryRequested(null),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileEquipVowlAccessoryRequested(null),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('affordable unowned accessory displays price and dispatches buy event', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'affordable unowned accessory displays price and dispatches buy event',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('BOUTIQUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('BOUTIQUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final priceButton = find.text('2,500');
-      expect(priceButton, findsOneWidget);
+        final priceButton = find.text('2,500');
+        expect(priceButton, findsOneWidget);
 
-      await tester.tap(priceButton);
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 4));
+        await tester.tap(priceButton);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 4));
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockProfileBloc.add(
-          const ProfileBuyVowlAccessoryRequested('red_scarf', 2500),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileBuyVowlAccessoryRequested('red_scarf', 2500),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('unaffordable unowned accessory displays error snackbar when tapped', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUser.copyWith(coins: 0)),
-      );
+    testWidgets(
+      'unaffordable unowned accessory displays error snackbar when tapped',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(testUser.copyWith(coins: 0)));
 
-      await pumpMascotScreen(tester);
+        await pumpMascotScreen(tester);
 
-      await tester.tap(find.text('BOUTIQUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('BOUTIQUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final unaffordableButton = find.text('2,500');
-      expect(unaffordableButton, findsOneWidget);
+        final unaffordableButton = find.text('2,500');
+        expect(unaffordableButton, findsOneWidget);
 
-      await tester.tap(unaffordableButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(unaffordableButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verifyNever(
-        () => mockProfileBloc.add(
-          any(that: isA<ProfileBuyVowlAccessoryRequested>()),
-        ),
-      );
-      expect(
-        find.text('Not enough coins to unlock this accessory.'),
-        findsOneWidget,
-      );
+        verify(() => mockHapticService.error()).called(1);
+        verifyNever(
+          () => mockProfileBloc.add(
+            any(that: isA<ProfileBuyVowlAccessoryRequested>()),
+          ),
+        );
+        expect(
+          find.text('Not enough coins to unlock this accessory.'),
+          findsOneWidget,
+        );
 
-      await tester.pump(const Duration(seconds: 4));
-    });
+        await tester.pump(const Duration(seconds: 4));
+      },
+    );
   });
 
   // ===========================================================================
   // GROUP 6: PURCHASE FEEDBACK & MULTIBLOCLISTENER NOTIFICATIONS
   // ===========================================================================
-  group('Group 6: Purchase Feedback & MultiBlocListener State Notifications', () {
-    testWidgets('displays success SnackBar when mascot purchase succeeds', (
-      tester,
-    ) async {
-      whenListen(
-        mockProfileBloc,
-        Stream.fromIterable([
-          const ProfileState(
-            lastPurchaseType: 'vowl_mascot',
-            lastPurchaseSuccess: true,
-          ),
-        ]),
-        initialState: const ProfileState(),
+  group(
+    'Group 6: Purchase Feedback & MultiBlocListener State Notifications',
+    () {
+      testWidgets('displays success SnackBar when mascot purchase succeeds', (
+        tester,
+      ) async {
+        whenListen(
+          mockProfileBloc,
+          Stream.fromIterable([
+            const ProfileState(
+              lastPurchaseType: 'vowl_mascot',
+              lastPurchaseSuccess: true,
+            ),
+          ]),
+          initialState: const ProfileState(),
+        );
+
+        await pumpMascotScreen(tester);
+
+        expect(find.text('Buddy unlocked!'), findsOneWidget);
+        verify(() => mockHapticService.success()).called(1);
+        verify(
+          () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
+        ).called(1);
+
+        await tester.pump(const Duration(seconds: 4));
+      });
+
+      testWidgets(
+        'displays success SnackBar when accessory purchase succeeds',
+        (tester) async {
+          whenListen(
+            mockProfileBloc,
+            Stream.fromIterable([
+              const ProfileState(
+                lastPurchaseType: 'vowl_accessory',
+                lastPurchaseSuccess: true,
+              ),
+            ]),
+            initialState: const ProfileState(),
+          );
+
+          await pumpMascotScreen(tester);
+
+          expect(find.text('Accessory unlocked!'), findsOneWidget);
+          verify(() => mockHapticService.success()).called(1);
+          verify(
+            () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
+          ).called(1);
+
+          await tester.pump(const Duration(seconds: 4));
+        },
       );
 
-      await pumpMascotScreen(tester);
+      testWidgets('displays error SnackBar when mascot sync fails', (
+        tester,
+      ) async {
+        whenListen(
+          mockProfileBloc,
+          Stream.fromIterable([
+            const ProfileState(
+              lastPurchaseType: 'vowl_mascot',
+              lastPurchaseSuccess: false,
+              message: 'Sync Failed',
+            ),
+          ]),
+          initialState: const ProfileState(),
+        );
 
-      expect(find.text('Buddy unlocked!'), findsOneWidget);
-      verify(() => mockHapticService.success()).called(1);
-      verify(
-        () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
-      ).called(1);
+        await pumpMascotScreen(tester);
 
-      await tester.pump(const Duration(seconds: 4));
-    });
+        expect(find.text('Sync Failed'), findsOneWidget);
+        verify(() => mockHapticService.error()).called(1);
+        verify(
+          () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
+        ).called(1);
 
-    testWidgets('displays success SnackBar when accessory purchase succeeds', (
-      tester,
-    ) async {
-      whenListen(
-        mockProfileBloc,
-        Stream.fromIterable([
-          const ProfileState(
-            lastPurchaseType: 'vowl_accessory',
-            lastPurchaseSuccess: true,
-          ),
-        ]),
-        initialState: const ProfileState(),
-      );
+        await tester.pump(const Duration(seconds: 4));
+      });
 
-      await pumpMascotScreen(tester);
+      testWidgets('safety timeout clears processing spinner after 3 seconds', (
+        tester,
+      ) async {
+        await pumpMascotScreen(tester);
 
-      expect(find.text('Accessory unlocked!'), findsOneWidget);
-      verify(() => mockHapticService.success()).called(1);
-      verify(
-        () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
-      ).called(1);
+        await tester.tap(find.text('ZEPHYR'));
+        await tester.pump();
 
-      await tester.pump(const Duration(seconds: 4));
-    });
+        expect(find.byType(CircularProgressIndicator), findsOneWidget);
 
-    testWidgets('displays error SnackBar when mascot sync fails', (
-      tester,
-    ) async {
-      whenListen(
-        mockProfileBloc,
-        Stream.fromIterable([
-          const ProfileState(
-            lastPurchaseType: 'vowl_mascot',
-            lastPurchaseSuccess: false,
-            message: 'Sync Failed',
-          ),
-        ]),
-        initialState: const ProfileState(),
-      );
+        await tester.pump(const Duration(seconds: 4));
 
-      await pumpMascotScreen(tester);
-
-      expect(find.text('Sync Failed'), findsOneWidget);
-      verify(() => mockHapticService.error()).called(1);
-      verify(
-        () => mockProfileBloc.add(const ProfileClearPurchaseFeedback()),
-      ).called(1);
-
-      await tester.pump(const Duration(seconds: 4));
-    });
-
-    testWidgets('safety timeout clears processing spinner after 3 seconds', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
-
-      await tester.tap(find.text('ZEPHYR'));
-      await tester.pump();
-
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
-
-      await tester.pump(const Duration(seconds: 4));
-
-      expect(find.byType(CircularProgressIndicator), findsNothing);
-    });
-  });
+        expect(find.byType(CircularProgressIndicator), findsNothing);
+      });
+    },
+  );
 
   // ===========================================================================
   // GROUP 7: STATUS OVERLAY & ACCESSIBILITY SEMANTICS
   // ===========================================================================
   group('Group 7: Status Overlay & Accessibility Semantics', () {
-    testWidgets('renders without telemetry status bar overlay for clean distraction-free UI', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'renders without telemetry status bar overlay for clean distraction-free UI',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      expect(find.byIcon(Icons.security_rounded), findsNothing);
-      expect(find.text('Status OK'), findsNothing);
-    });
+        expect(find.byIcon(Icons.security_rounded), findsNothing);
+        expect(find.text('Status OK'), findsNothing);
+      },
+    );
 
-    testWidgets('provides accessible semantics for back button, tabs, and headers', (
-      tester,
-    ) async {
-      await pumpMascotScreen(tester);
+    testWidgets(
+      'provides accessible semantics for back button, tabs, and headers',
+      (tester) async {
+        await pumpMascotScreen(tester);
 
-      final backSemantics = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Back',
-      );
-      expect(backSemantics, findsOneWidget);
+        final backSemantics = find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.label == 'Back',
+        );
+        expect(backSemantics, findsOneWidget);
 
-      final companionSemantics = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'COMPANION',
-      );
-      expect(companionSemantics, findsOneWidget);
+        final companionSemantics = find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.label == 'COMPANION',
+        );
+        expect(companionSemantics, findsOneWidget);
 
-      final boutiqueSemantics = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'BOUTIQUE',
-      );
-      expect(boutiqueSemantics, findsOneWidget);
+        final boutiqueSemantics = find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.label == 'BOUTIQUE',
+        );
+        expect(boutiqueSemantics, findsOneWidget);
 
-      final headerFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.header == true,
-      );
-      expect(headerFinder, findsWidgets);
-    });
+        final headerFinder = find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.header == true,
+        );
+        expect(headerFinder, findsWidgets);
+      },
+    );
   });
 
   // ===========================================================================
@@ -823,4 +839,3 @@ void main() {
     });
   });
 }
-

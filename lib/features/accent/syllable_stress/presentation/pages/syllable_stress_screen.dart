@@ -99,15 +99,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
       if (currentQuest != null) {
-        submitWrongAnswer(
-          quest: currentQuest,
-          userAnswer: '',
-        );
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       }
     }
   }
@@ -119,15 +117,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
       if (currentQuest != null) {
-        submitWrongAnswer(
-          quest: currentQuest,
-          userAnswer: '',
-        );
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       }
     }
   }
@@ -250,13 +246,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                               color: theme.primaryColor,
                                               instruction:
                                                   isFirstStagePassedNotifier
-                                                          .value
-                                                      ? context.tr(
-                                                          'games.syllable_stress_phase2',
-                                                          fallback:
-                                                              'Speak the word with the correct stress',
-                                                        )
-                                                      : quest.instruction,
+                                                      .value
+                                                  ? context.tr(
+                                                      'games.syllable_stress_phase2',
+                                                      fallback:
+                                                          'Speak the word with the correct stress',
+                                                    )
+                                                  : quest.instruction,
                                             ),
                                             SizedBox(height: gapInstruction),
                                             SyllableStressPromptCard(
@@ -273,15 +269,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                             SizedBox(height: gapSpeaker),
                                             SyllableStressDrumConsole(
                                               syllables: syllables,
-                                              correctIndex: quest
-                                                      .correctAnswerIndex ??
-                                                  0,
+                                              correctIndex:
+                                                  quest.correctAnswerIndex ?? 0,
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
                                                   isAnsweredNotifier.value ||
-                                                      isFirstStagePassedNotifier
-                                                          .value,
+                                                  isFirstStagePassedNotifier
+                                                      .value,
                                               selectedIndex:
                                                   _selectedIndex.value,
                                               onPadTap: _onPadTap,
@@ -290,11 +285,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                             SizedBox(
                                               height:
                                                   (isFirstStagePassedNotifier
-                                                              .value &&
-                                                          !isAnsweredNotifier
-                                                              .value)
-                                                      ? 24.h
-                                                      : 140.h,
+                                                          .value &&
+                                                      !isAnsweredNotifier.value)
+                                                  ? 24.h
+                                                  : 140.h,
                                             ),
                                           ],
                                         ),
@@ -328,10 +322,12 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                                     theme.primaryColor,
                                                 onConfirmed: () =>
                                                     _submitVerbalEvaluation(
-                                                        true),
+                                                      true,
+                                                    ),
                                                 onSkipped: () =>
                                                     _submitVerbalEvaluation(
-                                                        false),
+                                                      false,
+                                                    ),
                                                 isPositioned: false,
                                               ),
                                               SizedBox(height: 60.h),

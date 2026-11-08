@@ -27,53 +27,53 @@ class PhrasalVerbsLiteralComparison extends StatelessWidget {
     final figurativeText = parts.length > 1 ? parts.sublist(1).join('\n') : "";
 
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(16.r),
-      decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.08) : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: color.withValues(alpha: isDark ? 0.25 : 0.2),
-          width: 1.2,
-        ),
-      ),
-      child: Column(
-        children: [
-          Row(
+          width: double.infinity,
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: isDark ? color.withValues(alpha: 0.08) : Colors.white,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.25 : 0.2),
+              width: 1.2,
+            ),
+          ),
+          child: Column(
             children: [
-              Icon(Icons.compare_arrows_rounded, color: color, size: 18.r),
-              SizedBox(width: 8.w),
-              Text(
-                "LITERAL VS FIGURATIVE",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w700,
-                  color: color,
-                  letterSpacing: 1.0,
-                ),
+              Row(
+                children: [
+                  Icon(Icons.compare_arrows_rounded, color: color, size: 18.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "LITERAL VS FIGURATIVE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              _buildComparisonRow(
+                context,
+                "LITERAL",
+                literalText.replaceFirst('Literal: ', ''),
+                isDark,
+                Colors.blueGrey,
+              ),
+              SizedBox(height: 10.h),
+              _buildComparisonRow(
+                context,
+                "FIGURATIVE",
+                figurativeText.replaceFirst('Figurative: ', ''),
+                isDark,
+                color,
               ),
             ],
           ),
-          SizedBox(height: 12.h),
-          _buildComparisonRow(
-            context,
-            "LITERAL",
-            literalText.replaceFirst('Literal: ', ''),
-            isDark,
-            Colors.blueGrey,
-          ),
-          SizedBox(height: 10.h),
-          _buildComparisonRow(
-            context,
-            "FIGURATIVE",
-            figurativeText.replaceFirst('Figurative: ', ''),
-            isDark,
-            color,
-          ),
-        ],
-      ),
-    )
+        )
         .animate()
         .fadeIn(duration: 400.ms)
         .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
@@ -122,9 +122,9 @@ class PhrasalVerbsLiteralComparison extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 13.5.sp,
               fontWeight: FontWeight.w400,
-              color: Theme.of(context).colorScheme.onSurface.withValues(
-                alpha: isDark ? 0.9 : 0.85,
-              ),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: isDark ? 0.9 : 0.85),
               height: 1.4,
             ),
           ),

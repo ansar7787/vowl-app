@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// 1 vs 1 duel hero. Same layered-SVG system as the onboarding illustrations:
 /// 360×320 stage, full-stage layers (`assets/illustrations/duel_<layer>.svg`),
@@ -175,21 +176,22 @@ class _DuelIllustrationState extends State<DuelIllustration>
   @override
   Widget build(BuildContext context) {
     final both = Listenable.merge([_entrance, _ambient]);
-    final Widget defaultOpponentFallback = widget.opponentFallback ??
+    final Widget defaultOpponentFallback =
+        widget.opponentFallback ??
         (widget.isOpponentAi
             ? Image.asset(_defaultMe, fit: BoxFit.cover)
             : const ColoredBox(
-                color: Color(0xFFEEF2FF),
+                color: AppColors.indigo50,
                 child: Icon(
                   Icons.person_rounded,
                   size: 36,
-                  color: Color(0xFFA78BFA),
+                  color: AppColors.indigo400,
                 ),
               ));
     final searchingGlyph = AnimatedBuilder(
       animation: _ambient,
       builder: (context, _) => ColoredBox(
-        color: const Color(0xFFEEF2FF),
+        color: AppColors.indigo50,
         child: Center(
           child: Opacity(
             opacity: .55 + .45 * (.5 + .5 * _wave(_ambient, 2)),
@@ -198,7 +200,7 @@ class _DuelIllustrationState extends State<DuelIllustration>
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w800,
-                color: Color(0xFF7C3AED),
+                color: AppColors.indigo600,
               ),
             ),
           ),
@@ -212,8 +214,8 @@ class _DuelIllustrationState extends State<DuelIllustration>
       label: widget.searching
           ? 'Illustration: you and an opponent slot searching, ready for a 1 vs 1 word duel'
           : widget.isOpponentAi
-              ? 'Illustration: you facing off against the Vowl AI in a 1 vs 1 word duel with a trophy'
-              : 'Illustration: two players facing off in a 1 vs 1 word duel with a trophy',
+          ? 'Illustration: you facing off against the Vowl AI in a 1 vs 1 word duel with a trophy'
+          : 'Illustration: two players facing off in a 1 vs 1 word duel with a trophy',
       child: FittedBox(
         child: SizedBox(
           width: _w,
@@ -353,7 +355,7 @@ class _PulsePainter extends CustomPainter {
       canvas.drawCircle(
         center,
         36 + p * 34,
-        _paint..color = const Color(0xFF8B5CF6).withValues(alpha: (1 - p) * .5),
+        _paint..color = AppColors.violet500.withValues(alpha: (1 - p) * .5),
       );
     }
   }
@@ -372,7 +374,7 @@ class _CountdownPainter extends CustomPainter {
     ..style = PaintingStyle.stroke
     ..strokeWidth = 3
     ..strokeCap = StrokeCap.round
-    ..color = const Color(0xFFF59E0B);
+    ..color = AppColors.amber500;
 
   @override
   void paint(Canvas canvas, Size size) {

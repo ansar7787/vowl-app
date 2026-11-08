@@ -41,11 +41,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
         color: emotionalColor.withValues(alpha: 0.1),
         shape: BoxShape.circle,
       ),
-      child: Icon(
-        Icons.forum_rounded,
-        color: emotionalColor,
-        size: 24.r,
-      ),
+      child: Icon(Icons.forum_rounded, color: emotionalColor, size: 24.r),
     );
 
     if (!reduceMotion) {

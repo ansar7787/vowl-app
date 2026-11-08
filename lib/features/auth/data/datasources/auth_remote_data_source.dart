@@ -273,9 +273,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           resolvedName = prefix
               .split(' ')
               .where((s) => s.isNotEmpty)
-              .map((w) =>
-                  w[0].toUpperCase() +
-                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .map(
+                (w) =>
+                    w[0].toUpperCase() +
+                    (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+              )
               .join(' ');
         }
       }
@@ -329,7 +331,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // or stuck on the generic fallback 'Vowl Learner' when a real Google name is available.
       final existingData = userDoc.data();
       final existingName = (existingData?['displayName'] as String?)?.trim();
-      final isExistingGeneric = existingName == null ||
+      final isExistingGeneric =
+          existingName == null ||
           existingName.isEmpty ||
           existingName.toLowerCase() == 'unknown user' ||
           existingName.toLowerCase() == 'unknown' ||
@@ -431,9 +434,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           resolvedName = prefix
               .split(' ')
               .where((s) => s.isNotEmpty)
-              .map((w) =>
-                  w[0].toUpperCase() +
-                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .map(
+                (w) =>
+                    w[0].toUpperCase() +
+                    (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+              )
               .join(' ');
         }
       }
@@ -445,7 +450,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       displayName: resolvedName,
       photoUrl: resolvedPhoto,
       isEmailVerified: firebaseUser.emailVerified,
-      lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers
+      lastDailyRewardDate:
+          DateTime.now(), // Defensively prevents false startup daily reward triggers
       dailyXpHistory: const {},
       recentActivities: const [],
     );

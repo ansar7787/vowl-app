@@ -146,9 +146,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
                         : wordBgNormal,
                     borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
-                      color: isTapped
-                          ? tokens.gameCorrect
-                          : wordBorderNormal,
+                      color: isTapped ? tokens.gameCorrect : wordBorderNormal,
                       width: 1.2,
                     ),
                   ),
@@ -173,4 +171,3 @@ class SkimmingScanningTerminal extends StatelessWidget {
     );
   }
 }
-

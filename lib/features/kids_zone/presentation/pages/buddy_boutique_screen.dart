@@ -344,12 +344,16 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final coins = state.user?.kidsCoins ?? 0;
-          final isMidnight = isDark &&
+          final isMidnight =
+              isDark &&
               (Theme.of(context).scaffoldBackgroundColor == Colors.black ||
                   Theme.of(context).scaffoldBackgroundColor ==
                       AppColors.midnightBase);
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 10.h),
+            margin: EdgeInsets.symmetric(
+              horizontal: AppSpacing.screen,
+              vertical: 10.h,
+            ),
             padding: EdgeInsets.all(AppSpacing.cardSpacious),
             decoration: BoxDecoration(
               color: isMidnight
@@ -553,7 +557,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     required bool isOwned,
     required bool isEquipped,
   }) {
-    final isMidnight = isDark &&
+    final isMidnight =
+        isDark &&
         (Theme.of(context).scaffoldBackgroundColor == Colors.black ||
             Theme.of(context).scaffoldBackgroundColor ==
                 AppColors.midnightBase);
@@ -565,8 +570,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           color: isEquipped
               ? itemColor.withValues(alpha: 0.1)
               : (isMidnight
-                  ? AppColors.midnightCard
-                  : (isDark ? AppColors.slate800 : Colors.white)),
+                    ? AppColors.midnightCard
+                    : (isDark ? AppColors.slate800 : Colors.white)),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: itemColor, width: 3.w),
           boxShadow: [
@@ -741,15 +746,21 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       isScrollControlled: true,
       builder: (sheetContext) {
         final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          sheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
             12.h;
 
         return Container(
-          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 24.h, AppSpacing.screen, safeBottom),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            24.h,
+            AppSpacing.screen,
+            safeBottom,
+          ),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),

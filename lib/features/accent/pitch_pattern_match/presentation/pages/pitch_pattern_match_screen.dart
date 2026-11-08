@@ -75,7 +75,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
     _isPreviewing.dispose();
     _sliderValue.dispose();
     _selectedIndex.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -194,8 +194,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
         if (state is AccentLoaded) {
           _lastQuest = state.currentQuest;
         }
-        final AccentQuest? quest =
-            (state is AccentLoaded) ? state.currentQuest : _lastQuest;
+        final AccentQuest? quest = (state is AccentLoaded)
+            ? state.currentQuest
+            : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final pattern = quest?.pitchPatterns ?? [0, 1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
@@ -314,9 +315,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                       valueListenable:
                                                           _isPreviewing,
                                                       builder: (context, isPreviewing, _) {
-                                                        final showCanvas = isPreviewing ||
-                                                            isAnsweredNotifier.value ||
-                                                            isFirstStagePassedNotifier.value;
+                                                        final showCanvas =
+                                                            isPreviewing ||
+                                                            isAnsweredNotifier
+                                                                .value ||
+                                                            isFirstStagePassedNotifier
+                                                                .value;
                                                         if (!showCanvas) {
                                                           return const SizedBox.shrink();
                                                         }
@@ -356,7 +360,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                                   },
                                                             ),
                                                             SizedBox(
-                                                              height: gapSpeaker,
+                                                              height:
+                                                                  gapSpeaker,
                                                             ),
                                                           ],
                                                         );

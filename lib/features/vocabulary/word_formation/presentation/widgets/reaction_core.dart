@@ -46,17 +46,16 @@ class ReactionCore extends StatelessWidget {
     final isCompleted =
         (controller.isAnswered && controller.isCorrect == true) ||
         controller.isFirstStagePassed;
-    final displayWord = isCompleted
-        ? (quest?.correctAnswer ?? "")
-        : root;
+    final displayWord = isCompleted ? (quest?.correctAnswer ?? "") : root;
 
     final cleanAffix = suffix?.trim() ?? '';
-    final isPrefix = cleanAffix.endsWith('-') ||
+    final isPrefix =
+        cleanAffix.endsWith('-') ||
         (!cleanAffix.startsWith('-') &&
             cleanAffix.isNotEmpty &&
-            (quest?.correctAnswer ?? '')
-                .toLowerCase()
-                .startsWith(cleanAffix.replaceAll('-', '').toLowerCase()));
+            (quest?.correctAnswer ?? '').toLowerCase().startsWith(
+              cleanAffix.replaceAll('-', '').toLowerCase(),
+            ));
 
     final cardContent = Container(
       width: double.infinity,
@@ -150,11 +149,7 @@ class ReactionCore extends StatelessWidget {
                     !controller.isFirstStagePassed &&
                     isPrefix) ...[
                   _buildAffixChip(suffix!, color),
-                  Icon(
-                    Icons.add_rounded,
-                    color: color,
-                    size: 20.r,
-                  ),
+                  Icon(Icons.add_rounded, color: color, size: 20.r),
                 ],
 
                 // Base Root Word
@@ -177,11 +172,7 @@ class ReactionCore extends StatelessWidget {
                     !controller.isAnswered &&
                     !controller.isFirstStagePassed &&
                     !isPrefix) ...[
-                  Icon(
-                    Icons.add_rounded,
-                    color: color,
-                    size: 20.r,
-                  ),
+                  Icon(Icons.add_rounded, color: color, size: 20.r),
                   _buildAffixChip(suffix!, color),
                 ],
               ],
@@ -194,24 +185,16 @@ class ReactionCore extends StatelessWidget {
       return cardContent;
     }
 
-    return cardContent
-        .animate()
-        .fadeIn(duration: 400.ms);
+    return cardContent.animate().fadeIn(duration: 400.ms);
   }
 
   Widget _buildAffixChip(String affix, Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
-        vertical: 3.h,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,

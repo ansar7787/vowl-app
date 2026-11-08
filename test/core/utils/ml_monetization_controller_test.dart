@@ -20,7 +20,9 @@ Widget _wrapWithAuth(Widget child, {required bool isPremium}) {
     isPremium: isPremium,
   );
   when(() => mockBloc.state).thenReturn(AuthState.authenticated(user));
-  when(() => mockBloc.stream).thenAnswer((_) => Stream.value(AuthState.authenticated(user)));
+  when(
+    () => mockBloc.stream,
+  ).thenAnswer((_) => Stream.value(AuthState.authenticated(user)));
 
   return ScreenUtilInit(
     designSize: const Size(390, 844),
@@ -51,66 +53,94 @@ void main() {
 
   group('MlMonetizationController Daily Quota Tests', () {
     test('initial state reports full daily allowance (3 scans)', () async {
-      final remaining = await MlMonetizationController.getRemainingDailyScans('scan_test', freeDailyLimit: 3);
-      final used = await MlMonetizationController.getUsedDailyScans('scan_test');
+      final remaining = await MlMonetizationController.getRemainingDailyScans(
+        'scan_test',
+        freeDailyLimit: 3,
+      );
+      final used = await MlMonetizationController.getUsedDailyScans(
+        'scan_test',
+      );
 
       expect(remaining, equals(3));
       expect(used, equals(0));
     });
 
-    testWidgets('allows 3 free scans sequentially for free users without showing gate', (tester) async {
-      int successCount = 0;
+    testWidgets(
+      'allows 3 free scans sequentially for free users without showing gate',
+      (tester) async {
+        int successCount = 0;
 
-      await tester.pumpWidget(
-        _wrapWithAuth(
-          Builder(
-            builder: (ctx) => ElevatedButton(
-              onPressed: () {
-                MlMonetizationController.attemptFeature(
-                  ctx,
-                  featureKey: 'scan_test',
-                  freeDailyLimit: 3,
-                  featureIcon: Icons.camera,
-                  featureTitle: 'Scan',
-                  featureSubtitle: 'Test Scan',
-                  adButtonLabel: 'Ad',
-                  onSuccess: () => successCount++,
-                );
-              },
-              child: const Text('Scan'),
+        await tester.pumpWidget(
+          _wrapWithAuth(
+            Builder(
+              builder: (ctx) => ElevatedButton(
+                onPressed: () {
+                  MlMonetizationController.attemptFeature(
+                    ctx,
+                    featureKey: 'scan_test',
+                    freeDailyLimit: 3,
+                    featureIcon: Icons.camera,
+                    featureTitle: 'Scan',
+                    featureSubtitle: 'Test Scan',
+                    adButtonLabel: 'Ad',
+                    onSuccess: () => successCount++,
+                  );
+                },
+                child: const Text('Scan'),
+              ),
             ),
+            isPremium: false,
           ),
-          isPremium: false,
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      // Scan 1
-      await tester.tap(find.text('Scan'));
-      await tester.pumpAndSettle();
-      expect(successCount, equals(1));
-      expect(await MlMonetizationController.getUsedDailyScans('scan_test'), equals(1));
-      expect(await MlMonetizationController.getRemainingDailyScans('scan_test'), equals(2));
+        // Scan 1
+        await tester.tap(find.text('Scan'));
+        await tester.pumpAndSettle();
+        expect(successCount, equals(1));
+        expect(
+          await MlMonetizationController.getUsedDailyScans('scan_test'),
+          equals(1),
+        );
+        expect(
+          await MlMonetizationController.getRemainingDailyScans('scan_test'),
+          equals(2),
+        );
 
-      // Scan 2
-      await tester.tap(find.text('Scan'));
-      await tester.pumpAndSettle();
-      expect(successCount, equals(2));
-      expect(await MlMonetizationController.getUsedDailyScans('scan_test'), equals(2));
-      expect(await MlMonetizationController.getRemainingDailyScans('scan_test'), equals(1));
+        // Scan 2
+        await tester.tap(find.text('Scan'));
+        await tester.pumpAndSettle();
+        expect(successCount, equals(2));
+        expect(
+          await MlMonetizationController.getUsedDailyScans('scan_test'),
+          equals(2),
+        );
+        expect(
+          await MlMonetizationController.getRemainingDailyScans('scan_test'),
+          equals(1),
+        );
 
-      // Scan 3
-      await tester.tap(find.text('Scan'));
-      await tester.pumpAndSettle();
-      expect(successCount, equals(3));
-      expect(await MlMonetizationController.getUsedDailyScans('scan_test'), equals(3));
-      expect(await MlMonetizationController.getRemainingDailyScans('scan_test'), equals(0));
+        // Scan 3
+        await tester.tap(find.text('Scan'));
+        await tester.pumpAndSettle();
+        expect(successCount, equals(3));
+        expect(
+          await MlMonetizationController.getUsedDailyScans('scan_test'),
+          equals(3),
+        );
+        expect(
+          await MlMonetizationController.getRemainingDailyScans('scan_test'),
+          equals(0),
+        );
 
-      // No modal sheet shown during first 3 scans
-      expect(find.text('DAILY SCANS USED (3/3)'), findsNothing);
-    });
+        // No modal sheet shown during first 3 scans
+        expect(find.text('DAILY SCANS USED (3/3)'), findsNothing);
+      },
+    );
 
-    testWidgets('triggers monetization modal on 4th scan for free user', (tester) async {
+    testWidgets('triggers monetization modal on 4th scan for free user', (
+      tester,
+    ) async {
       int successCount = 0;
 
       await tester.pumpWidget(
@@ -156,56 +186,70 @@ void main() {
       expect(find.text('Watch Ad (+1 Bonus)'), findsOneWidget);
     });
 
-    testWidgets('premium users bypass unconditionally with zero quota consumed', (tester) async {
-      int successCount = 0;
+    testWidgets(
+      'premium users bypass unconditionally with zero quota consumed',
+      (tester) async {
+        int successCount = 0;
 
-      await tester.pumpWidget(
-        _wrapWithAuth(
-          Builder(
-            builder: (ctx) => ElevatedButton(
-              onPressed: () {
-                MlMonetizationController.attemptFeature(
-                  ctx,
-                  featureKey: 'premium_test',
-                  freeDailyLimit: 3,
-                  featureIcon: Icons.camera,
-                  featureTitle: 'Scan',
-                  featureSubtitle: 'Test',
-                  adButtonLabel: 'Ad',
-                  onSuccess: () => successCount++,
-                );
-              },
-              child: const Text('Scan'),
+        await tester.pumpWidget(
+          _wrapWithAuth(
+            Builder(
+              builder: (ctx) => ElevatedButton(
+                onPressed: () {
+                  MlMonetizationController.attemptFeature(
+                    ctx,
+                    featureKey: 'premium_test',
+                    freeDailyLimit: 3,
+                    featureIcon: Icons.camera,
+                    featureTitle: 'Scan',
+                    featureSubtitle: 'Test',
+                    adButtonLabel: 'Ad',
+                    onSuccess: () => successCount++,
+                  );
+                },
+                child: const Text('Scan'),
+              ),
             ),
+            isPremium: true,
           ),
-          isPremium: true,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      // Execute 10 scans
-      for (int i = 0; i < 10; i++) {
-        await tester.tap(find.text('Scan'));
+        );
         await tester.pumpAndSettle();
-      }
 
-      expect(successCount, equals(10));
-      // 0 daily quota consumed for premium users
-      expect(await MlMonetizationController.getUsedDailyScans('premium_test'), equals(0));
-      expect(find.text('DAILY SCANS USED (3/3)'), findsNothing);
-    });
+        // Execute 10 scans
+        for (int i = 0; i < 10; i++) {
+          await tester.tap(find.text('Scan'));
+          await tester.pumpAndSettle();
+        }
 
-    test('resets daily quota count when date changes (midnight rollover)', () async {
-      final prefs = sl<SharedPreferences>();
-      // Simulate yesterday's exhausted quota
-      await prefs.setString('ml_quota_date_rollover_test', '2020-01-01');
-      await prefs.setInt('ml_quota_count_rollover_test', 3);
+        expect(successCount, equals(10));
+        // 0 daily quota consumed for premium users
+        expect(
+          await MlMonetizationController.getUsedDailyScans('premium_test'),
+          equals(0),
+        );
+        expect(find.text('DAILY SCANS USED (3/3)'), findsNothing);
+      },
+    );
 
-      final remaining = await MlMonetizationController.getRemainingDailyScans('rollover_test', freeDailyLimit: 3);
-      final used = await MlMonetizationController.getUsedDailyScans('rollover_test');
+    test(
+      'resets daily quota count when date changes (midnight rollover)',
+      () async {
+        final prefs = sl<SharedPreferences>();
+        // Simulate yesterday's exhausted quota
+        await prefs.setString('ml_quota_date_rollover_test', '2020-01-01');
+        await prefs.setInt('ml_quota_count_rollover_test', 3);
 
-      expect(remaining, equals(3));
-      expect(used, equals(0));
-    });
+        final remaining = await MlMonetizationController.getRemainingDailyScans(
+          'rollover_test',
+          freeDailyLimit: 3,
+        );
+        final used = await MlMonetizationController.getUsedDailyScans(
+          'rollover_test',
+        );
+
+        expect(remaining, equals(3));
+        expect(used, equals(0));
+      },
+    );
   });
 }

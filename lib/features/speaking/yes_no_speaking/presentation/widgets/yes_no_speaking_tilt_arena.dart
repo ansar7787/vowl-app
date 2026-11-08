@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-
 /// Interactive tilt arena with physics-based sliding ball snapping toward Yes or No poles.
 class YesNoSpeakingTiltArena extends StatelessWidget {
   /// Normalized tilt position value (-1.0 to 1.0).
@@ -56,8 +55,8 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark
-                ? AppColors.slate900
-                : Colors.black.withValues(alpha: 0.02)),
+                  ? AppColors.slate900
+                  : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark

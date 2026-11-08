@@ -180,7 +180,8 @@ class AuthRepositoryImpl
         // Self-heal display name and photo from Firebase Auth or Google providerData
         // if Firestore currently has null, empty, 'unknown user', or generic 'vowl learner'
         final currentName = resolvedUser.displayName?.trim();
-        final isNameGeneric = currentName == null ||
+        final isNameGeneric =
+            currentName == null ||
             currentName.isEmpty ||
             currentName.toLowerCase() == 'unknown user' ||
             currentName.toLowerCase() == 'unknown' ||
@@ -307,17 +308,17 @@ class AuthRepositoryImpl
     try {
       final cached = await _localDataSource.getCachedUser();
       if (cached != null && cached.id == firebaseUser.uid) {
-        final effectiveName = (cached.displayName != null &&
+        final effectiveName =
+            (cached.displayName != null &&
                 cached.displayName!.trim().isNotEmpty)
             ? cached.displayName
             : (firebaseUser.displayName != null &&
-                    firebaseUser.displayName!.trim().isNotEmpty
-                ? firebaseUser.displayName
-                : null);
+                      firebaseUser.displayName!.trim().isNotEmpty
+                  ? firebaseUser.displayName
+                  : null);
 
         final resolvedUser = cached.copyWith(
-          isEmailVerified:
-              firebaseUser.emailVerified || cached.isEmailVerified,
+          isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified,
           displayName: effectiveName,
         );
         // Self-heal to Firestore in background so missing document is created
@@ -367,11 +368,13 @@ class AuthRepositoryImpl
 
             // Auto-heal expired subscription status in Firestore
             if (doc.data()?['isPremium'] == true && !user.isPremium) {
-              unawaited(_firestore
-                  .collection('users')
-                  .doc(firebaseUser.uid)
-                  .update({'isPremium': false})
-                  .catchError((_) {}));
+              unawaited(
+                _firestore
+                    .collection('users')
+                    .doc(firebaseUser.uid)
+                    .update({'isPremium': false})
+                    .catchError((_) {}),
+              );
             }
 
             await _localDataSource.cacheUser(user);
@@ -389,19 +392,22 @@ class AuthRepositoryImpl
       if (cached != null && cached.id == firebaseUser.uid) {
         return Right(
           cached.copyWith(
-            isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified,
+            isEmailVerified:
+                firebaseUser.emailVerified || cached.isEmailVerified,
           ),
         );
       }
 
       // Firestore document missing — provision it and return the new entity.
-      final effectiveName = (cached != null &&
+      final effectiveName =
+          (cached != null &&
               cached.id == firebaseUser.uid &&
               cached.displayName != null &&
               cached.displayName!.trim().isNotEmpty)
           ? cached.displayName
           : firebaseUser.displayName;
-      final effectiveEmail = (cached != null &&
+      final effectiveEmail =
+          (cached != null &&
               cached.id == firebaseUser.uid &&
               cached.email.trim().isNotEmpty)
           ? cached.email
@@ -442,7 +448,10 @@ class AuthRepositoryImpl
         final cached = await _localDataSource.getCachedUser();
         if (cached != null && cached.id == firebaseUser.uid) {
           return Right(
-            cached.copyWith(isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified),
+            cached.copyWith(
+              isEmailVerified:
+                  firebaseUser.emailVerified || cached.isEmailVerified,
+            ),
           );
         }
         return Right(_minimalUserFrom(firebaseUser));
@@ -502,8 +511,10 @@ class AuthRepositoryImpl
         // Fetch authoritative fresh profile from Firestore so local cache has real data
         UserModel? model;
         try {
-          final doc =
-              await _firestore.collection('users').doc(activeUser.uid).get();
+          final doc = await _firestore
+              .collection('users')
+              .doc(activeUser.uid)
+              .get();
           if (doc.exists && doc.data() != null) {
             model = UserModel.fromMap(doc.data()!, doc.id);
           }
@@ -512,7 +523,8 @@ class AuthRepositoryImpl
         model ??= UserModel(
           id: activeUser.uid,
           email: activeUser.email ?? '',
-          displayName: (activeUser.displayName != null &&
+          displayName:
+              (activeUser.displayName != null &&
                   activeUser.displayName!.trim().isNotEmpty)
               ? activeUser.displayName!.trim()
               : 'Vowl Learner',
@@ -638,22 +650,25 @@ class AuthRepositoryImpl
 
             // Auto-heal expired subscription status in Firestore
             if (doc.data()?['isPremium'] == true && !userModel.isPremium) {
-              unawaited(_firestore
-                  .collection('users')
-                  .doc(refreshedUser.uid)
-                  .update({'isPremium': false})
-                  .catchError((_) {}));
+              unawaited(
+                _firestore
+                    .collection('users')
+                    .doc(refreshedUser.uid)
+                    .update({'isPremium': false})
+                    .catchError((_) {}),
+              );
             }
 
-            final effectiveName = (userModel.displayName != null &&
+            final effectiveName =
+                (userModel.displayName != null &&
                     userModel.displayName!.trim().isNotEmpty)
                 ? userModel.displayName
                 : ((cached != null &&
-                        cached.id == refreshedUser.uid &&
-                        cached.displayName != null &&
-                        cached.displayName!.trim().isNotEmpty)
-                    ? cached.displayName
-                    : refreshedUser.displayName);
+                          cached.id == refreshedUser.uid &&
+                          cached.displayName != null &&
+                          cached.displayName!.trim().isNotEmpty)
+                      ? cached.displayName
+                      : refreshedUser.displayName);
 
             final resolvedUser = userModel.copyWith(
               displayName: effectiveName,
@@ -664,19 +679,22 @@ class AuthRepositoryImpl
           } else {
             // Firestore doc missing: self-heal from cached user or auth credentials
             // so we NEVER emit a blank minimal user that wipes identity.
-            final effectiveName = (cached != null &&
+            final effectiveName =
+                (cached != null &&
                     cached.id == refreshedUser.uid &&
                     cached.displayName != null &&
                     cached.displayName!.trim().isNotEmpty)
                 ? cached.displayName
                 : refreshedUser.displayName;
-            final effectiveEmail = (cached != null &&
+            final effectiveEmail =
+                (cached != null &&
                     cached.id == refreshedUser.uid &&
                     cached.email.trim().isNotEmpty)
                 ? cached.email
                 : (refreshedUser.email ?? '');
 
-            final resolvedUser = (cached != null && cached.id == refreshedUser.uid)
+            final resolvedUser =
+                (cached != null && cached.id == refreshedUser.uid)
                 ? cached.copyWith(
                     displayName: effectiveName,
                     isEmailVerified: refreshedUser.emailVerified,
@@ -803,9 +821,11 @@ class AuthRepositoryImpl
           resolvedName = prefix
               .split(' ')
               .where((s) => s.isNotEmpty)
-              .map((w) =>
-                  w[0].toUpperCase() +
-                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .map(
+                (w) =>
+                    w[0].toUpperCase() +
+                    (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+              )
               .join(' ');
         }
       }
@@ -817,7 +837,8 @@ class AuthRepositoryImpl
       displayName: resolvedName,
       photoUrl: resolvedPhoto,
       isEmailVerified: firebaseUser.emailVerified,
-      lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers
+      lastDailyRewardDate:
+          DateTime.now(), // Defensively prevents false startup daily reward triggers
       dailyXpHistory: const {},
       recentActivities: const [],
     );

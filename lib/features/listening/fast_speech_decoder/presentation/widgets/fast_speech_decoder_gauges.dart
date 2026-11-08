@@ -25,11 +25,7 @@ class FastSpeechDecoderGauges extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.speed_rounded,
-              color: color,
-              size: 16.r,
-            ),
+            Icon(Icons.speed_rounded, color: color, size: 16.r),
             SizedBox(width: 8.w),
             Text(
               "PLAYBACK SPEED",

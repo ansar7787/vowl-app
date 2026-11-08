@@ -24,8 +24,7 @@ import 'package:vowl/features/home/presentation/widgets/streak_milestones.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
-class MockProgressionBloc
-    extends MockBloc<ProgressionEvent, ProgressionState>
+class MockProgressionBloc extends MockBloc<ProgressionEvent, ProgressionState>
     implements ProgressionBloc {}
 
 class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
@@ -101,15 +100,11 @@ void main() {
       return result;
     });
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
-    when(() => mockProgressionBloc.state).thenReturn(
-      const ProgressionState(),
-    );
-    when(() => mockEconomyBloc.state).thenReturn(
-      const EconomyState(),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(() => mockProgressionBloc.state).thenReturn(const ProgressionState());
+    when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
   });
 
   tearDown(() {
@@ -125,7 +120,8 @@ void main() {
     String initialLocation = '/streak',
     GoRouter? routerConfig,
   }) {
-    final router = routerConfig ??
+    final router =
+        routerConfig ??
         GoRouter(
           initialLocation: initialLocation,
           routes: [
@@ -160,7 +156,8 @@ void main() {
       builder: (context, child) {
         return MaterialApp.router(
           routerConfig: router,
-          theme: theme ??
+          theme:
+              theme ??
               ThemeData(
                 useMaterial3: true,
                 brightness: Brightness.light,
@@ -214,19 +211,18 @@ void main() {
   }
 
   group('Group 1: Authentication & Loading States', () {
-    testWidgets(
-      'renders HomeShimmerLoading placeholder when user is null',
-      (tester) async {
-        when(() => mockAuthBloc.state).thenReturn(
-          const AuthState.unauthenticated(),
-        );
+    testWidgets('renders HomeShimmerLoading placeholder when user is null', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
-        await pumpStreakScreen(tester, settle: false);
+      await pumpStreakScreen(tester, settle: false);
 
-        expect(find.byType(HomeShimmerLoading), findsOneWidget);
-        expect(find.byType(CustomScrollView), findsNothing);
-      },
-    );
+      expect(find.byType(HomeShimmerLoading), findsOneWidget);
+      expect(find.byType(CustomScrollView), findsNothing);
+    });
 
     testWidgets(
       'renders full streak screen with CustomScrollView when user is authenticated',
@@ -241,107 +237,102 @@ void main() {
   });
 
   group('Group 2: Floating Glass Island AppBar & Inventory', () {
-    testWidgets(
-      'renders DAILY STREAK title pill, fire icon, and back button',
-      (tester) async {
-        await pumpStreakScreen(tester);
+    testWidgets('renders DAILY STREAK title pill, fire icon, and back button', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester);
 
-        expect(find.text('DAILY STREAK'), findsOneWidget);
-        expect(find.byIcon(Icons.local_fire_department_rounded), findsWidgets);
-        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-      },
-    );
+      expect(find.text('DAILY STREAK'), findsOneWidget);
+      expect(find.byIcon(Icons.local_fire_department_rounded), findsWidgets);
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping back button when canPop is false navigates to /home',
-      (tester) async {
-        await pumpStreakScreen(tester);
+    testWidgets('tapping back button when canPop is false navigates to /home', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester);
 
-        final backBtnFinder = find.byWidgetPredicate(
-          (w) =>
-              w is ScaleButton &&
-              w.child is Container &&
-              find
-                  .descendant(
-                    of: find.byWidget(w),
-                    matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
-                  )
-                  .evaluate()
-                  .isNotEmpty,
-        );
+      final backBtnFinder = find.byWidgetPredicate(
+        (w) =>
+            w is ScaleButton &&
+            w.child is Container &&
+            find
+                .descendant(
+                  of: find.byWidget(w),
+                  matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
+                )
+                .evaluate()
+                .isNotEmpty,
+      );
 
-        expect(backBtnFinder, findsOneWidget);
-        await tester.tap(backBtnFinder);
-        await tester.pumpAndSettle();
+      expect(backBtnFinder, findsOneWidget);
+      await tester.tap(backBtnFinder);
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/home'));
-        expect(find.text('Home Screen'), findsOneWidget);
-      },
-    );
+      expect(navigatedRoutes, contains('/home'));
+      expect(find.text('Home Screen'), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping back button when canPop is true pops the route',
-      (tester) async {
-        final router = GoRouter(
-          initialLocation: '/initial',
-          routes: [
-            GoRoute(
-              path: '/initial',
-              builder: (context, state) => Scaffold(
-                body: Center(
-                  child: ElevatedButton(
-                    onPressed: () => context.push('/streak'),
-                    child: const Text('Open Streak'),
-                  ),
+    testWidgets('tapping back button when canPop is true pops the route', (
+      tester,
+    ) async {
+      final router = GoRouter(
+        initialLocation: '/initial',
+        routes: [
+          GoRoute(
+            path: '/initial',
+            builder: (context, state) => Scaffold(
+              body: Center(
+                child: ElevatedButton(
+                  onPressed: () => context.push('/streak'),
+                  child: const Text('Open Streak'),
                 ),
               ),
             ),
-            GoRoute(
-              path: '/streak',
-              builder: (context, state) => MultiBlocProvider(
-                providers: [
-                  BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-                  BlocProvider<ProgressionBloc>.value(
-                    value: mockProgressionBloc,
-                  ),
-                  BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-                ],
-                child: const StreakScreen(),
-              ),
+          ),
+          GoRoute(
+            path: '/streak',
+            builder: (context, state) => MultiBlocProvider(
+              providers: [
+                BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+                BlocProvider<ProgressionBloc>.value(value: mockProgressionBloc),
+                BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+              ],
+              child: const StreakScreen(),
             ),
-          ],
-        );
+          ),
+        ],
+      );
 
-        await pumpStreakScreen(
-          tester,
-          routerConfig: router,
-          initialLocation: '/initial',
-        );
+      await pumpStreakScreen(
+        tester,
+        routerConfig: router,
+        initialLocation: '/initial',
+      );
 
-        await tester.tap(find.text('Open Streak'));
-        await tester.pumpAndSettle();
-        expect(find.text('DAILY STREAK'), findsOneWidget);
+      await tester.tap(find.text('Open Streak'));
+      await tester.pumpAndSettle();
+      expect(find.text('DAILY STREAK'), findsOneWidget);
 
-        final backBtnFinder = find.byWidgetPredicate(
-          (w) =>
-              w is ScaleButton &&
-              w.child is Container &&
-              find
-                  .descendant(
-                    of: find.byWidget(w),
-                    matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
-                  )
-                  .evaluate()
-                  .isNotEmpty,
-        );
+      final backBtnFinder = find.byWidgetPredicate(
+        (w) =>
+            w is ScaleButton &&
+            w.child is Container &&
+            find
+                .descendant(
+                  of: find.byWidget(w),
+                  matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
+                )
+                .evaluate()
+                .isNotEmpty,
+      );
 
-        await tester.tap(backBtnFinder);
-        await tester.pumpAndSettle();
+      await tester.tap(backBtnFinder);
+      await tester.pumpAndSettle();
 
-        expect(find.text('Open Streak'), findsOneWidget);
-        expect(find.text('DAILY STREAK'), findsNothing);
-      },
-    );
+      expect(find.text('Open Streak'), findsOneWidget);
+      expect(find.text('DAILY STREAK'), findsNothing);
+    });
 
     testWidgets(
       'renders streak freeze inventory chip with shield icon and freeze count',
@@ -375,27 +366,25 @@ void main() {
   });
 
   group('Group 4: Streak Calendar & Week View', () {
-    testWidgets(
-      'renders StreakCalendar with THIS WEEK title and day nodes',
-      (tester) async {
-        await pumpStreakScreen(tester);
+    testWidgets('renders StreakCalendar with THIS WEEK title and day nodes', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester);
 
-        expect(find.byType(StreakCalendar), findsOneWidget);
-        expect(find.text('THIS WEEK'), findsOneWidget);
-      },
-    );
+      expect(find.byType(StreakCalendar), findsOneWidget);
+      expect(find.text('THIS WEEK'), findsOneWidget);
+    });
   });
 
   group('Group 5: Streak Milestones & Milestone Rewards', () {
-    testWidgets(
-      'renders StreakMilestones section and computes reward nodes',
-      (tester) async {
-        await pumpStreakScreen(tester);
+    testWidgets('renders StreakMilestones section and computes reward nodes', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester);
 
-        expect(find.byType(StreakMilestones), findsOneWidget);
-        expect(find.text('STREAK MILESTONES'), findsOneWidget);
-      },
-    );
+      expect(find.byType(StreakMilestones), findsOneWidget);
+      expect(find.text('STREAK MILESTONES'), findsOneWidget);
+    });
 
     testWidgets(
       'displays SnackBar when progression message indicates milestone claimed',
@@ -416,19 +405,18 @@ void main() {
   });
 
   group('Group 6: Streak Boosters Shop & Economy', () {
-    testWidgets(
-      'renders StreakBoostersShop with booster cards',
-      (tester) async {
-        await pumpStreakScreen(tester);
+    testWidgets('renders StreakBoostersShop with booster cards', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester);
 
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -400));
-        await tester.pump(const Duration(seconds: 2));
-        await tester.pumpAndSettle();
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -400));
+      await tester.pump(const Duration(seconds: 2));
+      await tester.pumpAndSettle();
 
-        expect(find.byType(StreakBoostersShop), findsOneWidget);
-        expect(find.text('STREAK BOOSTERS'), findsOneWidget);
-      },
-    );
+      expect(find.byType(StreakBoostersShop), findsOneWidget);
+      expect(find.text('STREAK BOOSTERS'), findsOneWidget);
+    });
   });
 
   group('Group 7: Earn More Coins & Ad Reward Card', () {
@@ -454,66 +442,50 @@ void main() {
     testWidgets(
       'renders cleanly without RenderFlex overflow on compact mobile (320x568)',
       (tester) async {
-        await pumpStreakScreen(
-          tester,
-          viewportSize: const Size(320, 568),
-        );
+        await pumpStreakScreen(tester, viewportSize: const Size(320, 568));
 
         expect(find.text('DAILY STREAK'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      'renders cleanly on large tablet viewport (800x1280)',
-      (tester) async {
-        await pumpStreakScreen(
-          tester,
-          viewportSize: const Size(800, 1280),
-        );
+    testWidgets('renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      await pumpStreakScreen(tester, viewportSize: const Size(800, 1280));
 
-        expect(find.text('DAILY STREAK'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.text('DAILY STREAK'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly under 1.3x accessibility text scaling without overflow',
       (tester) async {
-        await pumpStreakScreen(
-          tester,
-          textScaleFactor: 1.3,
-        );
+        await pumpStreakScreen(tester, textScaleFactor: 1.3);
 
         expect(find.text('DAILY STREAK'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      'renders cleanly in Dark Theme mode',
-      (tester) async {
-        final darkTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          fontFamily: 'Outfit',
-          scaffoldBackgroundColor: const Color(0xFF0F172A),
-          colorScheme: const ColorScheme.dark(
-            primary: Color(0xFFF97316),
-            surface: Color(0xFF1E293B),
-            onSurface: Colors.white,
-          ),
-        );
+    testWidgets('renders cleanly in Dark Theme mode', (tester) async {
+      final darkTheme = ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        fontFamily: 'Outfit',
+        scaffoldBackgroundColor: const Color(0xFF0F172A),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFFF97316),
+          surface: Color(0xFF1E293B),
+          onSurface: Colors.white,
+        ),
+      );
 
-        await pumpStreakScreen(
-          tester,
-          theme: darkTheme,
-        );
+      await pumpStreakScreen(tester, theme: darkTheme);
 
-        expect(find.text('DAILY STREAK'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.text('DAILY STREAK'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly in Midnight Theme mode (black scaffold background)',
@@ -530,10 +502,7 @@ void main() {
           ),
         );
 
-        await pumpStreakScreen(
-          tester,
-          theme: midnightTheme,
-        );
+        await pumpStreakScreen(tester, theme: midnightTheme);
 
         expect(find.text('DAILY STREAK'), findsOneWidget);
         expect(tester.takeException(), isNull);

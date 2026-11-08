@@ -231,9 +231,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                             if (!isAnsweredNotifier.value &&
                                 _isBriefingComplete.value)
                               SliverPadding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 20.w,
-                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 sliver: SliverToBoxAdapter(
                                   child: SpeakToConfirmOverlay(
                                     key: const Key(
@@ -244,7 +242,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                         quest.textToSpeak ??
                                         "",
                                     ttsText:
-                                        quest.textToSpeak ?? quest.correctAnswer,
+                                        quest.textToSpeak ??
+                                        quest.correctAnswer,
                                     acceptedSynonyms:
                                         quest.acceptedSynonyms ?? [],
                                     primaryColor: theme.primaryColor,

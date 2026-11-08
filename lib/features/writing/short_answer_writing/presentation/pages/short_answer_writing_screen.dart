@@ -377,7 +377,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                               decoration: BoxDecoration(
                                                 color: isDark
                                                     ? AppColors.slate900
-                                                        .withValues(alpha: 0.4)
+                                                          .withValues(
+                                                            alpha: 0.4,
+                                                          )
                                                     : AppColors.slate100,
                                                 borderRadius:
                                                     BorderRadius.circular(12.r),
@@ -400,9 +402,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                         fontSize: 13.sp,
                                                         color: isDark
                                                             ? AppColors.slate300
-                                                            : AppColors.slate700,
+                                                            : AppColors
+                                                                  .slate700,
                                                         height: 1.45,
-                                                        fontWeight: FontWeight.w400,
+                                                        fontWeight:
+                                                            FontWeight.w400,
                                                       ),
                                                     ),
                                                   ),
@@ -432,8 +436,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                           color: _wordCount.value >= 4
                                               ? theme.primaryColor
                                               : (isDark
-                                                  ? AppColors.slate800
-                                                  : AppColors.slate200),
+                                                    ? AppColors.slate800
+                                                    : AppColors.slate200),
                                           border: _wordCount.value >= 4
                                               ? null
                                               : Border.all(
@@ -462,8 +466,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                 color: _wordCount.value >= 4
                                                     ? Colors.white
                                                     : (isDark
-                                                        ? Colors.white38
-                                                        : AppColors.slate400),
+                                                          ? Colors.white38
+                                                          : AppColors.slate400),
                                                 size: 20.r,
                                               ),
                                               SizedBox(width: 8.w),
@@ -476,8 +480,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                   color: _wordCount.value >= 4
                                                       ? Colors.white
                                                       : (isDark
-                                                          ? Colors.white38
-                                                          : AppColors.slate400),
+                                                            ? Colors.white38
+                                                            : AppColors
+                                                                  .slate400),
                                                   letterSpacing: 1.0,
                                                 ),
                                               ),

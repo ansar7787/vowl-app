@@ -102,10 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       );
     } catch (_) {
       await SharePlus.instance.share(
-        ShareParams(
-          text: shareText,
-          subject: 'My Vowl Player Passport',
-        ),
+        ShareParams(text: shareText, subject: 'My Vowl Player Passport'),
       );
     }
   }
@@ -214,7 +211,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Padding(
                                 padding: EdgeInsets.only(
                                   top: 4.h,
-                                  bottom: 110.h +
+                                  bottom:
+                                      110.h +
                                       MediaQuery.paddingOf(context).bottom,
                                 ),
                                 child: Column(
@@ -225,43 +223,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       padding: EdgeInsets.symmetric(
                                         horizontal: AppSpacing.screen,
                                       ),
-                                      child: BlocBuilder<
-                                        ProfileBloc,
-                                        ProfileState
-                                      >(
-                                        buildWhen: (prev, curr) =>
-                                            prev.photoUrl != curr.photoUrl ||
-                                            prev.photoUserId !=
-                                                curr.photoUserId ||
-                                            prev.isPhotoUploading !=
-                                                curr.isPhotoUploading,
-                                        builder: (context, profileState) {
-                                          final immediatePhoto =
-                                              _pendingLocalPhotoPath ??
-                                              (profileState.isPhotoForUser(
-                                                    user.id,
-                                                  )
-                                                  ? profileState.photoUrl
-                                                  : null);
-                                          final isUploading =
-                                              profileState.isPhotoUploading ||
-                                              _pendingLocalPhotoPath != null;
+                                      child:
+                                          BlocBuilder<
+                                            ProfileBloc,
+                                            ProfileState
+                                          >(
+                                            buildWhen: (prev, curr) =>
+                                                prev.photoUrl !=
+                                                    curr.photoUrl ||
+                                                prev.photoUserId !=
+                                                    curr.photoUserId ||
+                                                prev.isPhotoUploading !=
+                                                    curr.isPhotoUploading,
+                                            builder: (context, profileState) {
+                                              final immediatePhoto =
+                                                  _pendingLocalPhotoPath ??
+                                                  (profileState.isPhotoForUser(
+                                                        user.id,
+                                                      )
+                                                      ? profileState.photoUrl
+                                                      : null);
+                                              final isUploading =
+                                                  profileState
+                                                      .isPhotoUploading ||
+                                                  _pendingLocalPhotoPath !=
+                                                      null;
 
-                                          return ProfileHeader(
-                                            user: user,
-                                            immediatePhotoUrl: immediatePhoto,
-                                            isUploading: isUploading,
-                                            repaintKey: _heroPassportKey,
-                                            onEditName: () =>
-                                                _showEditNameSheet(
-                                                  context,
-                                                  user.displayName ?? '',
-                                                ),
-                                            onEditPhoto: () =>
-                                                _showImageSourceSheet(context),
-                                          );
-                                        },
-                                      ),
+                                              return ProfileHeader(
+                                                user: user,
+                                                immediatePhotoUrl:
+                                                    immediatePhoto,
+                                                isUploading: isUploading,
+                                                repaintKey: _heroPassportKey,
+                                                onEditName: () =>
+                                                    _showEditNameSheet(
+                                                      context,
+                                                      user.displayName ?? '',
+                                                    ),
+                                                onEditPhoto: () =>
+                                                    _showImageSourceSheet(
+                                                      context,
+                                                    ),
+                                              );
+                                            },
+                                          ),
                                     ),
                                     SizedBox(height: 14.h),
 
@@ -282,18 +287,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                                     // Tab Content Switcher with smooth transition (no cutter effect)
                                     AnimatedSwitcher(
-                                      duration: const Duration(milliseconds: 280),
+                                      duration: const Duration(
+                                        milliseconds: 280,
+                                      ),
                                       switchInCurve: Curves.easeOutCubic,
                                       switchOutCurve: Curves.easeInCubic,
-                                      layoutBuilder: (currentChild, previousChildren) {
-                                        return Stack(
-                                          alignment: Alignment.topCenter,
-                                          children: <Widget>[
-                                            ...previousChildren,
-                                            ?currentChild,
-                                          ],
-                                        );
-                                      },
+                                      layoutBuilder:
+                                          (currentChild, previousChildren) {
+                                            return Stack(
+                                              alignment: Alignment.topCenter,
+                                              children: <Widget>[
+                                                ...previousChildren,
+                                                ?currentChild,
+                                              ],
+                                            );
+                                          },
                                       transitionBuilder: (child, animation) {
                                         return FadeTransition(
                                           opacity: animation,
@@ -342,9 +350,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         : (isDark ? AppColors.slate900 : AppColors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,
@@ -355,9 +361,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       toolbarHeight: 50.h,
       leadingWidth: 70.w,
       automaticallyImplyLeading: false,
-      flexibleSpace: Container(
-        color: barBg.withValues(alpha: 0.95),
-      ),
+      flexibleSpace: Container(color: barBg.withValues(alpha: 0.95)),
       leading: Padding(
         padding: EdgeInsets.only(left: AppSpacing.screen),
         child: Center(
@@ -374,10 +378,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ? Colors.white.withValues(alpha: 0.06)
                     : Colors.black.withValues(alpha: 0.04),
                 shape: BoxShape.circle,
-                border: Border.all(
-                  color: borderColor,
-                  width: 1.0,
-                ),
+                border: Border.all(color: borderColor, width: 1.0),
               ),
               child: Center(
                 child: Icon(
@@ -414,10 +415,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ? Colors.white.withValues(alpha: 0.06)
                       : Colors.black.withValues(alpha: 0.04),
                   shape: BoxShape.circle,
-                  border: Border.all(
-                    color: borderColor,
-                    width: 1.0,
-                  ),
+                  border: Border.all(color: borderColor, width: 1.0),
                 ),
                 child: Center(
                   child: Icon(

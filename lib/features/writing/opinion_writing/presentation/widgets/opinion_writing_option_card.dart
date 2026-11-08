@@ -155,10 +155,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(
-            color: borderColor,
-            width: isAnswered ? 1.5 : 1.0,
-          ),
+          border: Border.all(color: borderColor, width: isAnswered ? 1.5 : 1.0),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,11 +175,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
               ),
             ),
             SizedBox(width: 12.w),
-            Icon(
-              iconData,
-              color: iconColor,
-              size: 20.r,
-            ),
+            Icon(iconData, color: iconColor, size: 20.r),
           ],
         ),
       ),

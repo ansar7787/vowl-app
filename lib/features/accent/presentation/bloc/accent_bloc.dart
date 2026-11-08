@@ -329,10 +329,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                 _currentLevel!,
               );
               if (milestoneBadge != null) {
-                awardBadge(milestoneBadge).catchError((
-                  e,
-                  stack,
-                ) {
+                awardBadge(milestoneBadge).catchError((e, stack) {
                   errorReporter?.call(e, stack);
                   return const Right<Failure, void>(null);
                 });

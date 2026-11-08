@@ -104,8 +104,10 @@ void main() {
 
   WritingQuest createQuest({
     String id = 'quest_dsw_1',
-    String instruction = 'Describe the unfolding situation using the keyword boosters.',
-    String situation = 'A deep-sea hydrothermal vent is discovered in the abyssal zone.',
+    String instruction =
+        'Describe the unfolding situation using the keyword boosters.',
+    String situation =
+        'A deep-sea hydrothermal vent is discovered in the abyssal zone.',
     List<String> emojis = const ['🌍', '💧', '🔬', '🚀'],
     Map<String, List<String>> keywords = const {
       '0': ['VENTING', 'MAGMA', 'PLUME'],
@@ -114,10 +116,12 @@ void main() {
       '3': ['CREATURE', 'BENTHIC', 'ABYSSAL'],
     },
     int minWords = 15,
-    String? modelAnswer = 'The benthic creatures thrive near the deep oceanic hydrothermal vent despite immense pressure.',
+    String? modelAnswer =
+        'The benthic creatures thrive near the deep oceanic hydrothermal vent despite immense pressure.',
     int difficulty = 2,
     String hint = 'Focus on how the thermal heat supports strange life forms.',
-    String explanation = 'Describing dynamic situations develops contextual descriptive fluency.',
+    String explanation =
+        'Describing dynamic situations develops contextual descriptive fluency.',
   }) {
     return WritingQuest(
       id: id,
@@ -230,28 +234,36 @@ void main() {
     when(() => mockSpeechService.initializeStt()).thenAnswer((_) async => true);
     when(() => mockSpeechService.stop()).thenAnswer((_) async {});
     when(() => mockSpeechService.cancel()).thenAnswer((_) async {});
-    when(() => mockSpeechService.listen(
-          onResult: any(named: 'onResult'),
-          onDone: any(named: 'onDone'),
-          onSoundLevelChange: any(named: 'onSoundLevelChange'),
-          localeId: any(named: 'localeId'),
-          pauseFor: any(named: 'pauseFor'),
-          listenMode: any(named: 'listenMode'),
-        )).thenAnswer((_) async {});
+    when(
+      () => mockSpeechService.listen(
+        onResult: any(named: 'onResult'),
+        onDone: any(named: 'onDone'),
+        onSoundLevelChange: any(named: 'onSoundLevelChange'),
+        localeId: any(named: 'localeId'),
+        pauseFor: any(named: 'pauseFor'),
+        listenMode: any(named: 'listenMode'),
+      ),
+    ).thenAnswer((_) async {});
 
     // Language ID
-    when(() => mockLanguageIdService.identifyLanguage(any()))
-        .thenAnswer((_) async => 'en');
+    when(
+      () => mockLanguageIdService.identifyLanguage(any()),
+    ).thenAnswer((_) async => 'en');
 
     // Audio Recorder
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => '/tmp/audio_test.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => '/tmp/audio_test.m4a');
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
 
     // Analytics & Ad mocks
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -276,13 +288,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -368,9 +382,9 @@ void main() {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               home: MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: TextScaler.linear(textScaleFactor),
-                ),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.linear(textScaleFactor)),
                 child: DescribeSituationScreen(level: level),
               ),
             );
@@ -398,7 +412,9 @@ void main() {
       const Offset(0, -600),
     );
     await tester.pumpAndSettle();
-    final submitButton = find.byKey(const Key('describe_situation_submit_button'));
+    final submitButton = find.byKey(
+      const Key('describe_situation_submit_button'),
+    );
     if (submitButton.evaluate().isNotEmpty) {
       await tester.tap(submitButton, warnIfMissed: false);
       await tester.pump();
@@ -507,27 +523,30 @@ void main() {
       expect(find.text('TAP A KEYWORD TO ADD:'), findsNothing);
     });
 
-    testWidgets('tapping a keyword injects it into text field and updates booster count', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping a keyword injects it into text field and updates booster count',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      expect(find.text('Keywords used: 0'), findsOneWidget);
+        expect(find.text('Keywords used: 0'), findsOneWidget);
 
-      // Expand emoji 0
-      final emoji0 = find.byKey(const Key('describe_situation_emoji_0'));
-      await tester.tap(emoji0);
-      await tester.pumpAndSettle();
+        // Expand emoji 0
+        final emoji0 = find.byKey(const Key('describe_situation_emoji_0'));
+        await tester.tap(emoji0);
+        await tester.pumpAndSettle();
 
-      // Tap keyword VENTING -> injected capitalized as first word
-      final keywordVenting = find.byKey(const Key('describe_situation_keyword_VENTING'));
-      await tester.tap(keywordVenting);
-      await tester.pump();
+        // Tap keyword VENTING -> injected capitalized as first word
+        final keywordVenting = find.byKey(
+          const Key('describe_situation_keyword_VENTING'),
+        );
+        await tester.tap(keywordVenting);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(2);
-      expect(find.text('Venting'), findsOneWidget);
-      expect(find.text('Keywords used: 1'), findsOneWidget);
-    });
+        verify(() => mockHapticService.selection()).called(2);
+        expect(find.text('Venting'), findsOneWidget);
+        expect(find.text('Keywords used: 1'), findsOneWidget);
+      },
+    );
   });
 
   group('DescribeSituationScreen - 3. Live Typing & Validation Rules', () {
@@ -615,10 +634,7 @@ void main() {
       final inputField = find.byKey(
         const Key('describe_situation_input_field'),
       );
-      await tester.enterText(
-        inputField,
-        'The benthic creatures live here.',
-      );
+      await tester.enterText(inputField, 'The benthic creatures live here.');
       await tester.pump();
 
       await scrollAndTapSubmitButton(tester);
@@ -680,31 +696,32 @@ void main() {
       verify(() => mockHapticService.warning()).called(1);
     });
 
-    testWidgets('warns if description is just a list of keywords without glue words', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'warns if description is just a list of keywords without glue words',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('describe_situation_input_field'),
-      );
-      // Chaining booster keywords together (word salad)
-      await tester.enterText(
-        inputField,
-        'Venting magma plume oceanic thermal pressure mineral chemical hydrous creature benthic abyssal venting magma plume oceanic.',
-      );
-      await tester.pump();
+        final inputField = find.byKey(
+          const Key('describe_situation_input_field'),
+        );
+        // Chaining booster keywords together (word salad)
+        await tester.enterText(
+          inputField,
+          'Venting magma plume oceanic thermal pressure mineral chemical hydrous creature benthic abyssal venting magma plume oceanic.',
+        );
+        await tester.pump();
 
-      await scrollAndTapSubmitButton(tester);
+        await scrollAndTapSubmitButton(tester);
 
-      expect(
-        find.text(
-          'This looks like a list of keywords! Please write full, complete sentences connecting the words. (2 tries left)',
-        ),
-        findsOneWidget,
-      );
-      verify(() => mockHapticService.warning()).called(1);
-    });
+        expect(
+          find.text(
+            'This looks like a list of keywords! Please write full, complete sentences connecting the words. (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verify(() => mockHapticService.warning()).called(1);
+      },
+    );
 
     testWidgets('3 consecutive failures triggers wrong answer submission', (
       tester,
@@ -735,11 +752,10 @@ void main() {
   });
 
   group('DescribeSituationScreen - 4. Language ID & Gibberish Detection', () {
-    testWidgets('warns if language is detected as non-English', (
-      tester,
-    ) async {
-      when(() => mockLanguageIdService.identifyLanguage(any()))
-          .thenAnswer((_) async => 'fr');
+    testWidgets('warns if language is detected as non-English', (tester) async {
+      when(
+        () => mockLanguageIdService.identifyLanguage(any()),
+      ).thenAnswer((_) async => 'fr');
 
       await pumpScreen(tester, level: 2);
 
@@ -785,110 +801,116 @@ void main() {
     });
   });
 
-  group('DescribeSituationScreen - 5. Validation Success & Speak To Confirm (Stage 2)', () {
-    testWidgets('valid narrative entry reveals SpeakToConfirmOverlay', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+  group(
+    'DescribeSituationScreen - 5. Validation Success & Speak To Confirm (Stage 2)',
+    () {
+      testWidgets('valid narrative entry reveals SpeakToConfirmOverlay', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('describe_situation_input_field'),
+        final inputField = find.byKey(
+          const Key('describe_situation_input_field'),
+        );
+        await tester.enterText(
+          inputField,
+          'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
+        );
+        await tester.pump();
+
+        await scrollAndTapSubmitButton(tester);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.text('NOW SAY IT'), findsOneWidget);
+        expect(
+          find.byKey(const Key('describe_situation_submit_button')),
+          findsNothing,
+        );
+      });
+
+      testWidgets(
+        'confirming speech in SpeakToConfirmOverlay dispatches SubmitAnswer(true)',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
+
+          final inputField = find.byKey(
+            const Key('describe_situation_input_field'),
+          );
+          await tester.enterText(
+            inputField,
+            'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
+          );
+          await tester.pump();
+
+          await scrollAndTapSubmitButton(tester);
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pumpAndSettle();
+
+          final overlay = tester.widget<SpeakToConfirmOverlay>(
+            find.byType(SpeakToConfirmOverlay),
+          );
+          overlay.onConfirmed();
+          await tester.pump();
+
+          verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+        },
       );
-      await tester.enterText(
-        inputField,
-        'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
+
+      testWidgets(
+        'skipping speech in SpeakToConfirmOverlay also submits answer',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
+
+          final inputField = find.byKey(
+            const Key('describe_situation_input_field'),
+          );
+          await tester.enterText(
+            inputField,
+            'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
+          );
+          await tester.pump();
+
+          await scrollAndTapSubmitButton(tester);
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pumpAndSettle();
+
+          final overlay = tester.widget<SpeakToConfirmOverlay>(
+            find.byType(SpeakToConfirmOverlay),
+          );
+          overlay.onSkipped();
+          await tester.pump();
+
+          verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+        },
       );
-      await tester.pump();
-
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('NOW SAY IT'), findsOneWidget);
-      expect(
-        find.byKey(const Key('describe_situation_submit_button')),
-        findsNothing,
-      );
-    });
-
-    testWidgets('confirming speech in SpeakToConfirmOverlay dispatches SubmitAnswer(true)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
-
-      final inputField = find.byKey(
-        const Key('describe_situation_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
-      );
-      await tester.pump();
-
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
-
-    testWidgets('skipping speech in SpeakToConfirmOverlay also submits answer', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
-
-      final inputField = find.byKey(
-        const Key('describe_situation_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The benthic submarine explored the deep oceanic trench discovering strange creatures thriving in deep darkness.',
-      );
-      await tester.pump();
-
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
-
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
-  });
+    },
+  );
 
   group('DescribeSituationScreen - 6. Feedback, Navigation & Reset', () {
-    testWidgets('displays feedback card and model answer when answered correctly', (
-      tester,
-    ) async {
-      final answeredCorrect = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'displays feedback card and model answer when answered correctly',
+      (tester) async {
+        final answeredCorrect = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpScreen(tester, state: answeredCorrect, level: 2);
+        await pumpScreen(tester, state: answeredCorrect, level: 2);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('MODEL ANSWER'), findsOneWidget);
-      expect(
-        find.text(
-          'The benthic creatures thrive near the deep oceanic hydrothermal vent despite immense pressure.',
-        ),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('MODEL ANSWER'), findsOneWidget);
+        expect(
+          find.text(
+            'The benthic creatures thrive near the deep oceanic hydrothermal vent despite immense pressure.',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('tapping CONTINUE dispatches NextQuestion', (tester) async {
       final answeredState = testLoadedState.copyWith(
@@ -994,57 +1016,48 @@ void main() {
       }
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'narrator_auth_err',
-            email: 'err@vowl.app',
-            displayName: 'Narrator Error',
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'narrator_auth_err',
+              email: 'err@vowl.app',
+              displayName: 'Narrator Error',
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('describe_situation_input_field'),
-      );
+        final inputField = find.byKey(
+          const Key('describe_situation_input_field'),
+        );
 
-      // 3 strikes
-      for (int i = 0; i < 3; i++) {
-        await tester.enterText(inputField, 'strike $i invalid');
-        await tester.pump();
-        await scrollAndTapSubmitButton(tester);
-      }
+        // 3 strikes
+        for (int i = 0; i < 3; i++) {
+          await tester.enterText(inputField, 'strike $i invalid');
+          await tester.pump();
+          await scrollAndTapSubmitButton(tester);
+        }
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('DescribeSituationScreen - 8. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(DescribeSituationScreen), findsOneWidget);
       expect(find.byType(DescribeSituationInstruction), findsOneWidget);
       expect(find.byType(DescribeSituationWritingArea), findsOneWidget);
     });
 
-    testWidgets('renders properly on tablet screen (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+    testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(DescribeSituationScreen), findsOneWidget);
       expect(find.byType(DescribeSituationPromptCard), findsOneWidget);
@@ -1054,22 +1067,14 @@ void main() {
     testWidgets('renders with 1.3x high text scale without overflow', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(DescribeSituationScreen), findsOneWidget);
       expect(find.byType(DescribeSituationWritingArea), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(DescribeSituationScreen), findsOneWidget);
       expect(find.text('SUBMIT DESCRIPTION'), findsOneWidget);
@@ -1078,11 +1083,7 @@ void main() {
     testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 

@@ -72,7 +72,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   void _scrollToBottom() {
     _scrollTimer?.cancel();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_scrollController.hasClients) {
@@ -107,7 +108,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_reactorController.isAnimating) _reactorController.stop();
@@ -209,8 +211,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest =
-            (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
+        final quest = (state is RoleplayLoaded)
+            ? state.currentQuestOrNull
+            : null;
 
         if (quest != null &&
             _shuffledOptions.value.isEmpty &&
@@ -268,9 +271,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(
-                                   horizontal: 16.w,
-                                   vertical: isCompact ? 5.h : 10.h,
-                                 ),
+                                  horizontal: 16.w,
+                                  vertical: isCompact ? 5.h : 10.h,
+                                ),
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate([
                                     JobInterviewInstruction(
@@ -323,7 +326,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                       isAnswered:
                                           isAnsweredNotifier.value ||
                                           isFirstStagePassedNotifier.value,
-                                      isCorrect: isCorrectNotifier.value ??
+                                      isCorrect:
+                                          isCorrectNotifier.value ??
                                           (isFirstStagePassedNotifier.value
                                               ? true
                                               : null),

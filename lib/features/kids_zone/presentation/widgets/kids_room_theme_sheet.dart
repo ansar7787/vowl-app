@@ -83,8 +83,9 @@ class KidsRoomThemeSheet extends StatelessWidget {
                 SizedBox(height: 30.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:
-                      themes.map((t) => _buildThemeItem(context, t)).toList(),
+                  children: themes
+                      .map((t) => _buildThemeItem(context, t))
+                      .toList(),
                 ),
                 SizedBox(height: 20.h),
               ],

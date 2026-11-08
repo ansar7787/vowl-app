@@ -419,13 +419,13 @@ class VowlCoinsScreen extends StatelessWidget {
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-              ? Colors.white.withValues(alpha: 0.12)
-              : Colors.white.withValues(alpha: 0.08))
+                ? Colors.white.withValues(alpha: 0.12)
+                : Colors.white.withValues(alpha: 0.08))
           : AppColors.slate100,
       color: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-              ? AppColors.midnightSurface
-              : AppColors.slate800)
+                ? AppColors.midnightSurface
+                : AppColors.slate800)
           : Colors.white,
       borderWidth: 1.0,
       child: SizedBox(
@@ -954,7 +954,9 @@ class VowlCoinsScreen extends StatelessWidget {
                                       ),
                                       decoration: BoxDecoration(
                                         color: AppColors.emerald500,
-                                        borderRadius: BorderRadius.circular(6.r),
+                                        borderRadius: BorderRadius.circular(
+                                          6.r,
+                                        ),
                                       ),
                                       child: FittedBox(
                                         fit: BoxFit.scaleDown,
@@ -1190,13 +1192,11 @@ class VowlCoinsScreen extends StatelessWidget {
               blur: 0, // PERFORMANCE FIX: Disabled blur for list items
               padding: EdgeInsets.all(16.r),
               borderRadius: BorderRadius.circular(24.r),
-              borderColor: isDark
-                  ? AppColors.slate700
-                  : AppColors.slate300,
+              borderColor: isDark ? AppColors.slate700 : AppColors.slate300,
               color: isDark
                   ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-                      ? AppColors.midnightSurface
-                      : AppColors.slate800)
+                        ? AppColors.midnightSurface
+                        : AppColors.slate800)
                   : Colors.white,
               borderWidth: 1,
               child: Row(

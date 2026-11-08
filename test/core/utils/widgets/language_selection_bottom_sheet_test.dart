@@ -9,8 +9,11 @@ void main() {
         final flag = TranslationService.getFlag(langName);
         expect(flag, isNotEmpty);
         if (langName != 'Esperanto') {
-          expect(flag, isNot(equals('🌐')),
-              reason: '$langName should have a mapped country flag emoji');
+          expect(
+            flag,
+            isNot(equals('🌐')),
+            reason: '$langName should have a mapped country flag emoji',
+          );
         }
       }
     });
@@ -24,9 +27,18 @@ void main() {
       expect(service.downloadedLanguagesNotifier.value, isEmpty);
 
       service.downloadedLanguagesNotifier.value = {'Spanish', 'French'};
-      expect(service.downloadedLanguagesNotifier.value.contains('Spanish'), isTrue);
-      expect(service.downloadedLanguagesNotifier.value.contains('French'), isTrue);
-      expect(service.downloadedLanguagesNotifier.value.contains('German'), isFalse);
+      expect(
+        service.downloadedLanguagesNotifier.value.contains('Spanish'),
+        isTrue,
+      );
+      expect(
+        service.downloadedLanguagesNotifier.value.contains('French'),
+        isTrue,
+      );
+      expect(
+        service.downloadedLanguagesNotifier.value.contains('German'),
+        isFalse,
+      );
     });
 
     test('downloadingProgressNotifier tracks progress reactively', () {
@@ -56,7 +68,10 @@ void main() {
       set.addAll(['Spanish', 'Spanish', 'French']);
       service.downloadedLanguagesNotifier.value = set;
       expect(service.downloadedLanguagesNotifier.value.length, 2);
-      expect(service.downloadedLanguagesNotifier.value, equals({'Spanish', 'French'}));
+      expect(
+        service.downloadedLanguagesNotifier.value,
+        equals({'Spanish', 'French'}),
+      );
     });
   });
 }

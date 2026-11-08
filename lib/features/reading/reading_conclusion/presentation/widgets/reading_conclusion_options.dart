@@ -116,22 +116,25 @@ class _OptionCardState extends State<_OptionCard> {
     final optionLetter = String.fromCharCode(65 + widget.index);
 
     if (widget.isCorrect) {
-      bgColor = widget.tokens.gameCorrect
-          .withValues(alpha: widget.isDark ? 0.16 : 0.10);
+      bgColor = widget.tokens.gameCorrect.withValues(
+        alpha: widget.isDark ? 0.16 : 0.10,
+      );
       borderColor = widget.tokens.gameCorrect;
       badgeBgColor = widget.tokens.gameCorrect;
       badgeTextColor = Colors.white;
       textColor = widget.isDark ? Colors.white : const Color(0xFF1E293B);
     } else if (widget.isWrong) {
-      bgColor = widget.tokens.gameIncorrect
-          .withValues(alpha: widget.isDark ? 0.16 : 0.10);
+      bgColor = widget.tokens.gameIncorrect.withValues(
+        alpha: widget.isDark ? 0.16 : 0.10,
+      );
       borderColor = widget.tokens.gameIncorrect;
       badgeBgColor = widget.tokens.gameIncorrect;
       badgeTextColor = Colors.white;
       textColor = widget.isDark ? Colors.white : const Color(0xFF1E293B);
     } else if (widget.isSelected) {
-      bgColor = widget.primaryColor
-          .withValues(alpha: widget.isDark ? 0.14 : 0.08);
+      bgColor = widget.primaryColor.withValues(
+        alpha: widget.isDark ? 0.14 : 0.08,
+      );
       borderColor = widget.primaryColor;
       badgeBgColor = widget.primaryColor;
       badgeTextColor = Colors.white;
@@ -146,9 +149,7 @@ class _OptionCardState extends State<_OptionCard> {
       badgeBgColor = widget.isDark
           ? Colors.white.withValues(alpha: 0.08)
           : const Color(0xFFF1F5F9);
-      badgeTextColor = widget.isDark
-          ? Colors.white70
-          : const Color(0xFF64748B);
+      badgeTextColor = widget.isDark ? Colors.white70 : const Color(0xFF64748B);
       textColor = widget.isDark
           ? Colors.white.withValues(alpha: 0.90)
           : const Color(0xFF1E293B);
@@ -191,13 +192,14 @@ class _OptionCardState extends State<_OptionCard> {
                 border: Border.all(color: borderColor, width: 1.5),
                 boxShadow: [
                   BoxShadow(
-                    color: (widget.isCorrect ||
+                    color:
+                        (widget.isCorrect ||
                             widget.isWrong ||
                             widget.isSelected)
                         ? borderColor.withValues(alpha: 0.12)
                         : (widget.isDark
-                            ? Colors.black.withValues(alpha: 0.15)
-                            : Colors.black.withValues(alpha: 0.03)),
+                              ? Colors.black.withValues(alpha: 0.15)
+                              : Colors.black.withValues(alpha: 0.03)),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),

@@ -122,8 +122,7 @@ void main() {
     String? hint = 'Think of wartime surgery before anesthesia was invented.',
     String? explanation =
         'To endure a painful or difficult situation with resilience.',
-    String? usageContext =
-        'He had to bite the bullet and accept the demotion.',
+    String? usageContext = 'He had to bite the bullet and accept the demotion.',
     String? idiomOrigin =
         'Originates from soldiers biting on lead bullets during surgery.',
     String? visualMetaphor =
@@ -184,10 +183,7 @@ void main() {
     registerFallbackValue(const ShowEliteHint());
     registerFallbackValue(const MarkEliteHintUsed());
     registerFallbackValue(
-      const FetchEliteMasteryQuests(
-        gameType: GameSubtype.idiomMatch,
-        level: 2,
-      ),
+      const FetchEliteMasteryQuests(gameType: GameSubtype.idiomMatch, level: 2),
     );
     registerFallbackValue(const EliteSpeakConfirmed(5));
     registerFallbackValue(const EconomyAddCoinsRequested(5));
@@ -245,7 +241,9 @@ void main() {
     // Audio Recorder
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/mock/audio.m4a');
@@ -281,8 +279,12 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics & Ads
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -296,9 +298,9 @@ void main() {
     });
 
     // Theme mock
-    when(
-      () => mockThemeCubit.state,
-    ).thenReturn(const ThemeState(themeMode: ThemeMode.dark, isMidnight: false));
+    when(() => mockThemeCubit.state).thenReturn(
+      const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
+    );
     when(
       () => mockThemeCubit.stream,
     ).thenAnswer((_) => const Stream<ThemeState>.empty());
@@ -315,13 +317,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -428,39 +432,38 @@ void main() {
   // GROUP 1: Initial Rendering & Layout Hierarchy
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 1. Initial Rendering & Layout Hierarchy', () {
-    testWidgets('renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(EliteBaseLayout), findsOneWidget);
-      expect(find.byType(EliteGameHeader), findsOneWidget);
-      expect(
-        find.byKey(const Key('idiom_match_scroll_view')),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('idiom_match_instruction_banner')),
-        findsOneWidget,
-      );
-      expect(
-        find.text(sampleIdiomQuest1.instruction),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(
+          find.byKey(const Key('idiom_match_scroll_view')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('idiom_match_instruction_banner')),
+          findsOneWidget,
+        );
+        expect(find.text(sampleIdiomQuest1.instruction), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders idiom prompt card with quotation icon and question text', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders idiom prompt card with quotation icon and question text',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(
-        find.byKey(const Key('idiom_match_prompt_card')),
-        findsOneWidget,
-      );
-      expect(find.byIcon(Icons.format_quote_rounded), findsOneWidget);
-      expect(find.text(sampleIdiomQuest1.question!), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('idiom_match_prompt_card')),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.format_quote_rounded), findsOneWidget);
+        expect(find.text(sampleIdiomQuest1.question!), findsOneWidget);
+      },
+    );
 
     testWidgets('renders IdiomMatchOptionsPanel with all shuffled options', (
       tester,
@@ -486,56 +489,58 @@ void main() {
       expect(find.byType(IdiomMatchOptionsPanel), findsNothing);
     });
 
-    testWidgets('renders GameErrorView on EliteMasteryError and retries on tap', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        state: const EliteMasteryError('Network failure occurred'),
-      );
+    testWidgets(
+      'renders GameErrorView on EliteMasteryError and retries on tap',
+      (tester) async {
+        await pumpScreen(
+          tester,
+          state: const EliteMasteryError('Network failure occurred'),
+        );
 
-      expect(find.byType(GameErrorView), findsOneWidget);
+        expect(find.byType(GameErrorView), findsOneWidget);
 
-      final retryBtn = find.text('TRY AGAIN');
-      if (retryBtn.evaluate().isNotEmpty) {
-        await tester.tap(retryBtn);
-        await tester.pump();
-        verify(
-          () => mockEliteBloc.add(
-            const FetchEliteMasteryQuests(
-              gameType: GameSubtype.idiomMatch,
-              level: 2,
+        final retryBtn = find.text('TRY AGAIN');
+        if (retryBtn.evaluate().isNotEmpty) {
+          await tester.tap(retryBtn);
+          await tester.pump();
+          verify(
+            () => mockEliteBloc.add(
+              const FetchEliteMasteryQuests(
+                gameType: GameSubtype.idiomMatch,
+                level: 2,
+              ),
             ),
-          ),
-        ).called(greaterThanOrEqualTo(1));
-      }
-    });
+          ).called(greaterThanOrEqualTo(1));
+        }
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 2: Option Selection & Stage 1 Evaluation
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 2. Option Selection & Stage 1 Evaluation', () {
-    testWidgets('tapping wrong option triggers haptic error, sound, and marks option as wrong', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping wrong option triggers haptic error, sound, and marks option as wrong',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // 'Eat something crunchy' is an incorrect meaning
-      final wrongOption = find.text('Eat something crunchy');
-      expect(wrongOption, findsOneWidget);
+        // 'Eat something crunchy' is an incorrect meaning
+        final wrongOption = find.text('Eat something crunchy');
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
 
-      // Verify Stage 2 overlay is NOT shown on wrong selection
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
+        // Verify Stage 2 overlay is NOT shown on wrong selection
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
 
     testWidgets('tapping wrong option submits wrong answer to bloc', (
       tester,
@@ -554,115 +559,122 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
 
-    testWidgets('tapping already-marked wrong option does not re-submit or duplicate error', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping already-marked wrong option does not re-submit or duplicate error',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final wrongOption = find.text('Go to sleep early');
-      await tester.tap(wrongOption);
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.error()).called(1);
-
-      // Tap the same wrong option again
-      await tester.tap(wrongOption, warnIfMissed: false);
-      await tester.pumpAndSettle();
-
-      // Still only 1 call
-      verifyNever(() => mockHapticService.error());
-    });
-
-    testWidgets('tapping correct option passes Stage 1, triggers haptic selection, and reveals Stage 2', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      // Correct answer is 'Face a difficult situation with courage'
-      final correctOption = find.text('Face a difficult situation with courage');
-      expect(correctOption, findsOneWidget);
-
-      await tester.tap(correctOption);
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.selection()).called(1);
-
-      // Stage 2 SpeakToConfirmOverlay and insights are now visible
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(
-        find.byKey(const Key('idiom_match_insights_panel')),
-        findsOneWidget,
-      );
-
-      // Verify that SubmitEliteAnswer was NOT called yet (waiting for verbal confirmation)
-      verifyNever(() => mockEliteBloc.add(const SubmitEliteAnswer(true)));
-    });
-
-    testWidgets('once answered, options are disabled and do not respond to taps', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      // Pass stage 1
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
-
-      // Premium user skips speech to complete the answer
-      final skipBtn = find.text('SKIP');
-      if (skipBtn.evaluate().isNotEmpty) {
-        await tester.tap(skipBtn);
+        final wrongOption = find.text('Go to sleep early');
+        await tester.tap(wrongOption);
         await tester.pumpAndSettle();
-      }
 
-      // Now game is answered. Tapping options should have no effect
-      final otherOption = find.text('Eat something crunchy');
-      await tester.tap(otherOption, warnIfMissed: false);
-      await tester.pumpAndSettle();
+        verify(() => mockHapticService.error()).called(1);
 
-      // No new selection or error haptics after answer complete
-      verifyNever(() => mockHapticService.error());
-    });
+        // Tap the same wrong option again
+        await tester.tap(wrongOption, warnIfMissed: false);
+        await tester.pumpAndSettle();
+
+        // Still only 1 call
+        verifyNever(() => mockHapticService.error());
+      },
+    );
+
+    testWidgets(
+      'tapping correct option passes Stage 1, triggers haptic selection, and reveals Stage 2',
+      (tester) async {
+        await pumpScreen(tester);
+
+        // Correct answer is 'Face a difficult situation with courage'
+        final correctOption = find.text(
+          'Face a difficult situation with courage',
+        );
+        expect(correctOption, findsOneWidget);
+
+        await tester.tap(correctOption);
+        await tester.pumpAndSettle();
+
+        verify(() => mockHapticService.selection()).called(1);
+
+        // Stage 2 SpeakToConfirmOverlay and insights are now visible
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(
+          find.byKey(const Key('idiom_match_insights_panel')),
+          findsOneWidget,
+        );
+
+        // Verify that SubmitEliteAnswer was NOT called yet (waiting for verbal confirmation)
+        verifyNever(() => mockEliteBloc.add(const SubmitEliteAnswer(true)));
+      },
+    );
+
+    testWidgets(
+      'once answered, options are disabled and do not respond to taps',
+      (tester) async {
+        await pumpScreen(tester);
+
+        // Pass stage 1
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
+
+        // Premium user skips speech to complete the answer
+        final skipBtn = find.text('SKIP');
+        if (skipBtn.evaluate().isNotEmpty) {
+          await tester.tap(skipBtn);
+          await tester.pumpAndSettle();
+        }
+
+        // Now game is answered. Tapping options should have no effect
+        final otherOption = find.text('Eat something crunchy');
+        await tester.tap(otherOption, warnIfMissed: false);
+        await tester.pumpAndSettle();
+
+        // No new selection or error haptics after answer complete
+        verifyNever(() => mockHapticService.error());
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 3: Pedagogical Insights & Annotations
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 3. Pedagogical Insights & Annotations', () {
-    testWidgets('insights panel is hidden in initial state before Stage 1 is passed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'insights panel is hidden in initial state before Stage 1 is passed',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(
-        find.byKey(const Key('idiom_match_insights_panel')),
-        findsNothing,
-      );
-    });
+        expect(
+          find.byKey(const Key('idiom_match_insights_panel')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('passing Stage 1 reveals insights panel with EXPLANATION, USAGE CONTEXT, IDIOM ORIGIN, and VISUAL METAPHOR', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'passing Stage 1 reveals insights panel with EXPLANATION, USAGE CONTEXT, IDIOM ORIGIN, and VISUAL METAPHOR',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
 
-      final insightsFinder = find.byKey(
-        const Key('idiom_match_insights_panel'),
-      );
-      expect(insightsFinder, findsOneWidget);
-      expect(find.text('EXPLANATION'), findsOneWidget);
-      expect(find.text(sampleIdiomQuest1.explanation!), findsOneWidget);
+        final insightsFinder = find.byKey(
+          const Key('idiom_match_insights_panel'),
+        );
+        expect(insightsFinder, findsOneWidget);
+        expect(find.text('EXPLANATION'), findsOneWidget);
+        expect(find.text(sampleIdiomQuest1.explanation!), findsOneWidget);
 
-      expect(find.text('USAGE CONTEXT'), findsOneWidget);
-      expect(find.text(sampleIdiomQuest1.usageContext!), findsOneWidget);
+        expect(find.text('USAGE CONTEXT'), findsOneWidget);
+        expect(find.text(sampleIdiomQuest1.usageContext!), findsOneWidget);
 
-      expect(find.text('IDIOM ORIGIN'), findsOneWidget);
-      expect(find.text(sampleIdiomQuest1.idiomOrigin!), findsOneWidget);
+        expect(find.text('IDIOM ORIGIN'), findsOneWidget);
+        expect(find.text(sampleIdiomQuest1.idiomOrigin!), findsOneWidget);
 
-      expect(find.text('VISUAL METAPHOR'), findsOneWidget);
-      expect(find.text(sampleIdiomQuest1.visualMetaphor!), findsOneWidget);
-    });
+        expect(find.text('VISUAL METAPHOR'), findsOneWidget);
+        expect(find.text(sampleIdiomQuest1.visualMetaphor!), findsOneWidget);
+      },
+    );
 
     testWidgets('insights panel handles subset of annotations gracefully', (
       tester,
@@ -695,222 +707,237 @@ void main() {
       expect(find.text('VISUAL METAPHOR'), findsNothing);
     });
 
-    testWidgets('insights panel is completely omitted if quest has no pedagogical metadata', (
-      tester,
-    ) async {
-      final bareQuest = createSampleIdiomQuest(
-        id: 'quest_bare',
-        explanation: null,
-        usageContext: null,
-        idiomOrigin: null,
-        visualMetaphor: null,
-      );
-      final bareState = EliteMasteryLoaded(
-        gameType: GameSubtype.idiomMatch,
-        level: 2,
-        quests: [bareQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+    testWidgets(
+      'insights panel is completely omitted if quest has no pedagogical metadata',
+      (tester) async {
+        final bareQuest = createSampleIdiomQuest(
+          id: 'quest_bare',
+          explanation: null,
+          usageContext: null,
+          idiomOrigin: null,
+          visualMetaphor: null,
+        );
+        final bareState = EliteMasteryLoaded(
+          gameType: GameSubtype.idiomMatch,
+          level: 2,
+          quests: [bareQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      await pumpScreen(tester, state: bareState);
+        await pumpScreen(tester, state: bareState);
 
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
 
-      expect(
-        find.byKey(const Key('idiom_match_insights_panel')),
-        findsNothing,
-      );
-    });
+        expect(
+          find.byKey(const Key('idiom_match_insights_panel')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 4: Stage 2 Verbal Confirmation & Bypass
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 4. Stage 2 Verbal Confirmation & Bypass', () {
-    testWidgets('passing Stage 1 reveals SpeakToConfirmOverlay with title, subtitle, and expected text', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'passing Stage 1 reveals SpeakToConfirmOverlay with title, subtitle, and expected text',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('SPEAK THE IDIOM'), findsOneWidget);
-      expect(find.text('Say the idiom aloud to confirm'), findsOneWidget);
-      expect(
-        find.text('Face a difficult situation with courage'),
-        findsWidgets, // in options panel + overlay expected text
-      );
-    });
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.text('SPEAK THE IDIOM'), findsOneWidget);
+        expect(find.text('Say the idiom aloud to confirm'), findsOneWidget);
+        expect(
+          find.text('Face a difficult situation with courage'),
+          findsWidgets, // in options panel + overlay expected text
+        );
+      },
+    );
 
-    testWidgets('Stage 2: tapping SKIP via GameSkipBypassButton confirms verbal evaluation for premium user', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: tapping SKIP via GameSkipBypassButton confirms verbal evaluation for premium user',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Pass Stage 1
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
+        // Pass Stage 1
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
 
-      final bypassButton = find.byType(GameSkipBypassButton);
-      await tester.scrollUntilVisible(bypassButton, 200);
-      expect(bypassButton, findsOneWidget);
+        final bypassButton = find.byType(GameSkipBypassButton);
+        await tester.scrollUntilVisible(bypassButton, 200);
+        expect(bypassButton, findsOneWidget);
 
-      await tester.tap(find.text('SKIP'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('SKIP'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Stage 2: manual evaluation flow - recording audio and tapping Nailed It confirms speaking', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: manual evaluation flow - recording audio and tapping Nailed It confirms speaking',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Pass Stage 1
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        // Pass Stage 1
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      await tester.drag(
-        find.byKey(const Key('idiom_match_scroll_view')),
-        const Offset(0, -400),
-      );
-      await tester.pumpAndSettle();
+        await tester.drag(
+          find.byKey(const Key('idiom_match_scroll_view')),
+          const Offset(0, -400),
+        );
+        await tester.pumpAndSettle();
 
-      // Switch to manual evaluation
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      expect(manualEvalBtn, findsOneWidget);
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // Switch to manual evaluation
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        expect(manualEvalBtn, findsOneWidget);
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      // Tap microphone button to record
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micButton, findsOneWidget);
-      await tester.tap(micButton);
-      await tester.pump();
-      verify(() => mockAudioRecorder.startRecording()).called(1);
+        // Tap microphone button to record
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micButton, findsOneWidget);
+        await tester.tap(micButton);
+        await tester.pump();
+        verify(() => mockAudioRecorder.startRecording()).called(1);
 
-      // Stop recording
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
-      verify(() => mockAudioRecorder.stopRecording()).called(1);
+        // Stop recording
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
+        verify(() => mockAudioRecorder.stopRecording()).called(1);
 
-      // Tap Nailed It
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pumpAndSettle();
+        // Tap Nailed It
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockEliteBloc.add(const EliteSpeakConfirmed(5))).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('Stage 2: manual evaluation flow - recording audio and tapping Needs Work submits wrong verbal evaluation', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'Stage 2: manual evaluation flow - recording audio and tapping Needs Work submits wrong verbal evaluation',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Pass Stage 1
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        // Pass Stage 1
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      await tester.drag(
-        find.byKey(const Key('idiom_match_scroll_view')),
-        const Offset(0, -400),
-      );
-      await tester.pumpAndSettle();
+        await tester.drag(
+          find.byKey(const Key('idiom_match_scroll_view')),
+          const Offset(0, -400),
+        );
+        await tester.pumpAndSettle();
 
-      // Switch to manual evaluation
-      final manualEvalBtn = find.text('Evaluate myself manually');
-      await tester.tap(manualEvalBtn);
-      await tester.pumpAndSettle();
+        // Switch to manual evaluation
+        final manualEvalBtn = find.text('Evaluate myself manually');
+        await tester.tap(manualEvalBtn);
+        await tester.pumpAndSettle();
 
-      final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.tap(micButton);
-      await tester.pump();
+        final micButton = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.tap(micButton);
+        await tester.pump();
 
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await tester.tap(micButton);
-      await tester.pumpAndSettle();
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await tester.tap(micButton);
+        await tester.pumpAndSettle();
 
-      // Tap Needs Work
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pumpAndSettle();
+        // Tap Needs Work
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('Stage 2: STT auto-pass skips speech via overlay controls and marks answer as skipped', (
-      tester,
-    ) async {
-      // In non-premium state or tapping skip speaking
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'free_user',
-            email: 'free@vowl.app',
-            isPremium: false,
+    testWidgets(
+      'Stage 2: STT auto-pass skips speech via overlay controls and marks answer as skipped',
+      (tester) async {
+        // In non-premium state or tapping skip speaking
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'free_user',
+              email: 'free@vowl.app',
+              isPremium: false,
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester);
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('Face a difficult situation with courage'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Face a difficult situation with courage'));
+        await tester.pumpAndSettle();
 
-      await tester.drag(
-        find.byKey(const Key('idiom_match_scroll_view')),
-        const Offset(0, -400),
-      );
-      await tester.pumpAndSettle();
+        await tester.drag(
+          find.byKey(const Key('idiom_match_scroll_view')),
+          const Offset(0, -400),
+        );
+        await tester.pumpAndSettle();
 
-      // Find the overlay and tap skip speaking
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
+        // Find the overlay and tap skip speaking
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 5: Game Lifecycle & State Transitions
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 5. Game Lifecycle & State Transitions', () {
-    testWidgets('tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
+        await tester.tap(hintButton);
+        await tester.pump();
 
-      verify(() => mockEliteBloc.add(any(that: isA<MarkEliteHintUsed>()))).called(1);
-      verify(() => mockEliteBloc.add(any(that: isA<ShowEliteHint>()))).called(1);
-    });
+        verify(
+          () => mockEliteBloc.add(any(that: isA<MarkEliteHintUsed>())),
+        ).called(1);
+        verify(
+          () => mockEliteBloc.add(any(that: isA<ShowEliteHint>())),
+        ).called(1);
+      },
+    );
 
     testWidgets('displays EliteHintCard when isHintVisible is true', (
       tester,
@@ -928,81 +955,81 @@ void main() {
       await pumpScreen(tester, state: hintVisibleState);
 
       expect(find.byType(EliteHintCard), findsOneWidget);
-      expect(
-        find.text(sampleIdiomQuest1.hint!),
-        findsOneWidget,
-      );
+      expect(find.text(sampleIdiomQuest1.hint!), findsOneWidget);
     });
 
-    testWidgets('tapping hint button when quest hint is empty/null triggers hint ad dialog', (
-      tester,
-    ) async {
-      final noHintQuest = createSampleIdiomQuest(
-        id: 'quest_no_hint',
-        hint: '',
-      );
-      final noHintState = EliteMasteryLoaded(
-        gameType: GameSubtype.idiomMatch,
-        level: 2,
-        quests: [noHintQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+    testWidgets(
+      'tapping hint button when quest hint is empty/null triggers hint ad dialog',
+      (tester) async {
+        final noHintQuest = createSampleIdiomQuest(
+          id: 'quest_no_hint',
+          hint: '',
+        );
+        final noHintState = EliteMasteryLoaded(
+          gameType: GameSubtype.idiomMatch,
+          level: 2,
+          quests: [noHintQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      await pumpScreen(tester, state: noHintState);
+        await pumpScreen(tester, state: noHintState);
 
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pumpAndSettle();
 
-      expect(find.text('NEED A HINT?'), findsOneWidget);
-    });
+        expect(find.text('NEED A HINT?'), findsOneWidget);
+      },
+    );
 
-    testWidgets('GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
-      tester,
-    ) async {
-      final answeredState = EliteMasteryLoaded(
-        gameType: GameSubtype.idiomMatch,
-        level: 2,
-        quests: [sampleIdiomQuest1, sampleIdiomQuest2],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion',
+      (tester) async {
+        final answeredState = EliteMasteryLoaded(
+          gameType: GameSubtype.idiomMatch,
+          level: 2,
+          quests: [sampleIdiomQuest1, sampleIdiomQuest2],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpScreen(tester, state: answeredState);
+        await pumpScreen(tester, state: answeredState);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
 
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pumpAndSettle();
+        await tester.tap(continueButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
-    });
+        verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
+      },
+    );
 
-    testWidgets('state transition to EliteMasteryGameComplete shows level complete dialog and flushes confetti timer', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'state transition to EliteMasteryGameComplete shows level complete dialog and flushes confetti timer',
+      (tester) async {
+        await pumpScreen(tester);
 
-      const completeState = EliteMasteryGameComplete(
-        xpEarned: 5,
-        coinsEarned: 10,
-        questCount: 3,
-      );
+        const completeState = EliteMasteryGameComplete(
+          xpEarned: 5,
+          coinsEarned: 10,
+          questCount: 3,
+        );
 
-      when(() => mockEliteBloc.state).thenReturn(completeState);
-      eliteStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        when(() => mockEliteBloc.state).thenReturn(completeState);
+        eliteStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(seconds: 4));
-    });
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(seconds: 4));
+      },
+    );
 
     testWidgets('EliteMasteryGameOver renders dimmed view with zero lives', (
       tester,
@@ -1040,90 +1067,79 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 6: Responsive Layout, Text Scaling & Accessibility
   // ═══════════════════════════════════════════════════════════════════════════
-  group('IdiomMatchScreen - 6. Responsive Layout, Text Scaling & Accessibility', () {
-    testWidgets('renders cleanly on compact screen (320x568) without overflow', (
-      tester,
-    ) async {
-      await pumpScreen(
+  group(
+    'IdiomMatchScreen - 6. Responsive Layout, Text Scaling & Accessibility',
+    () {
+      testWidgets(
+        'renders cleanly on compact screen (320x568) without overflow',
+        (tester) async {
+          await pumpScreen(tester, surfaceSize: const Size(320, 568));
+
+          expect(tester.takeException(), isNull);
+          expect(
+            find.byKey(const Key('idiom_match_scroll_view')),
+            findsOneWidget,
+          );
+        },
+      );
+
+      testWidgets('renders cleanly on tablet viewport (800x1280)', (
         tester,
-        surfaceSize: const Size(320, 568),
-      );
+      ) async {
+        await pumpScreen(tester, surfaceSize: const Size(800, 1280));
 
-      expect(tester.takeException(), isNull);
-      expect(
-        find.byKey(const Key('idiom_match_scroll_view')),
-        findsOneWidget,
-      );
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
+      });
 
-    testWidgets('renders cleanly on tablet viewport (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
+      testWidgets('renders properly with enlarged textScaler (1.3x)', (
         tester,
-        surfaceSize: const Size(800, 1280),
-      );
+      ) async {
+        await pumpScreen(tester, textScaleFactor: 1.3);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
+        expect(
+          find.byKey(const Key('idiom_match_prompt_card')),
+          findsOneWidget,
+        );
+      });
 
-    testWidgets('renders properly with enlarged textScaler (1.3x)', (
-      tester,
-    ) async {
-      await pumpScreen(
+      testWidgets('accessible semantics: options have button semantics', (
         tester,
-        textScaleFactor: 1.3,
-      );
+      ) async {
+        await pumpScreen(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
-      expect(
-        find.byKey(const Key('idiom_match_prompt_card')),
-        findsOneWidget,
-      );
-    });
+        final optionFinder = find.byKey(const Key('idiom_match_option_0'));
+        expect(optionFinder, findsOneWidget);
 
-    testWidgets('accessible semantics: options have button semantics', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+        final semantics = tester.getSemantics(optionFinder);
+        expect(semantics.flagsCollection.isButton, isTrue);
+      });
 
-      final optionFinder = find.byKey(const Key('idiom_match_option_0'));
-      expect(optionFinder, findsOneWidget);
-
-      final semantics = tester.getSemantics(optionFinder);
-      expect(semantics.flagsCollection.isButton, isTrue);
-    });
-
-    testWidgets('renders cleanly in light and dark theme modes', (
-      tester,
-    ) async {
-      // Light Mode
-      when(
-        () => mockThemeCubit.state,
-      ).thenReturn(const ThemeState(themeMode: ThemeMode.light, isMidnight: false));
-
-      await pumpScreen(
+      testWidgets('renders cleanly in light and dark theme modes', (
         tester,
-        themeMode: ThemeMode.light,
-      );
+      ) async {
+        // Light Mode
+        when(() => mockThemeCubit.state).thenReturn(
+          const ThemeState(themeMode: ThemeMode.light, isMidnight: false),
+        );
 
-      expect(find.byType(EliteBaseLayout), findsOneWidget);
-      expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
+        await pumpScreen(tester, themeMode: ThemeMode.light);
 
-      // Dark Mode
-      when(
-        () => mockThemeCubit.state,
-      ).thenReturn(const ThemeState(themeMode: ThemeMode.dark, isMidnight: false));
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
 
-      await pumpScreen(
-        tester,
-        themeMode: ThemeMode.dark,
-      );
+        // Dark Mode
+        when(() => mockThemeCubit.state).thenReturn(
+          const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
+        );
 
-      expect(find.byType(EliteBaseLayout), findsOneWidget);
-      expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
-    });
-  });
+        await pumpScreen(tester, themeMode: ThemeMode.dark);
+
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(IdiomMatchOptionsPanel), findsOneWidget);
+      });
+    },
+  );
 }

@@ -46,9 +46,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final localeService = di.sl<LocaleService>();
     final currentCode = localeService.currentLocale.languageCode;
 
@@ -74,10 +72,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
           decoration: BoxDecoration(
             color: sheetBg,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-            border: Border.all(
-              color: borderColor,
-              width: 1.0,
-            ),
+            border: Border.all(color: borderColor, width: 1.0),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
@@ -346,9 +341,7 @@ class _LanguageTile extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final rowBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
@@ -370,15 +363,13 @@ class _LanguageTile extends StatelessWidget {
                         alpha: isDark ? 0.15 : 0.08,
                       )
                     : (isMidnight
-                        ? const Color(0xFF0F1523)
-                        : (isDark
-                            ? const Color(0xFF161F33)
-                            : AppColors.slate50)),
+                          ? const Color(0xFF0F1523)
+                          : (isDark
+                                ? const Color(0xFF161F33)
+                                : AppColors.slate50)),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: isActive
-                      ? AppColors.indigo500
-                      : rowBorder,
+                  color: isActive ? AppColors.indigo500 : rowBorder,
                   width: 1.0,
                 ),
               ),

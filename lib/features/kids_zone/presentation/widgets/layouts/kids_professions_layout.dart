@@ -162,6 +162,7 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -197,16 +198,14 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight,
+                      ),
 
                       // Storefront Target Area
                       _buildCareerStorefront(
@@ -273,16 +272,17 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                 color: isHovering
                     ? _ProfessionsPalette.hoverTargetGlow
                     : (isCorrect
-                        ? _ProfessionsPalette.successBorder
-                        : _ProfessionsPalette.buildingTrim),
+                          ? _ProfessionsPalette.successBorder
+                          : _ProfessionsPalette.buildingTrim),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: (isHovering
-                          ? _ProfessionsPalette.hoverTargetGlow
-                          : Colors.black)
-                      .withValues(alpha: isHovering ? 0.35 : 0.14),
+                  color:
+                      (isHovering
+                              ? _ProfessionsPalette.hoverTargetGlow
+                              : Colors.black)
+                          .withValues(alpha: isHovering ? 0.35 : 0.14),
                   blurRadius: isHovering ? 18 : 12,
                   offset: const Offset(0, 6),
                 ),
@@ -377,11 +377,7 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
               color: _ProfessionsPalette.primaryTeal,
               borderRadius: BorderRadius.circular(6.r),
             ),
-            child: Icon(
-              Icons.work_rounded,
-              color: Colors.white,
-              size: 15.r,
-            ),
+            child: Icon(Icons.work_rounded, color: Colors.white, size: 15.r),
           ),
           SizedBox(width: 8.w),
           Expanded(
@@ -408,7 +404,9 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: _ProfessionsPalette.primaryTeal.withValues(alpha: 0.4),
+                    color: _ProfessionsPalette.primaryTeal.withValues(
+                      alpha: 0.4,
+                    ),
                     width: 1.5,
                   ),
                   boxShadow: [
@@ -463,10 +461,7 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
           onTap: () => _replayQuestionAudio(quest),
           borderRadius: BorderRadius.circular(14.r),
           child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 14.w,
-              vertical: 12.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: _ProfessionsPalette.noticeParchment,
               borderRadius: BorderRadius.circular(14.r),
@@ -490,7 +485,9 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                   child: Container(
                     padding: EdgeInsets.all(5.r),
                     decoration: BoxDecoration(
-                      color: _ProfessionsPalette.woodLight.withValues(alpha: 0.15),
+                      color: _ProfessionsPalette.woodLight.withValues(
+                        alpha: 0.15,
+                      ),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
@@ -543,7 +540,9 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                 scale: isHovering ? 1.2 : 1.0,
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
-                  isHovering ? Icons.file_download_done_rounded : Icons.badge_outlined,
+                  isHovering
+                      ? Icons.file_download_done_rounded
+                      : Icons.badge_outlined,
                   color: isHovering
                       ? _ProfessionsPalette.woodWarm
                       : _ProfessionsPalette.primaryTeal,
@@ -553,9 +552,7 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
               SizedBox(width: 8.w),
               Flexible(
                 child: Text(
-                  isHovering
-                      ? 'Drop here'
-                      : 'Tap an answer, or drag it here',
+                  isHovering ? 'Drop here' : 'Tap an answer, or drag it here',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: isNarrow ? 12.sp : 13.sp,
@@ -575,10 +572,7 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
   }
 
   /// Storefront display when the question is solved correctly
-  Widget _buildSolvedStateDisplay(
-    KidsQuest quest, {
-    required bool isNarrow,
-  }) {
+  Widget _buildSolvedStateDisplay(KidsQuest quest, {required bool isNarrow}) {
     final emoji = quest.emoji ?? '🎖️';
     final answer = quest.correctAnswer ?? '';
 
@@ -601,13 +595,11 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
               Text(
                 emoji,
                 style: TextStyle(fontSize: isNarrow ? 44.sp : 52.sp),
-              )
-                  .animate()
-                  .scale(
-                    begin: const Offset(0.5, 0.5),
-                    duration: 400.ms,
-                    curve: Curves.elasticOut,
-                  ),
+              ).animate().scale(
+                begin: const Offset(0.5, 0.5),
+                duration: 400.ms,
+                curve: Curves.elasticOut,
+              ),
               SizedBox(width: 14.w),
               Expanded(
                 child: Column(
@@ -759,7 +751,8 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
     final isCorrectOption = (option == quest.correctAnswer);
 
     // Lifeline hint support: Dim distractor when hint is used
-    final bool isDistractorDimmed = state.hintUsed &&
+    final bool isDistractorDimmed =
+        state.hintUsed &&
         !isCorrectOption &&
         (index == 0 || (index == 1 && _optionsFirstIsCorrect(quest)));
 
@@ -778,8 +771,8 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
             color: isAnswered && isCorrectOption
                 ? _ProfessionsPalette.successBorder
                 : (isAnswered && isSelected
-                    ? _ProfessionsPalette.errorBorder
-                    : _ProfessionsPalette.woodLight),
+                      ? _ProfessionsPalette.errorBorder
+                      : _ProfessionsPalette.woodLight),
             width: isAnswered && (isCorrectOption || isSelected) ? 3.0 : 1.5,
           ),
           boxShadow: [
@@ -800,16 +793,13 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
               left: 7.w,
               right: 7.w,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 6.w,
-                  vertical: 6.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   color: isAnswered && isCorrectOption
                       ? _ProfessionsPalette.successBg
                       : (isAnswered && isSelected
-                          ? _ProfessionsPalette.errorBg
-                          : Colors.white),
+                            ? _ProfessionsPalette.errorBg
+                            : Colors.white),
                   borderRadius: BorderRadius.circular(6.r),
                   border: Border.all(
                     color: isAnswered && isCorrectOption
@@ -832,8 +822,8 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                             color: isAnswered && isCorrectOption
                                 ? _ProfessionsPalette.successText
                                 : (isAnswered && isSelected
-                                    ? _ProfessionsPalette.errorText
-                                    : AppColors.slate900),
+                                      ? _ProfessionsPalette.errorText
+                                      : AppColors.slate900),
                             height: 1.2,
                           ),
                           textAlign: TextAlign.center,
@@ -854,8 +844,9 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                             color: _ProfessionsPalette.lightTealBg,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: _ProfessionsPalette.primaryTeal
-                                  .withValues(alpha: 0.3),
+                              color: _ProfessionsPalette.primaryTeal.withValues(
+                                alpha: 0.3,
+                              ),
                               width: 1,
                             ),
                           ),
@@ -954,7 +945,8 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
     final isCorrectOption = (option == quest.correctAnswer);
 
     // Lifeline hint support
-    final bool isDistractorDimmed = state.hintUsed &&
+    final bool isDistractorDimmed =
+        state.hintUsed &&
         !isCorrectOption &&
         (index == 0 || (index == 1 && _optionsFirstIsCorrect(quest)));
 
@@ -966,15 +958,15 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
           color: isAnswered && isCorrectOption
               ? _ProfessionsPalette.successBg
               : (isAnswered && isSelected
-                  ? _ProfessionsPalette.errorBg
-                  : Colors.white),
+                    ? _ProfessionsPalette.errorBg
+                    : Colors.white),
           borderRadius: BorderRadius.circular(14.r),
           border: Border.all(
             color: isAnswered && isCorrectOption
                 ? _ProfessionsPalette.successBorder
                 : (isAnswered && isSelected
-                    ? _ProfessionsPalette.errorBorder
-                    : _ProfessionsPalette.badgeBorder),
+                      ? _ProfessionsPalette.errorBorder
+                      : _ProfessionsPalette.badgeBorder),
             width: isAnswered && (isCorrectOption || isSelected) ? 2.5 : 1.5,
           ),
           boxShadow: [
@@ -1007,8 +999,16 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                 child: isAnswered && isCorrectOption
                     ? Icon(Icons.check_rounded, color: Colors.white, size: 18.r)
                     : (isAnswered && isSelected
-                        ? Icon(Icons.close_rounded, color: _ProfessionsPalette.errorText, size: 18.r)
-                        : Icon(Icons.badge_outlined, color: _ProfessionsPalette.primaryTeal, size: 16.r)),
+                          ? Icon(
+                              Icons.close_rounded,
+                              color: _ProfessionsPalette.errorText,
+                              size: 18.r,
+                            )
+                          : Icon(
+                              Icons.badge_outlined,
+                              color: _ProfessionsPalette.primaryTeal,
+                              size: 16.r,
+                            )),
               ),
             ),
             SizedBox(width: 12.w),
@@ -1023,8 +1023,8 @@ class _KidsProfessionsLayoutState extends State<KidsProfessionsLayout> {
                   color: isAnswered && isCorrectOption
                       ? _ProfessionsPalette.successText
                       : (isAnswered && isSelected
-                          ? _ProfessionsPalette.errorText
-                          : AppColors.slate900),
+                            ? _ProfessionsPalette.errorText
+                            : AppColors.slate900),
                   height: 1.3,
                 ),
               ),

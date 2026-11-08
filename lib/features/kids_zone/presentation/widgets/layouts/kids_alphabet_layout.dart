@@ -38,7 +38,9 @@ class _AlphabetPalette {
   static const Color woodBlockBg = Color(0xFFFFFBEB); // Smooth pale maple
   static const Color woodBlockBorder = Color(0xFFF59E0B); // Amber 500 edge
   static const Color woodBlockShadow = Color(0xFFB45309); // Amber 700 3D shadow
-  static const Color woodBlockText = Color(0xFF78350F); // Deep engraved wood text
+  static const Color woodBlockText = Color(
+    0xFF78350F,
+  ); // Deep engraved wood text
 
   // Interactive Target States
   static const Color hoverGlow = Color(0xFFFBBF24); // Amber 400 target glow
@@ -166,8 +168,8 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
     final question = quest.question ?? '';
     final textToSpeak = instruction.isNotEmpty
         ? (question.isNotEmpty && question != '?'
-            ? '$instruction $question'
-            : instruction)
+              ? '$instruction $question'
+              : instruction)
         : question;
 
     if (textToSpeak.isNotEmpty) {
@@ -190,6 +192,7 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -225,11 +228,7 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -303,8 +302,8 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
                 color: isHovering
                     ? _AlphabetPalette.hoverGlow
                     : (isCorrect
-                        ? _AlphabetPalette.successBorder
-                        : _AlphabetPalette.woodFrameBorder),
+                          ? _AlphabetPalette.successBorder
+                          : _AlphabetPalette.woodFrameBorder),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
@@ -344,7 +343,9 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
                       ],
                     ),
                     border: Border.all(
-                      color: _AlphabetPalette.chalkDustGreen.withValues(alpha: 0.5),
+                      color: _AlphabetPalette.chalkDustGreen.withValues(
+                        alpha: 0.5,
+                      ),
                       width: 1.5.w,
                     ),
                   ),
@@ -434,7 +435,8 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
   }) {
     final instruction = InstructionHelper.getInstruction(quest);
     final question = quest.question ?? '';
-    final hasBoth = instruction.isNotEmpty &&
+    final hasBoth =
+        instruction.isNotEmpty &&
         question.isNotEmpty &&
         question != '?' &&
         instruction != question;
@@ -463,8 +465,8 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
           hasBoth
               ? question
               : (question.isNotEmpty && question != '?'
-                  ? question
-                  : instruction),
+                    ? question
+                    : instruction),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: isNarrow ? 17.sp : 19.sp,
@@ -537,19 +539,13 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
       decoration: BoxDecoration(
         color: _AlphabetPalette.slateLight,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: _AlphabetPalette.successBorder,
-          width: 2.w,
-        ),
+        border: Border.all(color: _AlphabetPalette.successBorder, width: 2.w),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // Celebratory Emoji with animated scale
-          Text(
-            emoji,
-            style: TextStyle(fontSize: 44.sp),
-          )
+          Text(emoji, style: TextStyle(fontSize: 44.sp))
               .animate()
               .scale(
                 duration: 400.ms,
@@ -616,7 +612,9 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
                   child: Container(
                     padding: EdgeInsets.all(4.r),
                     decoration: BoxDecoration(
-                      color: _AlphabetPalette.chalkYellow.withValues(alpha: 0.2),
+                      color: _AlphabetPalette.chalkYellow.withValues(
+                        alpha: 0.2,
+                      ),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
@@ -756,8 +754,9 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
     if (options.isEmpty) return const SizedBox.shrink();
 
     // Determine if options are short single letters or full words / sequences
-    final bool areAllOptionsShort =
-        options.every((opt) => opt.trim().length <= 6);
+    final bool areAllOptionsShort = options.every(
+      (opt) => opt.trim().length <= 6,
+    );
 
     // Identify distractor block to dim if hint is active
     String? hintDimOption;
@@ -917,10 +916,7 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.12,
-        child: Opacity(
-          opacity: 0.95,
-          child: blockVisual,
-        ),
+        child: Opacity(opacity: 0.95, child: blockVisual),
       ),
     );
 
@@ -1039,10 +1035,7 @@ class _KidsAlphabetLayoutState extends State<KidsAlphabetLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.04,
-        child: Opacity(
-          opacity: 0.95,
-          child: bannerVisual,
-        ),
+        child: Opacity(opacity: 0.95, child: bannerVisual),
       ),
     );
 

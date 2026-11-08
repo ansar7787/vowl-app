@@ -65,7 +65,9 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 17.sp,
             fontWeight: FontWeight.w500,
-            color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.9)
+                : Colors.black87,
             height: 1.6,
           ),
         ),
@@ -182,4 +184,3 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
     );
   }
 }
-

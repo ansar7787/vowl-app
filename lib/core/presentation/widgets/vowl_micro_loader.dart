@@ -7,11 +7,7 @@ class VowlMicroLoader extends StatelessWidget {
   final Color color;
   final double size;
 
-  const VowlMicroLoader({
-    super.key,
-    this.color = Colors.white,
-    this.size = 18,
-  });
+  const VowlMicroLoader({super.key, this.color = Colors.white, this.size = 18});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +19,11 @@ class VowlMicroLoader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(3, (index) {
           return Container(
-            width: dotSize,
-            height: dotSize,
-            margin: EdgeInsets.symmetric(horizontal: dotSize * 0.3),
-            decoration: BoxDecoration(
-              color: color,
-              shape: BoxShape.circle,
-            ),
-          )
+                width: dotSize,
+                height: dotSize,
+                margin: EdgeInsets.symmetric(horizontal: dotSize * 0.3),
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+              )
               .animate(onPlay: (controller) => controller.repeat(reverse: true))
               .scale(
                 delay: Duration(milliseconds: index * 150),
@@ -49,4 +42,3 @@ class VowlMicroLoader extends StatelessWidget {
     );
   }
 }
-

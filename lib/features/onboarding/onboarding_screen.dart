@@ -800,7 +800,12 @@ class _BottomBar extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : slide.ink;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(AppSpacing.spacious, 12, AppSpacing.spacious, 20),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.spacious,
+        12,
+        AppSpacing.spacious,
+        20,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

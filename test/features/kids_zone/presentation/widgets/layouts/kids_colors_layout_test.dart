@@ -132,8 +132,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedColorState);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -145,14 +146,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -160,23 +164,31 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
@@ -243,42 +255,57 @@ void main() {
   }
 
   group('KidsColorsLayout - Initial Rendering & Aesthetics', () {
-    testWidgets('renders easel canvas, instructions, emoji, and paint tubes for color quests',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'renders easel canvas, instructions, emoji, and paint tubes for color quests',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      // Verify instruction text is displayed in speech bubble
-      expect(
-        find.text('A stop sign tells cars to stop. What color is it?'),
-        findsOneWidget,
-      );
+        // Verify instruction text is displayed in speech bubble
+        expect(
+          find.text('A stop sign tells cars to stop. What color is it?'),
+          findsOneWidget,
+        );
 
-      // Verify prompt banner text
-      expect(
-        find.text('Tap or drag the correct color to the canvas!'),
-        findsOneWidget,
-      );
+        // Verify prompt banner text
+        expect(
+          find.text('Tap or drag the correct color to the canvas!'),
+          findsOneWidget,
+        );
 
-      // Verify paint tube options rendered
-      expect(find.byKey(const ValueKey('colors_option_Red')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Yellow')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Blue')), findsOneWidget);
+        // Verify paint tube options rendered
+        expect(find.byKey(const ValueKey('colors_option_Red')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('colors_option_Yellow')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('colors_option_Blue')),
+          findsOneWidget,
+        );
 
-      // Verify water drop icons inside paint tubes
-      expect(find.byIcon(Icons.water_drop_rounded), findsNWidgets(3));
+        // Verify water drop icons inside paint tubes
+        expect(find.byIcon(Icons.water_drop_rounded), findsNWidgets(3));
 
-      // Verify audio replay button
-      expect(find.byKey(const ValueKey('colors_audio_replay_btn')), findsOneWidget);
-    });
+        // Verify audio replay button
+        expect(
+          find.byKey(const ValueKey('colors_audio_replay_btn')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('renders object cards for object classification quests',
-        (tester) async {
+    testWidgets('renders object cards for object classification quests', (
+      tester,
+    ) async {
       await pumpColorsLayout(tester, state: testLoadedObjectState);
 
       // Verify object options rendered
       expect(find.byKey(const ValueKey('colors_option_Lemon')), findsOneWidget);
       expect(find.byKey(const ValueKey('colors_option_Grass')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Tomato')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('colors_option_Tomato')),
+        findsOneWidget,
+      );
 
       // Verify prompt adapts to object quest
       expect(
@@ -287,8 +314,9 @@ void main() {
       );
     });
 
-    testWidgets('renders cleanly in dark mode without contrast issues',
-        (tester) async {
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
       await pumpColorsLayout(
         tester,
         state: testLoadedColorState,
@@ -304,25 +332,30 @@ void main() {
   });
 
   group('KidsColorsLayout - Audio Scaffolding', () {
-    testWidgets('tapping easel audio button replays question instruction via TTS',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'tapping easel audio button replays question instruction via TTS',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      final audioBtn = find.byKey(const ValueKey('colors_audio_replay_btn'));
-      expect(audioBtn, findsOneWidget);
+        final audioBtn = find.byKey(const ValueKey('colors_audio_replay_btn'));
+        expect(audioBtn, findsOneWidget);
 
-      await tester.tap(audioBtn);
-      await tester.pump();
+        await tester.tap(audioBtn);
+        await tester.pump();
 
-      verify(() => mockTTSService.speak(
+        verify(
+          () => mockTTSService.speak(
             'A stop sign tells cars to stop. What color is it?',
             force: true,
-          )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('tapping option speaker button pronounces color name via TTS',
-        (tester) async {
+    testWidgets('tapping option speaker button pronounces color name via TTS', (
+      tester,
+    ) async {
       await pumpColorsLayout(tester, state: testLoadedColorState);
 
       final redSpeaker = find.byKey(const ValueKey('colors_speaker_Red'));
@@ -338,84 +371,97 @@ void main() {
   });
 
   group('KidsColorsLayout - Dual Interaction (Tap & Drag)', () {
-    testWidgets('instant tap-to-answer correct option dispatches SubmitKidsAnswer(true) and success haptics',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'instant tap-to-answer correct option dispatches SubmitKidsAnswer(true) and success haptics',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      final redOption = find.byKey(const ValueKey('colors_option_Red'));
-      await tester.tap(redOption);
-      await tester.pump();
+        final redOption = find.byKey(const ValueKey('colors_option_Red'));
+        await tester.tap(redOption);
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
-      verifyNever(() => mockHapticService.error());
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verifyNever(() => mockHapticService.error());
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('instant tap-to-answer incorrect option dispatches SubmitKidsAnswer(false), error haptics and TTS pronunciation',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'instant tap-to-answer incorrect option dispatches SubmitKidsAnswer(false), error haptics and TTS pronunciation',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      final yellowOption = find.byKey(const ValueKey('colors_option_Yellow'));
-      await tester.tap(yellowOption);
-      await tester.pump();
+        final yellowOption = find.byKey(const ValueKey('colors_option_Yellow'));
+        await tester.tap(yellowOption);
+        await tester.pump();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockTTSService.speak('Yellow')).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockTTSService.speak('Yellow')).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('drag-and-drop correct paint tube to easel canvas triggers SubmitKidsAnswer(true)',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'drag-and-drop correct paint tube to easel canvas triggers SubmitKidsAnswer(true)',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      final draggableFinder = find.byWidgetPredicate(
-        (w) => w is Draggable<String> && w.data == 'Red',
-      );
-      final dragTargetFinder = find.byType(DragTarget<String>);
+        final draggableFinder = find.byWidgetPredicate(
+          (w) => w is Draggable<String> && w.data == 'Red',
+        );
+        final dragTargetFinder = find.byType(DragTarget<String>);
 
-      expect(draggableFinder, findsOneWidget);
-      expect(dragTargetFinder, findsOneWidget);
+        expect(draggableFinder, findsOneWidget);
+        expect(dragTargetFinder, findsOneWidget);
 
-      final dragGesture = await tester.startGesture(tester.getCenter(draggableFinder));
-      await tester.pump();
+        final dragGesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
+        await tester.pump();
 
-      // Move over the drag target canvas
-      await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
-      await tester.pump();
+        // Move over the drag target canvas
+        await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
+        await tester.pump();
 
-      // Drop
-      await dragGesture.up();
-      await tester.pump();
+        // Drop
+        await dragGesture.up();
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('drag-and-drop incorrect paint tube to easel canvas triggers SubmitKidsAnswer(false)',
-        (tester) async {
-      await pumpColorsLayout(tester, state: testLoadedColorState);
+    testWidgets(
+      'drag-and-drop incorrect paint tube to easel canvas triggers SubmitKidsAnswer(false)',
+      (tester) async {
+        await pumpColorsLayout(tester, state: testLoadedColorState);
 
-      final draggableFinder = find.byWidgetPredicate(
-        (w) => w is Draggable<String> && w.data == 'Blue',
-      );
-      final dragTargetFinder = find.byType(DragTarget<String>);
+        final draggableFinder = find.byWidgetPredicate(
+          (w) => w is Draggable<String> && w.data == 'Blue',
+        );
+        final dragTargetFinder = find.byType(DragTarget<String>);
 
-      final dragGesture = await tester.startGesture(tester.getCenter(draggableFinder));
-      await tester.pump();
+        final dragGesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
+        await tester.pump();
 
-      await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
-      await tester.pump();
+        await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
+        await tester.pump();
 
-      await dragGesture.up();
-      await tester.pump();
+        await dragGesture.up();
+        await tester.pump();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockTTSService.speak('Blue')).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockTTSService.speak('Blue')).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('locks interaction when quest is already answered',
-        (tester) async {
+    testWidgets('locks interaction when quest is already answered', (
+      tester,
+    ) async {
       const answeredState = KidsLoaded(
         quests: [testColorQuest],
         originalTotalQuests: 1,
@@ -436,43 +482,66 @@ void main() {
     });
   });
 
-  group('KidsColorsLayout - Small Screen (320dp) & Complex Curriculum Safety', () {
-    testWidgets('renders 4 mineral options on compact 320dp width without RenderFlex overflow',
+  group(
+    'KidsColorsLayout - Small Screen (320dp) & Complex Curriculum Safety',
+    () {
+      testWidgets(
+        'renders 4 mineral options on compact 320dp width without RenderFlex overflow',
         (tester) async {
-      await pumpColorsLayout(
-        tester,
-        state: testLoadedFourOptionsState,
-        level: 190,
-        width: 320,
-        height: 568,
+          await pumpColorsLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 190,
+            width: 320,
+            height: 568,
+          );
+
+          // Verify all 4 gemstone options are visible
+          expect(
+            find.byKey(const ValueKey('colors_option_Sapphire')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('colors_option_Emerald')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('colors_option_Ruby')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('colors_option_Topaz')),
+            findsOneWidget,
+          );
+
+          // Verify zero overflow exceptions
+          expect(tester.takeException(), isNull);
+        },
       );
 
-      // Verify all 4 gemstone options are visible
-      expect(find.byKey(const ValueKey('colors_option_Sapphire')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Emerald')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Ruby')), findsOneWidget);
-      expect(find.byKey(const ValueKey('colors_option_Topaz')), findsOneWidget);
-
-      // Verify zero overflow exceptions
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('tapping option on 320dp screen still triggers correct answer flow',
+      testWidgets(
+        'tapping option on 320dp screen still triggers correct answer flow',
         (tester) async {
-      await pumpColorsLayout(
-        tester,
-        state: testLoadedFourOptionsState,
-        level: 190,
-        width: 320,
-        height: 568,
+          await pumpColorsLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 190,
+            width: 320,
+            height: 568,
+          );
+
+          final sapphireOption = find.byKey(
+            const ValueKey('colors_option_Sapphire'),
+          );
+          await tester.tap(sapphireOption);
+          await tester.pump();
+
+          verify(() => mockHapticService.success()).called(1);
+          verify(
+            () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
+          ).called(1);
+        },
       );
-
-      final sapphireOption = find.byKey(const ValueKey('colors_option_Sapphire'));
-      await tester.tap(sapphireOption);
-      await tester.pump();
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
-  });
+    },
+  );
 }

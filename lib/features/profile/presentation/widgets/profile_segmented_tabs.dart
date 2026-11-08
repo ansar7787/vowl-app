@@ -34,9 +34,7 @@ class ProfileSegmentedTabs extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     final tabs = [
       (
@@ -61,13 +59,10 @@ class ProfileSegmentedTabs extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                  ? const Color(0xFF131A29)
-                  : Colors.black.withValues(alpha: 0.04)),
+                    ? const Color(0xFF131A29)
+                    : Colors.black.withValues(alpha: 0.04)),
           borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(
-            color: borderColor,
-            width: 1.0,
-          ),
+          border: Border.all(color: borderColor, width: 1.0),
         ),
         child: LayoutBuilder(
           builder: (context, constraints) {
@@ -93,8 +88,8 @@ class ProfileSegmentedTabs extends StatelessWidget {
                         color: isMidnight
                             ? Colors.white.withValues(alpha: 0.12)
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.08)
-                                : AppColors.slate100),
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.slate100),
                         width: 1.0,
                       ),
                       boxShadow: [
@@ -137,7 +132,9 @@ class ProfileSegmentedTabs extends StatelessWidget {
                                 size: 15.r,
                                 color: isSelected
                                     ? AppColors.indigo500
-                                    : (isDark ? Colors.white38 : Colors.black38),
+                                    : (isDark
+                                          ? Colors.white38
+                                          : Colors.black38),
                               ),
                               SizedBox(width: 5.w),
                               Flexible(
@@ -151,11 +148,11 @@ class ProfileSegmentedTabs extends StatelessWidget {
                                         : FontWeight.w600,
                                     color: isSelected
                                         ? (isDark
-                                            ? Colors.white
-                                            : AppColors.slate900)
+                                              ? Colors.white
+                                              : AppColors.slate900)
                                         : (isDark
-                                            ? Colors.white38
-                                            : Colors.black38),
+                                              ? Colors.white38
+                                              : Colors.black38),
                                   ),
                                   child: Text(
                                     tab.label,

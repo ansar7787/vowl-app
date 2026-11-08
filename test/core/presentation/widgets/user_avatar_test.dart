@@ -23,15 +23,12 @@ void main() {
       expect(find.byType(Image), findsNothing);
     });
 
-    testWidgets('renders default fallback person icon when photoUrl is empty', (tester) async {
+    testWidgets('renders default fallback person icon when photoUrl is empty', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         const MaterialApp(
-          home: Scaffold(
-            body: UserAvatar(
-              photoUrl: '   ',
-              size: 48,
-            ),
-          ),
+          home: Scaffold(body: UserAvatar(photoUrl: '   ', size: 48)),
         ),
       );
 
@@ -39,7 +36,9 @@ void main() {
       expect(find.byType(CachedNetworkImage), findsNothing);
     });
 
-    testWidgets('renders CachedNetworkImage when photoUrl is an HTTPS url', (tester) async {
+    testWidgets('renders CachedNetworkImage when photoUrl is an HTTPS url', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: Scaffold(
@@ -52,12 +51,16 @@ void main() {
       );
 
       expect(find.byType(CachedNetworkImage), findsOneWidget);
-      final cachedImage = tester.widget<CachedNetworkImage>(find.byType(CachedNetworkImage));
+      final cachedImage = tester.widget<CachedNetworkImage>(
+        find.byType(CachedNetworkImage),
+      );
       expect(cachedImage.imageUrl, 'https://example.com/avatar.jpg');
       expect(cachedImage.fit, BoxFit.cover);
     });
 
-    testWidgets('applies border and custom dimensions correctly', (tester) async {
+    testWidgets('applies border and custom dimensions correctly', (
+      tester,
+    ) async {
       const border = Border.fromBorderSide(
         BorderSide(color: Colors.amber, width: 3.0),
       );
@@ -76,10 +79,12 @@ void main() {
       );
 
       final container = tester.widget<Container>(
-        find.descendant(
-          of: find.byType(UserAvatar),
-          matching: find.byType(Container),
-        ).first,
+        find
+            .descendant(
+              of: find.byType(UserAvatar),
+              matching: find.byType(Container),
+            )
+            .first,
       );
 
       expect(container.constraints?.maxWidth, 100);
@@ -90,4 +95,3 @@ void main() {
     });
   });
 }
-

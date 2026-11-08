@@ -59,14 +59,22 @@ class ArenaResultDialog extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final surfaceColor = isDark ? AppColors.midnightSurface : (tokens?.surface ?? Colors.white);
-    final borderColor = isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0));
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
-    final cardBg = isDark ? const Color(0xFF070A12) : const Color(0xFFF8FAFC);
+    final surfaceColor = isDark
+        ? AppColors.midnightSurface
+        : (tokens?.surface ?? Colors.white);
+    final borderColor = isDark
+        ? AppColors.slate800
+        : (tokens?.border ?? AppColors.slate200);
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? AppColors.slate900);
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? AppColors.slate500);
+    final cardBg = isDark ? AppColors.ultraDeep : AppColors.slate50;
 
     final statusColor = isSpeedTieBreak
-        ? const Color(0xFFF59E0B)
+        ? AppColors.amber500
         : (isWinner ? AppColors.emerald500 : AppColors.rose500);
 
     final statusTitle = isSpeedTieBreak
@@ -75,11 +83,11 @@ class ArenaResultDialog extends StatelessWidget {
 
     final statusSubtitle = isSpeedTieBreak
         ? (isWinner
-            ? 'Tied on points! You were ${speedDiffSeconds.toStringAsFixed(1)}s faster!'
-            : 'Tied on points! Rival was ${speedDiffSeconds.toStringAsFixed(1)}s faster.')
+              ? 'Tied on points! You were ${speedDiffSeconds.toStringAsFixed(1)}s faster!'
+              : 'Tied on points! Rival was ${speedDiffSeconds.toStringAsFixed(1)}s faster.')
         : (isWinner
-            ? 'Great match! +$payoutCoins coins won.'
-            : 'Good match! +$payoutCoins coins returned.');
+              ? 'Great match! +$payoutCoins coins won.'
+              : 'Good match! +$payoutCoins coins returned.');
 
     final netCoins = isWinner ? 20 : -20;
 
@@ -124,6 +132,7 @@ class ArenaResultDialog extends StatelessWidget {
               Text(
                 statusTitle,
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
@@ -135,6 +144,7 @@ class ArenaResultDialog extends StatelessWidget {
               Text(
                 statusSubtitle,
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
@@ -165,14 +175,21 @@ class ArenaResultDialog extends StatelessWidget {
                               CircleAvatar(
                                 radius: 10.r,
                                 backgroundColor: isWinner
-                                    ? AppColors.emerald500.withValues(alpha: 0.15)
-                                    : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
-                                backgroundImage: myPhotoUrl != null && myPhotoUrl!.isNotEmpty
+                                    ? AppColors.emerald500.withValues(
+                                        alpha: 0.15,
+                                      )
+                                    : (isDark
+                                          ? AppColors.slate800
+                                          : AppColors.slate200),
+                                backgroundImage:
+                                    myPhotoUrl != null && myPhotoUrl!.isNotEmpty
                                     ? NetworkImage(myPhotoUrl!)
                                     : null,
                                 child: myPhotoUrl == null || myPhotoUrl!.isEmpty
                                     ? Text(
-                                        myName.isNotEmpty ? myName[0].toUpperCase() : 'Y',
+                                        myName.isNotEmpty
+                                            ? myName[0].toUpperCase()
+                                            : 'Y',
                                         style: TextStyle(
                                           fontSize: 9.sp,
                                           fontWeight: FontWeight.w800,
@@ -183,7 +200,11 @@ class ArenaResultDialog extends StatelessWidget {
                               ),
                               SizedBox(width: 4.w),
                               if (isWinner) ...[
-                                Icon(LucideIcons.trophy, size: 12.sp, color: const Color(0xFFF59E0B)),
+                                Icon(
+                                  LucideIcons.trophy,
+                                  size: 12.sp,
+                                  color: AppColors.amber500,
+                                ),
                                 SizedBox(width: 3.w),
                               ],
                               Flexible(
@@ -192,6 +213,7 @@ class ArenaResultDialog extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     myName.isNotEmpty ? myName : 'You',
+                                    softWrap: true,
                                     maxLines: 1,
                                     style: TextStyle(
                                       fontSize: 12.sp,
@@ -208,10 +230,13 @@ class ArenaResultDialog extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             child: Text(
                               '$myScore',
+                              softWrap: true,
                               style: TextStyle(
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
-                                color: isWinner ? AppColors.emerald500 : textPrimary,
+                                color: isWinner
+                                    ? AppColors.emerald500
+                                    : textPrimary,
                               ),
                             ),
                           ),
@@ -220,6 +245,7 @@ class ArenaResultDialog extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             child: Text(
                               '$myCorrectCount/5 • ${(myTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              softWrap: true,
                               style: TextStyle(
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w600,
@@ -233,13 +259,17 @@ class ArenaResultDialog extends StatelessWidget {
 
                     // VS Divider
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
-                        color: isDark ? AppColors.slate800 : const Color(0xFFE2E8F0),
+                        color: isDark ? AppColors.slate800 : AppColors.slate200,
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                       child: Text(
                         'VS',
+                        softWrap: true,
                         style: TextStyle(
                           fontSize: 11.sp,
                           fontWeight: FontWeight.w900,
@@ -256,14 +286,19 @@ class ArenaResultDialog extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              if (isAiRival && (rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty))
+                              if (isAiRival &&
+                                  (rivalPhotoUrl == null ||
+                                      rivalPhotoUrl!.isEmpty))
                                 Container(
                                   width: 20.r,
                                   height: 20.r,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     gradient: LinearGradient(
-                                      colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
+                                      colors: [
+                                        AppColors.cyan400,
+                                        AppColors.blue500,
+                                      ],
                                     ),
                                   ),
                                   child: ClipOval(
@@ -277,14 +312,24 @@ class ArenaResultDialog extends StatelessWidget {
                                 CircleAvatar(
                                   radius: 10.r,
                                   backgroundColor: !isWinner
-                                      ? AppColors.emerald500.withValues(alpha: 0.15)
-                                      : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
-                                  backgroundImage: rivalPhotoUrl != null && rivalPhotoUrl!.isNotEmpty
+                                      ? AppColors.emerald500.withValues(
+                                          alpha: 0.15,
+                                        )
+                                      : (isDark
+                                            ? AppColors.slate800
+                                            : AppColors.slate200),
+                                  backgroundImage:
+                                      rivalPhotoUrl != null &&
+                                          rivalPhotoUrl!.isNotEmpty
                                       ? NetworkImage(rivalPhotoUrl!)
                                       : null,
-                                  child: rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty
+                                  child:
+                                      rivalPhotoUrl == null ||
+                                          rivalPhotoUrl!.isEmpty
                                       ? Text(
-                                          rivalName.isNotEmpty ? rivalName[0].toUpperCase() : 'R',
+                                          rivalName.isNotEmpty
+                                              ? rivalName[0].toUpperCase()
+                                              : 'R',
                                           style: TextStyle(
                                             fontSize: 9.sp,
                                             fontWeight: FontWeight.w800,
@@ -295,7 +340,11 @@ class ArenaResultDialog extends StatelessWidget {
                                 ),
                               SizedBox(width: 4.w),
                               if (!isWinner) ...[
-                                Icon(LucideIcons.trophy, size: 12.sp, color: const Color(0xFFF59E0B)),
+                                Icon(
+                                  LucideIcons.trophy,
+                                  size: 12.sp,
+                                  color: AppColors.amber500,
+                                ),
                                 SizedBox(width: 3.w),
                               ],
                               Flexible(
@@ -304,6 +353,7 @@ class ArenaResultDialog extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     rivalName.isNotEmpty ? rivalName : 'Rival',
+                                    softWrap: true,
                                     maxLines: 1,
                                     style: TextStyle(
                                       fontSize: 12.sp,
@@ -320,10 +370,13 @@ class ArenaResultDialog extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             child: Text(
                               '$rivalScore',
+                              softWrap: true,
                               style: TextStyle(
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
-                                color: !isWinner ? AppColors.emerald500 : textPrimary,
+                                color: !isWinner
+                                    ? AppColors.emerald500
+                                    : textPrimary,
                               ),
                             ),
                           ),
@@ -332,6 +385,7 @@ class ArenaResultDialog extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             child: Text(
                               '$rivalCorrectCount/5 • ${(rivalTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              softWrap: true,
                               style: TextStyle(
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w600,
@@ -352,7 +406,9 @@ class ArenaResultDialog extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0B101D) : const Color(0xFFF1F5F9),
+                  color: isDark
+                      ? AppColors.midnightSurface
+                      : AppColors.slate100,
                   borderRadius: BorderRadius.circular(14.r),
                   border: Border.all(color: borderColor.withValues(alpha: 0.8)),
                 ),
@@ -360,7 +416,11 @@ class ArenaResultDialog extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(LucideIcons.coins, size: 14.sp, color: const Color(0xFFF59E0B)),
+                        Icon(
+                          LucideIcons.coins,
+                          size: 14.sp,
+                          color: AppColors.amber500,
+                        ),
                         SizedBox(width: 6.w),
                         Flexible(
                           child: FittedBox(
@@ -368,6 +428,7 @@ class ArenaResultDialog extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'MATCH REWARDS',
+                              softWrap: true,
                               maxLines: 1,
                               style: TextStyle(
                                 fontSize: 10.sp,
@@ -380,7 +441,10 @@ class ArenaResultDialog extends StatelessWidget {
                         ),
                         SizedBox(width: 6.w),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 7.w,
+                            vertical: 2.h,
+                          ),
                           decoration: BoxDecoration(
                             color: isWinner
                                 ? AppColors.emerald500.withValues(alpha: 0.15)
@@ -389,17 +453,23 @@ class ArenaResultDialog extends StatelessWidget {
                           ),
                           child: Text(
                             isWinner ? '+$netCoins COINS' : '$netCoins COINS',
+                            softWrap: true,
                             style: TextStyle(
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w800,
-                              color: isWinner ? AppColors.emerald500 : AppColors.rose500,
+                              color: isWinner
+                                  ? AppColors.emerald500
+                                  : AppColors.rose500,
                             ),
                           ),
                         ),
                       ],
                     ),
                     SizedBox(height: 8.h),
-                    Divider(height: 1.h, color: borderColor.withValues(alpha: 0.5)),
+                    Divider(
+                      height: 1.h,
+                      color: borderColor.withValues(alpha: 0.5),
+                    ),
                     SizedBox(height: 8.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -409,11 +479,22 @@ class ArenaResultDialog extends StatelessWidget {
                             'Entry Fee',
                             maxLines: 2,
                             softWrap: true,
-                            style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                            style: TextStyle(
+                              fontSize: 11.sp,
+                              color: textSecondary,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8.w),
-                        Text('30 🪙', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w700, color: textPrimary)),
+                        Text(
+                          '30 🪙',
+                          softWrap: true,
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: textPrimary,
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(height: 4.h),
@@ -425,16 +506,22 @@ class ArenaResultDialog extends StatelessWidget {
                             isWinner ? 'Coins Won' : 'Coins Returned',
                             maxLines: 2,
                             softWrap: true,
-                            style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                            style: TextStyle(
+                              fontSize: 11.sp,
+                              color: textSecondary,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8.w),
                         Text(
                           '+$payoutCoins 🪙',
+                          softWrap: true,
                           style: TextStyle(
                             fontSize: 11.sp,
                             fontWeight: FontWeight.w800,
-                            color: isWinner ? AppColors.emerald500 : const Color(0xFFF59E0B),
+                            color: isWinner
+                                ? AppColors.emerald500
+                                : AppColors.amber500,
                           ),
                         ),
                       ],
@@ -449,16 +536,77 @@ class ArenaResultDialog extends StatelessWidget {
                               'Win Bonus',
                               maxLines: 2,
                               softWrap: true,
-                              style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                color: textSecondary,
+                              ),
                             ),
                           ),
                           SizedBox(width: 8.w),
                           Text(
                             '+5 XP ⚡',
+                            softWrap: true,
                             style: TextStyle(
                               fontSize: 11.sp,
                               fontWeight: FontWeight.w800,
-                              color: const Color(0xFF6366F1),
+                              color: AppColors.indigo500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (myCorrectCount >= 5) ...[
+                        SizedBox(height: 4.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Perfect 5/5 Bonus',
+                                maxLines: 2,
+                                softWrap: true,
+                                style: TextStyle(
+                                  fontSize: 11.sp,
+                                  color: textSecondary,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 8.w),
+                            Text(
+                              '+10 🪙 🎯',
+                              softWrap: true,
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.amber500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ] else ...[
+                      SizedBox(height: 4.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Match XP',
+                              maxLines: 2,
+                              softWrap: true,
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                color: textSecondary,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            '+0 XP',
+                            softWrap: true,
+                            style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: textSecondary,
                             ),
                           ),
                         ],
@@ -507,62 +655,88 @@ class ArenaResultDialog extends StatelessWidget {
 
               SizedBox(height: 18.h),
 
-              // 5. Actions
-              if (isWinner) ...[
-                ScaleButton(
-                  onTap: () {
-                    final code = roomCode.isNotEmpty ? roomCode : 'VOWL';
-                    ShareCardPreviewModal.show(
-                      context: context,
-                      data: ShareCardData.fromArenaVictory(
-                        userName: myName,
-                        userPhotoUrl: myPhotoUrl,
-                        myScore: myScore,
-                        rivalScore: rivalScore,
-                        rivalName: rivalName.isNotEmpty ? rivalName : 'Challenger',
-                        roomCode: code,
-                        payoutCoins: payoutCoins,
-                        isAiRival: isAiRival,
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.indigo500.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: AppColors.indigo500, width: 1.2.w),
+              // 5. Share Card Action (Winners & Contenders)
+              ScaleButton(
+                onTap: () {
+                  final code = roomCode.isNotEmpty ? roomCode : 'VOWL';
+                  final effectiveRival = rivalName.isNotEmpty
+                      ? rivalName
+                      : 'Challenger';
+                  final shareData = isWinner
+                      ? ShareCardData.fromArenaVictory(
+                          userName: myName,
+                          userPhotoUrl: myPhotoUrl,
+                          myScore: myScore,
+                          rivalScore: rivalScore,
+                          rivalName: effectiveRival,
+                          roomCode: code,
+                          payoutCoins: payoutCoins,
+                          isAiRival: isAiRival,
+                        )
+                      : ShareCardData.fromArenaDefeat(
+                          userName: myName,
+                          userPhotoUrl: myPhotoUrl,
+                          myScore: myScore,
+                          rivalScore: rivalScore,
+                          rivalName: effectiveRival,
+                          roomCode: code,
+                          payoutCoins: payoutCoins,
+                          isAiRival: isAiRival,
+                        );
+                  ShareCardPreviewModal.show(context: context, data: shareData);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 12.h,
+                    horizontal: 12.w,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: AppColors.indigo500,
+                      width: 1.2.w,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(LucideIcons.share2, size: 15.sp, color: AppColors.indigo500),
-                        SizedBox(width: 8.w),
-                        Flexible(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              'Share Victory Card',
-                              style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.indigo500,
-                              ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.share2,
+                        size: 15.sp,
+                        color: AppColors.indigo500,
+                      ),
+                      SizedBox(width: 8.w),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            isWinner
+                                ? 'Share Victory Card'
+                                : 'Share Battle Card',
+                            softWrap: true,
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.indigo500,
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 8.h),
-              ],
+              ),
+              SizedBox(height: 8.h),
 
               // Rematch Button
               ScaleButton(
                 onTap: onRematch,
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 14.h,
+                    horizontal: 12.w,
+                  ),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [AppColors.indigo500, AppColors.indigo600],
@@ -579,13 +753,18 @@ class ArenaResultDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.swords, size: 18.sp, color: Colors.white),
+                      Icon(
+                        LucideIcons.swords,
+                        size: 18.sp,
+                        color: Colors.white,
+                      ),
                       SizedBox(width: 8.w),
                       Flexible(
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
                             'Rematch (30🪙)',
+                            softWrap: true,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -609,6 +788,7 @@ class ArenaResultDialog extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 10.h),
                   child: Text(
                     'Back to Arena',
+                    softWrap: true,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 13.sp,
@@ -688,6 +868,7 @@ class _MetricPill extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 value,
+                softWrap: true,
                 style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
@@ -699,6 +880,7 @@ class _MetricPill extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 label,
+                softWrap: true,
                 style: TextStyle(
                   fontSize: 9.sp,
                   fontWeight: FontWeight.w500,

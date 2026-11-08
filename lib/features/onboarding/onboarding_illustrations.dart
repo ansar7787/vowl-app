@@ -652,10 +652,16 @@ class _DuelScene extends StatelessWidget {
             e,
             Transform.scale(
               scale: (.3 + .7 * e) * (1 + .04 * _wave(ambient)),
-              alignment: Alignment(180 / (kStageW / 2) - 1, 144 / (kStageH / 2) - 1),
+              alignment: Alignment(
+                180 / (kStageW / 2) - 1,
+                144 / (kStageH / 2) - 1,
+              ),
               child: Transform.rotate(
                 angle: _wave(ambient) * .03,
-                alignment: Alignment(180 / (kStageW / 2) - 1, 144 / (kStageH / 2) - 1),
+                alignment: Alignment(
+                  180 / (kStageW / 2) - 1,
+                  144 / (kStageH / 2) - 1,
+                ),
                 child: c,
               ),
             ),
@@ -668,7 +674,10 @@ class _DuelScene extends StatelessWidget {
             e,
             Transform.scale(
               scale: .6 + .4 * e,
-              alignment: Alignment(104 / (kStageW / 2) - 1, 106 / (kStageH / 2) - 1),
+              alignment: Alignment(
+                104 / (kStageW / 2) - 1,
+                106 / (kStageH / 2) - 1,
+              ),
               child: c,
             ),
           );
@@ -680,7 +689,10 @@ class _DuelScene extends StatelessWidget {
             e,
             Transform.scale(
               scale: .6 + .4 * e,
-              alignment: Alignment(256 / (kStageW / 2) - 1, 106 / (kStageH / 2) - 1),
+              alignment: Alignment(
+                256 / (kStageW / 2) - 1,
+                106 / (kStageH / 2) - 1,
+              ),
               child: c,
             ),
           );

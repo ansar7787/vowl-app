@@ -27,7 +27,8 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     String levelText = "";
     if (registerLevel != null) {
@@ -64,11 +65,7 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        Icons.tune_rounded,
-                        color: color,
-                        size: 18.r,
-                      ),
+                      Icon(Icons.tune_rounded, color: color, size: 18.r),
                       SizedBox(width: 8.w),
                       Flexible(
                         child: Text(
@@ -117,9 +114,7 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
                     height: 6.h,
                     margin: EdgeInsets.symmetric(horizontal: 2.w),
                     decoration: BoxDecoration(
-                      color: isActive
-                          ? color
-                          : color.withValues(alpha: 0.12),
+                      color: isActive ? color : color.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(3.r),
                       boxShadow: isActive
                           ? [
@@ -165,10 +160,7 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
             SizedBox(height: 16.h),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: 14.w,
-                vertical: 10.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: color.withValues(alpha: isDark ? 0.1 : 0.05),
                 borderRadius: BorderRadius.circular(14.r),

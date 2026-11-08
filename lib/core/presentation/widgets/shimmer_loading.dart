@@ -254,9 +254,17 @@ class HomeShimmerLoading extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ShimmerLoading.rounded(height: 12.h, width: 110.w, borderRadius: 6),
+                    ShimmerLoading.rounded(
+                      height: 12.h,
+                      width: 110.w,
+                      borderRadius: 6,
+                    ),
                     SizedBox(height: 8.h),
-                    ShimmerLoading.rounded(height: 24.h, width: 170.w, borderRadius: 8),
+                    ShimmerLoading.rounded(
+                      height: 24.h,
+                      width: 170.w,
+                      borderRadius: 8,
+                    ),
                   ],
                 ),
                 ShimmerLoading.circular(width: 48.r, height: 48.r),
@@ -385,8 +393,16 @@ class HomeShimmerLoading extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ShimmerLoading.rounded(height: 18.h, width: 130.w, borderRadius: 6),
-                ShimmerLoading.rounded(height: 14.h, width: 56.w, borderRadius: 6),
+                ShimmerLoading.rounded(
+                  height: 18.h,
+                  width: 130.w,
+                  borderRadius: 6,
+                ),
+                ShimmerLoading.rounded(
+                  height: 14.h,
+                  width: 56.w,
+                  borderRadius: 6,
+                ),
               ],
             ),
             SizedBox(height: 14.h),

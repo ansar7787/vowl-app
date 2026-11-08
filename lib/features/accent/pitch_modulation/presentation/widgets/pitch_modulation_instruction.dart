@@ -38,11 +38,7 @@ class PitchModulationInstruction extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
-            Icons.record_voice_over_rounded,
-            size: 18.r,
-            color: color,
-          ),
+          Icon(Icons.record_voice_over_rounded, size: 18.r, color: color),
           SizedBox(width: 10.w),
           Expanded(
             child: Text(

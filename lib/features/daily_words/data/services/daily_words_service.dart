@@ -138,30 +138,36 @@ class DailyWordsService {
     _userId = userId;
     try {
       final prefs = await SharedPreferences.getInstance();
-      _currentDay = prefs.getInt(_userKey(_keyCurrentDay)) ??
+      _currentDay =
+          prefs.getInt(_userKey(_keyCurrentDay)) ??
           prefs.getInt(_keyCurrentDay) ??
           1;
-      _completedDay = prefs.getInt(_userKey(_keyCompletedDay)) ??
+      _completedDay =
+          prefs.getInt(_userKey(_keyCompletedDay)) ??
           prefs.getInt(_keyCompletedDay) ??
           0;
-      _lastOpenDate = prefs.getString(_userKey(_keyLastOpenDate)) ??
+      _lastOpenDate =
+          prefs.getString(_userKey(_keyLastOpenDate)) ??
           prefs.getString(_keyLastOpenDate) ??
           '';
-      _lastCompletedDate = prefs.getString(_userKey(_keyLastCompletedDate)) ??
+      _lastCompletedDate =
+          prefs.getString(_userKey(_keyLastCompletedDate)) ??
           prefs.getString(_keyLastCompletedDate) ??
           '';
-      _streak = prefs.getInt(_userKey(_keyStreak)) ??
-          prefs.getInt(_keyStreak) ??
-          0;
-      _longestStreak = prefs.getInt(_userKey(_keyLongestStreak)) ??
+      _streak =
+          prefs.getInt(_userKey(_keyStreak)) ?? prefs.getInt(_keyStreak) ?? 0;
+      _longestStreak =
+          prefs.getInt(_userKey(_keyLongestStreak)) ??
           prefs.getInt(_keyLongestStreak) ??
           0;
-      _totalWordsLearned = prefs.getInt(_userKey(_keyTotalWordsLearned)) ??
+      _totalWordsLearned =
+          prefs.getInt(_userKey(_keyTotalWordsLearned)) ??
           prefs.getInt(_keyTotalWordsLearned) ??
           0;
 
       // Load word bank
-      final bankJson = prefs.getString(_userKey(_keyWordBank)) ??
+      final bankJson =
+          prefs.getString(_userKey(_keyWordBank)) ??
           prefs.getString(_keyWordBank);
       if (bankJson != null && bankJson.isNotEmpty) {
         final Map<String, dynamic> decoded = jsonDecode(bankJson);
@@ -564,7 +570,10 @@ class DailyWordsService {
       await prefs.setInt(_userKey(_keyCurrentDay), _currentDay);
       await prefs.setInt(_userKey(_keyCompletedDay), _completedDay);
       await prefs.setString(_userKey(_keyLastOpenDate), _lastOpenDate);
-      await prefs.setString(_userKey(_keyLastCompletedDate), _lastCompletedDate);
+      await prefs.setString(
+        _userKey(_keyLastCompletedDate),
+        _lastCompletedDate,
+      );
       await prefs.setInt(_userKey(_keyStreak), _streak);
       await prefs.setInt(_userKey(_keyLongestStreak), _longestStreak);
       await prefs.setInt(_userKey(_keyTotalWordsLearned), _totalWordsLearned);

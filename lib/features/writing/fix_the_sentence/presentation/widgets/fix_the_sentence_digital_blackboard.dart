@@ -84,7 +84,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
     }
 
     final successColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
-    final errorColor = isDark ? tokens.gameIncorrect : _LocalPalette.colordc2626;
+    final errorColor = isDark
+        ? tokens.gameIncorrect
+        : _LocalPalette.colordc2626;
 
     return Container(
       width: double.infinity,
@@ -93,7 +95,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
         color: color.withValues(alpha: isDark ? 0.06 : 0.08),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.1) : color.withValues(alpha: 0.18),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.1)
+              : color.withValues(alpha: 0.18),
           width: 1.5,
         ),
       ),
@@ -109,7 +113,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white.withValues(alpha: 0.95) : const Color(0xFF1E293B),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.95)
+                    : const Color(0xFF1E293B),
                 height: 1.6,
                 letterSpacing: 0.2,
               ),
@@ -129,18 +135,26 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               vertical: 2.h,
                             ),
                             padding: EdgeInsets.symmetric(
-                              horizontal: selectedReplacement != null ? 10.w : 14.w,
+                              horizontal: selectedReplacement != null
+                                  ? 10.w
+                                  : 14.w,
                               vertical: 4.h,
                             ),
                             decoration: BoxDecoration(
                               color: selectedReplacement != null
-                                  ? successColor.withValues(alpha: isDark ? 0.22 : 0.14)
-                                  : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                                  ? successColor.withValues(
+                                      alpha: isDark ? 0.22 : 0.14,
+                                    )
+                                  : (isDark
+                                        ? Colors.white10
+                                        : Colors.black.withValues(alpha: 0.05)),
                               borderRadius: BorderRadius.circular(8.r),
                               border: Border.all(
                                 color: selectedReplacement != null
                                     ? successColor
-                                    : (isDark ? Colors.white30 : Colors.black26),
+                                    : (isDark
+                                          ? Colors.white30
+                                          : Colors.black26),
                                 width: 1.5,
                               ),
                             ),
@@ -154,7 +168,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                                 color: selectedReplacement != null
                                     ? (isDark ? Colors.white : successColor)
-                                    : (isDark ? Colors.white54 : Colors.black45),
+                                    : (isDark
+                                          ? Colors.white54
+                                          : Colors.black45),
                               ),
                             ),
                           )
@@ -164,7 +180,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               vertical: 2.h,
                             ),
                             decoration: BoxDecoration(
-                              color: errorColor.withValues(alpha: isDark ? 0.15 : 0.08),
+                              color: errorColor.withValues(
+                                alpha: isDark ? 0.15 : 0.08,
+                              ),
                               borderRadius: BorderRadius.circular(8.r),
                               border: Border.all(
                                 color: errorColor.withValues(alpha: 0.5),
@@ -204,41 +222,44 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                         Positioned.fill(
                                           child: IgnorePointer(
                                             child: Center(
-                                              child: Icon(
-                                                Icons.swipe_rounded,
-                                                size: 22.r,
-                                                color: isDark
-                                                    ? Colors.white70
-                                                    : Colors.black54,
-                                              )
-                                                  .animate(
-                                                    onPlay: (c) {
-                                                      if (!VowlMotion
-                                                          .lowAnimationModeOverride
-                                                          .value) {
-                                                        c.repeat();
-                                                      }
-                                                    },
-                                                  )
-                                                  .moveX(
-                                                    begin: -12,
-                                                    end: 12,
-                                                    duration: 1.seconds,
-                                                    curve: Curves.easeInOutSine,
-                                                  )
-                                                  .fadeIn(duration: 300.ms)
-                                                  .fadeOut(
-                                                    delay: 500.ms,
-                                                    duration: 300.ms,
-                                                  ),
+                                              child:
+                                                  Icon(
+                                                        Icons.swipe_rounded,
+                                                        size: 22.r,
+                                                        color: isDark
+                                                            ? Colors.white70
+                                                            : Colors.black54,
+                                                      )
+                                                      .animate(
+                                                        onPlay: (c) {
+                                                          if (!VowlMotion
+                                                              .lowAnimationModeOverride
+                                                              .value) {
+                                                            c.repeat();
+                                                          }
+                                                        },
+                                                      )
+                                                      .moveX(
+                                                        begin: -12,
+                                                        end: 12,
+                                                        duration: 1.seconds,
+                                                        curve: Curves
+                                                            .easeInOutSine,
+                                                      )
+                                                      .fadeIn(duration: 300.ms)
+                                                      .fadeOut(
+                                                        delay: 500.ms,
+                                                        duration: 300.ms,
+                                                      ),
                                             ),
                                           ),
                                         ),
                                       if (erasePoints.isNotEmpty)
                                         Positioned.fill(
                                           child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(7.r),
+                                            borderRadius: BorderRadius.circular(
+                                              7.r,
+                                            ),
                                             child: CustomPaint(
                                               painter:
                                                   FixTheSentenceScratchOverlayPainter(

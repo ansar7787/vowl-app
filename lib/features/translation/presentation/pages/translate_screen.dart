@@ -215,8 +215,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             context: context,
             message: context.tr(
               'translation.mic_permission_required',
-              fallback:
-                  'Microphone permission is required for voice input.',
+              fallback: 'Microphone permission is required for voice input.',
             ),
             type: CustomSnackBarType.warning,
           );
@@ -382,8 +381,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 onTap: () => FocusScope.of(context).unfocus(),
                 behavior: HitTestBehavior.translucent,
                 child: Scaffold(
-                  backgroundColor: (isDark &&
-                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                  backgroundColor:
+                      (isDark &&
+                          Theme.of(context).scaffoldBackgroundColor ==
+                              Colors.black)
                       ? Colors.black
                       : (isDark ? AppColors.slate900 : Colors.white),
                   body: Stack(
@@ -1171,8 +1172,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                       fontSize: 11.sp,
                                       fontWeight: FontWeight.w500,
                                       color:
-                                          value.text.length >
-                                              _maxCharacterLimit
+                                          value.text.length > _maxCharacterLimit
                                           ? AppColors.red500
                                           : (isDark
                                                 ? Colors.white38

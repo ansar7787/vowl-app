@@ -89,7 +89,8 @@ class DiscoveryHelper {
     String? date,
   }) {
     final now = DateTime.now();
-    final todayStr = date ??
+    final todayStr =
+        date ??
         '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
     final canonical = canonicalSequenceId(sequenceId);
     final key = '${canonical}_$userId';
@@ -186,21 +187,13 @@ class DiscoveryHelper {
 
     if (allZero) {
       return [
-        _getQuestForSubtype(
-          user,
-          GameSubtype.flashcards,
-          _kPlayToStrengths,
-        ),
+        _getQuestForSubtype(user, GameSubtype.flashcards, _kPlayToStrengths),
         _getQuestForSubtype(
           user,
           GameSubtype.audioMultipleChoice,
           _kEarTraining,
         ),
-        _getQuestForSubtype(
-          user,
-          GameSubtype.repeatSentence,
-          _kSpeakingWarmUp,
-        ),
+        _getQuestForSubtype(user, GameSubtype.repeatSentence, _kSpeakingWarmUp),
       ];
     }
 
@@ -245,11 +238,7 @@ class DiscoveryHelper {
     // Step 1: Speaking Warm-up (Repeat Sentence at user's current unlocked level)
     // Step 2: Comprehension Focus (Read & Answer at user's current unlocked level)
     return [
-      _getQuestForSubtype(
-        user,
-        GameSubtype.repeatSentence,
-        _kSpeakingWarmUp,
-      ),
+      _getQuestForSubtype(user, GameSubtype.repeatSentence, _kSpeakingWarmUp),
       _getQuestForSubtype(
         user,
         GameSubtype.readAndAnswer,
@@ -264,21 +253,9 @@ class DiscoveryHelper {
     // Step 2: Rapid Listening (Fast Speech Decoder)
     // Step 3: Pronunciation Clarity (Minimal Pairs)
     return [
-      _getQuestForSubtype(
-        user,
-        GameSubtype.readingSpeedCheck,
-        _kReadReact,
-      ),
-      _getQuestForSubtype(
-        user,
-        GameSubtype.fastSpeechDecoder,
-        _kListenAnswer,
-      ),
-      _getQuestForSubtype(
-        user,
-        GameSubtype.minimalPairs,
-        _kRapidPronunciation,
-      ),
+      _getQuestForSubtype(user, GameSubtype.readingSpeedCheck, _kReadReact),
+      _getQuestForSubtype(user, GameSubtype.fastSpeechDecoder, _kListenAnswer),
+      _getQuestForSubtype(user, GameSubtype.minimalPairs, _kRapidPronunciation),
     ];
   }
 
@@ -298,16 +275,18 @@ class DiscoveryHelper {
         GameSubtype.tenseMastery,
         _kStrengthenWeakSpots,
       ),
-      _getQuestForSubtype(
-        user,
-        GameSubtype.clauseConnector,
-        _kPlayToStrengths,
-      ),
+      _getQuestForSubtype(user, GameSubtype.clauseConnector, _kPlayToStrengths),
     ];
   }
 
   static List<GameQuest> _generateRandomQuest(UserEntity user) {
-    return [_getQuestForSubtype(user, GameSubtype.repeatSentence, _kCategorySkillEnhance)];
+    return [
+      _getQuestForSubtype(
+        user,
+        GameSubtype.repeatSentence,
+        _kCategorySkillEnhance,
+      ),
+    ];
   }
 
   static GameQuest _getQuestForSubtype(
@@ -319,9 +298,12 @@ class DiscoveryHelper {
     int maxLevels = CurriculumManifest.getLevels(activeSubtype.name);
     int userLevel = user.unlockedLevels[activeSubtype.name] ?? 1;
 
-    final isMastered = (maxLevels > 0) &&
-        ((user.completedLevels[activeSubtype.name]?.contains(maxLevels) ?? false) ||
-            ((user.completedLevels[activeSubtype.name]?.length ?? 0) >= maxLevels) ||
+    final isMastered =
+        (maxLevels > 0) &&
+        ((user.completedLevels[activeSubtype.name]?.contains(maxLevels) ??
+                false) ||
+            ((user.completedLevels[activeSubtype.name]?.length ?? 0) >=
+                maxLevels) ||
             (userLevel > maxLevels));
 
     // If the preferred game subtype has been completely mastered,
@@ -329,7 +311,8 @@ class DiscoveryHelper {
     if (maxLevels > 0 && isMastered) {
       for (final alt in activeSubtype.category.subtypes) {
         final altMax = CurriculumManifest.getLevels(alt.name);
-        final altMastered = (altMax > 0) &&
+        final altMastered =
+            (altMax > 0) &&
             ((user.completedLevels[alt.name]?.contains(altMax) ?? false) ||
                 ((user.completedLevels[alt.name]?.length ?? 0) >= altMax) ||
                 ((user.unlockedLevels[alt.name] ?? 1) > altMax));
@@ -342,10 +325,7 @@ class DiscoveryHelper {
       }
     }
 
-    final currentLevel = userLevel.clamp(
-      1,
-      maxLevels > 0 ? maxLevels : 50,
-    );
+    final currentLevel = userLevel.clamp(1, maxLevels > 0 ? maxLevels : 50);
     return GameQuest(
       id: '${activeSubtype.name}_$currentLevel',
       type: activeSubtype.category,

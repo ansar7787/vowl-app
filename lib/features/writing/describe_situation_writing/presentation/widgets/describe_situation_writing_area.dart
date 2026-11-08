@@ -53,9 +53,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
         color: isDark ? Colors.black87 : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.12)
-              : Colors.black12,
+          color: isDark ? Colors.white.withValues(alpha: 0.12) : Colors.black12,
           width: 1,
         ),
       ),

@@ -97,10 +97,7 @@ class SynonymWordShard extends StatelessWidget {
                 ),
                 builder: (context, scale, child) => Transform.scale(
                   scale: scale,
-                  child: Opacity(
-                    opacity: isWarping ? 0.0 : 1.0,
-                    child: child,
-                  ),
+                  child: Opacity(opacity: isWarping ? 0.0 : 1.0, child: child),
                 ),
                 child: Container(
                   constraints: BoxConstraints(
@@ -124,8 +121,8 @@ class SynonymWordShard extends StatelessWidget {
                         color: isActive
                             ? color.withValues(alpha: 0.45)
                             : (isDark
-                                ? Colors.black.withValues(alpha: 0.25)
-                                : color.withValues(alpha: 0.08)),
+                                  ? Colors.black.withValues(alpha: 0.25)
+                                  : color.withValues(alpha: 0.08)),
                         blurRadius: isActive ? 18 : 8,
                         spreadRadius: isActive ? 2 : 0,
                         offset: const Offset(0, 4),

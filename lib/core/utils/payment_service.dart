@@ -110,9 +110,8 @@ class RazorpayPaymentService implements PaymentService {
     String currency = 'INR',
     String description = 'Vowl Premium - 30 Days',
   }) {
-    final razorpayKey = (dotenv.isInitialized
-            ? dotenv.env['RAZORPAY_KEY_ID']
-            : null) ??
+    final razorpayKey =
+        (dotenv.isInitialized ? dotenv.env['RAZORPAY_KEY_ID'] : null) ??
         (const String.fromEnvironment('RAZORPAY_KEY_ID').isNotEmpty
             ? const String.fromEnvironment('RAZORPAY_KEY_ID')
             : null);
@@ -150,9 +149,7 @@ class RazorpayPaymentService implements PaymentService {
         if (contact.isNotEmpty) 'contact': contact,
         if (email.isNotEmpty) 'email': email,
       },
-      'theme': {
-        'color': '#6366F1',
-      },
+      'theme': {'color': '#6366F1'},
     };
 
     try {

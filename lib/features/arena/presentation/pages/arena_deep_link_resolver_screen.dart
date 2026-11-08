@@ -21,16 +21,15 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 class ArenaDeepLinkResolverScreen extends StatefulWidget {
   final String roomCode;
 
-  const ArenaDeepLinkResolverScreen({
-    super.key,
-    required this.roomCode,
-  });
+  const ArenaDeepLinkResolverScreen({super.key, required this.roomCode});
 
   @override
-  State<ArenaDeepLinkResolverScreen> createState() => _ArenaDeepLinkResolverScreenState();
+  State<ArenaDeepLinkResolverScreen> createState() =>
+      _ArenaDeepLinkResolverScreenState();
 }
 
-class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScreen> {
+class _ArenaDeepLinkResolverScreenState
+    extends State<ArenaDeepLinkResolverScreen> {
   bool _isLoading = true;
   String? _errorMessage;
   bool _isCoinRefuelNeeded = false;
@@ -60,7 +59,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         setState(() {
           _isLoading = false;
           _isAuthNeeded = true;
-          _errorMessage = 'Please sign in or create an account to accept this 1v1 duel.';
+          _errorMessage =
+              'Please sign in or create an account to accept this 1v1 duel.';
         });
       }
       return;
@@ -72,7 +72,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         if (mounted) {
           setState(() {
             _isLoading = false;
-            _errorMessage = 'An active internet connection is required to join an Arena Duel. Please check your connection and try again.';
+            _errorMessage =
+                'An active internet connection is required to join an Arena Duel. Please check your connection and try again.';
           });
         }
         return;
@@ -98,9 +99,10 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       );
 
       if (mounted) {
-        Navigator.of(context, rootNavigator: true).pushReplacement(
-          ArenaDuelScreen.route(session: session),
-        );
+        Navigator.of(
+          context,
+          rootNavigator: true,
+        ).pushReplacement(ArenaDuelScreen.route(session: session));
       }
     } catch (e) {
       if (mounted) {
@@ -176,9 +178,14 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final bgColor = isMidnight ? Colors.black : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
-    final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
     final borderColor = isDark
@@ -211,7 +218,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                 border: Border.all(color: borderColor, width: 1.r),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.indigo500.withValues(alpha: isDark ? 0.10 : 0.05),
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.10 : 0.05,
+                    ),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -226,20 +235,23 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: _isCoinRefuelNeeded
-                            ? [const Color(0xFFF59E0B), const Color(0xFFD97706)]
+                            ? [AppColors.amber500, AppColors.amber600]
                             : (_errorMessage != null
-                                ? [AppColors.rose500, AppColors.rose700]
-                                : [AppColors.indigo500, AppColors.indigo600]),
+                                  ? [AppColors.rose500, AppColors.rose700]
+                                  : [AppColors.indigo500, AppColors.indigo600]),
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: (_isCoinRefuelNeeded
-                                  ? const Color(0xFFF59E0B)
-                                  : (_errorMessage != null ? AppColors.rose500 : AppColors.indigo500))
-                              .withValues(alpha: 0.35),
+                          color:
+                              (_isCoinRefuelNeeded
+                                      ? AppColors.amber500
+                                      : (_errorMessage != null
+                                            ? AppColors.rose500
+                                            : AppColors.indigo500))
+                                  .withValues(alpha: 0.35),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
                         ),
@@ -249,7 +261,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                       child: Icon(
                         _isCoinRefuelNeeded
                             ? LucideIcons.coins
-                            : (_errorMessage != null ? LucideIcons.alertCircle : LucideIcons.swords),
+                            : (_errorMessage != null
+                                  ? LucideIcons.alertCircle
+                                  : LucideIcons.swords),
                         size: 30.sp,
                         color: Colors.white,
                       ),
@@ -259,7 +273,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                   Text(
                     _isCoinRefuelNeeded
                         ? 'Not Enough Coins'
-                        : (_errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!'),
+                        : (_errorMessage != null
+                              ? 'Duel Unavailable'
+                              : 'Duel Ready!'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 20.sp,
@@ -269,9 +285,12 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                   ),
                   SizedBox(height: 8.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF070A12) : const Color(0xFFEEF2FF),
+                      color: isDark ? AppColors.ultraDeep : AppColors.indigo50,
                       borderRadius: BorderRadius.circular(8.r),
                       border: Border.all(
                         color: AppColors.indigo500.withValues(alpha: 0.25),
@@ -291,9 +310,12 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                   SizedBox(height: 16.h),
                   if (_isCoinRefuelNeeded) ...[
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 12.h,
+                      ),
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+                        color: isDark ? AppColors.slate900 : AppColors.slate50,
                         borderRadius: BorderRadius.circular(14.r),
                         border: Border.all(color: borderColor),
                       ),
@@ -325,7 +347,11 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                               ],
                             ),
                           ),
-                          Container(width: 1.w, height: 26.h, color: borderColor),
+                          Container(
+                            width: 1.w,
+                            height: 26.h,
+                            color: borderColor,
+                          ),
                           Expanded(
                             child: Column(
                               children: [
@@ -376,24 +402,38 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                         height: 46.h,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          gradient: context.watch<AuthBloc>().state.user?.isPremium == true
+                          gradient:
+                              context.watch<AuthBloc>().state.user?.isPremium ==
+                                  true
                               ? const LinearGradient(
-                                  colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                                  colors: [
+                                    AppColors.indigo500,
+                                    AppColors.indigo600,
+                                  ],
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                 )
                               : const LinearGradient(
-                                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                                  colors: [
+                                    AppColors.amber500,
+                                    AppColors.amber600,
+                                  ],
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                 ),
                           borderRadius: BorderRadius.circular(12.r),
                           boxShadow: [
                             BoxShadow(
-                              color: (context.watch<AuthBloc>().state.user?.isPremium == true
-                                      ? const Color(0xFF6366F1)
-                                      : const Color(0xFFF59E0B))
-                                  .withValues(alpha: 0.32),
+                              color:
+                                  (context
+                                                  .watch<AuthBloc>()
+                                                  .state
+                                                  .user
+                                                  ?.isPremium ==
+                                              true
+                                          ? AppColors.indigo500
+                                          : AppColors.amber500)
+                                      .withValues(alpha: 0.32),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -403,7 +443,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              context.watch<AuthBloc>().state.user?.isPremium == true
+                              context.watch<AuthBloc>().state.user?.isPremium ==
+                                      true
                                   ? LucideIcons.crown
                                   : LucideIcons.video,
                               size: 16.sp,
@@ -411,7 +452,8 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                             ),
                             SizedBox(width: 8.w),
                             Text(
-                              context.watch<AuthBloc>().state.user?.isPremium == true
+                              context.watch<AuthBloc>().state.user?.isPremium ==
+                                      true
                                   ? 'VIP Instant Refuel (+30🪙)'
                                   : 'Watch Video (+30🪙)',
                               style: TextStyle(

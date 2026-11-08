@@ -252,8 +252,8 @@ class _AboutScreenState extends State<AboutScreen> {
     required bool isDark,
     VoidCallback? onTap,
   }) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? AppColors.slate800 : Colors.white);
@@ -264,13 +264,14 @@ class _AboutScreenState extends State<AboutScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.card,
+          vertical: 12.h,
+        ),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: cardBorder,
-          ),
+          border: Border.all(color: cardBorder),
         ),
         child: Row(
           children: [
@@ -321,8 +322,8 @@ class _AboutScreenState extends State<AboutScreen> {
     required bool isDark,
     required VoidCallback onTap,
   }) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? AppColors.slate800 : Colors.white);
@@ -333,13 +334,14 @@ class _AboutScreenState extends State<AboutScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 16.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.card,
+          vertical: 16.h,
+        ),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: cardBorder,
-          ),
+          border: Border.all(color: cardBorder),
         ),
         child: Row(
           children: [

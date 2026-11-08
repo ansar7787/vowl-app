@@ -67,7 +67,11 @@ class MascotSelectionScreen extends StatelessWidget {
                 elevation: 0,
                 leadingWidth: 80.w,
                 leading: Padding(
-                  padding: EdgeInsets.only(left: AppSpacing.screen, top: 8.h, bottom: 8.h),
+                  padding: EdgeInsets.only(
+                    left: AppSpacing.screen,
+                    top: 8.h,
+                    bottom: 8.h,
+                  ),
                   child: ScaleButton(
                     onTap: () => context.pop(),
                     child: Container(
@@ -138,7 +142,8 @@ class MascotSelectionScreen extends StatelessWidget {
                       SizedBox(height: 30.h),
                       LayoutBuilder(
                         builder: (context, constraints) {
-                          final cardWidth = (constraints.maxWidth - AppSpacing.screen) / 2;
+                          final cardWidth =
+                              (constraints.maxWidth - AppSpacing.screen) / 2;
                           return Column(
                             children: [
                               Row(
@@ -331,7 +336,9 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                                   )
                                   .animate(
                                     onPlay: (c) {
-                                      if (!VowlMotion.shouldReduceMotion(context)) {
+                                      if (!VowlMotion.shouldReduceMotion(
+                                        context,
+                                      )) {
                                         c.repeat(reverse: true);
                                       }
                                     },

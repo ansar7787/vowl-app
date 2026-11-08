@@ -103,8 +103,8 @@ class _SituationSpeakingBriefingCardState
               color: _isFinishedTyping || widget.isAnswered
                   ? widget.primaryColor.withValues(alpha: 0.35)
                   : widget.isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate200,
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate200,
               width: 1.5,
             ),
           ),
@@ -116,19 +116,13 @@ class _SituationSpeakingBriefingCardState
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: isMidnight
-                        ? const [
-                            AppColors.midnightSurface,
-                            Colors.black,
-                          ]
+                        ? const [AppColors.midnightSurface, Colors.black]
                         : (widget.isDark
-                            ? const [
-                                AppColors.slate800,
-                                AppColors.slate950,
-                              ]
-                            : [
-                                widget.primaryColor.withValues(alpha: 0.04),
-                                Colors.white,
-                              ]),
+                              ? const [AppColors.slate800, AppColors.slate950]
+                              : [
+                                  widget.primaryColor.withValues(alpha: 0.04),
+                                  Colors.white,
+                                ]),
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -253,14 +247,14 @@ class _SituationSpeakingBriefingCardState
                                     ),
                                     padding: EdgeInsets.all(14.r),
                                     decoration: BoxDecoration(
-                                      color: widget.primaryColor
-                                          .withValues(alpha: 0.08),
-                                      borderRadius: BorderRadius.circular(
-                                        16.r,
+                                      color: widget.primaryColor.withValues(
+                                        alpha: 0.08,
                                       ),
+                                      borderRadius: BorderRadius.circular(16.r),
                                       border: Border.all(
-                                        color: widget.primaryColor
-                                            .withValues(alpha: 0.2),
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.2,
+                                        ),
                                       ),
                                     ),
                                     child: Column(
@@ -283,10 +277,8 @@ class _SituationSpeakingBriefingCardState
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 11.5.sp,
-                                                  fontWeight:
-                                                      FontWeight.w700,
-                                                  color:
-                                                      widget.primaryColor,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: widget.primaryColor,
                                                   letterSpacing: 0.8,
                                                 ),
                                               ),
@@ -355,13 +347,11 @@ class _TypewriterTextState extends State<_TypewriterText>
     super.initState();
     final bool reduceMotion = VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion || widget.text.isEmpty) {
-      _controller = AnimationController(
-        vsync: this,
-        duration: Duration.zero,
-      );
-      _characterCount =
-          StepTween(begin: widget.text.length, end: widget.text.length)
-              .animate(_controller);
+      _controller = AnimationController(vsync: this, duration: Duration.zero);
+      _characterCount = StepTween(
+        begin: widget.text.length,
+        end: widget.text.length,
+      ).animate(_controller);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) widget.onFinished();
       });
@@ -403,16 +393,19 @@ class _TypewriterTextState extends State<_TypewriterText>
     if (oldWidget.text != widget.text) {
       _controller.stop();
       if (VowlMotion.lowAnimationModeOverride.value || widget.text.isEmpty) {
-        _characterCount =
-            StepTween(begin: widget.text.length, end: widget.text.length)
-                .animate(_controller);
+        _characterCount = StepTween(
+          begin: widget.text.length,
+          end: widget.text.length,
+        ).animate(_controller);
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted) widget.onFinished();
         });
       } else {
         _controller.duration = widget.speed * widget.text.length;
-        _characterCount =
-            StepTween(begin: 0, end: widget.text.length).animate(_controller);
+        _characterCount = StepTween(
+          begin: 0,
+          end: widget.text.length,
+        ).animate(_controller);
         _controller.forward(from: 0.0);
       }
     }

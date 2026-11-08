@@ -146,72 +146,72 @@ class ReadingSpeedPulseZone extends StatelessWidget {
 
         // The Stop Button
         ScaleButton(
-          onTap: onTapPulse,
-          child: Container(
-            width: 116.r,
-            height: 116.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color.withValues(alpha: isDark ? 0.15 : 0.08),
-              border: Border.all(color: color, width: 3.w),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.25),
-                  blurRadius: 16,
-                  spreadRadius: 2,
+              onTap: onTapPulse,
+              child: Container(
+                width: 116.r,
+                height: 116.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+                  border: Border.all(color: color, width: 3.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.25),
+                      blurRadius: 16,
+                      spreadRadius: 2,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Center(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Padding(
-                  padding: EdgeInsets.all(8.r),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.stop_circle_rounded,
-                        color: color,
-                        size: 32.r,
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.r),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.stop_circle_rounded,
+                            color: color,
+                            size: 32.r,
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            "$_liveWpm",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isDark ? Colors.white : color,
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            "WPM",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isDark
+                                  ? Colors.white70
+                                  : color.withValues(alpha: 0.75),
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        "$_liveWpm",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: isDark ? Colors.white : color,
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        "WPM",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: isDark
-                              ? Colors.white70
-                              : color.withValues(alpha: 0.75),
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-        )
-        .animate(
-          onPlay: (c) {
-            if (!VowlMotion.shouldReduceMotion(context)) {
-              c.repeat(reverse: true);
-            }
-          },
-        )
-        .scaleXY(end: 1.05, duration: 800.ms),
+            )
+            .animate(
+              onPlay: (c) {
+                if (!VowlMotion.shouldReduceMotion(context)) {
+                  c.repeat(reverse: true);
+                }
+              },
+            )
+            .scaleXY(end: 1.05, duration: 800.ms),
 
         SizedBox(height: 16.h),
         Text(

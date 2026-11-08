@@ -168,10 +168,10 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      Icons.touch_app_rounded,
-                      size: 38.r,
-                      color: isDark ? Colors.white70 : Colors.black54,
-                    )
+                          Icons.touch_app_rounded,
+                          size: 38.r,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                        )
                         .animate(
                           onPlay: (c) {
                             if (!VowlMotion.shouldReduceMotion(context)) {

@@ -28,8 +28,7 @@ import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
-class MockProgressionBloc
-    extends MockBloc<ProgressionEvent, ProgressionState>
+class MockProgressionBloc extends MockBloc<ProgressionEvent, ProgressionState>
     implements ProgressionBloc {}
 
 class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
@@ -67,7 +66,9 @@ void main() {
     displayName: 'Aria Explorer',
     totalExp: 2645, // Level 27, 45 XP in current level, 55 XP to next
     coins: 750,
-    claimedLevelMilestones: [10], // Level 10 claimed, Level 25 reached & unclaimed
+    claimedLevelMilestones: [
+      10,
+    ], // Level 10 claimed, Level 25 reached & unclaimed
   );
 
   setUpAll(() {
@@ -97,12 +98,13 @@ void main() {
     mockRewardLimitService = MockRewardLimitService();
     progressionStateController = StreamController<ProgressionState>.broadcast();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
-    when(() => mockProgressionBloc.state)
-        .thenReturn(const ProgressionState());
-    when(() => mockProgressionBloc.stream)
-        .thenAnswer((_) => progressionStateController.stream);
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(() => mockProgressionBloc.state).thenReturn(const ProgressionState());
+    when(
+      () => mockProgressionBloc.stream,
+    ).thenAnswer((_) => progressionStateController.stream);
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
@@ -127,11 +129,13 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -238,7 +242,9 @@ void main() {
 
   group('Group 1: Unauthenticated / Null User State', () {
     testWidgets('renders SizedBox.shrink when user is null', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -249,7 +255,9 @@ void main() {
   });
 
   group('Group 2: AppBar & Navigation', () {
-    testWidgets('renders title, coins badge, and back button pops screen', (tester) async {
+    testWidgets('renders title, coins badge, and back button pops screen', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(startAtRoot: true));
       await tester.pumpAndSettle();
 
@@ -270,7 +278,9 @@ void main() {
   });
 
   group('Group 3: Main Level Card & XP Progress', () {
-    testWidgets('displays GLOBAL RANK, current level, and MASTER EXPLORER', (tester) async {
+    testWidgets('displays GLOBAL RANK, current level, and MASTER EXPLORER', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -282,7 +292,9 @@ void main() {
   });
 
   group('Group 4: XP Next Milestone Details', () {
-    testWidgets('displays NEXT MILESTONE, next level and remaining XP', (tester) async {
+    testWidgets('displays NEXT MILESTONE, next level and remaining XP', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -294,91 +306,107 @@ void main() {
   });
 
   group('Group 5: Level Mastery Perks', () {
-    testWidgets('renders LEVEL MASTERY PERKS section and perks horizontal list', (tester) async {
-      // Test when user is level 56 so Level 50 perk is ACTIVE
-      final highLevelUser = testUser.copyWith(totalExp: 5500);
-      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(highLevelUser));
+    testWidgets(
+      'renders LEVEL MASTERY PERKS section and perks horizontal list',
+      (tester) async {
+        // Test when user is level 56 so Level 50 perk is ACTIVE
+        final highLevelUser = testUser.copyWith(totalExp: 5500);
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(highLevelUser));
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      await tester.scrollUntilVisible(
-        find.text('LEVEL MASTERY PERKS'),
-        100.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.pumpAndSettle();
+        await tester.scrollUntilVisible(
+          find.text('LEVEL MASTERY PERKS'),
+          100.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('LEVEL MASTERY PERKS'), findsOneWidget);
-      expect(find.text('ACTIVE'), findsWidgets);
-      expect(find.text('LOCKED'), findsWidgets);
-    });
+        expect(find.text('LEVEL MASTERY PERKS'), findsOneWidget);
+        expect(find.text('ACTIVE'), findsWidgets);
+        expect(find.text('LOCKED'), findsWidgets);
+      },
+    );
   });
 
   group('Group 6: Milestones List & Claiming', () {
-    testWidgets('renders UPCOMING MILESTONES and shows Claim button for reached milestones', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders UPCOMING MILESTONES and shows Claim button for reached milestones',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      await tester.scrollUntilVisible(
-        find.text('UPCOMING MILESTONES'),
-        100.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.pumpAndSettle();
+        await tester.scrollUntilVisible(
+          find.text('UPCOMING MILESTONES'),
+          100.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('UPCOMING MILESTONES'), findsOneWidget);
-      // Claimed milestone (Level 10) shows Reward Claimed
-      expect(find.text('Reward Claimed'), findsOneWidget);
+        expect(find.text('UPCOMING MILESTONES'), findsOneWidget);
+        // Claimed milestone (Level 10) shows Reward Claimed
+        expect(find.text('Reward Claimed'), findsOneWidget);
 
-      // Reached but unclaimed milestone (Level 25) shows CLAIM
-      final claimButton = find.text('CLAIM');
-      expect(claimButton, findsOneWidget);
+        // Reached but unclaimed milestone (Level 25) shows CLAIM
+        final claimButton = find.text('CLAIM');
+        expect(claimButton, findsOneWidget);
 
-      await tester.tap(claimButton);
-      await tester.pumpAndSettle();
+        await tester.tap(claimButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockProgressionBloc.add(
+        verify(
+          () => mockProgressionBloc.add(
             const ProgressionClaimLevelMilestoneRequested(25, 625),
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
   });
 
   group('Group 7: ProgressionBloc Listener', () {
-    testWidgets('milestone_claimed message shows ModernGameDialog, confetti, and plays sound', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'milestone_claimed message shows ModernGameDialog, confetti, and plays sound',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      progressionStateController.add(
-        const ProgressionState(message: 'progression.milestone_claimed:250'),
-      );
-      // Pump frame without pumpAndSettle to avoid infinite animation loop from GameConfetti
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        progressionStateController.add(
+          const ProgressionState(message: 'progression.milestone_claimed:250'),
+        );
+        // Pump frame without pumpAndSettle to avoid infinite animation loop from GameConfetti
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playLevelComplete()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playLevelComplete()).called(1);
 
-      expect(find.byType(ModernGameDialog), findsOneWidget);
-      expect(find.text('MILESTONE UNLOCKED!'), findsOneWidget);
-      expect(
-        find.text('You claimed 250 Coins for your epic journey!'),
-        findsOneWidget,
-      );
-      expect(find.byType(GameConfetti), findsOneWidget);
+        expect(find.byType(ModernGameDialog), findsOneWidget);
+        expect(find.text('MILESTONE UNLOCKED!'), findsOneWidget);
+        expect(
+          find.text('You claimed 250 Coins for your epic journey!'),
+          findsOneWidget,
+        );
+        expect(find.byType(GameConfetti), findsOneWidget);
 
-      // Tap AWESOME button on dialog
-      await tester.tap(find.text('AWESOME'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap AWESOME button on dialog
+        await tester.tap(find.text('AWESOME'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockProgressionBloc.add(
-            const ProgressionClearMessageRequested(),
-          )).called(1);
-      expect(find.byType(ModernGameDialog), findsNothing);
-    });
+        verify(
+          () =>
+              mockProgressionBloc.add(const ProgressionClearMessageRequested()),
+        ).called(1);
+        expect(find.byType(ModernGameDialog), findsNothing);
+      },
+    );
 
-    testWidgets('error message shows CustomSnackBar and clears message', (tester) async {
+    testWidgets('error message shows CustomSnackBar and clears message', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -388,46 +416,51 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('NETWORK FAILURE'), findsOneWidget);
-      verify(() => mockProgressionBloc.add(
-            const ProgressionClearMessageRequested(),
-          )).called(1);
+      verify(
+        () => mockProgressionBloc.add(const ProgressionClearMessageRequested()),
+      ).called(1);
     });
   });
 
   group('Group 8: Hint Shop & Hint Purchases', () {
-    testWidgets('renders Hint Shop, HintAdCard, and purchasing hint dispatches event', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
-
-      // Scroll to Hint Shop
-      await tester.scrollUntilVisible(
-        find.text('HINT SHOP'),
-        150.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.text('HINT SHOP'), findsOneWidget);
-      expect(find.byType(HintAdCard), findsOneWidget);
-      expect(find.text('Strategic Pack'), findsOneWidget);
-      expect(find.text('Grand Master Pack'), findsOneWidget);
-
-      // Tap Strategic Pack
-      await tester.tap(find.text('Strategic Pack'));
-      await tester.pumpAndSettle();
-
-      // Confirm in HintPurchaseDialog
-      final unlockButton = find.text('CONFIRM');
-      if (unlockButton.evaluate().isNotEmpty) {
-        await tester.tap(unlockButton);
+    testWidgets(
+      'renders Hint Shop, HintAdCard, and purchasing hint dispatches event',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
         await tester.pumpAndSettle();
 
-        verify(() => mockEconomyBloc.add(
+        // Scroll to Hint Shop
+        await tester.scrollUntilVisible(
+          find.text('HINT SHOP'),
+          150.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text('HINT SHOP'), findsOneWidget);
+        expect(find.byType(HintAdCard), findsOneWidget);
+        expect(find.text('Strategic Pack'), findsOneWidget);
+        expect(find.text('Grand Master Pack'), findsOneWidget);
+
+        // Tap Strategic Pack
+        await tester.tap(find.text('Strategic Pack'));
+        await tester.pumpAndSettle();
+
+        // Confirm in HintPurchaseDialog
+        final unlockButton = find.text('CONFIRM');
+        if (unlockButton.evaluate().isNotEmpty) {
+          await tester.tap(unlockButton);
+          await tester.pumpAndSettle();
+
+          verify(
+            () => mockEconomyBloc.add(
               const EconomyPurchaseHintRequested(5000, hintAmount: 5),
-            )).called(1);
-        verify(() => mockHapticService.heavy()).called(1);
-      }
-    });
+            ),
+          ).called(1);
+          verify(() => mockHapticService.heavy()).called(1);
+        }
+      },
+    );
   });
 
   group('Group 9: Ad Reward Card', () {
@@ -447,23 +480,35 @@ void main() {
   });
 
   group('Group 10: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(CustomScrollView), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(CustomScrollView), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(800, 1280)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(CustomScrollView), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(CustomScrollView), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 

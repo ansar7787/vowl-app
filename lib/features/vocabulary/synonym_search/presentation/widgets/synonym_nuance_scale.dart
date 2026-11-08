@@ -133,9 +133,7 @@ class SynonymNuanceScale extends StatelessWidget {
                           Container(
                             height: 3.h,
                             decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white24
-                                  : Colors.black12,
+                              color: isDark ? Colors.white24 : Colors.black12,
                               borderRadius: BorderRadius.circular(2.r),
                             ),
                           ),
@@ -176,8 +174,7 @@ class SynonymNuanceScale extends StatelessWidget {
                                 if (!reduceMotion) {
                                   sliderDot = sliderDot
                                       .animate(
-                                        onPlay: (c) =>
-                                            c.repeat(reverse: true),
+                                        onPlay: (c) => c.repeat(reverse: true),
                                       )
                                       .scale(
                                         begin: const Offset(1, 1),
@@ -232,9 +229,7 @@ class SynonymNuanceScale extends StatelessWidget {
                               borderRadius: BorderRadius.circular(2.r),
                               boxShadow: [
                                 BoxShadow(
-                                  color: primaryColor.withValues(
-                                    alpha: 0.3,
-                                  ),
+                                  color: primaryColor.withValues(alpha: 0.3),
                                   blurRadius: 4,
                                 ),
                               ],
@@ -249,7 +244,10 @@ class SynonymNuanceScale extends StatelessWidget {
 
                 // The Nuance Description
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 12.h,
+                  ),
                   decoration: BoxDecoration(
                     color: isDark
                         ? Colors.black.withValues(alpha: 0.25)

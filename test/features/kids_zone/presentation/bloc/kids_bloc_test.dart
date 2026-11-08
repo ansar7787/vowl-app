@@ -200,11 +200,14 @@ void main() {
     blocTest<KidsBloc, KidsState>(
       'should prune duplicate quest and complete level when final question is answered correctly',
       build: () {
-        when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-            .thenAnswer((_) async => {});
+        when(
+          () =>
+              mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+        ).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
-        when(() => mockUpdateUserRewards(any()))
-            .thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       seed: () => KidsGameOver(
@@ -242,7 +245,7 @@ void main() {
         ),
         // 3. Level complete immediately!
         const KidsGameComplete(
-          xpEarned: 5,
+          xpEarned: 0,
           coinsEarned: 10,
           stickerAwarded: null,
         ),

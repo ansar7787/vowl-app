@@ -114,11 +114,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
-            Icons.task_alt_rounded,
-            color: primaryColor,
-            size: 20.r,
-          ),
+          Icon(Icons.task_alt_rounded, color: primaryColor, size: 20.r),
           SizedBox(width: 10.w),
           Expanded(
             child: Text(
@@ -136,11 +132,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
             ),
           ),
           SizedBox(width: 10.w),
-          Icon(
-            Icons.task_alt_rounded,
-            color: Colors.transparent,
-            size: 20.r,
-          ),
+          Icon(Icons.task_alt_rounded, color: Colors.transparent, size: 20.r),
         ],
       ),
     );
@@ -210,7 +202,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                 .toSet() ??
                             {};
 
-                        final rawInstruction = InstructionHelper.getInstruction(quest);
+                        final rawInstruction = InstructionHelper.getInstruction(
+                          quest,
+                        );
                         final displayInstruction = rawInstruction.isNotEmpty
                             ? rawInstruction
                             : quest.instruction;
@@ -254,8 +248,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                             color: isDark
                                                 ? const Color(0xFF1E293B)
                                                 : Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(16.r),
+                                            borderRadius: BorderRadius.circular(
+                                              16.r,
+                                            ),
                                             border: Border.all(
                                               color: isDark
                                                   ? Colors.white12
@@ -305,8 +300,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       letterSpacing: 0.6,
-                                                      color:
-                                                          theme.primaryColor,
+                                                      color: theme.primaryColor,
                                                     ),
                                                   ),
                                                 ),
@@ -319,15 +313,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 15.5.sp,
-                                                  fontWeight:
-                                                      FontWeight.w500,
+                                                  fontWeight: FontWeight.w500,
                                                   color: isDark
                                                       ? Colors.white.withValues(
                                                           alpha: 0.9,
                                                         )
-                                                      : const Color(
-                                                          0xFF1E293B,
-                                                        ),
+                                                      : const Color(0xFF1E293B),
                                                   height: 1.45,
                                                 ),
                                               ),
@@ -354,11 +345,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                             details.data,
                                           ];
                                         },
-                                        builder: (
-                                          context,
-                                          candidateData,
-                                          rejectedData,
-                                        ) {
+                                        builder: (context, candidateData, rejectedData) {
                                           final isHovering =
                                               candidateData.isNotEmpty;
                                           return Container(
@@ -377,10 +364,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                 color: isHovering
                                                     ? theme.primaryColor
                                                     : (isDark
-                                                        ? Colors.white12
-                                                        : const Color(
-                                                            0xFFE2E8F0,
-                                                          )),
+                                                          ? Colors.white12
+                                                          : const Color(
+                                                              0xFFE2E8F0,
+                                                            )),
                                                 width: isHovering ? 2.0 : 1.0,
                                               ),
                                             ),
@@ -393,8 +380,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                     Icon(
                                                       Icons
                                                           .assignment_turned_in_rounded,
-                                                      color:
-                                                          theme.primaryColor,
+                                                      color: theme.primaryColor,
                                                       size: 18.r,
                                                     ),
                                                     SizedBox(width: 8.w),
@@ -404,14 +390,15 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                             ? "Your Selection"
                                                             : "Your Answer",
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 14.sp,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          color:
-                                                              theme.primaryColor,
+                                                          color: theme
+                                                              .primaryColor,
                                                           letterSpacing: 0.2,
                                                         ),
                                                       ),
@@ -449,125 +436,111 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                   ],
                                                 ),
                                                 SizedBox(height: 14.h),
-                                                ...List.generate(
-                                                  requiredCount,
-                                                  (index) {
-                                                    if (index <
-                                                        draftedOptions.length) {
-                                                      final option =
-                                                          draftedOptions[index];
-                                                      return OpinionWritingDraftedCard(
-                                                        key: Key(
-                                                          'opinion_drafted_card_$option',
-                                                        ),
-                                                        text: option,
-                                                        isDark: isDark,
-                                                        primaryColor:
-                                                            theme.primaryColor,
-                                                        isAnswered: isAnswered,
-                                                        isCorrectOption:
-                                                            correctOptionsSet
-                                                                .contains(
-                                                                  option,
-                                                                ),
-                                                        onRemove: isAnswered
-                                                            ? null
-                                                            : () {
-                                                                hapticService
-                                                                    .selection();
-                                                                final current =
-                                                                    List<
-                                                                      String
-                                                                    >.from(
-                                                                      _draftedOptions
-                                                                          .value,
-                                                                    );
-                                                                current.remove(
-                                                                  option,
-                                                                );
-                                                                _draftedOptions
-                                                                        .value =
-                                                                    current;
-                                                              },
-                                                      );
-                                                    } else {
-                                                      return Padding(
+                                                ...List.generate(requiredCount, (
+                                                  index,
+                                                ) {
+                                                  if (index <
+                                                      draftedOptions.length) {
+                                                    final option =
+                                                        draftedOptions[index];
+                                                    return OpinionWritingDraftedCard(
+                                                      key: Key(
+                                                        'opinion_drafted_card_$option',
+                                                      ),
+                                                      text: option,
+                                                      isDark: isDark,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isAnswered: isAnswered,
+                                                      isCorrectOption:
+                                                          correctOptionsSet
+                                                              .contains(option),
+                                                      onRemove: isAnswered
+                                                          ? null
+                                                          : () {
+                                                              hapticService
+                                                                  .selection();
+                                                              final current =
+                                                                  List<
+                                                                    String
+                                                                  >.from(
+                                                                    _draftedOptions
+                                                                        .value,
+                                                                  );
+                                                              current.remove(
+                                                                option,
+                                                              );
+                                                              _draftedOptions
+                                                                      .value =
+                                                                  current;
+                                                            },
+                                                    );
+                                                  } else {
+                                                    return Padding(
+                                                      padding: EdgeInsets.only(
+                                                        bottom: 12.h,
+                                                      ),
+                                                      child: Container(
+                                                        width: double.infinity,
                                                         padding:
-                                                            EdgeInsets.only(
-                                                              bottom: 12.h,
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 16.w,
+                                                              vertical: 16.h,
                                                             ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          padding:
-                                                              EdgeInsets.symmetric(
-                                                                horizontal:
-                                                                    16.w,
-                                                                vertical: 16.h,
-                                                              ),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                                color: isDark
-                                                                    ? Colors
-                                                                          .white
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.03,
-                                                                          )
-                                                                    : Colors
-                                                                          .black
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.02,
-                                                                          ),
-                                                                borderRadius:
-                                                                    BorderRadius.circular(
-                                                                      14.r,
+                                                        decoration: BoxDecoration(
+                                                          color: isDark
+                                                              ? Colors.white
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.03,
+                                                                    )
+                                                              : Colors.black
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.02,
                                                                     ),
-                                                                border:
-                                                                    Border.all(
-                                                                      color: isDark
-                                                                          ? Colors
-                                                                                .white12
-                                                                          : theme
-                                                                                .primaryColor
-                                                                                .withValues(
-                                                                                  alpha:
-                                                                                      0.2,
-                                                                                ),
-                                                                      width:
-                                                                          1.0,
-                                                                    ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                14.r,
                                                               ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "Tap or drag an option here",
-                                                              softWrap: true,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    14.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                color: isDark
-                                                                    ? Colors
-                                                                          .white38
-                                                                    : const Color(
-                                                                        0xFF94A3B8,
+                                                          border: Border.all(
+                                                            color: isDark
+                                                                ? Colors.white12
+                                                                : theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.2,
                                                                       ),
-                                                              ),
+                                                            width: 1.0,
+                                                          ),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            "Tap or drag an option here",
+                                                            softWrap: true,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 14.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              color: isDark
+                                                                  ? Colors
+                                                                        .white38
+                                                                  : const Color(
+                                                                      0xFF94A3B8,
+                                                                    ),
                                                             ),
                                                           ),
                                                         ),
-                                                      );
-                                                    }
-                                                  },
-                                                ),
+                                                      ),
+                                                    );
+                                                  }
+                                                }),
                                               ],
                                             ),
                                           );
@@ -627,8 +600,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                               child: SizedBox(
                                                 width:
                                                     MediaQuery.of(
-                                                          context,
-                                                        ).size.width -
+                                                      context,
+                                                    ).size.width -
                                                     40.w,
                                                 child: OpinionWritingIdeaCard(
                                                   text: option,
@@ -683,12 +656,13 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                               color: canSubmit
                                                   ? theme.primaryColor
                                                   : (isDark
-                                                      ? Colors.white.withValues(
-                                                          alpha: 0.08,
-                                                        )
-                                                      : const Color(
-                                                          0xFFE2E8F0,
-                                                        )),
+                                                        ? Colors.white
+                                                              .withValues(
+                                                                alpha: 0.08,
+                                                              )
+                                                        : const Color(
+                                                            0xFFE2E8F0,
+                                                          )),
                                               boxShadow: canSubmit
                                                   ? [
                                                       BoxShadow(
@@ -717,10 +691,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                   color: canSubmit
                                                       ? Colors.white
                                                       : (isDark
-                                                          ? Colors.white38
-                                                          : const Color(
-                                                              0xFF94A3B8,
-                                                            )),
+                                                            ? Colors.white38
+                                                            : const Color(
+                                                                0xFF94A3B8,
+                                                              )),
                                                   letterSpacing: 0.4,
                                                 ),
                                               ),

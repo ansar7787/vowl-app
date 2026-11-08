@@ -55,59 +55,59 @@ class KidsRoomDecorSheet extends StatelessWidget {
               length: 2,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 60.w,
-                height: 6.h,
-                decoration: BoxDecoration(
-                  color: Colors.amber.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(3.r),
-                ),
-              ),
-              SizedBox(height: 20.h),
-              Text(
-                "DECORATE ROOM",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.amber.shade700,
-                  letterSpacing: 1.2,
-                ),
-              ),
-              SizedBox(height: 10.h),
-              TabBar(
-                tabs: const [
-                  Tab(text: "BEDS"),
-                  Tab(text: "WINDOWS"),
+                children: [
+                  Container(
+                    width: 60.w,
+                    height: 6.h,
+                    decoration: BoxDecoration(
+                      color: Colors.amber.withValues(alpha: 0.5),
+                      borderRadius: BorderRadius.circular(3.r),
+                    ),
+                  ),
+                  SizedBox(height: 20.h),
+                  Text(
+                    "DECORATE ROOM",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.amber.shade700,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                  TabBar(
+                    tabs: const [
+                      Tab(text: "BEDS"),
+                      Tab(text: "WINDOWS"),
+                    ],
+                    labelColor: Colors.amber.shade700,
+                    unselectedLabelColor: Colors.grey,
+                    indicatorColor: Colors.amber.shade700,
+                    indicatorWeight: 4,
+                    labelStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 250.h,
+                    child: TabBarView(
+                      children: [
+                        _buildStoreGrid(context, 'bed'),
+                        _buildStoreGrid(context, 'window'),
+                      ],
+                    ),
+                  ),
                 ],
-                labelColor: Colors.amber.shade700,
-                unselectedLabelColor: Colors.grey,
-                indicatorColor: Colors.amber.shade700,
-                indicatorWeight: 4,
-                labelStyle: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                ),
               ),
-              SizedBox(
-                height: 250.h,
-                child: TabBarView(
-                  children: [
-                    _buildStoreGrid(context, 'bed'),
-                    _buildStoreGrid(context, 'window'),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
-    ),
-  ),
-);
-}
+    );
+  }
 
   Widget _buildStoreGrid(BuildContext context, String category) {
     final items = furnitureStore[category]!;

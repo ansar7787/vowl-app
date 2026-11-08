@@ -47,9 +47,7 @@ class ContextualUsageOptionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color tileColor = isDark
-        ? color.withValues(alpha: 0.08)
-        : Colors.white;
+    Color tileColor = isDark ? color.withValues(alpha: 0.08) : Colors.white;
     Color borderColor = isDark
         ? Colors.white.withValues(alpha: 0.12)
         : color.withValues(alpha: 0.2);
@@ -95,8 +93,8 @@ class ContextualUsageOptionChip extends StatelessWidget {
                 color: isSelected
                     ? borderColor.withValues(alpha: 0.25)
                     : (isDark
-                        ? Colors.black.withValues(alpha: 0.2)
-                        : Colors.black.withValues(alpha: 0.03)),
+                          ? Colors.black.withValues(alpha: 0.2)
+                          : Colors.black.withValues(alpha: 0.03)),
                 blurRadius: isSelected ? 12 : 6,
                 offset: const Offset(0, 2),
               ),

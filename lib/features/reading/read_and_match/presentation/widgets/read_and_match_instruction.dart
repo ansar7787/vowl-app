@@ -44,11 +44,7 @@ class ReadAndMatchInstruction extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.touch_app_rounded,
-                size: 15.r,
-                color: primaryColor,
-              ),
+              Icon(Icons.touch_app_rounded, size: 15.r, color: primaryColor),
               SizedBox(width: 8.w),
               Flexible(
                 child: Text(
@@ -62,8 +58,8 @@ class ReadAndMatchInstruction extends StatelessWidget {
                     color: isDark
                         ? Colors.white.withValues(alpha: 0.95)
                         : (primaryColor == Colors.white
-                            ? const Color(0xFF1E293B)
-                            : primaryColor),
+                              ? const Color(0xFF1E293B)
+                              : primaryColor),
                     height: 1.35,
                     letterSpacing: 0.2,
                   ),
@@ -73,10 +69,7 @@ class ReadAndMatchInstruction extends StatelessWidget {
               // Invisible counter-balance icon to keep the text optically centered
               Opacity(
                 opacity: 0,
-                child: Icon(
-                  Icons.touch_app_rounded,
-                  size: 15.r,
-                ),
+                child: Icon(Icons.touch_app_rounded, size: 15.r),
               ),
             ],
           ),

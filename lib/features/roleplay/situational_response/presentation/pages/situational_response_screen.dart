@@ -68,10 +68,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
 
     final List<String> originalOptions =
         (quest.options != null && quest.options!.isNotEmpty)
-            ? quest.options!
-            : (quest.correctAnswer != null && quest.correctAnswer!.isNotEmpty)
-                ? [quest.correctAnswer!]
-                : <String>[];
+        ? quest.options!
+        : (quest.correctAnswer != null && quest.correctAnswer!.isNotEmpty)
+        ? [quest.correctAnswer!]
+        : <String>[];
 
     if (originalOptions.isNotEmpty) {
       int originalCorrect = 0;
@@ -84,13 +84,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
         if (idx >= 0) originalCorrect = idx;
       }
 
-      final List<int> indices = List.generate(
-        originalOptions.length,
-        (i) => i,
-      )..shuffle();
+      final List<int> indices = List.generate(originalOptions.length, (i) => i)
+        ..shuffle();
 
-      _shuffledOptions.value =
-          indices.map((i) => originalOptions[i]).toList();
+      _shuffledOptions.value = indices.map((i) => originalOptions[i]).toList();
       _shuffledCorrectIndex.value = indices.indexOf(originalCorrect);
     }
   }
@@ -255,45 +252,48 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                            final isCompact = constraints.maxHeight < 620;
-                            final hintUsed =
-                                (state is RoleplayLoaded) ? state.hintUsed : false;
+                        final isCompact = constraints.maxHeight < 620;
+                        final hintUsed = (state is RoleplayLoaded)
+                            ? state.hintUsed
+                            : false;
 
-                            return RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(height: isCompact ? 12.h : 20.h),
-                                  ),
-                                  SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring:
-                                          isFirstStagePassedNotifier.value ||
-                                          isAnsweredNotifier.value,
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: isCompact ? 12.h : 20.h,
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: IgnorePointer(
+                                  ignoring:
+                                      isFirstStagePassedNotifier.value ||
+                                      isAnsweredNotifier.value,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        SituationalResponseInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction:
+                                              quest.instruction.isNotEmpty
+                                              ? InstructionHelper.getInstruction(
+                                                  quest,
+                                                )
+                                              : null,
+                                          isDark: isDark,
+                                          hint: quest.hint,
+                                          hintUsed: hintUsed,
                                         ),
-                                        child: Column(
-                                          children: [
-                                            SituationalResponseInstruction(
-                                              primaryColor: theme.primaryColor,
-                                              instruction:
-                                                  quest.instruction.isNotEmpty
-                                                      ? InstructionHelper.getInstruction(
-                                                          quest,
-                                                        )
-                                                      : null,
-                                              isDark: isDark,
-                                              hint: quest.hint,
-                                              hintUsed: hintUsed,
-                                            ),
                                         SizedBox(
                                           height: isCompact ? 10.h : 16.h,
                                         ),
@@ -338,8 +338,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                               ),
                                           crossFadeState:
                                               isAnsweredNotifier.value
-                                                  ? CrossFadeState.showSecond
-                                                  : CrossFadeState.showFirst,
+                                              ? CrossFadeState.showSecond
+                                              : CrossFadeState.showFirst,
                                           duration: const Duration(
                                             milliseconds: 450,
                                           ),

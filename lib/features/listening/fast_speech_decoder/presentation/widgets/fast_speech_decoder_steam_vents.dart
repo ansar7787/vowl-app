@@ -66,9 +66,7 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
           if (isChoiceCorrect) return tokens.gameCorrect;
           if (isChoiceWrong) return tokens.gameIncorrect;
           if (isSelected) return color;
-          return isDark
-              ? color.withValues(alpha: 0.3)
-              : tokens.border;
+          return isDark ? color.withValues(alpha: 0.3) : tokens.border;
         }
 
         Color getTextColor() {
@@ -111,11 +109,15 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: getBorderColor(),
-                    width: isSelected || isChoiceCorrect || isChoiceWrong ? 2.0 : 1.2,
+                    width: isSelected || isChoiceCorrect || isChoiceWrong
+                        ? 2.0
+                        : 1.2,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.04),
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.25 : 0.04,
+                      ),
                       offset: Offset(0, 3.h),
                       blurRadius: 8,
                     ),
@@ -129,11 +131,7 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      getIconData(),
-                      color: getIconColor(),
-                      size: 20.r,
-                    ),
+                    Icon(getIconData(), color: getIconColor(), size: 20.r),
                     SizedBox(width: 14.w),
                     Expanded(
                       child: Text(

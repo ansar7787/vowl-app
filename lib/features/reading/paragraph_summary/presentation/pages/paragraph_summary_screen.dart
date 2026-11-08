@@ -243,9 +243,10 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                       color: _isDistilled.value
                                           ? tokens.gameCorrect
                                           : (isDark
-                                              ? Colors.white
-                                                  .withValues(alpha: 0.7)
-                                              : const Color(0xFF64748B)),
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.7,
+                                                  )
+                                                : const Color(0xFF64748B)),
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w600,
                                       letterSpacing: 0.2,

@@ -393,11 +393,11 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                               height: isAnswered
                                   ? 160.h
                                   : (_pendingSelectedOption.value != null
-                                      ? MediaQuery.viewInsetsOf(
-                                            context,
-                                          ).bottom +
-                                          48.h
-                                      : 80.h),
+                                        ? MediaQuery.viewInsetsOf(
+                                                context,
+                                              ).bottom +
+                                              48.h
+                                        : 80.h),
                             ),
                           ),
                         ],

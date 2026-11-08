@@ -221,7 +221,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics & Ad mocks
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -246,13 +248,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -328,9 +332,9 @@ void main() {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               home: MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: TextScaler.linear(textScaleFactor),
-                ),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.linear(textScaleFactor)),
                 child: CorrectionWritingScreen(level: level),
               ),
             );
@@ -365,7 +369,10 @@ void main() {
         find.byKey(const Key('correction_writing_scroll_view')),
         findsOneWidget,
       );
-      expect(find.text('Identify and correct the error in the sentence.'), findsOneWidget);
+      expect(
+        find.text('Identify and correct the error in the sentence.'),
+        findsOneWidget,
+      );
       expect(find.text('Select the correct word'), findsOneWidget);
       expect(find.text('Check Answer'), findsOneWidget);
     });
@@ -425,175 +432,185 @@ void main() {
     });
   });
 
-  group('CorrectionWritingScreen - 2. Option Selection & UI State (Normal Mode)', () {
-    testWidgets('check button is disabled before selecting an option', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+  group(
+    'CorrectionWritingScreen - 2. Option Selection & UI State (Normal Mode)',
+    () {
+      testWidgets('check button is disabled before selecting an option', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      final buttonFinder = find.byKey(
-        const Key('correction_writing_check_button'),
+        final buttonFinder = find.byKey(
+          const Key('correction_writing_check_button'),
+        );
+        await tester.tap(buttonFinder);
+        await tester.pump();
+
+        // SubmitAnswer should NOT have been called
+        verifyNever(() => mockWritingBloc.add(const SubmitAnswer(true)));
+        verifyNever(() => mockWritingBloc.add(const SubmitAnswer(false)));
+      });
+
+      testWidgets(
+        'tapping an option highlights it and triggers selection haptic',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
+
+          final chipFinder = find.byKey(
+            const Key('correction_vault_chip_goes'),
+          );
+          await tester.ensureVisible(chipFinder);
+          await tester.tap(chipFinder);
+          await tester.pump();
+
+          verify(() => mockHapticService.selection()).called(1);
+
+          // Check button should now be enabled and trigger submit
+          final buttonFinder = find.byKey(
+            const Key('correction_writing_check_button'),
+          );
+          await tester.ensureVisible(buttonFinder);
+          await tester.tap(buttonFinder);
+          await tester.pump();
+
+          verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+        },
       );
-      await tester.tap(buttonFinder);
-      await tester.pump();
 
-      // SubmitAnswer should NOT have been called
-      verifyNever(() => mockWritingBloc.add(const SubmitAnswer(true)));
-      verifyNever(() => mockWritingBloc.add(const SubmitAnswer(false)));
-    });
+      testWidgets('switching between options updates selection', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-    testWidgets('tapping an option highlights it and triggers selection haptic', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+        final chipWent = find.byKey(const Key('correction_vault_chip_went'));
+        final chipGoes = find.byKey(const Key('correction_vault_chip_goes'));
 
-      final chipFinder = find.byKey(const Key('correction_vault_chip_goes'));
-      await tester.ensureVisible(chipFinder);
-      await tester.tap(chipFinder);
-      await tester.pump();
+        await tester.ensureVisible(chipWent);
+        await tester.tap(chipWent);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
+        await tester.ensureVisible(chipGoes);
+        await tester.tap(chipGoes);
+        await tester.pump();
 
-      // Check button should now be enabled and trigger submit
-      final buttonFinder = find.byKey(
-        const Key('correction_writing_check_button'),
-      );
-      await tester.ensureVisible(buttonFinder);
-      await tester.tap(buttonFinder);
-      await tester.pump();
+        final buttonFinder = find.byKey(
+          const Key('correction_writing_check_button'),
+        );
+        await tester.ensureVisible(buttonFinder);
+        await tester.tap(buttonFinder);
+        await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        // Final submitted answer should be 'goes' -> correct
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      });
 
-    testWidgets('switching between options updates selection', (tester) async {
-      await pumpScreen(tester, level: 2);
+      testWidgets('submitting an incorrect option triggers wrong answer', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      final chipWent = find.byKey(const Key('correction_vault_chip_went'));
-      final chipGoes = find.byKey(const Key('correction_vault_chip_goes'));
+        final chipWent = find.byKey(const Key('correction_vault_chip_went'));
+        await tester.ensureVisible(chipWent);
+        await tester.tap(chipWent);
+        await tester.pump();
 
-      await tester.ensureVisible(chipWent);
-      await tester.tap(chipWent);
-      await tester.pump();
+        final buttonFinder = find.byKey(
+          const Key('correction_writing_check_button'),
+        );
+        await tester.ensureVisible(buttonFinder);
+        await tester.tap(buttonFinder);
+        await tester.pump();
 
-      await tester.ensureVisible(chipGoes);
-      await tester.tap(chipGoes);
-      await tester.pump();
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      });
 
-      final buttonFinder = find.byKey(
-        const Key('correction_writing_check_button'),
-      );
-      await tester.ensureVisible(buttonFinder);
-      await tester.tap(buttonFinder);
-      await tester.pump();
+      testWidgets('tapping an option when already answered does nothing', (
+        tester,
+      ) async {
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        await pumpScreen(tester, state: answeredState, level: 2);
 
-      // Final submitted answer should be 'goes' -> correct
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        final chipGoes = find.byKey(const Key('correction_vault_chip_goes'));
+        await tester.ensureVisible(chipGoes);
+        await tester.tap(chipGoes, warnIfMissed: false);
+        await tester.pump();
 
-    testWidgets('submitting an incorrect option triggers wrong answer', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
-
-      final chipWent = find.byKey(const Key('correction_vault_chip_went'));
-      await tester.ensureVisible(chipWent);
-      await tester.tap(chipWent);
-      await tester.pump();
-
-      final buttonFinder = find.byKey(
-        const Key('correction_writing_check_button'),
-      );
-      await tester.ensureVisible(buttonFinder);
-      await tester.tap(buttonFinder);
-      await tester.pump();
-
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
-
-    testWidgets('tapping an option when already answered does nothing', (
-      tester,
-    ) async {
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      await pumpScreen(tester, state: answeredState, level: 2);
-
-      final chipGoes = find.byKey(const Key('correction_vault_chip_goes'));
-      await tester.ensureVisible(chipGoes);
-      await tester.tap(chipGoes, warnIfMissed: false);
-      await tester.pump();
-
-      verifyNever(() => mockHapticService.selection());
-    });
-  });
+        verifyNever(() => mockHapticService.selection());
+      });
+    },
+  );
 
   group('CorrectionWritingScreen - 3. Hard Mode Mechanics (Level >= 6)', () {
-    testWidgets('renders keyboard input and absorbed vault in hard mode (level 6)', (
-      tester,
-    ) async {
-      final hardState = WritingLoaded(
-        quests: [sampleHardQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.correctionWriting,
-        level: 6,
-      );
+    testWidgets(
+      'renders keyboard input and absorbed vault in hard mode (level 6)',
+      (tester) async {
+        final hardState = WritingLoaded(
+          quests: [sampleHardQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.correctionWriting,
+          level: 6,
+        );
 
-      await pumpScreen(tester, state: hardState, level: 6);
+        await pumpScreen(tester, state: hardState, level: 6);
 
-      expect(find.byType(CorrectionWritingKeyboardInput), findsOneWidget);
-      expect(
-        find.byKey(const Key('correction_keyboard_input_field')),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('correction_keyboard_submit_button')),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('correction_hard_mode_vault_detector')),
-        findsOneWidget,
-      );
-      // Normal check button is hidden in hard mode
-      expect(
-        find.byKey(const Key('correction_writing_check_button')),
-        findsNothing,
-      );
-    });
+        expect(find.byType(CorrectionWritingKeyboardInput), findsOneWidget);
+        expect(
+          find.byKey(const Key('correction_keyboard_input_field')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('correction_keyboard_submit_button')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('correction_hard_mode_vault_detector')),
+          findsOneWidget,
+        );
+        // Normal check button is hidden in hard mode
+        expect(
+          find.byKey(const Key('correction_writing_check_button')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('tapping vault in hard mode displays disabled warning snackbar', (
-      tester,
-    ) async {
-      final hardState = WritingLoaded(
-        quests: [sampleHardQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.correctionWriting,
-        level: 6,
-      );
+    testWidgets(
+      'tapping vault in hard mode displays disabled warning snackbar',
+      (tester) async {
+        final hardState = WritingLoaded(
+          quests: [sampleHardQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.correctionWriting,
+          level: 6,
+        );
 
-      await pumpScreen(tester, state: hardState, level: 6);
+        await pumpScreen(tester, state: hardState, level: 6);
 
-      final detector = find.byKey(
-        const Key('correction_hard_mode_vault_detector'),
-      );
-      await tester.ensureVisible(detector);
-      await tester.tap(detector);
-      await tester.pump();
+        final detector = find.byKey(
+          const Key('correction_hard_mode_vault_detector'),
+        );
+        await tester.ensureVisible(detector);
+        await tester.tap(detector);
+        await tester.pump();
 
-      expect(
-        find.text(
-          'Hard Mode! Tapping is disabled. Please type your answer below.',
-        ),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.text(
+            'Hard Mode! Tapping is disabled. Please type your answer below.',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('submitting empty string does not submit', (tester) async {
       final hardState = WritingLoaded(
@@ -639,10 +656,7 @@ void main() {
       final inputField = find.byKey(
         const Key('correction_keyboard_input_field'),
       );
-      await tester.enterText(
-        inputField,
-        'he has two brothers and one sister.',
-      );
+      await tester.enterText(inputField, 'he has two brothers and one sister.');
       await tester.pump();
 
       final submitBtn = find.byKey(
@@ -680,10 +694,7 @@ void main() {
       final inputField = find.byKey(
         const Key('correction_keyboard_input_field'),
       );
-      await tester.enterText(
-        inputField,
-        'He has two brothers and one sister',
-      );
+      await tester.enterText(inputField, 'He has two brothers and one sister');
       await tester.pump();
 
       final submitBtn = find.byKey(
@@ -704,75 +715,77 @@ void main() {
       verifyNever(() => mockWritingBloc.add(const SubmitAnswer(false)));
     });
 
-    testWidgets('submitting correct full sentence triggers SubmitAnswer(true)', (
-      tester,
-    ) async {
-      final hardState = WritingLoaded(
-        quests: [sampleHardQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.correctionWriting,
-        level: 6,
-      );
+    testWidgets(
+      'submitting correct full sentence triggers SubmitAnswer(true)',
+      (tester) async {
+        final hardState = WritingLoaded(
+          quests: [sampleHardQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.correctionWriting,
+          level: 6,
+        );
 
-      await pumpScreen(tester, state: hardState, level: 6);
+        await pumpScreen(tester, state: hardState, level: 6);
 
-      final inputField = find.byKey(
-        const Key('correction_keyboard_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'He has two brothers and one sister.',
-      );
-      await tester.pump();
+        final inputField = find.byKey(
+          const Key('correction_keyboard_input_field'),
+        );
+        await tester.enterText(
+          inputField,
+          'He has two brothers and one sister.',
+        );
+        await tester.pump();
 
-      final submitBtn = find.byKey(
-        const Key('correction_keyboard_submit_button'),
-      );
-      await tester.ensureVisible(submitBtn);
-      await tester.tap(submitBtn);
-      await tester.pump();
+        final submitBtn = find.byKey(
+          const Key('correction_keyboard_submit_button'),
+        );
+        await tester.ensureVisible(submitBtn);
+        await tester.tap(submitBtn);
+        await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('submitting incorrect full sentence triggers SubmitAnswer(false)', (
-      tester,
-    ) async {
-      final hardState = WritingLoaded(
-        quests: [sampleHardQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.correctionWriting,
-        level: 6,
-      );
+    testWidgets(
+      'submitting incorrect full sentence triggers SubmitAnswer(false)',
+      (tester) async {
+        final hardState = WritingLoaded(
+          quests: [sampleHardQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.correctionWriting,
+          level: 6,
+        );
 
-      await pumpScreen(tester, state: hardState, level: 6);
+        await pumpScreen(tester, state: hardState, level: 6);
 
-      final inputField = find.byKey(
-        const Key('correction_keyboard_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'He had two brothers and one sister.',
-      );
-      await tester.pump();
+        final inputField = find.byKey(
+          const Key('correction_keyboard_input_field'),
+        );
+        await tester.enterText(
+          inputField,
+          'He had two brothers and one sister.',
+        );
+        await tester.pump();
 
-      final submitBtn = find.byKey(
-        const Key('correction_keyboard_submit_button'),
-      );
-      await tester.ensureVisible(submitBtn);
-      await tester.tap(submitBtn);
-      await tester.pump();
+        final submitBtn = find.byKey(
+          const Key('correction_keyboard_submit_button'),
+        );
+        await tester.ensureVisible(submitBtn);
+        await tester.tap(submitBtn);
+        await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
     testWidgets('submitting via onSubmitted on the text field works', (
       tester,
@@ -793,10 +806,7 @@ void main() {
       final inputField = find.byKey(
         const Key('correction_keyboard_input_field'),
       );
-      await tester.enterText(
-        inputField,
-        'He has two brothers and one sister.',
-      );
+      await tester.enterText(inputField, 'He has two brothers and one sister.');
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pump();
 
@@ -886,107 +896,103 @@ void main() {
     });
   });
 
-  group('CorrectionWritingScreen - 5. Game Completion, Game Over & Error Journal', () {
-    testWidgets('shows GameDialogHelper on WritingGameComplete', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+  group(
+    'CorrectionWritingScreen - 5. Game Completion, Game Over & Error Journal',
+    () {
+      testWidgets('shows GameDialogHelper on WritingGameComplete', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      writingStreamController.add(
-        const WritingGameComplete(
-          xpEarned: 100,
-          coinsEarned: 25,
-          questCount: 2,
-          gameType: GameSubtype.correctionWriting,
-          level: 2,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-
-      // Clean up dialog
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(milliseconds: 500));
-    });
-
-    testWidgets('handles WritingGameOver without crash', (tester) async {
-      await pumpScreen(tester, level: 2);
-
-      writingStreamController.add(
-        WritingGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-          gameType: GameSubtype.correctionWriting,
-          level: 2,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byType(WritingBaseLayout), findsOneWidget);
-
-      // Clean up game over dialog
-      final giveUpFinder = find.text('GIVE UP');
-      if (giveUpFinder.evaluate().isNotEmpty) {
-        Navigator.of(tester.element(giveUpFinder)).pop();
-        await tester.pump(const Duration(milliseconds: 500));
-      }
-    });
-
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'authed_user_1',
-            email: 'user@test.com',
-            displayName: 'Grammar Master',
+        writingStreamController.add(
+          const WritingGameComplete(
+            xpEarned: 100,
+            coinsEarned: 25,
+            questCount: 2,
+            gameType: GameSubtype.correctionWriting,
+            level: 2,
           ),
-        ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+
+        // Clean up dialog
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(milliseconds: 500));
+      });
+
+      testWidgets('handles WritingGameOver without crash', (tester) async {
+        await pumpScreen(tester, level: 2);
+
+        writingStreamController.add(
+          WritingGameOver(
+            quests: [sampleQuest1],
+            currentIndex: 0,
+            gameType: GameSubtype.correctionWriting,
+            level: 2,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(WritingBaseLayout), findsOneWidget);
+
+        // Clean up game over dialog
+        final giveUpFinder = find.text('GIVE UP');
+        if (giveUpFinder.evaluate().isNotEmpty) {
+          Navigator.of(tester.element(giveUpFinder)).pop();
+          await tester.pump(const Duration(milliseconds: 500));
+        }
+      });
+
+      testWidgets(
+        'records to ErrorJournal when answering incorrectly as authenticated user',
+        (tester) async {
+          when(() => mockAuthBloc.state).thenReturn(
+            AuthState.authenticated(
+              const UserEntity(
+                id: 'authed_user_1',
+                email: 'user@test.com',
+                displayName: 'Grammar Master',
+              ),
+            ),
+          );
+
+          await pumpScreen(tester, level: 2);
+
+          final chipWent = find.byKey(const Key('correction_vault_chip_went'));
+          await tester.ensureVisible(chipWent);
+          await tester.tap(chipWent);
+          await tester.pump();
+
+          final buttonFinder = find.byKey(
+            const Key('correction_writing_check_button'),
+          );
+          await tester.ensureVisible(buttonFinder);
+          await tester.tap(buttonFinder);
+          await tester.pump();
+
+          verify(
+            () => mockWritingBloc.add(const SubmitAnswer(false)),
+          ).called(1);
+        },
       );
-
-      await pumpScreen(tester, level: 2);
-
-      final chipWent = find.byKey(const Key('correction_vault_chip_went'));
-      await tester.ensureVisible(chipWent);
-      await tester.tap(chipWent);
-      await tester.pump();
-
-      final buttonFinder = find.byKey(
-        const Key('correction_writing_check_button'),
-      );
-      await tester.ensureVisible(buttonFinder);
-      await tester.tap(buttonFinder);
-      await tester.pump();
-
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
-  });
+    },
+  );
 
   group('CorrectionWritingScreen - 6. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(CorrectionWritingScreen), findsOneWidget);
       expect(find.byType(CorrectionWritingInstruction), findsOneWidget);
       expect(find.byType(CorrectionWritingVault), findsOneWidget);
     });
 
-    testWidgets('renders properly on tablet screen (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+    testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(CorrectionWritingScreen), findsOneWidget);
       expect(find.byType(CorrectionWritingSentenceCard), findsOneWidget);
@@ -995,21 +1001,13 @@ void main() {
     testWidgets('renders with 1.3x high text scale without overflow', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(CorrectionWritingScreen), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(CorrectionWritingScreen), findsOneWidget);
     });
@@ -1028,11 +1026,7 @@ void main() {
     testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
@@ -1048,4 +1042,3 @@ void main() {
     });
   });
 }
-

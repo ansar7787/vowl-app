@@ -60,12 +60,13 @@ class GlobalProgressCard extends StatelessWidget {
     return context.tr('home.stage_mastery', fallback: 'Mastery');
   }
 
-  static String _getMilestoneRemainingText(BuildContext context, int completed) {
+  static String _getMilestoneRemainingText(
+    BuildContext context,
+    int completed,
+  ) {
     final nextTarget = completed < 50
         ? 50
-        : (completed < 200
-            ? 200
-            : (completed < 1000 ? 1000 : totalLevels));
+        : (completed < 200 ? 200 : (completed < 1000 ? 1000 : totalLevels));
     final remaining = (nextTarget - completed).clamp(0, totalLevels);
     if (remaining == 0) {
       return context.tr(
@@ -83,8 +84,8 @@ class GlobalProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final completed = user.totalLevelsCompleted;
     final progress = totalLevels > 0
         ? (completed / totalLevels).clamp(0.0, 1.0)
@@ -108,7 +109,8 @@ class GlobalProgressCard extends StatelessWidget {
       button: true,
       label: context.tr(
         'home.quest_journey_progress_label',
-        fallback: '$title. $completed of $totalLevels levels completed. $rankLabel $rankText.',
+        fallback:
+            '$title. $completed of $totalLevels levels completed. $rankLabel $rankText.',
         args: [completed.toString(), totalLevels.toString(), percentage],
       ),
       child: ScaleButton(
@@ -130,8 +132,8 @@ class GlobalProgressCard extends StatelessWidget {
               color: isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
               width: 1.r,
             ),
           ),
@@ -398,9 +400,7 @@ class GlobalProgressCard extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark
-                          ? AppColors.slate400
-                          : AppColors.slate500,
+                      color: isDark ? AppColors.slate400 : AppColors.slate500,
                     ),
                     maxLines: 1,
                   ),

@@ -164,7 +164,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               if (di.sl.isRegistered<NetworkInfo>()) {
                 final network = di.sl<NetworkInfo>();
                 if (!isPremium && network.isCurrentlyOffline) {
-                  OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+                  OfflinePlayGateService.instance.recordOfflineLevel(
+                    isPremium: false,
+                  );
                 }
               }
             } catch (_) {}
@@ -172,7 +174,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             if (di.sl.isRegistered<PraiseService>()) {
               Timer(const Duration(milliseconds: 1400), () {
                 try {
-                  di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+                  di.sl<PraiseService>().givePraise(
+                    context: PraiseContext.flawless,
+                  );
                 } catch (_) {}
               });
             }

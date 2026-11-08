@@ -6,7 +6,10 @@ import 'package:vowl/features/referral/presentation/widgets/referral_claim_dialo
 class ReferralClipboardDetector {
   ReferralClipboardDetector._();
 
-  static final RegExp _kCodePattern = RegExp(r'VOWL-[A-Za-z0-9]{4,12}', caseSensitive: false);
+  static final RegExp _kCodePattern = RegExp(
+    r'VOWL-[A-Za-z0-9]{4,12}',
+    caseSensitive: false,
+  );
   static String? _lastDetectedCode;
 
   /// Checks the system clipboard for a Vowl referral code or invite message.
@@ -28,7 +31,9 @@ class ReferralClipboardDetector {
       if (match != null) {
         final code = match.group(0)!.toUpperCase();
         if (code == _lastDetectedCode) return;
-        if (user.referralCode != null && user.referralCode!.toUpperCase() == code) return;
+        if (user.referralCode != null &&
+            user.referralCode!.toUpperCase() == code)
+          return;
 
         _lastDetectedCode = code;
 
@@ -50,4 +55,3 @@ class ReferralClipboardDetector {
     }
   }
 }
-

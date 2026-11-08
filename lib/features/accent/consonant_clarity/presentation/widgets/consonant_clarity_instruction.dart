@@ -18,7 +18,8 @@ class ConsonantClarityInstruction extends StatelessWidget {
   });
 
   String _formatInstruction(BuildContext context) {
-    final raw = instruction ??
+    final raw =
+        instruction ??
         context.tr(
           'games.consonantClarity_instruction',
           fallback: 'Choose the correct consonant sound.',

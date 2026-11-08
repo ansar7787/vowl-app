@@ -113,7 +113,8 @@ void main() {
     correctAnswer:
         'HelioGrid turns urban balcony spaces into localized solar micro-grids, lowering household electricity bills by thirty percent without requiring rooftop solar installation permissions.',
     hint: 'Emphasize that rooftop permissions are not needed.',
-    explanation: 'Addressing regulatory hurdles upfront builds immediate trust.',
+    explanation:
+        'Addressing regulatory hurdles upfront builds immediate trust.',
   );
 
   final testLoadedState = RoleplayLoaded(
@@ -161,8 +162,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     roleplayStreamController = StreamController<RoleplayState>.broadcast();
-    when(() => mockRoleplayBloc.stream)
-        .thenAnswer((_) => roleplayStreamController.stream);
+    when(
+      () => mockRoleplayBloc.stream,
+    ).thenAnswer((_) => roleplayStreamController.stream);
     when(() => mockRoleplayBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -197,40 +199,50 @@ void main() {
     when(() => mockSoundService.playTts(any())).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
-    when(() => mockTtsService.speak(
-      any(),
-      rate: any(named: 'rate'),
-      locale: any(named: 'locale'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockTtsService.speak(
+        any(),
+        rate: any(named: 'rate'),
+        locale: any(named: 'locale'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockSpeechService.initializeStt()).thenAnswer((_) async => true);
     when(() => mockSpeechService.stop()).thenAnswer((_) async {});
     when(() => mockSpeechService.cancel()).thenAnswer((_) async {});
     when(() => mockSpeechService.isListening).thenReturn(false);
     when(() => mockSpeechService.isPlaying).thenReturn(false);
-    when(() => mockSpeechService.listen(
-      onResult: any(named: 'onResult'),
-      onDone: any(named: 'onDone'),
-      onSoundLevelChange: any(named: 'onSoundLevelChange'),
-      localeId: any(named: 'localeId'),
-      pauseFor: any(named: 'pauseFor'),
-      listenMode: any(named: 'listenMode'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockSpeechService.listen(
+        onResult: any(named: 'onResult'),
+        onDone: any(named: 'onDone'),
+        onSoundLevelChange: any(named: 'onSoundLevelChange'),
+        localeId: any(named: 'localeId'),
+        pauseFor: any(named: 'pauseFor'),
+        listenMode: any(named: 'listenMode'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => '/tmp/pitch_test.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => '/tmp/pitch_test.m4a');
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
-    when(() => mockAudioRecorder.onAmplitudeChanged(any()))
-        .thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
+    when(
+      () => mockAudioRecorder.onAmplitudeChanged(any()),
+    ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback =
           invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
@@ -238,12 +250,15 @@ void main() {
     });
 
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-    when(() => mockAnalyticsService.logSelfEvaluation(any()))
-        .thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any()))
-        .thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logPurchaseAttempt(any()))
-        .thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logPurchaseAttempt(any()),
+    ).thenAnswer((_) async {});
 
     SharedPreferences.setMockInitialValues({
       'has_seen_briefing_elevatorPitch': true,
@@ -317,12 +332,10 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQuery.of(context).copyWith(
-                disableAnimations: reduceMotion,
-              ),
-              child: Scaffold(
-                body: ElevatorPitchScreen(level: level),
-              ),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(disableAnimations: reduceMotion),
+              child: Scaffold(body: ElevatorPitchScreen(level: level)),
             ),
           ),
         ),
@@ -333,647 +346,845 @@ void main() {
   }
 
   group('ElevatorPitchScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders prompt card, rocket icon, instruction text, prompt text, time limit badge, and recorder widget', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '1. Initial layout renders prompt card, rocket icon, instruction text, prompt text, time limit badge, and recorder widget',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      expect(find.byKey(const Key('elevator_pitch_prompt_card')), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_card_icon')), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_instruction_text')), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_prompt_text')), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_timer_badge')), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_recorder')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('elevator_pitch_prompt_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_card_icon')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_instruction_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_prompt_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_timer_badge')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_recorder')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('2. Formatted instruction text displays uppercase instruction from quest', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '2. Formatted instruction text displays uppercase instruction from quest',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      expect(find.text(sampleQuest1.instruction.toUpperCase()), findsOneWidget);
-    });
+        expect(
+          find.text(sampleQuest1.instruction.toUpperCase()),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('3. Prompt text rendering matches custom quest prompt', (tester) async {
+    testWidgets('3. Prompt text rendering matches custom quest prompt', (
+      tester,
+    ) async {
       await pumpElevatorPitchScreen(tester);
 
       expect(find.text(sampleQuest1.prompt!), findsOneWidget);
     });
 
-    testWidgets('4. Time limit badge displays formatted "{timeLimit} SECONDS LIMIT" with timer icon', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '4. Time limit badge displays formatted "{timeLimit} SECONDS LIMIT" with timer icon',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      expect(find.text('${sampleQuest1.timeLimit} SECONDS LIMIT'), findsOneWidget);
-      expect(find.byIcon(Icons.timer_outlined), findsOneWidget);
-    });
+        expect(
+          find.text('${sampleQuest1.timeLimit} SECONDS LIMIT'),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.timer_outlined), findsOneWidget);
+      },
+    );
 
-    testWidgets('5. Default time limit fallback (30 seconds) renders when quest timeLimit is null', (tester) async {
-      const nullLimitQuest = RoleplayQuest(
-        id: 'ep_null',
-        instruction: 'Pitch your AI productivity tool.',
-        difficulty: 1,
-        subtype: GameSubtype.elevatorPitch,
-        scene: 'You stepped into an elevator with a top venture capital partner.',
-        prompt: 'You have 30 seconds to pitch FlowState.',
-        timeLimit: null,
-        correctAnswer: 'FlowState is an AI workspace.',
-      );
-      final nullLimitState = testLoadedState.copyWith(
-        quests: [nullLimitQuest],
-      );
-      await pumpElevatorPitchScreen(tester, state: nullLimitState);
+    testWidgets(
+      '5. Default time limit fallback (30 seconds) renders when quest timeLimit is null',
+      (tester) async {
+        const nullLimitQuest = RoleplayQuest(
+          id: 'ep_null',
+          instruction: 'Pitch your AI productivity tool.',
+          difficulty: 1,
+          subtype: GameSubtype.elevatorPitch,
+          scene:
+              'You stepped into an elevator with a top venture capital partner.',
+          prompt: 'You have 30 seconds to pitch FlowState.',
+          timeLimit: null,
+          correctAnswer: 'FlowState is an AI workspace.',
+        );
+        final nullLimitState = testLoadedState.copyWith(
+          quests: [nullLimitQuest],
+        );
+        await pumpElevatorPitchScreen(tester, state: nullLimitState);
 
-      expect(find.text('30 SECONDS LIMIT'), findsOneWidget);
-    });
+        expect(find.text('30 SECONDS LIMIT'), findsOneWidget);
+      },
+    );
 
-    testWidgets('6. Recorder initial state (PitchState.ready) renders mic icon, "GET READY" header, instructions, "REFERENCE PITCH" box, and "START PITCH" button', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '6. Recorder initial state (PitchState.ready) renders mic icon, "GET READY" header, instructions, "REFERENCE PITCH" box, and "START PITCH" button',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      expect(find.byIcon(Icons.mic_none_rounded), findsOneWidget);
-      expect(find.text('GET READY'), findsOneWidget);
-      expect(find.text('REFERENCE PITCH'), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_start_button')), findsOneWidget);
-      expect(find.text('START PITCH'), findsOneWidget);
-    });
+        expect(find.byIcon(Icons.mic_none_rounded), findsOneWidget);
+        expect(find.text('GET READY'), findsOneWidget);
+        expect(find.text('REFERENCE PITCH'), findsOneWidget);
+        expect(
+          find.byKey(const Key('elevator_pitch_start_button')),
+          findsOneWidget,
+        );
+        expect(find.text('START PITCH'), findsOneWidget);
+      },
+    );
 
-    testWidgets('7. "REFERENCE PITCH" box displays expectedText', (tester) async {
+    testWidgets('7. "REFERENCE PITCH" box displays expectedText', (
+      tester,
+    ) async {
       await pumpElevatorPitchScreen(tester);
 
       expect(find.text(sampleQuest1.correctAnswer!), findsOneWidget);
     });
 
-    testWidgets('8. Tapping "START PITCH" initializes STT, starts listening, triggers selection haptic, and transitions to PitchState.pitching', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '8. Tapping "START PITCH" initializes STT, starts listening, triggers selection haptic, and transitions to PitchState.pitching',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      final startBtn = find.byKey(const Key('elevator_pitch_start_button'));
-      expect(startBtn, findsOneWidget);
-      await tester.tap(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final startBtn = find.byKey(const Key('elevator_pitch_start_button'));
+        expect(startBtn, findsOneWidget);
+        await tester.tap(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSpeechService.initializeStt()).called(1);
-      verify(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockSpeechService.initializeStt()).called(1);
+        verify(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      expect(find.text('RECORDING...'), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_countdown_timer')), findsOneWidget);
-    });
-
-    testWidgets('9. In PitchState.pitching, displays "RECORDING..." with red recording dot and initial countdown timer ("00:30")', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byKey(const Key('elevator_pitch_recording_dot')), findsOneWidget);
-      expect(find.text('00:30'), findsOneWidget);
-    });
-
-    testWidgets('10. In PitchState.pitching, countdown timer decrements every second', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('00:30'), findsOneWidget);
-
-      await tester.pump(const Duration(seconds: 1));
-      expect(find.text('00:29'), findsOneWidget);
-
-      await tester.pump(const Duration(seconds: 2));
-      expect(find.text('00:27'), findsOneWidget);
-    });
-
-    testWidgets('11. Microphone button renders with amplitude scale transformation based on sound level', (tester) async {
-      Function(double)? soundLevelCallback;
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        soundLevelCallback = invocation.namedArguments[const Symbol('onSoundLevelChange')]
-            as Function(double)?;
-      });
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byKey(const Key('elevator_pitch_mic_button')), findsOneWidget);
-
-      // Simulate voice amplitude change to +20.0
-      soundLevelCallback?.call(20.0);
-      await tester.pump();
-
-      expect(find.byIcon(Icons.mic), findsOneWidget);
-    });
-
-    testWidgets('12. Linear progress indicator reflects elapsed time / time limit progress', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final progressBar = tester.widget<LinearProgressIndicator>(
-        find.byKey(const Key('elevator_pitch_progress_bar')),
-      );
-      expect(progressBar.value, equals(0.0));
-
-      await tester.pump(const Duration(seconds: 15));
-      final halfwayBar = tester.widget<LinearProgressIndicator>(
-        find.byKey(const Key('elevator_pitch_progress_bar')),
-      );
-      expect(halfwayBar.value, closeTo(0.5, 0.05));
-    });
-
-    testWidgets('13. Text "Tap the mic to finish early" is visible during recording', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('Tap the mic to finish early'), findsOneWidget);
-    });
-
-    testWidgets('14. Silence detection: receiving 12 silent sound levels (< -40.0) triggers _abortPitchDueToSilence, heavy haptic, and transitions to PitchState.failed', (tester) async {
-      Function(double)? soundLevelCallback;
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        soundLevelCallback = invocation.namedArguments[const Symbol('onSoundLevelChange')]
-            as Function(double)?;
-      });
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Feed 12 silent sound levels (< -40.0)
-      for (int i = 0; i < 12; i++) {
-        soundLevelCallback?.call(-45.0);
-      }
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSpeechService.stop()).called(1);
-
-      expect(find.text('THE DOORS OPENED'), findsOneWidget);
-      expect(find.text('You went silent. You lost their attention.'), findsOneWidget);
-    });
-
-    testWidgets('15. In PitchState.failed, displays door icon, "THE DOORS OPENED", explanation, and "CONTINUE" button', (tester) async {
-      Function(double)? soundLevelCallback;
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        soundLevelCallback = invocation.namedArguments[const Symbol('onSoundLevelChange')]
-            as Function(double)?;
-      });
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      for (int i = 0; i < 12; i++) {
-        soundLevelCallback?.call(-45.0);
-      }
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-
-      expect(find.byIcon(Icons.sensor_door_outlined), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_failed_continue_button')), findsOneWidget);
-    });
-
-    testWidgets('16. Tapping "CONTINUE" in PitchState.failed calls widget.onFailed -> submitWrongAnswer -> dispatches SubmitAnswer(false) with error sound & haptic', (tester) async {
-      Function(double)? soundLevelCallback;
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        soundLevelCallback = invocation.namedArguments[const Symbol('onSoundLevelChange')]
-            as Function(double)?;
-      });
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      for (int i = 0; i < 12; i++) {
-        soundLevelCallback?.call(-45.0);
-      }
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_failed_continue_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('17. In PitchState.pitching, tapping microphone button finishes pitch early -> transitions to PitchState.evaluating', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSpeechService.stop()).called(1);
-
-      expect(find.byKey(const Key('elevator_pitch_ai_analysis_card')), findsOneWidget);
-    });
-
-    testWidgets('18. In PitchState.pitching, countdown timer reaching 0 automatically finishes pitch -> transitions to PitchState.evaluating', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Advance timer by 31 seconds
-      await tester.pump(const Duration(seconds: 31));
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSpeechService.stop()).called(1);
-
-      expect(find.byKey(const Key('elevator_pitch_ai_analysis_card')), findsOneWidget);
-    });
-
-    testWidgets('19. In PitchState.evaluating, AI evaluation grading: when transcript meets fluency & vocabulary requirements, displays "PITCH SUCCESSFUL" in green', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(
-          const [
-            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
-          ],
-          true,
+        expect(find.text('RECORDING...'), findsOneWidget);
+        expect(
+          find.byKey(const Key('elevator_pitch_countdown_timer')),
+          findsOneWidget,
         );
-      });
+      },
+    );
 
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '9. In PitchState.pitching, displays "RECORDING..." with red recording dot and initial countdown timer ("00:30")',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('PITCH SUCCESSFUL'), findsOneWidget);
-    });
-
-    testWidgets('20. In PitchState.evaluating, AI evaluation grading: when transcript fails fluency or keywords requirements, displays "PITCH FAILED" in red', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(const ['Hello there.'], true);
-      });
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('PITCH FAILED'), findsOneWidget);
-    });
-
-    testWidgets('21. AI Analysis card displays Fluency (word count) row with words count and pass/fail icon', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(
-          const [
-            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
-          ],
-          true,
+        expect(
+          find.byKey(const Key('elevator_pitch_recording_dot')),
+          findsOneWidget,
         );
-      });
+        expect(find.text('00:30'), findsOneWidget);
+      },
+    );
 
-      await pumpElevatorPitchScreen(tester);
+    testWidgets(
+      '10. In PitchState.pitching, countdown timer decrements every second',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('00:30'), findsOneWidget);
 
-      expect(find.text('Fluency (Word Count)'), findsOneWidget);
-      expect(find.text('16 words'), findsOneWidget);
-      expect(find.byIcon(Icons.check_circle_rounded), findsAtLeastNWidgets(1));
-    });
+        await tester.pump(const Duration(seconds: 1));
+        expect(find.text('00:29'), findsOneWidget);
 
-    testWidgets('22. AI Analysis card displays Vocabulary (keywords) row with keyword hit count and pass/fail icon', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(
-          const [
-            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
-          ],
-          true,
+        await tester.pump(const Duration(seconds: 2));
+        expect(find.text('00:27'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '11. Microphone button renders with amplitude scale transformation based on sound level',
+      (tester) async {
+        Function(double)? soundLevelCallback;
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          soundLevelCallback =
+              invocation.namedArguments[const Symbol('onSoundLevelChange')]
+                  as Function(double)?;
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.byKey(const Key('elevator_pitch_mic_button')),
+          findsOneWidget,
         );
-      });
 
-      await pumpElevatorPitchScreen(tester);
+        // Simulate voice amplitude change to +20.0
+        soundLevelCallback?.call(20.0);
+        await tester.pump();
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        expect(find.byIcon(Icons.mic), findsOneWidget);
+      },
+    );
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      '12. Linear progress indicator reflects elapsed time / time limit progress',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      expect(find.text('Vocabulary (Keywords)'), findsOneWidget);
-      expect(find.text('10 hits'), findsOneWidget);
-    });
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-    testWidgets('23. In PitchState.evaluating, native example pitch row displays "Want to hear a perfect pitch?" and "LISTEN" button', (tester) async {
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('Want to hear a perfect pitch?'), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_listen_example_button')), findsOneWidget);
-      expect(find.text('LISTEN'), findsOneWidget);
-    });
-
-    testWidgets('24. Tapping "LISTEN" button starts TTS playback of expectedText and toggles icon to stop_circle', (tester) async {
-      final completer = Completer<void>();
-      when(() => mockSoundService.playTts(sampleQuest1.correctAnswer!))
-          .thenAnswer((_) => completer.future);
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final listenBtn = find.byKey(const Key('elevator_pitch_listen_example_button'));
-      await tester.tap(listenBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.playTts(sampleQuest1.correctAnswer!)).called(1);
-      expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
-
-      completer.complete();
-      await tester.pump();
-    });
-
-    testWidgets('25. Tapping "LISTEN" again while playing stops TTS playback and toggles back to play_arrow', (tester) async {
-      final completer = Completer<void>();
-      when(() => mockSoundService.playTts(sampleQuest1.correctAnswer!))
-          .thenAnswer((_) => completer.future);
-
-      await pumpElevatorPitchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final listenBtn = find.byKey(const Key('elevator_pitch_listen_example_button'));
-      await tester.tap(listenBtn);
-      await tester.pump();
-
-      expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
-
-      // Tap again to stop
-      await tester.tap(listenBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.stopTts()).called(2);
-      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
-
-      completer.complete();
-      await tester.pump();
-    });
-
-    testWidgets('26. In PitchState.evaluating, when pitch was successful, tapping "CONTINUE" dispatches RoleplaySpeakConfirmed(5) bonus coins and SubmitAnswer(true) with success sound & haptic', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(
-          const [
-            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
-          ],
-          true,
+        final progressBar = tester.widget<LinearProgressIndicator>(
+          find.byKey(const Key('elevator_pitch_progress_bar')),
         );
-      });
+        expect(progressBar.value, equals(0.0));
 
-      await pumpElevatorPitchScreen(tester);
+        await tester.pump(const Duration(seconds: 15));
+        final halfwayBar = tester.widget<LinearProgressIndicator>(
+          find.byKey(const Key('elevator_pitch_progress_bar')),
+        );
+        expect(halfwayBar.value, closeTo(0.5, 0.05));
+      },
+    );
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '13. Text "Tap the mic to finish early" is visible during recording',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_evaluating_continue_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Tap the mic to finish early'), findsOneWidget);
+      },
+    );
 
-      verify(() => mockRoleplayBloc.add(const RoleplaySpeakConfirmed(5))).called(1);
-      verify(() => mockRoleplayBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-    });
+    testWidgets(
+      '14. Silence detection: receiving 12 silent sound levels (< -40.0) triggers _abortPitchDueToSilence, heavy haptic, and transitions to PitchState.failed',
+      (tester) async {
+        Function(double)? soundLevelCallback;
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          soundLevelCallback =
+              invocation.namedArguments[const Symbol('onSoundLevelChange')]
+                  as Function(double)?;
+        });
 
-    testWidgets('27. In PitchState.evaluating, when pitch failed, tapping "CONTINUE" dispatches SubmitAnswer(false) with error sound & haptic', (tester) async {
-      when(() => mockSpeechService.listen(
-        onResult: any(named: 'onResult'),
-        onDone: any(named: 'onDone'),
-        onSoundLevelChange: any(named: 'onSoundLevelChange'),
-        pauseFor: any(named: 'pauseFor'),
-      )).thenAnswer((invocation) async {
-        final onResult = invocation.namedArguments[const Symbol('onResult')]
-            as Function(List<String>, bool);
-        onResult(const ['Short pitch.'], true);
-      });
+        await pumpElevatorPitchScreen(tester);
 
-      await pumpElevatorPitchScreen(tester);
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Feed 12 silent sound levels (< -40.0)
+        for (int i = 0; i < 12; i++) {
+          soundLevelCallback?.call(-45.0);
+        }
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSpeechService.stop()).called(1);
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_evaluating_continue_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('THE DOORS OPENED'), findsOneWidget);
+        expect(
+          find.text('You went silent. You lost their attention.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-      verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+    testWidgets(
+      '15. In PitchState.failed, displays door icon, "THE DOORS OPENED", explanation, and "CONTINUE" button',
+      (tester) async {
+        Function(double)? soundLevelCallback;
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          soundLevelCallback =
+              invocation.namedArguments[const Symbol('onSoundLevelChange')]
+                  as Function(double)?;
+        });
 
-    testWidgets('28. In answered state, ElevatorPitchRecorder unmounts and bottom bar CONTINUE button appears; tapping it dispatches NextQuestion', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+        await pumpElevatorPitchScreen(tester);
 
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(answeredState);
-      roleplayStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byKey(const Key('elevator_pitch_recorder')), findsNothing);
+        for (int i = 0; i < 12; i++) {
+          soundLevelCallback?.call(-45.0);
+        }
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
-      await tester.tap(continueBtn);
-      await tester.pump();
+        expect(find.byIcon(Icons.sensor_door_outlined), findsOneWidget);
+        expect(
+          find.byKey(const Key('elevator_pitch_failed_continue_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<NextQuestion>()))).called(1);
-    });
+    testWidgets(
+      '16. Tapping "CONTINUE" in PitchState.failed calls widget.onFailed -> submitWrongAnswer -> dispatches SubmitAnswer(false) with error sound & haptic',
+      (tester) async {
+        Function(double)? soundLevelCallback;
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          soundLevelCallback =
+              invocation.namedArguments[const Symbol('onSoundLevelChange')]
+                  as Function(double)?;
+        });
 
-    testWidgets('29. Question transition: when next quest loads, recorder resets, prompt updates, and stage is clean', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+        await pumpElevatorPitchScreen(tester);
 
-      // Advance to quest 2
-      final nextQuestState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(nextQuestState);
-      roleplayStreamController.add(nextQuestState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text(sampleQuest2.prompt!), findsOneWidget);
-      expect(find.text('${sampleQuest2.timeLimit} SECONDS LIMIT'), findsOneWidget);
-      expect(find.byKey(const Key('elevator_pitch_start_button')), findsOneWidget);
-    });
+        for (int i = 0; i < 12; i++) {
+          soundLevelCallback?.call(-45.0);
+        }
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-    testWidgets('30. Hint button in header dispatches selection haptic and RoleplayHintUsed', (tester) async {
-      await pumpElevatorPitchScreen(tester);
+        await tester.tap(
+          find.byKey(const Key('elevator_pitch_failed_continue_button')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
-      await tester.tap(hintButton);
-      await tester.pump();
+        verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
-    });
+    testWidgets(
+      '17. In PitchState.pitching, tapping microphone button finishes pitch early -> transitions to PitchState.evaluating',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-    testWidgets('31. Level 1 briefing layer displays PITCH PERFECT and dismisses on START PITCH tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_elevatorPitch': false,
-      });
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await pumpElevatorPitchScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1400),
-      );
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('PITCH PERFECT'), findsOneWidget);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSpeechService.stop()).called(1);
 
-      final enterBtn = find.descendant(
-        of: find.byType(GameBriefingLayer),
-        matching: find.text('START PITCH'),
-      );
-      expect(enterBtn, findsOneWidget);
-      await tester.tap(enterBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        expect(
+          find.byKey(const Key('elevator_pitch_ai_analysis_card')),
+          findsOneWidget,
+        );
+      },
+    );
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+    testWidgets(
+      '18. In PitchState.pitching, countdown timer reaching 0 automatically finishes pitch -> transitions to PitchState.evaluating',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
 
-    testWidgets('32. GameShimmerLoading displays on initial/loading state', (tester) async {
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Advance timer by 31 seconds
+        await tester.pump(const Duration(seconds: 31));
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSpeechService.stop()).called(1);
+
+        expect(
+          find.byKey(const Key('elevator_pitch_ai_analysis_card')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '19. In PitchState.evaluating, AI evaluation grading: when transcript meets fluency & vocabulary requirements, displays "PITCH SUCCESSFUL" in green',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const [
+            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
+          ], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text('PITCH SUCCESSFUL'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '20. In PitchState.evaluating, AI evaluation grading: when transcript fails fluency or keywords requirements, displays "PITCH FAILED" in red',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const ['Hello there.'], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text('PITCH FAILED'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '21. AI Analysis card displays Fluency (word count) row with words count and pass/fail icon',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const [
+            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
+          ], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text('Fluency (Word Count)'), findsOneWidget);
+        expect(find.text('16 words'), findsOneWidget);
+        expect(
+          find.byIcon(Icons.check_circle_rounded),
+          findsAtLeastNWidgets(1),
+        );
+      },
+    );
+
+    testWidgets(
+      '22. AI Analysis card displays Vocabulary (keywords) row with keyword hit count and pass/fail icon',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const [
+            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
+          ], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text('Vocabulary (Keywords)'), findsOneWidget);
+        expect(find.text('10 hits'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '23. In PitchState.evaluating, native example pitch row displays "Want to hear a perfect pitch?" and "LISTEN" button',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text('Want to hear a perfect pitch?'), findsOneWidget);
+        expect(
+          find.byKey(const Key('elevator_pitch_listen_example_button')),
+          findsOneWidget,
+        );
+        expect(find.text('LISTEN'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '24. Tapping "LISTEN" button starts TTS playback of expectedText and toggles icon to stop_circle',
+      (tester) async {
+        final completer = Completer<void>();
+        when(
+          () => mockSoundService.playTts(sampleQuest1.correctAnswer!),
+        ).thenAnswer((_) => completer.future);
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final listenBtn = find.byKey(
+          const Key('elevator_pitch_listen_example_button'),
+        );
+        await tester.tap(listenBtn);
+        await tester.pump();
+
+        verify(
+          () => mockSoundService.playTts(sampleQuest1.correctAnswer!),
+        ).called(1);
+        expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
+
+        completer.complete();
+        await tester.pump();
+      },
+    );
+
+    testWidgets(
+      '25. Tapping "LISTEN" again while playing stops TTS playback and toggles back to play_arrow',
+      (tester) async {
+        final completer = Completer<void>();
+        when(
+          () => mockSoundService.playTts(sampleQuest1.correctAnswer!),
+        ).thenAnswer((_) => completer.future);
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final listenBtn = find.byKey(
+          const Key('elevator_pitch_listen_example_button'),
+        );
+        await tester.tap(listenBtn);
+        await tester.pump();
+
+        expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
+
+        // Tap again to stop
+        await tester.tap(listenBtn);
+        await tester.pump();
+
+        verify(() => mockSoundService.stopTts()).called(2);
+        expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+
+        completer.complete();
+        await tester.pump();
+      },
+    );
+
+    testWidgets(
+      '26. In PitchState.evaluating, when pitch was successful, tapping "CONTINUE" dispatches RoleplaySpeakConfirmed(5) bonus coins and SubmitAnswer(true) with success sound & haptic',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const [
+            'FlowState is a workspace that eliminates developer context switching by saving engineers two hours every day.',
+          ], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        await tester.tap(
+          find.byKey(const Key('elevator_pitch_evaluating_continue_button')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockRoleplayBloc.add(const RoleplaySpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockRoleplayBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
+
+    testWidgets(
+      '27. In PitchState.evaluating, when pitch failed, tapping "CONTINUE" dispatches SubmitAnswer(false) with error sound & haptic',
+      (tester) async {
+        when(
+          () => mockSpeechService.listen(
+            onResult: any(named: 'onResult'),
+            onDone: any(named: 'onDone'),
+            onSoundLevelChange: any(named: 'onSoundLevelChange'),
+            pauseFor: any(named: 'pauseFor'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onResult =
+              invocation.namedArguments[const Symbol('onResult')]
+                  as Function(List<String>, bool);
+          onResult(const ['Short pitch.'], true);
+        });
+
+        await pumpElevatorPitchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.tap(find.byKey(const Key('elevator_pitch_mic_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        await tester.tap(
+          find.byKey(const Key('elevator_pitch_evaluating_continue_button')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '28. In answered state, ElevatorPitchRecorder unmounts and bottom bar CONTINUE button appears; tapping it dispatches NextQuestion',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
+
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(answeredState);
+        roleplayStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byKey(const Key('elevator_pitch_recorder')), findsNothing);
+
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
+        await tester.tap(continueBtn);
+        await tester.pump();
+
+        verify(
+          () => mockRoleplayBloc.add(any(that: isA<NextQuestion>())),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '29. Question transition: when next quest loads, recorder resets, prompt updates, and stage is clean',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
+
+        // Advance to quest 2
+        final nextQuestState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(nextQuestState);
+        roleplayStreamController.add(nextQuestState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text(sampleQuest2.prompt!), findsOneWidget);
+        expect(
+          find.text('${sampleQuest2.timeLimit} SECONDS LIMIT'),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('elevator_pitch_start_button')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '30. Hint button in header dispatches selection haptic and RoleplayHintUsed',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester);
+
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
+        await tester.tap(hintButton);
+        await tester.pump();
+
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>())),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '31. Level 1 briefing layer displays PITCH PERFECT and dismisses on START PITCH tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_elevatorPitch': false,
+        });
+
+        await pumpElevatorPitchScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1400),
+        );
+
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('PITCH PERFECT'), findsOneWidget);
+
+        final enterBtn = find.descendant(
+          of: find.byType(GameBriefingLayer),
+          matching: find.text('START PITCH'),
+        );
+        expect(enterBtn, findsOneWidget);
+        await tester.tap(enterBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
+
+    testWidgets('32. GameShimmerLoading displays on initial/loading state', (
+      tester,
+    ) async {
       await pumpElevatorPitchScreen(tester, state: const RoleplayInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('33. Game over state renders cleanly without error', (tester) async {
+    testWidgets('33. Game over state renders cleanly without error', (
+      tester,
+    ) async {
       const gameOverState = RoleplayGameOver(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -985,7 +1196,9 @@ void main() {
       expect(find.byType(ElevatorPitchScreen), findsOneWidget);
     });
 
-    testWidgets('34. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('34. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpElevatorPitchScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(ElevatorPitchScreen), findsOneWidget);
 
@@ -993,25 +1206,33 @@ void main() {
       expect(find.byType(ElevatorPitchScreen), findsOneWidget);
     });
 
-    testWidgets('35. Small mobile screen (320x568) and tablet viewport (768x1024) render cleanly with zero overflow', (tester) async {
-      await pumpElevatorPitchScreen(tester, size: const Size(320, 568));
-      expect(find.byType(ElevatorPitchScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
+    testWidgets(
+      '35. Small mobile screen (320x568) and tablet viewport (768x1024) render cleanly with zero overflow',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester, size: const Size(320, 568));
+        expect(find.byType(ElevatorPitchScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
 
-      await pumpElevatorPitchScreen(tester, size: const Size(768, 1024));
-      expect(find.byType(ElevatorPitchScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        await pumpElevatorPitchScreen(tester, size: const Size(768, 1024));
+        expect(find.byType(ElevatorPitchScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('36. Reduced motion mode suppresses repeating animations on recording red dot', (tester) async {
-      await pumpElevatorPitchScreen(tester, reduceMotion: true);
+    testWidgets(
+      '36. Reduced motion mode suppresses repeating animations on recording red dot',
+      (tester) async {
+        await pumpElevatorPitchScreen(tester, reduceMotion: true);
 
-      await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.byKey(const Key('elevator_pitch_start_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byKey(const Key('elevator_pitch_recording_dot')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('elevator_pitch_recording_dot')),
+          findsOneWidget,
+        );
+      },
+    );
   });
 }
-

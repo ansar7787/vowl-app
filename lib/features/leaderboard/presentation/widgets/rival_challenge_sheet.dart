@@ -64,20 +64,26 @@ class RivalChallengeSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : (tokens?.surface ?? Colors.white));
+        : (isDark
+              ? const Color(0xFF131A29)
+              : (tokens?.surface ?? Colors.white));
     final cardBgColor = isMidnight
         ? const Color(0xFF0F172A)
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? const Color(0xFF0F172A));
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
     // Resilient safe-area clearance for older 3-button navigation, gesture bars & keyboards
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
@@ -86,7 +92,10 @@ class RivalChallengeSheet extends StatelessWidget {
       MediaQuery.viewPaddingOf(context).bottom,
     );
     // Guarantees at least 20dp cushion above ANY system navigation bar or gesture pill
-    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 16.h) + 20.h + bottomInset;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 16.h) +
+        20.h +
+        bottomInset;
 
     final myXp = isWeekly ? currentUser.currentWeeklyExp : currentUser.totalExp;
     final rivalXp = isWeekly ? rival.currentWeeklyExp : rival.totalExp;
@@ -116,7 +125,9 @@ class RivalChallengeSheet extends StatelessWidget {
                   width: 40.w,
                   height: 4.h,
                   decoration: BoxDecoration(
-                    color: isDark ? AppColors.slate700 : const Color(0xFFCBD5E1),
+                    color: isDark
+                        ? AppColors.slate700
+                        : const Color(0xFFCBD5E1),
                     borderRadius: BorderRadius.circular(2.r),
                   ),
                 ),
@@ -152,13 +163,20 @@ class RivalChallengeSheet extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 3.h,
+                          ),
                           decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(alpha: isDark ? 0.2 : 0.1),
+                            color: AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.2 : 0.1,
+                            ),
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
-                            rivalXp >= myXp ? '+$xpDiff XP Gap' : '$xpDiff XP Ahead',
+                            rivalXp >= myXp
+                                ? '+$xpDiff XP Gap'
+                                : '$xpDiff XP Ahead',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -210,10 +228,11 @@ class RivalChallengeSheet extends StatelessWidget {
                                             vertical: 1.h,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: AppColors.indigo500.withValues(
-                                              alpha: 0.15,
+                                            color: AppColors.indigo500
+                                                .withValues(alpha: 0.15),
+                                            borderRadius: BorderRadius.circular(
+                                              4.r,
                                             ),
-                                            borderRadius: BorderRadius.circular(4.r),
                                           ),
                                           child: Text(
                                             'YOU',
@@ -250,7 +269,10 @@ class RivalChallengeSheet extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 6.w),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 3.h,
+                            ),
                             decoration: BoxDecoration(
                               color: AppColors.indigo500,
                               borderRadius: BorderRadius.circular(8.r),
@@ -317,10 +339,7 @@ class RivalChallengeSheet extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 8.w),
-                              UserAvatar(
-                                photoUrl: rival.photoUrl,
-                                size: 36.r,
-                              ),
+                              UserAvatar(photoUrl: rival.photoUrl, size: 36.r),
                             ],
                           ),
                         ),
@@ -345,7 +364,8 @@ class RivalChallengeSheet extends StatelessWidget {
                       label: 'Day Streak',
                       myValue: '${currentUser.currentStreak}d',
                       rivalValue: '${rival.currentStreak}d',
-                      isWinner: currentUser.currentStreak >= rival.currentStreak,
+                      isWinner:
+                          currentUser.currentStreak >= rival.currentStreak,
                       textPrimary: textPrimary,
                       textSecondary: textSecondary,
                     ),
@@ -354,7 +374,9 @@ class RivalChallengeSheet extends StatelessWidget {
                       label: 'Quests Completed',
                       myValue: '${currentUser.totalLevelsCompleted}',
                       rivalValue: '${rival.totalLevelsCompleted}',
-                      isWinner: currentUser.totalLevelsCompleted >= rival.totalLevelsCompleted,
+                      isWinner:
+                          currentUser.totalLevelsCompleted >=
+                          rival.totalLevelsCompleted,
                       textPrimary: textPrimary,
                       textSecondary: textSecondary,
                     ),
@@ -370,16 +392,12 @@ class RivalChallengeSheet extends StatelessWidget {
                           children: [
                             Expanded(
                               flex: (myRatio * 100).toInt(),
-                              child: Container(
-                                color: AppColors.indigo500,
-                              ),
+                              child: Container(color: AppColors.indigo500),
                             ),
                             Container(width: 1.5.w, color: surfaceColor),
                             Expanded(
                               flex: ((1.0 - myRatio) * 100).toInt(),
-                              child: Container(
-                                color: const Color(0xFFF59E0B),
-                              ),
+                              child: Container(color: const Color(0xFFF59E0B)),
                             ),
                           ],
                         ),

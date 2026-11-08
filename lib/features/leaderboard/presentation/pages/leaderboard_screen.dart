@@ -86,8 +86,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
     return BlocProvider(
       create: (_) =>
-          di.sl<LeaderboardBloc>()
-            ..add(LoadLeaderboard(isKids: widget.isKids)),
+          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: widget.isKids)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -129,9 +128,11 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                     if (context.canPop()) {
                                       context.pop();
                                     } else {
-                                      context.go(widget.isKids
-                                          ? AppRouter.kidsZoneRoute
-                                          : AppRouter.homeRoute);
+                                      context.go(
+                                        widget.isKids
+                                            ? AppRouter.kidsZoneRoute
+                                            : AppRouter.homeRoute,
+                                      );
                                     }
                                   },
                                   child: Container(
@@ -147,7 +148,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                           Directionality.of(context) ==
                                                   TextDirection.rtl
                                               ? Icons.arrow_forward_ios_rounded
-                                              : Icons.arrow_back_ios_new_rounded,
+                                              : Icons
+                                                    .arrow_back_ios_new_rounded,
                                           color: isDark
                                               ? Colors.white
                                               : AppColors.slate900,
@@ -320,9 +322,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   /// If the user is unranked, a friendly floating info message is displayed.
   void _scrollToMe() {
     final users = _sortedUsers;
-    final rankIndex = users.indexWhere(
-      (u) => u.id == widget.currentUser?.id,
-    );
+    final rankIndex = users.indexWhere((u) => u.id == widget.currentUser?.id);
 
     if (rankIndex < 0) {
       HapticFeedback.lightImpact();
@@ -355,8 +355,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final screenHeight = MediaQuery.sizeOf(context).height;
     final podiumHeight = (screenHeight * 0.24).clamp(185.0, 210.0);
     final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
-    final bannerHeight =
-        (!widget.state.isKids && isWeekly) ? 106.h : 0.0;
+    final bannerHeight = (!widget.state.isKids && isWeekly) ? 106.h : 0.0;
     final overtakeHudHeight =
         (!widget.state.isKids && widget.currentUser != null) ? 96.h : 0.0;
 
@@ -366,7 +365,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     // Exact cumulative overhead before rank 4-N SliverList:
     // topPadding + header(~52.h) + switch(66.h) + banner + spacing(14.h) + podium + spacing(12.h)
     // + stickyHeaderMaxExtent(122.h) + spacing(6.h) + overtakeHud + sectionDivider(38.h)
-    final overhead = topPadding +
+    final overhead =
+        topPadding +
         52.h +
         switchHeight +
         bannerHeight +
@@ -384,18 +384,23 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final divisionDividerOffset =
         (!widget.state.isKids && isWeekly && tileIndex >= 7) ? 20.h : 0.0;
     final tileCenterOffset =
-        overhead + divisionDividerOffset + (tileIndex * tileHeight) + (tileHeight / 2.0);
+        overhead +
+        divisionDividerOffset +
+        (tileIndex * tileHeight) +
+        (tileHeight / 2.0);
 
     // Visible viewport dimensions
     final viewportHeight = _scrollController.position.hasViewportDimension
         ? _scrollController.position.viewportDimension
         : screenHeight;
     final pinnedHeaderHeight = 70.h;
-    final bottomBarPadding = (widget.showBackButton ? 24.h : 110.h) +
+    final bottomBarPadding =
+        (widget.showBackButton ? 24.h : 110.h) +
         MediaQuery.paddingOf(context).bottom;
 
     // Center point in visible viewport between pinned top header and bottom bar
-    final visibleCenter = pinnedHeaderHeight +
+    final visibleCenter =
+        pinnedHeaderHeight +
         ((viewportHeight - pinnedHeaderHeight - bottomBarPadding) / 2.0);
 
     // Scroll offset so tile's vertical center lands exactly on visibleCenter
@@ -442,18 +447,21 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       'timestamp': Timestamp.now(),
     };
     try {
-      await FirebaseFirestore.instance.collection('users').doc(currentUser.id).update({
-        'claimedWeeklyRewardWeekKeys': updatedKeys,
-        if (coins > 0) ...{
-          'coins': FieldValue.increment(coins),
-          'coinHistory': FieldValue.arrayUnion([coinHistoryEntry]),
-        },
-        if (vipDays > 0) ...{
-          'isPremium': true,
-          'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
-        },
-        'lastRewardTimestamp': FieldValue.serverTimestamp(),
-      });
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(currentUser.id)
+          .update({
+            'claimedWeeklyRewardWeekKeys': updatedKeys,
+            if (coins > 0) ...{
+              'coins': FieldValue.increment(coins),
+              'coinHistory': FieldValue.arrayUnion([coinHistoryEntry]),
+            },
+            if (vipDays > 0) ...{
+              'isPremium': true,
+              'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
+            },
+            'lastRewardTimestamp': FieldValue.serverTimestamp(),
+          });
 
       if (mounted) {
         di.sl<HapticService>().success();
@@ -464,7 +472,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         context.read<AuthBloc>().add(const AuthReloadUser());
         CustomSnackBar.show(
           context: context,
-          message: '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+          message:
+              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
           type: CustomSnackBarType.success,
         );
       }
@@ -499,10 +508,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           }
           context.go(AppRouter.gamesRoute);
         },
-        onShareChallenge: () => _showShareCard(
-          widget.currentUser!,
-          myRank > 0 ? myRank : 1,
-        ),
+        onShareChallenge: () =>
+            _showShareCard(widget.currentUser!, myRank > 0 ? myRank : 1),
       );
     }
   }
@@ -592,9 +599,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final users = _sortedUsers;
     final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final rankIndex = users.indexWhere(
-      (u) => u.id == widget.currentUser?.id,
-    );
+    final rankIndex = users.indexWhere((u) => u.id == widget.currentUser?.id);
     final showFindMe = rankIndex >= 6; // Only show if not naturally visible
 
     return Stack(
@@ -624,9 +629,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             slivers: [
               // Top spacing
               SliverToBoxAdapter(
-                child: SizedBox(
-                  height: widget.state.isKids ? 16.h : 8.h,
-                ),
+                child: SizedBox(height: widget.state.isKids ? 16.h : 8.h),
               ),
 
               // 1. Header with last-updated timestamp
@@ -688,7 +691,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       isKids: widget.state.isKids,
                       isWeekly: isWeekly,
                       currentUserId: widget.currentUser?.id,
-                      onUserTap: (user, rank, isMe) => _handleTileTap(user, rank, isMe),
+                      onUserTap: (user, rank, isMe) =>
+                          _handleTileTap(user, rank, isMe),
                     ),
                   ),
                 ),
@@ -809,7 +813,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                 height: 6.r,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: isDark ? AppColors.slate500 : AppColors.slate400,
+                                  color: isDark
+                                      ? AppColors.slate500
+                                      : AppColors.slate400,
                                 ),
                               ),
                               SizedBox(width: 8.w),
@@ -820,7 +826,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 0.8,
-                                  color: isDark ? AppColors.slate400 : AppColors.slate500,
+                                  color: isDark
+                                      ? AppColors.slate400
+                                      : AppColors.slate500,
                                 ),
                               ),
                               SizedBox(width: 8.w),
@@ -858,7 +866,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       // Only animate the first 8 initially visible items on page entry.
                       // After initial entrance, recycled items render statically for 120 FPS scrolling.
                       // Removed .blurXY() to eliminate GPU rasterization bottlenecks.
-                      final animatedTile = (!reduceMotion && !_initialAnimateComplete && index < 8)
+                      final animatedTile =
+                          (!reduceMotion &&
+                              !_initialAnimateComplete &&
+                              index < 8)
                           ? tile
                                 .animate()
                                 .fadeIn(
@@ -909,27 +920,27 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                         ).withValues(alpha: 0.3),
                                 )
                               : Icon(
-                                  widget.state.isKids
-                                      ? Icons.child_care_rounded
-                                      : Icons.emoji_events_outlined,
-                                  size: 56.r,
-                                  color: isDark
-                                      ? const Color(
-                                          0xFF6366F1,
-                                        ).withValues(alpha: 0.4)
-                                      : const Color(
-                                          0xFF6366F1,
-                                        ).withValues(alpha: 0.3),
-                                )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .scaleXY(
-                                    begin: 0.95,
-                                    end: 1.05,
-                                    duration: 1800.ms,
-                                  )
-                                  .fade(begin: 0.7, end: 1.0),
+                                      widget.state.isKids
+                                          ? Icons.child_care_rounded
+                                          : Icons.emoji_events_outlined,
+                                      size: 56.r,
+                                      color: isDark
+                                          ? const Color(
+                                              0xFF6366F1,
+                                            ).withValues(alpha: 0.4)
+                                          : const Color(
+                                              0xFF6366F1,
+                                            ).withValues(alpha: 0.3),
+                                    )
+                                    .animate(
+                                      onPlay: (c) => c.repeat(reverse: true),
+                                    )
+                                    .scaleXY(
+                                      begin: 0.95,
+                                      end: 1.05,
+                                      duration: 1800.ms,
+                                    )
+                                    .fade(begin: 0.7, end: 1.0),
                         ),
                         SizedBox(height: 16.h),
                         Text(
@@ -980,7 +991,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: (widget.showBackButton ? 36.h : 120.h) +
+                  height:
+                      (widget.showBackButton ? 36.h : 120.h) +
                       MediaQuery.paddingOf(context).bottom,
                 ),
               ),
@@ -991,7 +1003,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         // "Find Me" FAB — only visible when user's rank is deep in the list
         if (showFindMe)
           Positioned(
-            bottom: (widget.showBackButton ? 24.h : 104.h) +
+            bottom:
+                (widget.showBackButton ? 24.h : 104.h) +
                 MediaQuery.paddingOf(context).bottom,
             right: AppSpacing.screen,
             child: Semantics(
@@ -1005,50 +1018,54 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 onTap: _scrollToMe,
                 child:
                     Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 10.h,
-                          ),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                AppColors.indigo500,
-                                IllustrationColors.brightBlue,
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(24.r),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.3),
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.my_location_rounded,
-                                color: Colors.white,
-                                size: 16.r,
-                              ),
-                              SizedBox(width: 6.w),
-                              Text(
-                                '#${rankIndex + 1}',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ).animateIf(
-                          context,
-                          (w) => w
-                              .animate()
-                              .fadeIn(duration: 400.ms, delay: 800.ms)
-                              .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [
+                            AppColors.indigo500,
+                            IllustrationColors.brightBlue,
+                          ],
                         ),
+                        borderRadius: BorderRadius.circular(24.r),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.3),
+                          width: 1.5,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.my_location_rounded,
+                            color: Colors.white,
+                            size: 16.r,
+                          ),
+                          SizedBox(width: 6.w),
+                          Text(
+                            '#${rankIndex + 1}',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ).animateIf(
+                      context,
+                      (w) => w
+                          .animate()
+                          .fadeIn(duration: 400.ms, delay: 800.ms)
+                          .slideY(
+                            begin: 0.3,
+                            end: 0,
+                            curve: Curves.easeOutCubic,
+                          ),
+                    ),
               ),
             ),
           ),
@@ -1101,10 +1118,11 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     // PERF: Avoid heavy BackdropFilter(sigma: 24) on every scroll frame.
     // When pinned, a solid high-opacity color (0.96) occludes content beneath
     // cleanly without forcing expensive GPU offscreen render passes during scroll.
-    final backdropColor = (isMidnight
-            ? Colors.black
-            : (isDark ? AppColors.slate900 : Colors.white))
-        .withValues(alpha: isPinned ? 0.96 : 0.7);
+    final backdropColor =
+        (isMidnight
+                ? Colors.black
+                : (isDark ? AppColors.slate900 : Colors.white))
+            .withValues(alpha: isPinned ? 0.96 : 0.7);
 
     return RepaintBoundary(
       child: ClipRect(
@@ -1229,10 +1247,7 @@ class _LeaderboardErrorView extends StatelessWidget {
 // Timeframe enumeration
 // ---------------------------------------------------------------------------
 
-enum LeaderboardTimeframe {
-  thisWeek,
-  allTime,
-}
+enum LeaderboardTimeframe { thisWeek, allTime }
 
 // ---------------------------------------------------------------------------
 // Primary Hero Segmented Switch: Weekly League vs Hall of Fame
@@ -1266,8 +1281,8 @@ class _LeaderboardHeroSwitch extends StatelessWidget {
           color: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : AppColors.slate200),
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate200),
           width: 1,
         ),
       ),

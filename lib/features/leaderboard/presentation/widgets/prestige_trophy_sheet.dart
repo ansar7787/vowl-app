@@ -47,17 +47,23 @@ class PrestigeTrophySheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : (tokens?.surface ?? Colors.white));
+        : (isDark
+              ? const Color(0xFF131A29)
+              : (tokens?.surface ?? Colors.white));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? const Color(0xFF0F172A));
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
     // Resilient safe-area clearance for older 3-button navigation, gesture bars & keyboards
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
@@ -65,7 +71,10 @@ class PrestigeTrophySheet extends StatelessWidget {
       MediaQuery.paddingOf(context).bottom,
       MediaQuery.viewPaddingOf(context).bottom,
     );
-    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 16.h) + 20.h + bottomInset;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 16.h) +
+        20.h +
+        bottomInset;
 
     return Container(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, safeBottom),
@@ -78,160 +87,170 @@ class PrestigeTrophySheet extends StatelessWidget {
         top: false,
         bottom: false,
         child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-          // Drag handle
-          Center(
-            child: Container(
-              width: 36.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate700 : const Color(0xFFCBD5E1),
-                borderRadius: BorderRadius.circular(2.r),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Drag handle
+              Center(
+                child: Container(
+                  width: 36.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? AppColors.slate700
+                        : const Color(0xFFCBD5E1),
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
               ),
-            ),
-          ),
-          SizedBox(height: 18.h),
+              SizedBox(height: 18.h),
 
-          // Trophy & Rank Header
-          Center(
-            child: Column(
-              children: [
-                Stack(
-                  alignment: Alignment.center,
+              // Trophy & Rank Header
+              Center(
+                child: Column(
                   children: [
-                    Container(
-                      width: 72.w,
-                      height: 72.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    UserAvatar(photoUrl: user.photoUrl, size: 60.r),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF59E0B),
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Text(
-                          '#$rank',
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 72.w,
+                          height: 72.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
                           ),
                         ),
+                        UserAvatar(photoUrl: user.photoUrl, size: 60.r),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 6.w,
+                              vertical: 2.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF59E0B),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Text(
+                              '#$rank',
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      user.safeDisplayName,
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w800,
+                        color: textPrimary,
+                      ),
+                    ),
+                    SizedBox(height: 4.h),
+                    Text(
+                      isWeekly
+                          ? 'Weekly League Standing'
+                          : 'Hall of Fame All-Time Standing',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: textSecondary,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 12.h),
-                Text(
-                  user.safeDisplayName,
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w800,
-                    color: textPrimary,
+              ),
+
+              SizedBox(height: 20.h),
+
+              // Stats Bento Grid
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildStatItem(
+                      isWeekly ? 'Weekly XP' : 'Lifetime XP',
+                      '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
+                      LucideIcons.zap,
+                      AppColors.indigo500,
+                      isDark,
+                      borderColor,
+                      textPrimary,
+                      textSecondary,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    child: _buildStatItem(
+                      'Streak',
+                      '${user.currentStreak} Days',
+                      LucideIcons.flame,
+                      const Color(0xFFF59E0B),
+                      isDark,
+                      borderColor,
+                      textPrimary,
+                      textSecondary,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    child: _buildStatItem(
+                      isWeekly ? 'Lifetime XP' : 'Quests',
+                      '${isWeekly ? user.totalExp : user.totalLevelsCompleted}',
+                      LucideIcons.award,
+                      const Color(0xFF10B981),
+                      isDark,
+                      borderColor,
+                      textPrimary,
+                      textSecondary,
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 22.h),
+
+              // Share Rank Button
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  onShareRank();
+                },
+                icon: Icon(LucideIcons.share2, size: 18.sp),
+                label: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    '🏆 Share My Rank',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-                SizedBox(height: 4.h),
-                Text(
-                  isWeekly ? 'Weekly League Standing' : 'Hall of Fame All-Time Standing',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: textSecondary,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.indigo500,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.r),
                   ),
-                ),
-              ],
-            ),
-          ),
-
-          SizedBox(height: 20.h),
-
-          // Stats Bento Grid
-          Row(
-            children: [
-              Expanded(
-                child: _buildStatItem(
-                  isWeekly ? 'Weekly XP' : 'Lifetime XP',
-                  '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
-                  LucideIcons.zap,
-                  AppColors.indigo500,
-                  isDark,
-                  borderColor,
-                  textPrimary,
-                  textSecondary,
-                ),
-              ),
-              SizedBox(width: 10.w),
-              Expanded(
-                child: _buildStatItem(
-                  'Streak',
-                  '${user.currentStreak} Days',
-                  LucideIcons.flame,
-                  const Color(0xFFF59E0B),
-                  isDark,
-                  borderColor,
-                  textPrimary,
-                  textSecondary,
-                ),
-              ),
-              SizedBox(width: 10.w),
-              Expanded(
-                child: _buildStatItem(
-                  isWeekly ? 'Lifetime XP' : 'Quests',
-                  '${isWeekly ? user.totalExp : user.totalLevelsCompleted}',
-                  LucideIcons.award,
-                  const Color(0xFF10B981),
-                  isDark,
-                  borderColor,
-                  textPrimary,
-                  textSecondary,
+                  elevation: 0,
                 ),
               ),
             ],
           ),
-
-          SizedBox(height: 22.h),
-
-          // Share Rank Button
-          ElevatedButton.icon(
-            onPressed: () {
-              Navigator.of(context).pop();
-              onShareRank();
-            },
-            icon: Icon(LucideIcons.share2, size: 18.sp),
-            label: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                '🏆 Share My Rank',
-                style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700),
-              ),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.indigo500,
-              foregroundColor: Colors.white,
-              padding: EdgeInsets.symmetric(vertical: 14.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              elevation: 0,
-            ),
-          ),
-        ],
+        ),
       ),
-    ),
-  ),
-);
-}
+    );
+  }
 
   Widget _buildStatItem(
     String label,
@@ -284,4 +303,3 @@ class PrestigeTrophySheet extends StatelessWidget {
     );
   }
 }
-

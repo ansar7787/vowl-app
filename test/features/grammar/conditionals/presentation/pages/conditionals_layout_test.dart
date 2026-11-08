@@ -382,10 +382,7 @@ void main() {
           findsOneWidget,
         );
         expect(
-          find.text(
-            'Type the answer to confirm',
-            skipOffstage: false,
-          ),
+          find.text('Type the answer to confirm', skipOffstage: false),
           findsOneWidget,
         );
       },

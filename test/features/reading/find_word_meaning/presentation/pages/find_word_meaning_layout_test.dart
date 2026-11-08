@@ -108,12 +108,14 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -128,8 +130,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
@@ -164,7 +167,9 @@ void main() {
     when(() => mockHapticService.heavy()).thenAnswer((_) async {});
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockLocaleService.tr(
         any(),
@@ -177,8 +182,12 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -194,7 +203,8 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
@@ -244,9 +254,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: FindWordMeaningScreen(level: level),
-            ),
+            home: Scaffold(body: FindWordMeaningScreen(level: level)),
           ),
         ),
       ),
@@ -256,60 +264,67 @@ void main() {
   }
 
   group('FindWordMeaningScreen - Production Layout & Mechanics Tests', () {
-    testWidgets('1. Initial rendering of instruction, target meaning, and passage words',
-        (tester) async {
-      await pumpFindWordMeaning(tester);
+    testWidgets(
+      '1. Initial rendering of instruction, target meaning, and passage words',
+      (tester) async {
+        await pumpFindWordMeaning(tester);
 
-      // Verify instruction pill
-      expect(
-        find.text('Find the word matching the given meaning.'),
-        findsOneWidget,
-      );
+        // Verify instruction pill
+        expect(
+          find.text('Find the word matching the given meaning.'),
+          findsOneWidget,
+        );
 
-      // Verify Question Header
-      expect(find.text('DEFINITION'), findsOneWidget);
-      expect(
-        find.text('Showing great courage or determination in the face of danger.'),
-        findsOneWidget,
-      );
+        // Verify Question Header
+        expect(find.text('DEFINITION'), findsOneWidget);
+        expect(
+          find.text(
+            'Showing great courage or determination in the face of danger.',
+          ),
+          findsOneWidget,
+        );
 
-      // Verify Interactive Passage prompt
-      expect(
-        find.text('Tap the word that matches the definition:'),
-        findsOneWidget,
-      );
+        // Verify Interactive Passage prompt
+        expect(
+          find.text('Tap the word that matches the definition:'),
+          findsOneWidget,
+        );
 
-      // Verify words in the passage
-      expect(find.text('The'), findsWidgets);
-      expect(find.text('valiant'), findsOneWidget);
-      expect(find.text('knight'), findsOneWidget);
-      expect(find.text('dragon'), findsOneWidget);
-      expect(find.text('courage'), findsOneWidget);
-    });
+        // Verify words in the passage
+        expect(find.text('The'), findsWidgets);
+        expect(find.text('valiant'), findsOneWidget);
+        expect(find.text('knight'), findsOneWidget);
+        expect(find.text('dragon'), findsOneWidget);
+        expect(find.text('courage'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. Tapping correct target word triggers success feedback and opens SentenceBuilder',
-        (tester) async {
-      await pumpFindWordMeaning(tester);
+    testWidgets(
+      '2. Tapping correct target word triggers success feedback and opens SentenceBuilder',
+      (tester) async {
+        await pumpFindWordMeaning(tester);
 
-      // Tap on target word "valiant"
-      final targetWord = find.text('valiant');
-      expect(targetWord, findsOneWidget);
+        // Tap on target word "valiant"
+        final targetWord = find.text('valiant');
+        expect(targetWord, findsOneWidget);
 
-      await tester.tap(targetWord);
-      await tester.pump();
+        await tester.tap(targetWord);
+        await tester.pump();
 
-      // Verify sensory feedback
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        // Verify sensory feedback
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      // Verify ContextSentenceBuilder is revealed
-      await tester.pump(const Duration(milliseconds: 600));
-      expect(find.textContaining('valiant'), findsWidgets);
-    });
+        // Verify ContextSentenceBuilder is revealed
+        await tester.pump(const Duration(milliseconds: 600));
+        expect(find.textContaining('valiant'), findsWidgets);
+      },
+    );
 
-    testWidgets('3. Skipping SentenceBuilder dispatches SubmitAnswer(true)',
-        (tester) async {
+    testWidgets('3. Skipping SentenceBuilder dispatches SubmitAnswer(true)', (
+      tester,
+    ) async {
       await pumpFindWordMeaning(tester);
 
       // Tap on correct target word
@@ -330,82 +345,87 @@ void main() {
       verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('4. Submitting a sentence in SentenceBuilder dispatches SubmitAnswer(true)',
-        (tester) async {
-      await pumpFindWordMeaning(tester);
+    testWidgets(
+      '4. Submitting a sentence in SentenceBuilder dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpFindWordMeaning(tester);
 
-      // Tap on correct target word
-      await tester.tap(find.text('valiant'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1400));
+        // Tap on correct target word
+        await tester.tap(find.text('valiant'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1400));
 
-      // Scroll to enter valid sentence in text field
-      final textField = find.byType(TextField);
-      await tester.ensureVisible(textField);
-      await tester.pumpAndSettle();
-      expect(textField, findsOneWidget);
+        // Scroll to enter valid sentence in text field
+        final textField = find.byType(TextField);
+        await tester.ensureVisible(textField);
+        await tester.pumpAndSettle();
+        expect(textField, findsOneWidget);
 
-      await tester.enterText(
-        textField,
-        'The valiant hero defeated all monsters bravely in battle',
-      );
-      await tester.pump();
+        await tester.enterText(
+          textField,
+          'The valiant hero defeated all monsters bravely in battle',
+        );
+        await tester.pump();
 
-      // Ensure the Submit Sentence button is visible and tap it
-      final submitBtn = find.text('SUBMIT SENTENCE');
-      await tester.ensureVisible(submitBtn);
-      await tester.pumpAndSettle();
-      expect(submitBtn, findsOneWidget);
+        // Ensure the Submit Sentence button is visible and tap it
+        final submitBtn = find.text('SUBMIT SENTENCE');
+        await tester.ensureVisible(submitBtn);
+        await tester.pumpAndSettle();
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(submitBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('5. Tapping incorrect word triggers wrong sound, error haptic, and SubmitAnswer(false)',
-        (tester) async {
-      await pumpFindWordMeaning(tester);
+    testWidgets(
+      '5. Tapping incorrect word triggers wrong sound, error haptic, and SubmitAnswer(false)',
+      (tester) async {
+        await pumpFindWordMeaning(tester);
 
-      // Tap on incorrect word "knight"
-      final wrongWord = find.text('knight');
-      expect(wrongWord, findsOneWidget);
+        // Tap on incorrect word "knight"
+        final wrongWord = find.text('knight');
+        expect(wrongWord, findsOneWidget);
 
-      await tester.tap(wrongWord);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(wrongWord);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Verify error feedback
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
+        // Verify error feedback
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
 
-      // Verify SubmitAnswer(false) is dispatched
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify SubmitAnswer(false) is dispatched
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('6. Subsequent word taps are locked out after an answer is initiated',
-        (tester) async {
-      await pumpFindWordMeaning(tester);
+    testWidgets(
+      '6. Subsequent word taps are locked out after an answer is initiated',
+      (tester) async {
+        await pumpFindWordMeaning(tester);
 
-      // Tap correct word
-      await tester.tap(find.text('valiant'));
-      await tester.pump();
+        // Tap correct word
+        await tester.tap(find.text('valiant'));
+        await tester.pump();
 
-      // Try tapping another word immediately while answered
-      await tester.tap(find.text('dragon'), warnIfMissed: false);
-      await tester.pump();
+        // Try tapping another word immediately while answered
+        await tester.tap(find.text('dragon'), warnIfMissed: false);
+        await tester.pump();
 
-      // Selection haptic should only have been called once for the first tap
-      verify(() => mockHapticService.selection()).called(1);
-      verifyNever(() => mockSoundService.playWrong());
+        // Selection haptic should only have been called once for the first tap
+        verify(() => mockHapticService.selection()).called(1);
+        verifyNever(() => mockSoundService.playWrong());
 
-      // Advance clock past the 600ms delayed scroll timer so no timer remains pending
-      await tester.pump(const Duration(milliseconds: 700));
-    });
+        // Advance clock past the 600ms delayed scroll timer so no timer remains pending
+        await tester.pump(const Duration(milliseconds: 700));
+      },
+    );
 
-    testWidgets('7. Hint button dispatches ReadingHintUsed',
-        (tester) async {
+    testWidgets('7. Hint button dispatches ReadingHintUsed', (tester) async {
       await pumpFindWordMeaning(tester);
 
       // Tap hint icon in GameBaseLayout header
@@ -417,32 +437,35 @@ void main() {
       }
     });
 
-    testWidgets('8. Displays GameShimmerLoading when quest is null or uninitialized',
-        (tester) async {
-      const loadingState = ReadingInitial();
-      await pumpFindWordMeaning(tester, state: loadingState);
+    testWidgets(
+      '8. Displays GameShimmerLoading when quest is null or uninitialized',
+      (tester) async {
+        const loadingState = ReadingInitial();
+        await pumpFindWordMeaning(tester, state: loadingState);
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+      },
+    );
 
-    testWidgets('9. Level 1 displays GameBriefingLayer and dismisses on start tap',
-        (tester) async {
-      await pumpFindWordMeaning(tester, level: 1);
+    testWidgets(
+      '9. Level 1 displays GameBriefingLayer and dismisses on start tap',
+      (tester) async {
+        await pumpFindWordMeaning(tester, level: 1);
 
-      // Verify GameBriefingLayer is present
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
+        // Verify GameBriefingLayer is present
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      // Tap action button on briefing overlay to start game
-      final startButton = find.byType(ElevatedButton);
-      if (startButton.evaluate().isNotEmpty) {
-        await tester.tap(startButton);
-        await tester.pumpAndSettle();
-        expect(find.byType(GameBriefingLayer), findsNothing);
-      }
-    });
+        // Tap action button on briefing overlay to start game
+        final startButton = find.byType(ElevatedButton);
+        if (startButton.evaluate().isNotEmpty) {
+          await tester.tap(startButton);
+          await tester.pumpAndSettle();
+          expect(find.byType(GameBriefingLayer), findsNothing);
+        }
+      },
+    );
 
-    testWidgets('10. Renders cleanly in dark theme mode',
-        (tester) async {
+    testWidgets('10. Renders cleanly in dark theme mode', (tester) async {
       await pumpFindWordMeaning(tester, themeMode: ThemeMode.dark);
 
       expect(find.text('DEFINITION'), findsOneWidget);
@@ -450,13 +473,10 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('11. Renders on compact 320dp screen without overflow',
-        (tester) async {
-      await pumpFindWordMeaning(
-        tester,
-        width: 320,
-        height: 568,
-      );
+    testWidgets('11. Renders on compact 320dp screen without overflow', (
+      tester,
+    ) async {
+      await pumpFindWordMeaning(tester, width: 320, height: 568);
 
       expect(find.text('DEFINITION'), findsOneWidget);
       expect(
@@ -467,26 +487,26 @@ void main() {
     });
 
     testWidgets(
-        '12. SentenceBuilder has proper standard padding and does not touch screen edges',
-        (tester) async {
-      await pumpFindWordMeaning(tester, width: 390, height: 844);
+      '12. SentenceBuilder has proper standard padding and does not touch screen edges',
+      (tester) async {
+        await pumpFindWordMeaning(tester, width: 390, height: 844);
 
-      // Tap on correct target word
-      await tester.tap(find.text('valiant'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Tap on correct target word
+        await tester.tap(find.text('valiant'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final sentenceBuilderFinder = find.byType(ContextSentenceBuilder);
-      expect(sentenceBuilderFinder, findsOneWidget);
+        final sentenceBuilderFinder = find.byType(ContextSentenceBuilder);
+        expect(sentenceBuilderFinder, findsOneWidget);
 
-      final builderRect = tester.getRect(sentenceBuilderFinder);
-      // Verify standard padding: builder must not touch left (0) or right (390)
-      expect(builderRect.left, greaterThan(0));
-      expect(builderRect.right, lessThan(390));
-      expect(builderRect.left, closeTo(24, 2));
-      expect(390 - builderRect.right, closeTo(24, 2));
-      expect(tester.takeException(), isNull);
-    });
+        final builderRect = tester.getRect(sentenceBuilderFinder);
+        // Verify standard padding: builder must not touch left (0) or right (390)
+        expect(builderRect.left, greaterThan(0));
+        expect(builderRect.right, lessThan(390));
+        expect(builderRect.left, closeTo(24, 2));
+        expect(390 - builderRect.right, closeTo(24, 2));
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

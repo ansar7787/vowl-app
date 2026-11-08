@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockTtsService extends Mock implements TtsService {}
 
 void main() {
@@ -21,18 +22,22 @@ void main() {
     mockTts = MockTtsService();
 
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
-    when(() => mockLocale.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocale.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback = invocation.namedArguments[#fallback] as String?;
       return fallback ?? invocation.positionalArguments[0] as String;
     });
 
     when(() => mockTts.stop()).thenAnswer((_) async {});
     when(() => mockTts.isSpeaking).thenReturn(false);
-    when(() => mockTts.isSpeakingNotifier).thenReturn(ValueNotifier<bool>(false));
+    when(
+      () => mockTts.isSpeakingNotifier,
+    ).thenReturn(ValueNotifier<bool>(false));
 
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     di.sl.registerLazySingleton<LocaleService>(() => mockLocale);
@@ -66,12 +71,7 @@ void main() {
           home: Scaffold(
             body: Stack(
               children: [
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: child,
-                ),
+                Positioned(bottom: 0, left: 0, right: 0, child: child),
               ],
             ),
           ),
@@ -81,78 +81,86 @@ void main() {
   }
 
   group('GameFeedbackCard Navigation Bar & Inset Resilience', () {
-    testWidgets('3-button navigation bar (48dp inset) allocates dynamic safe bottom padding', (tester) async {
-      var continued = false;
+    testWidgets(
+      '3-button navigation bar (48dp inset) allocates dynamic safe bottom padding',
+      (tester) async {
+        var continued = false;
 
-      await tester.pumpWidget(
-        buildTestHarness(
-          viewPaddingBottom: 48.0,
-          child: GameFeedbackCard(
-            isCorrect: true,
-            isFinalFailure: false,
-            livesRemaining: 3,
-            onContinue: () => continued = true,
-            isDark: false,
-            primaryColor: Colors.blue,
+        await tester.pumpWidget(
+          buildTestHarness(
+            viewPaddingBottom: 48.0,
+            child: GameFeedbackCard(
+              isCorrect: true,
+              isFinalFailure: false,
+              livesRemaining: 3,
+              onContinue: () => continued = true,
+              isDark: false,
+              primaryColor: Colors.blue,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      final containerFinder = find.byWidgetPredicate(
-        (widget) =>
-            widget is Container &&
-            widget.constraints != null &&
-            widget.padding is EdgeInsets,
-      );
-      expect(containerFinder, findsOneWidget);
+        final containerFinder = find.byWidgetPredicate(
+          (widget) =>
+              widget is Container &&
+              widget.constraints != null &&
+              widget.padding is EdgeInsets,
+        );
+        expect(containerFinder, findsOneWidget);
 
-      final container = tester.widget<Container>(containerFinder);
-      final padding = container.padding as EdgeInsets;
+        final container = tester.widget<Container>(containerFinder);
+        final padding = container.padding as EdgeInsets;
 
-      // Bottom padding must be at least 48.0 + 16.0 (>= 64.0dp)
-      expect(padding.bottom, greaterThanOrEqualTo(64.0));
+        // Bottom padding must be at least 48.0 + 16.0 (>= 64.0dp)
+        expect(padding.bottom, greaterThanOrEqualTo(64.0));
 
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pumpAndSettle();
+        await tester.tap(continueButton);
+        await tester.pumpAndSettle();
 
-      expect(continued, isTrue);
-    });
+        expect(continued, isTrue);
+      },
+    );
 
-    testWidgets('gesture navigation bar (20dp inset) scales bottom padding appropriately', (tester) async {
-      await tester.pumpWidget(
-        buildTestHarness(
-          viewPaddingBottom: 20.0,
-          child: GameFeedbackCard(
-            isCorrect: false,
-            isFinalFailure: false,
-            livesRemaining: 2,
-            onContinue: () {},
-            isDark: true,
-            primaryColor: Colors.amber,
+    testWidgets(
+      'gesture navigation bar (20dp inset) scales bottom padding appropriately',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestHarness(
+            viewPaddingBottom: 20.0,
+            child: GameFeedbackCard(
+              isCorrect: false,
+              isFinalFailure: false,
+              livesRemaining: 2,
+              onContinue: () {},
+              isDark: true,
+              primaryColor: Colors.amber,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      final containerFinder = find.byWidgetPredicate(
-        (widget) =>
-            widget is Container &&
-            widget.constraints != null &&
-            widget.padding is EdgeInsets,
-      );
-      final container = tester.widget<Container>(containerFinder);
-      final padding = container.padding as EdgeInsets;
+        final containerFinder = find.byWidgetPredicate(
+          (widget) =>
+              widget is Container &&
+              widget.constraints != null &&
+              widget.padding is EdgeInsets,
+        );
+        final container = tester.widget<Container>(containerFinder);
+        final padding = container.padding as EdgeInsets;
 
-      // Bottom padding must be at least 20.0 + 16.0 (>= 36.0dp)
-      expect(padding.bottom, greaterThanOrEqualTo(36.0));
-      expect(find.text('TRY AGAIN'), findsOneWidget);
-    });
+        // Bottom padding must be at least 20.0 + 16.0 (>= 36.0dp)
+        expect(padding.bottom, greaterThanOrEqualTo(36.0));
+        expect(find.text('TRY AGAIN'), findsOneWidget);
+      },
+    );
 
-    testWidgets('zero inset device uses minimum safe fallback padding', (tester) async {
+    testWidgets('zero inset device uses minimum safe fallback padding', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         buildTestHarness(
           viewPaddingBottom: 0.0,
@@ -181,41 +189,47 @@ void main() {
       expect(padding.bottom, greaterThanOrEqualTo(24.0));
     });
 
-    testWidgets('continue button is pinned while educational rules scroll above it', (tester) async {
-      var continued = false;
+    testWidgets(
+      'continue button is pinned while educational rules scroll above it',
+      (tester) async {
+        var continued = false;
 
-      await tester.pumpWidget(
-        buildTestHarness(
-          viewPaddingBottom: 48.0,
-          viewport: const Size(360, 640),
-          child: GameFeedbackCard(
-            isCorrect: false,
-            isFinalFailure: true,
-            livesRemaining: 0,
-            onContinue: () => continued = true,
-            isDark: true,
-            primaryColor: Colors.purple,
-            correctAnswer: 'The correct answer is present perfect continuous.',
-            explanation: 'We use the present perfect continuous for actions that began in the past and continue into the present.',
-            ruleTitle: 'GRAMMAR RULE',
-            ruleContent: 'Subject + have/has been + present participle (-ing).',
+        await tester.pumpWidget(
+          buildTestHarness(
+            viewPaddingBottom: 48.0,
+            viewport: const Size(360, 640),
+            child: GameFeedbackCard(
+              isCorrect: false,
+              isFinalFailure: true,
+              livesRemaining: 0,
+              onContinue: () => continued = true,
+              isDark: true,
+              primaryColor: Colors.purple,
+              correctAnswer:
+                  'The correct answer is present perfect continuous.',
+              explanation:
+                  'We use the present perfect continuous for actions that began in the past and continue into the present.',
+              ruleTitle: 'GRAMMAR RULE',
+              ruleContent:
+                  'Subject + have/has been + present participle (-ing).',
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      // Action button is SEE RESULTS (since livesRemaining <= 0)
-      final actionButton = find.text('SEE RESULTS');
-      expect(actionButton, findsOneWidget);
+        // Action button is SEE RESULTS (since livesRemaining <= 0)
+        final actionButton = find.text('SEE RESULTS');
+        expect(actionButton, findsOneWidget);
 
-      // Verify that SingleChildScrollView exists for educational info
-      expect(find.byType(SingleChildScrollView), findsWidgets);
+        // Verify that SingleChildScrollView exists for educational info
+        expect(find.byType(SingleChildScrollView), findsWidgets);
 
-      // Tap action button directly without needing to scroll to bottom
-      await tester.tap(actionButton);
-      await tester.pumpAndSettle();
+        // Tap action button directly without needing to scroll to bottom
+        await tester.tap(actionButton);
+        await tester.pumpAndSettle();
 
-      expect(continued, isTrue);
-    });
+        expect(continued, isTrue);
+      },
+    );
   });
 }

@@ -14,7 +14,7 @@ class KidsTTSService {
 
   /// Creates a [KidsTTSService] instance.
   KidsTTSService({TtsService? ttsService})
-      : _ttsService = ttsService ?? di.sl<TtsService>();
+    : _ttsService = ttsService ?? di.sl<TtsService>();
 
   Future<SharedPreferences> _getPrefs() async {
     return _prefs ??= await SharedPreferences.getInstance();

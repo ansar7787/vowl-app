@@ -128,7 +128,10 @@ class StrokeOrderGuidePainter extends CustomPainter {
     }
 
     final totalSegments = points.length - 1;
-    final targetSegment = (t * totalSegments).clamp(0.0, totalSegments.toDouble());
+    final targetSegment = (t * totalSegments).clamp(
+      0.0,
+      totalSegments.toDouble(),
+    );
     final segIndex = targetSegment.floor();
     final segT = targetSegment - segIndex;
 
@@ -154,7 +157,10 @@ class StrokeOrderGuidePainter extends CustomPainter {
       );
     }
     final totalSegments = points.length - 1;
-    final targetSegment = (t * totalSegments).clamp(0.0, totalSegments.toDouble());
+    final targetSegment = (t * totalSegments).clamp(
+      0.0,
+      totalSegments.toDouble(),
+    );
     final segIndex = targetSegment.floor();
     final segT = targetSegment - segIndex;
 
@@ -350,4 +356,3 @@ class StrokeOrderGuidePainter extends CustomPainter {
   bool shouldRepaint(covariant StrokeOrderGuidePainter oldDelegate) =>
       oldDelegate.progress != progress || oldDelegate.target != target;
 }
-

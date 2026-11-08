@@ -29,9 +29,9 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockThemeCubit = MockThemeCubit();
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(
       () => mockThemeCubit.state,
     ).thenReturn(ThemeState(themeMode: ThemeMode.system, isMidnight: false));
@@ -92,7 +92,9 @@ void main() {
     await tester.tap(verifyBtn);
     await tester.pump();
 
-    verify(() => mockAuthBloc.add(const AuthReloadUser())).called(greaterThanOrEqualTo(1));
+    verify(
+      () => mockAuthBloc.add(const AuthReloadUser()),
+    ).called(greaterThanOrEqualTo(1));
   });
 
   testWidgets('tapping Logout button dispatches AuthLogoutRequested', (
@@ -127,13 +129,14 @@ void main() {
 
     const longUser = UserEntity(
       id: 'user123',
-      email: 'supercalifragilisticexpialidocious.email@extraordinarylongdomainname.com',
+      email:
+          'supercalifragilisticexpialidocious.email@extraordinarylongdomainname.com',
       displayName: 'Verification Tester',
       isEmailVerified: false,
     );
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(longUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(longUser));
 
     await tester.pumpWidget(createWidgetUnderTest());
     await tester.pump();

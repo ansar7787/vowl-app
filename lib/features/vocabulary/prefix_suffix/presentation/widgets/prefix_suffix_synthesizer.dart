@@ -82,21 +82,21 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
           const SizedBox.shrink(),
         ] else ...[
           Wrap(
-            spacing: 12.w,
-            runSpacing: 12.h,
-            alignment: WrapAlignment.center,
-            children: widget.options.map((option) {
-              return _buildDraggableChip(option);
-            }).toList(),
-          )
-          .animate(target: widget.selectedAffix != null ? 0 : 1)
-          .scale(
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
-            duration: 250.ms,
-            curve: Curves.easeOut,
-          )
-          .fade(duration: 250.ms),
+                spacing: 12.w,
+                runSpacing: 12.h,
+                alignment: WrapAlignment.center,
+                children: widget.options.map((option) {
+                  return _buildDraggableChip(option);
+                }).toList(),
+              )
+              .animate(target: widget.selectedAffix != null ? 0 : 1)
+              .scale(
+                begin: const Offset(0.9, 0.9),
+                end: const Offset(1.0, 1.0),
+                duration: 250.ms,
+                curve: Curves.easeOut,
+              )
+              .fade(duration: 250.ms),
         ],
       ],
     );
@@ -112,7 +112,9 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
               ? Colors.white.withValues(alpha: 0.02)
               : Colors.black.withValues(alpha: 0.02),
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: widget.primaryColor.withValues(alpha: 0.12)),
+          border: Border.all(
+            color: widget.primaryColor.withValues(alpha: 0.12),
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -215,7 +217,8 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
       ),
     );
 
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     if (isHinted && !reduceMotion) {
@@ -280,9 +283,11 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
   }
 
   Widget _buildFusedWord() {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
-    final displayWord = (widget.targetWord != null && widget.targetWord!.isNotEmpty)
+    final displayWord =
+        (widget.targetWord != null && widget.targetWord!.isNotEmpty)
         ? widget.targetWord!
         : widget.correctAnswer;
 

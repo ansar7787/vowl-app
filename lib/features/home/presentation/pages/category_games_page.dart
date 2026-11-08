@@ -195,12 +195,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   ),
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(
-                        20.w,
-                        10.h,
-                        20.w,
-                        8.h,
-                      ),
+                      padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 8.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -217,7 +212,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                               letterSpacing: 2,
                             ),
                           ),
-                          _buildViewModeToggle(theme.primaryColor, contentColor, isDark),
+                          _buildViewModeToggle(
+                            theme.primaryColor,
+                            contentColor,
+                            isDark,
+                          ),
                         ],
                       ),
                     ),
@@ -231,7 +230,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          _buildViewModeToggle(theme.primaryColor, contentColor, isDark),
+                          _buildViewModeToggle(
+                            theme.primaryColor,
+                            contentColor,
+                            isDark,
+                          ),
                         ],
                       ),
                     ),
@@ -240,9 +243,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                 // 4. Edge-to-Edge Status Filter Bar (Fluid scroll, zero side clipping)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 8.h,
-                    ),
+                    padding: EdgeInsets.only(bottom: 8.h),
                     child: _buildFilterBar(theme, isDark, user),
                   ),
                 ),
@@ -275,24 +276,25 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                           MediaQuery.of(context).padding.bottom + 32.h,
                         ),
                         sliver: SliverGrid(
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 12.w,
-                            mainAxisSpacing: 12.h,
-                            childAspectRatio: 0.92,
-                          ),
-                          delegate: SliverChildBuilderDelegate(
-                            (context, index) {
-                              return _buildStudioGridCard(
-                                context: context,
-                                user: user,
-                                subtype: filtered[index],
-                                isDark: isDark,
-                                index: index,
-                              );
-                            },
-                            childCount: filtered.length,
-                          ),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 12.w,
+                                mainAxisSpacing: 12.h,
+                                childAspectRatio: 0.92,
+                              ),
+                          delegate: SliverChildBuilderDelegate((
+                            context,
+                            index,
+                          ) {
+                            return _buildStudioGridCard(
+                              context: context,
+                              user: user,
+                              subtype: filtered[index],
+                              isDark: isDark,
+                              index: index,
+                            );
+                          }, childCount: filtered.length),
                         ),
                       );
                     }
@@ -346,8 +348,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   ) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     final displayColor = theme.primaryColor;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return ValueListenableBuilder<double>(
       valueListenable: _scrollOffset,
@@ -358,8 +360,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         final double bgAlpha = isMidnight
             ? (scrollProgress > 0 ? 0.95 : 0.0)
             : (isDark
-                ? (scrollProgress > 0 ? 0.92 : 0.0)
-                : (scrollProgress > 0 ? 0.95 : 0.0));
+                  ? (scrollProgress > 0 ? 0.92 : 0.0)
+                  : (scrollProgress > 0 ? 0.95 : 0.0));
         final double borderAlpha = isDark
             ? (0.12 * scrollProgress)
             : (0.15 * scrollProgress);
@@ -504,14 +506,14 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         color: isOpen
                             ? displayColor.withValues(alpha: 0.15)
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.03)),
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03)),
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isOpen
                               ? displayColor.withValues(alpha: 0.3)
                               : (isDark ? Colors.white : Colors.black)
-                                  .withValues(alpha: 0.1),
+                                    .withValues(alpha: 0.1),
                         ),
                       ),
                       child: Icon(
@@ -554,16 +556,14 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         : 0.0;
     final rankText = _CategoryGamesLogic.getRank(context, targetProgress);
 
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Semantics(
           label: context.tr(
@@ -584,7 +584,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(color: cardBorder, width: 1.0),
               ),
-                child: ExcludeSemantics(
+              child: ExcludeSemantics(
                 child: Column(
                   children: [
                     Row(
@@ -836,13 +836,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBorderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =
@@ -864,132 +862,134 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     );
 
     return Semantics(
-          button: true,
-          label:
-              '${theme.title}, ${isMastered ? (isAllThreeStars ? context.tr('category_games.perfect', fallback: 'PERFECT') : context.tr('category_games.mastered', fallback: 'MASTERED')) : '$gameplayStars of $maxGameplayStars Game Stars'}',
-          child: RepaintBoundary(
-            child: ScaleButton(
-              onTap: () {
-                HapticFeedback.lightImpact();
-                context.push(
-                  '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
-                );
-              },
-              child: ExcludeSemantics(
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    // Main Card Body
-                    GlassTile(
-                      borderRadius: BorderRadius.circular(24.r),
-                      padding: EdgeInsets.all(AppSpacing.card),
-                      glassOpacity: 1.0,
-                      blur: 0,
-                      showShadow: false,
-                      usePremiumStyle: true,
-                      borderColor: cardBorderColor,
-                      borderWidth: 1.0,
-                      child: Row(
-                        children: [
-                          SizedBox(width: 56.r + 14.w), // Spacer for integrated spatial squircle icon
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                AutoSizeText(
-                                  theme.title.toUpperCase(),
-                                  maxLines: 2,
-                                  minFontSize: 12,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: contentColor,
-                                    letterSpacing: 1,
-                                    height: 1.1,
-                                  ),
-                                ),
-                                SizedBox(height: 8.h),
-                                _buildLiquidProgressBar(
+      button: true,
+      label:
+          '${theme.title}, ${isMastered ? (isAllThreeStars ? context.tr('category_games.perfect', fallback: 'PERFECT') : context.tr('category_games.mastered', fallback: 'MASTERED')) : '$gameplayStars of $maxGameplayStars Game Stars'}',
+      child: RepaintBoundary(
+        child: ScaleButton(
+          onTap: () {
+            HapticFeedback.lightImpact();
+            context.push(
+              '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+            );
+          },
+          child: ExcludeSemantics(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                // Main Card Body
+                GlassTile(
+                  borderRadius: BorderRadius.circular(24.r),
+                  padding: EdgeInsets.all(AppSpacing.card),
+                  glassOpacity: 1.0,
+                  blur: 0,
+                  showShadow: false,
+                  usePremiumStyle: true,
+                  borderColor: cardBorderColor,
+                  borderWidth: 1.0,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 56.r + 14.w,
+                      ), // Spacer for integrated spatial squircle icon
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              theme.title.toUpperCase(),
+                              maxLines: 2,
+                              minFontSize: 12,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w900,
+                                color: contentColor,
+                                letterSpacing: 1,
+                                height: 1.1,
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            _buildLiquidProgressBar(
+                              color: isAllThreeStars
+                                  ? Colors.amber
+                                  : displayColor,
+                              progress: cardProgress,
+                            ),
+                            SizedBox(height: 8.h),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: AlignmentDirectional.centerStart,
+                              child: Text(
+                                isMastered
+                                    ? (isAllThreeStars
+                                          ? '★ $gameplayStars / $maxGameplayStars • 100% PERFECT'
+                                          : '★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★')
+                                    : '★ $gameplayStars / $maxGameplayStars $gameStarsLabel',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
                                   color: isAllThreeStars
-                                      ? Colors.amber
-                                      : displayColor,
-                                  progress: cardProgress,
+                                      ? Colors.amber.shade700
+                                      : displayColor.withValues(
+                                          alpha: isMastered ? 0.9 : 0.7,
+                                        ),
+                                  letterSpacing: 0.5,
                                 ),
-                                SizedBox(height: 8.h),
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: AlignmentDirectional.centerStart,
-                                  child: Text(
-                                    isMastered
-                                        ? (isAllThreeStars
-                                              ? '★ $gameplayStars / $maxGameplayStars • 100% PERFECT'
-                                              : '★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★')
-                                        : '★ $gameplayStars / $maxGameplayStars $gameStarsLabel',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: isAllThreeStars
-                                          ? Colors.amber.shade700
-                                          : displayColor.withValues(
-                                              alpha: isMastered ? 0.9 : 0.7,
-                                            ),
-                                      letterSpacing: 0.5,
-                                    ),
-                                    maxLines: 1,
-                                  ),
-                                ),
-                              ],
+                                maxLines: 1,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 12.w),
-                          _buildSpatialBadge(
-                            color: displayColor,
-                            currentLevel: currentLevel,
-                            isNew: isNew,
-                            isMastered: isMastered,
-                            isAllThreeStars: isAllThreeStars,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // Integrated Spatial Squircle Icon (Zero-jitter 120 FPS performance, cleanly bounded inside card)
-                    PositionedDirectional(
-                      start: 16.w,
-                      top: 0,
-                      bottom: 0,
-                      child: Center(
-                        child: Container(
-                          width: 56.r,
-                          height: 56.r,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                displayColor,
-                                displayColor.withValues(alpha: 0.75),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(18.r),
-                          ),
-                          child: Icon(
-                            GameHelper.getIconForSubtype(subtype),
-                            color: Colors.white,
-                            size: 28.r,
-                          ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 12.w),
+                      _buildSpatialBadge(
+                        color: displayColor,
+                        currentLevel: currentLevel,
+                        isNew: isNew,
+                        isMastered: isMastered,
+                        isAllThreeStars: isAllThreeStars,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+
+                // Integrated Spatial Squircle Icon (Zero-jitter 120 FPS performance, cleanly bounded inside card)
+                PositionedDirectional(
+                  start: 16.w,
+                  top: 0,
+                  bottom: 0,
+                  child: Center(
+                    child: Container(
+                      width: 56.r,
+                      height: 56.r,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            displayColor,
+                            displayColor.withValues(alpha: 0.75),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(18.r),
+                      ),
+                      child: Icon(
+                        GameHelper.getIconForSubtype(subtype),
+                        color: Colors.white,
+                        size: 28.r,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        );
+        ),
+      ),
+    );
   }
 
   Widget _buildLiquidProgressBar({
@@ -1306,7 +1306,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       if (query.isNotEmpty) {
         final theme = LevelThemeHelper.getTheme(game.name);
         final title = theme.title.toLowerCase();
-        if (!title.contains(query) && !game.name.toLowerCase().contains(query)) {
+        if (!title.contains(query) &&
+            !game.name.toLowerCase().contains(query)) {
           return false;
         }
       }
@@ -1337,11 +1338,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }).toList();
   }
 
-  Widget _buildFilterBar(
-    ThemeResult theme,
-    bool isDark,
-    UserEntity user,
-  ) {
+  Widget _buildFilterBar(ThemeResult theme, bool isDark, UserEntity user) {
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
@@ -1522,10 +1519,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               _isGridView.value = !_isGridView.value;
             },
             child: Container(
-              constraints: BoxConstraints(
-                minWidth: 44.r,
-                minHeight: 44.r,
-              ),
+              constraints: BoxConstraints(minWidth: 44.r, minHeight: 44.r),
               alignment: Alignment.center,
               child: Container(
                 padding: EdgeInsets.all(8.r),
@@ -1533,21 +1527,19 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   color: isGrid
                       ? displayColor.withValues(alpha: 0.15)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.03)),
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.03)),
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: isGrid
                         ? displayColor.withValues(alpha: 0.3)
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : Colors.black.withValues(alpha: 0.05)),
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : Colors.black.withValues(alpha: 0.05)),
                   ),
                 ),
                 child: Icon(
-                  isGrid
-                      ? Icons.view_agenda_rounded
-                      : Icons.grid_view_rounded,
+                  isGrid ? Icons.view_agenda_rounded : Icons.grid_view_rounded,
                   size: 18.r,
                   color: isGrid
                       ? displayColor
@@ -1584,15 +1576,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             color: isSelected
                 ? displayColor
                 : (isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.75)
-                    : Colors.white.withValues(alpha: 0.85)),
+                      ? const Color(0xFF0F172A).withValues(alpha: 0.75)
+                      : Colors.white.withValues(alpha: 0.85)),
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
               color: isSelected
                   ? displayColor
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.10)
-                      : AppColors.slate200),
+                        ? Colors.white.withValues(alpha: 0.10)
+                        : AppColors.slate200),
             ),
           ),
           child: Row(
@@ -1652,13 +1644,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBorderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     final double cardProgress =
         (completedCount.clamp(0, gameTotalLevels)) / gameTotalLevels.toDouble();

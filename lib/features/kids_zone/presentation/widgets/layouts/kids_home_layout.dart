@@ -89,6 +89,7 @@ class _KidsHomeLayoutState extends State<KidsHomeLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -120,9 +121,14 @@ class _KidsHomeLayoutState extends State<KidsHomeLayout> {
           builder: (context, constraints) {
             final maxHeight = constraints.maxHeight;
             final isCompactHeight = maxHeight < 580;
-            final topSpacing = isCompactHeight ? 56.0.h : KidsGameBaseScreen.mascotClearanceHeight;
+            final topSpacing = isCompactHeight
+                ? 56.0.h
+                : KidsGameBaseScreen.mascotClearanceHeight;
             final dollhouseHeight = isCompactHeight ? 140.0.h : 170.0.h;
-            final dollhouseWidth = math.min(constraints.maxWidth * 0.78, 290.0.w);
+            final dollhouseWidth = math.min(
+              constraints.maxWidth * 0.78,
+              290.0.w,
+            );
 
             return SingleChildScrollView(
               physics: isCompactHeight
@@ -165,7 +171,9 @@ class _KidsHomeLayoutState extends State<KidsHomeLayout> {
                       _OptionsFloorArea(
                         options: quest.options ?? const [],
                         correctAnswer: quest.correctAnswer,
-                        selectedOption: state.answerStatus.isAnswered ? _selectedOption : null,
+                        selectedOption: state.answerStatus.isAnswered
+                            ? _selectedOption
+                            : null,
                         state: state,
                         onOptionSelected: (option) =>
                             _handleOptionSubmit(context, state, option),
@@ -248,25 +256,27 @@ class _DollhouseTarget extends StatelessWidget {
                           color: isHovering
                               ? const Color(0xFFFEF3C7) // Amber 100
                               : isCorrect
-                                  ? const Color(0xFFECFDF5) // Emerald 50
-                                  : isIncorrect
-                                      ? const Color(0xFFFFF1F2) // Rose 50
-                                      : const Color(0xFFFFFBEB), // Cream amber 50
+                              ? const Color(0xFFECFDF5) // Emerald 50
+                              : isIncorrect
+                              ? const Color(0xFFFFF1F2) // Rose 50
+                              : const Color(0xFFFFFBEB), // Cream amber 50
                           borderRadius: BorderRadius.circular(16.r),
                           border: Border.all(
                             color: isHovering
                                 ? const Color(0xFFF59E0B) // Amber 500
                                 : isCorrect
-                                    ? AppColors.emerald500
-                                    : isIncorrect
-                                        ? AppColors.rose500
-                                        : const Color(0xFFB45309), // Amber 700
+                                ? AppColors.emerald500
+                                : isIncorrect
+                                ? AppColors.rose500
+                                : const Color(0xFFB45309), // Amber 700
                             width: isHovering ? 4.r : 3.r,
                           ),
                           boxShadow: [
                             BoxShadow(
                               color: isHovering
-                                  ? const Color(0xFFF59E0B).withValues(alpha: 0.35)
+                                  ? const Color(
+                                      0xFFF59E0B,
+                                    ).withValues(alpha: 0.35)
                                   : Colors.black.withValues(alpha: 0.14),
                               blurRadius: isHovering ? 20 : 12,
                               offset: const Offset(0, 8),
@@ -336,8 +346,8 @@ class _RoofWidget extends StatelessWidget {
             roofColor: isHovering
                 ? const Color(0xFFEA580C) // Vibrant orange-red
                 : isCorrect
-                    ? AppColors.emerald600
-                    : AppColors.red500,
+                ? AppColors.emerald600
+                : AppColors.red500,
             eavesColor: const Color(0xFF991B1B), // Deep crimson eaves
           ),
         ),
@@ -351,10 +361,7 @@ class _RoofWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
-              border: Border.all(
-                color: const Color(0xFFB45309),
-                width: 2.r,
-              ),
+              border: Border.all(color: const Color(0xFFB45309), width: 2.r),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.15),
@@ -489,8 +496,8 @@ class _DollhouseInterior extends StatelessWidget {
           child: isCorrect
               ? _buildCorrectCelebration(context)
               : isHovering
-                  ? _buildHoverPrompt(context)
-                  : _buildAwaitingState(context),
+              ? _buildHoverPrompt(context)
+              : _buildAwaitingState(context),
         ),
       ),
     );
@@ -504,10 +511,7 @@ class _DollhouseInterior extends StatelessWidget {
       key: const ValueKey('correct_celebration'),
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          emoji,
-          style: TextStyle(fontSize: 36.sp),
-        ),
+        Text(emoji, style: TextStyle(fontSize: 36.sp)),
         SizedBox(width: 8.w),
         Flexible(
           child: Container(
@@ -519,7 +523,11 @@ class _DollhouseInterior extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.r),
+                Icon(
+                  Icons.check_circle_rounded,
+                  color: Colors.white,
+                  size: 16.r,
+                ),
                 SizedBox(width: 6.w),
                 Flexible(
                   child: Text(
@@ -684,7 +692,9 @@ class _OptionsFloorArea extends StatelessWidget {
         final isSelected = (option == selectedOption);
 
         return Padding(
-          padding: EdgeInsets.only(bottom: index == options.length - 1 ? 0 : 8.h),
+          padding: EdgeInsets.only(
+            bottom: index == options.length - 1 ? 0 : 8.h,
+          ),
           child: _HomeOptionCard(
             optionText: option,
             index: index,
@@ -855,7 +865,10 @@ class _HomeOptionCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle,
-                  border: Border.all(color: cardBorder.withValues(alpha: 0.6), width: 1.2.r),
+                  border: Border.all(
+                    color: cardBorder.withValues(alpha: 0.6),
+                    width: 1.2.r,
+                  ),
                 ),
                 child: Center(
                   child: Icon(

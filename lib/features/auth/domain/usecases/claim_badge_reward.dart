@@ -13,4 +13,3 @@ class ClaimBadgeReward extends UseCase<void, String> {
   Future<Either<Failure, void>> call(String badgeId) =>
       repository.claimBadgeReward(badgeId);
 }
-

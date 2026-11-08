@@ -45,10 +45,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
 
     final displayName = childName != null && childName!.isNotEmpty
         ? childName!
-        : context.tr(
-            'kids_zone.little_explorer',
-            fallback: 'Little Explorer',
-          );
+        : context.tr('kids_zone.little_explorer', fallback: 'Little Explorer');
 
     return SliverToBoxAdapter(
       child: Padding(

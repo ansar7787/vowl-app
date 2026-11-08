@@ -141,7 +141,8 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   String get latestAppVersion => _remoteConfig.getString(keyLatestAppVersion);
 
   @override
-  String get updateReleaseNotes => _remoteConfig.getString(keyUpdateReleaseNotes);
+  String get updateReleaseNotes =>
+      _remoteConfig.getString(keyUpdateReleaseNotes);
 
   @override
   String get updateStoreUrl => _remoteConfig.getString(keyUpdateStoreUrl);

@@ -56,15 +56,13 @@ void main() {
     instruction: 'Which shape matches a big round pizza fresh out of the oven?',
     question: '?',
     correctAnswer: 'Circle',
-    options: [
-      'Circle',
-      'Triangle',
-      'Square',
-    ],
+    options: ['Circle', 'Triangle', 'Square'],
     hint: 'Think of something round that has no corners at all.',
     emoji: '🍕',
-    explanation: 'A pizza is round all over with no straight edges, just like a circle!',
-    funFact: 'A circle is perfectly round, so every point on its edge is the same distance from the middle.',
+    explanation:
+        'A pizza is round all over with no straight edges, just like a circle!',
+    funFact:
+        'A circle is perfectly round, so every point on its edge is the same distance from the middle.',
     metadata: {'subtype': 'basic_2d_shapes'},
   );
 
@@ -76,11 +74,7 @@ void main() {
         'Which shape is the simplest possible polygon, has the fewest lines of symmetry among the regular polygons in this game, and is also used to build both pyramids and hexagons?',
     question: '?',
     correctAnswer: 'Triangle',
-    options: [
-      'Triangle',
-      'Pentagon',
-      'Rectangular Prism',
-    ],
+    options: ['Triangle', 'Pentagon', 'Rectangular Prism'],
     hint: 'Think of a shape with three sides.',
     emoji: '📐',
     explanation: 'A triangle is the simplest polygon with three sides.',
@@ -110,9 +104,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer(
-      (_) => const Stream<KidsState>.empty(),
-    );
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -124,34 +118,45 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer(
-      (_) => const Stream<AuthState>.empty(),
-    );
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
     when(() => mockTTSService.stop()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX()).thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments[0] as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments[0] as String);
 
     if (di.sl.isRegistered<KidsTTSService>()) {
       di.sl.unregister<KidsTTSService>();
@@ -177,8 +182,10 @@ void main() {
   });
 
   tearDown(() {
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsAudioService>())
+      di.sl.unregister<KidsAudioService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
@@ -236,7 +243,9 @@ void main() {
 
         // 1. Clue Text on Banner
         expect(
-          find.text('Which shape matches a big round pizza fresh out of the oven?'),
+          find.text(
+            'Which shape matches a big round pizza fresh out of the oven?',
+          ),
           findsAtLeastNWidgets(1),
         );
 
@@ -316,9 +325,7 @@ void main() {
         verify(() => mockTTSService.speak('Square', force: true)).called(1);
         verify(() => mockHapticService.selection()).called(1);
         // Verify SubmitKidsAnswer was NOT submitted
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
       },
     );
 
@@ -358,7 +365,9 @@ void main() {
         expect(blueprintTarget, findsOneWidget);
 
         // Perform drag and drop gesture
-        final gesture = await tester.startGesture(tester.getCenter(circleDraggable));
+        final gesture = await tester.startGesture(
+          tester.getCenter(circleDraggable),
+        );
         await tester.pump(const Duration(milliseconds: 100));
 
         await gesture.moveTo(tester.getCenter(blueprintTarget));
@@ -386,52 +395,47 @@ void main() {
       },
     );
 
-    testWidgets(
-      'already answered state disables re-submitting upon taps',
-      (tester) async {
-        final answeredState = testLoadedState.copyWith(
-          answerStatus: AnswerStatus.correct,
-        );
+    testWidgets('already answered state disables re-submitting upon taps', (
+      tester,
+    ) async {
+      final answeredState = testLoadedState.copyWith(
+        answerStatus: AnswerStatus.correct,
+      );
 
-        await pumpShapesScreen(tester, stateOverride: answeredState);
+      await pumpShapesScreen(tester, stateOverride: answeredState);
 
-        // Blocks are no longer wrapped in interactive Draggables
-        expect(find.byType(Draggable<String>), findsNothing);
+      // Blocks are no longer wrapped in interactive Draggables
+      expect(find.byType(Draggable<String>), findsNothing);
 
-        // Tapping the block text does nothing
-        await tester.tap(find.text('Circle'), warnIfMissed: false);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 250));
+      // Tapping the block text does nothing
+      await tester.tap(find.text('Circle'), warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 250));
 
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
-      },
-    );
+      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+    });
 
-    testWidgets(
-      'renders cleanly on compact 360x640 phone without overflow',
-      (tester) async {
-        await pumpShapesScreen(tester, customSize: const Size(360, 640));
+    testWidgets('renders cleanly on compact 360x640 phone without overflow', (
+      tester,
+    ) async {
+      await pumpShapesScreen(tester, customSize: const Size(360, 640));
 
-        expect(tester.takeException(), isNull);
-        expect(find.text('Circle'), findsOneWidget);
-        expect(find.text('Triangle'), findsOneWidget);
-        expect(find.text('Square'), findsOneWidget);
-      },
-    );
+      expect(tester.takeException(), isNull);
+      expect(find.text('Circle'), findsOneWidget);
+      expect(find.text('Triangle'), findsOneWidget);
+      expect(find.text('Square'), findsOneWidget);
+    });
 
-    testWidgets(
-      'renders cleanly on large 430x932 phone without overflow',
-      (tester) async {
-        await pumpShapesScreen(tester, customSize: const Size(430, 932));
+    testWidgets('renders cleanly on large 430x932 phone without overflow', (
+      tester,
+    ) async {
+      await pumpShapesScreen(tester, customSize: const Size(430, 932));
 
-        expect(tester.takeException(), isNull);
-        expect(find.text('Circle'), findsOneWidget);
-        expect(find.text('Triangle'), findsOneWidget);
-        expect(find.text('Square'), findsOneWidget);
-      },
-    );
+      expect(tester.takeException(), isNull);
+      expect(find.text('Circle'), findsOneWidget);
+      expect(find.text('Triangle'), findsOneWidget);
+      expect(find.text('Square'), findsOneWidget);
+    });
 
     testWidgets(
       'renders cleanly on ultra-narrow 320x568 phone without overflow',
@@ -464,37 +468,43 @@ void main() {
         expect(find.text('Triangle'), findsOneWidget);
         expect(find.text('Pentagon'), findsOneWidget);
         expect(find.text('Rectangular Prism'), findsOneWidget);
-        expect(find.text('📦'), findsOneWidget); // 3D symbol for rectangular prism
+        expect(
+          find.text('📦'),
+          findsOneWidget,
+        ); // 3D symbol for rectangular prism
       },
     );
 
     testWidgets(
       'ShapeOptionData.parse extracts geometric symbols and flags 3D shapes correctly',
       (tester) async {
-      final circle = ShapeOptionData.parse('Circle');
-      expect(circle.title, 'Circle');
-      expect(circle.shapeSymbol, '●');
-      expect(circle.is3D, isFalse);
+        final circle = ShapeOptionData.parse('Circle');
+        expect(circle.title, 'Circle');
+        expect(circle.shapeSymbol, '●');
+        expect(circle.is3D, isFalse);
 
-      final triangle = ShapeOptionData.parse('Triangle');
-      expect(triangle.shapeSymbol, '▲');
+        final triangle = ShapeOptionData.parse('Triangle');
+        expect(triangle.shapeSymbol, '▲');
 
-      final prism = ShapeOptionData.parse('Rectangular Prism');
-      expect(prism.title, 'Rectangular Prism');
-      expect(prism.shapeSymbol, '📦');
-      expect(prism.is3D, isTrue);
+        final prism = ShapeOptionData.parse('Rectangular Prism');
+        expect(prism.title, 'Rectangular Prism');
+        expect(prism.shapeSymbol, '📦');
+        expect(prism.is3D, isTrue);
 
-      final cube = ShapeOptionData.parse('Cube');
-      expect(cube.shapeSymbol, '🎲');
-      expect(cube.is3D, isTrue);
-    });
+        final cube = ShapeOptionData.parse('Cube');
+        expect(cube.shapeSymbol, '🎲');
+        expect(cube.is3D, isTrue);
+      },
+    );
 
     testWidgets(
       'GameInstructionService returns authentic Shapes briefing matching crane mechanics',
       (tester) async {
         await pumpShapesScreen(tester);
 
-        final BuildContext context = tester.element(find.byType(KidsShapesLayout));
+        final BuildContext context = tester.element(
+          find.byType(KidsShapesLayout),
+        );
         final briefing = GameInstructionService.getBriefing(
           context,
           null,
@@ -506,80 +516,107 @@ void main() {
         expect(briefing.actionText, 'Start Playing');
         expect(briefing.rules.length, 3);
         expect(briefing.rules.any((r) => r.contains('shape clue')), isTrue);
-        expect(briefing.rules.any((r) => r.contains('matching shape block')), isTrue);
+        expect(
+          briefing.rules.any((r) => r.contains('matching shape block')),
+          isTrue,
+        );
         expect(briefing.tip.contains('PRO TIP:'), isFalse);
-        expect(briefing.tip.contains('Tip: Count the sides and corners'), isTrue);
+        expect(
+          briefing.tip.contains('Tip: Count the sides and corners'),
+          isTrue,
+        );
       },
     );
 
-    test('StoryService contains authentic milestone beats for Shapes from Level 1 to 200', () {
-      final shapesScripts = StoryServiceImpl.kidsScripts['shapes'];
-      expect(shapesScripts, isNotNull);
-      expect(shapesScripts!.length, 6);
+    test(
+      'StoryService contains authentic milestone beats for Shapes from Level 1 to 200',
+      () {
+        final shapesScripts = StoryServiceImpl.kidsScripts['shapes'];
+        expect(shapesScripts, isNotNull);
+        expect(shapesScripts!.length, 6);
 
-      // Verify Level 1 (Beat 0)
-      expect(shapesScripts[0], contains('Circles, squares, and triangles!'));
-      expect(shapesScripts[0], contains('explore shapes all around us'));
+        // Verify Level 1 (Beat 0)
+        expect(shapesScripts[0], contains('Circles, squares, and triangles!'));
+        expect(shapesScripts[0], contains('explore shapes all around us'));
 
-      // Verify Level 10 (Beat 1)
-      expect(shapesScripts[1], contains('first 10 levels'));
-      expect(shapesScripts[1], contains('straight sides, round curves, and corners'));
+        // Verify Level 10 (Beat 1)
+        expect(shapesScripts[1], contains('first 10 levels'));
+        expect(
+          shapesScripts[1],
+          contains('straight sides, round curves, and corners'),
+        );
 
-      // Verify Level 20 (Beat 2)
-      expect(shapesScripts[2], contains('Twenty levels complete!'));
+        // Verify Level 20 (Beat 2)
+        expect(shapesScripts[2], contains('Twenty levels complete!'));
 
-      // Verify Level 50 (Beat 3)
-      expect(shapesScripts[3], contains('Fifty levels done!'));
-      expect(shapesScripts[3], contains('2D shapes to solid 3D cubes'));
+        // Verify Level 50 (Beat 3)
+        expect(shapesScripts[3], contains('Fifty levels done!'));
+        expect(shapesScripts[3], contains('2D shapes to solid 3D cubes'));
 
-      // Verify Level 100 (Beat 4)
-      expect(shapesScripts[4], contains('One hundred levels of shapes!'));
-      expect(shapesScripts[4], contains('how shapes connect, stack, and fit'));
+        // Verify Level 100 (Beat 4)
+        expect(shapesScripts[4], contains('One hundred levels of shapes!'));
+        expect(
+          shapesScripts[4],
+          contains('how shapes connect, stack, and fit'),
+        );
 
-      // Verify Level 200 (Beat 5)
-      expect(shapesScripts[5], contains('Two hundred levels completed!'));
-      expect(shapesScripts[5], contains('sharp eye for every pattern and form'));
+        // Verify Level 200 (Beat 5)
+        expect(shapesScripts[5], contains('Two hundred levels completed!'));
+        expect(
+          shapesScripts[5],
+          contains('sharp eye for every pattern and form'),
+        );
 
-      // Verify no robotic buzzwords or fantasy personas exist in any beat
-      for (final beat in shapesScripts) {
-        expect(beat.contains('PRO TIP'), isFalse);
-        expect(beat.contains('Geometry Genius'), isFalse);
-        expect(beat.contains('Shape Shifter'), isFalse);
-        expect(beat.contains('Grand Architect'), isFalse);
-        expect(beat.contains('Master of Forms'), isFalse);
-        expect(beat.contains('Shape Kingdom'), isFalse);
-      }
-    });
+        // Verify no robotic buzzwords or fantasy personas exist in any beat
+        for (final beat in shapesScripts) {
+          expect(beat.contains('PRO TIP'), isFalse);
+          expect(beat.contains('Geometry Genius'), isFalse);
+          expect(beat.contains('Shape Shifter'), isFalse);
+          expect(beat.contains('Grand Architect'), isFalse);
+          expect(beat.contains('Master of Forms'), isFalse);
+          expect(beat.contains('Shape Kingdom'), isFalse);
+        }
+      },
+    );
 
-    testWidgets('Accessibility Semantics labels are properly configured for screen readers', (tester) async {
-      await pumpShapesScreen(tester);
+    testWidgets(
+      'Accessibility Semantics labels are properly configured for screen readers',
+      (tester) async {
+        await pumpShapesScreen(tester);
 
-      // Verify clue banner semantics
-      expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.label != null &&
-            w.properties.label!.contains('Shape clue:')),
-        findsOneWidget,
-      );
+        // Verify clue banner semantics
+        expect(
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label != null &&
+                w.properties.label!.contains('Shape clue:'),
+          ),
+          findsOneWidget,
+        );
 
-      // Verify toy block semantics
-      expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.label != null &&
-            w.properties.label!.contains('Circle shape block')),
-        findsOneWidget,
-      );
+        // Verify toy block semantics
+        expect(
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label != null &&
+                w.properties.label!.contains('Circle shape block'),
+          ),
+          findsOneWidget,
+        );
 
-      // Verify pronunciation button semantics
-      expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.label != null &&
-            w.properties.label!.contains('Hear pronunciation for Circle')),
-        findsOneWidget,
-      );
-    });
+        // Verify pronunciation button semantics
+        expect(
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label != null &&
+                w.properties.label!.contains('Hear pronunciation for Circle'),
+          ),
+          findsOneWidget,
+        );
+      },
+    );
   });
 }

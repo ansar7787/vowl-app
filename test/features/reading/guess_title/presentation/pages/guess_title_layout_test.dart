@@ -123,12 +123,14 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -140,8 +142,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(
       () => mockLocaleService.tr(
@@ -188,8 +191,12 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -198,7 +205,9 @@ void main() {
         tag: any(named: 'tag'),
       ),
     ).thenReturn(null);
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
@@ -259,9 +268,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: GuessTitleScreen(level: level),
-            ),
+            home: Scaffold(body: GuessTitleScreen(level: level)),
           ),
         ),
       ),
@@ -272,181 +279,188 @@ void main() {
 
   group('GuessTitleScreen - Production Layout & Mechanics Tests', () {
     testWidgets(
-        '1. Initial rendering of instruction, cargo crate passage, and label cards',
-        (tester) async {
-      await pumpGuessTitle(tester);
+      '1. Initial rendering of instruction, cargo crate passage, and label cards',
+      (tester) async {
+        await pumpGuessTitle(tester);
 
-      // Verify instruction pill
-      expect(find.byType(GuessTitleInstruction), findsOneWidget);
-      expect(
-        find.textContaining('TITLE FOR THE PASSAGE'),
-        findsOneWidget,
-      );
+        // Verify instruction pill
+        expect(find.byType(GuessTitleInstruction), findsOneWidget);
+        expect(find.textContaining('TITLE FOR THE PASSAGE'), findsOneWidget);
 
-      // Verify cargo crate with passage
-      expect(find.byType(GuessTitleCargoCrate), findsOneWidget);
-      expect(
-        find.textContaining('Before Maria goes to the market'),
-        findsOneWidget,
-      );
-      expect(find.text('DRAG & DROP TITLE HERE'), findsOneWidget);
+        // Verify cargo crate with passage
+        expect(find.byType(GuessTitleCargoCrate), findsOneWidget);
+        expect(
+          find.textContaining('Before Maria goes to the market'),
+          findsOneWidget,
+        );
+        expect(find.text('DRAG & DROP TITLE HERE'), findsOneWidget);
 
-      // Verify label cards rack with 4 options (rendered Title Case)
-      expect(find.byType(GuessTitleLabelRack), findsOneWidget);
-      expect(find.text('A Guide to Choosing Fresh Fruit'), findsOneWidget);
-      expect(find.text('Cleaning the Kitchen'), findsOneWidget);
-      expect(find.text('Shopping With a List'), findsOneWidget);
-      expect(find.text('Cooking Dinner for Friends'), findsOneWidget);
-    });
+        // Verify label cards rack with 4 options (rendered Title Case)
+        expect(find.byType(GuessTitleLabelRack), findsOneWidget);
+        expect(find.text('A Guide to Choosing Fresh Fruit'), findsOneWidget);
+        expect(find.text('Cleaning the Kitchen'), findsOneWidget);
+        expect(find.text('Shopping With a List'), findsOneWidget);
+        expect(find.text('Cooking Dinner for Friends'), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        '2. Drag-and-drop correct label onto cargo crate triggers success audio/haptics and dispatches SubmitAnswer(true)',
-        (tester) async {
-      await pumpGuessTitle(tester);
+      '2. Drag-and-drop correct label onto cargo crate triggers success audio/haptics and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpGuessTitle(tester);
 
-      final source = find.text('Shopping With a List');
-      final target = find.text('DRAG & DROP TITLE HERE');
+        final source = find.text('Shopping With a List');
+        final target = find.text('DRAG & DROP TITLE HERE');
 
-      final firstLocation = tester.getCenter(source);
-      final targetLocation = tester.getCenter(target);
+        final firstLocation = tester.getCenter(source);
+        final targetLocation = tester.getCenter(target);
 
-      final gesture = await tester.startGesture(firstLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveTo(targetLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final gesture = await tester.startGesture(firstLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(targetLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify success feedback
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
-
-    testWidgets(
-        '3. Drag-and-drop incorrect label onto cargo crate triggers error audio/haptics and dispatches SubmitAnswer(false)',
-        (tester) async {
-      await pumpGuessTitle(tester);
-
-      final source = find.text('Cleaning the Kitchen');
-      final target = find.text('DRAG & DROP TITLE HERE');
-
-      final firstLocation = tester.getCenter(source);
-      final targetLocation = tester.getCenter(target);
-
-      final gesture = await tester.startGesture(firstLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveTo(targetLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      // Verify wrong feedback
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify success feedback
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
     testWidgets(
-        '4. Tap-to-answer correct option docks title and dispatches SubmitAnswer(true)',
-        (tester) async {
-      await pumpGuessTitle(tester);
+      '3. Drag-and-drop incorrect label onto cargo crate triggers error audio/haptics and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpGuessTitle(tester);
 
-      final correctOption = find.text('Shopping With a List');
-      expect(correctOption, findsOneWidget);
+        final source = find.text('Cleaning the Kitchen');
+        final target = find.text('DRAG & DROP TITLE HERE');
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final firstLocation = tester.getCenter(source);
+        final targetLocation = tester.getCenter(target);
 
-      // Verify feedback and submission
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        final gesture = await tester.startGesture(firstLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(targetLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-    testWidgets(
-        '5. Tap-to-answer incorrect option docks title and dispatches SubmitAnswer(false)',
-        (tester) async {
-      await pumpGuessTitle(tester);
-
-      final wrongOption = find.text('Cleaning the Kitchen');
-      expect(wrongOption, findsOneWidget);
-
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      // Verify feedback and submission
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify wrong feedback
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
     testWidgets(
-        '6. Post-answer state reveals explanation card and locks cargo crate',
-        (tester) async {
-      const answeredState = ReadingLoaded(
-        quests: [testGuessTitleQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+      '4. Tap-to-answer correct option docks title and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpGuessTitle(tester);
 
-      await pumpGuessTitle(tester, state: answeredState);
+        final correctOption = find.text('Shopping With a List');
+        expect(correctOption, findsOneWidget);
 
-      // Verify explanation card is visible
-      expect(find.text('Why this title?'), findsOneWidget);
-      expect(
-        find.textContaining('It names the list that links checking the kitchen'),
-        findsOneWidget,
-      );
-      expect(
-        find.textContaining('Each sentence belongs to one plan'),
-        findsNWidgets(2),
-      );
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify DragTarget rejects drops when answered
-      final dragTargetFinder = find.byType(DragTarget<String>);
-      expect(dragTargetFinder, findsOneWidget);
-      final dragTargetWidget =
-          tester.widget<DragTarget<String>>(dragTargetFinder);
-      expect(
-        dragTargetWidget.onWillAcceptWithDetails!(
-          DragTargetDetails(
-            data: 'Shopping With a List',
-            offset: Offset.zero,
+        // Verify feedback and submission
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
+
+    testWidgets(
+      '5. Tap-to-answer incorrect option docks title and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpGuessTitle(tester);
+
+        final wrongOption = find.text('Cleaning the Kitchen');
+        expect(wrongOption, findsOneWidget);
+
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+
+        // Verify feedback and submission
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
+
+    testWidgets(
+      '6. Post-answer state reveals explanation card and locks cargo crate',
+      (tester) async {
+        const answeredState = ReadingLoaded(
+          quests: [testGuessTitleQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
+
+        await pumpGuessTitle(tester, state: answeredState);
+
+        // Verify explanation card is visible
+        expect(find.text('Why this title?'), findsOneWidget);
+        expect(
+          find.textContaining(
+            'It names the list that links checking the kitchen',
           ),
-        ),
-        isFalse,
-      );
-    });
+          findsOneWidget,
+        );
+        expect(
+          find.textContaining('Each sentence belongs to one plan'),
+          findsNWidgets(2),
+        );
+
+        // Verify DragTarget rejects drops when answered
+        final dragTargetFinder = find.byType(DragTarget<String>);
+        expect(dragTargetFinder, findsOneWidget);
+        final dragTargetWidget = tester.widget<DragTarget<String>>(
+          dragTargetFinder,
+        );
+        expect(
+          dragTargetWidget.onWillAcceptWithDetails!(
+            DragTargetDetails(
+              data: 'Shopping With a List',
+              offset: Offset.zero,
+            ),
+          ),
+          isFalse,
+        );
+      },
+    );
 
     testWidgets(
-        '7. Answered incorrect state keeps label rack visible with correct answer highlighted',
-        (tester) async {
-      const wrongAnsweredState = ReadingLoaded(
-        quests: [testGuessTitleQuest],
-        currentIndex: 0,
-        livesRemaining: 2,
-        answerStatus: AnswerStatus.incorrect,
-      );
+      '7. Answered incorrect state keeps label rack visible with correct answer highlighted',
+      (tester) async {
+        const wrongAnsweredState = ReadingLoaded(
+          quests: [testGuessTitleQuest],
+          currentIndex: 0,
+          livesRemaining: 2,
+          answerStatus: AnswerStatus.incorrect,
+        );
 
-      await pumpGuessTitle(tester, state: wrongAnsweredState);
+        await pumpGuessTitle(tester, state: wrongAnsweredState);
 
-      // Verify label rack remains visible to show correct answer
-      expect(find.byType(GuessTitleLabelRack), findsOneWidget);
-      expect(find.text('Shopping With a List'), findsOneWidget);
+        // Verify label rack remains visible to show correct answer
+        expect(find.byType(GuessTitleLabelRack), findsOneWidget);
+        expect(find.text('Shopping With a List'), findsOneWidget);
 
-      // Verify explanation card is also shown
-      expect(find.text('Why this title?'), findsOneWidget);
-    });
+        // Verify explanation card is also shown
+        expect(find.text('Why this title?'), findsOneWidget);
+      },
+    );
 
-    testWidgets(
-        '8. Tapping hint button dispatches ReadingHintUsed',
-        (tester) async {
+    testWidgets('8. Tapping hint button dispatches ReadingHintUsed', (
+      tester,
+    ) async {
       await pumpGuessTitle(tester);
 
       final hintFinder = find.byType(QuestHintButton);
@@ -459,29 +473,30 @@ void main() {
     });
 
     testWidgets(
-        '9. Tapping continue button when answered dispatches NextQuestion',
-        (tester) async {
-      const answeredState = ReadingLoaded(
-        quests: [testGuessTitleQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+      '9. Tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        const answeredState = ReadingLoaded(
+          quests: [testGuessTitleQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpGuessTitle(tester, state: answeredState);
+        await pumpGuessTitle(tester, state: answeredState);
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(continueBtn);
+        await tester.pump();
 
-      verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets(
-        '10. ReadingInitial state renders GameShimmerLoading',
-        (tester) async {
+    testWidgets('10. ReadingInitial state renders GameShimmerLoading', (
+      tester,
+    ) async {
       await pumpGuessTitle(tester, state: const ReadingInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
@@ -489,23 +504,24 @@ void main() {
     });
 
     testWidgets(
-        '11. Level 1 displays GameBriefingLayer and dismisses on start tap',
-        (tester) async {
-      await pumpGuessTitle(tester, level: 1);
+      '11. Level 1 displays GameBriefingLayer and dismisses on start tap',
+      (tester) async {
+        await pumpGuessTitle(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      final startBtn = find.text('PLAY NOW');
-      expect(startBtn, findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        final startBtn = find.text('PLAY NOW');
+        expect(startBtn, findsOneWidget);
 
-      await tester.tap(startBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(startBtn);
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets(
-        '12. Dark theme mode renders cleanly without errors',
-        (tester) async {
+    testWidgets('12. Dark theme mode renders cleanly without errors', (
+      tester,
+    ) async {
       await pumpGuessTitle(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(GuessTitleCargoCrate), findsOneWidget);
@@ -517,17 +533,14 @@ void main() {
     });
 
     testWidgets(
-        '13. Compact 320dp small screen layout safety with zero overflow',
-        (tester) async {
-      await pumpGuessTitle(
-        tester,
-        width: 320,
-        height: 568,
-      );
+      '13. Compact 320dp small screen layout safety with zero overflow',
+      (tester) async {
+        await pumpGuessTitle(tester, width: 320, height: 568);
 
-      expect(find.byType(GuessTitleScreen), findsOneWidget);
-      expect(find.byType(GuessTitleCargoCrate), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(GuessTitleScreen), findsOneWidget);
+        expect(find.byType(GuessTitleCargoCrate), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

@@ -38,11 +38,7 @@ class ReadingInferenceInstruction extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.auto_stories_rounded,
-              size: 14.r,
-              color: primaryColor,
-            ),
+            Icon(Icons.auto_stories_rounded, size: 14.r, color: primaryColor),
             SizedBox(width: 8.w),
             Flexible(
               fit: FlexFit.loose,

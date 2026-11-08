@@ -23,4 +23,3 @@ class GameBriefingScope extends InheritedWidget {
   @override
   bool updateShouldNotify(GameBriefingScope oldWidget) => false;
 }
-

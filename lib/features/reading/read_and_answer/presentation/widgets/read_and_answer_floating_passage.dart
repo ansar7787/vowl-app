@@ -176,7 +176,9 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
       );
     }
 
-    final cleanActive = activeWord.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
+    final cleanActive = activeWord
+        .replaceAll(RegExp(r'[^\w]'), '')
+        .toLowerCase();
     final tokens = text.split(' ');
 
     return RichText(
@@ -193,7 +195,9 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
         children: tokens.asMap().entries.map((entry) {
           final token = entry.value;
           final isLast = entry.key == tokens.length - 1;
-          final cleanToken = token.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
+          final cleanToken = token
+              .replaceAll(RegExp(r'[^\w]'), '')
+              .toLowerCase();
           final isMatch = cleanToken.isNotEmpty && cleanToken == cleanActive;
 
           return TextSpan(

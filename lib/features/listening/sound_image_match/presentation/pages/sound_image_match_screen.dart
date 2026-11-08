@@ -53,10 +53,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   @override
   void initState() {
@@ -202,13 +200,13 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                           'sound_image_match_instruction',
                                         ),
                                         color: theme.primaryColor,
-                                        instruction:
-                                            context.tr(
-                                              'games.soundImageMatch_instruction',
-                                              fallback:
-                                                  InstructionHelper
-                                                      .getInstruction(quest),
-                                            ),
+                                        instruction: context.tr(
+                                          'games.soundImageMatch_instruction',
+                                          fallback:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
+                                        ),
                                       ),
                                       SizedBox(height: 18.h),
                                       SoundImageMatchEmitter(

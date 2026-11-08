@@ -116,16 +116,16 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                    ? const Color(0xFF11131E).withValues(alpha: 0.97)
-                    : Colors.white.withValues(alpha: 0.98)),
+                      ? const Color(0xFF11131E).withValues(alpha: 0.97)
+                      : Colors.white.withValues(alpha: 0.98)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border(
               top: BorderSide(
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100),
                 width: 1.2,
               ),
             ),
@@ -589,7 +589,11 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                           Navigator.of(context).pop();
                           Navigator.of(context).push(ReferralHubScreen.route());
                         },
-                        icon: Icon(LucideIcons.gift, size: 14.sp, color: slide.accentColor),
+                        icon: Icon(
+                          LucideIcons.gift,
+                          size: 14.sp,
+                          color: slide.accentColor,
+                        ),
                         label: Text(
                           'Have a Friend\'s Referral Code? Enter Pass',
                           style: TextStyle(

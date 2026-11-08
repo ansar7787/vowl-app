@@ -905,11 +905,7 @@ void main() {
           questCount: 5,
         );
 
-        await pumpModifierPlacement(
-          tester,
-          level: 1,
-          state: completeState,
-        );
+        await pumpModifierPlacement(tester, level: 1, state: completeState);
 
         expect(find.byType(GameBriefingLayer), findsNothing);
       },

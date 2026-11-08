@@ -26,7 +26,8 @@ class TopicBatchCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final progressLabel = context.tr(
@@ -72,7 +73,9 @@ class TopicBatchCounter extends StatelessWidget {
               );
               return reduceMotion
                   ? pip
-                  : pip.animate(target: isFilled ? 1 : 0).shimmer(duration: 800.ms);
+                  : pip
+                        .animate(target: isFilled ? 1 : 0)
+                        .shimmer(duration: 800.ms);
             }),
           ),
         ],

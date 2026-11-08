@@ -35,10 +35,7 @@ class SnapQuizDialog extends StatefulWidget {
     return showDialog<void>(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => SnapQuizDialog(
-        quests: quests,
-        title: title,
-      ),
+      builder: (ctx) => SnapQuizDialog(quests: quests, title: title),
     );
   }
 
@@ -124,7 +121,9 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
         if (_mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
           Timer(const Duration(milliseconds: 1400), () {
             try {
-              di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+              di.sl<PraiseService>().givePraise(
+                context: PraiseContext.flawless,
+              );
             } catch (_) {}
           });
         }
@@ -372,7 +371,11 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
           children: [
             Row(
               children: [
-                Icon(LucideIcons.sparkles, size: 16.r, color: AppColors.teal500),
+                Icon(
+                  LucideIcons.sparkles,
+                  size: 16.r,
+                  color: AppColors.teal500,
+                ),
                 SizedBox(width: 8.w),
                 Text(
                   widget.title,
@@ -475,13 +478,20 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
                 onTap: () => _onOptionSelected(index),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 14.h,
+                  ),
                   decoration: BoxDecoration(
                     color: bgColor,
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: borderColor,
-                      width: isSelected || (_selectedOptionIndex != null && isCorrectOption) ? 2.w : 1.w,
+                      width:
+                          isSelected ||
+                              (_selectedOptionIndex != null && isCorrectOption)
+                          ? 2.w
+                          : 1.w,
                     ),
                   ),
                   child: Row(
@@ -499,9 +509,17 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
                       ),
                       if (_selectedOptionIndex != null)
                         if (isCorrectOption)
-                          Icon(LucideIcons.checkCircle2, color: AppColors.teal500, size: 20.r)
+                          Icon(
+                            LucideIcons.checkCircle2,
+                            color: AppColors.teal500,
+                            size: 20.r,
+                          )
                         else if (isSelected)
-                          Icon(LucideIcons.xCircle, color: AppColors.rose500, size: 20.r),
+                          Icon(
+                            LucideIcons.xCircle,
+                            color: AppColors.rose500,
+                            size: 20.r,
+                          ),
                     ],
                   ),
                 ),

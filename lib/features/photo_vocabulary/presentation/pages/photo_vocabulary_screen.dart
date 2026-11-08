@@ -97,11 +97,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       alternativeDetectedWords: alts,
     );
 
-    SnapQuizDialog.show(
-      context,
-      quests: quests,
-      title: 'OBJECT CHALLENGE',
-    );
+    SnapQuizDialog.show(context, quests: quests, title: 'OBJECT CHALLENGE');
   }
 
   void _updateState() {
@@ -204,7 +200,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setStringList('photo_vocab_saved_words', _savedWords.toList());
+      await prefs.setStringList(
+        'photo_vocab_saved_words',
+        _savedWords.toList(),
+      );
     } catch (_) {}
 
     if (mounted) {
@@ -221,9 +220,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 args: [word],
                 fallback: 'Removed "$word" from your Vocab Notebook',
               ),
-        type: willSave
-            ? CustomSnackBarType.success
-            : CustomSnackBarType.info,
+        type: willSave ? CustomSnackBarType.success : CustomSnackBarType.info,
       );
     }
   }
@@ -238,7 +235,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           context: context,
           message: context.tr(
             'vocabulary.camera_permission_error',
-            fallback: 'Camera or photo permission denied. Please grant access in settings.',
+            fallback:
+                'Camera or photo permission denied. Please grant access in settings.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -302,7 +300,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 
       bool found = false;
       for (final l in confidentLabels) {
-        if (PhotoVocabularyDictionary.isBountyMatch(_currentBountyVal, l.label)) {
+        if (PhotoVocabularyDictionary.isBountyMatch(
+          _currentBountyVal,
+          l.label,
+        )) {
           found = true;
           break;
         }
@@ -556,38 +557,38 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 physics: const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics(),
                 ),
-              slivers: [
-                _buildSliverAppBar(context, isDark),
-                SliverToBoxAdapter(
-                  child: PhotoBountyTarget(
-                    currentBounty: _currentBountyVal,
-                    bountyFound: _bountyFoundVal,
-                    dailyCount: _dailyBountyCountVal,
-                    dailyLimit: _dailyBountyLimit,
-                    onShuffle: _onShuffleBounty,
+                slivers: [
+                  _buildSliverAppBar(context, isDark),
+                  SliverToBoxAdapter(
+                    child: PhotoBountyTarget(
+                      currentBounty: _currentBountyVal,
+                      bountyFound: _bountyFoundVal,
+                      dailyCount: _dailyBountyCountVal,
+                      dailyLimit: _dailyBountyLimit,
+                      onShuffle: _onShuffleBounty,
+                    ),
                   ),
-                ),
-                if (_imagePathVal == null)
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: PhotoEmptyState(onPickImage: _pickAndLabelImage),
-                  )
-                else ...[
-                  if (!_isProcessingVal &&
-                      !_hasErrorVal &&
-                      _labelsVal != null &&
-                      _labelsVal!.isNotEmpty) ...[
-                    _buildPhotoSummary(isDark),
-                    _buildVisualObjectBadgesSliver(isDark),
+                  if (_imagePathVal == null)
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: PhotoEmptyState(onPickImage: _pickAndLabelImage),
+                    )
+                  else ...[
+                    if (!_isProcessingVal &&
+                        !_hasErrorVal &&
+                        _labelsVal != null &&
+                        _labelsVal!.isNotEmpty) ...[
+                      _buildPhotoSummary(isDark),
+                      _buildVisualObjectBadgesSliver(isDark),
+                    ],
+                    _buildSliverResults(isDark),
                   ],
-                  _buildSliverResults(isDark),
-                ],
 
-                // Safe bottom padding for floating retake button
-                SliverToBoxAdapter(child: SizedBox(height: 120.h)),
-              ],
+                  // Safe bottom padding for floating retake button
+                  SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                ],
+              ),
             ),
-          ),
 
             // Confetti Celebration
             Align(
@@ -706,7 +707,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                       : Colors.amber.shade600.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: isDark ? Colors.amber.shade400 : Colors.amber.shade600,
+                    color: isDark
+                        ? Colors.amber.shade400
+                        : Colors.amber.shade600,
                     width: 1.w,
                   ),
                 ),
@@ -715,7 +718,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   children: [
                     Icon(
                       Icons.star_rounded,
-                      color: isDark ? Colors.amber.shade300 : AppColors.amber500,
+                      color: isDark
+                          ? Colors.amber.shade300
+                          : AppColors.amber500,
                       size: 14.r,
                     ),
                     SizedBox(width: 4.w),
@@ -725,7 +730,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.amber.shade300 : AppColors.amber500,
+                        color: isDark
+                            ? Colors.amber.shade300
+                            : AppColors.amber500,
                       ),
                     ),
                   ],
@@ -892,7 +899,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                            color: const Color(
+                              0xFF14B8A6,
+                            ).withValues(alpha: 0.4),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),
@@ -1020,7 +1029,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                            color: const Color(
+                              0xFF14B8A6,
+                            ).withValues(alpha: 0.4),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),
@@ -1128,7 +1139,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 ),
                 description: context.tr(
                   'vocabulary.retake_desc',
-                  fallback: 'Your current photo and translations will be cleared.',
+                  fallback:
+                      'Your current photo and translations will be cleared.',
                 ),
                 onQuit: () => _resetForNewPhoto(),
               );
@@ -1190,178 +1202,183 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           Container(color: Colors.black.withValues(alpha: 0.45)),
           // HUD Reticle Corners with Confined Scanning Laser
           Center(
-            child: Container(
-              width: 270.w,
-              height: 270.w,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: AppColors.teal500.withValues(alpha: 0.35),
-                  width: 1.5.w,
-                ),
-                color: Colors.black.withValues(alpha: 0.2),
-              ),
-              child: Stack(
-                clipBehavior: Clip.hardEdge,
-                children: [
-                  // Moving Laser Line - CONFINED INSIDE RETICLE BOX
-                  RepaintBoundary(
-                    child: AnimatedBuilder(
-                      animation: _scannerController,
-                      builder: (context, child) {
-                        return Align(
-                          alignment: Alignment(
-                            0,
-                            -1.0 + (_scannerController.value * 2.0),
-                          ),
-                          child: child,
-                        );
-                      },
-                      child: Container(
-                        height: 3.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColors.teal500.withValues(alpha: 0.0),
-                              AppColors.teal500,
-                              Colors.white,
-                              AppColors.teal500,
-                              AppColors.teal500.withValues(alpha: 0.0),
-                            ],
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.teal500,
-                              blurRadius: 12,
-                              spreadRadius: 3,
-                            ),
-                            BoxShadow(
-                              color: Colors.white.withValues(alpha: 0.8),
-                              blurRadius: 6,
-                              spreadRadius: 1,
-                            ),
-                          ],
+            child:
+                Container(
+                      width: 270.w,
+                      height: 270.w,
+                      clipBehavior: Clip.hardEdge,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: AppColors.teal500.withValues(alpha: 0.35),
+                          width: 1.5.w,
                         ),
+                        color: Colors.black.withValues(alpha: 0.2),
                       ),
-                    ),
-                  ),
+                      child: Stack(
+                        clipBehavior: Clip.hardEdge,
+                        children: [
+                          // Moving Laser Line - CONFINED INSIDE RETICLE BOX
+                          RepaintBoundary(
+                            child: AnimatedBuilder(
+                              animation: _scannerController,
+                              builder: (context, child) {
+                                return Align(
+                                  alignment: Alignment(
+                                    0,
+                                    -1.0 + (_scannerController.value * 2.0),
+                                  ),
+                                  child: child,
+                                );
+                              },
+                              child: Container(
+                                height: 3.h,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      AppColors.teal500.withValues(alpha: 0.0),
+                                      AppColors.teal500,
+                                      Colors.white,
+                                      AppColors.teal500,
+                                      AppColors.teal500.withValues(alpha: 0.0),
+                                    ],
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: AppColors.teal500,
+                                      blurRadius: 12,
+                                      spreadRadius: 3,
+                                    ),
+                                    BoxShadow(
+                                      color: Colors.white.withValues(
+                                        alpha: 0.8,
+                                      ),
+                                      blurRadius: 6,
+                                      spreadRadius: 1,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
 
-                  // Top Left Corner
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    child: Container(
-                      width: 36.w,
-                      height: 36.w,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
+                          // Top Left Corner
+                          Positioned(
+                            top: 0,
+                            left: 0,
+                            child: Container(
+                              width: 36.w,
+                              height: 36.w,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                  left: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          left: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
+                          // Top Right Corner
+                          Positioned(
+                            top: 0,
+                            right: 0,
+                            child: Container(
+                              width: 36.w,
+                              height: 36.w,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                  right: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          // Bottom Left Corner
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            child: Container(
+                              width: 36.w,
+                              height: 36.w,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                  left: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // Bottom Right Corner
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Container(
+                              width: 36.w,
+                              height: 36.w,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                  right: BorderSide(
+                                    color: AppColors.teal500,
+                                    width: 3.5.w,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // Scanner Center HUD
+                          Center(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                      Icons.camera_alt_rounded,
+                                      color: const Color(
+                                        0xFF14B8A6,
+                                      ).withValues(alpha: 0.9),
+                                      size: 46.r,
+                                    )
+                                    .animate(onPlay: (c) => c.repeat())
+                                    .shimmer(
+                                      duration: 1.seconds,
+                                      color: Colors.white,
+                                    ),
+                                SizedBox(height: 16.h),
+                                const _AnimatedScannerText(),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
+                    )
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scaleXY(
+                      begin: 0.98,
+                      end: 1.02,
+                      duration: 1.seconds,
+                      curve: Curves.easeInOut,
                     ),
-                  ),
-                  // Top Right Corner
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Container(
-                      width: 36.w,
-                      height: 36.w,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                          right: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Bottom Left Corner
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    child: Container(
-                      width: 36.w,
-                      height: 36.w,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                          left: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Bottom Right Corner
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      width: 36.w,
-                      height: 36.w,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                          right: BorderSide(
-                            color: AppColors.teal500,
-                            width: 3.5.w,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Scanner Center HUD
-                  Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.camera_alt_rounded,
-                          color: const Color(0xFF14B8A6).withValues(alpha: 0.9),
-                          size: 46.r,
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(
-                          duration: 1.seconds,
-                          color: Colors.white,
-                        ),
-                        SizedBox(height: 16.h),
-                        const _AnimatedScannerText(),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scaleXY(
-              begin: 0.98,
-              end: 1.02,
-              duration: 1.seconds,
-              curve: Curves.easeInOut,
-            ),
           ),
         ],
       ),

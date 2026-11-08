@@ -32,9 +32,7 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    final cardBgColor = isDark
-        ? const Color(0xFF161626)
-        : Colors.white;
+    final cardBgColor = isDark ? const Color(0xFF161626) : Colors.white;
     final hintTextColor = isDark
         ? Colors.white.withValues(alpha: 0.75)
         : Colors.black.withValues(alpha: 0.65);
@@ -76,29 +74,26 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      22,
-                      (i) {
-                        final bar = Container(
-                          width: 3.5.w,
-                          height: 16.h + (i % 6 * 7).h,
-                          margin: EdgeInsets.symmetric(horizontal: 2.w),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: isDark ? 0.22 : 0.14),
-                            borderRadius: BorderRadius.circular(2.r),
-                          ),
-                        );
-                        if (reduceMotion) return bar;
-                        return bar
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scaleY(
-                              begin: 0.4,
-                              end: 1.4,
-                              duration: 550.ms,
-                              delay: (i * 45).ms,
-                            );
-                      },
-                    ),
+                    children: List.generate(22, (i) {
+                      final bar = Container(
+                        width: 3.5.w,
+                        height: 16.h + (i % 6 * 7).h,
+                        margin: EdgeInsets.symmetric(horizontal: 2.w),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: isDark ? 0.22 : 0.14),
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      );
+                      if (reduceMotion) return bar;
+                      return bar
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scaleY(
+                            begin: 0.4,
+                            end: 1.4,
+                            duration: 550.ms,
+                            delay: (i * 45).ms,
+                          );
+                    }),
                   ),
                 ),
               ),
@@ -108,8 +103,8 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
                 (reduceMotion
                     ? Text(emoji!, style: TextStyle(fontSize: 48.r))
                     : Text(emoji!, style: TextStyle(fontSize: 48.r))
-                        .animate()
-                        .scale(duration: 400.ms, curve: Curves.easeOutCubic))
+                          .animate()
+                          .scale(duration: 400.ms, curve: Curves.easeOutCubic))
               else
                 Column(
                   mainAxisSize: MainAxisSize.min,

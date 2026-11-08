@@ -36,9 +36,13 @@ class WordMixerHintCard extends StatefulWidget {
 
 class _WordMixerHintCardState extends State<WordMixerHintCard> {
   late final HapticService _hapticService =
-      widget.hapticService ?? (di.sl.isRegistered<HapticService>() ? di.sl<HapticService>() : HapticService());
+      widget.hapticService ??
+      (di.sl.isRegistered<HapticService>()
+          ? di.sl<HapticService>()
+          : HapticService());
   late final TtsService? _ttsService =
-      widget.ttsService ?? (di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null);
+      widget.ttsService ??
+      (di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null);
   bool _isSpeaking = false;
 
   @override
@@ -93,7 +97,10 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
     setState(() => _isSpeaking = true);
     try {
       // Strip out blank masks for natural TTS pronunciation
-      final cleanText = widget.puzzle.maskedHint.replaceAll('______', 'the word');
+      final cleanText = widget.puzzle.maskedHint.replaceAll(
+        '______',
+        'the word',
+      );
       await tts.speak(cleanText);
     } finally {
       if (mounted) setState(() => _isSpeaking = false);
@@ -130,8 +137,8 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                 color: expanded
                     ? widget.primaryColor.withValues(alpha: 0.45)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : AppColors.slate200),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : AppColors.slate200),
                 width: expanded ? 1.5.w : 1.w,
               ),
             ),
@@ -143,7 +150,10 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                   onTap: () => _onTapHeader(context),
                   borderRadius: BorderRadius.circular(20.r),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 14.h,
+                    ),
                     child: Row(
                       children: [
                         Container(
@@ -176,7 +186,9 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                   fontWeight: FontWeight.w700,
                                   color: expanded
                                       ? widget.primaryColor
-                                      : (isDark ? Colors.white : AppColors.slate800),
+                                      : (isDark
+                                            ? Colors.white
+                                            : AppColors.slate800),
                                   letterSpacing: 0.2,
                                 ),
                               ),
@@ -190,7 +202,9 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                     fontFamily: 'Outfit',
                                     fontSize: 11.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: isDark ? Colors.white54 : AppColors.slate500,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : AppColors.slate500,
                                   ),
                                 ),
                               ],
@@ -202,7 +216,10 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                         // Reward / Free badge pill
                         if (!expanded)
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 3.h,
+                            ),
                             decoration: BoxDecoration(
                               color: isPremium
                                   ? AppColors.amber500.withValues(alpha: 0.14)
@@ -211,7 +228,9 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                               border: Border.all(
                                 color: isPremium
                                     ? AppColors.amber500.withValues(alpha: 0.3)
-                                    : widget.primaryColor.withValues(alpha: 0.2),
+                                    : widget.primaryColor.withValues(
+                                        alpha: 0.2,
+                                      ),
                                 width: 1.w,
                               ),
                             ),
@@ -223,7 +242,9 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                       ? Icons.star_rounded
                                       : Icons.play_circle_outline_rounded,
                                   size: 11.r,
-                                  color: isPremium ? AppColors.amber500 : widget.primaryColor,
+                                  color: isPremium
+                                      ? AppColors.amber500
+                                      : widget.primaryColor,
                                 ),
                                 SizedBox(width: 3.w),
                                 Text(
@@ -232,7 +253,9 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: isPremium ? AppColors.amber500 : widget.primaryColor,
+                                    color: isPremium
+                                        ? AppColors.amber500
+                                        : widget.primaryColor,
                                     letterSpacing: 0.4,
                                   ),
                                 ),
@@ -296,10 +319,14 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                 vertical: 5.h,
                               ),
                               decoration: BoxDecoration(
-                                color: widget.primaryColor.withValues(alpha: isDark ? 0.15 : 0.08),
+                                color: widget.primaryColor.withValues(
+                                  alpha: isDark ? 0.15 : 0.08,
+                                ),
                                 borderRadius: BorderRadius.circular(10.r),
                                 border: Border.all(
-                                  color: widget.primaryColor.withValues(alpha: 0.2),
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.2,
+                                  ),
                                   width: 1.w,
                                 ),
                               ),
@@ -323,10 +350,14 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                   vertical: 5.h,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: widget.primaryColor.withValues(alpha: isDark ? 0.18 : 0.1),
+                                  color: widget.primaryColor.withValues(
+                                    alpha: isDark ? 0.18 : 0.1,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.r),
                                   border: Border.all(
-                                    color: widget.primaryColor.withValues(alpha: 0.25),
+                                    color: widget.primaryColor.withValues(
+                                      alpha: 0.25,
+                                    ),
                                     width: 1.w,
                                   ),
                                 ),
@@ -343,8 +374,14 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                                     SizedBox(width: 5.w),
                                     Text(
                                       _isSpeaking
-                                          ? context.tr('common.stop', fallback: 'Stop')
-                                          : context.tr('common.listen', fallback: 'Listen'),
+                                          ? context.tr(
+                                              'common.stop',
+                                              fallback: 'Stop',
+                                            )
+                                          : context.tr(
+                                              'common.listen',
+                                              fallback: 'Listen',
+                                            ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,

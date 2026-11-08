@@ -38,7 +38,8 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
   @override
   void didUpdateWidget(covariant VisualObjectBadges oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.selectedObject != oldWidget.selectedObject && widget.selectedObject != null) {
+    if (widget.selectedObject != oldWidget.selectedObject &&
+        widget.selectedObject != null) {
       _isSaved = _wordBankBridge.isWordSaved(widget.selectedObject!.label);
     }
   }
@@ -82,7 +83,9 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final selected = widget.selectedObject ?? (widget.objects.isNotEmpty ? widget.objects.first : null);
+    final selected =
+        widget.selectedObject ??
+        (widget.objects.isNotEmpty ? widget.objects.first : null);
 
     if (widget.objects.isEmpty) {
       return const SizedBox.shrink();
@@ -104,11 +107,18 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(LucideIcons.scanLine, size: 14.r, color: AppColors.teal500),
+                        Icon(
+                          LucideIcons.scanLine,
+                          size: 14.r,
+                          color: AppColors.teal500,
+                        ),
                         SizedBox(width: 6.w),
                         Flexible(
                           child: Text(
-                            context.tr('photo.detected_objects', fallback: 'DETECTED IN PHOTO'),
+                            context.tr(
+                              'photo.detected_objects',
+                              fallback: 'DETECTED IN PHOTO',
+                            ),
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -141,7 +151,8 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                 spacing: 8.w,
                 runSpacing: 10.h,
                 children: widget.objects.map((obj) {
-                  final isCurrent = selected?.label.toLowerCase() == obj.label.toLowerCase();
+                  final isCurrent =
+                      selected?.label.toLowerCase() == obj.label.toLowerCase();
                   final confidencePct = (obj.confidence * 100).round();
 
                   return ScaleButton(
@@ -156,18 +167,24 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                     },
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 200),
-                      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 8.h,
+                      ),
                       decoration: BoxDecoration(
                         gradient: isCurrent
                             ? const LinearGradient(
-                                colors: [AppColors.teal500, AppColors.indigo500],
+                                colors: [
+                                  AppColors.teal500,
+                                  AppColors.indigo500,
+                                ],
                               )
                             : null,
                         color: isCurrent
                             ? null
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.08)
-                                : Colors.black.withValues(alpha: 0.05)),
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : Colors.black.withValues(alpha: 0.05)),
                         borderRadius: BorderRadius.circular(14.r),
                         border: Border.all(
                           color: isCurrent
@@ -178,7 +195,9 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                         boxShadow: isCurrent
                             ? [
                                 BoxShadow(
-                                  color: AppColors.teal500.withValues(alpha: 0.35),
+                                  color: AppColors.teal500.withValues(
+                                    alpha: 0.35,
+                                  ),
                                   blurRadius: 12,
                                   offset: const Offset(0, 3),
                                 ),
@@ -193,8 +212,12 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
-                              fontWeight: isCurrent ? FontWeight.w800 : FontWeight.w600,
-                              color: isCurrent ? Colors.white : (isDark ? Colors.white : Colors.black87),
+                              fontWeight: isCurrent
+                                  ? FontWeight.w800
+                                  : FontWeight.w600,
+                              color: isCurrent
+                                  ? Colors.white
+                                  : (isDark ? Colors.white : Colors.black87),
                             ),
                           ),
                           SizedBox(width: 6.w),
@@ -204,7 +227,9 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
                               fontWeight: FontWeight.w600,
-                              color: isCurrent ? Colors.white70 : (isDark ? Colors.white38 : Colors.black38),
+                              color: isCurrent
+                                  ? Colors.white70
+                                  : (isDark ? Colors.white38 : Colors.black38),
                             ),
                           ),
                         ],
@@ -255,7 +280,9 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                                     fontFamily: 'Outfit',
                                     fontSize: 22.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: isDark ? Colors.white : Colors.black87,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
                                   ),
                                 ),
                                 if (selected.ipa != null)
@@ -273,12 +300,19 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                           ),
                           if (selected.cefr != null)
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
                               decoration: BoxDecoration(
-                                color: AppColors.teal500.withValues(alpha: 0.15),
+                                color: AppColors.teal500.withValues(
+                                  alpha: 0.15,
+                                ),
                                 borderRadius: BorderRadius.circular(10.r),
                                 border: Border.all(
-                                  color: AppColors.teal500.withValues(alpha: 0.35),
+                                  color: AppColors.teal500.withValues(
+                                    alpha: 0.35,
+                                  ),
                                 ),
                               ),
                               child: Text(
@@ -325,12 +359,19 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                           ScaleButton(
                             onTap: _onPronounce,
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 14.w,
+                                vertical: 12.h,
+                              ),
                               decoration: BoxDecoration(
                                 color: isDark ? Colors.white10 : Colors.black12,
                                 borderRadius: BorderRadius.circular(14.r),
                               ),
-                              child: Icon(LucideIcons.volume2, size: 18.r, color: AppColors.teal400),
+                              child: Icon(
+                                LucideIcons.volume2,
+                                size: 18.r,
+                                color: AppColors.teal400,
+                              ),
                             ),
                           ),
                           SizedBox(width: 8.w),
@@ -343,27 +384,44 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                                   gradient: _isSaved
                                       ? null
                                       : const LinearGradient(
-                                          colors: [AppColors.indigo500, AppColors.teal500],
+                                          colors: [
+                                            AppColors.indigo500,
+                                            AppColors.teal500,
+                                          ],
                                         ),
-                                  color: _isSaved ? (isDark ? Colors.white12 : Colors.black12) : null,
+                                  color: _isSaved
+                                      ? (isDark
+                                            ? Colors.white12
+                                            : Colors.black12)
+                                      : null,
                                   borderRadius: BorderRadius.circular(14.r),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
-                                      _isSaved ? LucideIcons.checkCheck : LucideIcons.bookmarkPlus,
+                                      _isSaved
+                                          ? LucideIcons.checkCheck
+                                          : LucideIcons.bookmarkPlus,
                                       size: 16.r,
-                                      color: _isSaved ? AppColors.teal400 : Colors.white,
+                                      color: _isSaved
+                                          ? AppColors.teal400
+                                          : Colors.white,
                                     ),
                                     SizedBox(width: 6.w),
                                     Text(
-                                      _isSaved ? 'In Word Bank ✓' : 'Add to Word Bank',
+                                      _isSaved
+                                          ? 'In Word Bank ✓'
+                                          : 'Add to Word Bank',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 13.sp,
                                         fontWeight: FontWeight.w800,
-                                        color: _isSaved ? (isDark ? Colors.white70 : Colors.black87) : Colors.white,
+                                        color: _isSaved
+                                            ? (isDark
+                                                  ? Colors.white70
+                                                  : Colors.black87)
+                                            : Colors.white,
                                       ),
                                     ),
                                   ],
@@ -397,7 +455,11 @@ class _VisualObjectBadgesState extends State<VisualObjectBadges> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(LucideIcons.gamepad2, size: 18.r, color: Colors.white),
+                              Icon(
+                                LucideIcons.gamepad2,
+                                size: 18.r,
+                                color: Colors.white,
+                              ),
                               SizedBox(width: 8.w),
                               Flexible(
                                 child: Text(

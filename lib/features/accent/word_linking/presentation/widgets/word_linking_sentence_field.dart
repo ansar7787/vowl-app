@@ -137,9 +137,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : Colors.white,
+        color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
           color: isDark

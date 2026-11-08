@@ -121,7 +121,9 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
               return ScaleButton(
                 onTap: () => onSymptomTapped(s),
                 child: Container(
-                  key: Key('medical_consult_symptom_chip_${s.replaceAll(' ', '_')}'),
+                  key: Key(
+                    'medical_consult_symptom_chip_${s.replaceAll(' ', '_')}',
+                  ),
                   constraints: BoxConstraints(maxWidth: 1.sw - 68.w),
                   padding: EdgeInsets.symmetric(
                     horizontal: 12.w,
@@ -131,10 +133,10 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                     color: isChecked
                         ? cardColor
                         : (isMidnight
-                            ? AppColors.midnightSurface
-                            : (isDark
-                                ? AppColors.slate900
-                                : AppColors.slate100)),
+                              ? AppColors.midnightSurface
+                              : (isDark
+                                    ? AppColors.slate900
+                                    : AppColors.slate100)),
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: isChecked

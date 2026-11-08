@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-
 /// Terminal text and tile response composer for emergency communications.
 class EmergencyHubTerminalInput extends StatefulWidget {
   /// Editing controller holding the constructed response string.
@@ -111,10 +110,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
             onTap: () => _toggleWord(index),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.w,
-                vertical: 10.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: isSelected
                     ? (widget.isDark ? Colors.white12 : Colors.black12)
@@ -165,8 +161,9 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
     }
 
     final isMidnight = AppTheme.isMidnight(context);
-    final accentColor =
-        widget.isDark ? Colors.amberAccent : Colors.amber.shade900;
+    final accentColor = widget.isDark
+        ? Colors.amberAccent
+        : Colors.amber.shade900;
 
     return Container(
       width: double.infinity,
@@ -174,9 +171,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
-            : (widget.isDark
-                ? AppColors.slate900
-                : Colors.white),
+            : (widget.isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: widget.isDark
@@ -210,11 +205,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Icon(
-                Icons.keyboard_rounded,
-                color: accentColor,
-                size: 18.r,
-              ),
+              Icon(Icons.keyboard_rounded, color: accentColor, size: 18.r),
             ],
           ),
           SizedBox(height: 12.h),

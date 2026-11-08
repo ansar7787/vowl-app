@@ -21,26 +21,31 @@ void main() {
     test('openInbox returns true when native Android channel succeeds', () async {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
-        if (methodCall.method == 'openEmailInbox') {
-          return true;
-        }
-        return false;
-      });
+            if (methodCall.method == 'openEmailInbox') {
+              return true;
+            }
+            return false;
+          });
 
       // Note: On non-Android test host (Windows/Linux), it falls back safely without throwing
       final result = await EmailLauncher.openInbox();
       expect(result, isA<bool>());
     });
 
-    test('openInbox handles channel exception gracefully without throwing', () async {
-      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-          .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
-        throw PlatformException(code: 'ERROR', message: 'Activity not found');
-      });
+    test(
+      'openInbox handles channel exception gracefully without throwing',
+      () async {
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+              throw PlatformException(
+                code: 'ERROR',
+                message: 'Activity not found',
+              );
+            });
 
-      final result = await EmailLauncher.openInbox();
-      expect(result, isA<bool>());
-    });
+        final result = await EmailLauncher.openInbox();
+        expect(result, isA<bool>());
+      },
+    );
   });
 }
-

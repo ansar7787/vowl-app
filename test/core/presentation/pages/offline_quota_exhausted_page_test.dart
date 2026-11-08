@@ -35,7 +35,11 @@ void main() {
     isEmailVerified: true,
   );
 
-  void setViewport(WidgetTester tester, [Size size = const Size(390, 844), double ratio = 2.0]) {
+  void setViewport(
+    WidgetTester tester, [
+    Size size = const Size(390, 844),
+    double ratio = 2.0,
+  ]) {
     tester.view.physicalSize = Size(size.width * ratio, size.height * ratio);
     tester.view.devicePixelRatio = ratio;
     addTearDown(() => tester.view.resetPhysicalSize());
@@ -51,18 +55,20 @@ void main() {
     mockAuthBloc = MockAuthBloc();
 
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
-    when(() => mockLocale.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocale.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback = invocation.namedArguments[#fallback] as String?;
       return fallback ?? invocation.positionalArguments[0] as String;
     });
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
 
     // By default, ad is loaded
@@ -128,7 +134,9 @@ void main() {
   // GROUP 1: Initial Rendering & Quota Display
   // =========================================================================
   group('Group 1: Initial Rendering & Quota Display', () {
-    testWidgets('renders quota icon, levels count, header title and subtitle', (tester) async {
+    testWidgets('renders quota icon, levels count, header title and subtitle', (
+      tester,
+    ) async {
       setViewport(tester);
 
       await tester.pumpWidget(buildOfflineQuotaHarness());
@@ -139,7 +147,9 @@ void main() {
       expect(find.text('3/3'), findsOneWidget);
       expect(find.text('OFFLINE LIMIT REACHED'), findsOneWidget);
       expect(
-        find.text("You've played 3 levels offline. Reconnect or watch an ad to keep playing!"),
+        find.text(
+          "You've played 3 levels offline. Reconnect or watch an ad to keep playing!",
+        ),
         findsOneWidget,
       );
       expect(find.byIcon(LucideIcons.x), findsOneWidget);
@@ -152,47 +162,61 @@ void main() {
   // GROUP 2: Watch Ad Button Lifecycle & Reward Flow
   // =========================================================================
   group('Group 2: Watch Ad Button Lifecycle & Reward Flow', () {
-    testWidgets('renders Watch Ad button when ad is loaded and grants bonus plays on completion', (tester) async {
-      setViewport(tester);
-      var adWatchedCallbackInvoked = false;
+    testWidgets(
+      'renders Watch Ad button when ad is loaded and grants bonus plays on completion',
+      (tester) async {
+        setViewport(tester);
+        var adWatchedCallbackInvoked = false;
 
-      when(() => mockAdService.isRewardedAdLoaded).thenReturn(true);
-      when(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: any(named: 'isPremium'),
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).thenAnswer((invocation) async {
-        final onReward = invocation.namedArguments[#onUserEarnedReward] as void Function(RewardItem);
-        final onDismiss = invocation.namedArguments[#onDismissed] as VoidCallback?;
-        onReward(RewardItem(3, 'offline_plays'));
-        onDismiss?.call();
-      });
+        when(() => mockAdService.isRewardedAdLoaded).thenReturn(true);
+        when(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: any(named: 'isPremium'),
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onReward =
+              invocation.namedArguments[#onUserEarnedReward]
+                  as void Function(RewardItem);
+          final onDismiss =
+              invocation.namedArguments[#onDismissed] as VoidCallback?;
+          onReward(RewardItem(3, 'offline_plays'));
+          onDismiss?.call();
+        });
 
-      await tester.pumpWidget(buildOfflineQuotaHarness(
-        onAdWatched: () => adWatchedCallbackInvoked = true,
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildOfflineQuotaHarness(
+            onAdWatched: () => adWatchedCallbackInvoked = true,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final watchAdFinder = find.text('WATCH AD FOR +3 LEVELS');
-      expect(watchAdFinder, findsOneWidget);
+        final watchAdFinder = find.text('WATCH AD FOR +3 LEVELS');
+        expect(watchAdFinder, findsOneWidget);
 
-      await tester.tap(watchAdFinder);
-      await tester.pump();
+        await tester.tap(watchAdFinder);
+        await tester.pump();
 
-      verify(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: false,
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).called(1);
+        verify(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: false,
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).called(1);
 
-      expect(adWatchedCallbackInvoked, isTrue);
-      expect(OfflinePlayGateService.instance.offlineLevelsPlayed, 0);
-    });
+        expect(adWatchedCallbackInvoked, isTrue);
+        expect(OfflinePlayGateService.instance.offlineLevelsPlayed, 0);
+      },
+    );
 
-    testWidgets('hides Watch Ad button when rewarded ad is not loaded', (tester) async {
+    testWidgets('hides Watch Ad button when rewarded ad is not loaded', (
+      tester,
+    ) async {
       setViewport(tester);
       when(() => mockAdService.isRewardedAdLoaded).thenReturn(false);
 
@@ -202,47 +226,56 @@ void main() {
 
       expect(find.text('WATCH AD FOR +3 LEVELS'), findsNothing);
       expect(
-        find.text("You've played 3 levels offline. Reconnect to restore unlimited free play!"),
+        find.text(
+          "You've played 3 levels offline. Reconnect to restore unlimited free play!",
+        ),
         findsOneWidget,
       );
       expect(find.text('RETRY CONNECTION'), findsOneWidget);
     });
 
-    testWidgets('ad polling timer dynamically reveals Watch Ad button when ad becomes ready', (tester) async {
-      setViewport(tester);
-      when(() => mockAdService.isRewardedAdLoaded).thenReturn(false);
+    testWidgets(
+      'ad polling timer dynamically reveals Watch Ad button when ad becomes ready',
+      (tester) async {
+        setViewport(tester);
+        when(() => mockAdService.isRewardedAdLoaded).thenReturn(false);
 
-      await tester.pumpWidget(buildOfflineQuotaHarness());
-      await tester.pump();
-      expect(find.text('WATCH AD FOR +3 LEVELS'), findsNothing);
+        await tester.pumpWidget(buildOfflineQuotaHarness());
+        await tester.pump();
+        expect(find.text('WATCH AD FOR +3 LEVELS'), findsNothing);
 
-      // Transition ad status to loaded
-      when(() => mockAdService.isRewardedAdLoaded).thenReturn(true);
+        // Transition ad status to loaded
+        when(() => mockAdService.isRewardedAdLoaded).thenReturn(true);
 
-      // Advance periodic timer past 2 seconds
-      await tester.pump(const Duration(seconds: 2));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Advance periodic timer past 2 seconds
+        await tester.pump(const Duration(seconds: 2));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('WATCH AD FOR +3 LEVELS'), findsOneWidget);
-    });
+        expect(find.text('WATCH AD FOR +3 LEVELS'), findsOneWidget);
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 3: Retry Connection Interaction
   // =========================================================================
   group('Group 3: Retry Connection Interaction', () {
-    testWidgets('tapping Retry triggers onRetry and shows loading spinner', (tester) async {
+    testWidgets('tapping Retry triggers onRetry and shows loading spinner', (
+      tester,
+    ) async {
       setViewport(tester);
       final completer = Completer<void>();
       var retryCalledCount = 0;
 
-      await tester.pumpWidget(buildOfflineQuotaHarness(
-        onRetry: () async {
-          retryCalledCount++;
-          await completer.future;
-        },
-      ));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(
+          onRetry: () async {
+            retryCalledCount++;
+            await completer.future;
+          },
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -277,13 +310,15 @@ void main() {
   // GROUP 4: Close Action & Navigation Triggers
   // =========================================================================
   group('Group 4: Close Action & Navigation Triggers', () {
-    testWidgets('tapping close button triggers onClose callback', (tester) async {
+    testWidgets('tapping close button triggers onClose callback', (
+      tester,
+    ) async {
       setViewport(tester);
       var closeInvoked = false;
 
-      await tester.pumpWidget(buildOfflineQuotaHarness(
-        onClose: () => closeInvoked = true,
-      ));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(onClose: () => closeInvoked = true),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -296,7 +331,9 @@ void main() {
       expect(closeInvoked, isTrue);
     });
 
-    testWidgets('tapping premium upsell button triggers haptic feedback', (tester) async {
+    testWidgets('tapping premium upsell button triggers haptic feedback', (
+      tester,
+    ) async {
       setViewport(tester);
       await tester.pumpWidget(buildOfflineQuotaHarness());
       await tester.pump();
@@ -315,12 +352,14 @@ void main() {
   // GROUP 5: Responsive Viewports, Themes & Reduced Motion
   // =========================================================================
   group('Group 5: Responsive Viewports, Themes & Reduced Motion', () {
-    testWidgets('compact mobile layout (320x568) renders without overflow', (tester) async {
+    testWidgets('compact mobile layout (320x568) renders without overflow', (
+      tester,
+    ) async {
       setViewport(tester, const Size(320, 568));
 
-      await tester.pumpWidget(buildOfflineQuotaHarness(
-        viewport: const Size(320, 568),
-      ));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(viewport: const Size(320, 568)),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -328,12 +367,14 @@ void main() {
       expect(find.text('OFFLINE LIMIT REACHED'), findsOneWidget);
     });
 
-    testWidgets('tablet layout (800x1280) renders without overflow', (tester) async {
+    testWidgets('tablet layout (800x1280) renders without overflow', (
+      tester,
+    ) async {
       setViewport(tester, const Size(800, 1280), 1.5);
 
-      await tester.pumpWidget(buildOfflineQuotaHarness(
-        viewport: const Size(800, 1280),
-      ));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(viewport: const Size(800, 1280)),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -341,9 +382,13 @@ void main() {
       expect(find.text('OFFLINE LIMIT REACHED'), findsOneWidget);
     });
 
-    testWidgets('reduced motion mode disables entrance animations cleanly', (tester) async {
+    testWidgets('reduced motion mode disables entrance animations cleanly', (
+      tester,
+    ) async {
       setViewport(tester);
-      await tester.pumpWidget(buildOfflineQuotaHarness(disableAnimations: true));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(disableAnimations: true),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
@@ -354,7 +399,9 @@ void main() {
 
     testWidgets('dark theme adapts background color overlay', (tester) async {
       setViewport(tester);
-      await tester.pumpWidget(buildOfflineQuotaHarness(themeMode: ThemeMode.dark));
+      await tester.pumpWidget(
+        buildOfflineQuotaHarness(themeMode: ThemeMode.dark),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -362,17 +409,20 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('disposing widget cancels timers cleanly without pending timers', (tester) async {
-      setViewport(tester);
-      await tester.pumpWidget(buildOfflineQuotaHarness());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'disposing widget cancels timers cleanly without pending timers',
+      (tester) async {
+        setViewport(tester);
+        await tester.pumpWidget(buildOfflineQuotaHarness());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Unmount widget
-      await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pump();
+        // Unmount widget
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

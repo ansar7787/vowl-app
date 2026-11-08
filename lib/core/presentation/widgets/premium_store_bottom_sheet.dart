@@ -404,7 +404,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         product = matching.first;
       } else {
         final coinMatches = iap.products
-            .where((p) => p.id.contains('${pack.coins}') || p.id.contains('coin'))
+            .where(
+              (p) => p.id.contains('${pack.coins}') || p.id.contains('coin'),
+            )
             .toList();
         if (coinMatches.isNotEmpty) {
           product = coinMatches.first;
@@ -609,18 +611,18 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return PopScope(
-          canPop: !_isProcessing,
-          onPopInvokedWithResult: (didPop, result) {
-            if (didPop) return;
-            if (_isProcessing) {
-              _cancelPaymentTimeout();
-              _isProcessing = false;
-              _pendingPack = null;
-              _updateState();
-              return;
-            }
-          },
-          child: BackdropFilter(
+              canPop: !_isProcessing,
+              onPopInvokedWithResult: (didPop, result) {
+                if (didPop) return;
+                if (_isProcessing) {
+                  _cancelPaymentTimeout();
+                  _isProcessing = false;
+                  _pendingPack = null;
+                  _updateState();
+                  return;
+                }
+              },
+              child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.85,
@@ -816,7 +818,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                 SizedBox(height: 20.h),
                                 _buildTermsAndPolicy(context, isDark),
                                 SizedBox(
-                                  height: 36.h +
+                                  height:
+                                      36.h +
                                       MediaQuery.paddingOf(context).bottom,
                                 ),
                               ],
@@ -1275,7 +1278,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
             child: Container(
               padding: EdgeInsets.all(20.r),
               decoration: BoxDecoration(
-                color: (isDark &&
+                color:
+                    (isDark &&
                         Theme.of(context).scaffoldBackgroundColor ==
                             Colors.black)
                     ? AppColors.midnightSurface
@@ -1285,12 +1289,12 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                   color: pack.isBestValue
                       ? color
                       : ((isDark &&
-                              Theme.of(context).scaffoldBackgroundColor ==
-                                  Colors.black)
-                          ? Colors.white.withValues(alpha: 0.12)
-                          : (isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate100)),
+                                Theme.of(context).scaffoldBackgroundColor ==
+                                    Colors.black)
+                            ? Colors.white.withValues(alpha: 0.12)
+                            : (isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.slate100)),
                   width: pack.isBestValue ? 2.w : 1.w,
                 ),
                 boxShadow: [
@@ -1410,11 +1414,12 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             // For Razorpay (India), show ₹ price from Firestore.
                             String priceText;
                             if (_useGooglePlay) {
-                              final productId = InAppPurchaseService.getCoinPackProductId(
-                                packId: pack.id,
-                                coins: pack.coins,
-                                index: _activePacks.indexOf(pack),
-                              );
+                              final productId =
+                                  InAppPurchaseService.getCoinPackProductId(
+                                    packId: pack.id,
+                                    coins: pack.coins,
+                                    index: _activePacks.indexOf(pack),
+                                  );
                               final iap = InAppPurchaseService.instance;
                               final match = iap.products.where(
                                 (p) => p.id == productId,

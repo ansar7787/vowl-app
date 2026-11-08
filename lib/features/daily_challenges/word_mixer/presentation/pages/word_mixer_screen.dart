@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_completed_view.dart';
@@ -136,7 +137,10 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
         context,
         xp: 0,
         coins: 0,
-        title: context.tr('home.practice_complete', fallback: 'Practice Complete!'),
+        title: context.tr(
+          'home.practice_complete',
+          fallback: 'Practice Complete!',
+        ),
         description: context.tr(
           'word_mixer.practice_complete_desc',
           fallback: 'Great job unscrambling this bonus word!',
@@ -154,22 +158,33 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   void _grantRewards() {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     final int awardedCoins = isPremium ? 30 : 10;
-    di.sl<UpdateUserCoins>().call(
-      UpdateUserCoinsParams(
-        amountChange: awardedCoins,
-        title: 'Word Mixer Challenge',
-        isEarned: true,
-      ),
-    );
 
-    if (di.sl.isRegistered<IncrementXp>()) {
-      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    if (di.sl.isRegistered<UpdateUserRewards>()) {
+      di.sl<UpdateUserRewards>().call(
+        UpdateUserRewardsParams(
+          gameType: 'word_mixer',
+          xpIncrease: 5,
+          coinIncrease: awardedCoins,
+          level: 1,
+        ),
+      );
+    } else {
+      di.sl<UpdateUserCoins>().call(
+        UpdateUserCoinsParams(
+          amountChange: awardedCoins,
+          title: 'Word Mixer Challenge',
+          isEarned: true,
+        ),
+      );
+      if (di.sl.isRegistered<IncrementXp>()) {
+        di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+      }
     }
 
     GameDialogHelper.showCompletion(
       context,
       xp: 5,
-      coins: 10,
+      coins: awardedCoins,
       title: context.tr(
         'home.word_mixer_master',
         fallback: 'WORD MIXER MASTER!',
@@ -182,15 +197,15 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     final isCompleted = _alreadyCompleted.value;
     final isPractice = _isPracticeMode.value;
 
-    if ((isCompleted && !isPractice) || _hasError.value || _isAnswered.value || _currentPuzzle.value == null) {
+    if ((isCompleted && !isPractice) ||
+        _hasError.value ||
+        _isAnswered.value ||
+        _currentPuzzle.value == null) {
       context.pop();
       return;
     }
 
-    GameDialogHelper.showExitConfirmation(
-      context,
-      onQuit: () => context.pop(),
-    );
+    GameDialogHelper.showExitConfirmation(context, onQuit: () => context.pop());
   }
 
   @override
@@ -228,10 +243,10 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                   _hasError.value
                       ? _buildErrorState()
                       : ((isCompleted && !isPractice) || _isAnswered.value)
-                          ? _buildCompletedState(streak)
-                          : puzzle == null
-                              ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
-                              : _buildGameContent(streak),
+                      ? _buildCompletedState(streak)
+                      : puzzle == null
+                      ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
+                      : _buildGameContent(streak),
 
                   // Celebratory Confetti Burst Overlay
                   if (showConfetti)
@@ -275,7 +290,9 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     final puzzle = _currentPuzzle.value!;
 
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
+      ),
       slivers: [
         // ── Sticky/Top Bar ──────────────────────────────────────────────────
         SliverToBoxAdapter(
@@ -308,7 +325,9 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                 isExpanded: _isHintExpanded,
                 primaryColor: _kPrimaryColor,
                 hapticService: _hapticService,
-                ttsService: di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null,
+                ttsService: di.sl.isRegistered<TtsService>()
+                    ? di.sl<TtsService>()
+                    : null,
               ),
 
               SizedBox(height: 20.h),
@@ -338,10 +357,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
 
     return Column(
       children: [
-        WordMixerTopBar(
-          onBackPressed: () => context.pop(),
-          streak: 0,
-        ),
+        WordMixerTopBar(onBackPressed: () => context.pop(), streak: 0),
         Expanded(
           child: Center(
             child: Padding(

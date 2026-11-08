@@ -61,7 +61,8 @@ class AudioFillBlanksCanvas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Sentence card. Drag across the surface or tap to reveal the sentence.',
+      label:
+          'Sentence card. Drag across the surface or tap to reveal the sentence.',
       onTap: () => onSmear(0.5),
       onTapHint: 'reveal sentence',
       child: GestureDetector(
@@ -95,7 +96,8 @@ class AudioFillBlanksCanvas extends StatelessWidget {
                         memCacheWidth: 600,
                         memCacheHeight: 600,
                         placeholder: (context, url) => const SizedBox.shrink(),
-                        errorWidget: (context, url, error) => const SizedBox.shrink(),
+                        errorWidget: (context, url, error) =>
+                            const SizedBox.shrink(),
                       ),
                     ),
                   ),

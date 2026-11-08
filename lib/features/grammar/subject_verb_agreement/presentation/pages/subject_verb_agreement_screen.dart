@@ -627,8 +627,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         decoration: BoxDecoration(
           color: isDark
               ? (context.isMidnight
-                  ? AppColors.midnightSurface
-                  : const Color(0xFF1E2230))
+                    ? AppColors.midnightSurface
+                    : const Color(0xFF1E2230))
               : Colors.white,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
@@ -702,8 +702,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                     ? AppColors.gameIncorrect.withValues(alpha: 0.15)
                     : (isDark
                           ? (context.isMidnight
-                              ? AppColors.midnightSurface
-                              : const Color(0xFF1E2230))
+                                ? AppColors.midnightSurface
+                                : const Color(0xFF1E2230))
                           : Colors.white)),
           border: Border.all(
             color: isCorrect

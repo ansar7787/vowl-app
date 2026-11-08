@@ -84,9 +84,12 @@ void main() {
     String id = 'quest_repeat_1',
     String? textToSpeak = 'Could you please speak a little slower?',
     String? correctAnswer = 'Could you please speak a little slower?',
-    String? pronunciationTips = '[IPA Tip] Focus on the soft /k/ and fluent liaison between speak and a.',
-    String instruction = 'Repeat the sentence clearly, matching the natural cadence and pause patterns.',
-    String? hint = 'Pay attention to the rhythm and rising intonation at the end of the polite request.',
+    String? pronunciationTips =
+        '[IPA Tip] Focus on the soft /k/ and fluent liaison between speak and a.',
+    String instruction =
+        'Repeat the sentence clearly, matching the natural cadence and pause patterns.',
+    String? hint =
+        'Pay attention to the rhythm and rising intonation at the end of the polite request.',
     int difficulty = 2,
   }) {
     return SpeakingQuest(
@@ -108,8 +111,10 @@ void main() {
   final sampleQuest2 = createQuest(
     id: 'quest_repeat_2',
     textToSpeak: 'The weather forecast predicts heavy rainfall this afternoon.',
-    correctAnswer: 'The weather forecast predicts heavy rainfall this afternoon.',
-    pronunciationTips: '[IPA Tip] Emphasize forecast and heavy while softening rainfall.',
+    correctAnswer:
+        'The weather forecast predicts heavy rainfall this afternoon.',
+    pronunciationTips:
+        '[IPA Tip] Emphasize forecast and heavy while softening rainfall.',
   );
 
   final testLoadedState = SpeakingLoaded(
@@ -125,10 +130,7 @@ void main() {
 
   setUpAll(() {
     registerFallbackValue(
-      const FetchSpeakingQuests(
-        gameType: GameSubtype.repeatSentence,
-        level: 1,
-      ),
+      const FetchSpeakingQuests(gameType: GameSubtype.repeatSentence, level: 1),
     );
     registerFallbackValue(const Duration(milliseconds: 50));
     VowlMotion.lowAnimationModeOverride.value = true;
@@ -211,7 +213,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/repeat_test.m4a');
@@ -310,14 +314,8 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQueryData(
-                size: size,
-                disableAnimations: reduceMotion,
-              ),
-              child: RepeatSentenceScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              data: MediaQueryData(size: size, disableAnimations: reduceMotion),
+              child: RepeatSentenceScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -335,10 +333,7 @@ void main() {
       testWidgets('1.1 renders shimmer loading when in SpeakingLoading state', (
         tester,
       ) async {
-        await pumpRepeatSentenceScreen(
-          tester,
-          state: const SpeakingLoading(),
-        );
+        await pumpRepeatSentenceScreen(tester, state: const SpeakingLoading());
         expect(find.byType(GameShimmerLoading), findsOneWidget);
         expect(find.byType(ShadowPlaybackCompare), findsNothing);
       });
@@ -346,10 +341,7 @@ void main() {
       testWidgets('1.2 renders shimmer loading when in SpeakingInitial state', (
         tester,
       ) async {
-        await pumpRepeatSentenceScreen(
-          tester,
-          state: const SpeakingInitial(),
-        );
+        await pumpRepeatSentenceScreen(tester, state: const SpeakingInitial());
         expect(find.byType(GameShimmerLoading), findsOneWidget);
         expect(find.byType(ShadowPlaybackCompare), findsNothing);
       });
@@ -380,12 +372,17 @@ void main() {
       ) async {
         await pumpRepeatSentenceScreen(tester);
         final mediaQuery = tester.widget<MediaQuery>(
-          find.descendant(
-            of: find.byType(RepeatSentenceScreen),
-            matching: find.byType(MediaQuery),
-          ).first,
+          find
+              .descendant(
+                of: find.byType(RepeatSentenceScreen),
+                matching: find.byType(MediaQuery),
+              )
+              .first,
         );
-        expect(mediaQuery.data.textScaler.clamp(maxScaleFactor: 1.1), isNotNull);
+        expect(
+          mediaQuery.data.textScaler.clamp(maxScaleFactor: 1.1),
+          isNotNull,
+        );
       });
 
       testWidgets('1.6 loads with custom level parameter cleanly', (
@@ -415,9 +412,11 @@ void main() {
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
-        final state = tester.state(find.byType(RepeatSentenceScreen))
-            as dynamic;
-        final title = state.getCompletionTitle(tester.element(find.byType(RepeatSentenceScreen)));
+        final state =
+            tester.state(find.byType(RepeatSentenceScreen)) as dynamic;
+        final title = state.getCompletionTitle(
+          tester.element(find.byType(RepeatSentenceScreen)),
+        );
         expect(title, 'LEVEL COMPLETE!');
       });
     });
@@ -458,22 +457,21 @@ void main() {
         },
       );
 
-      testWidgets(
-        '2.4 tapping START ECHO button dismisses briefing overlay',
-        (tester) async {
-          SharedPreferences.setMockInitialValues({
-            'has_seen_briefing_repeatSentence': false,
-          });
-          await pumpRepeatSentenceScreen(tester, level: 1);
-          expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      testWidgets('2.4 tapping START ECHO button dismisses briefing overlay', (
+        tester,
+      ) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_repeatSentence': false,
+        });
+        await pumpRepeatSentenceScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
-          await tester.tap(find.text('START ECHO'));
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('START ECHO'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-          expect(find.byType(QuestBriefingOverlay), findsNothing);
-        },
-      );
+        expect(find.byType(QuestBriefingOverlay), findsNothing);
+      });
 
       testWidgets('2.5 does not show QuestBriefingOverlay when level is 2', (
         tester,
@@ -487,19 +485,18 @@ void main() {
     // 3. Instruction Component (RepeatSentenceInstruction) (6 tests)
     // -------------------------------------------------------------------------
     group('3. Instruction Component (RepeatSentenceInstruction)', () {
-      testWidgets('3.1 renders instruction component with key repeat_sentence_instruction', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.byKey(const Key('repeat_sentence_instruction')),
-          findsOneWidget,
-        );
-      });
+      testWidgets(
+        '3.1 renders instruction component with key repeat_sentence_instruction',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.byKey(const Key('repeat_sentence_instruction')),
+            findsOneWidget,
+          );
+        },
+      );
 
-      testWidgets('3.2 displays "LISTEN & REPEAT" badge text', (
-        tester,
-      ) async {
+      testWidgets('3.2 displays "LISTEN & REPEAT" badge text', (tester) async {
         await pumpRepeatSentenceScreen(tester);
         expect(find.text('LISTEN & REPEAT'), findsOneWidget);
       });
@@ -511,19 +508,12 @@ void main() {
         expect(find.byIcon(Icons.graphic_eq_rounded), findsWidgets);
       });
 
-      testWidgets('3.4 displays instruction text accurately', (
-        tester,
-      ) async {
+      testWidgets('3.4 displays instruction text accurately', (tester) async {
         await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.text(sampleQuest1.instruction),
-          findsOneWidget,
-        );
+        expect(find.text(sampleQuest1.instruction), findsOneWidget);
       });
 
-      testWidgets('3.5 has accessible header Semantics label', (
-        tester,
-      ) async {
+      testWidgets('3.5 has accessible header Semantics label', (tester) async {
         await pumpRepeatSentenceScreen(tester);
         final semanticsFinder = find.descendant(
           of: find.byKey(const Key('repeat_sentence_instruction')),
@@ -532,48 +522,50 @@ void main() {
         expect(semanticsFinder, findsWidgets);
       });
 
-      testWidgets('3.6 handles long instruction text centered across lines without overflow or ellipses', (
-        tester,
-      ) async {
-        final longQuest = createQuest(
-          instruction: 'This is an exceedingly detailed instruction designed to test centered text wrapping on compact viewports without generating any layout RenderFlex errors or ellipsis truncation.',
-        );
-        final state = testLoadedState.copyWith(quests: [longQuest]);
-        await pumpRepeatSentenceScreen(tester, state: state);
-        expect(tester.takeException(), isNull);
-      });
+      testWidgets(
+        '3.6 handles long instruction text centered across lines without overflow or ellipses',
+        (tester) async {
+          final longQuest = createQuest(
+            instruction:
+                'This is an exceedingly detailed instruction designed to test centered text wrapping on compact viewports without generating any layout RenderFlex errors or ellipsis truncation.',
+          );
+          final state = testLoadedState.copyWith(quests: [longQuest]);
+          await pumpRepeatSentenceScreen(tester, state: state);
+          expect(tester.takeException(), isNull);
+        },
+      );
     });
 
     // -------------------------------------------------------------------------
     // 4. Audition Card Component (RepeatSentenceAuditionCard) (8 tests)
     // -------------------------------------------------------------------------
     group('4. Audition Card Component (RepeatSentenceAuditionCard)', () {
-      testWidgets('4.1 renders audition card with key repeat_sentence_audition_card', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.byKey(const Key('repeat_sentence_audition_card')),
-          findsOneWidget,
-        );
-      });
+      testWidgets(
+        '4.1 renders audition card with key repeat_sentence_audition_card',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.byKey(const Key('repeat_sentence_audition_card')),
+            findsOneWidget,
+          );
+        },
+      );
 
-      testWidgets('4.2 displays "SENTENCE TO REPEAT" header', (
-        tester,
-      ) async {
+      testWidgets('4.2 displays "SENTENCE TO REPEAT" header', (tester) async {
         await pumpRepeatSentenceScreen(tester);
         expect(find.text('SENTENCE TO REPEAT'), findsOneWidget);
       });
 
-      testWidgets('4.3 renders listen button with key repeat_sentence_listen_button', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.byKey(const Key('repeat_sentence_listen_button')),
-          findsOneWidget,
-        );
-      });
+      testWidgets(
+        '4.3 renders listen button with key repeat_sentence_listen_button',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.byKey(const Key('repeat_sentence_listen_button')),
+            findsOneWidget,
+          );
+        },
+      );
 
       testWidgets('4.4 displays Icons.volume_up_rounded in listen button', (
         tester,
@@ -582,67 +574,80 @@ void main() {
         expect(find.byIcon(Icons.volume_up_rounded), findsWidgets);
       });
 
-      testWidgets('4.5 displays target sentence with key repeat_sentence_target_text', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.byKey(const Key('repeat_sentence_target_text')),
-          findsOneWidget,
-        );
-        expect(find.text(sampleQuest1.textToSpeak!), findsOneWidget);
-      });
+      testWidgets(
+        '4.5 displays target sentence with key repeat_sentence_target_text',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.byKey(const Key('repeat_sentence_target_text')),
+            findsOneWidget,
+          );
+          expect(find.text(sampleQuest1.textToSpeak!), findsOneWidget);
+        },
+      );
 
-      testWidgets('4.6 tapping listen button plays TTS via soundService.playTts', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        await tester.tap(find.byKey(const Key('repeat_sentence_listen_button')));
-        await tester.pump();
+      testWidgets(
+        '4.6 tapping listen button plays TTS via soundService.playTts',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          await tester.tap(
+            find.byKey(const Key('repeat_sentence_listen_button')),
+          );
+          await tester.pump();
 
-        verify(() => mockSoundService.playTts(sampleQuest1.textToSpeak!)).called(
-          greaterThanOrEqualTo(1),
-        );
-      });
+          verify(
+            () => mockSoundService.playTts(sampleQuest1.textToSpeak!),
+          ).called(greaterThanOrEqualTo(1));
+        },
+      );
 
-      testWidgets('4.7 tapping listen button while audio recording is active does not play TTS', (
-        tester,
-      ) async {
-        when(() => mockAudioRecorder.isRecording).thenReturn(true);
-        await pumpRepeatSentenceScreen(tester);
+      testWidgets(
+        '4.7 tapping listen button while audio recording is active does not play TTS',
+        (tester) async {
+          when(() => mockAudioRecorder.isRecording).thenReturn(true);
+          await pumpRepeatSentenceScreen(tester);
 
-        clearInteractions(mockSoundService);
-        await tester.tap(find.byKey(const Key('repeat_sentence_listen_button')));
-        await tester.pump();
+          clearInteractions(mockSoundService);
+          await tester.tap(
+            find.byKey(const Key('repeat_sentence_listen_button')),
+          );
+          await tester.pump();
 
-        verifyNever(() => mockSoundService.playTts(any()));
-      });
+          verifyNever(() => mockSoundService.playTts(any()));
+        },
+      );
 
-      testWidgets('4.8 renders pronunciation tips with key repeat_sentence_pronunciation_tips when available, strips [IPA Tip] prefix', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.byKey(const Key('repeat_sentence_pronunciation_tips')),
-          findsOneWidget,
-        );
-        expect(
-          find.text('Focus on the soft /k/ and fluent liaison between speak and a.'),
-          findsOneWidget,
-        );
-      });
+      testWidgets(
+        '4.8 renders pronunciation tips with key repeat_sentence_pronunciation_tips when available, strips [IPA Tip] prefix',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.byKey(const Key('repeat_sentence_pronunciation_tips')),
+            findsOneWidget,
+          );
+          expect(
+            find.text(
+              'Focus on the soft /k/ and fluent liaison between speak and a.',
+            ),
+            findsOneWidget,
+          );
+        },
+      );
     });
 
     // -------------------------------------------------------------------------
     // 5. Auto-play & TTS Barrier Mechanics (6 tests)
     // -------------------------------------------------------------------------
     group('5. Auto-play & TTS Barrier Mechanics', () {
-      testWidgets('5.1 automatically plays TTS of quest.textToSpeak upon question load', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        verify(() => mockSoundService.playTts(sampleQuest1.textToSpeak!)).called(greaterThanOrEqualTo(1));
-      });
+      testWidgets(
+        '5.1 automatically plays TTS of quest.textToSpeak upon question load',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          verify(
+            () => mockSoundService.playTts(sampleQuest1.textToSpeak!),
+          ).called(greaterThanOrEqualTo(1));
+        },
+      );
 
       testWidgets(
         '5.2 when TTS is playing (_ttsFinished is false), AbsorbPointer absorbs and ShadowPlaybackCompare is dimmed at 0.4',
@@ -734,18 +739,19 @@ void main() {
         ).called(greaterThanOrEqualTo(1));
       });
 
-      testWidgets('6.2 renders hint button with proper icon Icons.lightbulb_rounded', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        expect(
-          find.descendant(
-            of: find.byType(QuestHintButton),
-            matching: find.byIcon(Icons.lightbulb_rounded),
-          ),
-          findsOneWidget,
-        );
-      });
+      testWidgets(
+        '6.2 renders hint button with proper icon Icons.lightbulb_rounded',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          expect(
+            find.descendant(
+              of: find.byType(QuestHintButton),
+              matching: find.byIcon(Icons.lightbulb_rounded),
+            ),
+            findsOneWidget,
+          );
+        },
+      );
 
       testWidgets('6.3 works seamlessly across repeated hint taps', (
         tester,
@@ -756,9 +762,7 @@ void main() {
         await tester.tap(find.byType(QuestHintButton));
         await tester.pump();
 
-        verify(
-          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(1);
+        verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(1);
       });
 
       testWidgets('6.4 hint button displays available hint count badge', (
@@ -813,16 +817,15 @@ void main() {
         },
       );
 
-      testWidgets(
-        '7.3 passing isPositioned: false for inline placement',
-        (tester) async {
-          await pumpRepeatSentenceScreen(tester);
-          final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-            find.byKey(const Key('repeat_sentence_shadow_compare')),
-          );
-          expect(shadowCompare.isPositioned, isFalse);
-        },
-      );
+      testWidgets('7.3 passing isPositioned: false for inline placement', (
+        tester,
+      ) async {
+        await pumpRepeatSentenceScreen(tester);
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('repeat_sentence_shadow_compare')),
+        );
+        expect(shadowCompare.isPositioned, isFalse);
+      });
 
       testWidgets(
         '7.4 submitting correct evaluation (onConfirmed) plays correct sound and haptic',
@@ -969,7 +972,9 @@ void main() {
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 600));
 
-          verify(() => mockSoundService.playTts(sampleQuest2.textToSpeak!)).called(1);
+          verify(
+            () => mockSoundService.playTts(sampleQuest2.textToSpeak!),
+          ).called(1);
         },
       );
 
@@ -991,13 +996,14 @@ void main() {
         },
       );
 
-      testWidgets('8.6 screen disposes cleanly without timer leaks or exceptions', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(tester);
-        await tester.pumpWidget(const SizedBox());
-        expect(tester.takeException(), isNull);
-      });
+      testWidgets(
+        '8.6 screen disposes cleanly without timer leaks or exceptions',
+        (tester) async {
+          await pumpRepeatSentenceScreen(tester);
+          await tester.pumpWidget(const SizedBox());
+          expect(tester.takeException(), isNull);
+        },
+      );
     });
 
     // -------------------------------------------------------------------------
@@ -1007,10 +1013,7 @@ void main() {
       testWidgets(
         '9.1 renders cleanly on compact mobile viewport (320x568) without RenderFlex overflow',
         (tester) async {
-          await pumpRepeatSentenceScreen(
-            tester,
-            size: const Size(320, 568),
-          );
+          await pumpRepeatSentenceScreen(tester, size: const Size(320, 568));
           expect(tester.takeException(), isNull);
           expect(
             find.byKey(const Key('repeat_sentence_instruction')),
@@ -1026,10 +1029,7 @@ void main() {
       testWidgets('9.2 renders cleanly on tablet viewport (768x1024)', (
         tester,
       ) async {
-        await pumpRepeatSentenceScreen(
-          tester,
-          size: const Size(768, 1024),
-        );
+        await pumpRepeatSentenceScreen(tester, size: const Size(768, 1024));
         expect(tester.takeException(), isNull);
         expect(
           find.byKey(const Key('repeat_sentence_audition_card')),
@@ -1037,33 +1037,20 @@ void main() {
         );
       });
 
-      testWidgets('9.3 renders cleanly in Light Theme mode', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(
-          tester,
-          themeMode: ThemeMode.light,
-        );
+      testWidgets('9.3 renders cleanly in Light Theme mode', (tester) async {
+        await pumpRepeatSentenceScreen(tester, themeMode: ThemeMode.light);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('9.4 renders cleanly in Dark Theme mode', (
-        tester,
-      ) async {
-        await pumpRepeatSentenceScreen(
-          tester,
-          themeMode: ThemeMode.dark,
-        );
+      testWidgets('9.4 renders cleanly in Dark Theme mode', (tester) async {
+        await pumpRepeatSentenceScreen(tester, themeMode: ThemeMode.dark);
         expect(tester.takeException(), isNull);
       });
 
       testWidgets(
         '9.5 respects reduceMotion by disabling delayed animations and instant scrolling',
         (tester) async {
-          await pumpRepeatSentenceScreen(
-            tester,
-            reduceMotion: true,
-          );
+          await pumpRepeatSentenceScreen(tester, reduceMotion: true);
           expect(tester.takeException(), isNull);
         },
       );
@@ -1089,44 +1076,48 @@ void main() {
     // 10. Fallback and Null-Safety Quests (6 tests)
     // -------------------------------------------------------------------------
     group('10. Fallback and Null-Safety Quests', () {
-      testWidgets('10.1 handles quest with null pronunciationTips cleanly (tips container omitted)', (
-        tester,
-      ) async {
-        final noTipsQuest = createQuest(pronunciationTips: null);
-        final state = testLoadedState.copyWith(quests: [noTipsQuest]);
-        await pumpRepeatSentenceScreen(tester, state: state);
+      testWidgets(
+        '10.1 handles quest with null pronunciationTips cleanly (tips container omitted)',
+        (tester) async {
+          final noTipsQuest = createQuest(pronunciationTips: null);
+          final state = testLoadedState.copyWith(quests: [noTipsQuest]);
+          await pumpRepeatSentenceScreen(tester, state: state);
 
-        expect(
-          find.byKey(const Key('repeat_sentence_pronunciation_tips')),
-          findsNothing,
-        );
-      });
+          expect(
+            find.byKey(const Key('repeat_sentence_pronunciation_tips')),
+            findsNothing,
+          );
+        },
+      );
 
-      testWidgets('10.2 handles quest with empty textToSpeak falling back to correctAnswer', (
-        tester,
-      ) async {
-        final fallbackQuest = createQuest(
-          textToSpeak: null,
-          correctAnswer: 'Correct sentence fallback',
-        );
-        final state = testLoadedState.copyWith(quests: [fallbackQuest]);
-        await pumpRepeatSentenceScreen(tester, state: state);
+      testWidgets(
+        '10.2 handles quest with empty textToSpeak falling back to correctAnswer',
+        (tester) async {
+          final fallbackQuest = createQuest(
+            textToSpeak: null,
+            correctAnswer: 'Correct sentence fallback',
+          );
+          final state = testLoadedState.copyWith(quests: [fallbackQuest]);
+          await pumpRepeatSentenceScreen(tester, state: state);
 
-        expect(find.text('Correct sentence fallback'), findsOneWidget);
-      });
+          expect(find.text('Correct sentence fallback'), findsOneWidget);
+        },
+      );
 
-      testWidgets('10.3 handles quest with special characters or long sentences without layout distortion', (
-        tester,
-      ) async {
-        final complexQuest = createQuest(
-          textToSpeak: '“Well, that’s astonishing!” he exclaimed — 100% extraordinary, isn’t it?',
-        );
-        final state = testLoadedState.copyWith(quests: [complexQuest]);
-        await pumpRepeatSentenceScreen(tester, state: state);
+      testWidgets(
+        '10.3 handles quest with special characters or long sentences without layout distortion',
+        (tester) async {
+          final complexQuest = createQuest(
+            textToSpeak:
+                '“Well, that’s astonishing!” he exclaimed — 100% extraordinary, isn’t it?',
+          );
+          final state = testLoadedState.copyWith(quests: [complexQuest]);
+          await pumpRepeatSentenceScreen(tester, state: state);
 
-        expect(find.text(complexQuest.textToSpeak!), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      });
+          expect(find.text(complexQuest.textToSpeak!), findsOneWidget);
+          expect(tester.takeException(), isNull);
+        },
+      );
 
       testWidgets('10.4 handles rapid answer toggling gracefully', (
         tester,
@@ -1145,103 +1136,118 @@ void main() {
         verifyNever(() => mockSpeakingBloc.add(const SubmitAnswer(false)));
       });
 
-      testWidgets('10.5 handles state transition from answered to unanswered (retry question)', (
-        tester,
-      ) async {
-        final answeredState = testLoadedState.copyWith(
-          answerStatus: AnswerStatus.incorrect,
-        );
-        await pumpRepeatSentenceScreen(tester, state: answeredState);
-        expect(find.byType(GameFeedbackCard), findsOneWidget);
+      testWidgets(
+        '10.5 handles state transition from answered to unanswered (retry question)',
+        (tester) async {
+          final answeredState = testLoadedState.copyWith(
+            answerStatus: AnswerStatus.incorrect,
+          );
+          await pumpRepeatSentenceScreen(tester, state: answeredState);
+          expect(find.byType(GameFeedbackCard), findsOneWidget);
 
-        final retryState = testLoadedState.copyWith(
-          answerStatus: AnswerStatus.unanswered,
-        );
-        speakingStreamController.add(retryState);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+          final retryState = testLoadedState.copyWith(
+            answerStatus: AnswerStatus.unanswered,
+          );
+          speakingStreamController.add(retryState);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 600));
 
-        expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
-      });
+          expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
+        },
+      );
 
-      testWidgets('10.6 handles unauthenticated user state during wrong answer without ErrorJournal crash', (
-        tester,
-      ) async {
-        when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
-        await pumpRepeatSentenceScreen(tester);
-        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-          find.byKey(const Key('repeat_sentence_shadow_compare')),
-        );
+      testWidgets(
+        '10.6 handles unauthenticated user state during wrong answer without ErrorJournal crash',
+        (tester) async {
+          when(
+            () => mockAuthBloc.state,
+          ).thenReturn(const AuthState.unauthenticated());
+          await pumpRepeatSentenceScreen(tester);
+          final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+            find.byKey(const Key('repeat_sentence_shadow_compare')),
+          );
 
-        shadowCompare.onSkipped();
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+          shadowCompare.onSkipped();
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 600));
 
-        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-      });
+          verify(
+            () => mockSpeakingBloc.add(const SubmitAnswer(false)),
+          ).called(1);
+        },
+      );
     });
 
     // -------------------------------------------------------------------------
     // 11. Edge Cases in Audio & Scroll Interactions (5 tests)
     // -------------------------------------------------------------------------
     group('11. Edge Cases in Audio & Scroll Interactions', () {
-      testWidgets('11.1 _scrollToBottom triggers jumpTo in lowAnimationModeOverride', (
-        tester,
-      ) async {
-        VowlMotion.lowAnimationModeOverride.value = true;
-        await pumpRepeatSentenceScreen(tester);
-        expect(tester.takeException(), isNull);
-      });
+      testWidgets(
+        '11.1 _scrollToBottom triggers jumpTo in lowAnimationModeOverride',
+        (tester) async {
+          VowlMotion.lowAnimationModeOverride.value = true;
+          await pumpRepeatSentenceScreen(tester);
+          expect(tester.takeException(), isNull);
+        },
+      );
 
       testWidgets('11.2 tapping listen button repeatedly does not crash', (
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
         for (int i = 0; i < 3; i++) {
-          await tester.tap(find.byKey(const Key('repeat_sentence_listen_button')));
+          await tester.tap(
+            find.byKey(const Key('repeat_sentence_listen_button')),
+          );
           await tester.pump();
         }
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('11.3 lives change triggers question reset if lives increase', (
-        tester,
-      ) async {
-        final lowLivesState = testLoadedState.copyWith(livesRemaining: 1);
-        await pumpRepeatSentenceScreen(tester, state: lowLivesState);
+      testWidgets(
+        '11.3 lives change triggers question reset if lives increase',
+        (tester) async {
+          final lowLivesState = testLoadedState.copyWith(livesRemaining: 1);
+          await pumpRepeatSentenceScreen(tester, state: lowLivesState);
 
-        final restoredLivesState = testLoadedState.copyWith(livesRemaining: 3);
-        speakingStreamController.add(restoredLivesState);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+          final restoredLivesState = testLoadedState.copyWith(
+            livesRemaining: 3,
+          );
+          speakingStreamController.add(restoredLivesState);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 600));
 
-        expect(tester.takeException(), isNull);
-      });
+          expect(tester.takeException(), isNull);
+        },
+      );
 
-      testWidgets('11.4 final failure state passes isFinalFailure to SpeakingBaseLayout', (
-        tester,
-      ) async {
-        final failureState = testLoadedState.copyWith(
-          answerStatus: AnswerStatus.incorrect,
-          livesRemaining: 0,
-          isFinalFailure: true,
-        );
-        await pumpRepeatSentenceScreen(tester, state: failureState);
+      testWidgets(
+        '11.4 final failure state passes isFinalFailure to SpeakingBaseLayout',
+        (tester) async {
+          final failureState = testLoadedState.copyWith(
+            answerStatus: AnswerStatus.incorrect,
+            livesRemaining: 0,
+            isFinalFailure: true,
+          );
+          await pumpRepeatSentenceScreen(tester, state: failureState);
 
-        final layout = tester.widget<SpeakingBaseLayout>(
-          find.byType(SpeakingBaseLayout),
-        );
-        expect(layout.isFinalFailure, isTrue);
-      });
+          final layout = tester.widget<SpeakingBaseLayout>(
+            find.byType(SpeakingBaseLayout),
+          );
+          expect(layout.isFinalFailure, isTrue);
+        },
+      );
 
-      testWidgets('11.5 soundService.playTts exception handling in auto-play is safely caught', (
-        tester,
-      ) async {
-        when(() => mockSoundService.playTts(any())).thenThrow(Exception('TTS playback failure'));
-        await pumpRepeatSentenceScreen(tester);
-        expect(tester.takeException(), isNull);
-      });
+      testWidgets(
+        '11.5 soundService.playTts exception handling in auto-play is safely caught',
+        (tester) async {
+          when(
+            () => mockSoundService.playTts(any()),
+          ).thenThrow(Exception('TTS playback failure'));
+          await pumpRepeatSentenceScreen(tester);
+          expect(tester.takeException(), isNull);
+        },
+      );
     });
   });
 }
-

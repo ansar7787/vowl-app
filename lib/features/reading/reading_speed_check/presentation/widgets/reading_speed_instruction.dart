@@ -25,8 +25,8 @@ class ReadingSpeedInstruction extends StatelessWidget {
     final text = isRevealed
         ? "ANSWER THE QUESTION"
         : ((instruction != null && instruction!.trim().isNotEmpty)
-            ? instruction!.trim().toUpperCase()
-            : "READ QUICKLY AND TAP STOP WHEN DONE");
+              ? instruction!.trim().toUpperCase()
+              : "READ QUICKLY AND TAP STOP WHEN DONE");
 
     return Semantics(
       header: true,
@@ -74,4 +74,3 @@ class ReadingSpeedInstruction extends StatelessWidget {
     );
   }
 }
-

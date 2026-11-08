@@ -60,20 +60,20 @@ class EssayDraftingHexSlot extends StatelessWidget {
             decoration: BoxDecoration(
               color: isDark
                   ? (hasData
-                      ? Colors.white.withValues(alpha: 0.06)
-                      : Colors.white.withValues(alpha: 0.03))
+                        ? Colors.white.withValues(alpha: 0.06)
+                        : Colors.white.withValues(alpha: 0.03))
                   : (hasData
-                      ? Colors.white
-                      : Colors.black.withValues(alpha: 0.02)),
+                        ? Colors.white
+                        : Colors.black.withValues(alpha: 0.02)),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: highlight
                     ? successColor
                     : (hasData
-                        ? color.withValues(alpha: isDark ? 0.7 : 0.6)
-                        : (isDark
-                            ? Colors.white.withValues(alpha: 0.12)
-                            : Colors.black.withValues(alpha: 0.08))),
+                          ? color.withValues(alpha: isDark ? 0.7 : 0.6)
+                          : (isDark
+                                ? Colors.white.withValues(alpha: 0.12)
+                                : Colors.black.withValues(alpha: 0.08))),
                 width: 1.5,
               ),
               boxShadow: [
@@ -137,8 +137,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
                           ).animate().scale().fadeIn(),
                         ],
                       ),
-                    ]
-                    else
+                    ] else
                       Text(
                         "Empty slot",
                         style: TextStyle(
@@ -158,8 +157,8 @@ class EssayDraftingHexSlot extends StatelessWidget {
                     fontFamily: 'Outfit',
                     color: hasData
                         ? (isDark
-                            ? Colors.white.withValues(alpha: 0.95)
-                            : Colors.black87)
+                              ? Colors.white.withValues(alpha: 0.95)
+                              : Colors.black87)
                         : (isDark ? Colors.white38 : Colors.black38),
                     fontSize: 14.5.sp,
                     fontWeight: hasData ? FontWeight.w500 : FontWeight.w400,

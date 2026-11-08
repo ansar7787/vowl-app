@@ -457,10 +457,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
         ),
       ),
       (_) async {
-        emit(state.copyWith(
-          isLoading: false,
-          isDailyRewardAvailable: false,
-        ));
+        emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
         await _markDailyMysteryClaimedToday(0);
         authBloc.add(const AuthRefreshUser());
       },
@@ -621,12 +618,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       (failure) async {
         _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
         if (failure.message == 'daily-chest-already-claimed') {
-          emit(
-            state.copyWith(
-              isLoading: false,
-              isDailyRewardAvailable: false,
-            ),
-          );
+          emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
           await _markDailyMysteryClaimedToday(0);
           return;
         }
@@ -640,10 +632,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       },
       (_) async {
         _log('EconomyBloc: Daily chest SUCCESS');
-        emit(state.copyWith(
-          isLoading: false,
-          isDailyRewardAvailable: false,
-        ));
+        emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
         await _markDailyMysteryClaimedToday(event.amount);
         authBloc.add(const AuthRefreshUser());
       },
@@ -713,8 +702,8 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
         );
         if (di.sl.isRegistered<AuthLocalDataSource>()) {
           await di.sl<AuthLocalDataSource>().cacheUser(
-                UserModel.fromEntity(updatedUser),
-              );
+            UserModel.fromEntity(updatedUser),
+          );
         }
       }
     } catch (_) {}
@@ -737,8 +726,9 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     // 1. Fast local disk check: if already claimed today on this device, reject immediately
     try {
       final prefs = await SharedPreferences.getInstance();
-      final localClaimedDate =
-          prefs.getString('last_daily_mystery_claimed_date');
+      final localClaimedDate = prefs.getString(
+        'last_daily_mystery_claimed_date',
+      );
       final userClaimedDate = user.id.isNotEmpty
           ? prefs.getString('last_daily_mystery_claimed_date_${user.id}')
           : null;

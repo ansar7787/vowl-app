@@ -53,11 +53,34 @@ class KidsStarVaultBottomSheet extends StatefulWidget {
 }
 
 class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
-  // Extended chest tiers up to 3000+ stars to account for Ad watches!
-  static final List<int> _chestTiers = List.generate(100, (index) {
-    if (index < 10) return 15 + (index * 15);
-    return 150 + ((index - 9) * 30);
-  });
+  /// Exact 25 milestones capping at 600 stars max (200 levels × 3 stars max).
+  static const List<int> _chestTiers = [
+    15,
+    30,
+    45,
+    60,
+    75,
+    90,
+    105,
+    120,
+    135,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    390,
+    420,
+    450,
+    480,
+    510,
+    540,
+    570,
+    600,
+  ];
   final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
 
   @override
@@ -70,7 +93,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     Map<String, dynamic> categoryStars,
   ) {
     int gameplayStars = 0;
-    final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
 
     categoryStars.forEach((key, value) {
       if (key != 'magic_stars' && key != 'claimed_chests') {
@@ -78,14 +100,15 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       }
     });
     return (
-      totalStars: gameplayStars + magicStars,
+      totalStars: gameplayStars,
       gameplayStars: gameplayStars,
-      magicStars: magicStars,
+      magicStars: 0,
     );
   }
 
   Future<void> _claimChest(int tierIndex, int currentStars) async {
     if (_isProcessing.value) return;
+    if (tierIndex >= _chestTiers.length) return;
     final requirement = _chestTiers[tierIndex];
     if (currentStars < requirement) return;
 
@@ -181,9 +204,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         final categoryStars = user.starRatings[widget.gameType] ?? {};
         final starsData = _calculateStars(categoryStars);
         final totalStars = starsData.totalStars;
-        final gameplayStars = starsData.gameplayStars;
-        final magicStars = starsData.magicStars;
-        final claimedTier = categoryStars['claimed_chests'] ?? 0;
+        final claimedTier =
+            (categoryStars['claimed_chests'] as num?)?.toInt() ?? 0;
+        final bool isAllVaultClaimed = claimedTier >= _chestTiers.length;
 
         int nextTierIndex = claimedTier;
         if (nextTierIndex >= _chestTiers.length) {
@@ -364,39 +387,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                   ),
                                                 ],
                                               ),
-                                              if (magicStars > 0) ...[
-                                                SizedBox(height: 4.h),
-                                                Container(
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: 8.w,
-                                                    vertical: 2.h,
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                    color: widget.primaryColor
-                                                        .withValues(
-                                                          alpha: 0.15,
-                                                        ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                          12.r,
-                                                        ),
-                                                  ),
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: Text(
-                                                      '$gameplayStars Game + $magicStars Bonus',
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 10.sp,
-                                                        fontWeight:
-                                                            FontWeight.w800,
-                                                        color:
-                                                            widget.primaryColor,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
                                             ],
                                           ),
                                         ),
@@ -411,10 +401,15 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                           child: Column(
                                             children: [
                                               Text(
-                                                context.tr(
-                                                  'store.next_chest',
-                                                  fallback: "Next Chest",
-                                                ),
+                                                isAllVaultClaimed
+                                                    ? context.tr(
+                                                        'store.vault_completed',
+                                                        fallback: "Status",
+                                                      )
+                                                    : context.tr(
+                                                        'store.next_chest',
+                                                        fallback: "Next Chest",
+                                                      ),
                                                 style: TextStyle(
                                                   fontSize: 14.sp,
                                                   color: isDark
@@ -424,27 +419,55 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 ),
                                               ),
                                               SizedBox(height: 4.h),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Text(
-                                                    "$nextRequirement",
-                                                    style: TextStyle(
-                                                      fontSize: 36.sp,
-                                                      fontFamily: 'Outfit',
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                      color: Colors.grey,
+                                              isAllVaultClaimed
+                                                  ? Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Text(
+                                                          "MAX",
+                                                          style: TextStyle(
+                                                            fontSize: 26.sp,
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: Colors.amber,
+                                                          ),
+                                                        ),
+                                                        SizedBox(width: 4.w),
+                                                        Icon(
+                                                          Icons
+                                                              .verified_rounded,
+                                                          color: Colors.amber,
+                                                          size: 26.sp,
+                                                        ),
+                                                      ],
+                                                    )
+                                                  : Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Text(
+                                                          "$nextRequirement",
+                                                          style: TextStyle(
+                                                            fontSize: 36.sp,
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
+                                                        SizedBox(width: 4.w),
+                                                        Icon(
+                                                          Icons
+                                                              .star_border_rounded,
+                                                          color: Colors.grey,
+                                                          size: 32.sp,
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ),
-                                                  SizedBox(width: 4.w),
-                                                  Icon(
-                                                    Icons.star_border_rounded,
-                                                    color: Colors.grey,
-                                                    size: 32.sp,
-                                                  ),
-                                                ],
-                                              ),
                                             ],
                                           ),
                                         ),

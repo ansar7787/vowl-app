@@ -320,7 +320,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                           children: [
                             if (quest.instruction.isNotEmpty) ...[
                               Container(
-                                key: const Key('accent_shadowing_instruction_banner'),
+                                key: const Key(
+                                  'accent_shadowing_instruction_banner',
+                                ),
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 18.w,
@@ -648,7 +650,9 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: isDark ? Colors.white.withValues(alpha: 0.85) : AppColors.slate700,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.85)
+                        : AppColors.slate700,
                     height: 1.4,
                   ),
                 ),

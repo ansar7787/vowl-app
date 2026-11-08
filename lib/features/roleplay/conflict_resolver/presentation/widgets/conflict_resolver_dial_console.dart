@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_equalizer_painter.dart';
 
-
 /// Interactive rotary equalizer console allowing players to dial into response strategies.
 class ConflictResolverDialConsole extends StatelessWidget {
   /// Theme accent color.
@@ -128,100 +127,103 @@ class ConflictResolverDialConsole extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Colors.transparent,
                 ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Spinning audio spectrum equalizer lines
-                  Positioned.fill(
-                    child: AnimatedBuilder(
-                      animation: waveAnimation,
-                      builder: (context, child) {
-                        return CustomPaint(
-                          painter: EqualizerArcPainter(
-                            rotationValue: rotation,
-                            timeAnimation: waveAnimation.value,
-                            themeColor: currentColor,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-
-                  // Metallic rotatable core knob
-                  Transform.rotate(
-                    angle: rotation * 2 * math.pi,
-                    child: Container(
-                      width: 110.r,
-                      height: 110.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: isMidnight
-                              ? const [
-                                  AppColors.slate800,
-                                  AppColors.midnightSurface,
-                                ]
-                              : (isDark
-                                  ? const [
-                                      AppColors.slate700,
-                                      AppColors.slate900,
-                                    ]
-                                  : const [Colors.white, AppColors.slate100]),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.25),
-                            blurRadius: 10,
-                            offset: const Offset(3, 3),
-                          ),
-                        ],
-                        border: Border.all(
-                          color: isSignalTuned
-                              ? currentColor
-                              : currentColor.withValues(alpha: 0.3),
-                          width: isSignalTuned ? 3 : 1.5,
-                        ),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // Rotary position notch marker
-                          Positioned(
-                            top: 8.r,
-                            child: Container(
-                              width: 6.r,
-                              height: 16.r,
-                              decoration: BoxDecoration(
-                                color: isSignalTuned
-                                    ? currentColor
-                                    : currentColor.withValues(alpha: 0.5),
-                                borderRadius: BorderRadius.circular(3.r),
-                              ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Spinning audio spectrum equalizer lines
+                    Positioned.fill(
+                      child: AnimatedBuilder(
+                        animation: waveAnimation,
+                        builder: (context, child) {
+                          return CustomPaint(
+                            painter: EqualizerArcPainter(
+                              rotationValue: rotation,
+                              timeAnimation: waveAnimation.value,
+                              themeColor: currentColor,
                             ),
+                          );
+                        },
+                      ),
+                    ),
+
+                    // Metallic rotatable core knob
+                    Transform.rotate(
+                      angle: rotation * 2 * math.pi,
+                      child: Container(
+                        width: 110.r,
+                        height: 110.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: isMidnight
+                                ? const [
+                                    AppColors.slate800,
+                                    AppColors.midnightSurface,
+                                  ]
+                                : (isDark
+                                      ? const [
+                                          AppColors.slate700,
+                                          AppColors.slate900,
+                                        ]
+                                      : const [
+                                          Colors.white,
+                                          AppColors.slate100,
+                                        ]),
                           ),
-                          Icon(
-                            showCorrect
-                                ? Icons.check_rounded
-                                : (showIncorrect
-                                      ? Icons.close_rounded
-                                      : Icons.sensors_rounded),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.25),
+                              blurRadius: 10,
+                              offset: const Offset(3, 3),
+                            ),
+                          ],
+                          border: Border.all(
                             color: isSignalTuned
                                 ? currentColor
-                                : currentColor.withValues(alpha: 0.5),
-                            size: 28.r,
+                                : currentColor.withValues(alpha: 0.3),
+                            width: isSignalTuned ? 3 : 1.5,
                           ),
-                        ],
+                        ),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            // Rotary position notch marker
+                            Positioned(
+                              top: 8.r,
+                              child: Container(
+                                width: 6.r,
+                                height: 16.r,
+                                decoration: BoxDecoration(
+                                  color: isSignalTuned
+                                      ? currentColor
+                                      : currentColor.withValues(alpha: 0.5),
+                                  borderRadius: BorderRadius.circular(3.r),
+                                ),
+                              ),
+                            ),
+                            Icon(
+                              showCorrect
+                                  ? Icons.check_rounded
+                                  : (showIncorrect
+                                        ? Icons.close_rounded
+                                        : Icons.sensors_rounded),
+                              color: isSignalTuned
+                                  ? currentColor
+                                  : currentColor.withValues(alpha: 0.5),
+                              size: 28.r,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        SizedBox(height: 16.h),
+          SizedBox(height: 16.h),
 
           // D-Pad Controls for Accessibility
           Row(
@@ -265,7 +267,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                 ? Container(
                     key: const Key('conflict_resolver_static_noise'),
                     constraints: BoxConstraints(minHeight: 76.h),
-                    padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 14.h,
+                      horizontal: 16.w,
+                    ),
                     alignment: Alignment.center,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,

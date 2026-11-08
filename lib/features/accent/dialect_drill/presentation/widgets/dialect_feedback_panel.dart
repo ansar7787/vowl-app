@@ -297,13 +297,9 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
-                  bgColor: brColor.withValues(
-                    alpha: isDark ? 0.15 : 0.08,
-                  ),
+                  bgColor: brColor.withValues(alpha: isDark ? 0.15 : 0.08),
                   textColor: brColor,
-                  borderColor: brColor.withValues(
-                    alpha: isDark ? 0.35 : 0.25,
-                  ),
+                  borderColor: brColor.withValues(alpha: isDark ? 0.35 : 0.25),
                 ),
               ),
               SizedBox(width: 12.w),
@@ -316,13 +312,9 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",
-                  bgColor: amColor.withValues(
-                    alpha: isDark ? 0.15 : 0.08,
-                  ),
+                  bgColor: amColor.withValues(alpha: isDark ? 0.15 : 0.08),
                   textColor: amColor,
-                  borderColor: amColor.withValues(
-                    alpha: isDark ? 0.35 : 0.25,
-                  ),
+                  borderColor: amColor.withValues(alpha: isDark ? 0.35 : 0.25),
                 ),
               ),
             ],

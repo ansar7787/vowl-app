@@ -62,8 +62,8 @@ class NextInReachRadar extends StatelessWidget {
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF0F172A).withValues(alpha: 0.85)
-            : Colors.white);
+              ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+              : Colors.white);
 
     final borderColor = isDark
         ? catColor.withValues(alpha: 0.35)
@@ -75,10 +75,7 @@ class NextInReachRadar extends StatelessWidget {
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: borderColor,
-            width: 1.0,
-          ),
+          border: Border.all(color: borderColor, width: 1.0),
           boxShadow: [
             BoxShadow(
               color: catColor.withValues(alpha: isDark ? 0.15 : 0.08),
@@ -111,7 +108,8 @@ class NextInReachRadar extends StatelessWidget {
                   ],
                 ),
                 border: Border.all(
-                  color: catColor, // SAME COLOR as background: gives the circle a large, full bleed feel!
+                  color:
+                      catColor, // SAME COLOR as background: gives the circle a large, full bleed feel!
                   width: 2.2.r,
                 ),
                 boxShadow: [
@@ -123,11 +121,7 @@ class NextInReachRadar extends StatelessWidget {
                 ],
               ),
               child: Center(
-                child: Icon(
-                  metadata.icon,
-                  size: 19.r,
-                  color: Colors.white,
-                ),
+                child: Icon(metadata.icon, size: 19.r, color: Colors.white),
               ),
             ),
             SizedBox(width: 12.w),
@@ -163,7 +157,9 @@ class NextInReachRadar extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 8.5.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: isDark ? Colors.white : AppColors.slate900,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
                                   letterSpacing: 1.0,
                                 ),
                               ),
@@ -204,9 +200,7 @@ class NextInReachRadar extends StatelessWidget {
                       backgroundColor: isDark
                           ? Colors.white.withValues(alpha: 0.08)
                           : AppColors.slate100,
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        catColor,
-                      ),
+                      valueColor: AlwaysStoppedAnimation<Color>(catColor),
                     ),
                   ),
                 ],

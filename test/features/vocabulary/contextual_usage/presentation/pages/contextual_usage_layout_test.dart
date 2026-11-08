@@ -201,12 +201,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -234,7 +236,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/contextual_test.m4a');
@@ -378,7 +382,9 @@ void main() {
       expect(find.text('Adopt'), findsWidgets);
     });
 
-    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (tester) async {
+    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 3);
       verify(
         () => mockVocabularyBloc.add(
@@ -461,7 +467,13 @@ void main() {
 
         verify(
           () => mockVocabularyBloc.add(
-            any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
           ),
         ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
@@ -469,29 +481,30 @@ void main() {
       },
     );
 
-    testWidgets('2.4 tapping option chip while already answered is locked out', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '2.4 tapping option chip while already answered is locked out',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('Borrow').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(find.text('Borrow').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Attempt second tap during evaluation
-      await tester.tap(find.text('Rent').first, warnIfMissed: false);
-      await tester.pump();
+        // Attempt second tap during evaluation
+        await tester.tap(find.text('Rent').first, warnIfMissed: false);
+        await tester.pump();
 
-      // Drain timers
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+        // Drain timers
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final chipWidget = tester.widget<ContextualUsageOptionChip>(
-        find.widgetWithText(ContextualUsageOptionChip, 'Rent'),
-      );
-      expect(chipWidget.isSelected, isFalse);
-    });
+        final chipWidget = tester.widget<ContextualUsageOptionChip>(
+          find.widgetWithText(ContextualUsageOptionChip, 'Rent'),
+        );
+        expect(chipWidget.isSelected, isFalse);
+      },
+    );
   });
 
   group('3. Phase 2: ContextualUsageRegisterMeter & SpeakToConfirmOverlay', () {
@@ -530,22 +543,23 @@ void main() {
         await advanceToPhase2(tester);
         expect(find.text('Context & Nuance'), findsOneWidget);
         expect(
-          find.text('Borrow means to take temporarily; lend means to give temporarily.'),
+          find.text(
+            'Borrow means to take temporarily; lend means to give temporarily.',
+          ),
           findsOneWidget,
         );
       },
     );
 
-    testWidgets(
-      '3.4 renders usage example quote in RegisterMeter',
-      (tester) async {
-        await advanceToPhase2(tester);
-        expect(
-          find.text('"May I borrow your textbook for the evening?"'),
-          findsOneWidget,
-        );
-      },
-    );
+    testWidgets('3.4 renders usage example quote in RegisterMeter', (
+      tester,
+    ) async {
+      await advanceToPhase2(tester);
+      expect(
+        find.text('"May I borrow your textbook for the evening?"'),
+        findsOneWidget,
+      );
+    });
 
     testWidgets(
       '3.5 renders SpeakToConfirmOverlay with completed target sentence',
@@ -587,7 +601,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
 
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
@@ -607,7 +623,13 @@ void main() {
 
         verify(
           () => mockVocabularyBloc.add(
-            any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
           ),
         ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
@@ -615,9 +637,7 @@ void main() {
       },
     );
 
-    testWidgets('4.3 final submission mounts GameFeedbackCard', (
-      tester,
-    ) async {
+    testWidgets('4.3 final submission mounts GameFeedbackCard', (tester) async {
       await advanceToPhase2(tester);
 
       final overlay = tester.widget<SpeakToConfirmOverlay>(
@@ -664,52 +684,54 @@ void main() {
       verifyNever(() => mockVocabularyBloc.add(any()));
     });
 
-    testWidgets('5.2 answered state mounts GameFeedbackCard with CONTINUE button', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      await tester.tap(find.text('Borrow').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '5.2 answered state mounts GameFeedbackCard with CONTINUE button',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.text('Borrow').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('CONTINUE'), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('CONTINUE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('5.3 tapping CONTINUE on correct answer dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      await tester.tap(find.text('Borrow').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '5.3 tapping CONTINUE on correct answer dispatches NextQuestion',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.text('Borrow').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets(
       '5.4 tapping TRY AGAIN on wrong answer (non-final failure) resets for retry',
@@ -770,18 +792,19 @@ void main() {
   });
 
   group('6. Progression, State Transitions & Cleanup', () {
-    testWidgets('6.1 tapping header hint button dispatches VocabularyHintUsed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
-      await tester.tap(hintButton);
-      await tester.pump(const Duration(milliseconds: 100));
-      verify(
-        () => mockVocabularyBloc.add(const VocabularyHintUsed()),
-      ).called(greaterThanOrEqualTo(1));
-    });
+    testWidgets(
+      '6.1 tapping header hint button dispatches VocabularyHintUsed',
+      (tester) async {
+        await pumpScreen(tester);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
+        await tester.tap(hintButton);
+        await tester.pump(const Duration(milliseconds: 100));
+        verify(
+          () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
     testWidgets('6.2 hint state renders custom hint text in base layout', (
       tester,

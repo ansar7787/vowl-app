@@ -85,9 +85,9 @@ void main() {
   }
 
   GoRoute findRoute(String path) {
-    return GameRoutes.routes
-        .whereType<GoRoute>()
-        .firstWhere((r) => r.path == path);
+    return GameRoutes.routes.whereType<GoRoute>().firstWhere(
+      (r) => r.path == path,
+    );
   }
 
   group('GameRoutes - Static Constants & Route Declarations', () {
@@ -100,7 +100,10 @@ void main() {
     });
 
     test('declares all 7 required game route paths', () {
-      final paths = GameRoutes.routes.whereType<GoRoute>().map((r) => r.path).toList();
+      final paths = GameRoutes.routes
+          .whereType<GoRoute>()
+          .map((r) => r.path)
+          .toList();
 
       expect(paths, contains('/game'));
       expect(paths, contains('/levels'));
@@ -118,7 +121,8 @@ void main() {
 
     test('resolves reading category with default readAndAnswer screen', () {
       final state = createMockState('/game?category=reading&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<ReadingBloc>>());
       final blocProvider = page.child as BlocProvider<ReadingBloc>;
@@ -129,8 +133,11 @@ void main() {
     });
 
     test('resolves writing category with sentenceBuilder screen', () {
-      final state = createMockState('/game?category=writing&gameType=sentenceBuilder&level=3');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=writing&gameType=sentenceBuilder&level=3',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<WritingBloc>>());
       final blocProvider = page.child as BlocProvider<WritingBloc>;
@@ -141,8 +148,11 @@ void main() {
     });
 
     test('resolves speaking category with repeatSentence screen', () {
-      final state = createMockState('/game?category=speaking&gameType=repeatSentence&level=4');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=speaking&gameType=repeatSentence&level=4',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<SpeakingBloc>>());
       final blocProvider = page.child as BlocProvider<SpeakingBloc>;
@@ -153,8 +163,11 @@ void main() {
     });
 
     test('resolves grammar category with grammarQuest screen', () {
-      final state = createMockState('/game?category=grammar&gameType=grammarQuest&level=1');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=grammar&gameType=grammarQuest&level=1',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<GrammarBloc>>());
       final blocProvider = page.child as BlocProvider<GrammarBloc>;
@@ -165,8 +178,11 @@ void main() {
     });
 
     test('resolves listening category with audioMultipleChoice screen', () {
-      final state = createMockState('/game?category=listening&gameType=audioMultipleChoice&level=5');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=listening&gameType=audioMultipleChoice&level=5',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<ListeningBloc>>());
       final blocProvider = page.child as BlocProvider<ListeningBloc>;
@@ -177,8 +193,11 @@ void main() {
     });
 
     test('resolves roleplay category with branchingDialogue screen', () {
-      final state = createMockState('/game?category=roleplay&gameType=branchingDialogue&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=roleplay&gameType=branchingDialogue&level=2',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<RoleplayBloc>>());
       final blocProvider = page.child as BlocProvider<RoleplayBloc>;
@@ -189,8 +208,11 @@ void main() {
     });
 
     test('resolves accent category with minimalPairs screen', () {
-      final state = createMockState('/game?category=accent&gameType=minimalPairs&level=3');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=accent&gameType=minimalPairs&level=3',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<AccentBloc>>());
       final blocProvider = page.child as BlocProvider<AccentBloc>;
@@ -201,8 +223,11 @@ void main() {
     });
 
     test('resolves vocabulary category with flashcards screen', () {
-      final state = createMockState('/game?category=vocabulary&gameType=flashcards&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=vocabulary&gameType=flashcards&level=2',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<VocabularyBloc>>());
       final blocProvider = page.child as BlocProvider<VocabularyBloc>;
@@ -213,8 +238,11 @@ void main() {
     });
 
     test('resolves elite mastery category with storyBuilder screen', () {
-      final state = createMockState('/game?category=elitemastery&gameType=storyBuilder&level=1');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=elitemastery&gameType=storyBuilder&level=1',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<EliteMasteryBloc>>());
       final blocProvider = page.child as BlocProvider<EliteMasteryBloc>;
@@ -225,8 +253,11 @@ void main() {
     });
 
     test('resolves elite_mastery (with underscore) category properly', () {
-      final state = createMockState('/game?category=elite_mastery&gameType=storyBuilder&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=elite_mastery&gameType=storyBuilder&level=2',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<BlocProvider<EliteMasteryBloc>>());
       final blocProvider = page.child as BlocProvider<EliteMasteryBloc>;
@@ -237,8 +268,11 @@ void main() {
     });
 
     test('supports subtype parameter as alias for gameType', () {
-      final state = createMockState('/game?category=writing&subtype=sentenceBuilder&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/game?category=writing&subtype=sentenceBuilder&level=2',
+      );
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       final blocProvider = page.child as BlocProvider<WritingBloc>;
       expect(blocProvider.child, isA<SentenceBuilderScreen>());
@@ -246,48 +280,75 @@ void main() {
 
     test('handles case-insensitivity in category parameter', () {
       final state = createMockState('/game?category=READING&level=1');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       final blocProvider = page.child as BlocProvider<ReadingBloc>;
       expect(blocProvider.child, isA<ReadAndAnswerScreen>());
     });
 
-    test('falls back gracefully to reading category when unknown category provided', () {
-      final state = createMockState('/game?category=unknown_galaxy&level=2');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+    test(
+      'falls back gracefully to reading category when unknown category provided',
+      () {
+        final state = createMockState('/game?category=unknown_galaxy&level=2');
+        final page =
+            gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
-      expect(page.child, isA<BlocProvider<ReadingBloc>>());
-      final blocProvider = page.child as BlocProvider<ReadingBloc>;
-      expect(blocProvider.child, isA<ReadAndAnswerScreen>());
-    });
+        expect(page.child, isA<BlocProvider<ReadingBloc>>());
+        final blocProvider = page.child as BlocProvider<ReadingBloc>;
+        expect(blocProvider.child, isA<ReadAndAnswerScreen>());
+      },
+    );
 
-    test('falls back to category default subtype when unknown gameType provided', () {
-      final state = createMockState('/game?category=accent&gameType=nonexistent_drill&level=1');
-      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+    test(
+      'falls back to category default subtype when unknown gameType provided',
+      () {
+        final state = createMockState(
+          '/game?category=accent&gameType=nonexistent_drill&level=1',
+        );
+        final page =
+            gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
-      final blocProvider = page.child as BlocProvider<AccentBloc>;
-      expect(blocProvider.child, isA<MinimalPairsScreen>());
-    });
+        final blocProvider = page.child as BlocProvider<AccentBloc>;
+        expect(blocProvider.child, isA<MinimalPairsScreen>());
+      },
+    );
 
-    test('defaults to level 1 when level parameter is missing or non-numeric', () {
-      final stateMissing = createMockState('/game?category=reading');
-      final pageMissing = gameRoute.pageBuilder!(mockContext, stateMissing) as CustomTransitionPage;
-      final screenMissing = (pageMissing.child as BlocProvider<ReadingBloc>).child as ReadAndAnswerScreen;
-      expect(screenMissing.level, equals(1));
+    test(
+      'defaults to level 1 when level parameter is missing or non-numeric',
+      () {
+        final stateMissing = createMockState('/game?category=reading');
+        final pageMissing =
+            gameRoute.pageBuilder!(mockContext, stateMissing)
+                as CustomTransitionPage;
+        final screenMissing =
+            (pageMissing.child as BlocProvider<ReadingBloc>).child
+                as ReadAndAnswerScreen;
+        expect(screenMissing.level, equals(1));
 
-      final stateInvalid = createMockState('/game?category=reading&level=abc');
-      final pageInvalid = gameRoute.pageBuilder!(mockContext, stateInvalid) as CustomTransitionPage;
-      final screenInvalid = (pageInvalid.child as BlocProvider<ReadingBloc>).child as ReadAndAnswerScreen;
-      expect(screenInvalid.level, equals(1));
-    });
+        final stateInvalid = createMockState(
+          '/game?category=reading&level=abc',
+        );
+        final pageInvalid =
+            gameRoute.pageBuilder!(mockContext, stateInvalid)
+                as CustomTransitionPage;
+        final screenInvalid =
+            (pageInvalid.child as BlocProvider<ReadingBloc>).child
+                as ReadAndAnswerScreen;
+        expect(screenInvalid.level, equals(1));
+      },
+    );
   });
 
   group('GameRoutes - /levels Route Resolution', () {
     final levelsRoute = findRoute('/levels');
 
     test('resolves ModernCategoryMap with specified category and gameType', () {
-      final state = createMockState('/levels?category=vocabulary&gameType=flashcards');
-      final page = levelsRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final state = createMockState(
+        '/levels?category=vocabulary&gameType=flashcards',
+      );
+      final page =
+          levelsRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<ModernCategoryMap>());
       final mapWidget = page.child as ModernCategoryMap;
@@ -296,16 +357,21 @@ void main() {
       expect(mapWidget.key, equals(const ValueKey('vocabulary_flashcards')));
     });
 
-    test('defaults category to reading and gameType to readAndAnswer when params omitted', () {
-      final state = createMockState('/levels');
-      final page = levelsRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+    test(
+      'defaults category to reading and gameType to readAndAnswer when params omitted',
+      () {
+        final state = createMockState('/levels');
+        final page =
+            levelsRoute.pageBuilder!(mockContext, state)
+                as CustomTransitionPage;
 
-      expect(page.child, isA<ModernCategoryMap>());
-      final mapWidget = page.child as ModernCategoryMap;
-      expect(mapWidget.categoryId, equals('reading'));
-      expect(mapWidget.gameType, equals('readAndAnswer'));
-      expect(mapWidget.key, equals(const ValueKey('reading_readAndAnswer')));
-    });
+        expect(page.child, isA<ModernCategoryMap>());
+        final mapWidget = page.child as ModernCategoryMap;
+        expect(mapWidget.categoryId, equals('reading'));
+        expect(mapWidget.gameType, equals('readAndAnswer'));
+        expect(mapWidget.key, equals(const ValueKey('reading_readAndAnswer')));
+      },
+    );
   });
 
   group('GameRoutes - /category-games Route Resolution', () {
@@ -313,7 +379,9 @@ void main() {
 
     test('resolves CategoryGamesPage with explicit categoryId', () {
       final state = createMockState('/category-games?category=listening');
-      final page = catGamesRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          catGamesRoute.pageBuilder!(mockContext, state)
+              as CustomTransitionPage;
 
       expect(page.child, isA<CategoryGamesPage>());
       final catWidget = page.child as CategoryGamesPage;
@@ -322,7 +390,9 @@ void main() {
 
     test('defaults categoryId to speaking when parameter omitted', () {
       final state = createMockState('/category-games');
-      final page = catGamesRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          catGamesRoute.pageBuilder!(mockContext, state)
+              as CustomTransitionPage;
 
       expect(page.child, isA<CategoryGamesPage>());
       final catWidget = page.child as CategoryGamesPage;
@@ -334,7 +404,8 @@ void main() {
     test('resolves /level-details to AdventureLevelScreen', () {
       final route = findRoute(GameRoutes.levelRoute);
       final state = createMockState('/level-details');
-      final page = route.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          route.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<AdventureLevelScreen>());
     });
@@ -342,7 +413,8 @@ void main() {
     test('resolves /xp-details to AdventureXPScreen', () {
       final route = findRoute(GameRoutes.adventureXPRoute);
       final state = createMockState('/xp-details');
-      final page = route.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          route.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<AdventureXPScreen>());
     });
@@ -350,7 +422,8 @@ void main() {
     test('resolves /coins-details to VowlCoinsScreen', () {
       final route = findRoute(GameRoutes.questCoinsRoute);
       final state = createMockState('/coins-details');
-      final page = route.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          route.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<VowlCoinsScreen>());
     });
@@ -358,7 +431,8 @@ void main() {
     test('resolves /quest-sequence with authenticated user quests', () {
       final route = findRoute(GameRoutes.questSequenceRoute);
       final state = createMockState('/quest-sequence?id=daily_duo');
-      final page = route.pageBuilder!(mockContext, state) as CustomTransitionPage;
+      final page =
+          route.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<QuestSequencePage>());
       final sequencePage = page.child as QuestSequencePage;
@@ -366,20 +440,23 @@ void main() {
       expect(sequencePage.quests, isA<List<GameQuest>>());
     });
 
-    test('resolves /quest-sequence with empty quests if user is unauthenticated', () {
-      when(() => mockAuthBloc.state).thenReturn(
-        const AuthState.unauthenticated(),
-      );
+    test(
+      'resolves /quest-sequence with empty quests if user is unauthenticated',
+      () {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(const AuthState.unauthenticated());
 
-      final route = findRoute(GameRoutes.questSequenceRoute);
-      final state = createMockState('/quest-sequence?id=speed_run');
-      final page = route.pageBuilder!(mockContext, state) as CustomTransitionPage;
+        final route = findRoute(GameRoutes.questSequenceRoute);
+        final state = createMockState('/quest-sequence?id=speed_run');
+        final page =
+            route.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
-      expect(page.child, isA<QuestSequencePage>());
-      final sequencePage = page.child as QuestSequencePage;
-      expect(sequencePage.sequenceId, equals('speed_run'));
-      expect(sequencePage.quests, isEmpty);
-    });
+        expect(page.child, isA<QuestSequencePage>());
+        final sequencePage = page.child as QuestSequencePage;
+        expect(sequencePage.sequenceId, equals('speed_run'));
+        expect(sequencePage.quests, isEmpty);
+      },
+    );
   });
 }
-

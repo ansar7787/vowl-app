@@ -2,11 +2,7 @@ import 'dart:math';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 /// Difficulty tiers for official Computer/AI opponents in 1v1 Arena.
-enum ArenaAiDifficultyTier {
-  easy,
-  medium,
-  hard,
-}
+enum ArenaAiDifficultyTier { easy, medium, hard }
 
 /// Advanced 3-Pillar Skill-Based Matchmaking (SBMM) engine for 1v1 Arena AI opponents.
 ///
@@ -64,7 +60,8 @@ class ArenaAiOpponent {
     // 1. Anti-Farm & High-Skill Protection:
     // If player has a high win rate (>= 70% with 3+ games) OR is on a win streak (>= 2):
     // Easy bots are 100% eliminated!
-    final bool canUseEasy = (totalDuels < 3 || winRate < 70.0) && consecutiveWins < 2;
+    final bool canUseEasy =
+        (totalDuels < 3 || winRate < 70.0) && consecutiveWins < 2;
 
     // 2. Level Score (Weight: 40%) -> Range: 10.0 to 100.0
     final double levelScore = (playerLevel * 3.5).clamp(10.0, 100.0);
@@ -79,9 +76,8 @@ class ArenaAiOpponent {
     final double streakBonus = (consecutiveWins * 15.0).clamp(0.0, 30.0);
 
     // Composite Skill Index: 0.0 to 100.0
-    final double compositeSkill = (levelScore * 0.40) +
-        (winRateScore * 0.45) +
-        (streakBonus * 0.15);
+    final double compositeSkill =
+        (levelScore * 0.40) + (winRateScore * 0.45) + (streakBonus * 0.15);
 
     // Probabilistic Roll (0 to 99)
     final int roll = rng.nextInt(100);
@@ -92,10 +88,14 @@ class ArenaAiOpponent {
       // Competitive / Anti-Farm Bracket: 0% Easy (CANNOT FARM!)
       if (compositeSkill >= 60.0) {
         // High Master: 70% Hard, 30% Medium
-        chosenTier = (roll < 70) ? ArenaAiDifficultyTier.hard : ArenaAiDifficultyTier.medium;
+        chosenTier = (roll < 70)
+            ? ArenaAiDifficultyTier.hard
+            : ArenaAiDifficultyTier.medium;
       } else {
         // Balanced Competitive: 45% Hard, 55% Medium
-        chosenTier = (roll < 45) ? ArenaAiDifficultyTier.hard : ArenaAiDifficultyTier.medium;
+        chosenTier = (roll < 45)
+            ? ArenaAiDifficultyTier.hard
+            : ArenaAiDifficultyTier.medium;
       }
     } else {
       // Standard Bracket for Novices / Casual Players:

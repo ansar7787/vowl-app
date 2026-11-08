@@ -244,11 +244,18 @@ class AdventureLevelScreen extends StatelessWidget {
                         ),
                       ),
                       if (!user.isPremium)
-                        SliverToBoxAdapter(child: _buildHintStore(context, user)),
+                        SliverToBoxAdapter(
+                          child: _buildHintStore(context, user),
+                        ),
                       if (!user.isPremium)
                         SliverToBoxAdapter(
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 48.h),
+                            padding: EdgeInsets.fromLTRB(
+                              20.w,
+                              24.h,
+                              20.w,
+                              48.h,
+                            ),
                             child: const AdRewardCard(margin: EdgeInsets.zero),
                           ),
                         ),
@@ -973,10 +980,7 @@ class AdventureLevelScreen extends StatelessWidget {
               'adventure.hint_pack_grand_master',
               fallback: 'GRAND MASTER PACK',
             )
-          : context.tr(
-              'adventure.hint_pack_strategic',
-              fallback: 'HINT PACK',
-            ),
+          : context.tr('adventure.hint_pack_strategic', fallback: 'HINT PACK'),
       bodyBuilder: (cost, amount) => context.tr(
         'adventure.hint_pack_exchange_body',
         fallback: 'Trade coins for premium hint packs.',

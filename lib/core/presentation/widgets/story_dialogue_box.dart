@@ -52,16 +52,14 @@ class StoryDialogueBox extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isMidnight
                               ? AppColors.midnightSurface
-                              : (isDark
-                                  ? AppColors.slate900
-                                  : Colors.white),
+                              : (isDark ? AppColors.slate900 : Colors.white),
                           borderRadius: BorderRadius.circular(32.r),
                           border: Border.all(
                             color: isMidnight
                                 ? Colors.white.withValues(alpha: 0.12)
                                 : (isDark
-                                    ? Colors.white.withValues(alpha: 0.08)
-                                    : AppColors.slate100),
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : AppColors.slate100),
                             width: 1.5,
                           ),
                         ),
@@ -169,7 +167,10 @@ class StoryDialogueBox extends StatelessWidget {
     );
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacious, vertical: 32.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.spacious,
+        vertical: 32.h,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

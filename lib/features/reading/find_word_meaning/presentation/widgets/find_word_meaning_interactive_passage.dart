@@ -258,8 +258,10 @@ class _FindWordMeaningInteractivePassageState
                         color: isSelected
                             ? activeColor.withValues(alpha: 0.18)
                             : (widget.isDark
-                                ? Colors.white.withValues(alpha: 0.04)
-                                : widget.primaryColor.withValues(alpha: 0.04)),
+                                  ? Colors.white.withValues(alpha: 0.04)
+                                  : widget.primaryColor.withValues(
+                                      alpha: 0.04,
+                                    )),
                         borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(
                           color: isSelected ? activeColor : Colors.transparent,

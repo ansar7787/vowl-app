@@ -296,7 +296,9 @@ class _TtsVoiceSelectionBottomSheetState
   Future<void> _openTtsStore() async {
     di.sl<HapticService>().selection();
     final marketUri = Uri.parse('market://details?id=com.google.android.tts');
-    final webUri = Uri.parse('https://play.google.com/store/apps/details?id=com.google.android.tts');
+    final webUri = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.google.android.tts',
+    );
     try {
       if (await canLaunchUrl(marketUri)) {
         await launchUrl(marketUri, mode: LaunchMode.externalApplication);
@@ -328,9 +330,7 @@ class _TtsVoiceSelectionBottomSheetState
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Container(
       constraints: BoxConstraints(
@@ -339,10 +339,7 @@ class _TtsVoiceSelectionBottomSheetState
       decoration: BoxDecoration(
         color: sheetBg,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-        border: Border.all(
-          color: borderColor,
-          width: 1.0,
-        ),
+        border: Border.all(color: borderColor, width: 1.0),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
@@ -453,413 +450,419 @@ class _TtsVoiceSelectionBottomSheetState
             ),
             SizedBox(height: 18.h),
 
-                // No Engine Warning Banner (Empty/Degraded State)
-                if (di.sl.isRegistered<TtsService>() &&
-                    di.sl<TtsService>().engineStatus ==
-                        TtsEngineStatus.noEngine)
-                  Container(
-                    margin: EdgeInsets.only(bottom: 16.h),
-                    padding: EdgeInsets.all(12.r),
-                    decoration: BoxDecoration(
-                      color: AppColors.rose500.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(14.r),
-                      border: Border.all(
-                        color: AppColors.rose500.withValues(alpha: 0.35),
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+            // No Engine Warning Banner (Empty/Degraded State)
+            if (di.sl.isRegistered<TtsService>() &&
+                di.sl<TtsService>().engineStatus == TtsEngineStatus.noEngine)
+              Container(
+                margin: EdgeInsets.only(bottom: 16.h),
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: AppColors.rose500.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: AppColors.rose500.withValues(alpha: 0.35),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.warning_amber_rounded,
-                              color: AppColors.rose500,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 10.w),
-                            Expanded(
-                              child: Text(
-                                'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed.',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  color: isDark ? Colors.white70 : Colors.black87,
-                                  height: 1.35,
-                                ),
-                              ),
-                            ),
-                          ],
+                        Icon(
+                          Icons.warning_amber_rounded,
+                          color: AppColors.rose500,
+                          size: 20.r,
                         ),
-                        SizedBox(height: 10.h),
-                        Wrap(
-                          spacing: 8.w,
-                          runSpacing: 8.h,
-                          children: [
-                            ScaleButton(
-                              onTap: _openTtsStore,
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                                decoration: BoxDecoration(
-                                  color: AppColors.rose500,
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.download_rounded, color: Colors.white, size: 16.r),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      'Install Speech Services',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: Text(
+                            'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed.',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.35,
                             ),
-                            ScaleButton(
-                              onTap: () async {
-                                di.sl<HapticService>().selection();
-                                if (di.sl.isRegistered<TtsService>()) {
-                                  await di.sl<TtsService>().reloadVoice();
-                                  if (mounted) setState(() {});
-                                }
-                              },
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                                decoration: BoxDecoration(
-                                  color: isDark ? Colors.white12 : Colors.black12,
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.refresh_rounded, color: isDark ? Colors.white70 : Colors.black87, size: 16.r),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      'Check Again',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: isDark ? Colors.white70 : Colors.black87,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ],
                     ),
-                  ),
-
-                // Voice Preset Option Cards
-                ...TtsVoicePreset.values.map((preset) {
-                  final isLocked = preset.isPremium && !isUserPremium;
-                  final isSelected = _selectedPreset == preset;
-                  final isPlaying = _currentlyPlayingId == preset.id;
-
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 10.h),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => _selectPreset(preset),
-                        borderRadius: BorderRadius.circular(16.r),
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 180),
-                          curve: Curves.easeOutCubic,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 12.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: isSelected
-                                ? AppColors.indigo500.withValues(
-                                    alpha: isDark ? 0.15 : 0.08,
-                                  )
-                                : (isMidnight
-                                    ? const Color(0xFF0F1523)
-                                    : (isDark
-                                        ? const Color(0xFF161F33)
-                                        : AppColors.slate50)),
-                            borderRadius: BorderRadius.circular(18.r),
-                            border: Border.all(
-                              color: isSelected
-                                  ? AppColors.indigo500
-                                  : borderColor,
-                              width: 1.0,
+                    SizedBox(height: 10.h),
+                    Wrap(
+                      spacing: 8.w,
+                      runSpacing: 8.h,
+                      children: [
+                        ScaleButton(
+                          onTap: _openTtsStore,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14.w,
+                              vertical: 8.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.rose500,
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.download_rounded,
+                                  color: Colors.white,
+                                  size: 16.r,
+                                ),
+                                SizedBox(width: 6.w),
+                                Text(
+                                  'Install Speech Services',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              // Preset Icon
-                              Container(
-                                width: 40.r,
-                                height: 40.r,
-                                decoration: BoxDecoration(
-                                  color: isSelected
-                                      ? AppColors.indigo500.withValues(
-                                          alpha: 0.18,
-                                        )
-                                      : (isDark
-                                          ? Colors.white.withValues(
-                                              alpha: 0.06,
-                                            )
-                                          : Colors.black.withValues(
-                                              alpha: 0.04,
-                                            )),
-                                  borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        ScaleButton(
+                          onTap: () async {
+                            di.sl<HapticService>().selection();
+                            if (di.sl.isRegistered<TtsService>()) {
+                              await di.sl<TtsService>().reloadVoice();
+                              if (mounted) setState(() {});
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14.w,
+                              vertical: 8.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: isDark ? Colors.white12 : Colors.black12,
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.refresh_rounded,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
+                                  size: 16.r,
                                 ),
-                                child: Icon(
-                                  preset.icon,
-                                  size: 20.r,
+                                SizedBox(width: 6.w),
+                                Text(
+                                  'Check Again',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+            // Voice Preset Option Cards
+            ...TtsVoicePreset.values.map((preset) {
+              final isLocked = preset.isPremium && !isUserPremium;
+              final isSelected = _selectedPreset == preset;
+              final isPlaying = _currentlyPlayingId == preset.id;
+
+              return Padding(
+                padding: EdgeInsets.only(bottom: 10.h),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () => _selectPreset(preset),
+                    borderRadius: BorderRadius.circular(16.r),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 180),
+                      curve: Curves.easeOutCubic,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 12.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? AppColors.indigo500.withValues(
+                                alpha: isDark ? 0.15 : 0.08,
+                              )
+                            : (isMidnight
+                                  ? const Color(0xFF0F1523)
+                                  : (isDark
+                                        ? const Color(0xFF161F33)
+                                        : AppColors.slate50)),
+                        borderRadius: BorderRadius.circular(18.r),
+                        border: Border.all(
+                          color: isSelected ? AppColors.indigo500 : borderColor,
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          // Preset Icon
+                          Container(
+                            width: 40.r,
+                            height: 40.r,
+                            decoration: BoxDecoration(
+                              color: isSelected
+                                  ? AppColors.indigo500.withValues(alpha: 0.18)
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.06)
+                                        : Colors.black.withValues(alpha: 0.04)),
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
+                            child: Icon(
+                              preset.icon,
+                              size: 20.r,
+                              color: isSelected
+                                  ? AppColors.indigo500
+                                  : (isDark
+                                        ? Colors.white70
+                                        : AppColors.slate700),
+                            ),
+                          ),
+                          SizedBox(width: 12.w),
+
+                          // Title, Badges and Subtitle
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Wrap(
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  spacing: 6.w,
+                                  runSpacing: 2.h,
+                                  children: [
+                                    Text(
+                                      preset.title,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isSelected
+                                            ? (isDark
+                                                  ? Colors.white
+                                                  : AppColors.indigo500)
+                                            : Theme.of(
+                                                context,
+                                              ).colorScheme.onSurface,
+                                      ),
+                                    ),
+                                    if (preset ==
+                                        TtsVoicePreset.friendlyTeacher)
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 6.w,
+                                          vertical: 2.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? const Color(0xFF14291E)
+                                              : const Color(0xFFE8F5E9),
+                                          borderRadius: BorderRadius.circular(
+                                            5.r,
+                                          ),
+                                          border: Border.all(
+                                            color: isDark
+                                                ? const Color(0xFF1E462E)
+                                                : const Color(0xFFC8E6C9),
+                                            width: 0.8,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          'KIDS FAVORITE',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 9.sp,
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 0.4,
+                                            color: isDark
+                                                ? const Color(0xFF81C784)
+                                                : const Color(0xFF2E7D32),
+                                          ),
+                                        ),
+                                      ),
+                                    if (preset.isPremium)
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 7.w,
+                                          vertical: 2.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? const Color(0xFF261D0C)
+                                              : const Color(0xFFFEF3C7),
+                                          borderRadius: BorderRadius.circular(
+                                            6.r,
+                                          ),
+                                          border: Border.all(
+                                            color: isDark
+                                                ? const Color(0xFF453314)
+                                                : const Color(0xFFFDE68A),
+                                            width: 0.8,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          isUserPremium ? 'UNLOCKED' : 'PRO',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 9.5.sp,
+                                            fontWeight: FontWeight.w900,
+                                            letterSpacing: 0.8,
+                                            color: isDark
+                                                ? const Color(0xFFFBBF24)
+                                                : const Color(0xFFD97706),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                                SizedBox(height: 3.h),
+                                Text(
+                                  preset.subtitle,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.5.sp,
+                                    height: 1.25,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+
+                          // Interactive Audio Preview Button (Always available for preview)
+                          _AudioPreviewButton(
+                            isPlaying: isPlaying,
+                            isSelected: isSelected,
+                            isDark: isDark,
+                            onTap: () => _playPreview(preset),
+                          ),
+
+                          SizedBox(width: 8.w),
+
+                          // Selection or Lock Indicator
+                          if (isLocked)
+                            Container(
+                              width: 22.r,
+                              height: 22.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.04),
+                                border: Border.all(
+                                  color: isDark
+                                      ? Colors.white12
+                                      : Colors.black12,
+                                  width: 1,
+                                ),
+                              ),
+                              child: Icon(
+                                LucideIcons.lock,
+                                size: 11.r,
+                                color: isDark ? Colors.white38 : Colors.black38,
+                              ),
+                            )
+                          else
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 180),
+                              width: 22.r,
+                              height: 22.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: isSelected
+                                    ? AppColors.indigo500
+                                    : Colors.transparent,
+                                border: Border.all(
                                   color: isSelected
                                       ? AppColors.indigo500
                                       : (isDark
-                                          ? Colors.white70
-                                          : AppColors.slate700),
+                                            ? Colors.white.withValues(
+                                                alpha: 0.2,
+                                              )
+                                            : Colors.black.withValues(
+                                                alpha: 0.2,
+                                              )),
+                                  width: 1.5,
                                 ),
                               ),
-                              SizedBox(width: 12.w),
-
-                              // Title, Badges and Subtitle
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Wrap(
-                                      crossAxisAlignment:
-                                          WrapCrossAlignment.center,
-                                      spacing: 6.w,
-                                      runSpacing: 2.h,
-                                      children: [
-                                        Text(
-                                          preset.title,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: isSelected
-                                                ? (isDark
-                                                      ? Colors.white
-                                                      : AppColors.indigo500)
-                                                : Theme.of(
-                                                    context,
-                                                  ).colorScheme.onSurface,
-                                          ),
-                                        ),
-                                        if (preset ==
-                                            TtsVoicePreset.friendlyTeacher)
-                                          Container(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 6.w,
-                                              vertical: 2.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: isDark
-                                                  ? const Color(0xFF14291E)
-                                                  : const Color(0xFFE8F5E9),
-                                              borderRadius:
-                                                  BorderRadius.circular(5.r),
-                                              border: Border.all(
-                                                color: isDark
-                                                    ? const Color(0xFF1E462E)
-                                                    : const Color(0xFFC8E6C9),
-                                                width: 0.8,
-                                              ),
-                                            ),
-                                            child: Text(
-                                              'KIDS FAVORITE',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 9.sp,
-                                                fontWeight: FontWeight.w700,
-                                                letterSpacing: 0.4,
-                                                color: isDark
-                                                    ? const Color(0xFF81C784)
-                                                    : const Color(0xFF2E7D32),
-                                              ),
-                                            ),
-                                          ),
-                                        if (preset.isPremium)
-                                          Container(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 7.w,
-                                              vertical: 2.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: isDark
-                                                  ? const Color(0xFF261D0C)
-                                                  : const Color(0xFFFEF3C7),
-                                              borderRadius:
-                                                  BorderRadius.circular(6.r),
-                                              border: Border.all(
-                                                color: isDark
-                                                    ? const Color(0xFF453314)
-                                                    : const Color(0xFFFDE68A),
-                                                width: 0.8,
-                                              ),
-                                            ),
-                                            child: Text(
-                                              isUserPremium
-                                                  ? 'UNLOCKED'
-                                                  : 'PRO',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 9.5.sp,
-                                                fontWeight: FontWeight.w900,
-                                                letterSpacing: 0.8,
-                                                color: isDark
-                                                    ? const Color(0xFFFBBF24)
-                                                    : const Color(0xFFD97706),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 3.h),
-                                    Text(
-                                      preset.subtitle,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 11.5.sp,
-                                        height: 1.25,
-                                        color: isDark
-                                            ? Colors.white54
-                                            : Colors.black54,
-                                      ),
-                                    ),
-                                  ],
+                              child: AnimatedScale(
+                                scale: isSelected ? 1.0 : 0.0,
+                                duration: const Duration(milliseconds: 180),
+                                curve: Curves.easeOutBack,
+                                child: Icon(
+                                  Icons.check,
+                                  size: 14.r,
+                                  color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 8.w),
-
-                              // Interactive Audio Preview Button (Always available for preview)
-                              _AudioPreviewButton(
-                                isPlaying: isPlaying,
-                                isSelected: isSelected,
-                                isDark: isDark,
-                                onTap: () => _playPreview(preset),
-                              ),
-
-                              SizedBox(width: 8.w),
-
-                              // Selection or Lock Indicator
-                              if (isLocked)
-                                Container(
-                                  width: 22.r,
-                                  height: 22.r,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.05)
-                                        : Colors.black.withValues(alpha: 0.04),
-                                    border: Border.all(
-                                      color: isDark
-                                          ? Colors.white12
-                                          : Colors.black12,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    LucideIcons.lock,
-                                    size: 11.r,
-                                    color: isDark
-                                        ? Colors.white38
-                                        : Colors.black38,
-                                  ),
-                                )
-                              else
-                                AnimatedContainer(
-                                  duration: const Duration(milliseconds: 180),
-                                  width: 22.r,
-                                  height: 22.r,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: isSelected
-                                        ? AppColors.indigo500
-                                        : Colors.transparent,
-                                    border: Border.all(
-                                      color: isSelected
-                                          ? AppColors.indigo500
-                                          : (isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.2,
-                                                  )
-                                                : Colors.black.withValues(
-                                                    alpha: 0.2,
-                                                  )),
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: AnimatedScale(
-                                    scale: isSelected ? 1.0 : 0.0,
-                                    duration: const Duration(milliseconds: 180),
-                                    curve: Curves.easeOutBack,
-                                    child: Icon(
-                                      Icons.check,
-                                      size: 14.r,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-
-                SizedBox(height: 12.h),
-
-                // Bottom Action Button
-                SizedBox(
-                  width: double.infinity,
-                  height: 50.h,
-                  child: ScaleButton(
-                    onTap: _closeSheet,
-                    child: Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500,
-                        borderRadius: BorderRadius.circular(16.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.indigo500.withValues(alpha: 0.35),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
+                            ),
                         ],
-                      ),
-                      child: Text(
-                        'Done',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 0.3,
-                        ),
                       ),
                     ),
                   ),
                 ),
-              ],
+              );
+            }),
+
+            SizedBox(height: 12.h),
+
+            // Bottom Action Button
+            SizedBox(
+              width: double.infinity,
+              height: 50.h,
+              child: ScaleButton(
+                onTap: _closeSheet,
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500,
+                    borderRadius: BorderRadius.circular(16.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.35),
+                        blurRadius: 12,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'Done',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
-        );
+          ],
+        ),
+      ),
+    );
   }
 }
 

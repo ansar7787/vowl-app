@@ -180,8 +180,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         final GrammarQuest? quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
-        final rawQuestion =
-            quest?.question ?? quest?.prompt ?? "Direct Speech";
+        final rawQuestion = quest?.question ?? quest?.prompt ?? "Direct Speech";
         String displayDirect = quest?.sentence ?? "";
         if (displayDirect.isEmpty) {
           if (rawQuestion.contains(':')) {

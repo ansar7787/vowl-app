@@ -74,8 +74,8 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
               isSnapped
                   ? "Great! Tap the microphone below and read the sentence aloud."
                   : (instruction != null && instruction!.trim().isNotEmpty
-                      ? instruction!
-                      : "Listen to the audio. Does it match the sentence below? Choose Yes or No."),
+                        ? instruction!
+                        : "Listen to the audio. Does it match the sentence below? Choose Yes or No."),
               key: const Key('yes_no_speaking_instruction_text'),
               textAlign: TextAlign.center,
               softWrap: true,

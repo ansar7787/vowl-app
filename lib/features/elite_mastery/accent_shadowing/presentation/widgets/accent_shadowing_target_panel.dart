@@ -106,7 +106,8 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   }
 
   Widget _buildTargetWords(BuildContext context, List<String> words) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context) ||
+    final reduceMotion =
+        VowlMotion.shouldReduceMotion(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     return Semantics(

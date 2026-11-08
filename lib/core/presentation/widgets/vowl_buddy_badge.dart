@@ -69,8 +69,8 @@ class VowlBuddyBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final badgeDiameter = size ?? 24.r;
     final innerMascotSize = mascotSize ?? 18.r;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
@@ -83,27 +83,27 @@ class VowlBuddyBadge extends StatelessWidget {
             colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
           )
         : (isDark
-            ? LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  const Color(0xFF1E293B).withValues(alpha: 0.95),
-                  const Color(0xFF0F172A).withValues(alpha: 0.95),
-                ],
-              )
-            : const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.white, Color(0xFFF8FAFC)],
-              ));
+              ? LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    const Color(0xFF1E293B).withValues(alpha: 0.95),
+                    const Color(0xFF0F172A).withValues(alpha: 0.95),
+                  ],
+                )
+              : const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Colors.white, Color(0xFFF8FAFC)],
+                ));
 
     // Refined hairline border that catches light instead of pitch-black harshness
     final BoxBorder defaultBorder = Border.all(
       color: isMidnight
           ? Colors.white.withValues(alpha: 0.24)
           : (isDark
-              ? Colors.white.withValues(alpha: 0.22)
-              : AppColors.indigo500.withValues(alpha: 0.22)),
+                ? Colors.white.withValues(alpha: 0.22)
+                : AppColors.indigo500.withValues(alpha: 0.22)),
       width: 1.2.r,
     );
 
@@ -125,7 +125,9 @@ class VowlBuddyBadge extends StatelessWidget {
 
     final badgeDecoration = BoxDecoration(
       shape: BoxShape.circle,
-      color: (gradient != null || backgroundColor != null) ? backgroundColor : null,
+      color: (gradient != null || backgroundColor != null)
+          ? backgroundColor
+          : null,
       gradient: backgroundColor != null ? null : (gradient ?? defaultGradient),
       border: border ?? defaultBorder,
       boxShadow: boxShadow ?? defaultShadow,
@@ -165,18 +167,12 @@ class VowlBuddyBadge extends StatelessWidget {
               fit: BoxFit.contain,
               errorBuilder: (_, _, _) => Text(
                 '🦉',
-                style: TextStyle(
-                  fontSize: innerMascotSize * 0.6,
-                  height: 1.0,
-                ),
+                style: TextStyle(fontSize: innerMascotSize * 0.6, height: 1.0),
               ),
             )
           : Text(
               emoji,
-              style: TextStyle(
-                fontSize: innerMascotSize * 0.6,
-                height: 1.0,
-              ),
+              style: TextStyle(fontSize: innerMascotSize * 0.6, height: 1.0),
             );
 
       if (effectiveAccessory != null && effectiveAccessory.isNotEmpty) {
@@ -194,10 +190,7 @@ class VowlBuddyBadge extends StatelessWidget {
               top: -innerMascotSize * 0.16,
               child: Text(
                 accessoryEmoji,
-                style: TextStyle(
-                  fontSize: innerMascotSize * 0.42,
-                  height: 1.0,
-                ),
+                style: TextStyle(fontSize: innerMascotSize * 0.42, height: 1.0),
               ),
             );
             break;
@@ -206,10 +199,7 @@ class VowlBuddyBadge extends StatelessWidget {
               bottom: -innerMascotSize * 0.08,
               child: Text(
                 accessoryEmoji,
-                style: TextStyle(
-                  fontSize: innerMascotSize * 0.38,
-                  height: 1.0,
-                ),
+                style: TextStyle(fontSize: innerMascotSize * 0.38, height: 1.0),
               ),
             );
             break;
@@ -219,10 +209,7 @@ class VowlBuddyBadge extends StatelessWidget {
               right: -innerMascotSize * 0.04,
               child: Text(
                 accessoryEmoji,
-                style: TextStyle(
-                  fontSize: innerMascotSize * 0.3,
-                  height: 1.0,
-                ),
+                style: TextStyle(fontSize: innerMascotSize * 0.3, height: 1.0),
               ),
             );
             break;
@@ -232,10 +219,7 @@ class VowlBuddyBadge extends StatelessWidget {
               right: -innerMascotSize * 0.04,
               child: Text(
                 accessoryEmoji,
-                style: TextStyle(
-                  fontSize: innerMascotSize * 0.34,
-                  height: 1.0,
-                ),
+                style: TextStyle(fontSize: innerMascotSize * 0.34, height: 1.0),
               ),
             );
             break;
@@ -270,13 +254,9 @@ class VowlBuddyBadge extends StatelessWidget {
     }
 
     if (onTap != null) {
-      return ScaleButton(
-        onTap: onTap!,
-        child: badge,
-      );
+      return ScaleButton(onTap: onTap!, child: badge);
     }
 
     return badge;
   }
 }
-

@@ -30,8 +30,7 @@ import 'package:vowl/features/profile/presentation/widgets/adventure_total_xp_ca
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
-class MockProgressionBloc
-    extends MockBloc<ProgressionEvent, ProgressionState>
+class MockProgressionBloc extends MockBloc<ProgressionEvent, ProgressionState>
     implements ProgressionBloc {}
 
 class MockHapticService extends Mock implements HapticService {}
@@ -65,10 +64,7 @@ void main() {
     coins: 1500,
     streakFreezes: 1,
     hasPermanentXPBoost: false,
-    dailyXpHistory: {
-      '2026-10-15': 120,
-      '2026-10-16': 180,
-    },
+    dailyXpHistory: {'2026-10-15': 120, '2026-10-16': 180},
     completedLevels: {
       'beginner': [1, 2, 3],
       'intermediate': [1],
@@ -95,9 +91,7 @@ void main() {
 
   setUp(() async {
     VowlMotion.lowAnimationModeOverride.value = true;
-    SharedPreferences.setMockInitialValues({
-      'reward_limits_coins_count': 0,
-    });
+    SharedPreferences.setMockInitialValues({'reward_limits_coins_count': 0});
     navigatedRoutes = [];
 
     mockAuthBloc = MockAuthBloc();
@@ -108,12 +102,13 @@ void main() {
     mockRewardLimitService = MockRewardLimitService();
     progressionStateController = StreamController<ProgressionState>.broadcast();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
-    when(() => mockProgressionBloc.state)
-        .thenReturn(const ProgressionState());
-    when(() => mockProgressionBloc.stream)
-        .thenAnswer((_) => progressionStateController.stream);
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(() => mockProgressionBloc.state).thenReturn(const ProgressionState());
+    when(
+      () => mockProgressionBloc.stream,
+    ).thenAnswer((_) => progressionStateController.stream);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -129,11 +124,13 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -216,7 +213,9 @@ void main() {
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) {
             final category = state.uri.queryParameters['category'] ?? '';
-            navigatedRoutes.add('${AppRouter.categoryGamesRoute}?category=$category');
+            navigatedRoutes.add(
+              '${AppRouter.categoryGamesRoute}?category=$category',
+            );
             return Scaffold(body: Text('Category Games: $category'));
           },
         ),
@@ -250,7 +249,9 @@ void main() {
 
   group('Group 1: Unauthenticated / Null User State', () {
     testWidgets('renders SizedBox.shrink when user is null', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -280,18 +281,23 @@ void main() {
   });
 
   group('Group 3: Total Experience Card', () {
-    testWidgets('renders AdventureTotalXpCard with formatted XP and level info', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders AdventureTotalXpCard with formatted XP and level info',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.byType(AdventureTotalXpCard), findsOneWidget);
-      expect(find.text('TOTAL EXPERIENCE'), findsOneWidget);
-      expect(find.text('2,645 XP'), findsOneWidget);
-    });
+        expect(find.byType(AdventureTotalXpCard), findsOneWidget);
+        expect(find.text('TOTAL EXPERIENCE'), findsOneWidget);
+        expect(find.text('2,645 XP'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 4: Daily XP History Chart', () {
-    testWidgets('renders AdventureDailyXpChart with weekly total', (tester) async {
+    testWidgets('renders AdventureDailyXpChart with weekly total', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -301,65 +307,79 @@ void main() {
   });
 
   group('Group 5: Language Mastery Grid', () {
-    testWidgets('renders AdventureMasteryGrid and tapping kids pushes kidsZoneRoute', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders AdventureMasteryGrid and tapping kids pushes kidsZoneRoute',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      await tester.scrollUntilVisible(
-        find.text('Kids'),
-        100.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.pumpAndSettle();
+        await tester.scrollUntilVisible(
+          find.text('Kids'),
+          100.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(AdventureMasteryGrid), findsOneWidget);
-      expect(find.text('Kids'), findsOneWidget);
+        expect(find.byType(AdventureMasteryGrid), findsOneWidget);
+        expect(find.text('Kids'), findsOneWidget);
 
-      await tester.tap(find.text('Kids'));
-      await tester.pumpAndSettle();
-      expect(navigatedRoutes, contains(AppRouter.kidsZoneRoute));
-    });
+        await tester.tap(find.text('Kids'));
+        await tester.pumpAndSettle();
+        expect(navigatedRoutes, contains(AppRouter.kidsZoneRoute));
+      },
+    );
   });
 
   group('Group 6: Adventure Store Section', () {
-    testWidgets('renders store offers and tapping streak shield dispatches purchase event', (tester) async {
-      final userNoFreeze = testUser.copyWith(streakFreezes: 0);
-      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(userNoFreeze));
+    testWidgets(
+      'renders store offers and tapping streak shield dispatches purchase event',
+      (tester) async {
+        final userNoFreeze = testUser.copyWith(streakFreezes: 0);
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(userNoFreeze));
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
-
-      await tester.scrollUntilVisible(
-        find.text('Streak Shield'),
-        100.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.ensureVisible(find.text('Streak Shield'));
-      await tester.pumpAndSettle();
-
-      expect(find.byType(AdventureStoreSection), findsOneWidget);
-      expect(find.text('Streak Shield'), findsOneWidget);
-
-      // Tap Streak Shield ScaleButton and confirm purchase
-      final streakShieldButton = find.descendant(
-        of: find.byType(AdventureStoreSection),
-        matching: find.byType(ScaleButton),
-      ).first;
-      await tester.tap(streakShieldButton);
-      await tester.pumpAndSettle();
-
-      final purchaseButton = find.text('Purchase');
-      if (purchaseButton.evaluate().isNotEmpty) {
-        await tester.tap(purchaseButton);
+        await tester.pumpWidget(buildTestWidget());
         await tester.pumpAndSettle();
-      }
 
-      verify(() => mockProgressionBloc.add(
+        await tester.scrollUntilVisible(
+          find.text('Streak Shield'),
+          100.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.ensureVisible(find.text('Streak Shield'));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(AdventureStoreSection), findsOneWidget);
+        expect(find.text('Streak Shield'), findsOneWidget);
+
+        // Tap Streak Shield ScaleButton and confirm purchase
+        final streakShieldButton = find
+            .descendant(
+              of: find.byType(AdventureStoreSection),
+              matching: find.byType(ScaleButton),
+            )
+            .first;
+        await tester.tap(streakShieldButton);
+        await tester.pumpAndSettle();
+
+        final purchaseButton = find.text('Purchase');
+        if (purchaseButton.evaluate().isNotEmpty) {
+          await tester.tap(purchaseButton);
+          await tester.pumpAndSettle();
+        }
+
+        verify(
+          () => mockProgressionBloc.add(
             const ProgressionPurchaseStreakFreezeRequested(150),
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('tapping Double XP dispatches activate double XP event', (tester) async {
+    testWidgets('tapping Double XP dispatches activate double XP event', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -380,14 +400,18 @@ void main() {
         await tester.pumpAndSettle();
       }
 
-      verify(() => mockProgressionBloc.add(
-            const ProgressionActivateDoubleXPRequested(1000),
-          )).called(1);
+      verify(
+        () => mockProgressionBloc.add(
+          const ProgressionActivateDoubleXPRequested(1000),
+        ),
+      ).called(1);
     });
   });
 
   group('Group 7: Recent Activity', () {
-    testWidgets('renders AdventureRecentActivities with activity list', (tester) async {
+    testWidgets('renders AdventureRecentActivities with activity list', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -403,9 +427,13 @@ void main() {
       expect(find.text('Completed Lesson 3'), findsOneWidget);
     });
 
-    testWidgets('renders empty state when recent activities list is empty', (tester) async {
+    testWidgets('renders empty state when recent activities list is empty', (
+      tester,
+    ) async {
       final emptyActivityUser = testUser.copyWith(recentActivities: []);
-      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(emptyActivityUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(emptyActivityUser));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -438,23 +466,29 @@ void main() {
   });
 
   group('Group 9: ProgressionBloc Listener', () {
-    testWidgets('success message triggers light haptic, snackbar, and clears message', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'success message triggers light haptic, snackbar, and clears message',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      progressionStateController.add(
-        const ProgressionState(message: 'XP Boost Activated!'),
-      );
-      await tester.pumpAndSettle();
+        progressionStateController.add(
+          const ProgressionState(message: 'XP Boost Activated!'),
+        );
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.light()).called(1);
-      expect(find.text('XP Boost Activated!'), findsOneWidget);
-      verify(() => mockProgressionBloc.add(
-            const ProgressionClearMessageRequested(),
-          )).called(1);
-    });
+        verify(() => mockHapticService.light()).called(1);
+        expect(find.text('XP Boost Activated!'), findsOneWidget);
+        verify(
+          () =>
+              mockProgressionBloc.add(const ProgressionClearMessageRequested()),
+        ).called(1);
+      },
+    );
 
-    testWidgets('insufficient coins message shows localized error snackbar', (tester) async {
+    testWidgets('insufficient coins message shows localized error snackbar', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -465,13 +499,17 @@ void main() {
 
       verify(() => mockHapticService.light()).called(1);
       expect(find.text('Insufficient Vowl Coins!'), findsOneWidget);
-      verify(() => mockProgressionBloc.add(
-            const ProgressionClearMessageRequested(),
-          )).called(1);
+      verify(
+        () => mockProgressionBloc.add(const ProgressionClearMessageRequested()),
+      ).called(1);
     });
 
-    testWidgets('ServerFailure message logs error and displays generic error', (tester) async {
-      when(() => mockLogger.error(any(), error: any(named: 'error'))).thenReturn(null);
+    testWidgets('ServerFailure message logs error and displays generic error', (
+      tester,
+    ) async {
+      when(
+        () => mockLogger.error(any(), error: any(named: 'error')),
+      ).thenReturn(null);
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -481,35 +519,52 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      verify(() => mockLogger.error(
-            'Unhandled ProgressionBloc message shown as generic error',
-            error: 'ServerFailure: Database timeout',
-          )).called(1);
-      expect(find.text('Something went wrong. Please try again.'), findsOneWidget);
-      verify(() => mockProgressionBloc.add(
-            const ProgressionClearMessageRequested(),
-          )).called(1);
+      verify(
+        () => mockLogger.error(
+          'Unhandled ProgressionBloc message shown as generic error',
+          error: 'ServerFailure: Database timeout',
+        ),
+      ).called(1);
+      expect(
+        find.text('Something went wrong. Please try again.'),
+        findsOneWidget,
+      );
+      verify(
+        () => mockProgressionBloc.add(const ProgressionClearMessageRequested()),
+      ).called(1);
     });
   });
 
   group('Group 10: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(CustomScrollView), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(CustomScrollView), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(800, 1280)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(CustomScrollView), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(CustomScrollView), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 
@@ -567,4 +622,3 @@ void main() {
     });
   });
 }
-

@@ -85,7 +85,7 @@ class _KidsNatureLayoutState extends State<KidsNatureLayout>
   @override
   void dispose() {
     _fireflyController.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -394,29 +394,29 @@ class _AncientTreeSignTarget extends StatelessWidget {
                                   _NaturePalette.woodMedium,
                                 ]
                               : isCorrect
-                                  ? [
-                                      const Color(0xFF065F46), // Emerald 800
-                                      _NaturePalette.darkMoss,
-                                    ]
-                                  : isIncorrect
-                                      ? [
-                                          const Color(0xFF991B1B), // Red 800
-                                          _NaturePalette.woodDark,
-                                        ]
-                                      : [
-                                          _NaturePalette.woodMedium,
-                                          _NaturePalette.woodDark,
-                                        ],
+                              ? [
+                                  const Color(0xFF065F46), // Emerald 800
+                                  _NaturePalette.darkMoss,
+                                ]
+                              : isIncorrect
+                              ? [
+                                  const Color(0xFF991B1B), // Red 800
+                                  _NaturePalette.woodDark,
+                                ]
+                              : [
+                                  _NaturePalette.woodMedium,
+                                  _NaturePalette.woodDark,
+                                ],
                         ),
                         borderRadius: BorderRadius.circular(18.r),
                         border: Border.all(
                           color: isHovering
                               ? _NaturePalette.brightSprout
                               : isCorrect
-                                  ? KidsColors.safeGreen
-                                  : isIncorrect
-                                      ? AppColors.rose500
-                                      : _NaturePalette.woodPlank,
+                              ? KidsColors.safeGreen
+                              : isIncorrect
+                              ? AppColors.rose500
+                              : _NaturePalette.woodPlank,
                           width: isHovering ? 3.0.r : 2.5.r,
                         ),
                         boxShadow: [
@@ -713,10 +713,7 @@ class _SignInterior extends StatelessWidget {
           ),
           SizedBox(height: 6.h),
           Text(
-            context.tr(
-              'games.kids_drop_prompt',
-              fallback: 'Drop answer here',
-            ),
+            context.tr('games.kids_drop_prompt', fallback: 'Drop answer here'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 13.5.sp,
@@ -973,10 +970,7 @@ class _NatureSteppingStoneCard extends StatelessWidget {
                 ),
               ),
               childWhenDragging: Opacity(opacity: 0.28, child: cardContent),
-              child: ScaleButton(
-                onTap: onTap,
-                child: cardContent,
-              ),
+              child: ScaleButton(onTap: onTap, child: cardContent),
             ),
     );
   }
@@ -1215,10 +1209,7 @@ class _GlowingRiverStone extends StatelessWidget {
                 ),
               ),
               childWhenDragging: Opacity(opacity: 0.28, child: stoneWidget),
-              child: ScaleButton(
-                onTap: onTap,
-                child: stoneWidget,
-              ),
+              child: ScaleButton(onTap: onTap, child: stoneWidget),
             ),
     );
   }

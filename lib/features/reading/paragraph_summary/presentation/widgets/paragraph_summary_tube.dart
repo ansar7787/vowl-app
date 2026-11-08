@@ -42,12 +42,15 @@ class ParagraphSummaryTube extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final double maxCardWidth = constraints.maxWidth;
-        final double currentWidth =
-            (maxCardWidth * pinchWidth).clamp(160.w, maxCardWidth);
+        final double currentWidth = (maxCardWidth * pinchWidth).clamp(
+          160.w,
+          maxCardWidth,
+        );
 
         return AnimatedContainer(
-          duration:
-              isPinching ? Duration.zero : const Duration(milliseconds: 250),
+          duration: isPinching
+              ? Duration.zero
+              : const Duration(milliseconds: 250),
           curve: Curves.easeOutCubic,
           width: currentWidth,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
@@ -150,63 +153,70 @@ class ParagraphSummaryTube extends StatelessWidget {
                             padding: EdgeInsets.only(
                               bottom: index == keywords.length - 1 ? 0 : 8.h,
                             ),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 14.w,
-                                vertical: 10.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: color.withValues(
-                                    alpha: isDark ? 0.12 : 0.07),
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: color.withValues(alpha: 0.25),
-                                  width: 1.2,
-                                ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 22.r,
-                                    height: 22.r,
-                                    decoration: BoxDecoration(
-                                      color: color.withValues(alpha: 0.18),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '${index + 1}',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 11.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color: color,
+                            child:
+                                Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 14.w,
+                                        vertical: 10.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: color.withValues(
+                                          alpha: isDark ? 0.12 : 0.07,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          12.r,
+                                        ),
+                                        border: Border.all(
+                                          color: color.withValues(alpha: 0.25),
+                                          width: 1.2,
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  Expanded(
-                                    child: Text(
-                                      k,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: isDark
-                                            ? Colors.white
-                                                .withValues(alpha: 0.92)
-                                            : const Color(0xFF1E293B),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 22.r,
+                                            height: 22.r,
+                                            decoration: BoxDecoration(
+                                              color: color.withValues(
+                                                alpha: 0.18,
+                                              ),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                '${index + 1}',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 11.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: color,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(width: 10.w),
+                                          Expanded(
+                                            child: Text(
+                                              k,
+                                              softWrap: true,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: isDark
+                                                    ? Colors.white.withValues(
+                                                        alpha: 0.92,
+                                                      )
+                                                    : const Color(0xFF1E293B),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                                .animate()
-                                .fadeIn(duration: 250.ms)
-                                .slideY(begin: 0.08, end: 0),
+                                    )
+                                    .animate()
+                                    .fadeIn(duration: 250.ms)
+                                    .slideY(begin: 0.08, end: 0),
                           );
                         }),
                       ],

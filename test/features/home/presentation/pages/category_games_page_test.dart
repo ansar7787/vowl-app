@@ -66,9 +66,9 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
   });
 
   tearDown(() {
@@ -82,7 +82,8 @@ void main() {
     String initialLocation = '/category-games',
     GoRouter? routerConfig,
   }) {
-    final router = routerConfig ??
+    final router =
+        routerConfig ??
         GoRouter(
           initialLocation: initialLocation,
           routes: [
@@ -158,19 +159,18 @@ void main() {
   }
 
   group('Group 1: Authentication & Loading States', () {
-    testWidgets(
-      'renders GameShimmerLoading placeholder when user is null',
-      (tester) async {
-        when(() => mockAuthBloc.state).thenReturn(
-          const AuthState.unauthenticated(),
-        );
+    testWidgets('renders GameShimmerLoading placeholder when user is null', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
-        await pumpCategoryGamesPage(tester, settle: false);
+      await pumpCategoryGamesPage(tester, settle: false);
 
-        expect(find.byType(GameShimmerLoading), findsOneWidget);
-        expect(find.byType(CustomScrollView), findsNothing);
-      },
-    );
+      expect(find.byType(GameShimmerLoading), findsOneWidget);
+      expect(find.byType(CustomScrollView), findsNothing);
+    });
 
     testWidgets(
       'renders full category feed with CustomScrollView when user is authenticated',
@@ -198,86 +198,80 @@ void main() {
       },
     );
 
-    testWidgets(
-      'tapping back button when canPop is false navigates to /home',
-      (tester) async {
-        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+    testWidgets('tapping back button when canPop is false navigates to /home', (
+      tester,
+    ) async {
+      await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
-        final backButton = find.bySemanticsLabel('Back');
-        await tester.tap(backButton);
-        await tester.pumpAndSettle();
+      final backButton = find.bySemanticsLabel('Back');
+      await tester.tap(backButton);
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/home'));
-      },
-    );
+      expect(navigatedRoutes, contains('/home'));
+    });
 
-    testWidgets(
-      'tapping back button when canPop is true pops route',
-      (tester) async {
-        final router = GoRouter(
-          initialLocation: '/home',
-          routes: [
-            GoRoute(
-              path: '/home',
-              builder: (context, state) => Scaffold(
-                body: Center(
-                  child: ElevatedButton(
-                    onPressed: () => context.push('/category-games'),
-                    child: const Text('Go To Games'),
-                  ),
+    testWidgets('tapping back button when canPop is true pops route', (
+      tester,
+    ) async {
+      final router = GoRouter(
+        initialLocation: '/home',
+        routes: [
+          GoRoute(
+            path: '/home',
+            builder: (context, state) => Scaffold(
+              body: Center(
+                child: ElevatedButton(
+                  onPressed: () => context.push('/category-games'),
+                  child: const Text('Go To Games'),
                 ),
               ),
             ),
-            GoRoute(
-              path: '/category-games',
-              builder: (context, state) => BlocProvider<AuthBloc>.value(
-                value: mockAuthBloc,
-                child: const CategoryGamesPage(categoryId: 'grammar'),
-              ),
+          ),
+          GoRoute(
+            path: '/category-games',
+            builder: (context, state) => BlocProvider<AuthBloc>.value(
+              value: mockAuthBloc,
+              child: const CategoryGamesPage(categoryId: 'grammar'),
             ),
-          ],
-        );
+          ),
+        ],
+      );
 
-        await pumpCategoryGamesPage(
-          tester,
-          routerConfig: router,
-        );
+      await pumpCategoryGamesPage(tester, routerConfig: router);
 
-        // Push category games page from home
-        await tester.tap(find.text('Go To Games'));
-        await tester.pumpAndSettle();
+      // Push category games page from home
+      await tester.tap(find.text('Go To Games'));
+      await tester.pumpAndSettle();
 
-        expect(find.byType(CategoryGamesPage), findsOneWidget);
+      expect(find.byType(CategoryGamesPage), findsOneWidget);
 
-        // Tap back button
-        final backButton = find.bySemanticsLabel('Back');
-        await tester.tap(backButton);
-        await tester.pumpAndSettle();
+      // Tap back button
+      final backButton = find.bySemanticsLabel('Back');
+      await tester.tap(backButton);
+      await tester.pumpAndSettle();
 
-        // Should have popped back to home
-        expect(find.text('Go To Games'), findsOneWidget);
-        expect(find.byType(CategoryGamesPage), findsNothing);
-      },
-    );
+      // Should have popped back to home
+      expect(find.text('Go To Games'), findsOneWidget);
+      expect(find.byType(CategoryGamesPage), findsNothing);
+    });
   });
 
   group('Group 3: Mastery Dashboard', () {
-    testWidgets(
-      'renders OVERALL MASTERY label and level stats in dashboard',
-      (tester) async {
-        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+    testWidgets('renders OVERALL MASTERY label and level stats in dashboard', (
+      tester,
+    ) async {
+      await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
-        expect(find.text('OVERALL MASTERY'), findsOneWidget);
-        expect(find.text('POWER'), findsOneWidget);
-        expect(find.text('GAMES'), findsOneWidget);
-        expect(find.text('RANK'), findsOneWidget);
+      expect(find.text('OVERALL MASTERY'), findsOneWidget);
+      expect(find.text('POWER'), findsOneWidget);
+      expect(find.text('GAMES'), findsOneWidget);
+      expect(find.text('RANK'), findsOneWidget);
 
-        // Stat icons
-        expect(find.byIcon(Icons.bolt_rounded), findsOneWidget);
-        expect(find.byIcon(Icons.sports_esports_rounded), findsOneWidget);
-        expect(find.byIcon(Icons.stars_rounded), findsOneWidget);
-      },
-    );
+      // Stat icons
+      expect(find.byIcon(Icons.bolt_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.sports_esports_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.stars_rounded), findsOneWidget);
+    });
   });
 
   group('Group 4: Pedagogical Blueprint Integration', () {
@@ -298,7 +292,10 @@ void main() {
     testWidgets(
       'omits CategoryRadarChart and AdaptiveSmartMixWidget for category without blueprint',
       (tester) async {
-        await pumpCategoryGamesPage(tester, categoryId: 'non_existent_category');
+        await pumpCategoryGamesPage(
+          tester,
+          categoryId: 'non_existent_category',
+        );
 
         expect(find.byType(CategoryRadarChart), findsNothing);
         expect(find.byType(AdaptiveSmartMixWidget), findsNothing);
@@ -323,10 +320,9 @@ void main() {
         expect(partsOfSpeechCard, findsOneWidget);
 
         // Find the tap target for the card
-        final cardTapTarget = find.ancestor(
-          of: partsOfSpeechCard,
-          matching: find.byType(ScaleButton),
-        ).first;
+        final cardTapTarget = find
+            .ancestor(of: partsOfSpeechCard, matching: find.byType(ScaleButton))
+            .first;
 
         await tester.tap(cardTapTarget);
         await tester.pumpAndSettle();
@@ -349,9 +345,7 @@ void main() {
         addTearDown(() => tester.view.resetPhysicalSize());
         addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        await tester.pumpWidget(
-          createWidgetUnderTest(categoryId: 'grammar'),
-        );
+        await tester.pumpWidget(createWidgetUnderTest(categoryId: 'grammar'));
         await tester.pumpAndSettle();
 
         expect(find.byType(CategoryGamesPage), findsOneWidget);
@@ -359,23 +353,20 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly on large tablet viewport (800x1280)',
-      (tester) async {
-        tester.view.physicalSize = const Size(800, 1280);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() => tester.view.resetPhysicalSize());
-        addTearDown(() => tester.view.resetDevicePixelRatio());
+    testWidgets('renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 1280);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        await tester.pumpWidget(
-          createWidgetUnderTest(categoryId: 'grammar'),
-        );
-        await tester.pumpAndSettle();
+      await tester.pumpWidget(createWidgetUnderTest(categoryId: 'grammar'));
+      await tester.pumpAndSettle();
 
-        expect(find.byType(CategoryGamesPage), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(CategoryGamesPage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly under 1.3x accessibility text scaling without overflow',
@@ -398,19 +389,16 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in Dark Theme mode',
-      (tester) async {
-        await pumpCategoryGamesPage(
-          tester,
-          categoryId: 'grammar',
-          theme: ThemeData.dark(),
-        );
+    testWidgets('renders cleanly in Dark Theme mode', (tester) async {
+      await pumpCategoryGamesPage(
+        tester,
+        categoryId: 'grammar',
+        theme: ThemeData.dark(),
+      );
 
-        expect(find.byType(CategoryGamesPage), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(CategoryGamesPage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly in Midnight Theme mode (black scaffold background)',
@@ -434,9 +422,7 @@ void main() {
       'displays trophy icon badge and pure gameplay stars excluding magic_stars when 200 levels completed',
       (tester) async {
         final completed200User = testUser.copyWith(
-          completedLevels: {
-            'partsOfSpeech': List.generate(200, (i) => i + 1),
-          },
+          completedLevels: {'partsOfSpeech': List.generate(200, (i) => i + 1)},
           starRatings: {
             'partsOfSpeech': {
               '1': 3,
@@ -447,9 +433,9 @@ void main() {
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(completed200User),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(completed200User));
 
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
@@ -467,10 +453,7 @@ void main() {
         expect(find.byIcon(Icons.emoji_events_rounded), findsOneWidget);
 
         // Must display pure gameplay stars (6/600), NOT including magic_stars (506/600)
-        expect(
-          find.text('★ 6 / 600 • REPLAY FOR 3★'),
-          findsOneWidget,
-        );
+        expect(find.text('★ 6 / 600 • REPLAY FOR 3★'), findsOneWidget);
       },
     );
 
@@ -478,9 +461,7 @@ void main() {
       'displays 100% PERFECT and pure gameplay stars when all 200 levels have 3 stars (600 stars)',
       (tester) async {
         final perfectUser = testUser.copyWith(
-          completedLevels: {
-            'partsOfSpeech': List.generate(200, (i) => i + 1),
-          },
+          completedLevels: {'partsOfSpeech': List.generate(200, (i) => i + 1)},
           starRatings: {
             'partsOfSpeech': {
               for (var i = 1; i <= 200; i++) '$i': 3,
@@ -489,9 +470,9 @@ void main() {
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(perfectUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(perfectUser));
 
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
@@ -502,10 +483,7 @@ void main() {
         // Text 'PERFECT' is omitted from badge; star icon is displayed
         expect(find.text('PERFECT'), findsNothing);
         expect(find.byIcon(Icons.stars_rounded), findsWidgets);
-        expect(
-          find.text('★ 600 / 600 • 100% PERFECT'),
-          findsOneWidget,
-        );
+        expect(find.text('★ 600 / 600 • 100% PERFECT'), findsOneWidget);
       },
     );
 
@@ -514,20 +492,15 @@ void main() {
       (tester) async {
         // partsOfSpeech is mastered (200 levels), while other games in grammar are unmastered (0 levels)
         final mixedUser = testUser.copyWith(
-          completedLevels: {
-            'partsOfSpeech': List.generate(200, (i) => i + 1),
-          },
+          completedLevels: {'partsOfSpeech': List.generate(200, (i) => i + 1)},
           starRatings: {
-            'partsOfSpeech': {
-              '1': 3,
-              '2': 3,
-            },
+            'partsOfSpeech': {'1': 3, '2': 3},
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(mixedUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(mixedUser));
 
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
@@ -552,9 +525,7 @@ void main() {
       (tester) async {
         // partsOfSpeech has 60 stars out of 600 across 20 levels
         final inProgressUser = testUser.copyWith(
-          completedLevels: {
-            'partsOfSpeech': List.generate(20, (i) => i + 1),
-          },
+          completedLevels: {'partsOfSpeech': List.generate(20, (i) => i + 1)},
           starRatings: {
             'partsOfSpeech': {
               for (var i = 1; i <= 20; i++) '$i': 3, // 20 * 3 = 60 stars
@@ -563,9 +534,9 @@ void main() {
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(inProgressUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(inProgressUser));
 
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
@@ -596,9 +567,9 @@ void main() {
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(lowStarUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(lowStarUser));
 
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
@@ -621,10 +592,7 @@ void main() {
         await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
         // Verify quick resume hero is visible
-        expect(
-          find.text('CONTINUE PRACTICE'),
-          findsOneWidget,
-        );
+        expect(find.text('CONTINUE PRACTICE'), findsOneWidget);
         expect(find.text('PLAY'), findsOneWidget);
 
         // Tap the Play button on Quick-Resume hero
@@ -671,28 +639,27 @@ void main() {
       },
     );
 
-    testWidgets(
-      'Status Filter Chips filter game list by status',
-      (tester) async {
-        // testUser has completed 3 levels of partsOfSpeech and 2 of grammarQuest
-        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+    testWidgets('Status Filter Chips filter game list by status', (
+      tester,
+    ) async {
+      // testUser has completed 3 levels of partsOfSpeech and 2 of grammarQuest
+      await pumpCategoryGamesPage(tester, categoryId: 'grammar');
 
-        // Scroll so the filter bar is comfortably in the center of the screen, away from the floating app bar
-        final scrollable = find.byType(CustomScrollView);
-        await tester.drag(scrollable, const Offset(0, -350));
-        await tester.pumpAndSettle();
+      // Scroll so the filter bar is comfortably in the center of the screen, away from the floating app bar
+      final scrollable = find.byType(CustomScrollView);
+      await tester.drag(scrollable, const Offset(0, -350));
+      await tester.pumpAndSettle();
 
-        final inProgressChip = find.text('In Progress');
-        expect(inProgressChip, findsOneWidget);
+      final inProgressChip = find.text('In Progress');
+      expect(inProgressChip, findsOneWidget);
 
-        // Tap 'In Progress' chip
-        await tester.tap(inProgressChip);
-        await tester.pumpAndSettle();
+      // Tap 'In Progress' chip
+      await tester.tap(inProgressChip);
+      await tester.pumpAndSettle();
 
-        // In-progress games are displayed
-        expect(find.text('PARTS OF SPEECH'), findsOneWidget);
-      },
-    );
+      // In-progress games are displayed
+      expect(find.text('PARTS OF SPEECH'), findsOneWidget);
+    });
 
     testWidgets(
       'Dual View Switcher toggles between list view and 2-column grid view',

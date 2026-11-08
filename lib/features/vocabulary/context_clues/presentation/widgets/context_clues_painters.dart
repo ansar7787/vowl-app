@@ -11,7 +11,9 @@ class PaperGridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = (isDark ? Colors.white : Colors.blueGrey).withValues(alpha: 0.04)
+      ..color = (isDark ? Colors.white : Colors.blueGrey).withValues(
+        alpha: 0.04,
+      )
       ..strokeWidth = 1.0;
 
     const step = 28.0;

@@ -228,9 +228,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            final isAnswered = isAnsweredNotifier.value ||
+            final isAnswered =
+                isAnsweredNotifier.value ||
                 (state is EliteMasteryLoaded && state.answerStatus.isAnswered);
-            final isCorrect = isCorrectNotifier.value ??
+            final isCorrect =
+                isCorrectNotifier.value ??
                 (state is EliteMasteryLoaded ? state.lastAnswerCorrect : null);
 
             return EliteBaseLayout(
@@ -344,35 +346,23 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                 ),
                                 decoration: BoxDecoration(
                                   color: isDark
-                                      ? Colors.white.withValues(
-                                          alpha: 0.08,
-                                        )
+                                      ? Colors.white.withValues(alpha: 0.08)
                                       : Colors.white,
-                                  borderRadius: BorderRadius.circular(
-                                    16.r,
-                                  ),
+                                  borderRadius: BorderRadius.circular(16.r),
                                   border: Border.all(
                                     color: isDark
-                                        ? Colors.white.withValues(
-                                            alpha: 0.1,
-                                          )
-                                        : Colors.grey.withValues(
-                                            alpha: 0.2,
-                                          ),
+                                        ? Colors.white.withValues(alpha: 0.1)
+                                        : Colors.grey.withValues(alpha: 0.2),
                                   ),
                                   boxShadow: isDark
                                       ? []
                                       : [
                                           BoxShadow(
-                                            color: Colors.black
-                                                .withValues(
-                                                  alpha: 0.03,
-                                                ),
-                                            blurRadius: 10,
-                                            offset: const Offset(
-                                              0,
-                                              4,
+                                            color: Colors.black.withValues(
+                                              alpha: 0.03,
                                             ),
+                                            blurRadius: 10,
+                                            offset: const Offset(0, 4),
                                           ),
                                         ],
                                 ),
@@ -382,9 +372,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                   softWrap: true,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: isCompact
-                                        ? 13.sp
-                                        : 14.sp,
+                                    fontSize: isCompact ? 13.sp : 14.sp,
                                     fontWeight: FontWeight.w500,
                                     color: isDark
                                         ? Colors.white.withValues(alpha: 0.9)
@@ -398,51 +386,43 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                             if (quest.question != null &&
                                 quest.question!.isNotEmpty) ...[
                               Container(
-                                key: const Key(
-                                  'idiom_match_prompt_card',
-                                ),
+                                key: const Key('idiom_match_prompt_card'),
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20.w,
                                   vertical: isCompact ? 16.h : 20.h,
                                 ),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    20.r,
-                                  ),
+                                  borderRadius: BorderRadius.circular(20.r),
                                   gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                     colors: isDark
                                         ? [
-                                            Colors.white.withValues(
-                                              alpha: 0.1,
-                                            ),
+                                            Colors.white.withValues(alpha: 0.1),
                                             Colors.white.withValues(
                                               alpha: 0.02,
                                             ),
                                           ]
                                         : [
                                             Colors.white,
-                                            Colors.white.withValues(
-                                              alpha: 0.7,
-                                            ),
+                                            Colors.white.withValues(alpha: 0.7),
                                           ],
                                   ),
                                   border: Border.all(
                                     color: isDark
-                                        ? Colors.white.withValues(
-                                            alpha: 0.15,
-                                          )
-                                        : theme.primaryColor
-                                              .withValues(alpha: 0.3),
+                                        ? Colors.white.withValues(alpha: 0.15)
+                                        : theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     if (!isDark)
                                       BoxShadow(
-                                        color: theme.primaryColor
-                                            .withValues(alpha: 0.15),
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
                                         blurRadius: 24,
                                         offset: const Offset(0, 12),
                                       ),
@@ -452,8 +432,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                   children: [
                                     Icon(
                                       Icons.format_quote_rounded,
-                                      color: theme.primaryColor
-                                          .withValues(alpha: 0.6),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.6,
+                                      ),
                                       size: 22.r,
                                     ),
                                     SizedBox(height: 8.h),
@@ -463,9 +444,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                       softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: isCompact
-                                            ? 15.sp
-                                            : 17.sp,
+                                        fontSize: isCompact ? 15.sp : 17.sp,
                                         fontWeight: FontWeight.w600,
                                         color: isDark
                                             ? Colors.white
@@ -479,9 +458,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                               ),
                             ],
                             if (state.isHintVisible) ...[
-                              SizedBox(
-                                height: isCompact ? 12.h : 20.h,
-                              ),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
                               EliteHintCard(
                                 hintText: quest.hint,
                                 isVisible: true,
@@ -499,20 +476,16 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                               ]),
                               builder: (context, _) {
                                 return IdiomMatchOptionsPanel(
-                                  shuffledOptions:
-                                      _shuffledOptions.value,
-                                  originalIndices:
-                                      _originalIndices.value,
+                                  shuffledOptions: _shuffledOptions.value,
+                                  originalIndices: _originalIndices.value,
                                   selectedIndex: _selectedIndex.value,
                                   wrongIndices: _wrongIndices.value,
                                   isAnswered:
                                       isAnsweredNotifier.value ||
-                                      isFirstStagePassedNotifier
-                                          .value,
+                                      isFirstStagePassedNotifier.value,
                                   showCorrectAnswer:
                                       isAnsweredNotifier.value ||
-                                      isFirstStagePassedNotifier
-                                          .value,
+                                      isFirstStagePassedNotifier.value,
                                   correctAnswerIndex:
                                       quest.correctAnswerIndex ?? 0,
                                   isDark: isDark,
@@ -533,8 +506,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                   },
                 ),
               ),
-              if (isFirstStagePassedNotifier.value ||
-                  isAnsweredNotifier.value)
+              if (isFirstStagePassedNotifier.value || isAnsweredNotifier.value)
                 if (quest.explanation != null ||
                     quest.usageContext != null ||
                     quest.idiomOrigin != null ||
@@ -546,8 +518,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                       primaryColor: theme.primaryColor,
                     ),
                   ),
-              if (isFirstStagePassedNotifier.value &&
-                  !isAnsweredNotifier.value)
+              if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -562,12 +533,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                       builder: (context, _) {
                         final expectedText =
                             quest.options != null &&
-                                    _selectedIndex.value != null &&
-                                    _shuffledOptions.value.length >
-                                        _selectedIndex.value!
-                                ? _shuffledOptions.value[_selectedIndex
-                                      .value!]
-                                : "";
+                                _selectedIndex.value != null &&
+                                _shuffledOptions.value.length >
+                                    _selectedIndex.value!
+                            ? _shuffledOptions.value[_selectedIndex.value!]
+                            : "";
                         return SpeakToConfirmOverlay(
                           expectedText: expectedText,
                           displayText: expectedText,
@@ -621,7 +591,8 @@ class IdiomMatchInsightsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasInsights = quest.explanation != null ||
+    final hasInsights =
+        quest.explanation != null ||
         quest.usageContext != null ||
         quest.idiomOrigin != null ||
         quest.visualMetaphor != null;

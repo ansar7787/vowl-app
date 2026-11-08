@@ -112,7 +112,9 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                           fontFamily: 'Outfit',
                           color: isUsed
                               ? tokens.gameCorrect
-                              : (isDark ? Colors.white.withValues(alpha: 0.8) : Colors.black87),
+                              : (isDark
+                                    ? Colors.white.withValues(alpha: 0.8)
+                                    : Colors.black87),
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                         ),

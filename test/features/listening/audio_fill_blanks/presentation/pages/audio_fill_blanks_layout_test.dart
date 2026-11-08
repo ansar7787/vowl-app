@@ -147,7 +147,9 @@ void main() {
 
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream).thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -160,7 +162,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -195,14 +199,17 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
 
@@ -253,10 +260,9 @@ void main() {
               darkTheme: AppTheme.darkTheme,
               themeMode: themeMode,
               home: MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  size: size,
-                  disableAnimations: reduceMotion,
-                ),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(size: size, disableAnimations: reduceMotion),
                 child: AudioFillBlanksScreen(level: level),
               ),
             );
@@ -269,122 +275,185 @@ void main() {
   }
 
   group('Item 7.4: AudioFillBlanksScreen - Comprehensive Layout & Mechanics Suite', () {
-    testWidgets('1. Initial quest rendering displays instruction, timer, jar, canvas, and options list', (tester) async {
+    testWidgets(
+      '1. Initial quest rendering displays instruction, timer, jar, canvas, and options list',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('audio_fill_blanks_instruction')),
+          findsOneWidget,
+        );
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('audio_fill_blanks_jar')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('audio_fill_blanks_canvas')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const ValueKey('options_list')), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '2. Deterministic options list contains correct answer and distractors',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        expect(find.text('FOX'), findsOneWidget);
+        expect(find.text('BOX'), findsOneWidget);
+        expect(find.text('FOG'), findsOneWidget);
+      },
+    );
+
+    testWidgets('3. Canvas initially displays text with blanks and ink blobs', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester);
 
-      expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
-      expect(find.byKey(const ValueKey('audio_fill_blanks_instruction')), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const ValueKey('audio_fill_blanks_jar')), findsOneWidget);
-      expect(find.byKey(const ValueKey('audio_fill_blanks_canvas')), findsOneWidget);
-      expect(find.byKey(const ValueKey('options_list')), findsOneWidget);
+      expect(
+        find.text('The quick brown ___ jumps over the lazy dog.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('2. Deterministic options list contains correct answer and distractors', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
+    testWidgets(
+      '4. Smearing across canvas updates revealProgress and triggers haptic tick',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
 
-      expect(find.text('FOX'), findsOneWidget);
-      expect(find.text('BOX'), findsOneWidget);
-      expect(find.text('FOG'), findsOneWidget);
-    });
-
-    testWidgets('3. Canvas initially displays text with blanks and ink blobs', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      expect(find.text('The quick brown ___ jumps over the lazy dog.'), findsOneWidget);
-    });
-
-    testWidgets('4. Smearing across canvas updates revealProgress and triggers haptic tick', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      final canvas = tester.widget<AudioFillBlanksCanvas>(find.byType(AudioFillBlanksCanvas));
-      canvas.onSmear(0.2);
-      await tester.pump();
-
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
-
-    testWidgets('5. Tapping canvas acts as an accessibility tap alternative to smear', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      final canvasFinder = find.byKey(const ValueKey('audio_fill_blanks_canvas'));
-      await tester.tap(canvasFinder);
-      await tester.pump();
-
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
-
-    testWidgets('6. Tapping audio jar plays TTS audio and triggers selection haptic', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      await tester.tap(find.byKey(const ValueKey('audio_fill_blanks_jar')));
-      await tester.pump();
-
-      verify(() => mockSoundService.playTts('The quick brown fox jumps over the lazy dog.')).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('7. Tapping correct option dispatches SubmitAnswer(true) with success audio and haptics', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      await tester.tap(find.text('FOX'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
-
-    testWidgets('8. Tapping incorrect option dispatches SubmitAnswer(false) with error audio and haptics', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      await tester.tap(find.text('BOX'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
-
-    testWidgets('9. Answer lockout prevents secondary option taps once answered', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      await tester.tap(find.text('FOX'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-      clearInteractions(mockHapticService);
-
-      final boxFinder = find.text('BOX');
-      if (boxFinder.evaluate().isNotEmpty) {
-        await tester.tap(boxFinder, warnIfMissed: false);
+        final canvas = tester.widget<AudioFillBlanksCanvas>(
+          find.byType(AudioFillBlanksCanvas),
+        );
+        canvas.onSmear(0.2);
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
 
-        verifyNever(() => mockListeningBloc.add(any()));
-        verifyNever(() => mockHapticService.error());
-      }
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('10. SpeedChallengeTimer onTimeUp triggers failure submission', (tester) async {
+    testWidgets(
+      '5. Tapping canvas acts as an accessibility tap alternative to smear',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        final canvasFinder = find.byKey(
+          const ValueKey('audio_fill_blanks_canvas'),
+        );
+        await tester.tap(canvasFinder);
+        await tester.pump();
+
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
+
+    testWidgets(
+      '6. Tapping audio jar plays TTS audio and triggers selection haptic',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        await tester.tap(find.byKey(const ValueKey('audio_fill_blanks_jar')));
+        await tester.pump();
+
+        verify(
+          () => mockSoundService.playTts(
+            'The quick brown fox jumps over the lazy dog.',
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '7. Tapping correct option dispatches SubmitAnswer(true) with success audio and haptics',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        await tester.tap(find.text('FOX'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
+
+    testWidgets(
+      '8. Tapping incorrect option dispatches SubmitAnswer(false) with error audio and haptics',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        await tester.tap(find.text('BOX'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
+
+    testWidgets(
+      '9. Answer lockout prevents secondary option taps once answered',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        await tester.tap(find.text('FOX'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+        clearInteractions(mockHapticService);
+
+        final boxFinder = find.text('BOX');
+        if (boxFinder.evaluate().isNotEmpty) {
+          await tester.tap(boxFinder, warnIfMissed: false);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 200));
+
+          verifyNever(() => mockListeningBloc.add(any()));
+          verifyNever(() => mockHapticService.error());
+        }
+      },
+    );
+
+    testWidgets(
+      '10. SpeedChallengeTimer onTimeUp triggers failure submission',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
+
+        final timerState = tester.state<SpeedChallengeTimerState>(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerState.widget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets('11. Answering stops the active SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester);
 
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
-      timerState.widget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('11. Answering stops the active SpeedChallengeTimer', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
-
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
+      final timerState = tester.state<SpeedChallengeTimerState>(
+        find.byType(SpeedChallengeTimer),
+      );
       expect(timerState.isTimerActive, isTrue);
 
       await tester.tap(find.text('FOX'));
@@ -394,71 +463,98 @@ void main() {
       expect(timerState.isTimerActive, isFalse);
     });
 
-    testWidgets('12. High level (>= 8) renders BlindDictationWrapper instead of multiple choice options', (tester) async {
-      await pumpAudioFillBlanksScreen(tester, level: 8);
+    testWidgets(
+      '12. High level (>= 8) renders BlindDictationWrapper instead of multiple choice options',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester, level: 8);
 
-      expect(find.byType(BlindDictationWrapper), findsOneWidget);
-      expect(find.byKey(const ValueKey('options_list')), findsNothing);
-    });
+        expect(find.byType(BlindDictationWrapper), findsOneWidget);
+        expect(find.byKey(const ValueKey('options_list')), findsNothing);
+      },
+    );
 
-    testWidgets('12b. SpeedChallengeTimer uses 15s for level < 8 and dynamic 35s+ for level >= 8 listen-and-type', (tester) async {
-      await pumpAudioFillBlanksScreen(tester, level: 1);
-      var timer = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
-      expect(timer.durationSeconds, 15);
+    testWidgets(
+      '12b. SpeedChallengeTimer uses 15s for level < 8 and dynamic 35s+ for level >= 8 listen-and-type',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester, level: 1);
+        var timer = tester.widget<SpeedChallengeTimer>(
+          find.byType(SpeedChallengeTimer),
+        );
+        expect(timer.durationSeconds, 15);
 
-      await pumpAudioFillBlanksScreen(tester, level: 8);
-      timer = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
-      // Sample quest has correctAnswer 'fox' (1 word -> 30 + 5 = 35s)
-      expect(timer.durationSeconds, 35);
-    });
+        await pumpAudioFillBlanksScreen(tester, level: 8);
+        timer = tester.widget<SpeedChallengeTimer>(
+          find.byType(SpeedChallengeTimer),
+        );
+        // Sample quest has correctAnswer 'fox' (1 word -> 30 + 5 = 35s)
+        expect(timer.durationSeconds, 35);
+      },
+    );
 
-    testWidgets('13. Blind dictation confirmed callback dispatches SubmitAnswer(true)', (tester) async {
-      await pumpAudioFillBlanksScreen(tester, level: 8);
+    testWidgets(
+      '13. Blind dictation confirmed callback dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester, level: 8);
 
-      final dictation = tester.widget<BlindDictationWrapper>(find.byType(BlindDictationWrapper));
-      dictation.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final dictation = tester.widget<BlindDictationWrapper>(
+          find.byType(BlindDictationWrapper),
+        );
+        dictation.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
-    testWidgets('14. Blind dictation skipped callback dispatches SubmitAnswer(false)', (tester) async {
-      await pumpAudioFillBlanksScreen(tester, level: 8);
+    testWidgets(
+      '14. Blind dictation skipped callback dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester, level: 8);
 
-      final dictation = tester.widget<BlindDictationWrapper>(find.byType(BlindDictationWrapper));
-      dictation.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final dictation = tester.widget<BlindDictationWrapper>(
+          find.byType(BlindDictationWrapper),
+        );
+        dictation.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('15. Next question state transition clears revealProgress and updates canvas text', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
+    testWidgets(
+      '15. Next question state transition clears revealProgress and updates canvas text',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
 
-      // Answer first quest
-      await tester.tap(find.text('FOX'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Answer first quest
+        await tester.tap(find.text('FOX'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Emit second quest loaded state
-      final nextState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Emit second quest loaded state
+        final nextState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('She sells ___ on the seashore.'), findsOneWidget);
-      expect(find.text('SEASHELLS'), findsOneWidget);
-    });
+        expect(find.text('She sells ___ on the seashore.'), findsOneWidget);
+        expect(find.text('SEASHELLS'), findsOneWidget);
+      },
+    );
 
-    testWidgets('16. Continue button dispatches NextQuestion event', (tester) async {
+    testWidgets('16. Continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       final answeredState = testLoadedState.copyWith(
         answerStatus: AnswerStatus.correct,
       );
@@ -478,7 +574,9 @@ void main() {
       }
     });
 
-    testWidgets('17. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets('17. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -487,33 +585,46 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 1100));
 
-        verify(() => mockListeningBloc.add(const ListeningHintUsed())).called(1);
+        verify(
+          () => mockListeningBloc.add(const ListeningHintUsed()),
+        ).called(1);
       }
     });
 
-    testWidgets('18. Uninitialized or loading state renders GameShimmerLoading', (tester) async {
-      when(() => mockListeningBloc.state).thenReturn(const ListeningInitial());
-      await pumpAudioFillBlanksScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '18. Uninitialized or loading state renders GameShimmerLoading',
+      (tester) async {
+        when(
+          () => mockListeningBloc.state,
+        ).thenReturn(const ListeningInitial());
+        await pumpAudioFillBlanksScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byType(AudioFillBlanksCanvas), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byType(AudioFillBlanksCanvas), findsNothing);
+      },
+    );
 
-    testWidgets('19. Game complete state triggers completion handling and dialog', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
+    testWidgets(
+      '19. Game complete state triggers completion handling and dialog',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
 
-      const completeState = ListeningGameComplete(
-        xpEarned: 50,
-        coinsEarned: 15,
-        questCount: 2,
-      );
-      when(() => mockListeningBloc.state).thenReturn(completeState);
-      listeningStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        const completeState = ListeningGameComplete(
+          xpEarned: 50,
+          coinsEarned: 15,
+          questCount: 2,
+        );
+        when(() => mockListeningBloc.state).thenReturn(completeState);
+        listeningStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-    });
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+      },
+    );
 
     testWidgets('20. Game over state renders with zero lives', (tester) async {
       const gameOverState = ListeningGameOver(
@@ -525,7 +636,9 @@ void main() {
       expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
     });
 
-    testWidgets('21. Level 1 shows briefing layer and dismisses on start tap', (tester) async {
+    testWidgets('21. Level 1 shows briefing layer and dismisses on start tap', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_audioFillBlanks': false,
       });
@@ -543,78 +656,97 @@ void main() {
       }
     });
 
-    testWidgets('22. Dark mode renders correctly with dark theme styling', (tester) async {
+    testWidgets('22. Dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
     });
 
-    testWidgets('23. Light mode renders correctly with light theme styling', (tester) async {
+    testWidgets('23. Light mode renders correctly with light theme styling', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester, themeMode: ThemeMode.light);
 
       expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
     });
 
-    testWidgets('24. Compact mobile viewport (320x568) passes with zero overflow', (tester) async {
-      await pumpAudioFillBlanksScreen(tester, size: const Size(320, 568));
+    testWidgets(
+      '24. Compact mobile viewport (320x568) passes with zero overflow',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester, size: const Size(320, 568));
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('25. Tablet viewport (768x1024) passes with zero overflow', (tester) async {
+    testWidgets('25. Tablet viewport (768x1024) passes with zero overflow', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester, size: const Size(768, 1024));
 
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('26. Reduced motion mode stops repeating ink blob animations', (tester) async {
+    testWidgets('26. Reduced motion mode stops repeating ink blob animations', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester, reduceMotion: true);
 
       expect(find.byType(AudioFillBlanksCanvas), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('27. Empty textToSpeak falls back to prompt or question for TTS playback', (tester) async {
-      const fallbackQuest = ListeningQuest(
-        id: 'afb_fallback',
-        instruction: 'Fill blank.',
-        difficulty: 1,
-        subtype: GameSubtype.audioFillBlanks,
-        prompt: 'The cat in the hat.',
-        textWithBlanks: 'The ___ in the hat.',
-        correctAnswer: 'cat',
-        distractorWords: ['bat', 'rat'],
-      );
-      final fallbackState = testLoadedState.copyWith(
-        quests: [fallbackQuest],
-        currentIndex: 0,
-      );
+    testWidgets(
+      '27. Empty textToSpeak falls back to prompt or question for TTS playback',
+      (tester) async {
+        const fallbackQuest = ListeningQuest(
+          id: 'afb_fallback',
+          instruction: 'Fill blank.',
+          difficulty: 1,
+          subtype: GameSubtype.audioFillBlanks,
+          prompt: 'The cat in the hat.',
+          textWithBlanks: 'The ___ in the hat.',
+          correctAnswer: 'cat',
+          distractorWords: ['bat', 'rat'],
+        );
+        final fallbackState = testLoadedState.copyWith(
+          quests: [fallbackQuest],
+          currentIndex: 0,
+        );
 
-      await pumpAudioFillBlanksScreen(tester, state: fallbackState);
+        await pumpAudioFillBlanksScreen(tester, state: fallbackState);
 
-      await tester.tap(find.byKey(const ValueKey('audio_fill_blanks_jar')));
-      await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('audio_fill_blanks_jar')));
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('The cat in the hat.')).called(1);
-    });
+        verify(() => mockSoundService.playTts('The cat in the hat.')).called(1);
+      },
+    );
 
-    testWidgets('28. Final failure state displays explanation and correct answer', (tester) async {
-      final failureState = testLoadedState.copyWith(
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '28. Final failure state displays explanation and correct answer',
+      (tester) async {
+        final failureState = testLoadedState.copyWith(
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          isFinalFailure: true,
+        );
 
-      await pumpAudioFillBlanksScreen(tester, state: failureState);
+        await pumpAudioFillBlanksScreen(tester, state: failureState);
 
-      listeningStreamController.add(failureState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        listeningStreamController.add(failureState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
-    });
+        expect(find.byType(AudioFillBlanksScreen), findsOneWidget);
+      },
+    );
 
-    testWidgets('29. Correct answer reveals full textToSpeak on canvas', (tester) async {
+    testWidgets('29. Correct answer reveals full textToSpeak on canvas', (
+      tester,
+    ) async {
       await pumpAudioFillBlanksScreen(tester);
 
       final correctState = testLoadedState.copyWith(
@@ -634,88 +766,101 @@ void main() {
       );
     });
 
-    testWidgets('30. Instruction widget renders centered text with standard typography and clean human copy', (tester) async {
-      await pumpAudioFillBlanksScreen(tester);
+    testWidgets(
+      '30. Instruction widget renders centered text with standard typography and clean human copy',
+      (tester) async {
+        await pumpAudioFillBlanksScreen(tester);
 
-      final instructionWidget = find.byType(AudioFillBlanksInstruction);
-      expect(instructionWidget, findsOneWidget);
+        final instructionWidget = find.byType(AudioFillBlanksInstruction);
+        expect(instructionWidget, findsOneWidget);
 
-      final textWidgets = tester.widgetList<Text>(
-        find.descendant(of: instructionWidget, matching: find.byType(Text)),
-      ).toList();
+        final textWidgets = tester
+            .widgetList<Text>(
+              find.descendant(
+                of: instructionWidget,
+                matching: find.byType(Text),
+              ),
+            )
+            .toList();
 
-      expect(textWidgets.length, 2);
-      // Main instruction should be centered and semi-bold
-      expect(textWidgets[0].textAlign, TextAlign.center);
-      expect(textWidgets[0].style?.fontWeight, FontWeight.w600);
-      expect(textWidgets[0].style?.fontFamily, 'Outfit');
+        expect(textWidgets.length, 2);
+        // Main instruction should be centered and semi-bold
+        expect(textWidgets[0].textAlign, TextAlign.center);
+        expect(textWidgets[0].style?.fontWeight, FontWeight.w600);
+        expect(textWidgets[0].style?.fontFamily, 'Outfit');
 
-      // Helper subtext should be centered, human, and not screaming in buzzwords
-      expect(textWidgets[1].textAlign, TextAlign.center);
-      expect(textWidgets[1].data, 'Swipe or tap to uncover the sentence');
-      expect(textWidgets[1].style?.fontWeight, FontWeight.w500);
-    });
+        // Helper subtext should be centered, human, and not screaming in buzzwords
+        expect(textWidgets[1].textAlign, TextAlign.center);
+        expect(textWidgets[1].data, 'Swipe or tap to uncover the sentence');
+        expect(textWidgets[1].style?.fontWeight, FontWeight.w500);
+      },
+    );
 
-    testWidgets('31. Long option text wraps cleanly with zero overflow and without ellipses', (tester) async {
-      const longQuest = ListeningQuest(
-        id: 'afb_long',
-        instruction: 'Listen carefully to the passage and select the appropriate term.',
-        difficulty: 1,
-        subtype: GameSubtype.audioFillBlanks,
-        textToSpeak: 'The extraordinary atmospheric condition caused severe disruptions.',
-        textWithBlanks: 'The ___ condition caused severe disruptions.',
-        correctAnswer: 'extraordinary atmospheric',
-        distractorWords: [
-          'unexpected meteorological',
-          'unprecedented stratospheric',
-        ],
-      );
-      final longState = testLoadedState.copyWith(
-        quests: [longQuest],
-        currentIndex: 0,
-      );
+    testWidgets(
+      '31. Long option text wraps cleanly with zero overflow and without ellipses',
+      (tester) async {
+        const longQuest = ListeningQuest(
+          id: 'afb_long',
+          instruction:
+              'Listen carefully to the passage and select the appropriate term.',
+          difficulty: 1,
+          subtype: GameSubtype.audioFillBlanks,
+          textToSpeak:
+              'The extraordinary atmospheric condition caused severe disruptions.',
+          textWithBlanks: 'The ___ condition caused severe disruptions.',
+          correctAnswer: 'extraordinary atmospheric',
+          distractorWords: [
+            'unexpected meteorological',
+            'unprecedented stratospheric',
+          ],
+        );
+        final longState = testLoadedState.copyWith(
+          quests: [longQuest],
+          currentIndex: 0,
+        );
 
-      await pumpAudioFillBlanksScreen(
-        tester,
-        state: longState,
-        size: const Size(320, 568),
-      );
+        await pumpAudioFillBlanksScreen(
+          tester,
+          state: longState,
+          size: const Size(320, 568),
+        );
 
-      // Verify no ellipses in options, canvas, and instruction
-      final optionTexts = tester.widgetList<Text>(
-        find.descendant(
-          of: find.byKey(const ValueKey('options_list')),
-          matching: find.byType(Text),
-        ),
-      );
-      for (final t in optionTexts) {
-        expect(t.overflow, isNot(TextOverflow.ellipsis));
-        expect(t.data?.contains('...'), isFalse);
-      }
+        // Verify no ellipses in options, canvas, and instruction
+        final optionTexts = tester.widgetList<Text>(
+          find.descendant(
+            of: find.byKey(const ValueKey('options_list')),
+            matching: find.byType(Text),
+          ),
+        );
+        for (final t in optionTexts) {
+          expect(t.overflow, isNot(TextOverflow.ellipsis));
+          expect(t.data?.contains('...'), isFalse);
+        }
 
-      final canvasTexts = tester.widgetList<Text>(
-        find.descendant(
-          of: find.byKey(const ValueKey('audio_fill_blanks_canvas')),
-          matching: find.byType(Text),
-        ),
-      );
-      for (final t in canvasTexts) {
-        expect(t.overflow, isNot(TextOverflow.ellipsis));
-        expect(t.data?.contains('...'), isFalse);
-      }
+        final canvasTexts = tester.widgetList<Text>(
+          find.descendant(
+            of: find.byKey(const ValueKey('audio_fill_blanks_canvas')),
+            matching: find.byType(Text),
+          ),
+        );
+        for (final t in canvasTexts) {
+          expect(t.overflow, isNot(TextOverflow.ellipsis));
+          expect(t.data?.contains('...'), isFalse);
+        }
 
-      final instructionTexts = tester.widgetList<Text>(
-        find.descendant(
-          of: find.byKey(const ValueKey('audio_fill_blanks_instruction')),
-          matching: find.byType(Text),
-        ),
-      );
-      for (final t in instructionTexts) {
-        expect(t.overflow, isNot(TextOverflow.ellipsis));
-        expect(t.data?.contains('...'), isFalse);
-      }
+        final instructionTexts = tester.widgetList<Text>(
+          find.descendant(
+            of: find.byKey(const ValueKey('audio_fill_blanks_instruction')),
+            matching: find.byType(Text),
+          ),
+        );
+        for (final t in instructionTexts) {
+          expect(t.overflow, isNot(TextOverflow.ellipsis));
+          expect(t.data?.contains('...'), isFalse);
+        }
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

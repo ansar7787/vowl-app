@@ -38,9 +38,9 @@ void main() {
     when(
       () => mockNotificationService.onNotificationPreferenceChanged(any()),
     ).thenAnswer((_) async {});
-    when(
-      () => mockNotificationService.requestPermissions(),
-    ).thenAnswer((_) async {
+    when(() => mockNotificationService.requestPermissions()).thenAnswer((
+      _,
+    ) async {
       return true;
     });
 
@@ -84,30 +84,30 @@ void main() {
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
-      const MethodChannel('flutter.baseflow.com/permissions/methods'),
-      (MethodCall methodCall) async {
-        if (methodCall.method == 'checkPermissionStatus') {
-          // 0 = PermissionStatus.denied (not granted and not permanently denied)
-          return 0;
-        }
-        if (methodCall.method == 'requestPermissions') {
-          return {17: 0};
-        }
-        if (methodCall.method == 'openAppSettings') {
-          return true;
-        }
-        return null;
-      },
-    );
+          const MethodChannel('flutter.baseflow.com/permissions/methods'),
+          (MethodCall methodCall) async {
+            if (methodCall.method == 'checkPermissionStatus') {
+              // 0 = PermissionStatus.denied (not granted and not permanently denied)
+              return 0;
+            }
+            if (methodCall.method == 'requestPermissions') {
+              return {17: 0};
+            }
+            if (methodCall.method == 'openAppSettings') {
+              return true;
+            }
+            return null;
+          },
+        );
   });
 
   tearDown(() {
     InlineNotificationCard.cachedShouldShow = null;
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
-      const MethodChannel('flutter.baseflow.com/permissions/methods'),
-      null,
-    );
+          const MethodChannel('flutter.baseflow.com/permissions/methods'),
+          null,
+        );
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
     }
@@ -131,55 +131,57 @@ void main() {
         themeMode: themeMode,
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
-        home: Scaffold(
-          body: InlineNotificationCard(streak: streak),
-        ),
+        home: Scaffold(body: InlineNotificationCard(streak: streak)),
       ),
     );
   }
 
-  testWidgets(
-    'renders short title and subtitle for streak >= 3',
-    (tester) async {
-      await tester.pumpWidget(createSubject(streak: 14));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+  testWidgets('renders short title and subtitle for streak >= 3', (
+    tester,
+  ) async {
+    await tester.pumpWidget(createSubject(streak: 14));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
 
-      // Notification card renders when not dismissed
-      expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(find.text("Save your 14-day streak!"), findsOneWidget);
-      expect(find.text("A quick alert before midnight so you never lose it"), findsOneWidget);
-      expect(find.text('Remind Me'), findsOneWidget);
-      expect(find.byIcon(Icons.close_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
-    },
-  );
+    // Notification card renders when not dismissed
+    expect(find.byType(InlineNotificationCard), findsOneWidget);
+    expect(find.text("Save your 14-day streak!"), findsOneWidget);
+    expect(
+      find.text("A quick alert before midnight so you never lose it"),
+      findsOneWidget,
+    );
+    expect(find.text('Remind Me'), findsOneWidget);
+    expect(find.byIcon(Icons.close_rounded), findsOneWidget);
+    expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
+  });
 
-  testWidgets(
-    'renders starter momentum copy for streak = 1 or 2',
-    (tester) async {
-      await tester.pumpWidget(createSubject(streak: 2));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+  testWidgets('renders starter momentum copy for streak = 1 or 2', (
+    tester,
+  ) async {
+    await tester.pumpWidget(createSubject(streak: 2));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text("Keep your streak going!"), findsOneWidget);
-      expect(find.text("A quick daily reminder to help you hit a 7-day streak"), findsOneWidget);
-      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
-    },
-  );
+    expect(find.text("Keep your streak going!"), findsOneWidget);
+    expect(
+      find.text("A quick daily reminder to help you hit a 7-day streak"),
+      findsOneWidget,
+    );
+    expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
+  });
 
-  testWidgets(
-    'renders quest copy for new learner streak = 0',
-    (tester) async {
-      await tester.pumpWidget(createSubject(streak: 0));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+  testWidgets('renders quest copy for new learner streak = 0', (tester) async {
+    await tester.pumpWidget(createSubject(streak: 0));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text("Start your streak today!"), findsOneWidget);
-      expect(find.text("A quick 2-minute reminder so you never miss a day"), findsOneWidget);
-      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
-    },
-  );
+    expect(find.text("Start your streak today!"), findsOneWidget);
+    expect(
+      find.text("A quick 2-minute reminder so you never miss a day"),
+      findsOneWidget,
+    );
+    expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
+  });
 
   testWidgets(
     'tapping close icon triggers dismissal and runs collapse animation',
@@ -205,7 +207,9 @@ void main() {
     'does not render when card was dismissed within the 7-day cooldown',
     (tester) async {
       // Set recent dismissal timestamp
-      final recentDismissal = DateTime.now().subtract(const Duration(days: 2)).millisecondsSinceEpoch;
+      final recentDismissal = DateTime.now()
+          .subtract(const Duration(days: 2))
+          .millisecondsSinceEpoch;
       SharedPreferences.setMockInitialValues({
         'notification_card_dismissed_time': recentDismissal,
       });
@@ -218,66 +222,53 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders safely on small 320dp mobile screen without overflow',
-    (tester) async {
-      tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+  testWidgets('renders safely on small 320dp mobile screen without overflow', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
+    tester.view.devicePixelRatio = 2.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(
-        createSubject(
-          streak: 14,
-          width: 320,
-          height: 568,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+    await tester.pumpWidget(createSubject(streak: 14, width: 320, height: 568));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(InlineNotificationCard), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
-  testWidgets(
-    'renders cleanly in Light Mode without errors',
-    (tester) async {
-      await tester.pumpWidget(
-        createSubject(
-          streak: 14,
-          themeMode: ThemeMode.light,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+  testWidgets('renders cleanly in Light Mode without errors', (tester) async {
+    await tester.pumpWidget(
+      createSubject(streak: 14, themeMode: ThemeMode.light),
+    );
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(InlineNotificationCard), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
-  testWidgets(
-    'renders instantly on Frame 1 when prewarmed without delay',
-    (tester) async {
-      final prefs = await SharedPreferences.getInstance();
-      InlineNotificationCard.prewarm(prefs);
+  testWidgets('renders instantly on Frame 1 when prewarmed without delay', (
+    tester,
+  ) async {
+    final prefs = await SharedPreferences.getInstance();
+    InlineNotificationCard.prewarm(prefs);
 
-      await tester.pumpWidget(createSubject(streak: 14));
-      // Immediate Frame 1 check without needing pump duration
-      await tester.pump();
+    await tester.pumpWidget(createSubject(streak: 14));
+    // Immediate Frame 1 check without needing pump duration
+    await tester.pump();
 
-      expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(find.text("Save your 14-day streak!"), findsOneWidget);
-    },
-  );
+    expect(find.byType(InlineNotificationCard), findsOneWidget);
+    expect(find.text("Save your 14-day streak!"), findsOneWidget);
+  });
 
   testWidgets(
     'reappears and renders after 7-day cooldown expires for previously denied user',
     (tester) async {
-      final expiredDismissal =
-          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      final expiredDismissal = DateTime.now()
+          .subtract(const Duration(days: 8))
+          .millisecondsSinceEpoch;
       SharedPreferences.setMockInitialValues({
         'notification_card_dismissed_time': expiredDismissal,
       });
@@ -299,22 +290,23 @@ void main() {
       bool openedSettings = false;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(
-        const MethodChannel('flutter.baseflow.com/permissions/methods'),
-        (MethodCall methodCall) async {
-          if (methodCall.method == 'checkPermissionStatus') {
-            // 4 = PermissionStatus.permanentlyDenied
-            return 4;
-          }
-          if (methodCall.method == 'openAppSettings') {
-            openedSettings = true;
-            return true;
-          }
-          return null;
-        },
-      );
+            const MethodChannel('flutter.baseflow.com/permissions/methods'),
+            (MethodCall methodCall) async {
+              if (methodCall.method == 'checkPermissionStatus') {
+                // 4 = PermissionStatus.permanentlyDenied
+                return 4;
+              }
+              if (methodCall.method == 'openAppSettings') {
+                openedSettings = true;
+                return true;
+              }
+              return null;
+            },
+          );
 
-      final expiredDismissal =
-          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      final expiredDismissal = DateTime.now()
+          .subtract(const Duration(days: 8))
+          .millisecondsSinceEpoch;
       SharedPreferences.setMockInitialValues({
         'notification_card_dismissed_time': expiredDismissal,
       });
@@ -344,19 +336,19 @@ void main() {
     (tester) async {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(
-        const MethodChannel('flutter.baseflow.com/permissions/methods'),
-        (MethodCall methodCall) async {
-          if (methodCall.method == 'checkPermissionStatus') {
-            // 0 = denied (not permanently)
-            return 0;
-          }
-          if (methodCall.method == 'requestPermissions') {
-            // 1 = PermissionStatus.granted for permission index 17 (notification)
-            return {17: 1};
-          }
-          return null;
-        },
-      );
+            const MethodChannel('flutter.baseflow.com/permissions/methods'),
+            (MethodCall methodCall) async {
+              if (methodCall.method == 'checkPermissionStatus') {
+                // 0 = denied (not permanently)
+                return 0;
+              }
+              if (methodCall.method == 'requestPermissions') {
+                // 1 = PermissionStatus.granted for permission index 17 (notification)
+                return {17: 1};
+              }
+              return null;
+            },
+          );
 
       final prefs = await SharedPreferences.getInstance();
       InlineNotificationCard.prewarm(prefs);
@@ -372,7 +364,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       verify(() => mockHapticService.success()).called(1);
-      verify(() => mockNotificationService.onNotificationPreferenceChanged(true)).called(1);
+      verify(
+        () => mockNotificationService.onNotificationPreferenceChanged(true),
+      ).called(1);
 
       expect(prefs.getBool('notifications_enabled'), isTrue);
       expect(prefs.getBool('notification_permission_granted'), isTrue);

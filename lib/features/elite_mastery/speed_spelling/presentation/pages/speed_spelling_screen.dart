@@ -348,9 +348,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                           if (quest.difficultyTier != null) ...[
                             SizedBox(width: 12.w),
                             Container(
-                              key: const Key(
-                                'speed_spelling_difficulty_badge',
-                              ),
+                              key: const Key('speed_spelling_difficulty_badge'),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 10.w,
                                 vertical: 4.h,
@@ -553,9 +551,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                     ),
                                     decoration: BoxDecoration(
                                       color: theme.primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        16.r,
-                                      ),
+                                      borderRadius: BorderRadius.circular(16.r),
                                       boxShadow: [
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(

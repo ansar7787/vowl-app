@@ -171,8 +171,8 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
     final question = quest.question ?? '';
     final textToSpeak = instruction.isNotEmpty
         ? (question.isNotEmpty && question != '?'
-            ? '$instruction $question'
-            : instruction)
+              ? '$instruction $question'
+              : instruction)
         : question;
 
     if (textToSpeak.isNotEmpty) {
@@ -195,6 +195,7 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -230,11 +231,7 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -308,8 +305,8 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
                 color: isHovering
                     ? _ClinicPalette.hoverGlow
                     : (isCorrect
-                        ? _ClinicPalette.successBorder
-                        : _ClinicPalette.xrayBorder),
+                          ? _ClinicPalette.successBorder
+                          : _ClinicPalette.xrayBorder),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
@@ -376,10 +373,7 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
       decoration: BoxDecoration(
         color: _ClinicPalette.xrayBgDark,
         border: Border(
-          bottom: BorderSide(
-            color: _ClinicPalette.xrayBorder,
-            width: 1.5.w,
-          ),
+          bottom: BorderSide(color: _ClinicPalette.xrayBorder, width: 1.5.w),
         ),
       ),
       child: Row(
@@ -439,9 +433,8 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
   }) {
     final instruction = InstructionHelper.getInstruction(quest);
     final question = quest.question ?? '';
-    final hasDistinctQuestion = question.isNotEmpty &&
-        question != '?' &&
-        question != instruction;
+    final hasDistinctQuestion =
+        question.isNotEmpty && question != '?' && question != instruction;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -538,7 +531,9 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
               SizedBox(width: 6.w),
               Flexible(
                 child: Text(
-                  isHovering ? 'Drop band-aid here!' : 'Place band-aid on the X-Ray',
+                  isHovering
+                      ? 'Drop band-aid here!'
+                      : 'Place band-aid on the X-Ray',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.5.sp,
@@ -568,19 +563,13 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
       decoration: BoxDecoration(
         color: _ClinicPalette.xrayBgDark,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: _ClinicPalette.successBorder,
-          width: 2.w,
-        ),
+        border: Border.all(color: _ClinicPalette.successBorder, width: 2.w),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // Emoji pop
-          Text(
-            emoji,
-            style: TextStyle(fontSize: 46.sp),
-          )
+          Text(emoji, style: TextStyle(fontSize: 46.sp))
               .animate()
               .scale(
                 duration: 400.ms,
@@ -693,8 +682,9 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
     if (options.isEmpty) return const SizedBox.shrink();
 
     // Check if options are short single words or longer sensory chains
-    final bool areAllOptionsShort =
-        options.every((opt) => opt.trim().length <= 14);
+    final bool areAllOptionsShort = options.every(
+      (opt) => opt.trim().length <= 14,
+    );
 
     // Identify distractor band-aid to dim if hint is active
     String? hintDimOption;
@@ -816,26 +806,10 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
           alignment: Alignment.center,
           children: [
             // Band-aid ventilation dots
-            Positioned(
-              left: 10.w,
-              top: 14.h,
-              child: const _BandaidDot(),
-            ),
-            Positioned(
-              left: 10.w,
-              bottom: 14.h,
-              child: const _BandaidDot(),
-            ),
-            Positioned(
-              right: 10.w,
-              top: 14.h,
-              child: const _BandaidDot(),
-            ),
-            Positioned(
-              right: 10.w,
-              bottom: 14.h,
-              child: const _BandaidDot(),
-            ),
+            Positioned(left: 10.w, top: 14.h, child: const _BandaidDot()),
+            Positioned(left: 10.w, bottom: 14.h, child: const _BandaidDot()),
+            Positioned(right: 10.w, top: 14.h, child: const _BandaidDot()),
+            Positioned(right: 10.w, bottom: 14.h, child: const _BandaidDot()),
 
             // Center Sterile Gauze Pad
             Container(
@@ -891,10 +865,7 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.10,
-        child: Opacity(
-          opacity: 0.95,
-          child: bandaidVisual,
-        ),
+        child: Opacity(opacity: 0.95, child: bandaidVisual),
       ),
     );
 
@@ -1024,10 +995,7 @@ class _KidsBodyPartsLayoutState extends State<KidsBodyPartsLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.04,
-        child: Opacity(
-          opacity: 0.95,
-          child: stripVisual,
-        ),
+        child: Opacity(opacity: 0.95, child: stripVisual),
       ),
     );
 

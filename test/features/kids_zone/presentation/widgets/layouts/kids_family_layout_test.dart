@@ -58,7 +58,8 @@ void main() {
     options: ['Class 🏫', 'Team ⚽', 'Family 🏠'],
     hint: 'Think about the people who care for you at home.',
     emoji: '🏠',
-    explanation: 'A family is a group of people who belong together and care for each other.',
+    explanation:
+        'A family is a group of people who belong together and care for each other.',
     funFact: "The word 'family' comes from the Latin word 'familia'.",
   );
 
@@ -109,8 +110,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedFamilyState);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -122,14 +124,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -137,23 +142,31 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
@@ -232,7 +245,10 @@ void main() {
           find.byKey(const Key('kids_family_replay_audio_button')),
           findsOneWidget,
         );
-        expect(find.text('Who cares for you and lives together at home?'), findsOneWidget);
+        expect(
+          find.text('Who cares for you and lives together at home?'),
+          findsOneWidget,
+        );
 
         expect(find.byKey(const Key('kids_family_option_0')), findsOneWidget);
         expect(find.byKey(const Key('kids_family_option_1')), findsOneWidget);
@@ -257,18 +273,14 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in dark mode without contrast issues',
-      (tester) async {
-        await pumpFamilyLayout(tester, themeMode: ThemeMode.dark);
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
+      await pumpFamilyLayout(tester, themeMode: ThemeMode.dark);
 
-        expect(
-          find.byKey(const Key('kids_family_frame_target')),
-          findsOneWidget,
-        );
-        expect(find.text('Family'), findsOneWidget);
-      },
-    );
+      expect(find.byKey(const Key('kids_family_frame_target')), findsOneWidget);
+      expect(find.text('Family'), findsOneWidget);
+    });
   });
 
   group('KidsFamilyLayout - Audio Scaffolding', () {
@@ -283,10 +295,7 @@ void main() {
         await tester.pump();
 
         verify(
-          () => mockTTSService.speak(
-            testFamilyQuest.instruction,
-            force: true,
-          ),
+          () => mockTTSService.speak(testFamilyQuest.instruction, force: true),
         ).called(1);
         verify(() => mockHapticService.selection()).called(1);
       },
@@ -297,16 +306,11 @@ void main() {
       (tester) async {
         await pumpFamilyLayout(tester);
 
-        await tester.tap(
-          find.byKey(const Key('kids_family_frame_target')),
-        );
+        await tester.tap(find.byKey(const Key('kids_family_frame_target')));
         await tester.pump();
 
         verify(
-          () => mockTTSService.speak(
-            testFamilyQuest.instruction,
-            force: true,
-          ),
+          () => mockTTSService.speak(testFamilyQuest.instruction, force: true),
         ).called(1);
       },
     );
@@ -316,18 +320,12 @@ void main() {
       (tester) async {
         await pumpFamilyLayout(tester);
 
-        await tester.tap(
-          find.byKey(const Key('kids_family_pronounce_0')),
-        );
+        await tester.tap(find.byKey(const Key('kids_family_pronounce_0')));
         await tester.pump();
 
-        verify(
-          () => mockTTSService.speak('Class', force: true),
-        ).called(1);
+        verify(() => mockTTSService.speak('Class', force: true)).called(1);
         verify(() => mockHapticService.selection()).called(1);
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
       },
     );
   });
@@ -341,9 +339,7 @@ void main() {
         await tester.tap(find.byKey(const Key('kids_family_option_2')));
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );
@@ -356,9 +352,7 @@ void main() {
         await tester.tap(find.byKey(const Key('kids_family_option_0')));
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(false)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
         verify(() => mockHapticService.error()).called(1);
         verify(() => mockTTSService.speak('Class')).called(1);
       },
@@ -379,7 +373,9 @@ void main() {
         expect(draggableFinder, findsOneWidget);
         expect(dragTargetFinder, findsOneWidget);
 
-        final gesture = await tester.startGesture(tester.getCenter(draggableFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
         await tester.pump();
 
         await gesture.moveTo(tester.getCenter(dragTargetFinder));
@@ -388,9 +384,7 @@ void main() {
         await gesture.up();
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );
@@ -410,7 +404,9 @@ void main() {
         expect(draggableFinder, findsOneWidget);
         expect(dragTargetFinder, findsOneWidget);
 
-        final gesture = await tester.startGesture(tester.getCenter(draggableFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
         await tester.pump();
 
         await gesture.moveTo(tester.getCenter(dragTargetFinder));
@@ -419,78 +415,75 @@ void main() {
         await gesture.up();
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(false)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
         verify(() => mockHapticService.error()).called(1);
       },
     );
 
-    testWidgets(
-      'locks interaction when quest is already answered',
-      (tester) async {
-        final answeredState = testLoadedFamilyState.copyWith(
-          answerStatus: AnswerStatus.correct,
-        );
+    testWidgets('locks interaction when quest is already answered', (
+      tester,
+    ) async {
+      final answeredState = testLoadedFamilyState.copyWith(
+        answerStatus: AnswerStatus.correct,
+      );
 
-        await pumpFamilyLayout(tester, state: answeredState);
+      await pumpFamilyLayout(tester, state: answeredState);
 
-        await tester.tap(
-          find.byKey(const Key('kids_family_option_2')),
-          warnIfMissed: false,
-        );
-        await tester.pump();
+      await tester.tap(
+        find.byKey(const Key('kids_family_option_2')),
+        warnIfMissed: false,
+      );
+      await tester.pump();
 
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
-      },
-    );
+      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+    });
   });
 
-  group('KidsFamilyLayout - Small Screen (320dp) & Complex Curriculum Safety', () {
-    testWidgets(
-      'renders 4 family options on compact 320dp width without RenderFlex overflow',
-      (tester) async {
-        await pumpFamilyLayout(
-          tester,
-          state: testLoadedFourOptionsState,
-          level: 20,
-          width: 320,
-          height: 568,
-        );
+  group(
+    'KidsFamilyLayout - Small Screen (320dp) & Complex Curriculum Safety',
+    () {
+      testWidgets(
+        'renders 4 family options on compact 320dp width without RenderFlex overflow',
+        (tester) async {
+          await pumpFamilyLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 20,
+            width: 320,
+            height: 568,
+          );
 
-        expect(tester.takeException(), isNull);
-        expect(
-          find.byKey(const Key('kids_family_frame_target')),
-          findsOneWidget,
-        );
-        expect(find.byKey(const Key('kids_family_option_0')), findsOneWidget);
-        expect(find.byKey(const Key('kids_family_option_1')), findsOneWidget);
-        expect(find.byKey(const Key('kids_family_option_2')), findsOneWidget);
-        expect(find.byKey(const Key('kids_family_option_3')), findsOneWidget);
-      },
-    );
+          expect(tester.takeException(), isNull);
+          expect(
+            find.byKey(const Key('kids_family_frame_target')),
+            findsOneWidget,
+          );
+          expect(find.byKey(const Key('kids_family_option_0')), findsOneWidget);
+          expect(find.byKey(const Key('kids_family_option_1')), findsOneWidget);
+          expect(find.byKey(const Key('kids_family_option_2')), findsOneWidget);
+          expect(find.byKey(const Key('kids_family_option_3')), findsOneWidget);
+        },
+      );
 
-    testWidgets(
-      'tapping option on 320dp screen still triggers correct answer flow',
-      (tester) async {
-        await pumpFamilyLayout(
-          tester,
-          state: testLoadedFourOptionsState,
-          level: 20,
-          width: 320,
-          height: 568,
-        );
+      testWidgets(
+        'tapping option on 320dp screen still triggers correct answer flow',
+        (tester) async {
+          await pumpFamilyLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 20,
+            width: 320,
+            height: 568,
+          );
 
-        await tester.tap(find.byKey(const Key('kids_family_option_0')));
-        await tester.pump();
+          await tester.tap(find.byKey(const Key('kids_family_option_0')));
+          await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
-      },
-    );
-  });
+          verify(
+            () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
+          ).called(1);
+        },
+      );
+    },
+  );
 }
-

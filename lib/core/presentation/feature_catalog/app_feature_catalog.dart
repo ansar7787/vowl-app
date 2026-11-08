@@ -55,7 +55,8 @@ class AppFeatureCatalog {
     AppFeatureItem(
       id: 'pvp_staking_arena',
       title: '1v1 PvP Arena',
-      subtitle: 'Live 5-round vocabulary duels with smart matching and friend invites',
+      subtitle:
+          'Live 5-round vocabulary duels with smart matching and friend invites',
       badge: 'Live Duel',
       icon: LucideIcons.swords,
       accentColor: AppColors.indigo500,
@@ -79,7 +80,8 @@ class AppFeatureCatalog {
     AppFeatureItem(
       id: 'ambassador_referral_hub',
       title: 'Ambassador Program & Referral Hub',
-      subtitle: 'Invite friends to earn 100 Bonus Coins, 1-Day VIP trials & Monthly Cup prizes',
+      subtitle:
+          'Invite friends to earn 100 Bonus Coins, 1-Day VIP trials & Monthly Cup prizes',
       badge: 'Free VIP & Coins',
       icon: LucideIcons.gift,
       accentColor: AppColors.indigo500,

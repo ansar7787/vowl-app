@@ -28,10 +28,7 @@ class SoundImageMatchInstruction extends StatelessWidget {
           decoration: BoxDecoration(
             color: color.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: color.withValues(alpha: 0.2),
-              width: 1.2,
-            ),
+            border: Border.all(color: color.withValues(alpha: 0.2), width: 1.2),
           ),
           child: Text(
             instruction,
@@ -53,4 +50,3 @@ class SoundImageMatchInstruction extends StatelessWidget {
     );
   }
 }
-

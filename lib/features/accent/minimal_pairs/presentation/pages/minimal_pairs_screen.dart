@@ -96,7 +96,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedDroneIndex.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -122,7 +122,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -149,7 +150,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
       _scrollToBottom();
       // Do NOT submit yet! Wait for Phase 2.
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -243,8 +245,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
                         final double cardSpacing = isCompact ? 12.w : 16.w;
                         final double availableCardRowWidth = maxWidth - 48.w;
                         final double cardWidth =
-                            ((availableCardRowWidth - cardSpacing) / 2)
-                                .clamp(120.0, 150.0);
+                            ((availableCardRowWidth - cardSpacing) / 2).clamp(
+                              120.0,
+                              150.0,
+                            );
                         final double cardHeight = isCompact ? 104.h : 114.h;
 
                         return ListenableBuilder(
@@ -323,30 +327,30 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
                                                             index: 0,
                                                             word:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentOptions[0]['word']!
-                                                                    : quest.word1 ??
-                                                                          "",
+                                                                    .isNotEmpty
+                                                                ? _currentOptions[0]['word']!
+                                                                : quest.word1 ??
+                                                                      "",
                                                             ipa:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentOptions[0]['ipa']!
-                                                                    : quest.ipa1 ??
-                                                                          "",
+                                                                    .isNotEmpty
+                                                                ? _currentOptions[0]['ipa']!
+                                                                : quest.ipa1 ??
+                                                                      "",
                                                             correctIndex:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentCorrectIndex
-                                                                    : quest.correctAnswerIndex ??
-                                                                          0,
+                                                                    .isNotEmpty
+                                                                ? _currentCorrectIndex
+                                                                : quest.correctAnswerIndex ??
+                                                                      0,
                                                             color: theme
                                                                 .primaryColor,
                                                             isDark: isDark,
                                                             isAnswered:
                                                                 isAnsweredNotifier
-                                                                        .value ||
-                                                                    isFirstStagePassedNotifier
-                                                                        .value,
+                                                                    .value ||
+                                                                isFirstStagePassedNotifier
+                                                                    .value,
                                                             selectedDroneIndex:
                                                                 _selectedDroneIndex
                                                                     .value,
@@ -363,30 +367,30 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
                                                             index: 1,
                                                             word:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentOptions[1]['word']!
-                                                                    : quest.word2 ??
-                                                                          "",
+                                                                    .isNotEmpty
+                                                                ? _currentOptions[1]['word']!
+                                                                : quest.word2 ??
+                                                                      "",
                                                             ipa:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentOptions[1]['ipa']!
-                                                                    : quest.ipa2 ??
-                                                                          "",
+                                                                    .isNotEmpty
+                                                                ? _currentOptions[1]['ipa']!
+                                                                : quest.ipa2 ??
+                                                                      "",
                                                             correctIndex:
                                                                 _currentOptions
-                                                                        .isNotEmpty
-                                                                    ? _currentCorrectIndex
-                                                                    : quest.correctAnswerIndex ??
-                                                                          0,
+                                                                    .isNotEmpty
+                                                                ? _currentCorrectIndex
+                                                                : quest.correctAnswerIndex ??
+                                                                      0,
                                                             color: theme
                                                                 .primaryColor,
                                                             isDark: isDark,
                                                             isAnswered:
                                                                 isAnsweredNotifier
-                                                                        .value ||
-                                                                    isFirstStagePassedNotifier
-                                                                        .value,
+                                                                    .value ||
+                                                                isFirstStagePassedNotifier
+                                                                    .value,
                                                             selectedDroneIndex:
                                                                 _selectedDroneIndex
                                                                     .value,

@@ -56,12 +56,12 @@ class SyllableStressPulseSpeaker extends StatelessWidget {
                 reduceMotion
                     ? icon
                     : icon
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.15, 1.15),
-                          duration: 1.seconds,
-                        ),
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.15, 1.15),
+                            duration: 1.seconds,
+                          ),
                 SizedBox(height: 4.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6.w),

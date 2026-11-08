@@ -122,7 +122,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _state.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -220,7 +220,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
         isAnswered: true,
         isCorrect: false,
       );
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -244,7 +245,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -368,9 +370,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                                       color: theme.primaryColor,
                                                       instruction:
                                                           uiState
-                                                                  .isFirstStagePassed
-                                                              ? "Great job! Now speak the phrase to confirm."
-                                                              : quest.instruction,
+                                                              .isFirstStagePassed
+                                                          ? "Great job! Now speak the phrase to confirm."
+                                                          : quest.instruction,
                                                     ),
                                                     SizedBox(
                                                       height: gapInstruction,
@@ -466,33 +468,22 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                                 quest.textToSpeak ??
                                                 quest.word ??
                                                 "",
-                                            primaryColor:
-                                                theme.primaryColor,
+                                            primaryColor: theme.primaryColor,
                                             isPositioned: false,
                                             onBypassed: () {
-                                              context
-                                                  .read<AccentBloc>()
-                                                  .add(
-                                                    const AccentSpeakConfirmed(
-                                                      10,
-                                                    ),
-                                                  );
+                                              context.read<AccentBloc>().add(
+                                                const AccentSpeakConfirmed(10),
+                                              );
                                               _submitVerbalEvaluation(true);
                                             },
                                             onConfirmed: () {
-                                              context
-                                                  .read<AccentBloc>()
-                                                  .add(
-                                                    const AccentSpeakConfirmed(
-                                                      10,
-                                                    ),
-                                                  );
+                                              context.read<AccentBloc>().add(
+                                                const AccentSpeakConfirmed(10),
+                                              );
                                               _submitVerbalEvaluation(true);
                                             },
                                             onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                ),
+                                                _submitVerbalEvaluation(false),
                                           ),
                                           SizedBox(height: 60.h),
                                         ],

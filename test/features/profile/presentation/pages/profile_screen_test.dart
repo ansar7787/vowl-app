@@ -74,7 +74,9 @@ void main() {
     vowlMascot: 'nova',
     vowlEquippedAccessory: 'cyber_wings',
     kidsStickers: ['sticker_star', 'sticker_bear'],
-    completedLevels: {'kids_alphabet': [1, 2, 3]},
+    completedLevels: {
+      'kids_alphabet': [1, 2, 3],
+    },
   );
 
   setUpAll(() {
@@ -99,8 +101,9 @@ void main() {
     mockAddGoldenKey = MockAddGoldenKey();
     mockRewardLimitService = MockRewardLimitService();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockProfileBloc.state).thenReturn(const ProfileState());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
@@ -116,11 +119,13 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -189,7 +194,8 @@ void main() {
     GoRouter? customRouter,
     ThemeData? customDarkTheme,
   }) {
-    final router = customRouter ??
+    final router =
+        customRouter ??
         GoRouter(
           initialLocation: '/profile',
           routes: [
@@ -302,11 +308,13 @@ void main() {
     GoRouter? customRouter,
     ThemeData? customDarkTheme,
   }) async {
-    await tester.pumpWidget(createWidgetUnderTest(
-      themeMode: themeMode,
-      customRouter: customRouter,
-      customDarkTheme: customDarkTheme,
-    ));
+    await tester.pumpWidget(
+      createWidgetUnderTest(
+        themeMode: themeMode,
+        customRouter: customRouter,
+        customDarkTheme: customDarkTheme,
+      ),
+    );
     await tester.pumpAndSettle();
   }
 
@@ -322,10 +330,12 @@ void main() {
   }
 
   group('Group 1: Authentication & Loading States', () {
-    testWidgets('renders ProfileShimmerLoading when user is null',
-        (tester) async {
-      when(() => mockAuthBloc.state)
-          .thenReturn(const AuthState.unauthenticated());
+    testWidgets('renders ProfileShimmerLoading when user is null', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(createWidgetUnderTest());
       await tester.pump();
@@ -337,83 +347,101 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('renders active LoadingOverlay when auth status is loggingOut',
-        (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testUser).copyWith(status: AuthStatus.loggingOut),
-      );
+    testWidgets(
+      'renders active LoadingOverlay when auth status is loggingOut',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            testUser,
+          ).copyWith(status: AuthStatus.loggingOut),
+        );
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
 
-      expect(find.byType(LoadingOverlay), findsOneWidget);
-      final overlay = tester.widget<LoadingOverlay>(find.byType(LoadingOverlay));
-      expect(overlay.isLoading, isTrue);
+        expect(find.byType(LoadingOverlay), findsOneWidget);
+        final overlay = tester.widget<LoadingOverlay>(
+          find.byType(LoadingOverlay),
+        );
+        expect(overlay.isLoading, isTrue);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('renders CustomScrollView and ProfileHeader when authenticated',
-        (tester) async {
-      await pumpProfileScreen(tester);
+    testWidgets(
+      'renders CustomScrollView and ProfileHeader when authenticated',
+      (tester) async {
+        await pumpProfileScreen(tester);
 
-      expect(find.byType(ProfileShimmerLoading), findsNothing);
-      expect(find.byType(CustomScrollView), findsOneWidget);
-      expect(find.byType(ProfileHeader), findsOneWidget);
-    });
+        expect(find.byType(ProfileShimmerLoading), findsNothing);
+        expect(find.byType(CustomScrollView), findsOneWidget);
+        expect(find.byType(ProfileHeader), findsOneWidget);
+      },
+    );
   });
 
   group('Group 2: SliverAppBar & Hero Header', () {
-    testWidgets('renders ProfileHeader with display name, edit pill, and rank title',
-        (tester) async {
-      await pumpProfileScreen(tester);
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders ProfileHeader with display name, edit pill, and rank title',
+      (tester) async {
+        await pumpProfileScreen(tester);
+        await tester.pumpAndSettle();
 
-      expect(find.text('Aria Stark'), findsWidgets);
-      expect(find.text('EDIT'), findsOneWidget);
-      // Level 27 -> SCHOLAR
-      expect(find.text('SCHOLAR'), findsOneWidget);
-      expect(find.text('LVL 27'), findsOneWidget);
-    });
+        expect(find.text('Aria Stark'), findsWidgets);
+        expect(find.text('EDIT'), findsOneWidget);
+        // Level 27 -> SCHOLAR
+        expect(find.text('SCHOLAR'), findsOneWidget);
+        expect(find.text('LVL 27'), findsOneWidget);
+      },
+    );
 
-    testWidgets('displays immediate photo from ProfileState when present for matching user',
-        (tester) async {
-      when(() => mockProfileBloc.state).thenReturn(
-        const ProfileState(
-          photoUrl: 'https://example.com/fresh_avatar.jpg',
-          photoUserId: 'user_profile_123',
-        ),
-      );
+    testWidgets(
+      'displays immediate photo from ProfileState when present for matching user',
+      (tester) async {
+        when(() => mockProfileBloc.state).thenReturn(
+          const ProfileState(
+            photoUrl: 'https://example.com/fresh_avatar.jpg',
+            photoUserId: 'user_profile_123',
+          ),
+        );
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 700));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 700));
 
-      final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
-      expect(header.immediatePhotoUrl, 'https://example.com/fresh_avatar.jpg');
+        final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
+        expect(
+          header.immediatePhotoUrl,
+          'https://example.com/fresh_avatar.jpg',
+        );
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('does NOT display immediate photo if photo belongs to another user account',
-        (tester) async {
-      when(() => mockProfileBloc.state).thenReturn(
-        const ProfileState(
-          photoUrl: 'https://example.com/other_user_avatar.jpg',
-          photoUserId: 'other_user_999',
-        ),
-      );
+    testWidgets(
+      'does NOT display immediate photo if photo belongs to another user account',
+      (tester) async {
+        when(() => mockProfileBloc.state).thenReturn(
+          const ProfileState(
+            photoUrl: 'https://example.com/other_user_avatar.jpg',
+            photoUserId: 'other_user_999',
+          ),
+        );
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 700));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 700));
 
-      final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
-      expect(header.immediatePhotoUrl, isNull);
+        final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
+        expect(header.immediatePhotoUrl, isNull);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('scrolls down and displays collapsed mini-avatar and title',
-        (tester) async {
+    testWidgets('scrolls down and displays collapsed mini-avatar and title', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       await tester.drag(find.byType(CustomScrollView), const Offset(0, -350));
@@ -425,8 +453,9 @@ void main() {
   });
 
   group('Group 3: Edit Name & Photo Bottom Sheets', () {
-    testWidgets('tapping edit name opens sheet and submits new display name',
-        (tester) async {
+    testWidgets('tapping edit name opens sheet and submits new display name', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       // Find the name pill button in ProfileHeader
@@ -448,13 +477,16 @@ void main() {
       await tester.tap(find.text('Save Changes'));
       await tester.pumpAndSettle();
 
-      verify(() => mockProfileBloc.add(
-            const ProfileUpdateDisplayNameRequested('Queen Aria'),
-          )).called(1);
+      verify(
+        () => mockProfileBloc.add(
+          const ProfileUpdateDisplayNameRequested('Queen Aria'),
+        ),
+      ).called(1);
     });
 
-    testWidgets('tapping edit photo opens image source bottom sheet',
-        (tester) async {
+    testWidgets('tapping edit photo opens image source bottom sheet', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       final cameraIconFinder = find.byIcon(Icons.camera_alt_rounded);
@@ -472,24 +504,25 @@ void main() {
   });
 
   group('Group 4: Companion / Vowl Mascot Companion Pod', () {
-    testWidgets('renders Mascot pod in ProfileHeader and tapping navigates to mascot screen',
-        (tester) async {
-      await pumpProfileScreen(tester);
+    testWidgets(
+      'renders Mascot pod in ProfileHeader and tapping navigates to mascot screen',
+      (tester) async {
+        await pumpProfileScreen(tester);
 
-      expect(find.byType(VowlMascot), findsWidgets);
-      expect(find.text('BUDDY'), findsOneWidget);
+        expect(find.byType(VowlMascot), findsWidgets);
+        expect(find.text('BUDDY'), findsOneWidget);
 
-      await tester.tap(find.text('BUDDY'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('BUDDY'));
+        await tester.pumpAndSettle();
 
-      expect(navigatedRoutes, contains(AppRouter.vowlMascotRoute));
-      verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
-    });
+        expect(navigatedRoutes, contains(AppRouter.vowlMascotRoute));
+        verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
+      },
+    );
   });
 
   group('Group 5: Adventure Stats & Bento Grid', () {
-    testWidgets('renders ProfileBentoStats with stats cards',
-        (tester) async {
+    testWidgets('renders ProfileBentoStats with stats cards', (tester) async {
       await pumpProfileScreen(tester);
 
       expect(find.byType(ProfileBentoStats), findsOneWidget);
@@ -500,28 +533,35 @@ void main() {
       expect(find.text('ADVENTURE XP'), findsOneWidget);
     });
 
-    testWidgets('tapping current level bento card pushes levelRoute',
-        (tester) async {
+    testWidgets('tapping current level bento card pushes levelRoute', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       await scrollToAndTap(tester, find.text('CURRENT LEVEL'));
 
       expect(navigatedRoutes, contains(AppRouter.levelRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('tapping treasury bento card pushes coinsRoute',
-        (tester) async {
+    testWidgets('tapping treasury bento card pushes coinsRoute', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       await scrollToAndTap(tester, find.text('Vowl Treasury'));
 
       expect(navigatedRoutes, contains(AppRouter.questCoinsRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('tapping daily streak bento card pushes streakRoute',
-        (tester) async {
+    testWidgets('tapping daily streak bento card pushes streakRoute', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       await scrollToAndTap(tester, find.text('Daily Streak'));
@@ -529,33 +569,39 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.streakRoute));
     });
 
-    testWidgets('tapping XP boosted bento card pushes xpRoute',
-        (tester) async {
+    testWidgets('tapping XP boosted bento card pushes xpRoute', (tester) async {
       await pumpProfileScreen(tester);
 
       await scrollToAndTap(tester, find.text('ADVENTURE XP'));
 
       expect(navigatedRoutes, contains(AppRouter.adventureXPRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
   });
 
   group('Group 6: Learning Report & Review Mistakes Feature Cards', () {
-    testWidgets('renders Learning Report and tapping pushes progressDashboardRoute',
-        (tester) async {
-      await pumpProfileScreen(tester);
+    testWidgets(
+      'renders Learning Report and tapping pushes progressDashboardRoute',
+      (tester) async {
+        await pumpProfileScreen(tester);
 
-      final reportFinder = find.text('Learning Report');
-      expect(reportFinder, findsOneWidget);
+        final reportFinder = find.text('Learning Report');
+        expect(reportFinder, findsOneWidget);
 
-      await scrollToAndTap(tester, reportFinder);
+        await scrollToAndTap(tester, reportFinder);
 
-      expect(navigatedRoutes, contains(AppRouter.progressDashboardRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
+        expect(navigatedRoutes, contains(AppRouter.progressDashboardRoute));
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('renders Review & Master when isKidsModeOnly is false',
-        (tester) async {
+    testWidgets('renders Review & Master when isKidsModeOnly is false', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       final reviewFinder = find.text('Review & Master');
@@ -564,17 +610,23 @@ void main() {
       await scrollToAndTap(tester, reviewFinder);
 
       expect(navigatedRoutes, contains(AppRouter.reviewMistakesRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('omits Review & Master when isKidsModeOnly is true',
-        (tester) async {
+    testWidgets('omits Review & Master when isKidsModeOnly is true', (
+      tester,
+    ) async {
       final kidsUser = testUser.copyWith(
         totalExp: 0,
-        completedLevels: {'kids_alphabet': [1, 2]},
+        completedLevels: {
+          'kids_alphabet': [1, 2],
+        },
       );
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(kidsUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(kidsUser));
 
       await pumpProfileScreen(tester);
 
@@ -583,8 +635,9 @@ void main() {
   });
 
   group('Group 7: Golden Keys Shop Banner', () {
-    testWidgets('renders Golden Keys banner and user key count in Vault tab',
-        (tester) async {
+    testWidgets('renders Golden Keys banner and user key count in Vault tab', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Vault'));
       await tester.pumpAndSettle();
@@ -593,21 +646,25 @@ void main() {
       expect(find.text('4'), findsWidgets);
     });
 
-    testWidgets('tapping Golden Keys banner opens KeyShopBottomSheet',
-        (tester) async {
+    testWidgets('tapping Golden Keys banner opens KeyShopBottomSheet', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Vault'));
       await tester.pumpAndSettle();
 
       await scrollToAndTap(tester, find.text('Golden Keys'));
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
   });
 
   group('Group 8: Hall of Fame (ProfileBadgesList)', () {
-    testWidgets('renders ProfileBadgesList and earned badges in Trophies tab',
-        (tester) async {
+    testWidgets('renders ProfileBadgesList and earned badges in Trophies tab', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Trophies'));
       await tester.pumpAndSettle();
@@ -615,15 +672,17 @@ void main() {
       expect(find.byType(ProfileBadgesList), findsOneWidget);
     });
 
-    testWidgets('renders collection progress counter in Trophies tab',
-        (tester) async {
+    testWidgets('renders collection progress counter in Trophies tab', (
+      tester,
+    ) async {
       final noBadgesUser = testUser.copyWith(
         badges: [],
         claimedLevelMilestones: [],
         totalExp: 0,
       );
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(noBadgesUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(noBadgesUser));
 
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Trophies'));
@@ -635,8 +694,9 @@ void main() {
   });
 
   group('Group 9: Kids Zone (Conditional Rendering)', () {
-    testWidgets('renders Kids Zone section when stickers exist in Vault tab',
-        (tester) async {
+    testWidgets('renders Kids Zone section when stickers exist in Vault tab', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Vault'));
       await tester.pumpAndSettle();
@@ -648,17 +708,23 @@ void main() {
       await scrollToAndTap(tester, find.text('Kids Room'));
 
       expect(navigatedRoutes, contains('/kids-room'));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('omits Kids Zone section when stickers empty and levels zero',
-        (tester) async {
+    testWidgets('omits Kids Zone section when stickers empty and levels zero', (
+      tester,
+    ) async {
       final adultUser = testUser.copyWith(
         kidsStickers: [],
-        completedLevels: {'grammar': [1]},
+        completedLevels: {
+          'grammar': [1],
+        },
       );
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(adultUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(adultUser));
 
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Vault'));
@@ -671,30 +737,37 @@ void main() {
   });
 
   group('Group 10: Premium CTA Banner', () {
-    testWidgets('renders UPGRADE TO PREMIUM when user is not premium in Vault tab',
-        (tester) async {
-      final freeUser = testUser.copyWith(isPremium: false);
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(freeUser));
+    testWidgets(
+      'renders UPGRADE TO PREMIUM when user is not premium in Vault tab',
+      (tester) async {
+        final freeUser = testUser.copyWith(isPremium: false);
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(freeUser));
 
-      await pumpProfileScreen(tester);
-      await tester.tap(find.text('Vault'));
-      await tester.pumpAndSettle();
+        await pumpProfileScreen(tester);
+        await tester.tap(find.text('Vault'));
+        await tester.pumpAndSettle();
 
-      final upgradeFinder = find.text('UPGRADE TO PREMIUM');
-      expect(upgradeFinder, findsOneWidget);
+        final upgradeFinder = find.text('UPGRADE TO PREMIUM');
+        expect(upgradeFinder, findsOneWidget);
 
-      await scrollToAndTap(tester, upgradeFinder);
+        await scrollToAndTap(tester, upgradeFinder);
 
-      expect(navigatedRoutes, contains(AppRouter.premiumRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
+        expect(navigatedRoutes, contains(AppRouter.premiumRoute));
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('renders Premium Active when user is premium in Vault tab',
-        (tester) async {
+    testWidgets('renders Premium Active when user is premium in Vault tab', (
+      tester,
+    ) async {
       final premUser = testUser.copyWith(isPremium: true);
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(premUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(premUser));
 
       await pumpProfileScreen(tester);
       await tester.tap(find.text('Vault'));
@@ -706,27 +779,34 @@ void main() {
       await scrollToAndTap(tester, activeFinder);
 
       expect(navigatedRoutes, contains(AppRouter.premiumRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
   });
 
   group('Group 11: Preferences Navigation', () {
-    testWidgets('renders Settings button in AppBar and tapping routes to settings',
-        (tester) async {
-      await pumpProfileScreen(tester);
+    testWidgets(
+      'renders Settings button in AppBar and tapping routes to settings',
+      (tester) async {
+        await pumpProfileScreen(tester);
 
-      final settingsButton = find.byIcon(Icons.settings_rounded);
-      expect(settingsButton, findsOneWidget);
+        final settingsButton = find.byIcon(Icons.settings_rounded);
+        expect(settingsButton, findsOneWidget);
 
-      await tester.tap(settingsButton);
-      await tester.pumpAndSettle();
+        await tester.tap(settingsButton);
+        await tester.pumpAndSettle();
 
-      expect(navigatedRoutes, contains(AppRouter.settingsRoute));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
+        expect(navigatedRoutes, contains(AppRouter.settingsRoute));
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('omits redundant sign out button from profile screen',
-        (tester) async {
+    testWidgets('omits redundant sign out button from profile screen', (
+      tester,
+    ) async {
       await pumpProfileScreen(tester);
 
       expect(find.text('SIGN OUT ACCOUNT'), findsNothing);
@@ -737,9 +817,7 @@ void main() {
     testWidgets('pull-to-refresh dispatches AuthReloadUser', (tester) async {
       await pumpProfileScreen(tester);
 
-      tester
-          .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
-          .show();
+      tester.state<RefreshIndicatorState>(find.byType(RefreshIndicator)).show();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 250));
       await tester.pump(const Duration(milliseconds: 700));
@@ -750,42 +828,47 @@ void main() {
   });
 
   group('Group 13: Responsive Viewports, Accessibility & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow',
-        (tester) async {
-      tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
-      tester.view.devicePixelRatio = 2.0;
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
+        tester.view.devicePixelRatio = 2.0;
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ProfileScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ProfileScreen), findsOneWidget);
 
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
-    });
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow',
-        (tester) async {
-      tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
-      tester.view.devicePixelRatio = 1.5;
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
+        tester.view.devicePixelRatio = 1.5;
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ProfileScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ProfileScreen), findsOneWidget);
 
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
-    });
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale',
-        (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       tester.platformDispatcher.textScaleFactorTestValue = 1.3;
 
       await tester.pumpWidget(createWidgetUnderTest());
@@ -807,21 +890,24 @@ void main() {
       expect(find.byType(ProfileScreen), findsOneWidget);
     });
 
-    testWidgets('renders cleanly in Midnight theme mode (black scaffold background)',
-        (tester) async {
-      final midnightTheme = AppTheme.darkTheme.copyWith(
-        scaffoldBackgroundColor: Colors.black,
-      );
+    testWidgets(
+      'renders cleanly in Midnight theme mode (black scaffold background)',
+      (tester) async {
+        final midnightTheme = AppTheme.darkTheme.copyWith(
+          scaffoldBackgroundColor: Colors.black,
+        );
 
-      await tester.pumpWidget(createWidgetUnderTest(
-        themeMode: ThemeMode.dark,
-        customDarkTheme: midnightTheme,
-      ));
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          createWidgetUnderTest(
+            themeMode: ThemeMode.dark,
+            customDarkTheme: midnightTheme,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ProfileScreen), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ProfileScreen), findsOneWidget);
+      },
+    );
   });
 }
-

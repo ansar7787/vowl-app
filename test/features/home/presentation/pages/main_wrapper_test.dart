@@ -123,10 +123,7 @@ void main() {
                     controller: di.sl<ScrollController>(instanceName: 'home'),
                     children: List.generate(
                       40,
-                      (i) => SizedBox(
-                        height: 60,
-                        child: Text('Home Item $i'),
-                      ),
+                      (i) => SizedBox(height: 60, child: Text('Home Item $i')),
                     ),
                   ),
                 ),
@@ -140,10 +137,7 @@ void main() {
                     controller: di.sl<ScrollController>(instanceName: 'games'),
                     children: List.generate(
                       40,
-                      (i) => SizedBox(
-                        height: 60,
-                        child: Text('Games Item $i'),
-                      ),
+                      (i) => SizedBox(height: 60, child: Text('Games Item $i')),
                     ),
                   ),
                 ),
@@ -154,15 +148,15 @@ void main() {
                 GoRoute(
                   path: '/ranks',
                   builder: (context, state) => ListView(
-                    controller: di.sl<ScrollController>(instanceName: 'leaderboard'),
+                    controller: di.sl<ScrollController>(
+                      instanceName: 'leaderboard',
+                    ),
                     children: [
                       const Text('Ranks Screen Content'),
                       ...List.generate(
                         40,
-                        (i) => SizedBox(
-                          height: 60,
-                          child: Text('Ranks Item $i'),
-                        ),
+                        (i) =>
+                            SizedBox(height: 60, child: Text('Ranks Item $i')),
                       ),
                     ],
                   ),
@@ -174,7 +168,9 @@ void main() {
                 GoRoute(
                   path: '/profile',
                   builder: (context, state) => ListView(
-                    controller: di.sl<ScrollController>(instanceName: 'profile'),
+                    controller: di.sl<ScrollController>(
+                      instanceName: 'profile',
+                    ),
                     children: [
                       const Text('Profile Screen Content'),
                       ...List.generate(
@@ -195,10 +191,7 @@ void main() {
     );
   }
 
-  Widget createWidgetUnderTest({
-    GoRouter? router,
-    ThemeData? theme,
-  }) {
+  Widget createWidgetUnderTest({GoRouter? router, ThemeData? theme}) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       minTextAdapt: true,
@@ -223,10 +216,7 @@ void main() {
     addTearDown(() => tester.view.resetDevicePixelRatio());
 
     await tester.pumpWidget(
-      createWidgetUnderTest(
-        router: router,
-        theme: theme,
-      ),
+      createWidgetUnderTest(router: router, theme: theme),
     );
     await tester.pumpAndSettle();
   }
@@ -466,67 +456,65 @@ void main() {
   });
 
   group('Group 4: Accessibility & Semantics', () {
-    testWidgets(
-      'nav items expose proper Semantics button and selected state',
-      (tester) async {
-        await pumpMainWrapper(tester);
+    testWidgets('nav items expose proper Semantics button and selected state', (
+      tester,
+    ) async {
+      await pumpMainWrapper(tester);
 
-        final homeFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == true &&
-              w.properties.label == 'Home',
-        );
-        expect(homeFinder, findsOneWidget);
+      final homeFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == true &&
+            w.properties.label == 'Home',
+      );
+      expect(homeFinder, findsOneWidget);
 
-        final gamesFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Games',
-        );
-        expect(gamesFinder, findsOneWidget);
+      final gamesFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Games',
+      );
+      expect(gamesFinder, findsOneWidget);
 
-        final ranksFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Ranks',
-        );
-        expect(ranksFinder, findsOneWidget);
+      final ranksFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Ranks',
+      );
+      expect(ranksFinder, findsOneWidget);
 
-        final profileFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Profile',
-        );
-        expect(profileFinder, findsOneWidget);
-      },
-    );
+      final profileFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Profile',
+      );
+      expect(profileFinder, findsOneWidget);
+    });
 
-    testWidgets(
-      'maintains 48dp minimum touch target floor on all items',
-      (tester) async {
-        await pumpMainWrapper(tester);
+    testWidgets('maintains 48dp minimum touch target floor on all items', (
+      tester,
+    ) async {
+      await pumpMainWrapper(tester);
 
-        final constrainedContainers = find.byWidgetPredicate(
-          (w) =>
-              w is Container &&
-              w.constraints?.minWidth != null &&
-              w.constraints!.minWidth >= 48.0 &&
-              w.constraints?.minHeight != null &&
-              w.constraints!.minHeight >= 48.0,
-        );
+      final constrainedContainers = find.byWidgetPredicate(
+        (w) =>
+            w is Container &&
+            w.constraints?.minWidth != null &&
+            w.constraints!.minWidth >= 48.0 &&
+            w.constraints?.minHeight != null &&
+            w.constraints!.minHeight >= 48.0,
+      );
 
-        // At least 4 nav item tap targets meeting the 48dp floor
-        expect(constrainedContainers, findsAtLeastNWidgets(4));
-      },
-    );
+      // At least 4 nav item tap targets meeting the 48dp floor
+      expect(constrainedContainers, findsAtLeastNWidgets(4));
+    });
   });
 
   group('Group 5: Responsive Layouts & Themes', () {
@@ -546,21 +534,20 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly on large tablet viewport (800x1280)',
-      (tester) async {
-        tester.view.physicalSize = const Size(800, 1280);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() => tester.view.resetPhysicalSize());
-        addTearDown(() => tester.view.resetDevicePixelRatio());
+    testWidgets('renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 1280);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        await tester.pumpWidget(createWidgetUnderTest());
-        await tester.pumpAndSettle();
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pumpAndSettle();
 
-        expect(find.byType(MainWrapper), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(MainWrapper), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly under 1.3x accessibility text scaling without overflow',
@@ -583,18 +570,12 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in Dark Theme mode',
-      (tester) async {
-        await pumpMainWrapper(
-          tester,
-          theme: ThemeData.dark(),
-        );
+    testWidgets('renders cleanly in Dark Theme mode', (tester) async {
+      await pumpMainWrapper(tester, theme: ThemeData.dark());
 
-        expect(find.byType(MainWrapper), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(MainWrapper), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly in Midnight Theme mode (black scaffold background)',
@@ -612,4 +593,3 @@ void main() {
     );
   });
 }
-

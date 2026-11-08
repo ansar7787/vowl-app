@@ -38,20 +38,33 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 
 class MockWritingBloc extends Mock implements WritingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
+
 class FakeWritingState extends Fake implements WritingState {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeEconomyState extends Fake implements EconomyState {}
 
 void main() {
@@ -70,9 +83,11 @@ void main() {
 
   WritingQuest createQuest({
     String id = 'quest_ed_1',
-    String instruction = 'Assemble the essay outline by dragging the paragraph blocks into logical order.',
+    String instruction =
+        'Assemble the essay outline by dragging the paragraph blocks into logical order.',
     String essayTopic = 'Renewable Energy Transition in Urban Architecture',
-    String thesisStatement = 'Integrating solar envelopes into skyscrapers reduces urban grid dependency.',
+    String thesisStatement =
+        'Integrating solar envelopes into skyscrapers reduces urban grid dependency.',
     List<String> requiredPoints = const [
       'INTRODUCTION',
       'EVIDENCE',
@@ -87,8 +102,10 @@ void main() {
     ],
     List<int> correctOrder = const [0, 1, 2, 3],
     int difficulty = 2,
-    String hint = 'Start with the overarching global context before technical facade statistics.',
-    String explanation = 'Logical paragraph sequencing ensures coherence in academic essay structure.',
+    String hint =
+        'Start with the overarching global context before technical facade statistics.',
+    String explanation =
+        'Logical paragraph sequencing ensures coherence in academic essay structure.',
   }) {
     return WritingQuest(
       id: id,
@@ -111,7 +128,8 @@ void main() {
   final sampleQuest2 = createQuest(
     id: 'quest_ed_2',
     essayTopic: 'Autonomous Transit in Smart Metropolises',
-    thesisStatement: 'Self-driving bus fleets dramatically diminish traffic fatalities and congestion.',
+    thesisStatement:
+        'Self-driving bus fleets dramatically diminish traffic fatalities and congestion.',
     requiredPoints: ['CONTEXT', 'DATA', 'REBUTTAL', 'IMPACT'],
     options: [
       'Human driving errors cause over 90% of vehicular accidents.',
@@ -143,10 +161,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const WritingHintUsed());
     registerFallbackValue(
-      const FetchWritingQuests(
-        gameType: GameSubtype.essayDrafting,
-        level: 2,
-      ),
+      const FetchWritingQuests(gameType: GameSubtype.essayDrafting, level: 2),
     );
     registerFallbackValue(const EconomyAddCoinsRequested(5));
   });
@@ -195,7 +210,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics & Ad mocks
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -220,13 +237,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -293,9 +312,9 @@ void main() {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               home: MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: TextScaler.linear(textScaleFactor),
-                ),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.linear(textScaleFactor)),
                 child: EssayDraftingScreen(
                   level: level,
                   gameType: GameSubtype.essayDrafting,
@@ -321,7 +340,9 @@ void main() {
       tester.state<ScaffoldMessengerState>(messengerFinder).clearSnackBars();
       await tester.pump();
     }
-    final confirmButton = find.byKey(const Key('essay_drafting_confirm_button'));
+    final confirmButton = find.byKey(
+      const Key('essay_drafting_confirm_button'),
+    );
     if (confirmButton.evaluate().isNotEmpty) {
       await tester.ensureVisible(confirmButton);
       await tester.pumpAndSettle();
@@ -371,7 +392,9 @@ void main() {
       );
     });
 
-    testWidgets('renders shimmer loading when in initial state', (tester) async {
+    testWidgets('renders shimmer loading when in initial state', (
+      tester,
+    ) async {
       const initialState = WritingInitial();
       await pumpScreen(tester, state: initialState, level: 2, settle: false);
 
@@ -407,81 +430,89 @@ void main() {
       expect(find.text('Place sentence here...'), findsNWidgets(4));
     });
 
-    testWidgets('slotting an item updates hex slot and removes it from available stream', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'slotting an item updates hex slot and removes it from available stream',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlotFinder = find.byKey(const Key('essay_drafting_slot_INTRODUCTION'));
-      expect(introSlotFinder, findsOneWidget);
+        final introSlotFinder = find.byKey(
+          const Key('essay_drafting_slot_INTRODUCTION'),
+        );
+        expect(introSlotFinder, findsOneWidget);
 
-      final hexSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      hexSlot.onSlot(
-        'INTRODUCTION',
-        sampleQuest1.options![0],
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final hexSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        hexSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(1);
-      expect(
-        find.text('Cities consume 78% of global energy, necessitating self-sufficient buildings.'),
-        findsOneWidget,
-      );
-      expect(find.text('Place sentence here...'), findsNWidgets(3));
-    });
+        verify(() => mockHapticService.success()).called(1);
+        expect(
+          find.text(
+            'Cities consume 78% of global energy, necessitating self-sufficient buildings.',
+          ),
+          findsOneWidget,
+        );
+        expect(find.text('Place sentence here...'), findsNWidgets(3));
+      },
+    );
 
-    testWidgets('slotting same item into another slot moves it to the new slot', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'slotting same item into another slot moves it to the new slot',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![0]);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![0]);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Place sentence here...'), findsNWidgets(3));
-    });
+        expect(find.text('Place sentence here...'), findsNWidgets(3));
+      },
+    );
 
-    testWidgets('tapping a filled hex slot clears it and returns item to stream', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping a filled hex slot clears it and returns item to stream',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Place sentence here...'), findsNWidgets(3));
+        expect(find.text('Place sentence here...'), findsNWidgets(3));
 
-      // Tap slot to clear
-      await tester.tap(find.byKey(const Key('essay_drafting_slot_INTRODUCTION')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap slot to clear
+        await tester.tap(
+          find.byKey(const Key('essay_drafting_slot_INTRODUCTION')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(find.text('Place sentence here...'), findsNWidgets(4));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(find.text('Place sentence here...'), findsNWidgets(4));
+      },
+    );
 
     testWidgets('tapping an empty hex slot does nothing', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('essay_drafting_slot_INTRODUCTION')));
+      await tester.tap(
+        find.byKey(const Key('essay_drafting_slot_INTRODUCTION')),
+      );
       await tester.pump();
 
       verifyNever(() => mockHapticService.selection());
@@ -490,90 +521,98 @@ void main() {
   });
 
   group('EssayDraftingScreen - 3. Validation & Confirmation', () {
-    testWidgets('CONFIRM OUTLINE button does nothing when slots are not filled', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'CONFIRM OUTLINE button does nothing when slots are not filled',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      await scrollAndTapConfirmButton(tester);
+        await scrollAndTapConfirmButton(tester);
 
-      verifyNever(() => mockHapticService.error());
-      verifyNever(() => mockHapticService.success());
-      verifyNever(() => mockWritingBloc.add(const SubmitAnswer(true)));
-      verifyNever(() => mockWritingBloc.add(const SubmitAnswer(false)));
-    });
+        verifyNever(() => mockHapticService.error());
+        verifyNever(() => mockHapticService.success());
+        verifyNever(() => mockWritingBloc.add(const SubmitAnswer(true)));
+        verifyNever(() => mockWritingBloc.add(const SubmitAnswer(false)));
+      },
+    );
 
-    testWidgets('submitting incorrect outline triggers error haptic and submits wrong answer', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting incorrect outline triggers error haptic and submits wrong answer',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      // Fill in reverse/wrong order
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![3]); // wrong
+        // Fill in reverse/wrong order
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![3]); // wrong
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![2]); // wrong
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![2]); // wrong
 
-      final counterSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
-      );
-      counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![1]); // wrong
+        final counterSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
+        );
+        counterSlot.onSlot(
+          'COUNTERARGUMENT',
+          sampleQuest1.options![1],
+        ); // wrong
 
-      final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
-      );
-      conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![0]); // wrong
-      await tester.pump();
+        final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
+        );
+        conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![0]); // wrong
+        await tester.pump();
 
-      await scrollAndTapConfirmButton(tester);
+        await scrollAndTapConfirmButton(tester);
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('submitting correct outline triggers success haptic and reveals TypeToConfirmOverlay', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting correct outline triggers success haptic and reveals TypeToConfirmOverlay',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      // Fill in exact correct order
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        // Fill in exact correct order
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
 
-      final counterSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
-      );
-      counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
+        final counterSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
+        );
+        counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
 
-      final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
-      );
-      conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
-      await tester.pump();
+        final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
+        );
+        conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
+        await tester.pump();
 
-      await scrollAndTapConfirmButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        await scrollAndTapConfirmButton(tester);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(4));
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-      expect(
-        find.byKey(const Key('essay_drafting_confirm_button')),
-        findsNothing,
-      );
-    });
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(4));
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+        expect(
+          find.byKey(const Key('essay_drafting_confirm_button')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   group('EssayDraftingScreen - 4. TypeToConfirmOverlay (Stage 2)', () {
@@ -610,90 +649,89 @@ void main() {
       final overlay = tester.widget<TypeToConfirmOverlay>(
         find.byType(TypeToConfirmOverlay),
       );
-      expect(
-        overlay.expectedText,
-        sampleQuest1.options!.join(' '),
-      );
+      expect(overlay.expectedText, sampleQuest1.options!.join(' '));
     });
 
-    testWidgets('confirming typing in TypeToConfirmOverlay dispatches SubmitAnswer(true)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'confirming typing in TypeToConfirmOverlay dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
 
-      final counterSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
-      );
-      counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
+        final counterSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
+        );
+        counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
 
-      final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
-      );
-      conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
-      await tester.pump();
+        final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
+        );
+        conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
+        await tester.pump();
 
-      await scrollAndTapConfirmButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        await scrollAndTapConfirmButton(tester);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(
-        find.byType(TypeToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('skipping typing in TypeToConfirmOverlay dispatches SubmitAnswer(false)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'skipping typing in TypeToConfirmOverlay dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![1]);
 
-      final counterSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
-      );
-      counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
+        final counterSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
+        );
+        counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![2]);
 
-      final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
-      );
-      conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
-      await tester.pump();
+        final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
+        );
+        conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![3]);
+        await tester.pump();
 
-      await scrollAndTapConfirmButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        await scrollAndTapConfirmButton(tester);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(
-        find.byType(TypeToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('EssayDraftingScreen - 5. Feedback, Navigation & Reset', () {
@@ -738,39 +776,43 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('onQuestionReset resets slots and pending submit on new question', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'onQuestionReset resets slots and pending submit on new question',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
-      await tester.pump();
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
+        await tester.pump();
 
-      expect(find.text('Place sentence here...'), findsNWidgets(3));
+        expect(find.text('Place sentence here...'), findsNWidgets(3));
 
-      // Emit new question
-      final nextQuestionState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.essayDrafting,
-        level: 2,
-      );
+        // Emit new question
+        final nextQuestionState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.essayDrafting,
+          level: 2,
+        );
 
-      writingStreamController.add(nextQuestionState);
-      when(() => mockWritingBloc.state).thenReturn(nextQuestionState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        writingStreamController.add(nextQuestionState);
+        when(() => mockWritingBloc.state).thenReturn(nextQuestionState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('Autonomous Transit in Smart Metropolises'), findsOneWidget);
-      expect(find.text('Place sentence here...'), findsNWidgets(4));
-    });
+        expect(
+          find.text('Autonomous Transit in Smart Metropolises'),
+          findsOneWidget,
+        );
+        expect(find.text('Place sentence here...'), findsNWidgets(4));
+      },
+    );
   });
 
   group('EssayDraftingScreen - 6. Completion, Game Over & Error Journal', () {
@@ -822,69 +864,63 @@ void main() {
       }
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'essayist_err_user',
-            email: 'err@vowl.app',
-            displayName: 'Essay Error User',
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'essayist_err_user',
+              email: 'err@vowl.app',
+              displayName: 'Essay Error User',
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      final introSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
-      );
-      introSlot.onSlot('INTRODUCTION', sampleQuest1.options![3]); // wrong
+        final introSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'INTRODUCTION'),
+        );
+        introSlot.onSlot('INTRODUCTION', sampleQuest1.options![3]); // wrong
 
-      final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
-      );
-      evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![2]); // wrong
+        final evidenceSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'EVIDENCE'),
+        );
+        evidenceSlot.onSlot('EVIDENCE', sampleQuest1.options![2]); // wrong
 
-      final counterSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
-      );
-      counterSlot.onSlot('COUNTERARGUMENT', sampleQuest1.options![1]); // wrong
+        final counterSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'COUNTERARGUMENT'),
+        );
+        counterSlot.onSlot(
+          'COUNTERARGUMENT',
+          sampleQuest1.options![1],
+        ); // wrong
 
-      final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
-        find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
-      );
-      conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![0]); // wrong
-      await tester.pump();
+        final conclusionSlot = tester.widget<EssayDraftingHexSlot>(
+          find.widgetWithText(EssayDraftingHexSlot, 'CONCLUSION'),
+        );
+        conclusionSlot.onSlot('CONCLUSION', sampleQuest1.options![0]); // wrong
+        await tester.pump();
 
-      await scrollAndTapConfirmButton(tester);
+        await scrollAndTapConfirmButton(tester);
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('EssayDraftingScreen - 7. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(EssayDraftingScreen), findsOneWidget);
       expect(find.byType(EssayDraftingInstruction), findsOneWidget);
       expect(find.byType(EssayDraftingTopicBanner), findsOneWidget);
     });
 
-    testWidgets('renders properly on tablet screen (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+    testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(EssayDraftingScreen), findsOneWidget);
       expect(find.byType(EssayDraftingTopicBanner), findsOneWidget);
@@ -894,22 +930,14 @@ void main() {
     testWidgets('renders with 1.3x high text scale without overflow', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(EssayDraftingScreen), findsOneWidget);
       expect(find.byType(EssayDraftingTopicBanner), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(EssayDraftingScreen), findsOneWidget);
       expect(find.text('CONFIRM OUTLINE'), findsOneWidget);
@@ -918,11 +946,7 @@ void main() {
     testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
@@ -938,4 +962,3 @@ void main() {
     });
   });
 }
-

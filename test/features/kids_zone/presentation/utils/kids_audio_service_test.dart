@@ -14,14 +14,16 @@ void main() {
   late MockAppLogger mockAppLogger;
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers'),
-      (MethodCall methodCall) async => 1,
-    );
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers.global'),
-      (MethodCall methodCall) async => 1,
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers'),
+          (MethodCall methodCall) async => 1,
+        );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers.global'),
+          (MethodCall methodCall) async => 1,
+        );
 
     SharedPreferences.setMockInitialValues({
       'sound_enabled': true,
@@ -37,14 +39,16 @@ void main() {
 
   tearDown(() async {
     await Future.delayed(const Duration(milliseconds: 50));
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers'),
-      null,
-    );
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers.global'),
-      null,
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers'),
+          null,
+        );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers.global'),
+          null,
+        );
     if (di.sl.isRegistered<AppLogger>()) {
       di.sl.unregister<AppLogger>();
     }
@@ -62,15 +66,18 @@ void main() {
       expect(await service.isSfxEnabled(), isFalse);
     });
 
-    test('plays all sfx triggers including playGameOverSFX without throwing', () async {
-      final service = KidsAudioService();
-      await expectLater(service.playSuccessSFX(comboStep: 1), completes);
-      await expectLater(service.playSuccessSFX(comboStep: 2), completes);
-      await expectLater(service.playSuccessSFX(comboStep: 3), completes);
-      await expectLater(service.playSuccessSFX(comboStep: 4), completes);
-      await expectLater(service.playFailureSFX(), completes);
-      await expectLater(service.playLevelCompleteSFX(), completes);
-      await expectLater(service.playGameOverSFX(), completes);
-    });
+    test(
+      'plays all sfx triggers including playGameOverSFX without throwing',
+      () async {
+        final service = KidsAudioService();
+        await expectLater(service.playSuccessSFX(comboStep: 1), completes);
+        await expectLater(service.playSuccessSFX(comboStep: 2), completes);
+        await expectLater(service.playSuccessSFX(comboStep: 3), completes);
+        await expectLater(service.playSuccessSFX(comboStep: 4), completes);
+        await expectLater(service.playFailureSFX(), completes);
+        await expectLater(service.playLevelCompleteSFX(), completes);
+        await expectLater(service.playGameOverSFX(), completes);
+      },
+    );
   });
 }

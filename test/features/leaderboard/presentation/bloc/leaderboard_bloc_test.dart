@@ -26,7 +26,9 @@ void main() {
     dailyXpHistory: {todayKey: 200},
     currentStreak: 5,
     kidsCoins: 10,
-    completedLevels: {'reading': [1, 2, 3]},
+    completedLevels: {
+      'reading': [1, 2, 3],
+    },
   );
 
   final user2 = UserEntity(
@@ -37,7 +39,9 @@ void main() {
     dailyXpHistory: {todayKey: 500},
     currentStreak: 10,
     kidsCoins: 20,
-    completedLevels: {'reading': [1, 2, 3, 4, 5]},
+    completedLevels: {
+      'reading': [1, 2, 3, 4, 5],
+    },
   );
 
   setUp(() {
@@ -62,16 +66,25 @@ void main() {
     blocTest<LeaderboardBloc, LeaderboardState>(
       'emits [LeaderboardLoading, LeaderboardLoaded] sorted by weekly XP descending on successful fetch',
       build: () {
-        when(() => mockRepository.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer((_) async => Right(rawResult));
+        when(
+          () => mockRepository.getTopUsers(limit: any(named: 'limit')),
+        ).thenAnswer((_) async => Right(rawResult));
         return bloc;
       },
       act: (bloc) => bloc.add(const LoadLeaderboard(isKids: false)),
       expect: () => [
         const LeaderboardLoading(),
         isA<LeaderboardLoaded>()
-            .having((s) => s.users.first.id, 'first user is user2 (500 weekly)', 'u2')
-            .having((s) => s.users.last.id, 'last user is user1 (200 weekly)', 'u1')
+            .having(
+              (s) => s.users.first.id,
+              'first user is user2 (500 weekly)',
+              'u2',
+            )
+            .having(
+              (s) => s.users.last.id,
+              'last user is user1 (200 weekly)',
+              'u1',
+            )
             .having((s) => s.isKids, 'isKids', false)
             .having((s) => s.lastUpdated, 'lastUpdated', testDate),
       ],
@@ -83,8 +96,9 @@ void main() {
     blocTest<LeaderboardBloc, LeaderboardState>(
       'completes event.completer even when repository returns failure',
       build: () {
-        when(() => mockRepository.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer((_) async => const Left(ServerFailure('Network offline')));
+        when(
+          () => mockRepository.getTopUsers(limit: any(named: 'limit')),
+        ).thenAnswer((_) async => const Left(ServerFailure('Network offline')));
         return bloc;
       },
       act: (bloc) async {
@@ -101,8 +115,9 @@ void main() {
     blocTest<LeaderboardBloc, LeaderboardState>(
       'pull-to-refresh does not emit LeaderboardLoading when state is already LeaderboardLoaded',
       build: () {
-        when(() => mockRepository.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer((_) async => Right(rawResult));
+        when(
+          () => mockRepository.getTopUsers(limit: any(named: 'limit')),
+        ).thenAnswer((_) async => Right(rawResult));
         return bloc;
       },
       seed: () => LeaderboardLoaded([user1], testDate, isKids: false),
@@ -144,15 +159,20 @@ void main() {
     blocTest<LeaderboardBloc, LeaderboardState>(
       'emits [LeaderboardLoading, LeaderboardLoaded] sorted by kids levels completed on successful fetch',
       build: () {
-        when(() => mockRepository.getTopKidsUsers(limit: any(named: 'limit')))
-            .thenAnswer((_) async => Right(rawKidsResult));
+        when(
+          () => mockRepository.getTopKidsUsers(limit: any(named: 'limit')),
+        ).thenAnswer((_) async => Right(rawKidsResult));
         return bloc;
       },
       act: (bloc) => bloc.add(const LoadLeaderboard(isKids: true)),
       expect: () => [
         const LeaderboardLoading(),
         isA<LeaderboardLoaded>()
-            .having((s) => s.users.first.id, 'first user is k2 (7 levels)', 'k2')
+            .having(
+              (s) => s.users.first.id,
+              'first user is k2 (7 levels)',
+              'k2',
+            )
             .having((s) => s.users.last.id, 'last user is k1 (3 levels)', 'k1')
             .having((s) => s.isKids, 'isKids', true),
       ],
@@ -162,4 +182,3 @@ void main() {
     );
   });
 }
-

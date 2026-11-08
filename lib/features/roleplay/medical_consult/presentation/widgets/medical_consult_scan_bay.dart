@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_radar_painter.dart';
 
-
 /// Interactive full-body diagnostic scan bay widget.
 class MedicalConsultScanBay extends StatelessWidget {
   /// Available clinical symptoms to diagnose.
@@ -149,8 +148,8 @@ class MedicalConsultScanBay extends StatelessWidget {
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark
-                ? AppColors.slate900
-                : Colors.black.withValues(alpha: 0.02)),
+                  ? AppColors.slate900
+                  : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
@@ -177,166 +176,171 @@ class MedicalConsultScanBay extends StatelessWidget {
             alignment: Alignment.center,
             clipBehavior: Clip.none,
             children: [
-          // Cybernetic scan matrix background grids
-          Positioned.fill(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: AnimatedBuilder(
-                animation: sweepAnimation,
-                builder: (context, child) {
-                  return CustomPaint(
-                    painter: BiometricRadarPainter(
-                      animationValue: sweepAnimation.value,
-                      themeColor: color,
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-
-          // Glowing wireframe patient body
-          Center(
-            child: reduceMotion
-                ? Icon(
-                    Icons.accessibility_new_rounded,
-                    size: 260.r,
-                    color: color.withValues(alpha: isDark ? 0.18 : 0.12),
-                  )
-                : Icon(
-                    Icons.accessibility_new_rounded,
-                    size: 260.r,
-                    color: color.withValues(alpha: isDark ? 0.18 : 0.12),
-                  )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .shimmer(
-                      duration: 2.2.seconds,
-                      color: color.withValues(alpha: 0.35),
-                    ),
-          ),
-
-          // Render active symptom glitch circles dynamically mapped anatomically
-          ...symptoms.asMap().entries.map((entry) {
-            int index = entry.key;
-            String s = entry.value;
-            final Offset pos = _getAnatomicalOffset(s, index, symptoms.length);
-            final bool isResolved = scannedGlitches.contains(s);
-
-            final anomalyChild = Container(
-              key: Key('medical_consult_anomaly_$index'),
-              width: 32.r,
-              height: 32.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isResolved
-                    ? color.withValues(alpha: 0.2)
-                    : tokens.gameIncorrect.withValues(
-                        alpha: 0.08,
-                      ),
-                border: Border.all(
-                  color: isResolved
-                      ? color
-                      : tokens.gameIncorrect.withValues(
-                          alpha: 0.7,
+              // Cybernetic scan matrix background grids
+              Positioned.fill(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: AnimatedBuilder(
+                    animation: sweepAnimation,
+                    builder: (context, child) {
+                      return CustomPaint(
+                        painter: BiometricRadarPainter(
+                          animationValue: sweepAnimation.value,
+                          themeColor: color,
                         ),
-                  width: 2.0,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color:
-                        (isResolved
-                                ? color
-                                : tokens.gameIncorrect)
-                            .withValues(alpha: 0.25),
-                    blurRadius: 8,
+                      );
+                    },
                   ),
-                ],
-              ),
-              child: Center(
-                child: Icon(
-                  isResolved
-                      ? Icons.check_circle_outline_rounded
-                      : Icons.warning_rounded,
-                  color: isResolved
-                      ? color
-                      : tokens.gameIncorrect,
-                  size: 14.r,
                 ),
               ),
-            );
 
-            return Positioned(
-              left: (centerX - 16.r + pos.dx).clamp(16.w, constraints.maxWidth - 48.w),
-              top: (centerY - 16.r + pos.dy).clamp(16.h, constraints.maxHeight - 48.h),
-              child: Semantics(
-                label: "Examine symptom: $s",
-                hint: isResolved ? "Already examined" : "Double tap to examine",
-                button: true,
-                child: GestureDetector(
-                  onTap: () => onSymptomScannedDirectly(s),
-                  child: reduceMotion
-                      ? anomalyChild
-                      : anomalyChild
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .scale(
-                            begin: const Offset(1, 1),
-                            end: const Offset(1.15, 1.15),
-                            duration: 1.5.seconds,
-                            curve: Curves.easeInOut,
-                          ),
-                ),
-              ),
-            );
-          }),
-
-          // Interactive Drag-to-Scan lens
-          Positioned(
-            left: centerX - 48.r,
-            top: centerY - 48.r,
-            child: ValueListenableBuilder<Offset>(
-              valueListenable: scanOffsetNotifier,
-              builder: (context, offset, child) {
-                return Transform.translate(
-                  offset: offset,
-                  child: Listener(
-                    onPointerDown: (_) => onScanStart(),
-                    onPointerUp: (_) => onScanEnd(),
-                    onPointerCancel: (_) => onScanEnd(),
-                    child: GestureDetector(
-                      onPanUpdate: (d) => onScanUpdate(d, symptoms),
-                      child: Container(
-                        key: const Key('medical_consult_scan_lens'),
-                        width: 96.r,
-                        height: 96.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(color: color, width: 2.5),
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.25),
-                              blurRadius: 15,
+              // Glowing wireframe patient body
+              Center(
+                child: reduceMotion
+                    ? Icon(
+                        Icons.accessibility_new_rounded,
+                        size: 260.r,
+                        color: color.withValues(alpha: isDark ? 0.18 : 0.12),
+                      )
+                    : Icon(
+                            Icons.accessibility_new_rounded,
+                            size: 260.r,
+                            color: color.withValues(
+                              alpha: isDark ? 0.18 : 0.12,
                             ),
-                          ],
-                          color: color.withValues(alpha: 0.05),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.center_focus_strong_rounded,
-                            color: color,
-                            size: 32.r,
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .shimmer(
+                            duration: 2.2.seconds,
+                            color: color.withValues(alpha: 0.35),
                           ),
-                        ),
+              ),
+
+              // Render active symptom glitch circles dynamically mapped anatomically
+              ...symptoms.asMap().entries.map((entry) {
+                int index = entry.key;
+                String s = entry.value;
+                final Offset pos = _getAnatomicalOffset(
+                  s,
+                  index,
+                  symptoms.length,
+                );
+                final bool isResolved = scannedGlitches.contains(s);
+
+                final anomalyChild = Container(
+                  key: Key('medical_consult_anomaly_$index'),
+                  width: 32.r,
+                  height: 32.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isResolved
+                        ? color.withValues(alpha: 0.2)
+                        : tokens.gameIncorrect.withValues(alpha: 0.08),
+                    border: Border.all(
+                      color: isResolved
+                          ? color
+                          : tokens.gameIncorrect.withValues(alpha: 0.7),
+                      width: 2.0,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: (isResolved ? color : tokens.gameIncorrect)
+                            .withValues(alpha: 0.25),
+                        blurRadius: 8,
                       ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(
+                      isResolved
+                          ? Icons.check_circle_outline_rounded
+                          : Icons.warning_rounded,
+                      color: isResolved ? color : tokens.gameIncorrect,
+                      size: 14.r,
                     ),
                   ),
                 );
-              },
-            ),
-          ),
-        ],
-      );
-    },
-  ),
-);
+
+                return Positioned(
+                  left: (centerX - 16.r + pos.dx).clamp(
+                    16.w,
+                    constraints.maxWidth - 48.w,
+                  ),
+                  top: (centerY - 16.r + pos.dy).clamp(
+                    16.h,
+                    constraints.maxHeight - 48.h,
+                  ),
+                  child: Semantics(
+                    label: "Examine symptom: $s",
+                    hint: isResolved
+                        ? "Already examined"
+                        : "Double tap to examine",
+                    button: true,
+                    child: GestureDetector(
+                      onTap: () => onSymptomScannedDirectly(s),
+                      child: reduceMotion
+                          ? anomalyChild
+                          : anomalyChild
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(1, 1),
+                                  end: const Offset(1.15, 1.15),
+                                  duration: 1.5.seconds,
+                                  curve: Curves.easeInOut,
+                                ),
+                    ),
+                  ),
+                );
+              }),
+
+              // Interactive Drag-to-Scan lens
+              Positioned(
+                left: centerX - 48.r,
+                top: centerY - 48.r,
+                child: ValueListenableBuilder<Offset>(
+                  valueListenable: scanOffsetNotifier,
+                  builder: (context, offset, child) {
+                    return Transform.translate(
+                      offset: offset,
+                      child: Listener(
+                        onPointerDown: (_) => onScanStart(),
+                        onPointerUp: (_) => onScanEnd(),
+                        onPointerCancel: (_) => onScanEnd(),
+                        child: GestureDetector(
+                          onPanUpdate: (d) => onScanUpdate(d, symptoms),
+                          child: Container(
+                            key: const Key('medical_consult_scan_lens'),
+                            width: 96.r,
+                            height: 96.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: color, width: 2.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(alpha: 0.25),
+                                  blurRadius: 15,
+                                ),
+                              ],
+                              color: color.withValues(alpha: 0.05),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.center_focus_strong_rounded,
+                                color: color,
+                                size: 32.r,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
   }
 }

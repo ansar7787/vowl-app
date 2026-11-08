@@ -87,7 +87,7 @@ void main() {
       'What do you do about it?',
       'What are you going to do about it?',
       'Where are you going to go?',
-      'What did you want to do?'
+      'What did you want to do?',
     ],
     correctAnswerIndex: 1,
     correctAnswer: 'What are you going to do about it?',
@@ -106,7 +106,7 @@ void main() {
       'Give me a break',
       'Gimme that book',
       'Give her some time',
-      'Got to go now'
+      'Got to go now',
     ],
     correctAnswerIndex: 0,
     correctAnswer: 'Give me a break',
@@ -125,7 +125,7 @@ void main() {
       'I gotta leave right now.',
       'I got a leaf right now.',
       'I had to leave right now.',
-      'I want to leave right now.'
+      'I want to leave right now.',
     ],
     correctAnswerIndex: 0,
     correctAnswer: 'I gotta leave right now.',
@@ -170,8 +170,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -204,11 +205,13 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playUrl(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(
-      any(),
-      speed: any(named: 'speed'),
-      pauseMarkers: any(named: 'pauseMarkers'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(
+        any(),
+        speed: any(named: 'speed'),
+        pauseMarkers: any(named: 'pauseMarkers'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
@@ -219,12 +222,15 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
-      final fallback = invocation.namedArguments[const Symbol('fallback')] as String?;
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
+      final fallback =
+          invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
       return fallback ?? key;
     });
@@ -240,7 +246,8 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
 
@@ -314,40 +321,65 @@ void main() {
   }
 
   group('FastSpeechDecoderScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, gauges, core dial, and steam vents', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+    testWidgets(
+      '1. Initial layout renders instruction, timer, gauges, core dial, and steam vents',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_instruction')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_gauges')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_core')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_steam_vents')), findsOneWidget);
-    });
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const Key('fast_speech_decoder_instruction')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('fast_speech_decoder_gauges')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('fast_speech_decoder_core')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('fast_speech_decoder_steam_vents')),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('2. Initial instruction displays instruction', (tester) async {
       await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.text('Decode the fast speech and select the correct phrase.'), findsOneWidget);
+      expect(
+        find.text('Decode the fast speech and select the correct phrase.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('3. Core play button tap triggers TTS playback with current speed and selection haptic', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+    testWidgets(
+      '3. Core play button tap triggers TTS playback with current speed and selection haptic',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-      final playBtn = find.byKey(const Key('fast_speech_decoder_play_btn'));
-      expect(playBtn, findsOneWidget);
+        final playBtn = find.byKey(const Key('fast_speech_decoder_play_btn'));
+        expect(playBtn, findsOneWidget);
 
-      await tester.tap(playBtn);
-      await tester.pump();
+        await tester.tap(playBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        'What are you going to do about it?',
-        speed: any(named: 'speed'),
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(
+            'What are you going to do about it?',
+            speed: any(named: 'speed'),
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('4. Core play button tap with URL audio triggers playUrl', (tester) async {
+    testWidgets('4. Core play button tap with URL audio triggers playUrl', (
+      tester,
+    ) async {
       final urlState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -360,45 +392,63 @@ void main() {
       await tester.tap(playBtn);
       await tester.pump();
 
-      verify(() => mockSoundService.playUrl('https://example.com/audio/fast_phrase.mp3')).called(1);
+      verify(
+        () => mockSoundService.playUrl(
+          'https://example.com/audio/fast_phrase.mp3',
+        ),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('5. Audio fallback cascade uses prompt when textToSpeak is missing', (tester) async {
-      final fallbackState = ListeningLoaded(
-        quests: const [sampleQuest3],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+    testWidgets(
+      '5. Audio fallback cascade uses prompt when textToSpeak is missing',
+      (tester) async {
+        final fallbackState = ListeningLoaded(
+          quests: const [sampleQuest3],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      await pumpFastSpeechDecoderScreen(tester, state: fallbackState);
+        await pumpFastSpeechDecoderScreen(tester, state: fallbackState);
 
-      final playBtn = find.byKey(const Key('fast_speech_decoder_play_btn'));
-      await tester.tap(playBtn);
-      await tester.pump();
+        final playBtn = find.byKey(const Key('fast_speech_decoder_play_btn'));
+        await tester.tap(playBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        'I have got to leave right now.',
-        speed: any(named: 'speed'),
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(
+            'I have got to leave right now.',
+            speed: any(named: 'speed'),
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('6. Core dial displays play icon initially and shows emoji when answered correctly', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+    testWidgets(
+      '6. Core dial displays play icon initially and shows emoji when answered correctly',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_emoji')), findsNothing);
+        expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+        expect(
+          find.byKey(const Key('fast_speech_decoder_emoji')),
+          findsNothing,
+        );
 
-      // Select correct vent (index 1)
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Select correct vent (index 1)
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byKey(const Key('fast_speech_decoder_emoji')), findsOneWidget);
-      expect(find.text('⚡'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('fast_speech_decoder_emoji')),
+          findsOneWidget,
+        );
+        expect(find.text('⚡'), findsOneWidget);
+      },
+    );
 
     testWidgets('7. Speed gauge displays speed readout', (tester) async {
       await pumpFastSpeechDecoderScreen(tester);
@@ -407,30 +457,47 @@ void main() {
       expect(find.textContaining('X'), findsOneWidget);
     });
 
-    testWidgets('8. Panning core dial updates dial rotation, triggers light haptic, and updates gauge', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+    testWidgets(
+      '8. Panning core dial updates dial rotation, triggers light haptic, and updates gauge',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-      final coreFinder = find.byKey(const Key('fast_speech_decoder_core'));
-      expect(coreFinder, findsOneWidget);
+        final coreFinder = find.byKey(const Key('fast_speech_decoder_core'));
+        expect(coreFinder, findsOneWidget);
 
-      final gesture = await tester.startGesture(tester.getCenter(coreFinder) + const Offset(50, 0));
-      await gesture.moveBy(const Offset(0, 50));
-      await tester.pump();
-      await gesture.moveBy(const Offset(-50, 0));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump(const Duration(milliseconds: 500));
+        final gesture = await tester.startGesture(
+          tester.getCenter(coreFinder) + const Offset(50, 0),
+        );
+        await gesture.moveBy(const Offset(0, 50));
+        await tester.pump();
+        await gesture.moveBy(const Offset(-50, 0));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
-    });
+        verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
+      },
+    );
 
     testWidgets('9. Steam vents display all option choices', (tester) async {
       await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.byKey(const Key('fast_speech_decoder_vent_0')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_vent_1')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_vent_2')), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_vent_3')), findsOneWidget);
+      expect(
+        find.byKey(const Key('fast_speech_decoder_vent_0')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('fast_speech_decoder_vent_1')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('fast_speech_decoder_vent_2')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('fast_speech_decoder_vent_3')),
+        findsOneWidget,
+      );
 
       expect(find.text('What do you do about it?'), findsOneWidget);
       expect(find.text('What are you going to do about it?'), findsOneWidget);
@@ -438,150 +505,196 @@ void main() {
       expect(find.text('What did you want to do?'), findsOneWidget);
     });
 
-    testWidgets('10. Tapping correct option vent submits SubmitAnswer(true), plays sound, and triggers haptic', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+    testWidgets(
+      '10. Tapping correct option vent submits SubmitAnswer(true), plays sound, and triggers haptic',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-      final correctVent = find.byKey(const Key('fast_speech_decoder_vent_1'));
-      await tester.tap(correctVent);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('11. Tapping correct option vent stops the SpeedChallengeTimer', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
-      expect(timerState.remainingSeconds, greaterThan(0));
-
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(timerState.remainingSeconds, greaterThan(0));
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('12. Tapping wrong option vent submits SubmitAnswer(false) with userAnswer', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      final wrongVent = find.byKey(const Key('fast_speech_decoder_vent_0'));
-      await tester.tap(wrongVent);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('13. Tapping wrong option vent stops the SpeedChallengeTimer', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('14. Answer lockout: secondary taps on vents are ignored once answered', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      // Tap first vent
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      // Tap second vent
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_2')), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-
-    testWidgets('15. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('16. In answered state, correct vent is highlighted with verified icon', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byIcon(Icons.verified_rounded), findsOneWidget);
-    });
-
-    testWidgets('17. In answered state with wrong choice, chosen vent shows error icon and correct is revealed', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byIcon(Icons.error_outline_rounded), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('18. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
-
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      final continueFinder = find.text('CONTINUE');
-      if (continueFinder.evaluate().isNotEmpty) {
-        await tester.tap(continueFinder.first);
+        final correctVent = find.byKey(const Key('fast_speech_decoder_vent_1'));
+        await tester.tap(correctVent);
         await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-        verify(() => mockListeningBloc.add(any(that: isA<NextQuestion>()))).called(1);
-      }
-    });
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
-    testWidgets('19. Question transition resets dial, clears selections, and restarts timer without crash', (tester) async {
+    testWidgets(
+      '11. Tapping correct option vent stops the SpeedChallengeTimer',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        final timerState = tester.state<SpeedChallengeTimerState>(
+          find.byType(SpeedChallengeTimer),
+        );
+        expect(timerState.remainingSeconds, greaterThan(0));
+
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(timerState.remainingSeconds, greaterThan(0));
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '12. Tapping wrong option vent submits SubmitAnswer(false) with userAnswer',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        final wrongVent = find.byKey(const Key('fast_speech_decoder_vent_0'));
+        await tester.tap(wrongVent);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets('13. Tapping wrong option vent stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpFastSpeechDecoderScreen(tester);
 
-      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+      await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_0')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      final nextState = const ListeningLoaded(
-        quests: [sampleQuest1, sampleQuest2, sampleQuest3],
-        currentIndex: 1,
-        livesRemaining: 3,
-      );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('Give me a break'), findsOneWidget);
-      expect(find.text('Gimme that book'), findsOneWidget);
-
-      await tester.pump(const Duration(milliseconds: 500));
+      expect(tester.takeException(), isNull);
     });
 
-    testWidgets('20. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets(
+      '14. Answer lockout: secondary taps on vents are ignored once answered',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        // Tap first vent
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        // Tap second vent
+        await tester.tap(
+          find.byKey(const Key('fast_speech_decoder_vent_2')),
+          warnIfMissed: false,
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verifyNever(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
+
+    testWidgets(
+      '15. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        final SpeedChallengeTimer timerWidget = tester.widget(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '16. In answered state, correct vent is highlighted with verified icon',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byIcon(Icons.verified_rounded), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '17. In answered state with wrong choice, chosen vent shows error icon and correct is revealed',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byIcon(Icons.error_outline_rounded), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '18. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        final continueFinder = find.text('CONTINUE');
+        if (continueFinder.evaluate().isNotEmpty) {
+          await tester.tap(continueFinder.first);
+          await tester.pump();
+
+          verify(
+            () => mockListeningBloc.add(any(that: isA<NextQuestion>())),
+          ).called(1);
+        }
+      },
+    );
+
+    testWidgets(
+      '19. Question transition resets dial, clears selections, and restarts timer without crash',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
+
+        await tester.tap(find.byKey(const Key('fast_speech_decoder_vent_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final nextState = const ListeningLoaded(
+          quests: [sampleQuest1, sampleQuest2, sampleQuest3],
+          currentIndex: 1,
+          livesRemaining: 3,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('Give me a break'), findsOneWidget);
+        expect(find.text('Gimme that book'), findsOneWidget);
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('20. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpFastSpeechDecoderScreen(tester);
 
       clearInteractions(mockListeningBloc);
@@ -593,68 +706,81 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1100));
 
-      verify(() => mockListeningBloc.add(any(that: isA<ListeningHintUsed>()))).called(1);
+      verify(
+        () => mockListeningBloc.add(any(that: isA<ListeningHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('21. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '21. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('fast_speech_decoder_core')), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byKey(const Key('fast_speech_decoder_core')), findsNothing);
+      },
+    );
 
-    testWidgets('22. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpFastSpeechDecoderScreen(
-        tester,
-        state: const ListeningGameComplete(
-          xpEarned: 100,
-          coinsEarned: 20,
-          questCount: 5,
-        ),
-      );
+    testWidgets(
+      '22. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(
+          tester,
+          state: const ListeningGameComplete(
+            xpEarned: 100,
+            coinsEarned: 20,
+            questCount: 5,
+          ),
+        );
 
-      expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('23. Game over state renders with zero lives', (tester) async {
       await pumpFastSpeechDecoderScreen(
         tester,
-        state: const ListeningGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-        ),
+        state: const ListeningGameOver(quests: [sampleQuest1], currentIndex: 0),
       );
 
       expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('24. Level 1 briefing dialog displays FAST SPEECH DECODER and dismisses on START PRACTICE tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_fastSpeechDecoder': false,
-      });
+    testWidgets(
+      '24. Level 1 briefing dialog displays FAST SPEECH DECODER and dismisses on START PRACTICE tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_fastSpeechDecoder': false,
+        });
 
-      await pumpFastSpeechDecoderScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpFastSpeechDecoderScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('FAST SPEECH DECODER'), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('FAST SPEECH DECODER'), findsOneWidget);
 
-      final actionBtn = find.text('START PRACTICE');
-      expect(actionBtn, findsOneWidget);
+        final actionBtn = find.text('START PRACTICE');
+        expect(actionBtn, findsOneWidget);
 
-      await tester.tap(actionBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('25. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('25. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpFastSpeechDecoderScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
 
@@ -662,48 +788,57 @@ void main() {
       expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
     });
 
-    testWidgets('26. Small mobile screen (320x568) renders with zero overflow', (tester) async {
-      await pumpFastSpeechDecoderScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+    testWidgets(
+      '26. Small mobile screen (320x568) renders with zero overflow',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester, size: const Size(320, 568));
+        expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('27. Tablet viewport (768x1024) renders with zero overflow', (
+      tester,
+    ) async {
+      await pumpFastSpeechDecoderScreen(tester, size: const Size(768, 1024));
       expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('27. Tablet viewport (768x1024) renders with zero overflow', (tester) async {
-      await pumpFastSpeechDecoderScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
-      expect(find.byType(FastSpeechDecoderScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '28. Reduced motion mode suppresses rotating gear animation and vent shaking',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester, reduceMotion: true);
 
-    testWidgets('28. Reduced motion mode suppresses rotating gear animation and vent shaking', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester, reduceMotion: true);
+        expect(find.byType(FastSpeechDecoderCore), findsOneWidget);
+        expect(find.byType(FastSpeechDecoderSteamVents), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-      expect(find.byType(FastSpeechDecoderCore), findsOneWidget);
-      expect(find.byType(FastSpeechDecoderSteamVents), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '29. Speed dial semantics slider exposes speech speed and slider role',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-    testWidgets('29. Speed dial semantics slider exposes speech speed and slider role', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+        final dialFinder = find.byType(FastSpeechDecoderCore);
+        expect(dialFinder, findsOneWidget);
+      },
+    );
 
-      final dialFinder = find.byType(FastSpeechDecoderCore);
-      expect(dialFinder, findsOneWidget);
-    });
+    testWidgets(
+      '30. Accessibility semantics present on play button and steam vent options',
+      (tester) async {
+        await pumpFastSpeechDecoderScreen(tester);
 
-    testWidgets('30. Accessibility semantics present on play button and steam vent options', (tester) async {
-      await pumpFastSpeechDecoderScreen(tester);
+        final playSemantics = find.bySemanticsLabel('Play audio voice');
+        expect(playSemantics, findsOneWidget);
 
-      final playSemantics = find.bySemanticsLabel('Play audio voice');
-      expect(playSemantics, findsOneWidget);
-
-      final vent1Semantics = find.bySemanticsLabel('What are you going to do about it?');
-      expect(vent1Semantics, findsOneWidget);
-    });
+        final vent1Semantics = find.bySemanticsLabel(
+          'What are you going to do about it?',
+        );
+        expect(vent1Semantics, findsOneWidget);
+      },
+    );
   });
 }
-

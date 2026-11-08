@@ -98,9 +98,9 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
@@ -125,7 +125,9 @@ void main() {
             navigatedRoutes.add(state.uri.toString());
             return Scaffold(
               body: Center(
-                child: Text('Game Screen: ${state.uri.queryParameters['gameType']}'),
+                child: Text(
+                  'Game Screen: ${state.uri.queryParameters['gameType']}',
+                ),
               ),
             );
           },
@@ -136,7 +138,9 @@ void main() {
             navigatedRoutes.add(state.uri.toString());
             return Scaffold(
               body: Center(
-                child: Text('Level Map: ${state.uri.queryParameters['gameType']}'),
+                child: Text(
+                  'Level Map: ${state.uri.queryParameters['gameType']}',
+                ),
               ),
             );
           },
@@ -147,7 +151,9 @@ void main() {
             navigatedRoutes.add(state.uri.toString());
             return Scaffold(
               body: Center(
-                child: Text('Category Games: ${state.uri.queryParameters['category']}'),
+                child: Text(
+                  'Category Games: ${state.uri.queryParameters['category']}',
+                ),
               ),
             );
           },
@@ -192,9 +198,9 @@ void main() {
     testWidgets('renders shimmer placeholder when auth state user is null', (
       tester,
     ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        const AuthState.unauthenticated(),
-      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(createWidgetUnderTest());
       await tester.pump();
@@ -222,51 +228,65 @@ void main() {
       expect(find.text('12'), findsOneWidget); // User streak
     });
 
-    testWidgets('renders Quick Resume Hero Card with active game and PLAY button', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 2400);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'renders Quick Resume Hero Card with active game and PLAY button',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 2400);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('QUICK RESUME'), findsOneWidget);
-      expect(find.text('PLAY'), findsWidgets);
-      // Ensure no raw translation placeholder "{}" is rendered
-      expect(find.textContaining('{}'), findsNothing);
-      // Verify progress level text under progress bar
-      expect(find.textContaining(' / 20'), findsOneWidget);
-      // Verify linear progress indicator is rendered
-      expect(find.byType(LinearProgressIndicator), findsWidgets);
-    });
+        expect(find.text('QUICK RESUME'), findsOneWidget);
+        expect(find.text('PLAY'), findsWidgets);
+        // Ensure no raw translation placeholder "{}" is rendered
+        expect(find.textContaining('{}'), findsNothing);
+        // Verify progress level text under progress bar
+        expect(find.textContaining(' / 20'), findsOneWidget);
+        // Verify linear progress indicator is rendered
+        expect(find.byType(LinearProgressIndicator), findsWidgets);
+      },
+    );
 
-    testWidgets('renders 1v1 PvP Duel and Quick Drills with exact production rewards', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 2400);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'renders 1v1 PvP Duel and Quick Drills with exact production rewards',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 2400);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('1v1 Duel'), findsOneWidget);
-      expect(find.text('Word Snap'), findsOneWidget);
-      expect(find.text('Word Mixer'), findsOneWidget);
-      expect(find.text('60s Daily Blitz'), findsOneWidget);
-      expect(find.text('Anagram Puzzle'), findsOneWidget);
-      // Exact production rewards verified from repository implementations
-      expect(find.textContaining('WIN 50'), findsOneWidget); // 1v1 duel winner
-      expect(find.text('WIN 10🪙 + 5 XP'), findsWidgets); // Word Snap & Word Mixer daily challenge
-      expect(find.text('+50 XP'), findsNothing); // 50 XP economy inflation bug fixed
-      expect(find.text('+40 XP'), findsNothing); // Erroneous placeholder absent
-    });
+        expect(find.text('1v1 Duel'), findsOneWidget);
+        expect(find.text('Word Snap'), findsOneWidget);
+        expect(find.text('Word Mixer'), findsOneWidget);
+        expect(find.text('60s Daily Blitz'), findsOneWidget);
+        expect(find.text('Anagram Puzzle'), findsOneWidget);
+        // Exact production rewards verified from repository implementations
+        expect(
+          find.textContaining('WIN 50'),
+          findsOneWidget,
+        ); // 1v1 duel winner
+        expect(
+          find.text('WIN 10🪙 + 5 XP'),
+          findsWidgets,
+        ); // Word Snap & Word Mixer daily challenge
+        expect(
+          find.text('+50 XP'),
+          findsNothing,
+        ); // 50 XP economy inflation bug fixed
+        expect(
+          find.text('+40 XP'),
+          findsNothing,
+        ); // Erroneous placeholder absent
+      },
+    );
 
     testWidgets('renders Curriculum Mastery Card with achievable tier', (
       tester,
@@ -303,9 +323,7 @@ void main() {
   });
 
   group('GamesScreen - Kids Mode & Isolation', () {
-    testWidgets('renders Kids Zone shelf when in kidsModeOnly', (
-      tester,
-    ) async {
+    testWidgets('renders Kids Zone shelf when in kidsModeOnly', (tester) async {
       tester.view.physicalSize = const Size(800, 2400);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
@@ -319,9 +337,9 @@ void main() {
           'kids_alphabet': [1],
         },
       );
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(kidsUser),
-      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(kidsUser));
 
       await tester.pumpWidget(createWidgetUnderTest());
       await tester.pump();

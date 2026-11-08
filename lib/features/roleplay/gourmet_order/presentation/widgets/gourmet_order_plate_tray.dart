@@ -206,8 +206,8 @@ class GourmetOrderPlateTray extends StatelessWidget {
             color: isSelected
                 ? color
                 : (isMidnight
-                    ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate900 : Colors.white)),
+                      ? AppColors.midnightSurface
+                      : (isDark ? AppColors.slate900 : Colors.white)),
             border: Border.all(
               color: isSelected
                   ? Colors.white

@@ -42,8 +42,7 @@ class OfflineBanner extends StatelessWidget {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final isUrgent = remaining <= 1;
 
-        final Color accentColor =
-            isUrgent ? Colors.orangeAccent : Colors.amber;
+        final Color accentColor = isUrgent ? Colors.orangeAccent : Colors.amber;
 
         final String bannerText;
         if (remaining == 0) {
@@ -65,95 +64,108 @@ class OfflineBanner extends StatelessWidget {
         }
 
         return SafeArea(
-          bottom: false,
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-              child: ScaleButton(
-                onTap: () => _showOfflineQuotaInfoSheet(
-                  context,
-                  remaining: remaining,
-                  max: max,
-                  isDark: isDark,
-                ),
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 14.w,
-                      vertical: 7.h,
+              bottom: false,
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
+                  child: ScaleButton(
+                    onTap: () => _showOfflineQuotaInfoSheet(
+                      context,
+                      remaining: remaining,
+                      max: max,
+                      isDark: isDark,
                     ),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? AppColors.slate800.withValues(alpha: 0.92)
-                          : Colors.white.withValues(alpha: 0.92),
-                      borderRadius: BorderRadius.circular(24.r),
-                      border: Border.all(
-                        color: accentColor.withValues(alpha: isUrgent ? 0.6 : 0.35),
-                        width: isUrgent ? 1.5 : 1,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: accentColor.withValues(alpha: isDark ? 0.15 : 0.08),
-                          blurRadius: 10,
-                          offset: const Offset(0, 2),
+                    child: Material(
+                      type: MaterialType.transparency,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 7.h,
                         ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          isUrgent ? LucideIcons.alertTriangle : LucideIcons.wifiOff,
-                          color: accentColor,
-                          size: 15.r,
-                        ),
-                        SizedBox(width: 7.w),
-                        Flexible(
-                          child: AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 250),
-                            transitionBuilder: (child, animation) {
-                              return FadeTransition(
-                                opacity: animation,
-                                child: SlideTransition(
-                                  position: Tween<Offset>(
-                                    begin: const Offset(0.0, 0.2),
-                                    end: Offset.zero,
-                                  ).animate(animation),
-                                  child: child,
-                                ),
-                              );
-                            },
-                            child: Text(
-                              bannerText,
-                              key: ValueKey<int>(remaining),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark ? Colors.white : AppColors.slate900,
-                                decoration: TextDecoration.none,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? AppColors.slate800.withValues(alpha: 0.92)
+                              : Colors.white.withValues(alpha: 0.92),
+                          borderRadius: BorderRadius.circular(24.r),
+                          border: Border.all(
+                            color: accentColor.withValues(
+                              alpha: isUrgent ? 0.6 : 0.35,
                             ),
+                            width: isUrgent ? 1.5 : 1,
                           ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: accentColor.withValues(
+                                alpha: isDark ? 0.15 : 0.08,
+                              ),
+                              blurRadius: 10,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
                         ),
-                        SizedBox(width: 5.w),
-                        Icon(
-                          LucideIcons.chevronRight,
-                          color: isDark ? Colors.white38 : AppColors.slate400,
-                          size: 13.r,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              isUrgent
+                                  ? LucideIcons.alertTriangle
+                                  : LucideIcons.wifiOff,
+                              color: accentColor,
+                              size: 15.r,
+                            ),
+                            SizedBox(width: 7.w),
+                            Flexible(
+                              child: AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 250),
+                                transitionBuilder: (child, animation) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: SlideTransition(
+                                      position: Tween<Offset>(
+                                        begin: const Offset(0.0, 0.2),
+                                        end: Offset.zero,
+                                      ).animate(animation),
+                                      child: child,
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  bannerText,
+                                  key: ValueKey<int>(remaining),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                    decoration: TextDecoration.none,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 5.w),
+                            Icon(
+                              LucideIcons.chevronRight,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                              size: 13.r,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-        )
+            )
             .animate()
             .fadeIn(duration: 350.ms)
             .slideY(begin: -0.6, end: 0, curve: Curves.easeOutCubic);
@@ -176,8 +188,9 @@ class OfflineBanner extends StatelessWidget {
       isScrollControlled: true,
       builder: (bottomSheetContext) {
         final bottomInset = MediaQuery.viewInsetsOf(bottomSheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(bottomSheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          bottomSheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
@@ -190,10 +203,11 @@ class OfflineBanner extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, safeBottom),
               decoration: BoxDecoration(
-                color: (bottomSheetContext.isMidnight
-                        ? AppColors.midnightSurface
-                        : (isDark ? AppColors.slate900 : Colors.white))
-                    .withValues(alpha: 0.95),
+                color:
+                    (bottomSheetContext.isMidnight
+                            ? AppColors.midnightSurface
+                            : (isDark ? AppColors.slate900 : Colors.white))
+                        .withValues(alpha: 0.95),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
                 border: Border(
                   top: BorderSide(
@@ -204,8 +218,8 @@ class OfflineBanner extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                     // Sheet handle
                     Container(
                       width: 40.w,
@@ -246,7 +260,9 @@ class OfflineBanner extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: isDark ? Colors.white : AppColors.slate900,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
                                 ),
                               ),
                               SizedBox(height: 2.h),
@@ -254,7 +270,8 @@ class OfflineBanner extends StatelessWidget {
                                 bottomSheetContext.tr(
                                   'connectivity.offline_info_sheet_quota',
                                   args: [remaining.toString(), max.toString()],
-                                  fallback: '$remaining of $max free offline plays left',
+                                  fallback:
+                                      '$remaining of $max free offline plays left',
                                 ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
@@ -290,7 +307,9 @@ class OfflineBanner extends StatelessWidget {
                         children: [
                           Icon(
                             LucideIcons.infinity,
-                            color: isDark ? AppColors.emerald400 : AppColors.emerald600,
+                            color: isDark
+                                ? AppColors.emerald400
+                                : AppColors.emerald600,
                             size: 20.r,
                           ),
                           SizedBox(width: 10.w),
@@ -305,7 +324,9 @@ class OfflineBanner extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
-                                color: isDark ? Colors.white : AppColors.slate800,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate800,
                                 height: 1.35,
                               ),
                             ),
@@ -348,7 +369,9 @@ class OfflineBanner extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
-                                color: isDark ? Colors.white70 : AppColors.slate800,
+                                color: isDark
+                                    ? Colors.white70
+                                    : AppColors.slate800,
                                 height: 1.35,
                               ),
                             ),
@@ -364,23 +387,31 @@ class OfflineBanner extends StatelessWidget {
                       children: [
                         Expanded(
                           child: OutlinedButton(
-                            onPressed: () => Navigator.of(bottomSheetContext).pop(),
+                            onPressed: () =>
+                                Navigator.of(bottomSheetContext).pop(),
                             style: OutlinedButton.styleFrom(
                               padding: EdgeInsets.symmetric(vertical: 12.h),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(14.r),
                               ),
                               side: BorderSide(
-                                color: isDark ? Colors.white24 : AppColors.slate300,
+                                color: isDark
+                                    ? Colors.white24
+                                    : AppColors.slate300,
                               ),
                             ),
                             child: Text(
-                              bottomSheetContext.tr('common.got_it', fallback: 'Got it'),
+                              bottomSheetContext.tr(
+                                'common.got_it',
+                                fallback: 'Got it',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w700,
-                                color: isDark ? Colors.white : AppColors.slate800,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate800,
                               ),
                             ),
                           ),

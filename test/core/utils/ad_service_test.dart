@@ -39,10 +39,10 @@ void main() {
     );
     await TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .handlePlatformMessage(
-      'plugins.flutter.io/google_mobile_ads',
-      byteData,
-      (ByteData? data) {},
-    );
+          'plugins.flutter.io/google_mobile_ads',
+          byteData,
+          (ByteData? data) {},
+        );
     await pumpEventQueue();
   }
 
@@ -74,29 +74,31 @@ void main() {
     di.sl.registerLazySingleton<RemoteConfigService>(() => mockRemoteConfig);
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-        .setMockMethodCallHandler(instanceManager.channel, (MethodCall call) async {
-      channelCalls.add(call);
-      if (call.method == 'MobileAds#initialize') {
-        return InitializationStatus({});
-      }
-      if (call.method == 'MobileAds#updateRequestConfiguration') {
-        return null;
-      }
-      if (call.method == 'loadInterstitialAd') {
-        lastLoadedInterstitialAdId = call.arguments['adId'] as int;
-        return null;
-      }
-      if (call.method == 'loadRewardedAd') {
-        lastLoadedRewardedAdId = call.arguments['adId'] as int;
-        return null;
-      }
-      if (call.method == 'setImmersiveMode' ||
-          call.method == 'showAdWithoutView' ||
-          call.method == 'disposeAd') {
-        return null;
-      }
-      return null;
-    });
+        .setMockMethodCallHandler(instanceManager.channel, (
+          MethodCall call,
+        ) async {
+          channelCalls.add(call);
+          if (call.method == 'MobileAds#initialize') {
+            return InitializationStatus({});
+          }
+          if (call.method == 'MobileAds#updateRequestConfiguration') {
+            return null;
+          }
+          if (call.method == 'loadInterstitialAd') {
+            lastLoadedInterstitialAdId = call.arguments['adId'] as int;
+            return null;
+          }
+          if (call.method == 'loadRewardedAd') {
+            lastLoadedRewardedAdId = call.arguments['adId'] as int;
+            return null;
+          }
+          if (call.method == 'setImmersiveMode' ||
+              call.method == 'showAdWithoutView' ||
+              call.method == 'disposeAd') {
+            return null;
+          }
+          return null;
+        });
   });
 
   tearDown(() {
@@ -110,10 +112,13 @@ void main() {
   // GROUP 1: Ad Frequency, Level Counter & Remote Config Modulation
   // ===========================================================================
   group('1. Ad Frequency & Counter Management', () {
-    test('levelsPerInterstitial defaults to 3 when RemoteConfig is missing', () {
-      di.sl.unregister<RemoteConfigService>();
-      expect(AdService.levelsPerInterstitial, equals(3));
-    });
+    test(
+      'levelsPerInterstitial defaults to 3 when RemoteConfig is missing',
+      () {
+        di.sl.unregister<RemoteConfigService>();
+        expect(AdService.levelsPerInterstitial, equals(3));
+      },
+    );
 
     test('levelsPerInterstitial adapts to RemoteConfig multiplier', () {
       when(() => mockRemoteConfig.adFrequencyMultiplier).thenReturn(2.0);
@@ -137,22 +142,32 @@ void main() {
       expect(AdService.levelsPerInterstitial, equals(10));
     });
 
-    test('interstitialCooldownMinutes defaults to 3 and reads RemoteConfig', () {
-      di.sl.unregister<RemoteConfigService>();
-      expect(AdService.interstitialCooldownMinutes, equals(3));
+    test(
+      'interstitialCooldownMinutes defaults to 3 and reads RemoteConfig',
+      () {
+        di.sl.unregister<RemoteConfigService>();
+        expect(AdService.interstitialCooldownMinutes, equals(3));
 
-      di.sl.registerLazySingleton<RemoteConfigService>(() => mockRemoteConfig);
-      when(() => mockRemoteConfig.interstitialCooldownMinutes).thenReturn(5);
-      expect(AdService.interstitialCooldownMinutes, equals(5));
-    });
+        di.sl.registerLazySingleton<RemoteConfigService>(
+          () => mockRemoteConfig,
+        );
+        when(() => mockRemoteConfig.interstitialCooldownMinutes).thenReturn(5);
+        expect(AdService.interstitialCooldownMinutes, equals(5));
+      },
+    );
 
     test('recordLevelCompletion increments counter and checks threshold', () {
-      when(() => mockRemoteConfig.adFrequencyMultiplier).thenReturn(1.0); // 3 levels
+      when(
+        () => mockRemoteConfig.adFrequencyMultiplier,
+      ).thenReturn(1.0); // 3 levels
 
       expect(adService.recordLevelCompletion(), isFalse); // Level 1
       expect(adService.recordLevelCompletion(), isFalse); // Level 2
-      expect(adService.recordLevelCompletion(), isTrue);  // Level 3 (threshold reached)
-      expect(adService.recordLevelCompletion(), isTrue);  // Level 4 (exceeded)
+      expect(
+        adService.recordLevelCompletion(),
+        isTrue,
+      ); // Level 3 (threshold reached)
+      expect(adService.recordLevelCompletion(), isTrue); // Level 4 (exceeded)
     });
   });
 
@@ -160,38 +175,49 @@ void main() {
   // GROUP 2: Initialization, Request Configuration & Age Gate Integration
   // ===========================================================================
   group('2. Initialization & Age Gate Configuration', () {
-    test('init() initializes MobileAds SDK and applies RequestConfiguration', () async {
-      await adService.init();
+    test(
+      'init() initializes MobileAds SDK and applies RequestConfiguration',
+      () async {
+        await adService.init();
 
-      expect(channelCalls.any((c) => c.method == 'MobileAds#initialize'), isTrue);
-      expect(
-        channelCalls.any((c) => c.method == 'MobileAds#updateRequestConfiguration'),
-        isTrue,
-      );
+        expect(
+          channelCalls.any((c) => c.method == 'MobileAds#initialize'),
+          isTrue,
+        );
+        expect(
+          channelCalls.any(
+            (c) => c.method == 'MobileAds#updateRequestConfiguration',
+          ),
+          isTrue,
+        );
 
-      // Subsequent call is a no-op
-      final initialCount = channelCalls.length;
-      await adService.init();
-      expect(channelCalls.length, equals(initialCount));
-    });
+        // Subsequent call is a no-op
+        final initialCount = channelCalls.length;
+        await adService.init();
+        expect(channelCalls.length, equals(initialCount));
+      },
+    );
 
-    test('refreshAdConfig updates configuration mid-session for adult', () async {
-      await adService.init();
+    test(
+      'refreshAdConfig updates configuration mid-session for adult',
+      () async {
+        await adService.init();
 
-      // Complete age gate as adult
-      await AgeGateService.completeAgeGate(isAdult: true);
-      adService.refreshAdConfig();
+        // Complete age gate as adult
+        await AgeGateService.completeAgeGate(isAdult: true);
+        adService.refreshAdConfig();
 
-      final updateCalls = channelCalls
-          .where((c) => c.method == 'MobileAds#updateRequestConfiguration')
-          .toList();
-      expect(updateCalls.length, greaterThanOrEqualTo(2));
-      final lastUpdate = updateCalls.last;
-      expect(
-        lastUpdate.arguments['ageRestrictedTreatment'],
-        equals(AgeRestrictedTreatment.unspecified.index),
-      );
-    });
+        final updateCalls = channelCalls
+            .where((c) => c.method == 'MobileAds#updateRequestConfiguration')
+            .toList();
+        expect(updateCalls.length, greaterThanOrEqualTo(2));
+        final lastUpdate = updateCalls.last;
+        expect(
+          lastUpdate.arguments['ageRestrictedTreatment'],
+          equals(AgeRestrictedTreatment.unspecified.index),
+        );
+      },
+    );
 
     test('refreshAdConfig configures child restriction for minor', () async {
       await adService.init();
@@ -226,7 +252,9 @@ void main() {
       adService.loadInterstitialAd();
       expect(lastLoadedInterstitialAdId, isNotNull);
 
-      await simulateAdEvent(lastLoadedInterstitialAdId!, 'onAdLoaded', {'responseInfo': null});
+      await simulateAdEvent(lastLoadedInterstitialAdId!, 'onAdLoaded', {
+        'responseInfo': null,
+      });
 
       expect(
         channelCalls.any(
@@ -239,25 +267,31 @@ void main() {
       );
     });
 
-    test('load failure handles error gracefully and halts on dispose', () async {
-      adService.loadInterstitialAd();
-      expect(lastLoadedInterstitialAdId, isNotNull);
+    test(
+      'load failure handles error gracefully and halts on dispose',
+      () async {
+        adService.loadInterstitialAd();
+        expect(lastLoadedInterstitialAdId, isNotNull);
 
-      final error = LoadAdError(1, 'com.google.android.gms.ads', 'Network Error', null);
-      await simulateAdEvent(
-        lastLoadedInterstitialAdId!,
-        'onAdFailedToLoad',
-        {'loadAdError': error},
-      );
+        final error = LoadAdError(
+          1,
+          'com.google.android.gms.ads',
+          'Network Error',
+          null,
+        );
+        await simulateAdEvent(lastLoadedInterstitialAdId!, 'onAdFailedToLoad', {
+          'loadAdError': error,
+        });
 
-      // Verify no crash and ad dismissed safely on show
-      var dismissed = false;
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () => dismissed = true,
-      );
-      expect(dismissed, isTrue);
-    });
+        // Verify no crash and ad dismissed safely on show
+        var dismissed = false;
+        adService.showInterstitialAd(
+          isPremium: false,
+          onDismissed: () => dismissed = true,
+        );
+        expect(dismissed, isTrue);
+      },
+    );
 
     test('ad loaded after disposal is immediately discarded', () async {
       adService.loadInterstitialAd();
@@ -347,69 +381,78 @@ void main() {
       expect(channelCalls.any((c) => c.method == 'showAdWithoutView'), isFalse);
     });
 
-    test('full show and dismiss cycle resets completed levels counter', () async {
-      adService.loadInterstitialAd();
-      final adId = lastLoadedInterstitialAdId!;
-      await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
+    test(
+      'full show and dismiss cycle resets completed levels counter',
+      () async {
+        adService.loadInterstitialAd();
+        final adId = lastLoadedInterstitialAdId!;
+        await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
 
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
 
-      var dismissed = false;
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () => dismissed = true,
-      );
+        var dismissed = false;
+        adService.showInterstitialAd(
+          isPremium: false,
+          onDismissed: () => dismissed = true,
+        );
 
-      expect(dismissed, isFalse);
-      await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
-      expect(dismissed, isTrue);
+        expect(dismissed, isFalse);
+        await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
+        expect(dismissed, isTrue);
 
-      // Verify counter was reset to 0: next recordLevelCompletion starts at 1
-      expect(adService.recordLevelCompletion(), isFalse);
-    });
+        // Verify counter was reset to 0: next recordLevelCompletion starts at 1
+        expect(adService.recordLevelCompletion(), isFalse);
+      },
+    );
 
-    test('cooldown gate prevents back-to-back ads within cooldown window', () async {
-      when(() => mockRemoteConfig.interstitialCooldownMinutes).thenReturn(10);
+    test(
+      'cooldown gate prevents back-to-back ads within cooldown window',
+      () async {
+        when(() => mockRemoteConfig.interstitialCooldownMinutes).thenReturn(10);
 
-      adService.loadInterstitialAd();
-      final adId = lastLoadedInterstitialAdId!;
-      await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
+        adService.loadInterstitialAd();
+        final adId = lastLoadedInterstitialAdId!;
+        await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
 
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
 
-      var firstDismissed = false;
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () => firstDismissed = true,
-      );
-      await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
-      expect(firstDismissed, isTrue);
+        var firstDismissed = false;
+        adService.showInterstitialAd(
+          isPremium: false,
+          onDismissed: () => firstDismissed = true,
+        );
+        await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
+        expect(firstDismissed, isTrue);
 
-      // Load second ad
-      adService.loadInterstitialAd();
-      final secondAdId = lastLoadedInterstitialAdId!;
-      await simulateAdEvent(secondAdId, 'onAdLoaded', {'responseInfo': null});
+        // Load second ad
+        adService.loadInterstitialAd();
+        final secondAdId = lastLoadedInterstitialAdId!;
+        await simulateAdEvent(secondAdId, 'onAdLoaded', {'responseInfo': null});
 
-      // Complete 3 more levels
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
-      adService.recordLevelCompletion();
+        // Complete 3 more levels
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
+        adService.recordLevelCompletion();
 
-      var secondDismissed = false;
-      channelCalls.clear();
-      // Should be blocked by cooldown gate
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () => secondDismissed = true,
-      );
+        var secondDismissed = false;
+        channelCalls.clear();
+        // Should be blocked by cooldown gate
+        adService.showInterstitialAd(
+          isPremium: false,
+          onDismissed: () => secondDismissed = true,
+        );
 
-      expect(secondDismissed, isTrue);
-      expect(channelCalls.any((c) => c.method == 'showAdWithoutView'), isFalse);
-    });
+        expect(secondDismissed, isTrue);
+        expect(
+          channelCalls.any((c) => c.method == 'showAdWithoutView'),
+          isFalse,
+        );
+      },
+    );
 
     test('failure to show invokes onDismissed and disposes ad', () async {
       adService.loadInterstitialAd();
@@ -427,11 +470,9 @@ void main() {
       );
 
       final error = AdError(1, 'com.google.android.gms.ads', 'Display Error');
-      await simulateAdEvent(
-        adId,
-        'onFailedToShowFullScreenContent',
-        {'error': error},
-      );
+      await simulateAdEvent(adId, 'onFailedToShowFullScreenContent', {
+        'error': error,
+      });
 
       expect(dismissed, isTrue);
       expect(
@@ -460,39 +501,54 @@ void main() {
 
     test('loadRewardedAd prevents duplicate in-flight loads', () {
       adService.loadRewardedAd();
-      final countAfterFirst = channelCalls.where((c) => c.method == 'loadRewardedAd').length;
+      final countAfterFirst = channelCalls
+          .where((c) => c.method == 'loadRewardedAd')
+          .length;
 
       // Duplicate load while first is in flight
       adService.loadRewardedAd();
-      final countAfterSecond = channelCalls.where((c) => c.method == 'loadRewardedAd').length;
+      final countAfterSecond = channelCalls
+          .where((c) => c.method == 'loadRewardedAd')
+          .length;
 
       expect(countAfterSecond, equals(countAfterFirst));
     });
 
-    test('load failure clears in-flight state and keeps isRewardedAdLoaded false', () async {
-      adService.loadRewardedAd();
-      final adId = lastLoadedRewardedAdId!;
+    test(
+      'load failure clears in-flight state and keeps isRewardedAdLoaded false',
+      () async {
+        adService.loadRewardedAd();
+        final adId = lastLoadedRewardedAdId!;
 
-      final error = LoadAdError(1, 'com.google.android.gms.ads', 'Ad unavailable', null);
-      await simulateAdEvent(adId, 'onAdFailedToLoad', {'loadAdError': error});
+        final error = LoadAdError(
+          1,
+          'com.google.android.gms.ads',
+          'Ad unavailable',
+          null,
+        );
+        await simulateAdEvent(adId, 'onAdFailedToLoad', {'loadAdError': error});
 
-      expect(adService.isRewardedAdLoaded, isFalse);
-    });
+        expect(adService.isRewardedAdLoaded, isFalse);
+      },
+    );
 
-    test('rewarded ad loaded after disposal is immediately discarded', () async {
-      adService.loadRewardedAd();
-      final adId = lastLoadedRewardedAdId!;
+    test(
+      'rewarded ad loaded after disposal is immediately discarded',
+      () async {
+        adService.loadRewardedAd();
+        final adId = lastLoadedRewardedAdId!;
 
-      adService.dispose();
+        adService.dispose();
 
-      await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'disposeAd' && c.arguments['adId'] == adId,
-        ),
-        isTrue,
-      );
-    });
+        await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
+        expect(
+          channelCalls.any(
+            (c) => c.method == 'disposeAd' && c.arguments['adId'] == adId,
+          ),
+          isTrue,
+        );
+      },
+    );
   });
 
   // ===========================================================================
@@ -516,81 +572,90 @@ void main() {
       expect(channelCalls.any((c) => c.method == 'showAdWithoutView'), isFalse);
     });
 
-    testWidgets('unloaded rewarded ad triggers snackbar when context is provided', (tester) async {
-      RewardItem? earnedReward;
-      var dismissed = false;
+    testWidgets(
+      'unloaded rewarded ad triggers snackbar when context is provided',
+      (tester) async {
+        RewardItem? earnedReward;
+        var dismissed = false;
 
-      await tester.pumpWidget(
-        ScreenUtilInit(
-          designSize: const Size(390, 844),
-          builder: (context, child) => MaterialApp(
-            home: Scaffold(
-              body: Builder(
-                builder: (context) {
-                  return ElevatedButton(
-                    onPressed: () {
-                      adService.showRewardedAd(
-                        context: context,
-                        isPremium: false,
-                        onUserEarnedReward: (reward) => earnedReward = reward,
-                        onDismissed: () => dismissed = true,
-                      );
-                    },
-                    child: const Text('Show Rewarded'),
-                  );
-                },
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(390, 844),
+            builder: (context, child) => MaterialApp(
+              home: Scaffold(
+                body: Builder(
+                  builder: (context) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        adService.showRewardedAd(
+                          context: context,
+                          isPremium: false,
+                          onUserEarnedReward: (reward) => earnedReward = reward,
+                          onDismissed: () => dismissed = true,
+                        );
+                      },
+                      child: const Text('Show Rewarded'),
+                    );
+                  },
+                ),
               ),
             ),
           ),
-        ),
-      );
+        );
 
-      await tester.tap(find.text('Show Rewarded'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 3600));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Show Rewarded'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 3600));
+        await tester.pumpAndSettle();
 
-      expect(earnedReward, isNull);
-      expect(dismissed, isTrue);
-      expect(
-        find.text('Ad is still loading. Please try again in a few moments.'),
-        findsOneWidget,
-      );
-    });
+        expect(earnedReward, isNull);
+        expect(dismissed, isTrue);
+        expect(
+          find.text('Ad is still loading. Please try again in a few moments.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    test('full rewarded ad cycle delivers reward and triggers dismiss', () async {
-      adService.loadRewardedAd();
-      final adId = lastLoadedRewardedAdId!;
-      await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
+    test(
+      'full rewarded ad cycle delivers reward and triggers dismiss',
+      () async {
+        adService.loadRewardedAd();
+        final adId = lastLoadedRewardedAdId!;
+        await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
 
-      RewardItem? earnedReward;
-      var dismissed = false;
+        RewardItem? earnedReward;
+        var dismissed = false;
 
-      adService.showRewardedAd(
-        isPremium: false,
-        onUserEarnedReward: (reward) => earnedReward = reward,
-        onDismissed: () => dismissed = true,
-      );
+        adService.showRewardedAd(
+          isPremium: false,
+          onUserEarnedReward: (reward) => earnedReward = reward,
+          onDismissed: () => dismissed = true,
+        );
 
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'showAdWithoutView' && c.arguments['adId'] == adId,
-        ),
-        isTrue,
-      );
+        expect(
+          channelCalls.any(
+            (c) =>
+                c.method == 'showAdWithoutView' && c.arguments['adId'] == adId,
+          ),
+          isTrue,
+        );
 
-      // Simulate reward earned event
-      final reward = RewardItem(50, 'Coins');
-      await simulateAdEvent(adId, 'onRewardedAdUserEarnedReward', {'rewardItem': reward});
-      expect(earnedReward, isNotNull);
-      expect(earnedReward!.amount, equals(50));
-      expect(earnedReward!.type, equals('Coins'));
+        // Simulate reward earned event
+        final reward = RewardItem(50, 'Coins');
+        await simulateAdEvent(adId, 'onRewardedAdUserEarnedReward', {
+          'rewardItem': reward,
+        });
+        expect(earnedReward, isNotNull);
+        expect(earnedReward!.amount, equals(50));
+        expect(earnedReward!.type, equals('Coins'));
 
-      // Simulate dismiss
-      await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
-      expect(dismissed, isTrue);
-      expect(adService.isRewardedAdLoaded, isFalse);
-    });
+        // Simulate dismiss
+        await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
+        expect(dismissed, isTrue);
+        expect(adService.isRewardedAdLoaded, isFalse);
+      },
+    );
 
     test('failed to show rewarded ad invokes onDismissed', () async {
       adService.loadRewardedAd();
@@ -606,123 +671,153 @@ void main() {
         onDismissed: () => dismissed = true,
       );
 
-      final error = AdError(1, 'com.google.android.gms.ads', 'Video playback error');
-      await simulateAdEvent(adId, 'onFailedToShowFullScreenContent', {'error': error});
+      final error = AdError(
+        1,
+        'com.google.android.gms.ads',
+        'Video playback error',
+      );
+      await simulateAdEvent(adId, 'onFailedToShowFullScreenContent', {
+        'error': error,
+      });
 
       expect(earnedReward, isNull);
       expect(dismissed, isTrue);
     });
 
-    test('showHintRewardedAd convenience wrapper delivers hint callback', () async {
-      adService.loadRewardedAd();
-      final adId = lastLoadedRewardedAdId!;
-      await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
+    test(
+      'showHintRewardedAd convenience wrapper delivers hint callback',
+      () async {
+        adService.loadRewardedAd();
+        final adId = lastLoadedRewardedAdId!;
+        await simulateAdEvent(adId, 'onAdLoaded', {'responseInfo': null});
 
-      var hintEarned = false;
-      var dismissed = false;
+        var hintEarned = false;
+        var dismissed = false;
 
-      adService.showHintRewardedAd(
-        isPremium: false,
-        onHintEarned: () => hintEarned = true,
-        onDismissed: () => dismissed = true,
-      );
+        adService.showHintRewardedAd(
+          isPremium: false,
+          onHintEarned: () => hintEarned = true,
+          onDismissed: () => dismissed = true,
+        );
 
-      final reward = RewardItem(1, 'Hint');
-      await simulateAdEvent(adId, 'onRewardedAdUserEarnedReward', {'rewardItem': reward});
-      expect(hintEarned, isTrue);
+        final reward = RewardItem(1, 'Hint');
+        await simulateAdEvent(adId, 'onRewardedAdUserEarnedReward', {
+          'rewardItem': reward,
+        });
+        expect(hintEarned, isTrue);
 
-      await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
-      expect(dismissed, isTrue);
-    });
+        await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
+        expect(dismissed, isTrue);
+      },
+    );
   });
 
   // ===========================================================================
   // GROUP 7: COPPA / Child-Safe Rewarded Flow
   // ===========================================================================
   group('7. COPPA & Child-Safe Mode', () {
-    test('childSafe flag in adult session flushes personalized ad and reloads child-safe', () async {
-      await AgeGateService.completeAgeGate(isAdult: true);
+    test(
+      'childSafe flag in adult session flushes personalized ad and reloads child-safe',
+      () async {
+        await AgeGateService.completeAgeGate(isAdult: true);
 
-      adService.loadRewardedAd();
-      final originalAdId = lastLoadedRewardedAdId!;
-      await simulateAdEvent(originalAdId, 'onAdLoaded', {'responseInfo': null});
-      expect(adService.isRewardedAdLoaded, isTrue);
+        adService.loadRewardedAd();
+        final originalAdId = lastLoadedRewardedAdId!;
+        await simulateAdEvent(originalAdId, 'onAdLoaded', {
+          'responseInfo': null,
+        });
+        expect(adService.isRewardedAdLoaded, isTrue);
 
-      RewardItem? earnedReward;
-      var dismissed = false;
+        RewardItem? earnedReward;
+        var dismissed = false;
 
-      // Adult requesting child-safe ad (e.g. entering Kids Zone)
-      adService.showRewardedAd(
-        isPremium: false,
-        childSafe: true,
-        onUserEarnedReward: (reward) => earnedReward = reward,
-        onDismissed: () => dismissed = true,
-      );
+        // Adult requesting child-safe ad (e.g. entering Kids Zone)
+        adService.showRewardedAd(
+          isPremium: false,
+          childSafe: true,
+          onUserEarnedReward: (reward) => earnedReward = reward,
+          onDismissed: () => dismissed = true,
+        );
 
-      // Verify original ad was disposed for COPPA compliance
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'disposeAd' && c.arguments['adId'] == originalAdId,
-        ),
-        isTrue,
-      );
+        // Verify original ad was disposed for COPPA compliance
+        expect(
+          channelCalls.any(
+            (c) =>
+                c.method == 'disposeAd' && c.arguments['adId'] == originalAdId,
+          ),
+          isTrue,
+        );
 
-      // Verify a fresh child-safe ad was requested
-      final childSafeAdId = lastLoadedRewardedAdId!;
-      expect(childSafeAdId, isNot(equals(originalAdId)));
+        // Verify a fresh child-safe ad was requested
+        final childSafeAdId = lastLoadedRewardedAdId!;
+        expect(childSafeAdId, isNot(equals(originalAdId)));
 
-      // Simulate child-safe load and show
-      await simulateAdEvent(childSafeAdId, 'onAdLoaded', {'responseInfo': null});
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'showAdWithoutView' && c.arguments['adId'] == childSafeAdId,
-        ),
-        isTrue,
-      );
+        // Simulate child-safe load and show
+        await simulateAdEvent(childSafeAdId, 'onAdLoaded', {
+          'responseInfo': null,
+        });
+        expect(
+          channelCalls.any(
+            (c) =>
+                c.method == 'showAdWithoutView' &&
+                c.arguments['adId'] == childSafeAdId,
+          ),
+          isTrue,
+        );
 
-      final reward = RewardItem(10, 'Stars');
-      await simulateAdEvent(childSafeAdId, 'onRewardedAdUserEarnedReward', {'rewardItem': reward});
-      expect(earnedReward, isNotNull);
-      expect(earnedReward!.amount, equals(10));
-      expect(earnedReward!.type, equals('Stars'));
+        final reward = RewardItem(10, 'Stars');
+        await simulateAdEvent(childSafeAdId, 'onRewardedAdUserEarnedReward', {
+          'rewardItem': reward,
+        });
+        expect(earnedReward, isNotNull);
+        expect(earnedReward!.amount, equals(10));
+        expect(earnedReward!.type, equals('Stars'));
 
-      await simulateAdEvent(childSafeAdId, 'onAdDismissedFullScreenContent');
-      expect(dismissed, isTrue);
-    });
+        await simulateAdEvent(childSafeAdId, 'onAdDismissedFullScreenContent');
+        expect(dismissed, isTrue);
+      },
+    );
   });
 
   // ===========================================================================
   // GROUP 8: Teardown & Resource Disposal
   // ===========================================================================
   group('8. Teardown & Resource Disposal', () {
-    test('dispose() cleans up platform interstitial and rewarded ads', () async {
-      adService.loadInterstitialAd();
-      final interstitialId = lastLoadedInterstitialAdId!;
-      await simulateAdEvent(interstitialId, 'onAdLoaded', {'responseInfo': null});
+    test(
+      'dispose() cleans up platform interstitial and rewarded ads',
+      () async {
+        adService.loadInterstitialAd();
+        final interstitialId = lastLoadedInterstitialAdId!;
+        await simulateAdEvent(interstitialId, 'onAdLoaded', {
+          'responseInfo': null,
+        });
 
-      adService.loadRewardedAd();
-      final rewardedId = lastLoadedRewardedAdId!;
-      await simulateAdEvent(rewardedId, 'onAdLoaded', {'responseInfo': null});
+        adService.loadRewardedAd();
+        final rewardedId = lastLoadedRewardedAdId!;
+        await simulateAdEvent(rewardedId, 'onAdLoaded', {'responseInfo': null});
 
-      expect(adService.isRewardedAdLoaded, isTrue);
+        expect(adService.isRewardedAdLoaded, isTrue);
 
-      channelCalls.clear();
-      adService.dispose();
+        channelCalls.clear();
+        adService.dispose();
 
-      expect(adService.isRewardedAdLoaded, isFalse);
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'disposeAd' && c.arguments['adId'] == interstitialId,
-        ),
-        isTrue,
-      );
-      expect(
-        channelCalls.any(
-          (c) => c.method == 'disposeAd' && c.arguments['adId'] == rewardedId,
-        ),
-        isTrue,
-      );
-    });
+        expect(adService.isRewardedAdLoaded, isFalse);
+        expect(
+          channelCalls.any(
+            (c) =>
+                c.method == 'disposeAd' &&
+                c.arguments['adId'] == interstitialId,
+          ),
+          isTrue,
+        );
+        expect(
+          channelCalls.any(
+            (c) => c.method == 'disposeAd' && c.arguments['adId'] == rewardedId,
+          ),
+          isTrue,
+        );
+      },
+    );
 
     test('post-disposal operations are safely ignored', () async {
       adService.dispose();

@@ -63,13 +63,16 @@ class AppSpacing {
   // ── Pre-packaged EdgeInsets Helpers ───────────────────────────────────────
 
   /// Symmetric horizontal padding using [screen] (20.w).
-  static EdgeInsets get screenPadding => EdgeInsets.symmetric(horizontal: screen);
+  static EdgeInsets get screenPadding =>
+      EdgeInsets.symmetric(horizontal: screen);
 
   /// Symmetric horizontal padding using [compact] (16.w).
-  static EdgeInsets get compactPadding => EdgeInsets.symmetric(horizontal: compact);
+  static EdgeInsets get compactPadding =>
+      EdgeInsets.symmetric(horizontal: compact);
 
   /// Symmetric horizontal padding using [spacious] (24.w).
-  static EdgeInsets get spaciousPadding => EdgeInsets.symmetric(horizontal: spacious);
+  static EdgeInsets get spaciousPadding =>
+      EdgeInsets.symmetric(horizontal: spacious);
 
   /// Uniform card interior padding using [card] (16.w).
   static EdgeInsets get cardPadding => EdgeInsets.all(card);
@@ -81,7 +84,11 @@ class AppSpacing {
   static EdgeInsets get cardSpaciousPadding => EdgeInsets.all(cardSpacious);
 
   /// Standard modal bottom sheet padding: [screen] horizontally (20.w).
-  static EdgeInsets bottomSheetPadding(BuildContext context, {double? top, double? bottom}) {
+  static EdgeInsets bottomSheetPadding(
+    BuildContext context, {
+    double? top,
+    double? bottom,
+  }) {
     final bottomInset = MediaQuery.paddingOf(context).bottom;
     return EdgeInsets.fromLTRB(
       screen,
@@ -92,9 +99,6 @@ class AppSpacing {
   }
 
   /// Standard dialog outer inset padding: [spacious] horizontally (24.w).
-  static EdgeInsets get dialogInsetPadding => EdgeInsets.symmetric(
-        horizontal: spacious,
-        vertical: 24.h,
-      );
+  static EdgeInsets get dialogInsetPadding =>
+      EdgeInsets.symmetric(horizontal: spacious, vertical: 24.h);
 }
-

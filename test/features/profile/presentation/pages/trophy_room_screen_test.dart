@@ -36,18 +36,16 @@ void main() {
       'streak_7',
       'master_speaking', // Legendary badge
     ],
-    unlockedLevels: {
-      'vocabulary': 21,
-    },
+    unlockedLevels: {'vocabulary': 21},
   );
 
   setUpAll(() {
     registerFallbackValue(const AuthReloadUser());
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
-      const MethodChannel('haptic_feedback'),
-      (call) async => null,
-    );
+          const MethodChannel('haptic_feedback'),
+          (call) async => null,
+        );
   });
 
   setUp(() async {
@@ -57,16 +55,22 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockLocaleService = MockLocaleService();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
 
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
-    when(() => mockLocaleService.tr(any(), args: any(named: 'args'), fallback: any(named: 'fallback')))
-        .thenAnswer((inv) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((inv) {
       final fallback = inv.namedArguments[const Symbol('fallback')] as String?;
       final key = inv.positionalArguments[0] as String;
       return fallback ?? key;
@@ -104,7 +108,9 @@ void main() {
           path: '/category-games',
           builder: (context, state) {
             navigatedRoutes.add('/category-games');
-            return const Scaffold(body: Text('Category Games Screen Placeholder'));
+            return const Scaffold(
+              body: Text('Category Games Screen Placeholder'),
+            );
           },
         ),
       ],
@@ -112,9 +118,7 @@ void main() {
 
     ThemeData theme;
     if (isMidnight) {
-      theme = ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
-      );
+      theme = ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black);
     } else if (themeMode == ThemeMode.dark) {
       theme = AppTheme.darkTheme;
     } else {
@@ -130,28 +134,33 @@ void main() {
         ),
         child: BlocProvider<AuthBloc>.value(
           value: mockAuthBloc,
-          child: MaterialApp.router(
-            routerConfig: router,
-            theme: theme,
-          ),
+          child: MaterialApp.router(routerConfig: router, theme: theme),
         ),
       ),
     );
   }
 
   group('Group 1: Trophy Summary & Header', () {
-    testWidgets('renders Trophy Room title and summary counter with 3 earned badges', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Trophy Room title and summary counter with 3 earned badges',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('MY TROPHY ROOM'), findsOneWidget);
-      expect(find.text('Total Earned'), findsOneWidget);
-      // User has 3 badges total (2 standard + 1 legendary)
-      expect(find.textContaining('3 / 50', findRichText: true), findsOneWidget);
-      expect(find.byIcon(Icons.emoji_events_rounded), findsOneWidget);
-    });
+        expect(find.text('MY TROPHY ROOM'), findsOneWidget);
+        expect(find.text('Total Earned'), findsOneWidget);
+        // User has 3 badges total (2 standard + 1 legendary)
+        expect(
+          find.textContaining('3 / 50', findRichText: true),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.emoji_events_rounded), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping back button navigates out or to /home', (tester) async {
+    testWidgets('tapping back button navigates out or to /home', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -164,7 +173,9 @@ void main() {
   });
 
   group('Group 2: Filter Tabs (Standard vs Legendary)', () {
-    testWidgets('switches between Standard and Legendary filter views', (tester) async {
+    testWidgets('switches between Standard and Legendary filter views', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -193,17 +204,22 @@ void main() {
   });
 
   group('Group 3: Empty State / Status Message', () {
-    testWidgets('renders empty status message when user has zero badges', (tester) async {
+    testWidgets('renders empty status message when user has zero badges', (
+      tester,
+    ) async {
       final userZero = testUser.copyWith(badges: [], unlockedLevels: {});
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(userZero));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(userZero));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
       expect(find.textContaining('0 / 50', findRichText: true), findsOneWidget);
       expect(
-        find.text('No trophies yet. Complete lessons to unlock your first trophy!'),
+        find.text(
+          'No trophies yet. Complete lessons to unlock your first trophy!',
+        ),
         findsOneWidget,
       );
 
@@ -216,7 +232,9 @@ void main() {
   });
 
   group('Group 4: Badge Interaction & Locked Slots', () {
-    testWidgets('renders earned badge cards and locked slots with lock icons', (tester) async {
+    testWidgets('renders earned badge cards and locked slots with lock icons', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -233,20 +251,25 @@ void main() {
   });
 
   group('Group 5: Hero Pedestal, Next In Reach Radar & Dossier', () {
-    testWidgets('renders showcase pedestal and goal accelerator when in-flight progress exists', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders showcase pedestal and goal accelerator when in-flight progress exists',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      // Hero Pedestal
-      expect(find.text('FEATURED TROPHIES'), findsOneWidget);
-      expect(find.text('Your Highlights'), findsOneWidget);
+        // Hero Pedestal
+        expect(find.text('FEATURED TROPHIES'), findsOneWidget);
+        expect(find.text('Your Highlights'), findsOneWidget);
 
-      // Goal accelerator radar (vocabulary level 21/25 -> 84%)
-      expect(find.text('NEXT TROPHY'), findsOneWidget);
-      expect(find.text('84%'), findsOneWidget);
-    });
+        // Goal accelerator radar (vocabulary level 21/25 -> 84%)
+        expect(find.text('NEXT TROPHY'), findsOneWidget);
+        expect(find.text('84%'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping showcase pedestal opens Trophy Dossier Sheet', (tester) async {
+    testWidgets('tapping showcase pedestal opens Trophy Dossier Sheet', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -281,21 +304,33 @@ void main() {
   });
 
   group('Group 6: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(800, 1280)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 

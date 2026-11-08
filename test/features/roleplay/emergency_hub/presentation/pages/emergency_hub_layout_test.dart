@@ -157,8 +157,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     roleplayStreamController = StreamController<RoleplayState>.broadcast();
-    when(() => mockRoleplayBloc.stream)
-        .thenAnswer((_) => roleplayStreamController.stream);
+    when(
+      () => mockRoleplayBloc.stream,
+    ).thenAnswer((_) => roleplayStreamController.stream);
     when(() => mockRoleplayBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -193,11 +194,13 @@ void main() {
     when(() => mockSoundService.playTts(any())).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
-    when(() => mockTtsService.speak(
-      any(),
-      rate: any(named: 'rate'),
-      locale: any(named: 'locale'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockTtsService.speak(
+        any(),
+        rate: any(named: 'rate'),
+        locale: any(named: 'locale'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockSpeechService.initializeStt()).thenAnswer((_) async => true);
     when(() => mockSpeechService.stop()).thenAnswer((_) async {});
@@ -206,21 +209,27 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => '/tmp/emergency_hub_test.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => '/tmp/emergency_hub_test.m4a');
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
-    when(() => mockAudioRecorder.onAmplitudeChanged(any()))
-        .thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
+    when(
+      () => mockAudioRecorder.onAmplitudeChanged(any()),
+    ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
     VowlMotion.lowAnimationModeOverride.value = true;
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback =
           invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
@@ -228,12 +237,15 @@ void main() {
     });
 
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-    when(() => mockAnalyticsService.logSelfEvaluation(any()))
-        .thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any()))
-        .thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logPurchaseAttempt(any()))
-        .thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logPurchaseAttempt(any()),
+    ).thenAnswer((_) async {});
 
     SharedPreferences.setMockInitialValues({
       'has_seen_briefing_emergencyHub': true,
@@ -308,9 +320,9 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQuery.of(context).copyWith(
-                disableAnimations: reduceMotion,
-              ),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(disableAnimations: reduceMotion),
               child: EmergencyHubScreen(
                 level: level,
                 gameType: GameSubtype.emergencyHub,
@@ -325,602 +337,803 @@ void main() {
   }
 
   Finder findChip(String word) => find.descendant(
-        of: find.byKey(const Key('emergency_hub_word_chips_wrap')),
-        matching: find.text(word),
-      );
+    of: find.byKey(const Key('emergency_hub_word_chips_wrap')),
+    matching: find.text(word),
+  );
 
   group('EmergencyHubScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders TelexCard, TerminalInput, ValveChamber, and no launch button initially', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '1. Initial layout renders TelexCard, TerminalInput, ValveChamber, and no launch button initially',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.byKey(const Key('emergency_hub_telex_card')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_terminal_input')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_valve_chamber')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_launch_button')), findsNothing);
-    });
+        expect(
+          find.byKey(const Key('emergency_hub_telex_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_terminal_input')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_valve_chamber')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_launch_button')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('2. TelexCard renders warning icon, broadcast title, instruction, dispatcher question, and urgency label', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '2. TelexCard renders warning icon, broadcast title, instruction, dispatcher question, and urgency label',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.byKey(const Key('emergency_hub_telex_warning_icon')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_telex_broadcast_title')), findsOneWidget);
-      expect(find.text('INCOMING BROADCAST'), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_telex_instruction_text')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_telex_question_text')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_telex_urgency_label')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('emergency_hub_telex_warning_icon')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_telex_broadcast_title')),
+          findsOneWidget,
+        );
+        expect(find.text('INCOMING BROADCAST'), findsOneWidget);
+        expect(
+          find.byKey(const Key('emergency_hub_telex_instruction_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_telex_question_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_telex_urgency_label')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('3. Formatted instruction text displays uppercase instruction from quest', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '3. Formatted instruction text displays uppercase instruction from quest',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.text(sampleQuest1.instruction), findsOneWidget);
-    });
+        expect(find.text(sampleQuest1.instruction), findsOneWidget);
+      },
+    );
 
-    testWidgets('4. Dispatcher question text rendering matches custom quest prompt', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '4. Dispatcher question text rendering matches custom quest prompt',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.text(sampleQuest1.dispatcherQuestion!), findsOneWidget);
-    });
+        expect(find.text(sampleQuest1.dispatcherQuestion!), findsOneWidget);
+      },
+    );
 
-    testWidgets('5. Urgency level bars display exactly 5 bars with correct active count', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '5. Urgency level bars display exactly 5 bars with correct active count',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      for (int i = 0; i < 5; i++) {
-        expect(find.byKey(Key('emergency_hub_urgency_bar_$i')), findsOneWidget);
-      }
-    });
+        for (int i = 0; i < 5; i++) {
+          expect(
+            find.byKey(Key('emergency_hub_urgency_bar_$i')),
+            findsOneWidget,
+          );
+        }
+      },
+    );
 
-    testWidgets('6. Urgency level fallback renders cleanly when quest urgencyLevel is null', (tester) async {
-      const nullUrgencyQuest = RoleplayQuest(
-        id: 'eh_null_urgency',
-        instruction: 'Broadcast override.',
-        difficulty: 1,
-        subtype: GameSubtype.emergencyHub,
-        dispatcherQuestion: 'Alert question',
-        urgencyLevel: null,
-        correctAnswer: 'Alpha Beta',
-      );
-      final nullState = testLoadedState.copyWith(
-        quests: [nullUrgencyQuest],
-      );
-      await pumpEmergencyHubScreen(tester, state: nullState);
+    testWidgets(
+      '6. Urgency level fallback renders cleanly when quest urgencyLevel is null',
+      (tester) async {
+        const nullUrgencyQuest = RoleplayQuest(
+          id: 'eh_null_urgency',
+          instruction: 'Broadcast override.',
+          difficulty: 1,
+          subtype: GameSubtype.emergencyHub,
+          dispatcherQuestion: 'Alert question',
+          urgencyLevel: null,
+          correctAnswer: 'Alpha Beta',
+        );
+        final nullState = testLoadedState.copyWith(quests: [nullUrgencyQuest]);
+        await pumpEmergencyHubScreen(tester, state: nullState);
 
-      for (int i = 0; i < 5; i++) {
-        expect(find.byKey(Key('emergency_hub_urgency_bar_$i')), findsOneWidget);
-      }
-    });
+        for (int i = 0; i < 5; i++) {
+          expect(
+            find.byKey(Key('emergency_hub_urgency_bar_$i')),
+            findsOneWidget,
+          );
+        }
+      },
+    );
 
-    testWidgets('7. TerminalInput renders INPUT TERMINAL header, keyboard icon, and placeholder', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '7. TerminalInput renders INPUT TERMINAL header, keyboard icon, and placeholder',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.text('INPUT TERMINAL'), findsOneWidget);
-      expect(find.byIcon(Icons.keyboard_rounded), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_terminal_text_field')), findsOneWidget);
-      expect(find.text('Select words to build broadcast'), findsOneWidget);
-    });
+        expect(find.text('INPUT TERMINAL'), findsOneWidget);
+        expect(find.byIcon(Icons.keyboard_rounded), findsOneWidget);
+        expect(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+          findsOneWidget,
+        );
+        expect(find.text('Select words to build broadcast'), findsOneWidget);
+      },
+    );
 
-    testWidgets('8. Word chips wrap renders chips corresponding to words in correctAnswer', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '8. Word chips wrap renders chips corresponding to words in correctAnswer',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      expect(find.byKey(const Key('emergency_hub_word_chips_wrap')), findsOneWidget);
+        expect(
+          find.byKey(const Key('emergency_hub_word_chips_wrap')),
+          findsOneWidget,
+        );
 
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        expect(find.text(word), findsOneWidget);
-      }
-    });
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          expect(find.text(word), findsOneWidget);
+        }
+      },
+    );
 
-    testWidgets('9. Tapping a word chip adds word to TextField and displays backspace button', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '9. Tapping a word chip adds word to TextField and displays backspace button',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      final textField = tester.widget<TextField>(
-        find.byKey(const Key('emergency_hub_terminal_text_field')),
-      );
-      expect(textField.controller!.text, words.first);
-      expect(find.byKey(const Key('emergency_hub_backspace_button')), findsOneWidget);
-    });
-
-    testWidgets('10. Tapping multiple word chips builds space-separated phrase in TextField', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        await tester.tap(findChip(word));
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words.first));
         await tester.pump();
-      }
 
-      final textField = tester.widget<TextField>(
-        find.byKey(const Key('emergency_hub_terminal_text_field')),
-      );
-      expect(textField.controller!.text, sampleQuest1.correctAnswer);
-    });
+        final textField = tester.widget<TextField>(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+        );
+        expect(textField.controller!.text, words.first);
+        expect(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('11. Tapping an already selected word chip removes it from the phrase in TextField', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '10. Tapping multiple word chips builds space-separated phrase in TextField',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      final firstWord = words.first;
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          await tester.tap(findChip(word));
+          await tester.pump();
+        }
 
-      await tester.tap(findChip(firstWord));
-      await tester.pump();
+        final textField = tester.widget<TextField>(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+        );
+        expect(textField.controller!.text, sampleQuest1.correctAnswer);
+      },
+    );
 
-      // Tap it again to deselect
-      await tester.tap(findChip(firstWord));
-      await tester.pump();
+    testWidgets(
+      '11. Tapping an already selected word chip removes it from the phrase in TextField',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final textField = tester.widget<TextField>(
-        find.byKey(const Key('emergency_hub_terminal_text_field')),
-      );
-      expect(textField.controller!.text, isEmpty);
-      expect(find.byKey(const Key('emergency_hub_backspace_button')), findsNothing);
-    });
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        final firstWord = words.first;
 
-    testWidgets('12. Tapping backspace button removes the last selected word chip and updates TextField', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words[0]));
-      await tester.pump();
-      await tester.tap(findChip(words[1]));
-      await tester.pump();
-
-      var textField = tester.widget<TextField>(
-        find.byKey(const Key('emergency_hub_terminal_text_field')),
-      );
-      expect(textField.controller!.text, '${words[0]} ${words[1]}');
-
-      await tester.tap(find.byKey(const Key('emergency_hub_backspace_button')));
-      await tester.pump();
-
-      textField = tester.widget<TextField>(
-        find.byKey(const Key('emergency_hub_terminal_text_field')),
-      );
-      expect(textField.controller!.text, words[0]);
-    });
-
-    testWidgets('13. Backspace button disappears when all word chips are deselected', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words[0]));
-      await tester.pump();
-      expect(find.byKey(const Key('emergency_hub_backspace_button')), findsOneWidget);
-
-      await tester.tap(find.byKey(const Key('emergency_hub_backspace_button')));
-      await tester.pump();
-      expect(find.byKey(const Key('emergency_hub_backspace_button')), findsNothing);
-    });
-
-    testWidgets('14. ValveChamber renders circular valve, wheel knob, lock icon, and initial status text', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      expect(find.byKey(const Key('emergency_hub_valve_gesture')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_valve_wheel_knob')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_valve_lock_icon')), findsOneWidget);
-      expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
-      expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
-    });
-
-    testWidgets('15. Initial rotation (0.0) displays locked state with LOCK PENDING', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.lock_open_rounded), findsNothing);
-    });
-
-    testWidgets('16. Accessible valve alignment button aligns valve to 1.0 with selection haptic', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      expect(semanticsFinder, findsOneWidget);
-
-      final semanticsWidget = tester.widget<Semantics>(semanticsFinder);
-      semanticsWidget.properties.onTap!();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockHapticService.selection()).called(1);
-      expect(find.text('ALIGNED (READY)'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_open_rounded), findsOneWidget);
-    });
-
-    testWidgets('17. Dragging valve to >= 0.85 updates rotation and transitions to ALIGNED (READY)', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final gesture = tester.widget<GestureDetector>(
-        find.byKey(const Key('emergency_hub_valve_gesture')),
-      );
-
-      // Center is (100, 100). dx = -30, dy = -90 gives progress ~0.90 (>= 0.85)
-      gesture.onPanUpdate!(
-        DragUpdateDetails(
-          globalPosition: Offset.zero,
-          localPosition: const Offset(70, 10),
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('ALIGNED (READY)'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_open_rounded), findsOneWidget);
-    });
-
-    testWidgets('18. Dragging valve back to < 0.85 reverts to LOCK PENDING state', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final gesture = tester.widget<GestureDetector>(
-        find.byKey(const Key('emergency_hub_valve_gesture')),
-      );
-
-      // First align to >= 0.85
-      gesture.onPanUpdate!(
-        DragUpdateDetails(
-          globalPosition: Offset.zero,
-          localPosition: const Offset(70, 10),
-        ),
-      );
-      await tester.pump();
-      expect(find.text('ALIGNED (READY)'), findsOneWidget);
-
-      // Now drag to bottom center (progress ~0.50)
-      gesture.onPanUpdate!(
-        DragUpdateDetails(
-          globalPosition: Offset.zero,
-          localPosition: const Offset(100, 200),
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
-    });
-
-    testWidgets('19. Launch button is hidden when code input is empty even if valve is aligned', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      // Align valve
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      expect(find.text('ALIGNED (READY)'), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_launch_button')), findsNothing);
-    });
-
-    testWidgets('20. Launch button appears when words are selected in terminal input', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      expect(find.byKey(const Key('emergency_hub_launch_button')), findsOneWidget);
-    });
-
-    testWidgets('21. When words are selected but valve is NOT aligned, button displays ALIGN VALVE TO LAUNCH and onTap is disabled', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      expect(find.text('ALIGN VALVE TO LAUNCH'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_outline_rounded), findsOneWidget);
-
-      final scaleButton = tester.widget<ScaleButton>(
-        find.byKey(const Key('emergency_hub_launch_button')),
-      );
-      expect(scaleButton.onTap, isNull);
-    });
-
-    testWidgets('22. When words are selected AND valve IS aligned, button displays LAUNCH EMERGENCY BEACON and onTap is active', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      // Align valve
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      expect(find.text('LAUNCH EMERGENCY BEACON'), findsOneWidget);
-      expect(find.byIcon(Icons.flash_on_rounded), findsOneWidget);
-
-      final scaleButton = tester.widget<ScaleButton>(
-        find.byKey(const Key('emergency_hub_launch_button')),
-      );
-      expect(scaleButton.onTap, isNotNull);
-    });
-
-    testWidgets('23. Tapping LAUNCH with incorrect code phrase immediately submits wrong answer with error sound & haptic', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      // Only select one word (incomplete/wrong answer)
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      // Align valve
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockRoleplayBloc.add(any(that: isA<SubmitAnswer>()
-          .having((e) => e.isCorrect, 'isCorrect', false)))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('24. Incorrect code phrase does NOT mount SpeakToConfirmOverlay', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      await tester.tap(findChip(words.first));
-      await tester.pump();
-
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
-
-    testWidgets('25. Tapping LAUNCH with correct code phrase advances to Phase 2 SpeakToConfirmOverlay without early BLoC submission', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        await tester.tap(findChip(word));
+        await tester.tap(findChip(firstWord));
         await tester.pump();
-      }
 
-      // Align valve
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verifyNever(() => mockRoleplayBloc.add(any(that: isA<SubmitAnswer>())));
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-    });
-
-    testWidgets('26. Phase 2 SpeakToConfirmOverlay displays expectedText matching quest.correctAnswer', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        await tester.tap(findChip(word));
+        // Tap it again to deselect
+        await tester.tap(findChip(firstWord));
         await tester.pump();
-      }
 
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
+        final textField = tester.widget<TextField>(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+        );
+        expect(textField.controller!.text, isEmpty);
+        expect(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+          findsNothing,
+        );
+      },
+    );
 
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '12. Tapping backspace button removes the last selected word chip and updates TextField',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      expect(overlay.expectedText, sampleQuest1.correctAnswer);
-    });
-
-    testWidgets('27. SpeakToConfirmOverlay "Nailed It" dispatches RoleplaySpeakConfirmed(5) bonus coins and SubmitAnswer(true) with success sound & haptic', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        await tester.tap(findChip(word));
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words[0]));
         await tester.pump();
-      }
-
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
-
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockRoleplayBloc.add(const RoleplaySpeakConfirmed(5))).called(1);
-      verify(() => mockRoleplayBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('28. SpeakToConfirmOverlay "Needs Work" dispatches SubmitAnswer(false) with error sound & haptic', (tester) async {
-      await pumpEmergencyHubScreen(tester);
-
-      final words = sampleQuest1.correctAnswer!.split(' ');
-      for (final word in words) {
-        await tester.tap(findChip(word));
+        await tester.tap(findChip(words[1]));
         await tester.pump();
-      }
 
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
+        var textField = tester.widget<TextField>(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+        );
+        expect(textField.controller!.text, '${words[0]} ${words[1]}');
 
-      await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+        );
+        await tester.pump();
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        textField = tester.widget<TextField>(
+          find.byKey(const Key('emergency_hub_terminal_text_field')),
+        );
+        expect(textField.controller!.text, words[0]);
+      },
+    );
 
-      verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+    testWidgets(
+      '13. Backspace button disappears when all word chips are deselected',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-    testWidgets('29. In answered state, launch button and SpeakToConfirmOverlay unmount', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words[0]));
+        await tester.pump();
+        expect(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+          findsOneWidget,
+        );
 
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(answeredState);
-      roleplayStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+        );
+        await tester.pump();
+        expect(
+          find.byKey(const Key('emergency_hub_backspace_button')),
+          findsNothing,
+        );
+      },
+    );
 
-      expect(find.byKey(const Key('emergency_hub_launch_button')), findsNothing);
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
+    testWidgets(
+      '14. ValveChamber renders circular valve, wheel knob, lock icon, and initial status text',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-    testWidgets('30. In answered state, bottom bar CONTINUE button appears; tapping it dispatches NextQuestion', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+        expect(
+          find.byKey(const Key('emergency_hub_valve_gesture')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_valve_wheel_knob')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_valve_lock_icon')),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
+        expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
+      },
+    );
 
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(answeredState);
-      roleplayStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '15. Initial rotation (0.0) displays locked state with LOCK PENDING',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
-      await tester.tap(continueBtn);
-      await tester.pump();
+        expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.lock_open_rounded), findsNothing);
+      },
+    );
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<NextQuestion>()))).called(1);
-    });
+    testWidgets(
+      '16. Accessible valve alignment button aligns valve to 1.0 with selection haptic',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-    testWidgets('31. Answer lockout: once answered, tapping valve or chips does not dispatch further actions', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        expect(semanticsFinder, findsOneWidget);
 
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(answeredState);
-      roleplayStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final semanticsWidget = tester.widget<Semantics>(semanticsFinder);
+        semanticsWidget.properties.onTap!();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Attempt to align valve
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) => w is Semantics && w.properties.label == 'Emergency release valve',
-      );
-      tester.widget<Semantics>(semanticsFinder).properties.onTap!();
-      await tester.pump();
+        verify(() => mockHapticService.selection()).called(1);
+        expect(find.text('ALIGNED (READY)'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_open_rounded), findsOneWidget);
+      },
+    );
 
-      // No haptic from valve since answered
-      verifyNever(() => mockHapticService.heavy());
-    });
+    testWidgets(
+      '17. Dragging valve to >= 0.85 updates rotation and transitions to ALIGNED (READY)',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-    testWidgets('32. Question transition: when next quest loads, rotation resets to 0.0, stage resets cleanly', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+        final gesture = tester.widget<GestureDetector>(
+          find.byKey(const Key('emergency_hub_valve_gesture')),
+        );
 
-      // Advance to quest 2
-      final nextQuestState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      when(() => mockRoleplayBloc.state).thenReturn(nextQuestState);
-      roleplayStreamController.add(nextQuestState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Center is (100, 100). dx = -30, dy = -90 gives progress ~0.90 (>= 0.85)
+        gesture.onPanUpdate!(
+          DragUpdateDetails(
+            globalPosition: Offset.zero,
+            localPosition: const Offset(70, 10),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text(sampleQuest2.dispatcherQuestion!), findsOneWidget);
-      expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
-    });
+        expect(find.text('ALIGNED (READY)'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_open_rounded), findsOneWidget);
+      },
+    );
 
-    testWidgets('33. Hint button in header dispatches selection haptic and RoleplayHintUsed', (tester) async {
-      await pumpEmergencyHubScreen(tester);
+    testWidgets(
+      '18. Dragging valve back to < 0.85 reverts to LOCK PENDING state',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
-      await tester.tap(hintButton);
-      await tester.pump();
+        final gesture = tester.widget<GestureDetector>(
+          find.byKey(const Key('emergency_hub_valve_gesture')),
+        );
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
-    });
+        // First align to >= 0.85
+        gesture.onPanUpdate!(
+          DragUpdateDetails(
+            globalPosition: Offset.zero,
+            localPosition: const Offset(70, 10),
+          ),
+        );
+        await tester.pump();
+        expect(find.text('ALIGNED (READY)'), findsOneWidget);
 
-    testWidgets('34. Level 1 briefing layer displays EMERGENCY VOICE and dismisses on HELP NOW tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_emergencyHub': false,
-      });
+        // Now drag to bottom center (progress ~0.50)
+        gesture.onPanUpdate!(
+          DragUpdateDetails(
+            globalPosition: Offset.zero,
+            localPosition: const Offset(100, 200),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await pumpEmergencyHubScreen(
-        tester,
-        level: 1,
-      );
+        expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
+      },
+    );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('EMERGENCY VOICE'), findsOneWidget);
+    testWidgets(
+      '19. Launch button is hidden when code input is empty even if valve is aligned',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
 
-      final enterBtn = find.descendant(
-        of: find.byType(GameBriefingLayer),
-        matching: find.text('HELP NOW'),
-      );
-      expect(enterBtn, findsOneWidget);
-      await tester.tap(enterBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Align valve
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.text('ALIGNED (READY)'), findsOneWidget);
+        expect(
+          find.byKey(const Key('emergency_hub_launch_button')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('35. GameShimmerLoading displays on initial/loading state', (tester) async {
+    testWidgets(
+      '20. Launch button appears when words are selected in terminal input',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words.first));
+        await tester.pump();
+
+        expect(
+          find.byKey(const Key('emergency_hub_launch_button')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '21. When words are selected but valve is NOT aligned, button displays ALIGN VALVE TO LAUNCH and onTap is disabled',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words.first));
+        await tester.pump();
+
+        expect(find.text('ALIGN VALVE TO LAUNCH'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_outline_rounded), findsOneWidget);
+
+        final scaleButton = tester.widget<ScaleButton>(
+          find.byKey(const Key('emergency_hub_launch_button')),
+        );
+        expect(scaleButton.onTap, isNull);
+      },
+    );
+
+    testWidgets(
+      '22. When words are selected AND valve IS aligned, button displays LAUNCH EMERGENCY BEACON and onTap is active',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words.first));
+        await tester.pump();
+
+        // Align valve
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        expect(find.text('LAUNCH EMERGENCY BEACON'), findsOneWidget);
+        expect(find.byIcon(Icons.flash_on_rounded), findsOneWidget);
+
+        final scaleButton = tester.widget<ScaleButton>(
+          find.byKey(const Key('emergency_hub_launch_button')),
+        );
+        expect(scaleButton.onTap, isNotNull);
+      },
+    );
+
+    testWidgets(
+      '23. Tapping LAUNCH with incorrect code phrase immediately submits wrong answer with error sound & haptic',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        // Only select one word (incomplete/wrong answer)
+        await tester.tap(findChip(words.first));
+        await tester.pump();
+
+        // Align valve
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(
+          () => mockRoleplayBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '24. Incorrect code phrase does NOT mount SpeakToConfirmOverlay',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        await tester.tap(findChip(words.first));
+        await tester.pump();
+
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
+
+    testWidgets(
+      '25. Tapping LAUNCH with correct code phrase advances to Phase 2 SpeakToConfirmOverlay without early BLoC submission',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          await tester.tap(findChip(word));
+          await tester.pump();
+        }
+
+        // Align valve
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verifyNever(() => mockRoleplayBloc.add(any(that: isA<SubmitAnswer>())));
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '26. Phase 2 SpeakToConfirmOverlay displays expectedText matching quest.correctAnswer',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          await tester.tap(findChip(word));
+          await tester.pump();
+        }
+
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        expect(overlay.expectedText, sampleQuest1.correctAnswer);
+      },
+    );
+
+    testWidgets(
+      '27. SpeakToConfirmOverlay "Nailed It" dispatches RoleplaySpeakConfirmed(5) bonus coins and SubmitAnswer(true) with success sound & haptic',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          await tester.tap(findChip(word));
+          await tester.pump();
+        }
+
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockRoleplayBloc.add(const RoleplaySpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockRoleplayBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets(
+      '28. SpeakToConfirmOverlay "Needs Work" dispatches SubmitAnswer(false) with error sound & haptic',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final words = sampleQuest1.correctAnswer!.split(' ');
+        for (final word in words) {
+          await tester.tap(findChip(word));
+          await tester.pump();
+        }
+
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        await tester.tap(find.byKey(const Key('emergency_hub_launch_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockRoleplayBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '29. In answered state, launch button and SpeakToConfirmOverlay unmount',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(answeredState);
+        roleplayStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.byKey(const Key('emergency_hub_launch_button')),
+          findsNothing,
+        );
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
+
+    testWidgets(
+      '30. In answered state, bottom bar CONTINUE button appears; tapping it dispatches NextQuestion',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(answeredState);
+        roleplayStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
+        await tester.tap(continueBtn);
+        await tester.pump();
+
+        verify(
+          () => mockRoleplayBloc.add(any(that: isA<NextQuestion>())),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '31. Answer lockout: once answered, tapping valve or chips does not dispatch further actions',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(answeredState);
+        roleplayStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Attempt to align valve
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics && w.properties.label == 'Emergency release valve',
+        );
+        tester.widget<Semantics>(semanticsFinder).properties.onTap!();
+        await tester.pump();
+
+        // No haptic from valve since answered
+        verifyNever(() => mockHapticService.heavy());
+      },
+    );
+
+    testWidgets(
+      '32. Question transition: when next quest loads, rotation resets to 0.0, stage resets cleanly',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        // Advance to quest 2
+        final nextQuestState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockRoleplayBloc.state).thenReturn(nextQuestState);
+        roleplayStreamController.add(nextQuestState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.text(sampleQuest2.dispatcherQuestion!), findsOneWidget);
+        expect(find.text('LOCK PENDING (TURN TO 90%)'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '33. Hint button in header dispatches selection haptic and RoleplayHintUsed',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester);
+
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
+        await tester.tap(hintButton);
+        await tester.pump();
+
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>())),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '34. Level 1 briefing layer displays EMERGENCY VOICE and dismisses on HELP NOW tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_emergencyHub': false,
+        });
+
+        await pumpEmergencyHubScreen(tester, level: 1);
+
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('EMERGENCY VOICE'), findsOneWidget);
+
+        final enterBtn = find.descendant(
+          of: find.byType(GameBriefingLayer),
+          matching: find.text('HELP NOW'),
+        );
+        expect(enterBtn, findsOneWidget);
+        await tester.tap(enterBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
+
+    testWidgets('35. GameShimmerLoading displays on initial/loading state', (
+      tester,
+    ) async {
       await pumpEmergencyHubScreen(tester, state: const RoleplayInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('36. Game over state renders cleanly without error', (tester) async {
+    testWidgets('36. Game over state renders cleanly without error', (
+      tester,
+    ) async {
       const gameOverState = RoleplayGameOver(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -932,7 +1145,9 @@ void main() {
       expect(find.byType(EmergencyHubScreen), findsOneWidget);
     });
 
-    testWidgets('37. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('37. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpEmergencyHubScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(EmergencyHubScreen), findsOneWidget);
 
@@ -942,24 +1157,35 @@ void main() {
       expect(find.byType(EmergencyHubScreen), findsOneWidget);
     });
 
-    testWidgets('38. Small mobile screen (320x568) and tablet viewport (768x1024) render cleanly with zero overflow', (tester) async {
-      await pumpEmergencyHubScreen(tester, size: const Size(320, 568));
-      expect(find.byType(EmergencyHubScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
+    testWidgets(
+      '38. Small mobile screen (320x568) and tablet viewport (768x1024) render cleanly with zero overflow',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester, size: const Size(320, 568));
+        expect(find.byType(EmergencyHubScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
 
-      await tester.pumpWidget(const SizedBox());
+        await tester.pumpWidget(const SizedBox());
 
-      await pumpEmergencyHubScreen(tester, size: const Size(768, 1024));
-      expect(find.byType(EmergencyHubScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        await pumpEmergencyHubScreen(tester, size: const Size(768, 1024));
+        expect(find.byType(EmergencyHubScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('39. Reduced motion mode suppresses repeating pulse animation on valve and telex warning icon', (tester) async {
-      await pumpEmergencyHubScreen(tester, reduceMotion: true);
+    testWidgets(
+      '39. Reduced motion mode suppresses repeating pulse animation on valve and telex warning icon',
+      (tester) async {
+        await pumpEmergencyHubScreen(tester, reduceMotion: true);
 
-      expect(find.byKey(const Key('emergency_hub_telex_warning_icon')), findsOneWidget);
-      expect(find.byKey(const Key('emergency_hub_valve_chamber')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('emergency_hub_telex_warning_icon')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emergency_hub_valve_chamber')),
+          findsOneWidget,
+        );
+      },
+    );
   });
 }
-

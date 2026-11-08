@@ -47,7 +47,8 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
       children: List.generate(options.length, (index) {
         final opt = options[index];
         final isSelected = selectedOption == opt;
-        final isCorrect = isAnswered &&
+        final isCorrect =
+            isAnswered &&
             opt.trim().toLowerCase() == correctAnswer.trim().toLowerCase();
         final isWrong = isAnswered && isSelected && !isCorrect;
         final label = index < optionLabels.length
@@ -114,28 +115,32 @@ class _SummaryOptionCardState extends State<_SummaryOptionCard> {
     Widget? badgeIcon;
 
     if (widget.isCorrect) {
-      cardColor = widget.tokens.gameCorrect
-          .withValues(alpha: widget.isDark ? 0.15 : 0.1);
+      cardColor = widget.tokens.gameCorrect.withValues(
+        alpha: widget.isDark ? 0.15 : 0.1,
+      );
       borderColor = widget.tokens.gameCorrect;
       badgeBg = widget.tokens.gameCorrect;
       badgeTextColor = Colors.white;
       badgeIcon = Icon(Icons.check_rounded, color: Colors.white, size: 16.r);
     } else if (widget.isWrong) {
-      cardColor = widget.tokens.gameIncorrect
-          .withValues(alpha: widget.isDark ? 0.15 : 0.1);
+      cardColor = widget.tokens.gameIncorrect.withValues(
+        alpha: widget.isDark ? 0.15 : 0.1,
+      );
       borderColor = widget.tokens.gameIncorrect;
       badgeBg = widget.tokens.gameIncorrect;
       badgeTextColor = Colors.white;
       badgeIcon = Icon(Icons.close_rounded, color: Colors.white, size: 16.r);
     } else if (widget.isSelected) {
-      cardColor = widget.themeColor
-          .withValues(alpha: widget.isDark ? 0.15 : 0.08);
+      cardColor = widget.themeColor.withValues(
+        alpha: widget.isDark ? 0.15 : 0.08,
+      );
       borderColor = widget.themeColor;
       badgeBg = widget.themeColor;
       badgeTextColor = Colors.white;
     } else {
-      cardColor =
-          widget.isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white;
+      cardColor = widget.isDark
+          ? Colors.white.withValues(alpha: 0.04)
+          : Colors.white;
       borderColor = widget.isDark
           ? Colors.white.withValues(alpha: 0.12)
           : Colors.black.withValues(alpha: 0.08);
@@ -175,14 +180,14 @@ class _SummaryOptionCardState extends State<_SummaryOptionCard> {
                 BoxShadow(
                   color:
                       (widget.isSelected || widget.isCorrect || widget.isWrong)
-                          ? borderColor.withValues(alpha: 0.15)
-                          : (widget.isDark
-                              ? Colors.black.withValues(alpha: 0.25)
-                              : Colors.black.withValues(alpha: 0.04)),
+                      ? borderColor.withValues(alpha: 0.15)
+                      : (widget.isDark
+                            ? Colors.black.withValues(alpha: 0.25)
+                            : Colors.black.withValues(alpha: 0.04)),
                   blurRadius:
                       (widget.isSelected || widget.isCorrect || widget.isWrong)
-                          ? 10
-                          : 6,
+                      ? 10
+                      : 6,
                   offset: const Offset(0, 3),
                 ),
               ],
@@ -198,7 +203,8 @@ class _SummaryOptionCardState extends State<_SummaryOptionCard> {
                     shape: BoxShape.circle,
                   ),
                   child: Center(
-                    child: badgeIcon ??
+                    child:
+                        badgeIcon ??
                         Text(
                           widget.label,
                           style: TextStyle(

@@ -89,9 +89,11 @@ void main() {
 
   WritingQuest createQuest({
     String id = 'quest_cs_1',
-    String instruction = 'Launch the correct fragment to complete the sentence!',
+    String instruction =
+        'Launch the correct fragment to complete the sentence!',
     String? grammarFocus = 'Past Tense',
-    String partialSentence = 'Yesterday, the explorer ______ the ancient ruins.',
+    String partialSentence =
+        'Yesterday, the explorer ______ the ancient ruins.',
     String correctAnswer = 'discovered',
     List<String> options = const [
       'discovered',
@@ -133,7 +135,8 @@ void main() {
     correctAnswer: 'will cancel',
     options: ['will cancel', 'cancelled', 'cancelling', 'cancels'],
     hint: 'First conditional uses will + base verb.',
-    explanation: 'First conditional indicates future result based on a condition.',
+    explanation:
+        'First conditional indicates future result based on a condition.',
   );
 
   final sampleMinimalQuest = const WritingQuest(
@@ -217,7 +220,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics & Ad mocks
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -242,13 +247,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -344,26 +351,27 @@ void main() {
   }
 
   group('CompleteSentenceScreen — Initial Rendering & UI Components', () {
-    testWidgets('renders WritingBaseLayout with header, instruction, and wall', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders WritingBaseLayout with header, instruction, and wall',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(WritingBaseLayout), findsOneWidget);
-      expect(find.byType(CompleteSentenceInstruction), findsOneWidget);
-      expect(find.byType(CompleteSentenceTargetWall), findsOneWidget);
-      expect(find.byType(CompleteSentenceBallistaAmmo), findsOneWidget);
+        expect(find.byType(WritingBaseLayout), findsOneWidget);
+        expect(find.byType(CompleteSentenceInstruction), findsOneWidget);
+        expect(find.byType(CompleteSentenceTargetWall), findsOneWidget);
+        expect(find.byType(CompleteSentenceBallistaAmmo), findsOneWidget);
 
-      // Verify instruction and grammar focus
-      expect(
-        find.textContaining('Launch the correct fragment'),
-        findsOneWidget,
-      );
-      expect(find.textContaining('PAST TENSE'), findsOneWidget);
+        // Verify instruction and grammar focus
+        expect(
+          find.textContaining('Launch the correct fragment'),
+          findsOneWidget,
+        );
+        expect(find.textContaining('PAST TENSE'), findsOneWidget);
 
-      // Verify target wall text
-      expect(find.byType(RichText), findsWidgets);
-    });
+        // Verify target wall text
+        expect(find.byType(RichText), findsWidgets);
+      },
+    );
 
     testWidgets('dispatches FetchWritingQuests on initWritingGame', (
       tester,
@@ -424,84 +432,91 @@ void main() {
     });
   });
 
-  group('CompleteSentenceScreen — Ammo Selection & Fire Interaction (Normal Mode)', () {
-    testWidgets('tapping correct ammo option triggers success and displays DynamicAnagramWrapper', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+  group(
+    'CompleteSentenceScreen — Ammo Selection & Fire Interaction (Normal Mode)',
+    () {
+      testWidgets(
+        'tapping correct ammo option triggers success and displays DynamicAnagramWrapper',
+        (tester) async {
+          await pumpScreen(tester);
 
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
-      await tester.ensureVisible(ammoFinder);
-      await tester.tap(ammoFinder);
-      await tester.pumpAndSettle();
+          final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
+          await tester.ensureVisible(ammoFinder);
+          await tester.tap(ammoFinder);
+          await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
+          verify(() => mockHapticService.success()).called(1);
 
-      // DynamicAnagramWrapper should now be rendered!
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-      expect(find.text('SPELL IT OUT'), findsOneWidget);
-    });
-
-    testWidgets('dragging correct ammo onto target wall triggers fire', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
-      final dropZoneFinder = find.byKey(
-        const Key('complete_sentence_target_wall_drop_zone'),
+          // DynamicAnagramWrapper should now be rendered!
+          expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+          expect(find.text('SPELL IT OUT'), findsOneWidget);
+        },
       );
 
-      await tester.ensureVisible(ammoFinder);
-      await tester.ensureVisible(dropZoneFinder);
+      testWidgets('dragging correct ammo onto target wall triggers fire', (
+        tester,
+      ) async {
+        await pumpScreen(tester);
 
-      // Drag and drop onto the target wall
-      final TestGesture gesture = await tester.startGesture(
-        tester.getCenter(ammoFinder),
-      );
-      await tester.pump(const Duration(milliseconds: 300));
-      await gesture.moveTo(tester.getCenter(dropZoneFinder));
-      await tester.pumpAndSettle();
-      await gesture.up();
-      await tester.pumpAndSettle();
+        final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
+        final dropZoneFinder = find.byKey(
+          const Key('complete_sentence_target_wall_drop_zone'),
+        );
 
-      verify(() => mockHapticService.success()).called(1);
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-    });
+        await tester.ensureVisible(ammoFinder);
+        await tester.ensureVisible(dropZoneFinder);
 
-    testWidgets('tapping incorrect ammo option triggers haptic error and dispatches SubmitAnswer(false)', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovering'));
-      await tester.ensureVisible(ammoFinder);
-      await tester.tap(ammoFinder);
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-
-      // Anagram wrapper should NOT be shown
-      expect(find.byType(DynamicAnagramWrapper), findsNothing);
-    });
-
-    testWidgets('ignores firing when already answered', (tester) async {
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      await pumpScreen(tester, state: answeredState);
-
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
-      if (ammoFinder.evaluate().isNotEmpty) {
-        await tester.tap(ammoFinder, warnIfMissed: false);
+        // Drag and drop onto the target wall
+        final TestGesture gesture = await tester.startGesture(
+          tester.getCenter(ammoFinder),
+        );
+        await tester.pump(const Duration(milliseconds: 300));
+        await gesture.moveTo(tester.getCenter(dropZoneFinder));
         await tester.pumpAndSettle();
-      }
+        await gesture.up();
+        await tester.pumpAndSettle();
 
-      // SubmitAnswer should not be called again
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-  });
+        verify(() => mockHapticService.success()).called(1);
+        expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+      });
+
+      testWidgets(
+        'tapping incorrect ammo option triggers haptic error and dispatches SubmitAnswer(false)',
+        (tester) async {
+          await pumpScreen(tester);
+
+          final ammoFinder = find.byKey(const ValueKey('ammo_discovering'));
+          await tester.ensureVisible(ammoFinder);
+          await tester.tap(ammoFinder);
+          await tester.pumpAndSettle();
+
+          verify(() => mockHapticService.error()).called(1);
+          verify(
+            () => mockWritingBloc.add(const SubmitAnswer(false)),
+          ).called(1);
+
+          // Anagram wrapper should NOT be shown
+          expect(find.byType(DynamicAnagramWrapper), findsNothing);
+        },
+      );
+
+      testWidgets('ignores firing when already answered', (tester) async {
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        await pumpScreen(tester, state: answeredState);
+
+        final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
+        if (ammoFinder.evaluate().isNotEmpty) {
+          await tester.tap(ammoFinder, warnIfMissed: false);
+          await tester.pumpAndSettle();
+        }
+
+        // SubmitAnswer should not be called again
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      });
+    },
+  );
 
   group('CompleteSentenceScreen — DynamicAnagramWrapper Mechanics', () {
     testWidgets('renders anagram letters and allows tile manipulation', (
@@ -567,33 +582,34 @@ void main() {
       expect(find.byType(DynamicAnagramWrapper), findsNothing);
     });
 
-    testWidgets('free user skip triggers rewarded ad and submits correct answer on reward', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'free user skip triggers rewarded ad and submits correct answer on reward',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Open anagram
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
-      await tester.ensureVisible(ammoFinder);
-      await tester.tap(ammoFinder);
-      await tester.pumpAndSettle();
+        // Open anagram
+        final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
+        await tester.ensureVisible(ammoFinder);
+        await tester.tap(ammoFinder);
+        await tester.pumpAndSettle();
 
-      final skipFinder = find.text('SKIP');
-      expect(skipFinder, findsOneWidget);
-      await tester.ensureVisible(skipFinder);
-      await tester.tap(skipFinder);
-      await tester.pumpAndSettle();
+        final skipFinder = find.text('SKIP');
+        expect(skipFinder, findsOneWidget);
+        await tester.ensureVisible(skipFinder);
+        await tester.tap(skipFinder);
+        await tester.pumpAndSettle();
 
-      verify(
-        () => mockAdService.showRewardedAd(
-          context: any(named: 'context'),
-          isPremium: false,
-          onUserEarnedReward: any(named: 'onUserEarnedReward'),
-          onDismissed: any(named: 'onDismissed'),
-        ),
-      ).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: false,
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).called(1);
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
   });
 
   group('CompleteSentenceScreen — Hard Mode (Level >= 6)', () {
@@ -634,30 +650,31 @@ void main() {
       );
     });
 
-    testWidgets('typing and submitting correct word via button triggers anagram', (
-      tester,
-    ) async {
-      final hardModeState = testLoadedState.copyWith(level: 6);
-      await pumpScreen(tester, state: hardModeState, level: 6);
+    testWidgets(
+      'typing and submitting correct word via button triggers anagram',
+      (tester) async {
+        final hardModeState = testLoadedState.copyWith(level: 6);
+        await pumpScreen(tester, state: hardModeState, level: 6);
 
-      final inputFinder = find.byKey(
-        const Key('complete_sentence_input_field'),
-      );
-      final submitButton = find.byKey(
-        const Key('complete_sentence_submit_button'),
-      );
+        final inputFinder = find.byKey(
+          const Key('complete_sentence_input_field'),
+        );
+        final submitButton = find.byKey(
+          const Key('complete_sentence_submit_button'),
+        );
 
-      await tester.ensureVisible(inputFinder);
-      await tester.enterText(inputFinder, 'discovered');
-      await tester.pump();
+        await tester.ensureVisible(inputFinder);
+        await tester.enterText(inputFinder, 'discovered');
+        await tester.pump();
 
-      await tester.ensureVisible(submitButton);
-      await tester.tap(submitButton);
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(submitButton);
+        await tester.tap(submitButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+      },
+    );
 
     testWidgets('submitting via keyboard onSubmitted fires word', (
       tester,
@@ -704,67 +721,70 @@ void main() {
   });
 
   group('CompleteSentenceScreen — State Transitions & Feedback', () {
-    testWidgets('renders GameFeedbackCard on correct answered state and continue advances', (
-      tester,
-    ) async {
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      await pumpScreen(tester, state: answeredState);
+    testWidgets(
+      'renders GameFeedbackCard on correct answered state and continue advances',
+      (tester) async {
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        await pumpScreen(tester, state: answeredState);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('WRITING CONTEXT'), findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('WRITING CONTEXT'), findsOneWidget);
 
-      // Tapping continue button
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
-      await tester.tap(continueButton);
-      await tester.pumpAndSettle();
+        // Tapping continue button
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
+        await tester.tap(continueButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('renders GameFeedbackCard on incorrect answered state with explanation', (
-      tester,
-    ) async {
-      final incorrectState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.incorrect,
-        livesRemaining: 2,
-        isFinalFailure: true,
-      );
-      await pumpScreen(tester, state: incorrectState);
+    testWidgets(
+      'renders GameFeedbackCard on incorrect answered state with explanation',
+      (tester) async {
+        final incorrectState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.incorrect,
+          livesRemaining: 2,
+          isFinalFailure: true,
+        );
+        await pumpScreen(tester, state: incorrectState);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(
-        find.textContaining('Discovered is the simple past tense'),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(
+          find.textContaining('Discovered is the simple past tense'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('advancing question resets selected projectile and anagram state', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'advancing question resets selected projectile and anagram state',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Trigger anagram
-      final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
-      await tester.ensureVisible(ammoFinder);
-      await tester.tap(ammoFinder);
-      await tester.pumpAndSettle();
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+        // Trigger anagram
+        final ammoFinder = find.byKey(const ValueKey('ammo_discovered'));
+        await tester.ensureVisible(ammoFinder);
+        await tester.tap(ammoFinder);
+        await tester.pumpAndSettle();
+        expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
 
-      // Now stream new question state
-      final nextQuestionState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      writingStreamController.add(nextQuestionState);
-      await tester.pumpAndSettle();
+        // Now stream new question state
+        final nextQuestionState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        writingStreamController.add(nextQuestionState);
+        await tester.pumpAndSettle();
 
-      // DynamicAnagramWrapper should be gone and new quest rendered
-      expect(find.byType(DynamicAnagramWrapper), findsNothing);
-      expect(find.text('will cancel'), findsOneWidget);
-    });
+        // DynamicAnagramWrapper should be gone and new quest rendered
+        expect(find.byType(DynamicAnagramWrapper), findsNothing);
+        expect(find.text('will cancel'), findsOneWidget);
+      },
+    );
 
     testWidgets('handles WritingGameComplete state with completion dialog', (
       tester,
@@ -804,9 +824,7 @@ void main() {
       expect(find.byType(CompleteSentenceScreen), findsOneWidget);
     });
 
-    testWidgets('handles WritingError state with retry option', (
-      tester,
-    ) async {
+    testWidgets('handles WritingError state with retry option', (tester) async {
       const errorState = WritingError('Failed to load writing quests');
       await pumpScreen(tester, state: errorState);
 
@@ -829,18 +847,19 @@ void main() {
   });
 
   group('CompleteSentenceScreen — Hints and Header System', () {
-    testWidgets('tapping hint button dispatches WritingHintUsed and plays sound', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping hint button dispatches WritingHintUsed and plays sound',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final hintFinder = find.byType(QuestHintButton);
-      expect(hintFinder, findsOneWidget);
-      await tester.tap(hintFinder);
-      await tester.pumpAndSettle();
+        final hintFinder = find.byType(QuestHintButton);
+        expect(hintFinder, findsOneWidget);
+        await tester.tap(hintFinder);
+        await tester.pumpAndSettle();
 
-      verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
-    });
+        verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
+      },
+    );
 
     testWidgets('shows exit confirmation dialog when back button is tapped', (
       tester,

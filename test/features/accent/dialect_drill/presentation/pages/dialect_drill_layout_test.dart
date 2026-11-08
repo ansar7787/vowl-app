@@ -167,8 +167,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -180,12 +181,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -201,10 +204,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        locale: any(named: 'locale'),
-      ),
+      () => mockSoundService.playTts(any(), locale: any(named: 'locale')),
     ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
@@ -220,7 +220,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_test.m4a');
@@ -392,10 +394,7 @@ void main() {
         expect(find.text('schedule'), findsOneWidget);
 
         // Scroll down to bring ShadowPlaybackCompare into viewport
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -600),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -447,10 +446,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down to reveal ShadowPlaybackCompare
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -900),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -900));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -474,10 +470,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down to center comparison controls
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -300),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -513,10 +506,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down to reveal ShadowPlaybackCompare
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -900),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -900));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -537,10 +527,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down slightly more so comparison controls are centered
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -300),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -578,16 +565,11 @@ void main() {
         expect(find.byType(DialectFeedbackPanel), findsOneWidget);
 
         // Scroll feedback panel buttons into view
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -400),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -400));
         await tester.pump(const Duration(milliseconds: 300));
 
         // Tap British replay button
-        final britishBtn = find.byKey(
-          const ValueKey('feedback_audio_british'),
-        );
+        final britishBtn = find.byKey(const ValueKey('feedback_audio_british'));
         expect(britishBtn, findsOneWidget);
         await tester.tap(britishBtn);
         await tester.pump(const Duration(milliseconds: 200));
@@ -655,10 +637,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll to ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -900),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -900));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
@@ -677,10 +656,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll down to center comparison buttons
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -811,4 +787,3 @@ void main() {
     );
   });
 }
-

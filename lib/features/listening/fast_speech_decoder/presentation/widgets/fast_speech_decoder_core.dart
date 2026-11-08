@@ -82,12 +82,12 @@ class FastSpeechDecoderCore extends StatelessWidget {
                       color: color.withValues(alpha: 0.05),
                     )
                   : Icon(
-                      Icons.settings_suggest_rounded,
-                      size: 180.r,
-                      color: color.withValues(alpha: 0.05),
-                    )
-                      .animate(onPlay: (controller) => controller.repeat())
-                      .rotate(duration: 30.seconds, begin: 0, end: 1),
+                          Icons.settings_suggest_rounded,
+                          size: 180.r,
+                          color: color.withValues(alpha: 0.05),
+                        )
+                        .animate(onPlay: (controller) => controller.repeat())
+                        .rotate(duration: 30.seconds, begin: 0, end: 1),
             ),
 
             // Outer Ring Indicator
@@ -152,9 +152,10 @@ class FastSpeechDecoderCore extends StatelessWidget {
                                 emoji!,
                                 key: const Key('fast_speech_decoder_emoji'),
                                 style: TextStyle(fontSize: 44.r),
+                              ).animate().scale(
+                                duration: 400.ms,
+                                curve: Curves.easeOutCubic,
                               )
-                                .animate()
-                                .scale(duration: 400.ms, curve: Curves.easeOutCubic)
                       else
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,

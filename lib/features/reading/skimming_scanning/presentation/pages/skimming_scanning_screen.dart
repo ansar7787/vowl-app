@@ -218,12 +218,13 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                             ),
                                       borderRadius: BorderRadius.circular(16.r),
                                       border: Border.all(
-                                        color: (isAnsweredNotifier.value
-                                                ? tokens.gameCorrect
-                                                : theme.primaryColor)
-                                            .withValues(
-                                              alpha: isDark ? 0.35 : 0.2,
-                                            ),
+                                        color:
+                                            (isAnsweredNotifier.value
+                                                    ? tokens.gameCorrect
+                                                    : theme.primaryColor)
+                                                .withValues(
+                                                  alpha: isDark ? 0.35 : 0.2,
+                                                ),
                                         width: 1.2,
                                       ),
                                     ),
@@ -240,10 +241,10 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                         color: isAnsweredNotifier.value
                                             ? tokens.gameCorrect
                                             : (isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.95,
-                                                  )
-                                                : theme.primaryColor),
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.95,
+                                                    )
+                                                  : theme.primaryColor),
                                         fontSize: 13.5.sp,
                                         fontWeight: FontWeight.w600,
                                         height: 1.4,

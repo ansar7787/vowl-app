@@ -68,7 +68,9 @@ void main() {
       {
         'type': 'quest',
         'gameType': 'sentenceCorrection',
-        'timestamp': DateTime.now().subtract(const Duration(hours: 2)).toIso8601String(),
+        'timestamp': DateTime.now()
+            .subtract(const Duration(hours: 2))
+            .toIso8601String(),
       },
     ],
   );
@@ -85,8 +87,9 @@ void main() {
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -102,8 +105,13 @@ void main() {
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
-    when(() => mockLocaleService.tr(any(), args: any(named: 'args'), fallback: any(named: 'fallback')))
-        .thenAnswer((inv) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((inv) {
       final fallback = inv.namedArguments[const Symbol('fallback')] as String?;
       final key = inv.positionalArguments[0] as String;
       return fallback ?? key;
@@ -135,21 +143,28 @@ void main() {
         ),
         GoRoute(
           path: '/home',
-          builder: (context, state) => const Scaffold(body: Text('Home Screen Placeholder')),
+          builder: (context, state) =>
+              const Scaffold(body: Text('Home Screen Placeholder')),
         ),
         GoRoute(
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) {
-            navigatedRoutes.add('categoryGames:${state.uri.queryParameters['category']}');
+            navigatedRoutes.add(
+              'categoryGames:${state.uri.queryParameters['category']}',
+            );
             return Scaffold(
-              body: Text('Category Games: ${state.uri.queryParameters['category']}'),
+              body: Text(
+                'Category Games: ${state.uri.queryParameters['category']}',
+              ),
             );
           },
         ),
         GoRoute(
           path: AppRouter.levelsRoute,
           builder: (context, state) {
-            navigatedRoutes.add('levels:${state.uri.queryParameters['gameType']}');
+            navigatedRoutes.add(
+              'levels:${state.uri.queryParameters['gameType']}',
+            );
             return Scaffold(
               body: Text('Levels: ${state.uri.queryParameters['gameType']}'),
             );
@@ -160,9 +175,7 @@ void main() {
 
     ThemeData theme;
     if (isMidnight) {
-      theme = ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
-      );
+      theme = ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black);
     } else if (themeMode == ThemeMode.dark) {
       theme = AppTheme.darkTheme;
     } else {
@@ -178,18 +191,19 @@ void main() {
         ),
         child: BlocProvider<AuthBloc>.value(
           value: mockAuthBloc,
-          child: MaterialApp.router(
-            routerConfig: router,
-            theme: theme,
-          ),
+          child: MaterialApp.router(routerConfig: router, theme: theme),
         ),
       ),
     );
   }
 
   group('Group 1: Loading State', () {
-    testWidgets('renders CircularProgressIndicator when user is null', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    testWidgets('renders CircularProgressIndicator when user is null', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pump();
@@ -212,29 +226,37 @@ void main() {
   });
 
   group('Group 3: Weekly XP Trend Section', () {
-    testWidgets('renders weekly XP trend bar chart with active days and total XP', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders weekly XP trend bar chart with active days and total XP',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('WEEKLY XP TREND'), findsOneWidget);
-      // Total XP: 50 + 80 + 0 + 120 + 40 + 90 + 150 = 530 XP
-      expect(find.text('530 XP'), findsOneWidget);
-      expect(find.text('6 of 7 days active this week.'), findsOneWidget);
+        expect(find.text('WEEKLY XP TREND'), findsOneWidget);
+        // Total XP: 50 + 80 + 0 + 120 + 40 + 90 + 150 = 530 XP
+        expect(find.text('530 XP'), findsOneWidget);
+        expect(find.text('6 of 7 days active this week.'), findsOneWidget);
 
-      // Verify today's XP label
-      expect(find.text('150'), findsOneWidget);
-      expect(find.text('120'), findsOneWidget);
-    });
+        // Verify today's XP label
+        expect(find.text('150'), findsOneWidget);
+        expect(find.text('120'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 4: Cross-Category Mastery Overview', () {
-    testWidgets('calculates overall mastery and renders category chips', (tester) async {
+    testWidgets('calculates overall mastery and renders category chips', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
       expect(find.text('TOTAL MASTERY'), findsOneWidget);
       // 5 + 2 + 1 = 8 levels cleared
-      expect(find.text('8 levels cleared across all categories.'), findsOneWidget);
+      expect(
+        find.text('8 levels cleared across all categories.'),
+        findsOneWidget,
+      );
 
       // Verify category chips exist
       for (final cat in QuestType.values) {
@@ -251,66 +273,96 @@ void main() {
         await tester.pumpAndSettle();
 
         verify(() => mockHapticService.selection()).called(1);
-        expect(navigatedRoutes.any((r) => r.startsWith('categoryGames:')), isTrue);
+        expect(
+          navigatedRoutes.any((r) => r.startsWith('categoryGames:')),
+          isTrue,
+        );
       }
     });
   });
 
   group('Group 5: Continue Learning Quick Actions', () {
-    testWidgets('renders empty state when user has zero completed levels', (tester) async {
+    testWidgets('renders empty state when user has zero completed levels', (
+      tester,
+    ) async {
       final userZero = testUser.copyWith(
         completedLevels: {},
         recentActivities: [],
       );
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(userZero));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(userZero));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
       expect(find.byIcon(Icons.play_circle_outline_rounded), findsOneWidget);
-      expect(find.text('Start playing to see your progress here!'), findsOneWidget);
+      expect(
+        find.text('Start playing to see your progress here!'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('renders recent games and tapping a game card navigates to levels route', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders recent games and tapping a game card navigates to levels route',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('CONTINUE LEARNING'), findsOneWidget);
-      expect(find.text('CONSONANT CLARITY'), findsOneWidget);
-      expect(find.text('SENTENCE CORRECTION'), findsOneWidget);
+        expect(find.text('CONTINUE LEARNING'), findsOneWidget);
+        expect(find.text('CONSONANT CLARITY'), findsOneWidget);
+        expect(find.text('SENTENCE CORRECTION'), findsOneWidget);
 
-      // Tap first game resume card
-      final consonantClarityCard = find.widgetWithText(ScaleButton, 'CONSONANT CLARITY');
-      expect(consonantClarityCard, findsOneWidget);
+        // Tap first game resume card
+        final consonantClarityCard = find.widgetWithText(
+          ScaleButton,
+          'CONSONANT CLARITY',
+        );
+        expect(consonantClarityCard, findsOneWidget);
 
-      await tester.scrollUntilVisible(consonantClarityCard, 200);
-      await tester.pumpAndSettle();
+        await tester.scrollUntilVisible(consonantClarityCard, 200);
+        await tester.pumpAndSettle();
 
-      await tester.tap(consonantClarityCard);
-      await tester.pumpAndSettle();
+        await tester.tap(consonantClarityCard);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes.any((r) => r.contains('consonantClarity')), isTrue);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(
+          navigatedRoutes.any((r) => r.contains('consonantClarity')),
+          isTrue,
+        );
+      },
+    );
   });
 
   group('Group 6: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(320, 568)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(screenSize: const Size(800, 1280)));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 

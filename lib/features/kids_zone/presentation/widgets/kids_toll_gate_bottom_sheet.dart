@@ -80,13 +80,14 @@ class KidsTollGateBottomSheet {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
               decoration: BoxDecoration(
-                color: (Theme.of(context).brightness == Brightness.dark &&
+                color:
+                    (Theme.of(context).brightness == Brightness.dark &&
                         Theme.of(context).scaffoldBackgroundColor ==
                             Colors.black)
                     ? AppColors.midnightSurface
                     : (Theme.of(context).brightness == Brightness.dark
-                        ? AppColors.slate800
-                        : Colors.white),
+                          ? AppColors.slate800
+                          : Colors.white),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
                 border: Border.all(color: primaryColor, width: 4.w),
                 boxShadow: [

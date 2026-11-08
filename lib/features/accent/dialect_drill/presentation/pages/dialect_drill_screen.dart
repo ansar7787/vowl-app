@@ -57,7 +57,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
   @override
   void dispose() {
     _scrollController.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -114,7 +114,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -131,7 +132,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);

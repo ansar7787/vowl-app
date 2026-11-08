@@ -15,8 +15,8 @@ InputDecoration buildAuthDecoration({
   Widget? suffixIcon,
 }) {
   final isDark = Theme.of(context).brightness == Brightness.dark;
-  final isMidnight = isDark &&
-      Theme.of(context).scaffoldBackgroundColor == Colors.black;
+  final isMidnight =
+      isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
   final primaryColor = Theme.of(context).colorScheme.primary;
 
   final fieldFill = isMidnight
@@ -50,24 +50,15 @@ InputDecoration buildAuthDecoration({
     fillColor: fieldFill,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide(
-        color: fieldBorder,
-        width: 1.0,
-      ),
+      borderSide: BorderSide(color: fieldBorder, width: 1.0),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide(
-        color: fieldBorder,
-        width: 1.0,
-      ),
+      borderSide: BorderSide(color: fieldBorder, width: 1.0),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide(
-        color: primaryColor,
-        width: 1.5,
-      ),
+      borderSide: BorderSide(color: primaryColor, width: 1.5),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),

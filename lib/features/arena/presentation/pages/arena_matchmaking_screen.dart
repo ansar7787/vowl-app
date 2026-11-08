@@ -257,10 +257,10 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
 
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0B0F19) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.midnightSurface : AppColors.slate50);
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final borderColor = isDark
         ? AppColors.indigo500.withValues(alpha: 0.22)
         : AppColors.indigo500.withValues(alpha: 0.16);
@@ -532,31 +532,35 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
-              child: Text(
-                widget.user.safeDisplayName,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w800,
-                  color: textPrimary,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  widget.user.safeDisplayName,
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w800,
+                    color: textPrimary,
+                  ),
                 ),
               ),
             ),
             SizedBox(width: 48.w),
             Expanded(
-              child: Text(
-                rivalName,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w800,
-                  color: textPrimary,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  rivalName,
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w800,
+                    color: textPrimary,
+                  ),
                 ),
               ),
             ),
@@ -565,29 +569,76 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
 
         SizedBox(height: 14.h),
 
-        // 5-Round Disciplines Strip
+        // 5-Round Disciplines Strip with Icon Preview (⚡🎯💥🧠👑)
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
           decoration: BoxDecoration(
-            color: AppColors.indigo500.withValues(alpha: 0.12),
-            borderRadius: BorderRadius.circular(10.r),
+            color: AppColors.indigo500.withValues(alpha: 0.10),
+            borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
-              color: AppColors.indigo500.withValues(alpha: 0.25),
+              color: AppColors.indigo500.withValues(alpha: 0.22),
             ),
           ),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              '5-ROUND DUEL: WORD CLASH • PHRASE DUEL • SENTENCE STRIKE • CONTEXT BLITZ',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 9.5.sp,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 0.8,
-                color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _disciplineChip(
+                      icon: LucideIcons.zap,
+                      label: 'R1 Clash',
+                      color: AppColors.indigo500,
+                      isDark: isDark,
+                    ),
+                    SizedBox(width: 4.w),
+                    _disciplineChip(
+                      icon: LucideIcons.target,
+                      label: 'R2 Phrase',
+                      color: AppColors.emerald500,
+                      isDark: isDark,
+                    ),
+                    SizedBox(width: 4.w),
+                    _disciplineChip(
+                      icon: LucideIcons.flame,
+                      label: 'R3 Strike',
+                      color: AppColors.rose500,
+                      isDark: isDark,
+                    ),
+                    SizedBox(width: 4.w),
+                    _disciplineChip(
+                      icon: LucideIcons.brainCircuit,
+                      label: 'R4 Blitz',
+                      color: AppColors.blue500,
+                      isDark: isDark,
+                    ),
+                    SizedBox(width: 4.w),
+                    _disciplineChip(
+                      icon: LucideIcons.crown,
+                      label: 'R5 Climax',
+                      color: AppColors.amber500,
+                      isDark: isDark,
+                    ),
+                  ],
+                ),
               ),
-            ),
+              SizedBox(height: 5.h),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '5 PROGRESSIVE ROUNDS • EASY → MEDIUM → HARD',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 8.5.sp,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.8,
+                    color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
 
@@ -609,6 +660,38 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
             ),
           ),
       ],
+    );
+  }
+
+  Widget _disciplineChip({
+    required IconData icon,
+    required String label,
+    required Color color,
+    required bool isDark,
+  }) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(6.r),
+        border: Border.all(color: color.withValues(alpha: 0.25), width: 0.8),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 10.sp, color: color),
+          SizedBox(width: 3.w),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 8.5.sp,
+              fontWeight: FontWeight.w800,
+              color: color,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

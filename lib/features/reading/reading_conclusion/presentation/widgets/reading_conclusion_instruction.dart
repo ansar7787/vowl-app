@@ -39,11 +39,7 @@ class ReadingConclusionInstruction extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              Icons.menu_book_rounded,
-              size: 15.r,
-              color: primaryColor,
-            ),
+            Icon(Icons.menu_book_rounded, size: 15.r, color: primaryColor),
             SizedBox(width: 8.w),
             Flexible(
               child: Text(

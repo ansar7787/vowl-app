@@ -250,7 +250,8 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                                   SizedBox(height: 18.h),
                                   SentenceOrderReadingInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction: InstructionHelper.getInstruction(quest),
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 20.h),
                                 ],

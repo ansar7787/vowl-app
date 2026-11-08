@@ -140,7 +140,9 @@ class CustomSnackBar {
 
     OverlayState? overlay;
     try {
-      overlay = Overlay.maybeOf(context, rootOverlay: true) ?? Overlay.maybeOf(context);
+      overlay =
+          Overlay.maybeOf(context, rootOverlay: true) ??
+          Overlay.maybeOf(context);
     } catch (_) {
       overlay = null;
     }
@@ -393,10 +395,10 @@ class _ToastOverlayWidgetState extends State<_ToastOverlayWidget>
       duration: const Duration(milliseconds: 300),
     );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, -0.6),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _animController, curve: Curves.easeOutCubic));
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0, -0.6), end: Offset.zero).animate(
+          CurvedAnimation(parent: _animController, curve: Curves.easeOutCubic),
+        );
 
     _fadeAnimation = CurvedAnimation(
       parent: _animController,
@@ -440,10 +442,7 @@ class _ToastOverlayWidgetState extends State<_ToastOverlayWidget>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _fadeAnimation,
-      child: SlideTransition(
-        position: _slideAnimation,
-        child: widget.child,
-      ),
+      child: SlideTransition(position: _slideAnimation, child: widget.child),
     );
   }
 }

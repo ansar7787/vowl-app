@@ -75,9 +75,7 @@ class VisualObjectTarget extends Equatable {
   }
 
   /// Creates a copy of this object with an updated translation.
-  VisualObjectTarget copyWith({
-    String? nativeTranslation,
-  }) {
+  VisualObjectTarget copyWith({String? nativeTranslation}) {
     return VisualObjectTarget(
       label: label,
       confidence: confidence,
@@ -93,14 +91,14 @@ class VisualObjectTarget extends Equatable {
 
   @override
   List<Object?> get props => [
-        label,
-        confidence,
-        ipa,
-        cefr,
-        definition,
-        example,
-        grammarTip,
-        partOfSpeech,
-        nativeTranslation,
-      ];
+    label,
+    confidence,
+    ipa,
+    cefr,
+    definition,
+    example,
+    grammarTip,
+    partOfSpeech,
+    nativeTranslation,
+  ];
 }

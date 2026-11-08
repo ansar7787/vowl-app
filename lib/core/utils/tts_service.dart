@@ -277,7 +277,8 @@ class TtsServiceImpl implements TtsService {
     try {
       final targetPreset = preset ?? await TtsVoiceHelper.getSavedPreset();
       final targetLocale = locale ?? 'en-US';
-      final bool needsCalibration = _activeEnginePreset != targetPreset ||
+      final bool needsCalibration =
+          _activeEnginePreset != targetPreset ||
           _activeIsKids != isKids ||
           _activeLocale != targetLocale;
 
@@ -442,7 +443,8 @@ class TtsServiceImpl implements TtsService {
     try {
       final targetPreset =
           forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
-      final bool needsCalibration = _activeEnginePreset != targetPreset ||
+      final bool needsCalibration =
+          _activeEnginePreset != targetPreset ||
           _activeIsKids != isKids ||
           _activeLocale != locale;
 

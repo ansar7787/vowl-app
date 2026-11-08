@@ -48,18 +48,13 @@ class PremiumSuccessOverlay extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: const LinearGradient(
-          colors: [
-            AppColors.emerald400,
-            AppColors.emerald600,
-          ],
+          colors: [AppColors.emerald400, AppColors.emerald600],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.emerald500.withValues(
-              alpha: isDark ? 0.45 : 0.25,
-            ),
+            color: AppColors.emerald500.withValues(alpha: isDark ? 0.45 : 0.25),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -71,11 +66,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
           width: 2,
         ),
       ),
-      child: Icon(
-        LucideIcons.checkCircle2,
-        color: Colors.white,
-        size: 40.r,
-      ),
+      child: Icon(LucideIcons.checkCircle2, color: Colors.white, size: 40.r),
     );
 
     if (!reduceMotion) {
@@ -94,10 +85,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
         end: Alignment.bottomRight,
       ).createShader(bounds),
       child: Text(
-        context.tr(
-          'premium.success_title',
-          fallback: 'UPGRADE SUCCESSFUL',
-        ),
+        context.tr('premium.success_title', fallback: 'UPGRADE SUCCESSFUL'),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
@@ -145,16 +133,11 @@ class PremiumSuccessOverlay extends StatelessWidget {
     if (transactionId != null) {
       txnWidget = Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(
-          horizontal: 16.w,
-          vertical: 12.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: txnBoxBg,
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: txnBoxBorder,
-          ),
+          border: Border.all(color: txnBoxBorder),
         ),
         child: Column(
           children: [
@@ -213,8 +196,9 @@ class PremiumSuccessOverlay extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF10B981)
-                    .withValues(alpha: isDark ? 0.4 : 0.25),
+                color: const Color(
+                  0xFF10B981,
+                ).withValues(alpha: isDark ? 0.4 : 0.25),
                 blurRadius: 14,
                 offset: const Offset(0, 4),
               ),
@@ -268,10 +252,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(
-          color: borderColor,
-          width: 1.2,
-        ),
+        border: Border.all(color: borderColor, width: 1.2),
         boxShadow: [
           BoxShadow(
             color: isDark
@@ -299,10 +280,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
             titleWidget,
             SizedBox(height: 12.h),
             subtitleWidget,
-            if (txnWidget != null) ...[
-              SizedBox(height: 16.h),
-              txnWidget,
-            ],
+            if (txnWidget != null) ...[SizedBox(height: 16.h), txnWidget],
             SizedBox(height: 28.h),
             buttonWidget,
           ],

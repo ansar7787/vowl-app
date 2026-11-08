@@ -160,8 +160,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -215,7 +216,8 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
 
@@ -289,152 +291,192 @@ void main() {
   }
 
   group('AudioMultipleChoiceScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, question, and satellite spinner', (tester) async {
+    testWidgets(
+      '1. Initial layout renders instruction, timer, question, and satellite spinner',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        expect(find.byType(AudioMultipleChoiceInstruction), findsOneWidget);
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(find.byType(AudioMultipleChoiceQuestion), findsOneWidget);
+        expect(find.byType(AudioMultipleChoiceSpinner), findsOneWidget);
+        expect(find.byKey(const Key('satellite_core_btn')), findsOneWidget);
+        expect(find.text('Listen'), findsOneWidget);
+
+        expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(4));
+        expect(find.text('Thunderstorm'), findsOneWidget);
+        expect(find.text('Gentle Breeze'), findsOneWidget);
+        expect(find.text('Ocean Waves'), findsOneWidget);
+        expect(find.text('City Traffic'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '2. Tapping central core button triggers TTS replay and selection haptics',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        await tester.tap(find.byKey(const Key('satellite_core_btn')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        verify(
+          () => mockSoundService.playTts(sampleQuest.textToSpeak!),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '3. Central core audio playback cascades to prompt when textToSpeak is null',
+      (tester) async {
+        const fallbackQuest = ListeningQuest(
+          id: 'amc_fb',
+          instruction: 'Listen carefully',
+          difficulty: 1,
+          subtype: GameSubtype.audioMultipleChoice,
+          prompt: 'Fallback prompt recording text',
+          options: ['Opt A', 'Opt B'],
+          correctAnswerIndex: 0,
+        );
+
+        final state = ListeningLoaded(
+          quests: const [fallbackQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpAudioMultipleChoiceScreen(tester, state: state);
+
+        await tester.tap(find.byKey(const Key('satellite_core_btn')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        verify(
+          () => mockSoundService.playTts('Fallback prompt recording text'),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '4. Central core audio playback cascades to question when textToSpeak and prompt are null',
+      (tester) async {
+        const questionQuest = ListeningQuest(
+          id: 'amc_qfb',
+          instruction: 'Listen carefully',
+          difficulty: 1,
+          subtype: GameSubtype.audioMultipleChoice,
+          question: 'Identify this sound clip',
+          options: ['Sound A', 'Sound B'],
+          correctAnswerIndex: 0,
+        );
+
+        final state = ListeningLoaded(
+          quests: const [questionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpAudioMultipleChoiceScreen(tester, state: state);
+
+        await tester.tap(find.byKey(const Key('satellite_core_btn')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        verify(
+          () => mockSoundService.playTts('Identify this sound clip'),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '5. Selecting correct satellite dispatches SubmitAnswer(true) with success audio & haptics',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets(
+      '6. Selecting incorrect satellite dispatches SubmitAnswer(false) with error audio & haptics',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        await tester.tap(find.text('Gentle Breeze'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '7. Interaction lockout prevents secondary taps after answer submission',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+        clearInteractions(mockHapticService);
+
+        await tester.tap(find.text('Ocean Waves'), warnIfMissed: false);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+
+        verifyNever(() => mockListeningBloc.add(any()));
+      },
+    );
+
+    testWidgets(
+      '8. Timer onTimeUp automatically triggers wrong answer submission',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
+
+        final timer = tester.widget<SpeedChallengeTimer>(
+          find.byType(SpeedChallengeTimer),
+        );
+        timer.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
+
+    testWidgets('9. Answering stops the active SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester);
 
-      expect(find.byType(AudioMultipleChoiceInstruction), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byType(AudioMultipleChoiceQuestion), findsOneWidget);
-      expect(find.byType(AudioMultipleChoiceSpinner), findsOneWidget);
-      expect(find.byKey(const Key('satellite_core_btn')), findsOneWidget);
-      expect(find.text('Listen'), findsOneWidget);
-
-      expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(4));
-      expect(find.text('Thunderstorm'), findsOneWidget);
-      expect(find.text('Gentle Breeze'), findsOneWidget);
-      expect(find.text('Ocean Waves'), findsOneWidget);
-      expect(find.text('City Traffic'), findsOneWidget);
-    });
-
-    testWidgets('2. Tapping central core button triggers TTS replay and selection haptics', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      await tester.tap(find.byKey(const Key('satellite_core_btn')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockSoundService.playTts(sampleQuest.textToSpeak!)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('3. Central core audio playback cascades to prompt when textToSpeak is null', (tester) async {
-      const fallbackQuest = ListeningQuest(
-        id: 'amc_fb',
-        instruction: 'Listen carefully',
-        difficulty: 1,
-        subtype: GameSubtype.audioMultipleChoice,
-        prompt: 'Fallback prompt recording text',
-        options: ['Opt A', 'Opt B'],
-        correctAnswerIndex: 0,
+      final timerState = tester.state<SpeedChallengeTimerState>(
+        find.byType(SpeedChallengeTimer),
       );
-
-      final state = ListeningLoaded(
-        quests: const [fallbackQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
-
-      await pumpAudioMultipleChoiceScreen(tester, state: state);
-
-      await tester.tap(find.byKey(const Key('satellite_core_btn')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockSoundService.playTts('Fallback prompt recording text')).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('4. Central core audio playback cascades to question when textToSpeak and prompt are null', (tester) async {
-      const questionQuest = ListeningQuest(
-        id: 'amc_qfb',
-        instruction: 'Listen carefully',
-        difficulty: 1,
-        subtype: GameSubtype.audioMultipleChoice,
-        question: 'Identify this sound clip',
-        options: ['Sound A', 'Sound B'],
-        correctAnswerIndex: 0,
-      );
-
-      final state = ListeningLoaded(
-        quests: const [questionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
-
-      await pumpAudioMultipleChoiceScreen(tester, state: state);
-
-      await tester.tap(find.byKey(const Key('satellite_core_btn')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockSoundService.playTts('Identify this sound clip')).called(1);
-    });
-
-    testWidgets('5. Selecting correct satellite dispatches SubmitAnswer(true) with success audio & haptics', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('6. Selecting incorrect satellite dispatches SubmitAnswer(false) with error audio & haptics', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      await tester.tap(find.text('Gentle Breeze'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('7. Interaction lockout prevents secondary taps after answer submission', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-      clearInteractions(mockHapticService);
-
-      await tester.tap(find.text('Ocean Waves'), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-
-      verifyNever(() => mockListeningBloc.add(any()));
-    });
-
-    testWidgets('8. Timer onTimeUp automatically triggers wrong answer submission', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      final timer = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
-      timer.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
-
-    testWidgets('9. Answering stops the active SpeedChallengeTimer', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
-
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
       expect(timerState.isTimerActive, isTrue);
 
       await tester.tap(find.text('Thunderstorm'));
@@ -444,38 +486,43 @@ void main() {
       expect(timerState.isTimerActive, isFalse);
     });
 
-    testWidgets('10. Question transition clears selected index and restarts timer without GlobalKey crashes', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
+    testWidgets(
+      '10. Question transition clears selected index and restarts timer without GlobalKey crashes',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
 
-      // Answer quest 1
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Answer quest 1
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Transition to quest 2
-      final nextState = ListeningLoaded(
-        quests: const [sampleQuest, sampleSecondQuest],
-        currentIndex: 1,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+        // Transition to quest 2
+        final nextState = ListeningLoaded(
+          quests: const [sampleQuest, sampleSecondQuest],
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      listeningStreamController.add(nextState);
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pump(const Duration(milliseconds: 500));
+        listeningStreamController.add(nextState);
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Airport Terminal'), findsOneWidget);
-      expect(find.text('Train Station'), findsOneWidget);
-      expect(find.text('Subway Platform'), findsOneWidget);
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        expect(find.text('Airport Terminal'), findsOneWidget);
+        expect(find.text('Train Station'), findsOneWidget);
+        expect(find.text('Subway Platform'), findsOneWidget);
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
 
-    testWidgets('11. Continue button dispatches NextQuestion event', (tester) async {
+    testWidgets('11. Continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       final answeredState = ListeningLoaded(
         quests: const [sampleQuest, sampleSecondQuest],
         currentIndex: 0,
@@ -497,7 +544,9 @@ void main() {
       }
     });
 
-    testWidgets('12. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets('12. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -510,30 +559,39 @@ void main() {
       verify(() => mockListeningBloc.add(const ListeningHintUsed())).called(1);
     });
 
-    testWidgets('13. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '13. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byType(AudioMultipleChoiceSpinner), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byType(AudioMultipleChoiceSpinner), findsNothing);
+      },
+    );
 
-    testWidgets('14. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
+    testWidgets(
+      '14. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
 
-      const completeState = ListeningGameComplete(
-        xpEarned: 100,
-        coinsEarned: 50,
-        questCount: 2,
-      );
+        const completeState = ListeningGameComplete(
+          xpEarned: 100,
+          coinsEarned: 50,
+          questCount: 2,
+        );
 
-      listeningStreamController.add(completeState);
-      when(() => mockListeningBloc.state).thenReturn(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        listeningStreamController.add(completeState);
+        when(() => mockListeningBloc.state).thenReturn(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('15. Game over state renders with zero lives', (tester) async {
       const gameOverState = ListeningGameOver(
@@ -546,28 +604,33 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('16. Level 1 briefing dialog displays and dismisses on start button tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_audioMultipleChoice': false,
-      });
+    testWidgets(
+      '16. Level 1 briefing dialog displays and dismisses on start button tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_audioMultipleChoice': false,
+        });
 
-      await pumpAudioMultipleChoiceScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpAudioMultipleChoiceScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text("START"), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text("START"), findsOneWidget);
 
-      await tester.tap(find.text("START"));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text("START"));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('17. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('17. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(AudioMultipleChoiceSpinner), findsOneWidget);
 
@@ -575,30 +638,40 @@ void main() {
       expect(find.byType(AudioMultipleChoiceSpinner), findsOneWidget);
     });
 
-    testWidgets('18. Small mobile screen (320x568) renders with zero overflow', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester, size: const Size(320, 568));
+    testWidgets(
+      '18. Small mobile screen (320x568) renders with zero overflow',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester, size: const Size(320, 568));
 
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('19. Tablet viewport (768x1024) renders with zero overflow', (tester) async {
+    testWidgets('19. Tablet viewport (768x1024) renders with zero overflow', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester, size: const Size(768, 1024));
 
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('20. Reduced motion disables repeating animations and entry tickers', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
+    testWidgets(
+      '20. Reduced motion disables repeating animations and entry tickers',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
 
-      await pumpAudioMultipleChoiceScreen(tester, reduceMotion: true);
+        await pumpAudioMultipleChoiceScreen(tester, reduceMotion: true);
 
-      expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(4));
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(4));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('21. Spinner horizontal pan gesture triggers rotation update', (tester) async {
+    testWidgets('21. Spinner horizontal pan gesture triggers rotation update', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester);
 
       final spinner = find.byKey(const Key('audio_multiple_choice_spinner'));
@@ -611,59 +684,76 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('22. Spinner pan rotation is locked out when already answered', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
+    testWidgets(
+      '22. Spinner pan rotation is locked out when already answered',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
 
-      // Answer question
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Answer question
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final spinner = find.byKey(const Key('audio_multiple_choice_spinner'));
-      await tester.drag(spinner, const Offset(100, 0), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        final spinner = find.byKey(const Key('audio_multiple_choice_spinner'));
+        await tester.drag(spinner, const Offset(100, 0), warnIfMissed: false);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('23. Question blanks _____ is replaced with correct answer when answered correctly', (tester) async {
-      final blankState = ListeningLoaded(
-        quests: const [sampleBlankQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '23. Question blanks _____ is replaced with correct answer when answered correctly',
+      (tester) async {
+        final blankState = ListeningLoaded(
+          quests: const [sampleBlankQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpAudioMultipleChoiceScreen(tester, state: blankState);
+        await pumpAudioMultipleChoiceScreen(tester, state: blankState);
 
-      expect(find.text('The distant sound was caused by a _____.'), findsOneWidget);
+        expect(
+          find.text('The distant sound was caused by a _____.'),
+          findsOneWidget,
+        );
 
-      // Answer correctly
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Answer correctly
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Display question updates with replaced blank
-      expect(find.text('The distant sound was caused by a Thunderstorm.'), findsOneWidget);
-    });
+        // Display question updates with replaced blank
+        expect(
+          find.text('The distant sound was caused by a Thunderstorm.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('24. Question without blanks remains identical across answer states', (tester) async {
-      await pumpAudioMultipleChoiceScreen(tester);
+    testWidgets(
+      '24. Question without blanks remains identical across answer states',
+      (tester) async {
+        await pumpAudioMultipleChoiceScreen(tester);
 
-      expect(find.text(sampleQuest.question!), findsOneWidget);
+        expect(find.text(sampleQuest.question!), findsOneWidget);
 
-      await tester.tap(find.text('Thunderstorm'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text('Thunderstorm'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text(sampleQuest.question!), findsOneWidget);
-    });
+        expect(find.text(sampleQuest.question!), findsOneWidget);
+      },
+    );
 
-    testWidgets('25. Empty instruction falls back to localized default text', (tester) async {
+    testWidgets('25. Empty instruction falls back to localized default text', (
+      tester,
+    ) async {
       const emptyInstructionQuest = ListeningQuest(
         id: 'amc_empty_inst',
         instruction: '',
@@ -685,10 +775,15 @@ void main() {
 
       await pumpAudioMultipleChoiceScreen(tester, state: state);
 
-      expect(find.text('Listen and choose the correct answer.'), findsOneWidget);
+      expect(
+        find.text('Listen and choose the correct answer.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('26. Emoji displays in central core on correct answer', (tester) async {
+    testWidgets('26. Emoji displays in central core on correct answer', (
+      tester,
+    ) async {
       await pumpAudioMultipleChoiceScreen(tester);
 
       expect(find.text('⛈️'), findsNothing);
@@ -700,33 +795,38 @@ void main() {
       expect(find.text('⛈️'), findsOneWidget);
     });
 
-    testWidgets('27. Empty options list renders spinner with central core and zero satellites without crashing', (tester) async {
-      const emptyOptionsQuest = ListeningQuest(
-        id: 'amc_no_opts',
-        instruction: 'Listen to the audio',
-        difficulty: 1,
-        subtype: GameSubtype.audioMultipleChoice,
-        options: [],
-        correctAnswerIndex: 0,
-      );
+    testWidgets(
+      '27. Empty options list renders spinner with central core and zero satellites without crashing',
+      (tester) async {
+        const emptyOptionsQuest = ListeningQuest(
+          id: 'amc_no_opts',
+          instruction: 'Listen to the audio',
+          difficulty: 1,
+          subtype: GameSubtype.audioMultipleChoice,
+          options: [],
+          correctAnswerIndex: 0,
+        );
 
-      final state = ListeningLoaded(
-        quests: const [emptyOptionsQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+        final state = ListeningLoaded(
+          quests: const [emptyOptionsQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpAudioMultipleChoiceScreen(tester, state: state);
+        await pumpAudioMultipleChoiceScreen(tester, state: state);
 
-      expect(find.byType(AudioMultipleChoiceSatellite), findsNothing);
-      expect(find.byKey(const Key('satellite_core_btn')), findsOneWidget);
-    });
+        expect(find.byType(AudioMultipleChoiceSatellite), findsNothing);
+        expect(find.byKey(const Key('satellite_core_btn')), findsOneWidget);
+      },
+    );
 
-    testWidgets('28. Minimal 2-option quest renders 2 satellites cleanly', (tester) async {
+    testWidgets('28. Minimal 2-option quest renders 2 satellites cleanly', (
+      tester,
+    ) async {
       const binaryQuest = ListeningQuest(
         id: 'amc_bin',
         instruction: 'Choose A or B',
@@ -753,30 +853,33 @@ void main() {
       expect(find.text('Low Pitch'), findsOneWidget);
     });
 
-    testWidgets('29. Multi-option quest (6 options) distributes satellites radially without overflow', (tester) async {
-      const multiQuest = ListeningQuest(
-        id: 'amc_six',
-        instruction: 'Select one from six',
-        difficulty: 3,
-        subtype: GameSubtype.audioMultipleChoice,
-        options: ['One', 'Two', 'Three', 'Four', 'Five', 'Six'],
-        correctAnswerIndex: 2,
-      );
+    testWidgets(
+      '29. Multi-option quest (6 options) distributes satellites radially without overflow',
+      (tester) async {
+        const multiQuest = ListeningQuest(
+          id: 'amc_six',
+          instruction: 'Select one from six',
+          difficulty: 3,
+          subtype: GameSubtype.audioMultipleChoice,
+          options: ['One', 'Two', 'Three', 'Four', 'Five', 'Six'],
+          correctAnswerIndex: 2,
+        );
 
-      final state = ListeningLoaded(
-        quests: const [multiQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+        final state = ListeningLoaded(
+          quests: const [multiQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpAudioMultipleChoiceScreen(tester, state: state);
+        await pumpAudioMultipleChoiceScreen(tester, state: state);
 
-      expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(6));
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(6));
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

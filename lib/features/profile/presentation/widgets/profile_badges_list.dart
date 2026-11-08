@@ -61,8 +61,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final allBadges = BadgeConstants.badges;
     final totalBadges = allBadges.length;
     final earnedCount = allBadges.where(_isBadgeUnlocked).length;
@@ -72,11 +72,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
         // ── 1. Decoupled Collection Progress Counter (Informational, No Navigation) ──
         Padding(
           padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 16.h),
-          child: _buildProgressCounter(
-            context,
-            earnedCount,
-            totalBadges,
-          ),
+          child: _buildProgressCounter(context, earnedCount, totalBadges),
         ),
 
         // ── 2. Full 8-Milestone Holographic Badge Carousel ──
@@ -134,8 +130,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           borderColor: isMidnight
                               ? Colors.white.withValues(alpha: 0.12)
                               : (isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : AppColors.slate100),
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : AppColors.slate100),
                           borderWidth: 1.0,
                           child: Stack(
                             children: [
@@ -273,8 +269,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                         color: isEarned
                                             ? Colors.white
                                             : (isDark
-                                                ? Colors.white54
-                                                : AppColors.slate600),
+                                                  ? Colors.white54
+                                                  : AppColors.slate600),
                                         fontSize: 13.sp,
                                         fontWeight: FontWeight.w900,
                                         letterSpacing: 1.5,
@@ -298,12 +294,12 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                         color: isEarned
                                             ? badge.color.withValues(alpha: 0.2)
                                             : (isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.06,
-                                                  )
-                                                : Colors.black.withValues(
-                                                    alpha: 0.04,
-                                                  )),
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.06,
+                                                    )
+                                                  : Colors.black.withValues(
+                                                      alpha: 0.04,
+                                                    )),
                                         borderRadius: BorderRadius.circular(
                                           16.r,
                                         ),
@@ -313,22 +309,22 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                                   alpha: 0.6,
                                                 )
                                               : (isDark
-                                                  ? Colors.white.withValues(
-                                                      alpha: 0.12,
-                                                    )
-                                                  : AppColors.slate200),
+                                                    ? Colors.white.withValues(
+                                                        alpha: 0.12,
+                                                      )
+                                                    : AppColors.slate200),
                                           width: 1,
                                         ),
                                       ),
                                       child: Text(
                                         isEarned
                                             ? context
-                                                .tr(
-                                                  'profile.level_achieved',
-                                                  fallback: 'LEVEL ACHIEVED',
-                                                  args: ['${badge.minLevel}'],
-                                                )
-                                                .toUpperCase()
+                                                  .tr(
+                                                    'profile.level_achieved',
+                                                    fallback: 'LEVEL ACHIEVED',
+                                                    args: ['${badge.minLevel}'],
+                                                  )
+                                                  .toUpperCase()
                                             : 'UNLOCKS AT LVL ${badge.minLevel ?? 0}',
                                         maxLines: 1,
                                         style: TextStyle(
@@ -336,8 +332,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                           color: isEarned
                                               ? Colors.white
                                               : (isDark
-                                                  ? Colors.white60
-                                                  : AppColors.slate600),
+                                                    ? Colors.white60
+                                                    : AppColors.slate600),
                                           fontSize: 8.sp,
                                           fontWeight: FontWeight.w800,
                                           letterSpacing: 1.2,
@@ -435,9 +431,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final progress = total > 0 ? (earned / total).clamp(0.0, 1.0) : 0.0;
 
     return GlassTile(
@@ -512,10 +506,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           ),
                         ),
                         TweenAnimationBuilder<double>(
-                          tween: Tween<double>(
-                            begin: 0.0,
-                            end: progress,
-                          ),
+                          tween: Tween<double>(begin: 0.0, end: progress),
                           duration: 600.ms,
                           curve: Curves.easeOutCubic,
                           builder: (context, value, child) {

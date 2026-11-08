@@ -76,7 +76,8 @@ class AntonymNebulaCore extends StatelessWidget {
                       Builder(
                         builder: (context) {
                           final cleanWord = word.trim().toLowerCase();
-                          final entry = PhotoVocabularyDictionary.dictionary[cleanWord];
+                          final entry =
+                              PhotoVocabularyDictionary.dictionary[cleanWord];
                           return Padding(
                             padding: EdgeInsets.symmetric(horizontal: 12.w),
                             child: Column(
@@ -90,7 +91,9 @@ class AntonymNebulaCore extends StatelessWidget {
                                       fontFamily: 'Outfit',
                                       fontSize: 20.sp,
                                       fontWeight: FontWeight.w700,
-                                      color: Theme.of(context).colorScheme.onSurface,
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.onSurface,
                                       letterSpacing: 0.8,
                                     ),
                                   ),
@@ -145,11 +148,7 @@ class AntonymNebulaCore extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.volume_up_rounded,
-                  size: 14.r,
-                  color: color,
-                ),
+                Icon(Icons.volume_up_rounded, size: 14.r, color: color),
                 SizedBox(width: 4.w),
                 Text(
                   "LISTEN",

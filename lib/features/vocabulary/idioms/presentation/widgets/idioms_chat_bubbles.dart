@@ -119,10 +119,7 @@ class IdiomsStrangerMessage extends StatelessWidget {
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: Text(
-          emojis,
-          style: TextStyle(fontSize: 36.sp, height: 1.2),
-        ),
+        child: Text(emojis, style: TextStyle(fontSize: 36.sp, height: 1.2)),
       ),
     );
 
@@ -159,7 +156,10 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
         (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
 
-    final cleanedText = text.replaceFirst(RegExp(r'^DEFINITION:\s*', caseSensitive: false), '');
+    final cleanedText = text.replaceFirst(
+      RegExp(r'^DEFINITION:\s*', caseSensitive: false),
+      '',
+    );
 
     final container = Container(
       constraints: BoxConstraints(maxWidth: 0.75.sw),
@@ -192,11 +192,7 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 2.h),
-            child: Icon(
-              Icons.lightbulb_rounded,
-              size: 15.r,
-              color: color,
-            ),
+            child: Icon(Icons.lightbulb_rounded, size: 15.r, color: color),
           ),
           SizedBox(width: 8.w),
           Flexible(
@@ -278,10 +274,7 @@ class IdiomsUserMessage extends StatelessWidget {
           bottomLeft: Radius.circular(20.r),
           bottomRight: Radius.circular(4.r),
         ),
-        border: Border.all(
-          color: bgColor.withValues(alpha: 0.4),
-          width: 1.2,
-        ),
+        border: Border.all(color: bgColor.withValues(alpha: 0.4), width: 1.2),
         boxShadow: [
           BoxShadow(
             color: bgColor.withValues(alpha: 0.06),
@@ -309,9 +302,10 @@ class IdiomsUserMessage extends StatelessWidget {
             SizedBox(width: 8.w),
             reduceMotion
                 ? statusIcon
-                : statusIcon
-                    .animate()
-                    .scale(duration: 350.ms, curve: Curves.elasticOut),
+                : statusIcon.animate().scale(
+                    duration: 350.ms,
+                    curve: Curves.elasticOut,
+                  ),
           ],
         ],
       ),

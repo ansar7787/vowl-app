@@ -116,27 +116,28 @@ void main() {
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
-    when(() => mockDigitalInkService.isModelDownloaded())
-        .thenAnswer((_) async => true);
-    when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-        .thenAnswer(
+    when(
+      () => mockDigitalInkService.isModelDownloaded(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+    ).thenAnswer(
       (_) async => Right(
-        LeaderboardResult(
-          users: [testUser],
-          lastUpdated: DateTime.now(),
-        ),
+        LeaderboardResult(users: [testUser], lastUpdated: DateTime.now()),
       ),
     );
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     await AgeGateService.completeAgeGate(isAdult: true);
   });
@@ -273,49 +274,47 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders global progress card with levels completed and rank',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('renders global progress card with levels completed and rank', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        expect(find.byType(KidsGlobalProgressCard), findsOneWidget);
-        expect(find.text('8'), findsWidgets); // Kids total levels completed (5+3)
+      expect(find.byType(KidsGlobalProgressCard), findsOneWidget);
+      expect(find.text('8'), findsWidgets); // Kids total levels completed (5+3)
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'renders KidsMagicChest daily reward component',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('renders KidsMagicChest daily reward component', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        expect(find.byType(KidsMagicChest), findsOneWidget);
+      expect(find.byType(KidsMagicChest), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'renders category grid with themed sections after scrolling',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('renders category grid with themed sections after scrolling', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(find.byType(KidsCategoryGrid), findsOneWidget);
+      expect(find.byType(KidsCategoryGrid), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
     testWidgets(
       'renders shimmer loading when user state is unauthenticated / null',
       (tester) async {
-        when(() => mockAuthBloc.state)
-            .thenReturn(const AuthState.unauthenticated());
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(const AuthState.unauthenticated());
 
         await pumpScreen(tester);
 
@@ -325,112 +324,106 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in dark mode without contrast issues',
-      (tester) async {
-        await pumpScreen(tester, themeMode: ThemeMode.dark);
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
+      await pumpScreen(tester, themeMode: ThemeMode.dark);
 
-        expect(find.byType(KidsZoneScreen), findsOneWidget);
-        expect(find.text('120'), findsOneWidget);
+      expect(find.byType(KidsZoneScreen), findsOneWidget);
+      expect(find.text('120'), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
   });
 
   group('KidsZoneScreen - Quick Menu Navigation', () {
-    testWidgets(
-      'tapping quick menu Album navigates to /kids-stickers',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping quick menu Album navigates to /kids-stickers', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final albumIcon = find.byIcon(Icons.auto_stories_rounded);
-        expect(albumIcon, findsOneWidget);
+      final albumIcon = find.byIcon(Icons.auto_stories_rounded);
+      expect(albumIcon, findsOneWidget);
 
-        await tester.tap(albumIcon);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(albumIcon);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(navigatedRoutes, contains('/kids-stickers'));
+      expect(navigatedRoutes, contains('/kids-stickers'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'tapping quick menu Room navigates to /kids-room',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping quick menu Room navigates to /kids-room', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final roomIcon = find.byIcon(Icons.bedroom_child_rounded);
-        expect(roomIcon, findsOneWidget);
+      final roomIcon = find.byIcon(Icons.bedroom_child_rounded);
+      expect(roomIcon, findsOneWidget);
 
-        await tester.tap(roomIcon);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(roomIcon);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(navigatedRoutes, contains('/kids-room'));
+      expect(navigatedRoutes, contains('/kids-room'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'tapping quick menu Shop navigates to kids-boutique',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping quick menu Shop navigates to kids-boutique', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final shopIcon = find.byIcon(Icons.shopping_bag_rounded);
-        expect(shopIcon, findsOneWidget);
+      final shopIcon = find.byIcon(Icons.shopping_bag_rounded);
+      expect(shopIcon, findsOneWidget);
 
-        await tester.tap(shopIcon);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(shopIcon);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(navigatedRoutes, contains('/kids-boutique'));
+      expect(navigatedRoutes, contains('/kids-boutique'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
-    testWidgets(
-      'tapping quick menu Buddies navigates to /kids-mascot',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping quick menu Buddies navigates to /kids-mascot', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        final buddiesIcon = find.byIcon(Icons.face_retouching_natural_rounded);
-        expect(buddiesIcon, findsOneWidget);
+      final buddiesIcon = find.byIcon(Icons.face_retouching_natural_rounded);
+      expect(buddiesIcon, findsOneWidget);
 
-        await tester.tap(buddiesIcon);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(buddiesIcon);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(navigatedRoutes, contains('/kids-mascot'));
+      expect(navigatedRoutes, contains('/kids-mascot'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
   });
 
   group('KidsZoneScreen - App Bar Actions & Age Gating', () {
-    testWidgets(
-      'tapping back button navigates to /home when adult is cached',
-      (tester) async {
-        await AgeGateService.completeAgeGate(isAdult: true);
-        await pumpScreen(tester);
+    testWidgets('tapping back button navigates to /home when adult is cached', (
+      tester,
+    ) async {
+      await AgeGateService.completeAgeGate(isAdult: true);
+      await pumpScreen(tester);
 
-        final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
-        expect(backBtn, findsOneWidget);
+      final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
+      expect(backBtn, findsOneWidget);
 
-        await tester.tap(backBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(backBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        expect(navigatedRoutes, contains('/home'));
+      expect(navigatedRoutes, contains('/home'));
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
 
     testWidgets(
       'tapping settings button navigates to /settings when user is child/kids-only',
@@ -453,18 +446,16 @@ void main() {
   });
 
   group('KidsZoneScreen - Small Screen Safety (320dp)', () {
-    testWidgets(
-      'renders on compact 320dp width without RenderFlex overflow',
-      (tester) async {
-        await pumpScreen(tester, width: 320, height: 568);
+    testWidgets('renders on compact 320dp width without RenderFlex overflow', (
+      tester,
+    ) async {
+      await pumpScreen(tester, width: 320, height: 568);
 
-        expect(tester.takeException(), isNull);
-        expect(find.byType(KidsZoneScreen), findsOneWidget);
-        expect(find.text('120'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      expect(find.byType(KidsZoneScreen), findsOneWidget);
+      expect(find.text('120'), findsOneWidget);
 
-        await cleanUp(tester);
-      },
-    );
+      await cleanUp(tester);
+    });
   });
 }
-

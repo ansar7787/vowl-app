@@ -20,13 +20,7 @@ import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 
 /// Filter categories for the user's personal vocabulary word bank.
-enum WordBankFilter {
-  all,
-  today,
-  learning,
-  reviewing,
-  mastered,
-}
+enum WordBankFilter { all, today, learning, reviewing, mastered }
 
 /// Searchable personal word bank screen showcasing learned vocabulary,
 /// mastery stages (learning, reviewing, mastered), and spaced repetition status.
@@ -143,11 +137,13 @@ class _WordBankScreenState extends State<WordBankScreen> {
     final query = _searchController.text.trim().toLowerCase();
 
     // Segment words into categories with Leitner logic
-    final todayWords =
-        allWords.where((w) => service.isWordLearnedToday(w.wordId)).toList();
+    final todayWords = allWords
+        .where((w) => service.isWordLearnedToday(w.wordId))
+        .toList();
     final learningWords = allWords.where((w) => w.box == 1).toList();
-    final reviewingWords =
-        allWords.where((w) => w.box == 0 || w.box == 2).toList();
+    final reviewingWords = allWords
+        .where((w) => w.box == 0 || w.box == 2)
+        .toList();
     final masteredWords = allWords.where((w) => w.box >= 3).toList();
 
     return CustomScrollView(
@@ -181,9 +177,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           query: query,
           isDark: isDark,
         ),
-        SliverToBoxAdapter(
-          child: SizedBox(height: 32.h),
-        ),
+        SliverToBoxAdapter(child: SizedBox(height: 32.h)),
       ],
     );
   }
@@ -228,27 +222,25 @@ class _WordBankScreenState extends State<WordBankScreen> {
   }
 
   Widget _buildSearchBar(BuildContext context, bool isDark) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? AppColors.slate800 : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 6.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 6.h,
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: cardBorder,
-            width: 1,
-          ),
+          border: Border.all(color: cardBorder, width: 1),
         ),
         child: TextField(
           controller: _searchController,
@@ -303,7 +295,12 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
   Widget _buildMasteryStats(Map<String, int> stats, bool isDark) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 12.h, AppSpacing.screen, 6.h),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        12.h,
+        AppSpacing.screen,
+        6.h,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -368,7 +365,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 8.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 8.h,
+      ),
       child: Row(
         children: [
           _buildFilterChip(
@@ -457,15 +457,15 @@ class _WordBankScreenState extends State<WordBankScreen> {
           color: isSelected
               ? color
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.06)
-                  : AppColors.slate100),
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : AppColors.slate100),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: isSelected
                 ? color
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate200),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate200),
             width: 1,
           ),
           boxShadow: isSelected
@@ -509,8 +509,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 color: isSelected
                     ? Colors.white.withValues(alpha: 0.25)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : AppColors.slate200),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : AppColors.slate200),
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Text(
@@ -559,8 +559,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
           pool = allWords;
           break;
       }
-      final matches =
-          pool.where((w) => w.word.toLowerCase().contains(query)).toList();
+      final matches = pool
+          .where((w) => w.word.toLowerCase().contains(query))
+          .toList();
       if (matches.isEmpty) {
         return [
           SliverToBoxAdapter(
@@ -739,9 +740,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
     // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered!
     if (allWords.isEmpty) {
-      return [
-        SliverToBoxAdapter(child: _buildEmptyState(context, isDark)),
-      ];
+      return [SliverToBoxAdapter(child: _buildEmptyState(context, isDark))];
     }
 
     final slivers = <Widget>[];
@@ -984,7 +983,12 @@ class _WordBankScreenState extends State<WordBankScreen> {
               top: false,
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 24.h),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.screen,
+                  14.h,
+                  AppSpacing.screen,
+                  24.h,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
@@ -1016,9 +1020,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 26.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: Theme.of(sheetContext)
-                                      .colorScheme
-                                      .onSurface,
+                                  color: Theme.of(
+                                    sheetContext,
+                                  ).colorScheme.onSurface,
                                 ),
                               ),
                               if (wordDetail?.phonetic.isNotEmpty ?? false) ...[
@@ -1062,7 +1066,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                               vertical: 4.h,
                             ),
                             decoration: BoxDecoration(
-                              color: AppColors.indigo500.withValues(alpha: 0.12),
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.12,
+                              ),
                               borderRadius: BorderRadius.circular(8.r),
                             ),
                             child: Text(
@@ -1148,9 +1154,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                                   fontSize: 14.sp,
                                   height: 1.4,
                                   fontStyle: FontStyle.italic,
-                                  color: Theme.of(sheetContext)
-                                      .colorScheme
-                                      .onSurface,
+                                  color: Theme.of(
+                                    sheetContext,
+                                  ).colorScheme.onSurface,
                                 ),
                               ),
                             ),
@@ -1188,8 +1194,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
-                              color:
-                                  isDark ? Colors.white54 : AppColors.slate500,
+                              color: isDark
+                                  ? Colors.white54
+                                  : AppColors.slate500,
                             ),
                           ),
                           Text(
@@ -1198,8 +1205,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w600,
-                              color:
-                                  isDark ? Colors.white70 : AppColors.slate700,
+                              color: isDark
+                                  ? Colors.white70
+                                  : AppColors.slate700,
                             ),
                           ),
                         ],
@@ -1217,8 +1225,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
                           backgroundColor: progress.box >= 3
                               ? AppColors.emerald500
                               : (progress.box == 1
-                                  ? AppColors.blue500
-                                  : AppColors.amber500),
+                                    ? AppColors.blue500
+                                    : AppColors.amber500),
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16.r),
@@ -1237,8 +1245,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
                           progress.box >= 3
                               ? Icons.workspace_premium_rounded
                               : (progress.box >= 2
-                                  ? Icons.emoji_events_rounded
-                                  : Icons.school_rounded),
+                                    ? Icons.emoji_events_rounded
+                                    : Icons.school_rounded),
                           size: 18.r,
                         ),
                         label: Text(
@@ -1261,7 +1269,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                       height: 48.h,
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                          foregroundColor: isDark ? Colors.white70 : AppColors.slate600,
+                          foregroundColor: isDark
+                              ? Colors.white70
+                              : AppColors.slate600,
                           side: BorderSide(
                             color: isDark ? Colors.white24 : AppColors.slate300,
                           ),
@@ -1323,7 +1333,12 @@ class _WordBankScreenState extends State<WordBankScreen> {
               top: false,
               child: SingleChildScrollView(
                 physics: const ClampingScrollPhysics(),
-                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 16.h, AppSpacing.screen, 24.h),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.screen,
+                  16.h,
+                  AppSpacing.screen,
+                  24.h,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1354,7 +1369,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w700,
-                              color: Theme.of(modalContext).colorScheme.onSurface,
+                              color: Theme.of(
+                                modalContext,
+                              ).colorScheme.onSurface,
                             ),
                             maxLines: 1,
                           ),
@@ -1464,7 +1481,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
     String? customMessage,
     IconData? icon,
   }) {
-    final message = customMessage ??
+    final message =
+        customMessage ??
         (_searchController.text.isEmpty
             ? context.tr('word_bank.empty', fallback: 'No words learned yet.')
             : context.tr(
@@ -1542,8 +1560,9 @@ class _StatIndicator extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
-              color:
-                  isSelected ? color : Theme.of(context).colorScheme.onSurface,
+              color: isSelected
+                  ? color
+                  : Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 4.h),
@@ -1568,10 +1587,7 @@ class _StatIndicator extends StatelessWidget {
     );
 
     if (onTap != null) {
-      return GestureDetector(
-        onTap: onTap,
-        child: content,
-      );
+      return GestureDetector(onTap: onTap, child: content);
     }
     return content;
   }

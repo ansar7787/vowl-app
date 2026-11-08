@@ -340,10 +340,11 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                                     true,
                                                     quest: quest,
                                                   ),
-                                              onSkipped: () => _submitFinalAnswer(
-                                                false,
-                                                quest: quest,
-                                              ),
+                                              onSkipped: () =>
+                                                  _submitFinalAnswer(
+                                                    false,
+                                                    quest: quest,
+                                                  ),
                                               isPositioned: false,
                                             ),
                                             SizedBox(height: 60.h),
@@ -365,11 +366,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     );
   }
 
-  Widget _buildInstruction(
-    VocabularyQuest quest,
-    Color color,
-    bool isDark,
-  ) {
+  Widget _buildInstruction(VocabularyQuest quest, Color color, bool isDark) {
     final rawInstruction = InstructionHelper.getInstruction(quest);
     final instructionText = rawInstruction.isNotEmpty
         ? rawInstruction
@@ -429,12 +426,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
           ),
         ),
         SizedBox(height: 24.h),
-        _buildChipsWrap(
-          quest,
-          color,
-          isDark,
-          currentOptionCorrect,
-        ),
+        _buildChipsWrap(quest, color, isDark, currentOptionCorrect),
         SizedBox(height: 20.h),
       ],
     );

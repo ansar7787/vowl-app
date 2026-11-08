@@ -40,17 +40,20 @@ class ArenaQuitMatchDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
     final borderColor = isDark
         ? AppColors.indigo500.withValues(alpha: 0.22)
         : AppColors.slate200;
 
-    final accentColor = isWaitingLobby ? AppColors.indigo500 : AppColors.rose500;
+    final accentColor = isWaitingLobby
+        ? AppColors.indigo500
+        : AppColors.rose500;
 
     return PopScope(
       canPop: false,
@@ -80,7 +83,9 @@ class ArenaQuitMatchDialog extends StatelessWidget {
                 ),
                 child: Center(
                   child: Icon(
-                    isWaitingLobby ? LucideIcons.doorOpen : LucideIcons.alertTriangle,
+                    isWaitingLobby
+                        ? LucideIcons.doorOpen
+                        : LucideIcons.alertTriangle,
                     size: 24.r,
                     color: accentColor,
                   ),

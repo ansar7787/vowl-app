@@ -160,13 +160,14 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     required VocabularyQuest currentQuest,
   }) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    final effectiveHint = widget.customHintText ??
+    final effectiveHint =
+        widget.customHintText ??
         ((widget.gameType == GameSubtype.flashcards ||
                 widget.gameType == GameSubtype.wordFormation)
             ? null
             : (widget.gameType == GameSubtype.prefixSuffix
-                ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
-                : currentQuest.hint));
+                  ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
+                  : currentQuest.hint));
 
     final button = QuestHintButton(
       used: hintUsed,

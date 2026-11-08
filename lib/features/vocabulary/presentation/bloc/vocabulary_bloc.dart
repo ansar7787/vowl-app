@@ -218,8 +218,9 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
 
       // Mastery loop: append failed quest so the player must answer it
       // correctly before the level ends.
-      final updatedQuests =
-          shouldAppend ? [...s.quests, s.currentQuest] : s.quests;
+      final updatedQuests = shouldAppend
+          ? [...s.quests, s.currentQuest]
+          : s.quests;
 
       await soundService.playWrong();
       await hapticService.error();
@@ -370,16 +371,13 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
 
-    (await useHint(NoParams())).fold(
-      (_) {
-        // Rollback on failure
-        if (state is VocabularyLoaded) {
-          emit((state as VocabularyLoaded).copyWith(hintUsed: false));
-        }
-        hapticService.error();
-      },
-      (_) {},
-    );
+    (await useHint(NoParams())).fold((_) {
+      // Rollback on failure
+      if (state is VocabularyLoaded) {
+        emit((state as VocabularyLoaded).copyWith(hintUsed: false));
+      }
+      hapticService.error();
+    }, (_) {});
   }
 
   // ── Restore life — O(1) ───────────────────────────────────────────────────

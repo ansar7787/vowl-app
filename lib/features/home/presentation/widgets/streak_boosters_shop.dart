@@ -187,7 +187,8 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   )
                 : context.tr(
                     'streak.repair_subtitle',
-                    fallback: 'Melt the ice and restore your flame from yesterday.',
+                    fallback:
+                        'Melt the ice and restore your flame from yesterday.',
                   ),
             icon: LucideIcons.flame,
             color: _LocalPalette.colorff5f6d,
@@ -202,21 +203,22 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     context.push(AppRouter.premiumRoute);
                   }
                 : (user.currentStreak > 0
-                    ? null
-                    : () {
-                        di.sl<HapticService>().success();
-                        _executePurchase(
-                          context,
-                          name: context.tr(
-                            'adventure.streak_repair',
-                            fallback: 'Streak Repair',
-                          ),
-                          action: () => context.read<ProgressionBloc>().add(
-                            const ProgressionRepairStreakFreeRequested(),
-                          ),
-                        );
-                      }),
-            onAdTap: null, // Rewarded ad / free coin bypass removed per production policy
+                      ? null
+                      : () {
+                          di.sl<HapticService>().success();
+                          _executePurchase(
+                            context,
+                            name: context.tr(
+                              'adventure.streak_repair',
+                              fallback: 'Streak Repair',
+                            ),
+                            action: () => context.read<ProgressionBloc>().add(
+                              const ProgressionRepairStreakFreeRequested(),
+                            ),
+                          );
+                        }),
+            onAdTap:
+                null, // Rewarded ad / free coin bypass removed per production policy
           ),
           SizedBox(height: 16.h),
           _buildShopItem(
@@ -335,8 +337,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
       backgroundColor: Colors.transparent,
       builder: (sheetContext) {
         final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          sheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
@@ -366,125 +369,125 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             ],
           ),
           child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  width: 40.w,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(2.r),
-                  ),
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'streak.confirm_purchase_title',
-                    fallback: 'Confirm Purchase',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                  ),
+              ),
+              SizedBox(height: 24.h),
+              Text(
+                context.tr(
+                  'streak.confirm_purchase_title',
+                  fallback: 'Confirm Purchase',
                 ),
-                SizedBox(height: 12.h),
-                Text(
-                  context.tr(
-                    'streak.confirm_purchase_body',
-                    args: [cost.toString(), name],
-                    fallback: 'Spend $cost coins on $name?',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                  ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
-                SizedBox(height: 8.h),
-                Text(
-                  context.tr(
-                    'streak.confirm_balance_label',
-                    args: [
-                      currentCoins.toString(),
-                      (currentCoins - cost).toString(),
-                    ],
-                    fallback:
-                        'Balance: $currentCoins → ${currentCoins - cost} coins',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.emerald500,
-                  ),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                context.tr(
+                  'streak.confirm_purchase_body',
+                  args: [cost.toString(), name],
+                  fallback: 'Spend $cost coins on $name?',
                 ),
-                SizedBox(height: 24.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextButton(
-                        onPressed: () => Navigator.pop(sheetContext),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 14.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                            side: BorderSide(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.1),
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          context.tr('common.cancel', fallback: 'CANCEL'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w700,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(sheetContext);
-                          _executePurchase(context, name: name, action: action);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.indigo500,
-                          foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 14.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                          elevation: 0,
-                        ),
-                        child: Text(
-                          context.tr(
-                            'streak.confirm_buy_button',
-                            fallback: 'Buy',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                context.tr(
+                  'streak.confirm_balance_label',
+                  args: [
+                    currentCoins.toString(),
+                    (currentCoins - cost).toString(),
                   ],
+                  fallback:
+                      'Balance: $currentCoins → ${currentCoins - cost} coins',
                 ),
-              ],
-            ),
-          );
-        },
-      );
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.emerald500,
+                ),
+              ),
+              SizedBox(height: 24.h),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () => Navigator.pop(sheetContext),
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 14.h),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                          side: BorderSide(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.1)
+                                : Colors.black.withValues(alpha: 0.1),
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        context.tr('common.cancel', fallback: 'CANCEL'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(sheetContext);
+                        _executePurchase(context, name: name, action: action);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.indigo500,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 14.h),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        elevation: 0,
+                      ),
+                      child: Text(
+                        context.tr(
+                          'streak.confirm_buy_button',
+                          fallback: 'Buy',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   void _executePurchase(
@@ -537,18 +540,18 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               : (isPremiumOnly && !isUserPremium
                     ? 'VIP ONLY'
                     : (isPremiumOnly && isUserPremium
-                        ? 'FREE WITH VIP'
-                        : (canAfford
-                            ? context.tr(
-                                'streak.cost_label',
-                                args: [cost.toString()],
-                                fallback: '$cost coins',
-                              )
-                            : context.tr(
-                                'streak.cant_afford_label',
-                                args: [cost.toString()],
-                                fallback: 'Need $cost coins',
-                              )))));
+                          ? 'FREE WITH VIP'
+                          : (canAfford
+                                ? context.tr(
+                                    'streak.cost_label',
+                                    args: [cost.toString()],
+                                    fallback: '$cost coins',
+                                  )
+                                : context.tr(
+                                    'streak.cant_afford_label',
+                                    args: [cost.toString()],
+                                    fallback: 'Need $cost coins',
+                                  )))));
 
     return Semantics(
       button: !isDisabled && !isActive,
@@ -563,7 +566,8 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           child: ExcludeSemantics(
             child: Builder(
               builder: (ctx) {
-                final isMidnight = isDark &&
+                final isMidnight =
+                    isDark &&
                     Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
                 final cardBg = isMidnight
                     ? AppColors.midnightSurface
@@ -571,8 +575,8 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                 final cardBorder = isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100);
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100);
 
                 return Container(
                   padding: EdgeInsets.all(20.r),
@@ -594,353 +598,370 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                         ),
                     ],
                   ),
-              child: Row(
-                children: [
-                  !isDisabled
-                      ? Container(
-                          padding: EdgeInsets.all(12.r),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: color.withValues(alpha: 0.2),
-                                blurRadius: 10,
-                              ),
-                            ],
-                          ),
-                          child: Icon(icon, color: color, size: 24.r),
-                        )
-                      : Container(
-                          padding: EdgeInsets.all(12.r),
-                          decoration: BoxDecoration(
-                            color: (isDark ? Colors.white : Colors.black)
-                                .withValues(alpha: 0.05),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(icon, color: Colors.grey, size: 24.r),
-                        ),
-                  SizedBox(width: 16.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Flexible(
-                              child: AutoSizeText(
-                                title,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                ),
-                                maxLines: 1,
-                                minFontSize: 10,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            if (count != null && count > 0) ...[
-                              SizedBox(width: 8.w),
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 6.w,
-                                  vertical: 2.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: color.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(8.r),
-                                ),
-                                child: Text(
-                                  'x$count',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: isDisabled ? Colors.grey : color,
-                                  ),
-                                  maxLines: 1,
-                                ),
-                              ),
-                            ],
-                            if (isActive || isDisabled) ...[
-                              SizedBox(width: 8.w),
-                              Flexible(
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 6.w,
-                                    vertical: 2.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        (isActive
-                                                ? AppColors.emerald500
-                                                : Colors.grey)
-                                            .withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(8.r),
-                                  ),
-                                  child: AutoSizeText(
-                                    isActive
-                                        ? context.tr(
-                                            'streak.status_active',
-                                            fallback: 'ACTIVE',
-                                          )
-                                        : context.tr(
-                                            'streak.status_not_needed',
-                                            fallback: 'NOT NEEDED',
-                                          ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: isActive
-                                          ? AppColors.emerald500
-                                          : Colors.grey,
-                                    ),
-                                    maxLines: 1,
-                                    minFontSize: 6,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ],
-                        ),
-                        SizedBox(height: 4.h),
-                        AutoSizeText(
-                          subtitle,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            color: isDisabled
-                                ? Colors.grey.withValues(alpha: 0.5)
-                                : (isDark ? Colors.white54 : Colors.black54),
-                            fontWeight: FontWeight.w500,
-                          ),
-                          maxLines: 2,
-                          minFontSize: 8,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        if (isActive && activeUntil != null) ...[
-                          SizedBox(height: 4.h),
-                          AutoSizeText(
-                            context.tr(
-                              'streak.expires_label',
-                              args: [
-                                DateFormat(
-                                  'MMM d, h:mm a',
-                                  locale,
-                                ).format(activeUntil),
-                              ],
-                              fallback:
-                                  'Expires ${DateFormat('MMM d, h:mm a', locale).format(activeUntil)}',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              color: const Color(
-                                0xFF10B981,
-                              ).withValues(alpha: 0.7),
-                              fontWeight: FontWeight.w600,
-                            ),
-                            maxLines: 1,
-                            minFontSize: 6,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                  if (!isDisabled && !isActive) ...[
-                    SizedBox(width: 8.w),
-                    if (isPremiumOnly && !isUserPremium)
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [AppColors.indigo500, AppColors.violet500],
-                          ),
-                          borderRadius: BorderRadius.circular(12.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.indigo500.withValues(alpha: 0.3),
-                              blurRadius: 6,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              LucideIcons.crown,
-                              color: Colors.white,
-                              size: 13.r,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              'VIP',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    else if (isPremiumOnly && isUserPremium)
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.emerald500.withValues(alpha: 0.12),
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(
-                            color: AppColors.emerald500.withValues(alpha: 0.35),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              LucideIcons.sparkles,
-                              color: AppColors.emerald500,
-                              size: 13.r,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              context.tr(
-                                'streak.restore_label',
-                                fallback: 'RESTORE',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.emerald500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    else
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: canAfford
-                              ? color.withValues(alpha: 0.1)
-                              : Colors.red.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(
-                            color: canAfford
-                                ? color.withValues(alpha: 0.3)
-                                : Colors.red.withValues(alpha: 0.3),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              LucideIcons.circleDollarSign,
-                              color: canAfford ? color : Colors.red,
-                              size: 14.r,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              '$cost',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w900,
-                                color: canAfford ? color : Colors.red,
-                              ),
-                              maxLines: 1,
-                            ),
-                          ],
-                        ),
-                      ),
-                  ],
-                  if (onAdTap != null && !isDisabled) ...[
-                    SizedBox(width: 8.w),
-                    Semantics(
-                      button: true,
-                      label: context.tr(
-                        'streak.watch_ad_free',
-                        fallback: 'Watch an ad to get this for free',
-                      ),
-                      child: InkWell(
-                        onTap: onAdTap,
-                        child: ExcludeSemantics(
-                          child: ConstrainedBox(
-                            // Visual pill is intentionally compact; this
-                            // guarantees the 48dp minimum tap target for a
-                            // real monetization action without resizing it.
-                            constraints: BoxConstraints(
-                              minWidth: 48.r,
-                              minHeight: 48.r,
-                            ),
-                            child: Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 10.w,
-                                vertical: 6.h,
-                              ),
+                  child: Row(
+                    children: [
+                      !isDisabled
+                          ? Container(
+                              padding: EdgeInsets.all(12.r),
                               decoration: BoxDecoration(
-                                color: Colors.amber.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: Colors.amber.withValues(alpha: 0.3),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    LucideIcons.playCircle,
-                                    color: Colors.amber,
-                                    size: 12.r,
-                                  ),
-                                  SizedBox(width: 4.w),
-                                  Text(
-                                    context.tr(
-                                      'streak.free_label',
-                                      fallback: 'FREE',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.amber,
-                                    ),
-                                    maxLines: 1,
+                                color: color.withValues(alpha: 0.1),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.2),
+                                    blurRadius: 10,
                                   ),
                                 ],
                               ),
+                              child: Icon(icon, color: color, size: 24.r),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(12.r),
+                              decoration: BoxDecoration(
+                                color: (isDark ? Colors.white : Colors.black)
+                                    .withValues(alpha: 0.05),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(icon, color: Colors.grey, size: 24.r),
+                            ),
+                      SizedBox(width: 16.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: AutoSizeText(
+                                    title,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black87,
+                                    ),
+                                    maxLines: 1,
+                                    minFontSize: 10,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                if (count != null && count > 0) ...[
+                                  SizedBox(width: 8.w),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: color.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                    ),
+                                    child: Text(
+                                      'x$count',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isDisabled ? Colors.grey : color,
+                                      ),
+                                      maxLines: 1,
+                                    ),
+                                  ),
+                                ],
+                                if (isActive || isDisabled) ...[
+                                  SizedBox(width: 8.w),
+                                  Flexible(
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 2.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color:
+                                            (isActive
+                                                    ? AppColors.emerald500
+                                                    : Colors.grey)
+                                                .withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
+                                      ),
+                                      child: AutoSizeText(
+                                        isActive
+                                            ? context.tr(
+                                                'streak.status_active',
+                                                fallback: 'ACTIVE',
+                                              )
+                                            : context.tr(
+                                                'streak.status_not_needed',
+                                                fallback: 'NOT NEEDED',
+                                              ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: isActive
+                                              ? AppColors.emerald500
+                                              : Colors.grey,
+                                        ),
+                                        maxLines: 1,
+                                        minFontSize: 6,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
+                            SizedBox(height: 4.h),
+                            AutoSizeText(
+                              subtitle,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                color: isDisabled
+                                    ? Colors.grey.withValues(alpha: 0.5)
+                                    : (isDark
+                                          ? Colors.white54
+                                          : Colors.black54),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              maxLines: 2,
+                              minFontSize: 8,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            if (isActive && activeUntil != null) ...[
+                              SizedBox(height: 4.h),
+                              AutoSizeText(
+                                context.tr(
+                                  'streak.expires_label',
+                                  args: [
+                                    DateFormat(
+                                      'MMM d, h:mm a',
+                                      locale,
+                                    ).format(activeUntil),
+                                  ],
+                                  fallback:
+                                      'Expires ${DateFormat('MMM d, h:mm a', locale).format(activeUntil)}',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  color: const Color(
+                                    0xFF10B981,
+                                  ).withValues(alpha: 0.7),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                      if (!isDisabled && !isActive) ...[
+                        SizedBox(width: 8.w),
+                        if (isPremiumOnly && !isUserPremium)
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  AppColors.indigo500,
+                                  AppColors.violet500,
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(12.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.indigo500.withValues(
+                                    alpha: 0.3,
+                                  ),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  LucideIcons.crown,
+                                  color: Colors.white,
+                                  size: 13.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  'VIP',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        else if (isPremiumOnly && isUserPremium)
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.12,
+                              ),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: AppColors.emerald500.withValues(
+                                  alpha: 0.35,
+                                ),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  LucideIcons.sparkles,
+                                  color: AppColors.emerald500,
+                                  size: 13.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  context.tr(
+                                    'streak.restore_label',
+                                    fallback: 'RESTORE',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: AppColors.emerald500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        else
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: canAfford
+                                  ? color.withValues(alpha: 0.1)
+                                  : Colors.red.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: canAfford
+                                    ? color.withValues(alpha: 0.3)
+                                    : Colors.red.withValues(alpha: 0.3),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  LucideIcons.circleDollarSign,
+                                  color: canAfford ? color : Colors.red,
+                                  size: 14.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '$cost',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: canAfford ? color : Colors.red,
+                                  ),
+                                  maxLines: 1,
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                      if (onAdTap != null && !isDisabled) ...[
+                        SizedBox(width: 8.w),
+                        Semantics(
+                          button: true,
+                          label: context.tr(
+                            'streak.watch_ad_free',
+                            fallback: 'Watch an ad to get this for free',
+                          ),
+                          child: InkWell(
+                            onTap: onAdTap,
+                            child: ExcludeSemantics(
+                              child: ConstrainedBox(
+                                // Visual pill is intentionally compact; this
+                                // guarantees the 48dp minimum tap target for a
+                                // real monetization action without resizing it.
+                                constraints: BoxConstraints(
+                                  minWidth: 48.r,
+                                  minHeight: 48.r,
+                                ),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w,
+                                    vertical: 6.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.amber.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: Colors.amber.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        LucideIcons.playCircle,
+                                        color: Colors.amber,
+                                        size: 12.r,
+                                      ),
+                                      SizedBox(width: 4.w),
+                                      Text(
+                                        context.tr(
+                                          'streak.free_label',
+                                          fallback: 'FREE',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.amber,
+                                        ),
+                                        maxLines: 1,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            );
-          },
+                      ],
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ),
-    ),
-  ),
-);
-}
+    );
+  }
 }

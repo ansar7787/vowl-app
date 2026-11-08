@@ -96,19 +96,19 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                 ),
                 child: Text(
                   widget.quest.topicEmoji ?? '🏷️',
-                  style: TextStyle(
-                    fontSize: compactHeight ? 38.sp : 48.sp,
-                  ),
+                  style: TextStyle(fontSize: compactHeight ? 38.sp : 48.sp),
                 ),
               );
 
-              final rawHint = widget.quest.hint ??
+              final rawHint =
+                  widget.quest.hint ??
                   InstructionHelper.getInstruction(widget.quest);
               final trimmedHint = rawHint.trim();
-              final displayHint = (trimmedHint == trimmedHint.toUpperCase() &&
+              final displayHint =
+                  (trimmedHint == trimmedHint.toUpperCase() &&
                       trimmedHint.length > 2)
                   ? trimmedHint[0].toUpperCase() +
-                      trimmedHint.substring(1).toLowerCase()
+                        trimmedHint.substring(1).toLowerCase()
                   : trimmedHint;
 
               return Padding(

@@ -67,11 +67,7 @@ class VerbOptionData {
   final String? emoji;
 
   /// Creates a [VerbOptionData] instance.
-  const VerbOptionData({
-    required this.raw,
-    required this.verbText,
-    this.emoji,
-  });
+  const VerbOptionData({required this.raw, required this.verbText, this.emoji});
 
   /// Parses raw option [text] into a structured [VerbOptionData] instance.
   factory VerbOptionData.parse(String text) {
@@ -233,6 +229,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -269,11 +266,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 20.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 20.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -352,18 +345,19 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                 color: isHovering
                     ? _VerbsPalette.hoverTargetGlow
                     : (isCorrect
-                        ? _VerbsPalette.goalGlowGreen
-                        : _VerbsPalette.stadiumBorder),
+                          ? _VerbsPalette.goalGlowGreen
+                          : _VerbsPalette.stadiumBorder),
                 width: isHovering ? 4.w : 2.5.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: (isHovering
-                          ? _VerbsPalette.hoverTargetGlow
-                          : (isCorrect
-                              ? _VerbsPalette.goalGlowGreen
-                              : Colors.black))
-                      .withValues(alpha: isHovering ? 0.35 : 0.2),
+                  color:
+                      (isHovering
+                              ? _VerbsPalette.hoverTargetGlow
+                              : (isCorrect
+                                    ? _VerbsPalette.goalGlowGreen
+                                    : Colors.black))
+                          .withValues(alpha: isHovering ? 0.35 : 0.2),
                   blurRadius: isHovering ? 18 : 10,
                   offset: const Offset(0, 5),
                 ),
@@ -384,7 +378,11 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                     vertical: isShortHeight ? 10.h : 14.h,
                   ),
                   child: isCorrect
-                      ? _buildSolvedGoalDisplay(context, quest, isNarrow: isNarrow)
+                      ? _buildSolvedGoalDisplay(
+                          context,
+                          quest,
+                          isNarrow: isNarrow,
+                        )
                       : _buildPromptClueDisplay(
                           quest,
                           instruction,
@@ -463,10 +461,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                 decoration: BoxDecoration(
                   color: AppColors.slate700,
                   borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: AppColors.slate600,
-                    width: 1.w,
-                  ),
+                  border: Border.all(color: AppColors.slate600, width: 1.w),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -504,7 +499,8 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
     required bool isNarrow,
     required bool isShortHeight,
   }) {
-    final displayText = (quest.question != null &&
+    final displayText =
+        (quest.question != null &&
             quest.question!.trim() != '?' &&
             quest.question!.trim().isNotEmpty)
         ? quest.question!
@@ -524,10 +520,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
           decoration: BoxDecoration(
             color: Colors.black.withValues(alpha: 0.35),
             borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: AppColors.slate700,
-              width: 1.w,
-            ),
+            border: Border.all(color: AppColors.slate700, width: 1.w),
           ),
           child: Text(
             displayText,
@@ -580,8 +573,14 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
               Flexible(
                 child: Text(
                   isHovering
-                      ? context.tr('games.kids_verbs_drop_hover', fallback: 'Drop here to score!')
-                      : context.tr('games.kids_verbs_drop_target', fallback: 'Tap a ball, or drag it into the goal'),
+                      ? context.tr(
+                          'games.kids_verbs_drop_hover',
+                          fallback: 'Drop here to score!',
+                        )
+                      : context.tr(
+                          'games.kids_verbs_drop_target',
+                          fallback: 'Tap a ball, or drag it into the goal',
+                        ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
@@ -630,11 +629,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.check_circle_rounded,
-                size: 15.r,
-                color: Colors.white,
-              ),
+              Icon(Icons.check_circle_rounded, size: 15.r, color: Colors.white),
               SizedBox(width: 6.w),
               Text(
                 context.tr('games.kids_verbs_goal', fallback: 'Goal!'),
@@ -671,10 +666,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                   letterSpacing: 0.8,
                   color: _VerbsPalette.scoreboardGlow,
                   shadows: const [
-                    Shadow(
-                      color: _VerbsPalette.ledAmber,
-                      blurRadius: 10,
-                    ),
+                    Shadow(color: _VerbsPalette.ledAmber, blurRadius: 10),
                   ],
                 ),
               ),
@@ -736,11 +728,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
         alignment: Alignment.center,
         children: [
           // Field Pitch Striped Turf & Chalk Lines
-          Positioned.fill(
-            child: CustomPaint(
-              painter: _StadiumPitchPainter(),
-            ),
-          ),
+          Positioned.fill(child: CustomPaint(painter: _StadiumPitchPainter())),
 
           // Options Row
           Padding(
@@ -761,7 +749,8 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
                 return List.generate(options.length, (index) {
                   final option = options[index];
                   final isSelected = _selectedOption == option;
-                  final isDimmedByHint = state.hintUsed &&
+                  final isDimmedByHint =
+                      state.hintUsed &&
                       firstDistractor.isNotEmpty &&
                       option == firstDistractor;
 
@@ -832,7 +821,8 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
     Widget ballCardWidget = Opacity(
       opacity: isDimmedByHint ? 0.35 : 1.0,
       child: Semantics(
-        label: 'Action verb option: ${parsed.verbText}. Tap to score, or drag to goal.',
+        label:
+            'Action verb option: ${parsed.verbText}. Tap to score, or drag to goal.',
         button: true,
         child: Container(
           padding: EdgeInsets.symmetric(
@@ -889,9 +879,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
               SizedBox(
                 width: ballDiameter,
                 height: ballDiameter,
-                child: CustomPaint(
-                  painter: _getBallPainter(ballType),
-                ),
+                child: CustomPaint(painter: _getBallPainter(ballType)),
               ),
 
               SizedBox(height: isShortHeight ? 5.h : 7.h),
@@ -948,10 +936,7 @@ class _KidsVerbsLayoutState extends State<KidsVerbsLayout> {
             ),
           ),
         ),
-        childWhenDragging: Opacity(
-          opacity: 0.3,
-          child: ballCardWidget,
-        ),
+        childWhenDragging: Opacity(opacity: 0.3, child: ballCardWidget),
         child: ScaleButton(
           onTap: () => _handleOptionSubmit(context, state, option),
           child: ballCardWidget,
@@ -1000,11 +985,7 @@ class _StadiumPitchPainter extends CustomPainter {
       ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
 
-    canvas.drawLine(
-      const Offset(0, 1),
-      Offset(size.width, 1),
-      linePaint,
-    );
+    canvas.drawLine(const Offset(0, 1), Offset(size.width, 1), linePaint);
   }
 
   @override
@@ -1029,10 +1010,7 @@ class _SoccerBallPainter extends CustomPainter {
     // Ball Shadow / 3D shading
     final shadowPaint = Paint()
       ..shader = RadialGradient(
-        colors: [
-          Colors.transparent,
-          Colors.black.withValues(alpha: 0.22),
-        ],
+        colors: [Colors.transparent, Colors.black.withValues(alpha: 0.22)],
         stops: const [0.65, 1.0],
       ).createShader(Rect.fromCircle(center: center, radius: radius));
     canvas.drawCircle(center, radius, shadowPaint);
@@ -1102,10 +1080,7 @@ class _BasketballPainter extends CustomPainter {
     // 3D Rim Shading
     final shadowPaint = Paint()
       ..shader = RadialGradient(
-        colors: [
-          Colors.transparent,
-          Colors.black.withValues(alpha: 0.28),
-        ],
+        colors: [Colors.transparent, Colors.black.withValues(alpha: 0.28)],
         stops: const [0.65, 1.0],
       ).createShader(Rect.fromCircle(center: center, radius: radius));
     canvas.drawCircle(center, radius, shadowPaint);
@@ -1182,10 +1157,7 @@ class _TennisBallPainter extends CustomPainter {
     // 3D Shading
     final shadowPaint = Paint()
       ..shader = RadialGradient(
-        colors: [
-          Colors.transparent,
-          Colors.black.withValues(alpha: 0.22),
-        ],
+        colors: [Colors.transparent, Colors.black.withValues(alpha: 0.22)],
         stops: const [0.7, 1.0],
       ).createShader(Rect.fromCircle(center: center, radius: radius));
     canvas.drawCircle(center, radius, shadowPaint);
@@ -1248,10 +1220,7 @@ class _BaseballPainter extends CustomPainter {
     // Shading
     final shadowPaint = Paint()
       ..shader = RadialGradient(
-        colors: [
-          Colors.transparent,
-          Colors.black.withValues(alpha: 0.2),
-        ],
+        colors: [Colors.transparent, Colors.black.withValues(alpha: 0.2)],
         stops: const [0.65, 1.0],
       ).createShader(Rect.fromCircle(center: center, radius: radius));
     canvas.drawCircle(center, radius, shadowPaint);
@@ -1295,7 +1264,10 @@ class _BaseballPainter extends CustomPainter {
       final y = center.dy - radius * 0.65 + t * (radius * 1.3);
 
       // Left ticks
-      final leftX = center.dx - radius * 0.65 + (1 - (2 * (t - 0.5)).abs()) * radius * 0.45;
+      final leftX =
+          center.dx -
+          radius * 0.65 +
+          (1 - (2 * (t - 0.5)).abs()) * radius * 0.45;
       canvas.drawLine(
         Offset(leftX - 3.5, y - 2),
         Offset(leftX + 3.5, y + 2),
@@ -1303,7 +1275,10 @@ class _BaseballPainter extends CustomPainter {
       );
 
       // Right ticks
-      final rightX = center.dx + radius * 0.65 - (1 - (2 * (t - 0.5)).abs()) * radius * 0.45;
+      final rightX =
+          center.dx +
+          radius * 0.65 -
+          (1 - (2 * (t - 0.5)).abs()) * radius * 0.45;
       canvas.drawLine(
         Offset(rightX - 3.5, y + 2),
         Offset(rightX + 3.5, y - 2),

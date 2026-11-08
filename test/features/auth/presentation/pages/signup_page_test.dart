@@ -58,7 +58,9 @@ void main() {
     );
   }
 
-  testWidgets('should render all SignUpPage components cleanly', (tester) async {
+  testWidgets('should render all SignUpPage components cleanly', (
+    tester,
+  ) async {
     tester.view.physicalSize = const Size(800, 600);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);
@@ -116,4 +118,3 @@ void main() {
     verify(() => mockSignUpCubit.nameChanged('Jordan')).called(1);
   });
 }
-

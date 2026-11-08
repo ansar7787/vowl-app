@@ -35,10 +35,7 @@ void main() {
         TtsVoicePreset.fromId('unknown_id'),
         equals(TtsVoicePreset.clearGuide),
       );
-      expect(
-        TtsVoicePreset.fromId(null),
-        equals(TtsVoicePreset.clearGuide),
-      );
+      expect(TtsVoicePreset.fromId(null), equals(TtsVoicePreset.clearGuide));
     });
 
     test('isPremium flag distinguishes free vs premium voices accurately', () {
@@ -51,38 +48,44 @@ void main() {
       expect(TtsVoicePreset.indianEnglish.isPremium, isTrue);
     });
 
-    test('getSampleSentence returns non-empty friendly text for all presets', () {
-      for (final preset in TtsVoicePreset.values) {
-        final sample = TtsVoiceHelper.getSampleSentence(preset);
-        expect(sample, isNotEmpty);
-        expect(sample.contains('Hello'), isTrue);
-      }
-    });
+    test(
+      'getSampleSentence returns non-empty friendly text for all presets',
+      () {
+        for (final preset in TtsVoicePreset.values) {
+          final sample = TtsVoiceHelper.getSampleSentence(preset);
+          expect(sample, isNotEmpty);
+          expect(sample.contains('Hello'), isTrue);
+        }
+      },
+    );
   });
 
   group('TtsVoiceHelper persistence', () {
-    test('savePreset and getSavedPreset round-trip via SharedPreferences', () async {
-      SharedPreferences.setMockInitialValues({});
+    test(
+      'savePreset and getSavedPreset round-trip via SharedPreferences',
+      () async {
+        SharedPreferences.setMockInitialValues({});
 
-      // Defaults to clearGuide when not set
-      expect(
-        await TtsVoiceHelper.getSavedPreset(),
-        equals(TtsVoicePreset.clearGuide),
-      );
+        // Defaults to clearGuide when not set
+        expect(
+          await TtsVoiceHelper.getSavedPreset(),
+          equals(TtsVoicePreset.clearGuide),
+        );
 
-      // Save clearGuide
-      await TtsVoiceHelper.savePreset(TtsVoicePreset.clearGuide);
-      expect(
-        await TtsVoiceHelper.getSavedPreset(),
-        equals(TtsVoicePreset.clearGuide),
-      );
+        // Save clearGuide
+        await TtsVoiceHelper.savePreset(TtsVoicePreset.clearGuide);
+        expect(
+          await TtsVoiceHelper.getSavedPreset(),
+          equals(TtsVoicePreset.clearGuide),
+        );
 
-      // Save australianAccent
-      await TtsVoiceHelper.savePreset(TtsVoicePreset.australianAccent);
-      expect(
-        await TtsVoiceHelper.getSavedPreset(),
-        equals(TtsVoicePreset.australianAccent),
-      );
-    });
+        // Save australianAccent
+        await TtsVoiceHelper.savePreset(TtsVoicePreset.australianAccent);
+        expect(
+          await TtsVoiceHelper.getSavedPreset(),
+          equals(TtsVoicePreset.australianAccent),
+        );
+      },
+    );
   });
 }

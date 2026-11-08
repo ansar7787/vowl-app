@@ -388,6 +388,24 @@ class UserEntity {
     return count;
   }
 
+  /// Total number of gameplay stars collected across all 25 Kids Zone games.
+  /// Sums star ratings from [starRatings] for games defined in [UserGameConstants.kKidsGameTypes],
+  /// strictly excluding vault markers like 'magic_stars' and 'claimed_chests'.
+  int get kidsTotalStars {
+    var stars = 0;
+    for (final entry in starRatings.entries) {
+      if (UserGameConstants.kKidsGameTypes.contains(entry.key)) {
+        for (final starEntry in entry.value.entries) {
+          if (starEntry.key != 'magic_stars' &&
+              starEntry.key != 'claimed_chests') {
+            stars += starEntry.value;
+          }
+        }
+      }
+    }
+    return stars;
+  }
+
   /// Whether the Double XP power-up is currently active.
   bool get isDoubleXPActive {
     if (doubleXPExpiry == null) return false;
@@ -453,11 +471,16 @@ class UserEntity {
     if (dailyXpHistory.isEmpty) return 0;
     final now = DateTime.now().toUtc();
     final daysSinceMonday = (now.weekday - 1) % 7;
-    final monday = DateTime.utc(now.year, now.month, now.day).subtract(Duration(days: daysSinceMonday));
+    final monday = DateTime.utc(
+      now.year,
+      now.month,
+      now.day,
+    ).subtract(Duration(days: daysSinceMonday));
     var sum = 0;
     for (int i = 0; i < 7; i++) {
       final day = monday.add(Duration(days: i));
-      final key = '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';
+      final key =
+          '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';
       sum += dailyXpHistory[key] ?? 0;
     }
     return sum;
@@ -537,12 +560,20 @@ class UserEntity {
       return name;
     }
     if (email.isNotEmpty && email.contains('@')) {
-      final prefix = email.split('@').first.replaceAll(RegExp(r'[._\-+0-9]+'), ' ').trim();
+      final prefix = email
+          .split('@')
+          .first
+          .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+          .trim();
       if (prefix.isNotEmpty) {
         return prefix
             .split(' ')
             .where((s) => s.isNotEmpty)
-            .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+            .map(
+              (w) =>
+                  w[0].toUpperCase() +
+                  (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+            )
             .join(' ');
       }
       final rawPrefix = email.split('@').first.trim();
@@ -665,8 +696,7 @@ class UserEntity {
           claimedLevelMilestones ?? this.claimedLevelMilestones,
       claimedStreakMilestones:
           claimedStreakMilestones ?? this.claimedStreakMilestones,
-      claimedBadgeRewards:
-          claimedBadgeRewards ?? this.claimedBadgeRewards,
+      claimedBadgeRewards: claimedBadgeRewards ?? this.claimedBadgeRewards,
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
@@ -704,12 +734,15 @@ class UserEntity {
       kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
       hasClaimedReferral: hasClaimedReferral ?? this.hasClaimedReferral,
       totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
-      monthlyReferralsCount: monthlyReferralsCount ?? this.monthlyReferralsCount,
-      claimedAmbassadorRewardMonthKeys: claimedAmbassadorRewardMonthKeys ??
+      monthlyReferralsCount:
+          monthlyReferralsCount ?? this.monthlyReferralsCount,
+      claimedAmbassadorRewardMonthKeys:
+          claimedAmbassadorRewardMonthKeys ??
           this.claimedAmbassadorRewardMonthKeys,
       claimedWeeklyRewardWeekKeys:
           claimedWeeklyRewardWeekKeys ?? this.claimedWeeklyRewardWeekKeys,
-      dailyDuelsPlayedToday: dailyDuelsPlayedToday ?? this.dailyDuelsPlayedToday,
+      dailyDuelsPlayedToday:
+          dailyDuelsPlayedToday ?? this.dailyDuelsPlayedToday,
       duelWins: duelWins ?? this.duelWins,
       duelLosses: duelLosses ?? this.duelLosses,
       // Nullable: sentinel pattern — explicit null clears; absent preserves.
@@ -859,10 +892,14 @@ class UserEntity {
         other.totalReferralsCount == totalReferralsCount &&
         other.monthlyReferralsCount == monthlyReferralsCount &&
         other.currentReferralMonthKey == currentReferralMonthKey &&
-        _listEq.equals(other.claimedAmbassadorRewardMonthKeys,
-            claimedAmbassadorRewardMonthKeys) &&
         _listEq.equals(
-            other.claimedWeeklyRewardWeekKeys, claimedWeeklyRewardWeekKeys) &&
+          other.claimedAmbassadorRewardMonthKeys,
+          claimedAmbassadorRewardMonthKeys,
+        ) &&
+        _listEq.equals(
+          other.claimedWeeklyRewardWeekKeys,
+          claimedWeeklyRewardWeekKeys,
+        ) &&
         other.dailyDuelsPlayedToday == dailyDuelsPlayedToday &&
         other.lastDuelDate == lastDuelDate &&
         other.duelWins == duelWins &&

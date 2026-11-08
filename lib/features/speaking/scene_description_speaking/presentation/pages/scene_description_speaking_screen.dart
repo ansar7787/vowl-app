@@ -57,10 +57,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
@@ -91,7 +89,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final disable = VowlMotion.lowAnimationModeOverride.value ||
+    final disable =
+        VowlMotion.lowAnimationModeOverride.value ||
         (MediaQuery.maybeOf(context)?.disableAnimations ?? false);
     if (disable && _radarController.isAnimating) {
       _radarController.stop();
@@ -209,9 +208,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
 
     _hotspotPrompts = [];
     for (int i = 1; i <= count; i++) {
-      _hotspotPrompts.add(
-        parts.length > i ? parts[i] : "Describe this item.",
-      );
+      _hotspotPrompts.add(parts.length > i ? parts[i] : "Describe this item.");
     }
 
     _hotspotKeywords = [];
@@ -358,37 +355,42 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                             .asMap()
                                             .entries
                                             .map((entry) {
-                                          final index = entry.key;
-                                          final word = entry.value;
-                                          return Container(
-                                            key: Key(
-                                              'scene_description_vocab_$index',
-                                            ),
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 14.w,
-                                              vertical: 8.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.1),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.r),
-                                              border: Border.all(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.25),
-                                              ),
-                                            ),
-                                            child: Text(
-                                              word,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 13.sp,
-                                                fontWeight: FontWeight.w500,
-                                                color: theme.primaryColor,
-                                              ),
-                                            ),
-                                          );
-                                        }).toList(),
+                                              final index = entry.key;
+                                              final word = entry.value;
+                                              return Container(
+                                                key: Key(
+                                                  'scene_description_vocab_$index',
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 14.w,
+                                                  vertical: 8.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        16.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.25,
+                                                        ),
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  word,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 13.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                ),
+                                              );
+                                            })
+                                            .toList(),
                                       ),
                                     ],
                                   ],
@@ -414,9 +416,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                         _hotspotKeywords[_activeHotspot.value]
                                             .join(" "),
                                     acceptedSynonyms: [
-                                      _hotspotKeywords[_activeHotspot.value].join(
-                                        " ",
-                                      ),
+                                      _hotspotKeywords[_activeHotspot.value]
+                                          .join(" "),
                                       _hotspotLabels[_activeHotspot.value],
                                     ],
                                     primaryColor: theme.primaryColor,

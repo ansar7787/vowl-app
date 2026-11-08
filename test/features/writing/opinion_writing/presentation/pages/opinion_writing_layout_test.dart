@@ -33,20 +33,33 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 
 class MockWritingBloc extends Mock implements WritingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
+
 class FakeWritingState extends Fake implements WritingState {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeEconomyState extends Fake implements EconomyState {}
 
 void main() {
@@ -78,7 +91,8 @@ void main() {
     ],
     correctOrder: [0, 2],
     hint: 'Look for strong environmental and public safety statistics.',
-    explanation: 'Emissions reductions and accident statistics provide objective, impactful evidence.',
+    explanation:
+        'Emissions reductions and accident statistics provide objective, impactful evidence.',
     xpReward: 25,
     coinReward: 15,
   );
@@ -96,7 +110,8 @@ void main() {
     ],
     correctOrder: [1],
     hint: 'Focus on communication structure and employee productivity.',
-    explanation: 'Structured async communication directly refutes collaboration deficits.',
+    explanation:
+        'Structured async communication directly refutes collaboration deficits.',
     xpReward: 20,
     coinReward: 10,
   );
@@ -122,10 +137,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const WritingHintUsed());
     registerFallbackValue(
-      const FetchWritingQuests(
-        gameType: GameSubtype.opinionWriting,
-        level: 2,
-      ),
+      const FetchWritingQuests(gameType: GameSubtype.opinionWriting, level: 2),
     );
   });
 
@@ -184,13 +196,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -279,19 +293,39 @@ void main() {
   }
 
   group('OpinionWritingScreen - 1. Initial Rendering & Layout', () {
-    testWidgets('renders all essential components in normal mode (level 2)', (tester) async {
+    testWidgets('renders all essential components in normal mode (level 2)', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       expect(find.byType(WritingBaseLayout), findsOneWidget);
-      expect(find.byKey(const Key('opinion_writing_scroll_view')), findsOneWidget);
-      expect(find.byKey(const Key('opinion_drafting_pad_target')), findsOneWidget);
-      expect(find.byKey(const Key('opinion_writing_submit_button')), findsOneWidget);
+      expect(
+        find.byKey(const Key('opinion_writing_scroll_view')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('opinion_drafting_pad_target')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('opinion_writing_submit_button')),
+        findsOneWidget,
+      );
       expect(find.text('Your Selection'), findsOneWidget);
       expect(find.text('Options'), findsOneWidget);
       expect(find.text('Check Answer'), findsOneWidget);
-      expect(find.text('Should cities invest more in cycling infrastructure?'), findsOneWidget);
-      expect(find.text('SUPPORT YOUR POSITION WITH DATA AND CIVIC BENEFITS'), findsOneWidget);
-      expect(find.text('Select the two most compelling arguments.'), findsOneWidget);
+      expect(
+        find.text('Should cities invest more in cycling infrastructure?'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('SUPPORT YOUR POSITION WITH DATA AND CIVIC BENEFITS'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Select the two most compelling arguments.'),
+        findsOneWidget,
+      );
       expect(find.text('Tap or drag an option here'), findsNWidgets(2));
     });
 
@@ -308,30 +342,48 @@ void main() {
       );
       await pumpScreen(tester, state: state, level: 2);
 
-      expect(find.text('Remote work reduces team collaboration.'), findsOneWidget);
-      expect(find.text('Choose the best counter-argument rebuttal.'), findsOneWidget);
+      expect(
+        find.text('Remote work reduces team collaboration.'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Choose the best counter-argument rebuttal.'),
+        findsOneWidget,
+      );
       expect(find.text('Tap or drag an option here'), findsOneWidget);
     });
 
-    testWidgets('renders shimmer loading when in initial state', (tester) async {
+    testWidgets('renders shimmer loading when in initial state', (
+      tester,
+    ) async {
       const state = WritingInitial();
       await pumpScreen(tester, state: state, level: 2);
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('opinion_drafting_pad_target')), findsNothing);
+      expect(
+        find.byKey(const Key('opinion_drafting_pad_target')),
+        findsNothing,
+      );
     });
 
     testWidgets('dispatches FetchWritingQuests on init', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      verify(() => mockWritingBloc.add(
-        const FetchWritingQuests(gameType: GameSubtype.opinionWriting, level: 2),
-      )).called(1);
+      verify(
+        () => mockWritingBloc.add(
+          const FetchWritingQuests(
+            gameType: GameSubtype.opinionWriting,
+            level: 2,
+          ),
+        ),
+      ).called(1);
     });
   });
 
   group('OpinionWritingScreen - 2. Idea Board & Drafting Interactions', () {
-    testWidgets('tapping an idea card moves it into the Drafting Pad', (tester) async {
+    testWidgets('tapping an idea card moves it into the Drafting Pad', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       final firstOption = sampleQuest1.options![0];
@@ -346,12 +398,17 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
 
       // Now it appears in Drafting Pad as a drafted card
-      expect(find.byKey(Key('opinion_drafted_card_$firstOption')), findsOneWidget);
+      expect(
+        find.byKey(Key('opinion_drafted_card_$firstOption')),
+        findsOneWidget,
+      );
       // And only 1 empty slot remains
       expect(find.text('Tap or drag an option here'), findsOneWidget);
     });
 
-    testWidgets('dragging an idea card drops it into the Drafting Pad', (tester) async {
+    testWidgets('dragging an idea card drops it into the Drafting Pad', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       final secondOption = sampleQuest1.options![1];
@@ -367,33 +424,50 @@ void main() {
       await tester.pumpAndSettle();
 
       verify(() => mockHapticService.selection()).called(1);
-      expect(find.byKey(Key('opinion_drafted_card_$secondOption')), findsOneWidget);
+      expect(
+        find.byKey(Key('opinion_drafted_card_$secondOption')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('tapping remove on a drafted card returns it to the Idea Board', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping remove on a drafted card returns it to the Idea Board',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final firstOption = sampleQuest1.options![0];
-      final cardFinder = find.byKey(Key('opinion_idea_card_$firstOption'));
-      await tester.ensureVisible(cardFinder);
-      await tester.pumpAndSettle();
-      await tester.tap(cardFinder);
-      await tester.pumpAndSettle();
+        final firstOption = sampleQuest1.options![0];
+        final cardFinder = find.byKey(Key('opinion_idea_card_$firstOption'));
+        await tester.ensureVisible(cardFinder);
+        await tester.pumpAndSettle();
+        await tester.tap(cardFinder);
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(Key('opinion_drafted_card_$firstOption')), findsOneWidget);
+        expect(
+          find.byKey(Key('opinion_drafted_card_$firstOption')),
+          findsOneWidget,
+        );
 
-      // Tap remove on the drafted card
-      final draftedCardFinder = find.byKey(Key('opinion_drafted_card_$firstOption'));
-      await tester.ensureVisible(draftedCardFinder);
-      await tester.pumpAndSettle();
-      await tester.tap(draftedCardFinder);
-      await tester.pumpAndSettle();
+        // Tap remove on the drafted card
+        final draftedCardFinder = find.byKey(
+          Key('opinion_drafted_card_$firstOption'),
+        );
+        await tester.ensureVisible(draftedCardFinder);
+        await tester.pumpAndSettle();
+        await tester.tap(draftedCardFinder);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(2);
-      expect(find.byKey(Key('opinion_drafted_card_$firstOption')), findsNothing);
-      expect(find.byKey(Key('opinion_idea_card_$firstOption')), findsOneWidget);
-      expect(find.text('Tap or drag an option here'), findsNWidgets(2));
-    });
+        verify(() => mockHapticService.selection()).called(2);
+        expect(
+          find.byKey(Key('opinion_drafted_card_$firstOption')),
+          findsNothing,
+        );
+        expect(
+          find.byKey(Key('opinion_idea_card_$firstOption')),
+          findsOneWidget,
+        );
+        expect(find.text('Tap or drag an option here'), findsNWidgets(2));
+      },
+    );
 
     testWidgets('cannot draft more than requiredCount items', (tester) async {
       await pumpScreen(tester, level: 2);
@@ -430,7 +504,9 @@ void main() {
   });
 
   group('OpinionWritingScreen - 3. Answer Validation & Submission', () {
-    testWidgets('SUBMIT button does nothing when slots are not filled', (tester) async {
+    testWidgets('SUBMIT button does nothing when slots are not filled', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       // Pad is empty (0/2 filled)
@@ -439,56 +515,64 @@ void main() {
       verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('submitting incorrect combination dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting incorrect combination dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      // correctOrder is [0, 2], let's draft [0, 1] (incorrect)
-      final opt0 = sampleQuest1.options![0];
-      final opt1 = sampleQuest1.options![1];
+        // correctOrder is [0, 2], let's draft [0, 1] (incorrect)
+        final opt0 = sampleQuest1.options![0];
+        final opt1 = sampleQuest1.options![1];
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt1')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt1')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt1')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt1')));
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('submitting correct combination triggers success haptic and dispatches SubmitAnswer(true)', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting correct combination triggers success haptic and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      // correctOrder is [0, 2]
-      final opt0 = sampleQuest1.options![0];
-      final opt2 = sampleQuest1.options![2];
+        // correctOrder is [0, 2]
+        final opt0 = sampleQuest1.options![0];
+        final opt2 = sampleQuest1.options![2];
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt2')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt2')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt2')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt2')));
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
   });
 
   group('OpinionWritingScreen - 4. Feedback, Navigation & Reset', () {
-    testWidgets('displays feedback card when answered correctly', (tester) async {
+    testWidgets('displays feedback card when answered correctly', (
+      tester,
+    ) async {
       const state = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -525,7 +609,9 @@ void main() {
       verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
     });
 
-    testWidgets('tapping Hint button dispatches WritingHintUsed', (tester) async {
+    testWidgets('tapping Hint button dispatches WritingHintUsed', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       final hintButton = find.byType(QuestHintButton);
@@ -536,41 +622,49 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('onQuestionReset resets drafted options and Idea Board on new question', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'onQuestionReset resets drafted options and Idea Board on new question',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final opt0 = sampleQuest1.options![0];
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
+        final opt0 = sampleQuest1.options![0];
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(Key('opinion_drafted_card_$opt0')), findsOneWidget);
+        expect(find.byKey(Key('opinion_drafted_card_$opt0')), findsOneWidget);
 
-      const nextState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.opinionWriting,
-        level: 2,
-      );
-      when(() => mockWritingBloc.state).thenReturn(nextState);
-      writingStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pumpAndSettle();
+        const nextState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.opinionWriting,
+          level: 2,
+        );
+        when(() => mockWritingBloc.state).thenReturn(nextState);
+        writingStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Remote work reduces team collaboration.'), findsOneWidget);
-      expect(find.text('Tap or drag an option here'), findsOneWidget);
-      expect(find.byType(OpinionWritingDraftedCard), findsNothing);
-    });
+        expect(
+          find.text('Remote work reduces team collaboration.'),
+          findsOneWidget,
+        );
+        expect(find.text('Tap or drag an option here'), findsOneWidget);
+        expect(find.byType(OpinionWritingDraftedCard), findsNothing);
+      },
+    );
   });
 
   group('OpinionWritingScreen - 5. Completion, Game Over & Error Journal', () {
-    testWidgets('shows completion dialog on WritingGameComplete', (tester) async {
+    testWidgets('shows completion dialog on WritingGameComplete', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       const completeState = WritingGameComplete(
@@ -619,88 +713,81 @@ void main() {
       }
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'user_123',
-            email: 'test@vowl.app',
-            displayName: 'Learner',
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'user_123',
+              email: 'test@vowl.app',
+              displayName: 'Learner',
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      final opt0 = sampleQuest1.options![0];
-      final opt1 = sampleQuest1.options![1];
+        final opt0 = sampleQuest1.options![0];
+        final opt1 = sampleQuest1.options![1];
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt0')));
+        await tester.pumpAndSettle();
 
-      await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt1')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key('opinion_idea_card_$opt1')));
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(find.byKey(Key('opinion_idea_card_$opt1')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(Key('opinion_idea_card_$opt1')));
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('OpinionWritingScreen - 6. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(OpinionWritingScreen), findsOneWidget);
-      expect(find.byKey(const Key('opinion_drafting_pad_target')), findsOneWidget);
+      expect(
+        find.byKey(const Key('opinion_drafting_pad_target')),
+        findsOneWidget,
+      );
     });
 
     testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(OpinionWritingScreen), findsOneWidget);
-      expect(find.byKey(const Key('opinion_drafting_pad_target')), findsOneWidget);
+      expect(
+        find.byKey(const Key('opinion_drafting_pad_target')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('renders with 1.3x high text scale without overflow', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+    testWidgets('renders with 1.3x high text scale without overflow', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(OpinionWritingScreen), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(OpinionWritingScreen), findsOneWidget);
     });
 
-    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
@@ -718,4 +805,3 @@ void main() {
     });
   });
 }
-

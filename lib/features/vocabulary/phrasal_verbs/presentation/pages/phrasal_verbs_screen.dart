@@ -369,9 +369,7 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                                     if (quest.instruction.isNotEmpty) ...[
                                       SizedBox(height: gapInstruction),
                                       _buildInstruction(
-                                        InstructionHelper.getInstruction(
-                                          quest,
-                                        ),
+                                        InstructionHelper.getInstruction(quest),
                                         theme.primaryColor,
                                         isCompact,
                                       ),
@@ -563,7 +561,8 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
             correct: quest.correctAnswer ?? "",
             color: color,
             isDark: isDark,
-            isAnswered: isAnswered && (isCorrect != null || !isFirstStagePassed),
+            isAnswered:
+                isAnswered && (isCorrect != null || !isFirstStagePassed),
             isCorrect: isCorrect,
             selectedOption: selectedOption,
             isFinalFailure: isFinalFailure,

@@ -168,8 +168,8 @@ class GameFeedbackCard extends StatelessWidget {
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate100),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
             width: 1.5,
           ),
           boxShadow: [

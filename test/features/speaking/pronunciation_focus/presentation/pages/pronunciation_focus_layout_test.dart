@@ -223,7 +223,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/pronunciation_test.m4a');
@@ -322,14 +324,8 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQueryData(
-                size: size,
-                disableAnimations: reduceMotion,
-              ),
-              child: PronunciationFocusScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              data: MediaQueryData(size: size, disableAnimations: reduceMotion),
+              child: PronunciationFocusScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -378,9 +374,7 @@ void main() {
       ) async {
         await pumpPronunciationFocusScreen(tester);
         verify(
-          () => mockSpeakingBloc.add(
-            any(that: isA<FetchSpeakingQuests>()),
-          ),
+          () => mockSpeakingBloc.add(any(that: isA<FetchSpeakingQuests>())),
         ).called(1);
       });
 
@@ -503,16 +497,12 @@ void main() {
         );
       });
 
-      testWidgets(
-        '3.2 displays PRONUNCIATION FOCUS title in header',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.text('PRONUNCIATION FOCUS'),
-            findsOneWidget,
-          );
-        },
-      );
+      testWidgets('3.2 displays PRONUNCIATION FOCUS title in header', (
+        tester,
+      ) async {
+        await pumpPronunciationFocusScreen(tester);
+        expect(find.text('PRONUNCIATION FOCUS'), findsOneWidget);
+      });
 
       testWidgets(
         '3.3 displays Icons.graphic_eq_rounded icon in header badge',
@@ -522,19 +512,12 @@ void main() {
         },
       );
 
-      testWidgets('3.4 displays instruction text accurately', (
-        tester,
-      ) async {
+      testWidgets('3.4 displays instruction text accurately', (tester) async {
         await pumpPronunciationFocusScreen(tester);
-        expect(
-          find.text('Master the retroflex liquid sound'),
-          findsOneWidget,
-        );
+        expect(find.text('Master the retroflex liquid sound'), findsOneWidget);
       });
 
-      testWidgets('3.5 has accessible header Semantics label', (
-        tester,
-      ) async {
+      testWidgets('3.5 has accessible header Semantics label', (tester) async {
         await pumpPronunciationFocusScreen(tester);
         final semanticsFinder = find.descendant(
           of: find.byKey(const Key('pronunciation_focus_header')),
@@ -572,9 +555,7 @@ void main() {
         },
       );
 
-      testWidgets('4.2 displays TARGET SOUND label', (
-        tester,
-      ) async {
+      testWidgets('4.2 displays TARGET SOUND label', (tester) async {
         await pumpPronunciationFocusScreen(tester);
         expect(find.text('TARGET SOUND'), findsOneWidget);
       });
@@ -665,219 +646,221 @@ void main() {
     // -------------------------------------------------------------------------
     // 5. Thermal Grid Component & Custom Painter (PronunciationFocusThermalGrid) (6 tests)
     // -------------------------------------------------------------------------
-    group('5. Thermal Grid Component & Custom Painter (PronunciationFocusThermalGrid)', () {
-      testWidgets(
-        '5.1 renders thermal grid with key pronunciation_focus_thermal_grid',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.byKey(const Key('pronunciation_focus_thermal_grid')),
-            findsOneWidget,
-          );
-        },
-      );
-
-      testWidgets(
-        '5.2 has accessible Semantics label "Accent heat visualization grid"',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.bySemanticsLabel('Accent heat visualization grid'),
-            findsOneWidget,
-          );
-        },
-      );
-
-      testWidgets('5.3 paints with CustomPaint and ThermalGridPainter', (
-        tester,
-      ) async {
-        await pumpPronunciationFocusScreen(tester);
-        final customPaint = tester.widget<CustomPaint>(
-          find.descendant(
-            of: find.byKey(const Key('pronunciation_focus_thermal_grid')),
-            matching: find.byType(CustomPaint),
-          ),
+    group(
+      '5. Thermal Grid Component & Custom Painter (PronunciationFocusThermalGrid)',
+      () {
+        testWidgets(
+          '5.1 renders thermal grid with key pronunciation_focus_thermal_grid',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(
+              find.byKey(const Key('pronunciation_focus_thermal_grid')),
+              findsOneWidget,
+            );
+          },
         );
-        expect(customPaint.painter, isA<ThermalGridPainter>());
-      });
 
-      testWidgets(
-        '5.4 ThermalGridPainter shouldRepaint returns true when heatLevel changes',
-        (tester) async {
-          final p1 = ThermalGridPainter(
-            heatLevel: 0.0,
-            isListening: false,
-            time: 0.1,
-          );
-          final p2 = ThermalGridPainter(
-            heatLevel: 0.8,
-            isListening: false,
-            time: 0.1,
-          );
-          expect(p2.shouldRepaint(p1), isTrue);
-        },
-      );
+        testWidgets(
+          '5.2 has accessible Semantics label "Accent heat visualization grid"',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(
+              find.bySemanticsLabel('Accent heat visualization grid'),
+              findsOneWidget,
+            );
+          },
+        );
 
-      testWidgets(
-        '5.5 ThermalGridPainter shouldRepaint returns true when isListening changes',
-        (tester) async {
-          final p1 = ThermalGridPainter(
-            heatLevel: 0.5,
-            isListening: false,
-            time: 0.1,
+        testWidgets('5.3 paints with CustomPaint and ThermalGridPainter', (
+          tester,
+        ) async {
+          await pumpPronunciationFocusScreen(tester);
+          final customPaint = tester.widget<CustomPaint>(
+            find.descendant(
+              of: find.byKey(const Key('pronunciation_focus_thermal_grid')),
+              matching: find.byType(CustomPaint),
+            ),
           );
-          final p2 = ThermalGridPainter(
-            heatLevel: 0.5,
-            isListening: true,
-            time: 0.1,
-          );
-          expect(p2.shouldRepaint(p1), isTrue);
-        },
-      );
+          expect(customPaint.painter, isA<ThermalGridPainter>());
+        });
 
-      testWidgets(
-        '5.6 ThermalGridPainter shouldRepaint returns true when time changes, and false when all identical',
-        (tester) async {
-          final p1 = ThermalGridPainter(
-            heatLevel: 0.5,
-            isListening: false,
-            time: 0.1,
-          );
-          final p2 = ThermalGridPainter(
-            heatLevel: 0.5,
-            isListening: false,
-            time: 0.5,
-          );
-          final p3 = ThermalGridPainter(
-            heatLevel: 0.5,
-            isListening: false,
-            time: 0.1,
-          );
+        testWidgets(
+          '5.4 ThermalGridPainter shouldRepaint returns true when heatLevel changes',
+          (tester) async {
+            final p1 = ThermalGridPainter(
+              heatLevel: 0.0,
+              isListening: false,
+              time: 0.1,
+            );
+            final p2 = ThermalGridPainter(
+              heatLevel: 0.8,
+              isListening: false,
+              time: 0.1,
+            );
+            expect(p2.shouldRepaint(p1), isTrue);
+          },
+        );
 
-          expect(p2.shouldRepaint(p1), isTrue);
-          expect(p3.shouldRepaint(p1), isFalse);
-        },
-      );
-    });
+        testWidgets(
+          '5.5 ThermalGridPainter shouldRepaint returns true when isListening changes',
+          (tester) async {
+            final p1 = ThermalGridPainter(
+              heatLevel: 0.5,
+              isListening: false,
+              time: 0.1,
+            );
+            final p2 = ThermalGridPainter(
+              heatLevel: 0.5,
+              isListening: true,
+              time: 0.1,
+            );
+            expect(p2.shouldRepaint(p1), isTrue);
+          },
+        );
+
+        testWidgets(
+          '5.6 ThermalGridPainter shouldRepaint returns true when time changes, and false when all identical',
+          (tester) async {
+            final p1 = ThermalGridPainter(
+              heatLevel: 0.5,
+              isListening: false,
+              time: 0.1,
+            );
+            final p2 = ThermalGridPainter(
+              heatLevel: 0.5,
+              isListening: false,
+              time: 0.5,
+            );
+            final p3 = ThermalGridPainter(
+              heatLevel: 0.5,
+              isListening: false,
+              time: 0.1,
+            );
+
+            expect(p2.shouldRepaint(p1), isTrue);
+            expect(p3.shouldRepaint(p1), isFalse);
+          },
+        );
+      },
+    );
 
     // -------------------------------------------------------------------------
     // 6. Highlighted Sentence Component (PronunciationFocusHighlightedSentence) (8 tests)
     // -------------------------------------------------------------------------
-    group('6. Highlighted Sentence Component (PronunciationFocusHighlightedSentence)', () {
-      testWidgets(
-        '6.1 renders highlighted sentence with key pronunciation_focus_highlighted_sentence',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.byKey(
-              const Key('pronunciation_focus_highlighted_sentence'),
-            ),
-            findsOneWidget,
-          );
-        },
-      );
+    group(
+      '6. Highlighted Sentence Component (PronunciationFocusHighlightedSentence)',
+      () {
+        testWidgets(
+          '6.1 renders highlighted sentence with key pronunciation_focus_highlighted_sentence',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(
+              find.byKey(const Key('pronunciation_focus_highlighted_sentence')),
+              findsOneWidget,
+            );
+          },
+        );
 
-      testWidgets(
-        '6.2 renders sentence TTS button with key pronunciation_focus_sentence_tts_button',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.byKey(
-              const Key('pronunciation_focus_sentence_tts_button'),
-            ),
-            findsOneWidget,
-          );
-        },
-      );
+        testWidgets(
+          '6.2 renders sentence TTS button with key pronunciation_focus_sentence_tts_button',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(
+              find.byKey(const Key('pronunciation_focus_sentence_tts_button')),
+              findsOneWidget,
+            );
+          },
+        );
 
-      testWidgets(
-        '6.3 tapping sentence TTS button plays full text via soundService.playTts',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          await tester.tap(
-            find.byKey(
-              const Key('pronunciation_focus_sentence_tts_button'),
-            ),
-          );
-          await tester.pump();
+        testWidgets(
+          '6.3 tapping sentence TTS button plays full text via soundService.playTts',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            await tester.tap(
+              find.byKey(const Key('pronunciation_focus_sentence_tts_button')),
+            );
+            await tester.pump();
 
-          verify(
-            () => mockSoundService.playTts('Red round roller rink'),
-          ).called(greaterThanOrEqualTo(1));
-        },
-      );
+            verify(
+              () => mockSoundService.playTts('Red round roller rink'),
+            ).called(greaterThanOrEqualTo(1));
+          },
+        );
 
-      testWidgets(
-        '6.4 tapping sentence TTS button while recording is active does not trigger TTS',
-        (tester) async {
-          when(() => mockAudioRecorder.isRecording).thenReturn(true);
-          await pumpPronunciationFocusScreen(tester);
+        testWidgets(
+          '6.4 tapping sentence TTS button while recording is active does not trigger TTS',
+          (tester) async {
+            when(() => mockAudioRecorder.isRecording).thenReturn(true);
+            await pumpPronunciationFocusScreen(tester);
 
-          clearInteractions(mockSoundService);
-          await tester.tap(
-            find.byKey(
-              const Key('pronunciation_focus_sentence_tts_button'),
-            ),
-          );
-          await tester.pump();
+            clearInteractions(mockSoundService);
+            await tester.tap(
+              find.byKey(const Key('pronunciation_focus_sentence_tts_button')),
+            );
+            await tester.pump();
 
-          verifyNever(() => mockSoundService.playTts(any()));
-        },
-      );
+            verifyNever(() => mockSoundService.playTts(any()));
+          },
+        );
 
-      testWidgets(
-        '6.5 renders individual word chips with key pronunciation_focus_word_\$index',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(
-            find.byKey(const Key('pronunciation_focus_word_0')),
-            findsOneWidget,
-          );
-          expect(
-            find.byKey(const Key('pronunciation_focus_word_1')),
-            findsOneWidget,
-          );
-        },
-      );
+        testWidgets(
+          '6.5 renders individual word chips with key pronunciation_focus_word_\$index',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(
+              find.byKey(const Key('pronunciation_focus_word_0')),
+              findsOneWidget,
+            );
+            expect(
+              find.byKey(const Key('pronunciation_focus_word_1')),
+              findsOneWidget,
+            );
+          },
+        );
 
-      testWidgets(
-        '6.6 highlights words containing the target phoneme with distinct style',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          expect(find.text('Red'), findsOneWidget);
-          expect(find.text('round'), findsOneWidget);
-          expect(find.text('roller'), findsOneWidget);
-          expect(find.text('rink'), findsOneWidget);
-        },
-      );
+        testWidgets(
+          '6.6 highlights words containing the target phoneme with distinct style',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            expect(find.text('Red'), findsOneWidget);
+            expect(find.text('round'), findsOneWidget);
+            expect(find.text('roller'), findsOneWidget);
+            expect(find.text('rink'), findsOneWidget);
+          },
+        );
 
-      testWidgets(
-        '6.7 tapping an individual word chip plays soundService.playTts for that word',
-        (tester) async {
-          await pumpPronunciationFocusScreen(tester);
-          clearInteractions(mockSoundService);
+        testWidgets(
+          '6.7 tapping an individual word chip plays soundService.playTts for that word',
+          (tester) async {
+            await pumpPronunciationFocusScreen(tester);
+            clearInteractions(mockSoundService);
 
-          await tester.tap(find.byKey(const Key('pronunciation_focus_word_0')));
-          await tester.pump();
+            await tester.tap(
+              find.byKey(const Key('pronunciation_focus_word_0')),
+            );
+            await tester.pump();
 
-          verify(() => mockSoundService.playTts('Red')).called(1);
-        },
-      );
+            verify(() => mockSoundService.playTts('Red')).called(1);
+          },
+        );
 
-      testWidgets(
-        '6.8 tapping a word chip while recording is active does not play TTS',
-        (tester) async {
-          when(() => mockAudioRecorder.isRecording).thenReturn(true);
-          await pumpPronunciationFocusScreen(tester);
+        testWidgets(
+          '6.8 tapping a word chip while recording is active does not play TTS',
+          (tester) async {
+            when(() => mockAudioRecorder.isRecording).thenReturn(true);
+            await pumpPronunciationFocusScreen(tester);
 
-          clearInteractions(mockSoundService);
-          await tester.tap(find.byKey(const Key('pronunciation_focus_word_0')));
-          await tester.pump();
+            clearInteractions(mockSoundService);
+            await tester.tap(
+              find.byKey(const Key('pronunciation_focus_word_0')),
+            );
+            await tester.pump();
 
-          verifyNever(() => mockSoundService.playTts(any()));
-        },
-      );
-    });
+            verifyNever(() => mockSoundService.playTts(any()));
+          },
+        );
+      },
+    );
 
     // -------------------------------------------------------------------------
     // 7. Auto-play & TTS Barrier Mechanics (6 tests)
@@ -903,7 +886,9 @@ void main() {
             of: find.byType(AnimatedOpacity),
             matching: find.byType(AbsorbPointer),
           );
-          final absorbPointer = tester.widget<AbsorbPointer>(absorbPointerFinder);
+          final absorbPointer = tester.widget<AbsorbPointer>(
+            absorbPointerFinder,
+          );
           expect(absorbPointer.absorbing, isTrue);
 
           await tester.pump(const Duration(seconds: 3));
@@ -921,7 +906,9 @@ void main() {
             of: find.byType(AnimatedOpacity),
             matching: find.byType(AbsorbPointer),
           );
-          final absorbPointer = tester.widget<AbsorbPointer>(absorbPointerFinder);
+          final absorbPointer = tester.widget<AbsorbPointer>(
+            absorbPointerFinder,
+          );
           expect(absorbPointer.absorbing, isFalse);
         },
       );
@@ -991,12 +978,13 @@ void main() {
         ).called(greaterThanOrEqualTo(1));
       });
 
-      testWidgets('8.2 renders hint button with proper icon Icons.lightbulb_rounded', (
-        tester,
-      ) async {
-        await pumpPronunciationFocusScreen(tester);
-        expect(find.byIcon(Icons.lightbulb_rounded), findsOneWidget);
-      });
+      testWidgets(
+        '8.2 renders hint button with proper icon Icons.lightbulb_rounded',
+        (tester) async {
+          await pumpPronunciationFocusScreen(tester);
+          expect(find.byIcon(Icons.lightbulb_rounded), findsOneWidget);
+        },
+      );
 
       testWidgets('8.3 works seamlessly across repeated hint taps', (
         tester,
@@ -1009,9 +997,7 @@ void main() {
         await tester.tap(hintButton);
         await tester.pump();
 
-        verify(
-          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(1);
+        verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(1);
       });
 
       testWidgets('8.4 hint button displays available hint count badge', (
@@ -1264,13 +1250,14 @@ void main() {
         },
       );
 
-      testWidgets('10.6 screen disposes cleanly without timer leaks or exceptions', (
-        tester,
-      ) async {
-        await pumpPronunciationFocusScreen(tester);
-        await tester.pumpWidget(const SizedBox());
-        expect(tester.takeException(), isNull);
-      });
+      testWidgets(
+        '10.6 screen disposes cleanly without timer leaks or exceptions',
+        (tester) async {
+          await pumpPronunciationFocusScreen(tester);
+          await tester.pumpWidget(const SizedBox());
+          expect(tester.takeException(), isNull);
+        },
+      );
     });
 
     // -------------------------------------------------------------------------
@@ -1292,32 +1279,19 @@ void main() {
       testWidgets('11.2 renders cleanly on tablet viewport (768x1024)', (
         tester,
       ) async {
-        await pumpPronunciationFocusScreen(
-          tester,
-          size: const Size(768, 1024),
-        );
+        await pumpPronunciationFocusScreen(tester, size: const Size(768, 1024));
         expect(find.byType(PronunciationFocusScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('11.3 renders cleanly in Light Theme mode', (
-        tester,
-      ) async {
-        await pumpPronunciationFocusScreen(
-          tester,
-          themeMode: ThemeMode.light,
-        );
+      testWidgets('11.3 renders cleanly in Light Theme mode', (tester) async {
+        await pumpPronunciationFocusScreen(tester, themeMode: ThemeMode.light);
         expect(find.byType(PronunciationFocusScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('11.4 renders cleanly in Dark Theme mode', (
-        tester,
-      ) async {
-        await pumpPronunciationFocusScreen(
-          tester,
-          themeMode: ThemeMode.dark,
-        );
+      testWidgets('11.4 renders cleanly in Dark Theme mode', (tester) async {
+        await pumpPronunciationFocusScreen(tester, themeMode: ThemeMode.dark);
         expect(find.byType(PronunciationFocusScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
@@ -1346,4 +1320,3 @@ void main() {
     });
   });
 }
-

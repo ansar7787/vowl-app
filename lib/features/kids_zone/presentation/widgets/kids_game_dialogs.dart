@@ -127,9 +127,7 @@ class KidsGameDialogs {
                                                     ),
                                                   ),
                                                 )
-                                                .animate(
-                                                  delay: (60 * index).ms,
-                                                )
+                                                .animate(delay: (60 * index).ms)
                                                 .scale(
                                                   duration: 250.ms,
                                                   curve: Curves.easeOutBack,
@@ -157,37 +155,19 @@ class KidsGameDialogs {
                                     width: 4.w,
                                   ),
                                 ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: _buildReward(
-                                        context,
-                                        state.coinsEarned *
-                                            (rewardsDoubled ? 3 : 1),
-                                        "🪙",
-                                        _safeTr(
-                                          context,
-                                          'games.kids_coins',
-                                          'KIDS COINS',
-                                        ),
-                                        Colors.amber,
-                                      ),
+                                child: Center(
+                                  child: _buildReward(
+                                    context,
+                                    state.coinsEarned *
+                                        (rewardsDoubled ? 3 : 1),
+                                    "🪙",
+                                    _safeTr(
+                                      context,
+                                      'games.kids_coins',
+                                      'KIDS COINS',
                                     ),
-                                    Container(
-                                      width: 2.w,
-                                      height: 50.h,
-                                      color: Colors.grey.withValues(alpha: 0.2),
-                                    ),
-                                    Expanded(
-                                      child: _buildReward(
-                                        context,
-                                        state.xpEarned,
-                                        "⚡",
-                                        _safeTr(context, 'games.kids_xp', 'XP'),
-                                        Colors.blueAccent,
-                                      ),
-                                    ),
-                                  ],
+                                    Colors.amber,
+                                  ),
                                 ),
                               ),
 
@@ -260,13 +240,19 @@ class KidsGameDialogs {
                                           isPremium: isPremium,
                                           childSafe: true,
                                           onUserEarnedReward: (_) {
-                                            final gType = gameType ??
+                                            final gType =
+                                                gameType ??
                                                 (kidsBloc.state is KidsLoaded
-                                                    ? (kidsBloc.state as KidsLoaded).gameType
+                                                    ? (kidsBloc.state
+                                                              as KidsLoaded)
+                                                          .gameType
                                                     : '');
-                                            final lvl = level ??
+                                            final lvl =
+                                                level ??
                                                 (kidsBloc.state is KidsLoaded
-                                                    ? (kidsBloc.state as KidsLoaded).level
+                                                    ? (kidsBloc.state
+                                                              as KidsLoaded)
+                                                          .level
                                                     : 1);
                                             if (gType.isNotEmpty) {
                                               kidsBloc.add(
@@ -312,9 +298,7 @@ class KidsGameDialogs {
                                     border: Border.all(
                                       color: isPremium
                                           ? Colors.amber.shade600
-                                          : Colors.green.withValues(
-                                              alpha: 0.4,
-                                            ),
+                                          : Colors.green.withValues(alpha: 0.4),
                                       width: 3.w,
                                     ),
                                   ),
@@ -411,117 +395,112 @@ class KidsGameDialogs {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: KidsDialogContainer(
-                primaryColor: AppColors.indigo500, // Moody purple/indigo
-                title: context.tr(
-                  'games.kids_game_over',
-                  fallback: 'GAME OVER',
-                ),
-                ribbonColor: AppColors.gameIncorrect,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Builder(
-                      builder: (context) {
-                        Widget heart = Container(
-                          padding: EdgeInsets.all(24.r),
-                          decoration: BoxDecoration(
-                            color: AppColors.gameIncorrect.withValues(
-                              alpha: 0.1,
-                            ),
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColors.gameIncorrect.withValues(
-                                  alpha: 0.2,
-                                ),
-                                blurRadius: 20,
+              primaryColor: AppColors.indigo500, // Moody purple/indigo
+              title: context.tr('games.kids_game_over', fallback: 'GAME OVER'),
+              ribbonColor: AppColors.gameIncorrect,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Builder(
+                    builder: (context) {
+                      Widget heart = Container(
+                        padding: EdgeInsets.all(24.r),
+                        decoration: BoxDecoration(
+                          color: AppColors.gameIncorrect.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.gameIncorrect.withValues(
+                                alpha: 0.2,
                               ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.heart_broken_rounded,
-                            color: AppColors.gameIncorrect,
-                            size: 60.sp,
-                          ),
-                        );
+                              blurRadius: 20,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.heart_broken_rounded,
+                          color: AppColors.gameIncorrect,
+                          size: 60.sp,
+                        ),
+                      );
 
-                        if (!VowlMotion.shouldReduceMotion(context)) {
-                          heart = heart
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.1, 1.1),
-                                duration: 1.seconds,
-                              );
-                        }
+                      if (!VowlMotion.shouldReduceMotion(context)) {
+                        heart = heart
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                              duration: 1.seconds,
+                            );
+                      }
 
-                        return heart;
-                      },
+                      return heart;
+                    },
+                  ),
+
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(
+                      'games.kids_game_over_subtitle',
+                      fallback: 'Don\'t give up! You were so close!',
                     ),
-
-                    SizedBox(height: 16.h),
-                    Text(
-                      context.tr(
-                        'games.kids_game_over_subtitle',
-                        fallback: 'Don\'t give up! You were so close!',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white70
-                            : Colors.black54,
-                        fontWeight: FontWeight.w700,
-                      ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.black54,
+                      fontWeight: FontWeight.w700,
                     ),
+                  ),
 
-                    SizedBox(height: 32.h),
+                  SizedBox(height: 32.h),
 
-                    Kids3DButton(
-                      text: context.tr(
-                        'games.kids_resume_game',
-                        fallback: 'RESUME GAME',
-                      ),
-                      color: const Color(
-                        0xFF10B981,
-                      ), // Bright neon green for Revive
-                      icon: Icons.play_circle_fill_rounded,
-                      onTap: () {
-                        adService.showRewardedAd(
-                          context: context,
-                          isPremium: isPremium,
-                          childSafe: true,
-                          onUserEarnedReward: (_) {
-                            kidsBloc.add(RestoreKidsLife());
-                            navigator.pop();
-                          },
-                          onDismissed: () {},
-                        );
-                      },
+                  Kids3DButton(
+                    text: context.tr(
+                      'games.kids_resume_game',
+                      fallback: 'RESUME GAME',
                     ),
+                    color: const Color(
+                      0xFF10B981,
+                    ), // Bright neon green for Revive
+                    icon: Icons.play_circle_fill_rounded,
+                    onTap: () {
+                      adService.showRewardedAd(
+                        context: context,
+                        isPremium: isPremium,
+                        childSafe: true,
+                        onUserEarnedReward: (_) {
+                          kidsBloc.add(RestoreKidsLife());
+                          navigator.pop();
+                        },
+                        onDismissed: () {},
+                      );
+                    },
+                  ),
 
-                    SizedBox(height: 16.h),
+                  SizedBox(height: 16.h),
 
-                    Kids3DButton(
-                      text: context.tr(
-                        'games.kids_exit_to_map',
-                        fallback: 'EXIT TO MAP',
-                      ),
-                      color: Colors.grey.shade600,
-                      onTap: () {
-                        navigator.pop();
-                        navigator.pop();
-                      },
+                  Kids3DButton(
+                    text: context.tr(
+                      'games.kids_exit_to_map',
+                      fallback: 'EXIT TO MAP',
                     ),
-                  ],
-                ),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
-            ),
+                    color: Colors.grey.shade600,
+                    onTap: () {
+                      navigator.pop();
+                      navigator.pop();
+                    },
+                  ),
+                ],
+              ),
+            ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
           ),
         ),
-      );
-    }
+      ),
+    );
+  }
 
   static Future<bool> showExitConfirmation({
     required BuildContext context,
@@ -539,7 +518,8 @@ class KidsGameDialogs {
           child: Container(
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
-              color: (isDark &&
+              color:
+                  (isDark &&
                       Theme.of(context).scaffoldBackgroundColor == Colors.black)
                   ? AppColors.midnightSurface
                   : (isDark ? AppColors.slate800 : Colors.white),

@@ -76,10 +76,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.15),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
           BoxShadow(
             color: color.withValues(alpha: 0.08),
@@ -99,24 +96,27 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
 
           // Standard horizontal padding inside the board mechanism card so nodes never touch the borders
           final double horizontalPadding = 16.w;
-          final double usableWidth =
-              math.max(0.0, width - (2 * horizontalPadding));
+          final double usableWidth = math.max(
+            0.0,
+            width - (2 * horizontalPadding),
+          );
 
           // Calculate horizontal positioning of terminal nodes evenly spaced with standard breathing padding
-          final List<Offset> terminalCenters =
-              List.generate(options.length, (i) {
-                if (options.length <= 1) return Offset(width / 2, 75.h);
+          final List<Offset> terminalCenters = List.generate(options.length, (
+            i,
+          ) {
+            if (options.length <= 1) return Offset(width / 2, 75.h);
 
-                final double colWidth = usableWidth / options.length;
-                final double x =
-                    horizontalPadding + (i * colWidth) + (colWidth / 2);
+            final double colWidth = usableWidth / options.length;
+            final double x =
+                horizontalPadding + (i * colWidth) + (colWidth / 2);
 
-                // Gentle sweeping arc curve
-                final double arcOffset =
-                    18.h * math.sin((i / (options.length - 1)) * math.pi);
-                final double y = 78.h - arcOffset;
-                return Offset(x, y);
-              });
+            // Gentle sweeping arc curve
+            final double arcOffset =
+                18.h * math.sin((i / (options.length - 1)) * math.pi);
+            final double y = 78.h - arcOffset;
+            return Offset(x, y);
+          });
 
           Widget probeWidget = Container(
             width: 60.r,
@@ -256,10 +256,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
       Widget previewInner = Container(
         key: Key('branching_dialogue_consequence_preview_$index'),
         width: nodeWidth,
-        padding: EdgeInsets.symmetric(
-          horizontal: 6.w,
-          vertical: 3.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
         decoration: BoxDecoration(
           color: (isSelected && isAnswered)
               ? (index == correctIndex

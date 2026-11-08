@@ -131,11 +131,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
           _selectedWord.value?.toLowerCase() == expectedWord.toLowerCase();
 
       if (!wordIsCorrect) {
-        _submitVerbalEvaluation(
-          false,
-          expectedWord,
-          forceImmediateFail: true,
-        );
+        _submitVerbalEvaluation(false, expectedWord, forceImmediateFail: true);
         return;
       }
     }
@@ -363,8 +359,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                       SizedBox(height: 24.h),
                                       SpeakMissingWordVortexSentence(
                                         text: _isWordPlaced.value
-                                             ? userCompletedSentence
-                                             : initialBlankSentence,
+                                            ? userCompletedSentence
+                                            : initialBlankSentence,
                                         insertedWord: _isWordPlaced.value
                                             ? (_selectedWord.value ?? "")
                                             : "",
@@ -393,7 +389,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                 !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
-                                  key: const Key('speak_missing_word_shadow_compare'),
+                                  key: const Key(
+                                    'speak_missing_word_shadow_compare',
+                                  ),
                                   expectedText: userCompletedSentence,
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,

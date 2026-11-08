@@ -121,8 +121,9 @@ class BlackboardGuidelinesPainter extends CustomPainter {
     final y = p1.dy;
 
     while (currentX < p2.dx) {
-      final nextX =
-          (currentX + dashWidth < p2.dx) ? currentX + dashWidth : p2.dx;
+      final nextX = (currentX + dashWidth < p2.dx)
+          ? currentX + dashWidth
+          : p2.dx;
       canvas.drawLine(Offset(currentX, y), Offset(nextX, y), paint);
       currentX += dashWidth + dashSpace;
     }
@@ -134,4 +135,3 @@ class BlackboardGuidelinesPainter extends CustomPainter {
         oldDelegate.ghostText != ghostText;
   }
 }
-

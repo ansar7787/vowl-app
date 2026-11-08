@@ -163,7 +163,7 @@ class PraiseServiceImpl implements PraiseService {
   static final Random _random = Random();
 
   const PraiseServiceImpl(this._ttsService, {LocaleService? localeService})
-      : _localeService = localeService;
+    : _localeService = localeService;
 
   @override
   void givePraise({PraiseContext context = PraiseContext.standard}) {
@@ -206,6 +206,9 @@ class PraiseServiceImpl implements PraiseService {
     final String keySuffix = context == PraiseContext.standard
         ? '$index'
         : '${context.name}.$index';
-    return service.tr('${strategy.localizedPrefix}.$keySuffix', fallback: fallback);
+    return service.tr(
+      '${strategy.localizedPrefix}.$keySuffix',
+      fallback: fallback,
+    );
   }
 }

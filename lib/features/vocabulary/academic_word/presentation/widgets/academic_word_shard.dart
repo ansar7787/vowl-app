@@ -125,9 +125,7 @@ class AcademicWordShard extends StatelessWidget {
                   child: Text(
                     text.toUpperCase(),
                     key: Key('academic_word_shard_text_$index'),
-                    style: _textStyle(
-                      Theme.of(context).colorScheme.onSurface,
-                    ),
+                    style: _textStyle(Theme.of(context).colorScheme.onSurface),
                   ),
                 ),
               ),
@@ -142,9 +140,7 @@ class AcademicWordShard extends StatelessWidget {
     }
 
     return shard
-        .animate(
-          onPlay: (c) => c.repeat(reverse: true),
-        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(
           begin: -4,
           end: 4,

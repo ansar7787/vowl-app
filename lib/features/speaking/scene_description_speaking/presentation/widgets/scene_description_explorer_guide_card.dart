@@ -26,8 +26,8 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                  ? AppColors.slate900
-                  : Colors.black.withValues(alpha: 0.02)),
+                    ? AppColors.slate900
+                    : Colors.black.withValues(alpha: 0.02)),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
         ),

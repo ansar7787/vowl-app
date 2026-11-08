@@ -36,11 +36,7 @@ class ToolsStrip extends StatefulWidget {
   final ValueNotifier<bool>? isExpandedNotifier;
 
   /// Creates a [ToolsStrip] widget.
-  const ToolsStrip({
-    super.key,
-    this.collapsed = true,
-    this.isExpandedNotifier,
-  });
+  const ToolsStrip({super.key, this.collapsed = true, this.isExpandedNotifier});
 
   /// Global expansion notifier shared across the home screen.
   static final ValueNotifier<bool> globalExpansionNotifier =
@@ -72,7 +68,9 @@ class _ToolsStripState extends State<ToolsStrip> {
   @override
   void initState() {
     super.initState();
-    DiscoveryDeck.dailyCompletionNotifier.addListener(_onDailyCompletionChanged);
+    DiscoveryDeck.dailyCompletionNotifier.addListener(
+      _onDailyCompletionChanged,
+    );
     if (widget.isExpandedNotifier != null) {
       _isExpanded = widget.isExpandedNotifier!;
     } else {
@@ -89,14 +87,17 @@ class _ToolsStripState extends State<ToolsStrip> {
 
   @override
   void dispose() {
-    DiscoveryDeck.dailyCompletionNotifier.removeListener(_onDailyCompletionChanged);
+    DiscoveryDeck.dailyCompletionNotifier.removeListener(
+      _onDailyCompletionChanged,
+    );
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bool isDailyWordsDone = di.sl.isRegistered<DailyWordsService>() &&
+    final bool isDailyWordsDone =
+        di.sl.isRegistered<DailyWordsService>() &&
         di.sl<DailyWordsService>().isTodayCompleted;
 
     return Semantics(
@@ -136,14 +137,20 @@ class _ToolsStripState extends State<ToolsStrip> {
                 // ── 2. SWISS HORIZON CARD 2: DAILY VOCABULARY ───────────────────
                 _SwissHorizonCard(
                   tag: isDailyWordsDone
-                      ? context.tr('home.tools_daily_completed', fallback: 'COMPLETED ✓')
+                      ? context.tr(
+                          'home.tools_daily_completed',
+                          fallback: 'COMPLETED ✓',
+                        )
                       : context.tr('home.tools_daily_tag', fallback: 'TODAY'),
                   title: context.tr(
                     'home.tools_daily_words',
                     fallback: 'Daily Words',
                   ),
                   subtitle: isDailyWordsDone
-                      ? context.tr('home.tools_daily_all_learned', fallback: 'All 5 words mastered today!')
+                      ? context.tr(
+                          'home.tools_daily_all_learned',
+                          fallback: 'All 5 words mastered today!',
+                        )
                       : context.tr(
                           'home.tools_daily_desc',
                           fallback: '5 new words today',
@@ -383,8 +390,8 @@ class _SwissHorizonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Semantics(
       button: true,
@@ -400,14 +407,12 @@ class _SwissHorizonCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isCompleted
-                  ? AppColors.emerald500.withValues(
-                      alpha: isDark ? 0.22 : 0.16,
-                    )
+                  ? AppColors.emerald500.withValues(alpha: isDark ? 0.22 : 0.16)
                   : (isMidnight
-                      ? Colors.white.withValues(alpha: 0.12)
-                      : (isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100)),
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100)),
               width: 1.r,
             ),
           ),
@@ -434,7 +439,9 @@ class _SwissHorizonCard extends StatelessWidget {
                         width: 1.r,
                       ),
                     ),
-                    child: Center(child: Icon(icon, color: color, size: 21.r)),
+                    child: Center(
+                      child: Icon(icon, color: color, size: 21.r),
+                    ),
                   ),
                   if (isCompleted)
                     Positioned(
@@ -447,12 +454,16 @@ class _SwissHorizonCard extends StatelessWidget {
                           color: AppColors.emerald500,
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: isDark ? const Color(0xFF131A29) : Colors.white,
+                            color: isDark
+                                ? const Color(0xFF131A29)
+                                : Colors.white,
                             width: 1.5.r,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.emerald500.withValues(alpha: 0.4),
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.4,
+                              ),
                               blurRadius: 4,
                               offset: const Offset(0, 1),
                             ),
@@ -497,7 +508,9 @@ class _SwissHorizonCard extends StatelessWidget {
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w800,
                           color: isCompleted
-                              ? (isDark ? const Color(0xFF6EE7B7) : AppColors.emerald500)
+                              ? (isDark
+                                    ? const Color(0xFF6EE7B7)
+                                    : AppColors.emerald500)
                               : color,
                           letterSpacing: 0.6,
                         ),
@@ -588,8 +601,8 @@ class _BentoSubCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Semantics(
       button: true,
@@ -608,8 +621,8 @@ class _BentoSubCell extends StatelessWidget {
               color: isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
               width: 1.r,
             ),
           ),
@@ -632,7 +645,9 @@ class _BentoSubCell extends StatelessWidget {
                         width: 1.r,
                       ),
                     ),
-                    child: Center(child: Icon(icon, color: color, size: 17.r)),
+                    child: Center(
+                      child: Icon(icon, color: color, size: 17.r),
+                    ),
                   ),
                   SizedBox(width: 4.w),
                   Flexible(
@@ -724,8 +739,8 @@ class _ArcadeVaultStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Semantics(
       button: true,
@@ -747,10 +762,12 @@ class _ArcadeVaultStrip extends StatelessWidget {
                       alpha: isExpanded ? 0.35 : 0.20,
                     )
                   : (isDark
-                      ? IllustrationColors.vibrantPink.withValues(
-                          alpha: isExpanded ? 0.30 : 0.16,
-                        )
-                      : IllustrationColors.vibrantPink.withValues(alpha: 0.18)),
+                        ? IllustrationColors.vibrantPink.withValues(
+                            alpha: isExpanded ? 0.30 : 0.16,
+                          )
+                        : IllustrationColors.vibrantPink.withValues(
+                            alpha: 0.18,
+                          )),
               width: 1.r,
             ),
             boxShadow: isExpanded
@@ -853,21 +870,17 @@ class _ArcadeVaultStrip extends StatelessWidget {
                       isExpanded
                           ? context.tr(
                               'home.tools_arcade_expanded',
-                              fallback:
-                                  'Word Snap & Word Mixer ready to play',
+                              fallback: 'Word Snap & Word Mixer ready to play',
                             )
                           : context.tr(
                               'home.tools_arcade_teaser',
-                              fallback:
-                                  'Speed vocabulary & anagram challenges',
+                              fallback: 'Speed vocabulary & anagram challenges',
                             ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.5.sp,
                         fontWeight: FontWeight.w500,
-                        color: isDark
-                            ? AppColors.slate400
-                            : AppColors.slate500,
+                        color: isDark ? AppColors.slate400 : AppColors.slate500,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -886,8 +899,8 @@ class _ArcadeVaultStrip extends StatelessWidget {
                           alpha: isDark ? 0.16 : 0.10,
                         )
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.06)
-                          : AppColors.slate100),
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : AppColors.slate100),
                   borderRadius: BorderRadius.circular(100.r),
                   border: Border.all(
                     color: isExpanded
@@ -895,8 +908,8 @@ class _ArcadeVaultStrip extends StatelessWidget {
                             alpha: isDark ? 0.35 : 0.22,
                           )
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.10)
-                            : AppColors.slate200),
+                              ? Colors.white.withValues(alpha: 0.10)
+                              : AppColors.slate200),
                     width: 1.r,
                   ),
                 ),

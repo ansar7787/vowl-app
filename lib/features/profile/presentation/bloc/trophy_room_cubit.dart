@@ -60,7 +60,10 @@ class TrophyRoomState {
   });
 
   /// Factory constructing the initial trophy state from earned badge IDs and user progression.
-  factory TrophyRoomState.initial(List<String> earnedBadges, {UserEntity? user}) {
+  factory TrophyRoomState.initial(
+    List<String> earnedBadges, {
+    UserEntity? user,
+  }) {
     final canonicalEarned = earnedBadges
         .map(TrophyRoomCubit.canonicalizeBadgeId)
         .toList();
@@ -145,7 +148,9 @@ class TrophyRoomState {
       return pool;
     }
 
-    return pool.where((badgeId) => _matchesCategory(badgeId, category)).toList();
+    return pool
+        .where((badgeId) => _matchesCategory(badgeId, category))
+        .toList();
   }
 
   static bool _matchesCategory(String badgeId, String category) {
@@ -168,11 +173,12 @@ class TrophyRoomState {
     if (earned.isEmpty) return const [];
 
     // Sort by prestige: Legendary -> Expert -> Scholar -> Novice -> Milestones
-    final sorted = List<String>.from(earned)..sort((a, b) {
-      final scoreA = _prestigeScore(a);
-      final scoreB = _prestigeScore(b);
-      return scoreB.compareTo(scoreA);
-    });
+    final sorted = List<String>.from(earned)
+      ..sort((a, b) {
+        final scoreA = _prestigeScore(a);
+        final scoreB = _prestigeScore(b);
+        return scoreB.compareTo(scoreA);
+      });
 
     return sorted.take(3).toList();
   }
@@ -228,7 +234,7 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
 
   /// Creates a [TrophyRoomCubit] initialized with [initialBadges] and optional [user].
   TrophyRoomCubit(List<String> initialBadges, {UserEntity? user})
-      : super(TrophyRoomState.initial(initialBadges, user: user)) {
+    : super(TrophyRoomState.initial(initialBadges, user: user)) {
     _loadSavedPins();
   }
 
@@ -318,7 +324,9 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
 
     final earnedFiltered = filter == TrophyFilter.legendary || category == 'all'
         ? earnedPool
-        : earnedPool.where((b) => TrophyRoomState._matchesCategory(b, category)).toList();
+        : earnedPool
+              .where((b) => TrophyRoomState._matchesCategory(b, category))
+              .toList();
 
     final lockedFiltered = TrophyRoomState._calculateLocked(
       state.allEarnedBadges,
@@ -338,9 +346,7 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
 
   /// Reactively syncs state when [AuthBloc] updates badges or user levels.
   void updateUser({required List<String> badges, UserEntity? user}) {
-    final canonicalEarned = badges
-        .map(canonicalizeBadgeId)
-        .toList();
+    final canonicalEarned = badges.map(canonicalizeBadgeId).toList();
 
     final (nextBadge, nextProgress) = TrophyRoomState._computeNextInReach(
       user,
@@ -348,7 +354,9 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
     );
 
     final pinned = state.pinnedBadgeIds.isNotEmpty
-        ? state.pinnedBadgeIds.where((b) => canonicalEarned.contains(b)).toList()
+        ? state.pinnedBadgeIds
+              .where((b) => canonicalEarned.contains(b))
+              .toList()
         : TrophyRoomState._computeDefaultPinned(canonicalEarned);
 
     emit(
@@ -361,10 +369,7 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
       ),
     );
 
-    _applyFilter(
-      filter: state.currentFilter,
-      category: state.activeCategory,
-    );
+    _applyFilter(filter: state.currentFilter, category: state.activeCategory);
   }
 
   /// Pins [badgeId] into the top 3 showcase slots (or unpins if already pinned).

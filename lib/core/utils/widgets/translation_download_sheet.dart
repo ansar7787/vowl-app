@@ -147,8 +147,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100),
                 width: 1,
               ),
             ),
@@ -334,9 +334,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     begin: const Offset(1.05, 1.05),
                     end: const Offset(1, 1),
                   ),
-              SizedBox(
-                height: 16.h + MediaQuery.paddingOf(context).bottom,
-              ),
+              SizedBox(height: 16.h + MediaQuery.paddingOf(context).bottom),
             ],
           ),
         ).animate().slideY(

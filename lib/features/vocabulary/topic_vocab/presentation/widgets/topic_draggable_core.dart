@@ -81,8 +81,8 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                     decoration: BoxDecoration(
                       color: widget.isDark
                           ? (context.isMidnight
-                              ? AppColors.midnightSurface
-                              : AppColors.slate800)
+                                ? AppColors.midnightSurface
+                                : AppColors.slate800)
                           : Colors.white,
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
@@ -135,9 +135,12 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
 
   String _formatWord(String input) {
     if (input.isEmpty) return input;
-    return input.split(' ').map((segment) {
-      if (segment.isEmpty) return segment;
-      return '${segment[0].toUpperCase()}${segment.substring(1).toLowerCase()}';
-    }).join(' ');
+    return input
+        .split(' ')
+        .map((segment) {
+          if (segment.isEmpty) return segment;
+          return '${segment[0].toUpperCase()}${segment.substring(1).toLowerCase()}';
+        })
+        .join(' ');
   }
 }

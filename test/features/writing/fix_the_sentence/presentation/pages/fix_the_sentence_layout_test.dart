@@ -36,20 +36,33 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 
 class MockWritingBloc extends Mock implements WritingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
+
 class FakeWritingState extends Fake implements WritingState {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeEconomyState extends Fake implements EconomyState {}
 
 void main() {
@@ -130,10 +143,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const WritingHintUsed());
     registerFallbackValue(
-      const FetchWritingQuests(
-        gameType: GameSubtype.fixTheSentence,
-        level: 2,
-      ),
+      const FetchWritingQuests(gameType: GameSubtype.fixTheSentence, level: 2),
     );
   });
 
@@ -192,13 +202,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -275,49 +287,65 @@ void main() {
   }
 
   group('FixTheSentenceScreen - 1. Initial Rendering & Layout', () {
-    testWidgets('renders all essential components in normal mode (level 2)', (tester) async {
+    testWidgets('renders all essential components in normal mode (level 2)', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       expect(find.byType(WritingBaseLayout), findsOneWidget);
       expect(find.byType(FixTheSentenceInstruction), findsOneWidget);
       expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
-      expect(find.byKey(const Key('fix_the_sentence_scroll_view')), findsOneWidget);
-      expect(find.byKey(const Key('fix_the_sentence_scratch_target')), findsOneWidget);
+      expect(
+        find.byKey(const Key('fix_the_sentence_scroll_view')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('fix_the_sentence_scratch_target')),
+        findsOneWidget,
+      );
       expect(find.text("don't"), findsOneWidget);
     });
 
-    testWidgets('renders DigitalBlackboard with full passage and highlighted error word', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'renders DigitalBlackboard with full passage and highlighted error word',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      expect(find.text("don't"), findsOneWidget);
-      expect(find.byType(RichText), findsWidgets);
-      final richTexts = tester.widgetList<RichText>(find.byType(RichText));
-      final hasPassageText = richTexts.any(
-        (rt) =>
-            rt.text.toPlainText().contains('She') &&
-            rt.text.toPlainText().contains('like apples.'),
-      );
-      expect(hasPassageText, isTrue);
-    });
+        expect(find.text("don't"), findsOneWidget);
+        expect(find.byType(RichText), findsWidgets);
+        final richTexts = tester.widgetList<RichText>(find.byType(RichText));
+        final hasPassageText = richTexts.any(
+          (rt) =>
+              rt.text.toPlainText().contains('She') &&
+              rt.text.toPlainText().contains('like apples.'),
+        );
+        expect(hasPassageText, isTrue);
+      },
+    );
 
-    testWidgets('renders fallback when passage has no direct word regex match', (tester) async {
-      const state = WritingLoaded(
-        quests: [sampleMinimalQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.fixTheSentence,
-        level: 2,
-      );
-      await pumpScreen(tester, state: state, level: 2);
+    testWidgets(
+      'renders fallback when passage has no direct word regex match',
+      (tester) async {
+        const state = WritingLoaded(
+          quests: [sampleMinimalQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.fixTheSentence,
+          level: 2,
+        );
+        await pumpScreen(tester, state: state, level: 2);
 
-      expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
-      expect(find.text('notfound'), findsOneWidget);
-    });
+        expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
+        expect(find.text('notfound'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders shimmer loading when in initial state', (tester) async {
+    testWidgets('renders shimmer loading when in initial state', (
+      tester,
+    ) async {
       const state = WritingInitial();
       await pumpScreen(tester, state: state, level: 2);
 
@@ -328,9 +356,14 @@ void main() {
     testWidgets('dispatches FetchWritingQuests on init', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      verify(() => mockWritingBloc.add(
-        const FetchWritingQuests(gameType: GameSubtype.fixTheSentence, level: 2),
-      )).called(1);
+      verify(
+        () => mockWritingBloc.add(
+          const FetchWritingQuests(
+            gameType: GameSubtype.fixTheSentence,
+            level: 2,
+          ),
+        ),
+      ).called(1);
     });
   });
 
@@ -343,90 +376,126 @@ void main() {
       expect(find.text('Grammar'), findsOneWidget);
     });
 
-    testWidgets('displays instruction without error type if errorType is null', (tester) async {
-      const state = WritingLoaded(
-        quests: [sampleMinimalQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.fixTheSentence,
-        level: 2,
-      );
-      await pumpScreen(tester, state: state, level: 2);
+    testWidgets(
+      'displays instruction without error type if errorType is null',
+      (tester) async {
+        const state = WritingLoaded(
+          quests: [sampleMinimalQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.fixTheSentence,
+          level: 2,
+        );
+        await pumpScreen(tester, state: state, level: 2);
 
-      expect(find.text('Correct the word.'), findsOneWidget);
-    });
+        expect(find.text('Correct the word.'), findsOneWidget);
+      },
+    );
 
     testWidgets('updates instruction text when wiped', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      final scratchTarget = find.byKey(const Key('fix_the_sentence_scratch_target'));
+      final scratchTarget = find.byKey(
+        const Key('fix_the_sentence_scratch_target'),
+      );
       expect(scratchTarget, findsOneWidget);
       await tester.tap(scratchTarget);
       await tester.pumpAndSettle();
 
-      expect(find.text('Choose the correct word to complete the sentence'), findsOneWidget);
+      expect(
+        find.text('Choose the correct word to complete the sentence'),
+        findsOneWidget,
+      );
       expect(find.text('Grammar'), findsOneWidget);
     });
   });
 
   group('FixTheSentenceScreen - 3. Blackboard Wiping & Scratch Interaction', () {
-    testWidgets('tapping blackboard target triggers hint sound, success haptic, and sets wiped', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping blackboard target triggers hint sound, success haptic, and sets wiped',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final scratchTarget = find.byKey(const Key('fix_the_sentence_scratch_target'));
-      await tester.tap(scratchTarget);
-      await tester.pumpAndSettle();
+        final scratchTarget = find.byKey(
+          const Key('fix_the_sentence_scratch_target'),
+        );
+        await tester.tap(scratchTarget);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playHint()).called(1);
-      expect(find.byKey(const Key('fix_the_sentence_wiped_target')), findsOneWidget);
-      expect(find.text('____'), findsOneWidget);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playHint()).called(1);
+        expect(
+          find.byKey(const Key('fix_the_sentence_wiped_target')),
+          findsOneWidget,
+        );
+        expect(find.text('____'), findsOneWidget);
+      },
+    );
 
-    testWidgets('panning blackboard target accumulates erase points and wipes after 35 points', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'panning blackboard target accumulates erase points and wipes after 35 points',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final scratchTarget = find.byKey(const Key('fix_the_sentence_scratch_target'));
-      expect(scratchTarget, findsOneWidget);
+        final scratchTarget = find.byKey(
+          const Key('fix_the_sentence_scratch_target'),
+        );
+        expect(scratchTarget, findsOneWidget);
 
-      final gesture = await tester.startGesture(tester.getCenter(scratchTarget));
-      for (int i = 0; i < 60; i++) {
-        await gesture.moveBy(const Offset(2, 2));
-        await tester.pump(const Duration(milliseconds: 10));
-      }
-      await gesture.up();
-      await tester.pumpAndSettle();
+        final gesture = await tester.startGesture(
+          tester.getCenter(scratchTarget),
+        );
+        for (int i = 0; i < 60; i++) {
+          await gesture.moveBy(const Offset(2, 2));
+          await tester.pump(const Duration(milliseconds: 10));
+        }
+        await gesture.up();
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playHint()).called(1);
-      expect(find.byKey(const Key('fix_the_sentence_wiped_target')), findsOneWidget);
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playHint()).called(1);
+        expect(
+          find.byKey(const Key('fix_the_sentence_wiped_target')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('tapping or panning blackboard does nothing when already answered', (tester) async {
-      const state = WritingLoaded(
-        quests: [sampleQuest1],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.correct,
-        gameType: GameSubtype.fixTheSentence,
-        level: 2,
-      );
-      await pumpScreen(tester, state: state, level: 2);
+    testWidgets(
+      'tapping or panning blackboard does nothing when already answered',
+      (tester) async {
+        const state = WritingLoaded(
+          quests: [sampleQuest1],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.correct,
+          gameType: GameSubtype.fixTheSentence,
+          level: 2,
+        );
+        await pumpScreen(tester, state: state, level: 2);
 
-      final scratchTarget = find.byKey(const Key('fix_the_sentence_scratch_target'));
-      expect(scratchTarget, findsOneWidget);
-      await tester.tap(scratchTarget, warnIfMissed: false);
-      await tester.pump();
+        final scratchTarget = find.byKey(
+          const Key('fix_the_sentence_scratch_target'),
+        );
+        expect(scratchTarget, findsOneWidget);
+        await tester.tap(scratchTarget, warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockSoundService.playHint());
-      expect(find.byKey(const Key('fix_the_sentence_wiped_target')), findsNothing);
-    });
+        verifyNever(() => mockSoundService.playHint());
+        expect(
+          find.byKey(const Key('fix_the_sentence_wiped_target')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   group('FixTheSentenceScreen - 4. Correction Options (Stage 1)', () {
@@ -435,7 +504,9 @@ void main() {
 
       expect(find.byType(FixTheSentenceCorrectionOptions), findsNothing);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
+      await tester.tap(
+        find.byKey(const Key('fix_the_sentence_scratch_target')),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byType(FixTheSentenceCorrectionOptions), findsOneWidget);
@@ -445,40 +516,60 @@ void main() {
       }
     });
 
-    testWidgets('selecting incorrect option submits wrong answer and does not show TypeToConfirmOverlay', (tester) async {
+    testWidgets(
+      'selecting incorrect option submits wrong answer and does not show TypeToConfirmOverlay',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
+
+        await tester.tap(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+        );
+        await tester.pumpAndSettle();
+
+        final wrongOption = find.byKey(
+          const Key("fix_the_sentence_option_aren't"),
+        );
+        await tester.tap(wrongOption);
+        await tester.pumpAndSettle();
+
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+        expect(find.byType(TypeToConfirmOverlay), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'selecting correct option triggers success haptic and reveals TypeToConfirmOverlay',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
+
+        await tester.tap(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+        );
+        await tester.pumpAndSettle();
+
+        final correctOption = find.byKey(
+          const Key("fix_the_sentence_option_doesn't"),
+        );
+        await tester.tap(correctOption);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
+
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(2));
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+        expect(find.text("doesn't"), findsAtLeastNWidgets(1));
+      },
+    );
+
+    testWidgets('tapping option when already answered does nothing', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
-
-      final wrongOption = find.byKey(const Key("fix_the_sentence_option_aren't"));
-      await tester.tap(wrongOption);
-      await tester.pumpAndSettle();
-
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-      expect(find.byType(TypeToConfirmOverlay), findsNothing);
-    });
-
-    testWidgets('selecting correct option triggers success haptic and reveals TypeToConfirmOverlay', (tester) async {
-      await pumpScreen(tester, level: 2);
-
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
-
-      final correctOption = find.byKey(const Key("fix_the_sentence_option_doesn't"));
-      await tester.tap(correctOption);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(2));
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-      expect(find.text("doesn't"), findsAtLeastNWidgets(1));
-    });
-
-    testWidgets('tapping option when already answered does nothing', (tester) async {
-      await pumpScreen(tester, level: 2);
-
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
+      await tester.tap(
+        find.byKey(const Key('fix_the_sentence_scratch_target')),
+      );
       await tester.pumpAndSettle();
 
       const answeredState = WritingLoaded(
@@ -505,59 +596,94 @@ void main() {
     });
   });
 
-  group('FixTheSentenceScreen - 5. TypeToConfirmOverlay (Stage 2 Confirmation)', () {
-    testWidgets('TypeToConfirmOverlay displays expected word', (tester) async {
-      await pumpScreen(tester, level: 2);
+  group(
+    'FixTheSentenceScreen - 5. TypeToConfirmOverlay (Stage 2 Confirmation)',
+    () {
+      testWidgets('TypeToConfirmOverlay displays expected word', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
+        await tester.tap(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+        );
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.byKey(const Key("fix_the_sentence_option_doesn't")));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        await tester.tap(
+          find.byKey(const Key("fix_the_sentence_option_doesn't")),
+        );
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      expect(overlay.expectedText, "doesn't");
-    });
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        expect(overlay.expectedText, "doesn't");
+      });
 
-    testWidgets('confirming typing in TypeToConfirmOverlay speaks corrected text and dispatches SubmitAnswer(true)', (tester) async {
-      await pumpScreen(tester, level: 2);
+      testWidgets(
+        'confirming typing in TypeToConfirmOverlay speaks corrected text and dispatches SubmitAnswer(true)',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
+          await tester.tap(
+            find.byKey(const Key('fix_the_sentence_scratch_target')),
+          );
+          await tester.pumpAndSettle();
 
-      await tester.tap(find.byKey(const Key("fix_the_sentence_option_doesn't")));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+          await tester.tap(
+            find.byKey(const Key("fix_the_sentence_option_doesn't")),
+          );
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pumpAndSettle();
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onConfirmed();
-      await tester.pump();
+          final overlay = tester.widget<TypeToConfirmOverlay>(
+            find.byType(TypeToConfirmOverlay),
+          );
+          overlay.onConfirmed();
+          await tester.pump();
 
-      verify(() => mockTtsService.speak("She doesn't like apples.")).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+          verify(
+            () => mockTtsService.speak("She doesn't like apples."),
+          ).called(1);
+          verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+        },
+      );
 
-    testWidgets('skipping typing in TypeToConfirmOverlay dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester, level: 2);
+      testWidgets(
+        'skipping typing in TypeToConfirmOverlay dispatches SubmitAnswer(false)',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
+          await tester.tap(
+            find.byKey(const Key('fix_the_sentence_scratch_target')),
+          );
+          await tester.pumpAndSettle();
 
-      await tester.tap(find.byKey(const Key("fix_the_sentence_option_doesn't")));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+          await tester.tap(
+            find.byKey(const Key("fix_the_sentence_option_doesn't")),
+          );
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pumpAndSettle();
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onSkipped();
-      await tester.pump();
+          final overlay = tester.widget<TypeToConfirmOverlay>(
+            find.byType(TypeToConfirmOverlay),
+          );
+          overlay.onSkipped();
+          await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
-  });
+          verify(
+            () => mockWritingBloc.add(const SubmitAnswer(false)),
+          ).called(1);
+        },
+      );
+    },
+  );
 
   group('FixTheSentenceScreen - 6. Feedback, Navigation & Reset', () {
-    testWidgets('displays feedback card when answered correctly', (tester) async {
+    testWidgets('displays feedback card when answered correctly', (
+      tester,
+    ) async {
       const state = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -594,7 +720,9 @@ void main() {
       verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
     });
 
-    testWidgets('tapping Hint button dispatches WritingHintUsed', (tester) async {
+    testWidgets('tapping Hint button dispatches WritingHintUsed', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       final hintButton = find.byType(QuestHintButton);
@@ -605,37 +733,50 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('onQuestionReset resets wiped state and options on new question', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'onQuestionReset resets wiped state and options on new question',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
+        await tester.tap(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('fix_the_sentence_wiped_target')), findsOneWidget);
+        expect(
+          find.byKey(const Key('fix_the_sentence_wiped_target')),
+          findsOneWidget,
+        );
 
-      const nextState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.fixTheSentence,
-        level: 2,
-      );
-      when(() => mockWritingBloc.state).thenReturn(nextState);
-      writingStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pumpAndSettle();
+        const nextState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.fixTheSentence,
+          level: 2,
+        );
+        when(() => mockWritingBloc.state).thenReturn(nextState);
+        writingStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('fix_the_sentence_scratch_target')), findsOneWidget);
-      expect(find.text('librari'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+          findsOneWidget,
+        );
+        expect(find.text('librari'), findsOneWidget);
+      },
+    );
   });
 
   group('FixTheSentenceScreen - 7. Completion, Game Over & Error Journal', () {
-    testWidgets('shows completion dialog on WritingGameComplete', (tester) async {
+    testWidgets('shows completion dialog on WritingGameComplete', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       const completeState = WritingGameComplete(
@@ -684,79 +825,70 @@ void main() {
       }
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'user_123',
-            email: 'test@vowl.app',
-            displayName: 'Learner',
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'user_123',
+              email: 'test@vowl.app',
+              displayName: 'Learner',
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      await tester.tap(find.byKey(const Key('fix_the_sentence_scratch_target')));
-      await tester.pumpAndSettle();
+        await tester.tap(
+          find.byKey(const Key('fix_the_sentence_scratch_target')),
+        );
+        await tester.pumpAndSettle();
 
-      final wrongOption = find.byKey(const Key("fix_the_sentence_option_aren't"));
-      await tester.tap(wrongOption);
-      await tester.pumpAndSettle();
+        final wrongOption = find.byKey(
+          const Key("fix_the_sentence_option_aren't"),
+        );
+        await tester.tap(wrongOption);
+        await tester.pumpAndSettle();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('FixTheSentenceScreen - 8. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(FixTheSentenceScreen), findsOneWidget);
       expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
     });
 
     testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(FixTheSentenceScreen), findsOneWidget);
       expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
     });
 
-    testWidgets('renders with 1.3x high text scale without overflow', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+    testWidgets('renders with 1.3x high text scale without overflow', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(FixTheSentenceScreen), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(FixTheSentenceScreen), findsOneWidget);
     });
 
-    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 

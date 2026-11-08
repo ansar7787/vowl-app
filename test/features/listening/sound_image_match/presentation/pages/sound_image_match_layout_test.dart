@@ -161,8 +161,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -195,10 +196,12 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playUrl(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(
-      any(),
-      pauseMarkers: any(named: 'pauseMarkers'),
-    )).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(
+        any(),
+        pauseMarkers: any(named: 'pauseMarkers'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
@@ -209,11 +212,13 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback =
           invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
@@ -231,7 +236,8 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
 
@@ -305,38 +311,65 @@ void main() {
   }
 
   group('SoundImageMatchScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, emitter, and 4-option grid', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+    testWidgets(
+      '1. Initial layout renders instruction, timer, emitter, and 4-option grid',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      expect(find.byType(SoundImageMatchInstruction), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_instruction')), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_emitter')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_grid')), findsOneWidget);
-      expect(find.byType(SoundImageMatchScreen), findsOneWidget);
-    });
+        expect(find.byType(SoundImageMatchInstruction), findsOneWidget);
+        expect(
+          find.byKey(const Key('sound_image_match_instruction')),
+          findsOneWidget,
+        );
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const Key('sound_image_match_emitter')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const Key('sound_image_match_grid')), findsOneWidget);
+        expect(find.byType(SoundImageMatchScreen), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. Initial instruction displays natural, centered instruction text', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+    testWidgets(
+      '2. Initial instruction displays natural, centered instruction text',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      expect(find.byKey(const Key('sound_image_match_instruction_text')), findsOneWidget);
-      expect(find.text('Tap the picture that matches the sound.'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('sound_image_match_instruction_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Tap the picture that matches the sound.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('3. Emitter button tap triggers TTS playback and selection haptics', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+    testWidgets(
+      '3. Emitter button tap triggers TTS playback and selection haptics',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      final emitterFinder = find.byKey(const Key('sound_image_match_emitter_btn'));
-      expect(emitterFinder, findsOneWidget);
+        final emitterFinder = find.byKey(
+          const Key('sound_image_match_emitter_btn'),
+        );
+        expect(emitterFinder, findsOneWidget);
 
-      await tester.tap(emitterFinder);
-      await tester.pump();
+        await tester.tap(emitterFinder);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(sampleQuest1.textToSpeak!)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(sampleQuest1.textToSpeak!),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (tester) async {
+    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (
+      tester,
+    ) async {
       final urlState = ListeningLoaded(
         quests: const [sampleQuestUrl],
         currentIndex: 0,
@@ -351,41 +384,52 @@ void main() {
       await tester.tap(find.byKey(const Key('sound_image_match_emitter_btn')));
       await tester.pump();
 
-      verify(() => mockSoundService.playUrl('https://vowl.app/audio/stream.mp3')).called(1);
+      verify(
+        () => mockSoundService.playUrl('https://vowl.app/audio/stream.mp3'),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('5. Audio fallback cascade uses prompt or question when textToSpeak is missing', (tester) async {
-      const fallbackQuest = ListeningQuest(
-        id: 'sim_fallback',
-        instruction: 'Match sound.',
-        difficulty: 1,
-        subtype: GameSubtype.soundImageMatch,
-        prompt: 'Barking dog sound prompt',
-        options: ['Cat', 'Dog'],
-        optionEmojis: ['🐱', '🐶'],
-        correctAnswerIndex: 1,
-        correctAnswer: 'Dog',
-      );
+    testWidgets(
+      '5. Audio fallback cascade uses prompt or question when textToSpeak is missing',
+      (tester) async {
+        const fallbackQuest = ListeningQuest(
+          id: 'sim_fallback',
+          instruction: 'Match sound.',
+          difficulty: 1,
+          subtype: GameSubtype.soundImageMatch,
+          prompt: 'Barking dog sound prompt',
+          options: ['Cat', 'Dog'],
+          optionEmojis: ['🐱', '🐶'],
+          correctAnswerIndex: 1,
+          correctAnswer: 'Dog',
+        );
 
-      final fallbackState = ListeningLoaded(
-        quests: const [fallbackQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
-      await pumpSoundImageMatchScreen(tester, state: fallbackState);
+        final fallbackState = ListeningLoaded(
+          quests: const [fallbackQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+        await pumpSoundImageMatchScreen(tester, state: fallbackState);
 
-      await tester.tap(find.byKey(const Key('sound_image_match_emitter_btn')));
-      await tester.pump();
+        await tester.tap(
+          find.byKey(const Key('sound_image_match_emitter_btn')),
+        );
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('Barking dog sound prompt')).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts('Barking dog sound prompt'),
+        ).called(1);
+      },
+    );
 
-    testWidgets('6. Audio playback strips [pause:...] tokens cleanly', (tester) async {
+    testWidgets('6. Audio playback strips [pause:...] tokens cleanly', (
+      tester,
+    ) async {
       const pauseQuest = ListeningQuest(
         id: 'sim_pause',
         instruction: 'Listen carefully.',
@@ -415,27 +459,53 @@ void main() {
       verify(() => mockSoundService.playTts('Hello world!')).called(1);
     });
 
-    testWidgets('7. Emitter displays volume_up icon initially and emoji when answered correctly', (tester) async {
+    testWidgets(
+      '7. Emitter displays volume_up icon initially and emoji when answered correctly',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        expect(
+          find.byKey(const Key('sound_image_match_emitter_icon')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('sound_image_match_emitter_emoji')),
+          findsNothing,
+        );
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('sound_image_match_emitter_emoji')),
+          findsOneWidget,
+        );
+        expect(find.text('🐱'), findsWidgets);
+      },
+    );
+
+    testWidgets('8. Grid displays all options (labels and emojis) in 2 rows', (
+      tester,
+    ) async {
       await pumpSoundImageMatchScreen(tester);
 
-      expect(find.byKey(const Key('sound_image_match_emitter_icon')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_emitter_emoji')), findsNothing);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('sound_image_match_emitter_emoji')), findsOneWidget);
-      expect(find.text('🐱'), findsWidgets);
-    });
-
-    testWidgets('8. Grid displays all options (labels and emojis) in 2 rows', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      expect(find.byKey(const Key('sound_image_match_option_0')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_option_1')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_option_2')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_option_3')), findsOneWidget);
+      expect(
+        find.byKey(const Key('sound_image_match_option_0')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('sound_image_match_option_1')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('sound_image_match_option_2')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('sound_image_match_option_3')),
+        findsOneWidget,
+      );
 
       expect(find.text('CAT'), findsOneWidget);
       expect(find.text('DOG'), findsOneWidget);
@@ -443,35 +513,43 @@ void main() {
       expect(find.text('FISH'), findsOneWidget);
     });
 
-    testWidgets('9. Single-option quest renders option centered without error', (tester) async {
-      const singleOptionQuest = ListeningQuest(
-        id: 'sim_single',
-        instruction: 'Only choice.',
-        difficulty: 1,
-        subtype: GameSubtype.soundImageMatch,
-        textToSpeak: 'Singular',
-        options: ['Solo'],
-        optionEmojis: ['🎸'],
-        correctAnswerIndex: 0,
-        correctAnswer: 'Solo',
-      );
+    testWidgets(
+      '9. Single-option quest renders option centered without error',
+      (tester) async {
+        const singleOptionQuest = ListeningQuest(
+          id: 'sim_single',
+          instruction: 'Only choice.',
+          difficulty: 1,
+          subtype: GameSubtype.soundImageMatch,
+          textToSpeak: 'Singular',
+          options: ['Solo'],
+          optionEmojis: ['🎸'],
+          correctAnswerIndex: 0,
+          correctAnswer: 'Solo',
+        );
 
-      final singleState = ListeningLoaded(
-        quests: const [singleOptionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
-      await pumpSoundImageMatchScreen(tester, state: singleState);
+        final singleState = ListeningLoaded(
+          quests: const [singleOptionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+        await pumpSoundImageMatchScreen(tester, state: singleState);
 
-      expect(find.byKey(const Key('sound_image_match_option_0')), findsOneWidget);
-      expect(find.text('SOLO'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('sound_image_match_option_0')),
+          findsOneWidget,
+        );
+        expect(find.text('SOLO'), findsOneWidget);
+      },
+    );
 
-    testWidgets('10. Two-option quest renders row of 2 options without error', (tester) async {
+    testWidgets('10. Two-option quest renders row of 2 options without error', (
+      tester,
+    ) async {
       final twoState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -483,39 +561,55 @@ void main() {
       );
       await pumpSoundImageMatchScreen(tester, state: twoState);
 
-      expect(find.byKey(const Key('sound_image_match_option_0')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_option_1')), findsOneWidget);
+      expect(
+        find.byKey(const Key('sound_image_match_option_0')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('sound_image_match_option_1')),
+        findsOneWidget,
+      );
       expect(find.byKey(const Key('sound_image_match_option_2')), findsNothing);
       expect(find.text('CAR'), findsOneWidget);
       expect(find.text('TRAIN'), findsOneWidget);
     });
 
-    testWidgets('11. Tapping option tile triggers selection haptic and sets pending selection', (tester) async {
+    testWidgets(
+      '11. Tapping option tile triggers selection haptic and sets pending selection',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '12. Tapping correct option submits SubmitAnswer(true), plays success sound, and triggers success haptic',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets('13. Tapping correct option stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpSoundImageMatchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('12. Tapping correct option submits SubmitAnswer(true), plays success sound, and triggers success haptic', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('13. Tapping correct option stops the SpeedChallengeTimer', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
+      final SpeedChallengeTimer timerWidget = tester.widget(
+        find.byType(SpeedChallengeTimer),
+      );
       expect(timerWidget.key, isNotNull);
 
       await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
@@ -525,19 +619,26 @@ void main() {
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
     });
 
-    testWidgets('14. Tapping wrong option submits SubmitAnswer(false) with userAnswer', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+    testWidgets(
+      '14. Tapping wrong option submits SubmitAnswer(false) with userAnswer',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('sound_image_match_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('sound_image_match_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>()))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('15. Tapping wrong option stops the SpeedChallengeTimer', (tester) async {
+    testWidgets('15. Tapping wrong option stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpSoundImageMatchScreen(tester);
 
       await tester.tap(find.byKey(const Key('sound_image_match_option_1')));
@@ -547,102 +648,142 @@ void main() {
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
     });
 
-    testWidgets('16. Answer lockout: secondary taps on options are ignored once answered', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+    testWidgets(
+      '16. Answer lockout: secondary taps on options are ignored once answered',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_2')), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-
-    testWidgets('17. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout] and stops timer', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('18. In answered state with correct choice, correct option is highlighted with modernCorrect border/color', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('sound_image_match_option_0')), findsOneWidget);
-    });
-
-    testWidgets('19. In answered state with wrong choice, chosen option shows modernIncorrect border/color and correct option is highlighted', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('sound_image_match_option_1')), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_option_0')), findsOneWidget);
-    });
-
-    testWidgets('20. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
-
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      final continueFinder = find.text('CONTINUE');
-      if (continueFinder.evaluate().isNotEmpty) {
-        await tester.tap(continueFinder.first);
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
         await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-        verify(() => mockListeningBloc.add(any(that: isA<NextQuestion>()))).called(1);
-      }
-    });
+        clearInteractions(mockListeningBloc);
 
-    testWidgets('21. Question transition clears selections, updates options & emojis, and restarts timer without crash', (tester) async {
-      await pumpSoundImageMatchScreen(tester);
+        await tester.tap(
+          find.byKey(const Key('sound_image_match_option_2')),
+          warnIfMissed: false,
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        verifyNever(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
 
-      final nextState = ListeningLoaded(
-        quests: const [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '17. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout] and stops timer',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
 
-      expect(find.text('CAR'), findsOneWidget);
-      expect(find.text('TRAIN'), findsOneWidget);
+        final SpeedChallengeTimer timerWidget = tester.widget(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('22. Hint button in header dispatches selection haptic', (tester) async {
+    testWidgets(
+      '18. In answered state with correct choice, correct option is highlighted with modernCorrect border/color',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('sound_image_match_option_0')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '19. In answered state with wrong choice, chosen option shows modernIncorrect border/color and correct option is highlighted',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('sound_image_match_option_1')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('sound_image_match_option_0')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '20. In answered state, Continue button appears in bottom bar; tapping it dispatches NextQuestion',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        final continueFinder = find.text('CONTINUE');
+        if (continueFinder.evaluate().isNotEmpty) {
+          await tester.tap(continueFinder.first);
+          await tester.pump();
+
+          verify(
+            () => mockListeningBloc.add(any(that: isA<NextQuestion>())),
+          ).called(1);
+        }
+      },
+    );
+
+    testWidgets(
+      '21. Question transition clears selections, updates options & emojis, and restarts timer without crash',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester);
+
+        await tester.tap(find.byKey(const Key('sound_image_match_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final nextState = ListeningLoaded(
+          quests: const [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('CAR'), findsOneWidget);
+        expect(find.text('TRAIN'), findsOneWidget);
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('22. Hint button in header dispatches selection haptic', (
+      tester,
+    ) async {
       await pumpSoundImageMatchScreen(tester);
 
       clearInteractions(mockHapticService);
@@ -657,65 +798,79 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('23. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpSoundImageMatchScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '23. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpSoundImageMatchScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('sound_image_match_emitter')), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(
+          find.byKey(const Key('sound_image_match_emitter')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('24. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpSoundImageMatchScreen(
-        tester,
-        state: const ListeningGameComplete(
-          xpEarned: 100,
-          coinsEarned: 20,
-          questCount: 5,
-        ),
-      );
+    testWidgets(
+      '24. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpSoundImageMatchScreen(
+          tester,
+          state: const ListeningGameComplete(
+            xpEarned: 100,
+            coinsEarned: 20,
+            questCount: 5,
+          ),
+        );
 
-      expect(find.byType(SoundImageMatchScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(SoundImageMatchScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('25. Game over state renders with zero lives', (tester) async {
       await pumpSoundImageMatchScreen(
         tester,
-        state: const ListeningGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-        ),
+        state: const ListeningGameOver(quests: [sampleQuest1], currentIndex: 0),
       );
 
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('26. Level 1 briefing dialog displays SOUND IMAGE MATCH and dismisses on LET\'S PLAY tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_soundImageMatch': false,
-      });
+    testWidgets(
+      '26. Level 1 briefing dialog displays SOUND IMAGE MATCH and dismisses on LET\'S PLAY tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_soundImageMatch': false,
+        });
 
-      await pumpSoundImageMatchScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpSoundImageMatchScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('SOUND IMAGE MATCH'), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('SOUND IMAGE MATCH'), findsOneWidget);
 
-      final actionBtn = find.text("LET'S PLAY");
-      expect(actionBtn, findsOneWidget);
+        final actionBtn = find.text("LET'S PLAY");
+        expect(actionBtn, findsOneWidget);
 
-      await tester.tap(actionBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('27. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('27. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpSoundImageMatchScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
 
@@ -723,36 +878,37 @@ void main() {
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
     });
 
-    testWidgets('28. Small mobile screen (320x568) renders with zero overflow', (tester) async {
-      await pumpSoundImageMatchScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+    testWidgets(
+      '28. Small mobile screen (320x568) renders with zero overflow',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester, size: const Size(320, 568));
+        expect(find.byType(SoundImageMatchScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('29. Tablet viewport (768x1024) renders with zero overflow', (
+      tester,
+    ) async {
+      await pumpSoundImageMatchScreen(tester, size: const Size(768, 1024));
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('29. Tablet viewport (768x1024) renders with zero overflow', (tester) async {
-      await pumpSoundImageMatchScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
-      expect(find.byType(SoundImageMatchScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '30. Reduced motion mode suppresses emitter shimmer and emoji scale animations, and accessibility semantics are present on emitter and grid options',
+      (tester) async {
+        await pumpSoundImageMatchScreen(tester, reduceMotion: true);
 
-    testWidgets('30. Reduced motion mode suppresses emitter shimmer and emoji scale animations, and accessibility semantics are present on emitter and grid options', (tester) async {
-      await pumpSoundImageMatchScreen(tester, reduceMotion: true);
+        expect(find.byType(SoundImageMatchEmitter), findsOneWidget);
+        expect(find.byType(SoundImageMatchGrid), findsOneWidget);
 
-      expect(find.byType(SoundImageMatchEmitter), findsOneWidget);
-      expect(find.byType(SoundImageMatchGrid), findsOneWidget);
+        final emitterSemantics = find.bySemanticsLabel('Play sound');
+        expect(emitterSemantics, findsOneWidget);
 
-      final emitterSemantics = find.bySemanticsLabel('Play sound');
-      expect(emitterSemantics, findsOneWidget);
-
-      final option0Semantics = find.bySemanticsLabel('Cat');
-      expect(option0Semantics, findsOneWidget);
-    });
+        final option0Semantics = find.bySemanticsLabel('Cat');
+        expect(option0Semantics, findsOneWidget);
+      },
+    );
   });
 }
-

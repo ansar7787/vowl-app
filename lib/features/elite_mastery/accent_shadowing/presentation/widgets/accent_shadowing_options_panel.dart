@@ -63,7 +63,8 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
-    final reduceMotion = VowlMotion.shouldReduceMotion(context) ||
+    final reduceMotion =
+        VowlMotion.shouldReduceMotion(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     return Column(

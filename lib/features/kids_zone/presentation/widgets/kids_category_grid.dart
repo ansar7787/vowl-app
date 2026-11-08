@@ -188,11 +188,13 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                 itemBuilder: (context, index) {
                   final game = games[index];
                   final gameLevels = completedLevels[game.gameType] ?? [];
-                  final totalLevels =
-                      CurriculumManifest.getKidsLevels(game.gameType);
+                  final totalLevels = CurriculumManifest.getKidsLevels(
+                    game.gameType,
+                  );
                   final completedCount = gameLevels.length;
-                  final highestCompleted =
-                      gameLevels.isEmpty ? 0 : gameLevels.reduce(math.max);
+                  final highestCompleted = gameLevels.isEmpty
+                      ? 0
+                      : gameLevels.reduce(math.max);
                   final isMastered = completedCount >= totalLevels;
                   final currentLevel = isMastered
                       ? totalLevels
@@ -374,14 +376,15 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
       label: isMastered
           ? '$title, ${context.tr('category_games.mastered', fallback: 'Mastered')}! $totalLevels of $totalLevels'
           : (completedCount == 0
-              ? '$title, ${context.tr('quest_archive.new_badge', fallback: 'New')} adventure'
-              : '$title, ${context.tr('quest_archive.level', fallback: 'Level $currentLevel', args: [currentLevel.toString()])}, $completedCount of $totalLevels completed'),
+                ? '$title, ${context.tr('quest_archive.new_badge', fallback: 'New')} adventure'
+                : '$title, ${context.tr('quest_archive.level', fallback: 'Level $currentLevel', args: [currentLevel.toString()])}, $completedCount of $totalLevels completed'),
       child: ScaleButton(
         onTap: onTap,
         child: Container(
           padding: EdgeInsets.all(20.r),
           decoration: BoxDecoration(
-            color: (widget.isDark &&
+            color:
+                (widget.isDark &&
                     Theme.of(context).scaffoldBackgroundColor == Colors.black)
                 ? AppColors.midnightSurface
                 : (widget.isDark ? AppColors.slate800 : Colors.white),
@@ -511,10 +514,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(
-            color: color.withValues(alpha: 0.3),
-            width: 1.5.w,
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5.w),
         ),
         child: FittedBox(
           fit: BoxFit.scaleDown,

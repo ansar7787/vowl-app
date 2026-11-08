@@ -284,7 +284,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
       _transactionIdVal = response.paymentId;
       _errorMessageVal = context.tr(
         'premium.payment_verifying_notice',
-        fallback: 'Payment received (Ref: ${response.paymentId}). Your transaction was confirmed by your bank, but server synchronization is delayed. Your Pro access will activate shortly. Please do not pay again.',
+        fallback:
+            'Payment received (Ref: ${response.paymentId}). Your transaction was confirmed by your bank, but server synchronization is delayed. Your Pro access will activate shortly. Please do not pay again.',
       );
       _updateState();
     }
@@ -322,7 +323,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
     // fine to surface directly, with a localized fallback.
     _errorMessageVal =
         response.message ??
-        context.tr('premium.error_generic', fallback: 'Payment failed. Please try again.');
+        context.tr(
+          'premium.error_generic',
+          fallback: 'Payment failed. Please try again.',
+        );
     _updateState();
   }
 
@@ -404,157 +408,157 @@ class _PremiumScreenState extends State<PremiumScreen> {
           }
         },
         child: Scaffold(
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(color: backgroundColor),
-          child: Stack(
-            children: [
-              // 2026 Ultra-Premium Mesh Gradient Background
-              Positioned(
-                top: -150.h,
-                right: -100.w,
-                child: StaticGlow(
-                  color: isDark
-                      ? AppColors.indigo500.withValues(alpha: 0.15)
-                      : AppColors.indigo500.withValues(alpha: 0.08),
-                  radius: 300,
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(color: backgroundColor),
+            child: Stack(
+              children: [
+                // 2026 Ultra-Premium Mesh Gradient Background
+                Positioned(
+                  top: -150.h,
+                  right: -100.w,
+                  child: StaticGlow(
+                    color: isDark
+                        ? AppColors.indigo500.withValues(alpha: 0.15)
+                        : AppColors.indigo500.withValues(alpha: 0.08),
+                    radius: 300,
+                  ),
                 ),
-              ),
-              Positioned(
-                bottom: -100.h,
-                left: -100.w,
-                child: StaticGlow(
-                  color: isDark
-                      ? AppColors.violet500.withValues(alpha: 0.15)
-                      : AppColors.violet500.withValues(alpha: 0.08),
-                  radius: 250,
+                Positioned(
+                  bottom: -100.h,
+                  left: -100.w,
+                  child: StaticGlow(
+                    color: isDark
+                        ? AppColors.violet500.withValues(alpha: 0.15)
+                        : AppColors.violet500.withValues(alpha: 0.08),
+                    radius: 250,
+                  ),
                 ),
-              ),
-              Positioned(
-                top: 200.h,
-                left: -50.w,
-                child: StaticGlow(
-                  color: isDark
-                      ? IllustrationColors.richPurple.withValues(alpha: 0.1)
-                      : IllustrationColors.richPurple.withValues(alpha: 0.05),
-                  radius: 200,
+                Positioned(
+                  top: 200.h,
+                  left: -50.w,
+                  child: StaticGlow(
+                    color: isDark
+                        ? IllustrationColors.richPurple.withValues(alpha: 0.1)
+                        : IllustrationColors.richPurple.withValues(alpha: 0.05),
+                    radius: 200,
+                  ),
                 ),
-              ),
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  return CustomScrollView(
-                    physics: const AlwaysScrollableScrollPhysics(
-                      parent: BouncingScrollPhysics(),
-                    ),
-                    slivers: [
-                      SliverAppBar(
-                        backgroundColor: Colors.transparent,
-                        elevation: 0,
-                        pinned: true,
-                        centerTitle: false,
-                        leading: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                            color: isDark ? Colors.white : Colors.black,
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(
+                        parent: BouncingScrollPhysics(),
+                      ),
+                      slivers: [
+                        SliverAppBar(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                          pinned: true,
+                          centerTitle: false,
+                          leading: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
+                            onPressed: () {
+                              if (context.canPop()) {
+                                context.pop();
+                              } else {
+                                context.go('/home');
+                              }
+                            },
                           ),
-                          onPressed: () {
-                            if (context.canPop()) {
-                              context.pop();
-                            } else {
-                              context.go('/home');
-                            }
-                          },
-                        ),
-                        actions: [
-                          Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                                vertical: 6.h,
-                              ),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    const Color(
+                          actions: [
+                            Padding(
+                              padding: EdgeInsets.only(right: 16.w),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w,
+                                  vertical: 6.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      const Color(
+                                        0xFF6366F1,
+                                      ).withValues(alpha: 0.2),
+                                      const Color(
+                                        0xFF8B5CF6,
+                                      ).withValues(alpha: 0.1),
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  border: Border.all(
+                                    color: const Color(
                                       0xFF6366F1,
-                                    ).withValues(alpha: 0.2),
-                                    const Color(
-                                      0xFF8B5CF6,
-                                    ).withValues(alpha: 0.1),
+                                    ).withValues(alpha: 0.3),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.workspace_premium_rounded,
+                                      color: AppColors.indigo500,
+                                      size: 14.r,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      context.tr(
+                                        'premium.verified_pro_badge',
+                                        fallback: 'VERIFIED PRO',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ],
                                 ),
-                                borderRadius: BorderRadius.circular(20.r),
-                                border: Border.all(
-                                  color: const Color(
-                                    0xFF6366F1,
-                                  ).withValues(alpha: 0.3),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.workspace_premium_rounded,
-                                    color: AppColors.indigo500,
-                                    size: 14.r,
-                                  ),
-                                  SizedBox(width: 4.w),
-                                  Text(
-                                    context.tr(
-                                      'premium.verified_pro_badge',
-                                      fallback: 'VERIFIED PRO',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: _buildScrollableBody(),
-                      ),
-                    ],
-                  );
-                },
-              ),
-              if (_isProcessingVal) _buildProcessingOverlay(),
-              if (_paymentCompletedVal) _buildCompletedOverlay(),
-              Align(
-                alignment: Alignment.topCenter,
-                child: ConfettiWidget(
-                  confettiController: _confettiController,
-                  blastDirectionality: BlastDirectionality.explosive,
-                  emissionFrequency: 0.05,
-                  numberOfParticles: 50,
-                  gravity: 0.1,
-                  colors: [
-                    AppColors.emerald500,
-                    AppColors.emerald400,
-                    AppColors.amber500,
-                    AppColors.indigo500,
-                    AppColors.violet500,
-                  ],
+                          ],
+                        ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: _buildScrollableBody(),
+                        ),
+                      ],
+                    );
+                  },
                 ),
-              ),
-            ],
+                if (_isProcessingVal) _buildProcessingOverlay(),
+                if (_paymentCompletedVal) _buildCompletedOverlay(),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: ConfettiWidget(
+                    confettiController: _confettiController,
+                    blastDirectionality: BlastDirectionality.explosive,
+                    emissionFrequency: 0.05,
+                    numberOfParticles: 50,
+                    gravity: 0.1,
+                    colors: [
+                      AppColors.emerald500,
+                      AppColors.emerald400,
+                      AppColors.amber500,
+                      AppColors.indigo500,
+                      AppColors.violet500,
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   /// RESPONSIVENESS / OVERFLOW FIX
   ///
@@ -609,11 +613,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 end: Alignment.bottomRight,
               )
             : const LinearGradient(
-                colors: [
-                  Colors.white,
-                  Color(0xFFF8FAFC),
-                  Color(0xFFEEF2FF),
-                ],
+                colors: [Colors.white, Color(0xFFF8FAFC), Color(0xFFEEF2FF)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -787,7 +787,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
           // Expiry & Countdown Banner
           Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSpacing.card,
+              vertical: 12.h,
+            ),
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.white.withValues(alpha: 0.05)
@@ -821,20 +824,20 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                 args: ['$daysLeft'],
                               )
                             : (expiryDate != null && daysLeft == 1
-                                ? context.tr(
-                                    'premium.one_day_remaining',
-                                    fallback: '1 Day Remaining',
-                                  )
-                                : (expiryDate != null &&
-                                        expiryDate.isAfter(DateTime.now())
-                                    ? context.tr(
-                                        'premium.expiring_today',
-                                        fallback: 'Expiring Today',
-                                      )
-                                    : context.tr(
-                                        'premium.already_premium',
-                                        fallback: 'Pro Membership Active',
-                                      ))),
+                                  ? context.tr(
+                                      'premium.one_day_remaining',
+                                      fallback: '1 Day Remaining',
+                                    )
+                                  : (expiryDate != null &&
+                                            expiryDate.isAfter(DateTime.now())
+                                        ? context.tr(
+                                            'premium.expiring_today',
+                                            fallback: 'Expiring Today',
+                                          )
+                                        : context.tr(
+                                            'premium.already_premium',
+                                            fallback: 'Pro Membership Active',
+                                          ))),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -905,11 +908,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      LucideIcons.compass,
-                      color: Colors.white,
-                      size: 18.sp,
-                    ),
+                    Icon(LucideIcons.compass, color: Colors.white, size: 18.sp),
                     SizedBox(width: 8.w),
                     Text(
                       context.tr(
@@ -1036,11 +1035,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 decoration: BoxDecoration(
                   color: AppColors.rose500.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: AppColors.rose500.withValues(alpha: 0.3)),
+                  border: Border.all(
+                    color: AppColors.rose500.withValues(alpha: 0.3),
+                  ),
                 ),
                 child: Row(
                   children: [
-                    Icon(LucideIcons.alertCircle, color: AppColors.rose500, size: 16.sp),
+                    Icon(
+                      LucideIcons.alertCircle,
+                      color: AppColors.rose500,
+                      size: 16.sp,
+                    ),
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
@@ -1049,9 +1054,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                           fallback:
                               'Your Pro Membership expired on ${DateFormat.yMMMd().format(expiredDate.toLocal())}. Renew below to restore VIP benefits!',
                           args: [
-                            DateFormat.yMMMd().format(
-                              expiredDate.toLocal(),
-                            ),
+                            DateFormat.yMMMd().format(expiredDate.toLocal()),
                           ],
                         ),
                         style: TextStyle(
@@ -1092,9 +1095,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _buildSecureTag(),
           SizedBox(height: 8.h),
           _buildTermsAndPolicy(),
-          SizedBox(
-            height: 24.h + MediaQuery.paddingOf(context).bottom,
-          ),
+          SizedBox(height: 24.h + MediaQuery.paddingOf(context).bottom),
         ],
       ),
     );
@@ -1105,65 +1106,65 @@ class _PremiumScreenState extends State<PremiumScreen> {
       child: Container(
         color: Colors.black.withValues(alpha: 0.75),
         child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 60.r,
-                  height: 60.r,
-                  child: const VowlButtonSpinner(color: AppColors.amber500),
-                ),
-                SizedBox(height: 20.h),
-                Semantics(
-                  liveRegion: true,
-                  child: Text(
-                    context.tr(
-                      'premium.processing_title',
-                      fallback: 'Processing Payment...',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 60.r,
+                height: 60.r,
+                child: const VowlButtonSpinner(color: AppColors.amber500),
+              ),
+              SizedBox(height: 20.h),
+              Semantics(
+                liveRegion: true,
+                child: Text(
                   context.tr(
-                    'premium.processing_subtitle',
-                    fallback: 'Setting up your payment session. Please wait...',
+                    'premium.processing_title',
+                    fallback: 'Processing Payment...',
                   ),
-                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    color: Colors.white70,
-                    fontSize: 12.sp,
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 24.h),
-                TextButton(
-                  onPressed: () {
-                    _cancelPaymentTimeout();
-                    _isProcessingVal = false;
-                    _updateState();
-                  },
-                  child: Text(
-                    context.tr('common.cancel', fallback: 'CANCEL'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white60,
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                context.tr(
+                  'premium.processing_subtitle',
+                  fallback: 'Setting up your payment session. Please wait...',
+                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Colors.white70,
+                  fontSize: 12.sp,
+                ),
+              ),
+              SizedBox(height: 24.h),
+              TextButton(
+                onPressed: () {
+                  _cancelPaymentTimeout();
+                  _isProcessingVal = false;
+                  _updateState();
+                },
+                child: Text(
+                  context.tr('common.cancel', fallback: 'CANCEL'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white60,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-      );
+      ),
+    );
   }
 
   Widget _buildCompletedOverlay() {
@@ -1375,7 +1376,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: AppSpacing.card),
+        padding: EdgeInsets.symmetric(
+          vertical: 16.h,
+          horizontal: AppSpacing.card,
+        ),
         decoration: BoxDecoration(
           color: isSelected
               ? AppColors.indigo500.withValues(alpha: 0.15)
@@ -1683,9 +1687,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _paymentCompletedVal = true;
                 _paymentSuccessVal = false;
                 _errorMessageVal = context.tr(
-          'premium.error_session_expired',
-          fallback: 'Session expired. Please restart the app.',
-        );
+                  'premium.error_session_expired',
+                  fallback: 'Session expired. Please restart the app.',
+                );
                 _updateState();
               }
             } catch (e, stackTrace) {
@@ -1701,7 +1705,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _paymentSuccessVal = false;
                 _errorMessageVal = context.tr(
                   'premium.error_upgrade_failed',
-                  fallback: 'We couldn\'t activate your Pro access. Please contact support with your transaction ID.',
+                  fallback:
+                      'We couldn\'t activate your Pro access. Please contact support with your transaction ID.',
                 );
                 _updateState();
               }

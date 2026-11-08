@@ -32,19 +32,13 @@ class WordMixerInfoCard extends StatelessWidget {
 
     final cardBgGradient = LinearGradient(
       colors: isMidnight
-          ? const [
-              AppColors.midnightSurface,
-              Colors.black,
-            ]
+          ? const [AppColors.midnightSurface, Colors.black]
           : (isDark
-              ? [
-                  const Color(0xFF26123D).withValues(alpha: 0.65),
-                  const Color(0xFF0F172A).withValues(alpha: 0.85),
-                ]
-              : const [
-                  Colors.white,
-                  Color(0xFFFAF5FF),
-                ]),
+                ? [
+                    const Color(0xFF26123D).withValues(alpha: 0.65),
+                    const Color(0xFF0F172A).withValues(alpha: 0.85),
+                  ]
+                : const [Colors.white, Color(0xFFFAF5FF)]),
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );
@@ -69,7 +63,10 @@ class WordMixerInfoCard extends StatelessWidget {
               // Challenge Badge
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.5.h,
+                  ),
                   decoration: BoxDecoration(
                     color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.1),
                     borderRadius: BorderRadius.circular(10.r),
@@ -92,8 +89,14 @@ class WordMixerInfoCard extends StatelessWidget {
                           fit: BoxFit.scaleDown,
                           child: Text(
                             isPracticeMode
-                                ? context.tr('home.practice_round', fallback: 'Practice Round')
-                                : context.tr('home.daily_challenge', fallback: 'DAILY CHALLENGE'),
+                                ? context.tr(
+                                    'home.practice_round',
+                                    fallback: 'Practice Round',
+                                  )
+                                : context.tr(
+                                    'home.daily_challenge',
+                                    fallback: 'DAILY CHALLENGE',
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.5.sp,
@@ -114,7 +117,10 @@ class WordMixerInfoCard extends StatelessWidget {
               // Difficulty Pill (displays HARD, MEDIUM, etc.)
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.5.h,
+                  ),
                   decoration: BoxDecoration(
                     color: puzzle.difficultyColor.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(10.r),
@@ -297,7 +303,10 @@ class WordMixerInfoCard extends StatelessWidget {
               // Phonetic / Syllables Chip if available
               if (puzzle.hasPhonetic || puzzle.hasSyllables)
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.emerald500.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8.r),

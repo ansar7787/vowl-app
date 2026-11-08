@@ -28,7 +28,8 @@ class GameErrorView extends StatelessWidget {
     final titleColor = isDark ? Colors.white : Colors.black87;
     final bodyColor = isDark ? Colors.white70 : Colors.black54;
 
-    final isOffline = message.toLowerCase().contains('internet') ||
+    final isOffline =
+        message.toLowerCase().contains('internet') ||
         message.toLowerCase().contains('network') ||
         message.toLowerCase().contains('connection') ||
         message.toLowerCase().contains('offline');
@@ -38,10 +39,7 @@ class GameErrorView extends StatelessWidget {
             'connectivity.no_internet_title',
             fallback: 'Connection Interrupted',
           )
-        : context.tr(
-            'game_error.title',
-            fallback: 'Quest Unavailable',
-          );
+        : context.tr('game_error.title', fallback: 'Quest Unavailable');
 
     return Semantics(
       label: 'Error: $message',
@@ -52,10 +50,7 @@ class GameErrorView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _ErrorIcon(
-                primaryColor: primaryColor,
-                isOffline: isOffline,
-              ),
+              _ErrorIcon(primaryColor: primaryColor, isOffline: isOffline),
               SizedBox(height: 24.h),
               AutoSizeText(
                 title,

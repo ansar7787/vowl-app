@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_painter.dart';
 
-
 /// Interactive emergency pressure valve chamber allowing players to manually align system pressure.
 class EmergencyHubValveChamber extends StatelessWidget {
   /// Correct target answer phrase.
@@ -57,9 +56,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark
-                ? AppColors.slate900
-                : Colors.white),
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
@@ -190,7 +187,9 @@ class EmergencyHubValveChamber extends StatelessWidget {
                                   isValveAligned
                                       ? Icons.lock_open_rounded
                                       : Icons.lock_rounded,
-                                  key: const Key('emergency_hub_valve_lock_icon'),
+                                  key: const Key(
+                                    'emergency_hub_valve_lock_icon',
+                                  ),
                                   color: Colors.white,
                                   size: 24.r,
                                 ),

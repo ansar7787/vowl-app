@@ -9,17 +9,14 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
 
 Widget _wrap(Widget child) {
   return ScreenUtilInit(
     designSize: const Size(390, 844),
     minTextAdapt: true,
-    builder: (context, _) => MaterialApp(
-      home: Scaffold(
-        body: child,
-      ),
-    ),
+    builder: (context, _) => MaterialApp(home: Scaffold(body: child)),
   );
 }
 
@@ -42,7 +39,11 @@ void main() {
       id: 'q1',
       instruction: 'Select definition for "Exit":',
       targetWord: 'Exit',
-      options: ['A way out of a building', 'A piece of furniture', 'A food item'],
+      options: [
+        'A way out of a building',
+        'A piece of furniture',
+        'A food item',
+      ],
       correctAnswerIndex: 0,
       difficulty: 1,
     ),
@@ -66,63 +67,66 @@ void main() {
   ];
 
   group('SnapQuizDialog Widget Tests', () {
-    testWidgets('renders questions sequentially and displays victory view on completion', (tester) async {
-      await tester.pumpWidget(
-        _wrap(
-          Builder(
-            builder: (ctx) => ElevatedButton(
-              onPressed: () => SnapQuizDialog.show(ctx, quests: quests),
-              child: const Text('Open'),
+    testWidgets(
+      'renders questions sequentially and displays victory view on completion',
+      (tester) async {
+        await tester.pumpWidget(
+          _wrap(
+            Builder(
+              builder: (ctx) => ElevatedButton(
+                onPressed: () => SnapQuizDialog.show(ctx, quests: quests),
+                child: const Text('Open'),
+              ),
             ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Open'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Open'));
+        await tester.pumpAndSettle();
 
-      // Q1 is displayed
-      expect(find.text('Select definition for "Exit":'), findsOneWidget);
-      expect(find.text('A way out of a building'), findsOneWidget);
+        // Q1 is displayed
+        expect(find.text('Select definition for "Exit":'), findsOneWidget);
+        expect(find.text('A way out of a building'), findsOneWidget);
 
-      // Select correct answer for Q1
-      await tester.tap(find.text('A way out of a building'));
-      await tester.pump(const Duration(milliseconds: 950));
-      await tester.pumpAndSettle();
+        // Select correct answer for Q1
+        await tester.tap(find.text('A way out of a building'));
+        await tester.pump(const Duration(milliseconds: 950));
+        await tester.pumpAndSettle();
 
-      // Q2 is displayed
-      expect(find.text('Phonetics for "Exit":'), findsOneWidget);
-      expect(find.text('Two syllables'), findsOneWidget);
+        // Q2 is displayed
+        expect(find.text('Phonetics for "Exit":'), findsOneWidget);
+        expect(find.text('Two syllables'), findsOneWidget);
 
-      // Select correct answer for Q2
-      await tester.tap(find.text('Two syllables'));
-      await tester.pump(const Duration(milliseconds: 950));
-      await tester.pumpAndSettle();
+        // Select correct answer for Q2
+        await tester.tap(find.text('Two syllables'));
+        await tester.pump(const Duration(milliseconds: 950));
+        await tester.pumpAndSettle();
 
-      // Q3 is displayed
-      expect(find.text('Complete the sentence:'), findsOneWidget);
-      expect(find.text('Please use the emergency ______.'), findsOneWidget);
+        // Q3 is displayed
+        expect(find.text('Complete the sentence:'), findsOneWidget);
+        expect(find.text('Please use the emergency ______.'), findsOneWidget);
 
-      // Select correct answer for Q3
-      await tester.tap(find.text('Exit'));
-      await tester.pump(const Duration(milliseconds: 950));
-      await tester.pumpAndSettle();
+        // Select correct answer for Q3
+        await tester.tap(find.text('Exit'));
+        await tester.pump(const Duration(milliseconds: 950));
+        await tester.pumpAndSettle();
 
-      // Victory Content is displayed!
-      expect(find.text('CHALLENGE MASTERED!'), findsOneWidget);
-      expect(find.text('+10 COINS ADDED'), findsOneWidget);
-      expect(find.text('Keep Exploring Scanned Words'), findsOneWidget);
-      expect(find.text('Done & Return Home'), findsOneWidget);
+        // Victory Content is displayed!
+        expect(find.text('CHALLENGE MASTERED!'), findsOneWidget);
+        expect(find.text('+10 COINS ADDED'), findsOneWidget);
+        expect(find.text('Keep Exploring Scanned Words'), findsOneWidget);
+        expect(find.text('Done & Return Home'), findsOneWidget);
 
-      // Tap "Keep Exploring Scanned Words"
-      await tester.tap(find.text('Keep Exploring Scanned Words'));
-      await tester.pumpAndSettle();
+        // Tap "Keep Exploring Scanned Words"
+        await tester.tap(find.text('Keep Exploring Scanned Words'));
+        await tester.pumpAndSettle();
 
-      // Dialog dismissed, parent still mounted
-      expect(find.text('CHALLENGE MASTERED!'), findsNothing);
-      expect(find.text('Open'), findsOneWidget);
-    });
+        // Dialog dismissed, parent still mounted
+        expect(find.text('CHALLENGE MASTERED!'), findsNothing);
+        expect(find.text('Open'), findsOneWidget);
+      },
+    );
 
     testWidgets('X button closes dialog safely', (tester) async {
       await tester.pumpWidget(
@@ -153,4 +157,3 @@ void main() {
     });
   });
 }
-

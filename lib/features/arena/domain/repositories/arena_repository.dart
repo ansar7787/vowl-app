@@ -6,9 +6,7 @@ abstract class ArenaRepository {
   /// If another live player is waiting, pairs immediately.
   /// Otherwise, falls back to a calibrated Computer/AI opponent via
   /// 3-Pillar Skill-Based Matchmaking (SBMM).
-  Future<ArenaDuelSession> quickMatch({
-    required UserEntity currentUser,
-  });
+  Future<ArenaDuelSession> quickMatch({required UserEntity currentUser});
 
   /// Challenges a specific player picked from the Leaderboard as a Ghost Rival
   /// playing at their exact accuracy level.
@@ -19,9 +17,7 @@ abstract class ArenaRepository {
   });
 
   /// Generates a sharable room code (e.g. `VOWL-DUEL-882`) and creates the room document.
-  Future<ArenaDuelSession> createRoomCode({
-    required UserEntity currentUser,
-  });
+  Future<ArenaDuelSession> createRoomCode({required UserEntity currentUser});
 
   /// Joins an existing room code created by a friend.
   Future<ArenaDuelSession> joinRoom({
@@ -46,23 +42,16 @@ abstract class ArenaRepository {
     required UserEntity currentUser,
     required bool isWinner,
     required bool isDraw,
+    bool isPerfect = false,
   });
 
   /// Forfeits match on disconnect / rage-quit. Remaining player awarded 50 Coins.
-  Future<void> forfeitMatch({
-    required String roomCode,
-    required String userId,
-  });
+  Future<void> forfeitMatch({required String roomCode, required String userId});
 
   /// Refunds the 30-coin entry stake if matchmaking or a waiting room is dissolved before the match starts.
-  Future<void> refundStake({
-    required String userId,
-  });
+  Future<void> refundStake({required String userId});
 
   /// Immediately cancels an active matchmaking search, removes any queue ticket from Firestore,
   /// and terminates background listeners for [userId].
-  Future<void> cancelMatchmaking({
-    required String userId,
-  });
+  Future<void> cancelMatchmaking({required String userId});
 }
-

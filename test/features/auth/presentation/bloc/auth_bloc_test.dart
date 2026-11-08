@@ -66,12 +66,18 @@ void main() {
   setUp(() {
     SharedPreferences.setMockInitialValues({});
     mockNotificationService = MockNotificationService();
-    when(() => mockNotificationService.cancelAllReminders()).thenAnswer((_) async {});
-    when(() => mockNotificationService.unregisterUserOnLogout()).thenAnswer((_) async {});
+    when(
+      () => mockNotificationService.cancelAllReminders(),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockNotificationService.unregisterUserOnLogout(),
+    ).thenAnswer((_) async {});
     if (di.sl.isRegistered<NotificationService>()) {
       di.sl.unregister<NotificationService>();
     }
-    di.sl.registerLazySingleton<NotificationService>(() => mockNotificationService);
+    di.sl.registerLazySingleton<NotificationService>(
+      () => mockNotificationService,
+    );
 
     mockNetworkInfo = MockNetworkInfo();
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -139,22 +145,22 @@ void main() {
           completedLevels: {
             'trueFalseReading': [1],
           },
-          unlockedLevels: {
-            'trueFalseReading': 2,
-          },
+          unlockedLevels: {'trueFalseReading': 2},
         ),
       ),
       act: (bloc) => userStreamController.add(tUser),
       expect: () => [
-        isA<AuthState>().having(
-          (s) => s.user?.unlockedLevels['trueFalseReading'],
-          'unlockedLevels',
-          2,
-        ).having(
-          (s) => s.user?.completedLevels['trueFalseReading'],
-          'completedLevels',
-          [1],
-        ),
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.unlockedLevels['trueFalseReading'],
+              'unlockedLevels',
+              2,
+            )
+            .having(
+              (s) => s.user?.completedLevels['trueFalseReading'],
+              'completedLevels',
+              [1],
+            ),
       ],
     );
 
@@ -169,24 +175,12 @@ void main() {
         ),
       ),
       act: (bloc) => userStreamController.add(
-        tUser.copyWith(
-          coins: 20,
-          displayName: null,
-          photoUrl: null,
-        ),
+        tUser.copyWith(coins: 20, displayName: null, photoUrl: null),
       ),
       expect: () => [
         isA<AuthState>()
-            .having(
-              (s) => s.user?.coins,
-              'coins',
-              20,
-            )
-            .having(
-              (s) => s.user?.displayName,
-              'displayName',
-              'Real Name',
-            )
+            .having((s) => s.user?.coins, 'coins', 20)
+            .having((s) => s.user?.displayName, 'displayName', 'Real Name')
             .having(
               (s) => s.user?.photoUrl,
               'photoUrl',
@@ -198,30 +192,14 @@ void main() {
     blocTest<AuthBloc, AuthState>(
       'should correctly update coins and kidsCoins when spent (coins decreased in remote snapshot)',
       build: () => bloc,
-      seed: () => AuthState.authenticated(
-        tUser.copyWith(
-          coins: 150,
-          kidsCoins: 150,
-        ),
-      ),
-      act: (bloc) => userStreamController.add(
-        tUser.copyWith(
-          coins: 0,
-          kidsCoins: 0,
-        ),
-      ),
+      seed: () =>
+          AuthState.authenticated(tUser.copyWith(coins: 150, kidsCoins: 150)),
+      act: (bloc) =>
+          userStreamController.add(tUser.copyWith(coins: 0, kidsCoins: 0)),
       expect: () => [
         isA<AuthState>()
-            .having(
-              (s) => s.user?.coins,
-              'coins',
-              0,
-            )
-            .having(
-              (s) => s.user?.kidsCoins,
-              'kidsCoins',
-              0,
-            ),
+            .having((s) => s.user?.coins, 'coins', 0)
+            .having((s) => s.user?.kidsCoins, 'kidsCoins', 0),
       ],
     );
   });
@@ -253,38 +231,71 @@ void main() {
       },
     );
 
-    test('preserves user-scoped vowl_sequence, daily_words, and scan/photo keys across logout', () async {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('vowl_sequence_completed_rapid_recall_user_1', '2026-11-05');
-      await prefs.setString('daily_words_user_1_last_completed_date', '2026-11-05');
-      await prefs.setStringList('scan_saved_snippets', ['snippet_1', 'snippet_2']);
-      await prefs.setString('transient_session_secret', 'secret123');
+    test(
+      'preserves user-scoped vowl_sequence, daily_words, and scan/photo keys across logout',
+      () async {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString(
+          'vowl_sequence_completed_rapid_recall_user_1',
+          '2026-11-05',
+        );
+        await prefs.setString(
+          'daily_words_user_1_last_completed_date',
+          '2026-11-05',
+        );
+        await prefs.setStringList('scan_saved_snippets', [
+          'snippet_1',
+          'snippet_2',
+        ]);
+        await prefs.setString('transient_session_secret', 'secret123');
 
-      when(() => mockLogOut(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockLogOut(any()),
+        ).thenAnswer((_) async => const Right(null));
 
-      bloc.add(const AuthLogoutRequested());
-      await untilCalled(() => mockLogOut(any()));
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+        bloc.add(const AuthLogoutRequested());
+        await untilCalled(() => mockLogOut(any()));
+        await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      expect(prefs.getString('vowl_sequence_completed_rapid_recall_user_1'), equals('2026-11-05'));
-      expect(prefs.getString('daily_words_user_1_last_completed_date'), equals('2026-11-05'));
-      expect(prefs.getStringList('scan_saved_snippets'), equals(['snippet_1', 'snippet_2']));
-      expect(prefs.getString('transient_session_secret'), isNull);
-    });
+        expect(
+          prefs.getString('vowl_sequence_completed_rapid_recall_user_1'),
+          equals('2026-11-05'),
+        );
+        expect(
+          prefs.getString('daily_words_user_1_last_completed_date'),
+          equals('2026-11-05'),
+        );
+        expect(
+          prefs.getStringList('scan_saved_snippets'),
+          equals(['snippet_1', 'snippet_2']),
+        );
+        expect(prefs.getString('transient_session_secret'), isNull);
+      },
+    );
 
     blocTest<AuthBloc, AuthState>(
       'should emit [loggingOut, authenticated] with network-unreachable if offline',
       build: () {
-        when(() => mockNetworkInfo.hasRealConnection).thenAnswer((_) async => false);
+        when(
+          () => mockNetworkInfo.hasRealConnection,
+        ).thenAnswer((_) async => false);
         return bloc;
       },
       seed: () => AuthState.authenticated(tUser),
       act: (bloc) => bloc.add(const AuthLogoutRequested()),
       expect: () => [
-        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.loggingOut,
+        ),
         isA<AuthState>()
             .having((s) => s.status, 'status', AuthStatus.authenticated)
-            .having((s) => s.message, 'message', 'auth.error.network_unreachable'),
+            .having(
+              (s) => s.message,
+              'message',
+              'auth.error.network_unreachable',
+            ),
       ],
     );
 
@@ -322,20 +333,30 @@ void main() {
       'should emit [loggingOut, unauthenticated] with success message when delete succeeds',
       build: () {
         when(() => mockDeleteAccount(any())).thenAnswer(
-          (_) async => const Right<Failure, void>(null) as Either<Failure, void>,
+          (_) async =>
+              const Right<Failure, void>(null) as Either<Failure, void>,
         );
         when(() => mockLogOut(any())).thenAnswer(
-          (_) async => const Right<Failure, void>(null) as Either<Failure, void>,
+          (_) async =>
+              const Right<Failure, void>(null) as Either<Failure, void>,
         );
         return bloc;
       },
       seed: () => AuthState.authenticated(tUser),
       act: (bloc) => bloc.add(const AuthDeleteAccountRequested()),
       expect: () => [
-        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.loggingOut,
+        ),
         isA<AuthState>()
             .having((s) => s.status, 'status', AuthStatus.unauthenticated)
-            .having((s) => s.message, 'message', 'settings_dialogs.account_deleted_success'),
+            .having(
+              (s) => s.message,
+              'message',
+              'settings_dialogs.account_deleted_success',
+            ),
       ],
       verify: (_) {
         verify(() => mockDeleteAccount(any())).called(1);
@@ -345,16 +366,26 @@ void main() {
     blocTest<AuthBloc, AuthState>(
       'should emit [loggingOut, authenticated] with network-unreachable when offline',
       build: () {
-        when(() => mockNetworkInfo.hasRealConnection).thenAnswer((_) async => false);
+        when(
+          () => mockNetworkInfo.hasRealConnection,
+        ).thenAnswer((_) async => false);
         return bloc;
       },
       seed: () => AuthState.authenticated(tUser),
       act: (bloc) => bloc.add(const AuthDeleteAccountRequested()),
       expect: () => [
-        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.loggingOut,
+        ),
         isA<AuthState>()
             .having((s) => s.status, 'status', AuthStatus.authenticated)
-            .having((s) => s.message, 'message', 'auth.error.network_unreachable'),
+            .having(
+              (s) => s.message,
+              'message',
+              'auth.error.network_unreachable',
+            ),
       ],
     );
   });
@@ -371,15 +402,17 @@ void main() {
         ),
       ),
       expect: () => [
-        isA<AuthState>().having(
-          (s) => s.user?.completedLevels['trueFalseReading'],
-          'completedLevels',
-          [1],
-        ).having(
-          (s) => s.user?.unlockedLevels['trueFalseReading'],
-          'unlockedLevels',
-          2,
-        ),
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.completedLevels['trueFalseReading'],
+              'completedLevels',
+              [1],
+            )
+            .having(
+              (s) => s.user?.unlockedLevels['trueFalseReading'],
+              'unlockedLevels',
+              2,
+            ),
       ],
     );
   });
@@ -388,8 +421,9 @@ void main() {
     blocTest<AuthBloc, AuthState>(
       'should refresh user and preserve optimistic level unlocks',
       build: () {
-        when(() => mockGetCurrentUser(any()))
-            .thenAnswer((_) async => Right(tUser));
+        when(
+          () => mockGetCurrentUser(any()),
+        ).thenAnswer((_) async => Right(tUser));
         return bloc;
       },
       seed: () => AuthState.authenticated(
@@ -397,31 +431,31 @@ void main() {
           completedLevels: {
             'trueFalseReading': [1],
           },
-          unlockedLevels: {
-            'trueFalseReading': 2,
-          },
+          unlockedLevels: {'trueFalseReading': 2},
         ),
       ),
       act: (bloc) => bloc.add(const AuthRefreshUser()),
       expect: () => [
-        isA<AuthState>().having(
-          (s) => s.user?.unlockedLevels['trueFalseReading'],
-          'unlockedLevels',
-          2,
-        ).having(
-          (s) => s.user?.completedLevels['trueFalseReading'],
-          'completedLevels',
-          [1],
-        ),
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.unlockedLevels['trueFalseReading'],
+              'unlockedLevels',
+              2,
+            )
+            .having(
+              (s) => s.user?.completedLevels['trueFalseReading'],
+              'completedLevels',
+              [1],
+            ),
       ],
     );
 
     blocTest<AuthBloc, AuthState>(
       'AuthClearMessage clears the transient message in AuthState',
       build: () => bloc,
-      seed: () => AuthState.authenticated(tUser).copyWith(
-        message: () => 'auth.error.network_unreachable',
-      ),
+      seed: () => AuthState.authenticated(
+        tUser,
+      ).copyWith(message: () => 'auth.error.network_unreachable'),
       act: (bloc) => bloc.add(const AuthClearMessage()),
       expect: () => [
         isA<AuthState>().having((s) => s.message, 'message', isNull),

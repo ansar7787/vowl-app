@@ -92,7 +92,8 @@ class FakeTtsService implements TtsService {
   TtsEngineStatus get engineStatus => TtsEngineStatus.ready;
 
   @override
-  ValueListenable<bool> get isSpeakingNotifier => ValueNotifier<bool>(isSpeaking);
+  ValueListenable<bool> get isSpeakingNotifier =>
+      ValueNotifier<bool>(isSpeaking);
 
   @override
   Future<void> speakComparison(
@@ -150,7 +151,11 @@ class FakeSpeechService implements SpeechService {
   Future<void> setSpeechRate(double rate) async {}
 
   @override
-  Future<void> speak(String text, {double rate = 0.5, String locale = "en-US"}) async {}
+  Future<void> speak(
+    String text, {
+    double rate = 0.5,
+    String locale = "en-US",
+  }) async {}
 
   @override
   void setWordCallback(Function(String)? callback) {}
@@ -205,9 +210,15 @@ void main() {
       completedLevels: {},
       totalExp: 100,
     );
-    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(testUser));
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
-    when(() => mockTranslationBloc.stream).thenAnswer((_) => const Stream<TranslationState>.empty());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockTranslationBloc.stream,
+    ).thenAnswer((_) => const Stream<TranslationState>.empty());
     when(() => mockTranslationBloc.state).thenReturn(
       const TranslationState(
         status: TranslationStatus.loaded,
@@ -227,15 +238,15 @@ void main() {
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
-        builder: (context, child) => const MaterialApp(
-          home: TranslateScreen(),
-        ),
+        builder: (context, child) => const MaterialApp(home: TranslateScreen()),
       ),
     );
   }
 
   group('TranslateScreen Widget Tests', () {
-    testWidgets('renders all major sections cleanly without overflow', (tester) async {
+    testWidgets('renders all major sections cleanly without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 
@@ -262,7 +273,9 @@ void main() {
       expect(find.text('Translation will appear here.'), findsOneWidget);
     });
 
-    testWidgets('typing in TextField shows character count and clear button', (tester) async {
+    testWidgets('typing in TextField shows character count and clear button', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 
@@ -279,20 +292,29 @@ void main() {
       expect(find.byIcon(Icons.arrow_forward_rounded), findsOneWidget);
     });
 
-    testWidgets('tapping swap button dispatches TranslationSwapLanguages event', (tester) async {
-      tester.view.physicalSize = const Size(1080, 2400);
-      addTearDown(tester.view.resetPhysicalSize);
+    testWidgets(
+      'tapping swap button dispatches TranslationSwapLanguages event',
+      (tester) async {
+        tester.view.physicalSize = const Size(1080, 2400);
+        addTearDown(tester.view.resetPhysicalSize);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 600));
 
-      await tester.tap(find.byIcon(Icons.swap_horiz_rounded));
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.byIcon(Icons.swap_horiz_rounded));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockTranslationBloc.add(any(that: isA<TranslationSwapLanguages>()))).called(1);
-    });
+        verify(
+          () => mockTranslationBloc.add(
+            any(that: isA<TranslationSwapLanguages>()),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('displays translated text with copy and TTS audio buttons', (tester) async {
+    testWidgets('displays translated text with copy and TTS audio buttons', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 
@@ -319,133 +341,147 @@ void main() {
       expect(find.byIcon(Icons.volume_down_rounded), findsOneWidget);
     });
 
-    testWidgets('tapping back button when input is empty pops directly without exit dialog', (tester) async {
-      tester.view.physicalSize = const Size(390, 844);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+    testWidgets(
+      'tapping back button when input is empty pops directly without exit dialog',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final backButton = find.byIcon(Icons.arrow_back_ios_new_rounded);
-      expect(backButton, findsOneWidget);
+        final backButton = find.byIcon(Icons.arrow_back_ios_new_rounded);
+        expect(backButton, findsOneWidget);
 
-      await tester.tap(backButton);
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(backButton);
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // No confirmation dialog was shown because screen was untouched
-      expect(find.byType(ModernGameDialog), findsNothing);
-    });
+        // No confirmation dialog was shown because screen was untouched
+        expect(find.byType(ModernGameDialog), findsNothing);
+      },
+    );
 
-    testWidgets('tapping back button when input has text shows exit confirmation dialog', (tester) async {
-      tester.view.physicalSize = const Size(390, 844);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+    testWidgets(
+      'tapping back button when input has text shows exit confirmation dialog',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Enter text and hide test keyboard
-      await tester.enterText(find.byType(TextField), 'Testing confirmation');
-      tester.testTextInput.hide();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Enter text and hide test keyboard
+        await tester.enterText(find.byType(TextField), 'Testing confirmation');
+        tester.testTextInput.hide();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Tap back button
-      final backButton = find.byIcon(Icons.arrow_back_ios_new_rounded);
-      await tester.tap(backButton);
-      await tester.pump(const Duration(milliseconds: 400));
+        // Tap back button
+        final backButton = find.byIcon(Icons.arrow_back_ios_new_rounded);
+        await tester.tap(backButton);
+        await tester.pump(const Duration(milliseconds: 400));
 
-      // Exit confirmation dialog appears with KEEP PLAYING and Quit actions
-      expect(find.byType(ModernGameDialog), findsOneWidget);
-      expect(find.text('KEEP PLAYING'), findsOneWidget);
-      expect(find.text('QUIT'), findsOneWidget);
+        // Exit confirmation dialog appears with KEEP PLAYING and Quit actions
+        expect(find.byType(ModernGameDialog), findsOneWidget);
+        expect(find.text('KEEP PLAYING'), findsOneWidget);
+        expect(find.text('QUIT'), findsOneWidget);
 
-      // Dismiss dialog cleanly to cancel repeating animations before test teardown
-      await tester.tap(find.text('KEEP PLAYING'));
-      await tester.pump(const Duration(milliseconds: 500));
-      expect(find.byType(ModernGameDialog), findsNothing);
-    });
+        // Dismiss dialog cleanly to cancel repeating animations before test teardown
+        await tester.tap(find.text('KEEP PLAYING'));
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.byType(ModernGameDialog), findsNothing);
+      },
+    );
 
-    testWidgets('voice dictation uses primary candidate and does NOT duplicate alternates for Arabic/Kannada', (tester) async {
-      tester.view.physicalSize = const Size(1080, 2400);
-      addTearDown(tester.view.resetPhysicalSize);
+    testWidgets(
+      'voice dictation uses primary candidate and does NOT duplicate alternates for Arabic/Kannada',
+      (tester) async {
+        tester.view.physicalSize = const Size(1080, 2400);
+        addTearDown(tester.view.resetPhysicalSize);
 
-      when(() => mockTranslationBloc.state).thenReturn(
-        const TranslationState(
-          status: TranslationStatus.loaded,
-          currentSourceLanguage: 'Arabic',
-          currentTargetLanguage: 'English',
-          downloadedLanguages: ['Arabic', 'English'],
-          freeTranslationsRemaining: 3,
-        ),
-      );
+        when(() => mockTranslationBloc.state).thenReturn(
+          const TranslationState(
+            status: TranslationStatus.loaded,
+            currentSourceLanguage: 'Arabic',
+            currentTargetLanguage: 'English',
+            downloadedLanguages: ['Arabic', 'English'],
+            freeTranslationsRemaining: 3,
+          ),
+        );
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Voice button to start dictation
-      final voiceFinder = find.text('Voice');
-      expect(voiceFinder, findsOneWidget);
-      await tester.tap(voiceFinder);
-      await tester.pump();
+        // Tap Voice button to start dictation
+        final voiceFinder = find.text('Voice');
+        expect(voiceFinder, findsOneWidget);
+        await tester.tap(voiceFinder);
+        await tester.pump();
 
-      expect(fakeSpeech.capturedLocaleId, 'ar');
-      expect(fakeSpeech.capturedOnResult, isNotNull);
+        expect(fakeSpeech.capturedLocaleId, 'ar');
+        expect(fakeSpeech.capturedOnResult, isNotNull);
 
-      // Simulate speech engine returning 10 alternate hypotheses for a single Arabic word
-      fakeSpeech.capturedOnResult!([
-        'مرحبا',
-        'مرحبا',
-        'مرحبًا',
-        'مر حبا',
-        'مرحبا',
-        'مرحبا',
-        'مرحبا',
-        'مرحبا',
-        'مرحبا',
-        'مرحبا',
-      ], true);
-      await tester.pump(const Duration(milliseconds: 100));
+        // Simulate speech engine returning 10 alternate hypotheses for a single Arabic word
+        fakeSpeech.capturedOnResult!([
+          'مرحبا',
+          'مرحبا',
+          'مرحبًا',
+          'مر حبا',
+          'مرحبا',
+          'مرحبا',
+          'مرحبا',
+          'مرحبا',
+          'مرحبا',
+          'مرحبا',
+        ], true);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Verify that the TextField receives EXACTLY 1 clean word, NOT 10 duplicates!
-      final textField = tester.widget<TextField>(find.byType(TextField));
-      expect(textField.controller?.text, 'مرحبا');
-    });
+        // Verify that the TextField receives EXACTLY 1 clean word, NOT 10 duplicates!
+        final textField = tester.widget<TextField>(find.byType(TextField));
+        expect(textField.controller?.text, 'مرحبا');
+      },
+    );
 
-    testWidgets('voice dictation appends cleanly to existing text with a space', (tester) async {
-      tester.view.physicalSize = const Size(1080, 2400);
-      addTearDown(tester.view.resetPhysicalSize);
+    testWidgets(
+      'voice dictation appends cleanly to existing text with a space',
+      (tester) async {
+        tester.view.physicalSize = const Size(1080, 2400);
+        addTearDown(tester.view.resetPhysicalSize);
 
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // User already typed "Hello"
-      await tester.enterText(find.byType(TextField), 'Hello');
-      await tester.pump(const Duration(milliseconds: 100));
+        // User already typed "Hello"
+        await tester.enterText(find.byType(TextField), 'Hello');
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Tap mic icon (which is visible when text is non-empty)
-      final micIconFinder = find.byIcon(Icons.mic_none_rounded);
-      expect(micIconFinder, findsOneWidget);
-      await tester.tap(micIconFinder);
-      await tester.pump();
+        // Tap mic icon (which is visible when text is non-empty)
+        final micIconFinder = find.byIcon(Icons.mic_none_rounded);
+        expect(micIconFinder, findsOneWidget);
+        await tester.tap(micIconFinder);
+        await tester.pump();
 
-      expect(fakeSpeech.capturedOnResult, isNotNull);
+        expect(fakeSpeech.capturedOnResult, isNotNull);
 
-      // Simulate speaking "friend"
-      fakeSpeech.capturedOnResult!(['friend', 'fiend', 'frend'], true);
-      await tester.pump(const Duration(milliseconds: 100));
+        // Simulate speaking "friend"
+        fakeSpeech.capturedOnResult!(['friend', 'fiend', 'frend'], true);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      final textField = tester.widget<TextField>(find.byType(TextField));
-      expect(textField.controller?.text, 'Hello friend');
-    });
+        final textField = tester.widget<TextField>(find.byType(TextField));
+        expect(textField.controller?.text, 'Hello friend');
+      },
+    );
 
-    testWidgets('tapping clear button stops active speech listening session', (tester) async {
+    testWidgets('tapping clear button stops active speech listening session', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 
@@ -471,7 +507,9 @@ void main() {
       expect(textField.controller?.text, '');
     });
 
-    testWidgets('tapping swap button stops active voice listening session', (tester) async {
+    testWidgets('tapping swap button stops active voice listening session', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 
@@ -490,7 +528,9 @@ void main() {
       expect(fakeSpeech.isListening, isFalse);
     });
 
-    testWidgets('tapping voice dictation stops TTS audio if speaking', (tester) async {
+    testWidgets('tapping voice dictation stops TTS audio if speaking', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(1080, 2400);
       addTearDown(tester.view.resetPhysicalSize);
 

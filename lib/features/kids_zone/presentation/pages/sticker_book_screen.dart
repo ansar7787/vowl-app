@@ -160,8 +160,16 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     bool isMidnight,
   ) {
     return Container(
-          margin: EdgeInsets.fromLTRB(AppSpacing.screen, 10.h, AppSpacing.screen, 10.h),
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 16.h),
+          margin: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            10.h,
+            AppSpacing.screen,
+            10.h,
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacing.cardSpacious,
+            vertical: 16.h,
+          ),
           decoration: BoxDecoration(
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.05)
@@ -491,7 +499,10 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     final earnedStickers = state.user?.kidsStickers ?? [];
 
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 12.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 12.h,
+      ),
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

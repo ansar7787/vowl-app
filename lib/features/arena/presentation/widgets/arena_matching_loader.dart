@@ -83,15 +83,17 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final borderColor = isDark ? AppColors.slate700 : AppColors.slate200;
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
 
-    final displayMessage = widget.customMessage ?? _statusMessages[_messageIndex];
+    final displayMessage =
+        widget.customMessage ?? _statusMessages[_messageIndex];
 
     return Center(
       child: Padding(
@@ -126,14 +128,19 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                         animation: _pulseAnimation,
                         builder: (context, child) {
                           final scale1 = 0.8 + (_pulseAnimation.value * 0.45);
-                          final opacity1 = (1.0 - _pulseAnimation.value).clamp(0.0, 1.0);
+                          final opacity1 = (1.0 - _pulseAnimation.value).clamp(
+                            0.0,
+                            1.0,
+                          );
                           return Container(
                             width: 110.r * scale1,
                             height: 110.r * scale1,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: AppColors.indigo500.withValues(alpha: opacity1 * 0.5),
+                                color: AppColors.indigo500.withValues(
+                                  alpha: opacity1 * 0.5,
+                                ),
                                 width: 2.r,
                               ),
                             ),
@@ -216,9 +223,12 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
               if (widget.showShareCode && widget.roomCode != null) ...[
                 SizedBox(height: 20.h),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 12.h,
+                  ),
                   decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
+                    color: isDark ? AppColors.ultraDeep : AppColors.slate100,
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: AppColors.indigo500.withValues(alpha: 0.35),
@@ -268,13 +278,22 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                             visualDensity: VisualDensity.compact,
                             padding: EdgeInsets.all(6.r),
                             constraints: const BoxConstraints(),
-                            icon: Icon(LucideIcons.copy, size: 18.sp, color: AppColors.indigo500),
+                            icon: Icon(
+                              LucideIcons.copy,
+                              size: 18.sp,
+                              color: AppColors.indigo500,
+                            ),
                             tooltip: 'Copy Code',
                             onPressed: () {
-                              Clipboard.setData(ClipboardData(text: widget.roomCode!.toUpperCase()));
+                              Clipboard.setData(
+                                ClipboardData(
+                                  text: widget.roomCode!.toUpperCase(),
+                                ),
+                              );
                               CustomSnackBar.show(
                                 context: context,
-                                message: 'Room code copied to clipboard! Share it with a friend.',
+                                message:
+                                    'Room code copied to clipboard! Share it with a friend.',
                                 type: CustomSnackBarType.success,
                                 duration: const Duration(seconds: 2),
                               );
@@ -285,13 +304,18 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                             visualDensity: VisualDensity.compact,
                             padding: EdgeInsets.all(6.r),
                             constraints: const BoxConstraints(),
-                            icon: Icon(LucideIcons.share2, size: 18.sp, color: AppColors.indigo500),
+                            icon: Icon(
+                              LucideIcons.share2,
+                              size: 18.sp,
+                              color: AppColors.indigo500,
+                            ),
                             tooltip: 'Share Duel Invite',
                             onPressed: () {
                               final code = widget.roomCode!.toUpperCase();
                               SharePlus.instance.share(
                                 ShareParams(
-                                  text: '⚔️ I\'m waiting for you in the Vowl 1v1 Arena!\n'
+                                  text:
+                                      '⚔️ I\'m waiting for you in the Vowl 1v1 Arena!\n'
                                       'Room Code: $code\n\n'
                                       'Tap the link to join our vocabulary duel:\n'
                                       'https://vowl-acbc5.web.app/duel/$code',

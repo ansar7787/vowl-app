@@ -14,7 +14,6 @@ import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_bu
 
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
-
 /// Audio dictation mechanic where text is hidden and the user types what they hear.
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
@@ -175,365 +174,345 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
     final subtitleColor = isDark ? Colors.white70 : AppColors.slate600;
     final errorColor = tokens.gameIncorrect;
 
-    final content =
-        Material(
-              type: MaterialType.transparency,
-              child: ValueListenableBuilder<bool>(
-                valueListenable: _hasError,
-                builder: (context, hasError, _) {
-                  final innerColumn = Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      // Handle bar
-                      if (widget.isPositioned) ...[
-                        Center(
-                          child: Container(
-                            width: 48.w,
-                            height: 4.h,
-                            decoration: BoxDecoration(
-                              color: subtitleColor.withValues(alpha: 0.3),
-                              borderRadius: BorderRadius.circular(2.r),
-                            ),
+    final content = Material(
+      type: MaterialType.transparency,
+      child: ValueListenableBuilder<bool>(
+        valueListenable: _hasError,
+        builder: (context, hasError, _) {
+          final innerColumn = Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Handle bar
+              if (widget.isPositioned) ...[
+                Center(
+                  child: Container(
+                    width: 48.w,
+                    height: 4.h,
+                    decoration: BoxDecoration(
+                      color: subtitleColor.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.h),
+              ],
+
+              // Header
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: widget.primaryColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(14.r),
+                    ),
+                    child: Icon(
+                      Icons.hearing_rounded,
+                      color: widget.primaryColor,
+                      size: 22.r,
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          'LISTEN & TYPE',
+                          maxLines: 1,
+                          minFontSize: 8,
+                          overflow: TextOverflow.visible,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w800,
+                            color: widget.primaryColor,
+                            letterSpacing: 1.5,
                           ),
                         ),
-                        SizedBox(height: 16.h),
+                        SizedBox(height: 2.h),
+                        AutoSizeText(
+                          'Type what you heard',
+                          maxLines: 1,
+                          minFontSize: 8,
+                          overflow: TextOverflow.visible,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w500,
+                            color: subtitleColor,
+                          ),
+                        ),
                       ],
+                    ),
+                  ),
+                  if (widget.onReplayAudio != null) ...[
+                    SizedBox(width: 8.w),
+                    Semantics(
+                      button: true,
+                      label: 'Replay audio',
+                      child: GestureDetector(
+                        onTap: () {
+                          _hapticService.selection();
+                          widget.onReplayAudio!();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: widget.primaryColor.withValues(alpha: 0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.replay_rounded,
+                            color: widget.primaryColor,
+                            size: 20.r,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                  if (widget.allowSkip)
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.w),
+                      child: GameSkipBypassButton(
+                        subtitleColor: subtitleColor,
+                        isSubmitting: _isSubmitting,
+                        attempts: _attempts,
+                        maxAttempts: widget.maxAttempts,
+                        onBypassed: widget.onBypassed,
+                        onConfirmed: widget.onConfirmed,
+                        onSkipped: widget.onSkipped,
+                        onSubmittingChanged: (v) => _isSubmitting.value = v,
+                      ),
+                    ),
+                ],
+              ),
+              SizedBox(height: 24.h),
 
-                            // Header
-                            Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(10.r),
-                                  decoration: BoxDecoration(
-                                    color: widget.primaryColor.withValues(
-                                      alpha: 0.12,
-                                    ),
-                                    borderRadius: BorderRadius.circular(14.r),
-                                  ),
-                                  child: Icon(
-                                    Icons.hearing_rounded,
-                                    color: widget.primaryColor,
-                                    size: 22.r,
-                                  ),
-                                ),
-                                SizedBox(width: 12.w),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      AutoSizeText(
-                                        'LISTEN & TYPE',
-                                        maxLines: 1,
-                                        minFontSize: 8,
-                                        overflow: TextOverflow.visible,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 13.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: widget.primaryColor,
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                      SizedBox(height: 2.h),
-                                      AutoSizeText(
-                                        'Type what you heard',
-                                        maxLines: 1,
-                                        minFontSize: 8,
-                                        overflow: TextOverflow.visible,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 11.sp,
-                                          fontWeight: FontWeight.w500,
-                                          color: subtitleColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                if (widget.onReplayAudio != null) ...[
-                                  SizedBox(width: 8.w),
-                                  Semantics(
-                                    button: true,
-                                    label: 'Replay audio',
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        _hapticService.selection();
-                                        widget.onReplayAudio!();
-                                      },
-                                      child: Container(
-                                        padding: EdgeInsets.all(8.r),
-                                        decoration: BoxDecoration(
-                                          color: widget.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Icon(
-                                          Icons.replay_rounded,
-                                          color: widget.primaryColor,
-                                          size: 20.r,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                                if (widget.allowSkip)
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 8.w),
-                                    child: GameSkipBypassButton(
-                                      subtitleColor: subtitleColor,
-                                      isSubmitting: _isSubmitting,
-                                      attempts: _attempts,
-                                      maxAttempts: widget.maxAttempts,
-                                      onBypassed: widget.onBypassed,
-                                      onConfirmed: widget.onConfirmed,
-                                      onSkipped: widget.onSkipped,
-                                      onSubmittingChanged: (v) =>
-                                          _isSubmitting.value = v,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                            SizedBox(height: 24.h),
-
-                            // Text Input
-                            ValueListenableBuilder<bool>(
-                              valueListenable: _isFocused,
-                              builder: (context, isFocused, _) {
-                                final activeBorderColor = hasError
-                                    ? errorColor
-                                    : (isFocused
-                                        ? widget.primaryColor
-                                        : widget.primaryColor.withValues(
-                                            alpha: isDark ? 0.6 : 0.45,
-                                          ));
-                                final activeBorderWidth =
-                                    (hasError || isFocused) ? 2.0.w : 1.5.w;
-                                final fieldBgColor = Color.alphaBlend(
-                                  hasError
-                                      ? errorColor.withValues(
-                                          alpha: isDark ? 0.12 : 0.05,
-                                        )
-                                      : (isFocused
-                                          ? widget.primaryColor.withValues(
-                                              alpha: isDark ? 0.10 : 0.045,
-                                            )
-                                          : (isDark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.06,
-                                                )
-                                              : widget.primaryColor.withValues(
-                                                  alpha: 0.035,
-                                                ))),
-                                  bgColor,
-                                );
-
-                                final inputBorder = OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  borderSide: BorderSide(
-                                    color: activeBorderColor,
-                                    width: activeBorderWidth,
-                                  ),
-                                );
-
-                                return Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16.r),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      TextField(
-                                        controller: _controller,
-                                        focusNode: _focusNode,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: textColor,
-                                        ),
-                                        maxLines: 3,
-                                        minLines: 1,
-                                        onChanged: (_) {
-                                          if (_hasError.value) {
-                                            _hasError.value = false;
-                                          }
-                                        },
-                                        onSubmitted: (_) => _onSubmit(),
-                                        decoration: InputDecoration(
-                                          filled: true,
-                                          fillColor: fieldBgColor,
-                                          hintText: 'Type here...',
-                                          hintStyle: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w500,
-                                            color: subtitleColor.withValues(
-                                              alpha: 0.5,
-                                            ),
-                                          ),
-                                          contentPadding: EdgeInsets.only(
-                                            left: 16.w,
-                                            right: 16.w,
-                                            top: 16.h,
-                                            bottom: 32.h,
-                                          ),
-                                          border: inputBorder,
-                                          enabledBorder: inputBorder,
-                                          focusedBorder: inputBorder,
-                                          errorBorder: inputBorder,
-                                          focusedErrorBorder: inputBorder,
-                                        ),
-                                      ),
-                                      Positioned(
-                                        bottom: 12.h,
-                                        left: 16.w,
-                                        child: ValueListenableBuilder<int>(
-                                          valueListenable: _attempts,
-                                          builder: (context, attempts, _) {
-                                            if (attempts > 0) {
-                                              return AutoSizeText(
-                                                '${widget.maxAttempts - attempts} attempts left',
-                                                maxLines: 1,
-                                                minFontSize: 7,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: tokens.gameIncorrect
-                                                      .withValues(alpha: 0.8),
-                                                ),
-                                              );
-                                            }
-                                            return const SizedBox.shrink();
-                                          },
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+              // Text Input
+              ValueListenableBuilder<bool>(
+                valueListenable: _isFocused,
+                builder: (context, isFocused, _) {
+                  final activeBorderColor = hasError
+                      ? errorColor
+                      : (isFocused
+                            ? widget.primaryColor
+                            : widget.primaryColor.withValues(
+                                alpha: isDark ? 0.6 : 0.45,
+                              ));
+                  final activeBorderWidth = (hasError || isFocused)
+                      ? 2.0.w
+                      : 1.5.w;
+                  final fieldBgColor = Color.alphaBlend(
+                    hasError
+                        ? errorColor.withValues(alpha: isDark ? 0.12 : 0.05)
+                        : (isFocused
+                              ? widget.primaryColor.withValues(
+                                  alpha: isDark ? 0.10 : 0.045,
                                 )
-                                .animate(target: hasError ? 1 : 0)
-                                .shakeX(amount: 5, duration: 400.ms);
-                              },
-                            ),
+                              : (isDark
+                                    ? Colors.white.withValues(alpha: 0.06)
+                                    : widget.primaryColor.withValues(
+                                        alpha: 0.035,
+                                      ))),
+                    bgColor,
+                  );
 
-                            SizedBox(height: 24.h),
-
-                            // Controls
-                            ValueListenableBuilder<bool>(
-                              valueListenable: _isSubmitting,
-                              builder: (context, isSubmitting, _) {
-                                return ValueListenableBuilder<int>(
-                                  valueListenable: _attempts,
-                                  builder: (context, attempts, _) {
-                                    final outOfAttempts =
-                                        attempts >= widget.maxAttempts;
-                                    return SizedBox(
-                                      width: double.infinity,
-                                      child: ElevatedButton(
-                                        onPressed: isSubmitting
-                                            ? null
-                                            : () {
-                                                if (outOfAttempts) {
-                                                  _isSubmitting.value = true;
-                                                  widget.onSkipped();
-                                                } else {
-                                                  _onSubmit();
-                                                }
-                                              },
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: outOfAttempts
-                                              ? Colors.grey.withValues(
-                                                  alpha: 0.8,
-                                                )
-                                              : hasError
-                                              ? errorColor
-                                              : widget.primaryColor,
-                                          padding: EdgeInsets.symmetric(
-                                            vertical: 16.h,
-                                          ),
-                                          elevation: outOfAttempts ? 0 : 2,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              16.r,
-                                            ),
-                                          ),
-                                        ),
-                                        child: AutoSizeText(
-                                          outOfAttempts ? 'CONTINUE' : 'SUBMIT',
-                                          maxLines: 1,
-                                          minFontSize: 10,
-                                          overflow: TextOverflow.visible,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.white,
-                                            letterSpacing: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                    ],
+                  final inputBorder = OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: activeBorderColor,
+                      width: activeBorderWidth,
+                    ),
                   );
 
                   return Container(
-                    width: double.infinity,
-                    padding: widget.isPositioned
-                        ? EdgeInsets.fromLTRB(
-                            24.w,
-                            20.h,
-                            24.w,
-                            MediaQuery.of(context).viewInsets.bottom + 32.h,
-                          )
-                        : EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                    decoration: BoxDecoration(
-                      color: bgColor,
-                      borderRadius: widget.isPositioned
-                          ? BorderRadius.vertical(
-                              top: Radius.circular(32.r),
-                            )
-                          : BorderRadius.circular(24.r),
-                      border: Border.all(
-                        color: hasError
-                            ? errorColor.withValues(alpha: 0.5)
-                            : widget.primaryColor.withValues(
-                                alpha: isDark ? 0.35 : 0.25,
-                              ),
-                        width: 1.5.w,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: hasError
-                              ? errorColor.withValues(alpha: 0.15)
-                              : widget.primaryColor.withValues(alpha: 0.15),
-                          blurRadius: widget.isPositioned ? 30 : 20,
-                          offset: widget.isPositioned
-                              ? const Offset(0, -8)
-                              : const Offset(0, 4),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
                         ),
-                      ],
-                    ),
-                    child: SafeArea(
-                      top: false,
-                      bottom: widget.isPositioned,
-                      child: widget.isPositioned
-                          ? SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              child: innerColumn,
-                            )
-                          : innerColumn,
-                    ),
+                        child: Stack(
+                          children: [
+                            TextField(
+                              controller: _controller,
+                              focusNode: _focusNode,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w600,
+                                color: textColor,
+                              ),
+                              maxLines: 3,
+                              minLines: 1,
+                              onChanged: (_) {
+                                if (_hasError.value) {
+                                  _hasError.value = false;
+                                }
+                              },
+                              onSubmitted: (_) => _onSubmit(),
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: fieldBgColor,
+                                hintText: 'Type here...',
+                                hintStyle: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: subtitleColor.withValues(alpha: 0.5),
+                                ),
+                                contentPadding: EdgeInsets.only(
+                                  left: 16.w,
+                                  right: 16.w,
+                                  top: 16.h,
+                                  bottom: 32.h,
+                                ),
+                                border: inputBorder,
+                                enabledBorder: inputBorder,
+                                focusedBorder: inputBorder,
+                                errorBorder: inputBorder,
+                                focusedErrorBorder: inputBorder,
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 12.h,
+                              left: 16.w,
+                              child: ValueListenableBuilder<int>(
+                                valueListenable: _attempts,
+                                builder: (context, attempts, _) {
+                                  if (attempts > 0) {
+                                    return AutoSizeText(
+                                      '${widget.maxAttempts - attempts} attempts left',
+                                      maxLines: 1,
+                                      minFontSize: 7,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: tokens.gameIncorrect.withValues(
+                                          alpha: 0.8,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  return const SizedBox.shrink();
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                      .animate(target: hasError ? 1 : 0)
+                      .shakeX(amount: 5, duration: 400.ms);
+                },
+              ),
+
+              SizedBox(height: 24.h),
+
+              // Controls
+              ValueListenableBuilder<bool>(
+                valueListenable: _isSubmitting,
+                builder: (context, isSubmitting, _) {
+                  return ValueListenableBuilder<int>(
+                    valueListenable: _attempts,
+                    builder: (context, attempts, _) {
+                      final outOfAttempts = attempts >= widget.maxAttempts;
+                      return SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: isSubmitting
+                              ? null
+                              : () {
+                                  if (outOfAttempts) {
+                                    _isSubmitting.value = true;
+                                    widget.onSkipped();
+                                  } else {
+                                    _onSubmit();
+                                  }
+                                },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: outOfAttempts
+                                ? Colors.grey.withValues(alpha: 0.8)
+                                : hasError
+                                ? errorColor
+                                : widget.primaryColor,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            elevation: outOfAttempts ? 0 : 2,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.r),
+                            ),
+                          ),
+                          child: AutoSizeText(
+                            outOfAttempts ? 'CONTINUE' : 'SUBMIT',
+                            maxLines: 1,
+                            minFontSize: 10,
+                            overflow: TextOverflow.visible,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   );
                 },
               ),
-            );
+            ],
+          );
+
+          return Container(
+            width: double.infinity,
+            padding: widget.isPositioned
+                ? EdgeInsets.fromLTRB(
+                    24.w,
+                    20.h,
+                    24.w,
+                    MediaQuery.of(context).viewInsets.bottom + 32.h,
+                  )
+                : EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: widget.isPositioned
+                  ? BorderRadius.vertical(top: Radius.circular(32.r))
+                  : BorderRadius.circular(24.r),
+              border: Border.all(
+                color: hasError
+                    ? errorColor.withValues(alpha: 0.5)
+                    : widget.primaryColor.withValues(
+                        alpha: isDark ? 0.35 : 0.25,
+                      ),
+                width: 1.5.w,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: hasError
+                      ? errorColor.withValues(alpha: 0.15)
+                      : widget.primaryColor.withValues(alpha: 0.15),
+                  blurRadius: widget.isPositioned ? 30 : 20,
+                  offset: widget.isPositioned
+                      ? const Offset(0, -8)
+                      : const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              top: false,
+              bottom: widget.isPositioned,
+              child: widget.isPositioned
+                  ? SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: innerColumn,
+                    )
+                  : innerColumn,
+            ),
+          );
+        },
+      ),
+    );
 
     final reduceMotion =
         MediaQuery.disableAnimationsOf(context) ||
@@ -542,24 +521,24 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
     final animatedContent = reduceMotion
         ? content
         : widget.isPositioned
-            ? content
-                .animate()
-                .slideY(
-                  begin: 1.0,
-                  end: 0,
-                  duration: 400.ms,
-                  curve: Curves.easeOut,
-                )
-                .fadeIn(duration: 300.ms)
-            : content
-                .animate()
-                .slideY(
-                  begin: 0.12,
-                  end: 0,
-                  duration: 350.ms,
-                  curve: Curves.easeOutCubic,
-                )
-                .fadeIn(duration: 250.ms);
+        ? content
+              .animate()
+              .slideY(
+                begin: 1.0,
+                end: 0,
+                duration: 400.ms,
+                curve: Curves.easeOut,
+              )
+              .fadeIn(duration: 300.ms)
+        : content
+              .animate()
+              .slideY(
+                begin: 0.12,
+                end: 0,
+                duration: 350.ms,
+                curve: Curves.easeOutCubic,
+              )
+              .fadeIn(duration: 250.ms);
 
     if (widget.isPositioned) {
       return Positioned(

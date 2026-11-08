@@ -89,7 +89,11 @@ void main() {
       'Initially, scientists discovered the basic underlying principle.',
       'Subsequently, engineers constructed a working laboratory prototype.',
     ],
-    correctOrder: [1, 2, 0], // Chronological: Initially (1), Subsequently (2), Finally (0)
+    correctOrder: [
+      1,
+      2,
+      0,
+    ], // Chronological: Initially (1), Subsequently (2), Finally (0)
     transitionWords: ['Initially', 'Subsequently', 'Finally'],
     hint: 'Pay close attention to chronological transition words.',
     explanation:
@@ -158,8 +162,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -171,12 +176,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -280,7 +287,9 @@ void main() {
             find.byType(SentenceOrderReadingStoneSlab),
           )
           .toList();
-      final currentIdx = slabs.indexWhere((s) => s.text == targetOrder[targetIdx]);
+      final currentIdx = slabs.indexWhere(
+        (s) => s.text == targetOrder[targetIdx],
+      );
       if (currentIdx != targetIdx) {
         // Tap currentIdx slab to select
         await tester.tap(find.byWidget(slabs[currentIdx]));
@@ -298,24 +307,27 @@ void main() {
   }
 
   group('SentenceOrderReadingScreen Layout & Interactions', () {
-    testWidgets('1. Initial layout renders instruction, stone slabs, and check order button', (
+    testWidgets(
+      '1. Initial layout renders instruction, stone slabs, and check order button',
+      (tester) async {
+        await pumpSentenceOrder(tester);
+
+        expect(find.byType(SentenceOrderReadingInstruction), findsOneWidget);
+        expect(
+          find.text('Reconstruct the logical timeline of the invention.'),
+          findsOneWidget,
+        );
+
+        expect(find.byType(SentenceOrderReadingStoneSlab), findsNWidgets(3));
+        expect(find.byType(SentenceOrderReadingCapstone), findsOneWidget);
+        expect(find.text('Check Order'), findsOneWidget);
+        expect(find.byIcon(Icons.drag_handle_rounded), findsNWidgets(3));
+      },
+    );
+
+    testWidgets('2. Transition words render with highlighted spans', (
       tester,
     ) async {
-      await pumpSentenceOrder(tester);
-
-      expect(find.byType(SentenceOrderReadingInstruction), findsOneWidget);
-      expect(
-        find.text('Reconstruct the logical timeline of the invention.'),
-        findsOneWidget,
-      );
-
-      expect(find.byType(SentenceOrderReadingStoneSlab), findsNWidgets(3));
-      expect(find.byType(SentenceOrderReadingCapstone), findsOneWidget);
-      expect(find.text('Check Order'), findsOneWidget);
-      expect(find.byIcon(Icons.drag_handle_rounded), findsNWidgets(3));
-    });
-
-    testWidgets('2. Transition words render with highlighted spans', (tester) async {
       await pumpSentenceOrder(tester);
 
       final slabWidgets = tester
@@ -330,22 +342,25 @@ void main() {
       }
     });
 
-    testWidgets('3. Tapping a stone slab selects it and triggers selection haptic', (
-      tester,
-    ) async {
-      await pumpSentenceOrder(tester);
+    testWidgets(
+      '3. Tapping a stone slab selects it and triggers selection haptic',
+      (tester) async {
+        await pumpSentenceOrder(tester);
 
-      final firstSlabFinder = find.byType(SentenceOrderReadingStoneSlab).first;
-      await tester.tap(firstSlabFinder);
-      await tester.pump();
+        final firstSlabFinder = find
+            .byType(SentenceOrderReadingStoneSlab)
+            .first;
+        await tester.tap(firstSlabFinder);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      final updatedSlab = tester.widget<SentenceOrderReadingStoneSlab>(
-        firstSlabFinder,
-      );
-      expect(updatedSlab.isSelected, isTrue);
-    });
+        final updatedSlab = tester.widget<SentenceOrderReadingStoneSlab>(
+          firstSlabFinder,
+        );
+        expect(updatedSlab.isSelected, isTrue);
+      },
+    );
 
     testWidgets('4. Tapping the selected stone slab again deselects it', (
       tester,
@@ -357,7 +372,9 @@ void main() {
       await tester.pump();
 
       expect(
-        tester.widget<SentenceOrderReadingStoneSlab>(firstSlabFinder).isSelected,
+        tester
+            .widget<SentenceOrderReadingStoneSlab>(firstSlabFinder)
+            .isSelected,
         isTrue,
       );
 
@@ -365,118 +382,128 @@ void main() {
       await tester.pump();
 
       expect(
-        tester.widget<SentenceOrderReadingStoneSlab>(firstSlabFinder).isSelected,
+        tester
+            .widget<SentenceOrderReadingStoneSlab>(firstSlabFinder)
+            .isSelected,
         isFalse,
       );
       verify(() => mockHapticService.selection()).called(2);
     });
 
-    testWidgets('5. Tapping another stone slab while one is selected swaps their positions', (
-      tester,
-    ) async {
-      await pumpSentenceOrder(tester);
+    testWidgets(
+      '5. Tapping another stone slab while one is selected swaps their positions',
+      (tester) async {
+        await pumpSentenceOrder(tester);
 
-      final initialSlabs = tester
-          .widgetList<SentenceOrderReadingStoneSlab>(
-            find.byType(SentenceOrderReadingStoneSlab),
-          )
-          .toList();
-      final textAt0 = initialSlabs[0].text;
-      final textAt1 = initialSlabs[1].text;
+        final initialSlabs = tester
+            .widgetList<SentenceOrderReadingStoneSlab>(
+              find.byType(SentenceOrderReadingStoneSlab),
+            )
+            .toList();
+        final textAt0 = initialSlabs[0].text;
+        final textAt1 = initialSlabs[1].text;
 
-      // Select first slab
-      await tester.tap(find.byWidget(initialSlabs[0]));
-      await tester.pump();
+        // Select first slab
+        await tester.tap(find.byWidget(initialSlabs[0]));
+        await tester.pump();
 
-      // Tap second slab to swap
-      final slabsAfterSelect = tester
-          .widgetList<SentenceOrderReadingStoneSlab>(
-            find.byType(SentenceOrderReadingStoneSlab),
-          )
-          .toList();
-      await tester.tap(find.byWidget(slabsAfterSelect[1]));
-      await tester.pump();
+        // Tap second slab to swap
+        final slabsAfterSelect = tester
+            .widgetList<SentenceOrderReadingStoneSlab>(
+              find.byType(SentenceOrderReadingStoneSlab),
+            )
+            .toList();
+        await tester.tap(find.byWidget(slabsAfterSelect[1]));
+        await tester.pump();
 
-      final swappedSlabs = tester
-          .widgetList<SentenceOrderReadingStoneSlab>(
-            find.byType(SentenceOrderReadingStoneSlab),
-          )
-          .toList();
-      expect(swappedSlabs[0].text, equals(textAt1));
-      expect(swappedSlabs[1].text, equals(textAt0));
-      expect(swappedSlabs[0].isSelected, isFalse);
-      expect(swappedSlabs[1].isSelected, isFalse);
-    });
+        final swappedSlabs = tester
+            .widgetList<SentenceOrderReadingStoneSlab>(
+              find.byType(SentenceOrderReadingStoneSlab),
+            )
+            .toList();
+        expect(swappedSlabs[0].text, equals(textAt1));
+        expect(swappedSlabs[1].text, equals(textAt0));
+        expect(swappedSlabs[0].isSelected, isFalse);
+        expect(swappedSlabs[1].isSelected, isFalse);
+      },
+    );
 
-    testWidgets('6. Reorderable list onReorder shifts item positions and triggers selection haptic', (
-      tester,
-    ) async {
-      await pumpSentenceOrder(tester);
+    testWidgets(
+      '6. Reorderable list onReorder shifts item positions and triggers selection haptic',
+      (tester) async {
+        await pumpSentenceOrder(tester);
 
-      final reorderableList = tester.widget<SliverReorderableList>(
-        find.byType(SliverReorderableList),
-      );
+        final reorderableList = tester.widget<SliverReorderableList>(
+          find.byType(SliverReorderableList),
+        );
 
-      final initialSlabs = tester
-          .widgetList<SentenceOrderReadingStoneSlab>(
-            find.byType(SentenceOrderReadingStoneSlab),
-          )
-          .toList();
-      final movedText = initialSlabs[0].text;
+        final initialSlabs = tester
+            .widgetList<SentenceOrderReadingStoneSlab>(
+              find.byType(SentenceOrderReadingStoneSlab),
+            )
+            .toList();
+        final movedText = initialSlabs[0].text;
 
-      reorderableList.onReorder(0, 2);
-      await tester.pump();
+        reorderableList.onReorder(0, 2);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      final updatedSlabs = tester
-          .widgetList<SentenceOrderReadingStoneSlab>(
-            find.byType(SentenceOrderReadingStoneSlab),
-          )
-          .toList();
-      expect(updatedSlabs[1].text, equals(movedText));
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        final updatedSlabs = tester
+            .widgetList<SentenceOrderReadingStoneSlab>(
+              find.byType(SentenceOrderReadingStoneSlab),
+            )
+            .toList();
+        expect(updatedSlabs[1].text, equals(movedText));
+      },
+    );
 
-    testWidgets('7. Submitting initial scrambled order dispatches SubmitAnswer(false)', (
-      tester,
-    ) async {
-      await pumpSentenceOrder(tester);
+    testWidgets(
+      '7. Submitting initial scrambled order dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpSentenceOrder(tester);
 
-      final capstone = find.byType(SentenceOrderReadingCapstone);
-      expect(capstone, findsOneWidget);
+        final capstone = find.byType(SentenceOrderReadingCapstone);
+        expect(capstone, findsOneWidget);
 
-      await tester.tap(capstone);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(capstone);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('8. Arranging into correct order and tapping capstone dispatches SubmitAnswer(true)', (
-      tester,
-    ) async {
-      await pumpSentenceOrder(tester);
+    testWidgets(
+      '8. Arranging into correct order and tapping capstone dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpSentenceOrder(tester);
 
-      await arrangeChronologicalOrder(tester);
+        await arrangeChronologicalOrder(tester);
 
-      final capstone = find.byType(SentenceOrderReadingCapstone);
-      await tester.tap(capstone);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pump(const Duration(milliseconds: 600));
+        final capstone = find.byType(SentenceOrderReadingCapstone);
+        await tester.tap(capstone);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
     testWidgets('9. Interaction lockout prevents changes once answered', (
       tester,
     ) async {
       final stateController = StreamController<ReadingState>.broadcast();
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+      when(
+        () => mockReadingBloc.stream,
+      ).thenAnswer((_) => stateController.stream);
 
       await pumpSentenceOrder(tester);
 
@@ -504,7 +531,9 @@ void main() {
       await stateController.close();
     });
 
-    testWidgets('10. Continue button dispatches NextQuestion event', (tester) async {
+    testWidgets('10. Continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       await pumpSentenceOrder(tester, state: testAnsweredState);
       await tester.pump(const Duration(milliseconds: 600));
 
@@ -518,7 +547,9 @@ void main() {
       verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
     });
 
-    testWidgets('11. Hint button in header dispatches ReadingHintUsed', (tester) async {
+    testWidgets('11. Hint button in header dispatches ReadingHintUsed', (
+      tester,
+    ) async {
       await pumpSentenceOrder(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -527,7 +558,9 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(any(that: isA<ReadingHintUsed>()))).called(1);
+      verify(
+        () => mockReadingBloc.add(any(that: isA<ReadingHintUsed>())),
+      ).called(1);
     });
 
     testWidgets('12. Shimmer loading renders when state is ReadingInitial', (
@@ -539,31 +572,32 @@ void main() {
       expect(find.byType(SentenceOrderReadingStoneSlab), findsNothing);
     });
 
-    testWidgets('13. Game briefing layer renders on Level 1 and dismisses on action', (
-      tester,
-    ) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_sentenceOrderReading': false,
-      });
+    testWidgets(
+      '13. Game briefing layer renders on Level 1 and dismisses on action',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_sentenceOrderReading': false,
+        });
 
-      await pumpSentenceOrder(tester, level: 1);
+        await pumpSentenceOrder(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('STRUCTURE ARCHITECT'), findsOneWidget);
-      final startBtn = find.text('REBUILD FLOW');
-      expect(startBtn, findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('STRUCTURE ARCHITECT'), findsOneWidget);
+        final startBtn = find.text('REBUILD FLOW');
+        expect(startBtn, findsOneWidget);
 
-      await tester.ensureVisible(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.ensureVisible(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.tap(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-      expect(find.byType(SentenceOrderReadingStoneSlab), findsNWidgets(3));
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+        expect(find.byType(SentenceOrderReadingStoneSlab), findsNWidgets(3));
+      },
+    );
 
     testWidgets('14. Dark theme renders cleanly without contrast issues', (
       tester,
@@ -595,7 +629,9 @@ void main() {
       tester,
     ) async {
       final stateController = StreamController<ReadingState>.broadcast();
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+      when(
+        () => mockReadingBloc.stream,
+      ).thenAnswer((_) => stateController.stream);
 
       await pumpSentenceOrder(tester);
 
@@ -625,4 +661,3 @@ void main() {
     });
   });
 }
-

@@ -213,8 +213,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                             options: quest.options ?? [],
                                             correctAnswer:
                                                 quest.correctAnswer ?? "",
-                                            targetWord:
-                                                _controller.getTargetWord(quest),
+                                            targetWord: _controller
+                                                .getTargetWord(quest),
                                             selectedAffix:
                                                 _controller.selectedAffix,
                                             hintedAffix:
@@ -233,10 +233,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                           ),
                                         ),
                                         SizedBox(
-                                          height:
-                                              _controller.isFirstStagePassed
-                                                  ? 16.h
-                                                  : 32.h,
+                                          height: _controller.isFirstStagePassed
+                                              ? 16.h
+                                              : 32.h,
                                         ),
                                       ],
                                     ),
@@ -258,8 +257,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                     ),
                                     child: TypeToConfirmOverlay(
                                       isPositioned: false,
-                                      expectedText:
-                                          _controller.getTargetWord(quest),
+                                      expectedText: _controller.getTargetWord(
+                                        quest,
+                                      ),
                                       displayText: _controller
                                           .getTargetWord(quest)
                                           .toUpperCase(),

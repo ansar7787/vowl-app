@@ -380,7 +380,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     _showBackConfirmation(context, user),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: AppSpacing.screen, top: 4.h),
+                                padding: EdgeInsets.only(
+                                  left: AppSpacing.screen,
+                                  top: 4.h,
+                                ),
                                 child: KidsRoomDailyCareCard(
                                   user: user,
                                   hasPlayed: hasPlayedToday,
@@ -768,7 +771,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                          margin: EdgeInsets.symmetric(
+                            horizontal: AppSpacing.screen,
+                          ),
                           padding: EdgeInsets.symmetric(
                             horizontal: AppSpacing.cardSpacious,
                             vertical: 14.h,
@@ -1034,7 +1039,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         : 'OWLY';
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 6.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 6.h,
+      ),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20.r),

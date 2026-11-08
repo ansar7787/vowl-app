@@ -67,12 +67,14 @@ class InlineNotificationCard extends StatefulWidget {
     cachedShouldShow = true;
 
     // Asynchronously verify actual OS permission status in background
-    Permission.notification.status.then((status) {
-      if (status.isGranted) {
-        cachedShouldShow = false;
-        prefs.setBool('notification_permission_granted', true);
-      }
-    }).catchError((_) {});
+    Permission.notification.status
+        .then((status) {
+          if (status.isGranted) {
+            cachedShouldShow = false;
+            prefs.setBool('notification_permission_granted', true);
+          }
+        })
+        .catchError((_) {});
   }
 
   @override
@@ -276,8 +278,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return ValueListenableBuilder<bool>(
       valueListenable: _isVisible,
       builder: (context, isVisible, _) {
@@ -294,22 +296,25 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
             child: MediaQuery.withClampedTextScaling(
               maxScaleFactor: 1.25,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 0),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.screen,
+                  14.h,
+                  AppSpacing.screen,
+                  0,
+                ),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     color: isMidnight
                         ? AppColors.midnightSurface
-                        : (isDark
-                            ? const Color(0xFF131A29)
-                            : Colors.white),
+                        : (isDark ? const Color(0xFF131A29) : Colors.white),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: isMidnight
                           ? Colors.white.withValues(alpha: 0.12)
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate100),
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : AppColors.slate100),
                       width: 1.0,
                     ),
                   ),
@@ -452,8 +457,9 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                       ),
                                       decoration: BoxDecoration(
                                         color: IllustrationColors.warmOrange,
-                                        borderRadius:
-                                            BorderRadius.circular(9.r),
+                                        borderRadius: BorderRadius.circular(
+                                          9.r,
+                                        ),
                                         boxShadow: [
                                           BoxShadow(
                                             color: IllustrationColors.warmOrange

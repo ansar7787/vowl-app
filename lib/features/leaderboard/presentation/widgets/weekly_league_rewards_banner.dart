@@ -14,7 +14,8 @@ import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_cha
 
 class WeeklyLeagueRewardsBanner extends StatefulWidget {
   final UserEntity? currentUser;
-  final Future<void> Function(int rank, int vipDays, int coins, String weekKey)? onClaimReward;
+  final Future<void> Function(int rank, int vipDays, int coins, String weekKey)?
+  onClaimReward;
   final VoidCallback? onQuickMatch;
 
   const WeeklyLeagueRewardsBanner({
@@ -41,7 +42,8 @@ class WeeklyLeagueRewardsBanner extends StatefulWidget {
   }
 
   @override
-  State<WeeklyLeagueRewardsBanner> createState() => _WeeklyLeagueRewardsBannerState();
+  State<WeeklyLeagueRewardsBanner> createState() =>
+      _WeeklyLeagueRewardsBannerState();
 }
 
 class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
@@ -52,7 +54,10 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
   void initState() {
     super.initState();
     _calculateTimeUntilReset();
-    _timer = Timer.periodic(const Duration(minutes: 1), (_) => _calculateTimeUntilReset());
+    _timer = Timer.periodic(
+      const Duration(minutes: 1),
+      (_) => _calculateTimeUntilReset(),
+    );
   }
 
   @override
@@ -65,7 +70,14 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     final now = DateTime.now().toUtc();
     // Sunday is weekday 7
     final daysUntilSunday = (7 - now.weekday) % 7;
-    final nextSunday = DateTime.utc(now.year, now.month, now.day + daysUntilSunday, 23, 59, 59);
+    final nextSunday = DateTime.utc(
+      now.year,
+      now.month,
+      now.day + daysUntilSunday,
+      23,
+      59,
+      59,
+    );
     final diff = nextSunday.difference(now);
     if (mounted) {
       setState(() {
@@ -98,7 +110,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
@@ -106,7 +119,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
     final hours = _timeUntilReset.inHours;
     final days = _timeUntilReset.inDays;
@@ -118,9 +133,11 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     final prevWeekKey = WeeklyLeagueRewardsBanner.getPreviousWeekKey();
     final user = widget.currentUser;
     final targetWeekKey = user?.previousRankWeekKey ?? prevWeekKey;
-    final hasUnclaimedLastWeek = user != null &&
+    final hasUnclaimedLastWeek =
+        user != null &&
         (user.previousRank != null && user.previousRank! <= 10) &&
-        (user.previousRankWeekKey == null || user.previousRankWeekKey == prevWeekKey) &&
+        (user.previousRankWeekKey == null ||
+            user.previousRankWeekKey == prevWeekKey) &&
         !user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey);
 
     return Container(
@@ -181,9 +198,14 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 fit: BoxFit.scaleDown,
                 alignment: Alignment.centerRight,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.5.h,
+                  ),
                   decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+                    color: isDark
+                        ? const Color(0xFF1E293B)
+                        : const Color(0xFFF1F5F9),
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(color: borderColor),
                   ),
@@ -220,7 +242,11 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                           ),
                         ),
                       ),
-                      Icon(LucideIcons.clock, size: 11.sp, color: textSecondary),
+                      Icon(
+                        LucideIcons.clock,
+                        size: 11.sp,
+                        color: textSecondary,
+                      ),
                       SizedBox(width: 4.w),
                       Text(
                         remainingText,
@@ -297,7 +323,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    IllustrationColors.premiumGold.withValues(alpha: isDark ? 0.22 : 0.16),
+                    IllustrationColors.premiumGold.withValues(
+                      alpha: isDark ? 0.22 : 0.16,
+                    ),
                     AppColors.amber500.withValues(alpha: isDark ? 0.14 : 0.08),
                   ],
                 ),
@@ -313,7 +341,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                     padding: EdgeInsets.all(7.r),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: IllustrationColors.premiumGold.withValues(alpha: 0.25),
+                      color: IllustrationColors.premiumGold.withValues(
+                        alpha: 0.25,
+                      ),
                     ),
                     child: Icon(
                       LucideIcons.trophy,
@@ -342,7 +372,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w500,
-                            color: isDark ? AppColors.slate300 : AppColors.slate600,
+                            color: isDark
+                                ? AppColors.slate300
+                                : AppColors.slate600,
                           ),
                         ),
                       ],
@@ -358,7 +390,10 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: IllustrationColors.premiumGold,
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 7.h,
+                      ),
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       shape: RoundedRectangleBorder(
@@ -466,4 +501,3 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     );
   }
 }
-

@@ -112,11 +112,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [
-                      colors.highlight,
-                      colors.primary,
-                      colors.shadow,
-                    ],
+                    colors: [colors.highlight, colors.primary, colors.shadow],
                     stops: const [0.1, 0.5, 0.95],
                   ),
                   borderRadius: BorderRadius.vertical(
@@ -207,11 +203,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [
-                  colors.highlight,
-                  colors.primary,
-                  colors.shadow,
-                ],
+                colors: [colors.highlight, colors.primary, colors.shadow],
               ),
               borderRadius: BorderRadius.circular(6.r),
               boxShadow: [
@@ -244,10 +236,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
       width: (size * 0.10).r,
       height: (size * 0.26).r,
       decoration: BoxDecoration(
-        border: Border.all(
-          color: colors.primary,
-          width: 3.5.w,
-        ),
+        border: Border.all(color: colors.primary, width: 3.5.w),
         borderRadius: BorderRadius.horizontal(
           left: isLeft ? Radius.circular(16.r) : Radius.zero,
           right: !isLeft ? Radius.circular(16.r) : Radius.zero,
@@ -257,7 +246,11 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
   }
 
   /// Sculpted 3D Silver / Bronze Medallion
-  Widget _buildMedallion(_TierPalette colors, String rankText, String tierName) {
+  Widget _buildMedallion(
+    _TierPalette colors,
+    String rankText,
+    String tierName,
+  ) {
     return Container(
       width: (size * 0.55).r,
       height: (size * 0.55).r,
@@ -266,11 +259,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            colors.highlight,
-            colors.primary,
-            colors.shadow,
-          ],
+          colors: [colors.highlight, colors.primary, colors.shadow],
           stops: const [0.05, 0.5, 0.95],
         ),
         boxShadow: [
@@ -292,10 +281,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
               width: 2.w,
             ),
             gradient: RadialGradient(
-              colors: [
-                colors.highlight.withValues(alpha: 0.9),
-                colors.primary,
-              ],
+              colors: [colors.highlight.withValues(alpha: 0.9), colors.primary],
             ),
           ),
           child: Center(
@@ -349,11 +335,7 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            colors.highlight,
-            colors.primary,
-            colors.shadow,
-          ],
+          colors: [colors.highlight, colors.primary, colors.shadow],
         ),
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(16.r),
@@ -461,10 +443,7 @@ class _SunburstPainter extends CustomPainter {
   final Color rayColor;
   final int rayCount;
 
-  const _SunburstPainter({
-    required this.rayColor,
-    this.rayCount = 16,
-  });
+  const _SunburstPainter({required this.rayColor, this.rayCount = 16});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -514,11 +493,7 @@ class _LaurelWreathPainter extends CustomPainter {
       ..shader = LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [
-          tierColors.highlight,
-          tierColors.primary,
-          tierColors.shadow,
-        ],
+        colors: [tierColors.highlight, tierColors.primary, tierColors.shadow],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
       ..style = PaintingStyle.fill;
 
@@ -528,8 +503,22 @@ class _LaurelWreathPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     // Draw left and right arcs
-    _drawBranch(canvas, center, radius, isLeft: true, stemPaint: stemPaint, leafPaint: leafFill);
-    _drawBranch(canvas, center, radius, isLeft: false, stemPaint: stemPaint, leafPaint: leafFill);
+    _drawBranch(
+      canvas,
+      center,
+      radius,
+      isLeft: true,
+      stemPaint: stemPaint,
+      leafPaint: leafFill,
+    );
+    _drawBranch(
+      canvas,
+      center,
+      radius,
+      isLeft: false,
+      stemPaint: stemPaint,
+      leafPaint: leafFill,
+    );
   }
 
   void _drawBranch(
@@ -556,7 +545,14 @@ class _LaurelWreathPainter extends CustomPainter {
       // Draw leaf pair
       final leafAngle = angle + (isLeft ? math.pi * 0.2 : -math.pi * 0.2);
       _drawLeaf(canvas, leafCenter, leafAngle, 9.0, 4.5, leafPaint);
-      _drawLeaf(canvas, leafCenter, leafAngle + (isLeft ? 0.35 : -0.35), 7.5, 3.5, leafPaint);
+      _drawLeaf(
+        canvas,
+        leafCenter,
+        leafAngle + (isLeft ? 0.35 : -0.35),
+        7.5,
+        3.5,
+        leafPaint,
+      );
     }
   }
 
@@ -586,4 +582,3 @@ class _LaurelWreathPainter extends CustomPainter {
   bool shouldRepaint(covariant _LaurelWreathPainter oldDelegate) =>
       oldDelegate.tierColors != tierColors;
 }
-

@@ -48,10 +48,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
   @override
   int get level => widget.level;
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
@@ -203,7 +201,10 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                           'audio_multiple_choice_instruction',
                                         ),
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioMultipleChoiceQuestion(
@@ -242,9 +243,9 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                           isCorrectState:
                                               isCorrectNotifier.value,
                                           onSpin: (delta) {
-                                             if (!isAnsweredNotifier.value) {
-                                               _rotation.value += delta * 0.01;
-                                             }
+                                            if (!isAnsweredNotifier.value) {
+                                              _rotation.value += delta * 0.01;
+                                            }
                                           },
                                           onSelectSatellite: (index) {
                                             _submitAnswer(

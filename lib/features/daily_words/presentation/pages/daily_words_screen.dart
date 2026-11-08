@@ -197,10 +197,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         accentColor = AppColors.amber500;
         break;
       case 2:
-        title = context.tr(
-          'daily_words.gate2_title',
-          fallback: 'Keep Going!',
-        );
+        title = context.tr('daily_words.gate2_title', fallback: 'Keep Going!');
         desc = context.tr(
           'daily_words.gate2_desc',
           fallback:
@@ -246,14 +243,20 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       builder: (sheetContext) {
         final isDark = Theme.of(sheetContext).brightness == Brightness.dark;
         final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          sheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
             12.h;
         return Container(
-          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 32.h, AppSpacing.screen, safeBottom),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            32.h,
+            AppSpacing.screen,
+            safeBottom,
+          ),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
@@ -283,11 +286,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       ),
                     ],
                   ),
-                  child: Icon(
-                    icon,
-                    color: accentColor,
-                    size: 56.r,
-                  ),
+                  child: Icon(icon, color: accentColor, size: 56.r),
                 ),
                 SizedBox(height: 18.h),
                 // Progress Pill
@@ -383,7 +382,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                 }
                               },
                               onDismissed: () {
-                                setBtnState(() => isAdRequestInProgress = false);
+                                setBtnState(
+                                  () => isAdRequestInProgress = false,
+                                );
                                 if (earned) {
                                   if (sheetContext.mounted) {
                                     Navigator.of(sheetContext).pop();
@@ -858,7 +859,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           },
           child: Scaffold(
             resizeToAvoidBottomInset: false,
-            backgroundColor: (isDark &&
+            backgroundColor:
+                (isDark &&
                     Theme.of(context).scaffoldBackgroundColor == Colors.black)
                 ? Colors.black
                 : (isDark ? AppColors.slate900 : Colors.white),
@@ -878,7 +880,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: Builder(
                       builder: (context) {
                         final authUser = context.watch<AuthBloc>().state.user;
-                        final streakVal = authUser != null && authUser.currentStreak > 0
+                        final streakVal =
+                            authUser != null && authUser.currentStreak > 0
                             ? authUser.currentStreak
                             : state.streak;
                         final wordsCount = state.learnedThisSession.isNotEmpty
@@ -893,9 +896,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           isPremium: authUser?.isPremium ?? false,
                           onReviewAgain: () {
                             _unlockedUpToIndex.value = 9;
-                            context
-                                .read<DailyWordsBloc>()
-                                .add(const DailySessionRestartRequested());
+                            context.read<DailyWordsBloc>().add(
+                              const DailySessionRestartRequested(),
+                            );
                           },
                           onWordsTodayTap: () =>
                               context.push('/word-bank?filter=today'),
@@ -927,7 +930,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.screen,
+          vertical: 24.h,
+        ),
         child: Column(
           children: [
             SizedBox(height: 40.h),
@@ -984,7 +990,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 8.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSpacing.screen,
+                  vertical: 8.h,
+                ),
                 child: Row(
                   children: [
                     Semantics(
@@ -1150,26 +1159,25 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                         onTap: _pendingTyping.value ? null : _toggleFlip,
                         onHorizontalDragEnd:
                             (_pendingTyping.value || _isAnimating.value)
-                                ? null
-                                : (details) {
-                                    final velocity =
-                                        details.primaryVelocity ?? 0.0;
-                                    if (!_isFlipped.value) {
-                                      // Loophole protection: Card must be flipped first to see the definition.
-                                      // Swiping while front is visible flips the card so the learner sees the definition!
-                                      if (velocity.abs() > 300) {
-                                        _toggleFlip();
-                                      }
-                                      return;
-                                    }
-                                    if (velocity < -300) {
-                                      // Swiped left -> Review Later
-                                      _markNeedsReviewAndNext(word);
-                                    } else if (velocity > 300) {
-                                      // Swiped right -> Got it! triggers type-to-confirm game mechanism
-                                      _initiateGotItConfirmation(word);
-                                    }
-                                  },
+                            ? null
+                            : (details) {
+                                final velocity = details.primaryVelocity ?? 0.0;
+                                if (!_isFlipped.value) {
+                                  // Loophole protection: Card must be flipped first to see the definition.
+                                  // Swiping while front is visible flips the card so the learner sees the definition!
+                                  if (velocity.abs() > 300) {
+                                    _toggleFlip();
+                                  }
+                                  return;
+                                }
+                                if (velocity < -300) {
+                                  // Swiped left -> Review Later
+                                  _markNeedsReviewAndNext(word);
+                                } else if (velocity > 300) {
+                                  // Swiped right -> Got it! triggers type-to-confirm game mechanism
+                                  _initiateGotItConfirmation(word);
+                                }
+                              },
                         child: AnimatedBuilder(
                           animation: Listenable.merge([
                             _flipAnimation,
@@ -1205,15 +1213,18 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                         scrollController: _cardScrollController,
                                         onTypingConfirmed: () =>
                                             _executeGotIt(word, mastered: true),
-                                        onTypingSkipped: () =>
-                                            _executeGotIt(word, mastered: false),
+                                        onTypingSkipped: () => _executeGotIt(
+                                          word,
+                                          mastered: false,
+                                        ),
                                       ),
                                     )
                                   : WordCardFront(
                                       word: word,
                                       isDark: isDark,
                                       onSpeak: () => _speakWord(word.word),
-                                      onSpeakSlow: () => _speakWord(word.word, rate: 0.28),
+                                      onSpeakSlow: () =>
+                                          _speakWord(word.word, rate: 0.28),
                                       onTranslate: () => _handleTranslate(word),
                                       isTranslating: _isTranslating.value,
                                       translatedWord: _translatedWord.value,
@@ -1239,10 +1250,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       switchInCurve: Curves.easeOutQuad,
                       switchOutCurve: Curves.easeInQuad,
                       transitionBuilder: (child, animation) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
+                        return FadeTransition(opacity: animation, child: child);
                       },
                       child: !_isFlipped.value
                           ? ActionButton(
@@ -1257,43 +1265,42 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                               onTap: _toggleFlip,
                             )
                           : isPendingTyping
-                              ? const SizedBox.shrink(
-                                  key: ValueKey('typing_active'),
-                                )
-                              : Row(
-                                  key: const ValueKey('actions_row'),
-                                  children: [
-                                    Expanded(
-                                      child: ActionButton(
-                                        key: const ValueKey('skip_btn'),
-                                        label: context.tr(
-                                          'daily_words.skip',
-                                          fallback: 'Review Later',
-                                        ),
-                                        icon: Icons.replay_rounded,
-                                        color: AppColors.amber500,
-                                        isDark: isDark,
-                                        onTap: () =>
-                                            _markNeedsReviewAndNext(word),
-                                      ),
+                          ? const SizedBox.shrink(
+                              key: ValueKey('typing_active'),
+                            )
+                          : Row(
+                              key: const ValueKey('actions_row'),
+                              children: [
+                                Expanded(
+                                  child: ActionButton(
+                                    key: const ValueKey('skip_btn'),
+                                    label: context.tr(
+                                      'daily_words.skip',
+                                      fallback: 'Review Later',
                                     ),
-                                    SizedBox(width: 12.w),
-                                    Expanded(
-                                      child: ActionButton(
-                                        key: const ValueKey('learned_btn'),
-                                        label: context.tr(
-                                          'daily_words.learned',
-                                          fallback: 'Got it!',
-                                        ),
-                                        icon: Icons.verified_rounded,
-                                        color: AppColors.emerald500,
-                                        isDark: isDark,
-                                        onTap: () =>
-                                            _initiateGotItConfirmation(word),
-                                      ),
-                                    ),
-                                  ],
+                                    icon: Icons.replay_rounded,
+                                    color: AppColors.amber500,
+                                    isDark: isDark,
+                                    onTap: () => _markNeedsReviewAndNext(word),
+                                  ),
                                 ),
+                                SizedBox(width: 12.w),
+                                Expanded(
+                                  child: ActionButton(
+                                    key: const ValueKey('learned_btn'),
+                                    label: context.tr(
+                                      'daily_words.learned',
+                                      fallback: 'Got it!',
+                                    ),
+                                    icon: Icons.verified_rounded,
+                                    color: AppColors.emerald500,
+                                    isDark: isDark,
+                                    onTap: () =>
+                                        _initiateGotItConfirmation(word),
+                                  ),
+                                ),
+                              ],
+                            ),
                     );
                   },
                 ),

@@ -5,8 +5,9 @@ import 'package:vowl/core/theme/app_spacing.dart';
 
 void main() {
   group('AppSpacing Tests', () {
-    testWidgets('AppSpacing scales correctly on standard 375x812 screen',
-        (tester) async {
+    testWidgets('AppSpacing scales correctly on standard 375x812 screen', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(375, 812);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(() {
@@ -17,9 +18,7 @@ void main() {
       await tester.pumpWidget(
         ScreenUtilInit(
           designSize: const Size(375, 812),
-          builder: (context, child) => const MaterialApp(
-            home: Scaffold(),
-          ),
+          builder: (context, child) => const MaterialApp(home: Scaffold()),
         ),
       );
 

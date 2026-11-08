@@ -42,15 +42,15 @@ class SmartReplyChip extends StatelessWidget {
             color: isSelected
                 ? activeColor.withValues(alpha: isDark ? 0.22 : 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03)),
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.03)),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
               color: isSelected
                   ? activeColor
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.16)
-                      : Colors.black.withValues(alpha: 0.12)),
+                        ? Colors.white.withValues(alpha: 0.16)
+                        : Colors.black.withValues(alpha: 0.12)),
               width: isSelected ? 1.8 : 1.2,
             ),
             boxShadow: isSelected

@@ -69,6 +69,33 @@ class ShareCardData {
     );
   }
 
+  factory ShareCardData.fromArenaDefeat({
+    required String userName,
+    String? userPhotoUrl,
+    required int myScore,
+    required int rivalScore,
+    required String rivalName,
+    required String roomCode,
+    required int payoutCoins,
+    bool isAiRival = false,
+  }) {
+    return ShareCardData(
+      type: ShareCardType.arenaVictory,
+      userName: userName,
+      userPhotoUrl: userPhotoUrl,
+      myScore: myScore,
+      rivalScore: rivalScore,
+      rivalName: rivalName,
+      roomCode: roomCode,
+      payoutCoins: payoutCoins,
+      isAiRival: isAiRival,
+      title: '1v1 DUEL CONTENDER',
+      subtitle: rivalName.isNotEmpty
+          ? 'Battled $rivalName in a 1v1 English Duel — rematch incoming!'
+          : '1v1 English Duel Contender',
+    );
+  }
+
   factory ShareCardData.fromDuelInvite({
     required String userName,
     String? userPhotoUrl,
@@ -140,4 +167,3 @@ class ShareCardData {
     );
   }
 }
-

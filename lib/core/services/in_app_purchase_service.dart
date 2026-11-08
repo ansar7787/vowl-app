@@ -79,11 +79,7 @@ class InAppPurchaseService {
   }
 
   /// Resolves the Google Play Billing product ID for a given coin pack (100, 500, 1000 coins).
-  static String getCoinPackProductId({
-    String? packId,
-    int? coins,
-    int? index,
-  }) {
+  static String getCoinPackProductId({String? packId, int? coins, int? index}) {
     final id = (packId ?? '').toLowerCase().trim();
     final c = coins ?? 0;
 
@@ -252,7 +248,9 @@ class InAppPurchaseService {
       }
     } catch (e) {
       if (kDebugMode) {
-        debugPrint('IAP purchase launch error, attempting alternative mode: $e');
+        debugPrint(
+          'IAP purchase launch error, attempting alternative mode: $e',
+        );
       }
       try {
         if (_isPremiumProduct(product.id)) {

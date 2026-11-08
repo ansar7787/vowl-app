@@ -115,10 +115,7 @@ void main() {
     word: 'What time is the next train?',
     textToSpeak: 'What time is the next train?',
     phoneticHint: '/wɒt taɪm ɪz ðə nekst treɪn/',
-    options: [
-      'What time is the next train?',
-      'What time is the last train?',
-    ],
+    options: ['What time is the next train?', 'What time is the last train?'],
     correctAnswerIndex: 0,
     hint: 'Listen for "next" versus "last".',
     explanation: 'Clear t-glottaling before consonant onset.',
@@ -170,8 +167,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -183,12 +181,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -204,10 +204,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        speed: any(named: 'speed'),
-      ),
+      () => mockSoundService.playTts(any(), speed: any(named: 'speed')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
 
@@ -230,7 +227,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_shadow.m4a');
@@ -240,8 +239,12 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     await di.sl.reset();
 
@@ -322,57 +325,74 @@ void main() {
       expect(find.byType(ShadowPlaybackCompare), findsNothing);
     });
 
-    testWidgets('tapping pulse speaker triggers TTS audio and selection haptics at selected speed', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'tapping pulse speaker triggers TTS audio and selection haptics at selected speed',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
-      expect(speakerBtn, findsOneWidget);
+        final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
+        expect(speakerBtn, findsOneWidget);
 
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts(
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockSoundService.playTts(
             'Could you pass the salt please?',
             speed: any(named: 'speed'),
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('changing speed slider updates speed multiplier display and subsequent TTS', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'changing speed slider updates speed multiplier display and subsequent TTS',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      final slider = find.byKey(const ValueKey('shadowing_speed_slider'));
-      expect(slider, findsOneWidget);
+        final slider = find.byKey(const ValueKey('shadowing_speed_slider'));
+        expect(slider, findsOneWidget);
 
-      // Drag to slow speed (0.75x)
-      await tester.drag(slider, const Offset(-100, 0));
-      await tester.pumpAndSettle();
+        // Drag to slow speed (0.75x)
+        await tester.drag(slider, const Offset(-100, 0));
+        await tester.pumpAndSettle();
 
-      expect(find.text('0.75x'), findsOneWidget);
+        expect(find.text('0.75x'), findsOneWidget);
 
-      final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
+        verify(
+          () => mockSoundService.playTts(
             'Could you pass the salt please?',
             speed: 0.4 * 0.75,
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('tapping hint button dispatches AccentHintUsed without duplicates', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'tapping hint button dispatches AccentHintUsed without duplicates',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      final hintBtn = find.byType(QuestHintButton);
-      expect(hintBtn, findsOneWidget);
+        final hintBtn = find.byType(QuestHintButton);
+        expect(hintBtn, findsOneWidget);
 
-      await tester.tap(hintBtn);
-      await tester.pump();
+        await tester.tap(hintBtn);
+        await tester.pump();
 
-      verify(() => mockAccentBloc.add(any(that: isA<AccentHintUsed>()))).called(1);
-    });
+        verify(
+          () => mockAccentBloc.add(any(that: isA<AccentHintUsed>())),
+        ).called(1);
+      },
+    );
 
-    testWidgets('renders GameShimmerLoading when in AccentInitial state', (tester) async {
+    testWidgets('renders GameShimmerLoading when in AccentInitial state', (
+      tester,
+    ) async {
       await pumpShadowingChallenge(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
@@ -381,76 +401,116 @@ void main() {
   });
 
   group('ShadowingChallengeScreen - Phase 1 Dialogue Selection Flow', () {
-    testWidgets('tapping wrong dialogue bubble triggers error audio/haptics and submits wrong answer', (tester) async {
+    testWidgets(
+      'tapping wrong dialogue bubble triggers error audio/haptics and submits wrong answer',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
+
+        // Find which option is wrong
+        final opt0Text =
+            (tester.widget(
+                      find
+                          .descendant(
+                            of: find.byKey(
+                              const ValueKey('shadowing_option_0'),
+                            ),
+                            matching: find.byType(Text),
+                          )
+                          .first,
+                    )
+                    as Text)
+                .data;
+
+        final wrongIndex = opt0Text == 'Could you pass the salt please?'
+            ? 1
+            : 0;
+        final wrongOption = find.byKey(
+          ValueKey('shadowing_option_$wrongIndex'),
+        );
+
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+
+        // Phase 2 overlay remains unmounted
+        expect(find.byType(ShadowPlaybackCompare), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'tapping correct dialogue bubble advances to Stage 2 verbal evaluation without early answer submission',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
+
+        final opt0Text =
+            (tester.widget(
+                      find
+                          .descendant(
+                            of: find.byKey(
+                              const ValueKey('shadowing_option_0'),
+                            ),
+                            matching: find.byType(Text),
+                          )
+                          .first,
+                    )
+                    as Text)
+                .data;
+
+        final correctIndex = opt0Text == 'Could you pass the salt please?'
+            ? 0
+            : 1;
+        final correctOption = find.byKey(
+          ValueKey('shadowing_option_$correctIndex'),
+        );
+
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+
+        // Instruction changes to stage 2 recording prompt
+        expect(
+          find.text('Great job! Now record yourself saying the phrase.'),
+          findsOneWidget,
+        );
+
+        // Scroll down to bring ShadowPlaybackCompare into view
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
+      },
+    );
+
+    testWidgets('interaction lockout prevents secondary taps once answered', (
+      tester,
+    ) async {
       await pumpShadowingChallenge(tester);
 
-      // Find which option is wrong
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
+      final opt0Text =
+          (tester.widget(
+                    find
+                        .descendant(
+                          of: find.byKey(const ValueKey('shadowing_option_0')),
+                          matching: find.byType(Text),
+                        )
+                        .first,
+                  )
+                  as Text)
+              .data;
 
       final wrongIndex = opt0Text == 'Could you pass the salt please?' ? 1 : 0;
-      final wrongOption = find.byKey(ValueKey('shadowing_option_$wrongIndex'));
-
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-
-      // Phase 2 overlay remains unmounted
-      expect(find.byType(ShadowPlaybackCompare), findsNothing);
-    });
-
-    testWidgets('tapping correct dialogue bubble advances to Stage 2 verbal evaluation without early answer submission', (tester) async {
-      await pumpShadowingChallenge(tester);
-
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
-
-      final correctIndex = opt0Text == 'Could you pass the salt please?' ? 0 : 1;
-      final correctOption = find.byKey(ValueKey('shadowing_option_$correctIndex'));
-
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
-
-      // Instruction changes to stage 2 recording prompt
-      expect(
-        find.text('Great job! Now record yourself saying the phrase.'),
-        findsOneWidget,
-      );
-
-      // Scroll down to bring ShadowPlaybackCompare into view
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
-    });
-
-    testWidgets('interaction lockout prevents secondary taps once answered', (tester) async {
-      await pumpShadowingChallenge(tester);
-
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
-
-      final wrongIndex = opt0Text == 'Could you pass the salt please?' ? 1 : 0;
-      final correctIndex = opt0Text == 'Could you pass the salt please?' ? 0 : 1;
+      final correctIndex = opt0Text == 'Could you pass the salt please?'
+          ? 0
+          : 1;
 
       // Submit wrong answer
       final wrongOption = find.byKey(ValueKey('shadowing_option_$wrongIndex'));
@@ -461,7 +521,9 @@ void main() {
       verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
       // Further taps on correct option are ignored
-      final correctOption = find.byKey(ValueKey('shadowing_option_$correctIndex'));
+      final correctOption = find.byKey(
+        ValueKey('shadowing_option_$correctIndex'),
+      );
       await tester.tap(correctOption, warnIfMissed: false);
       await tester.pump();
 
@@ -470,147 +532,185 @@ void main() {
   });
 
   group('ShadowingChallengeScreen - Phase 2 Speaking & Shadow Comparison Flow', () {
-    testWidgets('recording audio and confirming "Nailed It" dispatches AccentSpeakConfirmed(5) and SubmitAnswer(true)', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'recording audio and confirming "Nailed It" dispatches AccentSpeakConfirmed(5) and SubmitAnswer(true)',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      // Advance stage 1
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
-      final correctIndex = opt0Text == 'Could you pass the salt please?' ? 0 : 1;
+        // Advance stage 1
+        final opt0Text =
+            (tester.widget(
+                      find
+                          .descendant(
+                            of: find.byKey(
+                              const ValueKey('shadowing_option_0'),
+                            ),
+                            matching: find.byType(Text),
+                          )
+                          .first,
+                    )
+                    as Text)
+                .data;
+        final correctIndex = opt0Text == 'Could you pass the salt please?'
+            ? 0
+            : 1;
 
-      await tester.tap(find.byKey(ValueKey('shadowing_option_$correctIndex')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(
+          find.byKey(ValueKey('shadowing_option_$correctIndex')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Scroll down to ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll down to ShadowPlaybackCompare
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final micBtn = find.byKey(const ValueKey('shadow_mic_btn'));
-      expect(micBtn, findsOneWidget);
+        final micBtn = find.byKey(const ValueKey('shadow_mic_btn'));
+        expect(micBtn, findsOneWidget);
 
-      // Start recording
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        // Start recording
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Stop recording
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Stop recording
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Comparison phase is now visible
-      expect(find.byKey(const ValueKey('comparison_phase')), findsOneWidget);
+        // Comparison phase is now visible
+        expect(find.byKey(const ValueKey('comparison_phase')), findsOneWidget);
 
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -400),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -400));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockAccentBloc.add(const AccentSpeakConfirmed(5))).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockAccentBloc.add(const AccentSpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      // Advance stage 1
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
-      final correctIndex = opt0Text == 'Could you pass the salt please?' ? 0 : 1;
+        // Advance stage 1
+        final opt0Text =
+            (tester.widget(
+                      find
+                          .descendant(
+                            of: find.byKey(
+                              const ValueKey('shadowing_option_0'),
+                            ),
+                            matching: find.byType(Text),
+                          )
+                          .first,
+                    )
+                    as Text)
+                .data;
+        final correctIndex = opt0Text == 'Could you pass the salt please?'
+            ? 0
+            : 1;
 
-      await tester.tap(find.byKey(ValueKey('shadowing_option_$correctIndex')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(
+          find.byKey(ValueKey('shadowing_option_$correctIndex')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Scroll down to ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll down to ShadowPlaybackCompare
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final micBtn = find.byKey(const ValueKey('shadow_mic_btn'));
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        final micBtn = find.byKey(const ValueKey('shadow_mic_btn'));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Comparison phase is now visible
-      expect(find.byKey(const ValueKey('comparison_phase')), findsOneWidget);
+        // Comparison phase is now visible
+        expect(find.byKey(const ValueKey('comparison_phase')), findsOneWidget);
 
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -400),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -400));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (tester) async {
-      await pumpShadowingChallenge(tester);
+    testWidgets(
+      'tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpShadowingChallenge(tester);
 
-      // Submit wrong answer to become answered
-      final opt0Text = (tester.widget(find.descendant(
-        of: find.byKey(const ValueKey('shadowing_option_0')),
-        matching: find.byType(Text),
-      ).first) as Text).data;
-      final wrongIndex = opt0Text == 'Could you pass the salt please?' ? 1 : 0;
+        // Submit wrong answer to become answered
+        final opt0Text =
+            (tester.widget(
+                      find
+                          .descendant(
+                            of: find.byKey(
+                              const ValueKey('shadowing_option_0'),
+                            ),
+                            matching: find.byType(Text),
+                          )
+                          .first,
+                    )
+                    as Text)
+                .data;
+        final wrongIndex = opt0Text == 'Could you pass the salt please?'
+            ? 1
+            : 0;
 
-      await tester.tap(find.byKey(ValueKey('shadowing_option_$wrongIndex')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(ValueKey('shadowing_option_$wrongIndex')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final continueBtn = find.text('TRY AGAIN');
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('TRY AGAIN');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(continueBtn);
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
   });
 
   group('ShadowingChallengeScreen - Briefing, Small Screens & Accessibility', () {
-    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (tester) async {
+    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_shadowingChallenge': false,
       });
@@ -632,84 +732,98 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
-    testWidgets('instruction text has centered alignment and wraps properly without ellipsis', (tester) async {
-      const longInstructionQuest = AccentQuest(
-        id: 'ACC_SC_LONG',
-        instruction: 'Listen carefully to the full sentence and shadow every word with natural linking.',
-        difficulty: 1,
-        subtype: GameSubtype.shadowingChallenge,
-        word: 'Could you pass the salt please?',
-        textToSpeak: 'Could you pass the salt please?',
-        options: ['Could you pass the salt please?', 'Could you pass the soup please?'],
-        correctAnswerIndex: 0,
-      );
+    testWidgets(
+      'instruction text has centered alignment and wraps properly without ellipsis',
+      (tester) async {
+        const longInstructionQuest = AccentQuest(
+          id: 'ACC_SC_LONG',
+          instruction:
+              'Listen carefully to the full sentence and shadow every word with natural linking.',
+          difficulty: 1,
+          subtype: GameSubtype.shadowingChallenge,
+          word: 'Could you pass the salt please?',
+          textToSpeak: 'Could you pass the salt please?',
+          options: [
+            'Could you pass the salt please?',
+            'Could you pass the soup please?',
+          ],
+          correctAnswerIndex: 0,
+        );
 
-      const longState = AccentLoaded(
-        quests: [longInstructionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.shadowingChallenge,
-        level: 2,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+        const longState = AccentLoaded(
+          quests: [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.shadowingChallenge,
+          level: 2,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpShadowingChallenge(tester, state: longState);
+        await pumpShadowingChallenge(tester, state: longState);
 
-      final instructionFinder = find.descendant(
-        of: find.byType(ShadowingChallengeInstruction),
-        matching: find.byType(Text),
-      );
-      expect(instructionFinder, findsOneWidget);
+        final instructionFinder = find.descendant(
+          of: find.byType(ShadowingChallengeInstruction),
+          matching: find.byType(Text),
+        );
+        expect(instructionFinder, findsOneWidget);
 
-      final instructionText = tester.widget<Text>(instructionFinder);
-      expect(instructionText.textAlign, TextAlign.center);
-      expect(instructionText.overflow, isNot(TextOverflow.ellipsis));
-      expect(instructionText.softWrap, isTrue);
-      expect(tester.takeException(), isNull);
-    });
+        final instructionText = tester.widget<Text>(instructionFinder);
+        expect(instructionText.textAlign, TextAlign.center);
+        expect(instructionText.overflow, isNot(TextOverflow.ellipsis));
+        expect(instructionText.softWrap, isTrue);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on small device (320x568) in dark theme without overflow', (tester) async {
-      await pumpShadowingChallenge(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
+    testWidgets(
+      'renders cleanly on small device (320x568) in dark theme without overflow',
+      (tester) async {
+        await pumpShadowingChallenge(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ShadowingChallengePromptCard), findsOneWidget);
-      expect(find.byType(ShadowingChallengeDialogueList), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ShadowingChallengePromptCard), findsOneWidget);
+        expect(find.byType(ShadowingChallengeDialogueList), findsOneWidget);
 
-      // Verify prompt card and dialogue options do not have ellipsis
-      final promptTextFinder = find.descendant(
-        of: find.byType(ShadowingChallengePromptCard),
-        matching: find.text('Could you pass the salt please?'),
-      );
-      final promptText = tester.widget<Text>(promptTextFinder);
-      expect(promptText.overflow, isNot(TextOverflow.ellipsis));
-      expect(promptText.softWrap, isTrue);
-    });
+        // Verify prompt card and dialogue options do not have ellipsis
+        final promptTextFinder = find.descendant(
+          of: find.byType(ShadowingChallengePromptCard),
+          matching: find.text('Could you pass the salt please?'),
+        );
+        final promptText = tester.widget<Text>(promptTextFinder);
+        expect(promptText.overflow, isNot(TextOverflow.ellipsis));
+        expect(promptText.softWrap, isTrue);
+      },
+    );
 
-    testWidgets('respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
+    testWidgets(
+      'respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
 
-      await pumpShadowingChallenge(tester);
+        await pumpShadowingChallenge(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ShadowingChallengeScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ShadowingChallengeScreen), findsOneWidget);
 
-      final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        final speakerBtn = find.byKey(const ValueKey('shadowing_speaker_btn'));
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
+        verify(
+          () => mockSoundService.playTts(
             'Could you pass the salt please?',
             speed: any(named: 'speed'),
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
   });
 }
-

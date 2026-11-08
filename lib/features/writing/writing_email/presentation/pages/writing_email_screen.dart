@@ -217,8 +217,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest =
-            isLoaded ? state.currentQuestOrNull : _lastQuest;
+        final WritingQuest? quest = isLoaded
+            ? state.currentQuestOrNull
+            : _lastQuest;
 
         final options = quest?.options ?? [];
 
@@ -230,8 +231,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
             : isCorrectNotifier.value;
 
         final lives = state.livesRemaining;
-        final bool isFinalFailure =
-            isLoaded ? state.isFinalFailure : (lives == 0);
+        final bool isFinalFailure = isLoaded
+            ? state.isFinalFailure
+            : (lives == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -256,10 +258,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                     _shuffledOptions,
                   ]),
                   builder: (context, _) {
-                    final slotsFilled = _slots.value.isNotEmpty &&
-                        _slots.value.values.every(
-                          (v) => v != null,
-                        );
+                    final slotsFilled =
+                        _slots.value.isNotEmpty &&
+                        _slots.value.values.every((v) => v != null);
 
                     return RawScrollbar(
                       controller: _scrollController,
@@ -332,7 +333,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                 children: [
                                   if (!isAnswered)
                                     ScaleButton(
-                                      key: const Key('writing_email_send_button'),
+                                      key: const Key(
+                                        'writing_email_send_button',
+                                      ),
                                       onTap: slotsFilled
                                           ? () => _submitAnswer(isAnswered)
                                           : null,
@@ -346,10 +349,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                           color: slotsFilled
                                               ? theme.primaryColor
                                               : (isDark
-                                                  ? Colors.white.withValues(
-                                                      alpha: 0.08,
-                                                    )
-                                                  : const Color(0xFFE2E8F0)),
+                                                    ? Colors.white.withValues(
+                                                        alpha: 0.08,
+                                                      )
+                                                    : const Color(0xFFE2E8F0)),
                                           boxShadow: [
                                             if (slotsFilled)
                                               BoxShadow(
@@ -370,10 +373,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                               color: slotsFilled
                                                   ? Colors.white
                                                   : (isDark
-                                                      ? Colors.white38
-                                                      : const Color(
-                                                          0xFF94A3B8,
-                                                        )),
+                                                        ? Colors.white38
+                                                        : const Color(
+                                                            0xFF94A3B8,
+                                                          )),
                                             ),
                                             SizedBox(width: 8.w),
                                             Text(
@@ -385,10 +388,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                                 color: slotsFilled
                                                     ? Colors.white
                                                     : (isDark
-                                                        ? Colors.white38
-                                                        : const Color(
-                                                            0xFF94A3B8,
-                                                          )),
+                                                          ? Colors.white38
+                                                          : const Color(
+                                                              0xFF94A3B8,
+                                                            )),
                                                 letterSpacing: 0.5,
                                               ),
                                             ),

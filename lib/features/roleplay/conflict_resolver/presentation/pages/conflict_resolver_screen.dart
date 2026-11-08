@@ -317,7 +317,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                     child: Builder(
                                       builder: (context) {
                                         final isCompact =
-                                            MediaQuery.sizeOf(context).height < 600;
+                                            MediaQuery.sizeOf(context).height <
+                                            600;
                                         return Padding(
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 20.w,
@@ -329,7 +330,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                 key: const Key(
                                                   'conflict_resolver_instruction',
                                                 ),
-                                                primaryColor: theme.primaryColor,
+                                                primaryColor:
+                                                    theme.primaryColor,
                                                 instruction:
                                                     InstructionHelper.getInstruction(
                                                       quest,
@@ -361,7 +363,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                 isDark: isDark,
                                                 rotation: _rotation.value,
                                                 waveAnimation: _waveController,
-                                                onDialDragStart: _onDialDragStart,
+                                                onDialDragStart:
+                                                    _onDialDragStart,
                                                 onDialDragged: _onDialDragged,
                                                 onDialDragEnd: _onDialDragEnd,
                                                 onStepLeft: _stepLeft,
@@ -371,13 +374,15 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                         _currentOptions
                                                             .isNotEmpty &&
                                                         _focusedIndex! <
-                                                            _currentOptions.length
+                                                            _currentOptions
+                                                                .length
                                                     ? _currentOptions[_focusedIndex!]
                                                           .correctAnswer
                                                     : null,
                                                 isAnswered:
                                                     isAnsweredNotifier.value,
-                                                isCorrect: isCorrectNotifier.value,
+                                                isCorrect:
+                                                    isCorrectNotifier.value,
                                                 isFirstStagePassed:
                                                     isFirstStagePassedNotifier
                                                         .value,
@@ -388,21 +393,25 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
                                               // Submit control button
                                               if (!isAnsweredNotifier.value &&
-                                                  !isFirstStagePassedNotifier.value)
+                                                  !isFirstStagePassedNotifier
+                                                      .value)
                                                 Builder(
                                                   builder: (context) {
                                                     Widget btn = ScaleButton(
                                                       key: const Key(
                                                         'conflict_resolver_confirm_button',
                                                       ),
-                                                      onTap: () => _submitAnswer(quest),
+                                                      onTap: () =>
+                                                          _submitAnswer(quest),
                                                       child: Container(
-                                                        padding: EdgeInsets.symmetric(
-                                                          horizontal: 28.w,
-                                                          vertical: isCompact
-                                                              ? 12.h
-                                                              : 14.h,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 28.w,
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 12.h
+                                                                  : 14.h,
+                                                            ),
                                                         decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius.circular(
@@ -410,7 +419,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                               ),
                                                           gradient: LinearGradient(
                                                             colors: [
-                                                              theme.primaryColor,
+                                                              theme
+                                                                  .primaryColor,
                                                               theme.primaryColor
                                                                   .withValues(
                                                                     alpha: 0.85,
@@ -419,14 +429,20 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                           ),
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              color: theme.primaryColor
+                                                              color: theme
+                                                                  .primaryColor
                                                                   .withValues(
                                                                     alpha: 0.35,
                                                                   ),
-                                                              blurRadius: isCompact
+                                                              blurRadius:
+                                                                  isCompact
                                                                   ? 10
                                                                   : 16,
-                                                              offset: const Offset(0, 4),
+                                                              offset:
+                                                                  const Offset(
+                                                                    0,
+                                                                    4,
+                                                                  ),
                                                             ),
                                                           ],
                                                         ),
@@ -434,29 +450,40 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                           mainAxisSize:
                                                               MainAxisSize.min,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.center,
+                                                              MainAxisAlignment
+                                                                  .center,
                                                           children: [
                                                             Icon(
-                                                              Icons.security_rounded,
-                                                              color: Colors.white,
+                                                              Icons
+                                                                  .security_rounded,
+                                                              color:
+                                                                  Colors.white,
                                                               size: isCompact
                                                                   ? 16.r
                                                                   : 18.r,
                                                             ),
-                                                            SizedBox(width: 8.w),
+                                                            SizedBox(
+                                                              width: 8.w,
+                                                            ),
                                                             Text(
                                                               "CONFIRM RESPONSE",
                                                               textAlign:
-                                                                  TextAlign.center,
+                                                                  TextAlign
+                                                                      .center,
                                                               style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
                                                                     ? 13.sp
                                                                     : 14.sp,
                                                                 fontWeight:
-                                                                    FontWeight.w600,
-                                                                color: Colors.white,
-                                                                letterSpacing: 0.8,
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    0.8,
                                                               ),
                                                             ),
                                                           ],
@@ -464,8 +491,14 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                       ),
                                                     );
 
-                                                    if (!MediaQuery.disableAnimationsOf(context)) {
-                                                      btn = btn.animate().fadeIn(duration: 300.ms);
+                                                    if (!MediaQuery.disableAnimationsOf(
+                                                      context,
+                                                    )) {
+                                                      btn = btn
+                                                          .animate()
+                                                          .fadeIn(
+                                                            duration: 300.ms,
+                                                          );
                                                     }
                                                     return btn;
                                                   },
@@ -507,10 +540,16 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                             context.read<RoleplayBloc>().add(
                                               const RoleplaySpeakConfirmed(5),
                                             );
-                                            _submitVerbalEvaluation(true, quest);
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              quest,
+                                            );
                                           },
                                           onSkipped: () =>
-                                              _submitVerbalEvaluation(false, quest),
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest,
+                                              ),
                                         ),
                                       ),
                                     ),

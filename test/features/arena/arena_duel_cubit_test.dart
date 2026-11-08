@@ -52,6 +52,7 @@ class FakeArenaRepository implements ArenaRepository {
     required UserEntity currentUser,
     required bool isWinner,
     required bool isDraw,
+    bool isPerfect = false,
   }) async {
     completeMatchCalled = true;
     lastIsWinner = isWinner;
@@ -65,14 +66,10 @@ class FakeArenaRepository implements ArenaRepository {
   }) async {}
 
   @override
-  Future<void> refundStake({
-    required String userId,
-  }) async {}
+  Future<void> refundStake({required String userId}) async {}
 
   @override
-  Future<void> cancelMatchmaking({
-    required String userId,
-  }) async {}
+  Future<void> cancelMatchmaking({required String userId}) async {}
 }
 
 void main() {
@@ -120,64 +117,75 @@ void main() {
       expect(cubit.state.isWinner, true);
       expect(cubit.state.isDraw, false);
       expect(cubit.state.isSpeedTieBreak, false);
-      expect(cubit.state.payoutCoins, 50);
+      expect(
+        cubit.state.payoutCoins,
+        60,
+      ); // 50 base win + 10 perfect bonus (1/1 correct)
 
       await cubit.close();
     });
 
-    test('resolves speed tiebreaker when points tie (Zero-Tie Guarantee)', () async {
-      final repo = FakeArenaRepository();
-      final cubit = ArenaDuelCubit(repository: repo);
+    test(
+      'resolves speed tiebreaker when points tie (Zero-Tie Guarantee)',
+      () async {
+        final repo = FakeArenaRepository();
+        final cubit = ArenaDuelCubit(repository: repo);
 
-      cubit.startSession(session, user);
+        cubit.startSession(session, user);
 
-      // Set rivalScore to match myScore, but myTotalTimeMs < rivalTotalTimeMs
-      cubit.emit(cubit.state.copyWith(
-        myScore: 400,
-        rivalScore: 400,
-        myTotalTimeMs: 4200,
-        rivalTotalTimeMs: 5800,
-        currentQuestionIndex: 0,
-      ));
+        // Set rivalScore to match myScore, but myTotalTimeMs < rivalTotalTimeMs
+        cubit.emit(
+          cubit.state.copyWith(
+            myScore: 400,
+            rivalScore: 400,
+            myTotalTimeMs: 4200,
+            rivalTotalTimeMs: 5800,
+            currentQuestionIndex: 0,
+          ),
+        );
 
-      // Answer option to complete 1-question duel
-      cubit.selectOption(0, user); // wrong option, scores remain tied
-      await Future<void>.delayed(const Duration(milliseconds: 1600));
+        // Answer option to complete 1-question duel
+        cubit.selectOption(0, user); // wrong option, scores remain tied
+        await Future<void>.delayed(const Duration(milliseconds: 1600));
 
-      expect(cubit.state.isCompleted, true);
-      expect(cubit.state.isSpeedTieBreak, true);
-      expect(cubit.state.isWinner, true); // Faster player won!
-      expect(cubit.state.isDraw, false); // No draws!
-      expect(cubit.state.payoutCoins, 50);
-      expect(cubit.state.speedDiffSeconds, greaterThan(0.0));
-      expect(cubit.state.speedDiffSeconds, lessThanOrEqualTo(1.6));
+        expect(cubit.state.isCompleted, true);
+        expect(cubit.state.isSpeedTieBreak, true);
+        expect(cubit.state.isWinner, true); // Faster player won!
+        expect(cubit.state.isDraw, false); // No draws!
+        expect(cubit.state.payoutCoins, 50);
+        expect(cubit.state.speedDiffSeconds, greaterThan(0.0));
+        expect(cubit.state.speedDiffSeconds, lessThanOrEqualTo(1.6));
 
-      await cubit.close();
-    });
+        await cubit.close();
+      },
+    );
 
-    test('awards immediate victory when opponent abandons match mid-game', () async {
-      final repo = FakeArenaRepository();
-      final controller = StreamController<ArenaDuelSession>.broadcast();
-      repo.roomStreamController = controller;
+    test(
+      'awards immediate victory when opponent abandons match mid-game',
+      () async {
+        final repo = FakeArenaRepository();
+        final controller = StreamController<ArenaDuelSession>.broadcast();
+        repo.roomStreamController = controller;
 
-      final cubit = ArenaDuelCubit(repository: repo);
-      cubit.startSession(session, user);
+        final cubit = ArenaDuelCubit(repository: repo);
+        cubit.startSession(session, user);
 
-      // Opponent forfeits/abandons the room
-      final abandonedSession = session.copyWith(status: 'abandoned');
-      controller.add(abandonedSession);
+        // Opponent forfeits/abandons the room
+        final abandonedSession = session.copyWith(status: 'abandoned');
+        controller.add(abandonedSession);
 
-      await Future<void>.delayed(const Duration(milliseconds: 60));
+        await Future<void>.delayed(const Duration(milliseconds: 60));
 
-      expect(cubit.state.isCompleted, true);
-      expect(cubit.state.isWinner, true);
-      expect(cubit.state.payoutCoins, 50);
-      expect(repo.completeMatchCalled, true);
-      expect(repo.lastIsWinner, true);
+        expect(cubit.state.isCompleted, true);
+        expect(cubit.state.isWinner, true);
+        expect(cubit.state.payoutCoins, 50);
+        expect(repo.completeMatchCalled, true);
+        expect(repo.lastIsWinner, true);
 
-      await controller.close();
-      await cubit.close();
-    });
+        await controller.close();
+        await cubit.close();
+      },
+    );
 
     group('Ghost AI Opponent Tier Tests (Easy, Medium, Hard)', () {
       final duelQuestions = List.generate(
@@ -191,52 +199,67 @@ void main() {
       );
 
       for (final tier in ['easy', 'medium', 'hard']) {
-        test('AI opponent ($tier) reliably scores points and does not get 0 points when user plays quickly', () async {
-          final repo = FakeArenaRepository();
-          final cubit = ArenaDuelCubit(repository: repo);
+        test(
+          'AI opponent ($tier) reliably scores points and does not get 0 points when user plays quickly',
+          () async {
+            final repo = FakeArenaRepository();
+            final cubit = ArenaDuelCubit(repository: repo);
 
-          final ghostAccuracy = tier == 'hard' ? 0.90 : (tier == 'medium' ? 0.78 : 0.65);
-          final ghostSession = ArenaDuelSession(
-            roomCode: 'VOWL-AI-TEST-$tier',
-            hostId: user.id,
-            hostName: user.displayName ?? 'Lexicon Master',
-            guestId: 'computer_$tier',
-            guestName: 'Computer',
-            stake: 30,
-            pot: 60,
-            status: 'in_progress',
-            isGhostRival: true,
-            ghostAccuracy: ghostAccuracy,
-            questions: duelQuestions,
-            createdAt: DateTime.now(),
-          );
+            final ghostAccuracy = tier == 'hard'
+                ? 0.90
+                : (tier == 'medium' ? 0.78 : 0.65);
+            final ghostSession = ArenaDuelSession(
+              roomCode: 'VOWL-AI-TEST-$tier',
+              hostId: user.id,
+              hostName: user.displayName ?? 'Lexicon Master',
+              guestId: 'computer_$tier',
+              guestName: 'Computer',
+              stake: 30,
+              pot: 60,
+              status: 'in_progress',
+              isGhostRival: true,
+              ghostAccuracy: ghostAccuracy,
+              questions: duelQuestions,
+              createdAt: DateTime.now(),
+            );
 
-          cubit.startSession(ghostSession, user);
+            cubit.startSession(ghostSession, user);
 
-          // Fast user answers each question after only 50ms
-          for (int q = 0; q < 5; q++) {
-            await Future<void>.delayed(const Duration(milliseconds: 50));
-            cubit.selectOption(0, user); // User selects correct option
-            // Advance delay in cubit is 1500ms
-            await Future<void>.delayed(const Duration(milliseconds: 1600));
-          }
+            // Fast user answers each question after only 50ms
+            for (int q = 0; q < 5; q++) {
+              await Future<void>.delayed(const Duration(milliseconds: 50));
+              cubit.selectOption(0, user); // User selects correct option
+              // Advance delay in cubit is 1500ms
+              await Future<void>.delayed(const Duration(milliseconds: 1600));
+            }
 
-          // Suspense pause before match finalization
-          await Future<void>.delayed(const Duration(milliseconds: 1400));
+            // Suspense pause before match finalization
+            await Future<void>.delayed(const Duration(milliseconds: 1400));
 
-          expect(cubit.state.isCompleted, true);
-          // Crucial check: AI must NOT have 0 points or 0ms!
-          expect(cubit.state.rivalScore, greaterThan(0),
-              reason: 'AI ($tier) should have scored points across 5 questions instead of 0');
-          expect(cubit.state.rivalCorrectCount, greaterThan(0),
-              reason: 'AI ($tier) with $ghostAccuracy accuracy should have correct answers');
-          expect(cubit.state.rivalTotalTimeMs, greaterThan(0),
-              reason: 'AI ($tier) response time should be tracked');
+            expect(cubit.state.isCompleted, true);
+            // Crucial check: AI must NOT have 0 points or 0ms!
+            expect(
+              cubit.state.rivalScore,
+              greaterThan(0),
+              reason:
+                  'AI ($tier) should have scored points across 5 questions instead of 0',
+            );
+            expect(
+              cubit.state.rivalCorrectCount,
+              greaterThan(0),
+              reason:
+                  'AI ($tier) with $ghostAccuracy accuracy should have correct answers',
+            );
+            expect(
+              cubit.state.rivalTotalTimeMs,
+              greaterThan(0),
+              reason: 'AI ($tier) response time should be tracked',
+            );
 
-          await cubit.close();
-        });
+            await cubit.close();
+          },
+        );
       }
     });
   });
 }
-

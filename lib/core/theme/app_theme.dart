@@ -442,4 +442,3 @@ extension AppThemeContextExtension on BuildContext {
           ? AppColorTokens.midnight
           : (isDark ? AppColorTokens.dark : AppColorTokens.light));
 }
-

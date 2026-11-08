@@ -174,8 +174,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -187,12 +188,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -208,10 +211,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        speed: any(named: 'speed'),
-      ),
+      () => mockSoundService.playTts(any(), speed: any(named: 'speed')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
 
@@ -234,7 +234,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_syllable_stress.m4a');
@@ -244,8 +246,12 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     when(
       () => mockAdService.showRewardedAd(
@@ -323,10 +329,7 @@ void main() {
     testWidgets('shows GameShimmerLoading when state is AccentInitial', (
       tester,
     ) async {
-      await pumpSyllableStress(
-        tester,
-        state: const AccentInitial(),
-      );
+      await pumpSyllableStress(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
@@ -372,47 +375,49 @@ void main() {
       verify(() => mockSoundService.playTts('political')).called(1);
     });
 
-    testWidgets('tapping wrong drum pad triggers wrong sound and error haptic', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester);
+    testWidgets(
+      'tapping wrong drum pad triggers wrong sound and error haptic',
+      (tester) async {
+        await pumpSyllableStress(tester);
 
-      // Pad 0 is 'po', correct is 1 ('lit')
-      final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
-      await tester.tap(wrongPad);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Pad 0 is 'po', correct is 1 ('lit')
+        final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
+        await tester.tap(wrongPad);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Feedback card is displayed with TRY AGAIN
-      expect(find.text('TRY AGAIN'), findsOneWidget);
-    });
+        // Feedback card is displayed with TRY AGAIN
+        expect(find.text('TRY AGAIN'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping wrong pad locks interaction to prevent duplicate taps', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester);
+    testWidgets(
+      'tapping wrong pad locks interaction to prevent duplicate taps',
+      (tester) async {
+        await pumpSyllableStress(tester);
 
-      final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
-      await tester.tap(wrongPad);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
+        await tester.tap(wrongPad);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      clearInteractions(mockSoundService);
-      clearInteractions(mockHapticService);
+        clearInteractions(mockSoundService);
+        clearInteractions(mockHapticService);
 
-      // Attempt to tap another pad
-      final pad2 = find.byKey(const ValueKey('syllable_pad_2'));
-      await tester.tap(pad2, warnIfMissed: false);
-      await tester.pump();
+        // Attempt to tap another pad
+        final pad2 = find.byKey(const ValueKey('syllable_pad_2'));
+        await tester.tap(pad2, warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockSoundService.playWrong());
-      verifyNever(() => mockSoundService.playCorrect());
-      verifyNever(() => mockHapticService.error());
-    });
+        verifyNever(() => mockSoundService.playWrong());
+        verifyNever(() => mockSoundService.playCorrect());
+        verifyNever(() => mockHapticService.error());
+      },
+    );
 
     testWidgets(
       'tapping correct drum pad unlocks Phase 2 SpeakToConfirmOverlay',
@@ -569,41 +574,45 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: any(named: 'isPremium'),
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).called(1);
+      verify(
+        () => mockAdService.showRewardedAd(
+          context: any(named: 'context'),
+          isPremium: any(named: 'isPremium'),
+          onUserEarnedReward: any(named: 'onUserEarnedReward'),
+          onDismissed: any(named: 'onDismissed'),
+        ),
+      ).called(1);
       verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester);
+    testWidgets(
+      'tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpSyllableStress(tester);
 
-      final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
-      await tester.tap(wrongPad);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongPad = find.byKey(const ValueKey('syllable_pad_0'));
+        await tester.tap(wrongPad);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final continueBtn = find.text('TRY AGAIN');
-      expect(continueBtn, findsOneWidget);
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final continueBtn = find.text('TRY AGAIN');
+        expect(continueBtn, findsOneWidget);
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets(
       'tapping TRY AGAIN resets state and dismisses feedback card when BLoC retries',
       (tester) async {
         final stateController = StreamController<AccentState>.broadcast();
         addTearDown(() => stateController.close());
-        when(() => mockAccentBloc.stream)
-            .thenAnswer((_) => stateController.stream);
+        when(
+          () => mockAccentBloc.stream,
+        ).thenAnswer((_) => stateController.stream);
 
         await pumpSyllableStress(tester);
 
@@ -674,9 +683,7 @@ void main() {
       verify(() => mockAccentBloc.add(const AccentHintUsed())).called(1);
     });
 
-    testWidgets('respects low animation mode (reduced motion)', (
-      tester,
-    ) async {
+    testWidgets('respects low animation mode (reduced motion)', (tester) async {
       VowlMotion.lowAnimationModeOverride.value = true;
 
       await pumpSyllableStress(tester);
@@ -686,137 +693,150 @@ void main() {
     });
   });
 
-  group('SyllableStressScreen - Multi-Screen Responsiveness & Zero Overflow', () {
-    testWidgets('renders cleanly on standard phone screen (390x844)', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester, width: 390, height: 844);
+  group(
+    'SyllableStressScreen - Multi-Screen Responsiveness & Zero Overflow',
+    () {
+      testWidgets('renders cleanly on standard phone screen (390x844)', (
+        tester,
+      ) async {
+        await pumpSyllableStress(tester, width: 390, height: 844);
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      });
 
-    testWidgets('renders cleanly on compact screen (320x568) with no overflows', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester, width: 320, height: 568);
+      testWidgets(
+        'renders cleanly on compact screen (320x568) with no overflows',
+        (tester) async {
+          await pumpSyllableStress(tester, width: 320, height: 568);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
-    });
-
-    testWidgets('renders cleanly on tablet screen (768x1024)', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester, width: 768, height: 1024);
-
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
-    });
-
-    testWidgets('renders properly in dark mode', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester, themeMode: ThemeMode.dark);
-
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
-    });
-  });
-
-  group('SyllableStressScreen - Professional Typography, Centered Multi-line Text & Standard Padding', () {
-    testWidgets('instruction text normalizes buzzwords, centers text, and uses standard typography', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester);
-
-      expect(find.text('Tap the stressed syllable'), findsOneWidget);
-      final instructionFinder = find.descendant(
-        of: find.byType(SyllableStressInstruction),
-        matching: find.byType(Text),
-      );
-      expect(instructionFinder, findsOneWidget);
-      final textWidget = tester.widget<Text>(instructionFinder);
-
-      expect(textWidget.textAlign, equals(TextAlign.center));
-      expect(textWidget.style?.fontWeight, equals(FontWeight.w600));
-      expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
-    });
-
-    testWidgets('prompt card uses clean WORD label and does not show ellipses', (
-      tester,
-    ) async {
-      await pumpSyllableStress(tester);
-
-      expect(find.text('WORD'), findsOneWidget);
-      expect(find.text('TARGET WORD'), findsNothing);
-
-      final wordTextFinder = find.descendant(
-        of: find.byType(SyllableStressPromptCard),
-        matching: find.text('POLITICAL'),
-      );
-      expect(wordTextFinder, findsOneWidget);
-      final wordWidget = tester.widget<Text>(wordTextFinder);
-      expect(wordWidget.style?.fontWeight, equals(FontWeight.w700));
-      expect(wordWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
-    });
-
-    testWidgets('game mechanism card (SpeakToConfirmOverlay) has standard padding and does not touch screen edges', (
-      tester,
-    ) async {
-      const double screenWidth = 390.0;
-      await pumpSyllableStress(tester, width: screenWidth, height: 844);
-
-      // Complete Phase 1 to reveal SpeakToConfirmOverlay
-      final correctPad = find.byKey(const ValueKey('syllable_pad_1'));
-      await tester.tap(correctPad);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final overlayFinder = find.byType(SpeakToConfirmOverlay);
-      expect(overlayFinder, findsOneWidget);
-
-      final topLeft = tester.getTopLeft(overlayFinder);
-      final bottomRight = tester.getBottomRight(overlayFinder);
-
-      // Verify that the card has standard padding on both sides (does not touch x=0 or x=screenWidth)
-      expect(topLeft.dx, greaterThanOrEqualTo(16.0));
-      expect(screenWidth - bottomRight.dx, greaterThanOrEqualTo(16.0));
-    });
-
-    testWidgets('handles multi-syllable word on 320dp screen with zero overflow and zero ellipsis', (
-      tester,
-    ) async {
-      const longQuest = AccentQuest(
-        id: 'ACC_SYLLABLESTRESS_LONG',
-        instruction: 'STRIKE THE DRUM PAD CONTAINING THE STRESSED SYLLABLE',
-        difficulty: 2,
-        subtype: GameSubtype.syllableStress,
-        word: 'characteristic',
-        textToSpeak: 'characteristic',
-        syllables: ['char', 'ac', 'ter', 'is', 'tic'],
-        correctAnswer: 'is',
-        correctAnswerIndex: 3,
-        hint: 'Say it slowly',
-        explanation: 'char-ac-ter-IS-tic',
-        stressRule: 'Primary stress falls on the fourth syllable.',
-        stressIndex: 3,
+          expect(tester.takeException(), isNull);
+          expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
+        },
       );
 
-      final state = testLoadedState.copyWith(
-        quests: [longQuest],
-        currentIndex: 0,
+      testWidgets('renders cleanly on tablet screen (768x1024)', (
+        tester,
+      ) async {
+        await pumpSyllableStress(tester, width: 768, height: 1024);
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
+      });
+
+      testWidgets('renders properly in dark mode', (tester) async {
+        await pumpSyllableStress(tester, themeMode: ThemeMode.dark);
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(SyllableStressDrumConsole), findsOneWidget);
+      });
+    },
+  );
+
+  group(
+    'SyllableStressScreen - Professional Typography, Centered Multi-line Text & Standard Padding',
+    () {
+      testWidgets(
+        'instruction text normalizes buzzwords, centers text, and uses standard typography',
+        (tester) async {
+          await pumpSyllableStress(tester);
+
+          expect(find.text('Tap the stressed syllable'), findsOneWidget);
+          final instructionFinder = find.descendant(
+            of: find.byType(SyllableStressInstruction),
+            matching: find.byType(Text),
+          );
+          expect(instructionFinder, findsOneWidget);
+          final textWidget = tester.widget<Text>(instructionFinder);
+
+          expect(textWidget.textAlign, equals(TextAlign.center));
+          expect(textWidget.style?.fontWeight, equals(FontWeight.w600));
+          expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+        },
       );
 
-      await pumpSyllableStress(tester, state: state, width: 320, height: 568);
+      testWidgets(
+        'prompt card uses clean WORD label and does not show ellipses',
+        (tester) async {
+          await pumpSyllableStress(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.text('CHARACTERISTIC'), findsOneWidget);
-      expect(find.text('Tap the stressed syllable'), findsOneWidget);
-    });
-  });
+          expect(find.text('WORD'), findsOneWidget);
+          expect(find.text('TARGET WORD'), findsNothing);
+
+          final wordTextFinder = find.descendant(
+            of: find.byType(SyllableStressPromptCard),
+            matching: find.text('POLITICAL'),
+          );
+          expect(wordTextFinder, findsOneWidget);
+          final wordWidget = tester.widget<Text>(wordTextFinder);
+          expect(wordWidget.style?.fontWeight, equals(FontWeight.w700));
+          expect(wordWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+        },
+      );
+
+      testWidgets(
+        'game mechanism card (SpeakToConfirmOverlay) has standard padding and does not touch screen edges',
+        (tester) async {
+          const double screenWidth = 390.0;
+          await pumpSyllableStress(tester, width: screenWidth, height: 844);
+
+          // Complete Phase 1 to reveal SpeakToConfirmOverlay
+          final correctPad = find.byKey(const ValueKey('syllable_pad_1'));
+          await tester.tap(correctPad);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 600));
+
+          await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 500));
+
+          final overlayFinder = find.byType(SpeakToConfirmOverlay);
+          expect(overlayFinder, findsOneWidget);
+
+          final topLeft = tester.getTopLeft(overlayFinder);
+          final bottomRight = tester.getBottomRight(overlayFinder);
+
+          // Verify that the card has standard padding on both sides (does not touch x=0 or x=screenWidth)
+          expect(topLeft.dx, greaterThanOrEqualTo(16.0));
+          expect(screenWidth - bottomRight.dx, greaterThanOrEqualTo(16.0));
+        },
+      );
+
+      testWidgets(
+        'handles multi-syllable word on 320dp screen with zero overflow and zero ellipsis',
+        (tester) async {
+          const longQuest = AccentQuest(
+            id: 'ACC_SYLLABLESTRESS_LONG',
+            instruction: 'STRIKE THE DRUM PAD CONTAINING THE STRESSED SYLLABLE',
+            difficulty: 2,
+            subtype: GameSubtype.syllableStress,
+            word: 'characteristic',
+            textToSpeak: 'characteristic',
+            syllables: ['char', 'ac', 'ter', 'is', 'tic'],
+            correctAnswer: 'is',
+            correctAnswerIndex: 3,
+            hint: 'Say it slowly',
+            explanation: 'char-ac-ter-IS-tic',
+            stressRule: 'Primary stress falls on the fourth syllable.',
+            stressIndex: 3,
+          );
+
+          final state = testLoadedState.copyWith(
+            quests: [longQuest],
+            currentIndex: 0,
+          );
+
+          await pumpSyllableStress(
+            tester,
+            state: state,
+            width: 320,
+            height: 568,
+          );
+
+          expect(tester.takeException(), isNull);
+          expect(find.text('CHARACTERISTIC'), findsOneWidget);
+          expect(find.text('Tap the stressed syllable'), findsOneWidget);
+        },
+      );
+    },
+  );
 }
-

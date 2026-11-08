@@ -17,16 +17,26 @@ class _WardrobePalette {
   _WardrobePalette._();
 
   // Boutique Wardrobe Closet
-  static const Color closetFrame = Color(0xFF78350F); // Deep warm amber/oak wood
-  static const Color closetInterior = Color(0xFFFFFBEB); // Creamy warm oak interior
+  static const Color closetFrame = Color(
+    0xFF78350F,
+  ); // Deep warm amber/oak wood
+  static const Color closetInterior = Color(
+    0xFFFFFBEB,
+  ); // Creamy warm oak interior
   static const Color closetShadow = Color(0x33451A03);
-  static const Color brassRail = Color(0xFFD97706); // Warm golden brass clothes rod
-  static const Color brassRailGleam = Color(0xFFFDE68A); // Polished brass highlight
+  static const Color brassRail = Color(
+    0xFFD97706,
+  ); // Warm golden brass clothes rod
+  static const Color brassRailGleam = Color(
+    0xFFFDE68A,
+  ); // Polished brass highlight
   static const Color hangerWood = Color(0xFFB45309); // Handcrafted cedar hanger
   static const Color hangerHook = Color(0xFF94A3B8); // Slate 400 metal hook
 
   // Interactive Target States
-  static const Color dropHoverBg = Color(0xFFFEF3C7); // Warm amber glow on hover
+  static const Color dropHoverBg = Color(
+    0xFFFEF3C7,
+  ); // Warm amber glow on hover
   static const Color dropHoverBorder = Color(0xFFF59E0B); // Amber 500
 
   // Fabric Tags Palette
@@ -131,6 +141,7 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
       di.sl<KidsTTSService>().speak(text);
     } catch (_) {}
   }
+
   @override
   void dispose() {
     try {
@@ -157,8 +168,9 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
           builder: (context, constraints) {
             final isNarrow = constraints.maxWidth < 360;
             final isTablet = constraints.maxWidth > 550;
-            final contentWidth =
-                isTablet ? 520.0 : (constraints.maxWidth - 20.w);
+            final contentWidth = isTablet
+                ? 520.0
+                : (constraints.maxWidth - 20.w);
 
             return Center(
               child: SizedBox(
@@ -174,7 +186,9 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight + 10.h),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight + 10.h,
+                      ),
 
                       // Boutique Wardrobe Closet (Drag Target & Story Board)
                       _buildClosetBoard(
@@ -235,7 +249,8 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
             child: KidsFittedText(
               context.tr(
                 'games.kids_clothing_drag',
-                fallback: 'Drag the hanger tag to the closet, or tap to choose!',
+                fallback:
+                    'Drag the hanger tag to the closet, or tap to choose!',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -274,9 +289,7 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
 
         return Container(
           width: double.infinity,
-          constraints: BoxConstraints(
-            minHeight: isNarrow ? 170.h : 190.h,
-          ),
+          constraints: BoxConstraints(minHeight: isNarrow ? 170.h : 190.h),
           decoration: BoxDecoration(
             color: isHovering
                 ? _WardrobePalette.dropHoverBg
@@ -286,8 +299,8 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
               color: isHovering
                   ? _WardrobePalette.dropHoverBorder
                   : (isAnswered && isCorrect
-                      ? _WardrobePalette.successBorder
-                      : _WardrobePalette.closetFrame),
+                        ? _WardrobePalette.successBorder
+                        : _WardrobePalette.closetFrame),
               width: isHovering ? 3.5.w : 3.w,
             ),
             boxShadow: [
@@ -428,9 +441,8 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
   }) {
     final instruction = InstructionHelper.getInstruction(quest);
     final question = quest.question ?? '';
-    final hasDistinctQuestion = question.isNotEmpty &&
-        question != '?' &&
-        question != instruction;
+    final hasDistinctQuestion =
+        question.isNotEmpty && question != '?' && question != instruction;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -535,10 +547,7 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Emoji bounce
-          Text(
-            emoji,
-            style: TextStyle(fontSize: 48.sp),
-          )
+          Text(emoji, style: TextStyle(fontSize: 48.sp))
               .animate()
               .scale(
                 duration: 400.ms,
@@ -849,8 +858,7 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
         if (isCorrectOption) {
           cardBg = _WardrobePalette.successBg;
           borderColor = _WardrobePalette.successBorder;
-          shadowColor =
-              _WardrobePalette.successBorder.withValues(alpha: 0.45);
+          shadowColor = _WardrobePalette.successBorder.withValues(alpha: 0.45);
         } else {
           cardBg = _WardrobePalette.errorBg;
           borderColor = _WardrobePalette.errorBorder;
@@ -1018,10 +1026,7 @@ class _KidsClothingLayoutState extends State<KidsClothingLayout> {
         scale: 1.08,
         child: Opacity(
           opacity: 0.92,
-          child: SizedBox(
-            width: 90.w,
-            child: hangerVisual,
-          ),
+          child: SizedBox(width: 90.w, child: hangerVisual),
         ),
       ),
     );

@@ -147,12 +147,12 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
         child: reduceMotion
             ? orbWidget
             : orbWidget
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.05, 1.05),
-                  duration: (2 + index).seconds,
-                ),
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.05, 1.05),
+                    duration: (2 + index).seconds,
+                  ),
       ),
     );
   }

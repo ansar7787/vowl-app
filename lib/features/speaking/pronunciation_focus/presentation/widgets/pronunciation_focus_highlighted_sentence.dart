@@ -62,8 +62,8 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
             decoration: BoxDecoration(
               color: hasPhoneme
                   ? (isDark
-                      ? Colors.orange[900]!.withValues(alpha: 0.3)
-                      : Colors.orange[100]!)
+                        ? Colors.orange[900]!.withValues(alpha: 0.3)
+                        : Colors.orange[100]!)
                   : Colors.transparent,
               borderRadius: BorderRadius.circular(10.r),
               border: Border.all(
@@ -92,8 +92,8 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                 color: hasPhoneme
                     ? (isDark ? Colors.orangeAccent : const Color(0xFFC2410C))
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.9)
-                        : const Color(0xFF1E293B)),
+                          ? Colors.white.withValues(alpha: 0.9)
+                          : const Color(0xFF1E293B)),
               ),
             ),
           ),
@@ -124,7 +124,9 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : const Color(0xFF475569),
+                        color: isDark
+                            ? Colors.white70
+                            : const Color(0xFF475569),
                         letterSpacing: 0.8,
                       ),
                     ),
@@ -135,7 +137,9 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                        color: isDark
+                            ? Colors.white54
+                            : const Color(0xFF64748B),
                       ),
                     ),
                   ],

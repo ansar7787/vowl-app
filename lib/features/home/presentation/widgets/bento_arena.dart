@@ -145,33 +145,33 @@ class _BentoArenaState extends State<BentoArena> {
               ),
               SizedBox(height: 10.h),
 
-            // 2. 2-COLUMN BENTO SUBGRID (Steps 2 to 5, plus Steps 6 to 9 when expanded)
-            _BentoSubgrid(
-              steps: isExpanded ? allSteps.sublist(1) : coreSteps,
-              user: widget.user,
-              focusIndex: focusIndex,
-              onCategoryTap: (type) => _navigateToCategory(context, type),
-            ),
-
-            // 3. THE DISCIPLINE BUBBLE DOCK (Expander Toggle & Teaser Bubbles)
-            if (widget.collapsed) ...[
-              SizedBox(height: 12.h),
-              _DisciplineBubbleDock(
-                isExpanded: isExpanded,
-                advancedSteps: advancedSteps,
-                isDark: isDark,
-                onToggleExpand: () {
-                  _triggerHaptic();
-                  _isExpanded.value = !_isExpanded.value;
-                },
+              // 2. 2-COLUMN BENTO SUBGRID (Steps 2 to 5, plus Steps 6 to 9 when expanded)
+              _BentoSubgrid(
+                steps: isExpanded ? allSteps.sublist(1) : coreSteps,
+                user: widget.user,
+                focusIndex: focusIndex,
                 onCategoryTap: (type) => _navigateToCategory(context, type),
               ),
+
+              // 3. THE DISCIPLINE BUBBLE DOCK (Expander Toggle & Teaser Bubbles)
+              if (widget.collapsed) ...[
+                SizedBox(height: 12.h),
+                _DisciplineBubbleDock(
+                  isExpanded: isExpanded,
+                  advancedSteps: advancedSteps,
+                  isDark: isDark,
+                  onToggleExpand: () {
+                    _triggerHaptic();
+                    _isExpanded.value = !_isExpanded.value;
+                  },
+                  onCategoryTap: (type) => _navigateToCategory(context, type),
+                ),
+              ],
             ],
-          ],
-        ),
-      );
-    },
-  );
+          ),
+        );
+      },
+    );
   }
 }
 
@@ -196,14 +196,15 @@ class _BentoHeroCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = GameHelper.getCategoryColor(type.name);
     final icon = GameHelper.getIconForCategory(type);
     final totalCleared = user.getTotalCategoryLevelsCleared(type);
     final maxLevels = user.getMaxCategoryLevels(type);
-    final progress =
-        maxLevels > 0 ? (totalCleared / maxLevels).clamp(0.0, 1.0) : 0.0;
+    final progress = maxLevels > 0
+        ? (totalCleared / maxLevels).clamp(0.0, 1.0)
+        : 0.0;
     final isCompleted = maxLevels > 0 && totalCleared >= maxLevels;
     final categoryName = BentoArena.formatCategoryTitle(type);
 
@@ -234,8 +235,8 @@ class _BentoHeroCard extends StatelessWidget {
               color: isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
               width: 1.r,
             ),
           ),
@@ -307,7 +308,9 @@ class _BentoHeroCard extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 10.5.sp,
                                 fontWeight: FontWeight.w800,
-                                color: isCompleted ? AppColors.emerald500 : color,
+                                color: isCompleted
+                                    ? AppColors.emerald500
+                                    : color,
                                 letterSpacing: 0.6,
                               ),
                               maxLines: 1,
@@ -533,14 +536,15 @@ class _BentoGridCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = GameHelper.getCategoryColor(type.name);
     final icon = GameHelper.getIconForCategory(type);
     final totalCleared = user.getTotalCategoryLevelsCleared(type);
     final maxLevels = user.getMaxCategoryLevels(type);
-    final progress =
-        maxLevels > 0 ? (totalCleared / maxLevels).clamp(0.0, 1.0) : 0.0;
+    final progress = maxLevels > 0
+        ? (totalCleared / maxLevels).clamp(0.0, 1.0)
+        : 0.0;
     final isCompleted = maxLevels > 0 && totalCleared >= maxLevels;
     final categoryName = BentoArena.formatCategoryTitle(type);
 
@@ -572,8 +576,8 @@ class _BentoGridCell extends StatelessWidget {
               color: isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
               width: 1.r,
             ),
           ),
@@ -717,21 +721,19 @@ class _DisciplineBubbleDock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.03)
-            : Colors.white,
+        color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : AppColors.slate100),
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
           width: 1.r,
         ),
       ),
@@ -848,8 +850,7 @@ class _DisciplineBubbleDock extends StatelessWidget {
                 children: advancedSteps.map((type) {
                   final color = GameHelper.getCategoryColor(type.name);
                   final icon = GameHelper.getIconForCategory(type);
-                  final categoryName =
-                      BentoArena.formatCategoryTitle(type);
+                  final categoryName = BentoArena.formatCategoryTitle(type);
 
                   return Padding(
                     padding: EdgeInsets.only(right: 10.w),
@@ -863,7 +864,9 @@ class _DisciplineBubbleDock extends StatelessWidget {
                           height: 36.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: color.withValues(alpha: isDark ? 0.14 : 0.10),
+                            color: color.withValues(
+                              alpha: isDark ? 0.14 : 0.10,
+                            ),
                             border: Border.all(
                               color: color.withValues(
                                 alpha: isDark ? 0.30 : 0.22,

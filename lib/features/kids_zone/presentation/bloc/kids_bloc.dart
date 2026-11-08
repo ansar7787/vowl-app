@@ -521,7 +521,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           // "Continue" button and eliminate UI delays.
           emit(
             KidsGameComplete(
-              xpEarned: 5,
+              xpEarned: 0,
               coinsEarned: 10,
               stickerAwarded: newSticker,
             ),
@@ -532,7 +532,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
                 UpdateUserRewardsParams(
                   gameType: s.gameType,
                   level: s.level,
-                  xpIncrease: 5,
+                  xpIncrease: 0,
                   coinIncrease: 10,
                   starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
                 ),

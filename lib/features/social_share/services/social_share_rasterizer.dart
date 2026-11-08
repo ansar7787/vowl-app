@@ -17,8 +17,9 @@ class SocialShareRasterizer {
     String? subject,
   }) async {
     try {
-      final boundary = boundaryKey.currentContext?.findRenderObject()
-          as RenderRepaintBoundary?;
+      final boundary =
+          boundaryKey.currentContext?.findRenderObject()
+              as RenderRepaintBoundary?;
 
       if (boundary == null) {
         debugPrint('[SocialShareRasterizer] Boundary context not found.');
@@ -45,7 +46,8 @@ class SocialShareRasterizer {
         }
       } catch (_) {}
 
-      final filePath = '${tempDir.path}/vowl_milestone_${DateTime.now().millisecondsSinceEpoch}.png';
+      final filePath =
+          '${tempDir.path}/vowl_milestone_${DateTime.now().millisecondsSinceEpoch}.png';
       final file = File(filePath);
       await file.writeAsBytes(pngBytes);
 

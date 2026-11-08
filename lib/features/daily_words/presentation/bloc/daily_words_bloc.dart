@@ -6,6 +6,7 @@ import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -157,7 +158,8 @@ class DailyWordsState extends Equatable {
   int get totalWords => wordSet?.words.length ?? 0;
 
   /// Whether the user can navigate back to the previous word in the session.
-  bool get canGoPrevious => currentIndex > 0 && status == DailyWordsStatus.loaded;
+  bool get canGoPrevious =>
+      currentIndex > 0 && status == DailyWordsStatus.loaded;
 
   /// Whether the user has gone through all today's words.
   bool get isSessionDone =>
@@ -319,8 +321,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       }
 
       try {
-        final dueWordsList =
-            _service.wordsForReview.map((w) => w.word).toList();
+        final dueWordsList = _service.wordsForReview
+            .map((w) => w.word)
+            .toList();
         await di.sl<NotificationService>().scheduleDailyWordsReminder(
           dueWords: dueWordsList,
           streak: _service.streak,
@@ -400,9 +403,27 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       // Session complete
       await _service.completeDailySession();
       DiscoveryDeck.notifySequenceCompleted();
+      if (di.sl.isRegistered<UpdateUserRewards>()) {
+        try {
+          await di.sl<UpdateUserRewards>().call(
+            UpdateUserRewardsParams(
+              gameType: 'daily_words',
+              xpIncrease: 5,
+              coinIncrease: 10,
+              level: _service.completedDay > 0
+                  ? _service.completedDay
+                  : _service.currentDay,
+            ),
+          );
+        } catch (e) {
+          if (kDebugMode)
+            debugPrint('DailyWordsBloc: failed to update rewards: $e');
+        }
+      }
       try {
-        final dueWordsList =
-            _service.wordsForReview.map((w) => w.word).toList();
+        final dueWordsList = _service.wordsForReview
+            .map((w) => w.word)
+            .toList();
         await di.sl<NotificationService>().scheduleDailyWordsReminder(
           dueWords: dueWordsList,
           streak: _service.streak,
@@ -440,6 +461,23 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
   ) async {
     await _service.completeDailySession();
     DiscoveryDeck.notifySequenceCompleted();
+    if (di.sl.isRegistered<UpdateUserRewards>()) {
+      try {
+        await di.sl<UpdateUserRewards>().call(
+          UpdateUserRewardsParams(
+            gameType: 'daily_words',
+            xpIncrease: 5,
+            coinIncrease: 10,
+            level: _service.completedDay > 0
+                ? _service.completedDay
+                : _service.currentDay,
+          ),
+        );
+      } catch (e) {
+        if (kDebugMode)
+          debugPrint('DailyWordsBloc: failed to update rewards: $e');
+      }
+    }
     emit(
       state.copyWith(
         status: DailyWordsStatus.sessionComplete,

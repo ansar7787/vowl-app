@@ -78,7 +78,9 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
         ? AppColors.slate800.withValues(alpha: 0.85)
         : Colors.white.withValues(alpha: 0.95);
     Color borderColor = color.withValues(alpha: 0.25);
-    Color textColor = isDark ? Colors.white.withValues(alpha: 0.9) : AppColors.slate900;
+    Color textColor = isDark
+        ? Colors.white.withValues(alpha: 0.9)
+        : AppColors.slate900;
 
     // Styling when selected / locked in
     if (showResult) {
@@ -109,10 +111,7 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
         decoration: BoxDecoration(
           color: capColor,
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: borderColor,
-            width: isSelected ? 2.5 : 1.5,
-          ),
+          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
           boxShadow: [
             if (!isSelected)
               BoxShadow(

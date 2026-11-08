@@ -120,8 +120,10 @@ class UserModel extends UserEntity {
 
     final parsedPremiumExpiry = _parseDateTime(map['premiumExpiryDate']);
     final rawIsPremium = (map['isPremium'] as bool?) ?? false;
-    final effectiveIsPremium = rawIsPremium &&
-        (parsedPremiumExpiry == null || parsedPremiumExpiry.isAfter(DateTime.now()));
+    final effectiveIsPremium =
+        rawIsPremium &&
+        (parsedPremiumExpiry == null ||
+            parsedPremiumExpiry.isAfter(DateTime.now()));
 
     return UserModel(
       id: effectiveId,
@@ -202,10 +204,12 @@ class UserModel extends UserEntity {
       monthlyReferralsCount:
           (map['monthlyReferralsCount'] as num?)?.toInt() ?? 0,
       currentReferralMonthKey: map['currentReferralMonthKey'] as String?,
-      claimedAmbassadorRewardMonthKeys:
-          _parseStringList(map['claimedAmbassadorRewardMonthKeys']),
-      claimedWeeklyRewardWeekKeys:
-          _parseStringList(map['claimedWeeklyRewardWeekKeys']),
+      claimedAmbassadorRewardMonthKeys: _parseStringList(
+        map['claimedAmbassadorRewardMonthKeys'],
+      ),
+      claimedWeeklyRewardWeekKeys: _parseStringList(
+        map['claimedWeeklyRewardWeekKeys'],
+      ),
       dailyDuelsPlayedToday:
           (map['dailyDuelsPlayedToday'] as num?)?.toInt() ?? 0,
       lastDuelDate: _parseDateTime(map['lastDuelDate']),
@@ -296,8 +300,7 @@ class UserModel extends UserEntity {
       totalReferralsCount: entity.totalReferralsCount,
       monthlyReferralsCount: entity.monthlyReferralsCount,
       currentReferralMonthKey: entity.currentReferralMonthKey,
-      claimedAmbassadorRewardMonthKeys:
-          entity.claimedAmbassadorRewardMonthKeys,
+      claimedAmbassadorRewardMonthKeys: entity.claimedAmbassadorRewardMonthKeys,
       claimedWeeklyRewardWeekKeys: entity.claimedWeeklyRewardWeekKeys,
       dailyDuelsPlayedToday: entity.dailyDuelsPlayedToday,
       lastDuelDate: entity.lastDuelDate,
@@ -331,7 +334,10 @@ class UserModel extends UserEntity {
           ? Timestamp.fromDate(lastLoginDate!)
           : null,
       'isEmailVerified': isEmailVerified,
-      'isPremium': isPremium && (premiumExpiryDate == null || premiumExpiryDate!.isAfter(DateTime.now())),
+      'isPremium':
+          isPremium &&
+          (premiumExpiryDate == null ||
+              premiumExpiryDate!.isAfter(DateTime.now())),
       'premiumExpiryDate': premiumExpiryDate != null
           ? Timestamp.fromDate(premiumExpiryDate!)
           : null,
@@ -404,8 +410,9 @@ class UserModel extends UserEntity {
       'claimedAmbassadorRewardMonthKeys': claimedAmbassadorRewardMonthKeys,
       'claimedWeeklyRewardWeekKeys': claimedWeeklyRewardWeekKeys,
       'dailyDuelsPlayedToday': dailyDuelsPlayedToday,
-      'lastDuelDate':
-          lastDuelDate != null ? Timestamp.fromDate(lastDuelDate!) : null,
+      'lastDuelDate': lastDuelDate != null
+          ? Timestamp.fromDate(lastDuelDate!)
+          : null,
       'duelWins': duelWins,
       'duelLosses': duelLosses,
     };
@@ -515,8 +522,7 @@ class UserModel extends UserEntity {
           claimedLevelMilestones ?? this.claimedLevelMilestones,
       claimedStreakMilestones:
           claimedStreakMilestones ?? this.claimedStreakMilestones,
-      claimedBadgeRewards:
-          claimedBadgeRewards ?? this.claimedBadgeRewards,
+      claimedBadgeRewards: claimedBadgeRewards ?? this.claimedBadgeRewards,
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
@@ -556,7 +562,8 @@ class UserModel extends UserEntity {
       totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
       monthlyReferralsCount:
           monthlyReferralsCount ?? this.monthlyReferralsCount,
-      claimedAmbassadorRewardMonthKeys: claimedAmbassadorRewardMonthKeys ??
+      claimedAmbassadorRewardMonthKeys:
+          claimedAmbassadorRewardMonthKeys ??
           this.claimedAmbassadorRewardMonthKeys,
       claimedWeeklyRewardWeekKeys:
           claimedWeeklyRewardWeekKeys ?? this.claimedWeeklyRewardWeekKeys,
@@ -661,7 +668,11 @@ class UserModel extends UserEntity {
         return prefix
             .split(' ')
             .where((s) => s.isNotEmpty)
-            .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+            .map(
+              (w) =>
+                  w[0].toUpperCase() +
+                  (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+            )
             .join(' ');
       }
       final rawPrefix = rawEmail.split('@').first.trim();

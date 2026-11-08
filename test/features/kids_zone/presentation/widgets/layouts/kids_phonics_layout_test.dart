@@ -53,7 +53,8 @@ void main() {
     id: 'KIDS_PHONICS_L1_Q1',
     gameType: 'phonics',
     level: 1,
-    instruction: 'Stretch the first sound in “moon” like a hum: mmm-oon. Which letter makes that sound?',
+    instruction:
+        'Stretch the first sound in “moon” like a hum: mmm-oon. Which letter makes that sound?',
     question: '?',
     correctAnswer: 'M',
     options: ['S', 'M', 'P'],
@@ -131,7 +132,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLetterLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -143,11 +146,16 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => true);
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
     when(() => mockTTSService.dispose()).thenAnswer((_) => Future.value());
 
@@ -157,18 +165,22 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-          any(),
-          fallback: any(named: 'fallback'),
-          args: any(named: 'args'),
-        )).thenAnswer((inv) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        fallback: any(named: 'fallback'),
+        args: any(named: 'args'),
+      ),
+    ).thenAnswer((inv) {
       final fallback = inv.namedArguments[#fallback] as String?;
       final key = inv.positionalArguments.first as String;
       return fallback ?? key;
     });
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsAudioService>())
+      di.sl.unregister<KidsAudioService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
@@ -181,8 +193,10 @@ void main() {
   });
 
   tearDown(() {
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
+    if (di.sl.isRegistered<KidsTTSService>())
+      di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsAudioService>())
+      di.sl.unregister<KidsAudioService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
@@ -217,7 +231,9 @@ void main() {
   }
 
   group('KidsPhonicsLayout Production Audit Tests', () {
-    testWidgets('renders studio monitor, emoji, and vinyl record options', (tester) async {
+    testWidgets('renders studio monitor, emoji, and vinyl record options', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -231,98 +247,125 @@ void main() {
       expect(find.text('P'), findsOneWidget);
     });
 
-    testWidgets('tapping vinyl record option submits answer (dual-mode interaction)', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'tapping vinyl record option submits answer (dual-mode interaction)',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Tap option 'M' (correct answer)
-      final mFinder = find.text('M');
-      expect(mFinder, findsOneWidget);
-      await tester.tap(mFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        // Tap option 'M' (correct answer)
+        final mFinder = find.text('M');
+        expect(mFinder, findsOneWidget);
+        await tester.tap(mFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify SubmitKidsAnswer(true) was sent to bloc and logged
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockLogger.debug(
+        // Verify SubmitKidsAnswer(true) was sent to bloc and logged
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(
+          () => mockLogger.debug(
             any(that: contains('Submitted option "M"')),
             tag: 'KidsPhonics',
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('dragging vinyl record option to studio monitor submits answer', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'dragging vinyl record option to studio monitor submits answer',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final optionToDrag = find.text('M');
-      final monitorTarget = find.byType(DragTarget<String>);
+        final optionToDrag = find.text('M');
+        final monitorTarget = find.byType(DragTarget<String>);
 
-      expect(optionToDrag, findsOneWidget);
-      expect(monitorTarget, findsOneWidget);
+        expect(optionToDrag, findsOneWidget);
+        expect(monitorTarget, findsOneWidget);
 
-      final dragLocation = tester.getCenter(optionToDrag);
-      final targetLocation = tester.getCenter(monitorTarget);
+        final dragLocation = tester.getCenter(optionToDrag);
+        final targetLocation = tester.getCenter(monitorTarget);
 
-      final TestGesture gesture = await tester.startGesture(dragLocation);
-      await tester.pump(const Duration(milliseconds: 100));
+        final TestGesture gesture = await tester.startGesture(dragLocation);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await gesture.moveTo(targetLocation);
-      await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(targetLocation);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify SubmitKidsAnswer was sent
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        // Verify SubmitKidsAnswer was sent
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('renders word blank puzzle on studio monitor when present in instruction', (tester) async {
-      await tester.pumpWidget(buildTestScreen(stateOverride: testBlankLoadedState, level: 91));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'renders word blank puzzle on studio monitor when present in instruction',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestScreen(stateOverride: testBlankLoadedState, level: 91),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify exact blank clue 'tr__n' is surfaced on the studio monitor
-      expect(find.text('tr__n'), findsOneWidget);
-      expect(find.text('ai'), findsOneWidget);
-      expect(find.text('ee'), findsOneWidget);
-      expect(find.text('ay'), findsOneWidget);
-    });
+        // Verify exact blank clue 'tr__n' is surfaced on the studio monitor
+        expect(find.text('tr__n'), findsOneWidget);
+        expect(find.text('ai'), findsOneWidget);
+        expect(find.text('ee'), findsOneWidget);
+        expect(find.text('ay'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders long multi-letter options cleanly without micro-downscaling or overflow', (tester) async {
-      await tester.pumpWidget(buildTestScreen(stateOverride: testLongOptionLoadedState, level: 191));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'renders long multi-letter options cleanly without micro-downscaling or overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestScreen(stateOverride: testLongOptionLoadedState, level: 191),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(find.text('explain'), findsOneWidget);
-      expect(find.text('explode'), findsOneWidget);
-      expect(find.text('expand'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.text('explain'), findsOneWidget);
+        expect(find.text('explode'), findsOneWidget);
+        expect(find.text('expand'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('studio monitor audio button triggers TTS speak for instruction', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'studio monitor audio button triggers TTS speak for instruction',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Find 'Listen' audio button on the studio monitor
-      final listenFinder = find.text('Listen');
-      expect(listenFinder, findsOneWidget);
+        // Find 'Listen' audio button on the studio monitor
+        final listenFinder = find.text('Listen');
+        expect(listenFinder, findsOneWidget);
 
-      await tester.tap(listenFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(listenFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      verify(() => mockTTSService.speak(any(), force: any(named: 'force'))).called(greaterThanOrEqualTo(1));
-      verify(() => mockLogger.debug(
+        verify(
+          () => mockTTSService.speak(any(), force: any(named: 'force')),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockLogger.debug(
             any(that: contains('Playing audio instruction')),
             tag: 'KidsPhonics',
-          )).called(1);
-    });
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('disables interaction when answerStatus is answered', (tester) async {
+    testWidgets('disables interaction when answerStatus is answered', (
+      tester,
+    ) async {
       const answeredState = KidsLoaded(
         quests: [testLetterQuest],
         originalTotalQuests: 1,
@@ -347,47 +390,63 @@ void main() {
       verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
     });
 
-    testWidgets('displays FUN FACT and explanation in feedback card upon correct answer', (tester) async {
-      const answeredState = KidsLoaded(
-        quests: [testLetterQuest],
-        originalTotalQuests: 1,
-        gameType: 'phonics',
-        level: 2,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'displays FUN FACT and explanation in feedback card upon correct answer',
+      (tester) async {
+        const answeredState = KidsLoaded(
+          quests: [testLetterQuest],
+          originalTotalQuests: 1,
+          gameType: 'phonics',
+          level: 2,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await tester.pumpWidget(buildTestScreen(stateOverride: answeredState));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildTestScreen(stateOverride: answeredState));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify FUN FACT box and text are displayed
-      expect(find.text('FUN FACT'), findsOneWidget);
-      expect(find.text('The /m/ sound travels through your nose.'), findsOneWidget);
+        // Verify FUN FACT box and text are displayed
+        expect(find.text('FUN FACT'), findsOneWidget);
+        expect(
+          find.text('The /m/ sound travels through your nose.'),
+          findsOneWidget,
+        );
 
-      // Verify explanation text is displayed
-      expect(find.text('“Moon” starts with /m/, written with M.'), findsOneWidget);
-    });
+        // Verify explanation text is displayed
+        expect(
+          find.text('“Moon” starts with /m/, written with M.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('renders cleanly without overflow on compact 320dp small phone screens', (tester) async {
-      tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+    testWidgets(
+      'renders cleanly without overflow on compact 320dp small phone screens',
+      (tester) async {
+        tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(buildTestScreen(screenSize: const Size(320, 568)));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(
+          buildTestScreen(screenSize: const Size(320, 568)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
-      expect(find.text('🌙'), findsOneWidget);
-      expect(find.text('M'), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.text('🌙'), findsOneWidget);
+        expect(find.text('M'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders cleanly without overflow on large screen (430x932)', (tester) async {
+    testWidgets('renders cleanly without overflow on large screen (430x932)', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(430 * 3.0, 932 * 3.0);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() {
@@ -395,7 +454,9 @@ void main() {
         tester.view.resetDevicePixelRatio();
       });
 
-      await tester.pumpWidget(buildTestScreen(screenSize: const Size(430, 932)));
+      await tester.pumpWidget(
+        buildTestScreen(screenSize: const Size(430, 932)),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
 
@@ -403,90 +464,106 @@ void main() {
       expect(find.text('🌙'), findsOneWidget);
     });
 
-    testWidgets('GameInstructionService provides accurate, human, buzzword-free phonics briefing', (tester) async {
-      late GameBriefing briefing;
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              briefing = GameInstructionService.getBriefing(
-                context,
-                null,
-                'phonics',
-                level: 1,
-              );
-              return const SizedBox();
-            },
+    testWidgets(
+      'GameInstructionService provides accurate, human, buzzword-free phonics briefing',
+      (tester) async {
+        late GameBriefing briefing;
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                briefing = GameInstructionService.getBriefing(
+                  context,
+                  null,
+                  'phonics',
+                  level: 1,
+                );
+                return const SizedBox();
+              },
+            ),
           ),
-        ),
-      );
+        );
 
-      expect(briefing.title, 'Sound Match');
-      expect(briefing.objective, contains('Listen to the sound clue'));
-      expect(briefing.objective, isNot(contains('amplifier')));
-      expect(briefing.rules.length, 3);
-      expect(briefing.tip, contains('Say the sound out loud'));
-      expect(briefing.tip, isNot(contains('PRO TIP')));
-      expect(briefing.actionText, "Let's Play");
-    });
+        expect(briefing.title, 'Sound Match');
+        expect(briefing.objective, contains('Listen to the sound clue'));
+        expect(briefing.objective, isNot(contains('amplifier')));
+        expect(briefing.rules.length, 3);
+        expect(briefing.tip, contains('Say the sound out loud'));
+        expect(briefing.tip, isNot(contains('PRO TIP')));
+        expect(briefing.actionText, "Let's Play");
+      },
+    );
 
-    testWidgets('50/50 lifeline dissolves first distractor when hintUsed is true and options count > 2', (tester) async {
-      final hintUsedState = testLetterLoadedState.copyWith(hintUsed: true);
-      when(() => mockKidsBloc.state).thenReturn(hintUsedState);
+    testWidgets(
+      '50/50 lifeline dissolves first distractor when hintUsed is true and options count > 2',
+      (tester) async {
+        final hintUsedState = testLetterLoadedState.copyWith(hintUsed: true);
+        when(() => mockKidsBloc.state).thenReturn(hintUsedState);
 
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // In testLetterQuest, options are ['S', 'M', 'P'], correct is 'M'
-      // The first distractor 'S' should be eliminated by lifeline
-      final animatedOpacities = tester.widgetList<AnimatedOpacity>(find.byType(AnimatedOpacity));
-      final hasZeroOpacity = animatedOpacities.any((ao) => ao.opacity == 0.0);
-      expect(hasZeroOpacity, isTrue);
+        // In testLetterQuest, options are ['S', 'M', 'P'], correct is 'M'
+        // The first distractor 'S' should be eliminated by lifeline
+        final animatedOpacities = tester.widgetList<AnimatedOpacity>(
+          find.byType(AnimatedOpacity),
+        );
+        final hasZeroOpacity = animatedOpacities.any((ao) => ao.opacity == 0.0);
+        expect(hasZeroOpacity, isTrue);
 
-      // Correct answer 'M' and remaining distractor 'P' remain available
-      expect(find.text('M'), findsOneWidget);
-      expect(find.text('P'), findsOneWidget);
-    });
+        // Correct answer 'M' and remaining distractor 'P' remain available
+        expect(find.text('M'), findsOneWidget);
+        expect(find.text('P'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping replay audio button triggers speech instruction safely', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'tapping replay audio button triggers speech instruction safely',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final listenButtonFinder = find.text('Listen');
-      expect(listenButtonFinder, findsOneWidget);
+        final listenButtonFinder = find.text('Listen');
+        expect(listenButtonFinder, findsOneWidget);
 
-      await tester.tap(listenButtonFinder);
-      await tester.pump();
+        await tester.tap(listenButtonFinder);
+        await tester.pump();
 
-      verify(() => mockTTSService.speak(any(), force: true)).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockTTSService.speak(any(), force: true),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    test('StoryService phonics scripts provide warm, educational, milestone-accurate story beats', () {
-      final beats = StoryServiceImpl.kidsScripts['phonics']!;
+    test(
+      'StoryService phonics scripts provide warm, educational, milestone-accurate story beats',
+      () {
+        final beats = StoryServiceImpl.kidsScripts['phonics']!;
 
-      expect(beats.length, 6);
-      // Level 1: Initial letter sounds
-      expect(beats[0], contains('Welcome to Phonics!'));
-      expect(beats[0], isNot(contains('Sound Scientist')));
+        expect(beats.length, 6);
+        // Level 1: Initial letter sounds
+        expect(beats[0], contains('Welcome to Phonics!'));
+        expect(beats[0], isNot(contains('Sound Scientist')));
 
-      // Level 10: Beginning & ending sounds
-      expect(beats[1], contains('first 10 levels'));
+        // Level 10: Beginning & ending sounds
+        expect(beats[1], contains('first 10 levels'));
 
-      // Level 20: CVC words and rhyming families
-      expect(beats[2], contains('Twenty levels complete'));
+        // Level 20: CVC words and rhyming families
+        expect(beats[2], contains('Twenty levels complete'));
 
-      // Level 50: Consonant blends & word families
-      expect(beats[3], contains('Halfway to 100'));
+        // Level 50: Consonant blends & word families
+        expect(beats[3], contains('Halfway to 100'));
 
-      // Level 100: Long vowels, vowel teams, word blanks
-      expect(beats[4], contains('One hundred levels completed'));
-      expect(beats[4], isNot(contains('Master of the Sound Garden')));
+        // Level 100: Long vowels, vowel teams, word blanks
+        expect(beats[4], contains('One hundred levels completed'));
+        expect(beats[4], isNot(contains('Master of the Sound Garden')));
 
-      // Level 200: Syllables, chunks, full fluency
-      expect(beats[5], contains('Two hundred levels completed'));
-      expect(beats[5], isNot(contains('Legendary Reader')));
-    });
+        // Level 200: Syllables, chunks, full fluency
+        expect(beats[5], contains('Two hundred levels completed'));
+        expect(beats[5], isNot(contains('Legendary Reader')));
+      },
+    );
   });
 }

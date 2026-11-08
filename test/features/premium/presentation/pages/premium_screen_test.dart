@@ -84,7 +84,10 @@ class FakePaymentService implements PaymentService {
   }) => true;
 
   @override
-  Future<Map<String, dynamic>> createOrder({String? planId, String? packId}) async {
+  Future<Map<String, dynamic>> createOrder({
+    String? planId,
+    String? packId,
+  }) async {
     return {'id': 'order_123'};
   }
 
@@ -196,11 +199,10 @@ class FakeInAppPurchase implements InAppPurchase {
   Future<bool> buyConsumable({
     required PurchaseParam purchaseParam,
     bool autoConsume = true,
-  }) =>
-      platform.buyConsumable(
-        purchaseParam: purchaseParam,
-        autoConsume: autoConsume,
-      );
+  }) => platform.buyConsumable(
+    purchaseParam: purchaseParam,
+    autoConsume: autoConsume,
+  );
 
   @override
   Future<bool> buyNonConsumable({required PurchaseParam purchaseParam}) =>
@@ -432,13 +434,13 @@ void main() {
   setUpAll(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMessageHandler(
-      'dev.flutter.pigeon.in_app_purchase_android.InAppPurchaseApi.startConnection',
-      (ByteData? message) async {
-        return const StandardMessageCodec().encodeMessage(<Object?>[
-          <Object?>[0, 'OK']
-        ]);
-      },
-    );
+          'dev.flutter.pigeon.in_app_purchase_android.InAppPurchaseApi.startConnection',
+          (ByteData? message) async {
+            return const StandardMessageCodec().encodeMessage(<Object?>[
+              <Object?>[0, 'OK'],
+            ]);
+          },
+        );
     registerFallbackValue(const AuthReloadUser());
     registerFallbackValue(ThemeMode.light);
   });
@@ -454,7 +456,9 @@ void main() {
     mockInAppPurchasePlatform = MockInAppPurchasePlatform();
     mockUrlLauncherPlatform = MockUrlLauncherPlatform();
 
-    when(() => mockInternetConnection.hasInternetAccess).thenAnswer((_) async => true);
+    when(
+      () => mockInternetConnection.hasInternetAccess,
+    ).thenAnswer((_) async => true);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.heavy()).thenAnswer((_) async {});
@@ -462,21 +466,31 @@ void main() {
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
 
-    when(() => mockAppLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockAppLogger.error(
-      any(),
-      error: any(named: 'error'),
-      stackTrace: any(named: 'stackTrace'),
-      tag: any(named: 'tag'),
-    )).thenReturn(null);
-    when(() => mockAppLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockAppLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockAppLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
+    when(
+      () => mockAppLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
 
     InAppPurchasePlatform.instance = mockInAppPurchasePlatform;
-    InAppPurchaseService.testIapInstance = FakeInAppPurchase(mockInAppPurchasePlatform);
+    InAppPurchaseService.testIapInstance = FakeInAppPurchase(
+      mockInAppPurchasePlatform,
+    );
     UrlLauncherPlatform.instance = mockUrlLauncherPlatform;
 
     HttpOverrides.global = TestHttpOverrides(statusCode: 200);
-    SharedPreferences.setMockInitialValues({'user_payment_contact': '9876543210'});
+    SharedPreferences.setMockInitialValues({
+      'user_payment_contact': '9876543210',
+    });
 
     // Default InAppPurchase products
     InAppPurchaseService.instance.products = [
@@ -512,7 +526,8 @@ void main() {
     InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
     // DI Setup
-    if (di.sl.isRegistered<PaymentService>()) di.sl.unregister<PaymentService>();
+    if (di.sl.isRegistered<PaymentService>())
+      di.sl.unregister<PaymentService>();
     if (di.sl.isRegistered<SubscriptionPlansService>()) {
       di.sl.unregister<SubscriptionPlansService>();
     }
@@ -530,16 +545,16 @@ void main() {
     di.sl.registerSingleton<AppLogger>(mockAppLogger);
     di.sl.registerSingleton<InternetConnection>(mockInternetConnection);
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockThemeCubit.state).thenReturn(
       const ThemeState(themeMode: ThemeMode.light, isMidnight: false),
     );
 
-    when(() => mockSubscriptionPlansService.fetchPlans()).thenAnswer(
-      (_) async => customPlans,
-    );
+    when(
+      () => mockSubscriptionPlansService.fetchPlans(),
+    ).thenAnswer((_) async => customPlans);
   });
 
   tearDown(() {
@@ -639,107 +654,110 @@ void main() {
   // GROUP 1: Initial Rendering & Header Navigation
   // =========================================================================
   group('Group 1: Initial Rendering & Header Navigation', () {
-    testWidgets('renders pinned SliverAppBar with VERIFIED PRO badge and back button', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.byType(SliverAppBar), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-      expect(find.text('VERIFIED PRO'), findsOneWidget);
-      expect(find.byIcon(Icons.workspace_premium_rounded), findsOneWidget);
-      expect(find.byType(PremiumHero), findsOneWidget);
-      expect(
-        find.descendant(
-          of: find.byType(PremiumHero),
-          matching: find.byIcon(LucideIcons.shieldCheck),
-        ),
-        findsOneWidget,
-      );
-      expect(find.byIcon(LucideIcons.crown), findsNothing);
-
-      await tester.pumpWidget(const SizedBox());
-    });
-
-    testWidgets('back button navigates to /home when context cannot be popped', (
-      tester,
-    ) async {
-      String? lastNavigatedRoute;
-      final router = GoRouter(
-        initialLocation: '/premium',
-        routes: [
-          GoRoute(
-            path: '/premium',
-            builder: (context, state) => const PremiumScreen(),
+    testWidgets(
+      'renders pinned SliverAppBar with VERIFIED PRO badge and back button',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
           ),
-          GoRoute(
-            path: '/home',
-            builder: (context, state) {
-              lastNavigatedRoute = '/home';
-              return const Scaffold(body: Text('Home Screen'));
-            },
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.byType(SliverAppBar), findsOneWidget);
+        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+        expect(find.text('VERIFIED PRO'), findsOneWidget);
+        expect(find.byIcon(Icons.workspace_premium_rounded), findsOneWidget);
+        expect(find.byType(PremiumHero), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byType(PremiumHero),
+            matching: find.byIcon(LucideIcons.shieldCheck),
           ),
-        ],
-      );
+          findsOneWidget,
+        );
+        expect(find.byIcon(LucideIcons.crown), findsNothing);
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const SizedBox(),
-          authBloc: mockAuthBloc,
-          router: router,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-      final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
-      expect(backBtn, findsOneWidget);
-      await tester.tap(backBtn);
-      await tester.pumpAndSettle();
+    testWidgets(
+      'back button navigates to /home when context cannot be popped',
+      (tester) async {
+        String? lastNavigatedRoute;
+        final router = GoRouter(
+          initialLocation: '/premium',
+          routes: [
+            GoRoute(
+              path: '/premium',
+              builder: (context, state) => const PremiumScreen(),
+            ),
+            GoRoute(
+              path: '/home',
+              builder: (context, state) {
+                lastNavigatedRoute = '/home';
+                return const Scaffold(body: Text('Home Screen'));
+              },
+            ),
+          ],
+        );
 
-      expect(lastNavigatedRoute, equals('/home'));
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const SizedBox(),
+            authBloc: mockAuthBloc,
+            router: router,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
+
+        final backBtn = find.byIcon(Icons.arrow_back_ios_new_rounded);
+        expect(backBtn, findsOneWidget);
+        await tester.tap(backBtn);
+        await tester.pumpAndSettle();
+
+        expect(lastNavigatedRoute, equals('/home'));
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 2: Dynamic Subscription Plans Loading & Selection
   // =========================================================================
   group('Group 2: Dynamic Subscription Plans Loading & Selection', () {
-    testWidgets('loads dynamic plans from SubscriptionPlansService and renders cards', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'loads dynamic plans from SubscriptionPlansService and renders cards',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      verify(() => mockSubscriptionPlansService.fetchPlans()).called(1);
-      expect(find.byType(PremiumPlanCard), findsNWidgets(3));
-      expect(find.text('WEEKLY PASS'), findsOneWidget);
-      expect(find.text('MONTHLY PRO'), findsOneWidget);
-      expect(find.text('ANNUAL MASTER'), findsOneWidget);
+        verify(() => mockSubscriptionPlansService.fetchPlans()).called(1);
+        expect(find.byType(PremiumPlanCard), findsNWidgets(3));
+        expect(find.text('WEEKLY PASS'), findsOneWidget);
+        expect(find.text('MONTHLY PRO'), findsOneWidget);
+        expect(find.text('ANNUAL MASTER'), findsOneWidget);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
     testWidgets('falls back to local defaults if fetchPlans throws error', (
       tester,
     ) async {
-      when(() => mockSubscriptionPlansService.fetchPlans()).thenThrow(
-        Exception('Network offline'),
-      );
+      when(
+        () => mockSubscriptionPlansService.fetchPlans(),
+      ).thenThrow(Exception('Network offline'));
 
       await tester.pumpWidget(
         buildTestableWidget(
@@ -759,145 +777,149 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('tapping different plan card updates selection with haptic feedback', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'tapping different plan card updates selection with haptic feedback',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      final monthlyCard = find.text('MONTHLY PRO');
-      expect(monthlyCard, findsOneWidget);
-      await tester.tap(monthlyCard);
-      await tester.pumpAndSettle();
+        final monthlyCard = find.text('MONTHLY PRO');
+        expect(monthlyCard, findsOneWidget);
+        await tester.tap(monthlyCard);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 3: Already Premium Quester State
   // =========================================================================
   group('Group 3: Already Premium Quester State', () {
-    testWidgets('renders already premium card with expiration date when user isPremium is true', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testPremiumUser),
-      );
+    testWidgets(
+      'renders already premium card with expiration date when user isPremium is true',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(testPremiumUser));
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byIcon(LucideIcons.checkCircle), findsOneWidget);
-      expect(find.text('Pro Membership Active'), findsOneWidget);
-      expect(find.textContaining('Valid until:'), findsOneWidget);
+        expect(find.byIcon(LucideIcons.checkCircle), findsOneWidget);
+        expect(find.text('Pro Membership Active'), findsOneWidget);
+        expect(find.textContaining('Valid until:'), findsOneWidget);
 
-      // Marketing hero, plans, and checkout button should NOT be rendered
-      expect(find.byType(PremiumHero), findsNothing);
-      expect(find.byType(PremiumPlanCard), findsNothing);
-      expect(find.text('Continue'), findsNothing);
+        // Marketing hero, plans, and checkout button should NOT be rendered
+        expect(find.byType(PremiumHero), findsNothing);
+        expect(find.byType(PremiumPlanCard), findsNothing);
+        expect(find.text('Continue'), findsNothing);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('tapping Extend Membership reveals plan list and CTA button, tapping Hide Plans hides them', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(testPremiumUser),
-      );
+    testWidgets(
+      'tapping Extend Membership reveals plan list and CTA button, tapping Hide Plans hides them',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(testPremiumUser));
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      // Initially plans are hidden
-      expect(find.byType(PremiumPlanCard), findsNothing);
-      expect(find.text('Continue'), findsNothing);
+        // Initially plans are hidden
+        expect(find.byType(PremiumPlanCard), findsNothing);
+        expect(find.text('Continue'), findsNothing);
 
-      // Tap Extend Membership
-      final extendBtn = find.text('Extend Membership');
-      expect(extendBtn, findsOneWidget);
-      await scrollAndTap(tester, extendBtn);
-      await tester.pumpAndSettle();
+        // Tap Extend Membership
+        final extendBtn = find.text('Extend Membership');
+        expect(extendBtn, findsOneWidget);
+        await scrollAndTap(tester, extendBtn);
+        await tester.pumpAndSettle();
 
-      // Plans and checkout button should now be rendered
-      expect(find.byType(PremiumPlanCard), findsNWidgets(3));
-      expect(find.text('Continue'), findsOneWidget);
-      expect(find.text('Hide Plans'), findsOneWidget);
+        // Plans and checkout button should now be rendered
+        expect(find.byType(PremiumPlanCard), findsNWidgets(3));
+        expect(find.text('Continue'), findsOneWidget);
+        expect(find.text('Hide Plans'), findsOneWidget);
 
-      // Tap Hide Plans to collapse again
-      final hideBtn = find.text('Hide Plans');
-      await scrollAndTap(tester, hideBtn);
-      await tester.pumpAndSettle();
+        // Tap Hide Plans to collapse again
+        final hideBtn = find.text('Hide Plans');
+        await scrollAndTap(tester, hideBtn);
+        await tester.pumpAndSettle();
 
-      // Plans should be hidden again
-      expect(find.byType(PremiumPlanCard), findsNothing);
-      expect(find.text('Continue'), findsNothing);
-      expect(find.text('Extend Membership'), findsOneWidget);
+        // Plans should be hidden again
+        expect(find.byType(PremiumPlanCard), findsNothing);
+        expect(find.text('Continue'), findsNothing);
+        expect(find.text('Extend Membership'), findsOneWidget);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 4: Payment Method Selection (India vs International GeoIP)
   // =========================================================================
   group('Group 4: Payment Method Selection (India vs International GeoIP)', () {
-    testWidgets('renders Payment Method selector with Razorpay and Google Play in India', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+    testWidgets(
+      'renders Payment Method selector with Razorpay and Google Play in India',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      await scrollTo(tester, find.text('PAYMENT METHOD'));
+        await scrollTo(tester, find.text('PAYMENT METHOD'));
 
-      expect(find.text('PAYMENT METHOD'), findsOneWidget);
-      expect(find.text('UPI / Credit Card'), findsOneWidget);
-      expect(find.text('Google Play Billing'), findsOneWidget);
-      expect(find.byIcon(Icons.check_rounded), findsOneWidget);
+        expect(find.text('PAYMENT METHOD'), findsOneWidget);
+        expect(find.text('UPI / Credit Card'), findsOneWidget);
+        expect(find.text('Google Play Billing'), findsOneWidget);
+        expect(find.byIcon(Icons.check_rounded), findsOneWidget);
 
-      // Tapping Google Play switches method
-      await tester.tap(find.text('Google Play Billing'));
-      await tester.pumpAndSettle();
+        // Tapping Google Play switches method
+        await tester.tap(find.text('Google Play Billing'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      // Tapping Razorpay switches back
-      await tester.tap(find.text('UPI / Credit Card'));
-      await tester.pumpAndSettle();
+        // Tapping Razorpay switches back
+        await tester.tap(find.text('UPI / Credit Card'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
     testWidgets('hides Payment Method selector when user is outside India', (
       tester,
@@ -924,336 +946,343 @@ void main() {
   // GROUP 5: Razorpay Checkout & Callbacks Flow
   // =========================================================================
   group('Group 5: Razorpay Checkout & Callbacks Flow', () {
-    testWidgets('tapping CTA launches Razorpay purchaseSubscription and starts timeout', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+    testWidgets(
+      'tapping CTA launches Razorpay purchaseSubscription and starts timeout',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
-
-      verify(() => mockHapticService.heavy()).called(1);
-      expect(fakePaymentService.lastPurchasedPlanId, equals('weekly'));
-      expect(find.text('Processing Payment...'), findsOneWidget);
-
-      await tester.pumpWidget(const SizedBox());
-    });
-
-    testWidgets('shows failure overlay when purchaseSubscription returns false', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
-      fakePaymentService.purchaseSubscriptionResult = false;
-
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
-
-      verify(() => mockHapticService.error()).called(1);
-      expect(find.byType(PremiumFailureOverlay), findsOneWidget);
-      expect(find.text('TRANSACTION FAILED'), findsOneWidget);
-
-      // Tapping RETRY dismisses error overlay
-      await tester.tap(find.text('RETRY'));
-      await tester.pumpAndSettle();
-      expect(find.byType(PremiumFailureOverlay), findsNothing);
-
-      await tester.pumpWidget(const SizedBox());
-    });
-
-    testWidgets('successful Razorpay callback upgrades premium, reloads user, shows success overlay', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
-
-      final router = GoRouter(
-        initialLocation: '/premium',
-        routes: [
-          GoRoute(
-            path: '/premium',
-            builder: (context, state) => const PremiumScreen(),
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
           ),
-          GoRoute(
-            path: '/home',
-            builder: (context, state) => const Scaffold(body: Text('Home')),
+        );
+        await tester.pumpAndSettle();
+
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
+
+        verify(() => mockHapticService.heavy()).called(1);
+        expect(fakePaymentService.lastPurchasedPlanId, equals('weekly'));
+        expect(find.text('Processing Payment...'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
+
+    testWidgets(
+      'shows failure overlay when purchaseSubscription returns false',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+        fakePaymentService.purchaseSubscriptionResult = false;
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
           ),
-        ],
-      );
+        );
+        await tester.pumpAndSettle();
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const SizedBox(),
-          authBloc: mockAuthBloc,
-          router: router,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        verify(() => mockHapticService.error()).called(1);
+        expect(find.byType(PremiumFailureOverlay), findsOneWidget);
+        expect(find.text('TRANSACTION FAILED'), findsOneWidget);
 
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        // Tapping RETRY dismisses error overlay
+        await tester.tap(find.text('RETRY'));
+        await tester.pumpAndSettle();
+        expect(find.byType(PremiumFailureOverlay), findsNothing);
 
-      // Trigger payment success
-      fakePaymentService.onSuccess?.call(
-        PaymentSuccessResponse('pay_98765', 'order_123', 'sig_abc', {}),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-      expect(fakePaymentService.lastUpgradedOrderId, equals('order_123'));
-      verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      expect(find.byType(PremiumSuccessOverlay), findsOneWidget);
-      expect(find.text('UPGRADE SUCCESSFUL'), findsOneWidget);
-      expect(find.text('pay_98765'), findsOneWidget);
+    testWidgets(
+      'successful Razorpay callback upgrades premium, reloads user, shows success overlay',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      // Tapping BEGIN ADVENTURE pops or navigates
-      expect(find.text('BEGIN ADVENTURE'), findsOneWidget);
-      await tester.tap(find.text('BEGIN ADVENTURE'));
-      await tester.pump(const Duration(seconds: 4));
+        final router = GoRouter(
+          initialLocation: '/premium',
+          routes: [
+            GoRoute(
+              path: '/premium',
+              builder: (context, state) => const PremiumScreen(),
+            ),
+            GoRoute(
+              path: '/home',
+              builder: (context, state) => const Scaffold(body: Text('Home')),
+            ),
+          ],
+        );
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const SizedBox(),
+            authBloc: mockAuthBloc,
+            router: router,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-    testWidgets('failure Razorpay callback displays error overlay with message', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        expect(find.text('Processing Payment...'), findsOneWidget);
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        // Trigger payment success
+        fakePaymentService.onSuccess?.call(
+          PaymentSuccessResponse('pay_98765', 'order_123', 'sig_abc', {}),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      fakePaymentService.onFailure?.call(
-        PaymentFailureResponse(
-          Razorpay.NETWORK_ERROR,
-          'Network connection lost',
-          {},
-        ),
-      );
-      await tester.pumpAndSettle();
+        expect(fakePaymentService.lastUpgradedOrderId, equals('order_123'));
+        verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        expect(find.byType(PremiumSuccessOverlay), findsOneWidget);
+        expect(find.text('UPGRADE SUCCESSFUL'), findsOneWidget);
+        expect(find.text('pay_98765'), findsOneWidget);
 
-      verify(() => mockHapticService.error()).called(1);
-      expect(find.byType(PremiumFailureOverlay), findsOneWidget);
-      expect(find.text('Network connection lost'), findsOneWidget);
+        // Tapping BEGIN ADVENTURE pops or navigates
+        expect(find.text('BEGIN ADVENTURE'), findsOneWidget);
+        await tester.tap(find.text('BEGIN ADVENTURE'));
+        await tester.pump(const Duration(seconds: 4));
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('cancellation Razorpay callback dismisses gracefully without error overlay', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+    testWidgets(
+      'failure Razorpay callback displays error overlay with message',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      fakePaymentService.onFailure?.call(
-        PaymentFailureResponse(
-          Razorpay.PAYMENT_CANCELLED,
-          'Payment cancelled by user',
-          {},
-        ),
-      );
-      await tester.pumpAndSettle();
+        fakePaymentService.onFailure?.call(
+          PaymentFailureResponse(
+            Razorpay.NETWORK_ERROR,
+            'Network connection lost',
+            {},
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.light()).called(1);
-      expect(find.byType(PremiumFailureOverlay), findsNothing);
+        verify(() => mockHapticService.error()).called(1);
+        expect(find.byType(PremiumFailureOverlay), findsOneWidget);
+        expect(find.text('Network connection lost'), findsOneWidget);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('tapping CANCEL on processing overlay dismisses processing state', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+    testWidgets(
+      'cancellation Razorpay callback dismisses gracefully without error overlay',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        fakePaymentService.onFailure?.call(
+          PaymentFailureResponse(
+            Razorpay.PAYMENT_CANCELLED,
+            'Payment cancelled by user',
+            {},
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('CANCEL'));
-      await tester.pumpAndSettle();
+        verify(() => mockHapticService.light()).called(1);
+        expect(find.byType(PremiumFailureOverlay), findsNothing);
 
-      expect(find.text('Processing Payment...'), findsNothing);
-      expect(find.text('Continue'), findsOneWidget);
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-      await tester.pumpWidget(const SizedBox());
-    });
+    testWidgets(
+      'tapping CANCEL on processing overlay dismisses processing state',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-    testWidgets('contact bottom sheet prompts for phone when contact not saved, validates 10 digits, and submits safely', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.remove('user_payment_contact');
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
-      await tester.pumpAndSettle();
+        expect(find.text('Processing Payment...'), findsOneWidget);
 
-      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
-      expect(find.text('Proceed to Payment Options'), findsOneWidget);
-      expect(find.byType(TextField), findsOneWidget);
+        await tester.tap(find.text('CANCEL'));
+        await tester.pumpAndSettle();
 
-      final proceedBtn = find.text('Proceed to Payment Options');
-      await tester.tap(proceedBtn);
-      await tester.pumpAndSettle();
-      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+        expect(find.text('Processing Payment...'), findsNothing);
+        expect(find.text('Continue'), findsOneWidget);
 
-      await tester.enterText(find.byType(TextField), '9876543210');
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-      await tester.tap(proceedBtn);
-      await tester.pumpAndSettle();
+    testWidgets(
+      'contact bottom sheet prompts for phone when contact not saved, validates 10 digits, and submits safely',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.remove('user_payment_contact');
 
-      expect(find.text('UPI & Payment Mobile Number'), findsNothing);
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(prefs.getString('user_payment_contact'), equals('9876543210'));
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
+        await tester.pumpAndSettle();
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+        expect(find.text('Proceed to Payment Options'), findsOneWidget);
+        expect(find.byType(TextField), findsOneWidget);
 
-    testWidgets('skipping contact bottom sheet proceeds to payment with empty contact', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.remove('user_payment_contact');
+        final proceedBtn = find.text('Proceed to Payment Options');
+        await tester.tap(proceedBtn);
+        await tester.pumpAndSettle();
+        expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.enterText(find.byType(TextField), '9876543210');
+        await tester.pumpAndSettle();
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(proceedBtn);
+        await tester.pumpAndSettle();
 
-      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+        expect(find.text('UPI & Payment Mobile Number'), findsNothing);
+        expect(find.text('Processing Payment...'), findsOneWidget);
 
-      final skipBtn = find.text('Skip and enter inside payment gateway');
-      await tester.tap(skipBtn);
-      await tester.pumpAndSettle();
+        expect(prefs.getString('user_payment_contact'), equals('9876543210'));
 
-      expect(find.text('UPI & Payment Mobile Number'), findsNothing);
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-      await tester.pumpWidget(const SizedBox());
-    });
+    testWidgets(
+      'skipping contact bottom sheet proceeds to payment with empty contact',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.remove('user_payment_contact');
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
+
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
+        await tester.pumpAndSettle();
+
+        expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+
+        final skipBtn = find.text('Skip and enter inside payment gateway');
+        await tester.tap(skipBtn);
+        await tester.pumpAndSettle();
+
+        expect(find.text('UPI & Payment Mobile Number'), findsNothing);
+        expect(find.text('Processing Payment...'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 6: Google Play / IAP Checkout Flow
   // =========================================================================
   group('Group 6: Google Play / IAP Checkout Flow', () {
-    testWidgets('tapping CTA with Google Play calls buyConsumable with matching product', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('US');
+    testWidgets(
+      'tapping CTA with Google Play calls buyConsumable with matching product',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('US');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      expect(
-        mockInAppPurchasePlatform.lastBoughtProduct?.id,
-        equals(InAppPurchaseService.premiumWeekly),
-      );
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        expect(
+          mockInAppPurchasePlatform.lastBoughtProduct?.id,
+          equals(InAppPurchaseService.premiumWeekly),
+        );
+        expect(find.text('Processing Payment...'), findsOneWidget);
 
-      // Trigger IAP onPurchaseSuccess
-      final purchase = FakePurchaseDetails(
-        purchaseID: 'iap_trans_111',
-        productID: InAppPurchaseService.premiumWeekly,
-        verificationData: FakePurchaseVerificationData(
-          serverVerificationData: 'token_123',
-        ),
-      );
-      InAppPurchaseService.instance.onPurchaseSuccess?.call(purchase);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Trigger IAP onPurchaseSuccess
+        final purchase = FakePurchaseDetails(
+          purchaseID: 'iap_trans_111',
+          productID: InAppPurchaseService.premiumWeekly,
+          verificationData: FakePurchaseVerificationData(
+            serverVerificationData: 'token_123',
+          ),
+        );
+        InAppPurchaseService.instance.onPurchaseSuccess?.call(purchase);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      expect(find.byType(PremiumSuccessOverlay), findsOneWidget);
-      expect(find.text('iap_trans_111'), findsOneWidget);
+        verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        expect(find.byType(PremiumSuccessOverlay), findsOneWidget);
+        expect(find.text('iap_trans_111'), findsOneWidget);
 
-      await tester.pump(const Duration(seconds: 4));
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pump(const Duration(seconds: 4));
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('IAP onPurchaseError displays failure overlay', (
-      tester,
-    ) async {
+    testWidgets('IAP onPurchaseError displays failure overlay', (tester) async {
       InAppPurchaseService.setCachedCountryCodeForTesting('US');
 
       await tester.pumpWidget(
@@ -1280,85 +1309,90 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('IAP onPurchaseCanceled resets processing overlay without error', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('US');
+    testWidgets(
+      'IAP onPurchaseCanceled resets processing overlay without error',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('US');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      final ctaBtn = find.text('Continue');
-      await scrollAndTap(tester, ctaBtn);
+        final ctaBtn = find.text('Continue');
+        await scrollAndTap(tester, ctaBtn);
 
-      expect(find.text('Processing Payment...'), findsOneWidget);
+        expect(find.text('Processing Payment...'), findsOneWidget);
 
-      InAppPurchaseService.instance.onPurchaseCanceled?.call('Cancelled');
-      await tester.pumpAndSettle();
+        InAppPurchaseService.instance.onPurchaseCanceled?.call('Cancelled');
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.light()).called(1);
-      expect(find.text('Processing Payment...'), findsNothing);
-      expect(find.byType(PremiumFailureOverlay), findsNothing);
+        verify(() => mockHapticService.light()).called(1);
+        expect(find.text('Processing Payment...'), findsNothing);
+        expect(find.byType(PremiumFailureOverlay), findsNothing);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 7: Zero Restore Policy & Offline Connectivity Handling
   // =========================================================================
   group('Group 7: Zero Restore Policy & Offline Connectivity Handling', () {
-    testWidgets('Restore Purchases button is not rendered (Zero Restore Policy, Account-Linked)', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('US');
-      InAppPurchaseService.testShouldUseIAPOverride = true;
+    testWidgets(
+      'Restore Purchases button is not rendered (Zero Restore Policy, Account-Linked)',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('US');
+        InAppPurchaseService.testShouldUseIAPOverride = true;
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Restore Purchases'), findsNothing);
-      expect(find.text('Restore'), findsNothing);
+        expect(find.text('Restore Purchases'), findsNothing);
+        expect(find.text('Restore'), findsNothing);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('Premium is account-bound to Firebase UID without manual restore button in India', (
-      tester,
-    ) async {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+    testWidgets(
+      'Premium is account-bound to Firebase UID without manual restore button in India',
+      (tester) async {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Restore Purchases'), findsNothing);
-      expect(find.text('Restore'), findsNothing);
+        expect(find.text('Restore Purchases'), findsNothing);
+        expect(find.text('Restore'), findsNothing);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
     testWidgets('shows no internet error when network is unreachable', (
       tester,
     ) async {
-      when(() => mockInternetConnection.hasInternetAccess).thenAnswer((_) async => false);
+      when(
+        () => mockInternetConnection.hasInternetAccess,
+      ).thenAnswer((_) async => false);
 
       await tester.pumpWidget(
         buildTestableWidget(
@@ -1406,8 +1440,14 @@ void main() {
       expect(find.byType(ModernFeatureBar), findsOneWidget);
       expect(find.text('PREMIUM PERKS'), findsOneWidget);
 
-      await scrollTo(tester, find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'));
-      expect(find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'), findsOneWidget);
+      await scrollTo(
+        tester,
+        find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'),
+      );
+      expect(
+        find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'),
+        findsOneWidget,
+      );
       expect(
         find.text(
           'One-time payment. Access for the selected duration. No recurring charges.',
@@ -1421,76 +1461,79 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('tapping Terms, Privacy, and Refund Policy launches correct legal URLs', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'tapping Terms, Privacy, and Refund Policy launches correct legal URLs',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTap(tester, find.text('Terms'));
-      expect(
-        mockUrlLauncherPlatform.lastLaunchedUrl,
-        equals('https://vowl-official.github.io/vowl-legal/terms.html'),
-      );
+        await scrollAndTap(tester, find.text('Terms'));
+        expect(
+          mockUrlLauncherPlatform.lastLaunchedUrl,
+          equals('https://vowl-official.github.io/vowl-legal/terms.html'),
+        );
 
-      await scrollAndTap(tester, find.text('Privacy'));
-      expect(
-        mockUrlLauncherPlatform.lastLaunchedUrl,
-        equals('https://vowl-official.github.io/vowl-legal/privacy.html'),
-      );
+        await scrollAndTap(tester, find.text('Privacy'));
+        expect(
+          mockUrlLauncherPlatform.lastLaunchedUrl,
+          equals('https://vowl-official.github.io/vowl-legal/privacy.html'),
+        );
 
-      await scrollAndTap(tester, find.text('Refund Policy'));
-      expect(
-        mockUrlLauncherPlatform.lastLaunchedUrl,
-        equals('https://vowl-official.github.io/vowl-legal/refund.html'),
-      );
+        await scrollAndTap(tester, find.text('Refund Policy'));
+        expect(
+          mockUrlLauncherPlatform.lastLaunchedUrl,
+          equals('https://vowl-official.github.io/vowl-legal/refund.html'),
+        );
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('renders cleanly on compact mobile viewport (320x568) with zero overflow', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          screenSize: const Size(320, 568),
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile viewport (320x568) with zero overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            screenSize: const Size(320, 568),
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PremiumScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PremiumScreen), findsOneWidget);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
-    testWidgets('renders cleanly on large tablet viewport (800x1280) with zero overflow', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          child: const PremiumScreen(),
-          authBloc: mockAuthBloc,
-          screenSize: const Size(800, 1280),
-          tester: tester,
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on large tablet viewport (800x1280) with zero overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(
+            child: const PremiumScreen(),
+            authBloc: mockAuthBloc,
+            screenSize: const Size(800, 1280),
+            tester: tester,
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PremiumScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PremiumScreen), findsOneWidget);
 
-      await tester.pumpWidget(const SizedBox());
-    });
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
 
     testWidgets('renders cleanly under 1.3x accessibility text scale', (
       tester,
@@ -1511,9 +1554,7 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
-    testWidgets('renders cleanly in dark theme mode', (
-      tester,
-    ) async {
+    testWidgets('renders cleanly in dark theme mode', (tester) async {
       when(() => mockThemeCubit.state).thenReturn(
         const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
       );

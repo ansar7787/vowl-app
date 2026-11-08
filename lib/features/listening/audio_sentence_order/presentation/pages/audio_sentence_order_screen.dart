@@ -50,10 +50,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ScrollController _scrollController = ScrollController();
 
@@ -149,8 +147,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                       key: timerKey!,
                                       durationSeconds: 15,
                                       primaryColor: theme.primaryColor,
-                                      onTimeUp: () =>
-                                          _submitWrongAnswer(quest),
+                                      onTimeUp: () => _submitWrongAnswer(quest),
                                     ),
                                   ),
                                   AudioSentenceOrderInstruction(
@@ -160,10 +157,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                     color: theme.primaryColor,
                                     instruction: context.tr(
                                       'games.audioSentenceOrder_instruction',
-                                      fallback:
-                                          quest.instruction.isNotEmpty
-                                              ? quest.instruction
-                                              : 'Listen and arrange the words in order.',
+                                      fallback: quest.instruction.isNotEmpty
+                                          ? quest.instruction
+                                          : 'Listen and arrange the words in order.',
                                     ),
                                   ),
                                   SizedBox(height: 24.h),
@@ -172,7 +168,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                       'audio_sentence_order_oscilloscope',
                                     ),
                                     onTap: () {
-                                      final audioToPlay = quest.textToSpeak ??
+                                      final audioToPlay =
+                                          quest.textToSpeak ??
                                           quest.prompt ??
                                           quest.question ??
                                           quest.sentence ??
@@ -201,8 +198,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                         false, // Disables the bypass feature for this game
                                     onConfirmed: () => _submitCorrectAnswer(),
                                     onBypassed: () => _submitCorrectAnswer(),
-                                    onSkipped: () =>
-                                        _submitWrongAnswer(quest),
+                                    onSkipped: () => _submitWrongAnswer(quest),
                                   ),
                                 ],
                               ),

@@ -30,8 +30,9 @@ void main() {
     sl.allowReassignment = true;
     sl.registerFactory<ForgotPasswordCubit>(() => mockForgotPasswordCubit);
 
-    when(() => mockForgotPasswordCubit.state)
-        .thenReturn(const ForgotPasswordState());
+    when(
+      () => mockForgotPasswordCubit.state,
+    ).thenReturn(const ForgotPasswordState());
     when(() => mockAuthBloc.state).thenReturn(const AuthState.unknown());
     when(
       () => mockThemeCubit.state,
@@ -106,8 +107,8 @@ void main() {
     await tester.enterText(emailField, 'reset@vowl.app');
     await tester.pump();
 
-    verify(() => mockForgotPasswordCubit.emailChanged('reset@vowl.app'))
-        .called(1);
+    verify(
+      () => mockForgotPasswordCubit.emailChanged('reset@vowl.app'),
+    ).called(1);
   });
 }
-

@@ -159,8 +159,9 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
                 ],
         ),
         child: Row(
-          mainAxisSize:
-              isDraggingFeedback ? MainAxisSize.min : MainAxisSize.max,
+          mainAxisSize: isDraggingFeedback
+              ? MainAxisSize.min
+              : MainAxisSize.max,
           children: [
             // Letter badge or status icon
             ExcludeSemantics(
@@ -174,17 +175,9 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: showAsCorrect
-                    ? Icon(
-                        Icons.check_rounded,
-                        color: Colors.white,
-                        size: 16.r,
-                      )
+                    ? Icon(Icons.check_rounded, color: Colors.white, size: 16.r)
                     : showAsWrong
-                    ? Icon(
-                        Icons.close_rounded,
-                        color: Colors.white,
-                        size: 16.r,
-                      )
+                    ? Icon(Icons.close_rounded, color: Colors.white, size: 16.r)
                     : Text(
                         _letter,
                         style: TextStyle(
@@ -236,10 +229,7 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
               child: buildCard(isDraggingFeedback: true),
             ),
           ),
-          childWhenDragging: Opacity(
-            opacity: 0.25,
-            child: buildCard(),
-          ),
+          childWhenDragging: Opacity(opacity: 0.25, child: buildCard()),
           child: ScaleButton(
             key: ValueKey('read_and_answer_option_tap_$index'),
             onTap: isAnswered ? () {} : onTap,

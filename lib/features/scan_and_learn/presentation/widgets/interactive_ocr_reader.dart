@@ -82,7 +82,10 @@ class InteractiveOcrReader extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          context.tr('scan.snap_quiz_title', fallback: 'SNAP CHALLENGE • 3 QUESTIONS'),
+                          context.tr(
+                            'scan.snap_quiz_title',
+                            fallback: 'SNAP CHALLENGE • 3 QUESTIONS',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
@@ -93,7 +96,11 @@ class InteractiveOcrReader extends StatelessWidget {
                         ),
                         SizedBox(height: 2.h),
                         Text(
-                          context.tr('scan.snap_quiz_prompt', fallback: 'Test Your Real-World Vocabulary (+10 Coins)'),
+                          context.tr(
+                            'scan.snap_quiz_prompt',
+                            fallback:
+                                'Test Your Real-World Vocabulary (+10 Coins)',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 13.sp,
@@ -104,11 +111,7 @@ class InteractiveOcrReader extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    LucideIcons.arrowRight,
-                    size: 18.r,
-                    color: Colors.white,
-                  ),
+                  Icon(LucideIcons.arrowRight, size: 18.r, color: Colors.white),
                 ],
               ),
             ),
@@ -153,7 +156,10 @@ class InteractiveOcrReader extends StatelessWidget {
                               SizedBox(width: 6.w),
                               Flexible(
                                 child: Text(
-                                  context.tr('scan.interactive_text', fallback: 'INTERACTIVE TEXT CANVAS'),
+                                  context.tr(
+                                    'scan.interactive_text',
+                                    fallback: 'INTERACTIVE TEXT CANVAS',
+                                  ),
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
@@ -169,7 +175,10 @@ class InteractiveOcrReader extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          context.tr('scan.tap_to_inspect', fallback: 'Tap word to inspect'),
+                          context.tr(
+                            'scan.tap_to_inspect',
+                            fallback: 'Tap word to inspect',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
@@ -184,7 +193,8 @@ class InteractiveOcrReader extends StatelessWidget {
                       spacing: 8.w,
                       runSpacing: 10.h,
                       children: tokens.map((token) {
-                        final isSelected = selectedToken?.cleanWord.toLowerCase() ==
+                        final isSelected =
+                            selectedToken?.cleanWord.toLowerCase() ==
                             token.cleanWord.toLowerCase();
 
                         return ScaleButton(
@@ -204,23 +214,33 @@ class InteractiveOcrReader extends StatelessWidget {
                               color: isSelected
                                   ? AppColors.indigo500
                                   : (token.isKeyword
-                                      ? AppColors.teal500.withValues(alpha: isDark ? 0.2 : 0.12)
-                                      : (isDark
-                                          ? Colors.white.withValues(alpha: 0.08)
-                                          : Colors.black.withValues(alpha: 0.05))),
+                                        ? AppColors.teal500.withValues(
+                                            alpha: isDark ? 0.2 : 0.12,
+                                          )
+                                        : (isDark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.08,
+                                                )
+                                              : Colors.black.withValues(
+                                                  alpha: 0.05,
+                                                ))),
                               borderRadius: BorderRadius.circular(10.r),
                               border: Border.all(
                                 color: isSelected
                                     ? AppColors.indigo400
                                     : (token.isKeyword
-                                        ? AppColors.teal500.withValues(alpha: 0.5)
-                                        : Colors.transparent),
+                                          ? AppColors.teal500.withValues(
+                                              alpha: 0.5,
+                                            )
+                                          : Colors.transparent),
                                 width: isSelected ? 2.w : 1.w,
                               ),
                               boxShadow: isSelected
                                   ? [
                                       BoxShadow(
-                                        color: AppColors.indigo500.withValues(alpha: 0.4),
+                                        color: AppColors.indigo500.withValues(
+                                          alpha: 0.4,
+                                        ),
                                         blurRadius: 10,
                                         offset: const Offset(0, 2),
                                       ),
@@ -238,8 +258,12 @@ class InteractiveOcrReader extends StatelessWidget {
                                 color: isSelected
                                     ? Colors.white
                                     : (token.isKeyword
-                                        ? (isDark ? AppColors.teal400 : AppColors.teal500)
-                                        : (isDark ? Colors.white : Colors.black87)),
+                                          ? (isDark
+                                                ? AppColors.teal400
+                                                : AppColors.teal500)
+                                          : (isDark
+                                                ? Colors.white
+                                                : Colors.black87)),
                               ),
                             ),
                           ),
@@ -263,7 +287,9 @@ class InteractiveOcrReader extends StatelessWidget {
         for (final element in line.elements) {
           final raw = element.text.trim();
           if (raw.isEmpty) continue;
-          final clean = raw.replaceAll(RegExp(r'^[^\w]+|[^\w]+$'), '').toLowerCase();
+          final clean = raw
+              .replaceAll(RegExp(r'^[^\w]+|[^\w]+$'), '')
+              .toLowerCase();
           if (clean.isEmpty) continue;
 
           tokens.add(

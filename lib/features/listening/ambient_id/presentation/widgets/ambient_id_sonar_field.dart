@@ -183,7 +183,8 @@ class AmbientIdSonarField extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final Color modernCorrect = tokens?.gameCorrect ?? AppColors.gameCorrect;
-    final Color modernIncorrect = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
+    final Color modernIncorrect =
+        tokens?.gameIncorrect ?? AppColors.gameIncorrect;
 
     bool isSelected = selectedIndex == index;
     bool isChoiceCorrect =
@@ -207,9 +208,7 @@ class AmbientIdSonarField extends StatelessWidget {
       borderColor = Colors.white.withValues(alpha: 0.85);
       textColor = Colors.white;
     } else {
-      cardBgColor = isDark
-          ? const Color(0xFF1E1E24)
-          : Colors.white;
+      cardBgColor = isDark ? const Color(0xFF1E1E24) : Colors.white;
       borderColor = color.withValues(alpha: isDark ? 0.35 : 0.22);
       textColor = isDark ? Colors.white : const Color(0xFF1E293B);
     }
@@ -248,11 +247,7 @@ class AmbientIdSonarField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              _getLocationIcon(text),
-              color: textColor,
-              size: 19.r,
-            ),
+            Icon(_getLocationIcon(text), color: textColor, size: 19.r),
             SizedBox(height: 3.h),
             ConstrainedBox(
               constraints: BoxConstraints(maxWidth: 96.r),
@@ -303,7 +298,10 @@ class AmbientIdSonarField extends StatelessWidget {
     if (l.contains('forest') || l.contains('wood') || l.contains('jungle')) {
       return Icons.forest_rounded;
     }
-    if (l.contains('cyber') || l.contains('city') || l.contains('downtown') || l.contains('street')) {
+    if (l.contains('cyber') ||
+        l.contains('city') ||
+        l.contains('downtown') ||
+        l.contains('street')) {
       return Icons.location_city_rounded;
     }
     if (l.contains('station')) {
@@ -312,34 +310,66 @@ class AmbientIdSonarField extends StatelessWidget {
     if (l.contains('space') || l.contains('orbit') || l.contains('galaxy')) {
       return Icons.rocket_launch_rounded;
     }
-    if (l.contains('airport') || l.contains('flight') || l.contains('terminal') || l.contains('plane')) {
+    if (l.contains('airport') ||
+        l.contains('flight') ||
+        l.contains('terminal') ||
+        l.contains('plane')) {
       return Icons.local_airport_rounded;
     }
-    if (l.contains('train') || l.contains('subway') || l.contains('metro') || l.contains('platform') || l.contains('rail')) {
+    if (l.contains('train') ||
+        l.contains('subway') ||
+        l.contains('metro') ||
+        l.contains('platform') ||
+        l.contains('rail')) {
       return Icons.train_rounded;
     }
     if (l.contains('library') || l.contains('book') || l.contains('study')) {
       return Icons.local_library_rounded;
     }
-    if (l.contains('school') || l.contains('classroom') || l.contains('college') || l.contains('university')) {
+    if (l.contains('school') ||
+        l.contains('classroom') ||
+        l.contains('college') ||
+        l.contains('university')) {
       return Icons.school_rounded;
     }
-    if (l.contains('mall') || l.contains('shop') || l.contains('store') || l.contains('supermarket') || l.contains('market') || l.contains('checkout') || l.contains('retail')) {
+    if (l.contains('mall') ||
+        l.contains('shop') ||
+        l.contains('store') ||
+        l.contains('supermarket') ||
+        l.contains('market') ||
+        l.contains('checkout') ||
+        l.contains('retail')) {
       return Icons.local_mall_rounded;
     }
-    if (l.contains('restaurant') || l.contains('cafe') || l.contains('bakery') || l.contains('kitchen') || l.contains('diner') || l.contains('coffee')) {
+    if (l.contains('restaurant') ||
+        l.contains('cafe') ||
+        l.contains('bakery') ||
+        l.contains('kitchen') ||
+        l.contains('diner') ||
+        l.contains('coffee')) {
       return Icons.restaurant_rounded;
     }
     if (l.contains('park') || l.contains('garden') || l.contains('trail')) {
       return Icons.park_rounded;
     }
-    if (l.contains('hospital') || l.contains('clinic') || l.contains('doctor') || l.contains('pharmacy')) {
+    if (l.contains('hospital') ||
+        l.contains('clinic') ||
+        l.contains('doctor') ||
+        l.contains('pharmacy')) {
       return Icons.local_hospital_rounded;
     }
-    if (l.contains('gym') || l.contains('workout') || l.contains('fitness') || l.contains('sport')) {
+    if (l.contains('gym') ||
+        l.contains('workout') ||
+        l.contains('fitness') ||
+        l.contains('sport')) {
       return Icons.fitness_center_rounded;
     }
-    if (l.contains('ocean') || l.contains('sea') || l.contains('deep') || l.contains('water') || l.contains('dock') || l.contains('ferry')) {
+    if (l.contains('ocean') ||
+        l.contains('sea') ||
+        l.contains('deep') ||
+        l.contains('water') ||
+        l.contains('dock') ||
+        l.contains('ferry')) {
       return Icons.waves_rounded;
     }
     if (l.contains('beach') || l.contains('coast') || l.contains('island')) {
@@ -351,16 +381,25 @@ class AmbientIdSonarField extends StatelessWidget {
     if (l.contains('lab') || l.contains('science') || l.contains('research')) {
       return Icons.science_rounded;
     }
-    if (l.contains('temple') || l.contains('church') || l.contains('shrine') || l.contains('mosque')) {
+    if (l.contains('temple') ||
+        l.contains('church') ||
+        l.contains('shrine') ||
+        l.contains('mosque')) {
       return Icons.temple_hindu_rounded;
     }
     if (l.contains('vault') || l.contains('safe')) {
       return Icons.lock_rounded;
     }
-    if (l.contains('arcade') || l.contains('game') || l.contains('cinema') || l.contains('theater')) {
+    if (l.contains('arcade') ||
+        l.contains('game') ||
+        l.contains('cinema') ||
+        l.contains('theater')) {
       return Icons.sports_esports_rounded;
     }
-    if (l.contains('home') || l.contains('house') || l.contains('room') || l.contains('living')) {
+    if (l.contains('home') ||
+        l.contains('house') ||
+        l.contains('room') ||
+        l.contains('living')) {
       return Icons.home_rounded;
     }
     return Icons.place_rounded;

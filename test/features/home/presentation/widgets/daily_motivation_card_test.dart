@@ -24,9 +24,10 @@ class TestAssetBundle extends CachingAssetBundle {
         'annual': {
           '11-02': {
             'title': 'Calendar Tip',
-            'text': "A day name and a date are different things: 'Monday' is the weekday.",
-          }
-        }
+            'text':
+                "A day name and a date are different things: 'Monday' is the weekday.",
+          },
+        },
       });
     }
     return '';
@@ -105,19 +106,23 @@ void main() {
         ),
         GoRoute(
           path: AppRouter.libraryRoute,
-          builder: (context, state) => const Scaffold(body: Text('LibraryScreen')),
+          builder: (context, state) =>
+              const Scaffold(body: Text('LibraryScreen')),
         ),
         GoRoute(
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) => Scaffold(
-            body: Text('CategoryGames: ${state.uri.queryParameters['category']}'),
+            body: Text(
+              'CategoryGames: ${state.uri.queryParameters['category']}',
+            ),
           ),
         ),
       ],
     );
 
     router.routerDelegate.addListener(() {
-      final location = router.routerDelegate.currentConfiguration.uri.toString();
+      final location = router.routerDelegate.currentConfiguration.uri
+          .toString();
       navigatedRoutes.add(location);
     });
 
@@ -133,8 +138,9 @@ void main() {
           builder: (context, child) => MaterialApp.router(
             theme: ThemeData(
               brightness: brightness,
-              scaffoldBackgroundColor:
-                  brightness == Brightness.dark ? const Color(0xFF0F172A) : Colors.white,
+              scaffoldBackgroundColor: brightness == Brightness.dark
+                  ? const Color(0xFF0F172A)
+                  : Colors.white,
             ),
             routerConfig: router,
           ),
@@ -144,7 +150,9 @@ void main() {
   }
 
   group('Piece 9: DailyMotivationCard Editorial Rendering Tests', () {
-    testWidgets('renders date, topic pill, quote body, and practice button', (tester) async {
+    testWidgets('renders date, topic pill, quote body, and practice button', (
+      tester,
+    ) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
@@ -161,7 +169,8 @@ void main() {
 
       final quoteFinder = find.byWidgetPredicate(
         (widget) =>
-            widget is Text && (widget.data ?? '').contains('day name and a date'),
+            widget is Text &&
+            (widget.data ?? '').contains('day name and a date'),
       );
       expect(quoteFinder, findsOneWidget);
       final quoteWidget = tester.widget<Text>(quoteFinder);
@@ -171,7 +180,9 @@ void main() {
   });
 
   group('Piece 9: DailyMotivationCard Navigation Tests', () {
-    testWidgets('tapping Practice Topic triggers haptics and navigates', (tester) async {
+    testWidgets('tapping Practice Topic triggers haptics and navigates', (
+      tester,
+    ) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
@@ -184,15 +195,20 @@ void main() {
   });
 
   group('Piece 9: DailyMotivationCard Responsiveness & Accessibility', () {
-    testWidgets('renders cleanly on 320dp small mobile screen without overflow', (tester) async {
-      await tester.pumpWidget(createTestWidget(width: 320, height: 568));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on 320dp small mobile screen without overflow',
+      (tester) async {
+        await tester.pumpWidget(createTestWidget(width: 320, height: 568));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(DailyMotivationCard), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(DailyMotivationCard), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text zoom', (tester) async {
+    testWidgets('renders cleanly with 1.3x accessibility text zoom', (
+      tester,
+    ) async {
       await tester.pumpWidget(createTestWidget(textScale: 1.3));
       await tester.pumpAndSettle();
 
@@ -209,4 +225,3 @@ void main() {
     });
   });
 }
-

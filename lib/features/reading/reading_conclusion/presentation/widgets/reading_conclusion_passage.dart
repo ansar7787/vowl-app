@@ -26,9 +26,7 @@ class ReadingConclusionPassage extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? color.withValues(alpha: 0.06)
-            : Colors.white,
+        color: isDark ? color.withValues(alpha: 0.06) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
@@ -57,11 +55,7 @@ class ReadingConclusionPassage extends StatelessWidget {
                   color: color.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                child: Icon(
-                  Icons.menu_book_rounded,
-                  color: color,
-                  size: 14.r,
-                ),
+                child: Icon(Icons.menu_book_rounded, color: color, size: 14.r),
               ),
               SizedBox(width: 8.w),
               Text(

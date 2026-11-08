@@ -39,7 +39,8 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = tokens?.textPrimary ?? (isDark ? Colors.white : AppColors.slate900);
+    final textColor =
+        tokens?.textPrimary ?? (isDark ? Colors.white : AppColors.slate900);
     final parts = sentence.split("[TARGET]");
 
     final fontSize = isCompact ? 15.sp : 17.sp;
@@ -105,10 +106,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
         decoration: BoxDecoration(
           color: slotColor.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(
-            color: slotColor,
-            width: 1.5,
-          ),
+          border: Border.all(color: slotColor, width: 1.5),
         ),
         child: Text(
           selectedOption ?? "???",
@@ -137,10 +135,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.15 : 0.08),
         borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.4),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
       ),
       child: Text(
         "______",
@@ -157,9 +152,6 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
 
     return slotPlaceholder
         .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          duration: 2.seconds,
-          color: color.withValues(alpha: 0.2),
-        );
+        .shimmer(duration: 2.seconds, color: color.withValues(alpha: 0.2));
   }
 }

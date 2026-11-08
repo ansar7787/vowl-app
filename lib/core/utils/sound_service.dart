@@ -165,10 +165,7 @@ class SoundServiceImpl implements SoundService {
       _isMuted = !(prefs.getBool(_prefsKeySoundEnabled) ?? true);
       _isGameSoundsEnabled = prefs.getBool(_prefsKeyGameSoundsEnabled) ?? true;
     } catch (e) {
-      _logError(
-        'SoundService: SharedPreferences loading error',
-        error: e,
-      );
+      _logError('SoundService: SharedPreferences loading error', error: e);
     }
   }
 
@@ -202,10 +199,7 @@ class SoundServiceImpl implements SoundService {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool(_prefsKeySoundEnabled, !muted);
     } catch (e) {
-      _logError(
-        'SoundService: Failed to persist mute preference',
-        error: e,
-      );
+      _logError('SoundService: Failed to persist mute preference', error: e);
     }
   }
 
@@ -226,18 +220,12 @@ class SoundServiceImpl implements SoundService {
     try {
       await _player.dispose();
     } catch (e) {
-      _logError(
-        'SoundService: Error disposing primary AudioPlayer',
-        error: e,
-      );
+      _logError('SoundService: Error disposing primary AudioPlayer', error: e);
     }
     try {
       await _overlayPlayer.dispose();
     } catch (e) {
-      _logError(
-        'SoundService: Error disposing overlay AudioPlayer',
-        error: e,
-      );
+      _logError('SoundService: Error disposing overlay AudioPlayer', error: e);
     }
   }
 
@@ -330,10 +318,7 @@ class SoundServiceImpl implements SoundService {
 
       await _player.play(AssetSource(assetWrong));
     } catch (e) {
-      _logError(
-        'SoundService: Error playing sound (wrong)',
-        error: e,
-      );
+      _logError('SoundService: Error playing sound (wrong)', error: e);
     }
   }
 
@@ -358,10 +343,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setPlaybackRate(1.0);
       await _player.play(AssetSource(assetHint));
     } catch (e) {
-      _logError(
-        'SoundService: Error playing sound (hint)',
-        error: e,
-      );
+      _logError('SoundService: Error playing sound (hint)', error: e);
     }
   }
 
@@ -501,10 +483,7 @@ class SoundServiceImpl implements SoundService {
       await _player.stop();
       await _player.play(UrlSource(url));
     } catch (e) {
-      _logError(
-        'SoundService: Error playing sound (url)',
-        error: e,
-      );
+      _logError('SoundService: Error playing sound (url)', error: e);
     }
   }
 
@@ -520,10 +499,7 @@ class SoundServiceImpl implements SoundService {
       await _player.stop();
       await _player.play(DeviceFileSource(filePath));
     } catch (e) {
-      _logError(
-        'SoundService: Error playing sound (file)',
-        error: e,
-      );
+      _logError('SoundService: Error playing sound (file)', error: e);
     }
   }
 
@@ -571,10 +547,7 @@ class SoundServiceImpl implements SoundService {
         slowRate: slowRate,
       );
     } catch (e) {
-      _logError(
-        'SoundService: Error playing TTS comparison',
-        error: e,
-      );
+      _logError('SoundService: Error playing TTS comparison', error: e);
     }
   }
 

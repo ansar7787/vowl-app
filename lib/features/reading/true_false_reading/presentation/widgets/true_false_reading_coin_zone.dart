@@ -57,7 +57,9 @@ class _TrueFalseReadingCoinZoneState extends State<TrueFalseReadingCoinZone> {
         });
       } else {
         setState(() {
-          _coinX = widget.pendingAnswer! ? _lastTargetOffset : -_lastTargetOffset;
+          _coinX = widget.pendingAnswer!
+              ? _lastTargetOffset
+              : -_lastTargetOffset;
           _coinY = 0.0;
         });
       }
@@ -68,8 +70,10 @@ class _TrueFalseReadingCoinZoneState extends State<TrueFalseReadingCoinZone> {
     if (widget.isDisabled) return;
     setState(() {
       _isDragging = true;
-      _coinX = (_coinX + details.delta.dx)
-          .clamp(-targetOffset * 1.15, targetOffset * 1.15);
+      _coinX = (_coinX + details.delta.dx).clamp(
+        -targetOffset * 1.15,
+        targetOffset * 1.15,
+      );
       _coinY = (_coinY + details.delta.dy).clamp(-24.h, 24.h);
       _coinRotation += (details.delta.dx + details.delta.dy) / 100;
     });
@@ -369,9 +373,7 @@ class _TrueFalseReadingCoinZoneState extends State<TrueFalseReadingCoinZone> {
               height: 32.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: color.withValues(
-                  alpha: isSelected ? 0.25 : 0.12,
-                ),
+                color: color.withValues(alpha: isSelected ? 0.25 : 0.12),
               ),
               child: Icon(
                 isTrue ? Icons.check_rounded : Icons.close_rounded,

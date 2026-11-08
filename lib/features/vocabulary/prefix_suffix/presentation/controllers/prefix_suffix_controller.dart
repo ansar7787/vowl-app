@@ -163,15 +163,27 @@ class PrefixSuffixController extends ChangeNotifier {
       }
 
       // Pattern 4: Search all uppercase words of length >= 3
-      final allCaps = RegExp(r'\b[A-Z]{3,}\b')
-          .allMatches(expl)
-          .map((m) => m.group(0)!)
-          .toList();
+      final allCaps = RegExp(
+        r'\b[A-Z]{3,}\b',
+      ).allMatches(expl).map((m) => m.group(0)!).toList();
       final upperAffix = cleanCorrect.toUpperCase();
       final upperRoot = root.toUpperCase();
       const ignoreWords = {
-        'THE', 'AND', 'NOT', 'FOR', 'THIS', 'THAT', 'WITH', 'FROM',
-        'WORD', 'ROOT', 'PREFIX', 'SUFFIX', 'ADDED', 'MEANS', 'ACTION'
+        'THE',
+        'AND',
+        'NOT',
+        'FOR',
+        'THIS',
+        'THAT',
+        'WITH',
+        'FROM',
+        'WORD',
+        'ROOT',
+        'PREFIX',
+        'SUFFIX',
+        'ADDED',
+        'MEANS',
+        'ACTION',
       };
 
       for (final w in allCaps) {

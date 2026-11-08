@@ -17,14 +17,8 @@ void main() {
     final router = GoRouter(
       initialLocation: '/',
       routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const AgeGateScreen(),
-        ),
-        GoRoute(
-          path: '/home',
-          builder: (context, state) => const SizedBox(),
-        ),
+        GoRoute(path: '/', builder: (context, state) => const AgeGateScreen()),
+        GoRoute(path: '/home', builder: (context, state) => const SizedBox()),
         GoRoute(
           path: '/kids_zone',
           builder: (context, state) => const SizedBox(),
@@ -36,9 +30,7 @@ void main() {
       designSize: const Size(390, 844),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp.router(
-        routerConfig: router,
-      ),
+      builder: (context, child) => MaterialApp.router(routerConfig: router),
     );
   }
 
@@ -58,7 +50,9 @@ void main() {
     expect(find.text("I'm under 16"), findsOneWidget);
   });
 
-  testWidgets('tapping adult button completes age gate as adult', (tester) async {
+  testWidgets('tapping adult button completes age gate as adult', (
+    tester,
+  ) async {
     tester.view.physicalSize = const Size(800, 1000);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);

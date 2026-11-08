@@ -103,7 +103,9 @@ class CollocationsWrongPairs extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 12.5.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
                                 ),
                               ),
                             ),

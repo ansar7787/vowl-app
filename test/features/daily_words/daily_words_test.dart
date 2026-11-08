@@ -50,7 +50,10 @@ void main() {
       expect(word.phonetic, '/rɪˈzɪl.jənt/');
       expect(word.partOfSpeech, 'adjective');
       expect(word.definition, 'Able to quickly recover from difficulties.');
-      expect(word.example, 'She is remarkably resilient in difficult situations.');
+      expect(
+        word.example,
+        'She is remarkably resilient in difficult situations.',
+      );
       expect(word.difficulty, 3);
       expect(word.frequencyRank, 1420);
     });
@@ -95,7 +98,7 @@ void main() {
             'example': 'They were ecstatic about the new opportunity.',
             'difficulty': 3,
             'frequencyRank': 3500,
-          }
+          },
         ],
       };
 
@@ -170,24 +173,27 @@ void main() {
       expect(DailyWordsService.calculateEffectiveDay(1501), 1);
     });
 
-    test('completeDailySession advances past day 750 into cycle 2 without artificial cap', () async {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setInt('daily_words_current_day', 750);
+    test(
+      'completeDailySession advances past day 750 into cycle 2 without artificial cap',
+      () async {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('daily_words_current_day', 750);
 
-      final cycleService = DailyWordsService();
-      await cycleService.init();
-      expect(cycleService.currentDay, 750);
-      expect(cycleService.effectiveDay, 750);
+        final cycleService = DailyWordsService();
+        await cycleService.init();
+        expect(cycleService.currentDay, 750);
+        expect(cycleService.effectiveDay, 750);
 
-      await cycleService.completeDailySession();
-      expect(cycleService.currentDay, 751);
-      expect(cycleService.effectiveDay, 1); // Wraps to lesson 1 of cycle 2
+        await cycleService.completeDailySession();
+        expect(cycleService.currentDay, 751);
+        expect(cycleService.effectiveDay, 1); // Wraps to lesson 1 of cycle 2
 
-      // Replaying today's words on the same calendar day must not advance day again
-      await cycleService.completeDailySession();
-      expect(cycleService.currentDay, 751);
-      expect(cycleService.isTodayCompleted, isTrue);
-    });
+        // Replaying today's words on the same calendar day must not advance day again
+        await cycleService.completeDailySession();
+        expect(cycleService.currentDay, 751);
+        expect(cycleService.isTodayCompleted, isTrue);
+      },
+    );
 
     test('resolves calendar streak across consecutive calendar days', () async {
       final prefs = await SharedPreferences.getInstance();
@@ -230,72 +236,102 @@ void main() {
       expect(testService.streak, 1);
     });
 
-    test('differentiates markWordLearned (Box 1) vs markWordNeedsReview (Box 0)', () async {
-      await service.markWordLearned(sampleWord1);
-      expect(service.isWordLearned(sampleWord1.id), isTrue);
-      expect(service.totalWordsLearned, 1);
+    test(
+      'differentiates markWordLearned (Box 1) vs markWordNeedsReview (Box 0)',
+      () async {
+        await service.markWordLearned(sampleWord1);
+        expect(service.isWordLearned(sampleWord1.id), isTrue);
+        expect(service.totalWordsLearned, 1);
 
-      await service.markWordNeedsReview(sampleWord2);
-      // Sample 2 is in word bank for review, but not yet learned/mastered
-      expect(service.hasWordEntry(sampleWord2.id), isTrue);
-      expect(service.isWordLearned(sampleWord2.id), isFalse);
-      expect(service.totalWordsLearned, 1); // Not incremented
+        await service.markWordNeedsReview(sampleWord2);
+        // Sample 2 is in word bank for review, but not yet learned/mastered
+        expect(service.hasWordEntry(sampleWord2.id), isTrue);
+        expect(service.isWordLearned(sampleWord2.id), isFalse);
+        expect(service.totalWordsLearned, 1); // Not incremented
 
-      final wordBank = service.wordBankEntries;
-      final sample2Entry = wordBank.firstWhere((w) => w.word == sampleWord2.word);
-      expect(sample2Entry.box, 0);
+        final wordBank = service.wordBankEntries;
+        final sample2Entry = wordBank.firstWhere(
+          (w) => w.word == sampleWord2.word,
+        );
+        expect(sample2Entry.box, 0);
 
-      final sample1Entry = wordBank.firstWhere((w) => w.word == sampleWord1.word);
-      expect(sample1Entry.box, 1);
-    });
+        final sample1Entry = wordBank.firstWhere(
+          (w) => w.word == sampleWord1.word,
+        );
+        expect(sample1Entry.box, 1);
+      },
+    );
 
-    test('mastery stats accurately counts learning, reviewing, mastered', () async {
-      await service.markWordLearned(sampleWord1); // Box 1 -> Learning
-      await service.markWordNeedsReview(sampleWord2); // Box 0 -> New/Review
+    test(
+      'mastery stats accurately counts learning, reviewing, mastered',
+      () async {
+        await service.markWordLearned(sampleWord1); // Box 1 -> Learning
+        await service.markWordNeedsReview(sampleWord2); // Box 0 -> New/Review
 
-      // Promote sampleWord1 to Box 2
-      await service.recordReview(sampleWord1.id, correct: true);
-      // Promote sampleWord1 to Box 3 (reviewing)
-      await service.recordReview(sampleWord1.id, correct: true);
+        // Promote sampleWord1 to Box 2
+        await service.recordReview(sampleWord1.id, correct: true);
+        // Promote sampleWord1 to Box 3 (reviewing)
+        await service.recordReview(sampleWord1.id, correct: true);
 
-      final stats = service.masteryStats;
-      expect(stats['new'], 1); // sampleWord2 (Box 0)
-      expect(stats['reviewing'], 1); // sampleWord1 (Box 3)
-      expect(stats['total'], 2);
-    });
+        final stats = service.masteryStats;
+        expect(stats['new'], 1); // sampleWord2 (Box 0)
+        expect(stats['reviewing'], 1); // sampleWord1 (Box 3)
+        expect(stats['total'], 2);
+      },
+    );
 
-    test('todayWords and isWordLearnedToday correctly identify words from today', () async {
-      await service.markWordLearned(sampleWord1);
-      await service.markWordNeedsReview(sampleWord2);
+    test(
+      'todayWords and isWordLearnedToday correctly identify words from today',
+      () async {
+        await service.markWordLearned(sampleWord1);
+        await service.markWordNeedsReview(sampleWord2);
 
-      expect(service.isWordLearnedToday(sampleWord1.id), isTrue);
-      expect(service.isWordLearnedToday(sampleWord2.id), isTrue);
-      expect(service.isWordLearnedToday('non_existent_word'), isFalse);
-      expect(service.todayWords.length, 2);
-    });
+        expect(service.isWordLearnedToday(sampleWord1.id), isTrue);
+        expect(service.isWordLearnedToday(sampleWord2.id), isTrue);
+        expect(service.isWordLearnedToday('non_existent_word'), isFalse);
+        expect(service.todayWords.length, 2);
+      },
+    );
 
-    test('markWordLearned with mastered: true directly marks word in Box 3 Mastered', () async {
-      await service.markWordLearned(sampleWord1, mastered: true);
-      expect(service.isWordLearned(sampleWord1.id), isTrue);
-      expect(service.masteryStats['mastered'], 1);
-      expect(service.masteryStats['learning'], 0);
+    test(
+      'markWordLearned with mastered: true directly marks word in Box 3 Mastered',
+      () async {
+        await service.markWordLearned(sampleWord1, mastered: true);
+        expect(service.isWordLearned(sampleWord1.id), isTrue);
+        expect(service.masteryStats['mastered'], 1);
+        expect(service.masteryStats['learning'], 0);
 
-      final entry = service.wordBankEntries.firstWhere((w) => w.wordId == sampleWord1.id);
-      expect(entry.box, 3);
-    });
+        final entry = service.wordBankEntries.firstWhere(
+          (w) => w.wordId == sampleWord1.id,
+        );
+        expect(entry.box, 3);
+      },
+    );
 
-    test('recordReview with promoteToMastered: true immediately sets Box 3', () async {
-      await service.markWordLearned(sampleWord1, mastered: false); // Box 1 Learning
-      expect(service.masteryStats['learning'], 1);
-      expect(service.masteryStats['mastered'], 0);
+    test(
+      'recordReview with promoteToMastered: true immediately sets Box 3',
+      () async {
+        await service.markWordLearned(
+          sampleWord1,
+          mastered: false,
+        ); // Box 1 Learning
+        expect(service.masteryStats['learning'], 1);
+        expect(service.masteryStats['mastered'], 0);
 
-      await service.recordReview(sampleWord1.id, correct: true, promoteToMastered: true);
-      expect(service.masteryStats['mastered'], 1);
-      expect(service.masteryStats['learning'], 0);
+        await service.recordReview(
+          sampleWord1.id,
+          correct: true,
+          promoteToMastered: true,
+        );
+        expect(service.masteryStats['mastered'], 1);
+        expect(service.masteryStats['learning'], 0);
 
-      final entry = service.wordBankEntries.firstWhere((w) => w.wordId == sampleWord1.id);
-      expect(entry.box, 3);
-    });
+        final entry = service.wordBankEntries.firstWhere(
+          (w) => w.wordId == sampleWord1.id,
+        );
+        expect(entry.box, 3);
+      },
+    );
   });
 
   group('DailyWordsBloc State Transitions', () {
@@ -317,13 +353,15 @@ void main() {
         words: [sampleWord1, sampleWord2],
       );
 
-      bloc.emit(DailyWordsState(
-        status: DailyWordsStatus.loaded,
-        wordSet: testWordSet,
-        currentIndex: 0,
-        totalWordsLearned: 0,
-        currentDay: 1,
-      ));
+      bloc.emit(
+        DailyWordsState(
+          status: DailyWordsStatus.loaded,
+          wordSet: testWordSet,
+          currentIndex: 0,
+          totalWordsLearned: 0,
+          currentDay: 1,
+        ),
+      );
 
       expect(bloc.state.currentIndex, 0);
       expect(bloc.state.canGoPrevious, isFalse);
@@ -355,13 +393,15 @@ void main() {
         words: [sampleWord1, sampleWord2],
       );
 
-      bloc.emit(DailyWordsState(
-        status: DailyWordsStatus.sessionComplete,
-        wordSet: testWordSet,
-        currentIndex: 1,
-        totalWordsLearned: 2,
-        currentDay: 1,
-      ));
+      bloc.emit(
+        DailyWordsState(
+          status: DailyWordsStatus.sessionComplete,
+          wordSet: testWordSet,
+          currentIndex: 1,
+          totalWordsLearned: 2,
+          currentDay: 1,
+        ),
+      );
 
       bloc.add(const DailySessionRestartRequested());
       await Future<void>.delayed(Duration.zero);
@@ -374,54 +414,66 @@ void main() {
   });
 
   group('DailyWords Widget Rendering', () {
-    testWidgets('renders WordCardFront with frequency rank badge and difficulty badge', (tester) async {
-      await tester.pumpWidget(
-        ScreenUtilInit(
-          designSize: const Size(393, 852),
-          builder: (context, child) => MaterialApp(
-            home: Scaffold(
-              body: WordCardFront(
-                word: sampleWord1,
-                isDark: false,
-                onSpeak: () {},
-                onTranslate: () {},
-                isTranslating: false,
-                difficulty: sampleWord1.difficulty,
-                theme: 'Emotions',
-                showFlipHint: true,
+    testWidgets(
+      'renders WordCardFront with frequency rank badge and difficulty badge',
+      (tester) async {
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(393, 852),
+            builder: (context, child) => MaterialApp(
+              home: Scaffold(
+                body: WordCardFront(
+                  word: sampleWord1,
+                  isDark: false,
+                  onSpeak: () {},
+                  onTranslate: () {},
+                  isTranslating: false,
+                  difficulty: sampleWord1.difficulty,
+                  theme: 'Emotions',
+                  showFlipHint: true,
+                ),
               ),
             ),
           ),
-        ),
-      );
+        );
 
-      expect(find.text('resilient'), findsOneWidget);
-      expect(find.text('/rɪˈzɪl.jənt/'), findsOneWidget);
-      expect(find.text('Top 2,000'), findsOneWidget);
-      expect(find.text('Intermediate (B1)'), findsOneWidget);
-    });
+        expect(find.text('resilient'), findsOneWidget);
+        expect(find.text('/rɪˈzɪl.jənt/'), findsOneWidget);
+        expect(find.text('Top 2,000'), findsOneWidget);
+        expect(find.text('Intermediate (B1)'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders WordCardBack with definition, example and safe scroll handling', (tester) async {
-      await tester.pumpWidget(
-        ScreenUtilInit(
-          designSize: const Size(393, 852),
-          builder: (context, child) => MaterialApp(
-            home: Scaffold(
-              body: WordCardBack(
-                word: sampleWord1,
-                isDark: false,
-                onSpeak: () {},
-                onTranslate: () {},
-                isTranslating: false,
+    testWidgets(
+      'renders WordCardBack with definition, example and safe scroll handling',
+      (tester) async {
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(393, 852),
+            builder: (context, child) => MaterialApp(
+              home: Scaffold(
+                body: WordCardBack(
+                  word: sampleWord1,
+                  isDark: false,
+                  onSpeak: () {},
+                  onTranslate: () {},
+                  isTranslating: false,
+                ),
               ),
             ),
           ),
-        ),
-      );
+        );
 
-      expect(find.text('resilient'), findsOneWidget);
-      expect(find.text('Able to quickly recover from difficulties.'), findsOneWidget);
-      expect(find.text('"She is remarkably resilient in difficult situations."'), findsOneWidget);
-    });
+        expect(find.text('resilient'), findsOneWidget);
+        expect(
+          find.text('Able to quickly recover from difficulties.'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('"She is remarkably resilient in difficult situations."'),
+          findsOneWidget,
+        );
+      },
+    );
   });
 }

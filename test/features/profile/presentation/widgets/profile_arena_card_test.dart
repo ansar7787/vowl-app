@@ -8,7 +8,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/arena/presentation/widgets/arena_refuel_dialog.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_stats_screen.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_arena_card.dart';
@@ -71,47 +71,43 @@ void main() {
       builder: (context, _) => BlocProvider<AuthBloc>.value(
         value: mockAuthBloc,
         child: MaterialApp(
-          home: Scaffold(
-            body: ProfileArenaCard(user: user),
-          ),
+          home: Scaffold(body: ProfileArenaCard(user: user)),
         ),
       ),
     );
   }
 
   group('ProfileArenaCard Brand & Visual Tests', () {
-    testWidgets('renders Lucide swords icon, human copy, and statistics accurately', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildSubject(user: userWithStats));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Lucide swords icon, human copy, and statistics accurately',
+      (tester) async {
+        await tester.pumpWidget(buildSubject(user: userWithStats));
+        await tester.pumpAndSettle();
 
-      // Official brand icon
-      expect(find.byIcon(LucideIcons.swords), findsOneWidget);
+        // Official brand icon
+        expect(find.byIcon(LucideIcons.swords), findsOneWidget);
 
-      // Human vocabulary game copy
-      expect(find.text('1V1 WORD ARENA'), findsOneWidget);
-      expect(find.text('Live Vocabulary Duels'), findsOneWidget);
+        // Human vocabulary game copy
+        expect(find.text('1V1 WORD ARENA'), findsOneWidget);
+        expect(find.text('Live Vocabulary Duels'), findsOneWidget);
 
-      // Zero-division math: 14 wins / (14 + 6) = 70% win rate
-      expect(find.text('14'), findsOneWidget);
-      expect(find.text('6'), findsOneWidget);
-      expect(find.text('70%'), findsOneWidget);
-      expect(find.text('3'), findsOneWidget);
-    });
+        // Zero-division math: 14 wins / (14 + 6) = 70% win rate
+        expect(find.text('14'), findsOneWidget);
+        expect(find.text('6'), findsOneWidget);
+        expect(find.text('70%'), findsOneWidget);
+        expect(find.text('3'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping with < 30 coins triggers ArenaRefuelDialog', (
-      tester,
-    ) async {
+    testWidgets('tapping card navigates to ArenaStatsScreen', (tester) async {
       await tester.pumpWidget(buildSubject(user: userLowCoins));
       await tester.pumpAndSettle();
 
       await tester.tap(find.byType(ProfileArenaCard));
       await tester.pumpAndSettle();
 
-      // Verifies refuel dialog appears instead of pushing matchmaking with invalid balance
-      expect(find.byType(ArenaRefuelDialog), findsOneWidget);
+      // Verifies navigation to detailed ArenaStatsScreen instead of immediate matchmaking
+      expect(find.byType(ArenaStatsScreen), findsOneWidget);
     });
   });
 }
-

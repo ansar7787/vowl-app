@@ -112,4 +112,3 @@ class ElevatorPitchPromptCard extends StatelessWidget {
     );
   }
 }
-

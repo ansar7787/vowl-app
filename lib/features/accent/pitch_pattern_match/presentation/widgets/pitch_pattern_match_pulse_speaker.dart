@@ -31,10 +31,7 @@ class PitchPatternMatchPulseSpeaker extends StatelessWidget {
     if (!reduceMotion) {
       icon = icon
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.15, 1.15),
-          );
+          .scale(begin: const Offset(1, 1), end: const Offset(1.15, 1.15));
     }
 
     return ScaleButton(

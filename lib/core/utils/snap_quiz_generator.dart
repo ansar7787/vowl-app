@@ -38,13 +38,15 @@ class SnapQuizGenerator {
     final String cleanWord = targetWord.trim();
     final String resolvedDef = definition ?? entry.definition;
     final String resolvedExample = exampleSentence ?? entry.example;
-    final String resolvedIpa = ipa ?? (entry.ipa ?? '/${cleanWord.toLowerCase()}/');
+    final String resolvedIpa =
+        ipa ?? (entry.ipa ?? '/${cleanWord.toLowerCase()}/');
 
     // Gather 3 unique distractors that do not match the target word
     final Set<String> distractors = {};
     if (alternativeDetectedWords != null) {
       for (final alt in alternativeDetectedWords) {
-        if (alt.toLowerCase() != cleanWord.toLowerCase() && distractors.length < 3) {
+        if (alt.toLowerCase() != cleanWord.toLowerCase() &&
+            distractors.length < 3) {
           distractors.add(alt);
         }
       }
@@ -63,7 +65,8 @@ class SnapQuizGenerator {
     final List<String> q1DistractorDefs = [];
     for (final d in distractors) {
       final dEntry = PhotoVocabularyDictionary.getEntry(d);
-      if (dEntry.definition != resolvedDef && !q1DistractorDefs.contains(dEntry.definition)) {
+      if (dEntry.definition != resolvedDef &&
+          !q1DistractorDefs.contains(dEntry.definition)) {
         q1DistractorDefs.add(dEntry.definition);
       }
     }
@@ -77,10 +80,8 @@ class SnapQuizGenerator {
         }
       }
     }
-    final q1Options = [
-      resolvedDef,
-      ...q1DistractorDefs.take(3),
-    ]..shuffle(_random);
+    final q1Options = [resolvedDef, ...q1DistractorDefs.take(3)]
+      ..shuffle(_random);
     final q1CorrectIndex = q1Options.indexOf(resolvedDef);
 
     final quest1 = GameQuest(
@@ -134,7 +135,10 @@ class SnapQuizGenerator {
     // Question 3: Real-World Sentence Placement (Active Fill-in)
     // ─────────────────────────────────────────────────────────────────────────
     final clozeSentence = resolvedExample.replaceAll(
-      RegExp(r'\b' + RegExp.escape(cleanWord) + r'(s|es|d|ed|ing)?\b', caseSensitive: false),
+      RegExp(
+        r'\b' + RegExp.escape(cleanWord) + r'(s|es|d|ed|ing)?\b',
+        caseSensitive: false,
+      ),
       '______',
     );
     final effectiveSentence = clozeSentence.contains('______')
@@ -169,4 +173,3 @@ class SnapQuizGenerator {
     return [word.substring(0, mid), word.substring(mid)];
   }
 }
-

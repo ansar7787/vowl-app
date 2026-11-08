@@ -23,7 +23,8 @@ class CollocationAnchorBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     return Container(
           padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 18.h),

@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/app_logger.dart';
 
 class MockTtsService extends Mock implements TtsService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
 
 void main() {
@@ -18,14 +19,16 @@ void main() {
   late MockAppLogger mockAppLogger;
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers'),
-      (MethodCall methodCall) async => 1,
-    );
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers.global'),
-      (MethodCall methodCall) async => 1,
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers'),
+          (MethodCall methodCall) async => 1,
+        );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers.global'),
+          (MethodCall methodCall) async => 1,
+        );
 
     SharedPreferences.setMockInitialValues({
       'sound_enabled': true,
@@ -42,41 +45,85 @@ void main() {
 
   tearDown(() async {
     await Future.delayed(const Duration(milliseconds: 10));
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers'),
-      null,
-    );
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
-      const MethodChannel('xyz.luan/audioplayers.global'),
-      null,
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers'),
+          null,
+        );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers.global'),
+          null,
+        );
     di.sl.reset();
   });
 
   group('PraiseService & PraiseStrategy Tests', () {
-    test('StandardPraiseStrategy supplies valid phrases for all PraiseContexts', () {
-      final strategy = StandardPraiseStrategy();
+    test(
+      'StandardPraiseStrategy supplies valid phrases for all PraiseContexts',
+      () {
+        final strategy = StandardPraiseStrategy();
 
-      expect(strategy.getPhrasesForContext(PraiseContext.standard).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.flawless).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.hotStreak5).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.hotStreak10).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.streakSecured).isNotEmpty, isTrue);
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.standard).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.flawless).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.hotStreak5).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.hotStreak10).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.streakSecured).isNotEmpty,
+          isTrue,
+        );
 
-      expect(strategy.getPhrasesForContext(PraiseContext.flawless), contains('Flawless! 3 out of 3.'));
-    });
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.flawless),
+          contains('Flawless! 3 out of 3.'),
+        );
+      },
+    );
 
-    test('KidsPraiseStrategy supplies cheerful phrases for all PraiseContexts', () {
-      final strategy = KidsPraiseStrategy();
+    test(
+      'KidsPraiseStrategy supplies cheerful phrases for all PraiseContexts',
+      () {
+        final strategy = KidsPraiseStrategy();
 
-      expect(strategy.getPhrasesForContext(PraiseContext.standard).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.flawless).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.hotStreak5).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.hotStreak10).isNotEmpty, isTrue);
-      expect(strategy.getPhrasesForContext(PraiseContext.streakSecured).isNotEmpty, isTrue);
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.standard).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.flawless).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.hotStreak5).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.hotStreak10).isNotEmpty,
+          isTrue,
+        );
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.streakSecured).isNotEmpty,
+          isTrue,
+        );
 
-      expect(strategy.getPhrasesForContext(PraiseContext.flawless), contains('Wow! Superstar! Perfect score!'));
-    });
+        expect(
+          strategy.getPhrasesForContext(PraiseContext.flawless),
+          contains('Wow! Superstar! Perfect score!'),
+        );
+      },
+    );
 
     test('PraiseService calls speak with contextual encouragement', () async {
       when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
@@ -87,14 +134,17 @@ void main() {
       verify(() => mockTtsService.speak(any())).called(1);
     });
 
-    test('PraiseService supports backward-compatible givePraise() with default standard context', () async {
-      when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
+    test(
+      'PraiseService supports backward-compatible givePraise() with default standard context',
+      () async {
+        when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
 
-      final praiseService = PraiseService(mockTtsService);
-      praiseService.givePraise(); // No arguments
+        final praiseService = PraiseService(mockTtsService);
+        praiseService.givePraise(); // No arguments
 
-      verify(() => mockTtsService.speak(any())).called(1);
-    });
+        verify(() => mockTtsService.speak(any())).called(1);
+      },
+    );
   });
 
   group('SoundService Contract & Architecture Tests', () {
@@ -135,19 +185,22 @@ void main() {
       expect(soundService.isGameSoundsEnabled, isTrue);
     });
 
-    test('playCorrect automatically steps through combo when unparameterized', () async {
-      when(() => mockTtsService.isSpeaking).thenReturn(false);
+    test(
+      'playCorrect automatically steps through combo when unparameterized',
+      () async {
+        when(() => mockTtsService.isSpeaking).thenReturn(false);
 
-      final soundService = SoundService(mockTtsService);
-      await Future.delayed(const Duration(milliseconds: 50));
+        final soundService = SoundService(mockTtsService);
+        await Future.delayed(const Duration(milliseconds: 50));
 
-      // First call -> Step 1
-      await soundService.playCorrect();
-      // Reset combo clears progression back to 0
-      soundService.resetCombo();
-      // Next call starts at Step 1 again
-      await soundService.playCorrect();
-    });
+        // First call -> Step 1
+        await soundService.playCorrect();
+        // Reset combo clears progression back to 0
+        soundService.resetCombo();
+        // Next call starts at Step 1 again
+        await soundService.playCorrect();
+      },
+    );
 
     test('playGameOver plays without throwing and resets combo', () async {
       when(() => mockTtsService.isSpeaking).thenReturn(false);

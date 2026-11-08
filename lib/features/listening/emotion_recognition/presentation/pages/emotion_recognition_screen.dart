@@ -50,10 +50,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -120,7 +118,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
   }
 
   void _playAudio(ListeningQuest quest) {
-    final rawAudio = quest.textToSpeak ??
+    final rawAudio =
+        quest.textToSpeak ??
         quest.prompt ??
         quest.question ??
         quest.sentence ??
@@ -218,10 +217,9 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.emotionRecognition_instruction',
-                                          fallback:
-                                              quest.instruction.isNotEmpty
-                                                  ? quest.instruction
-                                                  : "How is the speaker feeling?",
+                                          fallback: quest.instruction.isNotEmpty
+                                              ? quest.instruction
+                                              : "How is the speaker feeling?",
                                         ),
                                       ),
                                       SizedBox(height: 24.h),

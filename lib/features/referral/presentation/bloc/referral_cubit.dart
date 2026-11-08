@@ -9,28 +9,32 @@ class ReferralCubit extends Cubit<ReferralState> {
   final ReferralRepository _repository;
 
   ReferralCubit({required ReferralRepository repository})
-      : _repository = repository,
-        super(const ReferralState());
+    : _repository = repository,
+      super(const ReferralState());
 
   /// Initializes the referral hub: generates/fetches code, syncs any pending ambassador rewards, and loads active month cup leaderboard.
   Future<void> init(UserEntity user) async {
-    emit(state.copyWith(
-      isLoading: true,
-      lifetimeReferrals: user.totalReferralsCount,
-      monthlyReferrals: user.activeMonthlyReferralsCount,
-    ));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        lifetimeReferrals: user.totalReferralsCount,
+        monthlyReferrals: user.activeMonthlyReferralsCount,
+      ),
+    );
 
     try {
       final code = await _repository.getOrCreateReferralCode(user);
       final syncedCount = await _repository.syncAmbassadorRewards(user);
       final leaderboard = await _repository.getMonthlyAmbassadorLeaderboard();
 
-      emit(state.copyWith(
-        isLoading: false,
-        referralCode: code,
-        ambassadorLeaderboard: leaderboard,
-        syncedAmbassadorRewardCount: syncedCount > 0 ? syncedCount : null,
-      ));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          referralCode: code,
+          ambassadorLeaderboard: leaderboard,
+          syncedAmbassadorRewardCount: syncedCount > 0 ? syncedCount : null,
+        ),
+      );
     } catch (_) {
       emit(state.copyWith(isLoading: false));
     }
@@ -48,7 +52,8 @@ class ReferralCubit extends Cubit<ReferralState> {
 
   /// Native OS share sheet with standard viral ambassador copy.
   Future<void> shareCode(String code) async {
-    final message = '🚀 Join me on Vowl to level up your English skills!\n'
+    final message =
+        '🚀 Join me on Vowl to level up your English skills!\n'
         'Use my invite code $code to unlock 100 Bonus Coins + 1 Day VIP Trial immediately:\n'
         'https://vowl-acbc5.web.app/invite/$code';
 
@@ -62,20 +67,16 @@ class ReferralCubit extends Cubit<ReferralState> {
 
   /// Claims an entered invite code on behalf of the current user.
   Future<void> claimCode(String code, UserEntity user) async {
-    emit(state.copyWith(isClaiming: true, claimError: null, claimSuccess: null));
+    emit(
+      state.copyWith(isClaiming: true, claimError: null, claimSuccess: null),
+    );
 
     final result = await _repository.claimReferralCode(code: code, user: user);
 
     if (result.success) {
-      emit(state.copyWith(
-        isClaiming: false,
-        claimSuccess: result,
-      ));
+      emit(state.copyWith(isClaiming: false, claimSuccess: result));
     } else {
-      emit(state.copyWith(
-        isClaiming: false,
-        claimError: result.message,
-      ));
+      emit(state.copyWith(isClaiming: false, claimError: result.message));
     }
   }
 
@@ -85,9 +86,8 @@ class ReferralCubit extends Cubit<ReferralState> {
 
     final result = await _repository.claimMonthlyAmbassadorReward(user: user);
 
-    emit(state.copyWith(
-      isClaimingCupReward: false,
-      cupRewardClaimResult: result,
-    ));
+    emit(
+      state.copyWith(isClaimingCupReward: false, cupRewardClaimResult: result),
+    );
   }
 }

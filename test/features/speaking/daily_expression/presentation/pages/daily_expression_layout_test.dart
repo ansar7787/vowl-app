@@ -225,7 +225,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/daily_expression_test.m4a');
@@ -346,14 +348,8 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             home: MediaQuery(
-              data: MediaQueryData(
-                size: size,
-                disableAnimations: reduceMotion,
-              ),
-              child: DailyExpressionScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              data: MediaQueryData(size: size, disableAnimations: reduceMotion),
+              child: DailyExpressionScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -462,13 +458,12 @@ void main() {
     // 2. Briefing Overlay & Instructions (5 tests)
     // -------------------------------------------------------------------------
     group('2. Briefing Overlay & Instructions', () {
-      testWidgets(
-        '2.1 displays QuestBriefingOverlay when level is 1',
-        (tester) async {
-          await pumpDailyExpressionScreen(tester, level: 1);
-          expect(find.byType(QuestBriefingOverlay), findsOneWidget);
-        },
-      );
+      testWidgets('2.1 displays QuestBriefingOverlay when level is 1', (
+        tester,
+      ) async {
+        await pumpDailyExpressionScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      });
 
       testWidgets(
         '2.2 displays uppercase SOCIAL FLUENT title in briefing overlay',
@@ -499,13 +494,12 @@ void main() {
         expect(find.byType(QuestBriefingOverlay), findsNothing);
       });
 
-      testWidgets(
-        '2.5 does not show QuestBriefingOverlay when level is 2',
-        (tester) async {
-          await pumpDailyExpressionScreen(tester, level: 2);
-          expect(find.byType(QuestBriefingOverlay), findsNothing);
-        },
-      );
+      testWidgets('2.5 does not show QuestBriefingOverlay when level is 2', (
+        tester,
+      ) async {
+        await pumpDailyExpressionScreen(tester, level: 2);
+        expect(find.byType(QuestBriefingOverlay), findsNothing);
+      });
     });
 
     // -------------------------------------------------------------------------
@@ -523,7 +517,9 @@ void main() {
         expect(find.byType(DailyExpressionHeader), findsOneWidget);
       });
 
-      testWidgets('3.2 displays fallback instruction text in natural case', (tester) async {
+      testWidgets('3.2 displays fallback instruction text in natural case', (
+        tester,
+      ) async {
         await pumpDailyExpressionScreen(tester);
         expect(find.text('Speak the daily idiom'), findsOneWidget);
       });
@@ -615,10 +611,12 @@ void main() {
       ) async {
         await pumpDailyExpressionScreen(tester);
         expect(
-          find.byWidgetPredicate((w) =>
-              w is Semantics &&
-              w.properties.label ==
-                  'Hidden daily idiom. Swipe or tap to reveal idiom.'),
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label ==
+                    'Hidden daily idiom. Swipe or tap to reveal idiom.',
+          ),
           findsOneWidget,
         );
       });
@@ -657,32 +655,35 @@ void main() {
         },
       );
 
-      testWidgets('5.3 tapping TTS volume button while recording does not play', (
-        tester,
-      ) async {
-        await pumpDailyExpressionScreen(tester);
-        await tester.tap(
-          find.byKey(const Key('daily_expression_scratch_foil')),
-        );
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+      testWidgets(
+        '5.3 tapping TTS volume button while recording does not play',
+        (tester) async {
+          await pumpDailyExpressionScreen(tester);
+          await tester.tap(
+            find.byKey(const Key('daily_expression_scratch_foil')),
+          );
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 600));
 
-        when(() => mockAudioRecorder.isRecording).thenReturn(true);
-        await tester.tap(
-          find.byKey(const Key('daily_expression_tts_button')),
-        );
-        await tester.pump();
-        verify(() => mockSoundService.playTts('Bite the bullet')).called(1);
-      });
+          when(() => mockAudioRecorder.isRecording).thenReturn(true);
+          await tester.tap(
+            find.byKey(const Key('daily_expression_tts_button')),
+          );
+          await tester.pump();
+          verify(() => mockSoundService.playTts('Bite the bullet')).called(1);
+        },
+      );
 
       testWidgets('5.4 TTS button provides accessible semantics', (
         tester,
       ) async {
         await pumpDailyExpressionScreen(tester);
         expect(
-          find.byWidgetPredicate((w) =>
-              w is Semantics &&
-              w.properties.label == 'Listen to expression pronunciation'),
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label == 'Listen to expression pronunciation',
+          ),
           findsOneWidget,
         );
       });
@@ -826,9 +827,7 @@ void main() {
           await tester.pump(const Duration(milliseconds: 600));
 
           // Tap card area again
-          await tester.tap(
-            find.text('Bite the bullet'),
-          );
+          await tester.tap(find.text('Bite the bullet'));
           await tester.pump();
 
           // Selection haptic only called once from snapping
@@ -841,9 +840,7 @@ void main() {
     // 7. Revealed Idiom Card Details (5 tests)
     // -------------------------------------------------------------------------
     group('7. Revealed Idiom Card Details', () {
-      testWidgets('7.1 displays category label', (
-        tester,
-      ) async {
+      testWidgets('7.1 displays category label', (tester) async {
         await pumpDailyExpressionScreen(tester);
         expect(find.text('Daily Idiom'), findsOneWidget);
       });
@@ -853,12 +850,12 @@ void main() {
         expect(find.text('Bite the bullet'), findsOneWidget);
       });
 
-      testWidgets('7.3 displays idiom meaning in readable case', (tester) async {
+      testWidgets('7.3 displays idiom meaning in readable case', (
+        tester,
+      ) async {
         await pumpDailyExpressionScreen(tester);
         expect(
-          find.text(
-            'To endure a painful situation that cannot be avoided',
-          ),
+          find.text('To endure a painful situation that cannot be avoided'),
           findsOneWidget,
         );
       });
@@ -886,25 +883,26 @@ void main() {
         },
       );
 
-      testWidgets(
-        '7.5 updates Semantics label when idiom is fully revealed',
-        (tester) async {
-          await pumpDailyExpressionScreen(tester);
-          await tester.tap(
-            find.byKey(const Key('daily_expression_scratch_foil')),
-          );
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 600));
+      testWidgets('7.5 updates Semantics label when idiom is fully revealed', (
+        tester,
+      ) async {
+        await pumpDailyExpressionScreen(tester);
+        await tester.tap(
+          find.byKey(const Key('daily_expression_scratch_foil')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-          expect(
-            find.byWidgetPredicate((w) =>
+        expect(
+          find.byWidgetPredicate(
+            (w) =>
                 w is Semantics &&
                 w.properties.label ==
-                    'Daily expression: Bite the bullet. Meaning: To endure a painful situation that cannot be avoided'),
-            findsOneWidget,
-          );
-        },
-      );
+                    'Daily expression: Bite the bullet. Meaning: To endure a painful situation that cannot be avoided',
+          ),
+          findsOneWidget,
+        );
+      });
     });
 
     // -------------------------------------------------------------------------
@@ -929,26 +927,25 @@ void main() {
         },
       );
 
-      testWidgets(
-        '8.2 displays Origin header with history_edu_rounded icon',
-        (tester) async {
-          await pumpDailyExpressionScreen(tester);
-          await tester.tap(
-            find.byKey(const Key('daily_expression_scratch_foil')),
-          );
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 400));
+      testWidgets('8.2 displays Origin header with history_edu_rounded icon', (
+        tester,
+      ) async {
+        await pumpDailyExpressionScreen(tester);
+        await tester.tap(
+          find.byKey(const Key('daily_expression_scratch_foil')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-          expect(find.text('Origin'), findsOneWidget);
-          expect(find.byIcon(Icons.history_edu_rounded), findsOneWidget);
-          expect(
-            find.text(
-              'Originated from battlefield surgeries where soldiers were given lead bullets to bite down on.',
-            ),
-            findsOneWidget,
-          );
-        },
-      );
+        expect(find.text('Origin'), findsOneWidget);
+        expect(find.byIcon(Icons.history_edu_rounded), findsOneWidget);
+        expect(
+          find.text(
+            'Originated from battlefield surgeries where soldiers were given lead bullets to bite down on.',
+          ),
+          findsOneWidget,
+        );
+      });
 
       testWidgets(
         '8.3 displays Example sentence with format_quote_rounded icon',
@@ -973,9 +970,7 @@ void main() {
         tester,
       ) async {
         final questNoOrigin = createQuest(explanation: null);
-        final stateNoOrigin = testLoadedState.copyWith(
-          quests: [questNoOrigin],
-        );
+        final stateNoOrigin = testLoadedState.copyWith(quests: [questNoOrigin]);
         await pumpDailyExpressionScreen(tester, state: stateNoOrigin);
         await tester.tap(
           find.byKey(const Key('daily_expression_scratch_foil')),
@@ -1014,20 +1009,21 @@ void main() {
     // 9. Hint System (SpeakingHintUsed) (4 tests)
     // -------------------------------------------------------------------------
     group('9. Hint System (SpeakingHintUsed)', () {
-      testWidgets('9.1 tapping header hint button dispatches SpeakingHintUsed', (
-        tester,
-      ) async {
-        await pumpDailyExpressionScreen(tester);
-        final hintButton = find.byType(QuestHintButton);
-        expect(hintButton, findsOneWidget);
+      testWidgets(
+        '9.1 tapping header hint button dispatches SpeakingHintUsed',
+        (tester) async {
+          await pumpDailyExpressionScreen(tester);
+          final hintButton = find.byType(QuestHintButton);
+          expect(hintButton, findsOneWidget);
 
-        await tester.tap(hintButton);
-        await tester.pump();
+          await tester.tap(hintButton);
+          await tester.pump();
 
-        verify(
-          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(greaterThanOrEqualTo(1));
-      });
+          verify(
+            () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+          ).called(greaterThanOrEqualTo(1));
+        },
+      );
 
       testWidgets(
         '9.2 displays hint container when hintUsed is true and hint is available',
@@ -1108,23 +1104,24 @@ void main() {
         },
       );
 
-      testWidgets('10.3 configures ShadowPlaybackCompare parameters correctly', (
-        tester,
-      ) async {
-        await pumpDailyExpressionScreen(tester);
-        await tester.tap(
-          find.byKey(const Key('daily_expression_scratch_foil')),
-        );
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 1000));
+      testWidgets(
+        '10.3 configures ShadowPlaybackCompare parameters correctly',
+        (tester) async {
+          await pumpDailyExpressionScreen(tester);
+          await tester.tap(
+            find.byKey(const Key('daily_expression_scratch_foil')),
+          );
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 1000));
 
-        final shadowWidget = tester.widget<ShadowPlaybackCompare>(
-          find.byKey(const Key('daily_expression_shadow_compare')),
-        );
-        expect(shadowWidget.expectedText, equals('Bite the bullet'));
-        expect(shadowWidget.showExpectedText, isFalse);
-        expect(shadowWidget.isPositioned, isFalse);
-      });
+          final shadowWidget = tester.widget<ShadowPlaybackCompare>(
+            find.byKey(const Key('daily_expression_shadow_compare')),
+          );
+          expect(shadowWidget.expectedText, equals('Bite the bullet'));
+          expect(shadowWidget.showExpectedText, isFalse);
+          expect(shadowWidget.isPositioned, isFalse);
+        },
+      );
 
       testWidgets(
         '10.4 displays SHADOW & COMPARE title in ShadowPlaybackCompare',
@@ -1304,7 +1301,9 @@ void main() {
           await tester.pump(const Duration(milliseconds: 600));
 
           // Should still only have called SubmitAnswer once
-          verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
+          verify(
+            () => mockSpeakingBloc.add(const SubmitAnswer(true)),
+          ).called(1);
         },
       );
 
@@ -1413,10 +1412,7 @@ void main() {
       testWidgets('13.1 renders cleanly on compact phone viewport (320x568)', (
         tester,
       ) async {
-        await pumpDailyExpressionScreen(
-          tester,
-          size: const Size(320, 568),
-        );
+        await pumpDailyExpressionScreen(tester, size: const Size(320, 568));
         expect(find.byType(DailyExpressionScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
@@ -1424,28 +1420,19 @@ void main() {
       testWidgets('13.2 renders cleanly on tablet viewport (768x1024)', (
         tester,
       ) async {
-        await pumpDailyExpressionScreen(
-          tester,
-          size: const Size(768, 1024),
-        );
+        await pumpDailyExpressionScreen(tester, size: const Size(768, 1024));
         expect(find.byType(DailyExpressionScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
 
       testWidgets('13.3 renders cleanly in Light Theme mode', (tester) async {
-        await pumpDailyExpressionScreen(
-          tester,
-          themeMode: ThemeMode.light,
-        );
+        await pumpDailyExpressionScreen(tester, themeMode: ThemeMode.light);
         expect(find.byType(DailyExpressionScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
 
       testWidgets('13.4 renders cleanly in Dark Theme mode', (tester) async {
-        await pumpDailyExpressionScreen(
-          tester,
-          themeMode: ThemeMode.dark,
-        );
+        await pumpDailyExpressionScreen(tester, themeMode: ThemeMode.dark);
         expect(find.byType(DailyExpressionScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
@@ -1453,10 +1440,7 @@ void main() {
       testWidgets(
         '13.5 animations are disabled and static icons used when reduceMotion is active',
         (tester) async {
-          await pumpDailyExpressionScreen(
-            tester,
-            reduceMotion: true,
-          );
+          await pumpDailyExpressionScreen(tester, reduceMotion: true);
           expect(find.byType(DailyExpressionScratchPanel), findsOneWidget);
           expect(tester.takeException(), isNull);
         },
@@ -1464,4 +1448,3 @@ void main() {
     });
   });
 }
-

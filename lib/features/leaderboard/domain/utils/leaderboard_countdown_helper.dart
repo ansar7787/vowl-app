@@ -38,4 +38,3 @@ final class LeaderboardCountdownHelper {
     return '< 1m';
   }
 }
-

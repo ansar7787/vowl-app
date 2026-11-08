@@ -198,8 +198,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final user = widget.user!;
     final color = GameHelper.getQuestTypeColor(_nextType);
     final icon = GameHelper.getIconForCategory(_nextType);
@@ -298,20 +298,11 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     final String ctaLabel;
 
     if (!isTodayActive && currentStreak > 0) {
-      ctaLabel = context.tr(
-        'home.secure_streak_btn',
-        fallback: 'Secure',
-      );
+      ctaLabel = context.tr('home.secure_streak_btn', fallback: 'Secure');
     } else if (isNewUser) {
-      ctaLabel = context.tr(
-        'home.start',
-        fallback: 'Start',
-      );
+      ctaLabel = context.tr('home.start', fallback: 'Start');
     } else {
-      ctaLabel = context.tr(
-        'home.resume',
-        fallback: 'Resume',
-      );
+      ctaLabel = context.tr('home.resume', fallback: 'Resume');
     }
 
     final semanticLabel = isNewUser
@@ -356,8 +347,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                   color: isMidnight
                       ? Colors.white.withValues(alpha: 0.12)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100),
                   width: 1.0,
                 ),
               ),
@@ -620,22 +611,24 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                           ),
                                           // Fill: Solid authentic category color (NO gradient)
                                           FractionallySizedBox(
-                                            widthFactor:
-                                                milestoneProgress.clamp(
-                                              isNewUser ? 0.02 : 0.04,
-                                              1.0,
-                                            ),
-                                            child: Container(
-                                              height: 6.h,
-                                              decoration: BoxDecoration(
-                                                color: color,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        100.r),
-                                              ),
-                                            ).animateIf(
-                                              context,
-                                              (w) => w.animate().scaleX(
+                                            widthFactor: milestoneProgress
+                                                .clamp(
+                                                  isNewUser ? 0.02 : 0.04,
+                                                  1.0,
+                                                ),
+                                            child:
+                                                Container(
+                                                  height: 6.h,
+                                                  decoration: BoxDecoration(
+                                                    color: color,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          100.r,
+                                                        ),
+                                                  ),
+                                                ).animateIf(
+                                                  context,
+                                                  (w) => w.animate().scaleX(
                                                     begin: 0,
                                                     end: 1,
                                                     duration: 800.ms,
@@ -643,7 +636,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                                     alignment:
                                                         Alignment.centerLeft,
                                                   ),
-                                            ),
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -723,16 +716,14 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
   /// Shimmer skeleton precisely matching the compact proportions.
   Widget _buildShimmer(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final baseBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return RepaintBoundary(
       child: Container(

@@ -375,6 +375,7 @@ class _KidsTimeLayoutState extends State<KidsTimeLayout> {
     di.sl<HapticService>().selection();
     di.sl<KidsTTSService>().speak(questData.rawInstruction, force: true);
   }
+
   @override
   void dispose() {
     try {
@@ -454,8 +455,7 @@ class _KidsTimeLayoutState extends State<KidsTimeLayout> {
                         child: Text(
                           context.tr(
                             'games.kids_time_prompt',
-                            fallback:
-                                'Tap an answer or drag it to the clock!',
+                            fallback: 'Tap an answer or drag it to the clock!',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -475,12 +475,7 @@ class _KidsTimeLayoutState extends State<KidsTimeLayout> {
                       SizedBox(height: isCompactHeight ? 4.h : 6.h),
 
                       // 5. Wooden Shelf with Option Cards & Pendulum
-                      _buildOptionShelf(
-                        context,
-                        state,
-                        quest,
-                        isCompactHeight,
-                      ),
+                      _buildOptionShelf(context, state, quest, isCompactHeight),
 
                       SizedBox(height: 6.h),
                     ],

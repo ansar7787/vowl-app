@@ -104,11 +104,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
           .moveY(begin: -2, end: 2, duration: 500.ms);
     }
 
-    return Positioned(
-      left: posX,
-      bottom: posY,
-      child: cartIcon,
-    );
+    return Positioned(left: posX, bottom: posY, child: cartIcon);
   }
 
   double _getYForPosition(double pos, List<int> contour) {
