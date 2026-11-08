@@ -24,6 +24,7 @@
         android:label="Vowl"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:resizeableActivity="true"
@@ -90,7 +91,7 @@
         <!-- Firebase Cloud Messaging default notification icon and tint color -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_launcher_monochrome" />
+            android:resource="@drawable/ic_stat_notification" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/vowl_notification_color" />

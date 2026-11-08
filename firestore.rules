@@ -226,7 +226,7 @@ service cloud.firestore {
         && (!('guestScore' in data) || (data.guestScore is int && data.guestScore >= 0 && data.guestScore <= 1000))
         && (!('hostFinished' in data) || data.hostFinished is bool)
         && (!('guestFinished' in data) || data.guestFinished is bool)
-        && (!('winnerId' in data) || data.winnerId == null || (data.winnerId is string && data.winnerId.size() <= 128))
+        && (!('winnerId' in data) || data.winnerId == null || (data.winnerId is string && data.winnerId.size() <= 128 && (data.winnerId == data.hostId || (('guestId' in data) && data.winnerId == data.guestId))))
         && (!('questions' in data) || (data.questions is list && data.questions.size() <= 20))
         && (!('hostReady' in data) || data.hostReady is bool)
         && (!('guestReady' in data) || data.guestReady is bool);

@@ -711,6 +711,9 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
+        // Cancel today's streak reminder — user has practiced today,
+        // no need to nudge them again at 8:30 PM.
+        notificationService.cancelTodayStreakReminder();
       },
     );
   }

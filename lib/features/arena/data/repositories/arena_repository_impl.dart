@@ -145,7 +145,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
         }
 
         // B. No human waiting: register ticket and listen for real opponent
-        final myRoomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+        final myRoomCode = 'VOWL-DUEL-${(Random.secure().nextInt(900000) + 100000)}';
         final myTicketRef = queueRef.doc(currentUser.id);
         final completer = Completer<ArenaDuelSession?>();
 
@@ -529,24 +529,27 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
   Future<void> _deductEntryStake(String userId) async {
     try {
-      final userDoc = await _firestore.collection('users').doc(userId).get().timeout(_kNetworkTimeout);
-      final currentCoins = (userDoc.data()?['coins'] as num?)?.toInt() ?? 0;
-      if (currentCoins < _kStakeCoins) {
-        throw Exception('Insufficient coins for duel stake.');
-      }
-      final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
-              ?.map((e) => Map<String, dynamic>.from(e as Map))
-              .toList() ??
-          [];
-      final updatedHistory = _recordCoinHistory(
-        rawHistory,
-        titleKey: 'coin_history.arena_duel_stake',
-        amount: -_kStakeCoins,
-        isEarned: false,
-      );
-      await _firestore.collection('users').doc(userId).update({
-        'coins': FieldValue.increment(-_kStakeCoins),
-        'coinHistory': updatedHistory,
+      await _firestore.runTransaction((transaction) async {
+        final userDocRef = _firestore.collection('users').doc(userId);
+        final userDoc = await transaction.get(userDocRef);
+        final currentCoins = (userDoc.data()?['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < _kStakeCoins) {
+          throw Exception('Insufficient coins for duel stake.');
+        }
+        final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+                ?.map((e) => Map<String, dynamic>.from(e as Map))
+                .toList() ??
+            [];
+        final updatedHistory = _recordCoinHistory(
+          rawHistory,
+          titleKey: 'coin_history.arena_duel_stake',
+          amount: -_kStakeCoins,
+          isEarned: false,
+        );
+        transaction.update(userDocRef, {
+          'coins': FieldValue.increment(-_kStakeCoins),
+          'coinHistory': updatedHistory,
+        });
       }).timeout(_kNetworkTimeout);
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Deduct stake error: $e');

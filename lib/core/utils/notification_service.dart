@@ -81,7 +81,8 @@ class NotificationService {
   static const int weeklyMotivationNotificationId = 202;
   static const int sundayLeagueResetNotificationId = 303;
   static const int leaderboardChallengeNotificationId = 304;
-  static const int leaderboardNotificationId = 303; // Legacy alias for backward compatibility
+  // Removed: leaderboardNotificationId (303) — was a legacy alias that collided
+  // with sundayLeagueResetNotificationId. Use leaderboardChallengeNotificationId (304) instead.
   static const int milestoneNotificationId = 606;
   static const int dailyWordsReminderNotificationId = 505;
   static const int maxLocalNotificationModulo = 100000;
@@ -152,7 +153,7 @@ class NotificationService {
 
     // 3. Initialize Local Notifications
     const AndroidInitializationSettings androidSettings =
-        AndroidInitializationSettings('@drawable/ic_launcher_monochrome');
+        AndroidInitializationSettings('@drawable/ic_stat_notification');
     const DarwinInitializationSettings iosSettings =
         DarwinInitializationSettings(
           requestAlertPermission: false,
@@ -628,7 +629,7 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -684,7 +685,7 @@ class NotificationService {
           channelDescription: 'Keeps you motivated to learn!',
           importance: Importance.max,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -775,6 +776,17 @@ class NotificationService {
       debugPrint(
         'Scheduled streak reminder for $currentStreak days at 8:30 PM local time',
       );
+    }
+  }
+
+  /// Cancels today's streak reminder after the user has completed their daily
+  /// practice. The reminder will be re-scheduled on the next app open via
+  /// [ProgressionBloc._onCheckDailyStreak], so this only silences today's
+  /// 8:30 PM nudge.
+  Future<void> cancelTodayStreakReminder() async {
+    await _localNotifications.cancel(id: streakReminderNotificationId);
+    if (kDebugMode) {
+      debugPrint('Cancelled today\'s streak reminder — user practiced today.');
     }
   }
 
@@ -897,7 +909,7 @@ class NotificationService {
           channelDescription: 'Used for game updates and daily words',
           importance: Importance.max,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -1033,7 +1045,7 @@ class NotificationService {
           channelDescription: 'Sunday motivation!',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -1130,7 +1142,7 @@ class NotificationService {
           channelDescription: 'Sunday league reset reminders and podium rewards',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -1217,7 +1229,7 @@ class NotificationService {
           channelDescription: 'Game updates and challenges',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 
@@ -1302,7 +1314,7 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
-          icon: '@drawable/ic_launcher_monochrome',
+          icon: '@drawable/ic_stat_notification',
           color: Color(0xFF6366F1),
         );
 

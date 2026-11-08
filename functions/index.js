@@ -572,14 +572,19 @@ function getWeeklyExp(user, now = new Date()) {
 // 🏆 THE WEEKLY RECAP
 // Runs every Sunday at 11:59 PM (Final Results)
 // Ranks by Weekly XP earned this week so real weekly learners win podium recognition!
-exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
+exports.sendWeeklyRankings = onSchedule({
+  schedule: '59 23 * * 0',
+  timeZone: 'UTC',
+  timeoutSeconds: 540,
+  memory: '1GiB',
+}, async (event) => {
   const db = admin.firestore();
 
-  // 1. Paginated retrieval of learners to evaluate this week's active performance
+  // 1. Paginated retrieval of learners to evaluate this week's active performance (scaled for 100k+ downloads)
   const activeLearners = [];
   let lastDoc = null;
   const BATCH_SIZE = 500;
-  const MAX_EVALUATED = 5000;
+  const MAX_EVALUATED = 100000;
   let totalEvaluated = 0;
 
   while (totalEvaluated < MAX_EVALUATED) {
@@ -778,15 +783,20 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
 // Runs hourly at minute 0 — nudges users whose LOCAL device time is 8:00 PM (20:00)
 // and who have not yet logged in / practiced today in their own local time zone.
 // Eliminates middle-of-the-night notifications for global users (India, US, UK, Asia).
-exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
+exports.sendStreakReminders = onSchedule({
+  schedule: '0 * * * *',
+  timeZone: 'UTC',
+  timeoutSeconds: 540,
+  memory: '1GiB',
+}, async (event) => {
   const db = admin.firestore();
   const nowUtc = new Date();
 
-  // Paginated query for users with active streaks in batches of 500
+  // Paginated query for users with active streaks in batches of 500 (scaled for 100k+ downloads)
   let lastDoc = null;
   const eligibleDocs = [];
   const BATCH_SIZE = 500;
-  const MAX_EVALUATED = 5000;
+  const MAX_EVALUATED = 100000;
   let totalEvaluated = 0;
 
   while (totalEvaluated < MAX_EVALUATED) {
@@ -918,7 +928,10 @@ exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
 
   if (duplicateCleanups.length > 0) {
     try {
-      await Promise.all(duplicateCleanups);
+      const CHUNK_SIZE = 100;
+      for (let i = 0; i < duplicateCleanups.length; i += CHUNK_SIZE) {
+        await Promise.all(duplicateCleanups.slice(i, i + CHUNK_SIZE));
+      }
       console.log(`Cleaned up ${duplicateCleanups.length} stale duplicate tokens.`);
     } catch (e) {
       console.warn('Error cleaning up duplicate tokens:', e);
@@ -927,38 +940,59 @@ exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
 
   if (messages.length > 0) {
     try {
-      const response = await admin.messaging().sendEach(messages);
+      // FCM sendEach limit is 500 messages per call — chunk properly for 100k+ scale
+      const FCM_BATCH_LIMIT = 500;
+      let totalSuccess = 0;
+      let totalFailure = 0;
+      const cleanupPromises = [];
+
+      for (let i = 0; i < messages.length; i += FCM_BATCH_LIMIT) {
+        const chunk = messages.slice(i, i + FCM_BATCH_LIMIT);
+        try {
+          const response = await admin.messaging().sendEach(chunk);
+          totalSuccess += response.successCount;
+          totalFailure += response.failureCount;
+
+          response.responses.forEach((resp, idx) => {
+            if (
+              resp.error &&
+              (resp.error.code === 'messaging/registration-token-not-registered' ||
+                resp.error.code === 'messaging/invalid-registration-token')
+            ) {
+              const failedToken = chunk[idx].token;
+              cleanupPromises.push(
+                db
+                  .collection('users')
+                  .where('fcmToken', '==', failedToken)
+                  .get()
+                  .then((snapshot) => {
+                    const deletes = [];
+                    snapshot.forEach((d) => {
+                      deletes.push(
+                        d.ref.update({
+                          fcmToken: admin.firestore.FieldValue.delete(),
+                        })
+                      );
+                    });
+                    return Promise.all(deletes);
+                  })
+                  .catch((e) => console.warn('Prune token failed:', e))
+              );
+            }
+          });
+        } catch (chunkErr) {
+          console.error(`Error sending message chunk [${i}..${i + chunk.length}]:`, chunkErr);
+        }
+      }
+
       console.log(
-        `Sent ${response.successCount} streak reminders. Failed: ${response.failureCount}`,
+        `Sent ${totalSuccess} streak reminders. Failed: ${totalFailure}`,
       );
 
-      // Clean up invalid tokens
-      const cleanupPromises = [];
-      response.responses.forEach((resp, idx) => {
-        if (
-          resp.error &&
-          (resp.error.code === 'messaging/registration-token-not-registered' ||
-            resp.error.code === 'messaging/invalid-registration-token')
-        ) {
-          const failedToken = messages[idx].token;
-          // Remove stale token from Firestore
-          cleanupPromises.push(
-            db.collection('users')
-              .where('fcmToken', '==', failedToken)
-              .get()
-              .then((snapshot) => {
-                const deletes = [];
-                snapshot.forEach((d) => {
-                  deletes.push(d.ref.update({
-                    fcmToken: admin.firestore.FieldValue.delete(),
-                  }));
-                });
-                return Promise.all(deletes);
-              })
-          );
-        }
-      });
-      await Promise.all(cleanupPromises);
+      if (cleanupPromises.length > 0) {
+        await Promise.all(cleanupPromises);
+        console.log(`Pruned ${cleanupPromises.length} dead/unregistered tokens.`);
+      }
     } catch (error) {
       console.error('Error sending streak reminders:', error);
     }
