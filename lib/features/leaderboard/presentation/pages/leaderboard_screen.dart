@@ -263,6 +263,7 @@ class _LeaderboardContent extends StatefulWidget {
 class _LeaderboardContentState extends State<_LeaderboardContent> {
   late final ScrollController _scrollController;
   bool _ownsScrollController = false;
+  bool _initialAnimateComplete = false;
 
   @override
   void initState() {
@@ -273,6 +274,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       _scrollController = ScrollController();
       _ownsScrollController = true;
     }
+    // Only run entrance animations once on initial screen mount.
+    // Recycled tiles during scrolling will render statically at native 120 FPS.
+    Future.delayed(const Duration(milliseconds: 650), () {
+      if (mounted) {
+        setState(() => _initialAnimateComplete = true);
+      }
+    });
   }
 
   @override
@@ -357,7 +365,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
     // Exact cumulative overhead before rank 4-N SliverList:
     // topPadding + header(~52.h) + switch(66.h) + banner + spacing(14.h) + podium + spacing(12.h)
-    // + stickyHeaderMaxExtent(106.h) + overtakeHud + sectionDivider(38.h)
+    // + stickyHeaderMaxExtent(122.h) + spacing(6.h) + overtakeHud + sectionDivider(38.h)
     final overhead = topPadding +
         52.h +
         switchHeight +
@@ -365,7 +373,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         14.h +
         podiumHeight +
         12.h +
-        106.h +
+        122.h +
+        6.h +
         overtakeHudHeight +
         38.h;
 
@@ -381,7 +390,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final viewportHeight = _scrollController.position.hasViewportDimension
         ? _scrollController.position.viewportDimension
         : screenHeight;
-    final pinnedHeaderHeight = 82.h;
+    final pinnedHeaderHeight = 70.h;
     final bottomBarPadding = (widget.showBackButton ? 24.h : 110.h) +
         MediaQuery.paddingOf(context).bottom;
 
@@ -673,12 +682,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-                  child: LeaderboardPodium(
-                    top3: users.take(3).toList(),
-                    isKids: widget.state.isKids,
-                    isWeekly: isWeekly,
-                    currentUserId: widget.currentUser?.id,
-                    onUserTap: (user, rank, isMe) => _handleTileTap(user, rank, isMe),
+                  child: RepaintBoundary(
+                    child: LeaderboardPodium(
+                      top3: users.take(3).toList(),
+                      isKids: widget.state.isKids,
+                      isWeekly: isWeekly,
+                      currentUserId: widget.currentUser?.id,
+                      onUserTap: (user, rank, isMe) => _handleTileTap(user, rank, isMe),
+                    ),
                   ),
                 ),
               ),
@@ -689,8 +700,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverPersistentHeader(
                 pinned: true,
                 delegate: _StickyRankCardDelegate(
-                  minHeight: 82.h,
-                  maxHeight: 106.h,
+                  minHeight: 70.h,
+                  maxHeight: 122.h,
                   isWeekly: isWeekly,
                   child: LeaderboardRankCard(
                     allUsers: users,
@@ -700,6 +711,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   ),
                 ),
               ),
+
+              SliverToBoxAdapter(child: SizedBox(height: 6.h)),
 
               // Overtake Alert HUD (XP gap to next player, dropped rank alert)
               if (!widget.state.isKids && widget.currentUser != null)
@@ -843,9 +856,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       );
 
                       // Only animate the first 8 initially visible items on page entry.
-                      // Off-screen items scroll into view without animation overhead.
+                      // After initial entrance, recycled items render statically for 120 FPS scrolling.
                       // Removed .blurXY() to eliminate GPU rasterization bottlenecks.
-                      final animatedTile = (!reduceMotion && index < 8)
+                      final animatedTile = (!reduceMotion && !_initialAnimateComplete && index < 8)
                           ? tile
                                 .animate()
                                 .fadeIn(
@@ -1093,56 +1106,58 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
             : (isDark ? AppColors.slate900 : Colors.white))
         .withValues(alpha: isPinned ? 0.96 : 0.7);
 
-    return ClipRect(
-      child: Stack(
-        children: [
-          // Frosted / solid backdrop that fully occludes content beneath
-          Positioned.fill(child: Container(color: backdropColor)),
-          // Rank card content
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSpacing.screen,
-              vertical: 8.h - (2.h * collapseProgress),
-            ),
-            child: OverflowBox(
-              minHeight: 0,
-              maxHeight: double.infinity,
-              alignment: Alignment.topCenter,
-              child: LeaderboardRankCard(
-                allUsers: (child as LeaderboardRankCard).allUsers,
-                isKids: (child as LeaderboardRankCard).isKids,
-                isWeekly: isWeekly,
-                collapseProgress: collapseProgress,
-                onTap: (child as LeaderboardRankCard).onTap,
+    return RepaintBoundary(
+      child: ClipRect(
+        child: Stack(
+          children: [
+            // Frosted / solid backdrop that fully occludes content beneath
+            Positioned.fill(child: Container(color: backdropColor)),
+            // Rank card content — centered vertically with generous padding
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacing.screen,
+                vertical: 6.h,
               ),
-            ),
-          ),
-          // Bottom shadow/divider — only visible when pinned
-          if (isPinned)
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: 1,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      (isDark ? Colors.white : Colors.black).withValues(
-                        alpha: 0.08,
-                      ),
-                      (isDark ? Colors.white : Colors.black).withValues(
-                        alpha: 0.08,
-                      ),
-                      Colors.transparent,
-                    ],
-                    stops: const [0.0, 0.2, 0.8, 1.0],
-                  ),
+              child: OverflowBox(
+                minHeight: 0,
+                maxHeight: double.infinity,
+                alignment: Alignment.center,
+                child: LeaderboardRankCard(
+                  allUsers: (child as LeaderboardRankCard).allUsers,
+                  isKids: (child as LeaderboardRankCard).isKids,
+                  isWeekly: isWeekly,
+                  collapseProgress: collapseProgress,
+                  onTap: (child as LeaderboardRankCard).onTap,
                 ),
               ),
             ),
-        ],
+            // Bottom shadow/divider — only visible when pinned
+            if (isPinned)
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: 1,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.transparent,
+                        (isDark ? Colors.white : Colors.black).withValues(
+                          alpha: 0.08,
+                        ),
+                        (isDark ? Colors.white : Colors.black).withValues(
+                          alpha: 0.08,
+                        ),
+                        Colors.transparent,
+                      ],
+                      stops: const [0.0, 0.2, 0.8, 1.0],
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
