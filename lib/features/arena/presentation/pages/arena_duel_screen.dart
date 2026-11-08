@@ -316,13 +316,14 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                     }
 
                     final authState = context.read<AuthBloc>().state;
-                    final isHost = authState.user?.id == state.session?.hostId;
-                    final rivalName = isHost
-                        ? (state.session?.guestName ?? 'Challenger')
-                        : (state.session?.hostName ?? 'Host');
-                    final rivalPhoto = isHost
-                        ? state.session?.guestPhotoUrl
-                        : state.session?.hostPhotoUrl;
+                    final currentUserId = authState.user?.id ?? '';
+                    final session = state.session;
+                    final rivalName = session?.opponentName(currentUserId) ?? 'Challenger';
+                    final rivalPhoto = session?.opponentPhotoUrl(currentUserId);
+                    final myName = session?.myName(currentUserId) ??
+                        (authState.user?.safeDisplayName ?? 'You');
+                    final myPhoto = session?.myPhotoUrl(currentUserId) ??
+                        authState.user?.photoUrl;
                     showDialog(
                       context: context,
                       barrierDismissible: false,
@@ -339,8 +340,8 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                         rivalTotalTimeMs: state.rivalTotalTimeMs,
                         rivalName: rivalName,
                         rivalPhotoUrl: rivalPhoto,
-                        myName: authState.user?.safeDisplayName ?? 'You',
-                        myPhotoUrl: authState.user?.photoUrl,
+                        myName: myName,
+                        myPhotoUrl: myPhoto,
                         payoutCoins: state.payoutCoins,
                         roomCode: state.session?.roomCode ?? '',
                         isAiRival: state.session?.isGhostRival ?? false,
@@ -382,12 +383,8 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                     );
                   }
 
-                  final rivalName = state.session?.guestId == user.id
-                      ? (state.session?.hostName ?? 'Host')
-                      : (state.session?.guestName ?? 'Challenger');
-                  final rivalPhoto = state.session?.guestId == user.id
-                      ? state.session?.hostPhotoUrl
-                      : state.session?.guestPhotoUrl;
+                  final rivalName = state.session?.opponentName(user.id) ?? 'Challenger';
+                  final rivalPhoto = state.session?.opponentPhotoUrl(user.id);
 
                   // SUSPENSE STATE: Completed 5 rounds, waiting for rival to finish
                   if (state.isWaitingForOpponentFinish && !state.isCompleted) {

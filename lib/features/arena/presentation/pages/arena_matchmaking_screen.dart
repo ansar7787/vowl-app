@@ -470,13 +470,14 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
     Color textPrimary,
     Color textSecondary,
   ) {
-    final rivalName = _session?.guestName ?? 'Challenger';
-    final rivalPhoto = _session?.guestPhotoUrl;
+    final rivalName = _session?.opponentName(widget.user.id) ?? 'Challenger';
+    final rivalPhoto = _session?.opponentPhotoUrl(widget.user.id);
+    final myName = _session?.myName(widget.user.id) ?? widget.user.safeDisplayName;
+    final myPhoto = _session?.myPhotoUrl(widget.user.id) ?? widget.user.photoUrl;
     final isAiRival = _session?.isGhostRival ?? false;
 
-    final meAvatar =
-        widget.user.photoUrl != null && widget.user.photoUrl!.isNotEmpty
-        ? CachedNetworkImageProvider(widget.user.photoUrl!)
+    final meAvatar = myPhoto != null && myPhoto.isNotEmpty
+        ? CachedNetworkImageProvider(myPhoto)
         : null;
     final opponentAvatar = rivalPhoto != null && rivalPhoto.isNotEmpty
         ? CachedNetworkImageProvider(rivalPhoto)
@@ -535,7 +536,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  widget.user.safeDisplayName,
+                  myName,
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(

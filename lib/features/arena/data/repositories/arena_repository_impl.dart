@@ -145,6 +145,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
                   'status': 'in_progress',
                   'hostScore': 0,
                   'guestScore': 0,
+                  'hostCorrectCount': 0,
+                  'guestCorrectCount': 0,
+                  'hostTotalTimeMs': 0,
+                  'guestTotalTimeMs': 0,
                   'questions': questions.map((q) => q.toMap()).toList(),
                   'createdAt': FieldValue.serverTimestamp(),
                 })
@@ -340,6 +344,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
             'status': 'waiting',
             'hostScore': 0,
             'guestScore': 0,
+            'hostCorrectCount': 0,
+            'guestCorrectCount': 0,
+            'hostTotalTimeMs': 0,
+            'guestTotalTimeMs': 0,
             'questions': questions.map((q) => q.toMap()).toList(),
             'createdAt': FieldValue.serverTimestamp(),
           })
@@ -417,6 +425,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required String userId,
     required int score,
     required bool isHost,
+    int correctCount = 0,
+    int totalTimeMs = 0,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
     if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) {
@@ -427,6 +437,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
       final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
       await docRef.update({
         isHost ? 'hostScore' : 'guestScore': score,
+        isHost ? 'hostCorrectCount' : 'guestCorrectCount': correctCount,
+        isHost ? 'hostTotalTimeMs' : 'guestTotalTimeMs': totalTimeMs,
         'lastHeartbeat': FieldValue.serverTimestamp(),
       });
     } catch (_) {
@@ -703,6 +715,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
       status: data['status'] as String? ?? 'in_progress',
       hostScore: (data['hostScore'] as num?)?.toInt() ?? 0,
       guestScore: (data['guestScore'] as num?)?.toInt() ?? 0,
+      hostCorrectCount: (data['hostCorrectCount'] as num?)?.toInt() ?? 0,
+      guestCorrectCount: (data['guestCorrectCount'] as num?)?.toInt() ?? 0,
+      hostTotalTimeMs: (data['hostTotalTimeMs'] as num?)?.toInt() ?? 0,
+      guestTotalTimeMs: (data['guestTotalTimeMs'] as num?)?.toInt() ?? 0,
       winnerId: data['winnerId'] as String?,
       questions: questions,
       createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),

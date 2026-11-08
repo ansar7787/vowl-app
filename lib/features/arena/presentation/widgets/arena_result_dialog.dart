@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -183,7 +184,7 @@ class ArenaResultDialog extends StatelessWidget {
                                           : AppColors.slate200),
                                 backgroundImage:
                                     myPhotoUrl != null && myPhotoUrl!.isNotEmpty
-                                    ? NetworkImage(myPhotoUrl!)
+                                    ? CachedNetworkImageProvider(myPhotoUrl!)
                                     : null,
                                 child: myPhotoUrl == null || myPhotoUrl!.isEmpty
                                     ? Text(
@@ -321,7 +322,7 @@ class ArenaResultDialog extends StatelessWidget {
                                   backgroundImage:
                                       rivalPhotoUrl != null &&
                                           rivalPhotoUrl!.isNotEmpty
-                                      ? NetworkImage(rivalPhotoUrl!)
+                                      ? CachedNetworkImageProvider(rivalPhotoUrl!)
                                       : null,
                                   child:
                                       rivalPhotoUrl == null ||

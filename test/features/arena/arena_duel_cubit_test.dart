@@ -44,6 +44,8 @@ class FakeArenaRepository implements ArenaRepository {
     required String userId,
     required int score,
     required bool isHost,
+    int correctCount = 0,
+    int totalTimeMs = 0,
   }) async {}
 
   @override
@@ -260,6 +262,110 @@ void main() {
           },
         );
       }
+    });
+
+    group('Host vs Guest Identity & Live Telemetry Tests', () {
+      final session = ArenaDuelSession(
+        roomCode: 'VOWL-LIVE-100',
+        hostId: 'host_123',
+        hostName: 'HostPlayer',
+        hostPhotoUrl: 'https://vowl.app/host.jpg',
+        guestId: 'guest_456',
+        guestName: 'GuestPlayer',
+        guestPhotoUrl: 'https://vowl.app/guest.jpg',
+        stake: 30,
+        pot: 60,
+        status: 'in_progress',
+        hostScore: 240,
+        guestScore: 310,
+        hostCorrectCount: 3,
+        guestCorrectCount: 4,
+        hostTotalTimeMs: 14200,
+        guestTotalTimeMs: 11800,
+        questions: questions,
+        createdAt: DateTime.now(),
+      );
+
+      test('Correctly resolves Host perspective (User is Host)', () {
+        expect(session.isHost('host_123'), true);
+        expect(session.myName('host_123'), 'HostPlayer');
+        expect(session.myPhotoUrl('host_123'), 'https://vowl.app/host.jpg');
+        expect(session.opponentName('host_123'), 'GuestPlayer');
+        expect(session.opponentPhotoUrl('host_123'), 'https://vowl.app/guest.jpg');
+        expect(session.opponentScore('host_123'), 310);
+        expect(session.opponentCorrectCount('host_123'), 4);
+        expect(session.opponentTotalTimeMs('host_123'), 11800);
+      });
+
+      test('Correctly resolves Guest perspective (User is Guest - No Data Duplication)', () {
+        expect(session.isHost('guest_456'), false);
+        expect(session.myName('guest_456'), 'GuestPlayer');
+        expect(session.myPhotoUrl('guest_456'), 'https://vowl.app/guest.jpg');
+        expect(session.opponentName('guest_456'), 'HostPlayer');
+        expect(session.opponentPhotoUrl('guest_456'), 'https://vowl.app/host.jpg');
+        expect(session.opponentScore('guest_456'), 240);
+        expect(session.opponentCorrectCount('guest_456'), 3);
+        expect(session.opponentTotalTimeMs('guest_456'), 14200);
+
+        // Crucial: Opponent photo must NOT be guest's photo
+        expect(session.opponentPhotoUrl('guest_456'), isNot(equals(session.myPhotoUrl('guest_456'))));
+        expect(session.opponentName('guest_456'), isNot(equals(session.myName('guest_456'))));
+      });
+
+      test('Live duel room stream synchronizes rival score, correct count, and response time', () async {
+        final fakeRepo = FakeArenaRepository();
+        final cubit = ArenaDuelCubit(repository: fakeRepo);
+        final roomController = StreamController<ArenaDuelSession>.broadcast();
+        fakeRepo.roomStreamController = roomController;
+
+        const guestUser = UserEntity(
+          id: 'guest_456',
+          email: 'guest@vowl.app',
+          displayName: 'GuestPlayer',
+          photoUrl: 'https://vowl.app/guest.jpg',
+        );
+
+        final initialLiveSession = ArenaDuelSession(
+          roomCode: 'VOWL-LIVE-100',
+          hostId: 'host_123',
+          hostName: 'HostPlayer',
+          hostPhotoUrl: 'https://vowl.app/host.jpg',
+          guestId: 'guest_456',
+          guestName: 'GuestPlayer',
+          guestPhotoUrl: 'https://vowl.app/guest.jpg',
+          stake: 30,
+          pot: 60,
+          status: 'in_progress',
+          hostScore: 0,
+          guestScore: 0,
+          hostCorrectCount: 0,
+          guestCorrectCount: 0,
+          hostTotalTimeMs: 0,
+          guestTotalTimeMs: 0,
+          questions: questions,
+          createdAt: DateTime.now(),
+        );
+
+        cubit.startSession(initialLiveSession, guestUser);
+
+        // Host submits progress: score 85, correct 1, time 2500ms
+        final updatedFromHost = initialLiveSession.copyWith(
+          hostScore: 85,
+          hostCorrectCount: 1,
+          hostTotalTimeMs: 2500,
+        );
+        roomController.add(updatedFromHost);
+
+        await Future<void>.delayed(const Duration(milliseconds: 50));
+
+        // Guest's cubit must receive host's real telemetry
+        expect(cubit.state.rivalScore, 85);
+        expect(cubit.state.rivalCorrectCount, 1);
+        expect(cubit.state.rivalTotalTimeMs, 2500);
+
+        await cubit.close();
+        await roomController.close();
+      });
     });
   });
 }

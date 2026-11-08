@@ -28,12 +28,14 @@ abstract class ArenaRepository {
   /// Listens to real-time updates for an active duel room.
   Stream<ArenaDuelSession> listenToRoom(String roomCode);
 
-  /// Submits player's quiz score to the room.
+  /// Submits player's quiz score, round correct count, and total response time to the room.
   Future<void> submitScore({
     required String roomCode,
     required String userId,
     required int score,
     required bool isHost,
+    int correctCount = 0,
+    int totalTimeMs = 0,
   });
 
   /// Completes the match, awarding 50 coins to winner or 10 coins to loser.
