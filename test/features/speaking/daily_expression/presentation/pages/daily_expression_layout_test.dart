@@ -788,7 +788,7 @@ void main() {
           find.byKey(const Key('daily_expression_scratch_foil')),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         verify(() => mockSoundService.playTts('Bite the bullet')).called(1);
       });
@@ -981,7 +981,7 @@ void main() {
           find.byKey(const Key('daily_expression_scratch_foil')),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         expect(find.text('Origin'), findsNothing);
         expect(find.byIcon(Icons.history_edu_rounded), findsNothing);
@@ -1116,7 +1116,7 @@ void main() {
           find.byKey(const Key('daily_expression_scratch_foil')),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         final shadowWidget = tester.widget<ShadowPlaybackCompare>(
           find.byKey(const Key('daily_expression_shadow_compare')),
@@ -1176,7 +1176,7 @@ void main() {
           find.byKey(const Key('daily_expression_scratch_foil')),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         final shadowWidget = tester.widget<ShadowPlaybackCompare>(
           find.byKey(const Key('daily_expression_shadow_compare')),
@@ -1196,7 +1196,7 @@ void main() {
           find.byKey(const Key('daily_expression_scratch_foil')),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         final shadowWidget = tester.widget<ShadowPlaybackCompare>(
           find.byKey(const Key('daily_expression_shadow_compare')),
@@ -1384,7 +1384,7 @@ void main() {
           ),
         );
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 1000));
 
         expect(find.text('LEVEL COMPLETE!'), findsWidgets);
       });

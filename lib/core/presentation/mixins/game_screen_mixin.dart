@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/praise_service.dart';
 import 'package:vowl/core/utils/app_lifecycle_handler.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Shared stateful screen mixin coordinating game lifecycle, answer evaluation,
@@ -17,7 +18,13 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   GameSubtype get gameType;
   int get level;
-  String getCompletionTitle(BuildContext context);
+
+  /// Default completion dialog title matching the standardized level complete banner.
+  /// Subclasses can override if a specialized localized string is required.
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   late final HapticService hapticService = di.sl<HapticService>();
   late final SoundService soundService = di.sl<SoundService>();

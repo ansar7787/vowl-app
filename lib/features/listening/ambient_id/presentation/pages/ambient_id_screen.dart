@@ -52,9 +52,9 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-    'listening.games.ambient_id_title',
-    fallback: 'Sound Detective!',
-  );
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   late AnimationController _radarController;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);

@@ -1323,6 +1323,7 @@ class VowlCoinsScreen extends StatelessWidget {
     final params = txn['params'] as Map<String, dynamic>?;
     final gameType = params?['gameType'] as String? ?? '';
     final milestone = params?['milestone']?.toString() ?? '';
+    final trophyName = params?['trophyName'] as String? ?? '';
 
     switch (rawKey) {
       case 'coin_history.beginner_quest_reward':
@@ -1386,6 +1387,14 @@ class VowlCoinsScreen extends StatelessWidget {
           args: [milestone],
           fallback:
               'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''}',
+        );
+      case 'coin_history.trophy_reward':
+      case 'coin_history.badge_reward':
+        return context.tr(
+          'coin_history.trophy_reward',
+          args: [trophyName],
+          fallback:
+              'Trophy Bounty${trophyName.isNotEmpty ? ' – $trophyName' : ''}',
         );
       case 'coin_history.ad_reward':
         return context.tr('coin_history.ad_reward', fallback: 'Ad Reward');

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -56,7 +57,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'WELL DONE!';
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);

@@ -498,7 +498,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             fallback: 'Your learning toolkit',
                           ),
                           categoryColor: AppColors.emerald500,
-                          onSeeAll: () => ToolsStrip.toggleExpanded(context),
                         ),
                         const SliverToBoxAdapter(child: ToolsStrip()),
                       ],

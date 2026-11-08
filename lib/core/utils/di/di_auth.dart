@@ -28,6 +28,7 @@ import 'package:vowl/features/auth/domain/usecases/get_user_stream.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_badge_reward.dart';
 import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
@@ -239,6 +240,9 @@ void initAuthFeature(GetIt sl) {
   );
   sl.registerLazySingleton<ClaimLevelMilestone>(
     () => ClaimLevelMilestone(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<ClaimBadgeReward>(
+    () => ClaimBadgeReward(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<IncrementXp>(
     () => IncrementXp(sl<GamificationRepository>()),

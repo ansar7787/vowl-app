@@ -1003,9 +1003,9 @@ void main() {
       vocabularyStreamController.add(completeState);
       await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('Practice Complete!'), findsOneWidget);
+      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      Navigator.of(tester.element(find.text('Practice Complete!'))).pop();
+      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
       await tester.pump(const Duration(milliseconds: 500));
     });
   });

@@ -219,12 +219,11 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     final bool isOverallCorrect =
         wordIsCorrect && nailedIt && !forceImmediateFail;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = isOverallCorrect;
-
     if (isOverallCorrect) {
       submitCorrectAnswer();
     } else {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       hapticService.error();
       soundService.playWrong();
 

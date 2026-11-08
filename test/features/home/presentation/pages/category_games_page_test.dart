@@ -613,4 +613,146 @@ void main() {
       },
     );
   });
+
+  group('Group 8: Apex Studio Features (Quick Resume, Filters, Grid & Search)', () {
+    testWidgets(
+      '1-Tap Quick-Resume Hero renders next active lesson and navigates on tap',
+      (tester) async {
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        // Verify quick resume hero is visible
+        expect(
+          find.text('CONTINUE PRACTICE'),
+          findsOneWidget,
+        );
+        expect(find.text('PLAY'), findsOneWidget);
+
+        // Tap the Play button on Quick-Resume hero
+        final playButton = find.text('PLAY');
+        await tester.tap(playButton);
+        await tester.pumpAndSettle();
+
+        expect(navigatedRoutes.length, 1);
+        expect(
+          navigatedRoutes.first,
+          startsWith('/levels?category=grammar&gameType='),
+        );
+      },
+    );
+
+    testWidgets(
+      'Actionable App Bar toggles search input and filters practice library',
+      (tester) async {
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        // Initially search input is hidden
+        expect(find.byType(TextField), findsNothing);
+
+        // Tap top-right app bar button
+        final filterToggle = find.byIcon(Icons.auto_awesome_rounded);
+        await tester.tap(filterToggle);
+        await tester.pumpAndSettle();
+
+        // Search input is now visible
+        expect(find.byType(TextField), findsOneWidget);
+
+        // Type query 'parts' to filter for Parts of Speech
+        await tester.enterText(find.byType(TextField), 'parts');
+        await tester.pumpAndSettle();
+
+        // Scroll to library
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        expect(find.text('PARTS OF SPEECH'), findsOneWidget);
+        // Other games like 'TENSE MASTERY' should be filtered out
+        expect(find.text('TENSE MASTERY'), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'Status Filter Chips filter game list by status',
+      (tester) async {
+        // testUser has completed 3 levels of partsOfSpeech and 2 of grammarQuest
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        // Scroll so the filter bar is comfortably in the center of the screen, away from the floating app bar
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -350));
+        await tester.pumpAndSettle();
+
+        final inProgressChip = find.text('In Progress');
+        expect(inProgressChip, findsOneWidget);
+
+        // Tap 'In Progress' chip
+        await tester.tap(inProgressChip);
+        await tester.pumpAndSettle();
+
+        // In-progress games are displayed
+        expect(find.text('PARTS OF SPEECH'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'Dual View Switcher toggles between list view and 2-column grid view',
+      (tester) async {
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        // Scroll so the filter bar is comfortably in the center of the screen, away from the floating app bar
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -350));
+        await tester.pumpAndSettle();
+
+        // Default: List view is active, GridView is not present
+        expect(find.byType(SliverGrid), findsNothing);
+        expect(find.byIcon(Icons.grid_view_rounded), findsOneWidget);
+
+        // Tap Grid Toggle button
+        final gridToggle = find.byIcon(Icons.grid_view_rounded);
+        await tester.tap(gridToggle);
+        await tester.pumpAndSettle();
+
+        // Now GridView is active!
+        expect(find.byType(SliverGrid), findsOneWidget);
+        expect(find.byIcon(Icons.view_agenda_rounded), findsOneWidget);
+
+        // Tap again to switch back to List view
+        await tester.tap(find.byIcon(Icons.view_agenda_rounded));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(SliverGrid), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'Empty State displays when search query has no matches and allows resetting',
+      (tester) async {
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        // Open search and enter non-existent query
+        final filterToggle = find.byIcon(Icons.auto_awesome_rounded);
+        await tester.tap(filterToggle);
+        await tester.pumpAndSettle();
+
+        await tester.enterText(find.byType(TextField), 'xyznonexistentgame');
+        await tester.pumpAndSettle();
+
+        // Scroll down to see empty state
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        expect(find.text('No games match your filter'), findsOneWidget);
+        expect(find.text('Show All Games'), findsOneWidget);
+
+        // Tap 'Show All Games' button
+        await tester.tap(find.text('Show All Games'));
+        await tester.pumpAndSettle();
+
+        // Games restored
+        expect(find.text('No games match your filter'), findsNothing);
+      },
+    );
+  });
 }

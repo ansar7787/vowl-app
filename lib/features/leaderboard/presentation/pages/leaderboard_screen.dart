@@ -41,11 +41,13 @@ import 'package:vowl/features/social_share/presentation/widgets/share_card_previ
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
   final LeaderboardTimeframe initialTimeframe;
+  final bool? showBackButton;
 
   const LeaderboardScreen({
     super.key,
     this.isKids = false,
     this.initialTimeframe = LeaderboardTimeframe.thisWeek,
+    this.showBackButton,
   });
 
   @override
@@ -103,36 +105,83 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                   bottom: false,
                   child: Column(
                     children: [
-                      if (widget.isKids) ...[
+                      if (widget.showBackButton ?? widget.isKids) ...[
                         Padding(
                           padding: EdgeInsets.only(
                             top: 6.h,
-                            left: 8.w,
+                            left: 12.w,
                             right: AppSpacing.screen,
                             bottom: 4.h,
                           ),
                           child: Row(
                             children: [
-                              IconButton(
-                                icon: const Icon(Icons.arrow_back_rounded),
-                                color: isDark ? Colors.white : AppColors.slate900,
-                                tooltip: context.tr('common.back', fallback: 'Back to Kids Zone'),
-                                onPressed: () => Navigator.of(context).pop(),
-                              ),
-                              Text(
-                                'Kids Zone',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: isDark ? Colors.white70 : AppColors.slate600,
+                              Semantics(
+                                button: true,
+                                label: context.tr(
+                                  'common.back',
+                                  fallback: widget.isKids
+                                      ? 'Back to Kids Zone'
+                                      : 'Back to Home',
+                                ),
+                                child: GestureDetector(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTap: () {
+                                    if (context.canPop()) {
+                                      context.pop();
+                                    } else {
+                                      context.go(widget.isKids
+                                          ? AppRouter.kidsZoneRoute
+                                          : AppRouter.homeRoute);
+                                    }
+                                  },
+                                  child: Container(
+                                    constraints: BoxConstraints(
+                                      minHeight: 44.r,
+                                      minWidth: 44.r,
+                                    ),
+                                    alignment: Alignment.centerLeft,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Directionality.of(context) ==
+                                                  TextDirection.rtl
+                                              ? Icons.arrow_forward_ios_rounded
+                                              : Icons.arrow_back_ios_new_rounded,
+                                          color: isDark
+                                              ? Colors.white
+                                              : AppColors.slate900,
+                                          size: 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          widget.isKids
+                                              ? 'Kids Zone'
+                                              : context.tr(
+                                                  'nav.home',
+                                                  fallback: 'Home',
+                                                ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : AppColors.slate600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      ] else if (state is LeaderboardLoading ||
-                          state is LeaderboardInitial) ...[
+                      ],
+                      if (!widget.isKids &&
+                          (state is LeaderboardLoading ||
+                              state is LeaderboardInitial)) ...[
                         Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: AppSpacing.screen,
@@ -155,6 +204,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                 state: state,
                                 currentUser: currentUser,
                                 timeframe: _timeframe,
+                                showBackButton:
+                                    widget.showBackButton ?? widget.isKids,
                                 onTimeframeChanged: (selected) {
                                   setState(() => _timeframe = selected);
                                 },
@@ -195,12 +246,14 @@ class _LeaderboardContent extends StatefulWidget {
   final UserEntity? currentUser;
   final LeaderboardTimeframe timeframe;
   final ValueChanged<LeaderboardTimeframe>? onTimeframeChanged;
+  final bool showBackButton;
 
   const _LeaderboardContent({
     required this.state,
     required this.currentUser,
     this.timeframe = LeaderboardTimeframe.thisWeek,
     this.onTimeframeChanged,
+    this.showBackButton = false,
   });
 
   @override
@@ -329,7 +382,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         ? _scrollController.position.viewportDimension
         : screenHeight;
     final pinnedHeaderHeight = 82.h;
-    final bottomBarPadding = 110.h + MediaQuery.paddingOf(context).bottom;
+    final bottomBarPadding = (widget.showBackButton ? 24.h : 110.h) +
+        MediaQuery.paddingOf(context).bottom;
 
     // Center point in visible viewport between pinned top header and bottom bar
     final visibleCenter = pinnedHeaderHeight +
@@ -434,7 +488,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           if (di.sl.isRegistered<HapticService>()) {
             di.sl<HapticService>().selection();
           }
-          context.push(AppRouter.gamesRoute);
+          context.go(AppRouter.gamesRoute);
         },
         onShareChallenge: () => _showShareCard(
           widget.currentUser!,
@@ -573,6 +627,16 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
+                    onSync: () async {
+                      final completer = Completer<void>();
+                      context.read<LeaderboardBloc>().add(
+                        LoadLeaderboard(
+                          isKids: widget.state.isKids,
+                          completer: completer,
+                        ),
+                      );
+                      await completer.future;
+                    },
                   ),
                 ),
               ),
@@ -644,7 +708,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                     allUsers: users,
                     currentUser: widget.currentUser!,
                     isWeekly: isWeekly,
-                    onOvertakeTap: () => context.push(AppRouter.gamesRoute),
+                    onOvertakeTap: () => context.go(AppRouter.gamesRoute),
                   ),
                 ),
 
@@ -903,7 +967,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 120.h + MediaQuery.paddingOf(context).bottom,
+                  height: (widget.showBackButton ? 36.h : 120.h) +
+                      MediaQuery.paddingOf(context).bottom,
                 ),
               ),
             ],
@@ -913,7 +978,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         // "Find Me" FAB — only visible when user's rank is deep in the list
         if (showFindMe)
           Positioned(
-            bottom: 104.h + MediaQuery.paddingOf(context).bottom,
+            bottom: (widget.showBackButton ? 24.h : 104.h) +
+                MediaQuery.paddingOf(context).bottom,
             right: AppSpacing.screen,
             child: Semantics(
               button: true,

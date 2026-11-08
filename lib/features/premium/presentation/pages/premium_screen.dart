@@ -56,7 +56,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String? _errorMessageVal;
   String? _transactionIdVal;
   Timer? _paymentTimeout;
-  Timer? _restoreTimer;
   late ConfettiController _confettiController;
 
   static const List<SubscriptionPlan> _fallbackPlans = [
@@ -183,7 +182,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessingVal = false;
         _paymentCompletedVal = true;
         _paymentSuccessVal = false;
-        _errorMessageVal = 'Session expired. Please restart the app.';
+        _errorMessageVal = context.tr(
+          'premium.error_session_expired',
+          fallback: 'Session expired. Please restart the app.',
+        );
         _updateState();
       }
       return;
@@ -343,7 +345,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void dispose() {
     _confettiController.dispose();
     _cancelPaymentTimeout();
-    _restoreTimer?.cancel();
     final iap = InAppPurchaseService.instance;
     iap.onPurchaseSuccess = null;
     iap.onPurchaseError = null;
@@ -702,7 +703,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     ),
                     SizedBox(width: 6.w),
                     Text(
-                      'ACTIVE',
+                      context.tr('premium.status_active', fallback: 'ACTIVE'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: AppColors.emerald500,
@@ -719,7 +720,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
           SizedBox(height: 22.h),
 
-          // Centered Crown Hero
+          // Centered Star Shield Hero
           Container(
             width: 58.r,
             height: 58.r,
@@ -744,7 +745,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
             child: Center(
               child: Icon(
-                LucideIcons.crown,
+                LucideIcons.shieldCheck,
                 color: Colors.white,
                 size: 28.r,
               ),
@@ -769,7 +770,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           ),
           SizedBox(height: 4.h),
           Text(
-            user?.displayName ?? user?.email ?? 'Pro Member',
+            user?.displayName ??
+                user?.email ??
+                context.tr('premium.pro_member', fallback: 'Pro Member'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -812,13 +815,26 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     children: [
                       Text(
                         expiryDate != null && daysLeft > 1
-                            ? '$daysLeft Days Remaining'
+                            ? context.tr(
+                                'premium.days_remaining',
+                                fallback: '$daysLeft Days Remaining',
+                                args: ['$daysLeft'],
+                              )
                             : (expiryDate != null && daysLeft == 1
-                                ? '1 Day Remaining'
+                                ? context.tr(
+                                    'premium.one_day_remaining',
+                                    fallback: '1 Day Remaining',
+                                  )
                                 : (expiryDate != null &&
                                         expiryDate.isAfter(DateTime.now())
-                                    ? 'Expiring Today'
-                                    : 'Pro Membership Active')),
+                                    ? context.tr(
+                                        'premium.expiring_today',
+                                        fallback: 'Expiring Today',
+                                      )
+                                    : context.tr(
+                                        'premium.already_premium',
+                                        fallback: 'Pro Membership Active',
+                                      ))),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -1003,6 +1019,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final user = context.watch<AuthBloc>().state.user;
     final isPremium = user?.hasActivePremium ?? false;
+    final expiredDate = user?.premiumExpiryDate;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
@@ -1011,7 +1028,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (!isPremium) ...[
-            if (user?.premiumExpiryDate != null) ...[
+            if (expiredDate != null) ...[
               SizedBox(height: 12.h),
               Container(
                 width: double.infinity,
@@ -1027,7 +1044,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
-                        'Your Pro Membership expired on ${DateFormat.yMMMd().format(user!.premiumExpiryDate!.toLocal())}. Renew below to restore VIP benefits!',
+                        context.tr(
+                          'premium.membership_expired_notice',
+                          fallback:
+                              'Your Pro Membership expired on ${DateFormat.yMMMd().format(expiredDate.toLocal())}. Renew below to restore VIP benefits!',
+                          args: [
+                            DateFormat.yMMMd().format(
+                              expiredDate.toLocal(),
+                            ),
+                          ],
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -1042,100 +1068,25 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ],
             SizedBox(height: 16.h),
             const PremiumHero(),
+            SizedBox(height: 20.h),
+            const ModernFeatureBar(),
             SizedBox(height: 24.h),
             _buildPlanList(),
+            SizedBox(height: 24.h),
+            _buildPaymentMethodSelector(isDark),
+            _buildCTAButton(),
           ] else ...[
             SizedBox(height: 16.h),
             _buildAlreadyPremiumCard(isDark, user),
             if (_showExtendPlans) ...[
+              SizedBox(height: 20.h),
+              const ModernFeatureBar(),
               SizedBox(height: 24.h),
               _buildPlanList(),
               SizedBox(height: 24.h),
               _buildPaymentMethodSelector(isDark),
               _buildCTAButton(),
             ],
-          ],
-          SizedBox(height: 24.h),
-          const ModernFeatureBar(),
-          SizedBox(height: 32.h),
-          if (!isPremium) ...[
-            _buildPaymentMethodSelector(isDark),
-            _buildCTAButton(),
-            SizedBox(height: 12.h),
-            TextButton(
-              onPressed: () async {
-                di.sl<HapticService>().selection();
-                if (InAppPurchaseService.shouldUseIAP) {
-                  _isProcessingVal = true;
-                  _updateState();
-
-                  final iap = InAppPurchaseService.instance;
-                  iap.onPurchaseRestored = () {
-                    if (mounted) {
-                      context.read<AuthBloc>().add(const AuthReloadUser());
-                      _isProcessingVal = false;
-                      _updateState();
-                      CustomSnackBar.show(
-                        context: context,
-                        message: context.tr(
-                          'premium.restore_success',
-                          fallback: 'Purchases restored successfully.',
-                        ),
-                        type: CustomSnackBarType.success,
-                      );
-                    }
-                  };
-                  iap.onPurchaseError = (error) {
-                    if (mounted) {
-                      _isProcessingVal = false;
-                      _updateState();
-                      CustomSnackBar.show(
-                        context: context,
-                        message: error,
-                        type: CustomSnackBarType.error,
-                      );
-                    }
-                  };
-
-                  await iap.restorePurchases();
-
-                  // If there are no past purchases, the stream won't emit anything.
-                  // We should timeout the loading state just in case.
-                  _restoreTimer?.cancel();
-                  _restoreTimer = Timer(const Duration(seconds: 5), () {
-                    if (mounted && _isProcessingVal) {
-                      _isProcessingVal = false;
-                      _updateState();
-                    }
-                  });
-                } else {
-                  CustomSnackBar.show(
-                    context: context,
-                    message: context.tr(
-                      'premium.restore_not_supported',
-                      fallback:
-                          'Your premium is linked to your account and restored automatically when you sign in. Contact support if you need help.',
-                    ),
-                    type: CustomSnackBarType.info,
-                  );
-                }
-              },
-              child: Text(
-                context.tr(
-                  'premium.restore_purchases',
-                  fallback: 'Restore Purchases',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white60
-                      : Colors.black54,
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
           ],
           SizedBox(height: 20.h),
           _buildSecureTag(),
@@ -1579,7 +1530,30 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     children: [
                       const VowlButtonSpinner(color: Colors.white),
                       SizedBox(width: 12.w),
-                      Text(
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            leftText,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                else
+                  Flexible(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
                         leftText,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -1589,30 +1563,23 @@ class _PremiumScreenState extends State<PremiumScreen> {
                           letterSpacing: 1,
                         ),
                       ),
-                    ],
-                  )
-                else
-                  Text(
-                    leftText,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1,
                     ),
                   ),
-                if (!_isProcessingVal)
+                if (!_isProcessingVal) ...[
+                  SizedBox(width: 12.w),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        priceFormatted,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: Colors.white.withValues(alpha: 0.9),
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w800,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          priceFormatted,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: Colors.white.withValues(alpha: 0.9),
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                       ),
                       SizedBox(width: 8.w),
@@ -1623,6 +1590,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                       ),
                     ],
                   ),
+                ],
               ],
             ),
           ),
@@ -1635,8 +1603,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
     di.sl<HapticService>().heavy();
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
-
-    _restoreTimer?.cancel();
 
     _isProcessingVal = true;
     _updateState();
@@ -1677,11 +1643,15 @@ class _PremiumScreenState extends State<PremiumScreen> {
               .where((p) => p.id == productId)
               .toList();
           if (matchingProducts.isEmpty) {
+            if (!mounted) return;
             // Reset processing and show error
             _isProcessingVal = false;
             _paymentCompletedVal = true;
             _paymentSuccessVal = false;
-            _errorMessageVal = 'Product not available. Please try again later.';
+            _errorMessageVal = context.tr(
+              'premium.error_product_unavailable',
+              fallback: 'Product not available. Please try again later.',
+            );
             _updateState();
             return;
           }
@@ -1712,7 +1682,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _isProcessingVal = false;
                 _paymentCompletedVal = true;
                 _paymentSuccessVal = false;
-                _errorMessageVal = 'Session expired. Please restart the app.';
+                _errorMessageVal = context.tr(
+          'premium.error_session_expired',
+          fallback: 'Session expired. Please restart the app.',
+        );
                 _updateState();
               }
             } catch (e, stackTrace) {
@@ -1841,6 +1814,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
     return ContactPhoneBottomSheet.show(context);
   }
 
+  Future<void> _launchLegalUrl(String urlString) async {
+    di.sl<HapticService>().selection();
+    final url = Uri.parse(urlString);
+    try {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } catch (e) {
+      di.sl<AppLogger>().warning('Could not launch legal url $urlString: $e');
+    }
+  }
+
   Widget _buildSecureTag() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
@@ -1851,7 +1834,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Outfit',
-        color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000),
+        color: isDark ? Colors.white60 : AppColors.slate500,
         fontSize: 9.sp,
         fontWeight: FontWeight.w900,
         letterSpacing: 1.5,
@@ -1861,7 +1844,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildTermsAndPolicy() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final muted = isDark ? Colors.white38 : Colors.black38;
+    final muted = isDark ? Colors.white60 : AppColors.slate500;
 
     return Column(
       children: [
@@ -1886,12 +1869,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           children: [
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
-              onTap: () {
-                final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/terms.html',
-                );
-                launchUrl(url, mode: LaunchMode.externalApplication);
-              },
+              onTap: () => _launchLegalUrl(
+                'https://vowl-official.github.io/vowl-legal/terms.html',
+              ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                 child: Text(
@@ -1916,12 +1896,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
-              onTap: () {
-                final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/privacy.html',
-                );
-                launchUrl(url, mode: LaunchMode.externalApplication);
-              },
+              onTap: () => _launchLegalUrl(
+                'https://vowl-official.github.io/vowl-legal/privacy.html',
+              ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                 child: Text(
@@ -1946,12 +1923,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
-              onTap: () {
-                final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/refund.html',
-                );
-                launchUrl(url, mode: LaunchMode.externalApplication);
-              },
+              onTap: () => _launchLegalUrl(
+                'https://vowl-official.github.io/vowl-legal/refund.html',
+              ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                 child: Text(

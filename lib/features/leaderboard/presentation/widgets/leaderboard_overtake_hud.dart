@@ -104,7 +104,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'LEAGUE LEADER · REIGNING CHAMPION',
+                          'LEAGUE LEADER',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,

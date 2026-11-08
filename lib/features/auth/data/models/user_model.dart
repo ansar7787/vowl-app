@@ -71,6 +71,7 @@ class UserModel extends UserEntity {
     super.vowlOwnedMascots,
     super.claimedStreakMilestones,
     super.claimedLevelMilestones,
+    super.claimedBadgeRewards,
     super.coinHistory,
     super.hasPermanentXPBoost,
     super.kidsOwnedFurniture,
@@ -167,6 +168,7 @@ class UserModel extends UserEntity {
           : UserGameConstants.kDefaultVowlOwnedMascots,
       claimedStreakMilestones: _parseIntList(map['claimedStreakMilestones']),
       claimedLevelMilestones: _parseIntList(map['claimedLevelMilestones']),
+      claimedBadgeRewards: _parseStringList(map['claimedBadgeRewards']),
       coinHistory: _parseDynamicMapList(map['coinHistory']),
       hasPermanentXPBoost: (map['hasPermanentXPBoost'] as bool?) ?? false,
       kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
@@ -269,6 +271,7 @@ class UserModel extends UserEntity {
       vowlOwnedMascots: entity.vowlOwnedMascots,
       claimedStreakMilestones: entity.claimedStreakMilestones,
       claimedLevelMilestones: entity.claimedLevelMilestones,
+      claimedBadgeRewards: entity.claimedBadgeRewards,
       coinHistory: entity.coinHistory,
       hasPermanentXPBoost: entity.hasPermanentXPBoost,
       kidsOwnedFurniture: entity.kidsOwnedFurniture,
@@ -367,6 +370,7 @@ class UserModel extends UserEntity {
       'vowlOwnedMascots': vowlOwnedMascots,
       'claimedStreakMilestones': claimedStreakMilestones,
       'claimedLevelMilestones': claimedLevelMilestones,
+      'claimedBadgeRewards': claimedBadgeRewards,
       'coinHistory': coinHistory,
       'hasPermanentXPBoost': hasPermanentXPBoost,
       'kidsOwnedFurniture': kidsOwnedFurniture,
@@ -435,6 +439,7 @@ class UserModel extends UserEntity {
     Map<String, int>? categoryStats,
     List<int>? claimedLevelMilestones,
     List<int>? claimedStreakMilestones,
+    List<String>? claimedBadgeRewards,
     List<Map<String, dynamic>>? coinHistory,
     int? coins,
     Map<String, List<int>>? completedLevels,
@@ -510,6 +515,8 @@ class UserModel extends UserEntity {
           claimedLevelMilestones ?? this.claimedLevelMilestones,
       claimedStreakMilestones:
           claimedStreakMilestones ?? this.claimedStreakMilestones,
+      claimedBadgeRewards:
+          claimedBadgeRewards ?? this.claimedBadgeRewards,
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,

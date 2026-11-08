@@ -22,6 +22,9 @@ import 'package:vowl/features/profile/presentation/pages/review_mistakes_screen.
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
 import 'package:vowl/features/referral/presentation/pages/referral_hub_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
@@ -55,6 +58,9 @@ class HomeRoutes {
 
   /// Competitive leaderboard route path.
   static const String leaderboardRoute = '/leaderboard';
+
+  /// Ranks tab branch route path in bottom navigation shell.
+  static const String ranksRoute = '/ranks';
 
   /// Curriculum quest library route path.
   static const String libraryRoute = '/library';
@@ -132,16 +138,10 @@ class HomeRoutes {
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: leaderboardRoute,
-              builder: (context, state) {
-                final isGlobal = state.uri.queryParameters['tab'] == 'global' ||
-                    state.extra == LeaderboardTimeframe.allTime;
-                return LeaderboardScreen(
-                  initialTimeframe: isGlobal
-                      ? LeaderboardTimeframe.allTime
-                      : LeaderboardTimeframe.thisWeek,
-                );
-              },
+              path: ranksRoute,
+              builder: (context, state) => const LeaderboardScreen(
+                showBackButton: false,
+              ),
             ),
           ],
         ),
@@ -216,6 +216,23 @@ class HomeRoutes {
       ),
     ),
     GoRoute(
+      path: leaderboardRoute,
+      parentNavigatorKey: AppRouter.rootNavigatorKey,
+      pageBuilder: (context, state) {
+        final isGlobal = state.uri.queryParameters['tab'] == 'global' ||
+            state.extra == LeaderboardTimeframe.allTime;
+        return fadeTransitionPage(
+          child: LeaderboardScreen(
+            initialTimeframe: isGlobal
+                ? LeaderboardTimeframe.allTime
+                : LeaderboardTimeframe.thisWeek,
+            showBackButton: true,
+          ),
+          state: state,
+        );
+      },
+    ),
+    GoRoute(
       path: AppRouter.kidsLeaderboardRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: const LeaderboardScreen(isKids: true),
@@ -224,10 +241,17 @@ class HomeRoutes {
     ),
     GoRoute(
       path: AppRouter.referralRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const ReferralHubScreen(),
-        state: state,
-      ),
+      pageBuilder: (context, state) {
+        final initialTab = (state.extra is int) ? (state.extra as int) : 0;
+        final inviteCode = (state.extra is String) ? (state.extra as String) : null;
+        return fadeTransitionPage(
+          child: ReferralHubScreen(
+            initialInviteCode: inviteCode,
+            initialTab: initialTab,
+          ),
+          state: state,
+        );
+      },
     ),
     GoRoute(
       path: AppRouter.arenaRoute,
@@ -235,6 +259,13 @@ class HomeRoutes {
       pageBuilder: (context, state) {
         final session = state.extra as ArenaDuelSession?;
         if (session == null) {
+          final authUser = context.read<AuthBloc>().state.user;
+          if (authUser != null) {
+            return fadeTransitionPage(
+              child: ArenaMatchmakingScreen(user: authUser),
+              state: state,
+            );
+          }
           return fadeTransitionPage(
             child: const LeaderboardScreen(),
             state: state,

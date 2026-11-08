@@ -140,4 +140,14 @@ abstract class GamificationRepository {
     required int milestone,
     required int reward,
   });
+
+  /// Atomically claims the XP and coin bounty for an unlocked [badgeId].
+  ///
+  /// - Verifies [badgeId] exists in the user's `badges` list.
+  /// - Verifies [badgeId] is not already claimed in `claimedBadgeRewards`.
+  /// - Atomically deposits [TrophyMetadata.coinReward] into [coins] and logs an
+  ///   audit entry to [coinHistory] with `coin_history.trophy_reward`.
+  /// - Atomically deposits [TrophyMetadata.xpReward] into [totalExp] and [dailyXpHistory].
+  /// - Appends [badgeId] to `claimedBadgeRewards`.
+  Future<Either<Failure, void>> claimBadgeReward(String badgeId);
 }

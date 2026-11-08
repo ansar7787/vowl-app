@@ -3,19 +3,17 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/widgets/vowl_buddy_badge.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Lifecycle of the daily hoot content.
 enum _HootStatus { loading, ready, fallback }
@@ -376,18 +374,13 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Container(
-                            width: 24.r,
-                            height: 24.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.06)
-                                  : const Color(0xFFF1F5F9),
-                            ),
-                            child: Center(
-                              child: _SafeMascot(size: 18.r),
-                            ),
+                          VowlBuddyBadge(
+                            size: 24.r,
+                            mascotSize: 18.r,
+                            onTap: () {
+                              di.sl<HapticService>().selection();
+                              context.push(AppRouter.vowlMascotRoute);
+                            },
                           ),
                           SizedBox(width: 7.w),
                           Flexible(
@@ -485,35 +478,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
   }
 }
 
-/// Fallback-safe mascot widget that checks for [AuthBloc] presence before attempting
-/// to build [VowlMascot], avoiding missing provider assertions in isolated contexts.
-class _SafeMascot extends StatelessWidget {
-  final double size;
-
-  const _SafeMascot({required this.size});
-
-  @override
-  Widget build(BuildContext context) {
-    try {
-      final hasAuthBloc =
-          context.findAncestorWidgetOfExactType<BlocProvider<AuthBloc>>() !=
-          null;
-      if (hasAuthBloc) {
-        return VowlMascot(
-          size: size,
-          useFloatingAnimation: false,
-          state: VowlMascotState.happy,
-        );
-      }
-    } catch (_) {}
-
-    return Icon(
-      Icons.auto_awesome_rounded,
-      size: size * 0.75,
-      color: AppColors.indigo500,
-    );
-  }
-}
 
 class _ShimmerBlock extends StatefulWidget {
   final double width;

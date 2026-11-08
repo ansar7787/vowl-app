@@ -236,7 +236,7 @@ class VowlMascot extends StatelessWidget {
           bot = Stack(alignment: Alignment.center, children: [aura, bot]);
         }
 
-        // ── Accessory overlay ─────────────────────────────────────────────
+        // ── Accessory overlay with slot-aware physical anchoring ──────────
         final effectiveAccessory =
             accessoryId ??
             (isKidsMode ? userData.kidsAccessory : userData.vowlAccessory);
@@ -244,28 +244,110 @@ class VowlMascot extends StatelessWidget {
         if (effectiveAccessory != null &&
             accessoryMap.containsKey(effectiveAccessory)) {
           final emoji = accessoryMap[effectiveAccessory]!;
+          final slot = isKidsMode
+              ? AccessorySlot.charm
+              : VowlAssets.getAccessorySlot(effectiveAccessory);
+
+          late final Widget overlayChild;
+          Widget? backgroundChild;
+
+          switch (slot) {
+            case AccessorySlot.head:
+              overlayChild = Positioned(
+                top: -botSize * 0.16,
+                child: Text(
+                  emoji,
+                  style: TextStyle(
+                    fontSize: botSize * 0.42,
+                    height: 1.0,
+                  ),
+                ),
+              );
+              break;
+
+            case AccessorySlot.neck:
+              overlayChild = Positioned(
+                bottom: -botSize * 0.08,
+                child: Text(
+                  emoji,
+                  style: TextStyle(
+                    fontSize: botSize * 0.38,
+                    height: 1.0,
+                  ),
+                ),
+              );
+              break;
+
+            case AccessorySlot.aura:
+              final auraColor = VowlAssets.getItemColor(effectiveAccessory);
+              final auraGlow = Container(
+                width: botSize * 1.18,
+                height: botSize * 1.18,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      auraColor.withValues(alpha: 0.3),
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+              );
+              backgroundChild = reduceMotion
+                  ? auraGlow
+                  : auraGlow
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.12, 1.12),
+                        duration: 2500.ms,
+                        curve: Curves.easeInOut,
+                      );
+              overlayChild = Positioned(
+                top: -botSize * 0.08,
+                right: -botSize * 0.04,
+                child: Text(
+                  emoji,
+                  style: TextStyle(
+                    fontSize: botSize * 0.3,
+                    height: 1.0,
+                  ),
+                ),
+              );
+              break;
+
+            case AccessorySlot.charm:
+              overlayChild = Positioned(
+                bottom: botSize * 0.02,
+                right: -botSize * 0.04,
+                child: Text(
+                  emoji,
+                  style: TextStyle(
+                    fontSize: botSize * 0.34,
+                    height: 1.0,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black.withValues(alpha: 0.25),
+                        blurRadius: 4,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+              break;
+          }
+
           bot = Stack(
             alignment: Alignment.center,
-            // FIX (VISUAL CORRECTNESS): Stack's default clipBehavior is
-            // Clip.hardEdge, which clips any Positioned child that extends
-            // outside the Stack's own bounds. The crown badge below is
-            // deliberately positioned above the Stack (top: -botSize*0.1,
-            // i.e. y < 0) to hover above the avatar - with the default
-            // clip, that portion would be cut off. Clip.none lets it
-            // render fully, with no effect on any other child here (none
-            // of the others extend past the Stack's bounds).
             clipBehavior: Clip.none,
             children: [
+              ?backgroundChild,
               bot,
-              Positioned(
-                top: botSize * 0.1,
-                right: botSize * 0.1,
-                child: Text(emoji, style: TextStyle(fontSize: botSize * 0.35)),
-              ),
+              overlayChild,
               if (level >= 100)
                 Positioned(
-                  top: -botSize * 0.1,
-                  child: Text('👑', style: TextStyle(fontSize: botSize * 0.3)),
+                  top: slot == AccessorySlot.head ? -botSize * 0.26 : -botSize * 0.1,
+                  child: Text('👑', style: TextStyle(fontSize: botSize * 0.28)),
                 ),
             ],
           );

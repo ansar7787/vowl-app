@@ -39,6 +39,16 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final sheetBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
     final localeService = di.sl<LocaleService>();
     final currentCode = localeService.currentLocale.languageCode;
 
@@ -62,8 +72,12 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
+            color: sheetBg,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border.all(
+              color: borderColor,
+              width: 1.0,
+            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
@@ -328,6 +342,14 @@ class _LanguageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final rowBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
       child: Semantics(
@@ -347,17 +369,17 @@ class _LanguageTile extends StatelessWidget {
                     ? AppColors.indigo500.withValues(
                         alpha: isDark ? 0.15 : 0.08,
                       )
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : AppColors.slate100),
+                    : (isMidnight
+                        ? const Color(0xFF0F1523)
+                        : (isDark
+                            ? const Color(0xFF161F33)
+                            : AppColors.slate50)),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isActive
-                      ? AppColors.indigo500.withValues(alpha: 0.4)
-                      : (isDark
-                            ? Colors.white.withValues(alpha: 0.06)
-                            : AppColors.slate200.withValues(alpha: 0.6)),
-                  width: isActive ? 1.5 : 1.0,
+                      ? AppColors.indigo500
+                      : rowBorder,
+                  width: 1.0,
                 ),
               ),
               child: Row(

@@ -378,7 +378,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.heavy()).called(1);
+      verify(() => mockHapticService.success()).called(1);
       verify(() => mockSoundService.playCorrect()).called(1);
 
       expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
@@ -538,7 +538,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.heavy()).called(1);
+      verify(() => mockHapticService.success()).called(1);
       verify(() => mockSoundService.playCorrect()).called(1);
 
       expect(find.byType(TypeToConfirmOverlay), findsOneWidget);

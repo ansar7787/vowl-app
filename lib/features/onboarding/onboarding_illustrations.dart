@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-/// Buddy head, used ONLY as the profile avatar on slide 4.
+/// Buddy head, used as the profile avatar on slide 4 and player avatar on slide 5.
 const String kVowlyHead = 'assets/images/vowly_head.webp';
 
 /// Every illustration is authored on a 360×320 stage. Each slide is a stack of
@@ -35,7 +35,9 @@ class _Layer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SvgPicture.asset(
-    '$_dir${scene}_$name.svg',
+    scene == 'duel'
+        ? 'assets/illustrations/duel_$name.svg'
+        : '$_dir${scene}_$name.svg',
     width: kStageW,
     height: kStageH,
     fit: BoxFit.contain,
@@ -99,6 +101,7 @@ class OnboardingIllustration extends StatelessWidget {
     'Illustration: a phone camera scanning a plant, next to an open book and a vocabulary card',
     'Illustration: an open sticker album with a medal, gift, hat and sunglasses rewards',
     'Illustration: a progress dashboard with a bar chart, progress ring and a globe',
+    'Illustration: two players facing off in a 1 vs 1 real-time word duel with cards, stopwatch and trophy',
   ];
 
   @override
@@ -107,11 +110,12 @@ class OnboardingIllustration extends StatelessWidget {
       0 => _SpeechScene(entrance: entrance, ambient: ambient),
       1 => _ScanScene(entrance: entrance, ambient: ambient),
       2 => _RewardsScene(entrance: entrance, ambient: ambient),
-      _ => _ProgressScene(entrance: entrance, ambient: ambient),
+      3 => _ProgressScene(entrance: entrance, ambient: ambient),
+      _ => _DuelScene(entrance: entrance, ambient: ambient),
     };
     return Semantics(
       image: true,
-      label: labels[index],
+      label: labels[index.clamp(0, labels.length - 1)],
       excludeSemantics: true,
       child: FittedBox(
         child: SizedBox(
@@ -558,4 +562,184 @@ class _ChartPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_ChartPainter o) => o.entrance != entrance;
+}
+
+// ── Slide 5 · 1 vs 1 duel ──────────────────────────────────────────────────
+
+class _DuelScene extends StatelessWidget {
+  const _DuelScene({required this.entrance, required this.ambient});
+  final Animation<double> entrance, ambient;
+
+  static const double _meLeft = 53;
+  static const double _meTop = 121;
+  static const double _oppLeft = 253;
+  static const double _oppTop = 121;
+
+  @override
+  Widget build(BuildContext context) {
+    final both = Listenable.merge([entrance, ambient]);
+
+    const person = ColoredBox(
+      color: Color(0xFFEEF2FF),
+      child: Icon(Icons.person_rounded, size: 36, color: Color(0xFFA78BFA)),
+    );
+
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        _still('duel', 'base'),
+        // Card A (Me): slides from left (-60dx), eases out back
+        Positioned.fill(
+          child: AnimatedBuilder(
+            animation: both,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                const Positioned.fill(child: _Layer('duel', 'cardA')),
+                Positioned(
+                  left: _meLeft,
+                  top: _meTop,
+                  width: 54,
+                  height: 54,
+                  child: ClipOval(
+                    child: Image.asset(
+                      kVowlyHead,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            builder: (context, child) {
+              final e = _seg(entrance, 0, .5, Curves.easeOutBack);
+              return _fade(e, _shift(-60 * (1 - e), 0, child!));
+            },
+          ),
+        ),
+        // Card B (Opponent): slides from right (+60dx), eases out back
+        Positioned.fill(
+          child: AnimatedBuilder(
+            animation: both,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                const Positioned.fill(child: _Layer('duel', 'cardB')),
+                Positioned(
+                  left: _oppLeft,
+                  top: _oppTop,
+                  width: 54,
+                  height: 54,
+                  child: const ClipOval(child: person),
+                ),
+              ],
+            ),
+            builder: (context, child) {
+              final e = _seg(entrance, .1, .6, Curves.easeOutBack);
+              return _fade(e, _shift(60 * (1 - e), 0, child!));
+            },
+          ),
+        ),
+        // Trophy: drops in and floats gently
+        _fx(both, 'duel', 'trophy', (c) {
+          final e = _seg(entrance, .55, .9);
+          return _fade(e, _shift(0, (1 - e) * 16 + _wave(ambient) * 2, c));
+        }),
+        // VS badge: pops with bounce and micro-tilt
+        _fx(both, 'duel', 'vs', (c) {
+          final e = _seg(entrance, .4, .75, Curves.easeOutBack);
+          return _fade(
+            e,
+            Transform.scale(
+              scale: (.3 + .7 * e) * (1 + .04 * _wave(ambient)),
+              alignment: Alignment(180 / (kStageW / 2) - 1, 144 / (kStageH / 2) - 1),
+              child: Transform.rotate(
+                angle: _wave(ambient) * .03,
+                alignment: Alignment(180 / (kStageW / 2) - 1, 144 / (kStageH / 2) - 1),
+                child: c,
+              ),
+            ),
+          );
+        }),
+        // Speech Bubble A: pops at (104, 106)
+        _fx(both, 'duel', 'bubbleA', (c) {
+          final e = _seg(entrance, .7, 1, Curves.easeOutBack);
+          return _fade(
+            e,
+            Transform.scale(
+              scale: .6 + .4 * e,
+              alignment: Alignment(104 / (kStageW / 2) - 1, 106 / (kStageH / 2) - 1),
+              child: c,
+            ),
+          );
+        }),
+        // Speech Bubble B: pops at (256, 106)
+        _fx(both, 'duel', 'bubbleB', (c) {
+          final e = _seg(entrance, .8, 1, Curves.easeOutBack);
+          return _fade(
+            e,
+            Transform.scale(
+              scale: .6 + .4 * e,
+              alignment: Alignment(256 / (kStageW / 2) - 1, 106 / (kStageH / 2) - 1),
+              child: c,
+            ),
+          );
+        }),
+        // Timer + Animated Countdown Arc
+        Positioned.fill(
+          child: AnimatedBuilder(
+            animation: both,
+            child: const _Layer('duel', 'timer'),
+            builder: (context, child) {
+              final e = _seg(entrance, .6, .9);
+              return _fade(
+                e,
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    child!,
+                    CustomPaint(
+                      size: const Size(kStageW, kStageH),
+                      painter: _DuelCountdownPainter(
+                        center: const Offset(156, 56),
+                        t: ambient.value,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Amber countdown arc around the stopwatch icon (2 cycles per 6 s loop).
+class _DuelCountdownPainter extends CustomPainter {
+  const _DuelCountdownPainter({required this.center, required this.t});
+  final Offset center;
+  final double t;
+
+  static final Paint _paint = Paint()
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 3
+    ..strokeCap = StrokeCap.round
+    ..color = const Color(0xFFF59E0B);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final sweep = 2 * math.pi * (1 - (t * 2) % 1.0);
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: 15.5),
+      -math.pi / 2,
+      sweep,
+      false,
+      _paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_DuelCountdownPainter oldDelegate) => oldDelegate.t != t;
 }

@@ -256,22 +256,32 @@
     "perfect": "完美"
   },
   "category_map": {
-    "cheer_boom": "等级 {}！砰！完美的进展！",
-    "cheer_breathtaking": "等级 {}！哇！简直令人屏息！",
-    "cheer_genius": "等级 {}！绝对的天才能量！",
-    "cheer_impressed": "等级 {}！{} 印象深刻！",
-    "cheer_magic": "等级 {}！纯粹的语言魔法！",
-    "cheer_momentum": "等级 {}！保持这种势头！",
-    "cheer_rock": "等级 {}！你在这个舞台上太棒了！",
-    "cheer_smart": "等级 {}！{} 说：你真聪明！",
-    "cheer_unstoppable": "等级 {}！你势不可挡，超级明星！",
-    "cheer_winning": "等级 {}！我们赢大了！",
+    "cheer_boom": "准备好第 {} 关了吗？出发！",
+    "cheer_breathtaking": "第 {} 关时间到！",
+    "cheer_genius": "第 {} 关，我们来啦！",
+    "cheer_impressed": "{} 已经准备好啦！",
+    "cheer_magic": "状态很好！来玩吧！",
+    "cheer_momentum": "势头不错！继续加油！",
+    "cheer_rock": "干得好！下一关在等你！",
+    "cheer_smart": "太棒了！接下来是第 {} 关！",
+    "cheer_unstoppable": "你一定可以的！",
+    "cheer_winning": "我们开始吧！",
     "default_companion_name": "伴侣",
-    "first_level_greeting": "嘿！{} 在这里。让我们开始关卡吧！",
+    "first_level_greeting": "嗨！我是 {}。我们开始第 1 关吧！",
     "golden_keys_label": "金钥匙，{0} 键",
     "mascot_marker_action": "从你的吉祥物那里获得欢呼",
     "master_previous_levels": "掌握前一关卡以解锁",
-    "star_vault_label": "星之金库，{0} 颗星"
+    "star_vault_label": "星之金库，{0} 颗星",
+    "cheer_do_this": "我们开始吧！",
+    "cheer_got_this": "你一定可以的！",
+    "cheer_here_we_go": "第 {} 关，我们来啦！",
+    "cheer_looking_good": "状态很好！来玩吧！",
+    "cheer_next_up": "太棒了！接下来是第 {} 关！",
+    "cheer_on_a_roll": "势头不错！继续加油！",
+    "cheer_ready": "准备好第 {} 关了吗？出发！",
+    "cheer_time_for": "第 {} 关时间到！",
+    "cheer_waiting": "干得好！下一关在等你！",
+    "cheer_with_you": "{} 已经准备好啦！"
   },
   "coin_history": {
     "ad_reward": "广告奖励",
@@ -2515,18 +2525,18 @@
     }
   },
   "kids_zone": {
-    "buddy_message_amazing": "等级 {}! 太棒了!",
-    "buddy_message_boom": "等级 {}! 轰!",
-    "buddy_message_genius": "等级 {}! 天才!",
-    "buddy_message_go": "等级 {}！加油加油加油！",
-    "buddy_message_hifive": "等级 {}！击掌！",
-    "buddy_message_magic": "等级 {}！神奇的触碰！",
-    "buddy_message_moon": "等级 {}！冲向月球！",
-    "buddy_message_rock": "等级 {}！你太棒了！",
-    "buddy_message_smart": "等级 {}！太聪明了！",
-    "buddy_message_superstar": "等级 {}! 超级明星!",
-    "buddy_message_winner": "关卡 {}！胜利者！",
-    "buddy_message_wow": "等级 {}! 哇!",
+    "buddy_message_amazing": "太棒啦，第 {} 关！",
+    "buddy_message_boom": "各就各位，预备，跑！",
+    "buddy_message_genius": "你真棒，加油！",
+    "buddy_message_go": "我们来玩吧！",
+    "buddy_message_hifive": "击掌！",
+    "buddy_message_magic": "哇！开心玩耍吧！",
+    "buddy_message_moon": "我们来玩吧！",
+    "buddy_message_rock": "真棒！一起冲！",
+    "buddy_message_smart": "你表现太棒啦！",
+    "buddy_message_superstar": "太棒啦，第 {} 关！",
+    "buddy_message_winner": "真棒！一起冲！",
+    "buddy_message_wow": "我们来玩吧！",
     "buddy_selected": "{0} 现在是你的伙伴了！",
     "buy_for_coins": "花费 {0} 个金币购买吗？",
     "buy_now": "立即购买！",
@@ -2583,7 +2593,19 @@
     "title": "儿童区",
     "watch_ad_3x": "观看广告以获得三倍奖励",
     "welcome_back": "欢迎回来！",
-    "which_friend": "哪个朋友会加入你的冒险？"
+    "which_friend": "哪个朋友会加入你的冒险？",
+    "cheer_awesome": "你表现太棒啦！",
+    "cheer_can_do": "你真棒，加油！",
+    "cheer_fun": "哇！开心玩耍吧！",
+    "cheer_great": "你真棒，加油！",
+    "cheer_great_job": "真棒！一起冲！",
+    "cheer_hifive": "击掌！",
+    "cheer_play": "我们来玩吧！",
+    "cheer_ready_go": "各就各位，预备，跑！",
+    "cheer_smart": "击掌！",
+    "cheer_star": "你表现太棒啦！",
+    "cheer_wow": "各就各位，预备，跑！",
+    "cheer_yay": "太棒啦，第 {} 关！"
   },
   "language_picker": {
     "no_results": "未找到结果",
@@ -2621,7 +2643,14 @@
     "updates_info": "排行榜每4小时自动刷新。完成任务以提升你的排名！",
     "xp": "XP",
     "you": "你",
-    "your_standing": "你的地位"
+    "your_standing": "你的地位",
+    "live_sync": "实时同步",
+    "syncing": "正在同步...",
+    "sync_success": "排行榜已更新最新积分！",
+    "sync_error": "无法刷新排行榜。请再试一次。",
+    "live_sync_tooltip": "同步排行榜",
+    "league_leader": "联赛领跑者",
+    "defending": "卫冕"
   },
   "listening": {
     "games": {
@@ -2825,7 +2854,8 @@
     "payment_cancelled": "付款已取消。",
     "payment_verifying_notice": "已收到付款（参考编号：{0}）。您的交易已被银行确认，但服务器同步延迟。您的Pro权限将很快激活。请不要重复付款。",
     "start_questing": "继续学习",
-    "continue_learning": "继续学习"
+    "continue_learning": "继续学习",
+    "feature_arena_refuel": "即时1v1对战竞技场补给（无广告）"
   },
   "profile": {
     "picture_updated": "头像已成功更新！",
@@ -2917,7 +2947,11 @@
     "view_all": "查看全部",
     "view_all_stickers": "查看所有贴纸",
     "vowl_treasury": "元音国库",
-    "you_answered": "你回答了："
+    "you_answered": "你回答了：",
+    "store": "商店",
+    "premium_store": "高级商店",
+    "arena_pvp_title": "1对1单词竞技场",
+    "arena_pvp_subtitle": "实时词汇对决"
   },
   "quest_archive": {
     "completed": "已完成：{}%",
@@ -2964,7 +2998,8 @@
     "step_completed": "已完成",
     "step_indicator": "步骤 {} 的 {}",
     "step_locked": "接下来",
-    "track_briefing": "跟踪路线图"
+    "track_briefing": "跟踪路线图",
+    "practice_again": "再次练习"
   },
   "quest_sequences": {
     "category_skill_enhance": "类别技能增强",

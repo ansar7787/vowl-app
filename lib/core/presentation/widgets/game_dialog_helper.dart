@@ -118,7 +118,7 @@ class GameDialogHelper {
 
     final resolvedTitle =
         title ??
-        context.tr('games.level_complete', fallback: 'Level Complete!');
+        context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
     final resolvedButtonText =
         buttonText ?? context.tr('common.ok', fallback: 'OK').toUpperCase();
 

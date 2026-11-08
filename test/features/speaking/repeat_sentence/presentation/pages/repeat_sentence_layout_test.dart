@@ -411,14 +411,14 @@ void main() {
         expect(screen.gameType, GameSubtype.repeatSentence);
       });
 
-      testWidgets('1.8 getCompletionTitle returns REPEAT SENTENCE COMPLETED!', (
+      testWidgets('1.8 getCompletionTitle returns LEVEL COMPLETE!', (
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
         final state = tester.state(find.byType(RepeatSentenceScreen))
             as dynamic;
         final title = state.getCompletionTitle(tester.element(find.byType(RepeatSentenceScreen)));
-        expect(title, 'REPEAT SENTENCE COMPLETED!');
+        expect(title, 'LEVEL COMPLETE!');
       });
     });
 

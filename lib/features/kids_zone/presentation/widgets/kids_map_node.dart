@@ -20,6 +20,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/tts_text_cleaner.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
@@ -141,24 +142,37 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     _buddyState.value = VowlMascotState.happy;
 
     final messages = [
-      'kids_zone.cheer_great',
-      'kids_zone.cheer_star',
-      'kids_zone.cheer_smart',
-      'kids_zone.cheer_wow',
+      'kids_zone.cheer_play',
+      'kids_zone.cheer_can_do',
+      'kids_zone.cheer_yay',
+      'kids_zone.cheer_hifive',
+      'kids_zone.cheer_ready_go',
+      'kids_zone.cheer_great_job',
+      'kids_zone.cheer_fun',
+      'kids_zone.cheer_awesome',
     ];
     final fallbacks = [
-      "You're doing great! 🌟",
-      "You're a super star! ⭐",
-      "So smart! 🧠",
-      "Wow! Keep going! 🚀",
+      "Let's play! 🎈",
+      "You can do it! ⭐",
+      "Yay, Level {0}! 🌟",
+      "High five! ✋",
+      "Ready, set, go! 🚀",
+      "Great job! Let's go! 🎉",
+      "Woohoo! Let's have fun! 🎈",
+      "You're doing awesome! 🌟",
     ];
 
     final index = math.Random().nextInt(messages.length);
-    final msg = context.tr(messages[index], fallback: fallbacks[index]);
+    final msg = context.tr(
+      messages[index],
+      args: [widget.level.toString()],
+      fallback: fallbacks[index].replaceAll('{0}', widget.level.toString()),
+    );
 
     _buddyMessage.value = msg;
 
-    di.sl<TtsService>().speak(msg.replaceAll(RegExp(r'[^\w\s\!]'), ''));
+    final cleanMsg = TtsTextCleaner.clean(msg);
+    di.sl<TtsService>().speak(cleanMsg);
 
     _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
       if (mounted) {

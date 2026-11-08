@@ -531,7 +531,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('Listen & Choose'), findsOneWidget);
+      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

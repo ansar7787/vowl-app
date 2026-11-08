@@ -54,9 +54,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-    'listening.games.sound_image_match_title',
-    fallback: 'Sound Image Match',
-  );
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   @override
   void initState() {

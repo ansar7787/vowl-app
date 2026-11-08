@@ -360,11 +360,17 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 isAnswered: hudState.isAnswered,
                                 isDark: isDark,
                                 isAiRival: hudState.session?.isGhostRival ?? false,
-                                aiTierLabel: hudState.session?.ghostAccuracy != null
-                                    ? (hudState.session!.ghostAccuracy >= 0.86
-                                        ? 'HARD'
-                                        : (hudState.session!.ghostAccuracy >= 0.74 ? 'MED' : 'EASY'))
-                                    : null,
+                                aiTierLabel: () {
+                                  final session = hudState.session;
+                                  if (session == null || !session.isGhostRival) return null;
+                                  final gid = session.guestId?.toLowerCase() ?? '';
+                                  if (gid.contains('hard')) return 'HARD';
+                                  if (gid.contains('medium') || gid.contains('med')) return 'MED';
+                                  if (gid.contains('easy')) return 'EASY';
+                                  if (session.ghostAccuracy >= 0.86) return 'HARD';
+                                  if (session.ghostAccuracy >= 0.74) return 'MED';
+                                  return 'EASY';
+                                }(),
                               );
                             },
                           ),

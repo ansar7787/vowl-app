@@ -127,9 +127,9 @@ class LeaderboardRankTile extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  if (!isKids && isWeekly && user.previousRank != null) ...[
+                  if (!isKids && isWeekly) ...[
                     SizedBox(height: 2.h),
-                    _buildRankChangeIndicator(user.previousRank!, rank),
+                    _buildRankChangeIndicator(user.previousRank ?? rank, rank),
                   ],
                 ],
               ),
@@ -278,52 +278,60 @@ class LeaderboardRankTile extends StatelessWidget {
     final diff = previousRank - currentRank;
     if (diff > 0) {
       // Improved rank (e.g. from 10 to 5)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_upward_rounded,
-            color: AppColors.emerald500,
-            size: 10.r,
-          ),
-          Text(
-            '$diff',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.sp,
-              fontWeight: FontWeight.w800,
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_upward_rounded,
               color: AppColors.emerald500,
+              size: 10.r,
             ),
-          ),
-        ],
+            Text(
+              '$diff',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.emerald500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
       );
     } else if (diff < 0) {
       // Dropped rank (e.g. from 5 to 10)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_downward_rounded,
-            color: AppColors.red500,
-            size: 10.r,
-          ),
-          Text(
-            '${diff.abs()}',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.sp,
-              fontWeight: FontWeight.w800,
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_downward_rounded,
               color: AppColors.red500,
+              size: 10.r,
             ),
-          ),
-        ],
+            Text(
+              '${diff.abs()}',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.red500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
       );
     } else {
       // No change
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
+      return SizedBox(
+        height: 12.h,
+        child: Center(
+          child: Container(
             width: 6.w,
             height: 2.h,
             decoration: BoxDecoration(
@@ -331,7 +339,7 @@ class LeaderboardRankTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(2.r),
             ),
           ),
-        ],
+        ),
       );
     }
   }

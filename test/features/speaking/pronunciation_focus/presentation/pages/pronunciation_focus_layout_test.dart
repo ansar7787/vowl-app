@@ -412,7 +412,7 @@ void main() {
         expect(find.byType(PronunciationFocusScreen), findsOneWidget);
       });
 
-      testWidgets('1.8 getCompletionTitle returns PHONETIC MASTER!', (
+      testWidgets('1.8 getCompletionTitle returns LEVEL COMPLETE!', (
         tester,
       ) async {
         await pumpPronunciationFocusScreen(tester);
@@ -423,7 +423,7 @@ void main() {
           (state as dynamic).getCompletionTitle(
             tester.element(find.byType(PronunciationFocusScreen)),
           ),
-          equals('PHONETIC MASTER!'),
+          equals('LEVEL COMPLETE!'),
         );
       });
     });

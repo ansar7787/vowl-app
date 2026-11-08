@@ -116,13 +116,13 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     _bloomProgress.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       hapticService.error();
       soundService.playWrong();
 

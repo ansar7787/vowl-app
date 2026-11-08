@@ -256,22 +256,32 @@
     "perfect": "संपूर्ण"
   },
   "category_map": {
-    "cheer_boom": "लेवल {}! बूम! परफेक्ट प्रगति!",
-    "cheer_breathtaking": "लेवल {}! वाह! बस मंत्रमुग्ध कर देने वाला!",
-    "cheer_genius": "लेवल {}! बिल्कुल अद्भुत प्रतिभा की ऊर्जा!",
-    "cheer_impressed": "स्तर {}! {} प्रभावित है!",
-    "cheer_magic": "लेवल {}! शुद्ध भाषाई जादू!",
-    "cheer_momentum": "स्तर {}! उस गति को बनाए रखें!",
-    "cheer_rock": "लेवल {}! तुम इस स्टेज को धड़ल्ले से झटका रहे हो!",
-    "cheer_smart": "स्तर {}! {} कहते हैं: आप बहुत होशियार हैं!",
-    "cheer_unstoppable": "लेवल {}! आप अजेय हैं, सुपरस्टार!",
-    "cheer_winning": "लेवल {}! हम बड़ी जीत दर्ज कर रहे हैं!",
+    "cheer_boom": "लेवल {} के लिए तैयार? चलो शुरू करें!",
+    "cheer_breathtaking": "लेवल {} का समय आ गया!",
+    "cheer_genius": "लेवल {}, ये हुई ना बात!",
+    "cheer_impressed": "{} तुम्हारे साथ तैयार है!",
+    "cheer_magic": "बहुत बढ़िया! चलो खेलें!",
+    "cheer_momentum": "शानदार रफ़्तार! लगे रहो!",
+    "cheer_rock": "शाबाश! अगला लेवल इंतज़ार कर रहा है!",
+    "cheer_smart": "शानदार काम! अगला लेवल {} है!",
+    "cheer_unstoppable": "तुम यह कर सकते हो!",
+    "cheer_winning": "चलो इसे करते हैं!",
     "default_companion_name": "साथी",
-    "first_level_greeting": "अरे! {} यहाँ है। चलो स्तर शुरू करें!",
+    "first_level_greeting": "नमस्ते! मैं {} हूँ। चलो लेवल 1 शुरू करें!",
     "golden_keys_label": "सुनहरे चाबियाँ, {0} चाबियाँ",
     "mascot_marker_action": "अपने मैस्कॉट से तालियां पाओ",
     "master_previous_levels": "अनलॉक करने के लिए पिछले स्तरों में महारत हासिल करें",
-    "star_vault_label": "स्टार वॉल्ट, {0} सितारे"
+    "star_vault_label": "स्टार वॉल्ट, {0} सितारे",
+    "cheer_do_this": "चलो इसे करते हैं!",
+    "cheer_got_this": "तुम यह कर सकते हो!",
+    "cheer_here_we_go": "लेवल {}, ये हुई ना बात!",
+    "cheer_looking_good": "बहुत बढ़िया! चलो खेलें!",
+    "cheer_next_up": "शानदार काम! अगला लेवल {} है!",
+    "cheer_on_a_roll": "शानदार रफ़्तार! लगे रहो!",
+    "cheer_ready": "लेवल {} के लिए तैयार? चलो शुरू करें!",
+    "cheer_time_for": "लेवल {} का समय आ गया!",
+    "cheer_waiting": "शाबाश! अगला लेवल इंतज़ार कर रहा है!",
+    "cheer_with_you": "{} तुम्हारे साथ तैयार है!"
   },
   "coin_history": {
     "ad_reward": "विज्ञापन इनाम",
@@ -2515,18 +2525,18 @@
     }
   },
   "kids_zone": {
-    "buddy_message_amazing": "स्तर {}! अद्भुत!",
-    "buddy_message_boom": "स्तर {}! धाकड़!",
-    "buddy_message_genius": "स्तर {}! प्रतिभाशाली!",
-    "buddy_message_go": "लेवल {}! चलो चलो चलो!",
-    "buddy_message_hifive": "सतर {}! हाई फाइव!",
-    "buddy_message_magic": "सतर {}! जादुई स्पर्श!",
-    "buddy_message_moon": "स्तर {}! चाँद तक!",
-    "buddy_message_rock": "सतर {}! आप कमाल हैं!",
-    "buddy_message_smart": "सतर {}! कितने होशियार!",
-    "buddy_message_superstar": "स्तर {}! सुपरस्टार!",
-    "buddy_message_winner": "स्तर {}! विजेता!",
-    "buddy_message_wow": "स्तर {}! वाह!",
+    "buddy_message_amazing": "अरे वाह, लेवल {}!",
+    "buddy_message_boom": "रेडी, स्टेडी, गो!",
+    "buddy_message_genius": "तुम कर सकते हो!",
+    "buddy_message_go": "चलो खेलें!",
+    "buddy_message_hifive": "हाई फाइव!",
+    "buddy_message_magic": "मज़ेदार खेल शुरू करें!",
+    "buddy_message_moon": "चलो खेलें!",
+    "buddy_message_rock": "बहुत बढ़िया! चलो आगे बढ़ें!",
+    "buddy_message_smart": "तुम बहुत कमाल हो!",
+    "buddy_message_superstar": "अरे वाह, लेवल {}!",
+    "buddy_message_winner": "बहुत बढ़िया! चलो आगे बढ़ें!",
+    "buddy_message_wow": "चलो खेलें!",
     "buddy_selected": "{0} अब आपका दोस्त है!",
     "buy_for_coins": "{0} सिक्कों के लिए खरीदें?",
     "buy_now": "अब खरीदें!",
@@ -2583,7 +2593,19 @@
     "title": "बच्चों का क्षेत्र",
     "watch_ad_3x": "3X इनाम के लिए विज्ञापन देखें",
     "welcome_back": "वापस स्वागत है!",
-    "which_friend": "कौन सा दोस्त आपके अभियान में शामिल होगा?"
+    "which_friend": "कौन सा दोस्त आपके अभियान में शामिल होगा?",
+    "cheer_awesome": "तुम बहुत कमाल हो!",
+    "cheer_can_do": "तुम कर सकते हो!",
+    "cheer_fun": "मज़ेदार खेल शुरू करें!",
+    "cheer_great": "तुम कर सकते हो!",
+    "cheer_great_job": "बहुत बढ़िया! चलो आगे बढ़ें!",
+    "cheer_hifive": "हाई फाइव!",
+    "cheer_play": "चलो खेलें!",
+    "cheer_ready_go": "रेडी, स्टेडी, गो!",
+    "cheer_smart": "हाई फाइव!",
+    "cheer_star": "तुम बहुत कमाल हो!",
+    "cheer_wow": "रेडी, स्टेडी, गो!",
+    "cheer_yay": "अरे वाह, लेवल {}!"
   },
   "language_picker": {
     "no_results": "कोई परिणाम नहीं मिला",
@@ -2621,7 +2643,14 @@
     "updates_info": "रैंकिंग हर 4 घंटे में अपने आप ताज़ा हो जाती है। अपनी प्रतिष्ठा बढ़ाने के लिए क्वेस्ट खेलें!",
     "xp": "एक्सपी",
     "you": "तुम",
-    "your_standing": "आपकी स्थिति"
+    "your_standing": "आपकी स्थिति",
+    "live_sync": "लाइव सिंक",
+    "syncing": "सिंक हो रहा है...",
+    "sync_success": "नवीनतम स्कोर के साथ लीडरबोर्ड अपडेट किया गया!",
+    "sync_error": "लीडरबोर्ड रीफ्रेश करने में असमर्थ। कृपया पुनः प्रयास करें।",
+    "live_sync_tooltip": "लीडरबोर्ड सिंक करें",
+    "league_leader": "लीग लीडर",
+    "defending": "डिफेंडिंग"
   },
   "listening": {
     "games": {
@@ -2825,7 +2854,8 @@
     "payment_cancelled": "भुगतान रद्द कर दिया गया।",
     "payment_verifying_notice": "भुगतान प्राप्त हुआ (संदर्भ: {0})। आपका लेनदेन आपके बैंक द्वारा पुष्टि किया गया है, लेकिन सर्वर समन्वय में देरी है। आपका प्रो एक्सेस शीघ्र सक्रिय हो जाएगा। कृपया फिर से भुगतान न करें।",
     "start_questing": "सीखना जारी रखें",
-    "continue_learning": "सीखना जारी रखें"
+    "continue_learning": "सीखना जारी रखें",
+    "feature_arena_refuel": "तुरंत 1v1 एरिना रीफ्यूल (शून्य विज्ञापन)"
   },
   "profile": {
     "picture_updated": "प्रोफ़ाइल फ़ोटो सफलतापूर्वक अपडेट की गई!",
@@ -2917,7 +2947,11 @@
     "view_all": "सभी देखें",
     "view_all_stickers": "सभी स्टिकर देखें",
     "vowl_treasury": "वोल ट्रेजरी",
-    "you_answered": "आपने उत्तर दिया:"
+    "you_answered": "आपने उत्तर दिया:",
+    "store": "दुकान",
+    "premium_store": "प्रीमियम स्टोर",
+    "arena_pvp_title": "1V1 शब्द अखाड़ा",
+    "arena_pvp_subtitle": "लाइव शब्दावली द्वंद्व"
   },
   "quest_archive": {
     "completed": "संपन्न: {}%",
@@ -2964,7 +2998,8 @@
     "step_completed": "पूरा हुआ",
     "step_indicator": "चरण {} का {}",
     "step_locked": "उत्तर अगला",
-    "track_briefing": "रोडमैप ट्रैक करें"
+    "track_briefing": "रोडमैप ट्रैक करें",
+    "practice_again": "फिर से अभ्यास करें"
   },
   "quest_sequences": {
     "category_skill_enhance": "श्रेणी कौशल संवर्धन",

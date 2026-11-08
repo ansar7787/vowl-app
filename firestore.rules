@@ -49,6 +49,7 @@ service cloud.firestore {
     //   - vowlOwnedMascots: list (optional) - adult owned mascot IDs
     //   - claimedStreakMilestones: list (optional) - claimed streak milestones
     //   - claimedLevelMilestones: list (optional) - claimed level milestones
+    //   - claimedBadgeRewards: list (optional) - claimed trophy and badge bounty rewards
     //   - coinHistory: list (optional) - ledger of coin adjustments
     //   - hasPermanentXPBoost: bool (optional) - permanent boost flag
     //   - kidsOwnedFurniture: list (optional) - owned furniture IDs
@@ -284,6 +285,7 @@ service cloud.firestore {
                 && request.resource.data.get('duelWins', 0) == 0
                 && request.resource.data.get('duelLosses', 0) == 0
                 && (!('pendingReferralCode' in request.resource.data) || request.resource.data.pendingReferralCode == null || (request.resource.data.pendingReferralCode is string && request.resource.data.pendingReferralCode.size() <= 30))
+                && (!('claimedBadgeRewards' in request.resource.data) || request.resource.data.claimedBadgeRewards is list)
               )
             // Existing document update
             : (
@@ -315,7 +317,7 @@ service cloud.firestore {
                 && (
                   !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
                   || (
-                    request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys', 'totalReferralsCount'])
+                    request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedBadgeRewards', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys', 'totalReferralsCount'])
                       ? request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 15000 // Milestone, ambassador sync, & tournament rewards can be larger
                       : request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 250 // Max 250 earned at once for normal games, referrals, and duels
                   )
@@ -336,7 +338,7 @@ service cloud.firestore {
                       request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
                     )
                     // Bypass rate limit for milestone & tournament claims (already protected by counter/array checks)
-                    || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys', 'totalReferralsCount'])
+                    || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedBadgeRewards', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys', 'totalReferralsCount'])
                     // If they increased normally, enforce the timestamp cooldown with robust type checking
                     || (
                       ('lastRewardTimestamp' in request.resource.data) &&
@@ -403,6 +405,11 @@ service cloud.firestore {
                 && (
                   !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalReferralsCount'])
                   || request.resource.data.get('totalReferralsCount', 0) >= resource.data.get('totalReferralsCount', 0)
+                )
+                // BADGE REWARD INTEGRITY: Ensure claimedBadgeRewards is a list if provided
+                && (
+                  !('claimedBadgeRewards' in request.resource.data)
+                  || request.resource.data.claimedBadgeRewards is list
                 )
               )
         );

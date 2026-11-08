@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
+import 'package:vowl/core/presentation/widgets/vowl_buddy_badge.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -264,7 +265,7 @@ class HomeHeroHeader extends StatelessWidget {
             child: ScaleButton(
               onTap: () {
                 _triggerHaptic();
-                context.push(AppRouter.profileRoute);
+                context.go(AppRouter.profileRoute);
               },
               child: SizedBox(
                 width: 56.r,
@@ -343,7 +344,7 @@ class HomeHeroHeader extends StatelessWidget {
               behavior: HitTestBehavior.opaque,
               onTap: () {
                 _triggerHaptic();
-                context.push(AppRouter.profileRoute);
+                context.go(AppRouter.profileRoute);
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.5.h),
@@ -382,76 +383,23 @@ class HomeHeroHeader extends StatelessWidget {
     );
   }
 
-  /// Docked companion mascot pin displaying the user's active buddy.
+  /// Docked companion mascot pin displaying the user's active buddy and equipped accessory.
   Widget _buildBuddyPin(BuildContext context, {required bool isDark}) {
     final mascotId = user.vowlMascot ?? 'vowl_prime';
-    final isVowly = mascotId == 'vowly';
-    final emoji = VowlAssets.mascotMap[mascotId] ?? '🦉';
+    final accessoryId = user.vowlEquippedAccessory;
     final mascotName = VowlAssets.mascotNames[mascotId] ?? mascotId;
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-
-    final pin = Container(
-      width: 20.r,
-      height: 20.r,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: isDark ? AppColors.slate900 : Colors.white,
-        border: Border.all(
-          color: isDark ? AppColors.slate950 : Colors.white,
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.15),
-            blurRadius: 4,
-            offset: const Offset(0, 1),
-          ),
-        ],
-      ),
-      child: ClipOval(
-        child: Center(
-          child: isVowly
-              ? Image.asset(
-                  VowlAssets.vowlyNeutral,
-                  width: 14.r,
-                  height: 14.r,
-                  fit: BoxFit.contain,
-                  errorBuilder: (_, _, _) => Text(
-                    '🦉',
-                    style: TextStyle(
-                      fontSize: 10.sp,
-                      height: 1.0,
-                    ),
-                  ),
-                )
-              : Text(
-                  emoji,
-                  style: TextStyle(
-                    fontSize: 10.5.sp,
-                    height: 1.0,
-                  ),
-                ),
-        ),
-      ),
-    );
-
-    final animatedPin = reduceMotion
-        ? pin
-        : pin
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .scale(
-              begin: const Offset(1.0, 1.0),
-              end: const Offset(1.08, 1.08),
-              duration: 2000.ms,
-              curve: Curves.easeInOut,
-            );
+    final accessoryName =
+        accessoryId != null ? VowlAssets.getAccessoryName(accessoryId) : null;
+    final displayLabel = accessoryName != null
+        ? '$mascotName ($accessoryName)'
+        : mascotName;
 
     return Semantics(
       button: true,
       label: context.tr(
         'home.mascot_semantics_label',
         fallback: 'Companion mascot: {0}',
-        args: [mascotName],
+        args: [displayLabel],
       ),
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
@@ -459,7 +407,24 @@ class HomeHeroHeader extends StatelessWidget {
           _triggerHaptic();
           context.push(AppRouter.vowlMascotRoute);
         },
-        child: animatedPin,
+        child: VowlBuddyBadge(
+          size: 24.r,
+          mascotSize: 18.r,
+          mascotId: mascotId,
+          accessoryId: accessoryId,
+          animate: true,
+          border: Border.all(
+            color: isDark ? AppColors.slate950 : Colors.white,
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.15),
+              blurRadius: 4,
+              offset: const Offset(0, 1),
+            ),
+          ],
+        ),
       ),
     );
   }

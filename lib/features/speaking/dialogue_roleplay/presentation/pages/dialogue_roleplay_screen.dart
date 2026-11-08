@@ -52,8 +52,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-        'speaking_games.dialogue_expert',
-        fallback: 'DIALOGUE EXPERT!',
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
       );
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);

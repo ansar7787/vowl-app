@@ -336,9 +336,9 @@ class _PodiumSlot extends StatelessWidget {
                         height: 1.1,
                       ),
                     ),
-                    if (!isKids && isWeekly && user.previousRank != null) ...[
+                    if (!isKids && isWeekly) ...[
                       SizedBox(height: 2.h),
-                      _buildRankChangeIndicator(user.previousRank!, rank),
+                      _buildRankChangeIndicator(user.previousRank ?? rank, rank),
                     ],
                   ],
                 ),

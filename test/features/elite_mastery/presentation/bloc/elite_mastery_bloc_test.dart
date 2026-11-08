@@ -74,6 +74,11 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
 
+    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
+        .thenAnswer((_) async {});
+    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
+    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
+
     bloc = EliteMasteryBloc(
       getQuests: mockGetQuests,
       updateUserCoins: mockUpdateUserCoins,

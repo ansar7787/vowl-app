@@ -50,6 +50,7 @@ class AppRouter {
   static const String progressDashboardRoute = '/progress-dashboard';
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
+  static const String ranksRoute = '/ranks';
   static const String kidsLeaderboardRoute = '/kids-leaderboard';
   static const String forgotPasswordRoute = '/forgot-password';
   static const String trophyRoomRoute = '/trophy-room';

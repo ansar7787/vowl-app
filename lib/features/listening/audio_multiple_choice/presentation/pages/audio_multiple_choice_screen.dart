@@ -49,9 +49,9 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
   int get level => widget.level;
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-    'listening.games.audio_multiple_choice_title',
-    fallback: 'Listen & Choose',
-  );
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);

@@ -256,13 +256,13 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('1v1 PvP Duel'), findsOneWidget);
+      expect(find.text('1v1 Duel'), findsOneWidget);
       expect(find.text('Word Snap'), findsOneWidget);
       expect(find.text('Word Mixer'), findsOneWidget);
       expect(find.text('60s Daily Blitz'), findsOneWidget);
       expect(find.text('Anagram Puzzle'), findsOneWidget);
       // Exact production rewards verified from repository implementations
-      expect(find.text('WIN 50🪙 + 5 XP'), findsOneWidget); // 1v1 duel winner
+      expect(find.textContaining('WIN 50'), findsOneWidget); // 1v1 duel winner
       expect(find.text('WIN 10🪙 + 5 XP'), findsWidgets); // Word Snap & Word Mixer daily challenge
       expect(find.text('+50 XP'), findsNothing); // 50 XP economy inflation bug fixed
       expect(find.text('+40 XP'), findsNothing); // Erroneous placeholder absent

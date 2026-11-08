@@ -448,7 +448,32 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        verify(() => mockTtsService.speak(any())).called(1);
+        final captured = verify(() => mockTtsService.speak(captureAny())).captured;
+        expect(captured, isNotEmpty);
+        final spokenText = captured.last as String;
+
+        // Verify no robotic buzzwords or over-the-top AI praise
+        final roboticBuzzwords = [
+          'super star',
+          'magic touch',
+          'genius',
+          'to the moon',
+        ];
+        for (final buzzword in roboticBuzzwords) {
+          expect(
+            spokenText.toLowerCase(),
+            isNot(contains(buzzword.toLowerCase())),
+            reason: 'Spoken text contains robotic buzzword: $buzzword',
+          );
+        }
+
+        // Verify short enough for kids (at most 6 words)
+        final wordCount = spokenText
+            .split(RegExp(r'\s+'))
+            .where((w) => w.isNotEmpty)
+            .length;
+        expect(wordCount, lessThanOrEqualTo(6));
+
         expect(tester.takeException(), isNull);
 
         await cleanUp(tester);

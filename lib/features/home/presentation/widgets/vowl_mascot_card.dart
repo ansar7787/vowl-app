@@ -76,17 +76,17 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
             VowlAssets.mascotNames[mascotId] ??
             context.tr(
               'vowl_mascot.elite_fallback_name',
-              fallback: 'Vowl Elite',
+              fallback: 'Vowl Buddy',
             );
         final equippedAccessory = data.vowlEquippedAccessory;
         final sanctuaryLabel = context.tr(
           'vowl_mascot_card.sanctuary_linked',
-          fallback: 'SANCTUARY LINKED',
+          fallback: 'LEARNING COMPANION',
         );
         final guidanceLabel = context
             .tr(
               'vowl_mascot_card.majestic_guidance_active',
-              fallback: 'MAJESTIC GUIDANCE',
+              fallback: 'ACTIVE BUDDY',
             )
             .toUpperCase();
 

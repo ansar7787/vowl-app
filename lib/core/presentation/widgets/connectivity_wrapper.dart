@@ -62,6 +62,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.settingsRoute,
     AppRouter.profileRoute,
     AppRouter.leaderboardRoute,
+    AppRouter.ranksRoute,
     AppRouter.kidsLeaderboardRoute,
     AppRouter.homeRoute,
     AppRouter.gamesRoute,

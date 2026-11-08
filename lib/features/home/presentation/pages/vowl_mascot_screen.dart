@@ -21,6 +21,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 
@@ -106,11 +107,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
             state.lastPurchaseType == 'vowl_mascot'
                 ? context.tr(
                     'vowl_mascot.feedback_mascot_linked',
-                    fallback: 'Mascot Linked!',
+                    fallback: 'Buddy unlocked!',
                   )
                 : context.tr(
                     'vowl_mascot.feedback_augment_integrated',
-                    fallback: 'Augment Integrated!',
+                    fallback: 'Accessory unlocked!',
                   ),
             true,
           );
@@ -121,7 +122,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
             state.message ??
                 context.tr(
                   'vowl_mascot.feedback_sync_failed',
-                  fallback: 'Sync Failed',
+                  fallback: 'Couldn\'t complete purchase. Please try again.',
                 ),
             false,
           );
@@ -175,11 +176,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               ),
                             ),
 
-                            // Bottom padding accounts for the floating status
-                            // bar overlay height + device safe area.
+                            // Bottom padding accounts for device safe area
                             SliverPadding(
                               padding: EdgeInsets.only(
-                                bottom: 60.h + bottomPad + 20.h,
+                                bottom: bottomPad + 32.h,
                               ),
                               sliver: activeTabIndex == 0
                                   ? _buildSelectionSliver(
@@ -205,8 +205,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     );
                   },
                 ),
-
-                _buildEliteStatusOverlay(context, primaryColor, isDark),
               ],
             ),
           );
@@ -445,7 +443,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.attach_money_rounded, color: primaryColor, size: 12.r),
+              Icon(Icons.paid_rounded, color: primaryColor, size: 12.r),
               SizedBox(width: 2.w),
               Text(
                 NumberFormat.decimalPattern().format(user.coins),
@@ -601,7 +599,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           _buildSectionHeader(
             context.tr(
               'vowl_mascot.section_synchronized_elites',
-              fallback: 'SYNCHRONIZED ELITES',
+              fallback: 'BUDDY COLLECTION',
             ),
             textColor,
             isDark,
@@ -687,7 +685,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           _buildSectionHeader(
             context.tr(
               'vowl_mascot.section_cybernetic_augments',
-              fallback: 'CYBERNETIC AUGMENTS',
+              fallback: 'ACCESSORIES BOUTIQUE',
             ),
             textColor,
             isDark,
@@ -763,7 +761,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final statusLabel = isSelected
         ? context.tr('vowl_mascot.equipped_status', fallback: 'Equipped')
         : isOwned
-        ? context.tr('vowl_mascot.sync_ready', fallback: 'SYNC READY')
+        ? context.tr('vowl_mascot.sync_ready', fallback: 'READY')
         : (canAfford
               ? '$price 🪙'
               : context.tr('vowl_mascot.locked_label', fallback: 'Locked'));
@@ -788,7 +786,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
         child: AnimatedOpacity(
           opacity: isProcessing ? 0.5 : ((!isOwned && !canAfford) ? 0.4 : 1.0),
           duration: const Duration(milliseconds: 300),
-          child: Text(emoji, style: TextStyle(fontSize: 36.sp)),
+          child: isSelected && user.vowlEquippedAccessory != null
+              ? VowlMascot(
+                  size: 48.r,
+                  mascotId: id,
+                  accessoryId: user.vowlEquippedAccessory,
+                  state: VowlMascotState.happy,
+                  useFloatingAnimation: false,
+                )
+              : Text(emoji, style: TextStyle(fontSize: 36.sp)),
         ),
       ),
     );
@@ -854,8 +860,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   _showModernSnackbar(
                     context,
                     context.tr(
-                      'vowl_mascot.feedback_insufficient_credits',
-                      fallback: 'Insufficient Elite credits for this augment',
+                      'vowl_mascot.feedback_insufficient_coins_mascot',
+                      fallback: 'Not enough coins to unlock this buddy.',
                     ),
                     false,
                   );
@@ -952,7 +958,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           ? AutoSizeText(
                               context.tr(
                                 'vowl_mascot.sync_ready',
-                                fallback: 'SYNC READY',
+                                fallback: 'READY',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -969,7 +975,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               children: [
                                 Icon(
                                   canAfford
-                                      ? Icons.attach_money_rounded
+                                      ? Icons.paid_rounded
                                       : Icons.lock_rounded,
                                   color: canAfford
                                       ? (isDark ? AppColors.indigo400 : primaryColor)
@@ -1018,19 +1024,19 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
         ? VowlAssets.getAccessoryName(user.vowlEquippedAccessory!)
         : context.tr(
             'vowl_mascot.no_augmentations',
-            fallback: 'NO AUGMENTATIONS',
+            fallback: 'No accessory equipped',
           );
 
     final section = Semantics(
       label:
-          '${context.tr('vowl_mascot.elite_interface_label', fallback: 'ELITE INTERFACE:')} $mascotName. $accessoryLabel',
+          '${context.tr('vowl_mascot.elite_interface_label', fallback: 'CURRENT BUDDY:')} $mascotName. $accessoryLabel',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildSectionHeader(
             context.tr(
               'vowl_mascot.section_elite_neural_link',
-              fallback: 'ELITE NEURAL LINK',
+              fallback: 'ACTIVE COMPANION',
             ),
             textColor,
             isDark,
@@ -1088,11 +1094,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                       curve: Curves.easeInOut,
                                     );
                         }(),
-                        Text(
-                          VowlAssets.getMascotEmoji(
-                            user.vowlMascot ?? 'vowl_prime',
-                          ),
-                          style: TextStyle(fontSize: 42.sp),
+                        VowlMascot(
+                          size: 56.r,
+                          state: VowlMascotState.happy,
+                          mascotId: user.vowlMascot ?? 'vowl_prime',
+                          accessoryId: user.vowlEquippedAccessory,
+                          level: user.level,
+                          useFloatingAnimation: false,
                         ),
                       ],
                     ),
@@ -1104,7 +1112,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           Text(
                             context.tr(
                               'vowl_mascot.elite_interface_label',
-                              fallback: 'ELITE INTERFACE:',
+                              fallback: 'CURRENT BUDDY:',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -1196,9 +1204,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
         ? (isEquipped
               ? context.tr(
                   'vowl_mascot.action_disconnect',
-                  fallback: 'DISCONNECT',
+                  fallback: 'REMOVE',
                 )
-              : context.tr('vowl_mascot.action_link', fallback: 'LINK'))
+              : context.tr('vowl_mascot.action_link', fallback: 'EQUIP'))
         : context.tr(
             'vowl_mascot.price_label',
             fallback: 'Price',
@@ -1268,11 +1276,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         label: isEquipped
                             ? context.tr(
                                 'vowl_mascot.action_disconnect',
-                                fallback: 'DISCONNECT',
+                                fallback: 'REMOVE',
                               )
                             : context.tr(
                                 'vowl_mascot.action_link',
-                                fallback: 'LINK',
+                                fallback: 'EQUIP',
                               ),
                         color: isEquipped
                             ? AppColors.gameIncorrect.withValues(alpha: 0.2)
@@ -1321,15 +1329,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   _showModernSnackbar(
                                     context,
                                     context.tr(
-                                      'vowl_mascot.feedback_insufficient_credits',
+                                      'vowl_mascot.feedback_insufficient_coins_accessory',
                                       fallback:
-                                          'Insufficient Elite credits for this augment',
+                                          'Not enough coins to unlock this accessory.',
                                     ),
                                     false,
                                   );
                                 }
                               },
-                        icon: Icons.attach_money_rounded,
+                        icon: Icons.paid_rounded,
                         primaryColor: primaryColor,
                       ),
               ),
@@ -1438,116 +1446,4 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     );
   }
 
-  // ===========================================================================
-  // Bottom Status Bar — with SafeArea bottom padding
-  // ===========================================================================
-
-  Widget _buildEliteStatusOverlay(
-    BuildContext context,
-    Color primaryColor,
-    bool isDark,
-  ) {
-    final bottomPad = MediaQuery.of(context).padding.bottom;
-
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child: RepaintBoundary(
-        child: ClipRRect(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: Container(
-              height: 60.h + bottomPad,
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(color: primaryColor.withValues(alpha: 0.25)),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    primaryColor.withValues(alpha: 0.08),
-                    Colors.transparent,
-                  ],
-                ),
-              ),
-              padding: EdgeInsets.only(
-                left: 20.w,
-                right: 20.w,
-                bottom: bottomPad,
-              ),
-              child: ExcludeSemantics(
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.security_rounded,
-                      color: primaryColor,
-                      size: 14.r,
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: AutoSizeText(
-                        context.tr(
-                          'vowl_mascot.status_bar_text',
-                          fallback: 'Status OK',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 8.sp,
-                          fontWeight: FontWeight.w700,
-                          color: primaryColor.withValues(alpha: 0.8),
-                          letterSpacing: 1,
-                        ),
-                        maxLines: 1,
-                        minFontSize: 5,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    _buildSyncIndicator(context, primaryColor),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  /// Sync indicator bars — slow breathing pulse (2s cycle) instead of the
-  /// old 600ms frenetic animation. Calm enough to feel "alive" without
-  /// burning GPU cycles on something nobody watches after 0.5 seconds.
-  Widget _buildSyncIndicator(BuildContext context, Color primaryColor) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(4, (index) {
-        final bar = Container(
-          width: 3.w,
-          height: 10.h,
-          margin: EdgeInsets.only(left: 3.w),
-          decoration: BoxDecoration(
-            color: primaryColor,
-            borderRadius: BorderRadius.circular(2),
-          ),
-        );
-
-        if (reduceMotion) {
-          return bar;
-        }
-
-        return bar
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scaleY(
-              begin: 0.7,
-              end: 1.0,
-              delay: (index * 150).ms,
-              duration: 2.seconds,
-              curve: Curves.easeInOut,
-            );
-      }),
-    );
-  }
 }

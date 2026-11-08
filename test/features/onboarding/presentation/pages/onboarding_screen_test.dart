@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -16,17 +17,20 @@ void main() {
     VoidCallback? onGetStarted,
     VoidCallback? onLogin,
   }) {
-    return MediaQuery(
-      data: MediaQueryData(
-        size: physicalSize,
-        textScaler: TextScaler.linear(textScale),
-        disableAnimations: disableAnimations,
-      ),
-      child: MaterialApp(
-        home: OnboardingScreen(
-          onSkip: onSkip ?? () {},
-          onGetStarted: onGetStarted ?? () {},
-          onLogin: onLogin ?? () {},
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      builder: (context, child) => MediaQuery(
+        data: MediaQueryData(
+          size: physicalSize,
+          textScaler: TextScaler.linear(textScale),
+          disableAnimations: disableAnimations,
+        ),
+        child: MaterialApp(
+          home: OnboardingScreen(
+            onSkip: onSkip ?? () {},
+            onGetStarted: onGetStarted ?? () {},
+            onLogin: onLogin ?? () {},
+          ),
         ),
       ),
     );
@@ -42,7 +46,7 @@ void main() {
     });
 
     testWidgets(
-      'small phone (360x640) text scale 1.0 renders all 4 slides with no overflow',
+      'small phone (360x640) text scale 1.0 renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(360 * 2, 640 * 2);
         tester.view.devicePixelRatio = 2.0;
@@ -80,13 +84,20 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Advance to Slide 5
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
     testWidgets(
-      'compact phone (320x568) text scale 1.0 (iPhone SE) renders all 4 slides with no overflow',
+      'compact phone (320x568) text scale 1.0 (iPhone SE) renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(320 * 2, 568 * 2);
         tester.view.devicePixelRatio = 2.0;
@@ -124,13 +135,20 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Advance to Slide 5
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
     testWidgets(
-      'standard iPhone (390x844) renders all 4 slides with no overflow',
+      'standard iPhone (390x844) renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(390 * 3, 844 * 3);
         tester.view.devicePixelRatio = 3.0;
@@ -164,13 +182,19 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
     testWidgets(
-      'large phone (412x915) text scale 1.5 renders all 4 slides with no overflow',
+      'large phone (412x915) text scale 1.5 renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(412 * 3, 915 * 3);
         tester.view.devicePixelRatio = 3.0;
@@ -204,13 +228,19 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
     testWidgets(
-      'tall flagship (430x932) text scale 1.25 renders all 4 slides with no overflow',
+      'tall flagship (430x932) text scale 1.25 renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(430 * 3, 932 * 3);
         tester.view.devicePixelRatio = 3.0;
@@ -244,13 +274,19 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
     testWidgets(
-      'tablet / foldable (600x960) text scale 1.0 renders all 4 slides with no overflow',
+      'tablet / foldable (600x960) text scale 1.0 renders all 5 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(600 * 2, 960 * 2);
         tester.view.devicePixelRatio = 2.0;
@@ -284,6 +320,12 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
         expect(find.text('Master Natural World Accents'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Clash in Real-Time 1v1 Duels'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -352,7 +394,11 @@ void main() {
       await tester.pump(const Duration(milliseconds: 750));
       expect(skipFired, isTrue);
 
-      // Navigate to slide 4 and tap Get Started
+      // Navigate to slide 5 and tap Get Started
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
@@ -408,6 +454,14 @@ void main() {
       expect(find.text('Daily Streaks'), findsOneWidget);
       expect(find.text('Spaced Memory'), findsOneWidget);
       expect(find.text('US & UK Voices'), findsOneWidget);
+
+      // Slide 5 features
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.text('Real-Time Arena'), findsOneWidget);
+      expect(find.text('Lightning Rounds'), findsOneWidget);
+      expect(find.text('Trophies & Coins'), findsOneWidget);
     });
 
     testWidgets(

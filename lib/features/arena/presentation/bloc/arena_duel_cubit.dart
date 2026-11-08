@@ -2,21 +2,29 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/arena/data/utils/arena_ai_difficulty_engine.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_state.dart';
 
 class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   final ArenaRepository _repository;
+  final Random _rng;
   Timer? _questionTimer;
   Timer? _ghostTimer;
   Timer? _advanceTimer;
   Timer? _finishTimer;
   StreamSubscription<ArenaDuelSession>? _roomSub;
   int _questionStartTime = 0;
+  int _ghostAnsweredQuestionIndex = -1;
+  int _currentGhostDelayMs = 0;
+  bool _isGhostAnswerPending = false;
 
-  ArenaDuelCubit({required ArenaRepository repository})
-      : _repository = repository,
+  ArenaDuelCubit({
+    required ArenaRepository repository,
+    Random? random,
+  })  : _repository = repository,
+        _rng = random ?? Random(),
         super(const ArenaDuelState());
 
   @override
@@ -30,6 +38,10 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   }
 
   void startSession(ArenaDuelSession session, UserEntity currentUser) {
+    _ghostAnsweredQuestionIndex = -1;
+    _currentGhostDelayMs = 0;
+    _isGhostAnswerPending = false;
+
     emit(state.copyWith(
       session: session,
       isWaitingForGuest: session.isWaiting,
@@ -67,8 +79,14 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
 
   void _startQuestionTimer(UserEntity currentUser) {
     _questionTimer?.cancel();
-    _ghostTimer?.cancel();
     _questionStartTime = DateTime.now().millisecondsSinceEpoch;
+
+    final qIndex = state.currentQuestionIndex;
+
+    // Safety check: if previous question ghost answer didn't resolve, resolve it now
+    if (state.session?.isGhostRival == true && qIndex > 0 && _isGhostAnswerPending) {
+      _resolveGhostAnswer(qIndex - 1);
+    }
 
     emit(state.copyWith(
       timeRemaining: 15,
@@ -77,9 +95,9 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       isCorrect: null,
     ));
 
-    // Simulate ghost opponent answering
+    // Simulate ghost opponent answering this question
     if (state.session?.isGhostRival == true) {
-      _simulateGhostAnswer();
+      _scheduleGhostAnswer(qIndex);
     }
 
     _questionTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -92,38 +110,75 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     });
   }
 
-  void _simulateGhostAnswer() {
+  ArenaAiDifficultyTier _getAiTier() {
+    final guestId = state.session?.guestId?.toLowerCase() ?? '';
+    if (guestId.contains('hard')) return ArenaAiDifficultyTier.hard;
+    if (guestId.contains('medium') || guestId.contains('med')) return ArenaAiDifficultyTier.medium;
+    if (guestId.contains('easy')) return ArenaAiDifficultyTier.easy;
+
+    final acc = state.session?.ghostAccuracy ?? 0.80;
+    if (acc >= 0.86) return ArenaAiDifficultyTier.hard;
+    if (acc >= 0.72) return ArenaAiDifficultyTier.medium;
+    return ArenaAiDifficultyTier.easy;
+  }
+
+  void _scheduleGhostAnswer(int qIndex) {
     _ghostTimer?.cancel();
-    final targetQuestionIndex = state.currentQuestionIndex;
-    final accuracy = state.session?.ghostAccuracy ?? 0.8;
+    _isGhostAnswerPending = true;
 
-    // Calibrate response speed based on AI tier
-    final int delaySeconds;
-    if (accuracy <= 0.68) {
-      delaySeconds = Random().nextInt(3) + 4; // 4 to 6 seconds (Easy)
-    } else if (accuracy <= 0.82) {
-      delaySeconds = Random().nextInt(3) + 3; // 3 to 5 seconds (Medium)
-    } else {
-      delaySeconds = Random().nextInt(2) + 2; // 2 to 3 seconds (Hard)
+    final tier = _getAiTier();
+
+    // Calibrate response speed based on AI tier (realistic millisecond pacing)
+    final int delayMs;
+    switch (tier) {
+      case ArenaAiDifficultyTier.hard:
+        // 1.8s to 3.2s
+        delayMs = 1800 + _rng.nextInt(1400);
+        break;
+      case ArenaAiDifficultyTier.medium:
+        // 2.8s to 4.4s
+        delayMs = 2800 + _rng.nextInt(1600);
+        break;
+      case ArenaAiDifficultyTier.easy:
+        // 4.2s to 6.4s
+        delayMs = 4200 + _rng.nextInt(2200);
+        break;
     }
-    final ghostElapsedMs = (delaySeconds * 1000) + Random().nextInt(500);
+    _currentGhostDelayMs = delayMs;
 
-    _ghostTimer = Timer(Duration(seconds: delaySeconds), () {
-      if (isClosed || state.isCompleted || state.currentQuestionIndex != targetQuestionIndex) return;
-      final isRivalCorrect = Random().nextDouble() <= accuracy;
-      final speedBonus = isRivalCorrect ? max(20, (15 - delaySeconds) * 100 ~/ 15) : 0;
-      final newRivalScore = state.rivalScore + speedBonus;
-      final newRivalCorrect = isRivalCorrect
-          ? state.rivalCorrectCount + 1
-          : state.rivalCorrectCount;
-      final newRivalTime = state.rivalTotalTimeMs + ghostElapsedMs;
-
-      emit(state.copyWith(
-        rivalScore: newRivalScore,
-        rivalCorrectCount: newRivalCorrect,
-        rivalTotalTimeMs: newRivalTime,
-      ));
+    _ghostTimer = Timer(Duration(milliseconds: delayMs), () {
+      if (isClosed || state.isCompleted) return;
+      _resolveGhostAnswer(qIndex);
     });
+  }
+
+  void _resolveGhostAnswer(int questionIndex) {
+    if (_ghostAnsweredQuestionIndex >= questionIndex) {
+      return; // Already resolved for this question
+    }
+    _ghostAnsweredQuestionIndex = questionIndex;
+    _isGhostAnswerPending = false;
+    _ghostTimer?.cancel();
+
+    final accuracy = state.session?.ghostAccuracy ?? 0.80;
+    final isRivalCorrect = _rng.nextDouble() <= accuracy;
+    final delayMs = _currentGhostDelayMs > 0 ? _currentGhostDelayMs : 3200;
+    final delaySeconds = delayMs / 1000.0;
+    final speedBonus = isRivalCorrect
+        ? max(20, ((15.0 - delaySeconds) * 100 / 15.0).round())
+        : 0;
+
+    final newRivalScore = state.rivalScore + speedBonus;
+    final newRivalCorrect = isRivalCorrect
+        ? state.rivalCorrectCount + 1
+        : state.rivalCorrectCount;
+    final newRivalTime = state.rivalTotalTimeMs + delayMs;
+
+    emit(state.copyWith(
+      rivalScore: newRivalScore,
+      rivalCorrectCount: newRivalCorrect,
+      rivalTotalTimeMs: newRivalTime,
+    ));
   }
 
   void selectOption(int index, UserEntity currentUser) {
@@ -202,6 +257,11 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
           }
         });
       } else if (isGhost) {
+        // Guarantee final question is resolved for the AI opponent
+        if (_isGhostAnswerPending) {
+          _resolveGhostAnswer(state.currentQuestionIndex);
+        }
+
         // Natural 1.2s suspense pause before victory screen
         emit(state.copyWith(isWaitingForOpponentFinish: true));
         _finishTimer?.cancel();
@@ -214,6 +274,12 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         _finalizeMatch(currentUser);
       }
     } else {
+      // Transitioning to next question:
+      // Guarantee ghost answered the question we are leaving behind
+      if (state.session?.isGhostRival == true && _isGhostAnswerPending) {
+        _resolveGhostAnswer(state.currentQuestionIndex);
+      }
+
       emit(state.copyWith(currentQuestionIndex: nextIndex));
       _startQuestionTimer(currentUser);
     }
@@ -225,6 +291,11 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     _advanceTimer?.cancel();
     _finishTimer?.cancel();
     _roomSub?.cancel();
+
+    // Final safety check: if ghost rival is still pending any question, resolve it
+    if (state.session?.isGhostRival == true && _isGhostAnswerPending) {
+      _resolveGhostAnswer(state.currentQuestionIndex);
+    }
 
     final bool isScoreTie = state.myScore == state.rivalScore;
     final bool isWinner;

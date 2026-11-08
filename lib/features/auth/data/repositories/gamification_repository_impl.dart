@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mi
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
+import 'package:vowl/features/profile/domain/models/trophy_metadata.dart';
 
 /// Concrete implementation of [GamificationRepository] handling atomic writes
 /// and progress tracking.
@@ -1169,6 +1170,95 @@ class GamificationRepositoryImpl
   }
 
   // ---------------------------------------------------------------------------
+  // claimBadgeReward
+  // ---------------------------------------------------------------------------
+
+  @override
+  Future<Either<Failure, void>> claimBadgeReward(String badgeId) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          return Left(ServerFailure('user-data-not-found'));
+        }
+
+        final data = doc.data()!;
+        final canonicalId = badgeId.toLowerCase().trim();
+        final trophy = TrophyMetadata.forId(badgeId);
+
+        // Check if already claimed
+        final claimed = _parseStringList(data['claimedBadgeRewards']);
+        final hasClaimed = claimed.any((b) => b.toLowerCase().trim() == canonicalId);
+        if (hasClaimed) {
+          _log('[GamificationRepositoryImpl] Trophy $badgeId already claimed.');
+          return Left(AuthFailure('trophy-already-claimed'));
+        }
+
+        // Validate that trophy is earned either via badges list OR live progress criteria
+        final badges = _parseStringList(data['badges']).map((b) => b.toLowerCase().trim()).toList();
+        final userModel = UserModel.fromMap(data, user.uid);
+        final progress = trophy.calculateProgress(userModel, badges);
+        final isEarned = badges.contains(canonicalId) || progress >= 1.0;
+
+        if (!isEarned) {
+          _log('[GamificationRepositoryImpl] Trophy $badgeId not earned (progress: $progress, badges: $badges)');
+          return Left(AuthFailure('trophy-not-earned'));
+        }
+
+        final xpReward = trophy.xpReward;
+        final coinReward = trophy.coinReward;
+
+        // 1. Audit log in coinHistory with localized titleKey & params
+        final history = _recordCoinHistory(
+          _parseMapList(data['coinHistory']),
+          titleKey: 'coin_history.trophy_reward',
+          amount: coinReward,
+          isEarned: true,
+          params: {
+            'trophyId': badgeId,
+            'trophyName': trophy.name,
+          },
+        );
+
+        // 2. Daily XP History update
+        final dailyHistory = Map<String, int>.from(
+          (data['dailyXpHistory'] as Map?)?.cast<String, int>() ?? {},
+        );
+        final todayKey = _dateKey(DateTime.now());
+        dailyHistory[todayKey] = (dailyHistory[todayKey] ?? 0) + xpReward;
+        _trimOldestDailyEntries(
+          dailyHistory,
+          UserGameConstants.kDailyXpHistoryLimit,
+        );
+
+        final totalExp = (data['totalExp'] as num?)?.toInt() ?? 0;
+
+        transaction.update(docRef, {
+          'badges': FieldValue.arrayUnion([canonicalId]),
+          'claimedBadgeRewards': FieldValue.arrayUnion([canonicalId]),
+          'coins': FieldValue.increment(coinReward),
+          'totalExp': totalExp + xpReward,
+          'dailyXpHistory': dailyHistory,
+          'coinHistory': history,
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
+        });
+
+        _log('[GamificationRepositoryImpl] Successfully claimed trophy $badgeId: +$xpReward XP, +$coinReward Coins');
+        return const Right<Failure, void>(null);
+      });
+    } catch (e) {
+      _log('[GamificationRepositoryImpl] Error claiming trophy $badgeId: $e');
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // Private helpers
   // ---------------------------------------------------------------------------
 
@@ -1202,6 +1292,12 @@ class GamificationRepositoryImpl
         .whereType<Map<Object?, Object?>>()
         .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
         .toList();
+  }
+
+  /// Parses a Firestore list of strings defensively.
+  static List<String> _parseStringList(dynamic raw) {
+    if (raw == null || raw is! List) return const [];
+    return raw.map((e) => e?.toString() ?? '').where((s) => s.isNotEmpty).toList();
   }
 
   /// Prepends a coin-history entry and trims to the configured retention

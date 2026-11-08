@@ -58,5 +58,11 @@ abstract class ArenaRepository {
   Future<void> refundStake({
     required String userId,
   });
+
+  /// Immediately cancels an active matchmaking search, removes any queue ticket from Firestore,
+  /// and terminates background listeners for [userId].
+  Future<void> cancelMatchmaking({
+    required String userId,
+  });
 }
 

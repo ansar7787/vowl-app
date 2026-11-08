@@ -166,7 +166,7 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
             .toUpperCase();
         badgeLabel = rawTier == 'MEDIUM' ? 'MED' : rawTier;
       } else {
-        badgeLabel = 'EASY';
+        badgeLabel = 'MED';
       }
     } else {
       displayRivalName = widget.rivalName;

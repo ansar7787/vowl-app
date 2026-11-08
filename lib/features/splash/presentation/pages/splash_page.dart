@@ -156,15 +156,16 @@ class _SplashPageState extends State<SplashPage> {
         child: Scaffold(
           backgroundColor: backgroundColor,
           // Branded fallback UI: if native splash is removed while routing completes,
-          // user sees a polished mascot spinner instead of a blank screen.
+          // user sees the authentic Vowl splash logo and spinner instead of a blank screen.
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/mascot/vowly_neutral.webp',
-                  width: 90,
-                  height: 90,
+                  'assets/images/vowl_splash_logo.png',
+                  width: 120,
+                  height: 120,
+                  fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) => const Icon(
                     Icons.auto_awesome,
                     size: 60,

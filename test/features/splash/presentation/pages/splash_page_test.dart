@@ -355,6 +355,29 @@ void main() {
 
       await tester.pumpWidget(const SizedBox());
     });
+
+    testWidgets('renders vowl_splash_logo.png and circular progress indicator in fallback body', (tester) async {
+      when(() => mockAuthBloc.state).thenReturn(const AuthState.unknown());
+      final router = createTestRouter(onRouteNavigated: (_) {});
+
+      await tester.pumpWidget(
+        buildTestableSplash(
+          authBloc: mockAuthBloc,
+          router: router,
+          tester: tester,
+        ),
+      );
+      await tester.pump();
+
+      final imageFinder = find.byType(Image);
+      expect(imageFinder, findsOneWidget);
+      final imageWidget = tester.widget<Image>(imageFinder);
+      expect((imageWidget.image as AssetImage).assetName, equals('assets/images/vowl_splash_logo.png'));
+
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+      await tester.pumpWidget(const SizedBox());
+    });
   });
 }
 

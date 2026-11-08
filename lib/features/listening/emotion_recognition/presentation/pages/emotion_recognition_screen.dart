@@ -50,7 +50,10 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'Level Complete!';
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
+      );
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);

@@ -226,6 +226,21 @@ void main() {
   );
 
   testWidgets(
+    'renders equipped accessory badge on companion mascot pin when accessory is equipped',
+    (tester) async {
+      final userWithCrown = testUserCommander.copyWith(
+        vowlEquippedAccessory: 'golden_crown',
+      );
+      await tester.pumpWidget(createSubject(user: userWithCrown));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      expect(find.text('🦉'), findsOneWidget);
+      expect(find.text('👑'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
     'renders safely on small 320dp mobile screen without overflow',
     (tester) async {
       tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);

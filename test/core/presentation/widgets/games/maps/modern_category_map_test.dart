@@ -14,6 +14,8 @@ import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/story_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -25,6 +27,8 @@ class MockStoryService extends Mock implements StoryService {}
 
 class MockLocaleService extends Mock implements LocaleService {}
 
+class MockTtsService extends Mock implements TtsService {}
+
 class FakeBuildContext extends Fake implements BuildContext {}
 
 void main() {
@@ -33,6 +37,7 @@ void main() {
   late MockAuthBloc mockAuthBloc;
   late MockAssetQuestService mockAssetQuestService;
   late MockStoryService mockStoryService;
+  late MockTtsService mockTtsService;
   final mockLocaleService = MockLocaleService();
   late List<String> navigatedRoutes;
 
@@ -71,6 +76,10 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockAssetQuestService = MockAssetQuestService();
     mockStoryService = MockStoryService();
+    mockTtsService = MockTtsService();
+
+    when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
+    when(() => mockTtsService.stop()).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<AssetQuestService>()) {
       di.sl.unregister<AssetQuestService>();
@@ -81,10 +90,17 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
 
     di.sl.registerSingleton<AssetQuestService>(mockAssetQuestService);
     di.sl.registerSingleton<StoryService>(mockStoryService);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
+    di.sl.registerSingleton<TtsService>(mockTtsService);
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
     when(
@@ -121,6 +137,9 @@ void main() {
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
     }
   });
 
@@ -326,6 +345,58 @@ void main() {
       expect(tester.takeException(), isNull);
       expect(find.byType(ModernCategoryMap), findsOneWidget);
     });
+  });
+
+  group('ModernCategoryMap - Buddy Cheering & TTS', () {
+    testWidgets(
+      'tapping mascot marker triggers natural, short cheer via TTS without robotic buzzwords',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 1600);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final mascotFinder = find.byType(VowlMascot);
+        expect(mascotFinder, findsWidgets);
+
+        await tester.tap(mascotFinder.first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final captured = verify(() => mockTtsService.speak(captureAny())).captured;
+        expect(captured, isNotEmpty);
+        final spokenText = captured.last as String;
+
+        // Verify no robotic buzzwords or AI-generated phrases
+        final roboticBuzzwords = [
+          'linguistic magic',
+          'genius energy',
+          'unstoppable',
+          'Superstar',
+          'breathtaking',
+          'momentum',
+          'Perfect progress',
+        ];
+        for (final buzzword in roboticBuzzwords) {
+          expect(
+            spokenText.toLowerCase(),
+            isNot(contains(buzzword.toLowerCase())),
+            reason: 'Spoken text contains robotic buzzword: $buzzword',
+          );
+        }
+
+        // Verify the message is short and punchy (at most 8 words)
+        final wordCount = spokenText
+            .split(RegExp(r'\s+'))
+            .where((w) => w.isNotEmpty)
+            .length;
+        expect(wordCount, lessThanOrEqualTo(8));
+      },
+    );
   });
 }
 

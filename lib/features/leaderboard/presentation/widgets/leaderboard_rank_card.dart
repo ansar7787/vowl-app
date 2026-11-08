@@ -42,6 +42,8 @@ class LeaderboardRankCard extends StatelessWidget {
     final rankIndex = allUsers.indexWhere((u) => u.id == currentUser.id);
     final rank = rankIndex != -1 ? rankIndex + 1 : 0;
     final isRanked = rank > 0;
+    final previousRank = currentUser.previousRank ??
+        (rankIndex != -1 ? allUsers[rankIndex].previousRank : null);
 
     final String primaryScoreText;
     final String statusZoneText;
@@ -103,37 +105,46 @@ class LeaderboardRankCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  // Rank circle (compact 2026 styling, zero shadows)
-                  Container(
-                    width: 36.w,
-                    height: 36.w,
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [AppColors.indigo500, AppColors.blue500],
-                      ),
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.25),
-                        width: 1,
-                      ),
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 2.w),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            isRanked ? '#$rank' : '?',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
+                  // Rank circle & Change Indicator (compact 2026 styling, zero shadows)
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 36.w,
+                        height: 36.w,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [AppColors.indigo500, AppColors.blue500],
+                          ),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.25),
+                            width: 1,
+                          ),
+                        ),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 2.w),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                isRanked ? '#$rank' : '?',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                      if (isRanked && !isKids && isWeekly) ...[
+                        SizedBox(height: 3.h),
+                        _buildRankChangeIndicator(previousRank ?? rank, rank),
+                      ],
+                    ],
                   ),
                   SizedBox(width: 8.w),
                   // Avatar
@@ -309,5 +320,77 @@ class LeaderboardRankCard extends StatelessWidget {
         .animate()
         .fadeIn(duration: const Duration(milliseconds: 350))
         .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);
+  }
+
+  Widget _buildRankChangeIndicator(int previousRank, int currentRank) {
+    final diff = previousRank - currentRank;
+    if (diff > 0) {
+      // Improved rank (e.g. from 10 to 5)
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_upward_rounded,
+              color: AppColors.emerald500,
+              size: 10.r,
+            ),
+            Text(
+              '$diff',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.emerald500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
+      );
+    } else if (diff < 0) {
+      // Dropped rank (e.g. from 5 to 10)
+      return SizedBox(
+        height: 12.h,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.arrow_downward_rounded,
+              color: AppColors.red500,
+              size: 10.r,
+            ),
+            Text(
+              '${diff.abs()}',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w800,
+                color: AppColors.red500,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      // Stayed the same
+      return SizedBox(
+        height: 12.h,
+        child: Center(
+          child: Container(
+            width: 8.w,
+            height: 2.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.6),
+              borderRadius: BorderRadius.circular(2.r),
+            ),
+          ),
+        ),
+      );
+    }
   }
 }

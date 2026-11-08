@@ -55,8 +55,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-        'listening.games.listening_inference_title',
-        fallback: 'Level Complete!',
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
       );
 
   late AnimationController _pulseController;

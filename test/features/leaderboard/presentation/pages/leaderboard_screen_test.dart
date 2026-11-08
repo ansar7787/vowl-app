@@ -222,6 +222,7 @@ void main() {
 
   Widget buildTestWidget({
     bool isKids = false,
+    bool? showBackButton,
     ThemeData? theme,
     double fontScale = 1.0,
     Size screenSize = const Size(390, 844),
@@ -240,7 +241,10 @@ void main() {
           ),
           home: BlocProvider<AuthBloc>.value(
             value: mockAuthBloc,
-            child: LeaderboardScreen(isKids: isKids),
+            child: LeaderboardScreen(
+              isKids: isKids,
+              showBackButton: showBackButton,
+            ),
           ),
         ),
       ),
@@ -484,9 +488,27 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('Kids Leaderboard'), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
       expect(find.text('Weekly League'), findsNothing);
       expect(find.textContaining('Levels'), findsWidgets);
+    });
+
+    testWidgets('renders back button and Home label when showBackButton is true on main leaderboard', (tester) async {
+      await tester.pumpWidget(buildTestWidget(showBackButton: true));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+      expect(find.text('Home'), findsOneWidget);
+    });
+
+    testWidgets('hides back button when showBackButton is false on main leaderboard', (tester) async {
+      await tester.pumpWidget(buildTestWidget(showBackButton: false));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsNothing);
+      expect(find.text('Home'), findsNothing);
     });
   });
 

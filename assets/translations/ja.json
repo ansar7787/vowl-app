@@ -256,22 +256,32 @@
     "perfect": "完璧"
   },
   "category_map": {
-    "cheer_boom": "レベル {}! ドカン！完璧な進歩！",
-    "cheer_breathtaking": "レベル {}! わあ！本当に息をのむほどだ！",
-    "cheer_genius": "レベル {}！絶対天才のエネルギー！",
-    "cheer_impressed": "レベル {}! {} は感動しています！",
-    "cheer_magic": "レベル {}！純粋な言語の魔法！",
-    "cheer_momentum": "レベル {}！その勢いを維持して！",
-    "cheer_rock": "レベル {}! あなたはこのステージで輝いている！",
-    "cheer_smart": "レベル {}! {} が言いました：あなたはとても賢いです！",
-    "cheer_unstoppable": "レベル {}！あなたは止められない、スーパースター！",
-    "cheer_winning": "レベル{}！大勝しているよ！",
+    "cheer_boom": "レベル{}の準備はいい？ 行こう！",
+    "cheer_breathtaking": "レベル{}の時間だよ！",
+    "cheer_genius": "レベル{}、いってみよう！",
+    "cheer_impressed": "{}の準備はバッチリ！",
+    "cheer_magic": "いい調子！ 遊ぼう！",
+    "cheer_momentum": "絶好調！ その調子！",
+    "cheer_rock": "よくやった！ 次が待ってるよ！",
+    "cheer_smart": "ナイス！ 次はレベル{}だよ！",
+    "cheer_unstoppable": "キミならできる！",
+    "cheer_winning": "さあ、やってみよう！",
     "default_companion_name": "仲間",
-    "first_level_greeting": "やあ！ {} です。レベルを始めましょう！",
+    "first_level_greeting": "やあ！ {}だよ。レベル1をはじめよう！",
     "golden_keys_label": "ゴールデンキー、{0} キー",
     "mascot_marker_action": "マスコットから応援をもらう",
     "master_previous_levels": "前のレベルをマスターして解除",
-    "star_vault_label": "スター・ヴォールト、{0} 星"
+    "star_vault_label": "スター・ヴォールト、{0} 星",
+    "cheer_do_this": "さあ、やってみよう！",
+    "cheer_got_this": "キミならできる！",
+    "cheer_here_we_go": "レベル{}、いってみよう！",
+    "cheer_looking_good": "いい調子！ 遊ぼう！",
+    "cheer_next_up": "ナイス！ 次はレベル{}だよ！",
+    "cheer_on_a_roll": "絶好調！ その調子！",
+    "cheer_ready": "レベル{}の準備はいい？ 行こう！",
+    "cheer_time_for": "レベル{}の時間だよ！",
+    "cheer_waiting": "よくやった！ 次が待ってるよ！",
+    "cheer_with_you": "{}の準備はバッチリ！"
   },
   "coin_history": {
     "ad_reward": "広告報酬",
@@ -1250,7 +1260,7 @@
     "daily_goal_completed": "毎日の目標を達成しました⭐",
     "habit_focus": "毎日の目標を達成するための 1 レッスン",
     "avatar_semantics_label": "プロフィール アバター、レベル {0}",
-    "mascot_semantics_label": "コンパニオンマスコット：__PH_ezB9___",
+    "mascot_semantics_label": "相棒マスコット：{0}",
     "protect_streak_subtitle_short": "{}d の連続記録を保護する 1 レベル",
     "first_step_in_category_short": "{} の最初のステップ",
     "levels_to_reach_milestone_short": "___PH_e30=次の目標に到達するための___レベル",
@@ -2515,18 +2525,18 @@
     }
   },
   "kids_zone": {
-    "buddy_message_amazing": "レベル {}！すごい！",
-    "buddy_message_boom": "レベル {}！ドーン！",
-    "buddy_message_genius": "レベル {}！天才！",
-    "buddy_message_go": "レベル {}！行け行け行け！",
-    "buddy_message_hifive": "レベル {}！ハイタッチ！",
-    "buddy_message_magic": "レベル {}！魔法のタッチ！",
-    "buddy_message_moon": "レベル {}！月へ！",
-    "buddy_message_rock": "レベル {}！あなたは最高です！",
-    "buddy_message_smart": "レベル {}！とても賢い！",
-    "buddy_message_superstar": "レベル {}! スーパースター!",
-    "buddy_message_winner": "レベル {}！勝者！",
-    "buddy_message_wow": "レベル {}！わお！",
+    "buddy_message_amazing": "わーい、レベル{}！",
+    "buddy_message_boom": "よーい、どん！",
+    "buddy_message_genius": "キミならできるよ！",
+    "buddy_message_go": "いっしょにあそぼう！",
+    "buddy_message_hifive": "ハイタッチ！",
+    "buddy_message_magic": "わーい！ たのしもう！",
+    "buddy_message_moon": "いっしょにあそぼう！",
+    "buddy_message_rock": "すごいね！ いこう！",
+    "buddy_message_smart": "とってもじょうず！",
+    "buddy_message_superstar": "わーい、レベル{}！",
+    "buddy_message_winner": "すごいね！ いこう！",
+    "buddy_message_wow": "いっしょにあそぼう！",
     "buddy_selected": "{0} は今やあなたのバディです！",
     "buy_for_coins": "{0} コインで購入しますか？",
     "buy_now": "今すぐ購入！",
@@ -2583,7 +2593,19 @@
     "title": "キッズゾーン",
     "watch_ad_3x": "広告を見て3倍の報酬を獲得",
     "welcome_back": "おかえりなさい！",
-    "which_friend": "どの友達があなたの冒険に参加しますか？"
+    "which_friend": "どの友達があなたの冒険に参加しますか？",
+    "cheer_awesome": "とってもじょうず！",
+    "cheer_can_do": "キミならできるよ！",
+    "cheer_fun": "わーい！ たのしもう！",
+    "cheer_great": "キミならできるよ！",
+    "cheer_great_job": "すごいね！ いこう！",
+    "cheer_hifive": "ハイタッチ！",
+    "cheer_play": "いっしょにあそぼう！",
+    "cheer_ready_go": "よーい、どん！",
+    "cheer_smart": "ハイタッチ！",
+    "cheer_star": "とってもじょうず！",
+    "cheer_wow": "よーい、どん！",
+    "cheer_yay": "わーい、レベル{}！"
   },
   "language_picker": {
     "no_results": "結果が見つかりませんでした",
@@ -2621,7 +2643,14 @@
     "updates_info": "ランキングは 4 時間ごとに自動的に更新されます。クエストをプレイして順位を上げましょう！",
     "xp": "XP",
     "you": "あなた",
-    "your_standing": "あなたの立場"
+    "your_standing": "あなたの立場",
+    "live_sync": "ライブ同期",
+    "syncing": "同期中...",
+    "sync_success": "リーダーボードが最新スコアで更新されました！",
+    "sync_error": "リーダーボードを更新できませんでした。もう一度お試しください。",
+    "live_sync_tooltip": "リーダーボードを同期",
+    "league_leader": "リーグリーダー",
+    "defending": "防衛中"
   },
   "listening": {
     "games": {
@@ -2825,7 +2854,8 @@
     "payment_cancelled": "支払いがキャンセルされました。",
     "payment_verifying_notice": "支払いが受領されました（参照: {0}）。あなたの取引は銀行によって確認されましたが、サーバーの同期が遅れています。Proアクセスはまもなく有効になります。再度支払わないでください。",
     "start_questing": "学び続ける",
-    "continue_learning": "学び続ける"
+    "continue_learning": "学び続ける",
+    "feature_arena_refuel": "1v1アリーナの即時補給（広告なし）"
   },
   "profile": {
     "picture_updated": "プロフィール写真が正常に更新されました。",
@@ -2917,7 +2947,11 @@
     "view_all": "すべて表示",
     "view_all_stickers": "すべてのステッカーを見る",
     "vowl_treasury": "ボウル財務省",
-    "you_answered": "あなたは答えました："
+    "you_answered": "あなたは答えました：",
+    "store": "ショップ",
+    "premium_store": "プレミアムショップ",
+    "arena_pvp_title": "1対1ワードアリーナ",
+    "arena_pvp_subtitle": "リアルタイム語彙デュエル"
   },
   "quest_archive": {
     "completed": "完了: {}%",
@@ -2964,7 +2998,8 @@
     "step_completed": "完了しました",
     "step_indicator": "ステップ {} / {}",
     "step_locked": "次へ",
-    "track_briefing": "ロードマップを追跡する"
+    "track_briefing": "ロードマップを追跡する",
+    "practice_again": "もう一度練習"
   },
   "quest_sequences": {
     "category_skill_enhance": "カテゴリスキル強化",

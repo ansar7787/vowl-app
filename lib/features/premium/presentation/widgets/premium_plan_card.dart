@@ -131,7 +131,7 @@ class PremiumPlanCard extends StatelessWidget {
                                 children: [
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerLeft,
+                                    alignment: AlignmentDirectional.centerStart,
                                     child: Text(
                                       plan.name.toUpperCase(),
                                       style: TextStyle(
@@ -148,7 +148,7 @@ class PremiumPlanCard extends StatelessWidget {
                                   SizedBox(height: 4.h),
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerLeft,
+                                    alignment: AlignmentDirectional.centerStart,
                                     child: Text(
                                       context.tr(
                                         'premium.days_of_elite_access',
@@ -166,22 +166,32 @@ class PremiumPlanCard extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 2.h),
-                                  if (!isGooglePlay)
-                                    FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: accentColor.withValues(
-                                            alpha: 0.8,
+                                  if (!isGooglePlay) ...[
+                                    Builder(
+                                      builder: (context) {
+                                        final isYearly = plan.days >= 365 ||
+                                            plan.name.toLowerCase().contains('year');
+                                        final chaiSuffix = isYearly
+                                            ? ' • ${context.tr('premium.chai_anchor', fallback: 'Half a cup of chai ☕')}'
+                                            : '';
+                                        return FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          alignment: AlignmentDirectional.centerStart,
+                                          child: Text(
+                                            '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}$chaiSuffix',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              color: accentColor.withValues(
+                                                alpha: 0.9,
+                                              ),
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w700,
+                                            ),
                                           ),
-                                          fontSize: 11.sp,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
+                                        );
+                                      },
                                     ),
+                                  ],
                                 ],
                               ),
                             ),
@@ -196,7 +206,7 @@ class PremiumPlanCard extends StatelessWidget {
                                   if (!isGooglePlay)
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      alignment: Alignment.centerRight,
+                                      alignment: AlignmentDirectional.centerEnd,
                                       child: Text(
                                         currencyFormat.format(plan.oldPrice),
                                         style: TextStyle(
@@ -216,7 +226,7 @@ class PremiumPlanCard extends StatelessWidget {
                                   if (!isGooglePlay) SizedBox(height: 2.h),
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerRight,
+                                    alignment: AlignmentDirectional.centerEnd,
                                     child: Text(
                                       isGooglePlay
                                           ? googlePlayPrice!
@@ -268,9 +278,9 @@ class PremiumPlanCard extends StatelessWidget {
 
                       // The gorgeous floating tag at the top right
                       if (plan.tag.isNotEmpty)
-                        Positioned(
+                        PositionedDirectional(
                           top: -12.h,
-                          right: 20.w,
+                          end: 20.w,
                           child: Builder(
                             builder: (context) {
                               final tagWidget = Container(

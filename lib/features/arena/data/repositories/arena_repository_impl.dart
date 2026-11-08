@@ -9,9 +9,32 @@ import 'package:vowl/features/arena/data/utils/arena_ai_difficulty_engine.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 
+class _ActiveQueueSearch {
+  final String userId;
+  final String roomCode;
+  final Completer<ArenaDuelSession?> completer;
+  StreamSubscription? subscription;
+  bool isCanceled = false;
+
+  _ActiveQueueSearch({
+    required this.userId,
+    required this.roomCode,
+    required this.completer,
+  });
+}
+
+class MatchmakingCanceledException implements Exception {
+  final String message;
+  const MatchmakingCanceledException([this.message = 'Matchmaking cancelled by user']);
+
+  @override
+  String toString() => message;
+}
+
 class ArenaRepositoryImpl implements ArenaRepository {
   final FirebaseFirestore _firestore;
   int _sessionConsecutiveWins = 0;
+  final Map<String, _ActiveQueueSearch> _activeSearches = {};
 
   static const Duration _kNetworkTimeout = Duration(seconds: 10);
   static const int _kStakeCoins = 30;
@@ -22,9 +45,33 @@ class ArenaRepositoryImpl implements ArenaRepository {
       : _firestore = firestore ?? FirebaseFirestore.instance;
 
   @override
+  Future<void> cancelMatchmaking({required String userId}) async {
+    final search = _activeSearches.remove(userId);
+    if (search != null) {
+      search.isCanceled = true;
+      try {
+        await search.subscription?.cancel();
+      } catch (_) {}
+      if (!search.completer.isCompleted) {
+        search.completer.complete(null);
+      }
+    }
+    try {
+      await _firestore
+          .collection('arena_queue')
+          .doc(userId)
+          .delete()
+          .timeout(const Duration(seconds: 3));
+    } catch (_) {}
+  }
+
+  @override
   Future<ArenaDuelSession> quickMatch({
     required UserEntity currentUser,
   }) async {
+    // 0. Ensure any stale or orphaned queue state for this user from an interrupted session is purged
+    await cancelMatchmaking(userId: currentUser.id);
+
     // 1. Deduct entry stake (30 coins)
     await _deductEntryStake(currentUser.id);
 
@@ -95,50 +142,78 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
             return session;
           }
-        } else {
-          // B. No human waiting: register ticket and listen for 3s
-          final myRoomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
-          final myTicketRef = queueRef.doc(currentUser.id);
-          await myTicketRef.set({
-            'userId': currentUser.id,
-            'displayName': currentUser.safeDisplayName,
-            'photoUrl': currentUser.photoUrl,
-            'roomCode': myRoomCode,
-            'createdAt': FieldValue.serverTimestamp(),
-          });
-
-          final completer = Completer<ArenaDuelSession?>();
-          final sub = _firestore
-              .collection('arena_rooms')
-              .doc(myRoomCode)
-              .snapshots()
-              .listen((snap) {
-            if (snap.exists && snap.data()?['guestId'] != null) {
-              if (!completer.isCompleted) {
-                completer.complete(_mapSession(myRoomCode, snap.data()!));
-              }
-            }
-          });
-
-          ArenaDuelSession? liveMatched;
-          try {
-            // Real-world queue wait: Listen for up to 8 seconds for a real human player
-            liveMatched = await completer.future.timeout(const Duration(seconds: 8));
-          } catch (_) {
-            // 8-second timeout: no human joined in active queue
-          } finally {
-            await sub.cancel();
-            try {
-              await myTicketRef.delete();
-            } catch (_) {}
-          }
-
-          if (liveMatched != null) {
-            return liveMatched;
-          }
         }
-      } catch (_) {
+
+        // B. No human waiting: register ticket and listen for real opponent
+        final myRoomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+        final myTicketRef = queueRef.doc(currentUser.id);
+        final completer = Completer<ArenaDuelSession?>();
+
+        final search = _ActiveQueueSearch(
+          userId: currentUser.id,
+          roomCode: myRoomCode,
+          completer: completer,
+        );
+        _activeSearches[currentUser.id] = search;
+
+        await myTicketRef.set({
+          'userId': currentUser.id,
+          'displayName': currentUser.safeDisplayName,
+          'photoUrl': currentUser.photoUrl,
+          'roomCode': myRoomCode,
+          'createdAt': FieldValue.serverTimestamp(),
+        });
+
+        if (search.isCanceled) {
+          await myTicketRef.delete().catchError((_) {});
+          _activeSearches.remove(currentUser.id);
+          throw const MatchmakingCanceledException();
+        }
+
+        final sub = _firestore
+            .collection('arena_rooms')
+            .doc(myRoomCode)
+            .snapshots()
+            .listen((snap) {
+          if (search.isCanceled) return;
+          if (snap.exists && snap.data()?['guestId'] != null) {
+            if (!completer.isCompleted) {
+              completer.complete(_mapSession(myRoomCode, snap.data()!));
+            }
+          }
+        });
+        search.subscription = sub;
+
+        ArenaDuelSession? liveMatched;
+        try {
+          // Real-world queue wait: Listen for up to 8 seconds for a real human player
+          liveMatched = await completer.future.timeout(const Duration(seconds: 8));
+        } catch (_) {
+          // 8-second timeout or cancelled early
+        } finally {
+          await sub.cancel();
+          _activeSearches.remove(currentUser.id);
+          try {
+            await myTicketRef.delete();
+          } catch (_) {}
+        }
+
+        if (search.isCanceled) {
+          throw const MatchmakingCanceledException();
+        }
+
+        if (liveMatched != null) {
+          return liveMatched;
+        }
+      } catch (e) {
+        if (e is MatchmakingCanceledException) rethrow;
         // Fall through to calibrated Computer/AI opponent
+      }
+
+      // Check if user cancelled while in between checks
+      final active = _activeSearches[currentUser.id];
+      if (active != null && active.isCanceled) {
+        throw const MatchmakingCanceledException();
       }
 
       // 3. Fallback: If no real human player queued within 8s, match with calibrated Computer/AI
@@ -165,6 +240,9 @@ class ArenaRepositoryImpl implements ArenaRepository {
         questions: questions,
         createdAt: DateTime.now(),
       );
+    } on MatchmakingCanceledException {
+      // User explicitly cancelled - stake refund is handled by caller (ArenaMatchmakingScreen)
+      rethrow;
     } catch (e) {
       await _refundEntryStake(currentUser.id);
       rethrow;
