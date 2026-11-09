@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'package:vowl/core/theme/app_colors.dart';
@@ -84,17 +85,35 @@ class _SplashPageState extends State<SplashPage> {
             ),
           );
         } else {
+          // Cold-start on reinstalled app: fetch authoritative Firestore profile
+          // before routing to avoid flashing stale OAuth credentials
+          UserModel? authoritativeUser;
+          try {
+            final doc = await FirebaseFirestore.instance
+                .collection('users')
+                .doc(currentUser.uid)
+                .get()
+                .timeout(const Duration(seconds: 2));
+            if (doc.exists && doc.data() != null) {
+              authoritativeUser = UserModel.fromMap(doc.data()!, doc.id).copyWith(
+                isEmailVerified: currentUser.emailVerified,
+              );
+              await di.sl<AuthLocalDataSource>().cacheUser(authoritativeUser);
+            }
+          } catch (_) {}
+
           authBloc.add(
             AuthUserChanged(
-              UserModel(
-                id: currentUser.uid,
-                email: currentUser.email ?? '',
-                displayName: currentUser.displayName,
-                photoUrl: currentUser.photoURL,
-                isEmailVerified: currentUser.emailVerified,
-                dailyXpHistory: const {},
-                recentActivities: const [],
-              ),
+              authoritativeUser ??
+                  UserModel(
+                    id: currentUser.uid,
+                    email: currentUser.email ?? '',
+                    displayName: currentUser.displayName,
+                    photoUrl: currentUser.photoURL,
+                    isEmailVerified: currentUser.emailVerified,
+                    dailyXpHistory: const {},
+                    recentActivities: const [],
+                  ),
             ),
           );
         }

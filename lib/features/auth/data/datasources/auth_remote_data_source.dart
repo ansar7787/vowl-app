@@ -244,75 +244,74 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final userDocRef = _firestore.collection('users').doc(user.uid);
     final userDoc = await userDocRef.get();
     final isNewUser = !userDoc.exists;
-
-    // 1. Resolve authoritative display name: prioritize Google OAuth profile first,
-    // then Firebase Auth user, then formatted email prefix, with safe fallback.
-    final googleName = googleUser.displayName?.trim();
-    final firebaseName = user.displayName?.trim();
-    String? resolvedName;
-
-    if (googleName != null &&
-        googleName.isNotEmpty &&
-        googleName.toLowerCase() != 'unknown user' &&
-        googleName.toLowerCase() != 'unknown') {
-      resolvedName = googleName;
-    } else if (firebaseName != null &&
-        firebaseName.isNotEmpty &&
-        firebaseName.toLowerCase() != 'unknown user' &&
-        firebaseName.toLowerCase() != 'unknown') {
-      resolvedName = firebaseName;
-    } else {
-      final emailCandidate = (user.email ?? googleUser.email).trim();
-      if (emailCandidate.isNotEmpty && emailCandidate.contains('@')) {
-        final prefix = emailCandidate
-            .split('@')
-            .first
-            .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
-            .trim();
-        if (prefix.isNotEmpty) {
-          resolvedName = prefix
-              .split(' ')
-              .where((s) => s.isNotEmpty)
-              .map(
-                (w) =>
-                    w[0].toUpperCase() +
-                    (w.length > 1 ? w.substring(1).toLowerCase() : ''),
-              )
-              .join(' ');
-        }
-      }
-    }
-    resolvedName = (resolvedName != null && resolvedName.trim().isNotEmpty)
-        ? resolvedName.trim()
-        : 'Vowl Learner';
-
-    // 2. Resolve photo URL: prioritize Google OAuth avatar, then Firebase Auth avatar.
-    final resolvedPhotoUrl = googleUser.photoUrl ?? user.photoURL;
-
-    // 3. Immediately update and reload Firebase Auth user so currentUser.displayName matches
-    try {
-      await user.updateDisplayName(resolvedName);
-      if (resolvedPhotoUrl != null && resolvedPhotoUrl.isNotEmpty) {
-        await user.updatePhotoURL(resolvedPhotoUrl);
-      }
-      await user.reload();
-    } catch (_) {}
+    final existingData = userDoc.data();
+    final existingPhoto = (existingData?['photoUrl'] as String?)?.trim();
+    final existingName = (existingData?['displayName'] as String?)?.trim();
 
     if (isNewUser) {
+      // 1. Authoritative display name for fresh users: Google -> Firebase -> formatted email
+      final googleName = googleUser.displayName?.trim();
+      final firebaseName = user.displayName?.trim();
+      String? resolvedName;
+
+      if (googleName != null &&
+          googleName.isNotEmpty &&
+          googleName.toLowerCase() != 'unknown user' &&
+          googleName.toLowerCase() != 'unknown') {
+        resolvedName = googleName;
+      } else if (firebaseName != null &&
+          firebaseName.isNotEmpty &&
+          firebaseName.toLowerCase() != 'unknown user' &&
+          firebaseName.toLowerCase() != 'unknown') {
+        resolvedName = firebaseName;
+      } else {
+        final emailCandidate = (user.email ?? googleUser.email).trim();
+        if (emailCandidate.isNotEmpty && emailCandidate.contains('@')) {
+          final prefix = emailCandidate
+              .split('@')
+              .first
+              .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+              .trim();
+          if (prefix.isNotEmpty) {
+            resolvedName = prefix
+                .split(' ')
+                .where((s) => s.isNotEmpty)
+                .map(
+                  (w) =>
+                      w[0].toUpperCase() +
+                      (w.length > 1 ? w.substring(1).toLowerCase() : ''),
+                )
+                .join(' ');
+          }
+        }
+      }
+      resolvedName = (resolvedName != null && resolvedName.trim().isNotEmpty)
+          ? resolvedName.trim()
+          : 'Vowl Learner';
+
+      // 2. Initial photo URL for fresh signup only
+      final initialPhotoUrl = googleUser.photoUrl ?? user.photoURL;
+
+      // 3. Immediately update and reload Firebase Auth user for new registration
+      try {
+        await user.updateDisplayName(resolvedName);
+        if (initialPhotoUrl != null && initialPhotoUrl.isNotEmpty) {
+          await user.updatePhotoURL(initialPhotoUrl);
+        }
+        await user.reload();
+      } catch (_) {}
+
       final newUser = UserModel(
         id: user.uid,
         email: user.email ?? googleUser.email,
         displayName: resolvedName,
-        photoUrl: resolvedPhotoUrl,
+        photoUrl: initialPhotoUrl,
         isAdmin: false,
         lastLoginDate: DateTime.now(),
         currentStreak: 1,
         dailyXpHistory: const {},
         recentActivities: const [],
       );
-      // Best-effort, same reasoning as signUp() above: the Auth session
-      // already exists; don't fail this call over a transient Firestore
-      // write error and leave the caller unsure whether sign-in worked.
       try {
         final map = newUser.toMap();
         map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
@@ -327,28 +326,50 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         );
       }
     } else {
-      // Self-heal existing user doc if displayName was null, empty, 'Unknown User',
-      // or stuck on the generic fallback 'Vowl Learner' when a real Google name is available.
-      final existingData = userDoc.data();
-      final existingName = (existingData?['displayName'] as String?)?.trim();
-      final isExistingGeneric =
+      // RETURNING USER: In-app customizations are authoritative and sacred.
+      // Never overwrite the user's custom avatar or custom display name with Google OAuth defaults.
+      final isExistingNameGeneric =
           existingName == null ||
           existingName.isEmpty ||
           existingName.toLowerCase() == 'unknown user' ||
           existingName.toLowerCase() == 'unknown' ||
           existingName.toLowerCase() == 'vowl learner';
 
+      final googleName = googleUser.displayName?.trim();
+      final effectiveName = (!isExistingNameGeneric && existingName != null)
+          ? existingName
+          : ((googleName != null &&
+                    googleName.isNotEmpty &&
+                    googleName.toLowerCase() != 'unknown user' &&
+                    googleName.toLowerCase() != 'unknown')
+                ? googleName
+                : 'Vowl Learner');
+
+      final hasCustomPhoto = existingPhoto != null && existingPhoto.isNotEmpty;
+      final googlePhoto = (googleUser.photoUrl ?? user.photoURL)?.trim();
+      final effectivePhoto = hasCustomPhoto
+          ? existingPhoto
+          : ((googlePhoto != null && googlePhoto.isNotEmpty) ? googlePhoto : null);
+
+      // Keep Firebase Auth in sync with the authoritative Firestore profile
+      try {
+        if (user.displayName != effectiveName) {
+          await user.updateDisplayName(effectiveName);
+        }
+        if (effectivePhoto != null && user.photoURL != effectivePhoto) {
+          await user.updatePhotoURL(effectivePhoto);
+        }
+        await user.reload();
+      } catch (_) {}
+
       final updates = <String, dynamic>{
         'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
       };
-      if (isExistingGeneric && resolvedName != 'Vowl Learner') {
-        updates['displayName'] = resolvedName;
+      if (isExistingNameGeneric && effectiveName != 'Vowl Learner') {
+        updates['displayName'] = effectiveName;
       }
-      final existingPhoto = (existingData?['photoUrl'] as String?)?.trim();
-      if ((existingPhoto == null || existingPhoto.isEmpty) &&
-          resolvedPhotoUrl != null &&
-          resolvedPhotoUrl.isNotEmpty) {
-        updates['photoUrl'] = resolvedPhotoUrl;
+      if (!hasCustomPhoto && effectivePhoto != null && effectivePhoto.isNotEmpty) {
+        updates['photoUrl'] = effectivePhoto;
       }
       if (updates.isNotEmpty) {
         try {

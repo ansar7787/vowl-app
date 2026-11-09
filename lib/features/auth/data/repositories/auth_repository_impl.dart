@@ -265,6 +265,23 @@ class AuthRepositoryImpl
               firebaseUser.updatePhotoURL(bestPhoto).catchError((_) {});
             } catch (_) {}
           }
+        } else {
+          // Both name and photo exist in Firestore: ensure Firebase Auth mirrors authoritative data
+          if (currentPhoto != null &&
+              currentPhoto.isNotEmpty &&
+              firebaseUser.photoURL != currentPhoto) {
+            try {
+              firebaseUser.updatePhotoURL(currentPhoto).catchError((_) {});
+            } catch (_) {}
+          }
+          if (currentName != null &&
+              currentName.isNotEmpty &&
+              !isNameGeneric &&
+              firebaseUser.displayName != currentName) {
+            try {
+              firebaseUser.updateDisplayName(currentName).catchError((_) {});
+            } catch (_) {}
+          }
         }
 
         _localDataSource.cacheUser(resolvedUser);
@@ -676,9 +693,28 @@ class AuthRepositoryImpl
             );
             await _localDataSource.cacheUser(resolvedUser);
             _emit(resolvedUser);
-          } else {
-            // Firestore doc missing: self-heal from cached user or auth credentials
-            // so we NEVER emit a blank minimal user that wipes identity.
+
+            // Keep Firebase Auth in sync with authoritative Firestore data
+            final customPhoto = userModel.photoUrl?.trim();
+            if (customPhoto != null &&
+                customPhoto.isNotEmpty &&
+                refreshedUser.photoURL != customPhoto) {
+              try {
+                refreshedUser.updatePhotoURL(customPhoto).catchError((_) {});
+              } catch (_) {}
+            }
+            if (effectiveName != null &&
+                effectiveName.isNotEmpty &&
+                effectiveName.toLowerCase() != 'vowl learner' &&
+                effectiveName.toLowerCase() != 'unknown user' &&
+                refreshedUser.displayName != effectiveName) {
+              try {
+                refreshedUser.updateDisplayName(effectiveName).catchError((_) {});
+              } catch (_) {}
+            }
+          } else if (doc != null && !doc.exists) {
+            // ONLY self-heal when Firestore explicitly confirms the document does NOT exist.
+            // If doc is null due to a network glitch or timeout, NEVER overwrite real data!
             final effectiveName =
                 (cached != null &&
                     cached.id == refreshedUser.uid &&
@@ -703,7 +739,12 @@ class AuthRepositoryImpl
                     id: refreshedUser.uid,
                     email: effectiveEmail,
                     displayName: effectiveName,
-                    photoUrl: refreshedUser.photoURL,
+                    photoUrl: (cached != null &&
+                            cached.id == refreshedUser.uid &&
+                            cached.photoUrl != null &&
+                            cached.photoUrl!.trim().isNotEmpty)
+                        ? cached.photoUrl
+                        : refreshedUser.photoURL,
                     lastLoginDate: DateTime.now(),
                     currentStreak: 1,
                     isEmailVerified: refreshedUser.emailVerified,
