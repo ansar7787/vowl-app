@@ -177,20 +177,31 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                 // 3.5 Global Adaptive Learning Dashboard
                 if (hasBlueprint) ...[
                   SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 8.h),
-                      child: CategoryRadarChart(
-                        user: user,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        categoryId: widget.categoryId,
-                      ),
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: AdaptiveSmartMixWidget(
-                      user: user,
-                      categoryId: widget.categoryId,
+                    child: ValueListenableBuilder<String>(
+                      valueListenable: _searchQuery,
+                      builder: (context, query, _) {
+                        if (query.trim().isNotEmpty) {
+                          return const SizedBox.shrink();
+                        }
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: 8.h),
+                              child: CategoryRadarChart(
+                                user: user,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                categoryId: widget.categoryId,
+                              ),
+                            ),
+                            AdaptiveSmartMixWidget(
+                              user: user,
+                              categoryId: widget.categoryId,
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ),
                   SliverToBoxAdapter(
@@ -742,19 +753,23 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     ),
 
                     // 10/10 Apex Feature: 1-Tap Quick-Resume Hero Action
-                    () {
-                      final nextGame = _findNextActiveGame(games, user);
-                      if (nextGame == null) return const SizedBox.shrink();
-                      return Padding(
-                        padding: EdgeInsets.only(top: 8.h),
-                        child: _buildQuickResumeHero(
-                          theme: theme,
-                          user: user,
-                          nextGame: nextGame,
-                          isDark: isDark,
-                        ),
-                      );
-                    }(),
+                    ValueListenableBuilder<String>(
+                      valueListenable: _searchQuery,
+                      builder: (context, query, _) {
+                        if (query.trim().isNotEmpty) return const SizedBox.shrink();
+                        final nextGame = _findNextActiveGame(games, user);
+                        if (nextGame == null) return const SizedBox.shrink();
+                        return Padding(
+                          padding: EdgeInsets.only(top: 8.h),
+                          child: _buildQuickResumeHero(
+                            theme: theme,
+                            user: user,
+                            nextGame: nextGame,
+                            isDark: isDark,
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
