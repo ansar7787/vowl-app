@@ -42,25 +42,25 @@ enum AmbassadorRewardTier {
   gold(
     vipDays: 30,
     coins: 0,
-    title: '🥇 1st Place',
+    title: '1st Place',
     prizeDescription: '1 Month Free VIP',
   ),
   silver(
     vipDays: 7,
     coins: 0,
-    title: '🥈 2nd Place',
+    title: '2nd Place',
     prizeDescription: '1 Week Free VIP',
   ),
   bronze(
     vipDays: 3,
     coins: 500,
-    title: '🥉 3rd Place',
+    title: '3rd Place',
     prizeDescription: '500 Coins + 3 Days VIP',
   ),
   topTen(
     vipDays: 0,
     coins: 200,
-    title: '🏅 Top 10',
+    title: 'Top 10',
     prizeDescription: '200 Coins',
   ),
   participant(

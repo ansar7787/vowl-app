@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -198,6 +199,43 @@ void main() {
           findsOneWidget,
         );
         expect(find.text('QUALIFIED'), findsWidgets);
+      },
+    );
+
+    testWidgets(
+      'renders cached UserAvatar in podium and pinned user standing card',
+      (tester) async {
+        const userWithPhoto = UserEntity(
+          id: 'user_with_avatar',
+          email: 'avatar@vowl.app',
+          displayName: 'Avatar User',
+          photoUrl: 'https://images.example.com/avatar123.jpg',
+          coins: 500,
+          totalReferralsCount: 4,
+          monthlyReferralsCount: 2,
+          referralCode: 'VOWL-AVATAR',
+        );
+
+        await tester.pumpWidget(
+          buildSubject(user: userWithPhoto, initialTab: 1),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Verifies UserAvatar widgets exist on screen
+        final avatarFinder = find.byType(UserAvatar);
+        expect(avatarFinder, findsWidgets);
+
+        // Verifies the user's avatar is specifically passed to UserAvatar
+        final userAvatars = tester.widgetList<UserAvatar>(avatarFinder);
+        final hasUserPhoto = userAvatars.any(
+          (avatar) =>
+              avatar.photoUrl == 'https://images.example.com/avatar123.jpg',
+        );
+        expect(hasUserPhoto, isTrue);
+
+        // Verifies pinned standing card text
+        expect(find.text('Your Monthly Standing'), findsOneWidget);
       },
     );
   });

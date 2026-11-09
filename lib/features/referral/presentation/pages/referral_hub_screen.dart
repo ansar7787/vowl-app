@@ -295,7 +295,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                   CustomSnackBar.show(
                     context: context,
                     message:
-                        '🎉 $count friend(s) completed Level 1! You unlocked +$coins Coins & +$count Day VIP!',
+                        '$count friend(s) completed Level 1! You unlocked +$coins Coins & +$count Day VIP!',
                     type: CustomSnackBarType.success,
                   );
                 }
@@ -403,6 +403,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                             items: state.ambassadorLeaderboard,
                             isLoading: state.isLoading,
                             currentUserId: user.id,
+                            currentUserPhotoUrl: user.photoUrl,
                             myMonthlyReferrals:
                                 user.activeMonthlyReferralsCount,
                             onClaimPastMonth: () => context

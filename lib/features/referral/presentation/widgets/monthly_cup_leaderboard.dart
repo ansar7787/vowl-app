@@ -15,6 +15,7 @@ class MonthlyCupLeaderboard extends StatefulWidget {
   final List<AmbassadorLeaderboardItem> items;
   final bool isLoading;
   final String? currentUserId;
+  final String? currentUserPhotoUrl;
   final int myMonthlyReferrals;
   final VoidCallback? onClaimPastMonth;
   final bool isClaimingPastMonth;
@@ -26,6 +27,7 @@ class MonthlyCupLeaderboard extends StatefulWidget {
     required this.items,
     this.isLoading = false,
     this.currentUserId,
+    this.currentUserPhotoUrl,
     this.myMonthlyReferrals = 0,
     this.onClaimPastMonth,
     this.isClaimingPastMonth = false,
@@ -71,7 +73,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
   static String _rankPrizeText(int rank) {
     if (rank == 1) return '1 Mo VIP';
     if (rank == 2) return '1 Wk VIP';
-    if (rank == 3) return '500🪙 + 3d VIP';
+    if (rank == 3) return '500 Coins + 3d VIP';
     if (rank <= 10) return '200 Coins';
     return 'Badge';
   }
@@ -547,8 +549,8 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             child: Row(
               children: [
                 Container(
-                  width: 32.w,
-                  height: 32.w,
+                  width: 32.r,
+                  height: 32.r,
                   decoration: BoxDecoration(
                     color: AppColors.indigo500.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
@@ -561,6 +563,15 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                       fontWeight: FontWeight.w900,
                       color: AppColors.indigo500,
                     ),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                UserAvatar(
+                  photoUrl: widget.currentUserPhotoUrl,
+                  size: 34.r,
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.3),
+                    width: 1.5,
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -916,6 +927,9 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
     final hasReferrals = item.referralCount >= 1;
     final colors = _rankColors(rank);
     final avatarSize = isCenter ? 54.r : 44.r;
+    final avatarUrl = isMe
+        ? (widget.currentUserPhotoUrl ?? item.photoUrl)
+        : item.photoUrl;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -943,7 +957,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
               ),
               padding: EdgeInsets.all(isCenter ? 3.r : 2.5.r),
               child: UserAvatar(
-                photoUrl: item.photoUrl,
+                photoUrl: avatarUrl,
                 size: avatarSize - (isCenter ? 6.r : 5.r),
               ),
             ),
@@ -1255,7 +1269,9 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
 
           // Avatar with subtle tier border
           UserAvatar(
-            photoUrl: item.photoUrl,
+            photoUrl: isMe
+                ? (widget.currentUserPhotoUrl ?? item.photoUrl)
+                : item.photoUrl,
             size: 34.r,
             border: Border.all(
               color: tierColor.withValues(alpha: 0.25),

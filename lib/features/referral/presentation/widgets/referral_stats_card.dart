@@ -160,7 +160,7 @@ class ReferralStatsCard extends StatelessWidget {
                 child: _buildBentoPod(
                   title: 'Friends Joined',
                   value: '$lifetimeCount',
-                  subtitle: '+100 🪙 each',
+                  subtitle: '+100 Coins each',
                   icon: Icons.people_alt_rounded,
                   accentColor: AppColors.indigo500,
                   isDark: isDark,

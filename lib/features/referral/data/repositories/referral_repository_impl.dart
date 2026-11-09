@@ -31,7 +31,26 @@ class ReferralRepositoryImpl implements ReferralRepository {
   @override
   Future<String> getOrCreateReferralCode(UserEntity user) async {
     if (user.referralCode != null && user.referralCode!.trim().isNotEmpty) {
-      return user.referralCode!.trim().toUpperCase();
+      final code = user.referralCode!.trim().toUpperCase();
+      // Keep owner profile info (avatar & display name) synced in referrals collection
+      try {
+        unawaited(
+          _firestore
+              .collection('referrals')
+              .doc(code)
+              .set({
+                'ownerName': user.safeDisplayName,
+                'ownerPhotoUrl': user.photoUrl,
+              }, SetOptions(merge: true))
+              .timeout(_kNetworkTimeout)
+              .catchError((e) {
+                debugPrint('[ReferralRepositoryImpl] sync profile to referral error: $e');
+              }),
+        );
+      } catch (e) {
+        debugPrint('[ReferralRepositoryImpl] sync profile error: $e');
+      }
+      return code;
     }
 
     try {
