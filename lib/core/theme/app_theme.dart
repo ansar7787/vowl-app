@@ -42,14 +42,14 @@ class AppTheme {
   // Palette — Light mode surfaces (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
-  /// Light scaffold background (Slate 50 — soft neutral base so white cards pop).
-  static const Color scaffoldLight = AppColors.slate50;
+  /// Light scaffold background (Option 2: Pure White canvas).
+  static const Color scaffoldLight = AppColors.white;
 
   /// Light card surface (pure white).
   static const Color cardLight = AppColors.white;
 
-  /// Light border colour (Slate 100 — subtle & clean).
-  static const Color borderLight = AppColors.slate100;
+  /// Light border colour (Option 2: Slate 200 — crisp hairline boundary for white-on-white).
+  static const Color borderLight = AppColors.slate200;
 
   // ---------------------------------------------------------------------------
   // Palette — Dark mode surfaces (delegating to AppColors)

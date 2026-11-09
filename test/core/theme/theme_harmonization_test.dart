@@ -18,7 +18,7 @@ void main() {
         expect(tokens, isNotNull);
         expect(tokens!.surface, Colors.white);
         expect(tokens.textPrimary, AppColors.slate900);
-        expect(tokens.border, AppColors.slate100);
+        expect(tokens.border, AppTheme.borderLight);
       },
     );
 

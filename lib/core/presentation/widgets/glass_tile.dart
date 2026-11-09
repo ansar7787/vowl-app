@@ -80,7 +80,7 @@ class GlassTile extends StatelessWidget {
                           )) // Crisp Slate 700 standard border
                   : const Color(
                       0xFF0F172A,
-                    ).withValues(alpha: borderOpacity ?? 0.08)),
+                    ).withValues(alpha: borderOpacity ?? 0.11)),
           width: borderWidth ?? (isDark ? 1.0 : 1.4),
         );
 
