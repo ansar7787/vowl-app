@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -183,11 +182,14 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                         Semantics(
                           button: true,
                           label: context.tr(
-                            'leaderboard.live_sync_tooltip',
-                            fallback: 'Sync leaderboard',
+                            'leaderboard.sync_countdown_tooltip',
+                            fallback:
+                                'Next update in {0}. Tap to sync leaderboard now.',
+                            args: [countdown],
                           ),
                           child: GestureDetector(
                             onTap: _handleSync,
+                            behavior: HitTestBehavior.opaque,
                             child: Container(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 9.w,
@@ -223,10 +225,10 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                       color: isDark
                                           ? AppColors.blue300
                                           : AppColors.indigo500,
-                                      size: 12.r,
+                                      size: 13.r,
                                     ),
                                   ),
-                                  SizedBox(width: 4.w),
+                                  SizedBox(width: 4.5.w),
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Text(
@@ -236,8 +238,9 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                               fallback: 'Syncing...',
                                             )
                                           : context.tr(
-                                              'leaderboard.live_sync',
-                                              fallback: 'Live Sync',
+                                              'leaderboard.next_update_in',
+                                              fallback: 'Next in {0}',
+                                              args: [countdown],
                                             ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
@@ -246,6 +249,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                         color: isDark
                                             ? AppColors.blue300
                                             : AppColors.indigo500,
+                                        letterSpacing: 0.1,
                                       ),
                                       maxLines: 1,
                                     ),
@@ -258,29 +262,45 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                       ],
                     ),
                     SizedBox(height: 2.h),
-                    Text(
-                      widget.isKids
-                          ? context.tr(
-                              'leaderboard.kids_subtitle',
-                              fallback: 'See how your child ranks globally!',
-                            )
-                          : context.tr(
-                              'leaderboard.subtitle',
-                              fallback: 'See how you rank globally!',
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            widget.isKids
+                                ? context.tr(
+                                    'leaderboard.kids_subtitle',
+                                    fallback:
+                                        'See how your child ranks globally!',
+                                  )
+                                : context.tr(
+                                    'leaderboard.subtitle',
+                                    fallback: 'See how you rank globally!',
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? Colors.white60
+                                  : AppColors.slate600,
                             ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white60 : AppColors.slate600,
-                      ),
-                    ),
-                    SizedBox(height: 5.h),
-                    _buildUpdateCountdownBadge(
-                      context,
-                      isDark,
-                      countdown,
-                      timeAgo,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
+                          '•  $timeAgo',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark
+                                ? Colors.white38
+                                : AppColors.slate400,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -292,93 +312,6 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
     );
     if (VowlMotion.shouldReduceMotion(context)) return header;
     return header.animate().fadeIn(duration: 500.ms);
-  }
-
-  /// Renders a small, elegant countdown capsule with last-updated freshness text.
-  /// Designed to remain subtle and non-intrusive while giving instant temporal context.
-  Widget _buildUpdateCountdownBadge(
-    BuildContext context,
-    bool isDark,
-    String countdown,
-    String timeAgo,
-  ) {
-    final nextUpdateText = context.tr(
-      'leaderboard.next_update_in',
-      fallback: 'Next in {0}',
-      args: [countdown],
-    );
-
-    return Semantics(
-      label: context.tr(
-        'leaderboard.next_update_accessibility',
-        fallback: 'Next leaderboard update in {0}. Data was updated {1}.',
-        args: [countdown, timeAgo],
-      ),
-      child: GestureDetector(
-        onTap: _showUpdateInfo,
-        behavior: HitTestBehavior.opaque,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Micro countdown capsule (staying small and refined)
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 7.w,
-                vertical: 2.5.h,
-              ),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.indigo500.withValues(alpha: 0.16)
-                    : AppColors.indigo500.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(6.r),
-                border: Border.all(
-                  color: isDark
-                      ? AppColors.indigo500.withValues(alpha: 0.35)
-                      : AppColors.indigo500.withValues(alpha: 0.20),
-                  width: 0.8.w,
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    LucideIcons.clock,
-                    size: 10.sp,
-                    color: isDark ? AppColors.blue300 : AppColors.indigo600,
-                  ),
-                  SizedBox(width: 4.w),
-                  Text(
-                    nextUpdateText,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? AppColors.blue300 : AppColors.indigo600,
-                      letterSpacing: 0.2,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(width: 6.w),
-            // Subtle "• Updated X ago" indicator
-            Flexible(
-              child: Text(
-                '•  $timeAgo',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white38 : AppColors.slate400,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   String _formatTimeAgo(BuildContext context, DateTime dateTime) {
