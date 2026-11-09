@@ -4,363 +4,393 @@
   "quests": [
     {
       "id": "ARENA_SS_B19_Q1",
-      "question": "None of the evidence _____ conclusive, so the case was dropped.",
+      "question": "Would you like _____ more tea?",
       "options": [
-        "were",
-        "are",
-        "was",
-        "have been"
+        "an",
+        "many",
+        "few",
+        "some"
       ],
-      "correctAnswer": "was",
-      "explanation": "\"Evidence\" is uncountable, so \"none of the evidence\" takes a singular verb. The word \"dropped\" shows that the sentence is in the past, which makes \"was\" the only fit."
+      "correctAnswer": "some",
+      "explanation": "'Some' is used in offers with uncountable nouns: would you like some more tea?",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B19_Q2",
-      "question": "The painting was _____ above the fireplace for over a century.",
+      "question": "Congratulations _____ your new job, Meera!",
       "options": [
-        "hung",
-        "hanged",
-        "hanging",
-        "hang"
-      ],
-      "correctAnswer": "hung",
-      "explanation": "\"Hang\" is irregular, and the past participle \"hung\" is used for objects such as pictures and clothes. \"Hanged\" is reserved for executions."
-    },
-    {
-      "id": "ARENA_SS_B19_Q3",
-      "question": "Dev and Anil own a business together. Which phrase is correct?",
-      "options": [
-        "Dev and Anils business",
-        "Devs and Anil's business",
-        "Dev's and Anils' business",
-        "Dev and Anil's business"
-      ],
-      "correctAnswer": "Dev and Anil's business",
-      "explanation": "When two people share ownership of one thing, only the last name takes the possessive 's. Putting 's on both names would suggest separate businesses."
-    },
-    {
-      "id": "ARENA_SS_B19_Q4",
-      "question": "The bridge was designed to _____ winds of up to 150 kilometres per hour.",
-      "options": [
-        "withdraw",
-        "withstand",
-        "withhold",
-        "withstay"
-      ],
-      "correctAnswer": "withstand",
-      "explanation": "\"Withstand\" means to resist the force of something without being damaged. \"Withdraw\" means to take something back or to retreat."
-    },
-    {
-      "id": "ARENA_SS_B19_Q5",
-      "question": "The patient was _____ to hospital with severe chest pains.",
-      "options": [
-        "allowed",
-        "admitted",
-        "accepted",
-        "permitted"
-      ],
-      "correctAnswer": "admitted",
-      "explanation": "\"Be admitted to hospital\" is the standard way to describe a patient who is taken in for treatment. The other verbs focus on permission rather than on entry for care."
-    },
-    {
-      "id": "ARENA_SS_B19_Q6",
-      "question": "The policy does not _____ damage caused by floods.",
-      "options": [
-        "protect",
-        "contain",
-        "hold",
-        "cover"
-      ],
-      "correctAnswer": "cover",
-      "explanation": "An insurance policy \"covers\" certain risks, which means that it pays for the losses. The verb \"protect\" can't take \"damage\" as its object."
-    },
-    {
-      "id": "ARENA_SS_B19_Q7",
-      "question": "Your account is currently _____ by £50, so a fee will apply.",
-      "options": [
-        "overdrawn",
-        "overdue",
-        "overworked",
-        "overtaken"
-      ],
-      "correctAnswer": "overdrawn",
-      "explanation": "An account is \"overdrawn\" when more money has been taken out than was available. \"Overdue\" describes payments or books that are late."
-    },
-    {
-      "id": "ARENA_SS_B19_Q8",
-      "question": "The lease expires in March, so we must either _____ it or move out.",
-      "options": [
-        "revive",
-        "restore",
-        "renew",
-        "renovate"
-      ],
-      "correctAnswer": "renew",
-      "explanation": "To \"renew\" a lease or a contract means to extend it for a further period. \"Renovate\" refers to repairing a building."
-    },
-    {
-      "id": "ARENA_SS_B19_Q9",
-      "question": "Our flight was cancelled at the last minute. _____, the airline put us in a hotel and rebooked us for the next morning.",
-      "options": [
-        "Similarly",
-        "Presumably",
-        "Hardly",
-        "Fortunately"
-      ],
-      "correctAnswer": "Fortunately",
-      "explanation": "\"Fortunately\" shows the writer's attitude to a positive event that followed a problem. \"Similarly\" would introduce a comparison, and \"presumably\" would show an assumption."
-    },
-    {
-      "id": "ARENA_SS_B19_Q10",
-      "question": "The first speaker was dull and repetitive. The second, _____, kept the audience laughing for an hour.",
-      "options": [
-        "by contrast",
-        "in addition",
-        "as a result",
-        "for example"
-      ],
-      "correctAnswer": "by contrast",
-      "explanation": "\"By contrast\" compares two different things to show how unlike they are. Here the first speaker bored the audience and the second entertained it."
-    },
-    {
-      "id": "ARENA_SS_B19_Q11",
-      "question": "He never opened a book before the exam. _____, he failed.",
-      "options": [
-        "Admittedly",
-        "Unsurprisingly",
-        "Alternatively",
-        "Meanwhile"
-      ],
-      "correctAnswer": "Unsurprisingly",
-      "explanation": "\"Unsurprisingly\" tells us that the result was exactly what we would expect from the cause. It reflects the writer's judgment about the logic of the facts."
-    },
-    {
-      "id": "ARENA_SS_B19_Q12",
-      "question": "Several European countries have banned the product; _____, France and Spain did so last year.",
-      "options": [
-        "in other words",
-        "on the contrary",
-        "for example",
-        "as a result"
-      ],
-      "correctAnswer": "for example",
-      "explanation": "\"For example\" introduces specific cases that illustrate the general statement. France and Spain are two of the countries mentioned in the first clause."
-    },
-    {
-      "id": "ARENA_SS_B19_Q13",
-      "question": "_____ with a tight deadline, the team worked through the weekend.",
-      "options": [
-        "Faced",
-        "Facing",
-        "Face",
-        "Having faced"
-      ],
-      "correctAnswer": "Faced",
-      "explanation": "\"Faced with\" is a past participle phrase meaning in a situation where one must deal with something. The structure is passive in meaning, since the deadline confronts the team."
-    },
-    {
-      "id": "ARENA_SS_B19_Q14",
-      "question": "The match was abandoned _____ account of the heavy rain.",
-      "options": [
-        "in",
-        "by",
+        "to",
         "on",
+        "at",
         "for"
       ],
       "correctAnswer": "on",
-      "explanation": "\"On account of\" means because of and is a formal fixed phrase. The preposition \"on\" cannot be replaced."
+      "explanation": "'Congratulations on' + an achievement is the fixed pattern; we never say 'congratulations for'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q3",
+      "question": "The party _____ at seven, so come a little earlier.",
+      "options": [
+        "start",
+        "starting",
+        "starts",
+        "is start"
+      ],
+      "correctAnswer": "starts",
+      "explanation": "A scheduled event uses the present simple, and 'party' takes -s.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q4",
+      "question": "The flat is available _____ next month.",
+      "options": [
+        "to",
+        "from",
+        "at",
+        "since"
+      ],
+      "correctAnswer": "from",
+      "explanation": "'From' + a future date marks when something begins: available from next month.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q5",
+      "question": "I'm sorry, but I can't come; I'm busy _____ that day.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "by"
+      ],
+      "correctAnswer": "on",
+      "explanation": "Days take 'on': busy on that day, free on Monday. Months and years take 'in'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q6",
+      "question": "Please make yourself _____ home.",
+      "options": [
+        "on",
+        "with",
+        "at",
+        "in"
+      ],
+      "correctAnswer": "at",
+      "explanation": "'Make yourself at home' is a fixed welcoming phrase said to guests.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q7",
+      "question": "She was very kind _____ us during our stay.",
+      "options": [
+        "at",
+        "for",
+        "to",
+        "with"
+      ],
+      "correctAnswer": "to",
+      "explanation": "'Kind to' + a person is the usual pattern: kind to us, kind to everyone.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q8",
+      "question": "I'll bring some snacks if you _____ the drinks.",
+      "options": [
+        "bringing",
+        "brings",
+        "bring",
+        "bringed"
+      ],
+      "correctAnswer": "bring",
+      "explanation": "After 'if', we use the present simple even for future plans.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q9",
+      "question": "We had a lovely time; _____ for inviting us.",
+      "options": [
+        "thank",
+        "thanks",
+        "thanked",
+        "thanking"
+      ],
+      "correctAnswer": "thanks",
+      "explanation": "'Thanks for' + -ing or a noun is the informal way to say thank you.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q10",
+      "question": "The outdoor concert went ahead _____ the bad weather.",
+      "options": [
+        "because of",
+        "thanks to",
+        "owing to",
+        "in spite of"
+      ],
+      "correctAnswer": "in spite of",
+      "explanation": "'In spite of' + noun shows contrast: the concert happened although the weather was bad.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B19_Q11",
+      "question": "Guests are kindly _____ to switch off their phones during the ceremony.",
+      "options": [
+        "request",
+        "requiring",
+        "requested",
+        "requests"
+      ],
+      "correctAnswer": "requested",
+      "explanation": "'Are requested to' is the polite passive often seen in notices and invitations.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SS_B19_Q12",
+      "question": "Book now; the hotel _____ breakfast from seven to ten daily.",
+      "options": [
+        "serving",
+        "serve",
+        "served",
+        "serves"
+      ],
+      "correctAnswer": "serves",
+      "explanation": "A regular service uses the present simple, and a singular subject adds -s: serves.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SS_B19_Q13",
+      "question": "Dinner will be _____ in the garden if the weather is fine.",
+      "options": [
+        "serve",
+        "serving",
+        "serves",
+        "served"
+      ],
+      "correctAnswer": "served",
+      "explanation": "'Will be' + past participle forms the future passive: dinner will be served.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SS_B19_Q14",
+      "question": "We'd like to _____ a toast to the bride and groom.",
+      "options": [
+        "propose",
+        "purpose",
+        "prepose",
+        "propel"
+      ],
+      "correctAnswer": "propose",
+      "explanation": "'Propose a toast' is the fixed phrase for inviting everyone to raise a glass.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q15",
-      "question": "It is all _____ easy to make mistakes when you are tired.",
+      "question": "We were _____ to a buffet lunch after the meeting.",
       "options": [
-        "much",
-        "more",
-        "ever",
-        "too"
+        "treat",
+        "treated",
+        "treating",
+        "treats"
       ],
-      "correctAnswer": "too",
-      "explanation": "\"All too\" + adjective stresses that something is regrettably true. The phrase \"all too easy\" is a common collocation."
+      "correctAnswer": "treated",
+      "explanation": "'Be treated to' means to be given something enjoyable as a gift.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q16",
-      "question": "Of the two sisters, Meera is the _____.",
+      "question": "The restaurant is fully booked, but we can put you _____ the waiting list.",
       "options": [
-        "tallest",
-        "taller",
-        "more tall",
-        "most tall"
+        "at",
+        "on",
+        "in",
+        "to"
       ],
-      "correctAnswer": "taller",
-      "explanation": "When we compare exactly two people, we use the comparative with \"the\", as in \"the taller of the two\". The superlative is kept for three or more."
+      "correctAnswer": "on",
+      "explanation": "We say 'on the waiting list' for a queue of names; 'on' is the fixed preposition.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q17",
-      "question": "Constant criticism can _____ a person's confidence.",
+      "question": "The conference _____ place at the Grand Hotel next March.",
       "options": [
-        "undermine",
-        "underline",
-        "undertake",
-        "undergo"
+        "holds",
+        "takes",
+        "makes",
+        "gives"
       ],
-      "correctAnswer": "undermine",
-      "explanation": "To \"undermine\" confidence is to weaken it gradually. \"Underline\" means to draw a line beneath something or to emphasise it."
+      "correctAnswer": "takes",
+      "explanation": "Events 'take place'; we don't say 'make place' or 'hold place'.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q18",
-      "question": "Most of the delays _____ from poor planning rather than bad luck.",
+      "question": "Could we have the _____, please? We'd like to pay.",
       "options": [
-        "step",
-        "stand",
-        "stay",
-        "stem"
+        "bull",
+        "ball",
+        "bell",
+        "bill"
       ],
-      "correctAnswer": "stem",
-      "explanation": "\"Stem from\" means to have something as its origin or cause. It is used mostly for problems and difficulties."
+      "correctAnswer": "bill",
+      "explanation": "In British English you ask for 'the bill' at a restaurant; 'check' is American.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q19",
-      "question": "The new role will _____ a great deal of international travel.",
+      "question": "I'm afraid I have a _____ engagement that evening.",
       "options": [
-        "entitle",
-        "entail",
-        "entice",
-        "enclose"
+        "prior",
+        "prime",
+        "primary",
+        "priority"
       ],
-      "correctAnswer": "entail",
-      "explanation": "\"Entail\" means to involve something as a necessary part or result. \"Entitle\" means to give someone a right to something."
+      "correctAnswer": "prior",
+      "explanation": "'Prior engagement' is a polite way to say you're already busy.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q20",
-      "question": "The hotel _____ the harbour and has stunning views from every room.",
+      "question": "The caterers need to know about any dietary _____ among the guests.",
       "options": [
-        "overlooking",
-        "overseeing",
-        "overlooks",
-        "overhears"
+        "restricts",
+        "restricted",
+        "restrictions",
+        "restrictive"
       ],
-      "correctAnswer": "overlooks",
-      "explanation": "To \"overlook\" a place means to have a view of it from above. \"Overlook\" also has another meaning, which is to fail to notice something."
+      "correctAnswer": "restrictions",
+      "explanation": "'Dietary restrictions' is the fixed noun phrase, and 'any' + plural fits the sentence.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q21",
-      "question": "The menu is designed to _____ for vegetarians and vegans alike.",
+      "question": "It was lovely meeting you; let's keep in _____.",
       "options": [
-        "cater",
-        "cook",
-        "supply",
-        "serve"
+        "hand",
+        "reach",
+        "touch",
+        "line"
       ],
-      "correctAnswer": "cater",
-      "explanation": "\"Cater for\" means to provide what a group of people needs or wants. The phrasal structure requires the preposition \"for\"."
+      "correctAnswer": "touch",
+      "explanation": "'Keep in touch' is the fixed phrase for staying in contact after meeting someone.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q22",
-      "question": "Transport costs _____ for nearly half of our total expenses.",
+      "question": "He gave a very _____ speech that had everyone laughing.",
       "options": [
-        "amount",
-        "count",
-        "add",
-        "account"
+        "wiry",
+        "witty",
+        "wary",
+        "weary"
       ],
-      "correctAnswer": "account",
-      "explanation": "\"Account for\" a percentage means to make up that proportion of the total. \"Amount to\" is used with a total sum."
+      "correctAnswer": "witty",
+      "explanation": "'Witty' means clever and amusing; 'wary' means cautious and 'weary' means tired.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B19_Q23",
-      "question": "Women _____ up about sixty per cent of the workforce in this sector.",
+      "question": "Had it not _____ for the rain, the outdoor event would have been perfect.",
       "options": [
-        "take",
-        "set",
-        "make",
-        "put"
+        "be",
+        "were",
+        "been",
+        "was"
       ],
-      "correctAnswer": "make",
-      "explanation": "\"Make up\" means to form or constitute a part of a whole. It is often used in statistics with proportions."
+      "correctAnswer": "been",
+      "explanation": "'Had it not been for' is the fixed inverted conditional meaning 'if it hadn't been for'.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q24",
-      "question": "Please _____ of used batteries at the designated recycling points.",
+      "question": "The event was a _____ success, attracting over five thousand visitors.",
       "options": [
-        "throw",
-        "dispose",
-        "get",
-        "send"
+        "resound",
+        "resounding",
+        "resounded",
+        "resounds"
       ],
-      "correctAnswer": "dispose",
-      "explanation": "\"Dispose of\" means to get rid of something properly. \"Throw\" would need \"away\" instead of \"of\"."
+      "correctAnswer": "resounding",
+      "explanation": "'Resounding success' is a fixed collocation meaning a great success.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q25",
-      "question": "\"The report won't be ready by Friday.\"\n\"Then could you give me a realistic _____ of when it will be done?\"",
+      "question": "Guests are asked to dress _____ for the evening, so no jeans please.",
       "options": [
-        "estimation",
-        "esteem",
-        "estate",
-        "estimate"
+        "smart",
+        "smartness",
+        "smarten",
+        "smartly"
       ],
-      "correctAnswer": "estimate",
-      "explanation": "An \"estimate\" is an approximate judgment of an amount or a date. \"Estimation\" refers to the process of judging something, not to the result."
+      "correctAnswer": "smartly",
+      "explanation": "An adverb is needed to modify the verb 'dress': dress smartly, dress casually.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q26",
-      "question": "To _____ extent do you agree with the author's conclusion?",
+      "question": "The organisers regret _____ that the concert has been cancelled.",
       "options": [
-        "what",
-        "which",
-        "how",
-        "whose"
+        "announcing",
+        "announced",
+        "to announce",
+        "announce"
       ],
-      "correctAnswer": "what",
-      "explanation": "\"To what extent\" is a fixed question that asks about degree. The word \"which\" would suggest a choice from a known group."
+      "correctAnswer": "to announce",
+      "explanation": "'Regret to' + base verb is the formal phrase for delivering bad news.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q27",
-      "question": "The old stadium _____ demolished at the moment to make way for flats.",
+      "question": "Seldom have I been to _____ well-organised an event.",
       "options": [
-        "is",
-        "has been",
-        "is being",
-        "being"
+        "too",
+        "very",
+        "so",
+        "such"
       ],
-      "correctAnswer": "is being",
-      "explanation": "The present continuous passive, is being + past participle, describes an action in progress that affects the stadium. \"At the moment\" confirms the ongoing action."
+      "correctAnswer": "so",
+      "explanation": "'So' + adjective + 'a' + noun is the pattern: so well-organised an event.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q28",
-      "question": "The talks _____ well fail if neither side is willing to compromise.",
+      "question": "The wedding was a lavish _____, with over five hundred guests.",
       "options": [
-        "can",
-        "may",
-        "shall",
-        "must"
+        "effort",
+        "affect",
+        "affirm",
+        "affair"
       ],
-      "correctAnswer": "may",
-      "explanation": "\"May well\" shows that something is quite likely to happen. The expression is fixed with \"may\"."
+      "correctAnswer": "affair",
+      "explanation": "An 'affair' here means a social event; 'effect' and 'affect' are unrelated.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q29",
-      "question": "_____, I think the benefits outweigh the costs.",
+      "question": "The restaurant has a _____ atmosphere, perfect for a quiet dinner.",
       "options": [
-        "On balance",
-        "In balance",
-        "At balance",
-        "By balance"
+        "tranquilly",
+        "tranquil",
+        "tranquillity",
+        "tranquillise"
       ],
-      "correctAnswer": "On balance",
-      "explanation": "\"On balance\" introduces a judgment made after weighing all the points. The preposition in the phrase is fixed."
+      "correctAnswer": "tranquil",
+      "explanation": "'Tranquil' is an adjective meaning calm and peaceful, used before a noun.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B19_Q30",
-      "question": "There is no _____ that the economy is slowing down.",
+      "question": "Reservations are _____ recommended at weekends.",
       "options": [
-        "deny",
-        "denies",
-        "denying",
-        "denied"
+        "greatest",
+        "higher",
+        "highly",
+        "heavily"
       ],
-      "correctAnswer": "denying",
-      "explanation": "\"There's no denying\" is a fixed phrase meaning that something is undeniably true. After \"no\" the -ing form is used."
+      "correctAnswer": "highly",
+      "explanation": "'Highly recommended' is the fixed collocation, often used in reviews and notices.",
+      "difficulty": "hard"
     }
   ]
 }
