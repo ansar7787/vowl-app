@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
@@ -98,12 +100,14 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
 
   void _showUpdateInfo() {
     HapticFeedback.lightImpact();
+    final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
     CustomSnackBar.show(
       context: context,
       message: context.tr(
-        'leaderboard.updates_info',
+        'leaderboard.updates_info_hourly',
         fallback:
-            'Rankings update daily at midnight. Play quests to climb the leaderboard today!',
+            'Rankings recalculate hourly at the top of the hour. Next update in {0}. Play quests to climb the leaderboard!',
+        args: [countdown],
       ),
       type: CustomSnackBarType.info,
       duration: const Duration(seconds: 4),
@@ -114,12 +118,12 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
+    final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
 
     final header = Semantics(
-      // FIX (HIGH-5): Screen readers now announce the leaderboard title,
-      // subtitle, and when it was last updated in a single label.
+      // Announce title, subtitle, next update countdown, and last-updated time.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!')}. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,6 +275,13 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                         color: isDark ? Colors.white60 : AppColors.slate600,
                       ),
                     ),
+                    SizedBox(height: 5.h),
+                    _buildUpdateCountdownBadge(
+                      context,
+                      isDark,
+                      countdown,
+                      timeAgo,
+                    ),
                   ],
                 ),
               ),
@@ -281,6 +292,93 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
     );
     if (VowlMotion.shouldReduceMotion(context)) return header;
     return header.animate().fadeIn(duration: 500.ms);
+  }
+
+  /// Renders a small, elegant countdown capsule with last-updated freshness text.
+  /// Designed to remain subtle and non-intrusive while giving instant temporal context.
+  Widget _buildUpdateCountdownBadge(
+    BuildContext context,
+    bool isDark,
+    String countdown,
+    String timeAgo,
+  ) {
+    final nextUpdateText = context.tr(
+      'leaderboard.next_update_in',
+      fallback: 'Next in {0}',
+      args: [countdown],
+    );
+
+    return Semantics(
+      label: context.tr(
+        'leaderboard.next_update_accessibility',
+        fallback: 'Next leaderboard update in {0}. Data was updated {1}.',
+        args: [countdown, timeAgo],
+      ),
+      child: GestureDetector(
+        onTap: _showUpdateInfo,
+        behavior: HitTestBehavior.opaque,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Micro countdown capsule (staying small and refined)
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 7.w,
+                vertical: 2.5.h,
+              ),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? AppColors.indigo500.withValues(alpha: 0.16)
+                    : AppColors.indigo500.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(6.r),
+                border: Border.all(
+                  color: isDark
+                      ? AppColors.indigo500.withValues(alpha: 0.35)
+                      : AppColors.indigo500.withValues(alpha: 0.20),
+                  width: 0.8.w,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    LucideIcons.clock,
+                    size: 10.sp,
+                    color: isDark ? AppColors.blue300 : AppColors.indigo600,
+                  ),
+                  SizedBox(width: 4.w),
+                  Text(
+                    nextUpdateText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? AppColors.blue300 : AppColors.indigo600,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 6.w),
+            // Subtle "• Updated X ago" indicator
+            Flexible(
+              child: Text(
+                '•  $timeAgo',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white38 : AppColors.slate400,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   String _formatTimeAgo(BuildContext context, DateTime dateTime) {
