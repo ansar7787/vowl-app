@@ -166,17 +166,26 @@ class PhotoEmptyState extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(LucideIcons.sparkles, size: 12.r, color: AppColors.teal500),
+                  Icon(
+                    LucideIcons.sparkles,
+                    size: 12.r,
+                    color: AppColors.teal500,
+                  ),
                   SizedBox(width: 6.w),
                   Text(
                     context
-                        .tr('vocabulary.explore_objects', fallback: 'EXPLORE OBJECTS')
+                        .tr(
+                          'vocabulary.explore_objects',
+                          fallback: 'EXPLORE OBJECTS',
+                        )
                         .toUpperCase(),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.5.sp,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? _LocalPalette.color2dd4bf : AppColors.teal500,
+                      color: isDark
+                          ? _LocalPalette.color2dd4bf
+                          : AppColors.teal500,
                       letterSpacing: 1.5,
                     ),
                   ),

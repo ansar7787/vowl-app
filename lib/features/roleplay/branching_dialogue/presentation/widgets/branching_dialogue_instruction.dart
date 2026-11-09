@@ -27,12 +27,11 @@ class BranchingDialogueInstruction extends StatelessWidget {
         isDark || Theme.of(context).brightness == Brightness.dark;
     final effectiveInstruction =
         (instruction != null && instruction!.trim().isNotEmpty)
-            ? instruction!
-            : context.tr(
-                'games.branchingDialogue_instruction',
-                fallback:
-                    'Choose the best response to continue the conversation.',
-              );
+        ? instruction!
+        : context.tr(
+            'games.branchingDialogue_instruction',
+            fallback: 'Choose the best response to continue the conversation.',
+          );
 
     return Semantics(
       label: effectiveInstruction,

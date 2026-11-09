@@ -9,7 +9,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 
-
 /// A text passage with tappable words for evidence-based highlighting.
 ///
 /// Renders a passage as individually tappable word spans. User must tap
@@ -281,7 +280,8 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                 valueListenable: _isComplete,
                 builder: (context, isComplete, _) {
                   return Container(
-                    margin: widget.margin ??
+                    margin:
+                        widget.margin ??
                         (widget.isPositioned
                             ? EdgeInsets.zero
                             : EdgeInsets.symmetric(
@@ -407,11 +407,11 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                             : widget.primaryColor,
                                       ),
                                     ),
-                                );
-                              },
-                            ),
-                          ],
-                        ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                           SizedBox(height: 20.h),
 
                           // Passage with tappable words

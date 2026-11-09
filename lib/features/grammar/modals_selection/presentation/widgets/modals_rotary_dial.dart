@@ -213,8 +213,8 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                           color: isSelected
                               ? widget.primaryColor
                               : (widget.isDark
-                                  ? Colors.white.withValues(alpha: 0.65)
-                                  : Colors.black.withValues(alpha: 0.60)),
+                                    ? Colors.white.withValues(alpha: 0.65)
+                                    : Colors.black.withValues(alpha: 0.60)),
                           letterSpacing: 0.5,
                         ),
                         child: Text(widget.options[i]),
@@ -315,7 +315,9 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                               width: 2.r,
                               height: 7.r,
                               margin: EdgeInsets.only(top: 8.r),
-                              color: widget.primaryColor.withValues(alpha: 0.25),
+                              color: widget.primaryColor.withValues(
+                                alpha: 0.25,
+                              ),
                             ),
                           ),
                         ),
@@ -338,65 +340,68 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                         alignment: Alignment.topCenter,
                         child: isCorrectSelected
                             ? (reduceMotion
-                                ? Container(
-                                    width: 5.r,
-                                    height: 30.r,
-                                    margin: EdgeInsets.only(top: 12.r),
-                                    decoration: BoxDecoration(
-                                      color: widget.primaryColor,
-                                      borderRadius: BorderRadius.circular(3.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: widget.primaryColor,
-                                          blurRadius: 15,
-                                          spreadRadius: 2,
+                                  ? Container(
+                                      width: 5.r,
+                                      height: 30.r,
+                                      margin: EdgeInsets.only(top: 12.r),
+                                      decoration: BoxDecoration(
+                                        color: widget.primaryColor,
+                                        borderRadius: BorderRadius.circular(
+                                          3.r,
                                         ),
-                                      ],
-                                    ),
-                                  )
-                                : Container(
-                                        width: 5.r,
-                                        height: 30.r,
-                                        margin: EdgeInsets.only(top: 12.r),
-                                        decoration: BoxDecoration(
-                                          color: widget.primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(3.r),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: widget.primaryColor,
-                                              blurRadius: 12,
-                                              spreadRadius: 1,
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                      .animate(
-                                        onPlay: (controller) =>
-                                            controller.repeat(reverse: true),
-                                      )
-                                      .scale(
-                                        begin: const Offset(1.0, 1.0),
-                                        end: const Offset(1.15, 1.05),
-                                        duration: 600.ms,
-                                        curve: Curves.easeInOut,
-                                      )
-                                      .boxShadow(
-                                        begin: BoxShadow(
-                                          color: widget.primaryColor,
-                                          blurRadius: 12,
-                                          spreadRadius: 1,
-                                        ),
-                                        end: BoxShadow(
-                                          color: Colors.white.withValues(
-                                            alpha: 0.4,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: widget.primaryColor,
+                                            blurRadius: 15,
+                                            spreadRadius: 2,
                                           ),
-                                          blurRadius: 20,
-                                          spreadRadius: 3,
-                                        ),
-                                        duration: 600.ms,
-                                        curve: Curves.easeInOut,
-                                      ))
+                                        ],
+                                      ),
+                                    )
+                                  : Container(
+                                          width: 5.r,
+                                          height: 30.r,
+                                          margin: EdgeInsets.only(top: 12.r),
+                                          decoration: BoxDecoration(
+                                            color: widget.primaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              3.r,
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: widget.primaryColor,
+                                                blurRadius: 12,
+                                                spreadRadius: 1,
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                        .animate(
+                                          onPlay: (controller) =>
+                                              controller.repeat(reverse: true),
+                                        )
+                                        .scale(
+                                          begin: const Offset(1.0, 1.0),
+                                          end: const Offset(1.15, 1.05),
+                                          duration: 600.ms,
+                                          curve: Curves.easeInOut,
+                                        )
+                                        .boxShadow(
+                                          begin: BoxShadow(
+                                            color: widget.primaryColor,
+                                            blurRadius: 12,
+                                            spreadRadius: 1,
+                                          ),
+                                          end: BoxShadow(
+                                            color: Colors.white.withValues(
+                                              alpha: 0.4,
+                                            ),
+                                            blurRadius: 20,
+                                            spreadRadius: 3,
+                                          ),
+                                          duration: 600.ms,
+                                          curve: Curves.easeInOut,
+                                        ))
                             : Container(
                                 width: 5.r,
                                 height: 30.r,

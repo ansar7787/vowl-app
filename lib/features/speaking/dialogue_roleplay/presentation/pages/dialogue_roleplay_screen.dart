@@ -51,10 +51,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
@@ -75,12 +73,11 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     initGameLifecycle();
     initSpeakingGame();
 
-    _synapticController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 3),
-    )..addListener(() {
-        _timeVal.value = _synapticController.value;
-      });
+    _synapticController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 3))
+          ..addListener(() {
+            _timeVal.value = _synapticController.value;
+          });
     _synapticController.repeat();
 
     final initialBlocState = context.read<SpeakingBloc>().state;
@@ -103,7 +100,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   void didChangeDependencies() {
     super.didChangeDependencies();
     final mediaQuery = MediaQuery.maybeOf(context);
-    final reduceMotion = (mediaQuery?.disableAnimations ?? false) ||
+    final reduceMotion =
+        (mediaQuery?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       _synapticController.stop();
@@ -208,17 +206,14 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     final responseText = _chosenReply.value.isNotEmpty
         ? _chosenReply.value
         : (_acceptedSynonyms.isNotEmpty
-            ? _acceptedSynonyms.first
-            : (quest.sentence ?? "Yes"));
+              ? _acceptedSynonyms.first
+              : (quest.sentence ?? "Yes"));
 
     if (nailedIt) {
       di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
       submitCorrectAnswer();
     } else {
-      submitWrongAnswer(
-        quest: quest,
-        userAnswer: '[Failed Dialogue]',
-      );
+      submitWrongAnswer(quest: quest, userAnswer: '[Failed Dialogue]');
     }
   }
 
@@ -287,8 +282,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               final expectedText = _chosenReply.value.isNotEmpty
                   ? _chosenReply.value
                   : (_acceptedSynonyms.isNotEmpty
-                      ? _acceptedSynonyms.first
-                      : "");
+                        ? _acceptedSynonyms.first
+                        : "");
 
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
@@ -331,8 +326,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                       primaryColor: theme.primaryColor,
                                       instruction:
                                           InstructionHelper.getInstruction(
-                                        quest,
-                                      ),
+                                            quest,
+                                          ),
                                     ),
                                     SizedBox(height: 24.h),
                                     DialogueRoleplayExchangeStage(
@@ -348,12 +343,12 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                           isCorrectNotifier.value ?? false,
                                       userDisplayAnswer:
                                           _chosenReply.value.isNotEmpty
-                                              ? _chosenReply.value
-                                              : context.tr(
-                                                  'speaking_games.pick_a_reply',
-                                                  fallback:
-                                                      'Pick a response to speak!',
-                                                ),
+                                          ? _chosenReply.value
+                                          : context.tr(
+                                              'speaking_games.pick_a_reply',
+                                              fallback:
+                                                  'Pick a response to speak!',
+                                            ),
                                     ),
                                   ],
                                 ),

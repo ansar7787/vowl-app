@@ -63,29 +63,43 @@ class TierVisuals {
       case TrophyTier.novice:
         return TierVisuals(
           ringColor: const Color(0xFFD97706), // Warm Bronze / Amber
-          innerRingColor: isDark ? const Color(0xFFB45309) : const Color(0xFFF59E0B),
+          innerRingColor: isDark
+              ? const Color(0xFFB45309)
+              : const Color(0xFFF59E0B),
           fillColor: isDark ? const Color(0xFF23160D) : const Color(0xFFFFF7ED),
-          centerFillColor: isDark ? const Color(0xFF351F10) : const Color(0xFFFED7AA),
+          centerFillColor: isDark
+              ? const Color(0xFF351F10)
+              : const Color(0xFFFED7AA),
           iconColor: isDark ? const Color(0xFFFFD1A4) : const Color(0xFF9A3412),
           glowColor: const Color(0xFFD97706),
-          tierBadgeColor: isDark ? const Color(0xFFFB923C) : const Color(0xFFC2410C),
+          tierBadgeColor: isDark
+              ? const Color(0xFFFB923C)
+              : const Color(0xFFC2410C),
         );
       case TrophyTier.scholar:
         return TierVisuals(
           ringColor: const Color(0xFF94A3B8), // Platinum / Sterling Silver
-          innerRingColor: isDark ? const Color(0xFF64748B) : const Color(0xFFCBD5E1),
+          innerRingColor: isDark
+              ? const Color(0xFF64748B)
+              : const Color(0xFFCBD5E1),
           fillColor: isDark ? const Color(0xFF131D2E) : const Color(0xFFF8FAFC),
-          centerFillColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFE2E8F0),
+          centerFillColor: isDark
+              ? const Color(0xFF1E293B)
+              : const Color(0xFFE2E8F0),
           iconColor: isDark ? Colors.white : const Color(0xFF1E293B),
           glowColor: const Color(0xFF94A3B8),
-          tierBadgeColor: isDark ? const Color(0xFFCBD5E1) : const Color(0xFF475569),
+          tierBadgeColor: isDark
+              ? const Color(0xFFCBD5E1)
+              : const Color(0xFF475569),
         );
       case TrophyTier.expert:
         return TierVisuals(
           ringColor: const Color(0xFFFFD700), // Radiant Gold
           innerRingColor: const Color(0xFFD97706),
           fillColor: isDark ? const Color(0xFF261D08) : const Color(0xFFFEF3C7),
-          centerFillColor: isDark ? const Color(0xFF382909) : const Color(0xFFFDE68A),
+          centerFillColor: isDark
+              ? const Color(0xFF382909)
+              : const Color(0xFFFDE68A),
           iconColor: isDark ? const Color(0xFFFFF9C4) : const Color(0xFFB45309),
           glowColor: const Color(0xFFFFD700),
           tierBadgeColor: const Color(0xFFFFD700),
@@ -95,7 +109,9 @@ class TierVisuals {
           ringColor: const Color(0xFFFFD700), // Imperial Crown Gold
           innerRingColor: const Color(0xFFB45309),
           fillColor: isDark ? const Color(0xFF2E1A05) : const Color(0xFFFEF3C7),
-          centerFillColor: isDark ? const Color(0xFF452408) : const Color(0xFFFDE68A),
+          centerFillColor: isDark
+              ? const Color(0xFF452408)
+              : const Color(0xFFFDE68A),
           iconColor: isDark ? const Color(0xFFFFF9C4) : const Color(0xFF78350F),
           glowColor: const Color(0xFFFFD700),
           tierBadgeColor: const Color(0xFFFFD700),
@@ -105,7 +121,9 @@ class TierVisuals {
           ringColor: const Color(0xFFFF5722), // Blazing Flame
           innerRingColor: const Color(0xFFEA580C),
           fillColor: isDark ? const Color(0xFF281106) : const Color(0xFFFFF1EB),
-          centerFillColor: isDark ? const Color(0xFF3D1808) : const Color(0xFFFFD8CC),
+          centerFillColor: isDark
+              ? const Color(0xFF3D1808)
+              : const Color(0xFFFFD8CC),
           iconColor: isDark ? const Color(0xFFFFCC80) : const Color(0xFFC2410C),
           glowColor: const Color(0xFFFF5722),
           tierBadgeColor: const Color(0xFFFF7043),
@@ -113,12 +131,18 @@ class TierVisuals {
       case TrophyTier.milestone:
         return TierVisuals(
           ringColor: const Color(0xFF6366F1), // Royal Amethyst / Brand Indigo
-          innerRingColor: isDark ? const Color(0xFF818CF8) : const Color(0xFFA5B4FC),
+          innerRingColor: isDark
+              ? const Color(0xFF818CF8)
+              : const Color(0xFFA5B4FC),
           fillColor: isDark ? const Color(0xFF16153B) : const Color(0xFFEEF2FF),
-          centerFillColor: isDark ? const Color(0xFF231F5C) : const Color(0xFFDDD6FE),
+          centerFillColor: isDark
+              ? const Color(0xFF231F5C)
+              : const Color(0xFFDDD6FE),
           iconColor: isDark ? const Color(0xFFDDD6FE) : const Color(0xFF4338CA),
           glowColor: const Color(0xFF6366F1),
-          tierBadgeColor: isDark ? const Color(0xFF818CF8) : const Color(0xFF4F46E5),
+          tierBadgeColor: isDark
+              ? const Color(0xFF818CF8)
+              : const Color(0xFF4F46E5),
         );
     }
   }
@@ -189,7 +213,8 @@ class TrophyMetadata {
     ];
 
     if (skillCategories.contains(category)) {
-      final currentLevel = user.unlockedLevels[category] ??
+      final currentLevel =
+          user.unlockedLevels[category] ??
           (user.completedLevels[category]?.length ?? 0);
       return (currentLevel / targetValue).clamp(0.0, 1.0);
     }
@@ -205,8 +230,10 @@ class TrophyMetadata {
 
     // 3. Milestones
     if (id == 'first_blood') {
-      final totalCompleted = user.completedLevels.values
-          .fold<int>(0, (sum, list) => sum + list.length);
+      final totalCompleted = user.completedLevels.values.fold<int>(
+        0,
+        (sum, list) => sum + list.length,
+      );
       return totalCompleted >= 1 ? 1.0 : 0.0;
     }
 
@@ -248,7 +275,8 @@ class TrophyMetadata {
     ];
 
     if (skillCategories.contains(category)) {
-      final currentLevel = user.unlockedLevels[category] ??
+      final currentLevel =
+          user.unlockedLevels[category] ??
           (user.completedLevels[category]?.length ?? 0);
       return '$currentLevel / $targetValue Lvl';
     }
@@ -287,7 +315,9 @@ class TrophyMetadata {
     // Auto-generate fallback metadata for unmapped custom badges
     final parts = lower.split('_');
     final tier = parts.isNotEmpty ? parts[0] : 'novice';
-    final name = parts.map((p) => p.isEmpty ? '' : '${p[0].toUpperCase()}${p.substring(1)}').join(' ');
+    final name = parts
+        .map((p) => p.isEmpty ? '' : '${p[0].toUpperCase()}${p.substring(1)}')
+        .join(' ');
 
     return TrophyMetadata(
       id: lower,
@@ -296,8 +326,8 @@ class TrophyMetadata {
       tier: tier == 'master'
           ? TrophyTier.master
           : (tier == 'expert'
-              ? TrophyTier.expert
-              : (tier == 'scholar' ? TrophyTier.scholar : TrophyTier.novice)),
+                ? TrophyTier.expert
+                : (tier == 'scholar' ? TrophyTier.scholar : TrophyTier.novice)),
       icon: LucideIcons.award,
       description: 'Master lessons in $name to unlock.',
       targetValue: tier == 'master' ? 200 : (tier == 'expert' ? 100 : 25),
@@ -362,14 +392,30 @@ class TrophyMetadata {
 
     // 9 Core Categories (36 Badges)
     addSkillSet(cat: 'speaking', catName: 'Speaking', icon: LucideIcons.mic);
-    addSkillSet(cat: 'listening', catName: 'Listening', icon: LucideIcons.headphones);
+    addSkillSet(
+      cat: 'listening',
+      catName: 'Listening',
+      icon: LucideIcons.headphones,
+    );
     addSkillSet(cat: 'reading', catName: 'Reading', icon: LucideIcons.bookOpen);
     addSkillSet(cat: 'writing', catName: 'Writing', icon: LucideIcons.penTool);
     addSkillSet(cat: 'grammar', catName: 'Grammar', icon: LucideIcons.puzzle);
-    addSkillSet(cat: 'vocabulary', catName: 'Vocabulary', icon: LucideIcons.book);
+    addSkillSet(
+      cat: 'vocabulary',
+      catName: 'Vocabulary',
+      icon: LucideIcons.book,
+    );
     addSkillSet(cat: 'accent', catName: 'Accent', icon: LucideIcons.radio);
-    addSkillSet(cat: 'roleplay', catName: 'Roleplay', icon: LucideIcons.messageSquare);
-    addSkillSet(cat: 'elitemastery', catName: 'Elite Mastery', icon: LucideIcons.gem);
+    addSkillSet(
+      cat: 'roleplay',
+      catName: 'Roleplay',
+      icon: LucideIcons.messageSquare,
+    );
+    addSkillSet(
+      cat: 'elitemastery',
+      catName: 'Elite Mastery',
+      icon: LucideIcons.gem,
+    );
 
     // Consistency & Streak Badges (4 Badges)
     map['streak_7'] = const TrophyMetadata(
@@ -400,7 +446,8 @@ class TrophyMetadata {
       category: 'streak',
       tier: TrophyTier.streak,
       icon: LucideIcons.calendar,
-      description: 'Hit 100% of your daily XP goal every day from Monday to Sunday.',
+      description:
+          'Hit 100% of your daily XP goal every day from Monday to Sunday.',
       targetValue: 7,
       xpReward: 30,
       coinReward: 20,
@@ -458,7 +505,8 @@ class TrophyMetadata {
       category: 'milestones',
       tier: TrophyTier.milestone,
       icon: LucideIcons.zap,
-      description: 'Complete a speed challenge with 100% accuracy in under 60 seconds.',
+      description:
+          'Complete a speed challenge with 100% accuracy in under 60 seconds.',
       targetValue: 1,
       xpReward: 25,
       coinReward: 20,

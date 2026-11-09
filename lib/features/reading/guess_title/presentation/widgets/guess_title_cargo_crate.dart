@@ -50,9 +50,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.04)
-            : Colors.white,
+        color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: color.withValues(alpha: isDark ? 0.22 : 0.16),
@@ -60,9 +58,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: isDark
-                ? Colors.black38
-                : color.withValues(alpha: 0.05),
+            color: isDark ? Colors.black38 : color.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
@@ -74,11 +70,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
           // Subtle reading passage section indicator
           Row(
             children: [
-              Icon(
-                Icons.menu_book_rounded,
-                size: 14.r,
-                color: color,
-              ),
+              Icon(Icons.menu_book_rounded, size: 14.r, color: color),
               SizedBox(width: 6.w),
               Text(
                 'PASSAGE',
@@ -133,17 +125,11 @@ class GuessTitleCargoCrate extends StatelessWidget {
               return Container(
                 constraints: BoxConstraints(minHeight: 62.h),
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 16.w,
-                  vertical: 12.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: bgClr,
                   borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: borderClr,
-                    width: 1.8,
-                  ),
+                  border: Border.all(color: borderClr, width: 1.8),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14.r),

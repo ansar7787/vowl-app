@@ -11,7 +11,10 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -23,7 +26,9 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
     mockHapticService = MockHapticService();
-    when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(const AuthState.unauthenticated());
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -41,48 +46,48 @@ void main() {
     }
   });
 
-  testWidgets('TypeToConfirmOverlay renders header, standardized coin badge, and text input', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'TypeToConfirmOverlay renders header, standardized coin badge, and text input',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp(
-            home: Scaffold(
-              body: Stack(
-                children: [
-                  TypeToConfirmOverlay(
-                    expectedText: 'apple',
-                    primaryColor: Colors.blue,
-                    onConfirmed: () {},
-                    onSkipped: () {},
-                  ),
-                ],
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => MultiBlocProvider(
+            providers: [
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: MaterialApp(
+              home: Scaffold(
+                body: Stack(
+                  children: [
+                    TypeToConfirmOverlay(
+                      expectedText: 'apple',
+                      primaryColor: Colors.blue,
+                      onConfirmed: () {},
+                      onSkipped: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
-    expect(find.text('Type to confirm'), findsOneWidget);
-    expect(find.text('+5 coins'), findsNothing);
-    expect(find.text('apple'), findsOneWidget);
-  });
+      expect(find.text('Type to confirm'), findsOneWidget);
+      expect(find.text('+5 coins'), findsNothing);
+      expect(find.text('apple'), findsOneWidget);
+    },
+  );
 }
-

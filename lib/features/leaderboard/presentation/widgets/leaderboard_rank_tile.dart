@@ -1,4 +1,6 @@
+import 'package:intl/intl.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -38,19 +40,19 @@ class LeaderboardRankTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids
-        ? user.kidsTotalLevelsCompleted
+        ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        ? 'Stars'
         : (isWeekly
-            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-            : context.tr('leaderboard.xp', fallback: 'XP'));
+              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+              : context.tr('leaderboard.xp', fallback: 'XP'));
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10
@@ -69,7 +71,7 @@ class LeaderboardRankTile extends StatelessWidget {
           'Rank $rank: $displayName. '
           '$score $scoreLabel. '
           '${user.currentStreak}-day streak. '
-          '$levelsCleared levels cleared.'
+          '${isKids ? "$levelsCleared levels cleared." : "Level ${user.level}."}'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
       child: GlassTile(
         padding: EdgeInsets.zero,
@@ -87,11 +89,11 @@ class LeaderboardRankTile extends StatelessWidget {
             : (isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100)),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppTheme.borderLight)),
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? const Color(0xFF131A29) : Colors.white),
+            : (isDark ? AppColors.midnightNavy : Colors.white),
         borderWidth: 1.0,
         child: Material(
           color: Colors.transparent,
@@ -105,242 +107,282 @@ class LeaderboardRankTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-            // Rank number & Change Indicator
-            SizedBox(
-              width: 32.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '$rank',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: -1,
-                        color: isDark
-                            ? tierColor.withValues(alpha: 0.9)
-                            : tierColor.withValues(alpha: 0.8),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  if (!isKids && isWeekly) ...[
-                    SizedBox(height: 2.h),
-                    _buildRankChangeIndicator(user.previousRank ?? rank, rank),
-                  ],
-                ],
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Avatar
-            UserAvatar(
-              photoUrl: user.photoUrl,
-              size: 36.r,
-              border: Border.all(
-                color: tierColor.withValues(alpha: 0.25),
-                width: 1.5,
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Name & XP row
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          displayName,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w900,
-                            color: MeshGradientBackground.getContrastColor(
-                              context,
+                  // Rank number & Change Indicator side-by-side (adaptive width for Weekly vs Global/Kids)
+                  SizedBox(
+                    width: (!isKids && isWeekly) ? 50.w : 28.w,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: (!isKids && isWeekly)
+                          ? Alignment.centerLeft
+                          : Alignment.center,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            '$rank',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: (!isKids && isWeekly) ? 19.sp : 21.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -0.6,
+                              color: isDark
+                                  ? tierColor.withValues(alpha: 0.9)
+                                  : tierColor.withValues(alpha: 0.8),
                             ),
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                          if (!isKids && isWeekly) ...[
+                            SizedBox(width: 4.w),
+                            _buildRankChangeIndicator(
+                              user.previousRank ?? rank,
+                              rank,
+                            ),
+                          ],
+                        ],
                       ),
-                      if (user.isPremium)
-                        Padding(
-                          padding: EdgeInsets.only(left: 4.w),
-                          child: Icon(
-                            Icons.verified_rounded,
-                            color: AppColors.amber500,
-                            size: 14.r,
-                          ),
-                        ),
-                      if (isMe)
-                        Padding(
-                          padding: EdgeInsets.only(left: 6.w),
-                          child: ExcludeSemantics(
-                            // Already covered by the parent Semantics label.
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 2.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: const Color(
-                                  0xFF6366F1,
-                                ).withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(6.r),
-                              ),
-                              child: Text(
-                                context.tr('leaderboard.you', fallback: 'You'),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 8.5.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: _LocalPalette.color60a5fa,
-                                  letterSpacing: 0.5,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  // Avatar
+                  UserAvatar(
+                    photoUrl: user.photoUrl,
+                    size: 36.r,
+                    border: Border.all(
+                      color: tierColor.withValues(alpha: 0.25),
+                      width: 1.5,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  // Name & XP row
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  displayName,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color:
+                                        MeshGradientBackground.getContrastColor(
+                                          context,
+                                        ),
+                                  ),
+                                  maxLines: 1,
                                 ),
                               ),
                             ),
-                          ),
+                            if (user.isPremium)
+                              Padding(
+                                padding: EdgeInsets.only(left: 4.w),
+                                child: Icon(
+                                  Icons.verified_rounded,
+                                  color: AppColors.amber500,
+                                  size: 14.r,
+                                ),
+                              ),
+                            if (isMe)
+                              Padding(
+                                padding: EdgeInsets.only(left: 6.w),
+                                child: ExcludeSemantics(
+                                  // Already covered by the parent Semantics label.
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(
+                                        0xFF6366F1,
+                                      ).withValues(alpha: 0.2),
+                                      borderRadius: BorderRadius.circular(6.r),
+                                    ),
+                                    child: Text(
+                                      context.tr(
+                                        'leaderboard.you',
+                                        fallback: 'You',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 8.5.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: _LocalPalette.color60a5fa,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          ],
                         ),
-                    ],
+                        SizedBox(height: 2.h),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                isKids
+                                    ? '${user.kidsTotalLevelsCompleted} Levels · ${user.kidsCoins} Coins'
+                                    : 'Lv. ${user.level} · ${user.currentStreak}d',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark
+                                      ? AppColors.slate400
+                                      : AppColors.slate600,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            SizedBox(width: 3.w),
+                            Icon(
+                              isKids ? Icons.monetization_on_rounded : LucideIcons.flame,
+                              size: 12.r,
+                              color: isKids
+                                  ? AppColors.amber500
+                                  : IllustrationColors.warmOrange,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 2.h),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Flexible(
-                        child: Text(
-                          isKids
-                              ? '$score Levels · ${user.kidsCoins} Stars'
-                              : '$score $scoreLabel · ${user.currentStreak}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: isDark ? AppColors.slate400 : AppColors.slate600,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                  // Primary Score / XP Badge
+                  Container(
+                    constraints: BoxConstraints(
+                      minWidth: 52.w,
+                      maxWidth: 90.w,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 5.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: (isKids ? AppColors.amber500 : tierColor)
+                          .withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: (isKids ? AppColors.amber500 : tierColor)
+                            .withValues(alpha: 0.25),
                       ),
-                      SizedBox(width: 3.w),
-                      Icon(
-                        isKids ? Icons.star_rounded : LucideIcons.flame,
-                        size: 12.r,
-                        color: isKids ? AppColors.amber500 : IllustrationColors.warmOrange,
+                    ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (isKids) ...[
+                            Icon(
+                              Icons.star_rounded,
+                              size: 13.sp,
+                              color: AppColors.amber500,
+                            ),
+                            SizedBox(width: 2.w),
+                            Text(
+                              _formatScore(user.kidsTotalStars),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.amber500,
+                              ),
+                            ),
+                          ] else ...[
+                            Text(
+                              '${_formatScore(score)} XP',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w900,
+                                color: tierColor,
+                              ),
+                            ),
+                          ],
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
-            // Levels cleared / Stars badge
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.25),
-                ),
-              ),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  isKids
-                      ? '${user.kidsCoins} ⭐'
-                      : context.tr(
-                          'leaderboard.lvs',
-                          fallback: 'Lv. {0}',
-                          args: [levelsCleared.toString()],
-                        ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isKids ? AppColors.amber500 : tierColor,
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  ),
-),
-);
+    );
+  }
+
+  static String _formatScore(int value) {
+    if (value >= 100000) {
+      return NumberFormat.compact().format(value);
+    }
+    return NumberFormat('#,###').format(value);
   }
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {
     final diff = previousRank - currentRank;
-    if (diff > 0) {
-      // Improved rank (e.g. from 10 to 5)
-      return SizedBox(
-        height: 12.h,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.arrow_upward_rounded,
-              color: AppColors.emerald500,
-              size: 10.r,
-            ),
-            Text(
-              '$diff',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w800,
-                color: AppColors.emerald500,
-                height: 1.0,
-              ),
-            ),
-          ],
+    final bool improved = diff > 0;
+    final bool dropped = diff < 0;
+    final Color color;
+    final Color bgColor;
+
+    if (improved) {
+      color = AppColors.emerald500;
+      bgColor = AppColors.emerald500.withValues(alpha: 0.14);
+    } else if (dropped) {
+      color = AppColors.red500;
+      bgColor = AppColors.red500.withValues(alpha: 0.14);
+    } else {
+      color = Colors.grey;
+      bgColor = Colors.grey.withValues(alpha: 0.12);
+    }
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(7.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.25),
+          width: 1,
         ),
-      );
-    } else if (diff < 0) {
-      // Dropped rank (e.g. from 5 to 10)
-      return SizedBox(
-        height: 12.h,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.arrow_downward_rounded,
-              color: AppColors.red500,
-              size: 10.r,
-            ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            improved
+                ? Icons.arrow_drop_up_rounded
+                : (dropped
+                      ? Icons.arrow_drop_down_rounded
+                      : Icons.remove_rounded),
+            color: color,
+            size: 13.r,
+          ),
+          if (diff != 0) ...[
+            SizedBox(width: 2.w),
             Text(
               '${diff.abs()}',
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 9.sp,
-                fontWeight: FontWeight.w800,
-                color: AppColors.red500,
+                fontWeight: FontWeight.w900,
+                color: color,
                 height: 1.0,
               ),
             ),
           ],
-        ),
-      );
-    } else {
-      // No change
-      return SizedBox(
-        height: 12.h,
-        child: Center(
-          child: Container(
-            width: 6.w,
-            height: 2.h,
-            decoration: BoxDecoration(
-              color: Colors.grey.withValues(alpha: 0.6),
-              borderRadius: BorderRadius.circular(2.r),
-            ),
-          ),
-        ),
-      );
-    }
+        ],
+      ),
+    );
   }
 }

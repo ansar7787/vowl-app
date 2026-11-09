@@ -24,9 +24,15 @@ import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.
 import 'package:vowl/features/arena/presentation/widgets/arena_quit_match_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_result_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_score_hud.dart';
-import 'package:vowl/features/arena/presentation/widgets/arena_refuel_dialog.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_context_blitz_hero.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_discipline_strip.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_option_tile.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_phrase_duel_hero.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_sentence_strike_hero.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_waiting_view.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_word_clash_hero.dart';
 
 class ArenaDuelScreen extends StatelessWidget {
   final ArenaDuelSession initialSession;
@@ -44,11 +50,10 @@ class ArenaDuelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) {
-        final cubit = ArenaDuelCubit(
-          repository: di.sl<ArenaRepository>(),
-        );
+        final cubit = ArenaDuelCubit(repository: di.sl<ArenaRepository>());
         final authState = context.read<AuthBloc>().state;
-        if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        if (authState.status == AuthStatus.authenticated &&
+            authState.user != null) {
           cubit.startSession(initialSession, authState.user!);
         }
         return cubit;
@@ -65,16 +70,19 @@ class _ArenaDuelView extends StatefulWidget {
   State<_ArenaDuelView> createState() => _ArenaDuelViewState();
 }
 
-class _ArenaDuelViewState extends State<_ArenaDuelView> {
-  static final _quoteRegex = RegExp(r'"([^"]+)"');
+class _ArenaDuelViewState extends State<_ArenaDuelView>
+    with WidgetsBindingObserver {
   StreamSubscription<AppNetworkStatus>? _networkSubscription;
   Timer? _countdownTimer;
+  Timer? _backgroundForfeitTimer;
   bool _isOffline = false;
   bool _hasTriggeredMatchFound = false;
+  bool _hasTriggeredFirstBlood = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     if (di.sl.isRegistered<NetworkInfo>()) {
       final networkInfo = di.sl<NetworkInfo>();
       _isOffline = networkInfo.isCurrentlyOffline;
@@ -89,7 +97,49 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive) {
+      final cubit = context.read<ArenaDuelCubit>();
+      if (!cubit.state.isCompleted && !cubit.state.isWaitingForGuest) {
+        _backgroundForfeitTimer?.cancel();
+        _backgroundForfeitTimer = Timer(const Duration(seconds: 30), () {
+          if (mounted) {
+            _forfeitDueToInactivity();
+          }
+        });
+      }
+    } else if (state == AppLifecycleState.resumed) {
+      _backgroundForfeitTimer?.cancel();
+      _backgroundForfeitTimer = null;
+    }
+  }
+
+  void _forfeitDueToInactivity() async {
+    final cubit = context.read<ArenaDuelCubit>();
+    final session = cubit.state.session;
+    final authState = context.read<AuthBloc>().state;
+    if (session != null && authState.user != null) {
+      await di.sl<ArenaRepository>().forfeitMatch(
+        roomCode: session.roomCode,
+        userId: authState.user!.id,
+      );
+    }
+    if (mounted) {
+      context.read<AuthBloc>().add(const AuthReloadUser());
+      final nav = Navigator.of(context, rootNavigator: true);
+      if (nav.canPop()) {
+        nav.pop();
+      } else {
+        GoRouter.of(context).go(AppRouter.gamesRoute);
+      }
+    }
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _backgroundForfeitTimer?.cancel();
     _countdownTimer?.cancel();
     _networkSubscription?.cancel();
     super.dispose();
@@ -99,14 +149,18 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final backgroundColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? AppColors.slate900);
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? AppColors.slate500);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
@@ -154,7 +208,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.amber500,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.15),
@@ -166,7 +220,11 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(LucideIcons.wifiOff, size: 14.sp, color: Colors.black87),
+                    Icon(
+                      LucideIcons.wifiOff,
+                      size: 14.sp,
+                      color: Colors.black87,
+                    ),
                     SizedBox(width: 8.w),
                     Flexible(
                       child: Text(
@@ -186,8 +244,10 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
               child: BlocConsumer<ArenaDuelCubit, ArenaDuelState>(
                 buildWhen: (prev, curr) =>
                     prev.isWaitingForGuest != curr.isWaitingForGuest ||
-                    prev.isWaitingForOpponentFinish != curr.isWaitingForOpponentFinish ||
-                    (prev.currentQuestion == null) != (curr.currentQuestion == null) ||
+                    prev.isWaitingForOpponentFinish !=
+                        curr.isWaitingForOpponentFinish ||
+                    (prev.currentQuestion == null) !=
+                        (curr.currentQuestion == null) ||
                     prev.session?.roomCode != curr.session?.roomCode ||
                     prev.session?.guestId != curr.session?.guestId ||
                     prev.isCompleted != curr.isCompleted,
@@ -200,20 +260,37 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     if (di.sl.isRegistered<SoundService>()) {
                       di.sl<SoundService>().playArenaMatchFound();
                       _countdownTimer?.cancel();
-                      _countdownTimer = Timer(const Duration(milliseconds: 380), () {
-                        if (mounted && di.sl.isRegistered<SoundService>()) {
-                          try {
-                            di.sl<SoundService>().playArenaCountdown();
-                          } catch (_) {}
-                        }
-                      });
+                      _countdownTimer = Timer(
+                        const Duration(milliseconds: 380),
+                        () {
+                          if (mounted && di.sl.isRegistered<SoundService>()) {
+                            try {
+                              di.sl<SoundService>().playArenaCountdown();
+                            } catch (_) {}
+                          }
+                        },
+                      );
                     }
                     if (di.sl.isRegistered<HapticService>()) {
                       di.sl<HapticService>().heavy();
                     }
                   }
 
-                  if (state.timeRemaining == 3 && !state.isCompleted && !state.isWaitingForGuest) {
+                  if (state.hasFirstBlood && !_hasTriggeredFirstBlood) {
+                    _hasTriggeredFirstBlood = true;
+                    if (di.sl.isRegistered<HapticService>()) {
+                      di.sl<HapticService>().success();
+                    }
+                    CustomSnackBar.show(
+                      context: context,
+                      message: '⚡ FIRST BLOOD! Early round advantage.',
+                      type: CustomSnackBarType.success,
+                    );
+                  }
+
+                  if (state.timeRemaining == 3 &&
+                      !state.isCompleted &&
+                      !state.isWaitingForGuest) {
                     if (di.sl.isRegistered<HapticService>()) {
                       di.sl<HapticService>().warning();
                     }
@@ -239,13 +316,14 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     }
 
                     final authState = context.read<AuthBloc>().state;
-                    final isHost = authState.user?.id == state.session?.hostId;
-                    final rivalName = isHost
-                        ? (state.session?.guestName ?? 'Challenger')
-                        : (state.session?.hostName ?? 'Host');
-                    final rivalPhoto = isHost
-                        ? state.session?.guestPhotoUrl
-                        : state.session?.hostPhotoUrl;
+                    final currentUserId = authState.user?.id ?? '';
+                    final session = state.session;
+                    final rivalName = session?.opponentName(currentUserId) ?? 'Challenger';
+                    final rivalPhoto = session?.opponentPhotoUrl(currentUserId);
+                    final myName = session?.myName(currentUserId) ??
+                        (authState.user?.safeDisplayName ?? 'You');
+                    final myPhoto = session?.myPhotoUrl(currentUserId) ??
+                        authState.user?.photoUrl;
                     showDialog(
                       context: context,
                       barrierDismissible: false,
@@ -262,21 +340,25 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         rivalTotalTimeMs: state.rivalTotalTimeMs,
                         rivalName: rivalName,
                         rivalPhotoUrl: rivalPhoto,
-                        myName: authState.user?.safeDisplayName ?? 'You',
-                        myPhotoUrl: authState.user?.photoUrl,
+                        myName: myName,
+                        myPhotoUrl: myPhoto,
                         payoutCoins: state.payoutCoins,
                         roomCode: state.session?.roomCode ?? '',
                         isAiRival: state.session?.isGhostRival ?? false,
                         onRematch: () {
                           Navigator.of(dialogCtx).pop();
-                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                          if (authState.status == AuthStatus.authenticated &&
+                              authState.user != null) {
                             _triggerRematch(context, authState.user!);
                           }
                         },
                         onClose: () {
                           Navigator.of(dialogCtx).pop();
                           context.read<AuthBloc>().add(const AuthReloadUser());
-                          final nav = Navigator.of(context, rootNavigator: true);
+                          final nav = Navigator.of(
+                            context,
+                            rootNavigator: true,
+                          );
                           if (nav.canPop()) {
                             nav.pop();
                           } else {
@@ -289,7 +371,9 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                 },
                 builder: (context, state) {
                   final authState = context.watch<AuthBloc>().state;
-                  final user = authState.status == AuthStatus.authenticated ? authState.user : null;
+                  final user = authState.status == AuthStatus.authenticated
+                      ? authState.user
+                      : null;
                   if (user == null) return const SizedBox.shrink();
 
                   if (state.isWaitingForGuest) {
@@ -299,17 +383,12 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     );
                   }
 
-                  final rivalName = state.session?.guestId == user.id
-                      ? (state.session?.hostName ?? 'Host')
-                      : (state.session?.guestName ?? 'Challenger');
-                  final rivalPhoto = state.session?.guestId == user.id
-                      ? state.session?.hostPhotoUrl
-                      : state.session?.guestPhotoUrl;
+                  final rivalName = state.session?.opponentName(user.id) ?? 'Challenger';
+                  final rivalPhoto = state.session?.opponentPhotoUrl(user.id);
 
                   // SUSPENSE STATE: Completed 5 rounds, waiting for rival to finish
                   if (state.isWaitingForOpponentFinish && !state.isCompleted) {
-                    return _buildWaitingForOpponentView(
-                      context: context,
+                    return ArenaWaitingView(
                       state: state,
                       user: user,
                       rivalName: rivalName,
@@ -344,8 +423,10 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 prev.timeRemaining != curr.timeRemaining ||
                                 prev.myScore != curr.myScore ||
                                 prev.rivalScore != curr.rivalScore ||
-                                prev.currentQuestionIndex != curr.currentQuestionIndex ||
-                                prev.isAnswered != curr.isAnswered,
+                                prev.currentQuestionIndex !=
+                                    curr.currentQuestionIndex ||
+                                prev.isAnswered != curr.isAnswered ||
+                                prev.comboStreak != curr.comboStreak,
                             builder: (context, hudState) {
                               return ArenaScoreHud(
                                 myName: user.safeDisplayName,
@@ -354,23 +435,41 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 rivalName: rivalName,
                                 rivalPhotoUrl: rivalPhoto,
                                 rivalScore: hudState.rivalScore,
-                                currentQuestionIndex: hudState.currentQuestionIndex,
-                                totalQuestions: hudState.session?.questions.length ?? 5,
+                                currentQuestionIndex:
+                                    hudState.currentQuestionIndex,
+                                totalQuestions:
+                                    hudState.session?.questions.length ?? 5,
                                 timeRemaining: hudState.timeRemaining,
                                 isAnswered: hudState.isAnswered,
                                 isDark: isDark,
-                                isAiRival: hudState.session?.isGhostRival ?? false,
+                                isAiRival:
+                                    hudState.session?.isGhostRival ?? false,
                                 aiTierLabel: () {
                                   final session = hudState.session;
-                                  if (session == null || !session.isGhostRival) return null;
-                                  final gid = session.guestId?.toLowerCase() ?? '';
-                                  if (gid.contains('hard')) return 'HARD';
-                                  if (gid.contains('medium') || gid.contains('med')) return 'MED';
-                                  if (gid.contains('easy')) return 'EASY';
-                                  if (session.ghostAccuracy >= 0.86) return 'HARD';
-                                  if (session.ghostAccuracy >= 0.74) return 'MED';
+                                  if (session == null || !session.isGhostRival) {
+                                    return null;
+                                  }
+                                  final gid =
+                                      session.guestId?.toLowerCase() ?? '';
+                                  if (gid.contains('hard')) {
+                                    return 'HARD';
+                                  }
+                                  if (gid.contains('medium') ||
+                                      gid.contains('med')) {
+                                    return 'MED';
+                                  }
+                                  if (gid.contains('easy')) {
+                                    return 'EASY';
+                                  }
+                                  if (session.ghostAccuracy >= 0.86) {
+                                    return 'HARD';
+                                  }
+                                  if (session.ghostAccuracy >= 0.74) {
+                                    return 'MED';
+                                  }
                                   return 'EASY';
                                 }(),
+                                comboStreak: hudState.comboStreak,
                               );
                             },
                           ),
@@ -383,37 +482,75 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         Expanded(
                           child: BlocBuilder<ArenaDuelCubit, ArenaDuelState>(
                             buildWhen: (prev, curr) =>
-                                prev.currentQuestionIndex != curr.currentQuestionIndex ||
+                                prev.currentQuestionIndex !=
+                                    curr.currentQuestionIndex ||
                                 prev.isAnswered != curr.isAnswered ||
                                 prev.selectedOption != curr.selectedOption ||
                                 prev.currentQuestion != curr.currentQuestion,
                             builder: (context, qState) {
                               final activeQ = qState.currentQuestion;
-                              if (activeQ == null) return const SizedBox.shrink();
+                              if (activeQ == null) {
+                                return const SizedBox.shrink();
+                              }
 
-                              final isWordClash = activeQ.discipline == 'word_clash' ||
-                                  activeQ.question.toLowerCase().contains('synonym') ||
-                                  activeQ.question.toLowerCase().contains('antonym') ||
-                                  activeQ.question.toLowerCase().contains('opposite');
+                              final isWordClash =
+                                  activeQ.discipline == 'word_clash';
                               final isShortOptions = activeQ.options.every(
-                                (opt) => opt.trim().length <= 14 && !opt.trim().contains(' '),
+                                (opt) =>
+                                    opt.trim().length <= 14 &&
+                                    !opt.trim().contains(' '),
                               );
-                              final shouldUseGrid = isWordClash && isShortOptions;
+                              final shouldUseGrid =
+                                  isWordClash && isShortOptions;
 
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  // Discipline-Specific Hero Card
+                                  // Animated Discipline Strip above Hero Card
+                                  ArenaDisciplineStrip(
+                                    question: activeQ,
+                                    currentRound:
+                                        qState.currentQuestionIndex + 1,
+                                    totalRounds:
+                                        qState.session?.questions.length ?? 5,
+                                    isDark: isDark,
+                                  ),
+
+                                  SizedBox(height: 10.h),
+
+                                  // Discipline-Specific Hero Card with slide transition
                                   RepaintBoundary(
-                                    child: _buildDisciplineHero(
-                                      context: context,
-                                      q: activeQ,
-                                      state: qState,
-                                      isDark: isDark,
-                                      isMidnight: isMidnight,
-                                      borderColor: borderColor,
-                                      textPrimary: textPrimary,
-                                      textSecondary: textSecondary,
+                                    child: AnimatedSwitcher(
+                                      duration: VowlMotion.fast,
+                                      switchInCurve: Curves.easeOut,
+                                      switchOutCurve: Curves.easeIn,
+                                      transitionBuilder: (child, animation) {
+                                        return FadeTransition(
+                                          opacity: animation,
+                                          child: SlideTransition(
+                                            position: Tween<Offset>(
+                                              begin: const Offset(0.08, 0),
+                                              end: Offset.zero,
+                                            ).animate(animation),
+                                            child: child,
+                                          ),
+                                        );
+                                      },
+                                      child: KeyedSubtree(
+                                        key: ValueKey<int>(
+                                          qState.currentQuestionIndex,
+                                        ),
+                                        child: _buildDisciplineHero(
+                                          context: context,
+                                          q: activeQ,
+                                          state: qState,
+                                          isDark: isDark,
+                                          isMidnight: isMidnight,
+                                          borderColor: borderColor,
+                                          textPrimary: textPrimary,
+                                          textSecondary: textSecondary,
+                                        ),
+                                      ),
                                     ),
                                   ),
 
@@ -425,46 +562,66 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                       child: shouldUseGrid
                                           ? GridView.builder(
                                               padding: EdgeInsets.zero,
-                                              physics: const BouncingScrollPhysics(),
+                                              physics:
+                                                  const BouncingScrollPhysics(),
                                               itemCount: activeQ.options.length,
-                                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 2,
-                                                mainAxisSpacing: 10.h,
-                                                crossAxisSpacing: 10.w,
-                                                childAspectRatio: 2.2,
-                                              ),
+                                              gridDelegate:
+                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 2,
+                                                    mainAxisSpacing: 10.h,
+                                                    crossAxisSpacing: 10.w,
+                                                    childAspectRatio: 2.2,
+                                                  ),
                                               itemBuilder: (context, idx) {
-                                                final option = activeQ.options[idx];
-                                                return _buildGridOptionButton(
-                                                  context: context,
+                                                final option =
+                                                    activeQ.options[idx];
+                                                return ArenaGridOptionTile(
                                                   index: idx,
                                                   text: option,
-                                                  state: qState,
-                                                  correctIndex: activeQ.correctIndex,
+                                                  isAnswered: qState.isAnswered,
+                                                  selectedOption:
+                                                      qState.selectedOption,
+                                                  correctIndex:
+                                                      activeQ.correctIndex,
                                                   isDark: isDark,
                                                   borderColor: borderColor,
                                                   textPrimary: textPrimary,
-                                                  onTap: () => _handleAnswerTap(idx, activeQ, qState, user),
+                                                  onTap: () => _handleAnswerTap(
+                                                    idx,
+                                                    activeQ,
+                                                    qState,
+                                                    user,
+                                                  ),
                                                 );
                                               },
                                             )
                                           : ListView.separated(
                                               padding: EdgeInsets.zero,
-                                              physics: const BouncingScrollPhysics(),
+                                              physics:
+                                                  const BouncingScrollPhysics(),
                                               itemCount: activeQ.options.length,
-                                              separatorBuilder: (_, _) => SizedBox(height: 10.h),
+                                              separatorBuilder: (_, _) =>
+                                                  SizedBox(height: 10.h),
                                               itemBuilder: (context, idx) {
-                                                final option = activeQ.options[idx];
-                                                return _buildOptionButton(
-                                                  context: context,
+                                                final option =
+                                                    activeQ.options[idx];
+                                                return ArenaListOptionTile(
                                                   index: idx,
                                                   text: option,
-                                                  state: qState,
-                                                  correctIndex: activeQ.correctIndex,
+                                                  isAnswered: qState.isAnswered,
+                                                  selectedOption:
+                                                      qState.selectedOption,
+                                                  correctIndex:
+                                                      activeQ.correctIndex,
                                                   isDark: isDark,
                                                   borderColor: borderColor,
                                                   textPrimary: textPrimary,
-                                                  onTap: () => _handleAnswerTap(idx, activeQ, qState, user),
+                                                  onTap: () => _handleAnswerTap(
+                                                    idx,
+                                                    activeQ,
+                                                    qState,
+                                                    user,
+                                                  ),
                                                 );
                                               },
                                             ),
@@ -472,20 +629,35 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                   ),
 
                                   // Live Academic Explanation Card when answered
-                                  if (qState.isAnswered && activeQ.explanation.isNotEmpty) ...[
+                                  if (qState.isAnswered &&
+                                      activeQ.explanation.isNotEmpty) ...[
                                     SizedBox(height: 8.h),
                                     RepaintBoundary(
                                       child: Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 14.w,
+                                          vertical: 10.h,
+                                        ),
                                         decoration: BoxDecoration(
-                                          color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9),
-                                          borderRadius: BorderRadius.circular(12.r),
-                                          border: Border.all(color: borderColor),
+                                          color: isDark
+                                              ? AppColors.slate900
+                                              : AppColors.slate100,
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          border: Border.all(
+                                            color: borderColor,
+                                          ),
                                         ),
                                         child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Icon(LucideIcons.lightbulb, size: 15.sp, color: const Color(0xFFF59E0B)),
+                                            Icon(
+                                              LucideIcons.lightbulb,
+                                              size: 15.sp,
+                                              color: AppColors.amber500,
+                                            ),
                                             SizedBox(width: 8.w),
                                             Expanded(
                                               child: Text(
@@ -521,7 +693,12 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     );
   }
 
-  void _handleAnswerTap(int idx, ArenaQuestion q, ArenaDuelState state, UserEntity user) {
+  void _handleAnswerTap(
+    int idx,
+    ArenaQuestion q,
+    ArenaDuelState state,
+    UserEntity user,
+  ) {
     if (state.isAnswered) return;
     final isCorrect = idx == q.correctIndex;
     if (isCorrect) {
@@ -558,1036 +735,49 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     required Color textPrimary,
     required Color textSecondary,
   }) {
-    final disc = q.discipline;
-    final lower = q.question.toLowerCase();
-
-    if (disc == 'word_clash' ||
-        lower.contains('synonym') ||
-        lower.contains('antonym') ||
-        lower.contains('opposite')) {
-      return _buildWordClashHero(
-        q: q,
-        state: state,
-        isDark: isDark,
-        isMidnight: isMidnight,
-        borderColor: borderColor,
-        textPrimary: textPrimary,
-        textSecondary: textSecondary,
-      );
+    switch (q.discipline) {
+      case 'word_clash':
+        return ArenaWordClashHero(
+          q: q,
+          state: state,
+          isDark: isDark,
+          isMidnight: isMidnight,
+          borderColor: borderColor,
+          textPrimary: textPrimary,
+          textSecondary: textSecondary,
+        );
+      case 'phrase_duel':
+        return ArenaPhraseDuelHero(
+          q: q,
+          state: state,
+          isDark: isDark,
+          isMidnight: isMidnight,
+          borderColor: borderColor,
+          textPrimary: textPrimary,
+          textSecondary: textSecondary,
+        );
+      case 'sentence_strike':
+        return ArenaSentenceStrikeHero(
+          q: q,
+          state: state,
+          isDark: isDark,
+          isMidnight: isMidnight,
+          borderColor: borderColor,
+          textPrimary: textPrimary,
+          textSecondary: textSecondary,
+        );
+      case 'context_blitz':
+      default:
+        return ArenaContextBlitzHero(
+          q: q,
+          state: state,
+          isDark: isDark,
+          isMidnight: isMidnight,
+          borderColor: borderColor,
+          textPrimary: textPrimary,
+          textSecondary: textSecondary,
+        );
     }
-
-    if (disc == 'phrase_duel' ||
-        lower.contains('idiom') ||
-        lower.contains('collocation') ||
-        lower.contains('natural pair') ||
-        lower.contains('particle') ||
-        lower.contains('phrasal')) {
-      return _buildPhraseDuelHero(
-        q: q,
-        state: state,
-        isDark: isDark,
-        isMidnight: isMidnight,
-        borderColor: borderColor,
-        textPrimary: textPrimary,
-        textSecondary: textSecondary,
-      );
-    }
-
-    if (disc == 'sentence_strike' ||
-        lower.contains('academic') ||
-        lower.contains('precision')) {
-      return _buildSentenceStrikeHero(
-        q: q,
-        state: state,
-        isDark: isDark,
-        isMidnight: isMidnight,
-        borderColor: borderColor,
-        textPrimary: textPrimary,
-        textSecondary: textSecondary,
-      );
-    }
-
-    return _buildContextBlitzHero(
-      q: q,
-      state: state,
-      isDark: isDark,
-      isMidnight: isMidnight,
-      borderColor: borderColor,
-      textPrimary: textPrimary,
-      textSecondary: textSecondary,
-    );
-  }
-
-  /// 1. WORD CLASH ⚡: Instant Speed Target Card
-  Widget _buildWordClashHero({
-    required ArenaQuestion q,
-    required ArenaDuelState state,
-    required bool isDark,
-    required bool isMidnight,
-    required Color borderColor,
-    required Color textPrimary,
-    required Color textSecondary,
-  }) {
-    final lower = q.question.toLowerCase();
-    final isAntonym = lower.contains('opposite') || lower.contains('antonym');
-    final accentColor = isAntonym ? AppColors.amber500 : AppColors.indigo500;
-
-    final quoteMatch = _quoteRegex.firstMatch(q.question);
-    final targetWord = quoteMatch?.group(1);
-
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
-
-    return Container(
-      padding: EdgeInsets.all(AppSpacing.card),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: accentColor.withValues(alpha: 0.35), width: 1.5),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(LucideIcons.zap, size: 11.sp, color: accentColor),
-                    SizedBox(width: 5.w),
-                    Text(
-                      isAntonym ? 'WORD CLASH • ANTONYM' : 'WORD CLASH • SYNONYM',
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
-                        color: accentColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                'ROUND ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
-                style: TextStyle(
-                  fontSize: 10.sp,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w700,
-                  color: textSecondary,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-
-          if (targetWord != null) ...[
-            Text(
-              isAntonym ? 'SELECT THE DIRECT OPPOSITE OF:' : 'SELECT THE CLOSEST SYNONYM TO:',
-              softWrap: true,
-              style: TextStyle(
-                fontSize: 11.sp,
-                letterSpacing: 1.1,
-                fontWeight: FontWeight.w700,
-                color: textSecondary,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: accentColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(14.r),
-                border: Border.all(
-                  color: accentColor.withValues(alpha: 0.35),
-                  width: 1.5,
-                ),
-              ),
-              child: Text(
-                targetWord.toUpperCase(),
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.8,
-                  color: accentColor,
-                ),
-              ),
-            ),
-          ] else ...[
-            Text(
-              q.question,
-              textAlign: TextAlign.center,
-              softWrap: true,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                height: 1.35,
-                color: textPrimary,
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-
-  /// 2. PHRASE DUEL 🎯: Collocation & Idiom Puzzle
-  Widget _buildPhraseDuelHero({
-    required ArenaQuestion q,
-    required ArenaDuelState state,
-    required bool isDark,
-    required bool isMidnight,
-    required Color borderColor,
-    required Color textPrimary,
-    required Color textSecondary,
-  }) {
-    final lower = q.question.toLowerCase();
-    final isIdiom = lower.contains('idiom') || lower.contains('mean');
-    final isPhrasal = lower.contains('phrasal') || lower.contains('particle');
-    final accentColor = isIdiom
-        ? const Color(0xFF06B6D4) // Cyan
-        : (isPhrasal ? const Color(0xFF8B5CF6) : const Color(0xFF10B981)); // Purple or Emerald
-
-    final tagText = isIdiom
-        ? 'PHRASE DUEL • IDIOM'
-        : (isPhrasal ? 'PHRASE DUEL • PHRASAL VERB' : 'PHRASE DUEL • COLLOCATION');
-
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
-
-    return Container(
-      padding: EdgeInsets.all(AppSpacing.card),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: accentColor.withValues(alpha: 0.35), width: 1.5),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(LucideIcons.target, size: 11.sp, color: accentColor),
-                    SizedBox(width: 5.w),
-                    Text(
-                      tagText,
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
-                        color: accentColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                'ROUND ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
-                style: TextStyle(
-                  fontSize: 10.sp,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w700,
-                  color: textSecondary,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-
-          Text(
-            isIdiom
-                ? 'DECIPHER THE FIGURATIVE EXPRESSION:'
-                : 'FIT THE NATURAL COLLOCATING PHRASE:',
-            softWrap: true,
-            style: TextStyle(
-              fontSize: 10.5.sp,
-              letterSpacing: 1.0,
-              fontWeight: FontWeight.w700,
-              color: textSecondary,
-            ),
-          ),
-          SizedBox(height: 8.h),
-
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: accentColor.withValues(alpha: 0.2)),
-            ),
-            child: Text(
-              q.question,
-              textAlign: TextAlign.center,
-              softWrap: true,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w700,
-                height: 1.4,
-                color: textPrimary,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// 3. SENTENCE STRIKE 💥: Academic Register & Precision
-  Widget _buildSentenceStrikeHero({
-    required ArenaQuestion q,
-    required ArenaDuelState state,
-    required bool isDark,
-    required bool isMidnight,
-    required Color borderColor,
-    required Color textPrimary,
-    required Color textSecondary,
-  }) {
-    const accentColor = Color(0xFFEC4899); // Pink
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
-
-    return Container(
-      padding: EdgeInsets.all(AppSpacing.card),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: accentColor.withValues(alpha: 0.35), width: 1.5),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(LucideIcons.flame, size: 11.sp, color: accentColor),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'SENTENCE STRIKE • ACADEMIC',
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
-                        color: accentColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                'ROUND ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
-                style: TextStyle(
-                  fontSize: 10.sp,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w700,
-                  color: textSecondary,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-
-          Text(
-            'SELECT THE PRECISE GRAMMATICAL & REGISTER FIT:',
-            softWrap: true,
-            style: TextStyle(
-              fontSize: 10.5.sp,
-              letterSpacing: 1.0,
-              fontWeight: FontWeight.w700,
-              color: textSecondary,
-            ),
-          ),
-          SizedBox(height: 8.h),
-
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: accentColor.withValues(alpha: 0.2)),
-            ),
-            child: Text(
-              q.question,
-              textAlign: TextAlign.center,
-              softWrap: true,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w700,
-                height: 1.4,
-                color: textPrimary,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// 4. CONTEXT BLITZ 🧠: Deductive Reasoning Dossier
-  Widget _buildContextBlitzHero({
-    required ArenaQuestion q,
-    required ArenaDuelState state,
-    required bool isDark,
-    required bool isMidnight,
-    required Color borderColor,
-    required Color textPrimary,
-    required Color textSecondary,
-  }) {
-    const accentColor = Color(0xFF0EA5E9); // Sky Blue
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
-
-    return Container(
-      padding: EdgeInsets.all(AppSpacing.card),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: accentColor.withValues(alpha: 0.35), width: 1.5),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(LucideIcons.brainCircuit, size: 11.sp, color: accentColor),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'CONTEXT BLITZ • INFERENCE',
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
-                        color: accentColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                'ROUND ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
-                style: TextStyle(
-                  fontSize: 10.sp,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w700,
-                  color: textSecondary,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-
-          Row(
-            children: [
-              Icon(LucideIcons.search, size: 12.sp, color: accentColor),
-              SizedBox(width: 6.w),
-              Expanded(
-                child: Text(
-                  'ANALYZE CONTEXT CLUES & INFER THE MISSING MEANING:',
-                  softWrap: true,
-                  style: TextStyle(
-                    fontSize: 10.5.sp,
-                    letterSpacing: 0.9,
-                    fontWeight: FontWeight.w700,
-                    color: textSecondary,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 8.h),
-
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: accentColor.withValues(alpha: 0.2)),
-            ),
-            child: Text(
-              q.question,
-              textAlign: TextAlign.left,
-              softWrap: true,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.5.sp,
-                fontWeight: FontWeight.w600,
-                height: 1.45,
-                color: textPrimary,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // ==========================================
-  // OPTIONS BUILDERS
-  // ==========================================
-
-  Widget _buildGridOptionButton({
-    required BuildContext context,
-    required int index,
-    required String text,
-    required ArenaDuelState state,
-    required int correctIndex,
-    required bool isDark,
-    required Color borderColor,
-    required Color textPrimary,
-    required VoidCallback onTap,
-  }) {
-    Color btnBg = isDark ? const Color(0xFF0F172A) : Colors.white;
-    Color btnBorder = borderColor;
-    Color txtColor = textPrimary;
-
-    if (state.isAnswered) {
-      if (index == correctIndex) {
-        btnBg = AppColors.emerald500.withValues(alpha: 0.2);
-        btnBorder = AppColors.emerald500;
-        txtColor = isDark ? Colors.white : const Color(0xFF065F46);
-      } else if (state.selectedOption == index) {
-        btnBg = AppColors.rose500.withValues(alpha: 0.2);
-        btnBorder = AppColors.rose500;
-        txtColor = isDark ? Colors.white : AppColors.rose500;
-      }
-    }
-
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: state.isAnswered ? null : onTap,
-        borderRadius: BorderRadius.circular(14.r),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: btnBg,
-            borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(color: btnBorder, width: 1.5),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 22.w,
-                height: 22.w,
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
-                  shape: BoxShape.circle,
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  String.fromCharCode(65 + index),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w800,
-                    color: textPrimary,
-                  ),
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  text,
-                  softWrap: true,
-                  maxLines: 2,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
-                    color: txtColor,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildOptionButton({
-    required BuildContext context,
-    required int index,
-    required String text,
-    required ArenaDuelState state,
-    required int correctIndex,
-    required bool isDark,
-    required Color borderColor,
-    required Color textPrimary,
-    required VoidCallback onTap,
-  }) {
-    Color btnBg = isDark ? const Color(0xFF0F172A) : Colors.white;
-    Color btnBorder = borderColor;
-    Color txtColor = textPrimary;
-
-    if (state.isAnswered) {
-      if (index == correctIndex) {
-        btnBg = AppColors.emerald500.withValues(alpha: 0.2);
-        btnBorder = AppColors.emerald500;
-        txtColor = isDark ? Colors.white : const Color(0xFF065F46);
-      } else if (state.selectedOption == index) {
-        btnBg = AppColors.rose500.withValues(alpha: 0.2);
-        btnBorder = AppColors.rose500;
-        txtColor = isDark ? Colors.white : AppColors.rose500;
-      }
-    }
-
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: state.isAnswered ? null : onTap,
-        borderRadius: BorderRadius.circular(14.r),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
-          decoration: BoxDecoration(
-            color: btnBg,
-            borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(color: btnBorder, width: 1.5),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 26.w,
-                height: 26.w,
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
-                  shape: BoxShape.circle,
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  String.fromCharCode(65 + index),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
-                    color: textPrimary,
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Text(
-                  text,
-                  softWrap: true,
-                  maxLines: 3,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: txtColor,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  // ==========================================
-  // SUSPENSE WAITING VIEW (Round 5 Complete)
-  // ==========================================
-
-  Widget _buildWaitingForOpponentView({
-    required BuildContext context,
-    required ArenaDuelState state,
-    required UserEntity user,
-    required String rivalName,
-    required String? rivalPhoto,
-    required bool isDark,
-    required bool isMidnight,
-    required Color textPrimary,
-    required Color textSecondary,
-    required Color borderColor,
-  }) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.compact,
-        vertical: 16.h,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Center(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: AppColors.indigo500.withValues(alpha: 0.35),
-                  width: 1,
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(LucideIcons.swords, size: 13.sp, color: AppColors.indigo500),
-                  SizedBox(width: 6.w),
-                  Text(
-                    'PENTATHLON MATCH COMPLETE',
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.0,
-                      color: AppColors.indigo500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 16.h),
-
-          Text(
-            'WAITING FOR RIVAL TO FINISH',
-            textAlign: TextAlign.center,
-            softWrap: true,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 19.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 0.5,
-              color: textPrimary,
-            ),
-          ),
-          SizedBox(height: 6.h),
-          Text(
-            'All 5 rounds submitted. Rival is concluding their match.',
-            textAlign: TextAlign.center,
-            softWrap: true,
-            style: TextStyle(
-              fontSize: 12.5.sp,
-              fontWeight: FontWeight.w500,
-              color: textSecondary,
-            ),
-          ),
-
-          SizedBox(height: 24.h),
-
-          Container(
-            padding: EdgeInsets.all(18.r),
-            decoration: BoxDecoration(
-              color: isMidnight
-                  ? AppColors.midnightSurface
-                  : (isDark ? AppColors.slate800 : Colors.white),
-              borderRadius: BorderRadius.circular(18.r),
-              border: Border.all(color: borderColor),
-            ),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // User Locked Side
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 50.r,
-                            height: 50.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: AppColors.indigo500, width: 2),
-                              image: user.photoUrl != null
-                                  ? DecorationImage(
-                                      image: NetworkImage(user.photoUrl!),
-                                      fit: BoxFit.cover,
-                                    )
-                                  : null,
-                              color: AppColors.indigo500.withValues(alpha: 0.15),
-                            ),
-                            alignment: Alignment.center,
-                            child: user.photoUrl == null
-                                ? Text(
-                                    user.safeDisplayName.isNotEmpty
-                                        ? user.safeDisplayName[0].toUpperCase()
-                                        : 'Y',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: AppColors.indigo500,
-                                    ),
-                                  )
-                                : null,
-                          ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            user.safeDisplayName,
-                            softWrap: true,
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w700,
-                              color: textPrimary,
-                            ),
-                          ),
-                          SizedBox(height: 4.h),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                            decoration: BoxDecoration(
-                              color: AppColors.emerald500.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              'LOCKED: ${state.myScore} PTS',
-                              softWrap: true,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
-                                color: AppColors.emerald500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // VS Divider
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                        decoration: BoxDecoration(
-                          color: (isDark ? AppColors.slate700 : AppColors.slate200),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Text(
-                          'VS',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w900,
-                            color: textPrimary,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Rival Side
-                    Expanded(
-                      child: Column(
-                        children: [
-                          if ((state.session?.isGhostRival == true) &&
-                              (rivalPhoto == null || rivalPhoto.isEmpty))
-                            Container(
-                              width: 50.r,
-                              height: 50.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                gradient: const LinearGradient(
-                                  colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                                border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
-                              ),
-                              child: ClipOval(
-                                child: Image.asset(
-                                  'assets/images/vowly_head.webp',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            )
-                          else
-                            Container(
-                              width: 50.r,
-                              height: 50.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: AppColors.rose500, width: 2),
-                                image: rivalPhoto != null && rivalPhoto.isNotEmpty
-                                    ? DecorationImage(
-                                        image: NetworkImage(rivalPhoto),
-                                        fit: BoxFit.cover,
-                                      )
-                                    : null,
-                                color: AppColors.rose500.withValues(alpha: 0.15),
-                              ),
-                              alignment: Alignment.center,
-                              child: rivalPhoto == null || rivalPhoto.isEmpty
-                                  ? Text(
-                                      rivalName.isNotEmpty
-                                          ? rivalName[0].toUpperCase()
-                                          : 'R',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: AppColors.rose500,
-                                      ),
-                                    )
-                                  : null,
-                            ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            rivalName,
-                            softWrap: true,
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w700,
-                              color: textPrimary,
-                            ),
-                          ),
-                          SizedBox(height: 4.h),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                            decoration: BoxDecoration(
-                              color: AppColors.amber500.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              'RIVAL: ${state.rivalScore} PTS',
-                              softWrap: true,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
-                                color: AppColors.amber500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 18.h),
-
-                // Modern Linear Indicator (Never 2019 Spinner)
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: LinearProgressIndicator(
-                    minHeight: 4.h,
-                    backgroundColor: isDark ? AppColors.slate700 : AppColors.slate200,
-                    valueColor: const AlwaysStoppedAnimation<Color>(AppColors.indigo500),
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  'Waiting for rival to finish...',
-                  softWrap: true,
-                  style: TextStyle(
-                    fontSize: 11.sp,
-                    fontStyle: FontStyle.italic,
-                    color: textSecondary,
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          SizedBox(height: 20.h),
-
-          // Speed Tiebreaker Card
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-              borderRadius: BorderRadius.circular(14.r),
-              border: Border.all(color: borderColor),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(LucideIcons.zap, size: 16.sp, color: AppColors.amber500),
-                SizedBox(width: 10.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Speed Tiebreaker Active',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          color: textPrimary,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'If points tie, the faster player wins. Every second counts!',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          height: 1.35,
-                          color: textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   void _confirmExit(BuildContext context) {
@@ -1636,77 +826,25 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      ArenaRefuelDialog.show(
+      ArenaRefuelHelper.showRefuelDialog(
         context: context,
-        currentCoins: currentUser.coins,
-        requiredCoins: 30,
-        isPremium: currentUser.isPremium,
-        onWatchAd: () async {
-          if (currentUser.isPremium) {
-            try {
-              if (di.sl.isRegistered<UpdateUserCoins>()) {
-                await di.sl<UpdateUserCoins>()(
-                  const UpdateUserCoinsParams(
-                    amountChange: 30,
-                    title: 'VIP Arena Refuel',
-                  ),
-                );
-              }
-              if (context.mounted) {
-                context.read<AuthBloc>().add(const AuthReloadUser());
-                CustomSnackBar.show(
-                  context: context,
-                  message: '👑 +30 VIP Coins added! Entering rematch...',
-                  type: CustomSnackBarType.success,
-                );
-                Navigator.of(context, rootNavigator: true).pushReplacement(
-                  ArenaMatchmakingScreen.route(user: currentUser),
-                );
-              }
-            } catch (e) {
-              debugPrint('[ArenaDuelScreen] VIP Rematch refuel error: $e');
-            }
-            return;
+        user: currentUser,
+        onRefuelSuccess: () {
+          if (context.mounted) {
+            context.read<AuthBloc>().add(const AuthReloadUser());
+            Navigator.of(
+              context,
+              rootNavigator: true,
+            ).pushReplacement(ArenaMatchmakingScreen.route(user: currentUser));
           }
-
-          final adService = di.sl<AdService>();
-          adService.showRewardedAd(
-            context: context,
-            isPremium: currentUser.isPremium,
-            onDismissed: () {},
-            onUserEarnedReward: (_) async {
-              try {
-                if (di.sl.isRegistered<UpdateUserCoins>()) {
-                  await di.sl<UpdateUserCoins>()(
-                    const UpdateUserCoinsParams(
-                      amountChange: 30,
-                      title: 'Arena Duel Refuel',
-                    ),
-                  );
-                }
-                if (context.mounted) {
-                  context.read<AuthBloc>().add(const AuthReloadUser());
-                  CustomSnackBar.show(
-                    context: context,
-                    message: '+30 Coins added! Entering rematch...',
-                    type: CustomSnackBarType.success,
-                  );
-                  Navigator.of(context, rootNavigator: true).pushReplacement(
-                    ArenaMatchmakingScreen.route(user: currentUser),
-                  );
-                }
-              } catch (e) {
-                debugPrint('[ArenaDuelScreen] Rematch refuel error: $e');
-              }
-            },
-          );
         },
       );
       return;
     }
 
-    Navigator.of(context, rootNavigator: true).pushReplacement(
-      ArenaMatchmakingScreen.route(user: currentUser),
-    );
+    Navigator.of(
+      context,
+      rootNavigator: true,
+    ).pushReplacement(ArenaMatchmakingScreen.route(user: currentUser));
   }
 }

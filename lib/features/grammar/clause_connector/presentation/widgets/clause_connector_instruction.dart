@@ -46,11 +46,7 @@ class ClauseConnectorInstruction extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.link_rounded,
-            size: 16.r,
-            color: primaryColor,
-          ),
+          Icon(Icons.link_rounded, size: 16.r, color: primaryColor),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(

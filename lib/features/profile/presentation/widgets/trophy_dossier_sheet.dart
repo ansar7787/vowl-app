@@ -54,7 +54,9 @@ class TrophyDossierSheet extends StatefulWidget {
     required bool isPinned,
     required VoidCallback onTogglePin,
   }) {
-    Haptics.vibrate(metadata.isLegendary ? HapticsType.heavy : HapticsType.light);
+    Haptics.vibrate(
+      metadata.isLegendary ? HapticsType.heavy : HapticsType.light,
+    );
 
     return showModalBottomSheet(
       context: context,
@@ -115,7 +117,9 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
     });
     _pulseController.repeat(reverse: true);
     Haptics.vibrate(HapticsType.selection);
-    debugPrint('[TrophyDossierSheet] Claiming bounty for trophy: "${widget.metadata.id}" (${widget.metadata.name})');
+    debugPrint(
+      '[TrophyDossierSheet] Claiming bounty for trophy: "${widget.metadata.id}" (${widget.metadata.name})',
+    );
 
     try {
       if (di.sl.isRegistered<ClaimBadgeReward>()) {
@@ -128,8 +132,8 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
               final errorText = failure.message == 'trophy-already-claimed'
                   ? 'This trophy bounty has already been claimed.'
                   : (failure.message == 'trophy-not-earned'
-                      ? 'Complete the lesson criteria to unlock this trophy first!'
-                      : 'Claim failed: ${failure.message}');
+                        ? 'Complete the lesson criteria to unlock this trophy first!'
+                        : 'Claim failed: ${failure.message}');
               setState(() {
                 _claimErrorMessage = errorText;
               });
@@ -141,7 +145,9 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
             }
           },
           (_) {
-            debugPrint('[TrophyDossierSheet] Claim SUCCESS! +${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins');
+            debugPrint(
+              '[TrophyDossierSheet] Claim SUCCESS! +${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins',
+            );
             Haptics.vibrate(HapticsType.success);
             try {
               if (di.sl.isRegistered<SoundService>()) {
@@ -156,7 +162,8 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
               });
               CustomSnackBar.show(
                 context: context,
-                message: 'Bounty Claimed! +${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins',
+                message:
+                    'Bounty Claimed! +${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins',
                 type: CustomSnackBarType.success,
               );
               if (di.sl.isRegistered<AuthBloc>()) {
@@ -166,7 +173,9 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
           },
         );
       } else {
-        debugPrint('[TrophyDossierSheet] Error: ClaimBadgeReward is not registered in DI.');
+        debugPrint(
+          '[TrophyDossierSheet] Error: ClaimBadgeReward is not registered in DI.',
+        );
         if (mounted) {
           const err = 'Service unavailable. Please restart app.';
           setState(() {
@@ -208,7 +217,8 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
     try {
       await SocialShareRasterizer.captureAndShare(
         boundaryKey: _cardBoundaryKey,
-        shareText: 'Unlocked the ${widget.metadata.name} trophy on VOWL! 🏆✨ #VowlApp',
+        shareText:
+            'Unlocked the ${widget.metadata.name} trophy on VOWL! 🏆✨ #VowlApp',
         subject: 'My VOWL Trophy: ${widget.metadata.name}',
       );
     } finally {
@@ -243,8 +253,10 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
-    final isClaimed = _claimedLocally ||
-        (widget.user?.claimedBadgeRewards.contains(widget.metadata.id) ?? false);
+    final isClaimed =
+        _claimedLocally ||
+        (widget.user?.claimedBadgeRewards.contains(widget.metadata.id) ??
+            false);
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
@@ -275,9 +287,7 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
     final safeBottom = math.max(systemBottom, 16.h) + 16.h + bottomInset;
 
     return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxHeight: 0.90.sh,
-      ),
+      constraints: BoxConstraints(maxHeight: 0.90.sh),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -313,7 +323,9 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
                     child: Container(
                       padding: EdgeInsets.all(16.r),
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF0D1321) : const Color(0xFFF8FAFC),
+                        color: isDark
+                            ? const Color(0xFF0D1321)
+                            : const Color(0xFFF8FAFC),
                         borderRadius: BorderRadius.circular(24.r),
                         border: Border.all(color: borderColor),
                       ),
@@ -324,18 +336,29 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
                                 decoration: BoxDecoration(
                                   color: isEarnedEffective
-                                      ? const Color(0xFF10B981).withValues(alpha: 0.15)
-                                      : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                                      ? const Color(
+                                          0xFF10B981,
+                                        ).withValues(alpha: 0.15)
+                                      : (isDark
+                                            ? Colors.white10
+                                            : Colors.black.withValues(
+                                                alpha: 0.05,
+                                              )),
                                   borderRadius: BorderRadius.circular(20.r),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Icon(
-                                      isEarnedEffective ? LucideIcons.checkCircle : LucideIcons.lock,
+                                      isEarnedEffective
+                                          ? LucideIcons.checkCircle
+                                          : LucideIcons.lock,
                                       size: 12.r,
                                       color: isEarnedEffective
                                           ? const Color(0xFF10B981)
@@ -357,437 +380,471 @@ class _TrophyDossierSheetState extends State<TrophyDossierSheet>
                                   ],
                                 ),
                               ),
-                          if (widget.metadata.isLegendary)
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? AppColors.gold.withValues(alpha: 0.15)
-                                    : const Color(0xFFB45309).withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: isDark
-                                      ? AppColors.gold.withValues(alpha: 0.4)
-                                      : const Color(0xFFB45309).withValues(alpha: 0.35),
+                              if (widget.metadata.isLegendary)
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w,
+                                    vertical: 3.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? AppColors.gold.withValues(alpha: 0.15)
+                                        : const Color(
+                                            0xFFB45309,
+                                          ).withValues(alpha: 0.12),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: isDark
+                                          ? AppColors.gold.withValues(
+                                              alpha: 0.4,
+                                            )
+                                          : const Color(
+                                              0xFFB45309,
+                                            ).withValues(alpha: 0.35),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'LEGENDARY',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? AppColors.gold
+                                          : const Color(0xFFB45309),
+                                      letterSpacing: 1.0,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              child: Text(
-                                'LEGENDARY',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark ? AppColors.gold : const Color(0xFFB45309),
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
+                            ],
+                          ),
+                          SizedBox(height: 14.h),
+
+                          // Large 3D Center Medallion
+                          TrophyMedallionArtwork(
+                            metadata: widget.metadata,
+                            isEarned: isEarnedEffective,
+                            size: 92.0,
+                          ),
+                          SizedBox(height: 16.h),
+
+                          // Title & Category
+                          Text(
+                            widget.metadata.name,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w900,
+                              color: textPrimary,
+                              letterSpacing: -0.3,
                             ),
-                        ],
-                      ),
-                      SizedBox(height: 14.h),
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            widget.metadata.description,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: textSecondary,
+                              height: 1.3,
+                            ),
+                          ),
 
-                      // Large 3D Center Medallion
-                      TrophyMedallionArtwork(
-                        metadata: widget.metadata,
-                        isEarned: isEarnedEffective,
-                        size: 92.0,
-                      ),
-                      SizedBox(height: 16.h),
+                          SizedBox(height: 18.h),
 
-                      // Title & Category
-                      Text(
-                        widget.metadata.name,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: textPrimary,
-                          letterSpacing: -0.3,
-                        ),
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        widget.metadata.description,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w600,
-                          color: textSecondary,
-                          height: 1.3,
-                        ),
-                      ),
-
-                      SizedBox(height: 18.h),
-
-                      // Live Progress Tracker Bar
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // Live Progress Tracker Bar
+                          Column(
                             children: [
-                              Text(
-                                'Progress',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: textSecondary,
-                                ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Progress',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: textSecondary,
+                                    ),
+                                  ),
+                                  Text(
+                                    isEarnedEffective ? '100%' : progressLabel,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isEarnedEffective
+                                          ? const Color(0xFF10B981)
+                                          : (isDark
+                                                ? Colors.white
+                                                : AppColors.slate800),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                isEarnedEffective ? '100%' : progressLabel,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isEarnedEffective
-                                      ? const Color(0xFF10B981)
-                                      : (isDark ? Colors.white : AppColors.slate800),
+                              SizedBox(height: 6.h),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10.r),
+                                child: LinearProgressIndicator(
+                                  value: progressRatio,
+                                  minHeight: 8.h,
+                                  backgroundColor: isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : Colors.black.withValues(alpha: 0.06),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    isEarnedEffective
+                                        ? const Color(0xFF10B981)
+                                        : AppColors.indigo500,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          SizedBox(height: 6.h),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.r),
-                            child: LinearProgressIndicator(
-                              value: progressRatio,
-                              minHeight: 8.h,
-                              backgroundColor: isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : Colors.black.withValues(alpha: 0.06),
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                isEarnedEffective
-                                    ? const Color(0xFF10B981)
-                                    : AppColors.indigo500,
+                          SizedBox(height: 16.h),
+
+                          // Rewards Bento
+                          Row(
+                            children: [
+                              Expanded(
+                                child: _buildBountyPill(
+                                  label: 'XP REWARD',
+                                  value: '+${widget.metadata.xpReward} XP',
+                                  icon: LucideIcons.zap,
+                                  color: AppColors.indigo500,
+                                  isDark: isDark,
+                                  borderColor: borderColor,
+                                ),
                               ),
-                            ),
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: _buildBountyPill(
+                                  label: 'COIN REWARD',
+                                  value: '+${widget.metadata.coinReward} Coins',
+                                  icon: LucideIcons.coins,
+                                  color: const Color(0xFFF59E0B),
+                                  isDark: isDark,
+                                  borderColor: borderColor,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
-                      ),
-                      SizedBox(height: 16.h),
-
-                      // Rewards Bento
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _buildBountyPill(
-                              label: 'XP REWARD',
-                              value: '+${widget.metadata.xpReward} XP',
-                              icon: LucideIcons.zap,
-                              color: AppColors.indigo500,
-                              isDark: isDark,
-                              borderColor: borderColor,
-                            ),
-                          ),
-                          SizedBox(width: 8.w),
-                          Expanded(
-                            child: _buildBountyPill(
-                              label: 'COIN REWARD',
-                              value: '+${widget.metadata.coinReward} Coins',
-                              icon: LucideIcons.coins,
-                              color: const Color(0xFFF59E0B),
-                              isDark: isDark,
-                              borderColor: borderColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 16.h),
-
-              // Action Buttons
-              if (isEarnedEffective) ...[
-                if (_claimErrorMessage != null) ...[
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 12.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.rose500.withValues(alpha: isDark ? 0.15 : 0.08),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: AppColors.rose500.withValues(alpha: 0.35),
-                        width: 1.0,
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          LucideIcons.alertCircle,
-                          size: 15.sp,
-                          color: AppColors.rose500,
+                  ),
+
+                  SizedBox(height: 16.h),
+
+                  // Action Buttons
+                  if (isEarnedEffective) ...[
+                    if (_claimErrorMessage != null) ...[
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          vertical: 9.h,
+                          horizontal: 12.w,
                         ),
-                        SizedBox(width: 8.w),
-                        Expanded(
-                          child: Text(
-                            _claimErrorMessage!,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.5.sp,
-                              fontWeight: FontWeight.w600,
+                        decoration: BoxDecoration(
+                          color: AppColors.rose500.withValues(
+                            alpha: isDark ? 0.15 : 0.08,
+                          ),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: AppColors.rose500.withValues(alpha: 0.35),
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              LucideIcons.alertCircle,
+                              size: 15.sp,
                               color: AppColors.rose500,
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                ],
-
-                if (!isClaimed) ...[
-                  ScaleButton(
-                    onTap: _isClaiming ? null : _handleClaimReward,
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 13.h),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: _isClaiming
-                              ? [const Color(0xFF059669), const Color(0xFF10B981)]
-                              : [const Color(0xFF10B981), const Color(0xFF059669)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(16.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xFF10B981).withValues(alpha: 0.35),
-                            blurRadius: 14,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: _isClaiming
-                          ? _buildClaimingLoadingState()
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  LucideIcons.sparkles,
-                                  size: 16.sp,
-                                  color: Colors.white,
+                            SizedBox(width: 8.w),
+                            Expanded(
+                              child: Text(
+                                _claimErrorMessage!,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.5.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.rose500,
                                 ),
-                                SizedBox(width: 8.w),
-                                Flexible(
-                                  child: Text(
-                                    'Claim Bounty (+${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins)',
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.5.sp,
-                                      fontWeight: FontWeight.w900,
-                                      letterSpacing: 0.3,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10.h),
+                    ],
+
+                    if (!isClaimed) ...[
+                      ScaleButton(
+                        onTap: _isClaiming ? null : _handleClaimReward,
+                        child: Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(vertical: 13.h),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: _isClaiming
+                                  ? [
+                                      const Color(0xFF059669),
+                                      const Color(0xFF10B981),
+                                    ]
+                                  : [
+                                      const Color(0xFF10B981),
+                                      const Color(0xFF059669),
+                                    ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                            borderRadius: BorderRadius.circular(16.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(
+                                  0xFF10B981,
+                                ).withValues(alpha: 0.35),
+                                blurRadius: 14,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: _isClaiming
+                              ? _buildClaimingLoadingState()
+                              : Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      LucideIcons.sparkles,
+                                      size: 16.sp,
                                       color: Colors.white,
                                     ),
+                                    SizedBox(width: 8.w),
+                                    Flexible(
+                                      child: Text(
+                                        'Claim Bounty (+${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins)',
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.5.sp,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 0.3,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                        ),
+                      ),
+                      SizedBox(height: 10.h),
+                    ] else ...[
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          vertical: 10.h,
+                          horizontal: 14.w,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color(
+                            0xFF10B981,
+                          ).withValues(alpha: isDark ? 0.12 : 0.08),
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: const Color(
+                              0xFF10B981,
+                            ).withValues(alpha: 0.3),
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.checkCircle2,
+                              size: 16.sp,
+                              color: const Color(0xFF10B981),
+                            ),
+                            SizedBox(width: 6.w),
+                            Flexible(
+                              child: Text(
+                                'Bounty Claimed (+${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins)',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: const Color(0xFF10B981),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10.h),
+                    ],
+
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            height: 48.h,
+                            child: OutlinedButton.icon(
+                              onPressed: () {
+                                Haptics.vibrate(HapticsType.light);
+                                setState(() => _isPinned = !_isPinned);
+                                widget.onTogglePin();
+                              },
+                              icon: Icon(
+                                _isPinned
+                                    ? LucideIcons.pinOff
+                                    : LucideIcons.pin,
+                                size: 16.sp,
+                                color: textPrimary,
+                              ),
+                              label: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  _isPinned ? 'Unpin' : 'Pin to Showcase',
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: textPrimary,
                                   ),
                                 ),
-                              ],
+                              ),
+                              style: OutlinedButton.styleFrom(
+                                minimumSize: Size.fromHeight(48.h),
+                                maximumSize: Size.fromHeight(48.h),
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                side: BorderSide(
+                                  color: borderColor,
+                                  width: 1.5,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                              ),
                             ),
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                ] else ...[
-                  Container(
-                    width: double.infinity,
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF10B981)
-                          .withValues(alpha: isDark ? 0.12 : 0.08),
-                      borderRadius: BorderRadius.circular(14.r),
-                      border: Border.all(
-                        color:
-                            const Color(0xFF10B981).withValues(alpha: 0.3),
-                        width: 1.0,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          LucideIcons.checkCircle2,
-                          size: 16.sp,
-                          color: const Color(0xFF10B981),
+                          ),
                         ),
-                        SizedBox(width: 6.w),
-                        Flexible(
-                          child: Text(
-                            'Bounty Claimed (+${widget.metadata.xpReward} XP, +${widget.metadata.coinReward} Coins)',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF10B981),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: SizedBox(
+                            height: 48.h,
+                            child: ElevatedButton.icon(
+                              onPressed: _handleShare,
+                              icon: Icon(LucideIcons.share2, size: 16.sp),
+                              label: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  _isSharing ? 'Generating...' : 'Share Trophy',
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.indigo500,
+                                foregroundColor: Colors.white,
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                elevation: 0,
+                                minimumSize: Size.fromHeight(48.h),
+                                maximumSize: Size.fromHeight(48.h),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  SizedBox(height: 10.h),
-                ],
-
-                Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 48.h,
-                        child: OutlinedButton.icon(
-                          onPressed: () {
-                            Haptics.vibrate(HapticsType.light);
-                            setState(() => _isPinned = !_isPinned);
-                            widget.onTogglePin();
-                          },
-                          icon: Icon(
-                            _isPinned ? LucideIcons.pinOff : LucideIcons.pin,
-                            size: 16.sp,
-                            color: textPrimary,
-                          ),
-                          label: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              _isPinned ? 'Unpin' : 'Pin to Showcase',
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w800,
-                                color: textPrimary,
-                              ),
-                            ),
-                          ),
-                          style: OutlinedButton.styleFrom(
-                            minimumSize: Size.fromHeight(48.h),
-                            maximumSize: Size.fromHeight(48.h),
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            side: BorderSide(color: borderColor, width: 1.5),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.r),
-                            ),
-                          ),
+                  ] else ...[
+                    ElevatedButton.icon(
+                      onPressed: _handlePracticeNow,
+                      icon: Icon(LucideIcons.playCircle, size: 18.sp),
+                      label: Text(
+                        'Practice Now',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
                         ),
                       ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: SizedBox(
-                        height: 48.h,
-                        child: ElevatedButton.icon(
-                          onPressed: _handleShare,
-                          icon: Icon(LucideIcons.share2, size: 16.sp),
-                          label: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              _isSharing ? 'Generating...' : 'Share Trophy',
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.indigo500,
-                            foregroundColor: Colors.white,
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            elevation: 0,
-                            minimumSize: Size.fromHeight(48.h),
-                            maximumSize: Size.fromHeight(48.h),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.r),
-                            ),
-                          ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.indigo500,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 14.h),
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
                         ),
                       ),
                     ),
                   ],
+                ],
+              ),
+            ),
+          ),
+          if (_showConfetti)
+            const Positioned.fill(
+              child: IgnorePointer(child: GameConfetti(shouldPop: true)),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildClaimingLoadingState() {
+    return AnimatedBuilder(
+      animation: _pulseAnimation,
+      builder: (context, child) {
+        return Opacity(
+          opacity: _pulseAnimation.value,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Transform.rotate(
+                angle: _pulseAnimation.value * math.pi * 0.25,
+                child: Icon(
+                  LucideIcons.sparkles,
+                  size: 16.sp,
+                  color: Colors.white,
                 ),
-              ] else ...[
-                ElevatedButton.icon(
-                  onPressed: _handlePracticeNow,
-                  icon: Icon(LucideIcons.playCircle, size: 18.sp),
-                  label: Text(
-                    'Practice Now',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.indigo500,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                'CLAIMING BOUNTY...',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.5.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1.0,
+                  color: Colors.white,
                 ),
-              ],
+              ),
             ],
           ),
-        ),
-      ),
-      if (_showConfetti)
-        const Positioned.fill(
-          child: IgnorePointer(
-            child: GameConfetti(shouldPop: true),
-          ),
-        ),
-    ],
-  ),
-);
-}
-
-Widget _buildClaimingLoadingState() {
-  return AnimatedBuilder(
-    animation: _pulseAnimation,
-    builder: (context, child) {
-      return Opacity(
-        opacity: _pulseAnimation.value,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Transform.rotate(
-              angle: _pulseAnimation.value * math.pi * 0.25,
-              child: Icon(
-                LucideIcons.sparkles,
-                size: 16.sp,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(width: 8.w),
-            Text(
-              'CLAIMING BOUNTY...',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.5.sp,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 1.0,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
+        );
+      },
+    );
+  }
 
   Widget _buildBountyPill({
     required String label,
@@ -800,7 +857,9 @@ Widget _buildClaimingLoadingState() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 10.w),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.04)
+            : Colors.black.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(color: borderColor),
       ),

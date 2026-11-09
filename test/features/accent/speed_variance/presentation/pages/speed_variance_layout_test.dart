@@ -696,9 +696,7 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
-        verify(
-          () => mockHapticService.success(),
-        ).called(1);
+        verify(() => mockHapticService.success()).called(1);
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(
           () => mockAccentBloc.add(const AccentSpeakConfirmed(5)),

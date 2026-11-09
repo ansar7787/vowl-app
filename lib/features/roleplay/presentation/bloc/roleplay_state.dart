@@ -58,7 +58,8 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
   final notAlreadyAppended = !state.quests
       .sublist(state.currentIndex + 1)
       .any((q) => q.id == state.currentQuest.id);
-  final shouldAppend = isFinalDueToWrongCount &&
+  final shouldAppend =
+      isFinalDueToWrongCount &&
       newLives > 0 &&
       isNotLastQuestion &&
       notAlreadyAppended;

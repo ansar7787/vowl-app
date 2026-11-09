@@ -41,11 +41,7 @@ class PronunciationFocusHeader extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.graphic_eq_rounded,
-                  size: 15.r,
-                  color: primaryColor,
-                ),
+                Icon(Icons.graphic_eq_rounded, size: 15.r, color: primaryColor),
                 SizedBox(width: 8.w),
                 Flexible(
                   child: Text(

@@ -24,7 +24,8 @@ class HandwritingEvaluator {
     }
 
     // 2. Direct Stroke Geometry Evaluation (for shapes, lines, slants, and offline fallback)
-    if (ink.strokes.isNotEmpty && _evaluateStrokesGeometrically(ink, cleanTarget)) {
+    if (ink.strokes.isNotEmpty &&
+        _evaluateStrokesGeometrically(ink, cleanTarget)) {
       return true;
     }
 
@@ -70,8 +71,12 @@ class HandwritingEvaluator {
         }
       } else if (!isSymbol && upperTarget.length <= 6) {
         // Single words must match exactly (ignoring only trailing periods/quotes)
-        final cleanWordCand = upperCandidate.replaceAll(RegExp(r'''[.,!?'"]'''), '').trim();
-        final cleanWordTarg = upperTarget.replaceAll(RegExp(r'''[.,!?'"]'''), '').trim();
+        final cleanWordCand = upperCandidate
+            .replaceAll(RegExp(r'''[.,!?'"]'''), '')
+            .trim();
+        final cleanWordTarg = upperTarget
+            .replaceAll(RegExp(r'''[.,!?'"]'''), '')
+            .trim();
         if (cleanWordCand.isNotEmpty && cleanWordCand == cleanWordTarg) {
           return true;
         }
@@ -133,14 +138,7 @@ class HandwritingEvaluator {
       // Standing lines (Strict: only vertical equivalents)
       '|': ['|', 'I', '1'],
       '| |': ['||', '11', '1 1', 'I I', 'II', '| |'],
-      '| | | |': [
-        '||||',
-        '1111',
-        '1 1 1 1',
-        'IIII',
-        'I I I I',
-        '| | | |',
-      ],
+      '| | | |': ['||||', '1111', '1 1 1 1', 'IIII', 'I I I I', '| | | |'],
 
       // Sleeping lines / dashes (Strict: only horizontal equivalents)
       '-': ['-', '—', '–'],
@@ -180,7 +178,8 @@ class HandwritingEvaluator {
     if (equivalenceMap.containsKey(cleanTarg)) {
       final allowed = equivalenceMap[cleanTarg]!;
       for (final a in allowed) {
-        if (cleanCand == a || cleanCand.replaceAll(' ', '') == a.replaceAll(' ', '')) {
+        if (cleanCand == a ||
+            cleanCand.replaceAll(' ', '') == a.replaceAll(' ', '')) {
           return true;
         }
       }
@@ -211,10 +210,7 @@ class HandwritingEvaluator {
       v1[0] = i + 1;
       for (int j = 0; j < t.length; j++) {
         int cost = (s.codeUnitAt(i) == t.codeUnitAt(j)) ? 0 : 1;
-        v1[j + 1] = math.min(
-          v1[j] + 1,
-          math.min(v0[j + 1] + 1, v0[j] + cost),
-        );
+        v1[j + 1] = math.min(v1[j] + 1, math.min(v0[j + 1] + 1, v0[j] + cost));
       }
       for (int j = 0; j <= t.length; j++) {
         v0[j] = v1[j];
@@ -474,13 +470,21 @@ class HandwritingEvaluator {
     return (dx > 12.0 && dy > 12.0) || (dx < -12.0 && dy < -12.0);
   }
 
-  bool _areHorizontallySeparated(Stroke s1, Stroke s2, {required double minDistance}) {
+  bool _areHorizontallySeparated(
+    Stroke s1,
+    Stroke s2, {
+    required double minDistance,
+  }) {
     final midX1 = (s1.points.first.x + s1.points.last.x) / 2;
     final midX2 = (s2.points.first.x + s2.points.last.x) / 2;
     return (midX1 - midX2).abs() >= minDistance;
   }
 
-  bool _areVerticallySeparated(Stroke s1, Stroke s2, {required double minDistance}) {
+  bool _areVerticallySeparated(
+    Stroke s1,
+    Stroke s2, {
+    required double minDistance,
+  }) {
     final midY1 = (s1.points.first.y + s1.points.last.y) / 2;
     final midY2 = (s2.points.first.y + s2.points.last.y) / 2;
     return (midY1 - midY2).abs() >= minDistance;

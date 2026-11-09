@@ -73,36 +73,41 @@ class SoundImageMatchEmitter extends StatelessWidget {
               child: Center(
                 child: isCorrectState == true && emoji != null
                     ? (reduceMotion
-                        ? Text(
-                            emoji!,
-                            key: const Key('sound_image_match_emitter_emoji'),
-                            style: TextStyle(fontSize: 44.r),
-                          )
-                        : Text(
-                            emoji!,
-                            key: const Key('sound_image_match_emitter_emoji'),
-                            style: TextStyle(fontSize: 44.r),
-                          )
-                            .animate()
-                            .scale(duration: 400.ms, curve: Curves.easeOutCubic))
+                          ? Text(
+                              emoji!,
+                              key: const Key('sound_image_match_emitter_emoji'),
+                              style: TextStyle(fontSize: 44.r),
+                            )
+                          : Text(
+                              emoji!,
+                              key: const Key('sound_image_match_emitter_emoji'),
+                              style: TextStyle(fontSize: 44.r),
+                            ).animate().scale(
+                              duration: 400.ms,
+                              curve: Curves.easeOutCubic,
+                            ))
                     : (reduceMotion
-                        ? Icon(
-                            Icons.volume_up_rounded,
-                            key: const Key('sound_image_match_emitter_icon'),
-                            color: color,
-                            size: 44.r,
-                          )
-                        : Icon(
-                            Icons.volume_up_rounded,
-                            key: const Key('sound_image_match_emitter_icon'),
-                            color: color,
-                            size: 44.r,
-                          )
-                            .animate(onPlay: (controller) => controller.repeat())
-                            .shimmer(
-                              duration: 2.seconds,
-                              color: Colors.white.withValues(alpha: 0.6),
-                            )),
+                          ? Icon(
+                              Icons.volume_up_rounded,
+                              key: const Key('sound_image_match_emitter_icon'),
+                              color: color,
+                              size: 44.r,
+                            )
+                          : Icon(
+                                  Icons.volume_up_rounded,
+                                  key: const Key(
+                                    'sound_image_match_emitter_icon',
+                                  ),
+                                  color: color,
+                                  size: 44.r,
+                                )
+                                .animate(
+                                  onPlay: (controller) => controller.repeat(),
+                                )
+                                .shimmer(
+                                  duration: 2.seconds,
+                                  color: Colors.white.withValues(alpha: 0.6),
+                                )),
               ),
             ),
           ),

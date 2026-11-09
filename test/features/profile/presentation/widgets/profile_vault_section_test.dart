@@ -58,9 +58,7 @@ void main() {
       designSize: const Size(393, 852),
       builder: (context, _) => MaterialApp(
         home: Scaffold(
-          body: SingleChildScrollView(
-            child: ProfileVaultSection(user: user),
-          ),
+          body: SingleChildScrollView(child: ProfileVaultSection(user: user)),
         ),
       ),
     );
@@ -111,4 +109,3 @@ void main() {
     });
   });
 }
-

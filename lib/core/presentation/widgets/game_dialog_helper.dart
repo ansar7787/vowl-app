@@ -100,14 +100,20 @@ class GameDialogHelper {
         if (network.isCurrentlyOffline == true) {
           OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
         } else {
-          network.isConnected.then((connected) {
-            if (!connected) {
-              OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
-            }
-          }).catchError((_) {
-            // Network check failed — treat as offline to be safe
-            OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
-          });
+          network.isConnected
+              .then((connected) {
+                if (!connected) {
+                  OfflinePlayGateService.instance.recordOfflineLevel(
+                    isPremium: false,
+                  );
+                }
+              })
+              .catchError((_) {
+                // Network check failed — treat as offline to be safe
+                OfflinePlayGateService.instance.recordOfflineLevel(
+                  isPremium: false,
+                );
+              });
         }
       } catch (_) {}
     }

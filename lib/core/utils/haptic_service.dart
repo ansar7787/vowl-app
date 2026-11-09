@@ -70,9 +70,11 @@ class HapticServiceImpl implements HapticService {
   set isHapticsEnabled(bool value) {
     if (_isHapticsEnabled != value) {
       _isHapticsEnabled = value;
-      SharedPreferences.getInstance().then((prefs) {
-        prefs.setBool(_prefKey, value);
-      }).catchError((_) {});
+      SharedPreferences.getInstance()
+          .then((prefs) {
+            prefs.setBool(_prefKey, value);
+          })
+          .catchError((_) {});
     }
   }
 

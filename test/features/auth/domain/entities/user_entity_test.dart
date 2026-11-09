@@ -6,14 +6,14 @@ void main() {
     const tUser = UserEntity(
       id: '1',
       email: 'test@vowl.com',
-      totalExp: 250, // Should be Level 3 ((250/100).floor() + 1 = 2+1 = 3)
+      totalExp: 500, // Should be Level 3 ((500/250).floor() + 1 = 2+1 = 3)
       categoryStats: {'sentenceCorrection': 50, 'wordReorder': 30},
     );
 
     test('should calculate level correctly from totalExp', () {
       expect(tUser.level, 3);
 
-      final level10User = tUser.copyWith(totalExp: 950);
+      final level10User = tUser.copyWith(totalExp: 2250);
       expect(level10User.level, 10);
     });
 
@@ -65,87 +65,99 @@ void main() {
       expect(user.safeDisplayName, 'Alice Johnson');
     });
 
-    test('getSafeDisplayName sanitizes "Unknown User" and formats from email', () {
-      const user = UserEntity(
-        id: '2',
-        email: 'alex.smith@example.com',
-        displayName: 'Unknown User',
-        dailyXpHistory: {},
-      );
-      expect(user.getSafeDisplayName(), 'Alex Smith');
-      expect(user.safeDisplayName, 'Alex Smith');
-    });
+    test(
+      'getSafeDisplayName sanitizes "Unknown User" and formats from email',
+      () {
+        const user = UserEntity(
+          id: '2',
+          email: 'alex.smith@example.com',
+          displayName: 'Unknown User',
+          dailyXpHistory: {},
+        );
+        expect(user.getSafeDisplayName(), 'Alex Smith');
+        expect(user.safeDisplayName, 'Alex Smith');
+      },
+    );
 
-    test('getSafeDisplayName sanitizes "unknown" and formats dotted/dashed email prefix', () {
-      const user = UserEntity(
-        id: '3',
-        email: 'john_doe-42@example.com',
-        displayName: 'Unknown',
-        dailyXpHistory: {},
-      );
-      expect(user.getSafeDisplayName(), 'John Doe');
-    });
+    test(
+      'getSafeDisplayName sanitizes "unknown" and formats dotted/dashed email prefix',
+      () {
+        const user = UserEntity(
+          id: '3',
+          email: 'john_doe-42@example.com',
+          displayName: 'Unknown',
+          dailyXpHistory: {},
+        );
+        expect(user.getSafeDisplayName(), 'John Doe');
+      },
+    );
 
-    test('getSafeDisplayName sanitizes "Vowl Learner" and formats from email', () {
-      const user = UserEntity(
-        id: '4',
-        email: 'ayesha.friend@example.com',
-        displayName: 'Vowl Learner',
-        dailyXpHistory: {},
-      );
-      expect(user.getSafeDisplayName(), 'Ayesha Friend');
-      expect(user.safeDisplayName, 'Ayesha Friend');
-    });
+    test(
+      'getSafeDisplayName sanitizes "Vowl Learner" and formats from email',
+      () {
+        const user = UserEntity(
+          id: '4',
+          email: 'ayesha.friend@example.com',
+          displayName: 'Vowl Learner',
+          dailyXpHistory: {},
+        );
+        expect(user.getSafeDisplayName(), 'Ayesha Friend');
+        expect(user.safeDisplayName, 'Ayesha Friend');
+      },
+    );
 
-    test('getSafeDisplayName uses custom fallback when name is invalid and email is empty', () {
-      const user = UserEntity(
-        id: '99',
-        email: '',
-        displayName: 'Unknown User',
-        dailyXpHistory: {},
-      );
-      expect(user.getSafeDisplayName(fallback: 'Champion'), 'Champion');
-      expect(user.safeDisplayName, 'Vowl Learner');
-    });
+    test(
+      'getSafeDisplayName uses custom fallback when name is invalid and email is empty',
+      () {
+        const user = UserEntity(
+          id: '99',
+          email: '',
+          displayName: 'Unknown User',
+          dailyXpHistory: {},
+        );
+        expect(user.getSafeDisplayName(fallback: 'Champion'), 'Champion');
+        expect(user.safeDisplayName, 'Vowl Learner');
+      },
+    );
 
-    test('isTodayActive correctly evaluates activity from dailyXpHistory and login streak', () {
-      final now = DateTime.now();
-      final todayKey =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      final yesterdayKey =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
+    test(
+      'isTodayActive correctly evaluates activity from dailyXpHistory and login streak',
+      () {
+        final now = DateTime.now();
+        final todayKey =
+            '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+        final yesterdayKey =
+            '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
 
-      // 1. Inactive user with empty history
-      const inactiveUser = UserEntity(
-        id: 'inact',
-        email: 'inact@vowl.app',
-      );
-      expect(inactiveUser.isTodayActive, false);
+        // 1. Inactive user with empty history
+        const inactiveUser = UserEntity(id: 'inact', email: 'inact@vowl.app');
+        expect(inactiveUser.isTodayActive, false);
 
-      // 2. Active user with XP logged today
-      final activeXpUser = UserEntity(
-        id: 'act_xp',
-        email: 'act@vowl.app',
-        dailyXpHistory: {todayKey: 50},
-      );
-      expect(activeXpUser.isTodayActive, true);
+        // 2. Active user with XP logged today
+        final activeXpUser = UserEntity(
+          id: 'act_xp',
+          email: 'act@vowl.app',
+          dailyXpHistory: {todayKey: 50},
+        );
+        expect(activeXpUser.isTodayActive, true);
 
-      // 3. Inactive user with only yesterday XP
-      final yesterdayXpUser = UserEntity(
-        id: 'yest_xp',
-        email: 'yest@vowl.app',
-        dailyXpHistory: {yesterdayKey: 50},
-      );
-      expect(yesterdayXpUser.isTodayActive, false);
+        // 3. Inactive user with only yesterday XP
+        final yesterdayXpUser = UserEntity(
+          id: 'yest_xp',
+          email: 'yest@vowl.app',
+          dailyXpHistory: {yesterdayKey: 50},
+        );
+        expect(yesterdayXpUser.isTodayActive, false);
 
-      // 4. Active user logged in today with active streak
-      final loggedInStreakUser = UserEntity(
-        id: 'login_streak',
-        email: 'login@vowl.app',
-        lastLoginDate: now,
-        currentStreak: 4,
-      );
-      expect(loggedInStreakUser.isTodayActive, true);
-    });
+        // 4. Active user logged in today with active streak
+        final loggedInStreakUser = UserEntity(
+          id: 'login_streak',
+          email: 'login@vowl.app',
+          lastLoginDate: now,
+          currentStreak: 4,
+        );
+        expect(loggedInStreakUser.isTodayActive, true);
+      },
+    );
   });
 }

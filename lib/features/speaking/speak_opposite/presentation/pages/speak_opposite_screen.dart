@@ -212,7 +212,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
           contextText = parsed.contextText;
         }
 
-        final reduceMotion = (mediaQuery.disableAnimations) ||
+        final reduceMotion =
+            (mediaQuery.disableAnimations) ||
             VowlMotion.lowAnimationModeOverride.value;
         if (reduceMotion && !_ttsFinished.value) {
           _ttsFinished.value = true;

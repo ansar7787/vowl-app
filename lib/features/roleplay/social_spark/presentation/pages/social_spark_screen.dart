@@ -70,7 +70,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _scrollToBottom() {
-    final bool reduceMotion = (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) ||
+    final bool reduceMotion =
+        (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_scrollController.hasClients) {
@@ -105,7 +106,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_pulseController.isAnimating) _pulseController.stop();
@@ -206,7 +208,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   Widget _maybeFadeIn(BuildContext context, Widget child) {
     final bool reduceMotion =
         (MediaQuery.maybeDisableAnimationsOf(context) ?? false) ||
-            VowlMotion.lowAnimationModeOverride.value;
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) return child;
     return child.animate().fadeIn(duration: 300.ms);
   }
@@ -349,141 +351,160 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                             _maybeFadeIn(
                                               context,
                                               Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: [
-                                                ScaleButton(
-                                                  key: const Key('social_spark_ignite_button'),
-                                                  onTap: () => _submitAnswer(
-                                                    words,
-                                                    quest.correctAnswer ?? "",
-                                                    quest,
-                                                  ),
-                                                  child: Container(
-                                                    alignment: Alignment.center,
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          vertical: isCompact
-                                                              ? 12.h
-                                                              : 14.h,
-                                                        ),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            16.r,
-                                                          ),
-                                                      gradient: LinearGradient(
-                                                        colors: [
-                                                          theme.primaryColor,
-                                                          theme.primaryColor
-                                                              .withValues(
-                                                                alpha: 0.85,
-                                                              ),
-                                                        ],
-                                                      ),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
-                                                              ),
-                                                          blurRadius: isCompact
-                                                              ? 8
-                                                              : 12,
-                                                          offset: const Offset(0, 3),
-                                                        ),
-                                                      ],
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.stretch,
+                                                children: [
+                                                  ScaleButton(
+                                                    key: const Key(
+                                                      'social_spark_ignite_button',
                                                     ),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.check_rounded,
-                                                          color: Colors.white,
-                                                          size: isCompact
-                                                              ? 18.r
-                                                              : 20.r,
-                                                        ),
-                                                        SizedBox(width: 8.w),
-                                                        Text(
-                                                          "CHECK ANSWER",
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: isCompact
-                                                                ? 14.sp
-                                                                : 15.sp,
-                                                            fontWeight:
-                                                                FontWeight.w700,
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.8,
-                                                          ),
-                                                        ),
-                                                      ],
+                                                    onTap: () => _submitAnswer(
+                                                      words,
+                                                      quest.correctAnswer ?? "",
+                                                      quest,
                                                     ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 12.h,
-                                                ),
-                                                ScaleButton(
-                                                  key: const Key('social_spark_clear_button'),
-                                                  onTap: _clearSelection,
-                                                  child: Container(
-                                                    alignment: Alignment.center,
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          vertical: isCompact
-                                                              ? 10.h
-                                                              : 12.h,
+                                                    child: Container(
+                                                      alignment:
+                                                          Alignment.center,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            vertical: isCompact
+                                                                ? 12.h
+                                                                : 14.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              16.r,
+                                                            ),
+                                                        gradient: LinearGradient(
+                                                          colors: [
+                                                            theme.primaryColor,
+                                                            theme.primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.85,
+                                                                ),
+                                                          ],
                                                         ),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.refresh_rounded,
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.75,
-                                                              ),
-                                                          size: isCompact
-                                                              ? 16.r
-                                                              : 18.r,
-                                                        ),
-                                                        SizedBox(width: 6.w),
-                                                        Text(
-                                                          "CLEAR SELECTION",
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: isCompact
-                                                                ? 13.sp
-                                                                : 14.sp,
-                                                            fontWeight:
-                                                                FontWeight.w600,
+                                                        boxShadow: [
+                                                          BoxShadow(
                                                             color: theme
                                                                 .primaryColor
                                                                 .withValues(
-                                                                  alpha: 0.8,
+                                                                  alpha: 0.3,
                                                                 ),
-                                                            letterSpacing: 0.5,
+                                                            blurRadius:
+                                                                isCompact
+                                                                ? 8
+                                                                : 12,
+                                                            offset:
+                                                                const Offset(
+                                                                  0,
+                                                                  3,
+                                                                ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons.check_rounded,
+                                                            color: Colors.white,
+                                                            size: isCompact
+                                                                ? 18.r
+                                                                : 20.r,
+                                                          ),
+                                                          SizedBox(width: 8.w),
+                                                          Text(
+                                                            "CHECK ANSWER",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 14.sp
+                                                                  : 15.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700,
+                                                              color:
+                                                                  Colors.white,
+                                                              letterSpacing:
+                                                                  0.8,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 10.h
+                                                        : 12.h,
+                                                  ),
+                                                  ScaleButton(
+                                                    key: const Key(
+                                                      'social_spark_clear_button',
+                                                    ),
+                                                    onTap: _clearSelection,
+                                                    child: Container(
+                                                      alignment:
+                                                          Alignment.center,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            vertical: isCompact
+                                                                ? 10.h
+                                                                : 12.h,
+                                                          ),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .refresh_rounded,
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.75,
+                                                                ),
+                                                            size: isCompact
+                                                                ? 16.r
+                                                                : 18.r,
+                                                          ),
+                                                          SizedBox(width: 6.w),
+                                                          Text(
+                                                            "CLEAR SELECTION",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 13.sp
+                                                                  : 14.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.8,
+                                                                  ),
+                                                              letterSpacing:
+                                                                  0.5,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
-                                          ),
                                           // Post-answer review cards
                                           SizedBox(
                                             height: isCompact ? 20.h : 40.h,
@@ -508,7 +529,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                         quest.correctAnswer ?? currentText,
                                       ),
                                       title: 'PRACTICE SPEAKING',
-                                      subtitle: 'Say your response aloud to confirm',
+                                      subtitle:
+                                          'Say your response aloud to confirm',
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {

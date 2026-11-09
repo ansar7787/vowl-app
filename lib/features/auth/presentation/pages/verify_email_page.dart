@@ -45,8 +45,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   Timer? _resendCooldownTimer;
 
   bool _hasAutoDispatched = false;
-  final ValueNotifier<EmailDeliveryStatus> _deliveryStatus =
-      ValueNotifier(EmailDeliveryStatus.sending);
+  final ValueNotifier<EmailDeliveryStatus> _deliveryStatus = ValueNotifier(
+    EmailDeliveryStatus.sending,
+  );
   final ValueNotifier<bool> _canResendEmail = ValueNotifier(false);
   final ValueNotifier<int> _secondsRemaining = ValueNotifier(15);
   final ValueNotifier<bool> _isLoggingOut = ValueNotifier(false);
@@ -202,7 +203,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
           _showSnackBar(
             context.tr(
               'auth.email_verification_sent',
-              fallback: 'Verification link sent! Take a quick peek in your inbox.',
+              fallback:
+                  'Verification link sent! Take a quick peek in your inbox.',
             ),
             CustomSnackBarType.success,
           );
@@ -224,8 +226,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       },
       child: BlocBuilder<AuthBloc, AuthState>(
         buildWhen: (previous, current) =>
-            previous.status != current.status ||
-            previous.user != current.user,
+            previous.status != current.status || previous.user != current.user,
         builder: (context, state) {
           final bgColor = _bgColor(context);
 
@@ -265,14 +266,12 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                   valueListenable: _deliveryStatus,
                                   builder: (context, status, _) =>
                                       VerifyEmailStatusText(
-                                    email: state.user?.email,
-                                    deliveryStatus: status,
-                                  ),
+                                        email: state.user?.email,
+                                        deliveryStatus: status,
+                                      ),
                                 ),
                                 SizedBox(height: 32.h),
-                                OpenEmailAppButton(
-                                  onPressed: _openEmailApp,
-                                ),
+                                OpenEmailAppButton(onPressed: _openEmailApp),
                                 SizedBox(height: 14.h),
                                 VerifyConfirmationButton(
                                   onPressed: _triggerVerificationCheck,
@@ -300,8 +299,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                     );
                                     final networkInfo =
                                         di.sl.isRegistered<NetworkInfo>()
-                                            ? di.sl<NetworkInfo>()
-                                            : null;
+                                        ? di.sl<NetworkInfo>()
+                                        : null;
                                     if (networkInfo != null &&
                                         !await networkInfo.hasRealConnection) {
                                       if (mounted) {
@@ -316,9 +315,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                     _isLoggingOut.value = true;
                                     _verificationTimer?.cancel();
                                     _resendCooldownTimer?.cancel();
-                                    authBloc.add(
-                                      const AuthLogoutRequested(),
-                                    );
+                                    authBloc.add(const AuthLogoutRequested());
                                   },
                                 ),
                               ],

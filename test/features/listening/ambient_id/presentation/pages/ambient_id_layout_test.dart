@@ -96,7 +96,8 @@ void main() {
     instruction: 'Locate the source of the sonar ping.',
     difficulty: 2,
     subtype: GameSubtype.ambientId,
-    textToSpeak: 'Hydrophone recording sonar echoes underwater with whale songs.',
+    textToSpeak:
+        'Hydrophone recording sonar echoes underwater with whale songs.',
     options: ['Deep Ocean', 'Desert Dunes', 'Alpine Peak', 'Metro Station'],
     correctAnswerIndex: 0,
     correctAnswer: 'Deep Ocean',
@@ -149,7 +150,9 @@ void main() {
 
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream).thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -162,7 +165,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -195,16 +200,34 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
-    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
-    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
-    if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<AnalyticsService>()) {
+      di.sl.unregister<AnalyticsService>();
+    }
+    if (di.sl.isRegistered<AdService>()) {
+      di.sl.unregister<AdService>();
+    }
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      di.sl.unregister<NetworkInfo>();
+    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
@@ -260,9 +283,7 @@ void main() {
                 viewInsets: EdgeInsets.zero,
                 disableAnimations: reduceMotion,
               ),
-              child: Scaffold(
-                body: AmbientIdScreen(level: level),
-              ),
+              child: Scaffold(body: AmbientIdScreen(level: level)),
             ),
           ),
         ),
@@ -273,17 +294,22 @@ void main() {
   }
 
   group('Item 7.3: AmbientIdScreen - Comprehensive Layout & Mechanics Suite', () {
-    testWidgets('1. Initial quest rendering displays instruction, timer, sonar field, and emitter', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '1. Initial quest rendering displays instruction, timer, sonar field, and emitter',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      expect(find.byType(AmbientIdInstruction), findsOneWidget);
-      expect(find.text('Identify the ambient environment.'), findsOneWidget);
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byType(AmbientIdSonarField), findsOneWidget);
-      expect(find.byType(AmbientIdEmitterNode), findsOneWidget);
-    });
+        expect(find.byType(AmbientIdInstruction), findsOneWidget);
+        expect(find.text('Identify the ambient environment.'), findsOneWidget);
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(find.byType(AmbientIdSonarField), findsOneWidget);
+        expect(find.byType(AmbientIdEmitterNode), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. Location hubs are generated correctly for each option', (tester) async {
+    testWidgets('2. Location hubs are generated correctly for each option', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
       for (int i = 0; i < sampleQuest.options!.length; i++) {
@@ -295,7 +321,9 @@ void main() {
       expect(find.text('Ocean Base'), findsOneWidget);
     });
 
-    testWidgets('3. Location hubs render appropriate icons for categories', (tester) async {
+    testWidgets('3. Location hubs render appropriate icons for categories', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
       expect(find.byIcon(Icons.forest_rounded), findsOneWidget);
@@ -304,43 +332,58 @@ void main() {
       expect(find.byIcon(Icons.waves_rounded), findsOneWidget);
     });
 
-    testWidgets('4. Tapping emitter node triggers TTS replay and selection haptics', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '4. Tapping emitter node triggers TTS replay and selection haptics',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      await tester.tap(find.byKey(const ValueKey('ambient_emitter_node')));
-      await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('ambient_emitter_node')));
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(sampleQuest.textToSpeak!)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(sampleQuest.textToSpeak!),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('5. Tapping correct location hub dispatches SubmitAnswer(true) with success audio and haptics', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '5. Tapping correct location hub dispatches SubmitAnswer(true) with success audio and haptics',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      // Index 0 is 'Forest' (correct answer)
-      await tester.tap(find.byKey(const ValueKey('ambient_hub_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Index 0 is 'Forest' (correct answer)
+        await tester.tap(find.byKey(const ValueKey('ambient_hub_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
 
-    testWidgets('6. Tapping incorrect location hub dispatches SubmitAnswer(false) with error audio and haptics', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '6. Tapping incorrect location hub dispatches SubmitAnswer(false) with error audio and haptics',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      // Index 1 is 'Space Station' (wrong answer)
-      await tester.tap(find.byKey(const ValueKey('ambient_hub_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Index 1 is 'Space Station' (wrong answer)
+        await tester.tap(find.byKey(const ValueKey('ambient_hub_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
 
-    testWidgets('7. Answer lockout prevents secondary taps once answered', (tester) async {
+    testWidgets('7. Answer lockout prevents secondary taps once answered', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
       // Submit correct answer first
@@ -361,10 +404,14 @@ void main() {
       verifyNever(() => mockHapticService.error());
     });
 
-    testWidgets('8. SpeedChallengeTimer onTimeUp triggers submitWrongAnswer', (tester) async {
+    testWidgets('8. SpeedChallengeTimer onTimeUp triggers submitWrongAnswer', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
+      final timerState = tester.state<SpeedChallengeTimerState>(
+        find.byType(SpeedChallengeTimer),
+      );
       timerState.widget.onTimeUp();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
@@ -373,10 +420,14 @@ void main() {
       verify(() => mockHapticService.error()).called(1);
     });
 
-    testWidgets('9. Answering stops the active SpeedChallengeTimer', (tester) async {
+    testWidgets('9. Answering stops the active SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
+      final timerState = tester.state<SpeedChallengeTimerState>(
+        find.byType(SpeedChallengeTimer),
+      );
       expect(timerState.isTimerActive, isTrue);
 
       await tester.tap(find.byKey(const ValueKey('ambient_hub_0')));
@@ -386,32 +437,40 @@ void main() {
       expect(timerState.isTimerActive, isFalse);
     });
 
-    testWidgets('10. Next question state transition clears selected index and updates hubs', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '10. Next question state transition clears selected index and updates hubs',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      // Answer first quest
-      await tester.tap(find.byKey(const ValueKey('ambient_hub_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Answer first quest
+        await tester.tap(find.byKey(const ValueKey('ambient_hub_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Emit second quest loaded state
-      final nextState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Emit second quest loaded state
+        final nextState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Locate the source of the sonar ping.'), findsOneWidget);
-      expect(find.text('Deep Ocean'), findsOneWidget);
-      expect(find.text('Desert Dunes'), findsOneWidget);
+        expect(
+          find.text('Locate the source of the sonar ping.'),
+          findsOneWidget,
+        );
+        expect(find.text('Deep Ocean'), findsOneWidget);
+        expect(find.text('Desert Dunes'), findsOneWidget);
 
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
 
-    testWidgets('11. Continue button dispatches NextQuestion event', (tester) async {
+    testWidgets('11. Continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       final answeredState = testLoadedState.copyWith(
         answerStatus: AnswerStatus.correct,
       );
@@ -432,7 +491,9 @@ void main() {
       }
     });
 
-    testWidgets('12. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets('12. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -441,32 +502,40 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 1100));
 
-        verify(() => mockListeningBloc.add(const ListeningHintUsed())).called(1);
+        verify(
+          () => mockListeningBloc.add(const ListeningHintUsed()),
+        ).called(1);
       }
     });
 
-    testWidgets('13. Uninitialized or loading state renders GameShimmerLoading', (tester) async {
-      await pumpAmbientIdScreen(tester, state: const ListeningLoading());
+    testWidgets(
+      '13. Uninitialized or loading state renders GameShimmerLoading',
+      (tester) async {
+        await pumpAmbientIdScreen(tester, state: const ListeningLoading());
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byType(AmbientIdSonarField), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byType(AmbientIdSonarField), findsNothing);
+      },
+    );
 
-    testWidgets('14. Game complete state triggers completion handling and confetti', (tester) async {
-      await pumpAmbientIdScreen(tester);
+    testWidgets(
+      '14. Game complete state triggers completion handling and confetti',
+      (tester) async {
+        await pumpAmbientIdScreen(tester);
 
-      const completeState = ListeningGameComplete(
-        xpEarned: 50,
-        coinsEarned: 15,
-        questCount: 2,
-      );
-      when(() => mockListeningBloc.state).thenReturn(completeState);
-      listeningStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        const completeState = ListeningGameComplete(
+          xpEarned: 50,
+          coinsEarned: 15,
+          questCount: 2,
+        );
+        when(() => mockListeningBloc.state).thenReturn(completeState);
+        listeningStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-    });
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+      },
+    );
 
     testWidgets('15. Game over state renders with zero lives', (tester) async {
       const gameOverState = ListeningGameOver(
@@ -478,7 +547,9 @@ void main() {
       expect(find.byType(AmbientIdScreen), findsOneWidget);
     });
 
-    testWidgets('16. Level 1 shows briefing layer and dismisses on start tap', (tester) async {
+    testWidgets('16. Level 1 shows briefing layer and dismisses on start tap', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_ambientId': false,
       });
@@ -495,102 +566,130 @@ void main() {
       }
     });
 
-    testWidgets('17. Dark mode renders correctly with dark theme styling', (tester) async {
+    testWidgets('17. Dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(AmbientIdScreen), findsOneWidget);
       expect(find.text('Identify the ambient environment.'), findsOneWidget);
     });
 
-    testWidgets('18. Light mode renders correctly with light theme styling', (tester) async {
+    testWidgets('18. Light mode renders correctly with light theme styling', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester, themeMode: ThemeMode.light);
 
       expect(find.byType(AmbientIdScreen), findsOneWidget);
       expect(find.text('Identify the ambient environment.'), findsOneWidget);
     });
 
-    testWidgets('19. Compact mobile viewport (320x568) passes with zero overflow', (tester) async {
-      await pumpAmbientIdScreen(tester, size: const Size(320, 568));
+    testWidgets(
+      '19. Compact mobile viewport (320x568) passes with zero overflow',
+      (tester) async {
+        await pumpAmbientIdScreen(tester, size: const Size(320, 568));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(AmbientIdScreen), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(AmbientIdScreen), findsOneWidget);
+      },
+    );
 
-    testWidgets('20. Tablet viewport (768x1024) passes with zero overflow', (tester) async {
+    testWidgets('20. Tablet viewport (768x1024) passes with zero overflow', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester, size: const Size(768, 1024));
 
       expect(tester.takeException(), isNull);
       expect(find.byType(AmbientIdScreen), findsOneWidget);
     });
 
-    testWidgets('21. Reduced motion mode stops repeating radar and scale animations', (tester) async {
-      await pumpAmbientIdScreen(tester, reduceMotion: true);
+    testWidgets(
+      '21. Reduced motion mode stops repeating radar and scale animations',
+      (tester) async {
+        await pumpAmbientIdScreen(tester, reduceMotion: true);
 
-      expect(find.byType(AmbientIdSonarField), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(AmbientIdSonarField), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('22. Empty quest instruction falls back to localized default text', (tester) async {
-      const fallbackQuest = ListeningQuest(
-        id: 'amb_fallback',
-        instruction: '',
-        difficulty: 1,
-        subtype: GameSubtype.ambientId,
-        textToSpeak: 'Rain falling on a tin roof.',
-        options: ['Cabin', 'Tent', 'Mansion', 'Bunker'],
-        correctAnswerIndex: 0,
-        correctAnswer: 'Cabin',
-      );
-      final fallbackState = testLoadedState.copyWith(
-        quests: [fallbackQuest],
-        currentIndex: 0,
-      );
+    testWidgets(
+      '22. Empty quest instruction falls back to localized default text',
+      (tester) async {
+        const fallbackQuest = ListeningQuest(
+          id: 'amb_fallback',
+          instruction: '',
+          difficulty: 1,
+          subtype: GameSubtype.ambientId,
+          textToSpeak: 'Rain falling on a tin roof.',
+          options: ['Cabin', 'Tent', 'Mansion', 'Bunker'],
+          correctAnswerIndex: 0,
+          correctAnswer: 'Cabin',
+        );
+        final fallbackState = testLoadedState.copyWith(
+          quests: [fallbackQuest],
+          currentIndex: 0,
+        );
 
-      await pumpAmbientIdScreen(tester, state: fallbackState);
+        await pumpAmbientIdScreen(tester, state: fallbackState);
 
-      expect(find.text('Listen to the sounds and choose the location.'), findsOneWidget);
-    });
+        expect(
+          find.text('Listen to the sounds and choose the location.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('23. Missing textToSpeak falls back to prompt or question for TTS', (tester) async {
-      const noTtsQuest = ListeningQuest(
-        id: 'amb_no_tts',
-        instruction: 'Find the sound origin.',
-        difficulty: 1,
-        subtype: GameSubtype.ambientId,
-        textToSpeak: null,
-        transcript: 'Whistling wind on a mountain pass.',
-        options: ['Mountain', 'Valley', 'Cave', 'Coast'],
-        correctAnswerIndex: 0,
-        correctAnswer: 'Mountain',
-      );
-      final noTtsState = testLoadedState.copyWith(
-        quests: [noTtsQuest],
-        currentIndex: 0,
-      );
+    testWidgets(
+      '23. Missing textToSpeak falls back to prompt or question for TTS',
+      (tester) async {
+        const noTtsQuest = ListeningQuest(
+          id: 'amb_no_tts',
+          instruction: 'Find the sound origin.',
+          difficulty: 1,
+          subtype: GameSubtype.ambientId,
+          textToSpeak: null,
+          transcript: 'Whistling wind on a mountain pass.',
+          options: ['Mountain', 'Valley', 'Cave', 'Coast'],
+          correctAnswerIndex: 0,
+          correctAnswer: 'Mountain',
+        );
+        final noTtsState = testLoadedState.copyWith(
+          quests: [noTtsQuest],
+          currentIndex: 0,
+        );
 
-      await pumpAmbientIdScreen(tester, state: noTtsState);
+        await pumpAmbientIdScreen(tester, state: noTtsState);
 
-      await tester.tap(find.byKey(const ValueKey('ambient_emitter_node')));
-      await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('ambient_emitter_node')));
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('Whistling wind on a mountain pass.')).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts('Whistling wind on a mountain pass.'),
+        ).called(1);
+      },
+    );
 
-    testWidgets('24. Final failure state displays explanation and correct answer', (tester) async {
-      final failureState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.incorrect,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '24. Final failure state displays explanation and correct answer',
+      (tester) async {
+        final failureState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.incorrect,
+          isFinalFailure: true,
+        );
 
-      await pumpAmbientIdScreen(tester, state: failureState);
+        await pumpAmbientIdScreen(tester, state: failureState);
 
-      listeningStreamController.add(failureState);
-      await tester.pump();
+        listeningStreamController.add(failureState);
+        await tester.pump();
 
-      expect(find.byType(AmbientIdScreen), findsOneWidget);
-    });
+        expect(find.byType(AmbientIdScreen), findsOneWidget);
+      },
+    );
 
-    testWidgets('25. Selected hub retains visual selection state', (tester) async {
+    testWidgets('25. Selected hub retains visual selection state', (
+      tester,
+    ) async {
       await pumpAmbientIdScreen(tester);
 
       // Tap index 1
@@ -598,32 +697,42 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      final sonarField = tester.widget<AmbientIdSonarField>(find.byType(AmbientIdSonarField));
+      final sonarField = tester.widget<AmbientIdSonarField>(
+        find.byType(AmbientIdSonarField),
+      );
       expect(sonarField.selectedIndex, equals(1));
     });
 
-    testWidgets('26. Sonar field gracefully handles diverse options like airport and lab', (tester) async {
-      const diverseQuest = ListeningQuest(
-        id: 'amb_diverse',
-        instruction: 'Identify the facility.',
-        difficulty: 1,
-        subtype: GameSubtype.ambientId,
-        textToSpeak: 'Jet turbine spooling up.',
-        options: ['Airport Runway', 'Chemistry Lab', 'Ancient Temple', 'Bank Vault'],
-        correctAnswerIndex: 0,
-        correctAnswer: 'Airport Runway',
-      );
-      final diverseState = testLoadedState.copyWith(
-        quests: [diverseQuest],
-        currentIndex: 0,
-      );
+    testWidgets(
+      '26. Sonar field gracefully handles diverse options like airport and lab',
+      (tester) async {
+        const diverseQuest = ListeningQuest(
+          id: 'amb_diverse',
+          instruction: 'Identify the facility.',
+          difficulty: 1,
+          subtype: GameSubtype.ambientId,
+          textToSpeak: 'Jet turbine spooling up.',
+          options: [
+            'Airport Runway',
+            'Chemistry Lab',
+            'Ancient Temple',
+            'Bank Vault',
+          ],
+          correctAnswerIndex: 0,
+          correctAnswer: 'Airport Runway',
+        );
+        final diverseState = testLoadedState.copyWith(
+          quests: [diverseQuest],
+          currentIndex: 0,
+        );
 
-      await pumpAmbientIdScreen(tester, state: diverseState);
+        await pumpAmbientIdScreen(tester, state: diverseState);
 
-      expect(find.byIcon(Icons.local_airport_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.science_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.temple_hindu_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
-    });
+        expect(find.byIcon(Icons.local_airport_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.science_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.temple_hindu_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
+      },
+    );
   });
 }

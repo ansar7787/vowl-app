@@ -48,10 +48,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
@@ -140,10 +138,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      submitWrongAnswer(
-        quest: quest,
-        userAnswer: '[Pronunciation Error]',
-      );
+      submitWrongAnswer(quest: quest, userAnswer: '[Pronunciation Error]');
     }
   }
 
@@ -264,11 +259,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen>
                                   ),
                                 ),
                               ),
-                            SliverToBoxAdapter(
-                              child: SizedBox(
-                                height: 120.h,
-                              ),
-                            ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                           ],
                         ),
                       ),

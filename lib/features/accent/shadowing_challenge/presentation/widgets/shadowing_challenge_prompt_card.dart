@@ -34,10 +34,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
             ? color.withValues(alpha: 0.06)
             : color.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.18),
-          width: 1,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.18), width: 1),
       ),
       child: Center(
         child: Column(
@@ -68,10 +65,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
             if (ipa.isNotEmpty) ...[
               SizedBox(height: 8.h),
               Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12.w,
-                  vertical: 4.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: isDark ? 0.12 : 0.08),
                   borderRadius: BorderRadius.circular(10.r),
@@ -98,4 +92,3 @@ class ShadowingChallengePromptCard extends StatelessWidget {
     );
   }
 }
-

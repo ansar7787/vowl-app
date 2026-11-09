@@ -48,10 +48,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<Offset?> _hookPoint = ValueNotifier(null);
   final ValueNotifier<int> _targetFish = ValueNotifier(-1);

@@ -23,6 +23,8 @@ class ArenaDuelState {
   final bool isDraw;
   final int payoutCoins;
   final bool isWaitingForGuest;
+  final int comboStreak;
+  final bool hasFirstBlood;
   final String? errorMessage;
 
   const ArenaDuelState({
@@ -46,6 +48,8 @@ class ArenaDuelState {
     this.isDraw = false,
     this.payoutCoins = 0,
     this.isWaitingForGuest = false,
+    this.comboStreak = 0,
+    this.hasFirstBlood = false,
     this.errorMessage,
   });
 
@@ -76,6 +80,8 @@ class ArenaDuelState {
     bool? isDraw,
     int? payoutCoins,
     bool? isWaitingForGuest,
+    int? comboStreak,
+    bool? hasFirstBlood,
     String? errorMessage,
   }) {
     return ArenaDuelState(
@@ -94,11 +100,14 @@ class ArenaDuelState {
       isCorrect: isCorrect,
       timeRemaining: timeRemaining ?? this.timeRemaining,
       isCompleted: isCompleted ?? this.isCompleted,
-      isWaitingForOpponentFinish: isWaitingForOpponentFinish ?? this.isWaitingForOpponentFinish,
+      isWaitingForOpponentFinish:
+          isWaitingForOpponentFinish ?? this.isWaitingForOpponentFinish,
       isWinner: isWinner ?? this.isWinner,
       isDraw: isDraw ?? this.isDraw,
       payoutCoins: payoutCoins ?? this.payoutCoins,
       isWaitingForGuest: isWaitingForGuest ?? this.isWaitingForGuest,
+      comboStreak: comboStreak ?? this.comboStreak,
+      hasFirstBlood: hasFirstBlood ?? this.hasFirstBlood,
       errorMessage: errorMessage,
     );
   }

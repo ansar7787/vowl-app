@@ -64,16 +64,16 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
       duration: const Duration(milliseconds: 350),
     );
 
-    _shakeAnimation = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.0, end: -8.0), weight: 1),
-      TweenSequenceItem(tween: Tween(begin: -8.0, end: 8.0), weight: 2),
-      TweenSequenceItem(tween: Tween(begin: 8.0, end: -6.0), weight: 2),
-      TweenSequenceItem(tween: Tween(begin: -6.0, end: 6.0), weight: 2),
-      TweenSequenceItem(tween: Tween(begin: 6.0, end: 0.0), weight: 1),
-    ]).animate(CurvedAnimation(
-      parent: _shakeController,
-      curve: Curves.easeInOut,
-    ));
+    _shakeAnimation =
+        TweenSequence<double>([
+          TweenSequenceItem(tween: Tween(begin: 0.0, end: -8.0), weight: 1),
+          TweenSequenceItem(tween: Tween(begin: -8.0, end: 8.0), weight: 2),
+          TweenSequenceItem(tween: Tween(begin: 8.0, end: -6.0), weight: 2),
+          TweenSequenceItem(tween: Tween(begin: -6.0, end: 6.0), weight: 2),
+          TweenSequenceItem(tween: Tween(begin: 6.0, end: 0.0), weight: 1),
+        ]).animate(
+          CurvedAnimation(parent: _shakeController, curve: Curves.easeInOut),
+        );
 
     _initTiles();
   }
@@ -105,7 +105,8 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
     items.shuffle(rand);
 
     // If accidental identity shuffle, rotate once
-    if (_normalize(items.map((e) => e.text).join(' ')) == _normalize(widget.puzzle.playableSentence) &&
+    if (_normalize(items.map((e) => e.text).join(' ')) ==
+            _normalize(widget.puzzle.playableSentence) &&
         items.length > 1) {
       final first = items.removeAt(0);
       items.add(first);
@@ -162,7 +163,8 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
       .replaceAll(RegExp(r'\s+'), ' ');
 
   void _onSubmit() {
-    if (widget.isAnswered || _placedTiles.length != widget.puzzle.playableWords.length) {
+    if (widget.isAnswered ||
+        _placedTiles.length != widget.puzzle.playableWords.length) {
       return;
     }
 
@@ -231,8 +233,8 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                 color: _hasError
                     ? AppColors.rose500.withValues(alpha: 0.6)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : widget.primaryColor.withValues(alpha: 0.2)),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : widget.primaryColor.withValues(alpha: 0.2)),
                 width: 1.5.w,
               ),
             ),
@@ -252,7 +254,10 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                         ),
                         SizedBox(width: 6.w),
                         Text(
-                          context.tr('games.assemble_sentence', fallback: 'Build the Sentence'),
+                          context.tr(
+                            'games.assemble_sentence',
+                            fallback: 'Build the Sentence',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.5.sp,
@@ -267,7 +272,10 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                       ScaleButton(
                         onTap: _onClearAll,
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 3.h,
+                          ),
                           decoration: BoxDecoration(
                             color: isDark
                                 ? Colors.white.withValues(alpha: 0.08)
@@ -280,7 +288,9 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                               Icon(
                                 Icons.refresh_rounded,
                                 size: 12.r,
-                                color: isDark ? Colors.white70 : AppColors.slate600,
+                                color: isDark
+                                    ? Colors.white70
+                                    : AppColors.slate600,
                               ),
                               SizedBox(width: 4.w),
                               Text(
@@ -289,7 +299,9 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                                   fontFamily: 'Outfit',
                                   fontSize: 11.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white70 : AppColors.slate600,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : AppColors.slate600,
                                 ),
                               ),
                             ],
@@ -308,14 +320,17 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                           child: Text(
                             context.tr(
                               'games.tap_words_to_snap',
-                              fallback: 'Tap words below in sequence to assemble the sentence.',
+                              fallback:
+                                  'Tap words below in sequence to assemble the sentence.',
                             ),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
-                              color: isDark ? Colors.white38 : AppColors.slate400,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
                             ),
                           ),
                         )
@@ -331,15 +346,27 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                             Color tileBg = isDark
                                 ? widget.primaryColor.withValues(alpha: 0.22)
                                 : widget.primaryColor.withValues(alpha: 0.12);
-                            Color tileBorder = widget.primaryColor.withValues(alpha: 0.4);
-                            Color tileText = isDark ? Colors.white : theme.colorScheme.onSurface;
+                            Color tileBorder = widget.primaryColor.withValues(
+                              alpha: 0.4,
+                            );
+                            Color tileText = isDark
+                                ? Colors.white
+                                : theme.colorScheme.onSurface;
 
                             if (isPosCorrect == true) {
-                              tileBg = AppColors.emerald500.withValues(alpha: 0.2);
-                              tileBorder = AppColors.emerald500.withValues(alpha: 0.6);
+                              tileBg = AppColors.emerald500.withValues(
+                                alpha: 0.2,
+                              );
+                              tileBorder = AppColors.emerald500.withValues(
+                                alpha: 0.6,
+                              );
                             } else if (isPosCorrect == false) {
-                              tileBg = AppColors.rose500.withValues(alpha: 0.18);
-                              tileBorder = AppColors.rose500.withValues(alpha: 0.6);
+                              tileBg = AppColors.rose500.withValues(
+                                alpha: 0.18,
+                              );
+                              tileBorder = AppColors.rose500.withValues(
+                                alpha: 0.6,
+                              );
                             }
 
                             return ScaleButton(
@@ -352,7 +379,10 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                                 decoration: BoxDecoration(
                                   color: tileBg,
                                   borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: tileBorder, width: 1.5.w),
+                                  border: Border.all(
+                                    color: tileBorder,
+                                    width: 1.5.w,
+                                  ),
                                   boxShadow: [
                                     BoxShadow(
                                       color: tileBorder.withValues(alpha: 0.15),
@@ -378,14 +408,16 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                                       isPosCorrect == true
                                           ? Icons.check_circle_rounded
                                           : (isPosCorrect == false
-                                              ? Icons.close_rounded
-                                              : Icons.close_rounded),
+                                                ? Icons.close_rounded
+                                                : Icons.close_rounded),
                                       size: 13.r,
                                       color: isPosCorrect == true
                                           ? AppColors.emerald500
                                           : (isPosCorrect == false
-                                              ? AppColors.rose500
-                                              : tileText.withValues(alpha: 0.4)),
+                                                ? AppColors.rose500
+                                                : tileText.withValues(
+                                                    alpha: 0.4,
+                                                  )),
                                     ),
                                   ],
                                 ),
@@ -399,7 +431,10 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                 if (_hasError) ...[
                   SizedBox(height: 12.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 7.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 7.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.rose500.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(10.r),
@@ -420,7 +455,8 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                           child: Text(
                             context.tr(
                               'games.reorder_try_again',
-                              fallback: 'Word order is not quite right. Tap tiles to adjust and try again!',
+                              fallback:
+                                  'Word order is not quite right. Tap tiles to adjust and try again!',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -475,11 +511,12 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                 return ScaleButton(
                   onTap: () => _onTileTap(tile),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15.w,
+                      vertical: 10.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: isDark
-                          ? const Color(0xFF1E293B)
-                          : Colors.white,
+                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(13.r),
                       border: Border.all(
                         color: isDark
@@ -489,7 +526,9 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.05),
+                          color: Colors.black.withValues(
+                            alpha: isDark ? 0.25 : 0.05,
+                          ),
                           blurRadius: 8,
                           offset: const Offset(0, 3),
                         ),
@@ -523,8 +562,8 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                 color: allPlaced
                     ? widget.primaryColor
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate200),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate200),
                 borderRadius: BorderRadius.circular(16.r),
                 boxShadow: allPlaced
                     ? [
@@ -557,4 +596,3 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
     );
   }
 }
-

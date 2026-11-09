@@ -71,10 +71,7 @@ void main() {
         darkTheme: ThemeData.dark(),
         home: Scaffold(
           body: SingleChildScrollView(
-            child: BeginnerMilestoneCard(
-              user: user,
-              onUnlockNow: onUnlockNow,
-            ),
+            child: BeginnerMilestoneCard(user: user, onUnlockNow: onUnlockNow),
           ),
         ),
       ),
@@ -94,10 +91,7 @@ void main() {
       );
 
       await tester.pumpWidget(
-        createSubject(
-          user: user,
-          onUnlockNow: () => unlocked = true,
-        ),
+        createSubject(user: user, onUnlockNow: () => unlocked = true),
       );
       await tester.pumpAndSettle();
 
@@ -119,18 +113,10 @@ void main() {
   testWidgets(
     'renders cleanly on 320dp small mobile screen without RenderFlex overflow',
     (tester) async {
-      const user = UserEntity(
-        id: 'beginner_small',
-        email: 'small@vowl.app',
-      );
+      const user = UserEntity(id: 'beginner_small', email: 'small@vowl.app');
 
       await tester.pumpWidget(
-        createSubject(
-          user: user,
-          onUnlockNow: () {},
-          width: 320,
-          height: 568,
-        ),
+        createSubject(user: user, onUnlockNow: () {}, width: 320, height: 568),
       );
       await tester.pumpAndSettle();
 
@@ -142,25 +128,15 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders cleanly in Light theme mode',
-    (tester) async {
-      const user = UserEntity(
-        id: 'beginner_light',
-        email: 'light@vowl.app',
-      );
+  testWidgets('renders cleanly in Light theme mode', (tester) async {
+    const user = UserEntity(id: 'beginner_light', email: 'light@vowl.app');
 
-      await tester.pumpWidget(
-        createSubject(
-          user: user,
-          onUnlockNow: () {},
-          themeMode: ThemeMode.light,
-        ),
-      );
-      await tester.pumpAndSettle();
+    await tester.pumpWidget(
+      createSubject(user: user, onUnlockNow: () {}, themeMode: ThemeMode.light),
+    );
+    await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
-    },
-  );
+    expect(tester.takeException(), isNull);
+    expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
+  });
 }

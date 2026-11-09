@@ -135,9 +135,9 @@ void main() {
     blocTest<EconomyBloc, EconomyState>(
       'EconomyClaimDailyChestRequested emits isDailyRewardAvailable: false when already claimed in Firestore',
       build: () {
-        when(
-          () => mockClaimDailyChest(any()),
-        ).thenAnswer((_) async => Left(AuthFailure('daily-chest-already-claimed')));
+        when(() => mockClaimDailyChest(any())).thenAnswer(
+          (_) async => Left(AuthFailure('daily-chest-already-claimed')),
+        );
         return bloc;
       },
       act: (bloc) => bloc.add(const EconomyClaimDailyChestRequested(25)),
@@ -162,9 +162,7 @@ void main() {
         return bloc;
       },
       act: (bloc) => bloc.add(const EconomyCheckDailyRewardRequested()),
-      expect: () => [
-        const EconomyState(isDailyRewardAvailable: false),
-      ],
+      expect: () => [const EconomyState(isDailyRewardAvailable: false)],
     );
   });
 }

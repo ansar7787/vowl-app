@@ -210,28 +210,26 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         RepaintBoundary(
                           child:
                               Container(
-                                    width: 48.w,
-                                    height: 38.h,
-                                    decoration: BoxDecoration(
-                                      color: const Color(
-                                        0xFFF43F5E,
-                                      ).withValues(alpha: 0.1),
-                                      borderRadius: BorderRadius.circular(16.r),
-                                      border: Border.all(
-                                        color: const Color(
-                                          0xFFF43F5E,
-                                        ).withValues(alpha: 0.2),
-                                        width: 1,
-                                      ),
-                                    ),
-                                  )
-                                  .animate()
-                                  .shimmer(
-                                    duration: 1500.ms,
+                                width: 48.w,
+                                height: 38.h,
+                                decoration: BoxDecoration(
+                                  color: const Color(
+                                    0xFFF43F5E,
+                                  ).withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
                                     color: const Color(
                                       0xFFF43F5E,
-                                    ).withValues(alpha: 0.3),
+                                    ).withValues(alpha: 0.2),
+                                    width: 1,
                                   ),
+                                ),
+                              ).animate().shimmer(
+                                duration: 1500.ms,
+                                color: const Color(
+                                  0xFFF43F5E,
+                                ).withValues(alpha: 0.3),
+                              ),
                         ),
                     ],
                   ),

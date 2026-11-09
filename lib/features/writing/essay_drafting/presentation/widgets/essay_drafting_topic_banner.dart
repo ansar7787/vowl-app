@@ -47,10 +47,7 @@ class EssayDraftingTopicBanner extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10.w,
-                  vertical: 4.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: isDark ? 0.18 : 0.12),
                   borderRadius: BorderRadius.circular(8.r),

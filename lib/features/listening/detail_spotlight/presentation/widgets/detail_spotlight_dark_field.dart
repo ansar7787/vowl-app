@@ -250,8 +250,8 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                             Color tileColor = isCorrectStateUI
                                 ? tokens.gameCorrect
                                 : (isWrongStateUI
-                                    ? tokens.gameIncorrect
-                                    : Colors.white);
+                                      ? tokens.gameIncorrect
+                                      : Colors.white);
 
                             bool shouldReveal =
                                 isLit ||
@@ -274,7 +274,8 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                                     color: shouldReveal
                                         ? tileColor.withValues(alpha: 0.5)
                                         : Colors.white.withValues(alpha: 0.08),
-                                    width: (isCorrectStateUI ||
+                                    width:
+                                        (isCorrectStateUI ||
                                             isWrongStateUI ||
                                             (widget.isAnswered &&
                                                 isActuallyCorrect))
@@ -284,7 +285,9 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                                   boxShadow: shouldReveal
                                       ? [
                                           BoxShadow(
-                                            color: tileColor.withValues(alpha: 0.18),
+                                            color: tileColor.withValues(
+                                              alpha: 0.18,
+                                            ),
                                             blurRadius: 12.r,
                                             offset: const Offset(0, 3),
                                           ),
@@ -367,16 +370,18 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                                 size: 28.r,
                               )
                             : Icon(
-                                Icons.flare_rounded,
-                                color: Colors.yellowAccent,
-                                size: 28.r,
-                              )
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .scale(
-                                  begin: const Offset(0.8, 0.8),
-                                  end: const Offset(1.1, 1.1),
-                                  duration: 1000.ms,
-                                ),
+                                    Icons.flare_rounded,
+                                    color: Colors.yellowAccent,
+                                    size: 28.r,
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(0.8, 0.8),
+                                    end: const Offset(1.1, 1.1),
+                                    duration: 1000.ms,
+                                  ),
                       ),
                     ),
                   ),

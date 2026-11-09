@@ -220,8 +220,13 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                               child: IgnorePointer(
                                                 child: AntonymInstructionHeader(
                                                   color: theme.primaryColor,
-                                                  instruction: quest.instruction.isNotEmpty
-                                                      ? InstructionHelper.getInstruction(quest)
+                                                  instruction:
+                                                      quest
+                                                          .instruction
+                                                          .isNotEmpty
+                                                      ? InstructionHelper.getInstruction(
+                                                          quest,
+                                                        )
                                                       : "Find the opposite word",
                                                   isCompact: isCompact,
                                                 ),
@@ -272,7 +277,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                   ]),
                                                   builder: (context, _) {
                                                     final isSelected =
-                                                        _activeShardIndex.value == i;
+                                                        _activeShardIndex
+                                                            .value ==
+                                                        i;
                                                     return AntonymOptionShard(
                                                       index: i,
                                                       text: quest.options![i],
@@ -286,7 +293,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                           .value,
                                                       isDragging:
                                                           _isDraggingShard &&
-                                                              isSelected,
+                                                          isSelected,
                                                       isSelected: isSelected,
                                                       isCompact: isCompact,
                                                       isFused:
@@ -429,25 +436,25 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                               horizontal: 20.w,
                                             ),
                                             child: SpeakToConfirmOverlay(
-                                            expectedText:
-                                                "${quest.word} ${quest.correctAnswer}",
-                                            displayText:
-                                                "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
-                                            primaryColor: theme.primaryColor,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(
-                                                  true,
-                                                  quest: quest,
-                                                ),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                  quest: quest,
-                                                ),
-                                            isPositioned: false,
+                                              expectedText:
+                                                  "${quest.word} ${quest.correctAnswer}",
+                                              displayText:
+                                                  "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () =>
+                                                  _submitVerbalEvaluation(
+                                                    true,
+                                                    quest: quest,
+                                                  ),
+                                              onSkipped: () =>
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                    quest: quest,
+                                                  ),
+                                              isPositioned: false,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(height: 60.h),
+                                          SizedBox(height: 60.h),
                                         ],
                                       ),
                                     ),
@@ -538,7 +545,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
 
   void _onShardEnd(int index) {
     _isDraggingShard = false;
-    if (_activeShardIndex.value != index || _lastConstraints == null || _isAnimatingTap) return;
+    if (_activeShardIndex.value != index ||
+        _lastConstraints == null ||
+        _isAnimatingTap) {
+      return;
+    }
     final initial = _getInitialPosition(index);
     final offset = _shardOffsets[index]?.value ?? Offset.zero;
     final currentY = initial.dy + offset.dy;

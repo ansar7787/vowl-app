@@ -371,7 +371,9 @@ class _SentenceBuilderBody extends StatelessWidget {
 
                       if (level >= 6) ...[
                         GestureDetector(
-                          key: const Key('sentence_builder_hard_mode_pool_gesture'),
+                          key: const Key(
+                            'sentence_builder_hard_mode_pool_gesture',
+                          ),
                           behavior: HitTestBehavior.opaque,
                           onTap: () {
                             CustomSnackBar.show(

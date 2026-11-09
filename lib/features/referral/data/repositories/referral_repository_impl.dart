@@ -14,7 +14,7 @@ class ReferralRepositoryImpl implements ReferralRepository {
   static const Duration _kNetworkTimeout = Duration(seconds: 10);
 
   ReferralRepositoryImpl([FirebaseFirestore? firestore])
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+    : _firestore = firestore ?? FirebaseFirestore.instance;
 
   static String _getCurrentMonthKey([DateTime? date]) {
     final now = (date ?? DateTime.now()).toUtc();
@@ -31,7 +31,26 @@ class ReferralRepositoryImpl implements ReferralRepository {
   @override
   Future<String> getOrCreateReferralCode(UserEntity user) async {
     if (user.referralCode != null && user.referralCode!.trim().isNotEmpty) {
-      return user.referralCode!.trim().toUpperCase();
+      final code = user.referralCode!.trim().toUpperCase();
+      // Keep owner profile info (avatar & display name) synced in referrals collection
+      try {
+        unawaited(
+          _firestore
+              .collection('referrals')
+              .doc(code)
+              .set({
+                'ownerName': user.safeDisplayName,
+                'ownerPhotoUrl': user.photoUrl,
+              }, SetOptions(merge: true))
+              .timeout(_kNetworkTimeout)
+              .catchError((e) {
+                debugPrint('[ReferralRepositoryImpl] sync profile to referral error: $e');
+              }),
+        );
+      } catch (e) {
+        debugPrint('[ReferralRepositoryImpl] sync profile error: $e');
+      }
+      return code;
     }
 
     try {
@@ -62,28 +81,37 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final currentMonth = _getCurrentMonthKey();
 
       // Write to referrals registry
-      await _firestore.collection('referrals').doc(code).set({
-        'code': code,
-        'ownerId': user.id,
-        'ownerName': user.safeDisplayName,
-        'ownerPhotoUrl': user.photoUrl,
-        'createdAt': FieldValue.serverTimestamp(),
-        'successfulCount': 0,
-        'monthlyCount': 0,
-        'currentMonthKey': currentMonth,
-      }).timeout(_kNetworkTimeout);
+      await _firestore
+          .collection('referrals')
+          .doc(code)
+          .set({
+            'code': code,
+            'ownerId': user.id,
+            'ownerName': user.safeDisplayName,
+            'ownerPhotoUrl': user.photoUrl,
+            'createdAt': FieldValue.serverTimestamp(),
+            'successfulCount': 0,
+            'monthlyCount': 0,
+            'currentMonthKey': currentMonth,
+          })
+          .timeout(_kNetworkTimeout);
 
       // Persist to user record
-      await _firestore.collection('users').doc(user.id).update({
-        'referralCode': code,
-        'currentReferralMonthKey': currentMonth,
-      }).timeout(_kNetworkTimeout);
+      await _firestore
+          .collection('users')
+          .doc(user.id)
+          .update({
+            'referralCode': code,
+            'currentReferralMonthKey': currentMonth,
+          })
+          .timeout(_kNetworkTimeout);
 
       return code;
     } catch (e) {
       debugPrint('[ReferralRepositoryImpl] getOrCreateReferralCode error: $e');
       // Graceful offline fallback
-      final fallback = 'VOWL-${user.id.substring(0, min(4, user.id.length)).toUpperCase()}';
+      final fallback =
+          'VOWL-${user.id.substring(0, min(4, user.id.length)).toUpperCase()}';
       return fallback;
     }
   }
@@ -119,15 +147,23 @@ class ReferralRepositoryImpl implements ReferralRepository {
     }
 
     if (user.hasClaimedReferral) {
-      return ReferralClaimResult.failure('You have already claimed an invite bonus on this account.');
+      return ReferralClaimResult.failure(
+        'You have already claimed an invite bonus on this account.',
+      );
     }
 
-    if (user.pendingReferralCode != null && user.pendingReferralCode!.toUpperCase() == cleanCode) {
-      return ReferralClaimResult.failure('You already have this referral code pending! Complete Adventure Level 1 to activate.');
+    if (user.pendingReferralCode != null &&
+        user.pendingReferralCode!.toUpperCase() == cleanCode) {
+      return ReferralClaimResult.failure(
+        'You already have this referral code pending! Complete Adventure Level 1 to activate.',
+      );
     }
 
-    if (user.referralCode != null && user.referralCode!.toUpperCase() == cleanCode) {
-      return ReferralClaimResult.failure('You cannot claim your own invite code.');
+    if (user.referralCode != null &&
+        user.referralCode!.toUpperCase() == cleanCode) {
+      return ReferralClaimResult.failure(
+        'You cannot claim your own invite code.',
+      );
     }
 
     try {
@@ -135,7 +171,9 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final snapshot = await docRef.get().timeout(_kNetworkTimeout);
 
       if (!snapshot.exists || snapshot.data() == null) {
-        return ReferralClaimResult.failure('Invite code not found. Please double-check the code.');
+        return ReferralClaimResult.failure(
+          'Invite code not found. Please double-check the code.',
+        );
       }
 
       final data = snapshot.data()!;
@@ -143,11 +181,15 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final ownerName = (data['ownerName'] as String?) ?? 'A Vowl Ambassador';
 
       if (ownerId == user.id) {
-        return ReferralClaimResult.failure('You cannot claim your own invite code.');
+        return ReferralClaimResult.failure(
+          'You cannot claim your own invite code.',
+        );
       }
 
       // Check whether user has already completed Adventure Level 1 in any category
-      final hasCompletedLevelOne = user.completedLevels.values.any((levels) => levels.contains(1));
+      final hasCompletedLevelOne = user.completedLevels.values.any(
+        (levels) => levels.contains(1),
+      );
 
       if (hasCompletedLevelOne) {
         // Milestone already met: activate bonus immediately!
@@ -159,8 +201,13 @@ class ReferralRepositoryImpl implements ReferralRepository {
           newExpiry = now.add(const Duration(days: 1));
         }
 
-        final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
-        final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+        final userDoc = await _firestore
+            .collection('users')
+            .doc(user.id)
+            .get()
+            .timeout(_kNetworkTimeout);
+        final rawHistory =
+            (userDoc.data()?['coinHistory'] as List<dynamic>?)
                 ?.map((e) => Map<String, dynamic>.from(e as Map))
                 .toList() ??
             [];
@@ -172,22 +219,26 @@ class ReferralRepositoryImpl implements ReferralRepository {
         );
 
         final userRef = _firestore.collection('users').doc(user.id);
-        await userRef.update({
-          'hasClaimedReferral': true,
-          'referredBy': cleanCode,
-          'pendingReferralCode': null,
-          'coins': FieldValue.increment(100),
-          'isPremium': true,
-          'premiumExpiryDate': Timestamp.fromDate(newExpiry),
-          'coinHistory': updatedHistory,
-          'lastRewardTimestamp': FieldValue.serverTimestamp(),
-        }).timeout(_kNetworkTimeout);
+        await userRef
+            .update({
+              'hasClaimedReferral': true,
+              'referredBy': cleanCode,
+              'pendingReferralCode': null,
+              'coins': FieldValue.increment(100),
+              'isPremium': true,
+              'premiumExpiryDate': Timestamp.fromDate(newExpiry),
+              'coinHistory': updatedHistory,
+              'lastRewardTimestamp': FieldValue.serverTimestamp(),
+            })
+            .timeout(_kNetworkTimeout);
 
         // Notify and reward the ambassador
-        unawaited(onFriendCompletedLevelOne(
-          friendUserId: user.id,
-          referrerCode: cleanCode,
-        ));
+        unawaited(
+          onFriendCompletedLevelOne(
+            friendUserId: user.id,
+            referrerCode: cleanCode,
+          ),
+        );
 
         return ReferralClaimResult.success(
           coinsAwarded: 100,
@@ -196,19 +247,23 @@ class ReferralRepositoryImpl implements ReferralRepository {
         );
       } else {
         // Milestone not yet met: save pending code to activate upon Level 1 completion
-        await _firestore.collection('users').doc(user.id).update({
-          'pendingReferralCode': cleanCode,
-          'referredBy': cleanCode,
-        }).timeout(_kNetworkTimeout);
+        await _firestore
+            .collection('users')
+            .doc(user.id)
+            .update({'pendingReferralCode': cleanCode, 'referredBy': cleanCode})
+            .timeout(_kNetworkTimeout);
 
         return ReferralClaimResult.pending(
           referrerName: ownerName,
-          message: 'Referral pass saved! Complete Adventure Level 1 to activate your 100 Bonus Coins & 1 Day VIP pass!',
+          message:
+              'Referral pass saved! Complete Adventure Level 1 to activate your 100 Bonus Coins & 1 Day VIP pass!',
         );
       }
     } catch (e) {
       debugPrint('[ReferralRepositoryImpl] claimReferralCode error: $e');
-      return ReferralClaimResult.failure('Could not claim code. Please check your network and try again.');
+      return ReferralClaimResult.failure(
+        'Could not claim code. Please check your network and try again.',
+      );
     }
   }
 
@@ -221,7 +276,11 @@ class ReferralRepositoryImpl implements ReferralRepository {
     if (cleanCode.isEmpty) return;
 
     try {
-      final refDoc = await _firestore.collection('referrals').doc(cleanCode).get().timeout(_kNetworkTimeout);
+      final refDoc = await _firestore
+          .collection('referrals')
+          .doc(cleanCode)
+          .get()
+          .timeout(_kNetworkTimeout);
       if (!refDoc.exists || refDoc.data() == null) return;
 
       final data = refDoc.data()!;
@@ -245,9 +304,14 @@ class ReferralRepositoryImpl implements ReferralRepository {
         referralUpdates['currentMonthKey'] = currentMonth;
       }
 
-      await _firestore.collection('referrals').doc(cleanCode).update(referralUpdates);
+      await _firestore
+          .collection('referrals')
+          .doc(cleanCode)
+          .update(referralUpdates);
     } catch (e) {
-      debugPrint('[ReferralRepositoryImpl] onFriendCompletedLevelOne error: $e');
+      debugPrint(
+        '[ReferralRepositoryImpl] onFriendCompletedLevelOne error: $e',
+      );
     }
   }
 
@@ -259,7 +323,11 @@ class ReferralRepositoryImpl implements ReferralRepository {
     }
 
     try {
-      final refDoc = await _firestore.collection('referrals').doc(code).get().timeout(_kNetworkTimeout);
+      final refDoc = await _firestore
+          .collection('referrals')
+          .doc(code)
+          .get()
+          .timeout(_kNetworkTimeout);
       if (!refDoc.exists || refDoc.data() == null) {
         return 0;
       }
@@ -267,7 +335,8 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final data = refDoc.data()!;
       final successfulCount = (data['successfulCount'] as num?)?.toInt() ?? 0;
       final monthlyCount = (data['monthlyCount'] as num?)?.toInt() ?? 0;
-      final currentMonth = (data['currentMonthKey'] as String?) ?? _getCurrentMonthKey();
+      final currentMonth =
+          (data['currentMonthKey'] as String?) ?? _getCurrentMonthKey();
 
       final pendingDiff = successfulCount - user.totalReferralsCount;
       if (pendingDiff <= 0) {
@@ -282,8 +351,13 @@ class ReferralRepositoryImpl implements ReferralRepository {
         newExpiry = now.add(Duration(days: pendingDiff));
       }
 
-      final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
-      var rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+      final userDoc = await _firestore
+          .collection('users')
+          .doc(user.id)
+          .get()
+          .timeout(_kNetworkTimeout);
+      var rawHistory =
+          (userDoc.data()?['coinHistory'] as List<dynamic>?)
               ?.map((e) => Map<String, dynamic>.from(e as Map))
               .toList() ??
           [];
@@ -298,16 +372,20 @@ class ReferralRepositoryImpl implements ReferralRepository {
         );
       }
 
-      await _firestore.collection('users').doc(user.id).update({
-        'totalReferralsCount': successfulCount,
-        'monthlyReferralsCount': monthlyCount,
-        'currentReferralMonthKey': currentMonth,
-        'coins': FieldValue.increment(coinsEarned),
-        'isPremium': true,
-        'premiumExpiryDate': Timestamp.fromDate(newExpiry),
-        'coinHistory': rawHistory,
-        'lastRewardTimestamp': FieldValue.serverTimestamp(),
-      }).timeout(_kNetworkTimeout);
+      await _firestore
+          .collection('users')
+          .doc(user.id)
+          .update({
+            'totalReferralsCount': successfulCount,
+            'monthlyReferralsCount': monthlyCount,
+            'currentReferralMonthKey': currentMonth,
+            'coins': FieldValue.increment(coinsEarned),
+            'isPremium': true,
+            'premiumExpiryDate': Timestamp.fromDate(newExpiry),
+            'coinHistory': rawHistory,
+            'lastRewardTimestamp': FieldValue.serverTimestamp(),
+          })
+          .timeout(_kNetworkTimeout);
 
       return pendingDiff;
     } catch (e) {
@@ -353,7 +431,9 @@ class ReferralRepositoryImpl implements ReferralRepository {
       }
       return items;
     } catch (e) {
-      debugPrint('[ReferralRepositoryImpl] getMonthlyAmbassadorLeaderboard error: $e');
+      debugPrint(
+        '[ReferralRepositoryImpl] getMonthlyAmbassadorLeaderboard error: $e',
+      );
       return [];
     }
   }
@@ -365,15 +445,23 @@ class ReferralRepositoryImpl implements ReferralRepository {
     final prevMonthKey = _getPreviousMonthKey();
 
     if (user.claimedAmbassadorRewardMonthKeys.contains(prevMonthKey)) {
-      return AmbassadorRewardClaimResult.failure('You have already claimed your Ambassador Cup reward for $prevMonthKey.');
+      return AmbassadorRewardClaimResult.failure(
+        'You have already claimed your Ambassador Cup reward for $prevMonthKey.',
+      );
     }
 
     try {
-      final leaderboard = await getMonthlyAmbassadorLeaderboard(monthKey: prevMonthKey);
-      final myEntryIndex = leaderboard.indexWhere((item) => item.userId == user.id);
+      final leaderboard = await getMonthlyAmbassadorLeaderboard(
+        monthKey: prevMonthKey,
+      );
+      final myEntryIndex = leaderboard.indexWhere(
+        (item) => item.userId == user.id,
+      );
 
       if (myEntryIndex == -1) {
-        return AmbassadorRewardClaimResult.failure('You did not place in the top 10 for $prevMonthKey.');
+        return AmbassadorRewardClaimResult.failure(
+          'You did not place in the top 10 for $prevMonthKey.',
+        );
       }
 
       final entry = leaderboard[myEntryIndex];
@@ -383,7 +471,9 @@ class ReferralRepositoryImpl implements ReferralRepository {
       if (entry.referralCount < 1 ||
           tier == AmbassadorRewardTier.none ||
           tier == AmbassadorRewardTier.participant) {
-        return AmbassadorRewardClaimResult.failure('Ambassador Cup rewards require at least 1 referral.');
+        return AmbassadorRewardClaimResult.failure(
+          'Ambassador Cup rewards require at least 1 referral.',
+        );
       }
 
       final now = DateTime.now();
@@ -398,7 +488,10 @@ class ReferralRepositoryImpl implements ReferralRepository {
         newExpiry = null;
       }
 
-      final updatedClaimedKeys = [...user.claimedAmbassadorRewardMonthKeys, prevMonthKey];
+      final updatedClaimedKeys = [
+        ...user.claimedAmbassadorRewardMonthKeys,
+        prevMonthKey,
+      ];
 
       final Map<String, dynamic> updates = {
         'claimedAmbassadorRewardMonthKeys': updatedClaimedKeys,
@@ -411,8 +504,13 @@ class ReferralRepositoryImpl implements ReferralRepository {
       };
 
       if (tier.coins > 0) {
-        final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
-        final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+        final userDoc = await _firestore
+            .collection('users')
+            .doc(user.id)
+            .get()
+            .timeout(_kNetworkTimeout);
+        final rawHistory =
+            (userDoc.data()?['coinHistory'] as List<dynamic>?)
                 ?.map((e) => Map<String, dynamic>.from(e as Map))
                 .toList() ??
             [];
@@ -424,7 +522,11 @@ class ReferralRepositoryImpl implements ReferralRepository {
         );
       }
 
-      await _firestore.collection('users').doc(user.id).update(updates).timeout(_kNetworkTimeout);
+      await _firestore
+          .collection('users')
+          .doc(user.id)
+          .update(updates)
+          .timeout(_kNetworkTimeout);
 
       return AmbassadorRewardClaimResult.success(
         rank: rank,
@@ -433,9 +535,12 @@ class ReferralRepositoryImpl implements ReferralRepository {
         monthKey: prevMonthKey,
       );
     } catch (e) {
-      debugPrint('[ReferralRepositoryImpl] claimMonthlyAmbassadorReward error: $e');
-      return AmbassadorRewardClaimResult.failure('Could not process month-end claim. Please try again.');
+      debugPrint(
+        '[ReferralRepositoryImpl] claimMonthlyAmbassadorReward error: $e',
+      );
+      return AmbassadorRewardClaimResult.failure(
+        'Could not process month-end claim. Please try again.',
+      );
     }
   }
 }
-

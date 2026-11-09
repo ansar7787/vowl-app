@@ -111,6 +111,10 @@ service cloud.firestore {
     //   - lastHeartbeat: timestamp (optional) - live duel heartbeat
     //   - hostScore: int (optional)
     //   - guestScore: int (optional)
+    //   - hostCorrectCount: int (optional, >= 0 && <= 20) - host correct answers count
+    //   - guestCorrectCount: int (optional, >= 0 && <= 20) - guest correct answers count
+    //   - hostTotalTimeMs: int (optional, >= 0 && <= 300000) - host total elapsed duel time in ms
+    //   - guestTotalTimeMs: int (optional, >= 0 && <= 300000) - guest total elapsed duel time in ms
     //   - hostFinished: bool (optional)
     //   - guestFinished: bool (optional)
     //   - winnerId: string (optional)
@@ -224,6 +228,10 @@ service cloud.firestore {
         && (!('lastHeartbeat' in data) || data.lastHeartbeat == null || data.lastHeartbeat is timestamp)
         && (!('hostScore' in data) || (data.hostScore is int && data.hostScore >= 0 && data.hostScore <= 1000))
         && (!('guestScore' in data) || (data.guestScore is int && data.guestScore >= 0 && data.guestScore <= 1000))
+        && (!('hostCorrectCount' in data) || (data.hostCorrectCount is int && data.hostCorrectCount >= 0 && data.hostCorrectCount <= 20))
+        && (!('guestCorrectCount' in data) || (data.guestCorrectCount is int && data.guestCorrectCount >= 0 && data.guestCorrectCount <= 20))
+        && (!('hostTotalTimeMs' in data) || (data.hostTotalTimeMs is int && data.hostTotalTimeMs >= 0 && data.hostTotalTimeMs <= 300000))
+        && (!('guestTotalTimeMs' in data) || (data.guestTotalTimeMs is int && data.guestTotalTimeMs >= 0 && data.guestTotalTimeMs <= 300000))
         && (!('hostFinished' in data) || data.hostFinished is bool)
         && (!('guestFinished' in data) || data.guestFinished is bool)
         && (!('winnerId' in data) || data.winnerId == null || (data.winnerId is string && data.winnerId.size() <= 128 && (data.winnerId == data.hostId || (('guestId' in data) && data.winnerId == data.guestId))))

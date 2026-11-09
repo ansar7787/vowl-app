@@ -104,8 +104,8 @@ class WritingEmailDataStream extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isDark
                               ? (context.isMidnight
-                                  ? AppColors.midnightSurface
-                                  : const Color(0xFF1E2230))
+                                    ? AppColors.midnightSurface
+                                    : const Color(0xFF1E2230))
                               : Colors.white,
                           borderRadius: BorderRadius.circular(14.r),
                           border: Border.all(

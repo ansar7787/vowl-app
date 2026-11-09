@@ -405,10 +405,7 @@ class AdService {
 
     _adLoadListeners.add(listener);
     try {
-      return await completer.future.timeout(
-        timeout,
-        onTimeout: () => false,
-      );
+      return await completer.future.timeout(timeout, onTimeout: () => false);
     } finally {
       _adLoadListeners.remove(listener);
     }
@@ -721,8 +718,7 @@ class AdService {
           context: context,
           message: context.tr(
             'games.ad_loading_retry',
-            fallback:
-                'Ad is still loading. Please try again in a few moments.',
+            fallback: 'Ad is still loading. Please try again in a few moments.',
           ),
           type: CustomSnackBarType.warning,
         );
@@ -817,9 +813,11 @@ class _AdLoadingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
+    final isMidnight =
+        isDark &&
         (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
-            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface ==
+                AppColors.midnightSurface ||
             Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     return PopScope(
@@ -837,15 +835,15 @@ class _AdLoadingDialog extends StatelessWidget {
               color: isMidnight
                   ? AppColors.midnightSurface
                   : (isDark
-                      ? const Color(0xFF1E293B).withValues(alpha: 0.95)
-                      : Colors.white.withValues(alpha: 0.95)),
+                        ? const Color(0xFF1E293B).withValues(alpha: 0.95)
+                        : Colors.white.withValues(alpha: 0.95)),
               borderRadius: BorderRadius.circular(28.r),
               border: Border.all(
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100),
                 width: 1,
               ),
               boxShadow: [
@@ -879,10 +877,7 @@ class _AdLoadingDialog extends StatelessWidget {
                     ],
                   ),
                   child: const Center(
-                    child: VowlButtonSpinner(
-                      color: Colors.white,
-                      size: 26,
-                    ),
+                    child: VowlButtonSpinner(color: Colors.white, size: 26),
                   ),
                 ),
                 SizedBox(height: 20.h),

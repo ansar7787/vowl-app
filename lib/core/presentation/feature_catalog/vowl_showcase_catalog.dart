@@ -179,4 +179,3 @@ abstract final class VowlShowcaseCatalog {
     ),
   ];
 }
-

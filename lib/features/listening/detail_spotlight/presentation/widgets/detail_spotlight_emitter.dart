@@ -55,18 +55,19 @@ class DetailSpotlightEmitter extends StatelessWidget {
           ),
           child: isCorrectState == true && emoji != null
               ? (reduceMotion
-                  ? Text(
-                      emoji!,
-                      key: const Key('detail_spotlight_emoji'),
-                      style: TextStyle(fontSize: 32.r),
-                    )
-                  : Text(
-                      emoji!,
-                      key: const Key('detail_spotlight_emoji'),
-                      style: TextStyle(fontSize: 32.r),
-                    )
-                      .animate()
-                      .scale(duration: 400.ms, curve: Curves.easeOutCubic))
+                    ? Text(
+                        emoji!,
+                        key: const Key('detail_spotlight_emoji'),
+                        style: TextStyle(fontSize: 32.r),
+                      )
+                    : Text(
+                        emoji!,
+                        key: const Key('detail_spotlight_emoji'),
+                        style: TextStyle(fontSize: 32.r),
+                      ).animate().scale(
+                        duration: 400.ms,
+                        curve: Curves.easeOutCubic,
+                      ))
               : Icon(Icons.volume_up_rounded, color: color, size: 36.r),
         ),
       ),

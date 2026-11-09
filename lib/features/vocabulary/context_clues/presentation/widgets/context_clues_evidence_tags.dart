@@ -71,7 +71,8 @@ class ContextCluesEvidenceTags extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
-                    color: tokens?.textSecondary ?? color.withValues(alpha: 0.8),
+                    color:
+                        tokens?.textSecondary ?? color.withValues(alpha: 0.8),
                     letterSpacing: 0.3,
                   ),
                   softWrap: true,
@@ -99,9 +100,11 @@ class ContextCluesEvidenceTags extends StatelessWidget {
                       ? (tokens?.surface ?? const Color(0xFF161822))
                       : Colors.white;
                   final normalBorder = isDark
-                      ? (tokens?.borderSubtle ?? Colors.white.withValues(alpha: 0.1))
+                      ? (tokens?.borderSubtle ??
+                            Colors.white.withValues(alpha: 0.1))
                       : color.withValues(alpha: 0.18);
-                  final normalTextColor = tokens?.textPrimary ??
+                  final normalTextColor =
+                      tokens?.textPrimary ??
                       (isDark ? Colors.white : const Color(0xFF0F172A));
 
                   Color cardBg = normalBg;

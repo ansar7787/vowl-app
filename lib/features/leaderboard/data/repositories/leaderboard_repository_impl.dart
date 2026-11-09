@@ -6,6 +6,7 @@ import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 
 /// Concrete implementation of [LeaderboardRepository] querying Firestore
 /// cached leaderboards with client-side timeout guards and fallback queries.
@@ -139,18 +140,28 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             )
             .toList();
 
-        return Right(LeaderboardResult(users: users, lastUpdated: lastUpdated));
+        final sortedKidsUsers = LeaderboardRankingHelper.sortKids(users);
+        return Right(LeaderboardResult(users: sortedKidsUsers, lastUpdated: lastUpdated));
       }
 
-      final snapshot = await firestore
-          .collection('users')
-          .orderBy('kidsCoins', descending: true)
-          .limit(limit)
-          .get()
-          .timeout(_kNetworkTimeout);
+      QuerySnapshot<Map<String, dynamic>> snapshot;
+      try {
+        snapshot = await firestore
+            .collection('users')
+            .orderBy('kidsTotalStars', descending: true)
+            .limit(limit)
+            .get()
+            .timeout(_kNetworkTimeout);
+      } catch (_) {
+        // Fallback for older documents before direct kidsTotalStars index
+        snapshot = await firestore
+            .collection('users')
+            .limit(limit)
+            .get()
+            .timeout(_kNetworkTimeout);
+      }
 
-      final List<Map<String, dynamic>> usersData = [];
-      final List<UserEntity> users = [];
+      final List<UserEntity> rawUsers = [];
       final fetchTime = DateTime.now();
 
       for (final doc in snapshot.docs) {
@@ -158,21 +169,29 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
           final data = Map<String, dynamic>.from(doc.data());
           data['id'] = (data['id'] as String?) ?? doc.id;
           final user = UserModel.fromMap(data);
-          users.add(user);
-
-          usersData.add({
-            'id': data['id'],
-            'displayName': user.safeDisplayName,
-            'photoUrl': data['photoUrl'],
-            'kidsCoins': data['kidsCoins'] ?? 0,
-            'currentStreak': data['currentStreak'],
-            'completedLevels': data['completedLevels'],
-            'isPremium': data['isPremium'] ?? false,
-            'previousRank': data['previousRank'] ?? users.length,
-          });
+          rawUsers.add(user);
         } catch (e) {
           if (kDebugMode) debugPrint('LeaderboardRepo: Corrupted user doc: $e');
         }
+      }
+
+      // Sort strictly by Kids Stars descending (tie-breaker: levels completed, coins, streak)
+      final sortedUsers = LeaderboardRankingHelper.sortKids(rawUsers);
+
+      final List<Map<String, dynamic>> usersData = [];
+      for (int i = 0; i < sortedUsers.length; i++) {
+        final user = sortedUsers[i];
+        usersData.add({
+          'id': user.id,
+          'displayName': user.safeDisplayName,
+          'photoUrl': user.photoUrl,
+          'kidsCoins': user.kidsCoins,
+          'currentStreak': user.currentStreak,
+          'completedLevels': user.completedLevels,
+          'starRatings': user.starRatings,
+          'isPremium': user.isPremium,
+          'previousRank': i + 1,
+        });
       }
 
       try {
@@ -188,7 +207,7 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         }
       }
 
-      return Right(LeaderboardResult(users: users, lastUpdated: fetchTime));
+      return Right(LeaderboardResult(users: sortedUsers, lastUpdated: fetchTime));
     } on TimeoutException {
       return const Left(
         ServerFailure('Connection timed out. Please check your network.'),

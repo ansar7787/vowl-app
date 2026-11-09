@@ -1005,6 +1005,24 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             Icons.apps_rounded,
           ][index];
           break;
+        case GameCategory.accent:
+          icon = [
+            Icons.waves_rounded,
+            Icons.record_voice_over_rounded,
+            Icons.graphic_eq_rounded,
+            Icons.vibration_rounded,
+            Icons.tune_rounded,
+          ][index];
+          break;
+        case GameCategory.roleplay:
+          icon = [
+            Icons.theater_comedy_rounded,
+            Icons.forum_rounded,
+            Icons.alt_route_rounded,
+            Icons.groups_rounded,
+            Icons.chat_bubble_outline_rounded,
+          ][index];
+          break;
         case GameCategory.eliteMastery:
           icon = [
             Icons.workspace_premium_rounded,
@@ -1014,8 +1032,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             Icons.star_rounded,
           ][index];
           break;
-        default:
-          icon = Icons.star_rounded;
       }
       return Positioned(
         left: (0.1 + random.nextDouble() * 0.8) * 1.sw,

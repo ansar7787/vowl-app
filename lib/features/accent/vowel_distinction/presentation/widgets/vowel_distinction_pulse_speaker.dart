@@ -42,10 +42,7 @@ class VowelDistinctionPulseSpeaker extends StatelessWidget {
             color: color.withValues(alpha: 0.08),
             border: Border.all(color: color, width: 2.5),
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.12),
-                blurRadius: 16,
-              ),
+              BoxShadow(color: color.withValues(alpha: 0.12), blurRadius: 16),
             ],
           ),
           child: Center(
@@ -55,11 +52,11 @@ class VowelDistinctionPulseSpeaker extends StatelessWidget {
                 reduceMotion
                     ? icon
                     : icon
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.15, 1.15),
-                        ),
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.15, 1.15),
+                          ),
                 SizedBox(height: 6.h),
                 Text(
                   "HEAR VOWEL",

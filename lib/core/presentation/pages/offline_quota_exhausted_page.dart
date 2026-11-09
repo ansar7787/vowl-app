@@ -108,7 +108,8 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
             context: context,
             message: context.tr(
               'connectivity.still_offline',
-              fallback: 'No internet connection detected. Please check Wi-Fi or data.',
+              fallback:
+                  'No internet connection detected. Please check Wi-Fi or data.',
             ),
             type: CustomSnackBarType.warning,
           );
@@ -193,10 +194,11 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
           // 2. Solid color tint overlay
           Container(
-            color: (isMidnight
-                    ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate900 : Colors.white))
-                .withValues(alpha: 0.95),
+            color:
+                (isMidnight
+                        ? AppColors.midnightSurface
+                        : (isDark ? AppColors.slate900 : Colors.white))
+                    .withValues(alpha: 0.95),
           ),
 
           // 3. Background glow accents
@@ -718,19 +720,13 @@ class _ActionButton extends StatelessWidget {
                     ? SizedBox(
                         width: 22.r,
                         height: 22.r,
-                        child: const VowlButtonSpinner(
-                          color: Colors.white,
-                        ),
+                        child: const VowlButtonSpinner(color: Colors.white),
                       )
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
-                            icon,
-                            color: Colors.white,
-                            size: 20.r,
-                          ),
+                          Icon(icon, color: Colors.white, size: 20.r),
                           SizedBox(width: 10.w),
                           Flexible(
                             child: Text(

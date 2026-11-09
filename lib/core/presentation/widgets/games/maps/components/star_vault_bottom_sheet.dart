@@ -395,12 +395,17 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                         maxHeight: ScreenUtil().screenHeight * 0.85,
                       ),
                       decoration: BoxDecoration(
-                        color: ((isDark &&
-                                    Theme.of(context).scaffoldBackgroundColor ==
-                                        Colors.black)
-                                ? AppColors.midnightSurface
-                                : (isDark ? AppColors.slate800 : Colors.white))
-                            .withValues(alpha: 0.95),
+                        color:
+                            ((isDark &&
+                                        Theme.of(
+                                              context,
+                                            ).scaffoldBackgroundColor ==
+                                            Colors.black)
+                                    ? AppColors.midnightSurface
+                                    : (isDark
+                                          ? AppColors.slate800
+                                          : Colors.white))
+                                .withValues(alpha: 0.95),
                         borderRadius: BorderRadius.vertical(
                           top: Radius.circular(32.r),
                         ),

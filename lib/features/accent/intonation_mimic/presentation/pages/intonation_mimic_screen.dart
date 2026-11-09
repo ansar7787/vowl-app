@@ -157,7 +157,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -174,7 +175,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -334,14 +336,11 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                       height: gapInstruction,
                                                     ),
                                                     IntonationMimicPromptCard(
-                                                      word:
-                                                          quest.word ?? "",
-                                                      color: theme
-                                                          .primaryColor,
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
                                                       isDark: isDark,
                                                       emotionContext:
-                                                          quest
-                                                              .emotionContext,
+                                                          quest.emotionContext,
                                                     ),
                                                     SizedBox(height: gapPrompt),
 

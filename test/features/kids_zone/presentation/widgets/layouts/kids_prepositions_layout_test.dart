@@ -513,67 +513,73 @@ void main() {
   });
 
   group('StoryService & GameInstructionService Integration Tests', () {
-    test('StoryService prepositions scripts provide warm, pedagogical milestones from Level 1 to 200', () {
-      final beats = StoryServiceImpl.kidsScripts['prepositions']!;
+    test(
+      'StoryService prepositions scripts provide warm, pedagogical milestones from Level 1 to 200',
+      () {
+        final beats = StoryServiceImpl.kidsScripts['prepositions']!;
 
-      expect(beats.length, 6);
+        expect(beats.length, 6);
 
-      // Level 1: Foundations of location
-      expect(beats[0], contains('In, on, and under!'));
-      expect(beats[0], contains('placed in everyday sentences'));
-      expect(beats[0], isNot(contains('treasure waterfall')));
+        // Level 1: Foundations of location
+        expect(beats[0], contains('In, on, and under!'));
+        expect(beats[0], contains('placed in everyday sentences'));
+        expect(beats[0], isNot(contains('treasure waterfall')));
 
-      // Level 10: First milestone
-      expect(beats[1], contains('first 10 levels'));
+        // Level 10: First milestone
+        expect(beats[1], contains('first 10 levels'));
 
-      // Level 20: Dual prepositions
-      expect(beats[2], contains('Twenty levels complete'));
-      expect(beats[2], contains('next to'));
+        // Level 20: Dual prepositions
+        expect(beats[2], contains('Twenty levels complete'));
+        expect(beats[2], contains('next to'));
 
-      // Level 50: Halfway milestone
-      expect(beats[3], contains('Halfway to 100'));
+        // Level 50: Halfway milestone
+        expect(beats[3], contains('Halfway to 100'));
 
-      // Level 100: Complete sentence relationship mastery
-      expect(beats[4], contains('One hundred levels completed'));
-      expect(beats[4], isNot(contains('Master of the Map')));
+        // Level 100: Complete sentence relationship mastery
+        expect(beats[4], contains('One hundred levels completed'));
+        expect(beats[4], isNot(contains('Master of the Map')));
 
-      // Level 200: Global fluency
-      expect(beats[5], contains('Two hundred levels completed'));
-      expect(beats[5], isNot(contains('Grand Navigator')));
-    });
+        // Level 200: Global fluency
+        expect(beats[5], contains('Two hundred levels completed'));
+        expect(beats[5], isNot(contains('Grand Navigator')));
+      },
+    );
 
-    testWidgets('GameInstructionService prepositions briefing matches game mechanics accurately', (tester) async {
-      late BuildContext testContext;
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              testContext = context;
-              return const SizedBox();
-            },
+    testWidgets(
+      'GameInstructionService prepositions briefing matches game mechanics accurately',
+      (tester) async {
+        late BuildContext testContext;
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                testContext = context;
+                return const SizedBox();
+              },
+            ),
           ),
-        ),
-      );
+        );
 
-      final briefing = GameInstructionService.getBriefing(
-        testContext,
-        null,
-        'prepositions',
-        level: 1,
-      );
+        final briefing = GameInstructionService.getBriefing(
+          testContext,
+          null,
+          'prepositions',
+          level: 1,
+        );
 
-      expect(briefing.title, 'Where Is It?');
-      expect(
-        briefing.objective,
-        contains('choose the correct position word to complete the blank'),
-      );
-      expect(briefing.rules.length, 3);
-      expect(briefing.rules[0], contains('sentence clue'));
-      expect(briefing.rules[1], contains('matching preposition'));
-      expect(briefing.rules[2], contains('speaker icon'));
-      expect(briefing.actionText, 'Start Playing');
-      expect(briefing.tip, contains("'in'"));
-      expect(briefing.tip, isNot(contains('PRO TIP:')));
-    });
+        expect(briefing.title, 'Where Is It?');
+        expect(
+          briefing.objective,
+          contains('choose the correct position word to complete the blank'),
+        );
+        expect(briefing.rules.length, 3);
+        expect(briefing.rules[0], contains('sentence clue'));
+        expect(briefing.rules[1], contains('matching preposition'));
+        expect(briefing.rules[2], contains('speaker icon'));
+        expect(briefing.actionText, 'Start Playing');
+        expect(briefing.tip, contains("'in'"));
+        expect(briefing.tip, isNot(contains('PRO TIP:')));
+      },
+    );
   });
 }

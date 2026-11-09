@@ -60,7 +60,9 @@ class WordMixerTopBar extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.2 : 0.04,
+                      ),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),
@@ -90,7 +92,10 @@ class WordMixerTopBar extends StatelessWidget {
               children: [
                 Text(
                   isPracticeMode
-                      ? context.tr('home.practice_mode', fallback: 'Word Mixer Practice')
+                      ? context.tr(
+                          'home.practice_mode',
+                          fallback: 'Word Mixer Practice',
+                        )
                       : context.tr('home.word_mixer', fallback: 'Word Mixer'),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -103,7 +108,10 @@ class WordMixerTopBar extends StatelessWidget {
                 ),
                 if (isPracticeMode)
                   Text(
-                    context.tr('home.unlimited_play', fallback: 'Unlimited Practice'),
+                    context.tr(
+                      'home.unlimited_play',
+                      fallback: 'Unlimited Practice',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

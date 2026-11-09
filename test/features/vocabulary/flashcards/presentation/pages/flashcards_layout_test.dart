@@ -236,9 +236,7 @@ void main() {
       ),
     ).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playCorrect(
-        comboStep: any(named: 'comboStep'),
-      ),
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
@@ -539,25 +537,32 @@ void main() {
 
       expect(find.text('Again'), findsOneWidget);
       expect(find.text('Got It'), findsOneWidget);
-      expect(find.byIcon(Icons.keyboard_double_arrow_left_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.keyboard_double_arrow_right_rounded), findsOneWidget);
-    });
-
-    testWidgets('instruction banner switches to swipe instruction when flipped', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      await tester.tap(find.byType(FlashcardSwipeFront));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
       expect(
-        find.text('Swipe left to review, right if you got it'),
+        find.byIcon(Icons.keyboard_double_arrow_left_rounded),
         findsOneWidget,
       );
-      expect(find.byIcon(Icons.swipe_rounded), findsOneWidget);
+      expect(
+        find.byIcon(Icons.keyboard_double_arrow_right_rounded),
+        findsOneWidget,
+      );
     });
+
+    testWidgets(
+      'instruction banner switches to swipe instruction when flipped',
+      (tester) async {
+        await pumpScreen(tester);
+
+        await tester.tap(find.byType(FlashcardSwipeFront));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.text('Swipe left to review, right if you got it'),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.swipe_rounded), findsOneWidget);
+      },
+    );
 
     testWidgets('tapping back card flips it back to front face', (
       tester,
@@ -579,22 +584,25 @@ void main() {
   });
 
   group('Group 3: Swipe Gesture Mechanics & Directional Detection', () {
-    testWidgets('horizontal drag updates offset and angle with selection haptics', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'horizontal drag updates offset and angle with selection haptics',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Flip to back first
-      await tester.tap(find.byType(FlashcardSwipeFront));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Flip to back first
+        await tester.tap(find.byType(FlashcardSwipeFront));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Perform a drag update
-      await tester.drag(find.byType(FlashcardSwipeBack), const Offset(60, 0));
-      await tester.pump();
+        // Perform a drag update
+        await tester.drag(find.byType(FlashcardSwipeBack), const Offset(60, 0));
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
     testWidgets('dragging right past threshold submits correct answer', (
       tester,
@@ -673,9 +681,7 @@ void main() {
   });
 
   group('Group 4: Action Buttons Tap Mechanics & State Handling', () {
-    testWidgets('tapping GOT IT button submits correct answer', (
-      tester,
-    ) async {
+    testWidgets('tapping GOT IT button submits correct answer', (tester) async {
       await pumpScreen(tester);
 
       // Flip to back
@@ -695,9 +701,7 @@ void main() {
       verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('tapping AGAIN button submits wrong answer', (
-      tester,
-    ) async {
+    testWidgets('tapping AGAIN button submits wrong answer', (tester) async {
       await pumpScreen(tester);
 
       // Flip to back
@@ -740,22 +744,23 @@ void main() {
   });
 
   group('Group 5: Hint System & Audio (TTS) Lifecycle', () {
-    testWidgets('tapping header hint button auto-flips card and marks hint active', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping header hint button auto-flips card and marks hint active',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(FlashcardSwipeFront), findsOneWidget);
+        expect(find.byType(FlashcardSwipeFront), findsOneWidget);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(hintButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(FlashcardSwipeBack), findsOneWidget);
-    });
+        expect(find.byType(FlashcardSwipeBack), findsOneWidget);
+      },
+    );
 
     testWidgets('hint timer auto-flips card back to front after 4 seconds', (
       tester,
@@ -789,12 +794,12 @@ void main() {
       await tester.tap(volumeIcon);
       await tester.pump();
 
-      verify(() => mockTtsService.speak('EPHEMERAL')).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockTtsService.speak('EPHEMERAL'),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('back card auto-speaks word after 200ms delay', (
-      tester,
-    ) async {
+    testWidgets('back card auto-speaks word after 200ms delay', (tester) async {
       await pumpScreen(tester);
 
       await tester.tap(find.byType(FlashcardSwipeFront));
@@ -818,86 +823,89 @@ void main() {
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('displays ErrorScaffold and allows retrying on VocabularyError', (
-      tester,
-    ) async {
-      const errorState = VocabularyError('Failed to load flashcard quests');
-      await pumpScreen(tester, state: errorState);
+    testWidgets(
+      'displays ErrorScaffold and allows retrying on VocabularyError',
+      (tester) async {
+        const errorState = VocabularyError('Failed to load flashcard quests');
+        await pumpScreen(tester, state: errorState);
 
-      expect(find.text('Failed to load flashcard quests'), findsOneWidget);
-      expect(find.byIcon(Icons.error_outline_rounded), findsOneWidget);
+        expect(find.text('Failed to load flashcard quests'), findsOneWidget);
+        expect(find.byIcon(Icons.error_outline_rounded), findsOneWidget);
 
-      final retryBtn = find.text('TRY AGAIN');
-      expect(retryBtn, findsOneWidget);
+        final retryBtn = find.text('TRY AGAIN');
+        expect(retryBtn, findsOneWidget);
 
-      await tester.tap(retryBtn);
-      await tester.pump();
+        await tester.tap(retryBtn);
+        await tester.pump();
 
-      verify(
-        () => mockVocabularyBloc.add(
-          const FetchVocabularyQuests(
-            gameType: GameSubtype.flashcards,
-            level: 2,
+        verify(
+          () => mockVocabularyBloc.add(
+            const FetchVocabularyQuests(
+              gameType: GameSubtype.flashcards,
+              level: 2,
+            ),
           ),
-        ),
-      ).called(2); // 1 from initState, 1 from retry
-    });
+        ).called(2); // 1 from initState, 1 from retry
+      },
+    );
 
-    testWidgets('renders GameFeedbackCard on correct answer with CONTINUE button', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders GameFeedbackCard on correct answer with CONTINUE button',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Flip and answer
-      await tester.tap(find.byType(FlashcardSwipeFront));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.tap(find.text('Got It'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        // Flip and answer
+        await tester.tap(find.byType(FlashcardSwipeFront));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text('Got It'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      // Emit loaded state with correct answer
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      vocabularyStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Emit loaded state with correct answer
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        vocabularyStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(continueBtn);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('renders GameFeedbackCard on wrong answer with pedagogical feedback', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders GameFeedbackCard on wrong answer with pedagogical feedback',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Flip and answer wrong
-      await tester.tap(find.byType(FlashcardSwipeFront));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.tap(find.text('Again'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        // Flip and answer wrong
+        await tester.tap(find.byType(FlashcardSwipeFront));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text('Again'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      final wrongState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.incorrect,
-        wrongCount: 1,
-      );
-      vocabularyStreamController.add(wrongState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 1,
+        );
+        vocabularyStreamController.add(wrongState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('TRY AGAIN'), findsWidgets);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('TRY AGAIN'), findsWidgets);
+      },
+    );
 
     testWidgets(
       'tapping CONTINUE on final question with isFinalFailure dispatches NextQuestion and resets card when re-prompted',
@@ -1129,4 +1137,3 @@ void main() {
     });
   });
 }
-

@@ -126,6 +126,7 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -195,7 +196,8 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
                             Icon(
                               Icons.photo_library_rounded,
                               size: 16.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : AppColors.amber900,
@@ -206,7 +208,8 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
                                 state.answerStatus == AnswerStatus.correct
                                     ? context.tr(
                                         'games.kids_family_done',
-                                        fallback: 'Perfect match! Family photo placed!',
+                                        fallback:
+                                            'Perfect match! Family photo placed!',
                                       )
                                     : context.tr(
                                         'games.kids_family_drag',
@@ -217,7 +220,8 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.85)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -340,8 +344,9 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
                                 )
                               : ColorFiltered(
                                   colorFilter: ColorFilter.mode(
-                                    const Color(0xFF78350F)
-                                        .withValues(alpha: 0.2),
+                                    const Color(
+                                      0xFF78350F,
+                                    ).withValues(alpha: 0.2),
                                     BlendMode.srcIn,
                                   ),
                                   child: Text(
@@ -358,8 +363,9 @@ class _KidsFamilyLayoutState extends State<KidsFamilyLayout> {
                                 fontFamily: 'Outfit',
                                 fontSize: 28.sp,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF78350F)
-                                    .withValues(alpha: 0.75),
+                                color: const Color(
+                                  0xFF78350F,
+                                ).withValues(alpha: 0.75),
                               ),
                               textAlign: TextAlign.center,
                               maxLines: 2,

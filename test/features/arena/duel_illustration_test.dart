@@ -68,34 +68,35 @@ void main() {
       expect(semanticsFinder, findsOneWidget);
     });
 
-    testWidgets('renders in AI face-off mode (isOpponentAi: true) with AI semantics and mascot fallback', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        const MaterialApp(
-          home: Scaffold(
-            body: Center(
-              child: SizedBox(
-                width: 360,
-                height: 320,
-                child: DuelIllustration(searching: false, isOpponentAi: true),
+    testWidgets(
+      'renders in AI face-off mode (isOpponentAi: true) with AI semantics and mascot fallback',
+      (tester) async {
+        await tester.pumpWidget(
+          const MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: SizedBox(
+                  width: 360,
+                  height: 320,
+                  child: DuelIllustration(searching: false, isOpponentAi: true),
+                ),
               ),
             ),
           ),
-        ),
-      );
+        );
 
-      expect(find.byType(DuelIllustration), findsOneWidget);
+        expect(find.byType(DuelIllustration), findsOneWidget);
 
-      // Verify Semantics label for AI opponent face-off mode
-      final semanticsFinder = find.byWidgetPredicate(
-        (w) =>
-            w is Semantics &&
-            w.properties.label ==
-                'Illustration: you facing off against the Vowl AI in a 1 vs 1 word duel with a trophy',
-      );
-      expect(semanticsFinder, findsOneWidget);
-    });
+        // Verify Semantics label for AI opponent face-off mode
+        final semanticsFinder = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label ==
+                  'Illustration: you facing off against the Vowl AI in a 1 vs 1 word duel with a trophy',
+        );
+        expect(semanticsFinder, findsOneWidget);
+      },
+    );
 
     testWidgets('respects disableAnimationsOf without throwing or freezing', (
       tester,

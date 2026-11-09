@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_snap/domain/models/word_snap_puzzle.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_assembly_card.dart';
@@ -122,7 +123,8 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
           ),
           description: context.tr(
             'vocabulary.practice_complete_desc',
-            fallback: 'Well done! Keep practicing to strengthen your vocabulary.',
+            fallback:
+                'Well done! Keep practicing to strengthen your vocabulary.',
           ),
           enableDoubleUp: false,
         );
@@ -138,22 +140,33 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   void _grantRewards() {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     final int awardedCoins = isPremium ? 30 : 10;
-    di.sl<UpdateUserCoins>().call(
-      UpdateUserCoinsParams(
-        amountChange: awardedCoins,
-        title: 'Word Snap Challenge',
-        isEarned: true,
-      ),
-    );
 
-    if (di.sl.isRegistered<IncrementXp>()) {
-      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    if (di.sl.isRegistered<UpdateUserRewards>()) {
+      di.sl<UpdateUserRewards>().call(
+        UpdateUserRewardsParams(
+          gameType: 'word_snap',
+          xpIncrease: 5,
+          coinIncrease: awardedCoins,
+          level: widget.level,
+        ),
+      );
+    } else {
+      di.sl<UpdateUserCoins>().call(
+        UpdateUserCoinsParams(
+          amountChange: awardedCoins,
+          title: 'Word Snap Challenge',
+          isEarned: true,
+        ),
+      );
+      if (di.sl.isRegistered<IncrementXp>()) {
+        di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+      }
     }
 
     GameDialogHelper.showCompletion(
       context,
       xp: 5,
-      coins: 10,
+      coins: awardedCoins,
       title: context.tr(
         'vocabulary.word_snap_master',
         fallback: 'WORD SNAP MASTER!',
@@ -202,10 +215,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     }
 
     // Active gameplay: prompt standardized exit confirmation
-    GameDialogHelper.showExitConfirmation(
-      context,
-      onQuit: () => context.pop(),
-    );
+    GameDialogHelper.showExitConfirmation(context, onQuit: () => context.pop());
   }
 
   @override
@@ -243,18 +253,23 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                   _hasError.value
                       ? _buildErrorState(streak)
                       : ((isCompleted && !isPractice) || _isAnswered.value)
-                          ? WordSnapCompletedView(
-                              puzzle: puzzle,
-                              streak: streak,
-                              primaryColor: _kPrimaryColor,
-                              soundService: _soundService,
-                              hapticService: _hapticService,
-                              onPracticeAgain: _startPracticeMode,
-                              isPracticeMode: isPractice,
-                            )
-                          : puzzle == null
-                              ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
-                              : _buildSliverGameContent(puzzle, streak, isDark, isPractice),
+                      ? WordSnapCompletedView(
+                          puzzle: puzzle,
+                          streak: streak,
+                          primaryColor: _kPrimaryColor,
+                          soundService: _soundService,
+                          hapticService: _hapticService,
+                          onPracticeAgain: _startPracticeMode,
+                          isPracticeMode: isPractice,
+                        )
+                      : puzzle == null
+                      ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
+                      : _buildSliverGameContent(
+                          puzzle,
+                          streak,
+                          isDark,
+                          isPractice,
+                        ),
 
                   // Celebratory Confetti Burst Overlay
                   if (showConfetti)
@@ -295,7 +310,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
         if (isPractice)
           SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 4.h),
+              margin: EdgeInsets.symmetric(
+                horizontal: AppSpacing.screen,
+                vertical: 4.h,
+              ),
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: _kPrimaryColor.withValues(alpha: 0.1),
@@ -310,7 +328,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
-                      context.tr('vocabulary.practice_mode', fallback: 'Practice Mode'),
+                      context.tr(
+                        'vocabulary.practice_mode',
+                        fallback: 'Practice Mode',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.5.sp,
@@ -322,7 +343,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                   ScaleButton(
                     onTap: _exitPracticeMode,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.h,
+                      ),
                       child: Text(
                         context.tr('common.exit', fallback: 'Exit'),
                         style: TextStyle(
@@ -368,7 +392,9 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
               // Bespoke Sentence Assembly Card (No Skip button, non-punitive)
               WordSnapAssemblyCard(
-                key: ValueKey('snap_${puzzle.id}_${isPractice}_$_sessionCounter'),
+                key: ValueKey(
+                  'snap_${puzzle.id}_${isPractice}_$_sessionCounter',
+                ),
                 puzzle: puzzle,
                 primaryColor: _kPrimaryColor,
                 onSuccess: _onSuccess,
@@ -391,10 +417,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
     return Column(
       children: [
-        WordSnapTopBar(
-          streak: streak,
-          onBackPressed: () => context.pop(),
-        ),
+        WordSnapTopBar(streak: streak, onBackPressed: () => context.pop()),
         Expanded(
           child: Center(
             child: Padding(

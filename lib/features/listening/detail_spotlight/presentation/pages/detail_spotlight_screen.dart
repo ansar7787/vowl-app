@@ -105,7 +105,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
   }
 
   void _playAudio(ListeningQuest quest) {
-    final rawAudio = quest.textToSpeak ??
+    final rawAudio =
+        quest.textToSpeak ??
         quest.prompt ??
         quest.question ??
         quest.sentence ??
@@ -153,7 +154,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
           ]),
           builder: (context, _) {
             final targetDetail = quest != null
-                ? (quest.targetDetail ?? quest.prompt ?? quest.targetEmotion ?? "Detail")
+                ? (quest.targetDetail ??
+                      quest.prompt ??
+                      quest.targetEmotion ??
+                      "Detail")
                 : "Detail";
 
             return ListeningBaseLayout(
@@ -207,10 +211,9 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.detailSpotlight_instruction',
-                                          fallback:
-                                              quest.instruction.isNotEmpty
-                                                  ? quest.instruction
-                                                  : 'Listen closely and tap the matching detail',
+                                          fallback: quest.instruction.isNotEmpty
+                                              ? quest.instruction
+                                              : 'Listen closely and tap the matching detail',
                                         ),
                                       ),
                                       SizedBox(height: 20.h),

@@ -45,9 +45,7 @@ class WordSnapCompletedView extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: 20.w,
               vertical: 16.h,
-            ).copyWith(
-              bottom: MediaQuery.of(context).padding.bottom + 24.h,
-            ),
+            ).copyWith(bottom: MediaQuery.of(context).padding.bottom + 24.h),
             child: Column(
               children: [
                 SizedBox(height: 12.h),
@@ -59,10 +57,7 @@ class WordSnapCompletedView extends StatelessWidget {
                     gradient: const LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      colors: [
-                        AppColors.emerald500,
-                        Color(0xFF059669),
-                      ],
+                      colors: [AppColors.emerald500, Color(0xFF059669)],
                     ),
                     shape: BoxShape.circle,
                     boxShadow: [
@@ -105,7 +100,8 @@ class WordSnapCompletedView extends StatelessWidget {
                   isPracticeMode
                       ? context.tr(
                           'vocabulary.practice_complete_desc',
-                          fallback: 'Well done! Keep practicing to strengthen your vocabulary.',
+                          fallback:
+                              'Well done! Keep practicing to strengthen your vocabulary.',
                         )
                       : context.tr(
                           'home.come_back_tomorrow',
@@ -125,9 +121,14 @@ class WordSnapCompletedView extends StatelessWidget {
                   SizedBox(height: 18.h),
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 18.w,
+                      vertical: 16.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: isDark ? 0.1 : 0.05),
+                      color: primaryColor.withValues(
+                        alpha: isDark ? 0.1 : 0.05,
+                      ),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
                         color: primaryColor.withValues(alpha: 0.2),
@@ -177,9 +178,13 @@ class WordSnapCompletedView extends StatelessWidget {
                           alignment: WrapAlignment.center,
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            if (puzzle?.partOfSpeech != null && puzzle!.partOfSpeech.isNotEmpty)
+                            if (puzzle?.partOfSpeech != null &&
+                                puzzle!.partOfSpeech.isNotEmpty)
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
                                 decoration: BoxDecoration(
                                   color: primaryColor.withValues(alpha: 0.12),
                                   borderRadius: BorderRadius.circular(8.r),
@@ -195,11 +200,17 @@ class WordSnapCompletedView extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            if (puzzle?.cefrLevel != null && puzzle!.cefrLevel.isNotEmpty)
+                            if (puzzle?.cefrLevel != null &&
+                                puzzle!.cefrLevel.isNotEmpty)
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: AppColors.amber500.withValues(alpha: 0.12),
+                                  color: AppColors.amber500.withValues(
+                                    alpha: 0.12,
+                                  ),
                                   borderRadius: BorderRadius.circular(8.r),
                                 ),
                                 child: Text(
@@ -212,14 +223,17 @@ class WordSnapCompletedView extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            if (puzzle != null && (puzzle!.hasPhonetic || puzzle!.hasSyllables))
+                            if (puzzle != null &&
+                                (puzzle!.hasPhonetic || puzzle!.hasSyllables))
                               Text(
                                 puzzle!.displayPhonetic,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: isDark ? Colors.white60 : Colors.black54,
+                                  color: isDark
+                                      ? Colors.white60
+                                      : Colors.black54,
                                 ),
                               ),
                           ],
@@ -241,7 +255,10 @@ class WordSnapCompletedView extends StatelessWidget {
                         if (puzzle != null && puzzle!.hasExample) ...[
                           SizedBox(height: 10.h),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 8.h,
+                            ),
                             decoration: BoxDecoration(
                               color: isDark
                                   ? Colors.white.withValues(alpha: 0.04)
@@ -266,24 +283,35 @@ class WordSnapCompletedView extends StatelessWidget {
                             spacing: 6.w,
                             runSpacing: 4.h,
                             alignment: WrapAlignment.center,
-                            children: puzzle!.synonyms.map((s) => Container(
-                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.06)
-                                    : Colors.black.withValues(alpha: 0.04),
-                                borderRadius: BorderRadius.circular(6.r),
-                              ),
-                              child: Text(
-                                s,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: isDark ? Colors.white70 : Colors.black87,
-                                ),
-                              ),
-                            )).toList(),
+                            children: puzzle!.synonyms
+                                .map(
+                                  (s) => Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8.w,
+                                      vertical: 3.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.06)
+                                          : Colors.black.withValues(
+                                              alpha: 0.04,
+                                            ),
+                                      borderRadius: BorderRadius.circular(6.r),
+                                    ),
+                                    child: Text(
+                                      s,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w500,
+                                        color: isDark
+                                            ? Colors.white70
+                                            : Colors.black87,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
                           ),
                         ],
                         if (puzzle != null && puzzle!.tags.isNotEmpty) ...[
@@ -292,24 +320,35 @@ class WordSnapCompletedView extends StatelessWidget {
                             spacing: 6.w,
                             runSpacing: 4.h,
                             alignment: WrapAlignment.center,
-                            children: puzzle!.tags.map((tag) => Container(
-                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.04),
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: Text(
-                                '#$tag',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white54 : Colors.black45,
-                                ),
-                              ),
-                            )).toList(),
+                            children: puzzle!.tags
+                                .map(
+                                  (tag) => Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8.w,
+                                      vertical: 3.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(
+                                              alpha: 0.04,
+                                            ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                    ),
+                                    child: Text(
+                                      '#$tag',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isDark
+                                            ? Colors.white54
+                                            : Colors.black45,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
                           ),
                         ],
                       ],
@@ -352,7 +391,9 @@ class WordSnapCompletedView extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: isDark ? Colors.white : AppColors.slate900,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
                                 ),
                               ),
                               SizedBox(height: 2.h),
@@ -365,7 +406,9 @@ class WordSnapCompletedView extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
-                                  color: isDark ? Colors.white54 : Colors.black45,
+                                  color: isDark
+                                      ? Colors.white54
+                                      : Colors.black45,
                                 ),
                               ),
                             ],
@@ -388,7 +431,10 @@ class WordSnapCompletedView extends StatelessWidget {
                     },
                     icon: Icon(Icons.refresh_rounded, color: primaryColor),
                     label: Text(
-                      context.tr('games.practice_another', fallback: 'Practice Another Word'),
+                      context.tr(
+                        'games.practice_another',
+                        fallback: 'Practice Another Word',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
@@ -397,7 +443,10 @@ class WordSnapCompletedView extends StatelessWidget {
                       ),
                     ),
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: primaryColor.withValues(alpha: 0.4), width: 1.5),
+                      side: BorderSide(
+                        color: primaryColor.withValues(alpha: 0.4),
+                        width: 1.5,
+                      ),
                       padding: EdgeInsets.symmetric(vertical: 14.h),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14.r),
@@ -422,7 +471,10 @@ class WordSnapCompletedView extends StatelessWidget {
                       elevation: 0,
                     ),
                     child: Text(
-                      context.tr('games.back_to_home', fallback: 'Back to Home'),
+                      context.tr(
+                        'games.back_to_home',
+                        fallback: 'Back to Home',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,

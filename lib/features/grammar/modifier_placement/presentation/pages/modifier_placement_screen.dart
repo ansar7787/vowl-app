@@ -337,307 +337,362 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
                         final horizontalPadding = isNarrow ? 16.w : 24.w;
 
                         return Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        crossAxisMargin: 2,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
-                              child: Builder(
-                                builder: (context) {
-                                  final maxHeight = constraints.maxHeight;
-                                  final isCompact = maxHeight < 650;
-                                  final ruleText =
-                                      currentQuest.grammarRule ??
-                                      currentQuest.ruleExplanation;
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              crossAxisMargin: 2,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Builder(
+                                      builder: (context) {
+                                        final maxHeight = constraints.maxHeight;
+                                        final isCompact = maxHeight < 650;
+                                        final ruleText =
+                                            currentQuest.grammarRule ??
+                                            currentQuest.ruleExplanation;
 
-                                  return Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(
-                                            height: isCompact ? 6.h : 12.h,
-                                          ),
-                                          ModifierPlacementInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instructionText:
-                                                currentQuest.instruction,
-                                            horizontalMargin: horizontalPadding,
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 8.h : 14.h,
-                                          ),
-
-                                          if (ruleText != null &&
-                                              ruleText.isNotEmpty) ...[
-                                            _buildGrammarRule(
-                                              ruleText,
-                                              theme.primaryColor,
-                                              horizontalPadding,
-                                              isDark: isDark,
-                                            ),
-                                            SizedBox(
-                                              height: isCompact ? 8.h : 12.h,
-                                            ),
-                                          ],
-
-                                          if (currentQuest.modifierType !=
-                                              null) ...[
-                                            _buildModifierTypeChip(
-                                              currentQuest.modifierType!,
-                                              theme.primaryColor,
-                                            ),
-                                            SizedBox(
-                                              height: isCompact ? 8.h : 12.h,
-                                            ),
-                                          ],
-
-                                          // Context Card
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: horizontalPadding,
-                                            ),
-                                            child: Container(
-                                              key: const ValueKey(
-                                                'modifier_context_card',
-                                              ),
-                                              width: double.infinity,
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: isCompact
-                                                    ? 16.w
-                                                    : 20.w,
-                                                vertical: isCompact
-                                                    ? 12.h
-                                                    : 16.h,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: isDark
-                                                    ? Colors.white.withValues(
-                                                        alpha: 0.05,
-                                                      )
-                                                    : Colors.black.withValues(
-                                                        alpha: 0.03,
-                                                      ),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                      isCompact ? 16.r : 20.r,
-                                                    ),
-                                                border: Border.all(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.18),
-                                                  width: 1.2,
-                                                ),
-                                              ),
-                                              child: Text(
-                                                currentQuest.sentence ?? "",
-                                                textAlign: TextAlign.center,
-                                                softWrap: true,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: isCompact
-                                                      ? 14.5.sp
-                                                      : 16.sp,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: isDark
-                                                      ? Colors.white
-                                                      : Colors.black87,
-                                                  height: 1.4,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 12.h : 18.h,
-                                          ),
-
-                                          // Magnetic Arena
-                                          ModifierMagneticArena(
-                                            words: words,
-                                            modifier: modifier,
-                                            targetIndex: _targetIndex.value,
-                                            isAnswered:
-                                                isAnswered ||
-                                                _pendingJigsaw.value,
-                                            isDark: isDark,
-                                            primaryColor: theme.primaryColor,
-                                            onSlotAccepted: (idx) =>
-                                                _targetIndex.value = idx,
-                                            onSlotReset: () =>
-                                                _targetIndex.value = -1,
-                                            isCompact: isCompact,
-                                          ),
-                                        ],
-                                      ),
-
-                                      // Bottom section: Magnet or Confirm Button
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(
-                                            height: isCompact ? 10.h : 16.h,
-                                          ),
-                                          if (!isAnswered &&
-                                              !_pendingJigsaw.value &&
-                                              _targetIndex.value == -1)
-                                            Draggable<String>(
-                                              key: const ValueKey(
-                                                'draggable_modifier_magnet',
-                                              ),
-                                              data: modifier,
-                                              feedback: _buildTactileMagnet(
-                                                modifier,
-                                                theme.primaryColor,
-                                                isDragging: true,
-                                                isCompact: isCompact,
-                                              ),
-                                              childWhenDragging: Opacity(
-                                                opacity: 0.2,
-                                                child: _buildTactileMagnet(
-                                                  modifier,
-                                                  theme.primaryColor,
-                                                  isCompact: isCompact,
-                                                ),
-                                              ),
-                                              child: _buildTactileMagnet(
-                                                modifier,
-                                                theme.primaryColor,
-                                                isCompact: isCompact,
-                                              ),
-                                            ),
-
-                                          if (!isAnswered &&
-                                              !_pendingJigsaw.value &&
-                                              _targetIndex.value != -1) ...[
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: horizontalPadding,
-                                              ),
-                                              child: ScaleButton(
-                                                key: const ValueKey(
-                                                  'finalize_syntax_button',
-                                                ),
-                                                onTap: () => _submitAnswer(
-                                                  currentQuest,
-                                                  modifier,
-                                                  words,
-                                                ),
-                                                child: Container(
-                                                  width: double.infinity,
+                                        return Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(
                                                   height: isCompact
-                                                      ? 48.h
-                                                      : 54.h,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                          isCompact
-                                                              ? 14.r
-                                                              : 18.r,
-                                                        ),
-                                                    gradient: LinearGradient(
-                                                      colors: [
-                                                        theme.primaryColor,
-                                                        theme.primaryColor
-                                                            .withValues(
-                                                              alpha: 0.85,
-                                                            ),
-                                                      ],
+                                                      ? 6.h
+                                                      : 12.h,
+                                                ),
+                                                ModifierPlacementInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instructionText:
+                                                      currentQuest.instruction,
+                                                  horizontalMargin:
+                                                      horizontalPadding,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 8.h
+                                                      : 14.h,
+                                                ),
+
+                                                if (ruleText != null &&
+                                                    ruleText.isNotEmpty) ...[
+                                                  _buildGrammarRule(
+                                                    ruleText,
+                                                    theme.primaryColor,
+                                                    horizontalPadding,
+                                                    isDark: isDark,
+                                                  ),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 12.h,
+                                                  ),
+                                                ],
+
+                                                if (currentQuest.modifierType !=
+                                                    null) ...[
+                                                  _buildModifierTypeChip(
+                                                    currentQuest.modifierType!,
+                                                    theme.primaryColor,
+                                                  ),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 12.h,
+                                                  ),
+                                                ],
+
+                                                // Context Card
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal:
+                                                        horizontalPadding,
+                                                  ),
+                                                  child: Container(
+                                                    key: const ValueKey(
+                                                      'modifier_context_card',
                                                     ),
-                                                    boxShadow: [
-                                                      BoxShadow(
+                                                    width: double.infinity,
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: isCompact
+                                                              ? 16.w
+                                                              : 20.w,
+                                                          vertical: isCompact
+                                                              ? 12.h
+                                                              : 16.h,
+                                                        ),
+                                                    decoration: BoxDecoration(
+                                                      color: isDark
+                                                          ? Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.05,
+                                                                )
+                                                          : Colors.black
+                                                                .withValues(
+                                                                  alpha: 0.03,
+                                                                ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            isCompact
+                                                                ? 16.r
+                                                                : 20.r,
+                                                          ),
+                                                      border: Border.all(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.3,
+                                                              alpha: 0.18,
                                                             ),
-                                                        blurRadius: 16,
-                                                        offset: const Offset(
-                                                          0,
-                                                          6,
-                                                        ),
+                                                        width: 1.2,
                                                       ),
-                                                    ],
-                                                  ),
-                                                  child: Center(
+                                                    ),
                                                     child: Text(
-                                                      "Confirm Placement",
+                                                      currentQuest.sentence ??
+                                                          "",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      softWrap: true,
                                                       style: TextStyle(
                                                         fontFamily: 'Outfit',
                                                         fontSize: isCompact
-                                                            ? 14.sp
-                                                            : 15.5.sp,
+                                                            ? 14.5.sp
+                                                            : 16.sp,
                                                         fontWeight:
-                                                            FontWeight.w700,
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.6,
+                                                            FontWeight.w500,
+                                                        color: isDark
+                                                            ? Colors.white
+                                                            : Colors.black87,
+                                                        height: 1.4,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 18.h,
+                                                ),
+
+                                                // Magnetic Arena
+                                                ModifierMagneticArena(
+                                                  words: words,
+                                                  modifier: modifier,
+                                                  targetIndex:
+                                                      _targetIndex.value,
+                                                  isAnswered:
+                                                      isAnswered ||
+                                                      _pendingJigsaw.value,
+                                                  isDark: isDark,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  onSlotAccepted: (idx) =>
+                                                      _targetIndex.value = idx,
+                                                  onSlotReset: () =>
+                                                      _targetIndex.value = -1,
+                                                  isCompact: isCompact,
+                                                ),
+                                              ],
+                                            ),
+
+                                            // Bottom section: Magnet or Confirm Button
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 10.h
+                                                      : 16.h,
+                                                ),
+                                                if (!isAnswered &&
+                                                    !_pendingJigsaw.value &&
+                                                    _targetIndex.value == -1)
+                                                  Draggable<String>(
+                                                    key: const ValueKey(
+                                                      'draggable_modifier_magnet',
+                                                    ),
+                                                    data: modifier,
+                                                    feedback:
+                                                        _buildTactileMagnet(
+                                                          modifier,
+                                                          theme.primaryColor,
+                                                          isDragging: true,
+                                                          isCompact: isCompact,
+                                                        ),
+                                                    childWhenDragging: Opacity(
+                                                      opacity: 0.2,
+                                                      child:
+                                                          _buildTactileMagnet(
+                                                            modifier,
+                                                            theme.primaryColor,
+                                                            isCompact:
+                                                                isCompact,
+                                                          ),
+                                                    ),
+                                                    child: _buildTactileMagnet(
+                                                      modifier,
+                                                      theme.primaryColor,
+                                                      isCompact: isCompact,
+                                                    ),
+                                                  ),
+
+                                                if (!isAnswered &&
+                                                    !_pendingJigsaw.value &&
+                                                    _targetIndex.value !=
+                                                        -1) ...[
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal:
+                                                              horizontalPadding,
+                                                        ),
+                                                    child: ScaleButton(
+                                                      key: const ValueKey(
+                                                        'finalize_syntax_button',
+                                                      ),
+                                                      onTap: () =>
+                                                          _submitAnswer(
+                                                            currentQuest,
+                                                            modifier,
+                                                            words,
+                                                          ),
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: isCompact
+                                                            ? 48.h
+                                                            : 54.h,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                isCompact
+                                                                    ? 14.r
+                                                                    : 18.r,
+                                                              ),
+                                                          gradient: LinearGradient(
+                                                            colors: [
+                                                              theme
+                                                                  .primaryColor,
+                                                              theme.primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.85,
+                                                                  ),
+                                                            ],
+                                                          ),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.3,
+                                                                  ),
+                                                              blurRadius: 16,
+                                                              offset:
+                                                                  const Offset(
+                                                                    0,
+                                                                    6,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            "Confirm Placement",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 14.sp
+                                                                  : 15.5.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700,
+                                                              color:
+                                                                  Colors.white,
+                                                              letterSpacing:
+                                                                  0.6,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 24.h,
+                                                ),
+                                              ],
                                             ),
                                           ],
-                                          SizedBox(
-                                            height: isCompact ? 12.h : 24.h,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
-                            ),
-                            if (_pendingJigsaw.value &&
-                                !isAnswered &&
-                                cleanTargetSentence.isNotEmpty)
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: horizontalPadding,
-                                    vertical: 8.h,
-                                  ),
-                                  child: TypeToConfirmOverlay(
-                                    key: const ValueKey(
-                                      'modifier_type_overlay',
+                                        );
+                                      },
                                     ),
-                                    expectedText: cleanTargetSentence,
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () =>
-                                        _submitFinalAnswer(true, currentQuest),
-                                    onSkipped: () =>
-                                        _submitFinalAnswer(false, currentQuest),
-                                    isPositioned: false,
-                                    allowSkip: true,
-                                    displayText:
-                                        "Type the complete sentence to confirm",
                                   ),
-                                ),
-                              ),
-                            SliverToBoxAdapter(
-                              child: SizedBox(
-                                height:
-                                    MediaQuery.of(context).viewInsets.bottom > 0
-                                    ? MediaQuery.of(context).viewInsets.bottom +
-                                          40.h
-                                    : 60.h,
+                                  if (_pendingJigsaw.value &&
+                                      !isAnswered &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: horizontalPadding,
+                                          vertical: 8.h,
+                                        ),
+                                        child: TypeToConfirmOverlay(
+                                          key: const ValueKey(
+                                            'modifier_type_overlay',
+                                          ),
+                                          expectedText: cleanTargetSentence,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _submitFinalAnswer(
+                                            true,
+                                            currentQuest,
+                                          ),
+                                          onSkipped: () => _submitFinalAnswer(
+                                            false,
+                                            currentQuest,
+                                          ),
+                                          isPositioned: false,
+                                          allowSkip: true,
+                                          displayText:
+                                              "Type the complete sentence to confirm",
+                                        ),
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
+                        );
+                      },
+                    ),
             );
           },
         );

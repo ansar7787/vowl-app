@@ -73,7 +73,8 @@ void main() {
     options: ['Pineapple', 'Mango', 'Papaya', 'Coconut'],
     hint: 'It wears a crown of pointed green leaves.',
     emoji: '🍍',
-    explanation: 'Pineapples are tropical fruits topped with a stiff leafy rosette.',
+    explanation:
+        'Pineapples are tropical fruits topped with a stiff leafy rosette.',
     funFact: 'A pineapple takes nearly three years to grow and mature.',
   );
 
@@ -109,8 +110,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedFruitsState);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -122,14 +124,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -137,29 +142,44 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -260,18 +280,17 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in dark mode without contrast issues',
-      (tester) async {
-        await pumpFruitsLayout(tester, themeMode: ThemeMode.dark);
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
+      await pumpFruitsLayout(tester, themeMode: ThemeMode.dark);
 
-        expect(
-          find.byKey(const Key('kids_fruits_awning_target')),
-          findsOneWidget,
-        );
-        expect(find.text('Banana'), findsOneWidget);
-      },
-    );
+      expect(
+        find.byKey(const Key('kids_fruits_awning_target')),
+        findsOneWidget,
+      );
+      expect(find.text('Banana'), findsOneWidget);
+    });
   });
 
   group('KidsFruitsLayout - Audio Scaffolding', () {
@@ -286,10 +305,7 @@ void main() {
         await tester.pump();
 
         verify(
-          () => mockTTSService.speak(
-            testFruitsQuest.instruction,
-            force: true,
-          ),
+          () => mockTTSService.speak(testFruitsQuest.instruction, force: true),
         ).called(1);
         verify(() => mockHapticService.selection()).called(1);
       },
@@ -300,16 +316,11 @@ void main() {
       (tester) async {
         await pumpFruitsLayout(tester);
 
-        await tester.tap(
-          find.byKey(const Key('kids_fruits_awning_target')),
-        );
+        await tester.tap(find.byKey(const Key('kids_fruits_awning_target')));
         await tester.pump();
 
         verify(
-          () => mockTTSService.speak(
-            testFruitsQuest.instruction,
-            force: true,
-          ),
+          () => mockTTSService.speak(testFruitsQuest.instruction, force: true),
         ).called(1);
       },
     );
@@ -319,18 +330,12 @@ void main() {
       (tester) async {
         await pumpFruitsLayout(tester);
 
-        await tester.tap(
-          find.byKey(const Key('kids_fruits_pronounce_0')),
-        );
+        await tester.tap(find.byKey(const Key('kids_fruits_pronounce_0')));
         await tester.pump();
 
-        verify(
-          () => mockTTSService.speak('Apple', force: true),
-        ).called(1);
+        verify(() => mockTTSService.speak('Apple', force: true)).called(1);
         verify(() => mockHapticService.selection()).called(1);
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
       },
     );
   });
@@ -344,9 +349,7 @@ void main() {
         await tester.tap(find.byKey(const Key('kids_fruits_option_1')));
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );
@@ -359,9 +362,7 @@ void main() {
         await tester.tap(find.byKey(const Key('kids_fruits_option_0')));
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(false)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
         verify(() => mockHapticService.error()).called(1);
         verify(() => mockTTSService.speak('Apple')).called(1);
       },
@@ -382,7 +383,9 @@ void main() {
         expect(draggableFinder, findsOneWidget);
         expect(dragTargetFinder, findsOneWidget);
 
-        final gesture = await tester.startGesture(tester.getCenter(draggableFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
         await tester.pump();
 
         await gesture.moveTo(tester.getCenter(dragTargetFinder));
@@ -391,9 +394,7 @@ void main() {
         await gesture.up();
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );
@@ -413,7 +414,9 @@ void main() {
         expect(draggableFinder, findsOneWidget);
         expect(dragTargetFinder, findsOneWidget);
 
-        final gesture = await tester.startGesture(tester.getCenter(draggableFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
         await tester.pump();
 
         await gesture.moveTo(tester.getCenter(dragTargetFinder));
@@ -422,78 +425,75 @@ void main() {
         await gesture.up();
         await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(false)),
-        ).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
         verify(() => mockHapticService.error()).called(1);
       },
     );
 
-    testWidgets(
-      'locks interaction when quest is already answered',
-      (tester) async {
-        final answeredState = testLoadedFruitsState.copyWith(
-          answerStatus: AnswerStatus.correct,
-        );
+    testWidgets('locks interaction when quest is already answered', (
+      tester,
+    ) async {
+      final answeredState = testLoadedFruitsState.copyWith(
+        answerStatus: AnswerStatus.correct,
+      );
 
-        await pumpFruitsLayout(tester, state: answeredState);
+      await pumpFruitsLayout(tester, state: answeredState);
 
-        await tester.tap(
-          find.byKey(const Key('kids_fruits_option_1')),
-          warnIfMissed: false,
-        );
-        await tester.pump();
+      await tester.tap(
+        find.byKey(const Key('kids_fruits_option_1')),
+        warnIfMissed: false,
+      );
+      await tester.pump();
 
-        verifyNever(
-          () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-        );
-      },
-    );
+      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+    });
   });
 
-  group('KidsFruitsLayout - Small Screen (320dp) & Complex Curriculum Safety', () {
-    testWidgets(
-      'renders 4 fruit options on compact 320dp width without RenderFlex overflow',
-      (tester) async {
-        await pumpFruitsLayout(
-          tester,
-          state: testLoadedFourOptionsState,
-          level: 30,
-          width: 320,
-          height: 568,
-        );
+  group(
+    'KidsFruitsLayout - Small Screen (320dp) & Complex Curriculum Safety',
+    () {
+      testWidgets(
+        'renders 4 fruit options on compact 320dp width without RenderFlex overflow',
+        (tester) async {
+          await pumpFruitsLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 30,
+            width: 320,
+            height: 568,
+          );
 
-        expect(tester.takeException(), isNull);
-        expect(
-          find.byKey(const Key('kids_fruits_awning_target')),
-          findsOneWidget,
-        );
-        expect(find.byKey(const Key('kids_fruits_option_0')), findsOneWidget);
-        expect(find.byKey(const Key('kids_fruits_option_1')), findsOneWidget);
-        expect(find.byKey(const Key('kids_fruits_option_2')), findsOneWidget);
-        expect(find.byKey(const Key('kids_fruits_option_3')), findsOneWidget);
-      },
-    );
+          expect(tester.takeException(), isNull);
+          expect(
+            find.byKey(const Key('kids_fruits_awning_target')),
+            findsOneWidget,
+          );
+          expect(find.byKey(const Key('kids_fruits_option_0')), findsOneWidget);
+          expect(find.byKey(const Key('kids_fruits_option_1')), findsOneWidget);
+          expect(find.byKey(const Key('kids_fruits_option_2')), findsOneWidget);
+          expect(find.byKey(const Key('kids_fruits_option_3')), findsOneWidget);
+        },
+      );
 
-    testWidgets(
-      'tapping option on 320dp screen still triggers correct answer flow',
-      (tester) async {
-        await pumpFruitsLayout(
-          tester,
-          state: testLoadedFourOptionsState,
-          level: 30,
-          width: 320,
-          height: 568,
-        );
+      testWidgets(
+        'tapping option on 320dp screen still triggers correct answer flow',
+        (tester) async {
+          await pumpFruitsLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 30,
+            width: 320,
+            height: 568,
+          );
 
-        await tester.tap(find.byKey(const Key('kids_fruits_option_0')));
-        await tester.pump();
+          await tester.tap(find.byKey(const Key('kids_fruits_option_0')));
+          await tester.pump();
 
-        verify(
-          () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
-        ).called(1);
-      },
-    );
-  });
+          verify(
+            () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
+          ).called(1);
+        },
+      );
+    },
+  );
 }
-

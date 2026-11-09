@@ -159,8 +159,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -193,8 +194,12 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playUrl(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(any(), pauseMarkers: any(named: 'pauseMarkers')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(
+        any(),
+        pauseMarkers: any(named: 'pauseMarkers'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
@@ -205,12 +210,15 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
-      final fallback = invocation.namedArguments[const Symbol('fallback')] as String?;
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
+      final fallback =
+          invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
       return fallback ?? key;
     });
@@ -221,14 +229,30 @@ void main() {
       'has_seen_briefing_detailSpotlight': true,
     });
 
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
-    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
-    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
-    if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<AnalyticsService>()) {
+      di.sl.unregister<AnalyticsService>();
+    }
+    if (di.sl.isRegistered<AdService>()) {
+      di.sl.unregister<AdService>();
+    }
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      di.sl.unregister<NetworkInfo>();
+    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
@@ -300,40 +324,69 @@ void main() {
   }
 
   group('DetailSpotlightScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, emitter, prompt, and dark field', (tester) async {
+    testWidgets(
+      '1. Initial layout renders instruction, timer, emitter, prompt, and dark field',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
+
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const Key('detail_spotlight_instruction')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('detail_spotlight_emitter')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('detail_spotlight_prompt')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('detail_spotlight_dark_field')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('2. Initial prompt displays scan text before answered', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_instruction')), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_emitter')), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_prompt')), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_dark_field')), findsOneWidget);
-    });
-
-    testWidgets('2. Initial prompt displays scan text before answered', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
-
-      expect(find.text('Drag the spotlight to find the answer'), findsOneWidget);
+      expect(
+        find.text('Drag the spotlight to find the answer'),
+        findsOneWidget,
+      );
       expect(find.textContaining('Answer:'), findsNothing);
     });
 
-    testWidgets('3. Emitter button tap triggers TTS playback and selection haptic', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '3. Emitter button tap triggers TTS playback and selection haptic',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      final emitterBtn = find.byKey(const Key('detail_spotlight_emitter_btn'));
-      expect(emitterBtn, findsOneWidget);
+        final emitterBtn = find.byKey(
+          const Key('detail_spotlight_emitter_btn'),
+        );
+        expect(emitterBtn, findsOneWidget);
 
-      await tester.tap(emitterBtn);
-      await tester.pump();
+        await tester.tap(emitterBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        'The golden key was hidden inside the wooden chest.',
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(
+            'The golden key was hidden inside the wooden chest.',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (tester) async {
+    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (
+      tester,
+    ) async {
       final urlState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -346,41 +399,58 @@ void main() {
       await tester.tap(emitterBtn);
       await tester.pump();
 
-      verify(() => mockSoundService.playUrl('https://example.com/audio/secret_map.mp3')).called(1);
+      verify(
+        () => mockSoundService.playUrl(
+          'https://example.com/audio/secret_map.mp3',
+        ),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('5. Audio fallback cascade uses prompt when textToSpeak is missing', (tester) async {
-      final fallbackState = ListeningLoaded(
-        quests: const [sampleQuest3],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+    testWidgets(
+      '5. Audio fallback cascade uses prompt when textToSpeak is missing',
+      (tester) async {
+        final fallbackState = ListeningLoaded(
+          quests: const [sampleQuest3],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      await pumpDetailSpotlightScreen(tester, state: fallbackState);
+        await pumpDetailSpotlightScreen(tester, state: fallbackState);
 
-      final emitterBtn = find.byKey(const Key('detail_spotlight_emitter_btn'));
-      await tester.tap(emitterBtn);
-      await tester.pump();
+        final emitterBtn = find.byKey(
+          const Key('detail_spotlight_emitter_btn'),
+        );
+        await tester.tap(emitterBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('iron shield', pauseMarkers: any(named: 'pauseMarkers'))).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(
+            'iron shield',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('6. Emitter displays volume icon initially and emoji when answered correctly', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '6. Emitter displays volume icon initially and emoji when answered correctly',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_emoji')), findsNothing);
+        expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
+        expect(find.byKey(const Key('detail_spotlight_emoji')), findsNothing);
 
-      // Select correct answer
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Select correct answer
+        await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byKey(const Key('detail_spotlight_emoji')), findsOneWidget);
-      expect(find.text('🔑'), findsOneWidget);
-    });
+        expect(find.byKey(const Key('detail_spotlight_emoji')), findsOneWidget);
+        expect(find.text('🔑'), findsOneWidget);
+      },
+    );
 
     testWidgets('7. Dark field displays all 4 option tiles', (tester) async {
       await pumpDetailSpotlightScreen(tester);
@@ -396,13 +466,19 @@ void main() {
       expect(find.text('brass bell'), findsOneWidget);
     });
 
-    testWidgets('8. Dragging in dark field updates spotlight position', (tester) async {
+    testWidgets('8. Dragging in dark field updates spotlight position', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
-      final darkFieldFinder = find.byKey(const Key('detail_spotlight_dark_field'));
+      final darkFieldFinder = find.byKey(
+        const Key('detail_spotlight_dark_field'),
+      );
       expect(darkFieldFinder, findsOneWidget);
 
-      final gesture = await tester.startGesture(tester.getCenter(darkFieldFinder));
+      final gesture = await tester.startGesture(
+        tester.getCenter(darkFieldFinder),
+      );
       await gesture.moveBy(const Offset(40, -30));
       await tester.pump();
       await gesture.up();
@@ -411,14 +487,20 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('9. Moving spotlight over an option triggers light haptic', (tester) async {
+    testWidgets('9. Moving spotlight over an option triggers light haptic', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
-      final darkFieldFinder = find.byKey(const Key('detail_spotlight_dark_field'));
+      final darkFieldFinder = find.byKey(
+        const Key('detail_spotlight_dark_field'),
+      );
       final topLeft = tester.getTopLeft(darkFieldFinder);
 
       // Drag to top-left tile area (around tile 0: x=16, y=40)
-      final gesture = await tester.startGesture(tester.getCenter(darkFieldFinder));
+      final gesture = await tester.startGesture(
+        tester.getCenter(darkFieldFinder),
+      );
       await gesture.moveTo(topLeft + const Offset(50, 80));
       await tester.pump();
       await gesture.up();
@@ -427,53 +509,68 @@ void main() {
       verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('10. Tapping correct option tile submits correct answer, plays sound, and triggers haptic', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '10. Tapping correct option tile submits correct answer, plays sound, and triggers haptic',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      final correctTile = find.byKey(const Key('detail_spotlight_tile_1'));
-      expect(correctTile, findsOneWidget);
+        final correctTile = find.byKey(const Key('detail_spotlight_tile_1'));
+        expect(correctTile, findsOneWidget);
 
-      await tester.tap(correctTile);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(correctTile);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
-    testWidgets('11. Tapping correct option tile stops the SpeedChallengeTimer', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '11. Tapping correct option tile stops the SpeedChallengeTimer',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
-      expect(timerState.remainingSeconds, greaterThan(0));
+        final timerState = tester.state<SpeedChallengeTimerState>(
+          find.byType(SpeedChallengeTimer),
+        );
+        expect(timerState.remainingSeconds, greaterThan(0));
 
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(timerState.remainingSeconds, greaterThan(0));
-      expect(tester.takeException(), isNull);
-    });
+        expect(timerState.remainingSeconds, greaterThan(0));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('12. Tapping wrong option tile submits wrong answer with userAnswer', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '12. Tapping wrong option tile submits wrong answer with userAnswer',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      final wrongTile = find.byKey(const Key('detail_spotlight_tile_0'));
-      expect(wrongTile, findsOneWidget);
+        final wrongTile = find.byKey(const Key('detail_spotlight_tile_0'));
+        expect(wrongTile, findsOneWidget);
 
-      await tester.tap(wrongTile);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(wrongTile);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('13. Tapping wrong option tile stops the SpeedChallengeTimer', (tester) async {
+    testWidgets('13. Tapping wrong option tile stops the SpeedChallengeTimer', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
       await tester.tap(find.byKey(const Key('detail_spotlight_tile_0')));
@@ -483,7 +580,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('14. Answer lockout: secondary taps on options are ignored', (tester) async {
+    testWidgets('14. Answer lockout: secondary taps on options are ignored', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
       // Tap first tile
@@ -494,27 +593,39 @@ void main() {
       clearInteractions(mockListeningBloc);
 
       // Tap second tile
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_2')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const Key('detail_spotlight_tile_2')),
+        warnIfMissed: false,
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
       verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('15. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '15. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final SpeedChallengeTimer timerWidget = tester.widget(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('16. In answered state, prompt reveals target detail', (tester) async {
+    testWidgets('16. In answered state, prompt reveals target detail', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
       await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
@@ -524,7 +635,9 @@ void main() {
       expect(find.text('Answer: golden key'), findsOneWidget);
     });
 
-    testWidgets('17. In answered state, correct option tile is highlighted', (tester) async {
+    testWidgets('17. In answered state, correct option tile is highlighted', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
       await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
@@ -536,61 +649,79 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('18. In answered state with wrong choice, chosen tile shows wrong state', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '18. In answered state with wrong choice, chosen tile shows wrong state',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final wrongTileFinder = find.byKey(const Key('detail_spotlight_tile_0'));
-      expect(wrongTileFinder, findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('19. Continue button in answered state dispatches NextQuestion event', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
-
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      final continueFinder = find.text('CONTINUE');
-      if (continueFinder.evaluate().isNotEmpty) {
-        await tester.tap(continueFinder.first);
+        await tester.tap(find.byKey(const Key('detail_spotlight_tile_0')));
         await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-        verify(() => mockListeningBloc.add(any(that: isA<NextQuestion>()))).called(1);
-      }
-    });
+        final wrongTileFinder = find.byKey(
+          const Key('detail_spotlight_tile_0'),
+        );
+        expect(wrongTileFinder, findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('20. Question transition clears selected indices and restarts timer without crash', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+    testWidgets(
+      '19. Continue button in answered state dispatches NextQuestion event',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final nextState = const ListeningLoaded(
-        quests: [sampleQuest1, sampleQuest2, sampleQuest3],
-        currentIndex: 1,
-        livesRemaining: 3,
-      );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        clearInteractions(mockListeningBloc);
 
-      expect(find.text('compass'), findsOneWidget);
-      expect(find.text('secret map'), findsOneWidget);
-      expect(find.text('Drag the spotlight to find the answer'), findsOneWidget);
+        final continueFinder = find.text('CONTINUE');
+        if (continueFinder.evaluate().isNotEmpty) {
+          await tester.tap(continueFinder.first);
+          await tester.pump();
 
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+          verify(
+            () => mockListeningBloc.add(any(that: isA<NextQuestion>())),
+          ).called(1);
+        }
+      },
+    );
 
-    testWidgets('21. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets(
+      '20. Question transition clears selected indices and restarts timer without crash',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
+
+        await tester.tap(find.byKey(const Key('detail_spotlight_tile_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final nextState = const ListeningLoaded(
+          quests: [sampleQuest1, sampleQuest2, sampleQuest3],
+          currentIndex: 1,
+          livesRemaining: 3,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('compass'), findsOneWidget);
+        expect(find.text('secret map'), findsOneWidget);
+        expect(
+          find.text('Drag the spotlight to find the answer'),
+          findsOneWidget,
+        );
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('21. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester);
 
       clearInteractions(mockListeningBloc);
@@ -602,68 +733,81 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1100));
 
-      verify(() => mockListeningBloc.add(any(that: isA<ListeningHintUsed>()))).called(1);
+      verify(
+        () => mockListeningBloc.add(any(that: isA<ListeningHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('22. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpDetailSpotlightScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '22. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpDetailSpotlightScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('detail_spotlight_emitter')), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byKey(const Key('detail_spotlight_emitter')), findsNothing);
+      },
+    );
 
-    testWidgets('23. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpDetailSpotlightScreen(
-        tester,
-        state: const ListeningGameComplete(
-          xpEarned: 100,
-          coinsEarned: 20,
-          questCount: 5,
-        ),
-      );
+    testWidgets(
+      '23. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpDetailSpotlightScreen(
+          tester,
+          state: const ListeningGameComplete(
+            xpEarned: 100,
+            coinsEarned: 20,
+            questCount: 5,
+          ),
+        );
 
-      expect(find.byType(DetailSpotlightScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(DetailSpotlightScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('24. Game over state renders with zero lives', (tester) async {
       await pumpDetailSpotlightScreen(
         tester,
-        state: const ListeningGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-        ),
+        state: const ListeningGameOver(quests: [sampleQuest1], currentIndex: 0),
       );
 
       expect(find.byType(DetailSpotlightScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('25. Level 1 briefing dialog displays SPOTLIGHT SEARCH and dismisses on START SEARCH tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_detailSpotlight': false,
-      });
+    testWidgets(
+      '25. Level 1 briefing dialog displays SPOTLIGHT SEARCH and dismisses on START SEARCH tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_detailSpotlight': false,
+        });
 
-      await pumpDetailSpotlightScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpDetailSpotlightScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('SPOTLIGHT SEARCH'), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('SPOTLIGHT SEARCH'), findsOneWidget);
 
-      final actionBtn = find.text('START SEARCH');
-      expect(actionBtn, findsOneWidget);
+        final actionBtn = find.text('START SEARCH');
+        expect(actionBtn, findsOneWidget);
 
-      await tester.tap(actionBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('26. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('26. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpDetailSpotlightScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(DetailSpotlightScreen), findsOneWidget);
 
@@ -671,110 +815,131 @@ void main() {
       expect(find.byType(DetailSpotlightScreen), findsOneWidget);
     });
 
-    testWidgets('27. Small mobile screen (320x568) renders with zero overflow', (tester) async {
-      await pumpDetailSpotlightScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+    testWidgets(
+      '27. Small mobile screen (320x568) renders with zero overflow',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester, size: const Size(320, 568));
+
+        expect(find.byType(DetailSpotlightScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('28. Tablet viewport (768x1024) renders with zero overflow', (
+      tester,
+    ) async {
+      await pumpDetailSpotlightScreen(tester, size: const Size(768, 1024));
 
       expect(find.byType(DetailSpotlightScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('28. Tablet viewport (768x1024) renders with zero overflow', (tester) async {
-      await pumpDetailSpotlightScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
+    testWidgets(
+      '29. Reduced motion mode suppresses animated flare in dark field',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester, reduceMotion: true);
 
-      expect(find.byType(DetailSpotlightScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(DetailSpotlightDarkField), findsOneWidget);
+        expect(find.byIcon(Icons.flare_rounded), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('29. Reduced motion mode suppresses animated flare in dark field', (tester) async {
-      await pumpDetailSpotlightScreen(tester, reduceMotion: true);
+    testWidgets(
+      '30. Accessibility semantics are present on emitter and option tiles',
+      (tester) async {
+        await pumpDetailSpotlightScreen(tester);
 
-      expect(find.byType(DetailSpotlightDarkField), findsOneWidget);
-      expect(find.byIcon(Icons.flare_rounded), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        final emitterSemantics = find.bySemanticsLabel('Play audio detail');
+        expect(emitterSemantics, findsOneWidget);
 
-    testWidgets('30. Accessibility semantics are present on emitter and option tiles', (tester) async {
-      await pumpDetailSpotlightScreen(tester);
+        final option0Semantics = find.bySemanticsLabel('silver coin');
+        expect(option0Semantics, findsOneWidget);
 
-      final emitterSemantics = find.bySemanticsLabel('Play audio detail');
-      expect(emitterSemantics, findsOneWidget);
+        final option1Semantics = find.bySemanticsLabel('golden key');
+        expect(option1Semantics, findsOneWidget);
+      },
+    );
 
-      final option0Semantics = find.bySemanticsLabel('silver coin');
-      expect(option0Semantics, findsOneWidget);
+    testWidgets(
+      '31. Multi-line instruction centers cleanly and does not overflow',
+      (tester) async {
+        const longInstructionQuest = ListeningQuest(
+          id: 'ds_long_instruction',
+          instruction:
+              'Clear the glass carefully, search through the dark field, and tap the exact place where they eat lunch together.',
+          difficulty: 1,
+          subtype: GameSubtype.detailSpotlight,
+          prompt: 'garden',
+          targetDetail: 'garden',
+          options: ['kitchen', 'garden', 'balcony', 'bedroom'],
+          correctAnswerIndex: 1,
+          correctAnswer: 'garden',
+        );
 
-      final option1Semantics = find.bySemanticsLabel('golden key');
-      expect(option1Semantics, findsOneWidget);
-    });
+        final longInstructionState = ListeningLoaded(
+          quests: const [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-    testWidgets('31. Multi-line instruction centers cleanly and does not overflow', (tester) async {
-      const longInstructionQuest = ListeningQuest(
-        id: 'ds_long_instruction',
-        instruction: 'Clear the glass carefully, search through the dark field, and tap the exact place where they eat lunch together.',
-        difficulty: 1,
-        subtype: GameSubtype.detailSpotlight,
-        prompt: 'garden',
-        targetDetail: 'garden',
-        options: ['kitchen', 'garden', 'balcony', 'bedroom'],
-        correctAnswerIndex: 1,
-        correctAnswer: 'garden',
-      );
+        await pumpDetailSpotlightScreen(
+          tester,
+          state: longInstructionState,
+          size: const Size(320, 568),
+        );
 
-      final longInstructionState = ListeningLoaded(
-        quests: const [longInstructionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
+        final instructionFinder = find.byKey(
+          const Key('detail_spotlight_instruction'),
+        );
+        expect(instructionFinder, findsOneWidget);
 
-      await pumpDetailSpotlightScreen(tester, state: longInstructionState, size: const Size(320, 568));
+        final textWidget = tester.widget<Text>(
+          find.descendant(of: instructionFinder, matching: find.byType(Text)),
+        );
+        expect(textWidget.textAlign, TextAlign.center);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-      final instructionFinder = find.byKey(const Key('detail_spotlight_instruction'));
-      expect(instructionFinder, findsOneWidget);
+    testWidgets(
+      '32. Long card option texts scale cleanly without overflow or ellipses',
+      (tester) async {
+        const longOptionsQuest = ListeningQuest(
+          id: 'ds_long_options',
+          instruction: 'Identify the object.',
+          difficulty: 1,
+          subtype: GameSubtype.detailSpotlight,
+          prompt: 'inside the vintage wooden chest',
+          targetDetail: 'inside the vintage wooden chest',
+          options: [
+            'underneath the ancient stone staircase',
+            'inside the vintage wooden chest',
+            'behind the tall velvet curtains',
+            'above the crackling stone fireplace',
+          ],
+          correctAnswerIndex: 1,
+          correctAnswer: 'inside the vintage wooden chest',
+        );
 
-      final textWidget = tester.widget<Text>(
-        find.descendant(of: instructionFinder, matching: find.byType(Text)),
-      );
-      expect(textWidget.textAlign, TextAlign.center);
-      expect(tester.takeException(), isNull);
-    });
+        final longOptionsState = ListeningLoaded(
+          quests: const [longOptionsQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-    testWidgets('32. Long card option texts scale cleanly without overflow or ellipses', (tester) async {
-      const longOptionsQuest = ListeningQuest(
-        id: 'ds_long_options',
-        instruction: 'Identify the object.',
-        difficulty: 1,
-        subtype: GameSubtype.detailSpotlight,
-        prompt: 'inside the vintage wooden chest',
-        targetDetail: 'inside the vintage wooden chest',
-        options: [
-          'underneath the ancient stone staircase',
-          'inside the vintage wooden chest',
-          'behind the tall velvet curtains',
-          'above the crackling stone fireplace',
-        ],
-        correctAnswerIndex: 1,
-        correctAnswer: 'inside the vintage wooden chest',
-      );
+        await pumpDetailSpotlightScreen(
+          tester,
+          state: longOptionsState,
+          size: const Size(320, 568),
+        );
 
-      final longOptionsState = ListeningLoaded(
-        quests: const [longOptionsQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-      );
-
-      await pumpDetailSpotlightScreen(tester, state: longOptionsState, size: const Size(320, 568));
-
-      expect(find.textContaining('underneath the ancient'), findsOneWidget);
-      expect(find.textContaining('inside the vintage'), findsOneWidget);
-      expect(find.text('...'), findsNothing);
-      expect(find.textContaining('...'), findsNothing);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.textContaining('underneath the ancient'), findsOneWidget);
+        expect(find.textContaining('inside the vintage'), findsOneWidget);
+        expect(find.text('...'), findsNothing);
+        expect(find.textContaining('...'), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

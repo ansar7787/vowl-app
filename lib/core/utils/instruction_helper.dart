@@ -43,7 +43,8 @@ class InstructionHelper {
     final lowerInstruction = (rawInstruction ?? '').trim().toLowerCase();
 
     // 1. Is this just a hardcoded parser fallback or empty?
-    final isGenericParserFallback = lowerInstruction.isEmpty ||
+    final isGenericParserFallback =
+        lowerInstruction.isEmpty ||
         _genericFallbacks.contains(lowerInstruction);
 
     // 2. Fetch the standard default instruction from en.json (if it exists)
@@ -123,12 +124,10 @@ class InstructionHelper {
         gameTypeName == 'sound_image_match') {
       return 'Listen and choose the matching picture.';
     }
-    if (gameTypeName == 'ambientId' ||
-        gameTypeName == 'ambient_id') {
+    if (gameTypeName == 'ambientId' || gameTypeName == 'ambient_id') {
       return 'Listen to the sounds and choose the location.';
     }
-    if (gameTypeName == 'medicalConsult' ||
-        gameTypeName == 'medical_consult') {
+    if (gameTypeName == 'medicalConsult' || gameTypeName == 'medical_consult') {
       return 'Examine the patient and identify the matching symptoms.';
     }
     if (rawInstruction != null && rawInstruction.isNotEmpty) {

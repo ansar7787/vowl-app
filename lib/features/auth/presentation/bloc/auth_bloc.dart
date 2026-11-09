@@ -284,9 +284,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           remoteUser: user,
           currentUser: current,
         );
-        _localDataSource.cacheUser(
-          UserModel.fromEntity(reconciledUser),
-        );
+        _localDataSource.cacheUser(UserModel.fromEntity(reconciledUser));
         emit(AuthState.authenticated(reconciledUser));
         return;
       }
@@ -298,9 +296,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               cached.id == user.id &&
               cached.displayName != null &&
               cached.displayName!.trim().isNotEmpty) {
-            user = user.copyWith(
-              displayName: cached.displayName,
-            );
+            user = user.copyWith(displayName: cached.displayName);
           }
         } catch (_) {}
       }
@@ -315,7 +311,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         }
       } catch (e) {
         if (kDebugMode) {
-          debugPrint('AuthBloc: could not access FirebaseAuth on user sign-in: $e');
+          debugPrint(
+            'AuthBloc: could not access FirebaseAuth on user sign-in: $e',
+          );
         }
       }
 
@@ -363,10 +361,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(message: () => 'auth.stream_error'));
   }
 
-  void _onClearMessage(
-    AuthClearMessage event,
-    Emitter<AuthState> emit,
-  ) {
+  void _onClearMessage(AuthClearMessage event, Emitter<AuthState> emit) {
     emit(state.copyWith(message: () => null));
   }
 
@@ -431,8 +426,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             } else if (val is List<String>) {
               userScopedStringLists[key] = val;
             } else if (val is List) {
-              userScopedStringLists[key] =
-                  val.map((e) => e.toString()).toList();
+              userScopedStringLists[key] = val
+                  .map((e) => e.toString())
+                  .toList();
             }
           }
         }
@@ -520,7 +516,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         }
       }
     } catch (e) {
-      if (kDebugMode) debugPrint('AuthBloc: DailyWordsService reset failed: $e');
+      if (kDebugMode) {
+        debugPrint('AuthBloc: DailyWordsService reset failed: $e');
+      }
     }
 
     // 4. Unbind the device push token from Firestore and cancel scheduled local
@@ -528,7 +526,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       await di.sl<NotificationService>().unregisterUserOnLogout();
     } catch (e) {
-      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
+      if (kDebugMode) {
+        debugPrint('AuthBloc: notification cleanup failed: $e');
+      }
     }
   }
 
@@ -618,9 +618,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               remoteUser: user,
               currentUser: current,
             );
-            _localDataSource.cacheUser(
-              UserModel.fromEntity(reconciledUser),
-            );
+            _localDataSource.cacheUser(UserModel.fromEntity(reconciledUser));
             emit(AuthState.authenticated(reconciledUser));
             return;
           }
@@ -690,12 +688,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     // are the authoritative source of truth and are preserved directly.
 
     // ---- Identity (Name & Photo): Never let a minimal/stale snapshot wipe them ----
-    final reconciledDisplayName = (remoteUser.displayName != null &&
+    final reconciledDisplayName =
+        (remoteUser.displayName != null &&
             remoteUser.displayName!.trim().isNotEmpty)
         ? remoteUser.displayName
         : currentUser.displayName;
-    final reconciledPhotoUrl = (remoteUser.photoUrl != null &&
-            remoteUser.photoUrl!.trim().isNotEmpty)
+    final reconciledPhotoUrl =
+        (remoteUser.photoUrl != null && remoteUser.photoUrl!.trim().isNotEmpty)
         ? remoteUser.photoUrl
         : currentUser.photoUrl;
 
@@ -779,20 +778,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         },
       );
 
-      final Future<Either<Failure, void>> deleteFuture =
-          _deleteAccount(const NoParams());
+      final Future<Either<Failure, void>> deleteFuture = _deleteAccount(
+        const NoParams(),
+      );
       final result = await deleteFuture.timeout(
         const Duration(seconds: 10),
-        onTimeout: () => Left<Failure, void>(const AuthFailure('network-unreachable')),
+        onTimeout: () =>
+            Left<Failure, void>(const AuthFailure('network-unreachable')),
       );
 
       await result.fold(
         (failure) async {
           if (failure.message == 'requires-recent-login') {
-            await _logOut(const NoParams()).timeout(
-              const Duration(seconds: 4),
-              onTimeout: () => Right(null),
-            );
+            await _logOut(
+              const NoParams(),
+            ).timeout(const Duration(seconds: 4), onTimeout: () => Right(null));
             emit(
               state.copyWith(
                 status: AuthStatus.unauthenticated,
@@ -809,10 +809,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           }
         },
         (_) async {
-          await _logOut(const NoParams()).timeout(
-            const Duration(seconds: 4),
-            onTimeout: () => Right(null),
-          );
+          await _logOut(
+            const NoParams(),
+          ).timeout(const Duration(seconds: 4), onTimeout: () => Right(null));
           emit(
             state.copyWith(
               status: AuthStatus.unauthenticated,

@@ -108,7 +108,8 @@ void main() {
     intonationMap: [1, 2, 3, 4],
     emotionContext: 'Surprise / Disbelief',
     hint: 'The pitch goes up at the end of the sentence.',
-    explanation: 'Questions expressing surprise usually end in a rising pitch contour.',
+    explanation:
+        'Questions expressing surprise usually end in a rising pitch contour.',
   );
 
   const testQuest2 = AccentQuest(
@@ -123,7 +124,8 @@ void main() {
     intonationMap: [4, 3, 2, 1],
     emotionContext: 'Acknowledgement',
     hint: 'The pitch falls downward at the conclusion.',
-    explanation: 'Definitive statements typically feature a falling terminal pitch.',
+    explanation:
+        'Definitive statements typically feature a falling terminal pitch.',
   );
 
   const testLoadedState = AccentLoaded(
@@ -173,8 +175,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -186,12 +189,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -207,10 +212,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        locale: any(named: 'locale'),
-      ),
+      () => mockSoundService.playTts(any(), locale: any(named: 'locale')),
     ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
@@ -232,7 +234,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_mimic.m4a');
@@ -242,8 +246,12 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     await di.sl.reset();
 
@@ -325,7 +333,10 @@ void main() {
       expect(find.text('Surprise / Disbelief'), findsOneWidget);
 
       expect(find.byType(IntonationMimicPulseSpeaker), findsOneWidget);
-      expect(find.byKey(const ValueKey('intonation_speaker_btn')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('intonation_speaker_btn')),
+        findsOneWidget,
+      );
 
       expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
       expect(find.byKey(const ValueKey('intonation_option_0')), findsOneWidget);
@@ -335,21 +346,22 @@ void main() {
       expect(find.byKey(const ValueKey('intonation_slider')), findsOneWidget);
     });
 
-    testWidgets('2. tapping pulse speaker triggers playTts and haptic selection', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '2. tapping pulse speaker triggers playTts and haptic selection',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      final speakerBtn = find.byKey(const ValueKey('intonation_speaker_btn'));
-      expect(speakerBtn, findsOneWidget);
+        final speakerBtn = find.byKey(const ValueKey('intonation_speaker_btn'));
+        expect(speakerBtn, findsOneWidget);
 
-      await tester.tap(speakerBtn);
-      await tester.pump();
-      await tester.pump(const Duration(seconds: 2));
+        await tester.tap(speakerBtn);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 2));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts('Really?')).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockSoundService.playTts('Really?')).called(1);
+      },
+    );
 
     testWidgets('3. tapping correct pitch option advances to stage 2 overlay', (
       tester,
@@ -380,66 +392,69 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
     });
 
-    testWidgets('4. tapping wrong pitch option triggers submitWrongAnswer directly', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '4. tapping wrong pitch option triggers submitWrongAnswer directly',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      final wrongOption = find.byKey(const ValueKey('intonation_option_1'));
-      expect(wrongOption, findsOneWidget);
+        final wrongOption = find.byKey(const ValueKey('intonation_option_1'));
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Does not advance to stage 2 SpeakToConfirmOverlay
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
+        // Does not advance to stage 2 SpeakToConfirmOverlay
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
 
-    testWidgets('5. dragging slider up past threshold auto-submits rising option', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '5. dragging slider up past threshold auto-submits rising option',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      final sliderFinder = find.byKey(const ValueKey('intonation_slider'));
-      expect(sliderFinder, findsOneWidget);
+        final sliderFinder = find.byKey(const ValueKey('intonation_slider'));
+        expect(sliderFinder, findsOneWidget);
 
-      final Slider sliderWidget = tester.widget(sliderFinder);
-      sliderWidget.onChanged!(0.95);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        final Slider sliderWidget = tester.widget(sliderFinder);
+        sliderWidget.onChanged!(0.95);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      // Scroll down to reveal SpeakToConfirmOverlay
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-    });
+        // Scroll down to reveal SpeakToConfirmOverlay
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('6. dragging slider down past threshold auto-submits falling option', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '6. dragging slider down past threshold auto-submits falling option',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      final sliderFinder = find.byKey(const ValueKey('intonation_slider'));
-      expect(sliderFinder, findsOneWidget);
+        final sliderFinder = find.byKey(const ValueKey('intonation_slider'));
+        expect(sliderFinder, findsOneWidget);
 
-      final Slider sliderWidget = tester.widget(sliderFinder);
-      sliderWidget.onChanged!(0.05);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final Slider sliderWidget = tester.widget(sliderFinder);
+        sliderWidget.onChanged!(0.05);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
     testWidgets('7. once answered, subsequent taps on options are ignored', (
       tester,
@@ -462,34 +477,35 @@ void main() {
       verifyNever(() => mockAccentBloc.add(const AccentSpeakConfirmed(5)));
     });
 
-    testWidgets('8. stage 2: SpeakToConfirmOverlay shows expected text and switches to manual evaluation', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '8. stage 2: SpeakToConfirmOverlay shows expected text and switches to manual evaluation',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      // Advance to stage 2
-      await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Advance to stage 2
+        await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('NOW SAY IT'), findsOneWidget);
-      expect(find.text('+5 COINS'), findsNothing);
-      expect(find.text('Tap to Speak'), findsOneWidget);
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.text('NOW SAY IT'), findsOneWidget);
+        expect(find.text('+5 COINS'), findsNothing);
+        expect(find.text('Tap to Speak'), findsOneWidget);
 
-      // Switch to manual evaluation mode
-      final manualBtn = find.text('Evaluate myself manually');
-      await tester.ensureVisible(manualBtn);
-      await tester.pumpAndSettle();
-      expect(manualBtn, findsOneWidget);
-      await tester.tap(manualBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Switch to manual evaluation mode
+        final manualBtn = find.text('Evaluate myself manually');
+        await tester.ensureVisible(manualBtn);
+        await tester.pumpAndSettle();
+        expect(manualBtn, findsOneWidget);
+        await tester.tap(manualBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byKey(const ValueKey('speaking_mic_btn')), findsOneWidget);
-      expect(find.text('Tap or Hold to speak'), findsOneWidget);
-    });
+        expect(find.byKey(const ValueKey('speaking_mic_btn')), findsOneWidget);
+        expect(find.text('Tap or Hold to speak'), findsOneWidget);
+      },
+    );
 
     testWidgets('9. stage 2: recording cycle reveals self-evaluation buttons', (
       tester,
@@ -534,147 +550,157 @@ void main() {
       expect(find.text('Needs Work'), findsOneWidget);
     });
 
-    testWidgets('10. stage 2: tapping Nailed It awards coins and submits correct answer', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '10. stage 2: tapping Nailed It awards coins and submits correct answer',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      // Advance to stage 2
-      await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Advance to stage 2
+        await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Switch to manual evaluation mode
-      final manualBtn = find.text('Evaluate myself manually');
-      await tester.ensureVisible(manualBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(manualBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Switch to manual evaluation mode
+        final manualBtn = find.text('Evaluate myself manually');
+        await tester.ensureVisible(manualBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(manualBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Record audio
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.ensureVisible(micBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(find.byIcon(Icons.stop_rounded));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Record audio
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.ensureVisible(micBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(find.byIcon(Icons.stop_rounded));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Nailed It
-      final nailedItBtn = find.text('Nailed It');
-      await tester.ensureVisible(nailedItBtn);
-      await tester.pumpAndSettle();
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Tap Nailed It
+        final nailedItBtn = find.text('Nailed It');
+        await tester.ensureVisible(nailedItBtn);
+        await tester.pumpAndSettle();
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockAccentBloc.add(const AccentSpeakConfirmed(5))).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-      verify(() => mockSoundService.playCorrect()).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockAccentBloc.add(const AccentSpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockSoundService.playCorrect(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('11. stage 2: tapping Needs Work dispatches SubmitAnswer(false)', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '11. stage 2: tapping Needs Work dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      // Advance to stage 2
-      await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Advance to stage 2
+        await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Switch to manual evaluation mode
-      final manualBtn = find.text('Evaluate myself manually');
-      await tester.ensureVisible(manualBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(manualBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Switch to manual evaluation mode
+        final manualBtn = find.text('Evaluate myself manually');
+        await tester.ensureVisible(manualBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(manualBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Record audio
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.ensureVisible(micBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(find.byIcon(Icons.stop_rounded));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Record audio
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.ensureVisible(micBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(find.byIcon(Icons.stop_rounded));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Needs Work
-      final needsWorkBtn = find.text('Needs Work');
-      await tester.ensureVisible(needsWorkBtn);
-      await tester.pumpAndSettle();
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Tap Needs Work
+        final needsWorkBtn = find.text('Needs Work');
+        await tester.ensureVisible(needsWorkBtn);
+        await tester.pumpAndSettle();
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
 
-    testWidgets('12. stage 2: tapping skip button triggers rewarded bypass and submits answer', (
-      tester,
-    ) async {
-      when(
-        () => mockAdService.showRewardedAd(
-          context: any(named: 'context'),
-          isPremium: any(named: 'isPremium'),
-          onUserEarnedReward: any(named: 'onUserEarnedReward'),
-          onDismissed: any(named: 'onDismissed'),
-        ),
-      ).thenAnswer((inv) async {
-        final onReward = inv.namedArguments[#onUserEarnedReward] as dynamic;
-        onReward?.call(RewardItem(1, 'coin'));
-      });
+    testWidgets(
+      '12. stage 2: tapping skip button triggers rewarded bypass and submits answer',
+      (tester) async {
+        when(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: any(named: 'isPremium'),
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).thenAnswer((inv) async {
+          final onReward = inv.namedArguments[#onUserEarnedReward] as dynamic;
+          onReward?.call(RewardItem(1, 'coin'));
+        });
 
-      await pumpIntonationMimic(tester);
+        await pumpIntonationMimic(tester);
 
-      // Advance to stage 2
-      await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 500));
+        // Advance to stage 2
+        await tester.tap(find.byKey(const ValueKey('intonation_option_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final skipBtn = find.byType(GameSkipBypassButton);
-      await tester.ensureVisible(skipBtn);
-      await tester.pumpAndSettle();
-      expect(skipBtn, findsOneWidget);
-      await tester.tap(skipBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final skipBtn = find.byType(GameSkipBypassButton);
+        await tester.ensureVisible(skipBtn);
+        await tester.pumpAndSettle();
+        expect(skipBtn, findsOneWidget);
+        await tester.tap(skipBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('13. tapping continue button when answered dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '13. tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      // Submit wrong answer to trigger answered state
-      await tester.tap(find.byKey(const ValueKey('intonation_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Submit wrong answer to trigger answered state
+        await tester.tap(find.byKey(const ValueKey('intonation_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final actionButton = find.widgetWithText(ScaleButton, 'TRY AGAIN');
-      expect(actionButton, findsOneWidget);
+        final actionButton = find.widgetWithText(ScaleButton, 'TRY AGAIN');
+        expect(actionButton, findsOneWidget);
 
-      await tester.tap(actionButton);
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionButton);
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets('14. tapping hint button dispatches AccentHintUsed', (
       tester,
@@ -699,129 +725,141 @@ void main() {
       expect(find.byType(IntonationMimicVerticalFader), findsNothing);
     });
 
-    testWidgets('16. shows briefing layer on level 1 when unseen and dismisses cleanly', (
-      tester,
-    ) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_intonationMimic': false,
-      });
+    testWidgets(
+      '16. shows briefing layer on level 1 when unseen and dismisses cleanly',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_intonationMimic': false,
+        });
 
-      await pumpIntonationMimic(tester, level: 1, height: 1100);
+        await pumpIntonationMimic(tester, level: 1, height: 1100);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      final briefingBtn = find.descendant(
-        of: find.byType(GameBriefingLayer),
-        matching: find.byType(ScaleButton),
-      );
-      expect(briefingBtn, findsOneWidget);
-      await tester.tap(briefingBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final briefingBtn = find.descendant(
+          of: find.byType(GameBriefingLayer),
+          matching: find.byType(ScaleButton),
+        );
+        expect(briefingBtn, findsOneWidget);
+        await tester.tap(briefingBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-      expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+        expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
+      },
+    );
 
-    testWidgets('17. renders cleanly without overflow on small 320dp screen & dark theme', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      '17. renders cleanly without overflow on small 320dp screen & dark theme',
+      (tester) async {
+        await pumpIntonationMimic(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
-      expect(find.byKey(const ValueKey('intonation_option_0')), findsOneWidget);
-      expect(find.byKey(const ValueKey('intonation_option_1')), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('intonation_option_0')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('intonation_option_1')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('18. instruction card has symmetric internal padding and centers multi-line text', (
-      tester,
-    ) async {
-      const longInstructionQuest = AccentQuest(
-        id: 'ACC_IM_LONG_TEST',
-        instruction:
-            'A classmate wants to borrow something from you. Which pattern fits this sentence?',
-        difficulty: 1,
-        subtype: GameSubtype.intonationMimic,
-        word: 'Do you have a pen?',
-        textToSpeak: 'Do you have a pen?',
-        options: [
-          'Narrow pitch, low start — neutral report',
-          'Wide pitch, high start — happy and friendly',
-        ],
-        correctAnswerIndex: 0,
-        intonationMap: [1, 2, 3, 4],
-        emotionContext: 'Friendly Inquiry',
-        hint: 'Listen closely.',
-        explanation: 'Friendly questions rise.',
-      );
+    testWidgets(
+      '18. instruction card has symmetric internal padding and centers multi-line text',
+      (tester) async {
+        const longInstructionQuest = AccentQuest(
+          id: 'ACC_IM_LONG_TEST',
+          instruction:
+              'A classmate wants to borrow something from you. Which pattern fits this sentence?',
+          difficulty: 1,
+          subtype: GameSubtype.intonationMimic,
+          word: 'Do you have a pen?',
+          textToSpeak: 'Do you have a pen?',
+          options: [
+            'Narrow pitch, low start — neutral report',
+            'Wide pitch, high start — happy and friendly',
+          ],
+          correctAnswerIndex: 0,
+          intonationMap: [1, 2, 3, 4],
+          emotionContext: 'Friendly Inquiry',
+          hint: 'Listen closely.',
+          explanation: 'Friendly questions rise.',
+        );
 
-      await pumpIntonationMimic(
-        tester,
-        state: const AccentLoaded(
-          quests: [longInstructionQuest],
-          currentIndex: 0,
-          livesRemaining: 3,
-          answerStatus: AnswerStatus.unanswered,
-          gameType: GameSubtype.intonationMimic,
-          level: 2,
-          hintUsed: false,
-          wrongCount: 0,
-          isFinalFailure: false,
-        ),
-      );
+        await pumpIntonationMimic(
+          tester,
+          state: const AccentLoaded(
+            quests: [longInstructionQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            answerStatus: AnswerStatus.unanswered,
+            gameType: GameSubtype.intonationMimic,
+            level: 2,
+            hintUsed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
+          ),
+        );
 
-      final instructionFinder = find.byType(IntonationMimicInstruction);
-      expect(instructionFinder, findsOneWidget);
+        final instructionFinder = find.byType(IntonationMimicInstruction);
+        expect(instructionFinder, findsOneWidget);
 
-      final containerWidget = tester.widget<Container>(
-        find
-            .descendant(
-              of: instructionFinder,
-              matching: find.byType(Container),
-            )
-            .first,
-      );
-      final padding = containerWidget.padding as EdgeInsets;
-      expect(padding.left, equals(padding.right));
+        final containerWidget = tester.widget<Container>(
+          find
+              .descendant(
+                of: instructionFinder,
+                matching: find.byType(Container),
+              )
+              .first,
+        );
+        final padding = containerWidget.padding as EdgeInsets;
+        expect(padding.left, equals(padding.right));
 
-      final textWidget = tester.widget<Text>(
-        find.descendant(of: instructionFinder, matching: find.byType(Text)),
-      );
-      expect(textWidget.textAlign, equals(TextAlign.center));
-      expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
-    });
+        final textWidget = tester.widget<Text>(
+          find.descendant(of: instructionFinder, matching: find.byType(Text)),
+        );
+        expect(textWidget.textAlign, equals(TextAlign.center));
+        expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
+      },
+    );
 
-    testWidgets('19. stage 2 SpeakToConfirmOverlay mechanism card has standard horizontal padding from screen edges', (
-      tester,
-    ) async {
-      await pumpIntonationMimic(tester);
+    testWidgets(
+      '19. stage 2 SpeakToConfirmOverlay mechanism card has standard horizontal padding from screen edges',
+      (tester) async {
+        await pumpIntonationMimic(tester);
 
-      final correctOption = find.byKey(const ValueKey('intonation_option_0'));
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 50));
+        final correctOption = find.byKey(const ValueKey('intonation_option_0'));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 50));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final overlayFinder = find.byType(SpeakToConfirmOverlay);
-      expect(overlayFinder, findsOneWidget);
+        final overlayFinder = find.byType(SpeakToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
 
-      final parentPadding = tester.widget<Padding>(
-        find.ancestor(of: overlayFinder, matching: find.byType(Padding)).first,
-      );
-      final overlayInsets = parentPadding.padding as EdgeInsets;
-      expect(overlayInsets.left, greaterThanOrEqualTo(16.0));
-      expect(overlayInsets.right, greaterThanOrEqualTo(16.0));
-    });
+        final parentPadding = tester.widget<Padding>(
+          find
+              .ancestor(of: overlayFinder, matching: find.byType(Padding))
+              .first,
+        );
+        final overlayInsets = parentPadding.padding as EdgeInsets;
+        expect(overlayInsets.left, greaterThanOrEqualTo(16.0));
+        expect(overlayInsets.right, greaterThanOrEqualTo(16.0));
+      },
+    );
 
     testWidgets('20. long sentences and long options never show ellipses', (
       tester,

@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
@@ -27,7 +28,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
   final int vipDays;
   final int coins;
   final String weekKey;
-  final Future<void> Function() onClaim;
+  final Future<void> Function()? onClaim;
+  final bool isAlreadyClaimed;
 
   const WeeklyLeagueChampionDialog({
     super.key,
@@ -36,7 +38,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
     required this.vipDays,
     required this.coins,
     required this.weekKey,
-    required this.onClaim,
+    this.onClaim,
+    this.isAlreadyClaimed = false,
   });
 
   /// Displays the celebration dialog with smooth backdrop fade.
@@ -47,7 +50,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
     required int vipDays,
     required int coins,
     required String weekKey,
-    required Future<void> Function() onClaim,
+    Future<void> Function()? onClaim,
+    bool isAlreadyClaimed = false,
   }) {
     return showGeneralDialog(
       context: context,
@@ -62,14 +66,16 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
           child: FadeTransition(opacity: anim1, child: child),
         );
       },
-      pageBuilder: (context, animation, secondaryAnimation) => WeeklyLeagueChampionDialog(
-        user: user,
-        rank: rank,
-        vipDays: vipDays,
-        coins: coins,
-        weekKey: weekKey,
-        onClaim: onClaim,
-      ),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          WeeklyLeagueChampionDialog(
+            user: user,
+            rank: rank,
+            vipDays: vipDays,
+            coins: coins,
+            weekKey: weekKey,
+            onClaim: onClaim,
+            isAlreadyClaimed: isAlreadyClaimed,
+          ),
     );
   }
 
@@ -122,22 +128,22 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
       case 1:
         return context.tr(
           'leaderboard.champion_title_1',
-          fallback: 'LEAGUE CHAMPION 🏆',
+          fallback: 'LEAGUE CHAMPION',
         );
       case 2:
         return context.tr(
           'leaderboard.champion_title_2',
-          fallback: 'SILVER RUNNER-UP 🥈',
+          fallback: 'SILVER RUNNER-UP',
         );
       case 3:
         return context.tr(
           'leaderboard.champion_title_3',
-          fallback: 'BRONZE PODIUM 🥉',
+          fallback: 'BRONZE PODIUM',
         );
       default:
         return context.tr(
           'leaderboard.champion_title_top10',
-          fallback: 'TOP 10 FINISHER 🎖️',
+          fallback: 'TOP 10 FINISHER',
         );
     }
   }
@@ -177,7 +183,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     }
 
     try {
-      await widget.onClaim();
+      await widget.onClaim?.call();
     } finally {
       if (mounted) {
         Navigator.of(context).pop();
@@ -206,8 +212,8 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final cardBg = isMidnight
-        ? const Color(0xFF090D16)
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = _accentColor.withValues(alpha: 0.35);
 
     final now = DateTime.now();
@@ -232,233 +238,248 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     return Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      insetPadding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.screen,
+        vertical: 24.h,
+      ),
       child: Stack(
         alignment: Alignment.center,
         clipBehavior: Clip.none,
         children: [
-          // Background Confetti Burst
+          // Background Confetti Burst (isolated GPU layer)
           const Positioned.fill(
             child: IgnorePointer(child: GameConfetti(shouldPop: true)),
           ),
 
-          // Main Modal Body
-          Container(
-            width: double.infinity,
-            constraints: BoxConstraints(maxWidth: 420.w, maxHeight: 680.h),
-            decoration: BoxDecoration(
-              color: cardBg,
-              borderRadius: BorderRadius.circular(32.r),
-              border: Border.all(color: borderColor, width: 2.w),
-              boxShadow: [
-                BoxShadow(
-                  color: _accentColor.withValues(alpha: 0.3),
-                  blurRadius: 40,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 10),
-                ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30.r),
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 24.h),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Top Close Button
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        onTap: () => Navigator.of(context).pop(),
-                        child: Container(
-                          padding: EdgeInsets.all(6.r),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: (isDark ? Colors.white : Colors.black)
-                                .withValues(alpha: 0.08),
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 18.r,
-                            color: isDark ? Colors.white70 : AppColors.slate700,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    SizedBox(height: 4.h),
-
-                    // 3D Metallic Laurel Trophy / Medallion Artwork with Ambient Rotating Rays
-                    LaurelTrophy3DArtwork(
-                      rank: widget.rank,
-                      size: 155,
-                      rotationController: reduceMotion ? null : _rotationController,
-                    ),
-
-                    SizedBox(height: 16.h),
-
-                    // Title
-                    Text(
-                      _title,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: _accentColor,
-                        letterSpacing: 1.1,
-                      ),
-                    ),
-
-                    SizedBox(height: 6.h),
-
-                    // Subtitle
-                    Text(
-                      _subtitle,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? AppColors.slate300 : AppColors.slate600,
-                        height: 1.35,
-                      ),
-                    ),
-
-                    SizedBox(height: 20.h),
-
-                    // Prize Cards Breakdown
-                    if (widget.vipDays > 0) ...[
-                      _buildRewardRow(
-                        icon: LucideIcons.sparkles,
-                        iconColor: IllustrationColors.premiumGold,
-                        title: isCurrentlyVip
-                            ? '+${widget.vipDays} Days VIP Extended!'
-                            : '+${widget.vipDays} Days Full VIP Unlocked!',
-                        subtitle: calculatedNewExpiry != null
-                            ? 'Valid through ${DateFormat.yMMMd().format(calculatedNewExpiry.toLocal())}'
-                            : 'All categories, unlimited energy & 2x XP',
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 10.h),
-                    ],
-
-                    if (widget.coins > 0) ...[
-                      _buildRewardRow(
-                        icon: Icons.monetization_on_rounded,
-                        iconColor: AppColors.amber500,
-                        title: '+${widget.coins} Quest Coins',
-                        subtitle:
-                            'Added directly to your treasury for power-ups & hints',
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 10.h),
-                    ],
-
-                    // Permanent / Weekly Flex Badge
-                    _buildRewardRow(
-                      icon: widget.rank == 1
-                          ? LucideIcons.trophy
-                          : LucideIcons.medal,
-                      iconColor: _accentColor,
-                      title: widget.rank == 1
-                          ? 'Golden Champion Avatar Aura'
-                          : (widget.rank <= 3
-                              ? 'Podium Laurels Profile Badge'
-                              : 'Division Finisher Ribbons'),
-                      subtitle: widget.rank == 1
-                          ? 'Glows around your avatar in the league all week'
-                          : 'Showcased across your global profile and rankings',
-                      isDark: isDark,
-                    ),
-
-                    SizedBox(height: 24.h),
-
-                    // Primary Action: Claim & Celebrate
-                    ScaleButton(
-                      onTap: _isClaiming ? null : _handleClaim,
-                      child: Container(
-                        width: double.infinity,
-                        height: 52.h,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              _accentColor,
-                              _accentColor.withValues(alpha: 0.8),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.3),
-                            width: 1,
+          // Main Modal Body (isolated from confetti repaints for locked 120 FPS)
+          RepaintBoundary(
+            child: Container(
+              width: double.infinity,
+              constraints: BoxConstraints(maxWidth: 420.w, maxHeight: 680.h),
+              decoration: BoxDecoration(
+                color: cardBg,
+                borderRadius: BorderRadius.circular(32.r),
+                border: Border.all(color: borderColor, width: 2.w),
+                boxShadow: [
+                  BoxShadow(
+                    color: _accentColor.withValues(alpha: 0.3),
+                    blurRadius: 40,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30.r),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSpacing.cardSpacious,
+                    vertical: 24.h,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Top Close Button
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: GestureDetector(
+                          onTap: () => Navigator.of(context).pop(),
+                          child: Container(
+                            padding: EdgeInsets.all(6.r),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: (isDark ? Colors.white : Colors.black)
+                                  .withValues(alpha: 0.08),
+                            ),
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 18.r,
+                              color: isDark ? Colors.white70 : AppColors.slate700,
+                            ),
                           ),
                         ),
-                        alignment: Alignment.center,
-                        child: _isClaiming
-                            ? SizedBox(
-                                width: 22.r,
-                                height: 22.r,
-                                child: const CircularProgressIndicator(
-                                  strokeWidth: 2.5,
-                                  valueColor:
-                                      AlwaysStoppedAnimation(Colors.white),
-                                ),
-                              )
-                            : Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    LucideIcons.checkCheck,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  SizedBox(width: 8.w),
-                                  Text(
-                                    context.tr(
-                                      'leaderboard.claim_and_celebrate',
-                                      fallback: 'Claim & Celebrate',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                ],
-                              ),
                       ),
-                    ),
 
-                    SizedBox(height: 10.h),
+                      SizedBox(height: 4.h),
 
-                    // Secondary Action: Share Victory
-                    TextButton.icon(
-                      onPressed: _handleShare,
-                      icon: Icon(
-                        LucideIcons.share2,
-                        size: 16.r,
-                        color: isDark ? AppColors.slate300 : AppColors.slate600,
+                      // 3D Metallic Laurel Trophy / Medallion Artwork with Ambient Rotating Rays
+                      LaurelTrophy3DArtwork(
+                        rank: widget.rank,
+                        size: 155,
+                        rotationController: reduceMotion
+                            ? null
+                            : _rotationController,
                       ),
-                      label: Text(
-                        context.tr(
-                          'leaderboard.share_victory',
-                          fallback: 'Share Victory Card',
+
+                      SizedBox(height: 16.h),
+
+                      // Title
+                      Text(
+                        _title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
+                          color: _accentColor,
+                          letterSpacing: 1.1,
                         ),
+                      ),
+
+                      SizedBox(height: 6.h),
+
+                      // Subtitle
+                      Text(
+                        _subtitle,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark
-                              ? AppColors.slate300
-                              : AppColors.slate700,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? AppColors.slate300 : AppColors.slate600,
+                          height: 1.35,
                         ),
                       ),
-                    ),
-                  ],
+
+                      SizedBox(height: 20.h),
+
+                      // Prize Cards Breakdown
+                      if (widget.vipDays > 0) ...[
+                        _buildRewardRow(
+                          icon: LucideIcons.sparkles,
+                          iconColor: IllustrationColors.premiumGold,
+                          title: isCurrentlyVip
+                              ? '+${widget.vipDays} Days VIP Extended!'
+                              : '+${widget.vipDays} Days Full VIP Unlocked!',
+                          subtitle: calculatedNewExpiry != null
+                              ? 'Valid through ${DateFormat.yMMMd().format(calculatedNewExpiry.toLocal())}'
+                              : 'All categories, unlimited energy & 2x XP',
+                          isDark: isDark,
+                        ),
+                        SizedBox(height: 10.h),
+                      ],
+
+                      if (widget.coins > 0) ...[
+                        _buildRewardRow(
+                          icon: Icons.monetization_on_rounded,
+                          iconColor: AppColors.amber500,
+                          title: '+${widget.coins} Quest Coins',
+                          subtitle:
+                              'Added directly to your treasury for power-ups & hints',
+                          isDark: isDark,
+                        ),
+                        SizedBox(height: 10.h),
+                      ],
+
+                      // Permanent / Weekly Flex Badge
+                      _buildRewardRow(
+                        icon: widget.rank == 1
+                            ? LucideIcons.trophy
+                            : LucideIcons.medal,
+                        iconColor: _accentColor,
+                        title: widget.rank == 1
+                            ? 'Golden Champion Avatar Aura'
+                            : (widget.rank <= 3
+                                  ? 'Podium Laurels Profile Badge'
+                                  : 'Division Finisher Ribbons'),
+                        subtitle: widget.rank == 1
+                            ? 'Glows around your avatar in the league all week'
+                            : 'Showcased across your global profile and rankings',
+                        isDark: isDark,
+                      ),
+
+                      SizedBox(height: 24.h),
+
+                      // Primary Action: Claim & Celebrate or Got It!
+                      ScaleButton(
+                        onTap: _isClaiming
+                            ? null
+                            : () async {
+                                if (widget.isAlreadyClaimed) {
+                                  Navigator.of(context).pop();
+                                } else {
+                                  await _handleClaim();
+                                }
+                              },
+                        child: Container(
+                          width: double.infinity,
+                          height: 52.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                _accentColor,
+                                _accentColor.withValues(alpha: 0.8),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.3),
+                              width: 1,
+                            ),
+                          ),
+                          alignment: Alignment.center,
+                          child: _isClaiming
+                              ? const VowlMicroLoader(
+                                  size: 18,
+                                  color: Colors.white,
+                                )
+                              : Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      LucideIcons.checkCheck,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      widget.isAlreadyClaimed
+                                          ? 'Got It!'
+                                          : context.tr(
+                                              'leaderboard.claim_and_celebrate',
+                                              fallback: 'Claim & Celebrate',
+                                            ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.white,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                        ),
+                      ),
+
+                      SizedBox(height: 10.h),
+
+                      // Secondary Action: Share Victory
+                      TextButton.icon(
+                        onPressed: _handleShare,
+                        icon: Icon(
+                          LucideIcons.share2,
+                          size: 16.r,
+                          color: isDark ? AppColors.slate300 : AppColors.slate600,
+                        ),
+                        label: Text(
+                          context.tr(
+                            'leaderboard.share_victory',
+                            fallback: 'Share Victory Card',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark
+                                ? AppColors.slate300
+                                : AppColors.slate700,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -526,4 +547,3 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     );
   }
 }
-

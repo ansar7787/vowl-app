@@ -121,16 +121,12 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isCorrectState == true ? tokens.gameCorrect : color,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 3.5,
-                  ),
+                  border: Border.all(color: Colors.white, width: 3.5),
                   boxShadow: [
                     BoxShadow(
-                      color: (isCorrectState == true
-                              ? tokens.gameCorrect
-                              : color)
-                          .withValues(alpha: 0.35),
+                      color:
+                          (isCorrectState == true ? tokens.gameCorrect : color)
+                              .withValues(alpha: 0.35),
                       blurRadius: 18,
                       offset: const Offset(0, 6),
                     ),
@@ -138,17 +134,21 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 ),
                 child: isCorrectState == true && emoji != null
                     ? (reduceMotion
-                        ? Center(
-                            child:
-                                Text(emoji!, style: TextStyle(fontSize: 34.r)),
-                          )
-                        : Center(
-                            child:
-                                Text(emoji!, style: TextStyle(fontSize: 34.r)),
-                          ).animate().scale(
-                            duration: 400.ms,
-                            curve: Curves.easeOutCubic,
-                          ))
+                          ? Center(
+                              child: Text(
+                                emoji!,
+                                style: TextStyle(fontSize: 34.r),
+                              ),
+                            )
+                          : Center(
+                              child: Text(
+                                emoji!,
+                                style: TextStyle(fontSize: 34.r),
+                              ),
+                            ).animate().scale(
+                              duration: 400.ms,
+                              curve: Curves.easeOutCubic,
+                            ))
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,

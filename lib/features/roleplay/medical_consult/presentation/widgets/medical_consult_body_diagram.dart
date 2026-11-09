@@ -101,12 +101,12 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                           color: primaryColor.withValues(alpha: 0.7),
                         )
                       : Icon(
-                          Icons.accessibility_new_rounded,
-                          size: 54.r,
-                          color: primaryColor.withValues(alpha: 0.7),
-                        )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .fadeIn(duration: 1000.ms),
+                              Icons.accessibility_new_rounded,
+                              size: 54.r,
+                              color: primaryColor.withValues(alpha: 0.7),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .fadeIn(duration: 1000.ms),
                 ),
               ),
               SizedBox(width: 18.w),

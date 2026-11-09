@@ -34,8 +34,14 @@ class WordMixerCompletedView extends StatelessWidget {
   void _speakWord(String word) {
     if (word.isEmpty) return;
     try {
-      (hapticService ?? (di.sl.isRegistered<HapticService>() ? di.sl<HapticService>() : null))?.light();
-      (ttsService ?? (di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null))?.speak(word);
+      (hapticService ??
+              (di.sl.isRegistered<HapticService>()
+                  ? di.sl<HapticService>()
+                  : null))
+          ?.light();
+      (ttsService ??
+              (di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null))
+          ?.speak(word);
     } catch (_) {}
   }
 
@@ -71,11 +77,7 @@ class WordMixerCompletedView extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(
-                Icons.check_rounded,
-                color: Colors.white,
-                size: 38.r,
-              ),
+              child: Icon(Icons.check_rounded, color: Colors.white, size: 38.r),
             ),
             SizedBox(height: 20.h),
 
@@ -104,7 +106,8 @@ class WordMixerCompletedView extends StatelessWidget {
               isPracticeMode
                   ? context.tr(
                       'home.practice_complete_desc',
-                      fallback: 'Great job! Keep practicing to build your vocabulary.',
+                      fallback:
+                          'Great job! Keep practicing to build your vocabulary.',
                     )
                   : context.tr(
                       'home.come_back_tomorrow',
@@ -162,7 +165,10 @@ class WordMixerCompletedView extends StatelessWidget {
                             color: primaryColor,
                             size: 22.r,
                           ),
-                          tooltip: context.tr('common.listen', fallback: 'Listen'),
+                          tooltip: context.tr(
+                            'common.listen',
+                            fallback: 'Listen',
+                          ),
                         ),
                       ],
                     ),
@@ -173,9 +179,13 @@ class WordMixerCompletedView extends StatelessWidget {
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        if (puzzle?.partOfSpeech != null && puzzle!.partOfSpeech.isNotEmpty)
+                        if (puzzle?.partOfSpeech != null &&
+                            puzzle!.partOfSpeech.isNotEmpty)
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
                             decoration: BoxDecoration(
                               color: primaryColor.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(8.r),
@@ -191,9 +201,13 @@ class WordMixerCompletedView extends StatelessWidget {
                               ),
                             ),
                           ),
-                        if (puzzle?.cefrLevel != null && puzzle!.cefrLevel.isNotEmpty)
+                        if (puzzle?.cefrLevel != null &&
+                            puzzle!.cefrLevel.isNotEmpty)
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
                             decoration: BoxDecoration(
                               color: AppColors.amber500.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(8.r),
@@ -208,7 +222,8 @@ class WordMixerCompletedView extends StatelessWidget {
                               ),
                             ),
                           ),
-                        if (puzzle != null && (puzzle!.hasPhonetic || puzzle!.hasSyllables))
+                        if (puzzle != null &&
+                            (puzzle!.hasPhonetic || puzzle!.hasSyllables))
                           Text(
                             puzzle!.displayPhonetic,
                             style: TextStyle(
@@ -237,7 +252,10 @@ class WordMixerCompletedView extends StatelessWidget {
                     if (puzzle != null && puzzle!.hasExample) ...[
                       SizedBox(height: 10.h),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 8.h,
+                        ),
                         decoration: BoxDecoration(
                           color: isDark
                               ? Colors.white.withValues(alpha: 0.04)
@@ -261,11 +279,18 @@ class WordMixerCompletedView extends StatelessWidget {
                       Wrap(
                         spacing: 6.w,
                         alignment: WrapAlignment.center,
-                        children: puzzle!.synonyms.map((s) => Chip(
-                          label: Text(s, style: TextStyle(fontSize: 10.sp)),
-                          padding: EdgeInsets.zero,
-                          visualDensity: VisualDensity.compact,
-                        )).toList(),
+                        children: puzzle!.synonyms
+                            .map(
+                              (s) => Chip(
+                                label: Text(
+                                  s,
+                                  style: TextStyle(fontSize: 10.sp),
+                                ),
+                                padding: EdgeInsets.zero,
+                                visualDensity: VisualDensity.compact,
+                              ),
+                            )
+                            .toList(),
                       ),
                     ],
                     if (puzzle != null && puzzle!.tags.isNotEmpty) ...[
@@ -274,24 +299,33 @@ class WordMixerCompletedView extends StatelessWidget {
                         spacing: 6.w,
                         runSpacing: 4.h,
                         alignment: WrapAlignment.center,
-                        children: puzzle!.tags.map((tag) => Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.04),
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text(
-                            '#$tag',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white54 : Colors.black45,
-                            ),
-                          ),
-                        )).toList(),
+                        children: puzzle!.tags
+                            .map(
+                              (tag) => Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 2.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.04),
+                                  borderRadius: BorderRadius.circular(6.r),
+                                ),
+                                child: Text(
+                                  '#$tag',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.black45,
+                                  ),
+                                ),
+                              ),
+                            )
+                            .toList(),
                       ),
                     ],
                   ],
@@ -340,7 +374,9 @@ class WordMixerCompletedView extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w700,
-                                color: isDark ? Colors.white : AppColors.slate900,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate900,
                               ),
                             ),
                           ),
@@ -348,7 +384,10 @@ class WordMixerCompletedView extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              context.tr('home.keep_it_going', fallback: 'Keep it going!'),
+                              context.tr(
+                                'home.keep_it_going',
+                                fallback: 'Keep it going!',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -374,7 +413,10 @@ class WordMixerCompletedView extends StatelessWidget {
                 onPressed: onPracticeMore,
                 icon: const Icon(Icons.shuffle_rounded),
                 label: Text(
-                  context.tr('home.practice_more_words', fallback: 'Practice Another Word'),
+                  context.tr(
+                    'home.practice_more_words',
+                    fallback: 'Practice Another Word',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,

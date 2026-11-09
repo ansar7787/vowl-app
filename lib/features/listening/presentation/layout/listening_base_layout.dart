@@ -349,10 +349,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
       CustomSnackBar.show(
         context: context,
         message: context
-            .tr(
-              'game.audio_clue_activated',
-              fallback: 'AUDIO CLUE ACTIVATED',
-            )
+            .tr('game.audio_clue_activated', fallback: 'AUDIO CLUE ACTIVATED')
             .toUpperCase(),
         type: CustomSnackBarType.info,
       );

@@ -200,7 +200,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
   Widget _buildDragTargetPage(int index, String text) {
     final bool isSelected = widget.selectedIndex == index;
     final bool isHovered = widget.hoveredIndex == index;
-    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final bool reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     Color borderColor = widget.color.withValues(alpha: 0.15);
@@ -386,10 +387,11 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),
-                                  color: (index == widget.correctIndex
-                                          ? AppColors.gameCorrect
-                                          : AppColors.gameIncorrect)
-                                      .withValues(alpha: 0.12),
+                                  color:
+                                      (index == widget.correctIndex
+                                              ? AppColors.gameCorrect
+                                              : AppColors.gameIncorrect)
+                                          .withValues(alpha: 0.12),
                                 ),
                                 child: Text(
                                   (index == widget.correctIndex)
@@ -425,10 +427,11 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),
-                                  color: (index == widget.correctIndex
-                                          ? AppColors.gameCorrect
-                                          : AppColors.gameIncorrect)
-                                      .withValues(alpha: 0.12),
+                                  color:
+                                      (index == widget.correctIndex
+                                              ? AppColors.gameCorrect
+                                              : AppColors.gameIncorrect)
+                                          .withValues(alpha: 0.12),
                                 ),
                                 child: Text(
                                   (index == widget.correctIndex)
@@ -462,12 +465,12 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
             return reduceMotion
                 ? pageContainer
                 : pageContainer
-                    .animate(target: isHovered ? 1.0 : 0.0)
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.05, 1.05),
-                      duration: 150.ms,
-                    );
+                      .animate(target: isHovered ? 1.0 : 0.0)
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.05, 1.05),
+                        duration: 150.ms,
+                      );
           },
         ),
       ),

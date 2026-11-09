@@ -65,11 +65,21 @@ class SoundImageMatchGrid extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: _buildOptionTile(context, 0, options[0], _getEmoji(0)),
+                    child: _buildOptionTile(
+                      context,
+                      0,
+                      options[0],
+                      _getEmoji(0),
+                    ),
                   ),
                   SizedBox(width: 16.w),
                   Expanded(
-                    child: _buildOptionTile(context, 1, options[1], _getEmoji(1)),
+                    child: _buildOptionTile(
+                      context,
+                      1,
+                      options[1],
+                      _getEmoji(1),
+                    ),
                   ),
                 ],
               ),
@@ -81,12 +91,22 @@ class SoundImageMatchGrid extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Expanded(
-                      child: _buildOptionTile(context, 2, options[2], _getEmoji(2)),
+                      child: _buildOptionTile(
+                        context,
+                        2,
+                        options[2],
+                        _getEmoji(2),
+                      ),
                     ),
                     SizedBox(width: 16.w),
                     if (options.length > 3)
                       Expanded(
-                        child: _buildOptionTile(context, 3, options[3], _getEmoji(3)),
+                        child: _buildOptionTile(
+                          context,
+                          3,
+                          options[3],
+                          _getEmoji(3),
+                        ),
                       )
                     else
                       const Spacer(),
@@ -107,11 +127,17 @@ class SoundImageMatchGrid extends StatelessWidget {
     return '🖼️';
   }
 
-  Widget _buildOptionTile(BuildContext context, int index, String text, String emoji) {
+  Widget _buildOptionTile(
+    BuildContext context,
+    int index,
+    String text,
+    String emoji,
+  ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final Color modernCorrect = tokens?.gameCorrect ?? AppColors.gameCorrect;
-    final Color modernIncorrect = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
+    final Color modernIncorrect =
+        tokens?.gameIncorrect ?? AppColors.gameIncorrect;
 
     bool isSelected = selectedIndex == index;
     Color tileColor;
@@ -120,7 +146,9 @@ class SoundImageMatchGrid extends StatelessWidget {
 
     if (isAnswered && isSelected) {
       final isCorrect = isCorrectState == true;
-      tileColor = (isCorrect ? modernCorrect : modernIncorrect).withValues(alpha: isDark ? 0.22 : 0.12);
+      tileColor = (isCorrect ? modernCorrect : modernIncorrect).withValues(
+        alpha: isDark ? 0.22 : 0.12,
+      );
       borderColor = isCorrect ? modernCorrect : modernIncorrect;
       textColor = isCorrect ? modernCorrect : modernIncorrect;
     } else if (isAnswered &&
@@ -134,15 +162,11 @@ class SoundImageMatchGrid extends StatelessWidget {
       borderColor = color;
       textColor = color;
     } else {
-      tileColor = isDark
-          ? color.withValues(alpha: 0.08)
-          : Colors.white;
+      tileColor = isDark ? color.withValues(alpha: 0.08) : Colors.white;
       borderColor = isDark
           ? color.withValues(alpha: 0.25)
           : color.withValues(alpha: 0.18);
-      textColor = isDark
-          ? Colors.white
-          : const Color(0xFF1E293B);
+      textColor = isDark ? Colors.white : const Color(0xFF1E293B);
     }
 
     return Semantics(
@@ -164,8 +188,9 @@ class SoundImageMatchGrid extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: (isSelected ? borderColor : Colors.black)
-                    .withValues(alpha: isDark ? 0.25 : 0.06),
+                color: (isSelected ? borderColor : Colors.black).withValues(
+                  alpha: isDark ? 0.25 : 0.06,
+                ),
                 blurRadius: 10,
                 offset: const Offset(0, 3),
               ),

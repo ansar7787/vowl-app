@@ -129,7 +129,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
       'speaking_games.pick_a_reply',
       fallback: 'Pick a response to speak!',
     );
-    final bool isPlaceholder = isUser && !isAnswered && (content == placeholderText);
+    final bool isPlaceholder =
+        isUser && !isAnswered && (content == placeholderText);
 
     final isMidnight = AppTheme.isMidnight(context);
 
@@ -248,13 +249,17 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.5.sp,
-                    fontWeight: isPlaceholder ? FontWeight.w400 : FontWeight.w500,
-                    fontStyle: isPlaceholder ? FontStyle.italic : FontStyle.normal,
+                    fontWeight: isPlaceholder
+                        ? FontWeight.w400
+                        : FontWeight.w500,
+                    fontStyle: isPlaceholder
+                        ? FontStyle.italic
+                        : FontStyle.normal,
                     color: isPlaceholder
                         ? (isDark ? Colors.white54 : Colors.black45)
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.95)
-                            : const Color(0xFF1E293B)),
+                              ? Colors.white.withValues(alpha: 0.95)
+                              : const Color(0xFF1E293B)),
                     height: 1.4,
                   ),
                 ),

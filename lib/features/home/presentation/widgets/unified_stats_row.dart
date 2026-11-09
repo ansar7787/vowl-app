@@ -46,12 +46,11 @@ class UnifiedStatsRow extends StatelessWidget {
   });
 
   /// Shimmer placeholder constructor for pre-load and skeleton states.
-  const UnifiedStatsRow.shimmer({
-    super.key,
-  })  : user = null,
-        globalRank = null,
-        isLoading = true,
-        isRankLoading = true;
+  const UnifiedStatsRow.shimmer({super.key})
+    : user = null,
+      globalRank = null,
+      isLoading = true,
+      isRankLoading = true;
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +60,8 @@ class UnifiedStatsRow extends StatelessWidget {
 
     final currentUser = user!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final shelfWidget = RepaintBoundary(
       child: Container(
@@ -86,8 +85,8 @@ class UnifiedStatsRow extends StatelessWidget {
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate100),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate200),
             width: 1,
           ),
         ),
@@ -268,8 +267,8 @@ class UnifiedStatsRow extends StatelessWidget {
 
   Widget _buildShimmerShelf(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Container(
       width: double.infinity,
@@ -283,19 +282,43 @@ class UnifiedStatsRow extends StatelessWidget {
           color: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : AppColors.slate100),
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
         ),
       ),
       child: Row(
         children: [
-          Expanded(child: _buildShimmerTile(context, labelWidth: 34.w, valueWidth: 24.w)),
+          Expanded(
+            child: _buildShimmerTile(
+              context,
+              labelWidth: 34.w,
+              valueWidth: 24.w,
+            ),
+          ),
           SizedBox(width: 4.w),
-          Expanded(child: _buildShimmerTile(context, labelWidth: 30.w, valueWidth: 32.w)),
+          Expanded(
+            child: _buildShimmerTile(
+              context,
+              labelWidth: 30.w,
+              valueWidth: 32.w,
+            ),
+          ),
           SizedBox(width: 4.w),
-          Expanded(child: _buildShimmerTile(context, labelWidth: 36.w, valueWidth: 20.w)),
+          Expanded(
+            child: _buildShimmerTile(
+              context,
+              labelWidth: 36.w,
+              valueWidth: 20.w,
+            ),
+          ),
           SizedBox(width: 4.w),
-          Expanded(child: _buildShimmerTile(context, labelWidth: 28.w, valueWidth: 26.w)),
+          Expanded(
+            child: _buildShimmerTile(
+              context,
+              labelWidth: 28.w,
+              valueWidth: 26.w,
+            ),
+          ),
         ],
       ),
     );

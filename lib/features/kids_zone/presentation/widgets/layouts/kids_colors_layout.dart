@@ -149,6 +149,7 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -219,7 +220,8 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
                             Icon(
                               Icons.touch_app_rounded,
                               size: 15.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : _LocalPalette.color92400e,
@@ -242,7 +244,8 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.9)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -383,20 +386,8 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
     final isCorrect = (quest.correctAnswer?.trim() == option.trim());
 
     return isColorQuest
-        ? _buildPaintTube(
-            context,
-            state,
-            option,
-            isCorrect,
-            maxWidth,
-          )
-        : _buildObjectCard(
-            context,
-            state,
-            option,
-            isCorrect,
-            maxWidth,
-          );
+        ? _buildPaintTube(context, state, option, isCorrect, maxWidth)
+        : _buildObjectCard(context, state, option, isCorrect, maxWidth);
   }
 
   Widget _buildEasel(
@@ -413,7 +404,8 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         final isAnswered = state.answerStatus.isAnswered;
-        final isCorrectAnswer = (_selectedOption == quest.correctAnswer) ||
+        final isCorrectAnswer =
+            (_selectedOption == quest.correctAnswer) ||
             (state.answerStatus == AnswerStatus.correct);
 
         Color canvasBg = Colors.white;
@@ -492,8 +484,9 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
                         child: Container(
                           padding: EdgeInsets.all(5.r),
                           decoration: BoxDecoration(
-                            color: _LocalPalette.color92400e
-                                .withValues(alpha: 0.1),
+                            color: _LocalPalette.color92400e.withValues(
+                              alpha: 0.1,
+                            ),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -792,10 +785,7 @@ class _KidsColorsLayoutState extends State<KidsColorsLayout> {
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: borderColor,
-          width: isSelected ? 2.5.w : 2.w,
-        ),
+        border: Border.all(color: borderColor, width: isSelected ? 2.5.w : 2.w),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.08),

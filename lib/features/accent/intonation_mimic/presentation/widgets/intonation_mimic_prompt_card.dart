@@ -27,7 +27,8 @@ class IntonationMimicPromptCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasEmotion = emotionContext != null && emotionContext!.trim().isNotEmpty;
+    final hasEmotion =
+        emotionContext != null && emotionContext!.trim().isNotEmpty;
 
     return Container(
       width: double.infinity,

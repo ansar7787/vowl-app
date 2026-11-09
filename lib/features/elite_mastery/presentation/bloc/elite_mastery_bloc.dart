@@ -313,8 +313,10 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
                   ),
                 ),
               );
-              final milestoneBadge =
-                  TrophyRoomCubit.getMilestoneBadge('elitemastery', level);
+              final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+                'elitemastery',
+                level,
+              );
               if (milestoneBadge != null && awardBadge != null) {
                 _persistRewardSafely(
                   'awardBadge',

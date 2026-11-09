@@ -24,7 +24,6 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-
 /// Companion mascot screen for equipping skins, backgrounds, and styling avatars.
 class VowlMascotScreen extends StatefulWidget {
   /// Creates a [VowlMascotScreen].
@@ -550,7 +549,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isSelected
-                                    ? (isDark ? AppColors.indigo400 : primaryColor)
+                                    ? (isDark
+                                          ? AppColors.indigo400
+                                          : primaryColor)
                                     : (isDark
                                           ? AppColors.slate400
                                           : AppColors.slate500),
@@ -941,17 +942,33 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       ),
                       decoration: BoxDecoration(
                         color: isOwned
-                            ? (isDark ? AppColors.indigo500.withValues(alpha: 0.2) : primaryColor.withValues(alpha: 0.15))
+                            ? (isDark
+                                  ? AppColors.indigo500.withValues(alpha: 0.2)
+                                  : primaryColor.withValues(alpha: 0.15))
                             : (canAfford
-                                  ? (isDark ? AppColors.slate800 : primaryColor.withValues(alpha: 0.05))
-                                  : (isDark ? AppColors.slate800 : Colors.grey.withValues(alpha: 0.05))),
+                                  ? (isDark
+                                        ? AppColors.slate800
+                                        : primaryColor.withValues(alpha: 0.05))
+                                  : (isDark
+                                        ? AppColors.slate800
+                                        : Colors.grey.withValues(alpha: 0.05))),
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: isOwned
-                              ? (isDark ? AppColors.indigo400.withValues(alpha: 0.4) : primaryColor.withValues(alpha: 0.3))
+                              ? (isDark
+                                    ? AppColors.indigo400.withValues(alpha: 0.4)
+                                    : primaryColor.withValues(alpha: 0.3))
                               : (canAfford
-                                    ? (isDark ? AppColors.slate700 : primaryColor.withValues(alpha: 0.15))
-                                    : (isDark ? AppColors.slate700 : Colors.grey.withValues(alpha: 0.15))),
+                                    ? (isDark
+                                          ? AppColors.slate700
+                                          : primaryColor.withValues(
+                                              alpha: 0.15,
+                                            ))
+                                    : (isDark
+                                          ? AppColors.slate700
+                                          : Colors.grey.withValues(
+                                              alpha: 0.15,
+                                            ))),
                         ),
                       ),
                       child: isOwned
@@ -963,7 +980,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 8.sp,
-                                color: isDark ? AppColors.indigo400 : primaryColor,
+                                color: isDark
+                                    ? AppColors.indigo400
+                                    : primaryColor,
                                 fontWeight: FontWeight.w900,
                               ),
                               maxLines: 1,
@@ -978,8 +997,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                       ? Icons.paid_rounded
                                       : Icons.lock_rounded,
                                   color: canAfford
-                                      ? (isDark ? AppColors.indigo400 : primaryColor)
-                                      : (isDark ? AppColors.slate400 : Colors.grey),
+                                      ? (isDark
+                                            ? AppColors.indigo400
+                                            : primaryColor)
+                                      : (isDark
+                                            ? AppColors.slate400
+                                            : Colors.grey),
                                   size: 10.r,
                                 ),
                                 SizedBox(width: 2.w),
@@ -990,8 +1013,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     fontSize: 9.sp,
                                     fontWeight: FontWeight.w900,
                                     color: canAfford
-                                        ? (isDark ? AppColors.indigo400 : primaryColor)
-                                        : (isDark ? AppColors.slate300 : AppColors.slate600),
+                                        ? (isDark
+                                              ? AppColors.indigo400
+                                              : primaryColor)
+                                        : (isDark
+                                              ? AppColors.slate300
+                                              : AppColors.slate600),
                                   ),
                                 ),
                               ],
@@ -1118,7 +1145,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? AppColors.indigo400 : primaryColor,
+                              color: isDark
+                                  ? AppColors.indigo400
+                                  : primaryColor,
                               letterSpacing: 2,
                             ),
                             maxLines: 1,
@@ -1202,10 +1231,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
 
     final statusLabel = isOwned
         ? (isEquipped
-              ? context.tr(
-                  'vowl_mascot.action_disconnect',
-                  fallback: 'REMOVE',
-                )
+              ? context.tr('vowl_mascot.action_disconnect', fallback: 'REMOVE')
               : context.tr('vowl_mascot.action_link', fallback: 'EQUIP'))
         : context.tr(
             'vowl_mascot.price_label',
@@ -1308,7 +1334,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         label: NumberFormat.decimalPattern().format(price),
                         color: canAfford
                             ? primaryColor.withValues(alpha: 0.1)
-                            : (isDark ? AppColors.slate800 : Colors.grey.withValues(alpha: 0.1)),
+                            : (isDark
+                                  ? AppColors.slate800
+                                  : Colors.grey.withValues(alpha: 0.1)),
                         textColor: canAfford
                             ? (isDark ? AppColors.indigo400 : primaryColor)
                             : (isDark ? AppColors.slate400 : Colors.grey),
@@ -1415,7 +1443,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   // Section Header
   // ===========================================================================
 
-  Widget _buildSectionHeader(String label, Color textColor, [bool isDark = false]) {
+  Widget _buildSectionHeader(
+    String label,
+    Color textColor, [
+    bool isDark = false,
+  ]) {
     return Semantics(
       header: true,
       child: Row(
@@ -1445,5 +1477,4 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
       ),
     );
   }
-
 }

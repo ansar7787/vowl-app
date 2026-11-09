@@ -47,4 +47,3 @@ abstract class ReferralRepository {
   /// the number of newly credited referrals (0 if none).
   Future<int> syncAmbassadorRewards(UserEntity user);
 }
-

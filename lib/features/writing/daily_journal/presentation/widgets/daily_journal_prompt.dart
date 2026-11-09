@@ -74,7 +74,9 @@ class DailyJournalPrompt extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white.withValues(alpha: 0.88) : const Color(0xFF1E293B),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.88)
+                        : const Color(0xFF1E293B),
                     height: 1.45,
                   ),
                 ),

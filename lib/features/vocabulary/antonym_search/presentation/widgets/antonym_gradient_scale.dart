@@ -28,9 +28,7 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
   @override
   void initState() {
     super.initState();
-    _sliderNotifier = ValueNotifier(
-      (widget.gradientScale.length - 1) / 2.0,
-    );
+    _sliderNotifier = ValueNotifier((widget.gradientScale.length - 1) / 2.0);
   }
 
   @override

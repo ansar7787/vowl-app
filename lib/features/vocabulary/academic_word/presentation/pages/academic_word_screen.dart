@@ -227,8 +227,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                         RawScrollbar(
                           key: const Key('academic_word_scrollbar'),
                           controller: _scrollController,
-                          thumbColor: _cachedTheme.primaryColor
-                              .withValues(alpha: 0.5),
+                          thumbColor: _cachedTheme.primaryColor.withValues(
+                            alpha: 0.5,
+                          ),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
@@ -250,7 +251,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                         child: IgnorePointer(
                                           ignoring: _isDragPassed.value,
                                           child: _AcademicWordGameBody(
-                                            key: const Key('academic_word_game_body'),
+                                            key: const Key(
+                                              'academic_word_game_body',
+                                            ),
                                             quest: quest,
                                             isAnswered:
                                                 isAnsweredNotifier.value,
@@ -270,7 +273,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                             activeShardIndex:
                                                 _activeShardIndex.value,
                                             dragOffset: _dragOffset.value,
-                                            themeColor: _cachedTheme.primaryColor,
+                                            themeColor:
+                                                _cachedTheme.primaryColor,
                                             onShardTap: (i) =>
                                                 _attemptThrust(i, quest),
                                             onDragStart: _onShardDragStart,
@@ -297,20 +301,20 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 20.w,
                                                 ),
-                                                child:
-                                                    AcademicWordFieldCollocations(
-                                                      key: const Key('academic_word_collocations_panel'),
-                                                      academicField:
-                                                          quest.academicField,
-                                                      collocations:
-                                                          quest.collocations,
-                                                      contextSentence:
-                                                          quest
-                                                              .contextSentence ??
-                                                          quest.example,
-                                                      color: _cachedTheme
-                                                          .primaryColor,
-                                                    ),
+                                                child: AcademicWordFieldCollocations(
+                                                  key: const Key(
+                                                    'academic_word_collocations_panel',
+                                                  ),
+                                                  academicField:
+                                                      quest.academicField,
+                                                  collocations:
+                                                      quest.collocations,
+                                                  contextSentence:
+                                                      quest.contextSentence ??
+                                                      quest.example,
+                                                  color:
+                                                      _cachedTheme.primaryColor,
+                                                ),
                                               ),
                                             if (_isDragPassed.value &&
                                                 !isAnsweredNotifier.value)
@@ -322,7 +326,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                   children: [
                                                     SizedBox(height: 24.h),
                                                     TypeToConfirmOverlay(
-                                                      key: const Key('academic_word_type_confirm_overlay'),
+                                                      key: const Key(
+                                                        'academic_word_type_confirm_overlay',
+                                                      ),
                                                       expectedText:
                                                           quest.correctAnswer ??
                                                           '',

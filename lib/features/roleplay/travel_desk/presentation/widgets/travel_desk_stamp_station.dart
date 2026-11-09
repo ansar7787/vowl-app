@@ -29,7 +29,8 @@ class TravelDeskStampStation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final bool reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final content = Container(
@@ -87,12 +88,24 @@ class TravelDeskStampStation extends StatelessWidget {
               onDragEnd: (details) {
                 onDragEnded();
               },
-              feedback: _buildStampCore(color, isGlowing: true, reduceMotion: reduceMotion),
+              feedback: _buildStampCore(
+                color,
+                isGlowing: true,
+                reduceMotion: reduceMotion,
+              ),
               childWhenDragging: Opacity(
                 opacity: 0.25,
-                child: _buildStampCore(color, isGlowing: false, reduceMotion: reduceMotion),
+                child: _buildStampCore(
+                  color,
+                  isGlowing: false,
+                  reduceMotion: reduceMotion,
+                ),
               ),
-              child: _buildStampCore(color, isGlowing: false, reduceMotion: reduceMotion),
+              child: _buildStampCore(
+                color,
+                isGlowing: false,
+                reduceMotion: reduceMotion,
+              ),
             ),
           ),
 
@@ -118,7 +131,11 @@ class TravelDeskStampStation extends StatelessWidget {
         : content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 
-  Widget _buildStampCore(Color color, {required bool isGlowing, required bool reduceMotion}) {
+  Widget _buildStampCore(
+    Color color, {
+    required bool isGlowing,
+    required bool reduceMotion,
+  }) {
     final stampContainer = Container(
       width: 72.r,
       height: 80.r,
@@ -140,24 +157,20 @@ class TravelDeskStampStation extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Icon(
-          Icons.approval_rounded,
-          color: Colors.white,
-          size: 32.r,
-        ),
+        child: Icon(Icons.approval_rounded, color: Colors.white, size: 32.r),
       ),
     );
 
     final animatedStamp = reduceMotion
         ? stampContainer
         : stampContainer
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 2.seconds,
-              curve: Curves.easeInOut,
-            );
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 2.seconds,
+                curve: Curves.easeInOut,
+              );
 
     return Material(
       color: Colors.transparent,

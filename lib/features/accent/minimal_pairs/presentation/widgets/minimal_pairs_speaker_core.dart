@@ -48,11 +48,7 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.volume_up_rounded,
-              color: color,
-              size: 28.r,
-            ),
+            Icon(Icons.volume_up_rounded, color: color, size: 28.r),
             SizedBox(height: 4.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 6.w),

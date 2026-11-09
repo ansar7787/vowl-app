@@ -36,10 +36,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
     if (!reduceMotion) {
       speakerIcon = speakerIcon
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.15, 1.15),
-          );
+          .scale(begin: const Offset(1, 1), end: const Offset(1.15, 1.15));
     }
 
     return ScaleButton(

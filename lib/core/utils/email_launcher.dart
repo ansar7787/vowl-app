@@ -7,7 +7,9 @@ import 'package:url_launcher/url_launcher.dart';
 class EmailLauncher {
   EmailLauncher._();
 
-  static const MethodChannel _channel = MethodChannel('com.vowl.app/email_launcher');
+  static const MethodChannel _channel = MethodChannel(
+    'com.vowl.app/email_launcher',
+  );
 
   /// Opens the device's default email client directly to the inbox dashboard.
   ///
@@ -20,12 +22,17 @@ class EmailLauncher {
   static Future<bool> openInbox() async {
     try {
       if (!kIsWeb && Platform.isAndroid) {
-        final bool? success = await _channel.invokeMethod<bool>('openEmailInbox');
+        final bool? success = await _channel.invokeMethod<bool>(
+          'openEmailInbox',
+        );
         if (success == true) return true;
       } else if (!kIsWeb && Platform.isIOS) {
         final Uri iosInboxUri = Uri.parse('message://');
         if (await canLaunchUrl(iosInboxUri)) {
-          return await launchUrl(iosInboxUri, mode: LaunchMode.externalApplication);
+          return await launchUrl(
+            iosInboxUri,
+            mode: LaunchMode.externalApplication,
+          );
         }
       }
 
@@ -41,7 +48,10 @@ class EmailLauncher {
       try {
         final Uri mailtoUri = Uri(scheme: 'mailto');
         if (await canLaunchUrl(mailtoUri)) {
-          return await launchUrl(mailtoUri, mode: LaunchMode.externalApplication);
+          return await launchUrl(
+            mailtoUri,
+            mode: LaunchMode.externalApplication,
+          );
         }
       } catch (_) {
         return false;
@@ -50,4 +60,3 @@ class EmailLauncher {
     }
   }
 }
-

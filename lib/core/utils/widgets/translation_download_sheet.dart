@@ -140,15 +140,15 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           decoration: BoxDecoration(
             color: isMidnight
                 ? AppColors.midnightSurface
-                : (isDark ? AppColors.slate900 : Colors.white),
+                : (isDark ? AppColors.midnightNavy : Colors.white),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border(
               top: BorderSide(
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate200),
                 width: 1,
               ),
             ),
@@ -334,9 +334,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     begin: const Offset(1.05, 1.05),
                     end: const Offset(1, 1),
                   ),
-              SizedBox(
-                height: 16.h + MediaQuery.paddingOf(context).bottom,
-              ),
+              SizedBox(height: 16.h + MediaQuery.paddingOf(context).bottom),
             ],
           ),
         ).animate().slideY(

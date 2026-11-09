@@ -31,17 +31,27 @@ import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class MockReadingBloc extends Mock implements ReadingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
 
 class FakeReadingEvent extends Fake implements ReadingEvent {}
+
 class FakeReadingState extends Fake implements ReadingState {}
 
 void main() {
@@ -75,7 +85,8 @@ void main() {
     targetWord: 'window',
     wordCategory: 'noun',
     hint: 'Think of the glass part of a room that can be opened or shut.',
-    explanation: 'A window can be opened or closed, and closing it keeps cold air out.',
+    explanation:
+        'A window can be opened or closed, and closing it keeps cold air out.',
   );
 
   const testLoadedState = ReadingLoaded(
@@ -101,12 +112,14 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -122,8 +135,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
@@ -158,7 +172,9 @@ void main() {
     when(() => mockHapticService.heavy()).thenAnswer((_) async {});
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockLocaleService.tr(
         any(),
@@ -171,8 +187,12 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -183,13 +203,27 @@ void main() {
     ).thenReturn(null);
 
     // Register mocks in DI
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
-    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
-    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<AnalyticsService>()) {
+      di.sl.unregister<AnalyticsService>();
+    }
+    if (di.sl.isRegistered<AdService>()) {
+      di.sl.unregister<AdService>();
+    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
@@ -238,9 +272,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: ClozeTestScreen(level: level),
-            ),
+            home: Scaffold(body: ClozeTestScreen(level: level)),
           ),
         ),
       ),
@@ -250,157 +282,169 @@ void main() {
   }
 
   group('ClozeTestScreen - Production Layout & Mechanics Tests', () {
-    testWidgets('1. Initial rendering of instruction, pneumatic port passage, and fuel cell options',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '1. Initial rendering of instruction, pneumatic port passage, and fuel cell options',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Verify instruction pill
-      expect(
-        find.textContaining('fits the context'),
-        findsOneWidget,
-      );
+        // Verify instruction pill
+        expect(find.textContaining('fits the context'), findsOneWidget);
 
-      // Verify pneumatic port passage text and placeholder
-      expect(find.byType(ClozeTestPneumaticPort), findsOneWidget);
-      expect(find.text('DRAG HERE'), findsOneWidget);
-      expect(find.text('(noun)'), findsOneWidget);
+        // Verify pneumatic port passage text and placeholder
+        expect(find.byType(ClozeTestPneumaticPort), findsOneWidget);
+        expect(find.text('DRAG HERE'), findsOneWidget);
+        expect(find.text('(noun)'), findsOneWidget);
 
-      // Verify fuel cell options
-      expect(find.byType(ClozeTestFuelCells), findsOneWidget);
-      expect(find.text('WINDOW'), findsOneWidget);
-      expect(find.text('ROAD'), findsOneWidget);
-      expect(find.text('SHELF'), findsOneWidget);
-      expect(find.text('RIVER'), findsOneWidget);
-    });
+        // Verify fuel cell options
+        expect(find.byType(ClozeTestFuelCells), findsOneWidget);
+        expect(find.text('WINDOW'), findsOneWidget);
+        expect(find.text('ROAD'), findsOneWidget);
+        expect(find.text('SHELF'), findsOneWidget);
+        expect(find.text('RIVER'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. Tapping wrong fuel cell option docks it, triggers wrong audio/haptics, and dispatches SubmitAnswer(false)',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '2. Tapping wrong fuel cell option docks it, triggers wrong audio/haptics, and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Tap on incorrect option "ROAD"
-      final wrongOption = find.text('ROAD');
-      expect(wrongOption, findsOneWidget);
+        // Tap on incorrect option "ROAD"
+        final wrongOption = find.text('ROAD');
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify wrong feedback
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify wrong feedback
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('3. Tapping correct fuel cell option docks it, triggers selection haptics, and reveals DynamicAnagramWrapper',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '3. Tapping correct fuel cell option docks it, triggers selection haptics, and reveals DynamicAnagramWrapper',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Tap on correct option "WINDOW"
-      final correctOption = find.text('WINDOW');
-      expect(correctOption, findsOneWidget);
+        // Tap on correct option "WINDOW"
+        final correctOption = find.text('WINDOW');
+        expect(correctOption, findsOneWidget);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify selection haptic was triggered
-      verify(() => mockHapticService.selection()).called(1);
+        // Verify selection haptic was triggered
+        verify(() => mockHapticService.selection()).called(1);
 
-      // Verify DynamicAnagramWrapper is revealed
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-    });
+        // Verify DynamicAnagramWrapper is revealed
+        expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+      },
+    );
 
-    testWidgets('4. Skipping DynamicAnagramWrapper dispatches SubmitAnswer(true)',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '4. Skipping DynamicAnagramWrapper dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Tap on correct option "WINDOW" to reveal anagram
-      await tester.tap(find.text('WINDOW'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        // Tap on correct option "WINDOW" to reveal anagram
+        await tester.tap(find.text('WINDOW'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Locate Skip button in DynamicAnagramWrapper and tap it
-      final skipBtn = find.text('SKIP');
-      await tester.ensureVisible(skipBtn);
-      await tester.pumpAndSettle();
-      expect(skipBtn, findsOneWidget);
+        // Locate Skip button in DynamicAnagramWrapper and tap it
+        final skipBtn = find.text('SKIP');
+        await tester.ensureVisible(skipBtn);
+        await tester.pumpAndSettle();
+        expect(skipBtn, findsOneWidget);
 
-      await tester.tap(skipBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(skipBtn);
+        await tester.pumpAndSettle();
 
-      // Verify SubmitAnswer(true) was dispatched
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        // Verify SubmitAnswer(true) was dispatched
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('5. Drag-and-drop correct fuel cell option onto pneumatic port triggers DynamicAnagramWrapper',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '5. Drag-and-drop correct fuel cell option onto pneumatic port triggers DynamicAnagramWrapper',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Drag WINDOW option onto pneumatic port target (DRAG HERE)
-      final source = find.text('WINDOW');
-      final target = find.text('DRAG HERE');
+        // Drag WINDOW option onto pneumatic port target (DRAG HERE)
+        final source = find.text('WINDOW');
+        final target = find.text('DRAG HERE');
 
-      final firstLocation = tester.getCenter(source);
-      final targetLocation = tester.getCenter(target);
+        final firstLocation = tester.getCenter(source);
+        final targetLocation = tester.getCenter(target);
 
-      final gesture = await tester.startGesture(firstLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveTo(targetLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final gesture = await tester.startGesture(firstLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(targetLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify DynamicAnagramWrapper opened
-      expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-    });
+        // Verify DynamicAnagramWrapper opened
+        expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
+      },
+    );
 
-    testWidgets('6. Drag-and-drop incorrect fuel cell option onto pneumatic port triggers SubmitAnswer(false)',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '6. Drag-and-drop incorrect fuel cell option onto pneumatic port triggers SubmitAnswer(false)',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Drag ROAD option onto pneumatic port target (DRAG HERE)
-      final source = find.text('ROAD');
-      final target = find.text('DRAG HERE');
+        // Drag ROAD option onto pneumatic port target (DRAG HERE)
+        final source = find.text('ROAD');
+        final target = find.text('DRAG HERE');
 
-      final firstLocation = tester.getCenter(source);
-      final targetLocation = tester.getCenter(target);
+        final firstLocation = tester.getCenter(source);
+        final targetLocation = tester.getCenter(target);
 
-      final gesture = await tester.startGesture(firstLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveTo(targetLocation);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final gesture = await tester.startGesture(firstLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(targetLocation);
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Verify wrong answer submission
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Verify wrong answer submission
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('7. Interaction lockout: once an option is docked, fuel cells ignore further taps',
-        (tester) async {
-      await pumpClozeTest(tester);
+    testWidgets(
+      '7. Interaction lockout: once an option is docked, fuel cells ignore further taps',
+      (tester) async {
+        await pumpClozeTest(tester);
 
-      // Tap on correct option
-      await tester.tap(find.text('WINDOW'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        // Tap on correct option
+        await tester.tap(find.text('WINDOW'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      // Attempt to tap another option (ignored due to lockout)
-      await tester.tap(find.text('ROAD'), warnIfMissed: false);
-      await tester.pump();
+        // Attempt to tap another option (ignored due to lockout)
+        await tester.tap(find.text('ROAD'), warnIfMissed: false);
+        await tester.pump();
 
-      // SubmitAnswer should not be called with false
-      verifyNever(() => mockReadingBloc.add(const SubmitAnswer(false)));
-    });
+        // SubmitAnswer should not be called with false
+        verifyNever(() => mockReadingBloc.add(const SubmitAnswer(false)));
+      },
+    );
 
-    testWidgets('8. Hint button in app bar dispatches ReadingHintUsed',
-        (tester) async {
+    testWidgets('8. Hint button in app bar dispatches ReadingHintUsed', (
+      tester,
+    ) async {
       await pumpClozeTest(tester);
 
       final hintBtn = find.byType(QuestHintButton);
@@ -412,45 +456,50 @@ void main() {
       verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
-    testWidgets('9. Displays GameShimmerLoading when quest is null or uninitialized',
-        (tester) async {
-      const loadingState = ReadingInitial();
-      await pumpClozeTest(tester, state: loadingState);
+    testWidgets(
+      '9. Displays GameShimmerLoading when quest is null or uninitialized',
+      (tester) async {
+        const loadingState = ReadingInitial();
+        await pumpClozeTest(tester, state: loadingState);
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byType(ClozeTestPneumaticPort), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byType(ClozeTestPneumaticPort), findsNothing);
+      },
+    );
 
-    testWidgets('10. Level 1 displays GameBriefingLayer and dismisses on start tap',
-        (tester) async {
-      await pumpClozeTest(tester, level: 1);
+    testWidgets(
+      '10. Level 1 displays GameBriefingLayer and dismisses on start tap',
+      (tester) async {
+        await pumpClozeTest(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      final startButton = find.byType(ElevatedButton);
-      if (startButton.evaluate().isNotEmpty) {
-        await tester.tap(startButton);
-        await tester.pumpAndSettle();
-        expect(find.byType(GameBriefingLayer), findsNothing);
-      }
-    });
+        final startButton = find.byType(ElevatedButton);
+        if (startButton.evaluate().isNotEmpty) {
+          await tester.tap(startButton);
+          await tester.pumpAndSettle();
+          expect(find.byType(GameBriefingLayer), findsNothing);
+        }
+      },
+    );
 
-    testWidgets('11. Renders cleanly in dark theme mode and small screen 320dp width without overflow',
-        (tester) async {
-      await pumpClozeTest(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
+    testWidgets(
+      '11. Renders cleanly in dark theme mode and small screen 320dp width without overflow',
+      (tester) async {
+        await pumpClozeTest(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
 
-      expect(find.byType(ClozeTestScreen), findsOneWidget);
-      expect(find.text('WINDOW'), findsOneWidget);
-      expect(find.text('ROAD'), findsOneWidget);
-      expect(find.text('SHELF'), findsOneWidget);
-      expect(find.text('RIVER'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ClozeTestScreen), findsOneWidget);
+        expect(find.text('WINDOW'), findsOneWidget);
+        expect(find.text('ROAD'), findsOneWidget);
+        expect(find.text('SHELF'), findsOneWidget);
+        expect(find.text('RIVER'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

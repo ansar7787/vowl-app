@@ -207,10 +207,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas>
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            _LocalPalette.woodFrameLight,
-            _LocalPalette.woodFrameDark,
-          ],
+          colors: [_LocalPalette.woodFrameLight, _LocalPalette.woodFrameDark],
         ),
         boxShadow: [
           BoxShadow(
@@ -376,11 +373,15 @@ class HandwritingCanvasState extends State<HandwritingCanvas>
                                     decoration: BoxDecoration(
                                       color: _showGuide
                                           ? Colors.amber.withValues(alpha: 0.25)
-                                          : Colors.white.withValues(alpha: 0.08),
+                                          : Colors.white.withValues(
+                                              alpha: 0.08,
+                                            ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
                                         color: _showGuide
-                                            ? Colors.amber.withValues(alpha: 0.6)
+                                            ? Colors.amber.withValues(
+                                                alpha: 0.6,
+                                              )
                                             : Colors.transparent,
                                         width: 1,
                                       ),
@@ -434,7 +435,9 @@ class HandwritingCanvasState extends State<HandwritingCanvas>
                                           ? Colors.lightBlue.withValues(
                                               alpha: 0.28,
                                             )
-                                          : Colors.white.withValues(alpha: 0.08),
+                                          : Colors.white.withValues(
+                                              alpha: 0.08,
+                                            ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
                                         color: _isDemoActive
@@ -598,4 +601,3 @@ class HandwritingCanvasState extends State<HandwritingCanvas>
     );
   }
 }
-

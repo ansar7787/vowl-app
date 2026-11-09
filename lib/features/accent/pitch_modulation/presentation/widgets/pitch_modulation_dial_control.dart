@@ -205,9 +205,7 @@ class PitchModulationDialControl extends StatelessWidget {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
 
-    Color cardBg = isDark
-        ? Colors.white.withValues(alpha: 0.04)
-        : Colors.white;
+    Color cardBg = isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white;
     Color borderColor = isDark
         ? Colors.white.withValues(alpha: 0.12)
         : Colors.black.withValues(alpha: 0.08);
@@ -308,13 +306,13 @@ class PitchModulationDialControl extends StatelessWidget {
                       Icon(
                         isSelected
                             ? (isAnswered
-                                ? (correct
-                                    ? Icons.check_circle_rounded
-                                    : Icons.cancel_rounded)
-                                : Icons.check_circle_rounded)
+                                  ? (correct
+                                        ? Icons.check_circle_rounded
+                                        : Icons.cancel_rounded)
+                                  : Icons.check_circle_rounded)
                             : (index == 1
-                                ? Icons.arrow_upward_rounded
-                                : Icons.arrow_downward_rounded),
+                                  ? Icons.arrow_upward_rounded
+                                  : Icons.arrow_downward_rounded),
                         color: isSelected
                             ? textColor
                             : (isDark ? Colors.white30 : Colors.black26),

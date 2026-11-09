@@ -41,106 +41,137 @@ void main() {
       expect(bloc.state.isLimitReached, false);
     });
 
-    test('TranslationInitRequested loads configured languages and state', () async {
-      when(() => mockService.getConfiguredSourceLanguageName())
-          .thenAnswer((_) async => 'English');
-      when(() => mockService.getConfiguredLanguageName())
-          .thenAnswer((_) async => 'Spanish');
-      when(() => mockService.getDownloadedLanguageNames())
-          .thenAnswer((_) async => ['Spanish']);
+    test(
+      'TranslationInitRequested loads configured languages and state',
+      () async {
+        when(
+          () => mockService.getConfiguredSourceLanguageName(),
+        ).thenAnswer((_) async => 'English');
+        when(
+          () => mockService.getConfiguredLanguageName(),
+        ).thenAnswer((_) async => 'Spanish');
+        when(
+          () => mockService.getDownloadedLanguageNames(),
+        ).thenAnswer((_) async => ['Spanish']);
 
-      bloc.add(TranslationInitRequested());
+        bloc.add(TranslationInitRequested());
 
-      await expectLater(
-        bloc.stream,
-        emitsInOrder([
-          isA<TranslationState>().having((s) => s.status, 'status', TranslationStatus.loading),
-          isA<TranslationState>()
-              .having((s) => s.status, 'status', TranslationStatus.loaded)
-              .having((s) => s.currentSourceLanguage, 'source', 'English')
-              .having((s) => s.currentTargetLanguage, 'target', 'Spanish')
-              .having((s) => s.downloadedLanguages, 'downloaded', ['Spanish'])
-              .having((s) => s.freeTranslationsRemaining, 'remaining', 3),
-        ]),
-      );
-    });
+        await expectLater(
+          bloc.stream,
+          emitsInOrder([
+            isA<TranslationState>().having(
+              (s) => s.status,
+              'status',
+              TranslationStatus.loading,
+            ),
+            isA<TranslationState>()
+                .having((s) => s.status, 'status', TranslationStatus.loaded)
+                .having((s) => s.currentSourceLanguage, 'source', 'English')
+                .having((s) => s.currentTargetLanguage, 'target', 'Spanish')
+                .having((s) => s.downloadedLanguages, 'downloaded', ['Spanish'])
+                .having((s) => s.freeTranslationsRemaining, 'remaining', 3),
+          ]),
+        );
+      },
+    );
 
-    test('TranslationTextChanged with empty text resets translated text', () async {
-      bloc.add(const TranslationTextChanged(''));
+    test(
+      'TranslationTextChanged with empty text resets translated text',
+      () async {
+        bloc.add(const TranslationTextChanged(''));
 
-      await expectLater(
-        bloc.stream,
-        emits(
-          isA<TranslationState>()
-              .having((s) => s.sourceText, 'sourceText', '')
-              .having((s) => s.translatedText, 'translatedText', '')
-              .having((s) => s.isTranslating, 'isTranslating', false),
-        ),
-      );
-    });
+        await expectLater(
+          bloc.stream,
+          emits(
+            isA<TranslationState>()
+                .having((s) => s.sourceText, 'sourceText', '')
+                .having((s) => s.translatedText, 'translatedText', '')
+                .having((s) => s.isTranslating, 'isTranslating', false),
+          ),
+        );
+      },
+    );
 
-    test('TranslationTextChanged translates when text >= 2 characters', () async {
-      when(() => mockService.getConfiguredSourceLanguageName())
-          .thenAnswer((_) async => 'English');
-      when(() => mockService.getConfiguredLanguageName())
-          .thenAnswer((_) async => 'Spanish');
-      when(() => mockService.getDownloadedLanguageNames())
-          .thenAnswer((_) async => ['Spanish']);
-      when(() => mockService.translate(
+    test(
+      'TranslationTextChanged translates when text >= 2 characters',
+      () async {
+        when(
+          () => mockService.getConfiguredSourceLanguageName(),
+        ).thenAnswer((_) async => 'English');
+        when(
+          () => mockService.getConfiguredLanguageName(),
+        ).thenAnswer((_) async => 'Spanish');
+        when(
+          () => mockService.getDownloadedLanguageNames(),
+        ).thenAnswer((_) async => ['Spanish']);
+        when(
+          () => mockService.translate(
             'Hello',
             sourceLanguage: any(named: 'sourceLanguage'),
             targetLanguage: any(named: 'targetLanguage'),
-          )).thenAnswer((_) async => 'Hola');
+          ),
+        ).thenAnswer((_) async => 'Hola');
 
-      bloc.add(TranslationInitRequested());
-      await pumpEventQueue();
+        bloc.add(TranslationInitRequested());
+        await pumpEventQueue();
 
-      bloc.add(const TranslationTextChanged('Hello', isPremium: true));
+        bloc.add(const TranslationTextChanged('Hello', isPremium: true));
 
-      await expectLater(
-        bloc.stream,
-        emitsInOrder([
-          isA<TranslationState>()
-              .having((s) => s.sourceText, 'sourceText', 'Hello')
-              .having((s) => s.isTranslating, 'isTranslating', true),
-          isA<TranslationState>()
-              .having((s) => s.translatedText, 'translatedText', 'Hola')
-              .having((s) => s.isTranslating, 'isTranslating', false),
-        ]),
-      );
-    });
+        await expectLater(
+          bloc.stream,
+          emitsInOrder([
+            isA<TranslationState>()
+                .having((s) => s.sourceText, 'sourceText', 'Hello')
+                .having((s) => s.isTranslating, 'isTranslating', true),
+            isA<TranslationState>()
+                .having((s) => s.translatedText, 'translatedText', 'Hola')
+                .having((s) => s.isTranslating, 'isTranslating', false),
+          ]),
+        );
+      },
+    );
 
-    test('TranslationSwapLanguages swaps source and target languages', () async {
-      when(() => mockService.getConfiguredSourceLanguageName())
-          .thenAnswer((_) async => 'English');
-      when(() => mockService.getConfiguredLanguageName())
-          .thenAnswer((_) async => 'Spanish');
-      when(() => mockService.getDownloadedLanguageNames())
-          .thenAnswer((_) async => ['Spanish']);
-      when(() => mockService.setLanguages(
+    test(
+      'TranslationSwapLanguages swaps source and target languages',
+      () async {
+        when(
+          () => mockService.getConfiguredSourceLanguageName(),
+        ).thenAnswer((_) async => 'English');
+        when(
+          () => mockService.getConfiguredLanguageName(),
+        ).thenAnswer((_) async => 'Spanish');
+        when(
+          () => mockService.getDownloadedLanguageNames(),
+        ).thenAnswer((_) async => ['Spanish']);
+        when(
+          () => mockService.setLanguages(
             source: any(named: 'source'),
             target: any(named: 'target'),
-          )).thenAnswer((_) async {});
-      when(() => mockService.translate(
+          ),
+        ).thenAnswer((_) async {});
+        when(
+          () => mockService.translate(
             any(),
             sourceLanguage: any(named: 'sourceLanguage'),
             targetLanguage: any(named: 'targetLanguage'),
-          )).thenAnswer((_) async => 'Hello');
+          ),
+        ).thenAnswer((_) async => 'Hello');
 
-      bloc.add(TranslationInitRequested());
-      await pumpEventQueue();
+        bloc.add(TranslationInitRequested());
+        await pumpEventQueue();
 
-      bloc.add(const TranslationSwapLanguages(isPremium: true));
+        bloc.add(const TranslationSwapLanguages(isPremium: true));
 
-      await expectLater(
-        bloc.stream,
-        emits(
-          isA<TranslationState>()
-              .having((s) => s.currentSourceLanguage, 'source', 'Spanish')
-              .having((s) => s.currentTargetLanguage, 'target', 'English'),
-        ),
-      );
-    });
+        await expectLater(
+          bloc.stream,
+          emits(
+            isA<TranslationState>()
+                .having((s) => s.currentSourceLanguage, 'source', 'Spanish')
+                .having((s) => s.currentTargetLanguage, 'target', 'English'),
+          ),
+        );
+      },
+    );
 
     test('TranslationAdWatched resets remaining tokens and limit', () async {
       bloc.add(TranslationAdWatched());
@@ -156,4 +187,3 @@ void main() {
     });
   });
 }
-

@@ -123,28 +123,27 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders level 1 and habit focus for a new learner',
-    (tester) async {
-      const rookieUser = UserEntity(
-        id: 'user_rookie',
-        email: 'rookie@vowl.app',
-        displayName: 'John Doe',
-        totalExp: 30, // Level 1
-        currentStreak: 0,
-        coins: 50,
-      );
+  testWidgets('renders level 1 and habit focus for a new learner', (
+    tester,
+  ) async {
+    const rookieUser = UserEntity(
+      id: 'user_rookie',
+      email: 'rookie@vowl.app',
+      displayName: 'John Doe',
+      totalExp: 30, // Level 1
+      currentStreak: 0,
+      coins: 50,
+    );
 
-      await tester.pumpWidget(createSubject(user: rookieUser));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpWidget(createSubject(user: rookieUser));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.text('1'), findsWidgets);
-      expect(find.textContaining('John Doe'), findsOneWidget);
-      expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
-      expect(find.text('50'), findsOneWidget);
-    },
-  );
+    expect(find.text('1'), findsWidgets);
+    expect(find.textContaining('John Doe'), findsOneWidget);
+    expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
+    expect(find.text('50'), findsOneWidget);
+  });
 
   testWidgets(
     'shows Goal completed message when user has completed activity today',
@@ -165,20 +164,19 @@ void main() {
     },
   );
 
-  testWidgets(
-    'tapping streak HUD navigates to /streak and triggers haptics',
-    (tester) async {
-      await tester.pumpWidget(createSubject(user: testUserCommander));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+  testWidgets('tapping streak HUD navigates to /streak and triggers haptics', (
+    tester,
+  ) async {
+    await tester.pumpWidget(createSubject(user: testUserCommander));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.tap(find.text('14'));
-      await tester.pumpAndSettle();
+    await tester.tap(find.text('14'));
+    await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains(AppRouter.streakRoute));
-    },
-  );
+    verify(() => mockHapticService.selection()).called(1);
+    expect(navigatedRoutes, contains(AppRouter.streakRoute));
+  });
 
   testWidgets(
     'tapping coins HUD navigates to /coins-details and triggers haptics',
@@ -195,20 +193,19 @@ void main() {
     },
   );
 
-  testWidgets(
-    'tapping avatar navigates to /profile and triggers haptics',
-    (tester) async {
-      await tester.pumpWidget(createSubject(user: testUserCommander));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+  testWidgets('tapping avatar navigates to /profile and triggers haptics', (
+    tester,
+  ) async {
+    await tester.pumpWidget(createSubject(user: testUserCommander));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.tap(find.text('15'));
-      await tester.pumpAndSettle();
+    await tester.tap(find.text('15'));
+    await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains(AppRouter.profileRoute));
-    },
-  );
+    verify(() => mockHapticService.selection()).called(1);
+    expect(navigatedRoutes, contains(AppRouter.profileRoute));
+  });
 
   testWidgets(
     'tapping companion mascot pin navigates to /mascot and triggers haptics',
@@ -240,43 +237,32 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders safely on small 320dp mobile screen without overflow',
-    (tester) async {
-      tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+  testWidgets('renders safely on small 320dp mobile screen without overflow', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
+    tester.view.devicePixelRatio = 2.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(
-        createSubject(
-          user: testUserCommander,
-          width: 320,
-          height: 568,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpWidget(
+      createSubject(user: testUserCommander, width: 320, height: 568),
+    );
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(HomeHeroHeader), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(HomeHeroHeader), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
-  testWidgets(
-    'renders cleanly in Light Mode without errors',
-    (tester) async {
-      await tester.pumpWidget(
-        createSubject(
-          user: testUserCommander,
-          themeMode: ThemeMode.light,
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+  testWidgets('renders cleanly in Light Mode without errors', (tester) async {
+    await tester.pumpWidget(
+      createSubject(user: testUserCommander, themeMode: ThemeMode.light),
+    );
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(HomeHeroHeader), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(HomeHeroHeader), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }

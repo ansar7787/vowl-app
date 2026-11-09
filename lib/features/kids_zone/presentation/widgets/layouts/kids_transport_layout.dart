@@ -358,6 +358,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -393,16 +394,14 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight,
+                      ),
 
                       // Overhead Highway Gantry & Destination Target
                       _buildHighwayGantry(
@@ -493,16 +492,17 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
                     color: isHovering
                         ? _TransportPalette.signHoverGlow
                         : (isCorrect
-                            ? _TransportPalette.successBorder
-                            : _TransportPalette.signBorder),
+                              ? _TransportPalette.successBorder
+                              : _TransportPalette.signBorder),
                     width: isHovering ? 4.5.w : 3.5.w,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: (isHovering
-                              ? _TransportPalette.signHoverGlow
-                              : Colors.black)
-                          .withValues(alpha: isHovering ? 0.45 : 0.25),
+                      color:
+                          (isHovering
+                                  ? _TransportPalette.signHoverGlow
+                                  : Colors.black)
+                              .withValues(alpha: isHovering ? 0.45 : 0.25),
                       blurRadius: isHovering ? 20 : 12,
                       offset: const Offset(0, 6),
                     ),
@@ -582,10 +582,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
       padding: EdgeInsets.symmetric(horizontal: 32.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildSingleSupportPost(),
-          _buildSingleSupportPost(),
-        ],
+        children: [_buildSingleSupportPost(), _buildSingleSupportPost()],
       ),
     );
   }
@@ -725,9 +722,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
             ),
           ),
           child: KidsFittedText(
-            instruction.isEmpty
-                ? 'Choose the matching vehicle.'
-                : instruction,
+            instruction.isEmpty ? 'Choose the matching vehicle.' : instruction,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: isNarrow ? 15.sp : 16.5.sp,
@@ -762,9 +757,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                isHovering
-                    ? Icons.download_rounded
-                    : Icons.touch_app_rounded,
+                isHovering ? Icons.download_rounded : Icons.touch_app_rounded,
                 color: isHovering
                     ? _TransportPalette.signHoverGlow
                     : Colors.white.withValues(alpha: 0.85),
@@ -845,10 +838,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
         SizedBox(height: 8.h),
 
         // Solved Hero Vehicle Emoji
-        Text(
-          solvedAnswer,
-          style: TextStyle(fontSize: isNarrow ? 56.sp : 64.sp),
-        )
+        Text(solvedAnswer, style: TextStyle(fontSize: isNarrow ? 56.sp : 64.sp))
             .animate()
             .scale(duration: 400.ms, curve: Curves.elasticOut)
             .shimmer(delay: 200.ms, duration: 800.ms),
@@ -976,10 +966,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
       decoration: BoxDecoration(
         color: _TransportPalette.primaryAsphalt,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: _TransportPalette.roadSurface,
-          width: 1.5,
-        ),
+        border: Border.all(color: _TransportPalette.roadSurface, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -1078,9 +1065,7 @@ class _TransitVehicleCard extends StatelessWidget {
       duration: const Duration(milliseconds: 250),
       opacity: isDimmed ? 0.32 : 1.0,
       child: Container(
-        constraints: BoxConstraints(
-          minHeight: isNarrow ? 116.h : 126.h,
-        ),
+        constraints: BoxConstraints(minHeight: isNarrow ? 116.h : 126.h),
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: cardBg,
@@ -1088,12 +1073,15 @@ class _TransitVehicleCard extends StatelessWidget {
           border: Border.all(color: borderColor, width: borderWidth),
           boxShadow: [
             BoxShadow(
-              color: (isAnswered && isSelected
-                      ? (isCorrect
-                          ? _TransportPalette.successBorder
-                          : _TransportPalette.errorBorder)
-                      : _TransportPalette.cardShadow)
-                  .withValues(alpha: isAnswered && isSelected ? 0.25 : 0.06),
+              color:
+                  (isAnswered && isSelected
+                          ? (isCorrect
+                                ? _TransportPalette.successBorder
+                                : _TransportPalette.errorBorder)
+                          : _TransportPalette.cardShadow)
+                      .withValues(
+                        alpha: isAnswered && isSelected ? 0.25 : 0.06,
+                      ),
               blurRadius: 8,
               offset: const Offset(0, 3),
             ),
@@ -1135,9 +1123,7 @@ class _TransitVehicleCard extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 option,
-                style: TextStyle(
-                  fontSize: isNarrow ? 38.sp : 44.sp,
-                ),
+                style: TextStyle(fontSize: isNarrow ? 38.sp : 44.sp),
               ),
             ),
 
@@ -1153,8 +1139,8 @@ class _TransitVehicleCard extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: isAnswered && isSelected
                       ? (isCorrect
-                          ? _TransportPalette.successText
-                          : _TransportPalette.errorText)
+                            ? _TransportPalette.successText
+                            : _TransportPalette.errorText)
                       : AppColors.slate800,
                 ),
                 textAlign: TextAlign.center,

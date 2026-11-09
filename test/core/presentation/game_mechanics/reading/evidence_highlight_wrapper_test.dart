@@ -10,7 +10,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -37,47 +39,50 @@ void main() {
     }
   });
 
-  testWidgets('EvidenceHighlightWrapper renders natural instruction and passage words', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'EvidenceHighlightWrapper renders natural instruction and passage words',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => BlocProvider<EconomyBloc>.value(
-          value: mockEconomyBloc,
-          child: MaterialApp(
-            theme: AppTheme.lightTheme,
-            home: Scaffold(
-              body: Stack(
-                children: [
-                  EvidenceHighlightWrapper(
-                    passage: 'The cat slept soundly by the warm fire.',
-                    evidenceWords: const ['warm', 'fire'],
-                    primaryColor: Colors.amber,
-                    onCorrectHighlight: () {},
-                  ),
-                ],
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => BlocProvider<EconomyBloc>.value(
+            value: mockEconomyBloc,
+            child: MaterialApp(
+              theme: AppTheme.lightTheme,
+              home: Scaffold(
+                body: Stack(
+                  children: [
+                    EvidenceHighlightWrapper(
+                      passage: 'The cat slept soundly by the warm fire.',
+                      evidenceWords: const ['warm', 'fire'],
+                      primaryColor: Colors.amber,
+                      onCorrectHighlight: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
-    // Verify natural non-buzzword instruction text and no coin badge
-    expect(find.text('Find the Clue Words'), findsOneWidget);
-    expect(find.text('Tap the word(s) that support the answer'), findsOneWidget);
-    expect(find.text('+5 coins'), findsNothing);
-  });
+      // Verify natural non-buzzword instruction text and no coin badge
+      expect(find.text('Find the Clue Words'), findsOneWidget);
+      expect(
+        find.text('Tap the word(s) that support the answer'),
+        findsOneWidget,
+      );
+      expect(find.text('+5 coins'), findsNothing);
+    },
+  );
 }
-

@@ -142,8 +142,11 @@ class _SignUpViewState extends State<SignUpView> {
                 final user = sl.isRegistered<FirebaseAuth>()
                     ? sl<FirebaseAuth>().currentUser
                     : null;
-                final authName =
-                    context.read<AuthBloc>().state.user?.displayName;
+                final authName = context
+                    .read<AuthBloc>()
+                    .state
+                    .user
+                    ?.displayName;
                 final name = (authName != null && authName.trim().isNotEmpty)
                     ? authName
                     : (user?.displayName ?? 'Traveler');
@@ -490,8 +493,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                         TextSpan(
                                                                           children: [
                                                                             TextSpan(
-                                                                              text:
-                                                                                  '${context.tr('auth.i_agree_to', fallback: 'I agree to the')} ',
+                                                                              text: '${context.tr('auth.i_agree_to', fallback: 'I agree to the')} ',
                                                                               style: TextStyle(
                                                                                 fontFamily: 'Outfit',
                                                                                 color: isDark
@@ -532,8 +534,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                                 },
                                                                             ),
                                                                             TextSpan(
-                                                                              text:
-                                                                                  ' ${context.tr('auth.and', fallback: 'and')} ',
+                                                                              text: ' ${context.tr('auth.and', fallback: 'and')} ',
                                                                               style: TextStyle(
                                                                                 fontFamily: 'Outfit',
                                                                                 color: isDark

@@ -344,7 +344,8 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   /// [Future.wait] without gating on network pings; Firestore and repository
   /// layers handle offline caching and retry transparently.
   void _persistLevelCompletion(int starsEarned) {
-    final gameType = currentGameType ??
+    final gameType =
+        currentGameType ??
         (state is ReadingLoaded && (state as ReadingLoaded).quests.isNotEmpty
             ? (state as ReadingLoaded).quests.first.subtype?.name
             : null);
@@ -362,10 +363,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
         ),
       ).catchError((_) => const Right<Failure, void>(null)),
       updateCategoryStats(
-        UpdateCategoryStatsParams(
-          categoryId: gameType,
-          isCorrect: true,
-        ),
+        UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
       ).catchError((_) => const Right<Failure, void>(null)),
       if (TrophyRoomCubit.getMilestoneBadge('reading', level) != null)
         awardBadge(

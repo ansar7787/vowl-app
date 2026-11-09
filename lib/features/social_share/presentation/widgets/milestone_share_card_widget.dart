@@ -21,12 +21,8 @@ class MilestoneShareCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final cardBg = isDark
-        ? const Color(0xFF0B0F19)
-        : Colors.white;
-    final metricBg = isDark
-        ? const Color(0xFF070A12)
-        : const Color(0xFFF8FAFC);
+    final cardBg = isDark ? const Color(0xFF0B0F19) : Colors.white;
+    final metricBg = isDark ? const Color(0xFF070A12) : const Color(0xFFF8FAFC);
     final borderColor = isDark
         ? const Color(0xFF1E293B)
         : const Color(0xFFE2E8F0);
@@ -249,7 +245,10 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 8.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: isDark
                           ? AppColors.indigo950.withValues(alpha: 0.4)
@@ -272,7 +271,10 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 8.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.5.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 3.5.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.amber500.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(8.r),
@@ -336,7 +338,10 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 6.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 3.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.amber500.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10.r),
@@ -354,7 +359,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                 ]
                 // Case C: Referral & Ambassador Program
                 else if (data.type == ShareCardType.referral) ...[
-                  Icon(LucideIcons.gift, size: 28.sp, color: AppColors.violet500),
+                  Icon(
+                    LucideIcons.gift,
+                    size: 28.sp,
+                    color: AppColors.violet500,
+                  ),
                   SizedBox(height: 6.h),
                   Text(
                     '+100 COINS & VIP ACCESS',
@@ -424,7 +433,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(LucideIcons.flame, size: 28.sp, color: AppColors.amber500),
+                      Icon(
+                        LucideIcons.flame,
+                        size: 28.sp,
+                        color: AppColors.amber500,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         '${data.streak} DAYS',
@@ -473,7 +486,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.swords, size: 14.sp, color: AppColors.indigo500),
+                      Icon(
+                        LucideIcons.swords,
+                        size: 14.sp,
+                        color: AppColors.indigo500,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         'DUEL CODE: ${data.roomCode ?? "VOWL"}',
@@ -520,7 +537,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.zap, size: 14.sp, color: AppColors.amber500),
+                      Icon(
+                        LucideIcons.zap,
+                        size: 14.sp,
+                        color: AppColors.amber500,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         '1v1 DUEL WINNER',
@@ -567,7 +588,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.gift, size: 14.sp, color: AppColors.violet500),
+                      Icon(
+                        LucideIcons.gift,
+                        size: 14.sp,
+                        color: AppColors.violet500,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         'CODE: ${data.referralCode}',
@@ -576,7 +601,9 @@ class MilestoneShareCardWidget extends StatelessWidget {
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 1.2,
-                          color: isDark ? Colors.white : const Color(0xFF7C3AED),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF7C3AED),
                         ),
                       ),
                     ],
@@ -614,7 +641,11 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.sparkles, size: 14.sp, color: AppColors.indigo500),
+                      Icon(
+                        LucideIcons.sparkles,
+                        size: 14.sp,
+                        color: AppColors.indigo500,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         'JOIN THE LEAGUE',

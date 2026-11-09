@@ -54,10 +54,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   late AnimationController _pulseController;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -123,7 +121,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   }
 
   void _playAudio(ListeningQuest quest) {
-    final rawAudio = quest.textToSpeak ??
+    final rawAudio =
+        quest.textToSpeak ??
         quest.prompt ??
         quest.question ??
         quest.sentence ??
@@ -156,80 +155,86 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
       ),
       builder: (sheetContext) {
         final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
-        final systemBottomPadding =
-            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final systemBottomPadding = MediaQuery.viewPaddingOf(
+          sheetContext,
+        ).bottom;
         final safeBottom =
             (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
             bottomInset +
             12.h;
 
         return Padding(
-          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 24.h, AppSpacing.screen, safeBottom),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            24.h,
+            AppSpacing.screen,
+            safeBottom,
+          ),
           child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  children: [
-                    Icon(
-                      Icons.closed_caption_rounded,
-                      color: theme.primaryColor,
-                      size: 22.r,
-                    ),
-                    SizedBox(width: 10.w),
-                    Text(
-                      "Audio Transcript",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                        color: theme.primaryColor,
-                        letterSpacing: 0.3,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  text,
-                  softWrap: true,
-                  overflow: TextOverflow.visible,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.9)
-                        : const Color(0xFF1E293B),
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.closed_caption_rounded,
+                    color: theme.primaryColor,
+                    size: 22.r,
                   ),
-                ),
-                SizedBox(height: 24.h),
-                ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: theme.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
-                    elevation: 0,
-                  ),
-                  child: Text(
-                    "Close",
+                  SizedBox(width: 10.w),
+                  Text(
+                    "Audio Transcript",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: theme.primaryColor,
+                      letterSpacing: 0.3,
                     ),
                   ),
+                ],
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                text,
+                softWrap: true,
+                overflow: TextOverflow.visible,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w400,
+                  height: 1.5,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.9)
+                      : const Color(0xFF1E293B),
                 ),
-              ],
-            ),
-          );
-        },
-      );
+              ),
+              SizedBox(height: 24.h),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  elevation: 0,
+                ),
+                child: Text(
+                  "Close",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override

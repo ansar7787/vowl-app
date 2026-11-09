@@ -72,7 +72,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
     _scrollController.dispose();
     _sliderValue.dispose();
     _selectedIndex.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -102,7 +102,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -137,7 +138,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
       _scrollToBottom();
       // Do NOT submit yet. Wait for Phase 2.
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -296,93 +298,90 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                     constraints: BoxConstraints(
                                       minHeight: constraints.maxHeight,
                                     ),
-                                      child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(height: gapTop),
-                                                    VowelDistinctionInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          getInstruction(),
-                                                    ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
-                                                    VowelDistinctionPromptCard(
-                                                      word: quest.word ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                    SizedBox(height: gapPrompt),
-                                                    if (isFirstStagePassedNotifier
-                                                            .value &&
-                                                        quest.vowelChart !=
-                                                            null)
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                              bottom: 24.h,
-                                                            ),
-                                                        child:
-                                                            VowelTrapezoidChart(
-                                                              vowelChart: quest
-                                                                  .vowelChart!,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              isDark: isDark,
-                                                            ),
-                                                      )
-                                                    else
-                                                      VowelDistinctionPulseSpeaker(
-                                                        text:
-                                                            quest.textToSpeak ??
-                                                            "",
-                                                        color:
-                                                            theme.primaryColor,
-                                                        onPlayTts: _playTts,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 20.w,
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  VowelDistinctionInstruction(
+                                                    color: theme.primaryColor,
+                                                    instruction:
+                                                        getInstruction(),
+                                                  ),
+                                                  SizedBox(
+                                                    height: gapInstruction,
+                                                  ),
+                                                  VowelDistinctionPromptCard(
+                                                    word: quest.word ?? "",
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                  ),
+                                                  SizedBox(height: gapPrompt),
+                                                  if (isFirstStagePassedNotifier
+                                                          .value &&
+                                                      quest.vowelChart != null)
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                        bottom: 24.h,
                                                       ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
+                                                      child:
+                                                          VowelTrapezoidChart(
+                                                            vowelChart: quest
+                                                                .vowelChart!,
+                                                            color: theme
+                                                                .primaryColor,
+                                                            isDark: isDark,
+                                                          ),
+                                                    )
+                                                  else
+                                                    VowelDistinctionPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
                                                     ),
-                                                    IgnorePointer(
-                                                      ignoring: isAnsweredNotifier.value || isFirstStagePassedNotifier.value,
-                                                      child: buildSlider(),
-                                                    ),
-                                                    SizedBox(height: gapBottom),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
+                                                ],
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  SizedBox(height: gapSpeaker),
+                                                  IgnorePointer(
+                                                    ignoring:
+                                                        isAnsweredNotifier
+                                                            .value ||
+                                                        isFirstStagePassedNotifier
+                                                            .value,
+                                                    child: buildSlider(),
+                                                  ),
+                                                  SizedBox(height: gapBottom),
+                                                ],
+                                              ),
+                                            ],
                                           ),
-                                          SizedBox(
-                                            height:
-                                                (isFirstStagePassedNotifier
-                                                        .value &&
-                                                    !isAnsweredNotifier.value)
-                                                ? 40.h
-                                                : 160.h,
-                                          ),
-                                        ],
-                                      ),
+                                        ),
+                                        SizedBox(
+                                          height:
+                                              (isFirstStagePassedNotifier
+                                                      .value &&
+                                                  !isAnsweredNotifier.value)
+                                              ? 40.h
+                                              : 160.h,
+                                        ),
+                                      ],
                                     ),
                                   ),
+                                ),
                                 if (isFirstStagePassedNotifier.value &&
                                     !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
@@ -390,7 +389,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                       children: [
                                         SpeakToConfirmOverlay(
                                           title: "Speak to confirm",
-                                          subtitle: "Say the word clearly to confirm",
+                                          subtitle:
+                                              "Say the word clearly to confirm",
                                           expectedText:
                                               quest.textToSpeak ??
                                               quest.word ??

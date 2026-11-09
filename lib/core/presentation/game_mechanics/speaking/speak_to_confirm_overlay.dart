@@ -83,7 +83,10 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(24.r),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 22.h,
+                    ),
                     decoration: BoxDecoration(
                       color: isDark
                           ? Colors.black.withValues(alpha: 0.85)

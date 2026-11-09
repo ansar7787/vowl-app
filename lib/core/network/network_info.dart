@@ -65,13 +65,15 @@ class NetworkInfoImpl implements NetworkInfo {
     });
 
     // Seed initial interface state immediately
-    _connectionChecker.internetStatus.then((status) {
-      _currentStatus = (status == InternetStatus.connected)
-          ? AppNetworkStatus.online
-          : AppNetworkStatus.offline;
-    }).catchError((_) {
-      _currentStatus = AppNetworkStatus.offline;
-    });
+    _connectionChecker.internetStatus
+        .then((status) {
+          _currentStatus = (status == InternetStatus.connected)
+              ? AppNetworkStatus.online
+              : AppNetworkStatus.offline;
+        })
+        .catchError((_) {
+          _currentStatus = AppNetworkStatus.offline;
+        });
   }
 
   /// Cancels background status subscription upon teardown.

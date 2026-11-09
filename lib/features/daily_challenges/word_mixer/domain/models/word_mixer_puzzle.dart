@@ -50,7 +50,8 @@ class WordMixerPuzzle {
       phonetic.trim().isNotEmpty && !phonetic.contains('[placeholder');
 
   bool get hasExample =>
-      exampleSentence.trim().isNotEmpty && !exampleSentence.contains('[placeholder');
+      exampleSentence.trim().isNotEmpty &&
+      !exampleSentence.contains('[placeholder');
 
   bool get hasSynonyms => synonyms.isNotEmpty;
 
@@ -64,9 +65,12 @@ class WordMixerPuzzle {
   }
 
   factory WordMixerPuzzle.fromMap(Map<String, dynamic> map) {
-    final id = map['id'] is int ? map['id'] as int : int.tryParse('${map['id']}') ?? 1;
+    final id = map['id'] is int
+        ? map['id'] as int
+        : int.tryParse('${map['id']}') ?? 1;
     final word = (map['word'] as String? ?? '').trim().toUpperCase();
-    final rawHint = (map['hint'] as String? ?? map['definition'] as String? ?? '').trim();
+    final rawHint =
+        (map['hint'] as String? ?? map['definition'] as String? ?? '').trim();
 
     // 1. Sanitize the hint text (spacing, OCR artifacts, citations, brackets)
     final clean = _sanitizeHint(rawHint);
@@ -77,42 +81,60 @@ class WordMixerPuzzle {
     // 3. Compute length & difficulty
     final length = word.replaceAll(' ', '').length;
     final first = word.isNotEmpty ? word[0] : '';
-    final diffLabel = (map['difficulty'] as String?) ?? _computeDifficultyLabel(length);
+    final diffLabel =
+        (map['difficulty'] as String?) ?? _computeDifficultyLabel(length);
     final diffColor = _computeDifficultyColor(diffLabel, length);
 
     // 4. Extract enhanced curriculum fields with intelligent fallbacks
     final rawPhonetic = (map['phonetic'] as String? ?? '').trim();
-    final rawPos = (map['partOfSpeech'] as String? ?? map['part_of_speech'] as String? ?? '').trim();
+    final rawPos =
+        (map['partOfSpeech'] as String? ??
+                map['part_of_speech'] as String? ??
+                '')
+            .trim();
     final pos = rawPos.isNotEmpty && !rawPos.contains('[placeholder')
         ? rawPos.toLowerCase()
         : _inferPartOfSpeech(clean);
 
-    final rawCefr = (map['cefrLevel'] as String? ?? map['cefr_level'] as String? ?? '').trim();
+    final rawCefr =
+        (map['cefrLevel'] as String? ?? map['cefr_level'] as String? ?? '')
+            .trim();
     final cefr = rawCefr.isNotEmpty && !rawCefr.contains('[placeholder')
         ? rawCefr.toUpperCase()
         : _computeCefr(length);
 
-    final rawEx = (map['example'] as String? ?? map['example_sentence'] as String? ?? '').trim();
-    final example = rawEx.isNotEmpty && !rawEx.contains('[placeholder') ? rawEx : '';
+    final rawEx =
+        (map['example'] as String? ?? map['example_sentence'] as String? ?? '')
+            .trim();
+    final example = rawEx.isNotEmpty && !rawEx.contains('[placeholder')
+        ? rawEx
+        : '';
 
-    final rawCloze = (map['clozeSentence'] as String? ?? map['cloze_sentence'] as String? ?? '').trim();
+    final rawCloze =
+        (map['clozeSentence'] as String? ??
+                map['cloze_sentence'] as String? ??
+                '')
+            .trim();
     final cloze = rawCloze.isNotEmpty && !rawCloze.contains('[placeholder')
         ? rawCloze
         : 'The definition of ______ is: $masked';
 
-    final rawSynonyms = (map['synonyms'] as List<dynamic>?)
+    final rawSynonyms =
+        (map['synonyms'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty && !e.contains('[placeholder'))
             .toList() ??
         <String>[];
 
-    final rawSyllables = (map['syllables'] as List<dynamic>?)
+    final rawSyllables =
+        (map['syllables'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty && !e.contains('[placeholder'))
             .toList() ??
         <String>[];
 
-    final rawTags = (map['tags'] as List<dynamic>?)
+    final rawTags =
+        (map['tags'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList() ??
@@ -127,8 +149,12 @@ class WordMixerPuzzle {
       difficultyLabel: diffLabel,
       difficultyColor: diffColor,
       rawHint: rawHint,
-      cleanHint: clean.isNotEmpty ? clean : 'Unscramble the letters to discover the word.',
-      maskedHint: masked.isNotEmpty ? masked : 'Unscramble the letters to discover the word.',
+      cleanHint: clean.isNotEmpty
+          ? clean
+          : 'Unscramble the letters to discover the word.',
+      maskedHint: masked.isNotEmpty
+          ? masked
+          : 'Unscramble the letters to discover the word.',
       exampleSentence: example,
       clozeSentence: cloze,
       synonyms: rawSynonyms,
@@ -189,7 +215,9 @@ class WordMixerPuzzle {
 
   static String _inferPartOfSpeech(String definition) {
     final lower = definition.toLowerCase();
-    if (lower.startsWith('to ') || lower.contains('to cause to') || lower.contains('to make')) {
+    if (lower.startsWith('to ') ||
+        lower.contains('to cause to') ||
+        lower.contains('to make')) {
       return 'verb';
     }
     if (lower.startsWith('pertaining to') ||
@@ -214,18 +242,32 @@ class WordMixerPuzzle {
   }
 
   static String _computeCefr(int length) {
-    if (length <= 4) return 'A2';
-    if (length <= 6) return 'B1';
-    if (length <= 8) return 'B2';
-    if (length <= 10) return 'C1';
+    if (length <= 4) {
+      return 'A2';
+    }
+    if (length <= 6) {
+      return 'B1';
+    }
+    if (length <= 8) {
+      return 'B2';
+    }
+    if (length <= 10) {
+      return 'C1';
+    }
     return 'C2';
   }
 
   static Color _computeDifficultyColor(String label, int length) {
     final normalized = label.toLowerCase();
-    if (normalized == 'easy' || length <= 4) return AppColors.emerald500;
-    if (normalized == 'medium' || length <= 6) return AppColors.amber500;
-    if (normalized == 'hard' || length <= 8) return IllustrationColors.warmOrange;
+    if (normalized == 'easy' || length <= 4) {
+      return AppColors.emerald500;
+    }
+    if (normalized == 'medium' || length <= 6) {
+      return AppColors.amber500;
+    }
+    if (normalized == 'hard' || length <= 8) {
+      return IllustrationColors.warmOrange;
+    }
     return AppColors.red500;
   }
 

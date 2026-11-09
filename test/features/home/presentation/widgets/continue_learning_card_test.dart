@@ -92,7 +92,9 @@ void main() {
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) {
             final cat = state.uri.queryParameters['category'] ?? '';
-            navigatedRoutes.add('${AppRouter.categoryGamesRoute}?category=$cat');
+            navigatedRoutes.add(
+              '${AppRouter.categoryGamesRoute}?category=$cat',
+            );
             return Scaffold(body: Text('Category: $cat'));
           },
         ),
@@ -144,24 +146,20 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders new learner state when totalLevelsCompleted is 0',
-    (tester) async {
-      final newUser = buildUser(
-        completedLevels: {},
-        recentActivities: [],
-      );
+  testWidgets('renders new learner state when totalLevelsCompleted is 0', (
+    tester,
+  ) async {
+    final newUser = buildUser(completedLevels: {}, recentActivities: []);
 
-      await tester.pumpWidget(createSubject(user: newUser));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+    await tester.pumpWidget(createSubject(user: newUser));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('Start Your Journey'), findsOneWidget);
-      expect(find.text('DAY 1 JOURNEY'), findsOneWidget);
-      expect(find.text('Start'), findsOneWidget);
-      expect(find.textContaining('First step in'), findsOneWidget);
-    },
-  );
+    expect(find.text('Start Your Journey'), findsOneWidget);
+    expect(find.text('DAY 1 JOURNEY'), findsOneWidget);
+    expect(find.text('Start'), findsOneWidget);
+    expect(find.textContaining('First step in'), findsOneWidget);
+  });
 
   testWidgets(
     'tapping card triggers selection haptics and navigates to category games route',
@@ -176,7 +174,10 @@ void main() {
 
       verify(() => mockHapticService.selection()).called(1);
       expect(navigatedRoutes.length, 1);
-      expect(navigatedRoutes.first, '${AppRouter.categoryGamesRoute}?category=vocabulary');
+      expect(
+        navigatedRoutes.first,
+        '${AppRouter.categoryGamesRoute}?category=vocabulary',
+      );
     },
   );
 
@@ -206,72 +207,67 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders cleanly in Light theme mode',
-    (tester) async {
-      final user = buildUser();
-      await tester.pumpWidget(
-        createSubject(user: user, themeMode: ThemeMode.light),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+  testWidgets('renders cleanly in Light theme mode', (tester) async {
+    final user = buildUser();
+    await tester.pumpWidget(
+      createSubject(user: user, themeMode: ThemeMode.light),
+    );
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(ContinueLearningCard), findsOneWidget);
-    },
-  );
+    expect(tester.takeException(), isNull);
+    expect(find.byType(ContinueLearningCard), findsOneWidget);
+  });
 
-  testWidgets(
-    'displays urgent habit spotlight when streak is pending today',
-    (tester) async {
-      final now = DateTime.now();
-      final yesterdayKey =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
-      final user = UserEntity(
-        id: 'user_streak',
-        email: 'streak@vowl.app',
-        currentStreak: 5,
-        dailyXpHistory: {yesterdayKey: 50},
-        completedLevels: const {
-          'flashcards': [1, 2, 3],
-        },
-      );
+  testWidgets('displays urgent habit spotlight when streak is pending today', (
+    tester,
+  ) async {
+    final now = DateTime.now();
+    final yesterdayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
+    final user = UserEntity(
+      id: 'user_streak',
+      email: 'streak@vowl.app',
+      currentStreak: 5,
+      dailyXpHistory: {yesterdayKey: 50},
+      completedLevels: const {
+        'flashcards': [1, 2, 3],
+      },
+    );
 
-      await tester.pumpWidget(createSubject(user: user));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+    await tester.pumpWidget(createSubject(user: user));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('DAILY GOAL'), findsOneWidget);
-      expect(find.text('Secure'), findsOneWidget);
-      expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
-      expect(find.textContaining('protect your 5d streak'), findsOneWidget);
-    },
-  );
+    expect(find.text('DAILY GOAL'), findsOneWidget);
+    expect(find.text('Secure'), findsOneWidget);
+    expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
+    expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+    expect(find.textContaining('protect your 5d streak'), findsOneWidget);
+  });
 
-  testWidgets(
-    'displays secured habit badge when streak is completed today',
-    (tester) async {
-      final now = DateTime.now();
-      final todayKey =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      final user = UserEntity(
-        id: 'user_secured',
-        email: 'secured@vowl.app',
-        currentStreak: 6,
-        dailyXpHistory: {todayKey: 100},
-        completedLevels: const {
-          'flashcards': [1, 2, 3, 4],
-        },
-      );
+  testWidgets('displays secured habit badge when streak is completed today', (
+    tester,
+  ) async {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    final user = UserEntity(
+      id: 'user_secured',
+      email: 'secured@vowl.app',
+      currentStreak: 6,
+      dailyXpHistory: {todayKey: 100},
+      completedLevels: const {
+        'flashcards': [1, 2, 3, 4],
+      },
+    );
 
-      await tester.pumpWidget(createSubject(user: user));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+    await tester.pumpWidget(createSubject(user: user));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('STREAK ACTIVE'), findsOneWidget);
-      expect(find.text('Resume'), findsOneWidget);
-      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
-    },
-  );
+    expect(find.text('STREAK ACTIVE'), findsOneWidget);
+    expect(find.text('Resume'), findsOneWidget);
+    expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+  });
 }

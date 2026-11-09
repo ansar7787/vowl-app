@@ -343,10 +343,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             s.level,
           );
           if (milestoneBadge != null) {
-            awardBadge(milestoneBadge).catchError((
-              Object e,
-              StackTrace st,
-            ) {
+            awardBadge(milestoneBadge).catchError((Object e, StackTrace st) {
               _logger.error(
                 'Secondary persistence (badge) failed',
                 error: e,

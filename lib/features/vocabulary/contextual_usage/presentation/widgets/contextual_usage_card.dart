@@ -39,10 +39,13 @@ class ContextualUsageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     Widget cardContent = AnimatedContainer(
-      duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 300),
+      duration: reduceMotion
+          ? Duration.zero
+          : const Duration(milliseconds: 300),
       curve: Curves.easeOutCubic,
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
@@ -64,7 +67,10 @@ class ContextualUsageCard extends StatelessWidget {
             children: [
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: isDark ? 0.15 : 0.08),
                     borderRadius: BorderRadius.circular(8.r),
@@ -113,13 +119,7 @@ class ContextualUsageCard extends StatelessWidget {
           ),
           SizedBox(height: 18.h),
           Text.rich(
-            TextSpan(
-              children: _buildSentenceSpans(
-                question,
-                color,
-                isDark,
-              ),
-            ),
+            TextSpan(children: _buildSentenceSpans(question, color, isDark)),
             textAlign: TextAlign.center,
             softWrap: true,
           ),
@@ -139,9 +139,7 @@ class ContextualUsageCard extends StatelessWidget {
           );
     }
 
-    return Center(
-      child: cardContent,
-    );
+    return Center(child: cardContent);
   }
 
   List<TextSpan> _buildSentenceSpans(
@@ -182,8 +180,8 @@ class ContextualUsageCard extends StatelessWidget {
               fontWeight: FontWeight.w700,
               color: isAnswered
                   ? (isCorrect == true
-                      ? AppColors.gameCorrect
-                      : AppColors.gameIncorrect)
+                        ? AppColors.gameCorrect
+                        : AppColors.gameIncorrect)
                   : color,
               decoration: isAnswered
                   ? TextDecoration.none

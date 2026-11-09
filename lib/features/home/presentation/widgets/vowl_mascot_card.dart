@@ -192,7 +192,9 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                               guidanceLabel,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: Theme.of(context).brightness == Brightness.dark
+                                color:
+                                    Theme.of(context).brightness ==
+                                        Brightness.dark
                                     ? AppColors.slate400
                                     : AppColors.slate500,
                                 fontSize: 10.sp,

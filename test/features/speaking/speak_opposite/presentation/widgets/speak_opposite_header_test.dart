@@ -30,8 +30,9 @@ void main() {
   }
 
   group('SpeakOppositeHeader Widget Tests', () {
-    testWidgets('renders badge and instruction text with correct keys',
-        (tester) async {
+    testWidgets('renders badge and instruction text with correct keys', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         buildTestWidget(
           instruction: 'Speak the opposite of the highlighted word.',
@@ -41,7 +42,10 @@ void main() {
 
       expect(find.byKey(const Key('speak_opposite_header')), findsOneWidget);
       expect(find.byKey(const Key('speak_opposite_badge')), findsOneWidget);
-      expect(find.byKey(const Key('speak_opposite_badge_text')), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_opposite_badge_text')),
+        findsOneWidget,
+      );
       expect(find.text('OPPOSITE CHALLENGE'), findsOneWidget);
       expect(
         find.byKey(const Key('speak_opposite_instruction_text')),
@@ -67,8 +71,9 @@ void main() {
       expect(textWidget.textAlign, TextAlign.center);
     });
 
-    testWidgets('falls back to default clean instruction when null or empty',
-        (tester) async {
+    testWidgets('falls back to default clean instruction when null or empty', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(instruction: null));
       await tester.pumpAndSettle();
 
@@ -93,8 +98,9 @@ void main() {
       expect(find.byIcon(Icons.swap_horiz_rounded), findsOneWidget);
     });
 
-    testWidgets('renders in light and dark mode without overflow',
-        (tester) async {
+    testWidgets('renders in light and dark mode without overflow', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         buildTestWidget(
           instruction:

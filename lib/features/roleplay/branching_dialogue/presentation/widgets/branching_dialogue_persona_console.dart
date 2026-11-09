@@ -42,11 +42,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
         color: color.withValues(alpha: 0.12),
         border: Border.all(color: color, width: 2),
       ),
-      child: Icon(
-        Icons.person_pin_rounded,
-        color: color,
-        size: 28.r,
-      ),
+      child: Icon(Icons.person_pin_rounded, color: color, size: 28.r),
     );
 
     if (!reduceMotion) {

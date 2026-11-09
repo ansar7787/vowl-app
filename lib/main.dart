@@ -483,9 +483,8 @@ class _AppShell extends StatelessWidget {
                     type: isSuccessMsg
                         ? CustomSnackBarType.success
                         : (isErrorMsg ||
-                                (authState.status ==
-                                        AuthStatus.unauthenticated &&
-                                    !isWarning))
+                              (authState.status == AuthStatus.unauthenticated &&
+                                  !isWarning))
                         ? CustomSnackBarType.error
                         : isWarning
                         ? CustomSnackBarType.warning

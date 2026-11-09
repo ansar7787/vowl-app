@@ -93,8 +93,8 @@ class _KidsGameEntryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = metadata.color;
     final displayColor = color;
     final title = metadata.gridTitle; // e.g. "ABC"
@@ -102,9 +102,7 @@ class _KidsGameEntryCard extends StatelessWidget {
     final icon = metadata.icon;
     final cardBorderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Semantics(
       button: true,

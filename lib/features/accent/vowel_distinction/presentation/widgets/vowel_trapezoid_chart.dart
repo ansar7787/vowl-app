@@ -66,9 +66,9 @@ class VowelTrapezoidChart extends StatelessWidget {
               return VowlMotion.shouldReduceMotion(context)
                   ? chart
                   : chart
-                      .animate()
-                      .fadeIn(duration: 400.ms)
-                      .scale(begin: const Offset(0.95, 0.95));
+                        .animate()
+                        .fadeIn(duration: 400.ms)
+                        .scale(begin: const Offset(0.95, 0.95));
             },
           ),
         ],

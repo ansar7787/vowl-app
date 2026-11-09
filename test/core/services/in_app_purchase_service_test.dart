@@ -21,7 +21,8 @@ class MockFirebaseFunctions extends Mock implements FirebaseFunctions {}
 
 class MockHttpsCallable extends Mock implements HttpsCallable {}
 
-class MockHttpsCallableResult<T> extends Mock implements HttpsCallableResult<T> {}
+class MockHttpsCallableResult<T> extends Mock
+    implements HttpsCallableResult<T> {}
 
 class FakePurchaseParam extends Fake implements PurchaseParam {
   @override
@@ -125,10 +126,7 @@ class FakeHttpClientRequest extends Fake implements HttpClientRequest {
   final int statusCode;
   final Map<String, dynamic> responseJson;
 
-  FakeHttpClientRequest({
-    required this.statusCode,
-    required this.responseJson,
-  });
+  FakeHttpClientRequest({required this.statusCode, required this.responseJson});
 
   @override
   Future<HttpClientResponse> close() async {
@@ -139,7 +137,8 @@ class FakeHttpClientRequest extends Fake implements HttpClientRequest {
   }
 }
 
-class FakeHttpClientResponse extends Stream<List<int>> implements HttpClientResponse {
+class FakeHttpClientResponse extends Stream<List<int>>
+    implements HttpClientResponse {
   @override
   final int statusCode;
   final Map<String, dynamic> responseJson;
@@ -238,7 +237,8 @@ void main() {
     mockIap = MockInAppPurchase();
     mockFirebaseFunctions = MockFirebaseFunctions();
     mockCallable = MockHttpsCallable();
-    purchaseStreamController = StreamController<List<PurchaseDetails>>.broadcast();
+    purchaseStreamController =
+        StreamController<List<PurchaseDetails>>.broadcast();
 
     InAppPurchaseService.testIapInstance = mockIap;
     InAppPurchaseService.setCachedCountryCodeForTesting(null);
@@ -250,34 +250,46 @@ void main() {
     service.onPurchaseRestored = null;
     service.products = [];
 
-    when(() => mockIap.purchaseStream).thenAnswer(
-      (_) => purchaseStreamController.stream,
-    );
+    when(
+      () => mockIap.purchaseStream,
+    ).thenAnswer((_) => purchaseStreamController.stream);
     when(() => mockIap.isAvailable()).thenAnswer((_) async => true);
     when(() => mockIap.queryProductDetails(any())).thenAnswer(
       (_) async => ProductDetailsResponse(
-        productDetails: [weeklyProduct, monthlyProduct, yearlyProduct, coinProduct],
+        productDetails: [
+          weeklyProduct,
+          monthlyProduct,
+          yearlyProduct,
+          coinProduct,
+        ],
         notFoundIDs: [],
         error: null,
       ),
     );
-    when(() => mockIap.buyConsumable(
-      purchaseParam: any(named: 'purchaseParam'),
-      autoConsume: any(named: 'autoConsume'),
-    )).thenAnswer((_) async => true);
-    when(() => mockIap.buyNonConsumable(
-      purchaseParam: any(named: 'purchaseParam'),
-    )).thenAnswer((_) async => true);
-    when(() => mockIap.restorePurchases(applicationUserName: any(named: 'applicationUserName')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockIap.buyConsumable(
+        purchaseParam: any(named: 'purchaseParam'),
+        autoConsume: any(named: 'autoConsume'),
+      ),
+    ).thenAnswer((_) async => true);
+    when(
+      () =>
+          mockIap.buyNonConsumable(purchaseParam: any(named: 'purchaseParam')),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockIap.restorePurchases(
+        applicationUserName: any(named: 'applicationUserName'),
+      ),
+    ).thenAnswer((_) async {});
     when(() => mockIap.completePurchase(any())).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<FirebaseFunctions>()) {
       di.sl.unregister<FirebaseFunctions>();
     }
     di.sl.registerSingleton<FirebaseFunctions>(mockFirebaseFunctions);
-    when(() => mockFirebaseFunctions.httpsCallable('validateIAPReceipt'))
-        .thenReturn(mockCallable);
+    when(
+      () => mockFirebaseFunctions.httpsCallable('validateIAPReceipt'),
+    ).thenReturn(mockCallable);
   });
 
   tearDown(() async {
@@ -310,93 +322,118 @@ void main() {
       expect(InAppPurchaseService.isUserInIndia, isFalse);
     });
 
-    test('initialize aborts early without loading products when isAvailable is false', () async {
-      when(() => mockIap.isAvailable()).thenAnswer((_) async => false);
+    test(
+      'initialize aborts early without loading products when isAvailable is false',
+      () async {
+        when(() => mockIap.isAvailable()).thenAnswer((_) async => false);
 
-      await service.initialize();
+        await service.initialize();
 
-      expect(service.isAvailable, isFalse);
-      verify(() => mockIap.isAvailable()).called(1);
-      verifyNever(() => mockIap.queryProductDetails(any()));
-    });
+        expect(service.isAvailable, isFalse);
+        verify(() => mockIap.isAvailable()).called(1);
+        verifyNever(() => mockIap.queryProductDetails(any()));
+      },
+    );
 
-    test('initialize successfully connects, listens to stream, and loads products when available', () async {
-      when(() => mockIap.isAvailable()).thenAnswer((_) async => true);
+    test(
+      'initialize successfully connects, listens to stream, and loads products when available',
+      () async {
+        when(() => mockIap.isAvailable()).thenAnswer((_) async => true);
 
-      await service.initialize();
+        await service.initialize();
 
-      expect(service.isAvailable, isTrue);
-      expect(service.products.length, equals(4));
-      verify(() => mockIap.queryProductDetails(any())).called(1);
-    });
+        expect(service.isAvailable, isTrue);
+        expect(service.products.length, equals(4));
+        verify(() => mockIap.queryProductDetails(any())).called(1);
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 2: GeoIP Country & Market Partitioning (India vs International)
   // =========================================================================
-  group('Group 2: GeoIP Country & Market Partitioning (India vs International)', () {
-    test('isUserInIndia returns true when cached country code is IN', () {
-      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
-      expect(InAppPurchaseService.isUserInIndia, isTrue);
-    });
+  group(
+    'Group 2: GeoIP Country & Market Partitioning (India vs International)',
+    () {
+      test('isUserInIndia returns true when cached country code is IN', () {
+        InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+        expect(InAppPurchaseService.isUserInIndia, isTrue);
+      });
 
-    test('isUserInIndia returns false when cached country code is outside India', () {
-      InAppPurchaseService.setCachedCountryCodeForTesting('US');
-      expect(InAppPurchaseService.isUserInIndia, isFalse);
+      test(
+        'isUserInIndia returns false when cached country code is outside India',
+        () {
+          InAppPurchaseService.setCachedCountryCodeForTesting('US');
+          expect(InAppPurchaseService.isUserInIndia, isFalse);
 
-      InAppPurchaseService.setCachedCountryCodeForTesting('GB');
-      expect(InAppPurchaseService.isUserInIndia, isFalse);
-    });
-
-    test('shouldUseIAP respects testShouldUseIAPOverride', () {
-      InAppPurchaseService.testShouldUseIAPOverride = true;
-      expect(InAppPurchaseService.shouldUseIAP, isTrue);
-
-      InAppPurchaseService.testShouldUseIAPOverride = false;
-      expect(InAppPurchaseService.shouldUseIAP, isFalse);
-    });
-
-    test('GeoIP background HTTP refresh updates SharedPreferences cache on 200 response', () async {
-      HttpOverrides.global = FakeHttpOverrides(
-        statusCode: 200,
-        responseJson: {'country': 'CA'},
+          InAppPurchaseService.setCachedCountryCodeForTesting('GB');
+          expect(InAppPurchaseService.isUserInIndia, isFalse);
+        },
       );
 
-      await service.initialize();
-      // Allow background microtasks and async HTTP to execute
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test('shouldUseIAP respects testShouldUseIAPOverride', () {
+        InAppPurchaseService.testShouldUseIAPOverride = true;
+        expect(InAppPurchaseService.shouldUseIAP, isTrue);
 
-      final prefs = await SharedPreferences.getInstance();
-      expect(prefs.getString('cached_geoip_country'), equals('CA'));
-    });
+        InAppPurchaseService.testShouldUseIAPOverride = false;
+        expect(InAppPurchaseService.shouldUseIAP, isFalse);
+      });
 
-    test('GeoIP background HTTP refresh handles network error gracefully without crashing', () async {
-      HttpOverrides.global = FakeHttpOverrides(shouldThrow: true);
+      test(
+        'GeoIP background HTTP refresh updates SharedPreferences cache on 200 response',
+        () async {
+          HttpOverrides.global = FakeHttpOverrides(
+            statusCode: 200,
+            responseJson: {'country': 'CA'},
+          );
 
-      await service.initialize();
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+          await service.initialize();
+          // Allow background microtasks and async HTTP to execute
+          await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      expect(service.isAvailable, isTrue);
-    });
-  });
+          final prefs = await SharedPreferences.getInstance();
+          expect(prefs.getString('cached_geoip_country'), equals('CA'));
+        },
+      );
+
+      test(
+        'GeoIP background HTTP refresh handles network error gracefully without crashing',
+        () async {
+          HttpOverrides.global = FakeHttpOverrides(shouldThrow: true);
+
+          await service.initialize();
+          await Future<void>.delayed(const Duration(milliseconds: 50));
+
+          expect(service.isAvailable, isTrue);
+        },
+      );
+    },
+  );
 
   // =========================================================================
   // GROUP 3: Product Catalog Loading
   // =========================================================================
   group('Group 3: Product Catalog Loading', () {
-    test('loadProducts queries all 6 target products and assigns products list', () async {
-      await service.loadProducts();
+    test(
+      'loadProducts queries all 6 target products and assigns products list',
+      () async {
+        await service.loadProducts();
 
-      final captured = verify(() => mockIap.queryProductDetails(captureAny())).captured.single as Set<String>;
-      expect(captured.contains(InAppPurchaseService.premiumWeekly), isTrue);
-      expect(captured.contains(InAppPurchaseService.premiumMonthly), isTrue);
-      expect(captured.contains(InAppPurchaseService.premiumYearly), isTrue);
-      expect(captured.contains(InAppPurchaseService.coinPack100), isTrue);
-      expect(captured.contains(InAppPurchaseService.coinPack500), isTrue);
-      expect(captured.contains(InAppPurchaseService.coinPack1000), isTrue);
+        final captured =
+            verify(
+                  () => mockIap.queryProductDetails(captureAny()),
+                ).captured.single
+                as Set<String>;
+        expect(captured.contains(InAppPurchaseService.premiumWeekly), isTrue);
+        expect(captured.contains(InAppPurchaseService.premiumMonthly), isTrue);
+        expect(captured.contains(InAppPurchaseService.premiumYearly), isTrue);
+        expect(captured.contains(InAppPurchaseService.coinPack100), isTrue);
+        expect(captured.contains(InAppPurchaseService.coinPack500), isTrue);
+        expect(captured.contains(InAppPurchaseService.coinPack1000), isTrue);
 
-      expect(service.products.length, equals(4));
-    });
+        expect(service.products.length, equals(4));
+      },
+    );
 
     test('loadProducts handles IAP query error without throwing', () async {
       when(() => mockIap.queryProductDetails(any())).thenAnswer(
@@ -424,114 +461,148 @@ void main() {
     test('buyProduct invokes buyNonConsumable for subscriptions', () async {
       await service.buyProduct(weeklyProduct);
 
-      final captured = verify(
-        () => mockIap.buyNonConsumable(
-          purchaseParam: captureAny(named: 'purchaseParam'),
-        ),
-      ).captured.single as PurchaseParam;
+      final captured =
+          verify(
+                () => mockIap.buyNonConsumable(
+                  purchaseParam: captureAny(named: 'purchaseParam'),
+                ),
+              ).captured.single
+              as PurchaseParam;
 
-      expect(captured.productDetails.id, equals(InAppPurchaseService.premiumWeekly));
+      expect(
+        captured.productDetails.id,
+        equals(InAppPurchaseService.premiumWeekly),
+      );
     });
 
     test('buyProduct invokes buyConsumable for coin packs', () async {
       await service.buyProduct(coinProduct);
 
-      final captured = verify(
-        () => mockIap.buyConsumable(
-          purchaseParam: captureAny(named: 'purchaseParam'),
-        ),
-      ).captured.single as PurchaseParam;
+      final captured =
+          verify(
+                () => mockIap.buyConsumable(
+                  purchaseParam: captureAny(named: 'purchaseParam'),
+                ),
+              ).captured.single
+              as PurchaseParam;
 
-      expect(captured.productDetails.id, equals(InAppPurchaseService.coinPack100));
+      expect(
+        captured.productDetails.id,
+        equals(InAppPurchaseService.coinPack100),
+      );
     });
 
-    test('buyProduct triggers onPurchaseError callback when launch returns false', () async {
-      when(() => mockIap.buyNonConsumable(
-        purchaseParam: any(named: 'purchaseParam'),
-      )).thenAnswer((_) async => false);
-      when(() => mockIap.buyConsumable(
-        purchaseParam: any(named: 'purchaseParam'),
-      )).thenAnswer((_) async => false);
+    test(
+      'buyProduct triggers onPurchaseError callback when launch returns false',
+      () async {
+        when(
+          () => mockIap.buyNonConsumable(
+            purchaseParam: any(named: 'purchaseParam'),
+          ),
+        ).thenAnswer((_) async => false);
+        when(
+          () =>
+              mockIap.buyConsumable(purchaseParam: any(named: 'purchaseParam')),
+        ).thenAnswer((_) async => false);
 
-      String? errorReceived;
-      service.onPurchaseError = (err) => errorReceived = err;
+        String? errorReceived;
+        service.onPurchaseError = (err) => errorReceived = err;
 
-      await service.buyProduct(weeklyProduct);
+        await service.buyProduct(weeklyProduct);
 
-      expect(errorReceived, equals('Could not launch purchase. Please try again.'));
-    });
+        expect(
+          errorReceived,
+          equals('Could not launch purchase. Please try again.'),
+        );
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 5: Purchase Stream Updates & Lifecycle
   // =========================================================================
   group('Group 5: Purchase Stream Updates & Lifecycle', () {
-    test('PurchaseStatus.pending does not complete purchase or invoke error callback', () async {
-      await service.initialize();
+    test(
+      'PurchaseStatus.pending does not complete purchase or invoke error callback',
+      () async {
+        await service.initialize();
 
-      String? errorReceived;
-      service.onPurchaseError = (err) => errorReceived = err;
+        String? errorReceived;
+        service.onPurchaseError = (err) => errorReceived = err;
 
-      final pendingPurchase = FakePurchaseDetails(
-        purchaseID: 'p_pending',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.pending,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'tok'),
-      );
+        final pendingPurchase = FakePurchaseDetails(
+          purchaseID: 'p_pending',
+          productID: InAppPurchaseService.premiumMonthly,
+          status: PurchaseStatus.pending,
+          verificationData: FakePurchaseVerificationData(
+            serverVerificationData: 'tok',
+          ),
+        );
 
-      purchaseStreamController.add([pendingPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+        purchaseStreamController.add([pendingPurchase]);
+        await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      expect(errorReceived, isNull);
-      verifyNever(() => mockIap.completePurchase(any()));
-    });
+        expect(errorReceived, isNull);
+        verifyNever(() => mockIap.completePurchase(any()));
+      },
+    );
 
-    test('PurchaseStatus.error triggers onPurchaseError and completes pending purchase', () async {
-      await service.initialize();
+    test(
+      'PurchaseStatus.error triggers onPurchaseError and completes pending purchase',
+      () async {
+        await service.initialize();
 
-      String? errorReceived;
-      service.onPurchaseError = (err) => errorReceived = err;
+        String? errorReceived;
+        service.onPurchaseError = (err) => errorReceived = err;
 
-      final errorPurchase = FakePurchaseDetails(
-        purchaseID: 'p_error',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.error,
-        pendingCompletePurchase: true,
-        error: IAPError(
-          source: 'google_play',
-          code: 'payment_declined',
-          message: 'Payment declined by bank',
-        ),
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'tok'),
-      );
+        final errorPurchase = FakePurchaseDetails(
+          purchaseID: 'p_error',
+          productID: InAppPurchaseService.premiumMonthly,
+          status: PurchaseStatus.error,
+          pendingCompletePurchase: true,
+          error: IAPError(
+            source: 'google_play',
+            code: 'payment_declined',
+            message: 'Payment declined by bank',
+          ),
+          verificationData: FakePurchaseVerificationData(
+            serverVerificationData: 'tok',
+          ),
+        );
 
-      purchaseStreamController.add([errorPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+        purchaseStreamController.add([errorPurchase]);
+        await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      expect(errorReceived, equals('Payment declined by bank'));
-      verify(() => mockIap.completePurchase(errorPurchase)).called(1);
-    });
+        expect(errorReceived, equals('Payment declined by bank'));
+        verify(() => mockIap.completePurchase(errorPurchase)).called(1);
+      },
+    );
 
-    test('PurchaseStatus.canceled triggers onPurchaseCanceled and completes pending purchase', () async {
-      await service.initialize();
+    test(
+      'PurchaseStatus.canceled triggers onPurchaseCanceled and completes pending purchase',
+      () async {
+        await service.initialize();
 
-      String? cancelReceived;
-      service.onPurchaseCanceled = (msg) => cancelReceived = msg;
+        String? cancelReceived;
+        service.onPurchaseCanceled = (msg) => cancelReceived = msg;
 
-      final cancelPurchase = FakePurchaseDetails(
-        purchaseID: 'p_cancel',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.canceled,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'tok'),
-      );
+        final cancelPurchase = FakePurchaseDetails(
+          purchaseID: 'p_cancel',
+          productID: InAppPurchaseService.premiumMonthly,
+          status: PurchaseStatus.canceled,
+          pendingCompletePurchase: true,
+          verificationData: FakePurchaseVerificationData(
+            serverVerificationData: 'tok',
+          ),
+        );
 
-      purchaseStreamController.add([cancelPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+        purchaseStreamController.add([cancelPurchase]);
+        await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      expect(cancelReceived, equals('Purchase cancelled'));
-      verify(() => mockIap.completePurchase(cancelPurchase)).called(1);
-    });
+        expect(cancelReceived, equals('Purchase cancelled'));
+        verify(() => mockIap.completePurchase(cancelPurchase)).called(1);
+      },
+    );
 
     test('restorePurchases calls _iap.restorePurchases', () async {
       await service.restorePurchases();
@@ -543,196 +614,259 @@ void main() {
   // =========================================================================
   // GROUP 6: Zero Money Leakage: Backend Cloud Function Verification & Anti-Fraud
   // =========================================================================
-  group('Group 6: Zero Money Leakage: Backend Cloud Function Verification & Anti-Fraud', () {
-    test('PurchaseStatus.purchased for Weekly plan calls validateIAPReceipt with grantType premium and 7 days', () async {
-      await service.initialize();
+  group(
+    'Group 6: Zero Money Leakage: Backend Cloud Function Verification & Anti-Fraud',
+    () {
+      test(
+        'PurchaseStatus.purchased for Weekly plan calls validateIAPReceipt with grantType premium and 7 days',
+        () async {
+          await service.initialize();
 
-      final mockResult = MockHttpsCallableResult<dynamic>();
-      when(() => mockResult.data).thenReturn({'success': true});
-      when(() => mockCallable.call<dynamic>(any())).thenAnswer((_) async => mockResult);
+          final mockResult = MockHttpsCallableResult<dynamic>();
+          when(() => mockResult.data).thenReturn({'success': true});
+          when(
+            () => mockCallable.call<dynamic>(any()),
+          ).thenAnswer((_) async => mockResult);
 
-      PurchaseDetails? deliveredPurchase;
-      service.onPurchaseSuccess = (p) => deliveredPurchase = p;
+          PurchaseDetails? deliveredPurchase;
+          service.onPurchaseSuccess = (p) => deliveredPurchase = p;
 
-      final purchase = FakePurchaseDetails(
-        purchaseID: 'tx_weekly',
-        productID: InAppPurchaseService.premiumWeekly,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_weekly_123'),
+          final purchase = FakePurchaseDetails(
+            purchaseID: 'tx_weekly',
+            productID: InAppPurchaseService.premiumWeekly,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: true,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_weekly_123',
+            ),
+          );
+
+          purchaseStreamController.add([purchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
+
+          final capturedPayload =
+              verify(
+                    () => mockCallable.call<dynamic>(captureAny()),
+                  ).captured.single
+                  as Map<String, dynamic>;
+
+          expect(capturedPayload['purchaseToken'], equals('token_weekly_123'));
+          expect(
+            capturedPayload['productId'],
+            equals(InAppPurchaseService.premiumWeekly),
+          );
+          expect(capturedPayload['grantType'], equals('premium'));
+          expect(capturedPayload['days'], equals(7));
+
+          // Successfully completed and delivered
+          verify(() => mockIap.completePurchase(purchase)).called(1);
+          expect(deliveredPurchase?.purchaseID, equals('tx_weekly'));
+        },
       );
 
-      purchaseStreamController.add([purchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test(
+        'PurchaseStatus.purchased for Monthly plan passes 30 days and for Yearly passes 365 days',
+        () async {
+          await service.initialize();
 
-      final capturedPayload = verify(
-        () => mockCallable.call<dynamic>(captureAny()),
-      ).captured.single as Map<String, dynamic>;
+          final mockResult = MockHttpsCallableResult<dynamic>();
+          when(() => mockResult.data).thenReturn({'success': true});
+          when(
+            () => mockCallable.call<dynamic>(any()),
+          ).thenAnswer((_) async => mockResult);
 
-      expect(capturedPayload['purchaseToken'], equals('token_weekly_123'));
-      expect(capturedPayload['productId'], equals(InAppPurchaseService.premiumWeekly));
-      expect(capturedPayload['grantType'], equals('premium'));
-      expect(capturedPayload['days'], equals(7));
+          final monthlyPurchase = FakePurchaseDetails(
+            purchaseID: 'tx_monthly',
+            productID: InAppPurchaseService.premiumMonthly,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: false,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_monthly',
+            ),
+          );
 
-      // Successfully completed and delivered
-      verify(() => mockIap.completePurchase(purchase)).called(1);
-      expect(deliveredPurchase?.purchaseID, equals('tx_weekly'));
-    });
+          purchaseStreamController.add([monthlyPurchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
 
-    test('PurchaseStatus.purchased for Monthly plan passes 30 days and for Yearly passes 365 days', () async {
-      await service.initialize();
+          final capturedMonthly =
+              verify(
+                    () => mockCallable.call<dynamic>(captureAny()),
+                  ).captured.single
+                  as Map<String, dynamic>;
 
-      final mockResult = MockHttpsCallableResult<dynamic>();
-      when(() => mockResult.data).thenReturn({'success': true});
-      when(() => mockCallable.call<dynamic>(any())).thenAnswer((_) async => mockResult);
+          expect(capturedMonthly['grantType'], equals('premium'));
+          expect(capturedMonthly['days'], equals(30));
 
-      final monthlyPurchase = FakePurchaseDetails(
-        purchaseID: 'tx_monthly',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: false,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_monthly'),
+          final yearlyPurchase = FakePurchaseDetails(
+            purchaseID: 'tx_yearly',
+            productID: InAppPurchaseService.premiumYearly,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: false,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_yearly',
+            ),
+          );
+
+          purchaseStreamController.add([yearlyPurchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
+
+          final capturedYearly =
+              verify(
+                    () => mockCallable.call<dynamic>(captureAny()),
+                  ).captured.last
+                  as Map<String, dynamic>;
+
+          expect(capturedYearly['grantType'], equals('premium'));
+          expect(capturedYearly['days'], equals(365));
+        },
       );
 
-      purchaseStreamController.add([monthlyPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test(
+        'PurchaseStatus.purchased for Coins pack passes grantType coins',
+        () async {
+          await service.initialize();
 
-      final capturedMonthly = verify(
-        () => mockCallable.call<dynamic>(captureAny()),
-      ).captured.single as Map<String, dynamic>;
+          final mockResult = MockHttpsCallableResult<dynamic>();
+          when(() => mockResult.data).thenReturn({'success': true});
+          when(
+            () => mockCallable.call<dynamic>(any()),
+          ).thenAnswer((_) async => mockResult);
 
-      expect(capturedMonthly['grantType'], equals('premium'));
-      expect(capturedMonthly['days'], equals(30));
+          final coinPurchase = FakePurchaseDetails(
+            purchaseID: 'tx_coins',
+            productID: InAppPurchaseService.coinPack500,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: true,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_coins',
+            ),
+          );
 
-      final yearlyPurchase = FakePurchaseDetails(
-        purchaseID: 'tx_yearly',
-        productID: InAppPurchaseService.premiumYearly,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: false,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_yearly'),
+          purchaseStreamController.add([coinPurchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
+
+          final captured =
+              verify(
+                    () => mockCallable.call<dynamic>(captureAny()),
+                  ).captured.single
+                  as Map<String, dynamic>;
+
+          expect(captured['grantType'], equals('coins'));
+          expect(captured.containsKey('days'), isFalse);
+        },
       );
 
-      purchaseStreamController.add([yearlyPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test(
+        'PurchaseStatus.restored invokes onPurchaseRestored callback upon successful backend validation',
+        () async {
+          await service.initialize();
 
-      final capturedYearly = verify(
-        () => mockCallable.call<dynamic>(captureAny()),
-      ).captured.last as Map<String, dynamic>;
+          final mockResult = MockHttpsCallableResult<dynamic>();
+          when(() => mockResult.data).thenReturn({'success': true});
+          when(
+            () => mockCallable.call<dynamic>(any()),
+          ).thenAnswer((_) async => mockResult);
 
-      expect(capturedYearly['grantType'], equals('premium'));
-      expect(capturedYearly['days'], equals(365));
-    });
+          bool restoredInvoked = false;
+          service.onPurchaseRestored = () => restoredInvoked = true;
 
-    test('PurchaseStatus.purchased for Coins pack passes grantType coins', () async {
-      await service.initialize();
+          final restoredPurchase = FakePurchaseDetails(
+            purchaseID: 'tx_restored',
+            productID: InAppPurchaseService.premiumMonthly,
+            status: PurchaseStatus.restored,
+            pendingCompletePurchase: true,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_restored',
+            ),
+          );
 
-      final mockResult = MockHttpsCallableResult<dynamic>();
-      when(() => mockResult.data).thenReturn({'success': true});
-      when(() => mockCallable.call<dynamic>(any())).thenAnswer((_) async => mockResult);
+          purchaseStreamController.add([restoredPurchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      final coinPurchase = FakePurchaseDetails(
-        purchaseID: 'tx_coins',
-        productID: InAppPurchaseService.coinPack500,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_coins'),
+          expect(restoredInvoked, isTrue);
+          verify(() => mockIap.completePurchase(restoredPurchase)).called(1);
+        },
       );
 
-      purchaseStreamController.add([coinPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test(
+        'ANTI-FRAUD: Backend rejection (success != true) DOES NOT complete purchase and triggers error',
+        () async {
+          await service.initialize();
 
-      final captured = verify(
-        () => mockCallable.call<dynamic>(captureAny()),
-      ).captured.single as Map<String, dynamic>;
+          final mockResult = MockHttpsCallableResult<dynamic>();
+          when(
+            () => mockResult.data,
+          ).thenReturn({'success': false, 'error': 'Invalid receipt'});
+          when(
+            () => mockCallable.call<dynamic>(any()),
+          ).thenAnswer((_) async => mockResult);
 
-      expect(captured['grantType'], equals('coins'));
-      expect(captured.containsKey('days'), isFalse);
-    });
+          String? errorReceived;
+          service.onPurchaseError = (err) => errorReceived = err;
+          bool successInvoked = false;
+          service.onPurchaseSuccess = (_) => successInvoked = true;
 
-    test('PurchaseStatus.restored invokes onPurchaseRestored callback upon successful backend validation', () async {
-      await service.initialize();
+          final fraudulentPurchase = FakePurchaseDetails(
+            purchaseID: 'tx_fraud',
+            productID: InAppPurchaseService.premiumMonthly,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: true,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'tampered_receipt',
+            ),
+          );
 
-      final mockResult = MockHttpsCallableResult<dynamic>();
-      when(() => mockResult.data).thenReturn({'success': true});
-      when(() => mockCallable.call<dynamic>(any())).thenAnswer((_) async => mockResult);
+          purchaseStreamController.add([fraudulentPurchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      bool restoredInvoked = false;
-      service.onPurchaseRestored = () => restoredInvoked = true;
+          expect(
+            errorReceived,
+            equals('Verification failed. Contact support.'),
+          );
+          expect(successInvoked, isFalse);
 
-      final restoredPurchase = FakePurchaseDetails(
-        purchaseID: 'tx_restored',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.restored,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_restored'),
+          // ZERO MONEY LEAKAGE: Never complete purchase when server validation fails!
+          verifyNever(() => mockIap.completePurchase(any()));
+        },
       );
 
-      purchaseStreamController.add([restoredPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      test(
+        'NETWORK RESILIENCE: Cloud Function exception DOES NOT complete purchase and triggers error',
+        () async {
+          await service.initialize();
 
-      expect(restoredInvoked, isTrue);
-      verify(() => mockIap.completePurchase(restoredPurchase)).called(1);
-    });
+          when(() => mockCallable.call<dynamic>(any())).thenThrow(
+            FirebaseFunctionsException(
+              message: 'Backend server timeout',
+              code: 'unavailable',
+            ),
+          );
 
-    test('ANTI-FRAUD: Backend rejection (success != true) DOES NOT complete purchase and triggers error', () async {
-      await service.initialize();
+          String? errorReceived;
+          service.onPurchaseError = (err) => errorReceived = err;
 
-      final mockResult = MockHttpsCallableResult<dynamic>();
-      when(() => mockResult.data).thenReturn({'success': false, 'error': 'Invalid receipt'});
-      when(() => mockCallable.call<dynamic>(any())).thenAnswer((_) async => mockResult);
+          final purchase = FakePurchaseDetails(
+            purchaseID: 'tx_net_error',
+            productID: InAppPurchaseService.premiumMonthly,
+            status: PurchaseStatus.purchased,
+            pendingCompletePurchase: true,
+            verificationData: FakePurchaseVerificationData(
+              serverVerificationData: 'token_timeout',
+            ),
+          );
 
-      String? errorReceived;
-      service.onPurchaseError = (err) => errorReceived = err;
-      bool successInvoked = false;
-      service.onPurchaseSuccess = (_) => successInvoked = true;
+          purchaseStreamController.add([purchase]);
+          await Future<void>.delayed(const Duration(milliseconds: 50));
 
-      final fraudulentPurchase = FakePurchaseDetails(
-        purchaseID: 'tx_fraud',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'tampered_receipt'),
+          expect(
+            errorReceived,
+            equals('Could not verify purchase. Please try again.'),
+          );
+
+          // ZERO MONEY LEAKAGE: Never complete purchase when verification errors out!
+          verifyNever(() => mockIap.completePurchase(any()));
+        },
       );
-
-      purchaseStreamController.add([fraudulentPurchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
-
-      expect(errorReceived, equals('Verification failed. Contact support.'));
-      expect(successInvoked, isFalse);
-
-      // ZERO MONEY LEAKAGE: Never complete purchase when server validation fails!
-      verifyNever(() => mockIap.completePurchase(any()));
-    });
-
-    test('NETWORK RESILIENCE: Cloud Function exception DOES NOT complete purchase and triggers error', () async {
-      await service.initialize();
-
-      when(() => mockCallable.call<dynamic>(any())).thenThrow(
-        FirebaseFunctionsException(
-          message: 'Backend server timeout',
-          code: 'unavailable',
-        ),
-      );
-
-      String? errorReceived;
-      service.onPurchaseError = (err) => errorReceived = err;
-
-      final purchase = FakePurchaseDetails(
-        purchaseID: 'tx_net_error',
-        productID: InAppPurchaseService.premiumMonthly,
-        status: PurchaseStatus.purchased,
-        pendingCompletePurchase: true,
-        verificationData: FakePurchaseVerificationData(serverVerificationData: 'token_timeout'),
-      );
-
-      purchaseStreamController.add([purchase]);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
-
-      expect(errorReceived, equals('Could not verify purchase. Please try again.'));
-
-      // ZERO MONEY LEAKAGE: Never complete purchase when verification errors out!
-      verifyNever(() => mockIap.completePurchase(any()));
-    });
-  });
+    },
+  );
 }
-

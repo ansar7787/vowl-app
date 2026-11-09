@@ -82,8 +82,8 @@ class _LanguageSelectionBottomSheetState
   final TextEditingController _searchController = TextEditingController();
   final TranslationService _translationService =
       di.sl.isRegistered<TranslationService>()
-          ? di.sl<TranslationService>()
-          : TranslationService();
+      ? di.sl<TranslationService>()
+      : TranslationService();
 
   List<String> _allLanguages = [];
   List<String> _filteredLanguages = [];
@@ -396,9 +396,7 @@ class _LanguageSelectionBottomSheetState
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.85,
@@ -408,10 +406,7 @@ class _LanguageSelectionBottomSheetState
       decoration: BoxDecoration(
         color: sheetBg,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-        border: Border.all(
-          color: borderColor,
-          width: 1.0,
-        ),
+        border: Border.all(color: borderColor, width: 1.0),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
@@ -564,14 +559,14 @@ class _LanguageSelectionBottomSheetState
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate100,
+                      color: isDark ? Colors.white12 : AppColors.slate200,
                       width: 1.0,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate100,
+                      color: isDark ? Colors.white12 : AppColors.slate200,
                       width: 1.0,
                     ),
                   ),
@@ -733,11 +728,11 @@ class _LanguageSelectionBottomSheetState
   /// Modern shimmer loading skeleton mirroring the exact layout of the bottom sheet.
   Widget _buildShimmerLoading(bool isDark) {
     final baseColor = isDark
-        ? Colors.white.withValues(alpha: 0.04)
-        : AppColors.slate200.withValues(alpha: 0.7);
+        ? AppColors.slate800
+        : AppColors.slate200;
     final highlightColor = isDark
-        ? Colors.white.withValues(alpha: 0.10)
-        : Colors.white.withValues(alpha: 0.95);
+        ? AppColors.slate700
+        : const Color(0xFFF8FAFC);
 
     return Shimmer.fromColors(
       key: const ValueKey('shimmer_skeleton'),
@@ -876,9 +871,7 @@ class _LanguageSelectionBottomSheetState
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final rowBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
@@ -894,15 +887,13 @@ class _LanguageSelectionBottomSheetState
               color: isActive
                   ? AppColors.indigo500.withValues(alpha: isDark ? 0.15 : 0.08)
                   : (isMidnight
-                      ? const Color(0xFF0F1523)
-                      : (isDark
-                          ? const Color(0xFF161F33)
-                          : AppColors.slate50)),
+                        ? const Color(0xFF0F1523)
+                        : (isDark
+                              ? const Color(0xFF161F33)
+                              : AppColors.slate50)),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isActive
-                    ? AppColors.indigo500
-                    : rowBorder,
+                color: isActive ? AppColors.indigo500 : rowBorder,
                 width: 1.0,
               ),
             ),

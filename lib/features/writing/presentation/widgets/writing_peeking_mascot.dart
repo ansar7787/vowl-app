@@ -125,7 +125,9 @@ class _SpeechBubble extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 11.sp,
             fontWeight: FontWeight.bold,
-            color: isDark ? Colors.white70 : (theme.primaryColor ?? const Color(0xFF2563EB)),
+            color: isDark
+                ? Colors.white70
+                : (theme.primaryColor ?? const Color(0xFF2563EB)),
           ),
         ),
       ),
@@ -141,10 +143,6 @@ class _MascotAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VowlMascot(
-      state: mascotState,
-      size: 45.r,
-      mascotId: mascotId,
-    );
+    return VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
   }
 }

@@ -106,7 +106,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -118,12 +120,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -131,15 +138,29 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX()).thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer((inv) => inv.positionalArguments.first as String);
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -199,40 +220,45 @@ void main() {
   }
 
   group('KidsProfessionsLayout Production Audit Tests', () {
-    testWidgets('renders storefront, dispatch header, scenario, and 3 clipboards',
-        (tester) async {
-      await pumpProfessionsLayout(tester);
+    testWidgets(
+      'renders storefront, dispatch header, scenario, and 3 clipboards',
+      (tester) async {
+        await pumpProfessionsLayout(tester);
 
-      expect(find.text('Community Helpers'), findsOneWidget);
-      expect(
-        find.text(
-          'Who helps children learn to read, write, and count in a classroom?',
-        ),
-        findsWidgets,
-      );
-      expect(find.text('Teacher'), findsOneWidget);
-      expect(find.text('Baker'), findsOneWidget);
-      expect(find.text('Firefighter'), findsOneWidget);
-      expect(find.text('Listen'), findsOneWidget);
-    });
+        expect(find.text('Community Helpers'), findsOneWidget);
+        expect(
+          find.text(
+            'Who helps children learn to read, write, and count in a classroom?',
+          ),
+          findsWidgets,
+        );
+        expect(find.text('Teacher'), findsOneWidget);
+        expect(find.text('Baker'), findsOneWidget);
+        expect(find.text('Firefighter'), findsOneWidget);
+        expect(find.text('Listen'), findsOneWidget);
+      },
+    );
 
-    testWidgets('supports accessible tap-to-answer submission (dual interaction)',
-        (tester) async {
-      await pumpProfessionsLayout(tester);
+    testWidgets(
+      'supports accessible tap-to-answer submission (dual interaction)',
+      (tester) async {
+        await pumpProfessionsLayout(tester);
 
-      // Tap the correct clipboard
-      await tester.tap(find.text('Teacher'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Tap the correct clipboard
+        await tester.tap(find.text('Teacher'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Teacher', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
-    });
+        verify(() => mockTTSService.speak('Teacher', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('supports drag-and-drop to career storefront target',
-        (tester) async {
+    testWidgets('supports drag-and-drop to career storefront target', (
+      tester,
+    ) async {
       await pumpProfessionsLayout(tester);
 
       final teacherFinder = find.text('Teacher');
@@ -242,7 +268,9 @@ void main() {
       expect(storefrontFinder, findsOneWidget);
 
       final dragLocation = tester.getCenter(storefrontFinder);
-      final gesture = await tester.startGesture(tester.getCenter(teacherFinder));
+      final gesture = await tester.startGesture(
+        tester.getCenter(teacherFinder),
+      );
       await tester.pump(const Duration(milliseconds: 100));
 
       await gesture.moveTo(dragLocation);
@@ -255,8 +283,9 @@ void main() {
       verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
     });
 
-    testWidgets('replays scenario audio when Listen button is tapped',
-        (tester) async {
+    testWidgets('replays scenario audio when Listen button is tapped', (
+      tester,
+    ) async {
       await pumpProfessionsLayout(tester);
 
       await tester.tap(find.text('Listen'));
@@ -273,24 +302,27 @@ void main() {
       verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('pronounces career name when clipboard speaker button is tapped',
-        (tester) async {
-      await pumpProfessionsLayout(tester);
+    testWidgets(
+      'pronounces career name when clipboard speaker button is tapped',
+      (tester) async {
+        await pumpProfessionsLayout(tester);
 
-      final hearButton = find.bySemanticsLabel('Hear Baker pronounced');
-      expect(hearButton, findsOneWidget);
+        final hearButton = find.bySemanticsLabel('Hear Baker pronounced');
+        expect(hearButton, findsOneWidget);
 
-      await tester.tap(hearButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hearButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Baker', force: true)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
-    });
+        verify(() => mockTTSService.speak('Baker', force: true)).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('displays celebratory hero badge upon correct answer',
-        (tester) async {
+    testWidgets('displays celebratory hero badge upon correct answer', (
+      tester,
+    ) async {
       const correctState = KidsLoaded(
         quests: [testQuestShortOptions],
         originalTotalQuests: 1,
@@ -305,30 +337,36 @@ void main() {
 
       expect(find.text('Correct!'), findsOneWidget);
       expect(find.text('🏫'), findsOneWidget);
-      expect(find.text('Teacher'), findsNWidgets(2)); // One in hero banner, one in options
+      expect(
+        find.text('Teacher'),
+        findsNWidgets(2),
+      ); // One in hero banner, one in options
     });
 
-    testWidgets('renders wide dispatch cards for long options without clipping',
-        (tester) async {
-      const longOptionsState = KidsLoaded(
-        quests: [testQuestLongOptions],
-        originalTotalQuests: 1,
-        gameType: 'professions',
-        level: 191,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+    testWidgets(
+      'renders wide dispatch cards for long options without clipping',
+      (tester) async {
+        const longOptionsState = KidsLoaded(
+          quests: [testQuestLongOptions],
+          originalTotalQuests: 1,
+          gameType: 'professions',
+          level: 191,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpProfessionsLayout(tester, state: longOptionsState);
+        await pumpProfessionsLayout(tester, state: longOptionsState);
 
-      expect(find.text('Mountain Rescue Volunteer'), findsOneWidget);
-      expect(find.text('Mountain Weather Forecaster'), findsOneWidget);
-      expect(find.text('Campsite Kitchen Cook'), findsOneWidget);
-    });
+        expect(find.text('Mountain Rescue Volunteer'), findsOneWidget);
+        expect(find.text('Mountain Weather Forecaster'), findsOneWidget);
+        expect(find.text('Campsite Kitchen Cook'), findsOneWidget);
+      },
+    );
 
-    testWidgets('dims a wrong distractor when lifeline hintUsed is true',
-        (tester) async {
+    testWidgets('dims a wrong distractor when lifeline hintUsed is true', (
+      tester,
+    ) async {
       const hintState = KidsLoaded(
         quests: [testQuestShortOptions],
         originalTotalQuests: 1,
@@ -350,8 +388,9 @@ void main() {
       expect(opacities.contains(0.35), isTrue);
     });
 
-    testWidgets('locks interaction when question is already answered',
-        (tester) async {
+    testWidgets('locks interaction when question is already answered', (
+      tester,
+    ) async {
       const answeredState = KidsLoaded(
         quests: [testQuestShortOptions],
         originalTotalQuests: 1,
@@ -372,16 +411,18 @@ void main() {
       verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
     });
 
-    testWidgets('renders without overflow on narrow 320dp screen',
-        (tester) async {
+    testWidgets('renders without overflow on narrow 320dp screen', (
+      tester,
+    ) async {
       await pumpProfessionsLayout(tester, width: 320, height: 600);
 
       expect(tester.takeException(), isNull);
       expect(find.text('Community Helpers'), findsOneWidget);
     });
 
-    testWidgets('renders without overflow on large 430dp screen',
-        (tester) async {
+    testWidgets('renders without overflow on large 430dp screen', (
+      tester,
+    ) async {
       await pumpProfessionsLayout(tester, width: 430, height: 932);
 
       expect(tester.takeException(), isNull);
@@ -390,36 +431,44 @@ void main() {
   });
 
   group('StoryService & GameInstructionService Integration Tests', () {
-    test('StoryService professions scripts provide inspirational milestones', () {
-      final beats = StoryServiceImpl.kidsScripts['professions']!;
-      expect(beats, isNotEmpty);
-      expect(beats.length, greaterThanOrEqualTo(2));
-      expect(beats.first.contains('jobs') || beats.first.contains('careers'), isTrue);
-    });
+    test(
+      'StoryService professions scripts provide inspirational milestones',
+      () {
+        final beats = StoryServiceImpl.kidsScripts['professions']!;
+        expect(beats, isNotEmpty);
+        expect(beats.length, greaterThanOrEqualTo(2));
+        expect(
+          beats.first.contains('jobs') || beats.first.contains('careers'),
+          isTrue,
+        );
+      },
+    );
 
-    testWidgets('GameInstructionService professions briefing matches game mechanics', (tester) async {
-      late BuildContext testContext;
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              testContext = context;
-              return const SizedBox();
-            },
+    testWidgets(
+      'GameInstructionService professions briefing matches game mechanics',
+      (tester) async {
+        late BuildContext testContext;
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                testContext = context;
+                return const SizedBox();
+              },
+            ),
           ),
-        ),
-      );
+        );
 
-      final briefing = GameInstructionService.getBriefing(
-        testContext,
-        null,
-        'professions',
-        level: 1,
-      );
-      expect(briefing.title, 'Community Helpers');
-      expect(briefing.rules.length, greaterThanOrEqualTo(2));
-      expect(briefing.icon, Icons.work_rounded);
-    });
+        final briefing = GameInstructionService.getBriefing(
+          testContext,
+          null,
+          'professions',
+          level: 1,
+        );
+        expect(briefing.title, 'Community Helpers');
+        expect(briefing.rules.length, greaterThanOrEqualTo(2));
+        expect(briefing.icon, Icons.work_rounded);
+      },
+    );
   });
 }
-

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -123,10 +124,7 @@ void main() {
                     controller: di.sl<ScrollController>(instanceName: 'home'),
                     children: List.generate(
                       40,
-                      (i) => SizedBox(
-                        height: 60,
-                        child: Text('Home Item $i'),
-                      ),
+                      (i) => SizedBox(height: 60, child: Text('Home Item $i')),
                     ),
                   ),
                 ),
@@ -140,10 +138,7 @@ void main() {
                     controller: di.sl<ScrollController>(instanceName: 'games'),
                     children: List.generate(
                       40,
-                      (i) => SizedBox(
-                        height: 60,
-                        child: Text('Games Item $i'),
-                      ),
+                      (i) => SizedBox(height: 60, child: Text('Games Item $i')),
                     ),
                   ),
                 ),
@@ -154,15 +149,15 @@ void main() {
                 GoRoute(
                   path: '/ranks',
                   builder: (context, state) => ListView(
-                    controller: di.sl<ScrollController>(instanceName: 'leaderboard'),
+                    controller: di.sl<ScrollController>(
+                      instanceName: 'leaderboard',
+                    ),
                     children: [
                       const Text('Ranks Screen Content'),
                       ...List.generate(
                         40,
-                        (i) => SizedBox(
-                          height: 60,
-                          child: Text('Ranks Item $i'),
-                        ),
+                        (i) =>
+                            SizedBox(height: 60, child: Text('Ranks Item $i')),
                       ),
                     ],
                   ),
@@ -174,7 +169,9 @@ void main() {
                 GoRoute(
                   path: '/profile',
                   builder: (context, state) => ListView(
-                    controller: di.sl<ScrollController>(instanceName: 'profile'),
+                    controller: di.sl<ScrollController>(
+                      instanceName: 'profile',
+                    ),
                     children: [
                       const Text('Profile Screen Content'),
                       ...List.generate(
@@ -195,10 +192,7 @@ void main() {
     );
   }
 
-  Widget createWidgetUnderTest({
-    GoRouter? router,
-    ThemeData? theme,
-  }) {
+  Widget createWidgetUnderTest({GoRouter? router, ThemeData? theme}) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       minTextAdapt: true,
@@ -223,10 +217,7 @@ void main() {
     addTearDown(() => tester.view.resetDevicePixelRatio());
 
     await tester.pumpWidget(
-      createWidgetUnderTest(
-        router: router,
-        theme: theme,
-      ),
+      createWidgetUnderTest(router: router, theme: theme),
     );
     await tester.pumpAndSettle();
   }
@@ -240,18 +231,26 @@ void main() {
         expect(find.byType(MainWrapper), findsOneWidget);
         expect(find.text('Home Item 0'), findsOneWidget);
 
-        // Home tab is active: has active icon and 'Home' label
-        expect(find.byIcon(Icons.home_rounded), findsOneWidget);
+        // All 4 modern Lucide icons are rendered
+        expect(find.byIcon(LucideIcons.home), findsOneWidget);
+        expect(find.byIcon(LucideIcons.gamepad2), findsOneWidget);
+        expect(find.byIcon(LucideIcons.trophy), findsOneWidget);
+        expect(find.byIcon(LucideIcons.user), findsOneWidget);
+
+        // Labels are rendered in stacked layout for immediate legibility
         expect(find.text('Home'), findsOneWidget);
+        expect(find.text('Games'), findsOneWidget);
+        expect(find.text('Ranks'), findsOneWidget);
+        expect(find.text('Profile'), findsOneWidget);
 
-        // Inactive tabs show outline icons and do NOT show label texts
-        expect(find.byIcon(Icons.sports_esports_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.leaderboard_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.person_outline_rounded), findsOneWidget);
-
-        expect(find.text('Games'), findsNothing);
-        expect(find.text('Ranks'), findsNothing);
-        expect(find.text('Profile'), findsNothing);
+        // Home is selected
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == true,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
 
@@ -279,12 +278,25 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Games Item 0'), findsOneWidget);
-        expect(find.byIcon(Icons.sports_esports_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.gamepad2), findsOneWidget);
         expect(find.text('Games'), findsOneWidget);
 
-        // Home should now be inactive
-        expect(find.byIcon(Icons.home_outlined), findsOneWidget);
-        expect(find.text('Home'), findsNothing);
+        // Games tab is now selected, Home is not
+        final gamesSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Games' &&
+              w.properties.selected == true,
+        );
+        expect(gamesSemantics, findsOneWidget);
+
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == false,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
 
@@ -300,12 +312,17 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Ranks Screen Content'), findsOneWidget);
-        expect(find.byIcon(Icons.leaderboard_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.trophy), findsOneWidget);
         expect(find.text('Ranks'), findsOneWidget);
 
-        // Games and Home are inactive
-        expect(find.byIcon(Icons.home_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.sports_esports_outlined), findsOneWidget);
+        // Ranks tab is now selected
+        final ranksSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Ranks' &&
+              w.properties.selected == true,
+        );
+        expect(ranksSemantics, findsOneWidget);
       },
     );
 
@@ -321,8 +338,17 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Profile Screen Content'), findsOneWidget);
-        expect(find.byIcon(Icons.person_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.user), findsOneWidget);
         expect(find.text('Profile'), findsOneWidget);
+
+        // Profile tab is now selected
+        final profileSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Profile' &&
+              w.properties.selected == true,
+        );
+        expect(profileSemantics, findsOneWidget);
       },
     );
 
@@ -350,7 +376,15 @@ void main() {
         await tester.tap(find.bySemanticsLabel('Home'));
         await tester.pumpAndSettle();
         expect(find.text('Home Item 0'), findsOneWidget);
-        expect(find.byIcon(Icons.home_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.home), findsOneWidget);
+
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == true,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
   });
@@ -466,67 +500,65 @@ void main() {
   });
 
   group('Group 4: Accessibility & Semantics', () {
-    testWidgets(
-      'nav items expose proper Semantics button and selected state',
-      (tester) async {
-        await pumpMainWrapper(tester);
+    testWidgets('nav items expose proper Semantics button and selected state', (
+      tester,
+    ) async {
+      await pumpMainWrapper(tester);
 
-        final homeFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == true &&
-              w.properties.label == 'Home',
-        );
-        expect(homeFinder, findsOneWidget);
+      final homeFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == true &&
+            w.properties.label == 'Home',
+      );
+      expect(homeFinder, findsOneWidget);
 
-        final gamesFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Games',
-        );
-        expect(gamesFinder, findsOneWidget);
+      final gamesFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Games',
+      );
+      expect(gamesFinder, findsOneWidget);
 
-        final ranksFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Ranks',
-        );
-        expect(ranksFinder, findsOneWidget);
+      final ranksFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Ranks',
+      );
+      expect(ranksFinder, findsOneWidget);
 
-        final profileFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              w.properties.selected == false &&
-              w.properties.label == 'Profile',
-        );
-        expect(profileFinder, findsOneWidget);
-      },
-    );
+      final profileFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.selected == false &&
+            w.properties.label == 'Profile',
+      );
+      expect(profileFinder, findsOneWidget);
+    });
 
-    testWidgets(
-      'maintains 48dp minimum touch target floor on all items',
-      (tester) async {
-        await pumpMainWrapper(tester);
+    testWidgets('maintains 48dp minimum touch target floor on all items', (
+      tester,
+    ) async {
+      await pumpMainWrapper(tester);
 
-        final constrainedContainers = find.byWidgetPredicate(
-          (w) =>
-              w is Container &&
-              w.constraints?.minWidth != null &&
-              w.constraints!.minWidth >= 48.0 &&
-              w.constraints?.minHeight != null &&
-              w.constraints!.minHeight >= 48.0,
-        );
+      final constrainedContainers = find.byWidgetPredicate(
+        (w) =>
+            w is Container &&
+            w.constraints?.minWidth != null &&
+            w.constraints!.minWidth >= 48.0 &&
+            w.constraints?.minHeight != null &&
+            w.constraints!.minHeight >= 48.0,
+      );
 
-        // At least 4 nav item tap targets meeting the 48dp floor
-        expect(constrainedContainers, findsAtLeastNWidgets(4));
-      },
-    );
+      // At least 4 nav item tap targets meeting the 48dp floor
+      expect(constrainedContainers, findsAtLeastNWidgets(4));
+    });
   });
 
   group('Group 5: Responsive Layouts & Themes', () {
@@ -546,21 +578,20 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly on large tablet viewport (800x1280)',
-      (tester) async {
-        tester.view.physicalSize = const Size(800, 1280);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() => tester.view.resetPhysicalSize());
-        addTearDown(() => tester.view.resetDevicePixelRatio());
+    testWidgets('renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 1280);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        await tester.pumpWidget(createWidgetUnderTest());
-        await tester.pumpAndSettle();
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pumpAndSettle();
 
-        expect(find.byType(MainWrapper), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(MainWrapper), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly under 1.3x accessibility text scaling without overflow',
@@ -583,18 +614,12 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders cleanly in Dark Theme mode',
-      (tester) async {
-        await pumpMainWrapper(
-          tester,
-          theme: ThemeData.dark(),
-        );
+    testWidgets('renders cleanly in Dark Theme mode', (tester) async {
+      await pumpMainWrapper(tester, theme: ThemeData.dark());
 
-        expect(find.byType(MainWrapper), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(MainWrapper), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly in Midnight Theme mode (black scaffold background)',
@@ -612,4 +637,3 @@ void main() {
     );
   });
 }
-

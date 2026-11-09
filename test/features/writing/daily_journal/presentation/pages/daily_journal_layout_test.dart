@@ -141,7 +141,8 @@ void main() {
   final sampleQuest2 = createQuest(
     id: 'quest_dj_2',
     instruction: 'Write a reflection about your morning walk.',
-    prompt: 'Describe the sights, sounds, and fresh air of an early sunrise walk.',
+    prompt:
+        'Describe the sights, sounds, and fresh air of an early sunrise walk.',
     promptQuestions: ['How did the morning light feel?'],
     options: ['sunrise', 'horizon', 'breeze'],
   );
@@ -167,10 +168,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const WritingHintUsed());
     registerFallbackValue(
-      const FetchWritingQuests(
-        gameType: GameSubtype.dailyJournal,
-        level: 2,
-      ),
+      const FetchWritingQuests(gameType: GameSubtype.dailyJournal, level: 2),
     );
     registerFallbackValue(const EconomyAddCoinsRequested(5));
     registerFallbackValue(ListenMode.dictation);
@@ -222,14 +220,18 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Language ID
-    when(() => mockLanguageIdService.identifyLanguage(any()))
-        .thenAnswer((_) async => 'en');
+    when(
+      () => mockLanguageIdService.identifyLanguage(any()),
+    ).thenAnswer((_) async => 'en');
 
     // Audio Recorder
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => '/tmp/audio_test.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => '/tmp/audio_test.m4a');
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
 
     // Speech Service
@@ -239,17 +241,21 @@ void main() {
     when(() => mockSpeechService.initializeStt()).thenAnswer((_) async => true);
     when(() => mockSpeechService.stop()).thenAnswer((_) async {});
     when(() => mockSpeechService.cancel()).thenAnswer((_) async {});
-    when(() => mockSpeechService.listen(
-          onResult: any(named: 'onResult'),
-          onDone: any(named: 'onDone'),
-          onSoundLevelChange: any(named: 'onSoundLevelChange'),
-          localeId: any(named: 'localeId'),
-          pauseFor: any(named: 'pauseFor'),
-          listenMode: any(named: 'listenMode'),
-        )).thenAnswer((_) async {});
+    when(
+      () => mockSpeechService.listen(
+        onResult: any(named: 'onResult'),
+        onDone: any(named: 'onDone'),
+        onSoundLevelChange: any(named: 'onSoundLevelChange'),
+        localeId: any(named: 'localeId'),
+        pauseFor: any(named: 'pauseFor'),
+        listenMode: any(named: 'listenMode'),
+      ),
+    ).thenAnswer((_) async {});
 
     // Analytics & Ad mocks
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
     when(
       () => mockAdService.showRewardedAd(
         context: any(named: 'context'),
@@ -274,13 +280,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -368,9 +376,9 @@ void main() {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               home: MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: TextScaler.linear(textScaleFactor),
-                ),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.linear(textScaleFactor)),
                 child: DailyJournalScreen(level: level),
               ),
             );
@@ -476,9 +484,7 @@ void main() {
 
       expect(find.text('0 words'), findsOneWidget);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'One two three four five six seven eight nine ten.',
@@ -488,72 +494,62 @@ void main() {
       expect(find.text('10 words'), findsOneWidget);
     });
 
-    testWidgets('typing target words activates booster tokens', (
-      tester,
-    ) async {
+    testWidgets('typing target words activates booster tokens', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The submersible explored the deep.',
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
+      await tester.enterText(inputField, 'The submersible explored the deep.');
       await tester.pump();
 
       // "submersible" should be activated -> has check icon
       expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
     });
 
-    testWidgets('tapping an unactivated booster token speaks word and displays info snackbar', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping an unactivated booster token speaks word and displays info snackbar',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final tokenFinder = find.byKey(
-        const Key('daily_journal_token_submersible'),
-      );
-      await tester.ensureVisible(tokenFinder);
-      await tester.tap(tokenFinder);
-      await tester.pump();
+        final tokenFinder = find.byKey(
+          const Key('daily_journal_token_submersible'),
+        );
+        await tester.ensureVisible(tokenFinder);
+        await tester.tap(tokenFinder);
+        await tester.pump();
 
-      verify(() => mockTtsService.speak('submersible')).called(1);
-      expect(
-        find.text(
-          "Type 'submersible' in your journal entry to include this word.",
-        ),
-        findsOneWidget,
-      );
-    });
+        verify(() => mockTtsService.speak('submersible')).called(1);
+        expect(
+          find.text(
+            "Type 'submersible' in your journal entry to include this word.",
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('tapping an activated booster token speaks word and displays success snackbar', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping an activated booster token speaks word and displays success snackbar',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The submersible plunged downward.',
-      );
-      await tester.pump();
+        final inputField = find.byKey(const Key('daily_journal_input_field'));
+        await tester.enterText(inputField, 'The submersible plunged downward.');
+        await tester.pump();
 
-      final tokenFinder = find.byKey(
-        const Key('daily_journal_token_submersible'),
-      );
-      await tester.ensureVisible(tokenFinder);
-      await tester.tap(tokenFinder);
-      await tester.pump();
+        final tokenFinder = find.byKey(
+          const Key('daily_journal_token_submersible'),
+        );
+        await tester.ensureVisible(tokenFinder);
+        await tester.tap(tokenFinder);
+        await tester.pump();
 
-      verify(() => mockTtsService.speak('submersible')).called(1);
-      expect(
-        find.text("'submersible' is already included! Great job."),
-        findsOneWidget,
-      );
-    });
+        verify(() => mockTtsService.speak('submersible')).called(1);
+        expect(
+          find.text("'submersible' is already included! Great job."),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('DailyJournalScreen - 3. Validation Rules & Strike System', () {
@@ -571,9 +567,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'the submersible descended deep into the mariana trench today.',
@@ -596,9 +590,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'The submersible descended deep into the mariana trench today',
@@ -619,13 +611,8 @@ void main() {
     testWidgets('warns if word count is less than 10 words', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The submersible explored Mariana.',
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
+      await tester.enterText(inputField, 'The submersible explored Mariana.');
       await tester.pump();
 
       await scrollAndTapSaveButton(tester);
@@ -644,9 +631,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       // Only 1 target keyword: "submersible"
       await tester.enterText(
         inputField,
@@ -670,12 +655,13 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
 
       // Strike 1
-      await tester.enterText(inputField, 'lower case sentence here without count');
+      await tester.enterText(
+        inputField,
+        'lower case sentence here without count',
+      );
       await tester.pump();
       await scrollAndTapSaveButton(tester);
 
@@ -685,7 +671,10 @@ void main() {
       await scrollAndTapSaveButton(tester);
 
       // Strike 3
-      await tester.enterText(inputField, 'lower case sentence here strike three');
+      await tester.enterText(
+        inputField,
+        'lower case sentence here strike three',
+      );
       await tester.pump();
       await scrollAndTapSaveButton(tester);
 
@@ -695,17 +684,14 @@ void main() {
   });
 
   group('DailyJournalScreen - 4. Language ID & Gibberish Detection', () {
-    testWidgets('warns if language is detected as non-English', (
-      tester,
-    ) async {
-      when(() => mockLanguageIdService.identifyLanguage(any()))
-          .thenAnswer((_) async => 'es');
+    testWidgets('warns if language is detected as non-English', (tester) async {
+      when(
+        () => mockLanguageIdService.identifyLanguage(any()),
+      ).thenAnswer((_) async => 'es');
 
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'The submersible descended deep into the dark mariana trench to explore.',
@@ -727,9 +713,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'The submersible descended into the mariana trench with aaaaaaaabbbbbb screaming loud.',
@@ -751,9 +735,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'The submersible descended deep into the dark mariana trench to explore the ocean.',
@@ -773,41 +755,38 @@ void main() {
       expect(find.byKey(const Key('daily_journal_save_button')), findsNothing);
     });
 
-    testWidgets('confirming speech in SpeakToConfirmOverlay dispatches SubmitAnswer(true)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'confirming speech in SpeakToConfirmOverlay dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The submersible descended deep into the dark mariana trench to explore the ocean.',
-      );
-      await tester.pump();
+        final inputField = find.byKey(const Key('daily_journal_input_field'));
+        await tester.enterText(
+          inputField,
+          'The submersible descended deep into the dark mariana trench to explore the ocean.',
+        );
+        await tester.pump();
 
-      await scrollAndTapSaveButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        await scrollAndTapSaveButton(tester);
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pumpAndSettle();
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
     testWidgets('skipping speech in SpeakToConfirmOverlay also submits answer', (
       tester,
     ) async {
       await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+      final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
         'The submersible descended deep into the dark mariana trench to explore the ocean.',
@@ -870,36 +849,35 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('onQuestionReset resets controller and progress on new question', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'onQuestionReset resets controller and progress on new question',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(inputField, 'Some journal text here for test.');
-      await tester.pump();
+        final inputField = find.byKey(const Key('daily_journal_input_field'));
+        await tester.enterText(inputField, 'Some journal text here for test.');
+        await tester.pump();
 
-      // Now emit next question
-      final nextQuestionState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.dailyJournal,
-        level: 2,
-      );
+        // Now emit next question
+        final nextQuestionState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.dailyJournal,
+          level: 2,
+        );
 
-      writingStreamController.add(nextQuestionState);
-      when(() => mockWritingBloc.state).thenReturn(nextQuestionState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        writingStreamController.add(nextQuestionState);
+        when(() => mockWritingBloc.state).thenReturn(nextQuestionState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('0 words'), findsOneWidget);
-    });
+        expect(find.text('0 words'), findsOneWidget);
+      },
+    );
   });
 
   group('DailyJournalScreen - 7. Completion, Game Over & Error Journal', () {
@@ -950,57 +928,46 @@ void main() {
       }
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (
-      tester,
-    ) async {
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(
-          const UserEntity(
-            id: 'authed_user_1',
-            email: 'user@test.com',
-            displayName: 'Grammar Master',
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'authed_user_1',
+              email: 'user@test.com',
+              displayName: 'Grammar Master',
+            ),
           ),
-        ),
-      );
+        );
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
+        final inputField = find.byKey(const Key('daily_journal_input_field'));
 
-      // 3 strikes
-      for (int i = 0; i < 3; i++) {
-        await tester.enterText(inputField, 'strike $i invalid');
-        await tester.pump();
-        await scrollAndTapSaveButton(tester);
-      }
+        // 3 strikes
+        for (int i = 0; i < 3; i++) {
+          await tester.enterText(inputField, 'strike $i invalid');
+          await tester.pump();
+          await scrollAndTapSaveButton(tester);
+        }
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('DailyJournalScreen - 8. Responsiveness & Accessibility', () {
     testWidgets('renders properly on small screen (320x568)', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(320, 568),
-      );
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(320, 568));
 
       expect(find.byType(DailyJournalScreen), findsOneWidget);
       expect(find.byType(DailyJournalInstruction), findsOneWidget);
       expect(find.byType(DailyJournalScratchArea), findsOneWidget);
     });
 
-    testWidgets('renders properly on tablet screen (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        surfaceSize: const Size(800, 1280),
-      );
+    testWidgets('renders properly on tablet screen (800x1280)', (tester) async {
+      await pumpScreen(tester, level: 2, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(DailyJournalScreen), findsOneWidget);
       expect(find.byType(DailyJournalPrompt), findsOneWidget);
@@ -1009,21 +976,13 @@ void main() {
     testWidgets('renders with 1.3x high text scale without overflow', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        textScaleFactor: 1.3,
-      );
+      await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(DailyJournalScreen), findsOneWidget);
     });
 
     testWidgets('renders properly in light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 2,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, level: 2, themeMode: ThemeMode.light);
 
       expect(find.byType(DailyJournalScreen), findsOneWidget);
     });
@@ -1031,11 +990,7 @@ void main() {
     testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
       tester,
     ) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-        surfaceSize: const Size(390, 1000),
-      );
+      await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
@@ -1051,69 +1006,71 @@ void main() {
     });
   });
 
-  group('DailyJournalScreen - 9. Visual Polish & Standard Typography Verification', () {
-    testWidgets('instruction has TextAlign.center and standard padding', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
+  group(
+    'DailyJournalScreen - 9. Visual Polish & Standard Typography Verification',
+    () {
+      testWidgets('instruction has TextAlign.center and standard padding', (
+        tester,
+      ) async {
+        await pumpScreen(tester, level: 2);
 
-      final instructionWidget = tester.widget<DailyJournalInstruction>(
-        find.byType(DailyJournalInstruction),
+        final instructionWidget = tester.widget<DailyJournalInstruction>(
+          find.byType(DailyJournalInstruction),
+        );
+        expect(instructionWidget, isNotNull);
+
+        final instructionFinder = find.descendant(
+          of: find.byType(DailyJournalInstruction),
+          matching: find.byType(Text),
+        );
+        expect(instructionFinder, findsOneWidget);
+        final textWidget = tester.widget<Text>(instructionFinder);
+        expect(textWidget.textAlign, equals(TextAlign.center));
+        expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+      });
+
+      testWidgets(
+        'booster tokens and scratch area use standard professional font sizes',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
+
+          // Target words header
+          final targetWordsFinder = find.text('Target words (use at least 2)');
+          expect(targetWordsFinder, findsOneWidget);
+          final targetWordsText = tester.widget<Text>(targetWordsFinder);
+          expect(targetWordsText.style?.fontSize, greaterThanOrEqualTo(12.sp));
+
+          // Word count text
+          final wordCountFinder = find.text('Word count:');
+          expect(wordCountFinder, findsOneWidget);
+          final wordCountText = tester.widget<Text>(wordCountFinder);
+          expect(wordCountText.style?.fontSize, greaterThanOrEqualTo(12.sp));
+        },
       );
-      expect(instructionWidget, isNotNull);
 
-      final instructionFinder = find.descendant(
-        of: find.byType(DailyJournalInstruction),
-        matching: find.byType(Text),
+      testWidgets(
+        'SpeakToConfirmOverlay uses balanced font size and has proper padding',
+        (tester) async {
+          await pumpScreen(tester, level: 2);
+
+          final inputField = find.byKey(const Key('daily_journal_input_field'));
+          await tester.enterText(
+            inputField,
+            'The submersible descended deep into the dark mariana trench to explore the ocean.',
+          );
+          await tester.pump();
+
+          await scrollAndTapSaveButton(tester);
+          await tester.pump(const Duration(milliseconds: 500));
+          await tester.pumpAndSettle();
+
+          final overlayFinder = find.byType(SpeakToConfirmOverlay);
+          expect(overlayFinder, findsOneWidget);
+          final overlay = tester.widget<SpeakToConfirmOverlay>(overlayFinder);
+          expect(overlay.displayFontSize, equals(15.sp));
+          expect(overlay.displayTextAlign, equals(TextAlign.center));
+        },
       );
-      expect(instructionFinder, findsOneWidget);
-      final textWidget = tester.widget<Text>(instructionFinder);
-      expect(textWidget.textAlign, equals(TextAlign.center));
-      expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
-    });
-
-    testWidgets('booster tokens and scratch area use standard professional font sizes', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
-
-      // Target words header
-      final targetWordsFinder = find.text('Target words (use at least 2)');
-      expect(targetWordsFinder, findsOneWidget);
-      final targetWordsText = tester.widget<Text>(targetWordsFinder);
-      expect(targetWordsText.style?.fontSize, greaterThanOrEqualTo(12.sp));
-
-      // Word count text
-      final wordCountFinder = find.text('Word count:');
-      expect(wordCountFinder, findsOneWidget);
-      final wordCountText = tester.widget<Text>(wordCountFinder);
-      expect(wordCountText.style?.fontSize, greaterThanOrEqualTo(12.sp));
-    });
-
-    testWidgets('SpeakToConfirmOverlay uses balanced font size and has proper padding', (
-      tester,
-    ) async {
-      await pumpScreen(tester, level: 2);
-
-      final inputField = find.byKey(
-        const Key('daily_journal_input_field'),
-      );
-      await tester.enterText(
-        inputField,
-        'The submersible descended deep into the dark mariana trench to explore the ocean.',
-      );
-      await tester.pump();
-
-      await scrollAndTapSaveButton(tester);
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      final overlayFinder = find.byType(SpeakToConfirmOverlay);
-      expect(overlayFinder, findsOneWidget);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(overlayFinder);
-      expect(overlay.displayFontSize, equals(15.sp));
-      expect(overlay.displayTextAlign, equals(TextAlign.center));
-    });
-  });
+    },
+  );
 }
-

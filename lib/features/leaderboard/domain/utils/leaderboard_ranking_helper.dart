@@ -76,9 +76,10 @@ final class LeaderboardRankingHelper {
   }
 
   /// Sorts users for the Kids Zone leaderboard:
-  /// 1. [kidsTotalLevelsCompleted] (primary, descending)
-  /// 2. [currentStreak] (tie-breaker, descending)
+  /// 1. [kidsTotalStars] (primary, descending)
+  /// 2. [kidsTotalLevelsCompleted] (tie-breaker, descending)
   /// 3. [kidsCoins] (tie-breaker, descending)
+  /// 4. [currentStreak] (tie-breaker, descending)
   static List<UserEntity> sortKids(
     List<UserEntity> rawUsers, {
     UserEntity? currentUser,
@@ -94,13 +95,16 @@ final class LeaderboardRankingHelper {
     }
 
     list.sort((a, b) {
+      final aStars = a.kidsTotalStars;
+      final bStars = b.kidsTotalStars;
+      if (bStars != aStars) return bStars.compareTo(aStars);
       final aLevels = a.kidsTotalLevelsCompleted;
       final bLevels = b.kidsTotalLevelsCompleted;
       if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-      if (b.currentStreak != a.currentStreak) {
-        return b.currentStreak.compareTo(a.currentStreak);
+      if (b.kidsCoins != a.kidsCoins) {
+        return b.kidsCoins.compareTo(a.kidsCoins);
       }
-      return b.kidsCoins.compareTo(a.kidsCoins);
+      return b.currentStreak.compareTo(a.currentStreak);
     });
 
     return list;
@@ -114,4 +118,3 @@ final class LeaderboardRankingHelper {
     return idx >= 0 ? idx + 1 : null;
   }
 }
-

@@ -405,7 +405,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                                   fontSize: 14.sp,
                                                   fontWeight: FontWeight.w400,
                                                   color: isDark
-                                                      ? Colors.white.withValues(alpha: 0.85)
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.85,
+                                                        )
                                                       : const Color(0xFF334155),
                                                   height: 1.4,
                                                 ),

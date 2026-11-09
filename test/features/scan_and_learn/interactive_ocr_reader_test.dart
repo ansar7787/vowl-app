@@ -11,9 +11,7 @@ Widget _wrap(Widget child) {
     designSize: const Size(390, 844),
     minTextAdapt: true,
     builder: (context, _) => MaterialApp(
-      home: Scaffold(
-        body: SingleChildScrollView(child: child),
-      ),
+      home: Scaffold(body: SingleChildScrollView(child: child)),
     ),
   );
 }
@@ -53,7 +51,12 @@ void main() {
     final element = TextElement(
       text: 'Emergency',
       boundingBox: const Rect.fromLTWH(0, 0, 100, 20),
-      cornerPoints: const [Point(0, 0), Point(100, 0), Point(100, 20), Point(0, 20)],
+      cornerPoints: const [
+        Point(0, 0),
+        Point(100, 0),
+        Point(100, 20),
+        Point(0, 20),
+      ],
       recognizedLanguages: const ['en'],
       symbols: const [],
       confidence: 0.99,
@@ -63,7 +66,12 @@ void main() {
       text: 'Emergency',
       elements: [element],
       boundingBox: const Rect.fromLTWH(0, 0, 100, 20),
-      cornerPoints: const [Point(0, 0), Point(100, 0), Point(100, 20), Point(0, 20)],
+      cornerPoints: const [
+        Point(0, 0),
+        Point(100, 0),
+        Point(100, 20),
+        Point(0, 20),
+      ],
       recognizedLanguages: const ['en'],
       confidence: 0.99,
       angle: 0.0,
@@ -72,15 +80,19 @@ void main() {
       text: 'Emergency',
       lines: [line],
       boundingBox: const Rect.fromLTWH(0, 0, 100, 20),
-      cornerPoints: const [Point(0, 0), Point(100, 0), Point(100, 20), Point(0, 20)],
+      cornerPoints: const [
+        Point(0, 0),
+        Point(100, 0),
+        Point(100, 20),
+        Point(0, 20),
+      ],
       recognizedLanguages: const ['en'],
     );
-    final recognizedText = RecognizedText(
-      text: 'Emergency',
-      blocks: [block],
-    );
+    final recognizedText = RecognizedText(text: 'Emergency', blocks: [block]);
 
-    testWidgets('renders interactive tokens and challenge banner', (tester) async {
+    testWidgets('renders interactive tokens and challenge banner', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         _wrap(
           InteractiveOcrReader(
@@ -95,7 +107,10 @@ void main() {
 
       expect(find.text('Emergency'), findsOneWidget);
       expect(find.text('SNAP CHALLENGE • 3 QUESTIONS'), findsOneWidget);
-      expect(find.text('Test Your Real-World Vocabulary (+10 Coins)'), findsOneWidget);
+      expect(
+        find.text('Test Your Real-World Vocabulary (+10 Coins)'),
+        findsOneWidget,
+      );
       expect(find.text('INTERACTIVE TEXT CANVAS'), findsOneWidget);
     });
 

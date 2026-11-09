@@ -72,11 +72,7 @@ class DialectDrillDataProbePin extends StatelessWidget {
       pinIcon = Icons.touch_app_rounded;
     }
 
-    Widget iconWidget = Icon(
-      pinIcon,
-      size: 24.r,
-      color: pinColor,
-    );
+    Widget iconWidget = Icon(pinIcon, size: 24.r, color: pinColor);
 
     if (!reduceMotion && !isAnswered) {
       iconWidget = iconWidget

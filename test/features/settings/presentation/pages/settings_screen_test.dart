@@ -453,18 +453,19 @@ void main() {
       },
     );
 
-    testWidgets('back button navigates to /profile when route cannot be popped', (
-      tester,
-    ) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'back button navigates to /profile when route cannot be popped',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.byIcon(Icons.arrow_back_ios_new_rounded));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byIcon(Icons.arrow_back_ios_new_rounded));
+        await tester.pumpAndSettle();
 
-      expect(navigatedRoutes.contains('/profile'), isTrue);
-      expect(find.text('Profile Screen'), findsOneWidget);
-    });
+        expect(navigatedRoutes.contains('/profile'), isTrue);
+        expect(find.text('Profile Screen'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 3: Appearance & Theme Matrix', () {
@@ -613,24 +614,23 @@ void main() {
       },
     );
 
-    testWidgets(
-      'toggling Game Sounds updates preference and SoundService',
-      (tester) async {
-        await tester.pumpWidget(buildTestableWidget(tester: tester));
-        await tester.pumpAndSettle();
+    testWidgets('toggling Game Sounds updates preference and SoundService', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestableWidget(tester: tester));
+      await tester.pumpAndSettle();
 
-        final gameSoundSwitch = find.descendant(
-          of: find.widgetWithText(SettingsSwitchTile, 'Celebration Sounds'),
-          matching: find.byType(Switch),
-        );
-        expect(gameSoundSwitch, findsOneWidget);
+      final gameSoundSwitch = find.descendant(
+        of: find.widgetWithText(SettingsSwitchTile, 'Celebration Sounds'),
+        matching: find.byType(Switch),
+      );
+      expect(gameSoundSwitch, findsOneWidget);
 
-        // Toggle off
-        await tapVisible(tester, gameSoundSwitch);
+      // Toggle off
+      await tapVisible(tester, gameSoundSwitch);
 
-        verify(() => mockSoundService.setGameSoundsEnabled(false)).called(1);
-      },
-    );
+      verify(() => mockSoundService.setGameSoundsEnabled(false)).called(1);
+    });
 
     testWidgets(
       'Pronunciation Voice tile renders current preset and opens bottom sheet on tap',
@@ -673,63 +673,60 @@ void main() {
       },
     );
 
-    testWidgets(
-      'toggling Reduce Complex Gestures updates SharedPreferences',
-      (tester) async {
-        await tester.pumpWidget(buildTestableWidget());
-        await tester.pumpAndSettle();
+    testWidgets('toggling Reduce Complex Gestures updates SharedPreferences', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestableWidget());
+      await tester.pumpAndSettle();
 
-        final gestureSwitch = find.descendant(
-          of: find.widgetWithText(
-            SettingsSwitchTile,
-            'Simplify Complex Gestures',
-          ),
-          matching: find.byType(Switch),
-        );
-        expect(gestureSwitch, findsOneWidget);
+      final gestureSwitch = find.descendant(
+        of: find.widgetWithText(
+          SettingsSwitchTile,
+          'Simplify Complex Gestures',
+        ),
+        matching: find.byType(Switch),
+      );
+      expect(gestureSwitch, findsOneWidget);
 
-        await tapVisible(tester, gestureSwitch);
+      await tapVisible(tester, gestureSwitch);
 
-        final prefs = await SharedPreferences.getInstance();
-        expect(prefs.getBool('reduce_complex_gestures'), isTrue);
-      },
-    );
+      final prefs = await SharedPreferences.getInstance();
+      expect(prefs.getBool('reduce_complex_gestures'), isTrue);
+    });
 
-    testWidgets(
-      'toggling Low Animation Mode updates global override',
-      (tester) async {
-        await tester.pumpWidget(buildTestableWidget());
-        await tester.pumpAndSettle();
+    testWidgets('toggling Low Animation Mode updates global override', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestableWidget());
+      await tester.pumpAndSettle();
 
-        final animSwitch = find.descendant(
-          of: find.widgetWithText(SettingsSwitchTile, 'Low Animation Mode'),
-          matching: find.byType(Switch),
-        );
-        expect(animSwitch, findsOneWidget);
+      final animSwitch = find.descendant(
+        of: find.widgetWithText(SettingsSwitchTile, 'Low Animation Mode'),
+        matching: find.byType(Switch),
+      );
+      expect(animSwitch, findsOneWidget);
 
-        await tapVisible(tester, animSwitch);
+      await tapVisible(tester, animSwitch);
 
-        expect(VowlMotion.lowAnimationModeOverride.value, isTrue);
-      },
-    );
+      expect(VowlMotion.lowAnimationModeOverride.value, isTrue);
+    });
 
-    testWidgets(
-      'toggling Analytics calls FirebaseAnalytics platform',
-      (tester) async {
-        await tester.pumpWidget(buildTestableWidget());
-        await tester.pumpAndSettle();
+    testWidgets('toggling Analytics calls FirebaseAnalytics platform', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestableWidget());
+      await tester.pumpAndSettle();
 
-        final analyticsSwitch = find.descendant(
-          of: find.widgetWithText(SettingsSwitchTile, 'Anonymous Analytics'),
-          matching: find.byType(Switch),
-        );
-        expect(analyticsSwitch, findsOneWidget);
+      final analyticsSwitch = find.descendant(
+        of: find.widgetWithText(SettingsSwitchTile, 'Anonymous Analytics'),
+        matching: find.byType(Switch),
+      );
+      expect(analyticsSwitch, findsOneWidget);
 
-        await tapVisible(tester, analyticsSwitch);
+      await tapVisible(tester, analyticsSwitch);
 
-        expect(mockAnalyticsPlatform.lastCollectionEnabled, isFalse);
-      },
-    );
+      expect(mockAnalyticsPlatform.lastCollectionEnabled, isFalse);
+    });
 
     testWidgets('tapping Dark theme option calls toggleTheme(true)', (
       tester,

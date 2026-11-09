@@ -201,8 +201,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              _isRevealed.value ? 0 : 40.w,
+                                          horizontal: _isRevealed.value
+                                              ? 0
+                                              : 40.w,
                                         ),
                                         child: SizedBox(
                                           width: double.infinity,
@@ -280,7 +281,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                               bottom: 24.h,
                                             ),
                                             child: SpeedChallengeTimer(
-                                              key: const ValueKey('speed_challenge_timer'),
+                                              key: const ValueKey(
+                                                'speed_challenge_timer',
+                                              ),
                                               durationSeconds: _timeLimit.value,
                                               primaryColor: theme.primaryColor,
                                               onTimeUp: _onTimeUp,

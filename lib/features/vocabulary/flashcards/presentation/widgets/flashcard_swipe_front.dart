@@ -65,6 +65,17 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
         (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
 
+    final isMidnight = widget.isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (widget.isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = widget.isDark
+        ? (isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.white.withValues(alpha: 0.08))
+        : AppColors.slate200;
+
     return Semantics(
       label:
           '${context.tr('games.hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap card to flip')}',
@@ -72,13 +83,11 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
         width: widget.width,
         height: widget.height,
         decoration: BoxDecoration(
-          color: widget.isDark ? AppColors.slate800 : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: widget.isDark
-                ? Colors.white10
-                : widget.color.withValues(alpha: 0.2),
-            width: 1.5,
+            color: borderColor,
+            width: 1.0,
           ),
         ),
         child: ClipRRect(
@@ -96,19 +105,19 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                 ),
                 child: Text(
                   widget.quest.topicEmoji ?? '🏷️',
-                  style: TextStyle(
-                    fontSize: compactHeight ? 38.sp : 48.sp,
-                  ),
+                  style: TextStyle(fontSize: compactHeight ? 38.sp : 48.sp),
                 ),
               );
 
-              final rawHint = widget.quest.hint ??
+              final rawHint =
+                  widget.quest.hint ??
                   InstructionHelper.getInstruction(widget.quest);
               final trimmedHint = rawHint.trim();
-              final displayHint = (trimmedHint == trimmedHint.toUpperCase() &&
+              final displayHint =
+                  (trimmedHint == trimmedHint.toUpperCase() &&
                       trimmedHint.length > 2)
                   ? trimmedHint[0].toUpperCase() +
-                      trimmedHint.substring(1).toLowerCase()
+                        trimmedHint.substring(1).toLowerCase()
                   : trimmedHint;
 
               return Padding(

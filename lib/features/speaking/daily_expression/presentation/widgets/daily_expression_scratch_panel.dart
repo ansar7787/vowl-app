@@ -8,7 +8,6 @@ import 'package:vowl/features/speaking/daily_expression/presentation/widgets/scr
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-
 /// Interactive scratch-card panel concealing an idiom until revealed by gesture or tap.
 class DailyExpressionScratchPanel extends StatelessWidget {
   /// Active speaking quest entity containing expression and meaning.
@@ -50,7 +49,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final bool reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     final isMidnight = AppTheme.isMidnight(context);
 
@@ -85,19 +85,16 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: isMidnight
-                            ? const [
-                                AppColors.midnightSurface,
-                                Colors.black,
-                              ]
+                            ? const [AppColors.midnightSurface, Colors.black]
                             : (isDark
-                                ? const [
-                                    AppColors.slate800,
-                                    AppColors.slate950,
-                                  ]
-                                : [
-                                    primaryColor.withValues(alpha: 0.2),
-                                    Colors.white,
-                                  ]),
+                                  ? const [
+                                      AppColors.slate800,
+                                      AppColors.slate950,
+                                    ]
+                                  : [
+                                      primaryColor.withValues(alpha: 0.2),
+                                      Colors.white,
+                                    ]),
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -165,18 +162,18 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                           color: primaryColor,
                                         )
                                       : Icon(
-                                          Icons.mic_rounded,
-                                          size: 14.r,
-                                          color: primaryColor,
-                                        )
-                                          .animate(
-                                            onPlay: (c) =>
-                                                c.repeat(reverse: true),
-                                          )
-                                          .scale(
-                                            begin: const Offset(1, 1),
-                                            end: const Offset(1.15, 1.15),
-                                          ),
+                                              Icons.mic_rounded,
+                                              size: 14.r,
+                                              color: primaryColor,
+                                            )
+                                            .animate(
+                                              onPlay: (c) =>
+                                                  c.repeat(reverse: true),
+                                            )
+                                            .scale(
+                                              begin: const Offset(1, 1),
+                                              end: const Offset(1.15, 1.15),
+                                            ),
                                   SizedBox(width: 6.w),
                                   Text(
                                     "Speak this",
@@ -193,10 +190,9 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                             );
                             return reduceMotion
                                 ? speakBadge
-                                : speakBadge
-                                    .animate()
-                                    .fadeIn()
-                                    .slideY(begin: 0.5);
+                                : speakBadge.animate().fadeIn().slideY(
+                                    begin: 0.5,
+                                  );
                           }(),
                         Text(
                           quest.expression ?? "Bite the bullet",
@@ -287,19 +283,16 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                         size: 30.r,
                                       )
                                     : Icon(
-                                        reduceComplexGestures
-                                            ? Icons.touch_app_rounded
-                                            : Icons.swipe_rounded,
-                                        color: Colors.white,
-                                        size: 30.r,
-                                      )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .shake(
-                                          hz: 2,
-                                          curve: Curves.easeInOut,
-                                        )
-                                        .then()
-                                        .fadeOut(),
+                                            reduceComplexGestures
+                                                ? Icons.touch_app_rounded
+                                                : Icons.swipe_rounded,
+                                            color: Colors.white,
+                                            size: 30.r,
+                                          )
+                                          .animate(onPlay: (c) => c.repeat())
+                                          .shake(hz: 2, curve: Curves.easeInOut)
+                                          .then()
+                                          .fadeOut(),
                                 SizedBox(height: 8.h),
                                 Text(
                                   reduceComplexGestures

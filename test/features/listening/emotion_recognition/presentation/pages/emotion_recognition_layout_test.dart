@@ -161,8 +161,9 @@ void main() {
     mockNetworkInfo = MockNetworkInfo();
 
     listeningStreamController = StreamController<ListeningState>.broadcast();
-    when(() => mockListeningBloc.stream)
-        .thenAnswer((_) => listeningStreamController.stream);
+    when(
+      () => mockListeningBloc.stream,
+    ).thenAnswer((_) => listeningStreamController.stream);
     when(() => mockListeningBloc.state).thenReturn(testLoadedState);
 
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -195,8 +196,12 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playUrl(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(any(), pauseMarkers: any(named: 'pauseMarkers')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(
+        any(),
+        pauseMarkers: any(named: 'pauseMarkers'),
+      ),
+    ).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
@@ -207,12 +212,15 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
-      final fallback = invocation.namedArguments[const Symbol('fallback')] as String?;
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
+      final fallback =
+          invocation.namedArguments[const Symbol('fallback')] as String?;
       final key = invocation.positionalArguments[0] as String;
       return fallback ?? key;
     });
@@ -223,14 +231,30 @@ void main() {
       'has_seen_briefing_emotionRecognition': true,
     });
 
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
-    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
-    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
-    if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<AnalyticsService>()) {
+      di.sl.unregister<AnalyticsService>();
+    }
+    if (di.sl.isRegistered<AdService>()) {
+      di.sl.unregister<AdService>();
+    }
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      di.sl.unregister<NetworkInfo>();
+    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
@@ -302,38 +326,64 @@ void main() {
   }
 
   group('EmotionRecognitionScreen Layout & Mechanics Tests', () {
-    testWidgets('1. Initial layout renders instruction, timer, emitter, and quadrant', (tester) async {
+    testWidgets(
+      '1. Initial layout renders instruction, timer, emitter, and quadrant',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        expect(find.byType(SpeedChallengeTimer), findsOneWidget);
+        expect(
+          find.byKey(const Key('emotion_recognition_instruction')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_emitter')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_quadrant')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('2. Initial instruction displays clean centered instruction', (
+      tester,
+    ) async {
       await pumpEmotionRecognitionScreen(tester);
 
-      expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_instruction')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_emitter')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_quadrant')), findsOneWidget);
+      expect(
+        find.text('Detect the emotion conveyed in the voice.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('2. Initial instruction displays clean centered instruction', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
+    testWidgets(
+      '3. Emitter button tap triggers TTS playback and selection haptic',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
 
-      expect(find.text('Detect the emotion conveyed in the voice.'), findsOneWidget);
-    });
+        final emitterBtn = find.byKey(
+          const Key('emotion_recognition_emitter_btn'),
+        );
+        expect(emitterBtn, findsOneWidget);
 
-    testWidgets('3. Emitter button tap triggers TTS playback and selection haptic', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
+        await tester.tap(emitterBtn);
+        await tester.pump();
 
-      final emitterBtn = find.byKey(const Key('emotion_recognition_emitter_btn'));
-      expect(emitterBtn, findsOneWidget);
+        verify(
+          () => mockSoundService.playTts(
+            'I cannot believe this actually worked out!',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-      await tester.tap(emitterBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.playTts(
-        'I cannot believe this actually worked out!',
-        pauseMarkers: any(named: 'pauseMarkers'),
-      )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (tester) async {
+    testWidgets('4. Emitter button tap with URL audio triggers playUrl', (
+      tester,
+    ) async {
       final urlState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -342,283 +392,424 @@ void main() {
 
       await pumpEmotionRecognitionScreen(tester, state: urlState);
 
-      final emitterBtn = find.byKey(const Key('emotion_recognition_emitter_btn'));
-      await tester.tap(emitterBtn);
-      await tester.pump();
-
-      verify(() => mockSoundService.playUrl('https://example.com/audio/urgent_call.mp3')).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('5. Audio fallback cascade uses prompt when textToSpeak is missing', (tester) async {
-      final fallbackState = ListeningLoaded(
-        quests: const [sampleQuest3],
-        currentIndex: 0,
-        livesRemaining: 3,
+      final emitterBtn = find.byKey(
+        const Key('emotion_recognition_emitter_btn'),
       );
-
-      await pumpEmotionRecognitionScreen(tester, state: fallbackState);
-
-      final emitterBtn = find.byKey(const Key('emotion_recognition_emitter_btn'));
       await tester.tap(emitterBtn);
       await tester.pump();
 
-      verify(() => mockSoundService.playTts('I am so tired of this endless waiting.', pauseMarkers: any(named: 'pauseMarkers'))).called(1);
+      verify(
+        () => mockSoundService.playUrl(
+          'https://example.com/audio/urgent_call.mp3',
+        ),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('6. Emitter displays volume icon initially and emoji when answered correctly', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
+    testWidgets(
+      '5. Audio fallback cascade uses prompt when textToSpeak is missing',
+      (tester) async {
+        final fallbackState = ListeningLoaded(
+          quests: const [sampleQuest3],
+          currentIndex: 0,
+          livesRemaining: 3,
+        );
 
-      expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_emoji')), findsNothing);
+        await pumpEmotionRecognitionScreen(tester, state: fallbackState);
 
-      // Select correct answer (index 1 is Joy)
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('emotion_recognition_emoji')), findsOneWidget);
-      expect(find.text('😄'), findsAtLeastNWidgets(1));
-    });
-
-    testWidgets('7. Quadrant displays all 4 option reservoirs with their labels and emojis', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      expect(find.byKey(const Key('emotion_recognition_reservoir_0')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_reservoir_1')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_reservoir_2')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_reservoir_3')), findsOneWidget);
-
-      expect(find.text('Anger'), findsOneWidget);
-      expect(find.text('Joy'), findsOneWidget);
-      expect(find.text('Sadness'), findsOneWidget);
-      expect(find.text('Fear'), findsOneWidget);
-
-      expect(find.text('😠'), findsOneWidget);
-      expect(find.text('😄'), findsOneWidget);
-      expect(find.text('😢'), findsOneWidget);
-      expect(find.text('😨'), findsOneWidget);
-    });
-
-    testWidgets('8. Psychology core starts centered and can be panned via drag gestures', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final coreFinder = find.byKey(const Key('emotion_recognition_core'));
-      expect(coreFinder, findsOneWidget);
-
-      final gesture = await tester.startGesture(tester.getCenter(coreFinder));
-      await gesture.moveBy(const Offset(30, 30));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('9. Dragging psychology core onto a reservoir submits that answer', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final coreFinder = find.byKey(const Key('emotion_recognition_core'));
-      final reservoir1 = find.byKey(const Key('emotion_recognition_reservoir_1'));
-
-      final gesture = await tester.startGesture(tester.getCenter(coreFinder));
-      await gesture.moveBy(const Offset(40, -40));
-      await tester.pump();
-      await gesture.moveTo(tester.getCenter(reservoir1));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('10. Dragging core and releasing far from any reservoir resets core position', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final coreFinder = find.byKey(const Key('emotion_recognition_core'));
-
-      final gesture = await tester.startGesture(tester.getCenter(coreFinder));
-      await gesture.moveBy(const Offset(10, 10));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-
-    testWidgets('11. Tapping option reservoir directly submits that answer with selection haptic', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final reservoir1 = find.byKey(const Key('emotion_recognition_reservoir_1'));
-      await tester.tap(reservoir1);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('12. Tapping correct option reservoir submits SubmitAnswer(true), plays sound, and triggers haptic', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final correctReservoir = find.byKey(const Key('emotion_recognition_reservoir_1'));
-      await tester.tap(correctReservoir);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    testWidgets('13. Tapping correct option reservoir stops the SpeedChallengeTimer', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final timerState = tester.state<SpeedChallengeTimerState>(find.byType(SpeedChallengeTimer));
-      expect(timerState.remainingSeconds, greaterThan(0));
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(timerState.remainingSeconds, greaterThan(0));
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('14. Tapping wrong option reservoir submits SubmitAnswer(false) with userAnswer', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final wrongReservoir = find.byKey(const Key('emotion_recognition_reservoir_0'));
-      await tester.tap(wrongReservoir);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('15. Tapping wrong option reservoir stops the SpeedChallengeTimer', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('16. Answer lockout: secondary taps on reservoirs are ignored once answered', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      // Tap first reservoir
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      // Tap second reservoir with warnIfMissed: false in case feedback card overlays
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_2')), warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verifyNever(() => mockListeningBloc.add(any(that: isA<SubmitAnswer>())));
-    });
-
-    testWidgets('17. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      final SpeedChallengeTimer timerWidget = tester.widget(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockListeningBloc.add(const SubmitAnswer(false))).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
-
-    testWidgets('18. In answered state, instruction remains clearly visible', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('Detect the emotion conveyed in the voice.'), findsOneWidget);
-    });
-
-    testWidgets('19. In answered state, correct option reservoir shows highlighted border', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('emotion_recognition_reservoir_1')), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('20. In answered state with wrong choice, chosen reservoir shows wrong state and correct is revealed', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byKey(const Key('emotion_recognition_reservoir_0')), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_reservoir_1')), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('21. Continue button in answered state dispatches NextQuestion event', (tester) async {
-      await pumpEmotionRecognitionScreen(tester);
-
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      clearInteractions(mockListeningBloc);
-
-      final continueFinder = find.text('CONTINUE');
-      if (continueFinder.evaluate().isNotEmpty) {
-        await tester.tap(continueFinder.first);
+        final emitterBtn = find.byKey(
+          const Key('emotion_recognition_emitter_btn'),
+        );
+        await tester.tap(emitterBtn);
         await tester.pump();
 
-        verify(() => mockListeningBloc.add(any(that: isA<NextQuestion>()))).called(1);
-      }
-    });
+        verify(
+          () => mockSoundService.playTts(
+            'I am so tired of this endless waiting.',
+            pauseMarkers: any(named: 'pauseMarkers'),
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('22. Question transition clears selections, updates options, and restarts timer without crash', (tester) async {
+    testWidgets(
+      '6. Emitter displays volume icon initially and emoji when answered correctly',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
+        expect(
+          find.byKey(const Key('emotion_recognition_emoji')),
+          findsNothing,
+        );
+
+        // Select correct answer (index 1 is Joy)
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('emotion_recognition_emoji')),
+          findsOneWidget,
+        );
+        expect(find.text('😄'), findsAtLeastNWidgets(1));
+      },
+    );
+
+    testWidgets(
+      '7. Quadrant displays all 4 option reservoirs with their labels and emojis',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_0')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_2')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_3')),
+          findsOneWidget,
+        );
+
+        expect(find.text('Anger'), findsOneWidget);
+        expect(find.text('Joy'), findsOneWidget);
+        expect(find.text('Sadness'), findsOneWidget);
+        expect(find.text('Fear'), findsOneWidget);
+
+        expect(find.text('😠'), findsOneWidget);
+        expect(find.text('😄'), findsOneWidget);
+        expect(find.text('😢'), findsOneWidget);
+        expect(find.text('😨'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '8. Psychology core starts centered and can be panned via drag gestures',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final coreFinder = find.byKey(const Key('emotion_recognition_core'));
+        expect(coreFinder, findsOneWidget);
+
+        final gesture = await tester.startGesture(tester.getCenter(coreFinder));
+        await gesture.moveBy(const Offset(30, 30));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '9. Dragging psychology core onto a reservoir submits that answer',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final coreFinder = find.byKey(const Key('emotion_recognition_core'));
+        final reservoir1 = find.byKey(
+          const Key('emotion_recognition_reservoir_1'),
+        );
+
+        final gesture = await tester.startGesture(tester.getCenter(coreFinder));
+        await gesture.moveBy(const Offset(40, -40));
+        await tester.pump();
+        await gesture.moveTo(tester.getCenter(reservoir1));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets(
+      '10. Dragging core and releasing far from any reservoir resets core position',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final coreFinder = find.byKey(const Key('emotion_recognition_core'));
+
+        final gesture = await tester.startGesture(tester.getCenter(coreFinder));
+        await gesture.moveBy(const Offset(10, 10));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verifyNever(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
+
+    testWidgets(
+      '11. Tapping option reservoir directly submits that answer with selection haptic',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final reservoir1 = find.byKey(
+          const Key('emotion_recognition_reservoir_1'),
+        );
+        await tester.tap(reservoir1);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
+
+    testWidgets(
+      '12. Tapping correct option reservoir submits SubmitAnswer(true), plays sound, and triggers haptic',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final correctReservoir = find.byKey(
+          const Key('emotion_recognition_reservoir_1'),
+        );
+        await tester.tap(correctReservoir);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockListeningBloc.add(const SubmitAnswer(true))).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
+
+    testWidgets(
+      '13. Tapping correct option reservoir stops the SpeedChallengeTimer',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final timerState = tester.state<SpeedChallengeTimerState>(
+          find.byType(SpeedChallengeTimer),
+        );
+        expect(timerState.remainingSeconds, greaterThan(0));
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(timerState.remainingSeconds, greaterThan(0));
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '14. Tapping wrong option reservoir submits SubmitAnswer(false) with userAnswer',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final wrongReservoir = find.byKey(
+          const Key('emotion_recognition_reservoir_0'),
+        );
+        await tester.tap(wrongReservoir);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets(
+      '15. Tapping wrong option reservoir stops the SpeedChallengeTimer',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '16. Answer lockout: secondary taps on reservoirs are ignored once answered',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        // Tap first reservoir
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        // Tap second reservoir with warnIfMissed: false in case feedback card overlays
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_2')),
+          warnIfMissed: false,
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verifyNever(
+          () => mockListeningBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
+
+    testWidgets(
+      '17. SpeedChallengeTimer onTimeUp triggers wrong answer submission with [Timeout]',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        final SpeedChallengeTimer timerWidget = tester.widget(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockListeningBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
+
+    testWidgets('18. In answered state, instruction remains clearly visible', (
+      tester,
+    ) async {
       await pumpEmotionRecognitionScreen(tester);
 
-      await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final nextState = const ListeningLoaded(
-        quests: [sampleQuest1, sampleQuest2, sampleQuest3],
-        currentIndex: 1,
-        livesRemaining: 3,
+      await tester.tap(
+        find.byKey(const Key('emotion_recognition_reservoir_1')),
       );
-      when(() => mockListeningBloc.state).thenReturn(nextState);
-      listeningStreamController.add(nextState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('Calm'), findsOneWidget);
-      expect(find.text('Boredom'), findsOneWidget);
-      expect(find.text('Urgency'), findsOneWidget);
-
       await tester.pump(const Duration(milliseconds: 500));
+
+      expect(
+        find.text('Detect the emotion conveyed in the voice.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('23. Hint button in header dispatches ListeningHintUsed', (tester) async {
+    testWidgets(
+      '19. In answered state, correct option reservoir shows highlighted border',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+          findsOneWidget,
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '20. In answered state with wrong choice, chosen reservoir shows wrong state and correct is revealed',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_0')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+          findsOneWidget,
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '21. Continue button in answered state dispatches NextQuestion event',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        clearInteractions(mockListeningBloc);
+
+        final continueFinder = find.text('CONTINUE');
+        if (continueFinder.evaluate().isNotEmpty) {
+          await tester.tap(continueFinder.first);
+          await tester.pump();
+
+          verify(
+            () => mockListeningBloc.add(any(that: isA<NextQuestion>())),
+          ).called(1);
+        }
+      },
+    );
+
+    testWidgets(
+      '22. Question transition clears selections, updates options, and restarts timer without crash',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester);
+
+        await tester.tap(
+          find.byKey(const Key('emotion_recognition_reservoir_1')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        final nextState = const ListeningLoaded(
+          quests: [sampleQuest1, sampleQuest2, sampleQuest3],
+          currentIndex: 1,
+          livesRemaining: 3,
+        );
+        when(() => mockListeningBloc.state).thenReturn(nextState);
+        listeningStreamController.add(nextState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('Calm'), findsOneWidget);
+        expect(find.text('Boredom'), findsOneWidget);
+        expect(find.text('Urgency'), findsOneWidget);
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('23. Hint button in header dispatches ListeningHintUsed', (
+      tester,
+    ) async {
       await pumpEmotionRecognitionScreen(tester);
 
       clearInteractions(mockListeningBloc);
@@ -630,68 +821,84 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1100));
 
-      verify(() => mockListeningBloc.add(any(that: isA<ListeningHintUsed>()))).called(1);
+      verify(
+        () => mockListeningBloc.add(any(that: isA<ListeningHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('24. GameShimmerLoading rendered when state is uninitialized or quest is null', (tester) async {
-      await pumpEmotionRecognitionScreen(tester, state: const ListeningInitial());
+    testWidgets(
+      '24. GameShimmerLoading rendered when state is uninitialized or quest is null',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(
+          tester,
+          state: const ListeningInitial(),
+        );
 
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byKey(const Key('emotion_recognition_emitter')), findsNothing);
-    });
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(
+          find.byKey(const Key('emotion_recognition_emitter')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('25. Game complete state triggers completion handling cleanly', (tester) async {
-      await pumpEmotionRecognitionScreen(
-        tester,
-        state: const ListeningGameComplete(
-          xpEarned: 100,
-          coinsEarned: 20,
-          questCount: 5,
-        ),
-      );
+    testWidgets(
+      '25. Game complete state triggers completion handling cleanly',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(
+          tester,
+          state: const ListeningGameComplete(
+            xpEarned: 100,
+            coinsEarned: 20,
+            questCount: 5,
+          ),
+        );
 
-      expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('26. Game over state renders with zero lives', (tester) async {
       await pumpEmotionRecognitionScreen(
         tester,
-        state: const ListeningGameOver(
-          quests: [sampleQuest1],
-          currentIndex: 0,
-        ),
+        state: const ListeningGameOver(quests: [sampleQuest1], currentIndex: 0),
       );
 
       expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('27. Level 1 briefing dialog displays EMOTION RECOGNITION and dismisses on START tap', (tester) async {
-      SharedPreferences.setMockInitialValues({
-        'has_seen_briefing_emotionRecognition': false,
-      });
+    testWidgets(
+      '27. Level 1 briefing dialog displays EMOTION RECOGNITION and dismisses on START tap',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_emotionRecognition': false,
+        });
 
-      await pumpEmotionRecognitionScreen(
-        tester,
-        level: 1,
-        size: const Size(390, 1100),
-      );
+        await pumpEmotionRecognitionScreen(
+          tester,
+          level: 1,
+          size: const Size(390, 1100),
+        );
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('EMOTION RECOGNITION'), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.text('EMOTION RECOGNITION'), findsOneWidget);
 
-      final actionBtn = find.text('START');
-      expect(actionBtn, findsOneWidget);
+        final actionBtn = find.text('START');
+        expect(actionBtn, findsOneWidget);
 
-      await tester.tap(actionBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(actionBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets('28. Dark and light themes render cleanly without errors', (tester) async {
+    testWidgets('28. Dark and light themes render cleanly without errors', (
+      tester,
+    ) async {
       await pumpEmotionRecognitionScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
 
@@ -699,37 +906,36 @@ void main() {
       expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
     });
 
-    testWidgets('29. Small mobile screen (320x568) and tablet (768x1024) render with zero overflow', (tester) async {
-      await pumpEmotionRecognitionScreen(
-        tester,
-        size: const Size(320, 568),
-      );
-      expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
+    testWidgets(
+      '29. Small mobile screen (320x568) and tablet (768x1024) render with zero overflow',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester, size: const Size(320, 568));
+        expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
 
-      await pumpEmotionRecognitionScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
-      expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        await pumpEmotionRecognitionScreen(tester, size: const Size(768, 1024));
+        expect(find.byType(EmotionRecognitionScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('30. Reduced motion mode and accessibility semantics present on emitter, core, and reservoirs', (tester) async {
-      await pumpEmotionRecognitionScreen(tester, reduceMotion: true);
+    testWidgets(
+      '30. Reduced motion mode and accessibility semantics present on emitter, core, and reservoirs',
+      (tester) async {
+        await pumpEmotionRecognitionScreen(tester, reduceMotion: true);
 
-      expect(find.byType(EmotionRecognitionEmitter), findsOneWidget);
-      expect(find.byType(EmotionRecognitionQuadrant), findsOneWidget);
+        expect(find.byType(EmotionRecognitionEmitter), findsOneWidget);
+        expect(find.byType(EmotionRecognitionQuadrant), findsOneWidget);
 
-      final emitterSemantics = find.bySemanticsLabel('Play audio voice');
-      expect(emitterSemantics, findsOneWidget);
+        final emitterSemantics = find.bySemanticsLabel('Play audio voice');
+        expect(emitterSemantics, findsOneWidget);
 
-      final coreSemantics = find.bySemanticsLabel('Psychology Core');
-      expect(coreSemantics, findsOneWidget);
+        final coreSemantics = find.bySemanticsLabel('Psychology Core');
+        expect(coreSemantics, findsOneWidget);
 
-      final reservoirJoy = find.bySemanticsLabel('Joy');
-      expect(reservoirJoy, findsOneWidget);
-    });
+        final reservoirJoy = find.bySemanticsLabel('Joy');
+        expect(reservoirJoy, findsOneWidget);
+      },
+    );
   });
 }
-

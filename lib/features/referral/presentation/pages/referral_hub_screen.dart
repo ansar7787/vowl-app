@@ -43,11 +43,10 @@ class ReferralHubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) {
-        final cubit = ReferralCubit(
-          repository: di.sl<ReferralRepository>(),
-        );
+        final cubit = ReferralCubit(repository: di.sl<ReferralRepository>());
         final authState = context.read<AuthBloc>().state;
-        if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        if (authState.status == AuthStatus.authenticated &&
+            authState.user != null) {
           cubit.init(authState.user!);
         }
         return cubit;
@@ -99,19 +98,19 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
     Color textSecondary,
   ) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: AppSpacing.compact, vertical: 8.h),
+      margin: EdgeInsets.symmetric(
+        horizontal: AppSpacing.compact,
+        vertical: 8.h,
+      ),
       padding: EdgeInsets.all(4.r),
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark
-                ? const Color(0xFF131A29)
-                : Colors.black.withValues(alpha: 0.04)),
+                  ? const Color(0xFF131A29)
+                  : Colors.black.withValues(alpha: 0.04)),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: borderColor,
-          width: 1.0,
-        ),
+        border: Border.all(color: borderColor, width: 1.0),
       ),
       child: Row(
         children: [
@@ -209,17 +208,21 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final backgroundColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? const Color(0xFF0F172A));
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? const Color(0xFF64748B));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -230,7 +233,11 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_rounded, size: 18.r, color: textPrimary),
+          icon: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            size: 18.r,
+            color: textPrimary,
+          ),
           onPressed: () {
             di.sl<HapticService>().light();
             Navigator.of(context).pop();
@@ -250,7 +257,13 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
       ),
       body: Column(
         children: [
-          _buildSegmentedSwitcher(isDark, isMidnight, borderColor, textPrimary, textSecondary),
+          _buildSegmentedSwitcher(
+            isDark,
+            isMidnight,
+            borderColor,
+            textPrimary,
+            textSecondary,
+          ),
           Expanded(
             child: BlocConsumer<ReferralCubit, ReferralState>(
               listener: (context, state) {
@@ -274,21 +287,24 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                         : CustomSnackBarType.error,
                   );
                 }
-                if (state.syncedAmbassadorRewardCount != null && state.syncedAmbassadorRewardCount! > 0) {
+                if (state.syncedAmbassadorRewardCount != null &&
+                    state.syncedAmbassadorRewardCount! > 0) {
                   context.read<AuthBloc>().add(const AuthReloadUser());
                   final count = state.syncedAmbassadorRewardCount!;
                   final coins = count * 100;
                   CustomSnackBar.show(
                     context: context,
                     message:
-                        '🎉 $count friend(s) completed Level 1! You unlocked +$coins Coins & +$count Day VIP!',
+                        '$count friend(s) completed Level 1! You unlocked +$coins Coins & +$count Day VIP!',
                     type: CustomSnackBarType.success,
                   );
                 }
               },
               builder: (context, state) {
                 final authState = context.watch<AuthBloc>().state;
-                final user = authState.status == AuthStatus.authenticated ? authState.user : null;
+                final user = authState.status == AuthStatus.authenticated
+                    ? authState.user
+                    : null;
 
                 if (user == null) {
                   return Center(
@@ -311,7 +327,11 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.auto_awesome_rounded, size: 30.r, color: AppColors.indigo500),
+                          Icon(
+                            Icons.auto_awesome_rounded,
+                            size: 30.r,
+                            color: AppColors.indigo500,
+                          ),
                           SizedBox(height: 12.h),
                           Text(
                             'Loading your rewards...',
@@ -335,7 +355,10 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                   onRefresh: () => context.read<ReferralCubit>().init(user),
                   child: SingleChildScrollView(
                     physics: const AlwaysScrollableScrollPhysics(),
-                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacing.compact,
+                      vertical: 8.h,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -351,7 +374,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                             hasActivePremium: user.hasActivePremium,
                             premiumExpiryDate: user.premiumExpiryDate,
                             isCopied: state.copiedToClipboard,
-                            onCopy: () => context.read<ReferralCubit>().copyCode(code),
+                            onCopy: () =>
+                                context.read<ReferralCubit>().copyCode(code),
                             onShare: () {
                               ShareCardPreviewModal.show(
                                 context: context,
@@ -366,17 +390,28 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                           ),
                           SizedBox(height: 16.h),
                           // How It Works Rules Card
-                          _buildHowItWorksCard(isDark, isMidnight, borderColor, textPrimary, textSecondary),
+                          _buildHowItWorksCard(
+                            isDark,
+                            isMidnight,
+                            borderColor,
+                            textPrimary,
+                            textSecondary,
+                          ),
                         ] else ...[
                           // Monthly Ambassador Cup Leaderboard
                           MonthlyCupLeaderboard(
                             items: state.ambassadorLeaderboard,
                             isLoading: state.isLoading,
                             currentUserId: user.id,
-                            myMonthlyReferrals: user.activeMonthlyReferralsCount,
-                            onClaimPastMonth: () => context.read<ReferralCubit>().claimMonthlyCupReward(user),
+                            currentUserPhotoUrl: user.photoUrl,
+                            myMonthlyReferrals:
+                                user.activeMonthlyReferralsCount,
+                            onClaimPastMonth: () => context
+                                .read<ReferralCubit>()
+                                .claimMonthlyCupReward(user),
                             isClaimingPastMonth: state.isClaimingCupReward,
-                            hasUnclaimedPastMonth: user.activeMonthlyReferralsCount > 0,
+                            hasUnclaimedPastMonth:
+                                user.activeMonthlyReferralsCount > 0,
                             onInviteTap: () {
                               di.sl<HapticService>().selection();
                               setState(() => _selectedTab = 0);
@@ -417,7 +452,11 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         children: [
           Row(
             children: [
-              Icon(Icons.auto_awesome_rounded, size: 18.r, color: AppColors.indigo500),
+              Icon(
+                Icons.auto_awesome_rounded,
+                size: 18.r,
+                color: AppColors.indigo500,
+              ),
               SizedBox(width: 8.w),
               Text(
                 'How Rewards Work',
@@ -435,7 +474,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           _buildStepRow(
             step: '1',
             title: 'Share your code or link',
-            description: 'Send your invite code to friends, classmates, or family learning English.',
+            description:
+                'Send your invite code to friends, classmates, or family learning English.',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -444,7 +484,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           _buildStepRow(
             step: '2',
             title: 'Friend completes Level 1',
-            description: 'When they finish their first pronunciation lesson, both of you unlock rewards.',
+            description:
+                'When they finish their first pronunciation lesson, both of you unlock rewards.',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -453,7 +494,8 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           _buildStepRow(
             step: '3',
             title: 'Unlock 100 Coins & 1 Day VIP',
-            description: 'Coins and VIP time are credited instantly, and you rank up in the Monthly Cup!',
+            description:
+                'Coins and VIP time are credited instantly, and you rank up in the Monthly Cup!',
             isDark: isDark,
             textPrimary: textPrimary,
             textSecondary: textSecondary,
@@ -527,7 +569,11 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
     );
   }
 
-  void _showClaimDialog(BuildContext context, UserEntity user, {String? initialCode}) {
+  void _showClaimDialog(
+    BuildContext context,
+    UserEntity user, {
+    String? initialCode,
+  }) {
     final cubit = context.read<ReferralCubit>();
     showDialog(
       context: context,

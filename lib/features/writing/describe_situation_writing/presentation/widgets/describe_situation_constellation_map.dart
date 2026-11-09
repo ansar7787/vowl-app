@@ -158,9 +158,12 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                                       (k) => Semantics(
                                         button: true,
                                         label: 'Keyword ${k.toLowerCase()}',
-                                        hint: 'Double tap to add to description',
+                                        hint:
+                                            'Double tap to add to description',
                                         child: InkWell(
-                                          key: Key('describe_situation_keyword_$k'),
+                                          key: Key(
+                                            'describe_situation_keyword_$k',
+                                          ),
                                           onTap: () => onInjectKeyword(k),
                                           borderRadius: BorderRadius.circular(
                                             12.r,

@@ -195,6 +195,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
     // 5. Complete the node unlock pop
     _celebratingLevel.value = currLevel;
+    if (mounted) setState(() {});
 
     // 6. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
     await WidgetsBinding.instance.endOfFrame;
@@ -203,11 +204,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     // 7. Instantly unlock user touch & scroll so the user can tap the unlocked node
     //    or scroll immediately without being locked out. Confetti continues to float in background.
     _isUnlockAnimating.value = false;
+    if (mounted) setState(() {});
 
     // 8. Clean up celebrating level state in background after confetti natural duration completes
     Future.delayed(const Duration(milliseconds: 2500), () {
       if (mounted) {
         _celebratingLevel.value = null;
+        setState(() {});
       }
     });
   }
@@ -382,10 +385,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         widget.primaryColor.withAlpha(100),
                         AppColors.slate900,
                       )
-                    : Color.alphaBlend(
-                        widget.primaryColor.withAlpha(60),
-                        AppColors.white,
-                      ));
+                    : Colors.white);
 
           return ListenableBuilder(
             listenable: Listenable.merge([
@@ -443,164 +443,165 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                                       context.go('/home');
                                     }
                                   },
-                                child: Container(
-                                  width: 36.r,
-                                  height: 36.r,
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? AppColors.slate800
-                                        : Colors.white,
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
+                                  child: Container(
+                                    width: 36.r,
+                                    height: 36.r,
+                                    decoration: BoxDecoration(
                                       color: isDark
-                                          ? Colors.blue.shade700
-                                          : Colors.blue.shade200,
-                                      width: 3.w,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
+                                          ? AppColors.slate800
+                                          : Colors.white,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
                                         color: isDark
-                                            ? Colors.blue.shade900
-                                            : Colors.blue.shade100,
-                                        offset: Offset(0, 4.h),
+                                            ? Colors.blue.shade700
+                                            : Colors.blue.shade200,
+                                        width: 3.w,
                                       ),
-                                    ],
-                                  ),
-                                  child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: AppColors.slate900,
-                                    size: 16.r,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: isDark
+                                              ? Colors.blue.shade900
+                                              : Colors.blue.shade100,
+                                          offset: Offset(0, 4.h),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: AppColors.slate900,
+                                      size: 16.r,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
 
-                          // 2. The World Portal Header (Part of the Map Journey)
-                          SliverToBoxAdapter(
-                            child: _buildChunkyMapHeader(user, isDark),
-                          ),
-
-                          // ── Map Segments ──
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(vertical: 20.h),
-                            sliver: SliverList(
-                              delegate: SliverChildBuilderDelegate((
-                                context,
-                                index,
-                              ) {
-                                final level = index + 1;
-                                final highestCompleted = completedLevels.isEmpty
-                                    ? 0
-                                    : completedLevels.reduce(math.max);
-                                final isCompleted = level <= highestCompleted;
-                                final isPlayable =
-                                    level == highestCompleted + 1 &&
-                                    (level <= unlockedLevel || isPremium);
-                                final isTollGate =
-                                    level == highestCompleted + 1 &&
-                                    level > unlockedLevel &&
-                                    !isPremium;
-                                final isHalfUnlocked =
-                                    level > highestCompleted + 1 &&
-                                    level <= unlockedLevel &&
-                                    unlockedLevel > 10;
-                                final isNextZone =
-                                    level > unlockedLevel + 1 &&
-                                    level <= unlockedLevel + 3 &&
-                                    !isPremium &&
-                                    highestCompleted >= unlockedLevel;
-                                final isLocked =
-                                    !isCompleted &&
-                                    !isPlayable &&
-                                    !isHalfUnlocked &&
-                                    !isTollGate &&
-                                    !isNextZone;
-                                final isCurrent = isPlayable || isTollGate;
-                                final isLast = index == 199;
-
-                                // FIX: Check auth loading status from our selector
-                                final isLoading =
-                                    authStatus == AuthStatus.unknown;
-
-                                final currentOffset = _getHorizontalOffset(
-                                  level,
-                                  screenWidth,
-                                );
-                                final nextOffset = isLast
-                                    ? currentOffset
-                                    : _getHorizontalOffset(
-                                        level + 1,
-                                        screenWidth,
-                                      );
-                                final prevOffset = level == 1
-                                    ? currentOffset
-                                    : _getHorizontalOffset(
-                                        level - 1,
-                                        screenWidth,
-                                      );
-
-                                return KidsMapNode(
-                                  level: level,
-                                  isLocked: isLocked,
-                                  isCurrent: isCurrent,
-                                  isLast: isLast,
-                                  currentOffset: currentOffset,
-                                  nextOffset: nextOffset,
-                                  prevOffset: prevOffset,
-                                  isLoading: isLoading,
-                                  isTollGate: isTollGate,
-                                  isCompleted: isCompleted,
-                                  isPlayable: isPlayable,
-                                  isNextZone: isNextZone,
-                                  isPrevCompleted: level == 1
-                                      ? true
-                                      : (level - 1) <= highestCompleted,
-                                  gameType: widget.gameType,
-                                  primaryColor: widget.primaryColor,
-                                  unlockPathController: _unlockPathController,
-                                  entryController: _entryController,
-                                  glowController: _glowController,
-                                  confettiController: _confettiController,
-                                  isUnlockAnimating: _isUnlockAnimating.value,
-                                  celebratingLevel: _celebratingLevel.value,
-                                );
-                              }, childCount: _totalLevels),
+                            // 2. The World Portal Header (Part of the Map Journey)
+                            SliverToBoxAdapter(
+                              child: _buildChunkyMapHeader(user, isDark),
                             ),
-                          ),
-                        ],
-                      ),
-                      if (_activeStoryBeat.value != null)
-                        Positioned.fill(
-                          child: Container(
-                            color: Colors.black54,
-                            child: StoryDialogueBox(
-                              beat: _activeStoryBeat.value!,
-                              isKidsMode: true,
-                              onDismiss: () {
-                                _activeStoryBeat.value = null;
-                              },
+
+                            // ── Map Segments ──
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(vertical: 20.h),
+                              sliver: SliverList(
+                                delegate: SliverChildBuilderDelegate((
+                                  context,
+                                  index,
+                                ) {
+                                  final level = index + 1;
+                                  final highestCompleted =
+                                      completedLevels.isEmpty
+                                      ? 0
+                                      : completedLevels.reduce(math.max);
+                                  final isCompleted = level <= highestCompleted;
+                                  final isPlayable =
+                                      level == highestCompleted + 1 &&
+                                      (level <= unlockedLevel || isPremium);
+                                  final isTollGate =
+                                      level == highestCompleted + 1 &&
+                                      level > unlockedLevel &&
+                                      !isPremium;
+                                  final isHalfUnlocked =
+                                      level > highestCompleted + 1 &&
+                                      level <= unlockedLevel &&
+                                      unlockedLevel > 10;
+                                  final isNextZone =
+                                      level > unlockedLevel + 1 &&
+                                      level <= unlockedLevel + 3 &&
+                                      !isPremium &&
+                                      highestCompleted >= unlockedLevel;
+                                  final isLocked =
+                                      !isCompleted &&
+                                      !isPlayable &&
+                                      !isHalfUnlocked &&
+                                      !isTollGate &&
+                                      !isNextZone;
+                                  final isCurrent = isPlayable || isTollGate;
+                                  final isLast = index == 199;
+
+                                  // FIX: Check auth loading status from our selector
+                                  final isLoading =
+                                      authStatus == AuthStatus.unknown;
+
+                                  final currentOffset = _getHorizontalOffset(
+                                    level,
+                                    screenWidth,
+                                  );
+                                  final nextOffset = isLast
+                                      ? currentOffset
+                                      : _getHorizontalOffset(
+                                          level + 1,
+                                          screenWidth,
+                                        );
+                                  final prevOffset = level == 1
+                                      ? currentOffset
+                                      : _getHorizontalOffset(
+                                          level - 1,
+                                          screenWidth,
+                                        );
+
+                                  return KidsMapNode(
+                                    level: level,
+                                    isLocked: isLocked,
+                                    isCurrent: isCurrent,
+                                    isLast: isLast,
+                                    currentOffset: currentOffset,
+                                    nextOffset: nextOffset,
+                                    prevOffset: prevOffset,
+                                    isLoading: isLoading,
+                                    isTollGate: isTollGate,
+                                    isCompleted: isCompleted,
+                                    isPlayable: isPlayable,
+                                    isNextZone: isNextZone,
+                                    isPrevCompleted: level == 1
+                                        ? true
+                                        : (level - 1) <= highestCompleted,
+                                    gameType: widget.gameType,
+                                    primaryColor: widget.primaryColor,
+                                    unlockPathController: _unlockPathController,
+                                    entryController: _entryController,
+                                    glowController: _glowController,
+                                    confettiController: _confettiController,
+                                    isUnlockAnimating: _isUnlockAnimating.value,
+                                    celebratingLevel: _celebratingLevel.value,
+                                  );
+                                }, childCount: _totalLevels),
+                              ),
                             ),
-                          ).animate().fadeIn(),
+                          ],
                         ),
-                      // Global Star Vault FAB
-                      Positioned(
-                        bottom: 32.h,
-                        right: 20.w,
-                        child: _buildStarVaultButton(),
-                      ),
+                        if (_activeStoryBeat.value != null)
+                          Positioned.fill(
+                            child: Container(
+                              color: Colors.black54,
+                              child: StoryDialogueBox(
+                                beat: _activeStoryBeat.value!,
+                                isKidsMode: true,
+                                onDismiss: () {
+                                  _activeStoryBeat.value = null;
+                                },
+                              ),
+                            ).animate().fadeIn(),
+                          ),
+                        // Global Star Vault FAB
+                        Positioned(
+                          bottom: 32.h,
+                          right: 20.w,
+                          child: _buildStarVaultButton(),
+                        ),
 
-                      // Golden Keys FAB
-                      Positioned(
-                        bottom: 32.h,
-                        left: 20.w,
-                        child: _buildGoldenKeysButton(),
-                      ),
-                    ],
+                        // Golden Keys FAB
+                        Positioned(
+                          bottom: 32.h,
+                          left: 20.w,
+                          child: _buildGoldenKeysButton(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
+              );
             },
           );
         },

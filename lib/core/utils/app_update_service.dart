@@ -71,15 +71,17 @@ class AppUpdateServiceImpl implements AppUpdateService {
   AppUpdateServiceImpl({
     required RemoteConfigService remoteConfig,
     SharedPreferences? preferences,
-  })  : _remoteConfig = remoteConfig,
-        _preferences = preferences;
+  }) : _remoteConfig = remoteConfig,
+       _preferences = preferences;
 
   Future<SharedPreferences> _getPrefs() async {
     return _preferences ?? await SharedPreferences.getInstance();
   }
 
   @override
-  Future<AppUpdateInfo> checkForUpdate({bool ignoreFrequencyCap = false}) async {
+  Future<AppUpdateInfo> checkForUpdate({
+    bool ignoreFrequencyCap = false,
+  }) async {
     try {
       final packageInfo = await PackageInfo.fromPlatform();
       final currentVersion = packageInfo.version;
@@ -111,8 +113,9 @@ class AppUpdateServiceImpl implements AppUpdateService {
 
           // If dismissed for the exact same target version in the last 24 hours, suppress
           if (dismissedVersion == latestVersion && dismissedTimestamp > 0) {
-            final lastDismissed =
-                DateTime.fromMillisecondsSinceEpoch(dismissedTimestamp);
+            final lastDismissed = DateTime.fromMillisecondsSinceEpoch(
+              dismissedTimestamp,
+            );
             final hoursSince = DateTime.now().difference(lastDismissed).inHours;
             if (hoursSince < 24) {
               return AppUpdateInfo(
@@ -219,4 +222,3 @@ class AppUpdateServiceImpl implements AppUpdateService {
     }
   }
 }
-

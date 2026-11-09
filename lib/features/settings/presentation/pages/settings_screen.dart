@@ -485,8 +485,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 type: isSuccessMsg
                     ? CustomSnackBarType.success
                     : (isErrorMsg ||
-                            (authState.status == AuthStatus.unauthenticated &&
-                                !isWarning))
+                          (authState.status == AuthStatus.unauthenticated &&
+                              !isWarning))
                     ? CustomSnackBarType.error
                     : isWarning
                     ? CustomSnackBarType.warning
@@ -522,8 +522,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               ),
                               child: Builder(
                                 builder: (context) {
-                                  final user =
-                                      context.read<AuthBloc>().state.user;
+                                  final user = context
+                                      .read<AuthBloc>()
+                                      .state
+                                      .user;
                                   final contentChildren = <Widget>[
                                     // 1. Appearance & Theme Matrix
                                     Column(
@@ -580,9 +582,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                     'App audio, buttons & UI feedback',
                                               ),
                                               icon: Icons.volume_up_rounded,
-                                              color:
-                                                  IllustrationColors
-                                                      .vibrantPink,
+                                              color: IllustrationColors
+                                                  .vibrantPink,
                                               value: _soundEnabledVal,
                                               isLoading: _isLoadingVal,
                                               onChanged: _toggleSound,
@@ -609,9 +610,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                 fallback: 'Pronunciation Voice',
                                               ),
                                               subtitle: _voicePresetVal.title,
-                                              icon:
-                                                  Icons
-                                                      .record_voice_over_rounded,
+                                              icon: Icons
+                                                  .record_voice_over_rounded,
                                               color: AppColors.indigo500,
                                               onTap: () async {
                                                 final newPreset =
@@ -668,7 +668,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                                       .stop_rounded
                                                                 : Icons
                                                                       .play_arrow_rounded,
-                                                            color: _isPlayingVoice
+                                                            color:
+                                                                _isPlayingVoice
                                                                 ? Colors.white
                                                                 : AppColors
                                                                       .indigo500,
@@ -694,7 +695,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w700,
-                                                              color: _isPlayingVoice
+                                                              color:
+                                                                  _isPlayingVoice
                                                                   ? Colors.white
                                                                   : AppColors
                                                                         .indigo500,
@@ -942,9 +944,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                 fallback:
                                                     'Replace swiping with tap-to-select actions',
                                               ),
-                                              icon:
-                                                  Icons
-                                                      .accessibility_new_rounded,
+                                              icon: Icons
+                                                  .accessibility_new_rounded,
                                               color: AppColors.emerald500,
                                               value: _reduceComplexGesturesVal,
                                               isLoading: _isLoadingVal,
@@ -1025,9 +1026,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                 fallback:
                                                     'Daily streaks, quest alerts & bonuses',
                                               ),
-                                              icon:
-                                                  Icons
-                                                      .notifications_active_rounded,
+                                              icon: Icons
+                                                  .notifications_active_rounded,
                                               color:
                                                   IllustrationColors.warmOrange,
                                               value: _notificationsEnabledVal,
@@ -1046,12 +1046,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   fallback:
                                                       'Ensure reminders arrive on Xiaomi, POCO & Samsung',
                                                 ),
-                                                icon: Icons.battery_saver_rounded,
+                                                icon:
+                                                    Icons.battery_saver_rounded,
                                                 color: AppColors.amber500,
-                                                onTap: () => SettingsDialogs
-                                                    .showBatteryOptimizationHelp(
-                                                  context,
-                                                ),
+                                                onTap: () =>
+                                                    SettingsDialogs.showBatteryOptimizationHelp(
+                                                      context,
+                                                    ),
                                               ),
                                             SettingsSwitchTile(
                                               title: context.tr(
@@ -1089,9 +1090,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                       fallback:
                                                           'Purge images and temporary data',
                                                     ),
-                                              icon:
-                                                  Icons
-                                                      .cleaning_services_rounded,
+                                              icon: Icons
+                                                  .cleaning_services_rounded,
                                               color: _LocalPalette.coloreab308,
                                               onTap: () =>
                                                   _handleClearCache(context),
@@ -1232,9 +1232,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         : (isDark ? AppColors.slate900 : AppColors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,
@@ -1245,9 +1243,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       toolbarHeight: 50.h,
       leadingWidth: 70.w,
       automaticallyImplyLeading: false,
-      flexibleSpace: Container(
-        color: barBg.withValues(alpha: 0.95),
-      ),
+      flexibleSpace: Container(color: barBg.withValues(alpha: 0.95)),
       leading: Padding(
         padding: EdgeInsets.only(left: AppSpacing.screen),
         child: Center(
@@ -1268,10 +1264,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ? Colors.white.withValues(alpha: 0.06)
                     : Colors.black.withValues(alpha: 0.04),
                 shape: BoxShape.circle,
-                border: Border.all(
-                  color: borderColor,
-                  width: 1.0,
-                ),
+                border: Border.all(color: borderColor, width: 1.0),
               ),
               child: Center(
                 child: Icon(
@@ -1311,10 +1304,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ? Colors.white.withValues(alpha: 0.06)
                       : Colors.black.withValues(alpha: 0.04),
                   shape: BoxShape.circle,
-                  border: Border.all(
-                    color: borderColor,
-                    width: 1.0,
-                  ),
+                  border: Border.all(color: borderColor, width: 1.0),
                 ),
                 child: Center(
                   child: Icon(

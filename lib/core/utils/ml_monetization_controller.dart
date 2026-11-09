@@ -95,7 +95,8 @@ class MlMonetizationController {
         ? context.tr(
             'translation.daily_quota_desc',
             args: [freeDailyLimit.toString()],
-            fallback: 'You’ve used your $freeDailyLimit free daily scans! Watch 1 quick ad for a bonus scan, or get Unlimited Scans with Vowl Premium.',
+            fallback:
+                'You’ve used your $freeDailyLimit free daily scans! Watch 1 quick ad for a bonus scan, or get Unlimited Scans with Vowl Premium.',
           )
         : featureSubtitle;
 
@@ -154,7 +155,9 @@ class MlMonetizationController {
       final countKey = 'ml_quota_count_$featureKey';
 
       final lastDate = prefs.getString(dateKey) ?? '';
-      final currentCount = (lastDate == today) ? (prefs.getInt(countKey) ?? 0) : 0;
+      final currentCount = (lastDate == today)
+          ? (prefs.getInt(countKey) ?? 0)
+          : 0;
 
       final remaining = freeDailyLimit - currentCount;
       return remaining > 0 ? remaining : 0;
@@ -230,165 +233,165 @@ class _MlFeatureGateDialog extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-              // ── Drag handle ─────────────────────────────────────────
-              Container(
-                width: 40.w,
-                height: 4.h,
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.white24 : Colors.black12,
-                  borderRadius: BorderRadius.circular(2.r),
-                ),
-              ),
-              SizedBox(height: 24.h),
-
-              // ── Feature icon ────────────────────────────────────────
-              Container(
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [AppColors.indigo500, AppColors.violet500],
+                // ── Drag handle ─────────────────────────────────────────
+                Container(
+                  width: 40.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white24 : Colors.black12,
+                    borderRadius: BorderRadius.circular(2.r),
                   ),
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.3),
-                      blurRadius: 20,
-                      offset: const Offset(0, 8),
-                    ),
-                  ],
                 ),
-                child: Icon(featureIcon, color: Colors.white, size: 32.r),
-              ),
-              SizedBox(height: 20.h),
+                SizedBox(height: 24.h),
 
-              // ── Title ───────────────────────────────────────────────
-              Text(
-                featureTitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : Colors.black87,
-                  letterSpacing: 0.5,
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                featureSubtitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.white54 : Colors.black45,
-                ),
-              ),
-              SizedBox(height: 28.h),
-
-              // ── Premium button ──────────────────────────────────────
-              ScaleButton(
-                onTap: () {
-                  Navigator.pop(context, 'premium');
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                // ── Feature icon ────────────────────────────────────────
+                Container(
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [AppColors.indigo500, AppColors.violet500],
                     ),
-                    borderRadius: BorderRadius.circular(16.r),
+                    shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
                         color: AppColors.indigo500.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        offset: const Offset(0, 6),
+                        blurRadius: 20,
+                        offset: const Offset(0, 8),
                       ),
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.workspace_premium_rounded,
-                        color: Colors.white,
-                        size: 20.r,
-                      ),
-                      SizedBox(width: 8.w),
-                      Flexible(
-                        child: Text(
-                          context.tr(
-                            'translation.get_premium_button',
-                            fallback: 'Get Vowl Premium',
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontWeight: FontWeight.w900,
-                            fontSize: 16.sp,
-                            color: Colors.white,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                    ],
+                  child: Icon(featureIcon, color: Colors.white, size: 32.r),
+                ),
+                SizedBox(height: 20.h),
+
+                // ── Title ───────────────────────────────────────────────
+                Text(
+                  featureTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : Colors.black87,
+                    letterSpacing: 0.5,
                   ),
                 ),
-              ),
-              SizedBox(height: 12.h),
+                SizedBox(height: 8.h),
+                Text(
+                  featureSubtitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white54 : Colors.black45,
+                  ),
+                ),
+                SizedBox(height: 28.h),
 
-              // ── Watch Ad button ─────────────────────────────────────
-              ScaleButton(
-                onTap: () {
-                  Navigator.pop(context, 'ad');
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.06)
-                        : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.08),
+                // ── Premium button ──────────────────────────────────────
+                ScaleButton(
+                  onTap: () {
+                    Navigator.pop(context, 'premium');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColors.indigo500, AppColors.violet500],
+                      ),
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.indigo500.withValues(alpha: 0.3),
+                          blurRadius: 12,
+                          offset: const Offset(0, 6),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.workspace_premium_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
+                        SizedBox(width: 8.w),
+                        Flexible(
+                          child: Text(
+                            context.tr(
+                              'translation.get_premium_button',
+                              fallback: 'Get Vowl Premium',
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.w900,
+                              fontSize: 16.sp,
+                              color: Colors.white,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.play_circle_outline_rounded,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                        size: 20.r,
+                ),
+                SizedBox(height: 12.h),
+
+                // ── Watch Ad button ─────────────────────────────────────
+                ScaleButton(
+                  onTap: () {
+                    Navigator.pop(context, 'ad');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.06)
+                          : Colors.black.withValues(alpha: 0.03),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.1)
+                            : Colors.black.withValues(alpha: 0.08),
                       ),
-                      SizedBox(width: 8.w),
-                      Flexible(
-                        child: Text(
-                          adButtonLabel,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.sp,
-                            color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.play_circle_outline_rounded,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                          size: 20.r,
+                        ),
+                        SizedBox(width: 8.w),
+                        Flexible(
+                          child: Text(
+                            adButtonLabel,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15.sp,
+                              color: isDark ? Colors.white70 : Colors.black54,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
-  );
+    );
   }
 }

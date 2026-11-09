@@ -73,7 +73,9 @@ class IdiomsOriginCard extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
-                color: isDark ? Colors.white.withValues(alpha: 0.8) : AppColors.slate800,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.8)
+                    : AppColors.slate800,
                 height: 1.45,
               ),
             ),
@@ -83,10 +85,7 @@ class IdiomsOriginCard extends StatelessWidget {
             SizedBox(height: 14.h),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: 14.w,
-                vertical: 10.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: color.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12.r),
@@ -112,7 +111,9 @@ class IdiomsOriginCard extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
-                      color: isDark ? Colors.white.withValues(alpha: 0.75) : AppColors.slate700,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.75)
+                          : AppColors.slate700,
                       height: 1.4,
                     ),
                   ),
@@ -126,11 +127,7 @@ class IdiomsOriginCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.lightbulb_outline_rounded,
-                  color: color,
-                  size: 18.r,
-                ),
+                Icon(Icons.lightbulb_outline_rounded, color: color, size: 18.r),
                 SizedBox(width: 8.w),
                 Expanded(
                   child: Text(

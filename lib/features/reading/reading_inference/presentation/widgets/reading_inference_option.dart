@@ -172,8 +172,9 @@ class ReadingInferenceOption extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.5.sp,
-                          fontWeight:
-                              isSelected ? FontWeight.w600 : FontWeight.w500,
+                          fontWeight: isSelected
+                              ? FontWeight.w600
+                              : FontWeight.w500,
                           height: 1.35,
                           color: Theme.of(context).colorScheme.onSurface,
                         ),

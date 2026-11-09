@@ -147,17 +147,23 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
+    final isMidnight =
+        isDark &&
         (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
-            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface ==
+                AppColors.midnightSurface ||
             Theme.of(context).colorScheme.surface == AppColors.midnightBase);
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     final glassColor = isMidnight
         ? AppColors.midnightCard
         : (isDark
-            ? Colors.black.withValues(alpha: 0.85) // Highly opaque for dark mode
-            : Colors.white.withValues(alpha: 0.95)); // Nearly solid for light mode
+              ? Colors.black.withValues(
+                  alpha: 0.85,
+                ) // Highly opaque for dark mode
+              : Colors.white.withValues(
+                  alpha: 0.95,
+                )); // Nearly solid for light mode
 
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
@@ -174,8 +180,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               : isMidnight
               ? Colors.white.withValues(alpha: 0.12)
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : AppColors.slate100);
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100);
 
           return Container(
             decoration: BoxDecoration(
@@ -209,7 +215,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
       ),
     );
 
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final content = Material(
@@ -233,9 +240,14 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     final animatedContent = reduceMotion
         ? content
         : content
-            .animate(key: const ValueKey('context_sentence_builder_anim'))
-            .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOut)
-            .fadeIn(duration: 300.ms);
+              .animate(key: const ValueKey('context_sentence_builder_anim'))
+              .slideY(
+                begin: 0.2,
+                end: 0,
+                duration: 400.ms,
+                curve: Curves.easeOut,
+              )
+              .fadeIn(duration: 300.ms);
 
     if (widget.isPositioned) {
       return Positioned(
@@ -579,9 +591,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                   ]
                                 : [
                                     widget.primaryColor,
-                                    widget.primaryColor.withValues(
-                                      alpha: 0.8,
-                                    ),
+                                    widget.primaryColor.withValues(alpha: 0.8),
                                   ],
                           ),
                           borderRadius: BorderRadius.circular(20.r),
@@ -590,9 +600,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: AutoSizeText(
-                              ContextSentenceStrings.submitButton(
-                                context,
-                              ),
+                              ContextSentenceStrings.submitButton(context),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,
@@ -609,9 +617,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 ),
                 if (widget.allowSkip) ...[
                   SizedBox(height: 12.h),
-                  Center(
-                    child: _buildSkipButton(subtitleColor),
-                  ),
+                  Center(child: _buildSkipButton(subtitleColor)),
                 ],
               ],
             );
@@ -762,8 +768,7 @@ class ContextSentenceStrings {
           .replaceAll('{keyword}', keyword);
   static String errorCopiedExample(BuildContext context) => context.tr(
     'game.sentence_builder.error_copied_example',
-    fallback:
-        'Please write your own sentence instead of copying the example.',
+    fallback: 'Please write your own sentence instead of copying the example.',
   );
   static String errorGibberish(BuildContext context) => context.tr(
     'game.sentence_builder.error_gibberish',

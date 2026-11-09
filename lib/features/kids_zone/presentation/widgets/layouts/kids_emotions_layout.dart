@@ -131,6 +131,7 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -200,7 +201,8 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
                             Icon(
                               Icons.theater_comedy_rounded,
                               size: 16.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : _LocalPalette.color92400e,
@@ -222,7 +224,8 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.85)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -286,8 +289,9 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
                     color: isHovering ? AppColors.slate700 : AppColors.slate800,
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color:
-                          isHovering ? AppColors.amber500 : AppColors.amber900,
+                      color: isHovering
+                          ? AppColors.amber500
+                          : AppColors.amber900,
                       width: isHovering ? 6.r : 4.r,
                     ),
                     boxShadow: [
@@ -358,10 +362,7 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
                         left: Radius.circular(14.r),
                       ),
                       border: Border(
-                        right: BorderSide(
-                          color: AppColors.rose700,
-                          width: 4.w,
-                        ),
+                        right: BorderSide(color: AppColors.rose700, width: 4.w),
                       ),
                     ),
                   ),
@@ -380,10 +381,7 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
                         right: Radius.circular(14.r),
                       ),
                       border: Border(
-                        left: BorderSide(
-                          color: AppColors.rose700,
-                          width: 4.w,
-                        ),
+                        left: BorderSide(color: AppColors.rose700, width: 4.w),
                       ),
                     ),
                   ),
@@ -459,16 +457,9 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
       decoration: BoxDecoration(
         color: _LocalPalette.color92400e,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: KidsColors.warmAmber,
-          width: 4.h,
-        ),
+        border: Border.all(color: KidsColors.warmAmber, width: 4.h),
         boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            offset: Offset(0, 4),
-            blurRadius: 8,
-          ),
+          BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 8),
         ],
       ),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
@@ -503,10 +494,12 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
     int index,
   ) {
     final isComedy = index % 2 == 0;
-    final color =
-        isComedy ? _LocalPalette.colorfde047 : _LocalPalette.color7dd3fc;
-    final shadowColor =
-        isComedy ? _LocalPalette.colorca8a04 : _LocalPalette.color0284c7;
+    final color = isComedy
+        ? _LocalPalette.colorfde047
+        : _LocalPalette.color7dd3fc;
+    final shadowColor = isComedy
+        ? _LocalPalette.colorca8a04
+        : _LocalPalette.color0284c7;
 
     final parts = text.trim().split(' ');
     String wordPart = text;
@@ -581,10 +574,7 @@ class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
               // Mask Body with text & emoji
               Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 4.w,
-                    vertical: 8.h,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,

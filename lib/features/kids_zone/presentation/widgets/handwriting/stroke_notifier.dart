@@ -94,4 +94,3 @@ class StrokeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 }
-

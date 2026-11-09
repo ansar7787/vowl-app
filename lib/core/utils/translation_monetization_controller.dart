@@ -45,9 +45,11 @@ class TranslationMonetizationController {
       context: context,
       builder: (ctx) {
         final isDark = Theme.of(ctx).brightness == Brightness.dark;
-        final isMidnight = isDark &&
+        final isMidnight =
+            isDark &&
             (Theme.of(ctx).scaffoldBackgroundColor == AppColors.midnightBase ||
-                Theme.of(ctx).colorScheme.surface == AppColors.midnightSurface ||
+                Theme.of(ctx).colorScheme.surface ==
+                    AppColors.midnightSurface ||
                 Theme.of(ctx).colorScheme.surface == AppColors.midnightBase);
         return Dialog(
           backgroundColor: Colors.transparent,
@@ -63,14 +65,14 @@ class TranslationMonetizationController {
                   color: isMidnight
                       ? AppColors.midnightSurface
                       : (isDark
-                          ? AppColors.slate900.withValues(alpha: 0.85)
-                          : Colors.white.withValues(alpha: 0.9)),
+                            ? AppColors.midnightNavy.withValues(alpha: 0.92)
+                            : Colors.white.withValues(alpha: 0.9)),
                   border: Border.all(
                     color: isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : AppColors.slate100),
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate200),
                     width: 1,
                   ),
                   borderRadius: BorderRadius.circular(28.r),

@@ -75,9 +75,7 @@ void main() {
       builder: (context, _) => BlocProvider<AuthBloc>.value(
         value: mockAuthBloc,
         child: MaterialApp(
-          home: Scaffold(
-            body: ProfileQuickActionHud(user: user),
-          ),
+          home: Scaffold(body: ProfileQuickActionHud(user: user)),
         ),
       ),
     );

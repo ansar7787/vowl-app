@@ -109,10 +109,7 @@ void main() {
     hint: "Drop the jaw: 'hot' feels back and open.",
     explanation: 'The tongue pulls back, giving a back open vowel.',
     vowelTensionRule: '/ɒ/ is back and open; /ʌ/ is central.',
-    vowelChart: {
-      'x': 0.95,
-      'y': 0.8,
-    },
+    vowelChart: {'x': 0.95, 'y': 0.8},
   );
 
   const testQuest2 = AccentQuest(
@@ -177,8 +174,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -190,12 +188,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -211,10 +211,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        speed: any(named: 'speed'),
-      ),
+      () => mockSoundService.playTts(any(), speed: any(named: 'speed')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
 
@@ -237,7 +234,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_vowel_distinction.m4a');
@@ -247,8 +246,12 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     when(
       () => mockAdService.showRewardedAd(
@@ -326,10 +329,7 @@ void main() {
     testWidgets('shows GameShimmerLoading when state is AccentInitial', (
       tester,
     ) async {
-      await pumpVowelDistinction(
-        tester,
-        state: const AccentInitial(),
-      );
+      await pumpVowelDistinction(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
@@ -349,7 +349,10 @@ void main() {
       // Verify vowel orbs and slider
       expect(find.byKey(const ValueKey('vowel_orb_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('vowel_orb_1')), findsOneWidget);
-      expect(find.byKey(const ValueKey('vowel_spectral_slider')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('vowel_spectral_slider')),
+        findsOneWidget,
+      );
 
       expect(find.text('/ɒ/'), findsOneWidget);
       expect(find.text('/ʌ/'), findsOneWidget);
@@ -372,46 +375,48 @@ void main() {
       verify(() => mockSoundService.playTts('hot')).called(1);
     });
 
-    testWidgets('tapping wrong vowel orb triggers wrong sound and error haptic', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester);
+    testWidgets(
+      'tapping wrong vowel orb triggers wrong sound and error haptic',
+      (tester) async {
+        await pumpVowelDistinction(tester);
 
-      // Option 1 is '/ʌ/', correct is 0 ('/ɒ/')
-      final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
-      await tester.tap(wrongOrb);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Option 1 is '/ʌ/', correct is 0 ('/ɒ/')
+        final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
+        await tester.tap(wrongOrb);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
 
-      // Feedback card is displayed with TRY AGAIN
-      expect(find.text('TRY AGAIN'), findsOneWidget);
-    });
+        // Feedback card is displayed with TRY AGAIN
+        expect(find.text('TRY AGAIN'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping wrong orb locks interaction to prevent duplicate taps', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester);
+    testWidgets(
+      'tapping wrong orb locks interaction to prevent duplicate taps',
+      (tester) async {
+        await pumpVowelDistinction(tester);
 
-      final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
-      await tester.tap(wrongOrb);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
+        await tester.tap(wrongOrb);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      clearInteractions(mockSoundService);
-      clearInteractions(mockHapticService);
+        clearInteractions(mockSoundService);
+        clearInteractions(mockHapticService);
 
-      // Attempt to tap another orb
-      final orb0 = find.byKey(const ValueKey('vowel_orb_0'));
-      await tester.tap(orb0, warnIfMissed: false);
-      await tester.pump();
+        // Attempt to tap another orb
+        final orb0 = find.byKey(const ValueKey('vowel_orb_0'));
+        await tester.tap(orb0, warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockSoundService.playWrong());
-      verifyNever(() => mockSoundService.playCorrect());
-      verifyNever(() => mockHapticService.error());
-    });
+        verifyNever(() => mockSoundService.playWrong());
+        verifyNever(() => mockSoundService.playCorrect());
+        verifyNever(() => mockHapticService.error());
+      },
+    );
 
     testWidgets(
       'tapping correct vowel orb advances to Phase 2 and mounts VowelTrapezoidChart',
@@ -588,33 +593,36 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: any(named: 'isPremium'),
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).called(1);
+      verify(
+        () => mockAdService.showRewardedAd(
+          context: any(named: 'context'),
+          isPremium: any(named: 'isPremium'),
+          onUserEarnedReward: any(named: 'onUserEarnedReward'),
+          onDismissed: any(named: 'onDismissed'),
+        ),
+      ).called(1);
       verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester);
+    testWidgets(
+      'tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpVowelDistinction(tester);
 
-      final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
-      await tester.tap(wrongOrb);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
+        await tester.tap(wrongOrb);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final continueBtn = find.text('TRY AGAIN');
-      expect(continueBtn, findsOneWidget);
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final continueBtn = find.text('TRY AGAIN');
+        expect(continueBtn, findsOneWidget);
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets(
       'tapping TRY AGAIN on feedback card resets state and dismisses feedback card when bloc retries',
@@ -622,8 +630,9 @@ void main() {
         final stateController = StreamController<AccentState>.broadcast();
         addTearDown(stateController.close);
 
-        when(() => mockAccentBloc.stream)
-            .thenAnswer((_) => stateController.stream);
+        when(
+          () => mockAccentBloc.stream,
+        ).thenAnswer((_) => stateController.stream);
 
         await pumpVowelDistinction(tester);
 
@@ -693,9 +702,7 @@ void main() {
       verify(() => mockAccentBloc.add(const AccentHintUsed())).called(1);
     });
 
-    testWidgets('respects low animation mode (reduced motion)', (
-      tester,
-    ) async {
+    testWidgets('respects low animation mode (reduced motion)', (tester) async {
       VowlMotion.lowAnimationModeOverride.value = true;
 
       await pumpVowelDistinction(tester);
@@ -705,41 +712,42 @@ void main() {
     });
   });
 
-  group('VowelDistinctionScreen - Multi-Screen Responsiveness & Zero Overflow', () {
-    testWidgets('renders cleanly on standard phone screen (390x844)', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester, width: 390, height: 844);
+  group(
+    'VowelDistinctionScreen - Multi-Screen Responsiveness & Zero Overflow',
+    () {
+      testWidgets('renders cleanly on standard phone screen (390x844)', (
+        tester,
+      ) async {
+        await pumpVowelDistinction(tester, width: 390, height: 844);
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      });
 
-    testWidgets('renders cleanly on compact screen (320x568) with no overflows', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester, width: 320, height: 568);
+      testWidgets(
+        'renders cleanly on compact screen (320x568) with no overflows',
+        (tester) async {
+          await pumpVowelDistinction(tester, width: 320, height: 568);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
-    });
+          expect(tester.takeException(), isNull);
+          expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
+        },
+      );
 
-    testWidgets('renders cleanly on tablet screen (768x1024)', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester, width: 768, height: 1024);
+      testWidgets('renders cleanly on tablet screen (768x1024)', (
+        tester,
+      ) async {
+        await pumpVowelDistinction(tester, width: 768, height: 1024);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
+      });
 
-    testWidgets('renders properly in dark mode', (
-      tester,
-    ) async {
-      await pumpVowelDistinction(tester, themeMode: ThemeMode.dark);
+      testWidgets('renders properly in dark mode', (tester) async {
+        await pumpVowelDistinction(tester, themeMode: ThemeMode.dark);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
-    });
-  });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(VowelDistinctionSpectralSlider), findsOneWidget);
+      });
+    },
+  );
 }
-

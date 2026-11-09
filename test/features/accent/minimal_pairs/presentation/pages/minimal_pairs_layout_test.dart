@@ -169,8 +169,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -182,12 +183,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -218,7 +221,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_test.m4a');
@@ -314,7 +319,9 @@ void main() {
   }
 
   group('MinimalPairsScreen - Component Layout & Initial State', () {
-    testWidgets('renders all essential elements in initial state', (tester) async {
+    testWidgets('renders all essential elements in initial state', (
+      tester,
+    ) async {
       await pumpMinimalPairs(tester);
 
       expect(find.byType(MinimalPairsInstruction), findsOneWidget);
@@ -334,20 +341,27 @@ void main() {
       expect(find.byType(ShadowPlaybackCompare), findsNothing);
     });
 
-    testWidgets('tapping speaker core triggers TTS audio playback and selection haptics', (tester) async {
-      await pumpMinimalPairs(tester);
+    testWidgets(
+      'tapping speaker core triggers TTS audio playback and selection haptics',
+      (tester) async {
+        await pumpMinimalPairs(tester);
 
-      final speakerBtn = find.byKey(const ValueKey('minimal_pairs_speaker_btn'));
-      expect(speakerBtn, findsOneWidget);
+        final speakerBtn = find.byKey(
+          const ValueKey('minimal_pairs_speaker_btn'),
+        );
+        expect(speakerBtn, findsOneWidget);
 
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts('ship')).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockSoundService.playTts('ship')).called(1);
+      },
+    );
 
-    testWidgets('tapping hint button triggers AccentHintUsed event', (tester) async {
+    testWidgets('tapping hint button triggers AccentHintUsed event', (
+      tester,
+    ) async {
       await pumpMinimalPairs(tester);
 
       final hintBtn = find.byType(QuestHintButton);
@@ -356,14 +370,15 @@ void main() {
       await tester.tap(hintBtn);
       await tester.pump();
 
-      verify(() => mockAccentBloc.add(any(that: isA<AccentHintUsed>()))).called(1);
+      verify(
+        () => mockAccentBloc.add(any(that: isA<AccentHintUsed>())),
+      ).called(1);
     });
 
-    testWidgets('renders shimmer loading when in AccentInitial state', (tester) async {
-      await pumpMinimalPairs(
-        tester,
-        state: const AccentInitial(),
-      );
+    testWidgets('renders shimmer loading when in AccentInitial state', (
+      tester,
+    ) async {
+      await pumpMinimalPairs(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(MinimalPairsSpeakerCore), findsNothing);
@@ -371,80 +386,194 @@ void main() {
   });
 
   group('MinimalPairsScreen - Phase 1 Drone Selection Flow', () {
-    testWidgets('tapping wrong drone triggers error audio/haptics and submits incorrect answer', (tester) async {
-      await pumpMinimalPairs(tester);
+    testWidgets(
+      'tapping wrong drone triggers error audio/haptics and submits incorrect answer',
+      (tester) async {
+        await pumpMinimalPairs(tester);
 
-      final wrongDrone = findWrongDrone(tester);
-      await tester.tap(wrongDrone);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final wrongDrone = findWrongDrone(tester);
+        await tester.tap(wrongDrone);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Phase 2 components should still not be visible
-      expect(find.byType(MinimalPairsMouthDiagram), findsNothing);
-      expect(find.byType(ShadowPlaybackCompare), findsNothing);
-    });
+        // Phase 2 components should still not be visible
+        expect(find.byType(MinimalPairsMouthDiagram), findsNothing);
+        expect(find.byType(ShadowPlaybackCompare), findsNothing);
+      },
+    );
 
-    testWidgets('tapping correct drone advances to stage 2 without submitting answer yet', (tester) async {
-      await pumpMinimalPairs(tester);
+    testWidgets(
+      'tapping correct drone advances to stage 2 without submitting answer yet',
+      (tester) async {
+        await pumpMinimalPairs(tester);
 
-      final correctDrone = findCorrectDrone(tester);
-      await tester.tap(correctDrone);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final correctDrone = findCorrectDrone(tester);
+        await tester.tap(correctDrone);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
 
-      // Instruction changes to stage 2 prompt
-      expect(
-        find.text('GREAT JOB! NOW SAY THE WORD TO PRACTICE.'),
-        findsOneWidget,
-      );
+        // Instruction changes to stage 2 prompt
+        expect(
+          find.text('GREAT JOB! NOW SAY THE WORD TO PRACTICE.'),
+          findsOneWidget,
+        );
 
-      // Mouth diagram appears in phase 2
-      expect(find.byType(MinimalPairsMouthDiagram), findsOneWidget);
-      expect(find.text('MOUTH POSITION'), findsOneWidget);
-      expect(find.text('Relaxed lips, short vowel sound.'), findsOneWidget);
+        // Mouth diagram appears in phase 2
+        expect(find.byType(MinimalPairsMouthDiagram), findsOneWidget);
+        expect(find.text('MOUTH POSITION'), findsOneWidget);
+        expect(find.text('Relaxed lips, short vowel sound.'), findsOneWidget);
 
-      // Scroll down to bring ShadowPlaybackCompare into viewport
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll down to bring ShadowPlaybackCompare into viewport
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
-      expect(find.text('SHADOW & COMPARE'), findsOneWidget);
-    });
+        expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
+        expect(find.text('SHADOW & COMPARE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('interaction lockout prevents further drone taps after answering', (tester) async {
-      await pumpMinimalPairs(tester);
+    testWidgets(
+      'interaction lockout prevents further drone taps after answering',
+      (tester) async {
+        await pumpMinimalPairs(tester);
 
-      // Submit wrong answer
-      final wrongDrone = findWrongDrone(tester);
-      await tester.tap(wrongDrone);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Submit wrong answer
+        final wrongDrone = findWrongDrone(tester);
+        await tester.tap(wrongDrone);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Further taps on correct drone are ignored
-      final correctDrone = findCorrectDrone(tester);
-      await tester.tap(correctDrone, warnIfMissed: false);
-      await tester.pump();
+        // Further taps on correct drone are ignored
+        final correctDrone = findCorrectDrone(tester);
+        await tester.tap(correctDrone, warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
-    });
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+      },
+    );
   });
 
   group('MinimalPairsScreen - Phase 2 Speaking & Self-Evaluation Flow', () {
-    testWidgets('confirming verbal evaluation ("Nailed It") awards bonus coins and dispatches SubmitAnswer(true)', (tester) async {
+    testWidgets(
+      'confirming verbal evaluation ("Nailed It") awards bonus coins and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpMinimalPairs(tester);
+
+        // Advance stage 1
+        await tester.tap(findCorrectDrone(tester));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        // Scroll down to reveal ShadowPlaybackCompare
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
+
+        // Tap mic to start recording
+        final micIcon = find.byIcon(Icons.mic_rounded);
+        expect(micIcon, findsOneWidget);
+        await tester.tap(micIcon);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Stop recording
+        final stopRecordingBtn = find.bySemanticsLabel('Stop recording');
+        expect(stopRecordingBtn, findsOneWidget);
+        await tester.tap(stopRecordingBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        // Scroll down slightly more so comparison controls are centered
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Evaluation buttons shown
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockAccentBloc.add(const AccentSpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+
+        await tester.pump(const Duration(seconds: 2));
+      },
+    );
+
+    testWidgets(
+      'evaluating "Needs Work" triggers error audio/haptics and SubmitAnswer(false)',
+      (tester) async {
+        await pumpMinimalPairs(tester);
+
+        // Advance stage 1
+        await tester.tap(findCorrectDrone(tester));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        // Scroll down to reveal ShadowPlaybackCompare
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Tap mic to record
+        final micIcon = find.byIcon(Icons.mic_rounded);
+        await tester.tap(micIcon);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Stop recording
+        final stopRecordingBtn = find.bySemanticsLabel('Stop recording');
+        await tester.tap(stopRecordingBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+
+        // Scroll down slightly
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+
+        await tester.pump(const Duration(seconds: 2));
+      },
+    );
+
+    testWidgets('tapping continue button when answered dispatches NextQuestion', (
+      tester,
+    ) async {
       await pumpMinimalPairs(tester);
 
       // Advance stage 1
@@ -453,120 +582,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll down to reveal ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
-
-      // Tap mic to start recording
-      final micIcon = find.byIcon(Icons.mic_rounded);
-      expect(micIcon, findsOneWidget);
-      await tester.tap(micIcon);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
-
-      // Stop recording
-      final stopRecordingBtn = find.bySemanticsLabel('Stop recording');
-      expect(stopRecordingBtn, findsOneWidget);
-      await tester.tap(stopRecordingBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      // Scroll down slightly more so comparison controls are centered
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Evaluation buttons shown
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockAccentBloc.add(const AccentSpeakConfirmed(5))).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-
-      await tester.pump(const Duration(seconds: 2));
-    });
-
-    testWidgets('evaluating "Needs Work" triggers error audio/haptics and SubmitAnswer(false)', (tester) async {
-      await pumpMinimalPairs(tester);
-
-      // Advance stage 1
-      await tester.tap(findCorrectDrone(tester));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      // Scroll down to reveal ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Tap mic to record
-      final micIcon = find.byIcon(Icons.mic_rounded);
-      await tester.tap(micIcon);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
-
-      // Stop recording
-      final stopRecordingBtn = find.bySemanticsLabel('Stop recording');
-      await tester.tap(stopRecordingBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      // Scroll down slightly
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-
-      await tester.pump(const Duration(seconds: 2));
-    });
-
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (tester) async {
-      await pumpMinimalPairs(tester);
-
-      // Advance stage 1
-      await tester.tap(findCorrectDrone(tester));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      // Scroll down to reveal ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
@@ -586,10 +602,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll down slightly to reveal eval controls
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -610,7 +623,9 @@ void main() {
   });
 
   group('MinimalPairsScreen - Briefing, Small Screens & Accessibility', () {
-    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (tester) async {
+    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_minimalPairs': false,
       });
@@ -632,34 +647,41 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
-    testWidgets('renders cleanly on small device (320x568) in dark theme without overflow', (tester) async {
-      await pumpMinimalPairs(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
+    testWidgets(
+      'renders cleanly on small device (320x568) in dark theme without overflow',
+      (tester) async {
+        await pumpMinimalPairs(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(MinimalPairsSpeakerCore), findsOneWidget);
-      expect(find.byType(MinimalPairsDroneOption), findsNWidgets(2));
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(MinimalPairsSpeakerCore), findsOneWidget);
+        expect(find.byType(MinimalPairsDroneOption), findsNWidgets(2));
+      },
+    );
 
-    testWidgets('respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
+    testWidgets(
+      'respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
 
-      await pumpMinimalPairs(tester);
+        await pumpMinimalPairs(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(MinimalPairsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(MinimalPairsScreen), findsOneWidget);
 
-      // Tapping speaker core still functions normally
-      final speakerBtn = find.byKey(const ValueKey('minimal_pairs_speaker_btn'));
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        // Tapping speaker core still functions normally
+        final speakerBtn = find.byKey(
+          const ValueKey('minimal_pairs_speaker_btn'),
+        );
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('ship')).called(1);
-    });
+        verify(() => mockSoundService.playTts('ship')).called(1);
+      },
+    );
   });
 }
-

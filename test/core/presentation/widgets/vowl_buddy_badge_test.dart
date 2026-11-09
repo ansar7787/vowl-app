@@ -64,11 +64,7 @@ void main() {
     testWidgets('triggers onTap callback when tapped', (tester) async {
       var tapped = false;
       await tester.pumpWidget(
-        buildSubject(
-          child: VowlBuddyBadge(
-            onTap: () => tapped = true,
-          ),
-        ),
+        buildSubject(child: VowlBuddyBadge(onTap: () => tapped = true)),
       );
       await tester.pumpAndSettle();
 
@@ -89,15 +85,10 @@ void main() {
         vowlMascot: 'crystal_swan',
         vowlEquippedAccessory: 'red_scarf',
       );
-      when(() => mockAuthBloc.state).thenReturn(
-        AuthState.authenticated(user),
-      );
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(user));
 
       await tester.pumpWidget(
-        buildSubject(
-          authBloc: mockAuthBloc,
-          child: const VowlBuddyBadge(),
-        ),
+        buildSubject(authBloc: mockAuthBloc, child: const VowlBuddyBadge()),
       );
       await tester.pumpAndSettle();
 
@@ -111,10 +102,7 @@ void main() {
       await tester.pumpWidget(
         buildSubject(
           brightness: Brightness.light,
-          child: const VowlBuddyBadge(
-            size: 28,
-            mascotSize: 20,
-          ),
+          child: const VowlBuddyBadge(size: 28, mascotSize: 20),
         ),
       );
       await tester.pumpAndSettle();

@@ -9,10 +9,7 @@ class ContextCluesCaseFileBackground extends StatelessWidget {
   final Color? accentColor;
 
   /// Creates a [ContextCluesCaseFileBackground] widget.
-  const ContextCluesCaseFileBackground({
-    super.key,
-    this.accentColor,
-  });
+  const ContextCluesCaseFileBackground({super.key, this.accentColor});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +27,7 @@ class ContextCluesCaseFileBackground extends StatelessWidget {
           color: isDark
               ? (tokens?.borderSubtle ?? Colors.white.withValues(alpha: 0.1))
               : (accentColor?.withValues(alpha: 0.18) ??
-                  Colors.black.withValues(alpha: 0.08)),
+                    Colors.black.withValues(alpha: 0.08)),
           width: 1.5,
         ),
       ),

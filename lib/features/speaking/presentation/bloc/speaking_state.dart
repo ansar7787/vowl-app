@@ -178,6 +178,7 @@ class SpeakingGameComplete extends SpeakingState implements GameCompleteState {
   final int xpEarned;
   @override
   final int coinsEarned;
+
   /// Total count of completed quests.
   final int questCount;
 

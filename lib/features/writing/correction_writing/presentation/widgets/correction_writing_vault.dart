@@ -75,15 +75,15 @@ class CorrectionWritingVault extends StatelessWidget {
                     color: isSelected
                         ? color.withValues(alpha: 0.12)
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.06)
-                            : Colors.white),
+                              ? Colors.white.withValues(alpha: 0.06)
+                              : Colors.white),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: isSelected
                           ? color
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.14)
-                              : Colors.black.withValues(alpha: 0.12)),
+                                ? Colors.white.withValues(alpha: 0.14)
+                                : Colors.black.withValues(alpha: 0.12)),
                       width: isSelected ? 2.0 : 1.2,
                     ),
                     boxShadow: [
@@ -123,4 +123,3 @@ class CorrectionWritingVault extends StatelessWidget {
     );
   }
 }
-

@@ -65,27 +65,30 @@ void main() {
       expect(item.rewardTier.coins, 0);
     });
 
-    test('strictly assigns none tier if referralCount is 0, even for top ranks', () {
-      const rankOneZeroRef = AmbassadorLeaderboardItem(
-        userId: 'u0',
-        displayName: 'Zero Ref Player',
-        referralCount: 0,
-        rank: 1,
-      );
-      expect(rankOneZeroRef.rewardTier, AmbassadorRewardTier.none);
-      expect(rankOneZeroRef.rewardTier.vipDays, 0);
-      expect(rankOneZeroRef.rewardTier.coins, 0);
+    test(
+      'strictly assigns none tier if referralCount is 0, even for top ranks',
+      () {
+        const rankOneZeroRef = AmbassadorLeaderboardItem(
+          userId: 'u0',
+          displayName: 'Zero Ref Player',
+          referralCount: 0,
+          rank: 1,
+        );
+        expect(rankOneZeroRef.rewardTier, AmbassadorRewardTier.none);
+        expect(rankOneZeroRef.rewardTier.vipDays, 0);
+        expect(rankOneZeroRef.rewardTier.coins, 0);
 
-      const rankFiveZeroRef = AmbassadorLeaderboardItem(
-        userId: 'u5',
-        displayName: 'Zero Ref Top 10',
-        referralCount: 0,
-        rank: 5,
-      );
-      expect(rankFiveZeroRef.rewardTier, AmbassadorRewardTier.none);
-      expect(rankFiveZeroRef.rewardTier.vipDays, 0);
-      expect(rankFiveZeroRef.rewardTier.coins, 0);
-    });
+        const rankFiveZeroRef = AmbassadorLeaderboardItem(
+          userId: 'u5',
+          displayName: 'Zero Ref Top 10',
+          referralCount: 0,
+          rank: 5,
+        );
+        expect(rankFiveZeroRef.rewardTier, AmbassadorRewardTier.none);
+        expect(rankFiveZeroRef.rewardTier.vipDays, 0);
+        expect(rankFiveZeroRef.rewardTier.coins, 0);
+      },
+    );
   });
 
   group('ReferralClaimResult', () {
@@ -103,9 +106,7 @@ void main() {
     });
 
     test('pending factory creates valid milestone pending object', () {
-      final res = ReferralClaimResult.pending(
-        referrerName: 'Alice',
-      );
+      final res = ReferralClaimResult.pending(referrerName: 'Alice');
       expect(res.success, true);
       expect(res.isPending, true);
       expect(res.coinsAwarded, 0);
@@ -143,4 +144,3 @@ void main() {
     });
   });
 }
-

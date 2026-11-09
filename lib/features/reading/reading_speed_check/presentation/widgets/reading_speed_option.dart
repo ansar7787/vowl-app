@@ -103,8 +103,8 @@ class ReadingSpeedOption extends StatelessWidget {
                   color: isSelected || isCorrect || isWrong
                       ? baseColor.withValues(alpha: 0.15)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.06)
-                          : Colors.black.withValues(alpha: 0.04)),
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : Colors.black.withValues(alpha: 0.04)),
                 ),
                 child: Center(
                   child: Text(

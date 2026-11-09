@@ -41,10 +41,7 @@ class SynonymWarpGate extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
-          colors: [
-            color.withValues(alpha: 0.18),
-            Colors.transparent,
-          ],
+          colors: [color.withValues(alpha: 0.18), Colors.transparent],
           stops: const [0.35, 1.0],
         ),
       ),
@@ -62,9 +59,7 @@ class SynonymWarpGate extends StatelessWidget {
     }
 
     Widget vortex = RepaintBoundary(
-      child: CustomPaint(
-        painter: VortexPainter(color),
-      ),
+      child: CustomPaint(painter: VortexPainter(color)),
     );
     if (!reduceMotion) {
       vortex = vortex

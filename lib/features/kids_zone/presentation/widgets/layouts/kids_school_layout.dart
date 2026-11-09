@@ -68,11 +68,7 @@ class SchoolOptionData {
   final String title;
   final String? emoji;
 
-  const SchoolOptionData({
-    required this.raw,
-    required this.title,
-    this.emoji,
-  });
+  const SchoolOptionData({required this.raw, required this.title, this.emoji});
 
   factory SchoolOptionData.parse(String text) {
     final trimmed = text.trim();
@@ -240,6 +236,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -275,16 +272,14 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight,
+                      ),
 
                       // Classroom Chalkboard Target Area
                       _buildClassroomChalkboard(
@@ -351,16 +346,17 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
                 color: isHovering
                     ? _SchoolPalette.hoverTargetGlow
                     : (isCorrect
-                        ? _SchoolPalette.successBorder
-                        : _SchoolPalette.woodDark),
+                          ? _SchoolPalette.successBorder
+                          : _SchoolPalette.woodDark),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: (isHovering
-                          ? _SchoolPalette.hoverTargetGlow
-                          : Colors.black)
-                      .withValues(alpha: isHovering ? 0.35 : 0.16),
+                  color:
+                      (isHovering
+                              ? _SchoolPalette.hoverTargetGlow
+                              : Colors.black)
+                          .withValues(alpha: isHovering ? 0.35 : 0.16),
                   blurRadius: isHovering ? 18 : 12,
                   offset: const Offset(0, 6),
                 ),
@@ -428,11 +424,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
                 width: 1,
               ),
             ),
-            child: Icon(
-              Icons.school_rounded,
-              color: Colors.white,
-              size: 16.r,
-            ),
+            child: Icon(Icons.school_rounded, color: Colors.white, size: 16.r),
           ),
           SizedBox(width: 8.w),
           Expanded(
@@ -488,10 +480,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
   }
 
   /// Solved State inside Blackboard: Celebratory Badge, Emoji & Answer Name
-  Widget _buildSolvedStateDisplay(
-    KidsQuest quest, {
-    required bool isNarrow,
-  }) {
+  Widget _buildSolvedStateDisplay(KidsQuest quest, {required bool isNarrow}) {
     final parsed = SchoolOptionData.parse(quest.correctAnswer ?? '');
     final displayEmoji = quest.emoji ?? parsed.emoji ?? '🎓';
 
@@ -500,10 +489,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
       decoration: BoxDecoration(
         color: _SchoolPalette.chalkboardSurface,
         borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(
-          color: _SchoolPalette.chalkGold,
-          width: 2.w,
-        ),
+        border: Border.all(color: _SchoolPalette.chalkGold, width: 2.w),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -542,14 +528,12 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
           Text(
             displayEmoji,
             style: TextStyle(fontSize: isNarrow ? 54.sp : 64.sp),
-          )
-              .animate()
-              .scale(
-                duration: 400.ms,
-                curve: Curves.elasticOut,
-                begin: const Offset(0.7, 0.7),
-                end: const Offset(1.0, 1.0),
-              ),
+          ).animate().scale(
+            duration: 400.ms,
+            curve: Curves.elasticOut,
+            begin: const Offset(0.7, 0.7),
+            end: const Offset(1.0, 1.0),
+          ),
           SizedBox(height: 8.h),
           KidsFittedText(
             parsed.title,
@@ -651,21 +635,25 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                isHovering ? Icons.check_circle_rounded : Icons.backpack_rounded,
-                color: isHovering ? _SchoolPalette.chalkGold : _SchoolPalette.chalkCyan,
+                isHovering
+                    ? Icons.check_circle_rounded
+                    : Icons.backpack_rounded,
+                color: isHovering
+                    ? _SchoolPalette.chalkGold
+                    : _SchoolPalette.chalkCyan,
                 size: 22.r,
               ),
               SizedBox(width: 8.w),
               Flexible(
                 child: Text(
-                  isHovering
-                      ? 'Place on the desk'
-                      : 'Drag here or tap below',
+                  isHovering ? 'Place on the desk' : 'Drag here or tap below',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
-                    color: isHovering ? _SchoolPalette.chalkYellow : Colors.white,
+                    color: isHovering
+                        ? _SchoolPalette.chalkYellow
+                        : Colors.white,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -685,10 +673,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
       decoration: const BoxDecoration(
         color: _SchoolPalette.trayWood,
         border: Border(
-          top: BorderSide(
-            color: _SchoolPalette.woodDark,
-            width: 1.5,
-          ),
+          top: BorderSide(color: _SchoolPalette.woodDark, width: 1.5),
         ),
       ),
       child: FittedBox(
@@ -924,9 +909,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
     }
 
     final cardContent = Container(
-      constraints: BoxConstraints(
-        minHeight: isNarrow ? 102.h : 112.h,
-      ),
+      constraints: BoxConstraints(minHeight: isNarrow ? 102.h : 112.h),
       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: cardBg,
@@ -1005,10 +988,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
     );
 
     if (isAnswered) {
-      return Opacity(
-        opacity: isDimmed ? 0.35 : 1.0,
-        child: cardContent,
-      );
+      return Opacity(opacity: isDimmed ? 0.35 : 1.0, child: cardContent);
     }
 
     return Opacity(
@@ -1021,16 +1001,10 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
             color: Colors.transparent,
             child: SizedBox(
               width: 100.w,
-              child: Transform.scale(
-                scale: 1.05,
-                child: cardContent,
-              ),
+              child: Transform.scale(scale: 1.05, child: cardContent),
             ),
           ),
-          childWhenDragging: Opacity(
-            opacity: 0.3,
-            child: cardContent,
-          ),
+          childWhenDragging: Opacity(opacity: 0.3, child: cardContent),
           child: GestureDetector(
             onTap: () => _handleOptionSubmit(context, state, option),
             behavior: HitTestBehavior.translucent,
@@ -1096,10 +1070,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
       child: Row(
         children: [
           if (parsed.emoji != null && parsed.emoji!.isNotEmpty) ...[
-            Text(
-              parsed.emoji!,
-              style: TextStyle(fontSize: 22.sp),
-            ),
+            Text(parsed.emoji!, style: TextStyle(fontSize: 22.sp)),
             SizedBox(width: 8.w),
           ],
           Expanded(
@@ -1145,10 +1116,7 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
     );
 
     if (isAnswered) {
-      return Opacity(
-        opacity: isDimmed ? 0.35 : 1.0,
-        child: cardContent,
-      );
+      return Opacity(opacity: isDimmed ? 0.35 : 1.0, child: cardContent);
     }
 
     return Opacity(
@@ -1161,16 +1129,10 @@ class _KidsSchoolLayoutState extends State<KidsSchoolLayout> {
             color: Colors.transparent,
             child: SizedBox(
               width: 280.w,
-              child: Transform.scale(
-                scale: 1.03,
-                child: cardContent,
-              ),
+              child: Transform.scale(scale: 1.03, child: cardContent),
             ),
           ),
-          childWhenDragging: Opacity(
-            opacity: 0.3,
-            child: cardContent,
-          ),
+          childWhenDragging: Opacity(opacity: 0.3, child: cardContent),
           child: GestureDetector(
             onTap: () => _handleOptionSubmit(context, state, option),
             behavior: HitTestBehavior.translucent,

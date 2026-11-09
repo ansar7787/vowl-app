@@ -34,10 +34,7 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
             ? color.withValues(alpha: 0.05)
             : color.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.18),
-          width: 1,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.18), width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,11 +45,7 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.speed_rounded,
-                    size: 16.r,
-                    color: color,
-                  ),
+                  Icon(Icons.speed_rounded, size: 16.r, color: color),
                   SizedBox(width: 6.w),
                   Text(
                     "Playback Speed",

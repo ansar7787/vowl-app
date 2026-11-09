@@ -89,15 +89,17 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
       decoration: BoxDecoration(
         color: isDark
             ? (context.isMidnight
-                ? AppColors.midnightSurface
-                : const Color(0xFF0F172A))
+                  ? AppColors.midnightSurface
+                  : AppColors.midnightNavy)
             : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
+              ? (context.isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : Colors.white.withValues(alpha: 0.08))
               : AppColors.slate200,
-          width: 1,
+          width: 1.0,
         ),
       ),
       child: SafeArea(
@@ -280,10 +282,7 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
                   decoration: BoxDecoration(
                     gradient: isValid
                         ? const LinearGradient(
-                            colors: [
-                              AppColors.indigo500,
-                              AppColors.violet500,
-                            ],
+                            colors: [AppColors.indigo500, AppColors.violet500],
                           )
                         : null,
                     color: isValid
@@ -293,7 +292,9 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
                     boxShadow: isValid
                         ? [
                             BoxShadow(
-                              color: AppColors.indigo500.withValues(alpha: 0.35),
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.35,
+                              ),
                               blurRadius: 16,
                               offset: const Offset(0, 4),
                             ),
@@ -343,4 +344,3 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
     );
   }
 }
-

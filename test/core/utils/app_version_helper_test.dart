@@ -23,21 +23,30 @@ void main() {
       expect(AppVersionHelper.compare('1.9.9', '2.0.0'), lessThan(0));
     });
 
-    test('isUpdateAvailable returns true only when remote is strictly newer', () {
-      expect(AppVersionHelper.isUpdateAvailable('1.0.0', '1.0.1'), isTrue);
-      expect(AppVersionHelper.isUpdateAvailable('1.0.0+3', '1.0.1+1'), isTrue);
-      expect(AppVersionHelper.isUpdateAvailable('1.0.0', '1.0.0'), isFalse);
-      expect(AppVersionHelper.isUpdateAvailable('1.1.0', '1.0.5'), isFalse);
-      expect(AppVersionHelper.isUpdateAvailable('1.0.0', ''), isFalse);
-    });
+    test(
+      'isUpdateAvailable returns true only when remote is strictly newer',
+      () {
+        expect(AppVersionHelper.isUpdateAvailable('1.0.0', '1.0.1'), isTrue);
+        expect(
+          AppVersionHelper.isUpdateAvailable('1.0.0+3', '1.0.1+1'),
+          isTrue,
+        );
+        expect(AppVersionHelper.isUpdateAvailable('1.0.0', '1.0.0'), isFalse);
+        expect(AppVersionHelper.isUpdateAvailable('1.1.0', '1.0.5'), isFalse);
+        expect(AppVersionHelper.isUpdateAvailable('1.0.0', ''), isFalse);
+      },
+    );
 
-    test('isBelowMinVersion returns true only when current is strictly lower than min', () {
-      expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.1.0'), isTrue);
-      expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.0.1'), isTrue);
-      expect(AppVersionHelper.isBelowMinVersion('1.0.1', '1.0.0'), isFalse);
-      expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.0.0'), isFalse);
-      expect(AppVersionHelper.isBelowMinVersion('1.0.0', ''), isFalse);
-    });
+    test(
+      'isBelowMinVersion returns true only when current is strictly lower than min',
+      () {
+        expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.1.0'), isTrue);
+        expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.0.1'), isTrue);
+        expect(AppVersionHelper.isBelowMinVersion('1.0.1', '1.0.0'), isFalse);
+        expect(AppVersionHelper.isBelowMinVersion('1.0.0', '1.0.0'), isFalse);
+        expect(AppVersionHelper.isBelowMinVersion('1.0.0', ''), isFalse);
+      },
+    );
 
     test('cleanDisplayVersion strips metadata and leading v', () {
       expect(AppVersionHelper.cleanDisplayVersion('v1.2.3'), '1.2.3');
@@ -47,4 +56,3 @@ void main() {
     });
   });
 }
-

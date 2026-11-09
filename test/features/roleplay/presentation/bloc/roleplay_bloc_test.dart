@@ -93,8 +93,9 @@ void main() {
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
 
-    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
@@ -218,12 +219,15 @@ void main() {
     blocTest<RoleplayBloc, RoleplayState>(
       'should award strictly 5 XP + 10 Coins on level complete',
       build: () {
-        when(() => mockUpdateUserRewards(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockAwardBadge(any()))
-            .thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       seed: () => tLoadedState.copyWith(
@@ -234,7 +238,11 @@ void main() {
       expect: () => [
         isA<RoleplayGameComplete>()
             .having((s) => s.xpEarned, 'xpEarned', kRoleplayLevelCompleteXp)
-            .having((s) => s.coinsEarned, 'coinsEarned', kRoleplayLevelCompleteCoins),
+            .having(
+              (s) => s.coinsEarned,
+              'coinsEarned',
+              kRoleplayLevelCompleteCoins,
+            ),
       ],
       verify: (_) {
         verify(
@@ -291,12 +299,15 @@ void main() {
       build: () {
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
-        when(() => mockUpdateUserRewards(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any()))
-            .thenAnswer((_) async => const Right(null));
-        when(() => mockAwardBadge(any()))
-            .thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       seed: () => RoleplayGameOver(
@@ -328,7 +339,11 @@ void main() {
         // 3. Level complete immediately!
         isA<RoleplayGameComplete>()
             .having((s) => s.xpEarned, 'xpEarned', kRoleplayLevelCompleteXp)
-            .having((s) => s.coinsEarned, 'coinsEarned', kRoleplayLevelCompleteCoins),
+            .having(
+              (s) => s.coinsEarned,
+              'coinsEarned',
+              kRoleplayLevelCompleteCoins,
+            ),
       ],
     );
   });

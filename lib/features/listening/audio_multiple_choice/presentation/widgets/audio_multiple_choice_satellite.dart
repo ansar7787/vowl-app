@@ -120,9 +120,7 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
             fit: BoxFit.scaleDown,
             alignment: Alignment.center,
             child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: cardWidth - 18.w,
-              ),
+              constraints: BoxConstraints(maxWidth: cardWidth - 18.w),
               child: Text(
                 text,
                 textAlign: TextAlign.center,

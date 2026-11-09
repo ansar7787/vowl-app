@@ -235,7 +235,11 @@ class VerifyEmailStatusText extends StatelessWidget {
         bg = Colors.green.withValues(alpha: 0.08);
         border = Colors.green.withValues(alpha: 0.25);
         textColor = isDark ? Colors.greenAccent : Colors.green.shade700;
-        leading = Icon(Icons.check_circle_rounded, size: 16.r, color: textColor);
+        leading = Icon(
+          Icons.check_circle_rounded,
+          size: 16.r,
+          color: textColor,
+        );
         text = context.tr(
           'auth.verification_link_sent_badge',
           fallback: 'Verification link sent to your inbox!',
@@ -245,7 +249,11 @@ class VerifyEmailStatusText extends StatelessWidget {
         bg = Colors.amber.withValues(alpha: 0.1);
         border = Colors.amber.withValues(alpha: 0.3);
         textColor = isDark ? Colors.amberAccent : Colors.amber.shade900;
-        leading = Icon(Icons.error_outline_rounded, size: 16.r, color: textColor);
+        leading = Icon(
+          Icons.error_outline_rounded,
+          size: 16.r,
+          color: textColor,
+        );
         text = context.tr(
           'auth.verification_send_failed_badge',
           fallback: "Couldn't send automatically. Tap Resend below.",

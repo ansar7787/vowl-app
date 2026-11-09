@@ -246,8 +246,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                                     theme.primaryColor,
                                                 instruction:
                                                     quest.instruction.isNotEmpty
-                                                        ? quest.instruction
-                                                        : "Find what the pronoun refers to",
+                                                    ? quest.instruction
+                                                    : "Find what the pronoun refers to",
                                               ),
                                             ),
                                             SizedBox(height: gapMiddle),

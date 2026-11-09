@@ -134,19 +134,15 @@ void main() {
   final sampleQuest2 = createQuest(
     id: 'quest_idiom_2',
     correctAnswer: 'Break a leg',
-    options: [
-      'Break a leg',
-      'Under the weather',
-      'Cold feet',
-      'Call it a day',
-    ],
+    options: ['Break a leg', 'Under the weather', 'Cold feet', 'Call it a day'],
     topicEmoji: '🎭 🦵',
     hint: 'Good luck before a theatrical performance.',
     origin:
         'In ancient theatre, bowing deeply might break the visual line of the leg.',
     literalVsFigurative:
         'Literal: Fracturing a bone. Figurative: Wishing someone good performance luck.',
-    contextSentence: 'The director told the actors to break a leg before opening night.',
+    contextSentence:
+        'The director told the actors to break a leg before opening night.',
   );
 
   final sampleMinimalQuest = createQuest(
@@ -277,9 +273,15 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecordingService.isRecording).thenReturn(false);
-    when(() => mockAudioRecordingService.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecordingService.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecordingService.stopRecording()).thenAnswer((_) async => 'fake_recording.m4a');
+    when(
+      () => mockAudioRecordingService.hasPermission(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecordingService.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecordingService.stopRecording(),
+    ).thenAnswer((_) async => 'fake_recording.m4a');
     when(() => mockAudioRecordingService.dispose()).thenAnswer((_) async {});
 
     when(() => mockSpeechService.isListening).thenReturn(false);
@@ -288,7 +290,9 @@ void main() {
     when(() => mockSpeechService.cancel()).thenAnswer((_) async {});
     when(() => mockSpeechService.initializeStt()).thenAnswer((_) async => true);
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
 
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
 
@@ -419,10 +423,7 @@ void main() {
                 disableAnimations: disableAnimations,
               ),
               child: Scaffold(
-                body: IdiomsScreen(
-                  level: level,
-                  gameType: GameSubtype.idioms,
-                ),
+                body: IdiomsScreen(level: level, gameType: GameSubtype.idioms),
               ),
             ),
           ),
@@ -445,17 +446,12 @@ void main() {
 
       verify(
         () => mockVocabularyBloc.add(
-          const FetchVocabularyQuests(
-            gameType: GameSubtype.idioms,
-            level: 2,
-          ),
+          const FetchVocabularyQuests(gameType: GameSubtype.idioms, level: 2),
         ),
       ).called(1);
     });
 
-    testWidgets('displays instruction text and sender avatar', (
-      tester,
-    ) async {
+    testWidgets('displays instruction text and sender avatar', (tester) async {
       await pumpScreen(tester);
 
       expect(
@@ -487,9 +483,7 @@ void main() {
       );
     });
 
-    testWidgets('renders all option chips with uppercase text', (
-      tester,
-    ) async {
+    testWidgets('renders all option chips with uppercase text', (tester) async {
       await pumpScreen(tester);
 
       expect(find.byType(IdiomsOptionChip), findsNWidgets(4));
@@ -528,63 +522,60 @@ void main() {
 
       verify(() => mockSoundService.playWrong()).called(1);
       verify(() => mockHapticService.error()).called(1);
-      verify(
-        () => mockVocabularyBloc.add(const SubmitAnswer(false)),
-      ).called(1);
+      verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
 
       // Shows failure transmission
-      expect(
-        find.text('Not quite right. Try again!'),
-        findsOneWidget,
-      );
+      expect(find.text('Not quite right. Try again!'), findsOneWidget);
       // Phase 2 remains hidden
       expect(find.byType(IdiomsOriginCard), findsNothing);
     });
 
-    testWidgets('selecting correct option advances to Phase 2 with success haptics', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'selecting correct option advances to Phase 2 with success haptics',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Tap correct option
-      await tester.tap(find.text('BITE THE BULLET'));
-      await tester.pump();
+        // Tap correct option
+        await tester.tap(find.text('BITE THE BULLET'));
+        await tester.pump();
 
-      // Elapse 650ms timer
-      await tester.pump(const Duration(milliseconds: 650));
+        // Elapse 650ms timer
+        await tester.pump(const Duration(milliseconds: 650));
 
-      verify(() => mockHapticService.success()).called(1);
+        verify(() => mockHapticService.success()).called(1);
 
-      // Elapse scroll animation timer
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 600));
+        // Elapse scroll animation timer
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Phase 2 components now mounted
-      expect(find.byType(IdiomsOriginCard), findsOneWidget);
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-    });
+        // Phase 2 components now mounted
+        expect(find.byType(IdiomsOriginCard), findsOneWidget);
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping options is ignored when answer is already being processed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping options is ignored when answer is already being processed',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Tap first option
-      await tester.tap(find.text('BITE THE BULLET'));
-      await tester.pump();
+        // Tap first option
+        await tester.tap(find.text('BITE THE BULLET'));
+        await tester.pump();
 
-      // Tap another option immediately before timer finishes
-      await tester.tap(find.text('PIECE OF CAKE'), warnIfMissed: false);
-      await tester.pump();
+        // Tap another option immediately before timer finishes
+        await tester.tap(find.text('PIECE OF CAKE'), warnIfMissed: false);
+        await tester.pump();
 
-      // Elapse submit timer and scroll animation timers
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 600));
+        // Elapse submit timer and scroll animation timers
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Only first selection was processed
-      expect(find.text('BITE THE BULLET'), findsWidgets);
-    });
+        // Only first selection was processed
+        expect(find.text('BITE THE BULLET'), findsWidgets);
+      },
+    );
   });
 
   group('Group 3: Phase 2 Origin Card & Speak-To-Confirm Overlay', () {
@@ -642,31 +633,34 @@ void main() {
       verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('skipping verbal confirmation in Phase 2 submits wrong answer', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'skipping verbal confirmation in Phase 2 submits wrong answer',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Pass phase 1
-      await tester.tap(find.text('BITE THE BULLET'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 600));
+        // Pass phase 1
+        await tester.tap(find.text('BITE THE BULLET'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+      },
+    );
   });
 
   group('Group 4: Hint System & Audio Lifecycle', () {
@@ -681,7 +675,9 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(1);
+      verify(
+        () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+      ).called(1);
       expect(find.byType(IdiomsStrangerTextMessage), findsOneWidget);
     });
   });
@@ -696,42 +692,43 @@ void main() {
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('renders GameFeedbackCard on correct answer and CONTINUE dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders GameFeedbackCard on correct answer and CONTINUE dispatches NextQuestion',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Pass phase 1
-      await tester.tap(find.text('BITE THE BULLET'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 650));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 600));
+        // Pass phase 1
+        await tester.tap(find.text('BITE THE BULLET'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 650));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Emit answered state
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      vocabularyStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Emit answered state
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        vocabularyStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(continueBtn);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets('renders GameFeedbackCard on wrong answer with TRY AGAIN', (
       tester,
@@ -775,24 +772,25 @@ void main() {
       expect(find.byType(IdiomsOriginCard), findsNothing);
     });
 
-    testWidgets('VocabularyGameComplete state displays LEVEL COMPLETE dialog and disposes cleanly', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'VocabularyGameComplete state displays LEVEL COMPLETE dialog and disposes cleanly',
+      (tester) async {
+        await pumpScreen(tester);
 
-      const completeState = VocabularyGameComplete(
-        xpEarned: 100,
-        coinsEarned: 50,
-        questCount: 2,
-      );
-      vocabularyStreamController.add(completeState);
-      await tester.pump(const Duration(milliseconds: 100));
+        const completeState = VocabularyGameComplete(
+          xpEarned: 100,
+          coinsEarned: 50,
+          questCount: 2,
+        );
+        vocabularyStreamController.add(completeState);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
   });
 
   group('Group 6: Viewport Responsiveness, Theming & Accessibility', () {
@@ -825,9 +823,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('adapts to high text scale (1.5x) gracefully', (
-      tester,
-    ) async {
+    testWidgets('adapts to high text scale (1.5x) gracefully', (tester) async {
       await pumpScreen(tester, textScale: 1.5);
 
       expect(find.byType(IdiomsScreen), findsOneWidget);
@@ -861,4 +857,3 @@ void main() {
     });
   });
 }
-

@@ -66,18 +66,20 @@ class WritingEmailHexSlot extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isDark
                     ? (context.isMidnight
-                        ? (hasData ? AppColors.midnightSurface : Colors.black)
-                        : (hasData
-                            ? const Color(0xFF1E2230)
-                            : const Color(0xFF161922)))
+                          ? (hasData ? AppColors.midnightSurface : Colors.black)
+                          : (hasData
+                                ? const Color(0xFF1E2230)
+                                : const Color(0xFF161922)))
                     : (hasData ? Colors.white : const Color(0xFFF8FAFC)),
                 borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(
                   color: highlight
                       ? successColor
                       : (hasData
-                          ? color.withValues(alpha: isDark ? 0.6 : 0.45)
-                          : (isDark ? Colors.white12 : const Color(0xFFE2E8F0))),
+                            ? color.withValues(alpha: isDark ? 0.6 : 0.45)
+                            : (isDark
+                                  ? Colors.white12
+                                  : const Color(0xFFE2E8F0))),
                   width: highlight ? 2 : 1.2,
                 ),
                 boxShadow: hasData
@@ -102,13 +104,15 @@ class WritingEmailHexSlot extends StatelessWidget {
                       color: hasData
                           ? color.withValues(alpha: 0.12)
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.06)
-                              : const Color(0xFFF1F5F9)),
+                                ? Colors.white.withValues(alpha: 0.06)
+                                : const Color(0xFFF1F5F9)),
                       borderRadius: BorderRadius.circular(6.r),
                       border: Border.all(
                         color: hasData
                             ? color.withValues(alpha: 0.25)
-                            : (isDark ? Colors.white12 : const Color(0xFFE2E8F0)),
+                            : (isDark
+                                  ? Colors.white12
+                                  : const Color(0xFFE2E8F0)),
                         width: 1,
                       ),
                     ),
@@ -118,7 +122,9 @@ class WritingEmailHexSlot extends StatelessWidget {
                         fontFamily: 'Outfit',
                         color: hasData
                             ? color
-                            : (isDark ? Colors.white54 : const Color(0xFF64748B)),
+                            : (isDark
+                                  ? Colors.white54
+                                  : const Color(0xFF64748B)),
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w600,
                         letterSpacing: 0.5,
@@ -136,13 +142,15 @@ class WritingEmailHexSlot extends StatelessWidget {
                           fontFamily: 'Outfit',
                           color: hasData
                               ? (isDark
-                                  ? Colors.white.withValues(alpha: 0.95)
-                                  : const Color(0xFF1E293B))
+                                    ? Colors.white.withValues(alpha: 0.95)
+                                    : const Color(0xFF1E293B))
                               : (isDark
-                                  ? Colors.white38
-                                  : const Color(0xFF94A3B8)),
+                                    ? Colors.white38
+                                    : const Color(0xFF94A3B8)),
                           fontSize: 14.sp,
-                          fontWeight: hasData ? FontWeight.w500 : FontWeight.w400,
+                          fontWeight: hasData
+                              ? FontWeight.w500
+                              : FontWeight.w400,
                           height: 1.4,
                         ),
                       ),
@@ -152,7 +160,8 @@ class WritingEmailHexSlot extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Padding(
                       padding: EdgeInsets.only(top: 2.h),
-                      child: (VowlMotion.shouldReduceMotion(context) ||
+                      child:
+                          (VowlMotion.shouldReduceMotion(context) ||
                               VowlMotion.lowAnimationModeOverride.value)
                           ? Icon(
                               Icons.check_circle_rounded,

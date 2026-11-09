@@ -54,7 +54,11 @@ void main() {
     isPremium: false,
   );
 
-  void setViewport(WidgetTester tester, [Size size = const Size(390, 844), double ratio = 2.0]) {
+  void setViewport(
+    WidgetTester tester, [
+    Size size = const Size(390, 844),
+    double ratio = 2.0,
+  ]) {
     tester.view.physicalSize = Size(size.width * ratio, size.height * ratio);
     tester.view.devicePixelRatio = ratio;
     addTearDown(() => tester.view.resetPhysicalSize());
@@ -71,21 +75,25 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockAdService.recordLevelCompletion()).thenReturn(false);
-    when(() => mockAdService.showInterstitialAd(
-      onDismissed: any(named: 'onDismissed'),
-      isPremium: any(named: 'isPremium'),
-      force: any(named: 'force'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockAdService.showInterstitialAd(
+        onDismissed: any(named: 'onDismissed'),
+        isPremium: any(named: 'isPremium'),
+        force: any(named: 'force'),
+      ),
+    ).thenAnswer((invocation) {
       final callback = invocation.namedArguments[#onDismissed] as VoidCallback;
       callback();
     });
 
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
-    when(() => mockLocale.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocale.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final fallback = invocation.namedArguments[#fallback] as String?;
       final args = invocation.namedArguments[#args] as List<dynamic>?;
@@ -98,14 +106,12 @@ void main() {
       return fallback ?? key;
     });
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
 
-    when(() => mockEconomyBloc.state).thenReturn(
-      const EconomyState(),
-    );
+    when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
 
     when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
@@ -170,10 +176,8 @@ void main() {
         ),
         GoRoute(
           path: '/sequence',
-          builder: (context, state) => QuestSequencePage(
-            sequenceId: sequenceId,
-            quests: quests,
-          ),
+          builder: (context, state) =>
+              QuestSequencePage(sequenceId: sequenceId, quests: quests),
         ),
         GoRoute(
           path: '/game',
@@ -242,30 +246,37 @@ void main() {
   // GROUP 1: Initial Rendering, Sequence Titles & Themed Metadata
   // =========================================================================
   group('Group 1: Initial Rendering, Sequence Titles & Themed Metadata', () {
-    testWidgets('renders daily_duo sequence title, part indicator and initial progress', (tester) async {
-      setViewport(tester);
+    testWidgets(
+      'renders daily_duo sequence title, part indicator and initial progress',
+      (tester) async {
+        setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'daily_duo',
+            quests: sampleQuests,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('DAILY WORKOUT'), findsOneWidget);
-      expect(find.text('Part 1 of 2'), findsOneWidget);
-      expect(find.text('quest_sequences.repeat_sentence'), findsOneWidget);
-      expect(find.text('Start Part 1'), findsOneWidget);
-      expect(find.byType(LinearProgressIndicator), findsOneWidget);
-    });
+        expect(find.text('DAILY WORKOUT'), findsOneWidget);
+        expect(find.text('Part 1 of 2'), findsOneWidget);
+        expect(find.text('quest_sequences.repeat_sentence'), findsOneWidget);
+        expect(find.text('Start Part 1'), findsOneWidget);
+        expect(find.byType(LinearProgressIndicator), findsOneWidget);
+      },
+    );
 
     testWidgets('renders speed_blitz title correctly', (tester) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'speed_blitz',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'speed_blitz',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -275,36 +286,43 @@ void main() {
     testWidgets('renders grammar_pro title correctly', (tester) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'grammar_pro',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'grammar_pro',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
-    testWidgets('renders default fallback title for unknown sequenceId', (tester) async {
+    testWidgets('renders default fallback title for unknown sequenceId', (
+      tester,
+    ) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'custom_adventure_quest',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'custom_adventure_quest',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('THEMED QUEST'), findsOneWidget);
     });
 
-    testWidgets('handles empty quests list gracefully with progress 1.0', (tester) async {
+    testWidgets('handles empty quests list gracefully with progress 1.0', (
+      tester,
+    ) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: const [],
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(sequenceId: 'daily_duo', quests: const []),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -320,19 +338,75 @@ void main() {
   // GROUP 2: Game Category Icons Extension Mapping
   // =========================================================================
   group('Group 2: Game Category Icons Extension Mapping', () {
-    testWidgets('resolves correct icons for all QuestType categories', (tester) async {
+    testWidgets('resolves correct icons for all QuestType categories', (
+      tester,
+    ) async {
       setViewport(tester);
 
       final iconQuests = [
-        const GameQuest(id: 'q_speak', type: QuestType.speaking, subtype: GameSubtype.repeatSentence, instruction: 'Speak', difficulty: 1),
-        const GameQuest(id: 'q_listen', type: QuestType.listening, subtype: GameSubtype.audioMultipleChoice, instruction: 'Listen', difficulty: 1),
-        const GameQuest(id: 'q_read', type: QuestType.reading, subtype: GameSubtype.readAndAnswer, instruction: 'Read', difficulty: 1),
-        const GameQuest(id: 'q_write', type: QuestType.writing, subtype: GameSubtype.sentenceBuilder, instruction: 'Write', difficulty: 1),
-        const GameQuest(id: 'q_gram', type: QuestType.grammar, subtype: GameSubtype.tenseMastery, instruction: 'Grammar', difficulty: 1),
-        const GameQuest(id: 'q_voc', type: QuestType.vocabulary, subtype: GameSubtype.flashcards, instruction: 'Vocab', difficulty: 1),
-        const GameQuest(id: 'q_acc', type: QuestType.accent, subtype: GameSubtype.minimalPairs, instruction: 'Accent', difficulty: 1),
-        const GameQuest(id: 'q_role', type: QuestType.roleplay, subtype: GameSubtype.jobInterview, instruction: 'Roleplay', difficulty: 1),
-        const GameQuest(id: 'q_elite', type: QuestType.eliteMastery, subtype: GameSubtype.storyBuilder, instruction: 'Elite', difficulty: 1),
+        const GameQuest(
+          id: 'q_speak',
+          type: QuestType.speaking,
+          subtype: GameSubtype.repeatSentence,
+          instruction: 'Speak',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_listen',
+          type: QuestType.listening,
+          subtype: GameSubtype.audioMultipleChoice,
+          instruction: 'Listen',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_read',
+          type: QuestType.reading,
+          subtype: GameSubtype.readAndAnswer,
+          instruction: 'Read',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_write',
+          type: QuestType.writing,
+          subtype: GameSubtype.sentenceBuilder,
+          instruction: 'Write',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_gram',
+          type: QuestType.grammar,
+          subtype: GameSubtype.tenseMastery,
+          instruction: 'Grammar',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_voc',
+          type: QuestType.vocabulary,
+          subtype: GameSubtype.flashcards,
+          instruction: 'Vocab',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_acc',
+          type: QuestType.accent,
+          subtype: GameSubtype.minimalPairs,
+          instruction: 'Accent',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_role',
+          type: QuestType.roleplay,
+          subtype: GameSubtype.jobInterview,
+          instruction: 'Roleplay',
+          difficulty: 1,
+        ),
+        const GameQuest(
+          id: 'q_elite',
+          type: QuestType.eliteMastery,
+          subtype: GameSubtype.storyBuilder,
+          instruction: 'Elite',
+          difficulty: 1,
+        ),
       ];
 
       final expectedIcons = [
@@ -350,10 +424,12 @@ void main() {
       for (var i = 0; i < iconQuests.length; i++) {
         SharedPreferences.setMockInitialValues({});
         DiscoveryHelper.clearTrackCache();
-        await tester.pumpWidget(buildQuestSequenceHarness(
-          sequenceId: 'icon_seq_$i',
-          quests: [iconQuests[i]],
-        ));
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'icon_seq_$i',
+            quests: [iconQuests[i]],
+          ),
+        );
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 100));
 
@@ -361,61 +437,79 @@ void main() {
       }
     });
 
-    testWidgets('resolves fallback auto_awesome_rounded icon when subtype is null', (tester) async {
-      setViewport(tester);
+    testWidgets(
+      'resolves fallback auto_awesome_rounded icon when subtype is null',
+      (tester) async {
+        setViewport(tester);
 
-      const noSubtypeQuest = GameQuest(
-        id: 'q_null_subtype',
-        instruction: 'Special Task',
-        difficulty: 1,
-      );
+        const noSubtypeQuest = GameQuest(
+          id: 'q_null_subtype',
+          instruction: 'Special Task',
+          difficulty: 1,
+        );
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: const [noSubtypeQuest],
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'daily_duo',
+            quests: const [noSubtypeQuest],
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.byIcon(Icons.auto_awesome_rounded), findsOneWidget);
-    });
+        expect(find.byIcon(Icons.auto_awesome_rounded), findsOneWidget);
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 3: Game Launching, Navigation & Step Transitions
   // =========================================================================
   group('Group 3: Game Launching, Navigation & Step Transitions', () {
-    testWidgets('tapping Start Part pushes /game route with matching query params', (tester) async {
+    testWidgets(
+      'tapping Start Part pushes /game route with matching query params',
+      (tester) async {
+        setViewport(tester);
+        String? pushedRoute;
+
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'daily_duo',
+            quests: sampleQuests,
+            onGamePushed: (route) => pushedRoute = route,
+            gamePushResultBuilder: (_) =>
+                false, // return false so it does not auto advance
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final startBtn = find.text('Start Part 1');
+        expect(startBtn, findsOneWidget);
+
+        await tester.tap(startBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+
+        expect(
+          pushedRoute,
+          contains('/game?category=speaking&subtype=repeatSentence&level=1'),
+        );
+      },
+    );
+
+    testWidgets('cancelled game shows snackbar and stays on current part', (
+      tester,
+    ) async {
       setViewport(tester);
-      String? pushedRoute;
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        onGamePushed: (route) => pushedRoute = route,
-        gamePushResultBuilder: (_) => false, // return false so it does not auto advance
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final startBtn = find.text('Start Part 1');
-      expect(startBtn, findsOneWidget);
-
-      await tester.tap(startBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-
-      expect(pushedRoute, contains('/game?category=speaking&subtype=repeatSentence&level=1'));
-    });
-
-    testWidgets('cancelled game shows snackbar and stays on current part', (tester) async {
-      setViewport(tester);
-
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        gamePushResultBuilder: (_) => false, // cancel
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+          gamePushResultBuilder: (_) => false, // cancel
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -432,22 +526,29 @@ void main() {
       // Returns to sequence page on Part 1
       expect(find.text('Part 1 of 2'), findsOneWidget);
       expect(find.text('Start Part 1'), findsOneWidget);
-      expect(find.text('Quest part cancelled. You can try again or exit.'), findsOneWidget);
+      expect(
+        find.text('Quest part cancelled. You can try again or exit.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('completing Part 1 advances to Part 2 seamlessly', (tester) async {
+    testWidgets('completing Part 1 advances to Part 2 seamlessly', (
+      tester,
+    ) async {
       setViewport(tester);
       final launchedRoutes = <String>[];
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        onGamePushed: (route) => launchedRoutes.add(route),
-        gamePushResultBuilder: (route) {
-          if (route.contains('repeatSentence')) return true;
-          return false;
-        },
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+          onGamePushed: (route) => launchedRoutes.add(route),
+          gamePushResultBuilder: (route) {
+            if (route.contains('repeatSentence')) return true;
+            return false;
+          },
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -470,64 +571,78 @@ void main() {
   // GROUP 4: Sequence Completion & Dialog Trigger
   // =========================================================================
   group('Group 4: Sequence Completion & Dialog Trigger', () {
-    testWidgets('completing all parts triggers completion dialog and summary view', (tester) async {
-      setViewport(tester);
+    testWidgets(
+      'completing all parts triggers completion dialog and summary view',
+      (tester) async {
+        setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        gamePushResultBuilder: (_) => true, // all pass
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'daily_duo',
+            quests: sampleQuests,
+            gamePushResultBuilder: (_) => true, // all pass
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Launch Part 1
-      await tester.tap(find.text('Start Part 1'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Launch Part 1
+        await tester.tap(find.text('Start Part 1'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Complete Part 1
-      await tester.tap(find.byKey(const Key('complete_game_btn')).last);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Complete Part 1
+        await tester.tap(find.byKey(const Key('complete_game_btn')).last);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Part 1 is completed, road map now presents Start Part 2
-      expect(find.text('Start Part 2'), findsOneWidget);
-      await tester.tap(find.text('Start Part 2'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Part 1 is completed, road map now presents Start Part 2
+        expect(find.text('Start Part 2'), findsOneWidget);
+        await tester.tap(find.text('Start Part 2'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Complete Part 2
-      expect(find.byKey(const Key('complete_game_btn')), findsWidgets);
-      await tester.tap(find.byKey(const Key('complete_game_btn')).last);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Complete Part 2
+        expect(find.byKey(const Key('complete_game_btn')), findsWidgets);
+        await tester.tap(find.byKey(const Key('complete_game_btn')).last);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Dialog helper sound and haptics called
-      verify(() => mockSoundService.playLevelComplete()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-    });
+        // Dialog helper sound and haptics called
+        verify(
+          () => mockSoundService.playLevelComplete(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('tapping FINISH button in summary triggers showCompletion dialog', (tester) async {
-      setViewport(tester);
+    testWidgets(
+      'tapping FINISH button in summary triggers showCompletion dialog',
+      (tester) async {
+        setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: const [], // Already finished
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildQuestSequenceHarness(
+            sequenceId: 'daily_duo',
+            quests: const [], // Already finished
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final finishBtn = find.text('FINISH');
-      expect(finishBtn, findsOneWidget);
+        final finishBtn = find.text('FINISH');
+        expect(finishBtn, findsOneWidget);
 
-      await tester.tap(finishBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(finishBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playLevelComplete()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        verify(() => mockSoundService.playLevelComplete()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
   });
 
   // =========================================================================
@@ -537,11 +652,13 @@ void main() {
     testWidgets('tapping header close button pops the screen', (tester) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        initialLocation: '/home',
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          initialLocation: '/home',
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -565,14 +682,18 @@ void main() {
   // GROUP 6: Responsive Viewports, Themes & Safe Disposal
   // =========================================================================
   group('Group 6: Responsive Viewports, Themes & Safe Disposal', () {
-    testWidgets('compact mobile layout (320x568) renders without overflow', (tester) async {
+    testWidgets('compact mobile layout (320x568) renders without overflow', (
+      tester,
+    ) async {
       setViewport(tester, const Size(320, 568));
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'speed_blitz',
-        quests: sampleQuests,
-        viewport: const Size(320, 568),
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'speed_blitz',
+          quests: sampleQuests,
+          viewport: const Size(320, 568),
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -580,14 +701,18 @@ void main() {
       expect(find.text('RAPID RECALL'), findsOneWidget);
     });
 
-    testWidgets('tablet layout (800x1280) renders without overflow', (tester) async {
+    testWidgets('tablet layout (800x1280) renders without overflow', (
+      tester,
+    ) async {
       setViewport(tester, const Size(800, 1280), 1.5);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'grammar_pro',
-        quests: sampleQuests,
-        viewport: const Size(800, 1280),
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'grammar_pro',
+          quests: sampleQuests,
+          viewport: const Size(800, 1280),
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -595,14 +720,18 @@ void main() {
       expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
-    testWidgets('dark theme applies AppColors.slate900 background', (tester) async {
+    testWidgets('dark theme applies AppColors.slate900 background', (
+      tester,
+    ) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        themeMode: ThemeMode.dark,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+          themeMode: ThemeMode.dark,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -613,11 +742,13 @@ void main() {
     testWidgets('light theme applies Colors.white background', (tester) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-        themeMode: ThemeMode.light,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+          themeMode: ThemeMode.light,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -625,13 +756,17 @@ void main() {
       expect(scaffold.backgroundColor, Colors.white);
     });
 
-    testWidgets('disposing widget cleans up stateHash notifier cleanly', (tester) async {
+    testWidgets('disposing widget cleans up stateHash notifier cleanly', (
+      tester,
+    ) async {
       setViewport(tester);
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
 
@@ -647,7 +782,9 @@ void main() {
   // GROUP 7: Daily Step & Quest Progress Persistence
   // =========================================================================
   group('Group 7: Daily Step & Quest Progress Persistence', () {
-    testWidgets('restores today saved step progress to resume at Part 2', (tester) async {
+    testWidgets('restores today saved step progress to resume at Part 2', (
+      tester,
+    ) async {
       setViewport(tester);
       final now = DateTime.now();
       final todayStr =
@@ -657,10 +794,12 @@ void main() {
         'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
       });
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -669,16 +808,20 @@ void main() {
       expect(find.text('Part 2 of 2'), findsOneWidget);
     });
 
-    testWidgets('completing Part 1 saves step progress to SharedPreferences', (tester) async {
+    testWidgets('completing Part 1 saves step progress to SharedPreferences', (
+      tester,
+    ) async {
       setViewport(tester);
       final now = DateTime.now();
       final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -693,167 +836,177 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       final prefs = await SharedPreferences.getInstance();
-      final savedStep = prefs.getString('vowl_sequence_step_daily_duo_user_quest_test');
+      final savedStep = prefs.getString(
+        'vowl_sequence_step_daily_duo_user_quest_test',
+      );
       expect(savedStep, equals('${todayStr}_1'));
     });
 
-    testWidgets('completing Part 1 via GameDialogHelper advances to Part 2 seamlessly', (tester) async {
-      setViewport(tester, const Size(390, 950));
+    testWidgets(
+      'completing Part 1 via GameDialogHelper advances to Part 2 seamlessly',
+      (tester) async {
+        setViewport(tester, const Size(390, 950));
 
-      final router = GoRouter(
-        initialLocation: '/sequence',
-        routes: [
-          GoRoute(
-            path: '/sequence',
-            builder: (context, state) => QuestSequencePage(
-              sequenceId: 'daily_duo',
-              quests: sampleQuests,
+        final router = GoRouter(
+          initialLocation: '/sequence',
+          routes: [
+            GoRoute(
+              path: '/sequence',
+              builder: (context, state) => QuestSequencePage(
+                sequenceId: 'daily_duo',
+                quests: sampleQuests,
+              ),
+            ),
+            GoRoute(
+              path: '/game',
+              builder: (gameCtx, state) {
+                return Scaffold(
+                  body: Center(
+                    child: ElevatedButton(
+                      key: const Key('trigger_completion_btn'),
+                      onPressed: () {
+                        GameDialogHelper.showCompletion(
+                          gameCtx,
+                          xp: 15,
+                          coins: 10,
+                          gameType: 'repeatSentence',
+                          level: 1,
+                        );
+                      },
+                      child: const Text('TRIGGER COMPLETION'),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        );
+
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(390, 844),
+            builder: (context, child) => MultiBlocProvider(
+              providers: [
+                BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+                BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+              ],
+              child: MaterialApp.router(routerConfig: router),
             ),
           ),
-          GoRoute(
-            path: '/game',
-            builder: (gameCtx, state) {
-              return Scaffold(
-                body: Center(
-                  child: ElevatedButton(
-                    key: const Key('trigger_completion_btn'),
-                    onPressed: () {
-                      GameDialogHelper.showCompletion(
-                        gameCtx,
-                        xp: 15,
-                        coins: 10,
-                        gameType: 'repeatSentence',
-                        level: 1,
-                      );
-                    },
-                    child: const Text('TRIGGER COMPLETION'),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Tap Start Part 1
+        await tester.tap(find.text('Start Part 1'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+
+        // Trigger completion dialog
+        await tester.tap(find.byKey(const Key('trigger_completion_btn')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1500));
+
+        // The dialog is visible! Find OK / CONTINUE button on ModernGameDialog
+        final okBtn = find.text('OK');
+        expect(okBtn, findsOneWidget);
+
+        // Tap OK
+        await tester.tap(okBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+
+        // NOW: We should be back on QuestSequencePage!
+        // And Part 2 should be active!
+        expect(find.text('Start Part 2'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'completing Part 2 finishes sequence and shows QUEST COMPLETED! dialog',
+      (tester) async {
+        setViewport(tester, const Size(390, 950));
+
+        final router = GoRouter(
+          initialLocation: '/sequence',
+          routes: [
+            GoRoute(
+              path: '/sequence',
+              builder: (context, state) => QuestSequencePage(
+                sequenceId: 'daily_duo',
+                quests: sampleQuests,
+              ),
+            ),
+            GoRoute(
+              path: '/game',
+              builder: (gameCtx, state) {
+                return Scaffold(
+                  body: Center(
+                    child: ElevatedButton(
+                      key: const Key('trigger_completion_btn_part2'),
+                      onPressed: () {
+                        GameDialogHelper.showCompletion(
+                          gameCtx,
+                          xp: 15,
+                          coins: 10,
+                          gameType: 'readAndAnswer',
+                          level: 1,
+                        );
+                      },
+                      child: const Text('TRIGGER PART 2 COMPLETION'),
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
-        ],
-      );
-
-      await tester.pumpWidget(ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, child) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+                );
+              },
+            ),
           ],
-          child: MaterialApp.router(
-            routerConfig: router,
-          ),
-        ),
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        );
 
-      // Tap Start Part 1
-      await tester.tap(find.text('Start Part 1'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final now = DateTime.now();
+        final todayStr =
+            '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+        SharedPreferences.setMockInitialValues({
+          'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
+        });
 
-      // Trigger completion dialog
-      await tester.tap(find.byKey(const Key('trigger_completion_btn')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1500));
-
-      // The dialog is visible! Find OK / CONTINUE button on ModernGameDialog
-      final okBtn = find.text('OK');
-      expect(okBtn, findsOneWidget);
-
-      // Tap OK
-      await tester.tap(okBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      // NOW: We should be back on QuestSequencePage!
-      // And Part 2 should be active!
-      expect(find.text('Start Part 2'), findsOneWidget);
-    });
-
-    testWidgets('completing Part 2 finishes sequence and shows QUEST COMPLETED! dialog', (tester) async {
-      setViewport(tester, const Size(390, 950));
-
-      final router = GoRouter(
-        initialLocation: '/sequence',
-        routes: [
-          GoRoute(
-            path: '/sequence',
-            builder: (context, state) => QuestSequencePage(
-              sequenceId: 'daily_duo',
-              quests: sampleQuests,
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(390, 844),
+            builder: (context, child) => MultiBlocProvider(
+              providers: [
+                BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+                BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+              ],
+              child: MaterialApp.router(routerConfig: router),
             ),
           ),
-          GoRoute(
-            path: '/game',
-            builder: (gameCtx, state) {
-              return Scaffold(
-                body: Center(
-                  child: ElevatedButton(
-                    key: const Key('trigger_completion_btn_part2'),
-                    onPressed: () {
-                      GameDialogHelper.showCompletion(
-                        gameCtx,
-                        xp: 15,
-                        coins: 10,
-                        gameType: 'readAndAnswer',
-                        level: 1,
-                      );
-                    },
-                    child: const Text('TRIGGER PART 2 COMPLETION'),
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
-      );
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final now = DateTime.now();
-      final todayStr =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      SharedPreferences.setMockInitialValues({
-        'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
-      });
+        expect(find.text('Start Part 2'), findsOneWidget);
 
-      await tester.pumpWidget(ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, child) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp.router(
-            routerConfig: router,
-          ),
-        ),
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Start Part 2'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.text('Start Part 2'), findsOneWidget);
+        await tester.tap(find.byKey(const Key('trigger_completion_btn_part2')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1500));
 
-      await tester.tap(find.text('Start Part 2'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final okBtn = find.text('OK');
+        expect(okBtn, findsOneWidget);
+        await tester.tap(okBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      await tester.tap(find.byKey(const Key('trigger_completion_btn_part2')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1500));
+        expect(find.text('QUEST COMPLETED!'), findsOneWidget);
+      },
+    );
 
-      final okBtn = find.text('OK');
-      expect(okBtn, findsOneWidget);
-      await tester.tap(okBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      expect(find.text('QUEST COMPLETED!'), findsOneWidget);
-    });
-
-    testWidgets('fully completed sequence restores all steps completed today', (tester) async {
+    testWidgets('fully completed sequence restores all steps completed today', (
+      tester,
+    ) async {
       setViewport(tester);
       final now = DateTime.now();
       final todayStr =
@@ -863,17 +1016,21 @@ void main() {
         'vowl_sequence_completed_daily_duo_user_quest_test': todayStr,
       });
 
-      await tester.pumpWidget(buildQuestSequenceHarness(
-        sequenceId: 'daily_duo',
-        quests: sampleQuests,
-      ));
+      await tester.pumpWidget(
+        buildQuestSequenceHarness(
+          sequenceId: 'daily_duo',
+          quests: sampleQuests,
+        ),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('FINISH'), findsOneWidget);
     });
 
-    testWidgets('tapping a completed part card allows replay / practice mode', (tester) async {
+    testWidgets('tapping a completed part card allows replay / practice mode', (
+      tester,
+    ) async {
       setViewport(tester);
       final now = DateTime.now();
       final todayStr =
@@ -904,18 +1061,18 @@ void main() {
         ],
       );
 
-      await tester.pumpWidget(ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, child) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp.router(
-            routerConfig: router,
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, child) => MultiBlocProvider(
+            providers: [
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: MaterialApp.router(routerConfig: router),
           ),
         ),
-      ));
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -930,76 +1087,81 @@ void main() {
       expect(find.text('GAME SCREEN'), findsOneWidget);
     });
 
-    testWidgets('tapping bottom dock FINISH button when finished records completion and pops safely', (tester) async {
-      setViewport(tester);
-      final now = DateTime.now();
-      final todayStr =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    testWidgets(
+      'tapping bottom dock FINISH button when finished records completion and pops safely',
+      (tester) async {
+        setViewport(tester);
+        final now = DateTime.now();
+        final todayStr =
+            '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
 
-      // Start with no completion recorded, but steps finished
-      SharedPreferences.setMockInitialValues({
-        'vowl_sequence_step_daily_workout_user_quest_test': '${todayStr}_2',
-      });
+        // Start with no completion recorded, but steps finished
+        SharedPreferences.setMockInitialValues({
+          'vowl_sequence_step_daily_workout_user_quest_test': '${todayStr}_2',
+        });
 
-      final router = GoRouter(
-        initialLocation: '/home',
-        routes: [
-          GoRoute(
-            path: '/home',
-            builder: (context, state) => Scaffold(
-              body: TextButton(
-                onPressed: () => context.push('/quest-sequence'),
-                child: const Text('GO TO QUEST'),
+        final router = GoRouter(
+          initialLocation: '/home',
+          routes: [
+            GoRoute(
+              path: '/home',
+              builder: (context, state) => Scaffold(
+                body: TextButton(
+                  onPressed: () => context.push('/quest-sequence'),
+                  child: const Text('GO TO QUEST'),
+                ),
               ),
             ),
-          ),
-          GoRoute(
-            path: '/quest-sequence',
-            builder: (context, state) => QuestSequencePage(
-              sequenceId: 'daily_workout',
-              quests: sampleQuests,
+            GoRoute(
+              path: '/quest-sequence',
+              builder: (context, state) => QuestSequencePage(
+                sequenceId: 'daily_workout',
+                quests: sampleQuests,
+              ),
+            ),
+          ],
+        );
+
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(390, 844),
+            builder: (context, child) => MultiBlocProvider(
+              providers: [
+                BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+                BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+              ],
+              child: MaterialApp.router(routerConfig: router),
             ),
           ),
-        ],
-      );
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      await tester.pumpWidget(ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, child) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp.router(
-            routerConfig: router,
+        // Go from Home to Quest Sequence
+        await tester.tap(find.text('GO TO QUEST'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('FINISH'), findsOneWidget);
+
+        // Tap FINISH button
+        await tester.tap(find.text('FINISH'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final prefs = await SharedPreferences.getInstance();
+        expect(
+          prefs.getString(
+            'vowl_sequence_completed_daily_workout_user_quest_test',
           ),
-        ),
-      ));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Go from Home to Quest Sequence
-      await tester.tap(find.text('GO TO QUEST'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('FINISH'), findsOneWidget);
-
-      // Tap FINISH button
-      await tester.tap(find.text('FINISH'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      final prefs = await SharedPreferences.getInstance();
-      expect(
-        prefs.getString('vowl_sequence_completed_daily_workout_user_quest_test'),
-        equals(todayStr),
-      );
-      expect(
-        prefs.getString('vowl_sequence_completed_daily_duo_user_quest_test'),
-        equals(todayStr),
-      );
-      expect(find.text('GO TO QUEST'), findsOneWidget);
-    });
+          equals(todayStr),
+        );
+        expect(
+          prefs.getString('vowl_sequence_completed_daily_duo_user_quest_test'),
+          equals(todayStr),
+        );
+        expect(find.text('GO TO QUEST'), findsOneWidget);
+      },
+    );
   });
 }

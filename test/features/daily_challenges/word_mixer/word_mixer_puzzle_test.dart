@@ -39,26 +39,41 @@ void main() {
       expect(puzzle.maskedHint, contains('______'));
     });
 
-    test('verifies all 1460 items in split word_mixer_curriculum.json parse with unified schema', () {
-      final file = File('assets/curriculum/daily_challenges/word_mixer_curriculum.json');
-      expect(file.existsSync(), isTrue);
+    test(
+      'verifies all 1460 items in split word_mixer_curriculum.json parse with unified schema',
+      () {
+        final file = File(
+          'assets/curriculum/daily_challenges/word_mixer_curriculum.json',
+        );
+        expect(file.existsSync(), isTrue);
 
-      final content = file.readAsStringSync();
-      final data = jsonDecode(content) as Map<String, dynamic>;
-      final list = data['items'] as List<dynamic>;
+        final content = file.readAsStringSync();
+        final data = jsonDecode(content) as Map<String, dynamic>;
+        final list = data['items'] as List<dynamic>;
 
-      expect(list.length, equals(1460));
+        expect(list.length, equals(1460));
 
-      for (int i = 0; i < list.length; i++) {
-        final item = Map<String, dynamic>.from(list[i] as Map);
-        final puzzle = WordMixerPuzzle.fromMap(item);
+        for (int i = 0; i < list.length; i++) {
+          final item = Map<String, dynamic>.from(list[i] as Map);
+          final puzzle = WordMixerPuzzle.fromMap(item);
 
-        expect(puzzle.word, isNotEmpty);
-        expect(puzzle.partOfSpeech, isNotEmpty);
-        expect(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], contains(puzzle.cefrLevel));
-        expect(puzzle.maskedHint, isNotEmpty);
-        expect(puzzle.maskedHint.toLowerCase().contains(puzzle.word.toLowerCase()), isFalse);
-      }
-    });
+          expect(puzzle.word, isNotEmpty);
+          expect(puzzle.partOfSpeech, isNotEmpty);
+          expect([
+            'A1',
+            'A2',
+            'B1',
+            'B2',
+            'C1',
+            'C2',
+          ], contains(puzzle.cefrLevel));
+          expect(puzzle.maskedHint, isNotEmpty);
+          expect(
+            puzzle.maskedHint.toLowerCase().contains(puzzle.word.toLowerCase()),
+            isFalse,
+          );
+        }
+      },
+    );
   });
 }

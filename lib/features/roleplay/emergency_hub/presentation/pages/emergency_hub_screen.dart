@@ -71,8 +71,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   void _scrollToBottom() {
     final reduceMotion =
-        MediaQuery.maybeDisableAnimationsOf(context) ?? false ||
-        VowlMotion.lowAnimationModeOverride.value;
+        MediaQuery.maybeDisableAnimationsOf(context) ??
+        false || VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_scrollController.hasClients) {
         _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
@@ -271,7 +271,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                     child: Builder(
                                       builder: (context) {
                                         final isCompact =
-                                            MediaQuery.sizeOf(context).height < 700;
+                                            MediaQuery.sizeOf(context).height <
+                                            700;
                                         return Padding(
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 20.w,
@@ -281,13 +282,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                             children: [
                                               // Critical dispatcher prompt telex
                                               EmergencyHubTelexCard(
-                                                key: const Key('emergency_hub_telex_card'),
+                                                key: const Key(
+                                                  'emergency_hub_telex_card',
+                                                ),
                                                 instruction:
                                                     InstructionHelper.getInstruction(
                                                       quest,
                                                     ),
                                                 dispatcherQuestion:
-                                                    quest.dispatcherQuestion ?? "",
+                                                    quest.dispatcherQuestion ??
+                                                    "",
                                                 urgencyLevel:
                                                     quest.urgencyLevel ?? 3,
                                                 isDark: isDark,
@@ -298,7 +302,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
                                               // Retro terminal input text field
                                               EmergencyHubTerminalInput(
-                                                key: const Key('emergency_hub_terminal_input'),
+                                                key: const Key(
+                                                  'emergency_hub_terminal_input',
+                                                ),
                                                 controller: _codeController,
                                                 correctAnswer:
                                                     quest.correctAnswer ?? "",
@@ -311,13 +317,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
                                               // Mechanical safety valve chamber
                                               EmergencyHubValveChamber(
-                                                key: const Key('emergency_hub_valve_chamber'),
+                                                key: const Key(
+                                                  'emergency_hub_valve_chamber',
+                                                ),
                                                 correctAnswer:
                                                     quest.correctAnswer ?? "",
                                                 inputText: _codeController.text,
                                                 isDark: isDark,
                                                 rotation: _rotation.value,
-                                                pulseAnimation: _pulseController,
+                                                pulseAnimation:
+                                                    _pulseController,
                                                 onValveDragged: _onValveDragged,
                                                 onValveAccessibleAlign:
                                                     _onValveAccessibleAlign,
@@ -328,33 +337,45 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
                                               // Dispatch lock confirm trigger button
                                               if (!isAnsweredNotifier.value &&
-                                                  _codeController.text.isNotEmpty)
+                                                  _codeController
+                                                      .text
+                                                      .isNotEmpty)
                                                 Builder(
                                                   builder: (context) {
                                                     final bool isValveAligned =
                                                         _rotation.value >= 0.85;
                                                     final reduceMotion =
-                                                        MediaQuery.disableAnimationsOf(context) ||
-                                                        VowlMotion.lowAnimationModeOverride.value;
-                                                    Widget launchBtn = ScaleButton(
-                                                      key: const Key('emergency_hub_launch_button'),
+                                                        MediaQuery.disableAnimationsOf(
+                                                          context,
+                                                        ) ||
+                                                        VowlMotion
+                                                            .lowAnimationModeOverride
+                                                            .value;
+                                                    Widget
+                                                    launchBtn = ScaleButton(
+                                                      key: const Key(
+                                                        'emergency_hub_launch_button',
+                                                      ),
                                                       onTap: isValveAligned
                                                           ? () => _submitCode(
-                                                              _codeController.text,
+                                                              _codeController
+                                                                  .text,
                                                               quest.correctAnswer ??
                                                                   "",
                                                               quest,
                                                             )
                                                           : null,
                                                       child: AnimatedContainer(
-                                                        duration: const Duration(
-                                                          milliseconds: 300,
-                                                        ),
+                                                        duration:
+                                                            const Duration(
+                                                              milliseconds: 300,
+                                                            ),
                                                         curve: Curves.easeInOut,
                                                         padding:
                                                             EdgeInsets.symmetric(
                                                               horizontal: 24.w,
-                                                              vertical: isCompact
+                                                              vertical:
+                                                                  isCompact
                                                                   ? 12.h
                                                                   : 15.h,
                                                             ),
@@ -364,7 +385,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                                 28.r,
                                                               ),
                                                           color: isValveAligned
-                                                              ? Colors.red.shade700
+                                                              ? Colors
+                                                                    .red
+                                                                    .shade700
                                                               : (isDark
                                                                     ? Colors
                                                                           .grey
@@ -372,7 +395,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                                     : Colors
                                                                           .grey
                                                                           .shade400),
-                                                          boxShadow: isValveAligned
+                                                          boxShadow:
+                                                              isValveAligned
                                                               ? [
                                                                   BoxShadow(
                                                                     color: Colors
@@ -382,7 +406,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                                           alpha:
                                                                               0.4,
                                                                         ),
-                                                                    blurRadius: 12,
+                                                                    blurRadius:
+                                                                        12,
                                                                     offset:
                                                                         const Offset(
                                                                           0,
@@ -402,14 +427,18 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                                         .flash_on_rounded
                                                                   : Icons
                                                                         .lock_outline_rounded,
-                                                              color: isValveAligned
+                                                              color:
+                                                                  isValveAligned
                                                                   ? Colors.white
-                                                                  : Colors.white70,
+                                                                  : Colors
+                                                                        .white70,
                                                               size: isCompact
                                                                   ? 18.r
                                                                   : 20.r,
                                                             ),
-                                                            SizedBox(width: 8.w),
+                                                            SizedBox(
+                                                              width: 8.w,
+                                                            ),
                                                             Flexible(
                                                               child: FittedBox(
                                                                 fit: BoxFit
@@ -453,9 +482,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                     );
 
                                                     if (!reduceMotion) {
-                                                      launchBtn = launchBtn.animate().fadeIn(
-                                                        duration: 300.ms,
-                                                      );
+                                                      launchBtn = launchBtn
+                                                          .animate()
+                                                          .fadeIn(
+                                                            duration: 300.ms,
+                                                          );
                                                     }
                                                     return launchBtn;
                                                   },
@@ -496,10 +527,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                             context.read<RoleplayBloc>().add(
                                               const RoleplaySpeakConfirmed(5),
                                             );
-                                            _submitVerbalEvaluation(true, quest);
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              quest,
+                                            );
                                           },
                                           onSkipped: () =>
-                                              _submitVerbalEvaluation(false, quest),
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest,
+                                              ),
                                         ),
                                       ),
                                     ),

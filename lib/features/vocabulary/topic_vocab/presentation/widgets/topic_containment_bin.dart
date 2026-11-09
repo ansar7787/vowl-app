@@ -38,7 +38,8 @@ class TopicContainmentBin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     const IconData bucketIcon = Icons.folder_open_rounded;
 
@@ -60,8 +61,8 @@ class TopicContainmentBin extends StatelessWidget {
           color: isHinted
               ? (isDark ? Colors.white : AppColors.indigo500)
               : (isDark
-                  ? color.withValues(alpha: 0.4)
-                  : color.withValues(alpha: 0.3)),
+                    ? color.withValues(alpha: 0.4)
+                    : color.withValues(alpha: 0.3)),
           width: isHinted ? 3.0 : 1.5,
         ),
         boxShadow: [
@@ -91,11 +92,11 @@ class TopicContainmentBin extends StatelessWidget {
           reduceMotion
               ? outerContainer
               : outerContainer
-                  .animate(target: isHinted ? 1 : 0)
-                  .shimmer(
-                    duration: 1.seconds,
-                    color: Colors.white.withValues(alpha: 0.3),
-                  ),
+                    .animate(target: isHinted ? 1 : 0)
+                    .shimmer(
+                      duration: 1.seconds,
+                      color: Colors.white.withValues(alpha: 0.3),
+                    ),
 
           Positioned(
             bottom: 8.h,
@@ -141,8 +142,9 @@ class TopicContainmentBin extends StatelessWidget {
                                           fontFamily: 'Outfit',
                                           fontSize: 11.sp,
                                           color: isDark
-                                              ? Colors.white
-                                                  .withValues(alpha: 0.95)
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.95,
+                                                )
                                               : AppColors.slate800,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 0.2,
@@ -165,10 +167,7 @@ class TopicContainmentBin extends StatelessWidget {
           Positioned(
             top: 0,
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 14.w,
-                vertical: 6.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
               constraints: BoxConstraints(maxWidth: 128.w),
               decoration: BoxDecoration(
                 color: color,
@@ -211,7 +210,8 @@ class TopicContainmentBin extends StatelessWidget {
   }
 
   Widget _buildPlasmaFill(BuildContext context, Color color) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final container = Container(

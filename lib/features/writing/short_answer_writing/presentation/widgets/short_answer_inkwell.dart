@@ -111,15 +111,15 @@ class ShortAnswerInkwell extends StatelessWidget {
                         color: wordCount >= 4
                             ? successColor.withValues(alpha: 0.15)
                             : (isDark
-                                ? AppColors.slate700.withValues(alpha: 0.6)
-                                : AppColors.slate100),
+                                  ? AppColors.slate700.withValues(alpha: 0.6)
+                                  : AppColors.slate100),
                         borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(
                           color: wordCount >= 4
                               ? successColor.withValues(alpha: 0.3)
                               : (isDark
-                                  ? AppColors.slate600
-                                  : AppColors.slate300),
+                                    ? AppColors.slate600
+                                    : AppColors.slate300),
                           width: 1.0,
                         ),
                       ),
@@ -131,8 +131,8 @@ class ShortAnswerInkwell extends StatelessWidget {
                           color: wordCount >= 4
                               ? successColor
                               : (isDark
-                                  ? AppColors.slate300
-                                  : AppColors.slate600),
+                                    ? AppColors.slate300
+                                    : AppColors.slate600),
                           fontWeight: FontWeight.w600,
                           letterSpacing: 0.3,
                         ),

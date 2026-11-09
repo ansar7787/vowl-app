@@ -52,10 +52,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ValueNotifier<double> _heatLevel = ValueNotifier(0.0);
 
@@ -100,7 +98,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   void didChangeDependencies() {
     super.didChangeDependencies();
     final mediaQuery = MediaQuery.maybeOf(context);
-    final reduceMotion = (mediaQuery?.disableAnimations ?? false) ||
+    final reduceMotion =
+        (mediaQuery?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       _tickerController.stop();
@@ -149,10 +148,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      submitWrongAnswer(
-        quest: quest,
-        userAnswer: '[Failed Pronunciation]',
-      );
+      submitWrongAnswer(quest: quest, userAnswer: '[Failed Pronunciation]');
     }
   }
 

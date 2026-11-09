@@ -52,9 +52,7 @@ class ClozeTestPneumaticPort extends StatelessWidget {
         dockedOption?.trim().toLowerCase() == correct.trim().toLowerCase();
     final bool wrongDocked = isAnswered && !correctDocked;
 
-    final cardBg = isDark
-        ? const Color(0xFF161922)
-        : Colors.white;
+    final cardBg = isDark ? const Color(0xFF161922) : Colors.white;
     final cardBorder = isDark
         ? Colors.white.withValues(alpha: 0.1)
         : color.withValues(alpha: 0.18);
@@ -68,7 +66,9 @@ class ClozeTestPneumaticPort extends StatelessWidget {
         border: Border.all(color: cardBorder, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: (isDark ? Colors.black : color).withValues(alpha: isDark ? 0.3 : 0.06),
+            color: (isDark ? Colors.black : color).withValues(
+              alpha: isDark ? 0.3 : 0.06,
+            ),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -84,7 +84,9 @@ class ClozeTestPneumaticPort extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 17.sp,
-                color: isDark ? Colors.white.withValues(alpha: 0.92) : const Color(0xFF1E293B),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.92)
+                    : const Color(0xFF1E293B),
                 fontWeight: FontWeight.w500,
                 height: 1.6,
                 letterSpacing: 0.2,
@@ -100,75 +102,91 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                       final slotBg = correctDocked
                           ? tokens.gameCorrect.withValues(alpha: 0.18)
                           : (wrongDocked
-                              ? tokens.gameIncorrect.withValues(alpha: 0.18)
-                              : (isFilled
-                                  ? color.withValues(alpha: isDark ? 0.22 : 0.12)
-                                  : (isDark
-                                      ? Colors.white.withValues(alpha: 0.06)
-                                      : color.withValues(alpha: 0.06))));
+                                ? tokens.gameIncorrect.withValues(alpha: 0.18)
+                                : (isFilled
+                                      ? color.withValues(
+                                          alpha: isDark ? 0.22 : 0.12,
+                                        )
+                                      : (isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.06,
+                                              )
+                                            : color.withValues(alpha: 0.06))));
 
                       final slotBorderColor = correctDocked
                           ? tokens.gameCorrect
                           : (wrongDocked
-                              ? tokens.gameIncorrect
-                              : (isFilled
-                                  ? color
-                                  : (isDark
-                                      ? Colors.white24
-                                      : color.withValues(alpha: 0.35))));
+                                ? tokens.gameIncorrect
+                                : (isFilled
+                                      ? color
+                                      : (isDark
+                                            ? Colors.white24
+                                            : color.withValues(alpha: 0.35))));
 
                       final slotTextColor = correctDocked
                           ? tokens.gameCorrect
                           : (wrongDocked
-                              ? tokens.gameIncorrect
-                              : (isFilled
-                                  ? (isDark ? Colors.white : const Color(0xFF0F172A))
-                                  : color.withValues(alpha: isDark ? 0.75 : 0.65)));
+                                ? tokens.gameIncorrect
+                                : (isFilled
+                                      ? (isDark
+                                            ? Colors.white
+                                            : const Color(0xFF0F172A))
+                                      : color.withValues(
+                                          alpha: isDark ? 0.75 : 0.65,
+                                        )));
 
                       return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 14.w,
-                          vertical: 6.h,
-                        ),
-                        constraints: BoxConstraints(
-                          minWidth: 84.w,
-                          maxWidth: 190.w,
-                        ),
-                        decoration: BoxDecoration(
-                          color: slotBg,
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(
-                            color: slotBorderColor,
-                            width: 1.5,
-                          ),
-                          boxShadow: [
-                            if (isFilled)
-                              BoxShadow(
-                                color: (correctDocked
-                                        ? tokens.gameCorrect
-                                        : (wrongDocked ? tokens.gameIncorrect : color))
-                                    .withValues(alpha: 0.25),
-                                blurRadius: 10,
-                                offset: const Offset(0, 2),
-                              ),
-                          ],
-                        ),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            dockedOption?.toUpperCase() ?? "DRAG HERE",
-                            overflow: TextOverflow.visible,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: isFilled ? 15.sp : 12.sp,
-                              color: slotTextColor,
-                              fontWeight: isFilled ? FontWeight.w700 : FontWeight.w600,
-                              letterSpacing: 0.8,
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 6.w,
+                              vertical: 2.h,
                             ),
-                          ),
-                        ),
-                      )
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14.w,
+                              vertical: 6.h,
+                            ),
+                            constraints: BoxConstraints(
+                              minWidth: 84.w,
+                              maxWidth: 190.w,
+                            ),
+                            decoration: BoxDecoration(
+                              color: slotBg,
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: slotBorderColor,
+                                width: 1.5,
+                              ),
+                              boxShadow: [
+                                if (isFilled)
+                                  BoxShadow(
+                                    color:
+                                        (correctDocked
+                                                ? tokens.gameCorrect
+                                                : (wrongDocked
+                                                      ? tokens.gameIncorrect
+                                                      : color))
+                                            .withValues(alpha: 0.25),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 2),
+                                  ),
+                              ],
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                dockedOption?.toUpperCase() ?? "DRAG HERE",
+                                overflow: TextOverflow.visible,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isFilled ? 15.sp : 12.sp,
+                                  color: slotTextColor,
+                                  fontWeight: isFilled
+                                      ? FontWeight.w700
+                                      : FontWeight.w600,
+                                  letterSpacing: 0.8,
+                                ),
+                              ),
+                            ),
+                          )
                           .animate(target: isFilled ? 1 : 0)
                           .shimmer(duration: 800.ms);
                     },

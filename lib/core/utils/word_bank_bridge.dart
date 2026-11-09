@@ -26,14 +26,16 @@ class WordBankBridge {
       }
 
       final service = di.sl<DailyWordsService>();
-      final wordId = 'lens_${clean.toLowerCase().replaceAll(RegExp(r'\s+'), '_')}';
+      final wordId =
+          'lens_${clean.toLowerCase().replaceAll(RegExp(r'\s+'), '_')}';
 
       final dailyWord = DailyWord(
         id: wordId,
         word: clean,
         phonetic: phonetic ?? '',
         partOfSpeech: partOfSpeech ?? 'noun',
-        definition: definition ?? 'Real-world vocabulary captured with Smart Lens.',
+        definition:
+            definition ?? 'Real-world vocabulary captured with Smart Lens.',
         example: example ?? 'I encountered "$clean" in real-world context.',
         difficulty: difficulty,
         frequencyRank: 100,

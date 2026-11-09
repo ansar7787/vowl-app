@@ -8,17 +8,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/leaderboard/domain/entities/leaderboard_timeframe.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
   final DateTime lastUpdated;
   final bool isKids;
+  final LeaderboardTimeframe timeframe;
   final Future<void> Function()? onSync;
 
   const LeaderboardHeader({
     super.key,
     required this.lastUpdated,
     this.isKids = false,
+    this.timeframe = LeaderboardTimeframe.thisWeek,
     this.onSync,
   });
 
@@ -98,28 +102,49 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
 
   void _showUpdateInfo() {
     HapticFeedback.lightImpact();
+    final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
     CustomSnackBar.show(
       context: context,
       message: context.tr(
-        'leaderboard.updates_info',
+        'leaderboard.updates_info_hourly',
         fallback:
-            'Rankings update daily at midnight. Play quests to climb the leaderboard today!',
+            'Rankings recalculate hourly at the top of the hour. Next update in {0}. Play quests to climb the leaderboard!',
+        args: [countdown],
       ),
       type: CustomSnackBarType.info,
       duration: const Duration(seconds: 4),
     );
   }
 
+  String _getSubtitle(BuildContext context) {
+    if (widget.isKids) {
+      return context.tr(
+        'leaderboard.kids_subtitle_short',
+        fallback: 'Star Vault rankings',
+      );
+    }
+    if (widget.timeframe == LeaderboardTimeframe.allTime) {
+      return context.tr(
+        'leaderboard.all_time_subtitle_short',
+        fallback: 'All-time rankings',
+      );
+    }
+    return context.tr(
+      'leaderboard.weekly_subtitle_short',
+      fallback: "This week's rankings",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
+    final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
+    final subtitle = _getSubtitle(context);
 
     final header = Semantics(
-      // FIX (HIGH-5): Screen readers now announce the leaderboard title,
-      // subtitle, and when it was last updated in a single label.
+      // Announce title, subtitle, and next update countdown.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. $subtitle. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}.',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,11 +204,14 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                         Semantics(
                           button: true,
                           label: context.tr(
-                            'leaderboard.live_sync_tooltip',
-                            fallback: 'Sync leaderboard',
+                            'leaderboard.sync_countdown_tooltip',
+                            fallback:
+                                'Next update in {0}. Tap to sync leaderboard now.',
+                            args: [countdown],
                           ),
                           child: GestureDetector(
                             onTap: _handleSync,
+                            behavior: HitTestBehavior.opaque,
                             child: Container(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 9.w,
@@ -219,10 +247,10 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                       color: isDark
                                           ? AppColors.blue300
                                           : AppColors.indigo500,
-                                      size: 12.r,
+                                      size: 13.r,
                                     ),
                                   ),
-                                  SizedBox(width: 4.w),
+                                  SizedBox(width: 4.5.w),
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Text(
@@ -232,8 +260,9 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                               fallback: 'Syncing...',
                                             )
                                           : context.tr(
-                                              'leaderboard.live_sync',
-                                              fallback: 'Live Sync',
+                                              'leaderboard.next_update_in',
+                                              fallback: 'Next in {0}',
+                                              args: [countdown],
                                             ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
@@ -242,6 +271,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                                         color: isDark
                                             ? AppColors.blue300
                                             : AppColors.indigo500,
+                                        letterSpacing: 0.1,
                                       ),
                                       maxLines: 1,
                                     ),
@@ -255,21 +285,15 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                     ),
                     SizedBox(height: 2.h),
                     Text(
-                      widget.isKids
-                          ? context.tr(
-                              'leaderboard.kids_subtitle',
-                              fallback: 'See how your child ranks globally!',
-                            )
-                          : context.tr(
-                              'leaderboard.subtitle',
-                              fallback: 'See how you rank globally!',
-                            ),
+                      subtitle,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white60 : AppColors.slate600,
                       ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
@@ -281,31 +305,5 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
     );
     if (VowlMotion.shouldReduceMotion(context)) return header;
     return header.animate().fadeIn(duration: 500.ms);
-  }
-
-  String _formatTimeAgo(BuildContext context, DateTime dateTime) {
-    final difference = DateTime.now().difference(dateTime);
-    if (difference.inMinutes < 1) {
-      return context.tr('leaderboard.just_now', fallback: 'Just now');
-    }
-    if (difference.inMinutes < 60) {
-      return context.tr(
-        'leaderboard.mins_ago',
-        fallback: '{0} mins ago',
-        args: [difference.inMinutes.toString()],
-      );
-    }
-    if (difference.inHours < 24) {
-      return context.tr(
-        'leaderboard.hours_ago',
-        fallback: '{0} hours ago',
-        args: [difference.inHours.toString()],
-      );
-    }
-    return context.tr(
-      'leaderboard.days_ago',
-      fallback: '{0} days ago',
-      args: [difference.inDays.toString()],
-    );
   }
 }

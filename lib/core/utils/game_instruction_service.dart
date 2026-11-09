@@ -264,8 +264,7 @@ class GameInstructionService {
         "Tap the letters in the correct order",
       ],
       actionText: "Start Spelling",
-      tip:
-          "If you missed the word, tap the replay button to hear it again!",
+      tip: "If you missed the word, tap the replay button to hear it again!",
     ),
     GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Match",
@@ -374,8 +373,7 @@ class GameInstructionService {
           "Listen carefully and repeat the sentence matching cadence and wave patterns. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: ["Hold mic to record", "Trace sound wave", "Master the cadence"],
       actionText: "Start Echo",
-      tip:
-          "Match the stress rhythm—English flows in stressed clusters!",
+      tip: "Match the stress rhythm—English flows in stressed clusters!",
     ),
     GameSubtype.speakMissingWord: GameBriefing(
       title: "Vocal Decoder",
@@ -416,8 +414,7 @@ class GameInstructionService {
         "Build a narrative",
       ],
       actionText: "Describe Scene",
-      tip:
-          "Start with foreground actions, then move to background details.",
+      tip: "Start with foreground actions, then move to background details.",
     ),
     GameSubtype.yesNoSpeaking: GameBriefing(
       title: "Voice Validator",
@@ -430,8 +427,7 @@ class GameInstructionService {
         "Be quick and clear",
       ],
       actionText: "Validate Voice",
-      tip:
-          "Speak with confident, clear pronunciation directly into the mic.",
+      tip: "Speak with confident, clear pronunciation directly into the mic.",
     ),
     GameSubtype.speakSynonym: GameBriefing(
       title: "Synonym Challenge",
@@ -450,8 +446,7 @@ class GameInstructionService {
           "Speak your roleplay script lines with correct emotion and phrasing. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: ["Follow the script", "Speak with feeling", "Keep the flow going"],
       actionText: "Enter Scene",
-      tip:
-          "Match your voice acting to the simulated character's mood!",
+      tip: "Match your voice acting to the simulated character's mood!",
     ),
     GameSubtype.pronunciationFocus: GameBriefing(
       title: "Phonetic Precision",
@@ -464,8 +459,7 @@ class GameInstructionService {
         "Analyze feedback waves",
       ],
       actionText: "Practice Sound",
-      tip:
-          "Pay attention to where your tongue touches the roof of your mouth.",
+      tip: "Pay attention to where your tongue touches the roof of your mouth.",
     ),
     GameSubtype.speakOpposite: GameBriefing(
       title: "Antonym Orator",
@@ -474,8 +468,7 @@ class GameInstructionService {
           "Speak the exact opposite meaning of the prompt word. Thinking of opposites rapidly builds a flexible, expressive vocabulary.",
       rules: ["Think of the opposite", "Speak clearly", "Avoid synonyms"],
       actionText: "Speak Opposite",
-      tip:
-          "Think magnetically: What is the polar opposite of the given word?",
+      tip: "Think magnetically: What is the polar opposite of the given word?",
     ),
     GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
@@ -488,8 +481,7 @@ class GameInstructionService {
         "Review context & usage",
       ],
       actionText: "Speak Now",
-      tip:
-          "Emphasize the keywords that carry the main emotional meaning.",
+      tip: "Emphasize the keywords that carry the main emotional meaning.",
     ),
     // 2. Listening
     GameSubtype.audioFillBlanks: GameBriefing(
@@ -825,8 +817,7 @@ class GameInstructionService {
         "Write naturally and clearly",
       ],
       actionText: "Submit Answer",
-      tip:
-          "Don't overcomplicate it! Simple, direct sentences are the best.",
+      tip: "Don't overcomplicate it! Simple, direct sentences are the best.",
     ),
     GameSubtype.clauseConnector: GameBriefing(
       title: "Clause Connector",
@@ -1000,8 +991,7 @@ class GameInstructionService {
         "Select the matching verb",
       ],
       actionText: "Match the Verb",
-      tip:
-          "Watch out for words that sit between the subject and the verb!",
+      tip: "Watch out for words that sit between the subject and the verb!",
     ),
     GameSubtype.voiceSwap: GameBriefing(
       title: "Voice Swap",
@@ -1112,8 +1102,7 @@ class GameInstructionService {
         "Add terminal punctuation",
       ],
       actionText: "Place Punctuation",
-      tip:
-          "Use a comma before 'and' in lists or between independent clauses!",
+      tip: "Use a comma before 'and' in lists or between independent clauses!",
     ),
     GameSubtype.relativeClauses: GameBriefing(
       title: "Relative Rail",
@@ -1122,8 +1111,7 @@ class GameInstructionService {
           "Use relative pronouns (who, which, that) to connect the clauses. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: ["Identify the noun", "Choose the pronoun", "Link the detail"],
       actionText: "Link Relative",
-      tip:
-          "Use 'Who' for people and 'Which' or 'That' for things and animals.",
+      tip: "Use 'Who' for people and 'Which' or 'That' for things and animals.",
     ),
     GameSubtype.conditionals: GameBriefing(
       title: "If-Logic",
@@ -1349,8 +1337,7 @@ class GameInstructionService {
         "Select the stressed part",
       ],
       actionText: "Find Stress",
-      tip:
-          "The stressed part of a word is always louder and slightly longer.",
+      tip: "The stressed part of a word is always louder and slightly longer.",
     ),
 
     GameSubtype.vowelDistinction: GameBriefing(
@@ -1432,8 +1419,7 @@ class GameInstructionService {
         "Navigate social nuances",
       ],
       actionText: "Respond Now",
-      tip:
-          "Use expressions like 'I would appreciate it' or 'Would you mind'!",
+      tip: "Use expressions like 'I would appreciate it' or 'Would you mind'!",
     ),
     GameSubtype.jobInterview: GameBriefing(
       title: "Career Closer",
@@ -1480,8 +1466,7 @@ class GameInstructionService {
           "Manage check-ins, navigate directions, and handle hotel booking requests. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Check travel tickets", "Follow directions", "Ask for support"],
       actionText: "Start Journey",
-      tip:
-          "Confirm directions by repeating them back to check understanding.",
+      tip: "Confirm directions by repeating them back to check understanding.",
     ),
     GameSubtype.conflictResolver: GameBriefing(
       title: "Peace Maker",
@@ -1494,8 +1479,7 @@ class GameInstructionService {
         "Find middle ground",
       ],
       actionText: "Resolve Conflict",
-      tip:
-          "De-escalate early by validating their perspective before replying.",
+      tip: "De-escalate early by validating their perspective before replying.",
     ),
     GameSubtype.elevatorPitch: GameBriefing(
       title: "Pitch Perfect",
@@ -1504,8 +1488,7 @@ class GameInstructionService {
           "Deliver a compelling, high-impact business message in 30 seconds. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Be concise", "High emotional impact", "Deliver with confidence"],
       actionText: "Start Pitch",
-      tip:
-          "Lead with a massive hook that frames a relatable daily problem.",
+      tip: "Lead with a massive hook that frames a relatable daily problem.",
     ),
     GameSubtype.socialSpark: GameBriefing(
       title: "Charisma Core",
@@ -1518,8 +1501,7 @@ class GameInstructionService {
         "Keep the tone light",
       ],
       actionText: "Spark Talk",
-      tip:
-          "Ask 'what' or 'how' to keep the conversational partner sharing.",
+      tip: "Ask 'what' or 'how' to keep the conversational partner sharing.",
     ),
     GameSubtype.emergencyHub: GameBriefing(
       title: "Emergency Voice",
@@ -1592,8 +1574,7 @@ class GameInstructionService {
             "Tag the correct species",
           ],
           actionText: "Go Safari",
-          tip:
-              "Think about the sound the animal makes or where it lives! 🦁",
+          tip: "Think about the sound the animal makes or where it lives! 🦁",
         );
       case 'numbers':
         return const GameBriefing(
@@ -1636,8 +1617,7 @@ class GameInstructionService {
             "Drag the matching fruit to the basket",
           ],
           actionText: "Play Now",
-          tip:
-              "Fruits can be sweet or sour. Think about how they taste! 🍎",
+          tip: "Fruits can be sweet or sour. Think about how they taste! 🍎",
         );
       case 'shapes':
         return const GameBriefing(
@@ -1696,8 +1676,7 @@ class GameInstructionService {
             "Serve it on the plate",
           ],
           actionText: "Eat Up",
-          tip:
-              "Think about what you eat for breakfast, lunch, or dinner! 🥛",
+          tip: "Think about what you eat for breakfast, lunch, or dinner! 🥛",
         );
       case 'clothing':
         return const GameBriefing(
@@ -1772,8 +1751,7 @@ class GameInstructionService {
             "Match the mask to the stage",
           ],
           actionText: "Play Now",
-          tip:
-              "Think about how you would feel in that exact situation.",
+          tip: "Think about how you would feel in that exact situation.",
         );
       case 'school':
         return const GameBriefing(
@@ -1938,8 +1916,7 @@ class GameInstructionService {
             "Select the correct answer",
           ],
           actionText: "Play",
-          tip:
-              "Think about whether the sun is up or the stars are out! ☀️🌙",
+          tip: "Think about whether the sun is up or the stars are out! ☀️🌙",
         );
       case 'weather':
         return const GameBriefing(

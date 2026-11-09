@@ -7,7 +7,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_steam_painter.dart';
 
-
 /// Interactive table setting destination where plated items are arranged.
 class GourmetOrderTableSetting extends StatefulWidget {
   /// Primary theme accent color.
@@ -109,8 +108,8 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                 color: isMidnight
                     ? AppColors.midnightSurface
                     : (widget.isDark
-                        ? AppColors.slate900
-                        : Colors.black.withValues(alpha: 0.02)),
+                          ? AppColors.slate900
+                          : Colors.black.withValues(alpha: 0.02)),
                 border: Border.all(
                   color: ringColor.withValues(
                     alpha: isActiveGlow ? 0.75 : 0.25,

@@ -41,7 +41,8 @@ class KidsFittedText extends StatelessWidget {
             ? constraints.maxWidth
             : 300.0;
 
-        final effectiveAlignment = alignment ??
+        final effectiveAlignment =
+            alignment ??
             (textAlign == TextAlign.start || textAlign == TextAlign.left
                 ? AlignmentDirectional.centerStart
                 : Alignment.center);

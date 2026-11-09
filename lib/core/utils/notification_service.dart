@@ -278,7 +278,10 @@ class NotificationService {
           if (!kIsWeb && Platform.isAndroid) {
             showNotification(
               notification.title ??
-                  _t('notifications.fcm_default_title', fallback: 'Vowl Update'),
+                  _t(
+                    'notifications.fcm_default_title',
+                    fallback: 'Vowl Update',
+                  ),
               notification.body ??
                   _t(
                     'notifications.fcm_default_body',
@@ -287,7 +290,8 @@ class NotificationService {
               payload: message.data['path'] as String?,
             );
           }
-        } else if (message.data.containsKey('title') && message.data.containsKey('body')) {
+        } else if (message.data.containsKey('title') &&
+            message.data.containsKey('body')) {
           // Data-only message: Neither platform shows native UI, so present locally on both
           showNotification(
             message.data['title'] as String,
@@ -499,7 +503,9 @@ class NotificationService {
       }
     }
     if (kDebugMode) {
-      debugPrint('NotificationService: FCM token acquisition exhausted all retries.');
+      debugPrint(
+        'NotificationService: FCM token acquisition exhausted all retries.',
+      );
     }
   }
 
@@ -524,7 +530,9 @@ class NotificationService {
       }, SetOptions(merge: true));
 
       if (kDebugMode) {
-        debugPrint('NotificationService: FCM token saved to Firestore for user ${user.uid}.');
+        debugPrint(
+          'NotificationService: FCM token saved to Firestore for user ${user.uid}.',
+        );
       }
     } catch (e) {
       if (kDebugMode) {
@@ -556,7 +564,9 @@ class NotificationService {
       await scheduleDailyWordsReminder();
     } catch (e) {
       if (kDebugMode) {
-        debugPrint('NotificationService: Error rescheduling reminders on sign-in: $e');
+        debugPrint(
+          'NotificationService: Error rescheduling reminders on sign-in: $e',
+        );
       }
     }
   }
@@ -575,7 +585,8 @@ class NotificationService {
         provisional: false,
       );
 
-      bool isGranted = settings.authorizationStatus == AuthorizationStatus.authorized ||
+      bool isGranted =
+          settings.authorizationStatus == AuthorizationStatus.authorized ||
           settings.authorizationStatus == AuthorizationStatus.provisional;
 
       if (isGranted) {
@@ -1013,8 +1024,9 @@ class NotificationService {
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      matchDateTimeComponents:
-          hasSpecificWords ? null : DateTimeComponents.time,
+      matchDateTimeComponents: hasSpecificWords
+          ? null
+          : DateTimeComponents.time,
       payload: AppRouter.dailyWordsRoute,
     );
 
@@ -1139,7 +1151,8 @@ class NotificationService {
         AndroidNotificationDetails(
           weeklyChannelId,
           'Weekly League Alerts',
-          channelDescription: 'Sunday league reset reminders and podium rewards',
+          channelDescription:
+              'Sunday league reset reminders and podium rewards',
           importance: Importance.high,
           priority: Priority.high,
           icon: '@drawable/ic_stat_notification',
@@ -1172,7 +1185,8 @@ class NotificationService {
       ),
       body: _t(
         'notifications.league_reset_body',
-        fallback: 'Podium spots earn up to 3 Days Free VIP! Secure your rank now.',
+        fallback:
+            'Podium spots earn up to 3 Days Free VIP! Secure your rank now.',
       ),
       scheduledDate: _nextInstanceOfSundayEvening(location),
       notificationDetails: platformDetails,
@@ -1184,7 +1198,9 @@ class NotificationService {
     );
 
     if (kDebugMode) {
-      debugPrint('Scheduled Sunday league reset reminder for Sundays at 8:00 PM');
+      debugPrint(
+        'Scheduled Sunday league reset reminder for Sundays at 8:00 PM',
+      );
     }
   }
 
@@ -1384,12 +1400,16 @@ class NotificationService {
           .timeout(const Duration(seconds: 5), onTimeout: () {})
           .then((_) {
             if (kDebugMode) {
-              debugPrint('NotificationService: Local FCM token deleted from device.');
+              debugPrint(
+                'NotificationService: Local FCM token deleted from device.',
+              );
             }
           })
           .catchError((e) {
             if (kDebugMode) {
-              debugPrint('NotificationService: Error deleting local FCM token: $e');
+              debugPrint(
+                'NotificationService: Error deleting local FCM token: $e',
+              );
             }
           }),
       cancelAllReminders().catchError((e) {

@@ -345,8 +345,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
             (isCompact ? 28.h : 36.h) +
             (isCompact ? 116.h : 130.h) +
             24.h;
-        final remainingHeight =
-            math.max(0.0, maxHeight - estimatedContentHeight);
+        final remainingHeight = math.max(
+          0.0,
+          maxHeight - estimatedContentHeight,
+        );
 
         final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
         final double gapTop = (gapUnit * 0.8).clamp(4.0, 10.0);
@@ -372,10 +374,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 13.sp,
-                  color: Theme.of(context)
-                      .colorScheme
-                      .onSurface
-                      .withValues(alpha: 0.7),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withValues(alpha: 0.7),
                   fontWeight: FontWeight.w500,
                   height: 1.3,
                 ),

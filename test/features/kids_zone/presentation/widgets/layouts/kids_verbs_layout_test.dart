@@ -101,8 +101,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -114,14 +115,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -129,19 +133,29 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any()))
-        .thenAnswer((inv) => inv.positionalArguments.first as String);
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -201,88 +215,95 @@ void main() {
   }
 
   group('KidsVerbsLayout Production Audit Tests', () {
-    testWidgets('renders stadium jumbotron, scoreboard header, scenario clue, and 3 sports balls',
-        (tester) async {
-      await pumpVerbsLayout(tester);
+    testWidgets(
+      'renders stadium jumbotron, scoreboard header, scenario clue, and 3 sports balls',
+      (tester) async {
+        await pumpVerbsLayout(tester);
 
-      expect(find.text('Action Story'), findsOneWidget);
-      expect(
-        find.text(
-          'Mia bites into a crunchy apple at lunchtime. Which verb fits the scene?',
-        ),
-        findsWidgets,
-      );
-      expect(find.text('Eat'), findsOneWidget);
-      expect(find.text('Drink'), findsOneWidget);
-      expect(find.text('Cook'), findsOneWidget);
-      expect(find.text('Listen'), findsOneWidget);
-      expect(find.byType(DragTarget<String>), findsOneWidget);
-    });
+        expect(find.text('Action Story'), findsOneWidget);
+        expect(
+          find.text(
+            'Mia bites into a crunchy apple at lunchtime. Which verb fits the scene?',
+          ),
+          findsWidgets,
+        );
+        expect(find.text('Eat'), findsOneWidget);
+        expect(find.text('Drink'), findsOneWidget);
+        expect(find.text('Cook'), findsOneWidget);
+        expect(find.text('Listen'), findsOneWidget);
+        expect(find.byType(DragTarget<String>), findsOneWidget);
+      },
+    );
 
-    testWidgets('supports accessible tap-to-answer submission (dual interaction)',
-        (tester) async {
-      await pumpVerbsLayout(tester);
+    testWidgets(
+      'supports accessible tap-to-answer submission (dual interaction)',
+      (tester) async {
+        await pumpVerbsLayout(tester);
 
-      // Tap the correct sports ball 'Eat'
-      await tester.tap(find.text('Eat'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Tap the correct sports ball 'Eat'
+        await tester.tap(find.text('Eat'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Eat', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(
-        () => mockLogger.debug(any(), tag: any(named: 'tag')),
-      ).called(greaterThanOrEqualTo(1));
-    });
+        verify(() => mockTTSService.speak('Eat', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(
+          () => mockLogger.debug(any(), tag: any(named: 'tag')),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('supports drag-and-drop of sports ball to stadium jumbotron scoreboard',
-        (tester) async {
-      await pumpVerbsLayout(tester);
+    testWidgets(
+      'supports drag-and-drop of sports ball to stadium jumbotron scoreboard',
+      (tester) async {
+        await pumpVerbsLayout(tester);
 
-      final eatFinder = find.text('Eat');
-      final scoreboardFinder = find.byType(DragTarget<String>);
+        final eatFinder = find.text('Eat');
+        final scoreboardFinder = find.byType(DragTarget<String>);
 
-      expect(eatFinder, findsOneWidget);
-      expect(scoreboardFinder, findsOneWidget);
+        expect(eatFinder, findsOneWidget);
+        expect(scoreboardFinder, findsOneWidget);
 
-      final dragLocation = tester.getCenter(scoreboardFinder);
-      final gesture = await tester.startGesture(tester.getCenter(eatFinder));
-      await tester.pump(const Duration(milliseconds: 100));
+        final dragLocation = tester.getCenter(scoreboardFinder);
+        final gesture = await tester.startGesture(tester.getCenter(eatFinder));
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await gesture.moveTo(dragLocation);
-      await tester.pump(const Duration(milliseconds: 100));
+        await gesture.moveTo(dragLocation);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockTTSService.speak('Eat', force: true)).called(1);
-    });
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(() => mockTTSService.speak('Eat', force: true)).called(1);
+      },
+    );
 
-    testWidgets('independent ball speaker button pronounces verb without submitting answer',
-        (tester) async {
-      await pumpVerbsLayout(tester);
+    testWidgets(
+      'independent ball speaker button pronounces verb without submitting answer',
+      (tester) async {
+        await pumpVerbsLayout(tester);
 
-      final speakerButtons = find.byIcon(Icons.volume_up_rounded);
-      // First is the jumbotron Listen button, subsequent are ball speakers
-      expect(speakerButtons, findsNWidgets(4));
+        final speakerButtons = find.byIcon(Icons.volume_up_rounded);
+        // First is the jumbotron Listen button, subsequent are ball speakers
+        expect(speakerButtons, findsNWidgets(4));
 
-      // Tap speaker on the second ball (Drink)
-      await tester.tap(speakerButtons.at(1));
-      await tester.pump();
+        // Tap speaker on the second ball (Drink)
+        await tester.tap(speakerButtons.at(1));
+        await tester.pump();
 
-      verify(() => mockTTSService.speak('Drink', force: true)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-      // Crucial: Answer submission must NOT have been called on speaker tap
-      verifyNever(
-        () => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())),
-      );
-    });
+        verify(() => mockTTSService.speak('Drink', force: true)).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+        // Crucial: Answer submission must NOT have been called on speaker tap
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
 
-    testWidgets('jumbotron LISTEN button replays full scenario clue audio',
-        (tester) async {
+    testWidgets('jumbotron LISTEN button replays full scenario clue audio', (
+      tester,
+    ) async {
       await pumpVerbsLayout(tester);
 
       final listenFinder = find.text('Listen');
@@ -291,48 +312,55 @@ void main() {
       await tester.tap(listenFinder);
       await tester.pump();
 
-      verify(() => mockTTSService.speak(
-            'Mia bites into a crunchy apple at lunchtime. Which verb fits the scene?',
-            force: true,
-          )).called(1);
+      verify(
+        () => mockTTSService.speak(
+          'Mia bites into a crunchy apple at lunchtime. Which verb fits the scene?',
+          force: true,
+        ),
+      ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('celebrates goal on correct answer with GOAL! SCORE! banner and target verb',
-        (tester) async {
-      const solvedState = KidsLoaded(
-        quests: [testQuestL1],
-        originalTotalQuests: 1,
-        gameType: 'verbs',
-        level: 2,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'celebrates goal on correct answer with GOAL! SCORE! banner and target verb',
+      (tester) async {
+        const solvedState = KidsLoaded(
+          quests: [testQuestL1],
+          originalTotalQuests: 1,
+          gameType: 'verbs',
+          level: 2,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpVerbsLayout(tester, state: solvedState);
+        await pumpVerbsLayout(tester, state: solvedState);
 
-      expect(find.text('Goal!'), findsOneWidget);
-      expect(find.text('EAT'), findsOneWidget);
-      expect(find.text('🍎'), findsWidgets);
-    });
+        expect(find.text('Goal!'), findsOneWidget);
+        expect(find.text('EAT'), findsOneWidget);
+        expect(find.text('🍎'), findsWidgets);
+      },
+    );
 
-    testWidgets('handles incorrect answer submission with error haptics and feedback',
-        (tester) async {
-      await pumpVerbsLayout(tester);
+    testWidgets(
+      'handles incorrect answer submission with error haptics and feedback',
+      (tester) async {
+        await pumpVerbsLayout(tester);
 
-      // Tap wrong option 'Drink'
-      await tester.tap(find.text('Drink'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Tap wrong option 'Drink'
+        await tester.tap(find.text('Drink'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Drink', force: true)).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-    });
+        verify(() => mockTTSService.speak('Drink', force: true)).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('dims distractor option when lifeline hintUsed is active',
-        (tester) async {
+    testWidgets('dims distractor option when lifeline hintUsed is active', (
+      tester,
+    ) async {
       const hintActiveState = KidsLoaded(
         quests: [testQuestL1],
         originalTotalQuests: 1,
@@ -352,28 +380,30 @@ void main() {
       expect(dimmedFound, isTrue);
     });
 
-    testWidgets('renders past tense verbs safely without overflow on narrow 320dp screen',
-        (tester) async {
-      const pastTenseState = KidsLoaded(
-        quests: [testQuestPastTense],
-        originalTotalQuests: 1,
-        gameType: 'verbs',
-        level: 191,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+    testWidgets(
+      'renders past tense verbs safely without overflow on narrow 320dp screen',
+      (tester) async {
+        const pastTenseState = KidsLoaded(
+          quests: [testQuestPastTense],
+          originalTotalQuests: 1,
+          gameType: 'verbs',
+          level: 191,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpVerbsLayout(
-        tester,
-        state: pastTenseState,
-        width: 320,
-        height: 560, // short and narrow phone
-      );
+        await pumpVerbsLayout(
+          tester,
+          state: pastTenseState,
+          width: 320,
+          height: 560, // short and narrow phone
+        );
 
-      expect(tester.takeException(), isNull);
-      expect(find.text('Found'), findsOneWidget);
-      expect(find.text('Founded'), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.text('Found'), findsOneWidget);
+        expect(find.text('Founded'), findsOneWidget);
+      },
+    );
   });
 }

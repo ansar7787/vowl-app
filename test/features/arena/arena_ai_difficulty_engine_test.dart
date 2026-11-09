@@ -5,75 +5,89 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 void main() {
   group('3-Pillar Skill-Based Matchmaking (SBMM) ArenaAiOpponent Tests', () {
-    test('Novice player (Level 2, 0 duels) produces authentic Computer with tier', () {
-      final opponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
-        playerLevel: 2,
-        totalDuels: 0,
-        consecutiveWins: 0,
-      );
-
-      expect(opponent.displayName, 'Computer');
-      expect(
-        [ArenaAiDifficultyTier.easy, ArenaAiDifficultyTier.medium, ArenaAiDifficultyTier.hard],
-        contains(opponent.tier),
-      );
-      expect(opponent.accuracy, inInclusiveRange(0.60, 0.94));
-    });
-
-    test('Master/Pro player (Level 35, 85% Win Rate) is NEVER matched with Easy bot (Anti-Farm Guarantee)', () {
-      // Test across 100 deterministic rolls to prove 0% Easy probability
-      for (int i = 0; i < 100; i++) {
+    test(
+      'Novice player (Level 2, 0 duels) produces authentic Computer with tier',
+      () {
         final opponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
-          playerLevel: 35,
-          winRate: 85.0,
-          totalDuels: 20,
+          playerLevel: 2,
+          totalDuels: 0,
           consecutiveWins: 0,
-          random: Random(i),
         );
 
-        expect(
-          opponent.tier,
-          isNot(equals(ArenaAiDifficultyTier.easy)),
-          reason: 'Roll $i for master player should never result in Easy tier',
+        expect(opponent.displayName, 'Computer');
+        expect([
+          ArenaAiDifficultyTier.easy,
+          ArenaAiDifficultyTier.medium,
+          ArenaAiDifficultyTier.hard,
+        ], contains(opponent.tier));
+        expect(opponent.accuracy, inInclusiveRange(0.60, 0.94));
+      },
+    );
+
+    test(
+      'Master/Pro player (Level 35, 85% Win Rate) is NEVER matched with Easy bot (Anti-Farm Guarantee)',
+      () {
+        // Test across 100 deterministic rolls to prove 0% Easy probability
+        for (int i = 0; i < 100; i++) {
+          final opponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
+            playerLevel: 35,
+            winRate: 85.0,
+            totalDuels: 20,
+            consecutiveWins: 0,
+            random: Random(i),
+          );
+
+          expect(
+            opponent.tier,
+            isNot(equals(ArenaAiDifficultyTier.easy)),
+            reason:
+                'Roll $i for master player should never result in Easy tier',
+          );
+          expect(opponent.accuracy, inInclusiveRange(0.75, 0.94));
+        }
+      },
+    );
+
+    test(
+      'Consecutive win streak of 3+ escalates any player to eliminate Easy bot farming',
+      () {
+        // Even a Level 1 player on a 3-match win streak must face Medium/Hard bots
+        for (int i = 0; i < 50; i++) {
+          final opponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
+            playerLevel: 1,
+            winRate: 100.0,
+            totalDuels: 3,
+            consecutiveWins: 3,
+            random: Random(i),
+          );
+
+          expect(
+            opponent.tier,
+            isNot(equals(ArenaAiDifficultyTier.easy)),
+            reason: 'Win-streak momentum must eliminate Easy bot farming',
+          );
+        }
+      },
+    );
+
+    test(
+      'Organic accuracy micro-variance produces varied, human-like bot stats',
+      () {
+        final opponent1 = ArenaAiOpponent.calculateSkillMatchedOpponent(
+          playerLevel: 10,
+          random: Random(42),
         );
-        expect(opponent.accuracy, inInclusiveRange(0.75, 0.94));
-      }
-    });
-
-    test('Consecutive win streak of 3+ escalates any player to eliminate Easy bot farming', () {
-      // Even a Level 1 player on a 3-match win streak must face Medium/Hard bots
-      for (int i = 0; i < 50; i++) {
-        final opponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
-          playerLevel: 1,
-          winRate: 100.0,
-          totalDuels: 3,
-          consecutiveWins: 3,
-          random: Random(i),
+        final opponent2 = ArenaAiOpponent.calculateSkillMatchedOpponent(
+          playerLevel: 10,
+          random: Random(99),
         );
 
-        expect(
-          opponent.tier,
-          isNot(equals(ArenaAiDifficultyTier.easy)),
-          reason: 'Win-streak momentum must eliminate Easy bot farming',
-        );
-      }
-    });
-
-    test('Organic accuracy micro-variance produces varied, human-like bot stats', () {
-      final opponent1 = ArenaAiOpponent.calculateSkillMatchedOpponent(
-        playerLevel: 10,
-        random: Random(42),
-      );
-      final opponent2 = ArenaAiOpponent.calculateSkillMatchedOpponent(
-        playerLevel: 10,
-        random: Random(99),
-      );
-
-      expect(opponent1.displayName, 'Computer');
-      expect(opponent2.displayName, 'Computer');
-      expect(opponent1.accuracy, isPositive);
-      expect(opponent2.accuracy, isPositive);
-    });
+        expect(opponent1.displayName, 'Computer');
+        expect(opponent2.displayName, 'Computer');
+        expect(opponent1.accuracy, isPositive);
+        expect(opponent2.accuracy, isPositive);
+      },
+    );
 
     test('forPlayer factory correctly extracts stats from UserEntity', () {
       const user = UserEntity(
@@ -96,14 +110,16 @@ void main() {
       expect(opponent.tier, isNot(equals(ArenaAiDifficultyTier.easy)));
     });
 
-    test('calculateSkillMatchedOpponent produces reliable opponent for novice', () {
-      final easyOpponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
-        playerLevel: 3,
-        random: Random(1),
-      );
-      expect(easyOpponent.displayName, 'Computer');
-      expect(easyOpponent.accuracy, inInclusiveRange(0.60, 0.94));
-    });
+    test(
+      'calculateSkillMatchedOpponent produces reliable opponent for novice',
+      () {
+        final easyOpponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
+          playerLevel: 3,
+          random: Random(1),
+        );
+        expect(easyOpponent.displayName, 'Computer');
+        expect(easyOpponent.accuracy, inInclusiveRange(0.60, 0.94));
+      },
+    );
   });
 }
-

@@ -142,13 +142,13 @@ class _PodiumSlot extends StatelessWidget {
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids
-        ? user.kidsTotalLevelsCompleted
+        ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        ? 'Stars'
         : (isWeekly
-            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-            : context.tr('leaderboard.xp', fallback: 'XP'));
+              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+              : context.tr('leaderboard.xp', fallback: 'XP'));
     final isMe = currentUserId != null && user.id == currentUserId;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
@@ -302,8 +302,8 @@ class _PodiumSlot extends StatelessWidget {
                               height: 1.1,
                             ),
                             maxLines: 1,
-                            minFontSize: 8,
-                            overflow: TextOverflow.ellipsis,
+                            minFontSize: 7,
+                            softWrap: false,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -319,26 +319,62 @@ class _PodiumSlot extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 2.h),
-                    // Primary score — single metric, high-contrast across light/dark
-                    AutoSizeText(
-                      isKids ? '$score Levels · ${user.kidsCoins} ⭐' : '$score $scoreLabel',
-                      maxLines: 1,
-                      minFontSize: 7,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isFirst ? 10.sp : 9.sp,
-                        fontWeight: FontWeight.w800,
-                        color: rank == 2
-                            ? (isDark
-                                ? _LocalPalette.colorc0c0c0
-                                : AppColors.slate700)
-                            : colors[0].withValues(alpha: 0.9),
-                        height: 1.1,
-                      ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (isKids) ...[
+                          Icon(
+                            Icons.star_rounded,
+                            size: isFirst ? 13.r : 11.r,
+                            color: AppColors.amber500,
+                          ),
+                          SizedBox(width: 2.w),
+                        ],
+                        Flexible(
+                          child: AutoSizeText(
+                            isKids
+                                ? '${user.kidsTotalStars} Stars'
+                                : '$score $scoreLabel',
+                            maxLines: 1,
+                            minFontSize: 7,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: isFirst ? 10.5.sp : 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isKids
+                                  ? AppColors.amber500
+                                  : (rank == 2
+                                        ? (isDark
+                                              ? _LocalPalette.colorc0c0c0
+                                              : AppColors.slate700)
+                                        : colors[0].withValues(alpha: 0.9)),
+                              height: 1.1,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                    if (isKids) ...[
+                      SizedBox(height: 1.h),
+                      AutoSizeText(
+                        '${user.kidsTotalLevelsCompleted} Levels Cleared',
+                        maxLines: 1,
+                        minFontSize: 6,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isFirst ? 8.5.sp : 7.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white60 : AppColors.slate600,
+                        ),
+                      ),
+                    ],
                     if (!isKids && isWeekly) ...[
                       SizedBox(height: 2.h),
-                      _buildRankChangeIndicator(user.previousRank ?? rank, rank),
+                      _buildRankChangeIndicator(
+                        user.previousRank ?? rank,
+                        rank,
+                      ),
                     ],
                   ],
                 ),
@@ -389,11 +425,12 @@ class _PodiumSlot extends StatelessWidget {
     if (diff > 0) {
       return Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
-            Icons.arrow_upward_rounded,
+            Icons.arrow_drop_up_rounded,
             color: AppColors.emerald500,
-            size: 8.r,
+            size: 11.r,
           ),
           Text(
             '$diff',
@@ -402,6 +439,7 @@ class _PodiumSlot extends StatelessWidget {
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
               color: AppColors.emerald500,
+              height: 1.0,
             ),
           ),
         ],
@@ -409,11 +447,12 @@ class _PodiumSlot extends StatelessWidget {
     } else if (diff < 0) {
       return Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
-            Icons.arrow_downward_rounded,
+            Icons.arrow_drop_down_rounded,
             color: AppColors.red500,
-            size: 8.r,
+            size: 11.r,
           ),
           Text(
             '${diff.abs()}',
@@ -422,6 +461,7 @@ class _PodiumSlot extends StatelessWidget {
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
               color: AppColors.red500,
+              height: 1.0,
             ),
           ),
         ],

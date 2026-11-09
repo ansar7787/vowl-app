@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Card widget presenting an available argument or premise candidate for opinion writing.
 class OpinionWritingIdeaCard extends StatelessWidget {
@@ -31,16 +32,27 @@ class OpinionWritingIdeaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : AppColors.slate200);
+
     return ScaleButton(
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.only(bottom: 12.h),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(14.r),
           border: Border.all(
-            color: isDark ? Colors.white12 : const Color(0xFFE2E8F0),
+            color: borderColor,
             width: 1.0,
           ),
           boxShadow: isDragging
@@ -155,10 +167,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(
-            color: borderColor,
-            width: isAnswered ? 1.5 : 1.0,
-          ),
+          border: Border.all(color: borderColor, width: isAnswered ? 1.5 : 1.0),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,11 +187,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
               ),
             ),
             SizedBox(width: 12.w),
-            Icon(
-              iconData,
-              color: iconColor,
-              size: 20.r,
-            ),
+            Icon(iconData, color: iconColor, size: 20.r),
           ],
         ),
       ),

@@ -51,17 +51,17 @@ class FlashcardActionButtons extends StatelessWidget {
                     size: 24.r,
                   )
                 : Icon(
-                    Icons.touch_app_rounded,
-                    color: isDark ? AppColors.slate400 : AppColors.slate500,
-                    size: 24.r,
-                  )
-                    .animate(onPlay: (c) => c.repeat())
-                    .moveY(
-                      begin: 2,
-                      end: -2,
-                      duration: 1.seconds,
-                      curve: Curves.easeInOut,
-                    ),
+                        Icons.touch_app_rounded,
+                        color: isDark ? AppColors.slate400 : AppColors.slate500,
+                        size: 24.r,
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .moveY(
+                        begin: 2,
+                        end: -2,
+                        duration: 1.seconds,
+                        curve: Curves.easeInOut,
+                      ),
             SizedBox(height: 6.h),
             Text(
               context.tr(

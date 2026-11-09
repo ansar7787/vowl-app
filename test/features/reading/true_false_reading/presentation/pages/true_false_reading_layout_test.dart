@@ -94,7 +94,8 @@ void main() {
     correctAnswer: 'true',
     evidenceLine: null,
     hint: 'Check the speed cited in the text.',
-    explanation: 'The passage explicitly says bees fly up to 15 miles per hour.',
+    explanation:
+        'The passage explicitly says bees fly up to 15 miles per hour.',
   );
 
   const testEvidenceQuest = ReadingQuest(
@@ -165,8 +166,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -178,12 +180,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -559,11 +563,17 @@ void main() {
       // Subsequent taps should be locked out
       await tester.ensureVisible(find.byKey(const ValueKey('slot_FALSE')));
       await tester.pump(const Duration(milliseconds: 100));
-      await tester.tap(find.byKey(const ValueKey('slot_FALSE')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const ValueKey('slot_FALSE')),
+        warnIfMissed: false,
+      );
       await tester.pump(const Duration(milliseconds: 300));
       await tester.ensureVisible(find.byKey(const ValueKey('slot_TRUE')));
       await tester.pump(const Duration(milliseconds: 100));
-      await tester.tap(find.byKey(const ValueKey('slot_TRUE')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const ValueKey('slot_TRUE')),
+        warnIfMissed: false,
+      );
       await tester.pump(const Duration(milliseconds: 300));
 
       verifyNever(() => mockReadingBloc.add(const SubmitAnswer(false)));
@@ -644,7 +654,9 @@ void main() {
       final stateController = StreamController<ReadingState>.broadcast();
       addTearDown(() => stateController.close());
 
-      when(() => mockReadingBloc.stream).thenAnswer((_) => stateController.stream);
+      when(
+        () => mockReadingBloc.stream,
+      ).thenAnswer((_) => stateController.stream);
 
       await pumpTrueFalseReading(tester);
 
@@ -706,4 +718,3 @@ void main() {
     );
   });
 }
-

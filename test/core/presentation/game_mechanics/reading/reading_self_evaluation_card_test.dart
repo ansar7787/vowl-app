@@ -9,7 +9,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -36,51 +38,51 @@ void main() {
     }
   });
 
-  testWidgets('ReadingSelfEvaluationCard reveals answer on tap and shows standardized coin badge', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'ReadingSelfEvaluationCard reveals answer on tap and shows standardized coin badge',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => BlocProvider<EconomyBloc>.value(
-          value: mockEconomyBloc,
-          child: MaterialApp(
-            home: Scaffold(
-              body: ReadingSelfEvaluationCard(
-                correctAnswer: 'Paris is the capital',
-                explanation: 'Geography context',
-                primaryColor: Colors.blue,
-                onEvaluated: (_) {},
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => BlocProvider<EconomyBloc>.value(
+            value: mockEconomyBloc,
+            child: MaterialApp(
+              home: Scaffold(
+                body: ReadingSelfEvaluationCard(
+                  correctAnswer: 'Paris is the capital',
+                  explanation: 'Geography context',
+                  primaryColor: Colors.blue,
+                  onEvaluated: (_) {},
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pump();
-    await tester.pump(const Duration(seconds: 1));
+      await tester.pump();
+      await tester.pump(const Duration(seconds: 1));
 
-    // Initially shows reveal button
-    expect(find.text('TAP TO REVEAL ANSWER'), findsOneWidget);
+      // Initially shows reveal button
+      expect(find.text('TAP TO REVEAL ANSWER'), findsOneWidget);
 
-    // Tap to reveal
-    await tester.tap(find.text('TAP TO REVEAL ANSWER'));
-    await tester.pump();
-    await tester.pump(const Duration(seconds: 1));
+      // Tap to reveal
+      await tester.tap(find.text('TAP TO REVEAL ANSWER'));
+      await tester.pump();
+      await tester.pump(const Duration(seconds: 1));
 
-    // Shows correct answer and evaluation buttons, but no coin badge
-    expect(find.text('Paris is the capital'), findsOneWidget);
-    expect(find.text('+5 coins'), findsNothing);
-    expect(find.text('NAILED IT'), findsOneWidget);
-    expect(find.text('MISSED IT'), findsOneWidget);
-  });
+      // Shows correct answer and evaluation buttons, but no coin badge
+      expect(find.text('Paris is the capital'), findsOneWidget);
+      expect(find.text('+5 coins'), findsNothing);
+      expect(find.text('NAILED IT'), findsOneWidget);
+      expect(find.text('MISSED IT'), findsOneWidget);
+    },
+  );
 }
-

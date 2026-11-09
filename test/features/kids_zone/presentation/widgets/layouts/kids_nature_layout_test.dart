@@ -53,14 +53,11 @@ void main() {
     id: 'KIDS_NATURE_L1_Q1',
     gameType: 'nature',
     level: 2,
-    instruction: 'What gives Earth most of its light and warmth during the day?',
+    instruction:
+        'What gives Earth most of its light and warmth during the day?',
     question: '?',
     correctAnswer: 'Sun ☀️',
-    options: [
-      'Sun ☀️',
-      'Moon 🌙',
-      'Cloud ☁️',
-    ],
+    options: ['Sun ☀️', 'Moon 🌙', 'Cloud ☁️'],
     hint: 'Its light is the reason you can see colors outside in the morning.',
     emoji: '🌅',
     explanation: 'The Sun is a star that sends out light and heat.',
@@ -81,7 +78,8 @@ void main() {
     ],
     hint: 'It starts tiny in the soil, pushes up green, then blooms.',
     emoji: '🌱',
-    explanation: 'Plants start as seeds, germinate into sprouts, and grow flowers.',
+    explanation:
+        'Plants start as seeds, germinate into sprouts, and grow flowers.',
     funFact: 'Some seeds can wait hundreds of years before sprouting.',
   );
 
@@ -117,7 +115,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testShortLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -129,11 +129,16 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => true);
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
     when(() => mockTTSService.dispose()).thenAnswer((_) => Future.value());
 
@@ -160,11 +165,21 @@ void main() {
       return key;
     });
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -174,11 +189,21 @@ void main() {
   });
 
   tearDown(() {
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
   });
 
   Widget buildTestScreen({
@@ -209,64 +234,77 @@ void main() {
   }
 
   group('KidsNatureLayout Production Tests', () {
-    testWidgets('renders ancient tree sign, fireflies, and short river stone options without overflow', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'renders ancient tree sign, fireflies, and short river stone options without overflow',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
+        expect(tester.takeException(), isNull);
 
-      // Verify all options are visible on river stones
-      expect(find.text('Sun ☀️'), findsOneWidget);
-      expect(find.text('Moon 🌙'), findsOneWidget);
-      expect(find.text('Cloud ☁️'), findsOneWidget);
+        // Verify all options are visible on river stones
+        expect(find.text('Sun ☀️'), findsOneWidget);
+        expect(find.text('Moon 🌙'), findsOneWidget);
+        expect(find.text('Cloud ☁️'), findsOneWidget);
 
-      // Verify clue button on ancient tree sign
-      expect(find.text('Clue'), findsOneWidget);
+        // Verify clue button on ancient tree sign
+        expect(find.text('Clue'), findsOneWidget);
 
-      // Verify prompt subtitle is present
-      expect(
-        find.text('Choose an answer or drag it to the sign'),
-        findsOneWidget,
-      );
-    });
+        // Verify prompt subtitle is present
+        expect(
+          find.text('Choose an answer or drag it to the sign'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('renders multi-word sentence options in legible stepping stone cards', (tester) async {
-      await tester.pumpWidget(buildTestScreen(stateOverride: testLongLoadedState));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'renders multi-word sentence options in legible stepping stone cards',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestScreen(stateOverride: testLongLoadedState),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
+        expect(tester.takeException(), isNull);
 
-      // Verify long wrapped options are rendered cleanly
-      expect(find.text('Seed, sprout, flowering plant 🌱'), findsOneWidget);
-      expect(find.text('Flowering plant, sprout, seed 🌸'), findsOneWidget);
-      expect(find.text('Sprout, seed, flowering plant 🌿'), findsOneWidget);
+        // Verify long wrapped options are rendered cleanly
+        expect(find.text('Seed, sprout, flowering plant 🌱'), findsOneWidget);
+        expect(find.text('Flowering plant, sprout, seed 🌸'), findsOneWidget);
+        expect(find.text('Sprout, seed, flowering plant 🌿'), findsOneWidget);
 
-      // Verify 1, 2, 3 indexing badges
-      expect(find.text('1'), findsOneWidget);
-      expect(find.text('2'), findsOneWidget);
-      expect(find.text('3'), findsOneWidget);
-    });
+        // Verify 1, 2, 3 indexing badges
+        expect(find.text('1'), findsOneWidget);
+        expect(find.text('2'), findsOneWidget);
+        expect(find.text('3'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tap-to-select submits answer directly and triggers speech reinforcement', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'tap-to-select submits answer directly and triggers speech reinforcement',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Tap on the correct stone 'Sun ☀️'
-      await tester.tap(find.text('Sun ☀️'));
-      await tester.pump();
+        // Tap on the correct stone 'Sun ☀️'
+        await tester.tap(find.text('Sun ☀️'));
+        await tester.pump();
 
-      // Verify SubmitKidsAnswer(true) was added to bloc
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        // Verify SubmitKidsAnswer(true) was added to bloc
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
 
-      // Verify speech reinforcement was called with 'Sun ☀️'
-      verify(() => mockTTSService.speak('Sun ☀️', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        // Verify speech reinforcement was called with 'Sun ☀️'
+        verify(() => mockTTSService.speak('Sun ☀️', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
-    testWidgets('tapping clue button replays question instruction via TTS', (tester) async {
+    testWidgets('tapping clue button replays question instruction via TTS', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -277,35 +315,39 @@ void main() {
 
       // Verify question instruction was read aloud
       verify(
-        () => mockTTSService.speak(
-          testShortQuest.instruction,
-          force: true,
-        ),
+        () => mockTTSService.speak(testShortQuest.instruction, force: true),
       ).called(1);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping stone speaker icon plays option audio without submitting', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'tapping stone speaker icon plays option audio without submitting',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Find speaker icons on river stones
-      final speakerIcons = find.byIcon(Icons.volume_up_rounded);
-      expect(speakerIcons, findsWidgets);
+        // Find speaker icons on river stones
+        final speakerIcons = find.byIcon(Icons.volume_up_rounded);
+        expect(speakerIcons, findsWidgets);
 
-      // Tap speaker on river stone
-      await tester.tap(speakerIcons.at(2)); // index 0 is Clue, index 1 is Sun, index 2 is Moon
-      await tester.pump();
+        // Tap speaker on river stone
+        await tester.tap(
+          speakerIcons.at(2),
+        ); // index 0 is Clue, index 1 is Sun, index 2 is Moon
+        await tester.pump();
 
-      // Verify TTS spoke 'Moon 🌙'
-      verify(() => mockTTSService.speak('Moon 🌙', force: true)).called(1);
+        // Verify TTS spoke 'Moon 🌙'
+        verify(() => mockTTSService.speak('Moon 🌙', force: true)).called(1);
 
-      // Verify no answer was submitted
-      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-    });
+        // Verify no answer was submitted
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
 
-    testWidgets('drag and drop onto tree sign submits answer successfully', (tester) async {
+    testWidgets('drag and drop onto tree sign submits answer successfully', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -328,7 +370,9 @@ void main() {
       verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
     });
 
-    testWidgets('renders cleanly on compact 360x640 phone without overflow', (tester) async {
+    testWidgets('renders cleanly on compact 360x640 phone without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(360, 640);
       tester.view.devicePixelRatio = 1.0;
 
@@ -344,7 +388,9 @@ void main() {
       tester.view.resetDevicePixelRatio();
     });
 
-    testWidgets('renders cleanly on large 430x932 phone without overflow', (tester) async {
+    testWidgets('renders cleanly on large 430x932 phone without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(430, 932);
       tester.view.devicePixelRatio = 1.0;
 
@@ -360,7 +406,9 @@ void main() {
       tester.view.resetDevicePixelRatio();
     });
 
-    testWidgets('displays celebration badge when answered correctly', (tester) async {
+    testWidgets('displays celebration badge when answered correctly', (
+      tester,
+    ) async {
       const correctState = KidsLoaded(
         quests: [testShortQuest],
         originalTotalQuests: 1,
@@ -383,103 +431,124 @@ void main() {
       expect(find.byIcon(Icons.check_rounded), findsOneWidget);
     });
 
-    testWidgets('renders multi-part phrase options like Sunshine, wind, and stones with zero ellipsis and zero overflow', (tester) async {
-      const userPhraseQuest = KidsQuest(
-        id: 'KIDS_NATURE_USER_PHRASE',
-        gameType: 'nature',
-        level: 81,
-        instruction: 'What are basic non-living parts of a habitat?',
-        question: '?',
-        correctAnswer: 'Sunshine, wind, and stones 🪨',
-        options: [
-          'Sunshine, wind, and stones 🪨',
-          'Food, water, and shelter 🏠',
-          'Toys, music, and games 🎮',
-        ],
-        hint: 'Think of things made by nature that are not alive.',
-        emoji: '🪨',
-        explanation: 'Habitats include both living things and non-living elements.',
-        funFact: 'Rocks can take millions of years to form.',
-      );
+    testWidgets(
+      'renders multi-part phrase options like Sunshine, wind, and stones with zero ellipsis and zero overflow',
+      (tester) async {
+        const userPhraseQuest = KidsQuest(
+          id: 'KIDS_NATURE_USER_PHRASE',
+          gameType: 'nature',
+          level: 81,
+          instruction: 'What are basic non-living parts of a habitat?',
+          question: '?',
+          correctAnswer: 'Sunshine, wind, and stones 🪨',
+          options: [
+            'Sunshine, wind, and stones 🪨',
+            'Food, water, and shelter 🏠',
+            'Toys, music, and games 🎮',
+          ],
+          hint: 'Think of things made by nature that are not alive.',
+          emoji: '🪨',
+          explanation:
+              'Habitats include both living things and non-living elements.',
+          funFact: 'Rocks can take millions of years to form.',
+        );
 
-      const phraseState = KidsLoaded(
-        quests: [userPhraseQuest],
-        originalTotalQuests: 1,
-        gameType: 'nature',
-        level: 81,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+        const phraseState = KidsLoaded(
+          quests: [userPhraseQuest],
+          originalTotalQuests: 1,
+          gameType: 'nature',
+          level: 81,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await tester.pumpWidget(buildTestScreen(stateOverride: phraseState));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildTestScreen(stateOverride: phraseState));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
+        expect(tester.takeException(), isNull);
 
-      // Verify every full option is completely rendered without any truncation or ellipsis
-      expect(find.text('Sunshine, wind, and stones 🪨'), findsOneWidget);
-      expect(find.text('Food, water, and shelter 🏠'), findsOneWidget);
-      expect(find.text('Toys, music, and games 🎮'), findsOneWidget);
+        // Verify every full option is completely rendered without any truncation or ellipsis
+        expect(find.text('Sunshine, wind, and stones 🪨'), findsOneWidget);
+        expect(find.text('Food, water, and shelter 🏠'), findsOneWidget);
+        expect(find.text('Toys, music, and games 🎮'), findsOneWidget);
 
-      // Verify ellipsis string does not appear in any Text widget
-      expect(find.textContaining('...'), findsNothing);
-      expect(find.textContaining('…'), findsNothing);
-    });
+        // Verify ellipsis string does not appear in any Text widget
+        expect(find.textContaining('...'), findsNothing);
+        expect(find.textContaining('…'), findsNothing);
+      },
+    );
 
-    testWidgets('renders 4 options smoothly without ellipsis or overflow when options count increases in future levels', (tester) async {
-      const fourOptionsQuest = KidsQuest(
-        id: 'KIDS_NATURE_FUTURE_4_OPTS',
-        gameType: 'nature',
-        level: 150,
-        instruction: 'Which elements are found in an alpine mountain biome?',
-        question: '?',
-        correctAnswer: 'Rocky peaks, pine trees, and fresh snow 🏔️',
-        options: [
-          'Rocky peaks, pine trees, and fresh snow 🏔️',
-          'Hot sand dunes and giant cactus plants 🏜️',
-          'Tropical corals and colorful sea turtles 🐢',
-          'City buildings, highways, and shopping centers 🏙️',
-        ],
-        hint: 'High up where the air is cold and thin.',
-        emoji: '🏔️',
-      );
+    testWidgets(
+      'renders 4 options smoothly without ellipsis or overflow when options count increases in future levels',
+      (tester) async {
+        const fourOptionsQuest = KidsQuest(
+          id: 'KIDS_NATURE_FUTURE_4_OPTS',
+          gameType: 'nature',
+          level: 150,
+          instruction: 'Which elements are found in an alpine mountain biome?',
+          question: '?',
+          correctAnswer: 'Rocky peaks, pine trees, and fresh snow 🏔️',
+          options: [
+            'Rocky peaks, pine trees, and fresh snow 🏔️',
+            'Hot sand dunes and giant cactus plants 🏜️',
+            'Tropical corals and colorful sea turtles 🐢',
+            'City buildings, highways, and shopping centers 🏙️',
+          ],
+          hint: 'High up where the air is cold and thin.',
+          emoji: '🏔️',
+        );
 
-      const fourOptsState = KidsLoaded(
-        quests: [fourOptionsQuest],
-        originalTotalQuests: 1,
-        gameType: 'nature',
-        level: 150,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+        const fourOptsState = KidsLoaded(
+          quests: [fourOptionsQuest],
+          originalTotalQuests: 1,
+          gameType: 'nature',
+          level: 150,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await tester.pumpWidget(buildTestScreen(stateOverride: fourOptsState));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildTestScreen(stateOverride: fourOptsState));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
+        expect(tester.takeException(), isNull);
 
-      // Verify all 4 options are rendered as stepping stone cards
-      expect(find.text('Rocky peaks, pine trees, and fresh snow 🏔️'), findsOneWidget);
-      expect(find.text('Hot sand dunes and giant cactus plants 🏜️'), findsOneWidget);
-      expect(find.text('Tropical corals and colorful sea turtles 🐢'), findsOneWidget);
-      expect(find.text('City buildings, highways, and shopping centers 🏙️'), findsOneWidget);
+        // Verify all 4 options are rendered as stepping stone cards
+        expect(
+          find.text('Rocky peaks, pine trees, and fresh snow 🏔️'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Hot sand dunes and giant cactus plants 🏜️'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Tropical corals and colorful sea turtles 🐢'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('City buildings, highways, and shopping centers 🏙️'),
+          findsOneWidget,
+        );
 
-      // Verify 4 indexing badges
-      expect(find.text('1'), findsOneWidget);
-      expect(find.text('2'), findsOneWidget);
-      expect(find.text('3'), findsOneWidget);
-      expect(find.text('4'), findsOneWidget);
+        // Verify 4 indexing badges
+        expect(find.text('1'), findsOneWidget);
+        expect(find.text('2'), findsOneWidget);
+        expect(find.text('3'), findsOneWidget);
+        expect(find.text('4'), findsOneWidget);
 
-      // Zero ellipsis
-      expect(find.textContaining('...'), findsNothing);
-      expect(find.textContaining('…'), findsNothing);
-    });
+        // Zero ellipsis
+        expect(find.textContaining('...'), findsNothing);
+        expect(find.textContaining('…'), findsNothing);
+      },
+    );
 
-    testWidgets('displays Try Again encouragement when answered incorrectly', (tester) async {
+    testWidgets('displays Try Again encouragement when answered incorrectly', (
+      tester,
+    ) async {
       const incorrectState = KidsLoaded(
         quests: [testShortQuest],
         originalTotalQuests: 1,
@@ -501,41 +570,56 @@ void main() {
       expect(find.byIcon(Icons.refresh_rounded), findsOneWidget);
     });
 
-    testWidgets('StoryService resolves warm, human-crafted narrative beats for Level 1 and Level 100', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      final BuildContext context = tester.element(find.byType(KidsNatureLayout));
+    testWidgets(
+      'StoryService resolves warm, human-crafted narrative beats for Level 1 and Level 100',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        final BuildContext context = tester.element(
+          find.byType(KidsNatureLayout),
+        );
 
-      final storyService = StoryService();
+        final storyService = StoryService();
 
-      // Level 1 story beat
-      final beat1 = storyService.getStoryBeat(context, 'nature', 1);
-      expect(beat1, isNotNull);
-      expect(beat1!.text, contains('Welcome to Nature!'));
-      expect(beat1.mascotEmoji, equals('🌳'));
+        // Level 1 story beat
+        final beat1 = storyService.getStoryBeat(context, 'nature', 1);
+        expect(beat1, isNotNull);
+        expect(beat1!.text, contains('Welcome to Nature!'));
+        expect(beat1.mascotEmoji, equals('🌳'));
 
-      // Level 100 milestone story beat
-      final beat100 = storyService.getStoryBeat(context, 'nature', 100);
-      expect(beat100, isNotNull);
-      expect(beat100!.text, contains('100 levels completed!'));
-      expect(beat100.mascotEmoji, equals('🌳'));
-    });
+        // Level 100 milestone story beat
+        final beat100 = storyService.getStoryBeat(context, 'nature', 100);
+        expect(beat100, isNotNull);
+        expect(beat100!.text, contains('100 levels completed!'));
+        expect(beat100.mascotEmoji, equals('🌳'));
+      },
+    );
 
-    testWidgets('GameInstructionService resolves Nature briefing matching tree sign and audio features', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      final BuildContext context = tester.element(find.byType(KidsNatureLayout));
+    testWidgets(
+      'GameInstructionService resolves Nature briefing matching tree sign and audio features',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        final BuildContext context = tester.element(
+          find.byType(KidsNatureLayout),
+        );
 
-      final briefing = GameInstructionService.getBriefing(context, null, 'nature', level: 1);
+        final briefing = GameInstructionService.getBriefing(
+          context,
+          null,
+          'nature',
+          level: 1,
+        );
 
-      expect(briefing.title, equals('Nature'));
-      expect(briefing.objective, contains('tree sign'));
-      expect(briefing.rules.any((r) => r.contains('tree sign')), isTrue);
-      expect(briefing.rules.any((r) => r.contains('speaker')), isTrue);
-      expect(briefing.tip, contains('speaker'));
-      expect(briefing.actionText, equals('Start Playing'));
-    });
+        expect(briefing.title, equals('Nature'));
+        expect(briefing.objective, contains('tree sign'));
+        expect(briefing.rules.any((r) => r.contains('tree sign')), isTrue);
+        expect(briefing.rules.any((r) => r.contains('speaker')), isTrue);
+        expect(briefing.tip, contains('speaker'));
+        expect(briefing.actionText, equals('Start Playing'));
+      },
+    );
   });
 }

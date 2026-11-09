@@ -15,14 +15,17 @@ void main() {
       expect(OnboardingService.isCompletedCached, isFalse);
     });
 
-    test('loadCached correctly reads existing SharedPreferences true value', () async {
-      SharedPreferences.setMockInitialValues({
-        OnboardingService.prefsKeyHasSeenOnboarding: true,
-      });
+    test(
+      'loadCached correctly reads existing SharedPreferences true value',
+      () async {
+        SharedPreferences.setMockInitialValues({
+          OnboardingService.prefsKeyHasSeenOnboarding: true,
+        });
 
-      await OnboardingService.loadCached();
-      expect(OnboardingService.isCompletedCached, isTrue);
-    });
+        await OnboardingService.loadCached();
+        expect(OnboardingService.isCompletedCached, isTrue);
+      },
+    );
 
     test('completeOnboarding updates cache and persists true', () async {
       SharedPreferences.setMockInitialValues({});
@@ -33,7 +36,10 @@ void main() {
       expect(OnboardingService.isCompletedCached, isTrue);
 
       final prefs = await SharedPreferences.getInstance();
-      expect(prefs.getBool(OnboardingService.prefsKeyHasSeenOnboarding), isTrue);
+      expect(
+        prefs.getBool(OnboardingService.prefsKeyHasSeenOnboarding),
+        isTrue,
+      );
     });
 
     test('evaluateUserProgress completes onboarding if levels > 0', () async {
@@ -45,17 +51,23 @@ void main() {
       expect(OnboardingService.isCompletedCached, isTrue);
 
       final prefs = await SharedPreferences.getInstance();
-      expect(prefs.getBool(OnboardingService.prefsKeyHasSeenOnboarding), isTrue);
+      expect(
+        prefs.getBool(OnboardingService.prefsKeyHasSeenOnboarding),
+        isTrue,
+      );
     });
 
-    test('evaluateUserProgress does not complete onboarding if levels == 0', () async {
-      SharedPreferences.setMockInitialValues({});
-      await OnboardingService.resetOnboarding();
-      expect(OnboardingService.isCompletedCached, isFalse);
+    test(
+      'evaluateUserProgress does not complete onboarding if levels == 0',
+      () async {
+        SharedPreferences.setMockInitialValues({});
+        await OnboardingService.resetOnboarding();
+        expect(OnboardingService.isCompletedCached, isFalse);
 
-      await OnboardingService.evaluateUserProgress(0);
-      expect(OnboardingService.isCompletedCached, isFalse);
-    });
+        await OnboardingService.evaluateUserProgress(0);
+        expect(OnboardingService.isCompletedCached, isFalse);
+      },
+    );
 
     test('resetOnboarding clears cache and removes preference', () async {
       SharedPreferences.setMockInitialValues({
@@ -68,8 +80,10 @@ void main() {
       expect(OnboardingService.isCompletedCached, isFalse);
 
       final prefs = await SharedPreferences.getInstance();
-      expect(prefs.containsKey(OnboardingService.prefsKeyHasSeenOnboarding), isFalse);
+      expect(
+        prefs.containsKey(OnboardingService.prefsKeyHasSeenOnboarding),
+        isFalse,
+      );
     });
   });
 }
-

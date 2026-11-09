@@ -141,8 +141,9 @@ class ShopRepositoryImpl
         final lastGift = userData.lastDailyRewardDate;
         if (lastGift != null) {
           final isSameDay = _isSameCalendarDay(lastGift, now);
-          final isFuture =
-              lastGift.isAfter(now.add(const Duration(minutes: 5)));
+          final isFuture = lastGift.isAfter(
+            now.add(const Duration(minutes: 5)),
+          );
           if (isSameDay || isFuture) {
             return Left(AuthFailure('daily-gift-already-claimed'));
           }
@@ -212,8 +213,9 @@ class ShopRepositoryImpl
         if (lastClaim != null) {
           final now = DateTime.now();
           final isSameDay = _isSameCalendarDay(lastClaim, now);
-          final isFuture =
-              lastClaim.isAfter(now.add(const Duration(minutes: 5)));
+          final isFuture = lastClaim.isAfter(
+            now.add(const Duration(minutes: 5)),
+          );
           if (isSameDay || isFuture) {
             return Left(AuthFailure('daily-chest-already-claimed'));
           }
@@ -271,8 +273,9 @@ class ShopRepositoryImpl
         if (lastClaim != null) {
           final now = DateTime.now();
           final isSameDay = _isSameCalendarDay(lastClaim, now);
-          final isFuture =
-              lastClaim.isAfter(now.add(const Duration(minutes: 5)));
+          final isFuture = lastClaim.isAfter(
+            now.add(const Duration(minutes: 5)),
+          );
           if (isSameDay || isFuture) {
             return Left(AuthFailure('kids-daily-reward-already-claimed'));
           }

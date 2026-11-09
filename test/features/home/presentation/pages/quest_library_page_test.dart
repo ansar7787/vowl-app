@@ -36,10 +36,7 @@ void main() {
       'synonymAntonym': [1, 2, 3],
       'wordRoots': [1],
     },
-    categoryStats: {
-      'partsOfSpeech': 5,
-      'grammarQuest': 2,
-    },
+    categoryStats: {'partsOfSpeech': 5, 'grammarQuest': 2},
   );
 
   setUpAll(() {
@@ -77,9 +74,9 @@ void main() {
       return result;
     });
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
   });
 
   tearDown(() {
@@ -92,7 +89,8 @@ void main() {
     String initialLocation = '/quest-library',
     GoRouter? routerConfig,
   }) {
-    final router = routerConfig ??
+    final router =
+        routerConfig ??
         GoRouter(
           initialLocation: initialLocation,
           routes: [
@@ -115,9 +113,13 @@ void main() {
               builder: (context, state) {
                 final category = state.uri.queryParameters['category'] ?? '';
                 final gameType = state.uri.queryParameters['gameType'] ?? '';
-                navigatedRoutes.add('/levels?category=$category&gameType=$gameType');
+                navigatedRoutes.add(
+                  '/levels?category=$category&gameType=$gameType',
+                );
                 return Scaffold(
-                  body: Text('Levels Screen: category=$category, gameType=$gameType'),
+                  body: Text(
+                    'Levels Screen: category=$category, gameType=$gameType',
+                  ),
                 );
               },
             ),
@@ -132,7 +134,8 @@ void main() {
       builder: (context, child) {
         return MaterialApp.router(
           routerConfig: router,
-          theme: theme ??
+          theme:
+              theme ??
               ThemeData(
                 useMaterial3: true,
                 brightness: Brightness.light,
@@ -186,19 +189,18 @@ void main() {
   }
 
   group('Group 1: Authentication & Loading States', () {
-    testWidgets(
-      'renders HomeShimmerLoading placeholder when user is null',
-      (tester) async {
-        when(() => mockAuthBloc.state).thenReturn(
-          const AuthState.unauthenticated(),
-        );
+    testWidgets('renders HomeShimmerLoading placeholder when user is null', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
-        await pumpQuestLibraryPage(tester, settle: false);
+      await pumpQuestLibraryPage(tester, settle: false);
 
-        expect(find.byType(HomeShimmerLoading), findsOneWidget);
-        expect(find.byType(CustomScrollView), findsNothing);
-      },
-    );
+      expect(find.byType(HomeShimmerLoading), findsOneWidget);
+      expect(find.byType(CustomScrollView), findsNothing);
+    });
 
     testWidgets(
       'renders full quest library with CustomScrollView when user is authenticated',
@@ -213,85 +215,98 @@ void main() {
   });
 
   group('Group 2: Floating Glass Island AppBar', () {
-    testWidgets(
-      'renders QUEST ARCHIVE title pill and back button in app bar',
-      (tester) async {
-        await pumpQuestLibraryPage(tester);
+    testWidgets('renders QUEST ARCHIVE title pill and back button in app bar', (
+      tester,
+    ) async {
+      await pumpQuestLibraryPage(tester);
 
-        expect(find.text('QUEST ARCHIVE'), findsOneWidget);
-        expect(find.byIcon(Icons.auto_stories_rounded), findsOneWidget);
-        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-      },
-    );
+      expect(find.text('QUEST ARCHIVE'), findsOneWidget);
+      expect(find.byIcon(Icons.auto_stories_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping back button when canPop is false navigates to /home',
-      (tester) async {
-        await pumpQuestLibraryPage(tester);
+    testWidgets('tapping back button when canPop is false navigates to /home', (
+      tester,
+    ) async {
+      await pumpQuestLibraryPage(tester);
 
-        final backBtnFinder = find.byWidgetPredicate(
-          (w) =>
-              w is ScaleButton &&
-              w.child is Container &&
-              find.descendant(of: find.byWidget(w), matching: find.byIcon(Icons.arrow_back_ios_new_rounded)).evaluate().isNotEmpty,
-        );
+      final backBtnFinder = find.byWidgetPredicate(
+        (w) =>
+            w is ScaleButton &&
+            w.child is Container &&
+            find
+                .descendant(
+                  of: find.byWidget(w),
+                  matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
+                )
+                .evaluate()
+                .isNotEmpty,
+      );
 
-        expect(backBtnFinder, findsOneWidget);
-        await tester.tap(backBtnFinder);
-        await tester.pumpAndSettle();
+      expect(backBtnFinder, findsOneWidget);
+      await tester.tap(backBtnFinder);
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/home'));
-        expect(find.text('Home Screen'), findsOneWidget);
-      },
-    );
+      expect(navigatedRoutes, contains('/home'));
+      expect(find.text('Home Screen'), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping back button when canPop is true pops the route',
-      (tester) async {
-        final router = GoRouter(
-          initialLocation: '/initial',
-          routes: [
-            GoRoute(
-              path: '/initial',
-              builder: (context, state) => Scaffold(
-                body: Center(
-                  child: ElevatedButton(
-                    onPressed: () => context.push('/quest-library'),
-                    child: const Text('Open Library'),
-                  ),
+    testWidgets('tapping back button when canPop is true pops the route', (
+      tester,
+    ) async {
+      final router = GoRouter(
+        initialLocation: '/initial',
+        routes: [
+          GoRoute(
+            path: '/initial',
+            builder: (context, state) => Scaffold(
+              body: Center(
+                child: ElevatedButton(
+                  onPressed: () => context.push('/quest-library'),
+                  child: const Text('Open Library'),
                 ),
               ),
             ),
-            GoRoute(
-              path: '/quest-library',
-              builder: (context, state) => BlocProvider<AuthBloc>.value(
-                value: mockAuthBloc,
-                child: const QuestLibraryPage(),
-              ),
+          ),
+          GoRoute(
+            path: '/quest-library',
+            builder: (context, state) => BlocProvider<AuthBloc>.value(
+              value: mockAuthBloc,
+              child: const QuestLibraryPage(),
             ),
-          ],
-        );
+          ),
+        ],
+      );
 
-        await pumpQuestLibraryPage(tester, routerConfig: router, initialLocation: '/initial');
+      await pumpQuestLibraryPage(
+        tester,
+        routerConfig: router,
+        initialLocation: '/initial',
+      );
 
-        await tester.tap(find.text('Open Library'));
-        await tester.pumpAndSettle();
-        expect(find.text('QUEST ARCHIVE'), findsOneWidget);
+      await tester.tap(find.text('Open Library'));
+      await tester.pumpAndSettle();
+      expect(find.text('QUEST ARCHIVE'), findsOneWidget);
 
-        final backBtnFinder = find.byWidgetPredicate(
-          (w) =>
-              w is ScaleButton &&
-              w.child is Container &&
-              find.descendant(of: find.byWidget(w), matching: find.byIcon(Icons.arrow_back_ios_new_rounded)).evaluate().isNotEmpty,
-        );
+      final backBtnFinder = find.byWidgetPredicate(
+        (w) =>
+            w is ScaleButton &&
+            w.child is Container &&
+            find
+                .descendant(
+                  of: find.byWidget(w),
+                  matching: find.byIcon(Icons.arrow_back_ios_new_rounded),
+                )
+                .evaluate()
+                .isNotEmpty,
+      );
 
-        await tester.tap(backBtnFinder);
-        await tester.pumpAndSettle();
+      await tester.tap(backBtnFinder);
+      await tester.pumpAndSettle();
 
-        expect(find.text('Open Library'), findsOneWidget);
-        expect(find.text('QUEST ARCHIVE'), findsNothing);
-      },
-    );
+      expect(find.text('Open Library'), findsOneWidget);
+      expect(find.text('QUEST ARCHIVE'), findsNothing);
+    });
   });
 
   group('Group 3: Stats Dashboard Panel', () {
@@ -326,19 +341,18 @@ void main() {
       },
     );
 
-    testWidgets(
-      'tapping category chip switches to vertical card list mode',
-      (tester) async {
-        await pumpQuestLibraryPage(tester);
+    testWidgets('tapping category chip switches to vertical card list mode', (
+      tester,
+    ) async {
+      await pumpQuestLibraryPage(tester);
 
-        // Tap GRAMMAR chip
-        await tester.tap(find.text('GRAMMAR'));
-        await tester.pumpAndSettle();
+      // Tap GRAMMAR chip
+      await tester.tap(find.text('GRAMMAR'));
+      await tester.pumpAndSettle();
 
-        // In vertical card list mode, cards render category tags
-        expect(find.text('grammar'), findsWidgets);
-      },
-    );
+      // In vertical card list mode, cards render category tags
+      expect(find.text('grammar'), findsWidgets);
+    });
 
     testWidgets(
       'entering search query filters list and displays matching quest cards',
@@ -353,20 +367,19 @@ void main() {
       },
     );
 
-    testWidgets(
-      'entering non-matching search query displays empty state',
-      (tester) async {
-        await pumpQuestLibraryPage(tester);
+    testWidgets('entering non-matching search query displays empty state', (
+      tester,
+    ) async {
+      await pumpQuestLibraryPage(tester);
 
-        final searchField = find.byType(TextField);
-        await tester.enterText(searchField, 'non_existent_quest_xyz_999');
-        await tester.pumpAndSettle();
+      final searchField = find.byType(TextField);
+      await tester.enterText(searchField, 'non_existent_quest_xyz_999');
+      await tester.pumpAndSettle();
 
-        expect(find.byIcon(Icons.search_off_rounded), findsOneWidget);
-        expect(find.text('No matching quests found'), findsOneWidget);
-        expect(find.text('Try a different search or category'), findsOneWidget);
-      },
-    );
+      expect(find.byIcon(Icons.search_off_rounded), findsOneWidget);
+      expect(find.text('No matching quests found'), findsOneWidget);
+      expect(find.text('Try a different search or category'), findsOneWidget);
+    });
 
     testWidgets(
       'tapping clear icon button clears search input and restores content',
@@ -411,18 +424,23 @@ void main() {
         await pumpQuestLibraryPage(tester);
 
         // The first compact card in the first section
-        final cardFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              (w.properties.label?.contains('Level') ?? false),
-        ).first;
+        final cardFinder = find
+            .byWidgetPredicate(
+              (w) =>
+                  w is Semantics &&
+                  w.properties.button == true &&
+                  (w.properties.label?.contains('Level') ?? false),
+            )
+            .first;
 
         expect(cardFinder, findsOneWidget);
         await tester.tap(cardFinder);
         await tester.pumpAndSettle();
 
-        expect(navigatedRoutes.any((r) => r.startsWith('/levels?category=')), isTrue);
+        expect(
+          navigatedRoutes.any((r) => r.startsWith('/levels?category=')),
+          isTrue,
+        );
         expect(find.textContaining('Levels Screen:'), findsOneWidget);
       },
     );
@@ -437,18 +455,23 @@ void main() {
         await tester.pumpAndSettle();
 
         // Find a card in vertical list
-        final cardFinder = find.byWidgetPredicate(
-          (w) =>
-              w is Semantics &&
-              w.properties.button == true &&
-              (w.properties.label?.contains('Completed') ?? false),
-        ).first;
+        final cardFinder = find
+            .byWidgetPredicate(
+              (w) =>
+                  w is Semantics &&
+                  w.properties.button == true &&
+                  (w.properties.label?.contains('Completed') ?? false),
+            )
+            .first;
 
         expect(cardFinder, findsOneWidget);
         await tester.tap(cardFinder);
         await tester.pumpAndSettle();
 
-        expect(navigatedRoutes.any((r) => r.startsWith('/levels?category=')), isTrue);
+        expect(
+          navigatedRoutes.any((r) => r.startsWith('/levels?category=')),
+          isTrue,
+        );
         expect(find.textContaining('Levels Screen:'), findsOneWidget);
       },
     );
@@ -458,66 +481,50 @@ void main() {
     testWidgets(
       'renders cleanly without RenderFlex overflow on compact mobile (320x568)',
       (tester) async {
-        await pumpQuestLibraryPage(
-          tester,
-          viewportSize: const Size(320, 568),
-        );
+        await pumpQuestLibraryPage(tester, viewportSize: const Size(320, 568));
 
         expect(find.text('QUEST ARCHIVE'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      'renders cleanly on large tablet viewport (800x1280)',
-      (tester) async {
-        await pumpQuestLibraryPage(
-          tester,
-          viewportSize: const Size(800, 1280),
-        );
+    testWidgets('renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      await pumpQuestLibraryPage(tester, viewportSize: const Size(800, 1280));
 
-        expect(find.text('QUEST ARCHIVE'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.text('QUEST ARCHIVE'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly under 1.3x accessibility text scaling without overflow',
       (tester) async {
-        await pumpQuestLibraryPage(
-          tester,
-          textScaleFactor: 1.3,
-        );
+        await pumpQuestLibraryPage(tester, textScaleFactor: 1.3);
 
         expect(find.text('QUEST ARCHIVE'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      'renders cleanly in Dark Theme mode',
-      (tester) async {
-        final darkTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          fontFamily: 'Outfit',
-          scaffoldBackgroundColor: const Color(0xFF0F172A),
-          colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF3B82F6),
-            surface: Color(0xFF1E293B),
-            onSurface: Colors.white,
-          ),
-        );
+    testWidgets('renders cleanly in Dark Theme mode', (tester) async {
+      final darkTheme = ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        fontFamily: 'Outfit',
+        scaffoldBackgroundColor: const Color(0xFF0F172A),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF3B82F6),
+          surface: Color(0xFF1E293B),
+          onSurface: Colors.white,
+        ),
+      );
 
-        await pumpQuestLibraryPage(
-          tester,
-          theme: darkTheme,
-        );
+      await pumpQuestLibraryPage(tester, theme: darkTheme);
 
-        expect(find.text('QUEST ARCHIVE'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.text('QUEST ARCHIVE'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
       'renders cleanly in Midnight Theme mode (black scaffold background)',
@@ -534,10 +541,7 @@ void main() {
           ),
         );
 
-        await pumpQuestLibraryPage(
-          tester,
-          theme: midnightTheme,
-        );
+        await pumpQuestLibraryPage(tester, theme: midnightTheme);
 
         expect(find.text('QUEST ARCHIVE'), findsOneWidget);
         expect(tester.takeException(), isNull);

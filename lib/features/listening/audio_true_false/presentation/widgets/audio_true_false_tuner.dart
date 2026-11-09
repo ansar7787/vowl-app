@@ -40,7 +40,8 @@ class AudioTrueFalseTuner extends StatelessWidget {
               AnimatedBuilder(
                 animation: audioController,
                 builder: (_, _) {
-                  if (!audioController.isAnimating && audioController.value == 0) {
+                  if (!audioController.isAnimating &&
+                      audioController.value == 0) {
                     return const SizedBox.shrink();
                   }
                   return SizedBox(

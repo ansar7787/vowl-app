@@ -390,10 +390,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 500));
 
         expect(
-          find.text(
-            'Type the completed sentence',
-            skipOffstage: false,
-          ),
+          find.text('Type the completed sentence', skipOffstage: false),
           findsOneWidget,
         );
       },

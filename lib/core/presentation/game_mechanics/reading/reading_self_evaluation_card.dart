@@ -116,10 +116,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: SafeArea(
-              top: false,
-              child: content,
-            ),
+            child: SafeArea(top: false, child: content),
           );
         }
 

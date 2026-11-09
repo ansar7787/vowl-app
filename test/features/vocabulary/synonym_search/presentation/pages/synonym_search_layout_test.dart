@@ -80,9 +80,11 @@ void main() {
     String correctAnswer = 'kind',
     List<String> options = const ['kind', 'cruel', 'harsh', 'severe'],
     String instruction = 'WARP THE SYNONYM SHARD',
-    String? explanation = 'Benevolent implies a charitable, kind-hearted nature.',
+    String? explanation =
+        'Benevolent implies a charitable, kind-hearted nature.',
     String? hint = 'Showing goodwill and kindness',
-    String? contextSentence = 'She was a benevolent ruler beloved by her subjects.',
+    String? contextSentence =
+        'She was a benevolent ruler beloved by her subjects.',
     List<String>? synonyms = const ['kind', 'generous', 'caring'],
     int difficulty = 1,
   }) {
@@ -203,18 +205,21 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Default BLoC mock
     when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
-    when(() => mockVocabularyBloc.stream)
-        .thenAnswer((_) => vocabularyStreamController.stream);
+    when(
+      () => mockVocabularyBloc.stream,
+    ).thenAnswer((_) => vocabularyStreamController.stream);
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -309,14 +314,18 @@ void main() {
   }
 
   group('Group 1: Initial Screen Layout & Component Rendering', () {
-    testWidgets('1. renders GameShimmerLoading when state has no quest', (tester) async {
+    testWidgets('1. renders GameShimmerLoading when state has no quest', (
+      tester,
+    ) async {
       final uninitializedState = const VocabularyInitial();
       await pumpScreen(tester, initialState: uninitializedState);
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('2. renders SynonymInstructionHeader with instruction', (tester) async {
+    testWidgets('2. renders SynonymInstructionHeader with instruction', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(SynonymInstructionHeader), findsOneWidget);
@@ -324,14 +333,18 @@ void main() {
       expect(find.text('Showing goodwill and kindness'), findsNothing);
     });
 
-    testWidgets('3. renders SynonymWarpGate displaying uppercase target word', (tester) async {
+    testWidgets('3. renders SynonymWarpGate displaying uppercase target word', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(SynonymWarpGate), findsOneWidget);
       expect(find.text('BENEVOLENT'), findsOneWidget);
     });
 
-    testWidgets('4. renders all SynonymWordShard option chips with text', (tester) async {
+    testWidgets('4. renders all SynonymWordShard option chips with text', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(SynonymWordShard), findsNWidgets(4));
@@ -341,7 +354,9 @@ void main() {
       expect(find.text('SEVERE'), findsOneWidget);
     });
 
-    testWidgets('5. renders header controls including QuestHintButton', (tester) async {
+    testWidgets('5. renders header controls including QuestHintButton', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(QuestHintButton), findsOneWidget);
@@ -349,7 +364,9 @@ void main() {
   });
 
   group('Group 2: Phase 1 Mechanics: Tap & Drag Shard to Warp Gate', () {
-    testWidgets('6. tapping a shard selects it and triggers light haptic', (tester) async {
+    testWidgets('6. tapping a shard selects it and triggers light haptic', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.text('KIND'));
@@ -359,7 +376,9 @@ void main() {
       verify(() => mockHapticService.light()).called(1);
     });
 
-    testWidgets('7. tapping another shard updates selected shard', (tester) async {
+    testWidgets('7. tapping another shard updates selected shard', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.text('KIND'));
@@ -373,7 +392,9 @@ void main() {
       verify(() => mockHapticService.light()).called(2);
     });
 
-    testWidgets('8. tapping warp gate with no shard selected does nothing', (tester) async {
+    testWidgets('8. tapping warp gate with no shard selected does nothing', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.byType(SynonymWarpGate));
@@ -385,243 +406,342 @@ void main() {
       verifyNever(() => mockVocabularyBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('9. tapping selected shard then tapping warp gate (tap-to-answer) with correct synonym advances to Phase 2', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '9. tapping selected shard then tapping warp gate (tap-to-answer) with correct synonym advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('KIND'));
-      await tester.pump();
+        await tester.tap(find.text('KIND'));
+        await tester.pump();
 
-      await tester.tap(find.byType(SynonymWarpGate));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byType(SynonymWarpGate));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
-    testWidgets('10. tapping selected shard then tapping warp gate with wrong synonym triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10. tapping selected shard then tapping warp gate with wrong synonym triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('CRUEL'));
-      await tester.pump();
+        await tester.tap(find.text('CRUEL'));
+        await tester.pump();
 
-      await tester.tap(find.byType(SynonymWarpGate));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byType(SynonymWarpGate));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('10a. tapping selected shard a second time (double-tap/confirm) with correct synonym advances to Phase 2', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10a. tapping selected shard a second time (double-tap/confirm) with correct synonym advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('KIND'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(find.text('KIND'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await tester.tap(find.text('KIND'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('KIND'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
-    testWidgets('10b. tapping selected shard a second time with wrong synonym triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10b. tapping selected shard a second time with wrong synonym triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('CRUEL'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(find.text('CRUEL'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await tester.tap(find.text('CRUEL'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('CRUEL'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('10c. when a shard is selected, warp gate displays TAP TO MATCH', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10c. when a shard is selected, warp gate displays TAP TO MATCH',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.text('TAP TO MATCH'), findsNothing);
+        expect(find.text('TAP TO MATCH'), findsNothing);
 
-      await tester.tap(find.text('KIND'));
-      await tester.pump();
+        await tester.tap(find.text('KIND'));
+        await tester.pump();
 
-      expect(find.text('TAP TO MATCH'), findsOneWidget);
-    });
+        expect(find.text('TAP TO MATCH'), findsOneWidget);
+      },
+    );
 
-    testWidgets('11. dragging correct shard close to warp gate triggers near-gate proximity selection haptic', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '11. dragging correct shard close to warp gate triggers near-gate proximity selection haptic',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final shard = find.text('KIND');
-      final gesture = await tester.startGesture(tester.getCenter(shard));
-      await tester.pump();
+        final shard = find.text('KIND');
+        final gesture = await tester.startGesture(tester.getCenter(shard));
+        await tester.pump();
 
-      // Drag inwards toward gate
-      await gesture.moveBy(const Offset(30, 30));
-      await tester.pump();
+        // Drag inwards toward gate
+        await gesture.moveBy(const Offset(30, 30));
+        await tester.pump();
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-    });
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
 
-    testWidgets('12. dragging correct shard into warp gate snaps and advances to Phase 2', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '12. dragging correct shard into warp gate snaps and advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final shard = find.text('KIND');
-      final gate = find.byType(SynonymWarpGate);
-      final gesture = await tester.startGesture(tester.getCenter(shard));
-      await gesture.moveBy(const Offset(-20, 20));
-      await tester.pump(const Duration(milliseconds: 20));
-      await gesture.moveTo(tester.getCenter(gate));
-      await tester.pump(const Duration(milliseconds: 20));
+        final shard = find.text('KIND');
+        final gate = find.byType(SynonymWarpGate);
+        final gesture = await tester.startGesture(tester.getCenter(shard));
+        await gesture.moveBy(const Offset(-20, 20));
+        await tester.pump(const Duration(milliseconds: 20));
+        await gesture.moveTo(tester.getCenter(gate));
+        await tester.pump(const Duration(milliseconds: 20));
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
-    testWidgets('13. dragging wrong shard into warp gate dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '13. dragging wrong shard into warp gate dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final shard = find.text('CRUEL');
-      final gate = find.byType(SynonymWarpGate);
-      final gesture = await tester.startGesture(tester.getCenter(shard));
-      await gesture.moveBy(const Offset(20, -20));
-      await tester.pump(const Duration(milliseconds: 20));
-      await gesture.moveTo(tester.getCenter(gate));
-      await tester.pump(const Duration(milliseconds: 20));
+        final shard = find.text('CRUEL');
+        final gate = find.byType(SynonymWarpGate);
+        final gesture = await tester.startGesture(tester.getCenter(shard));
+        await gesture.moveBy(const Offset(20, -20));
+        await tester.pump(const Duration(milliseconds: 20));
+        await gesture.moveTo(tester.getCenter(gate));
+        await tester.pump(const Duration(milliseconds: 20));
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('14. dragging shard below snap distance snaps back to initial position', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '14. dragging shard below snap distance snaps back to initial position',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final shard = find.text('KIND');
-      final gesture = await tester.startGesture(tester.getCenter(shard));
-      await tester.pump();
+        final shard = find.text('KIND');
+        final gesture = await tester.startGesture(tester.getCenter(shard));
+        await tester.pump();
 
-      // Slight move away
-      await gesture.moveBy(const Offset(-10, -10));
-      await tester.pump();
+        // Slight move away
+        await gesture.moveBy(const Offset(-10, -10));
+        await tester.pump();
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Shard remains visible and not warped
-      expect(find.text('KIND'), findsOneWidget);
-      expect(find.byType(ContextSentenceBuilder), findsNothing);
-    });
+        // Shard remains visible and not warped
+        expect(find.text('KIND'), findsOneWidget);
+        expect(find.byType(ContextSentenceBuilder), findsNothing);
+      },
+    );
   });
 
   group('Group 3: Phase 2 (Stage 2) Sentence Construction & Confirmation', () {
-    testWidgets('15. displays SynonymNuanceScale with nuance difference badge and explanation after Phase 1 passed', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '15. displays SynonymNuanceScale with nuance difference badge and explanation after Phase 1 passed',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      expect(find.byType(SynonymNuanceScale), findsOneWidget);
-      expect(find.text('NUANCE DIFFERENCE'), findsOneWidget);
-      expect(find.text('Benevolent implies a charitable, kind-hearted nature.'), findsOneWidget);
-    });
+        expect(find.byType(SynonymNuanceScale), findsOneWidget);
+        expect(find.text('NUANCE DIFFERENCE'), findsOneWidget);
+        expect(
+          find.text('Benevolent implies a charitable, kind-hearted nature.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('16. displays ContextSentenceBuilder in Phase 2', (tester) async {
+    testWidgets('16. displays ContextSentenceBuilder in Phase 2', (
+      tester,
+    ) async {
       await advanceToPhase2(tester);
 
       expect(find.byType(ContextSentenceBuilder), findsOneWidget);
     });
 
-    testWidgets('17. confirms Phase 2 via onConfirmed triggers success sound/haptic and dispatches SubmitAnswer(true)', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '17. confirms Phase 2 via onConfirmed triggers success sound/haptic and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(find.byType(ContextSentenceBuilder));
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playCorrect()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playCorrect(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isTrue,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('18. skips Phase 2 via onSkipped triggers wrong sound/haptic and dispatches SubmitAnswer(false)', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '18. skips Phase 2 via onSkipped triggers wrong sound/haptic and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(find.byType(ContextSentenceBuilder));
-      builder.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('19. entering sentence with target keyword in ContextSentenceBuilder confirms stage 2', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '19. entering sentence with target keyword in ContextSentenceBuilder confirms stage 2',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builderFinder = find.byType(ContextSentenceBuilder);
-      expect(builderFinder, findsOneWidget);
+        final builderFinder = find.byType(ContextSentenceBuilder);
+        expect(builderFinder, findsOneWidget);
 
-      final builder = tester.widget<ContextSentenceBuilder>(builderFinder);
-      expect(builder.targetKeyword, equals('kind'));
-    });
+        final builder = tester.widget<ContextSentenceBuilder>(builderFinder);
+        expect(builder.targetKeyword, equals('kind'));
+      },
+    );
   });
 
   group('Group 4: Hint System & Sensory Feedback', () {
-    testWidgets('20. tapping hint button pulls correct shard closer to center', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '20. tapping hint button pulls correct shard closer to center',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+        ).called(1);
+      },
+    );
 
-    testWidgets('21. hint shard offset auto-resets after timer elapses', (tester) async {
+    testWidgets('21. hint shard offset auto-resets after timer elapses', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.byType(QuestHintButton));
@@ -632,22 +752,30 @@ void main() {
       expect(find.text('KIND'), findsOneWidget);
     });
 
-    testWidgets('22. tapping hint button dispatches VocabularyHintUsed event', (tester) async {
+    testWidgets('22. tapping hint button dispatches VocabularyHintUsed event', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.byType(QuestHintButton));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockVocabularyBloc.add(any(that: isA<VocabularyHintUsed>()))).called(1);
+      verify(
+        () => mockVocabularyBloc.add(any(that: isA<VocabularyHintUsed>())),
+      ).called(1);
     });
   });
 
   group('Group 5: State Progression, Error Handling & Navigation', () {
-    testWidgets('23. displays success feedback card when answered correctly', (tester) async {
+    testWidgets('23. displays success feedback card when answered correctly', (
+      tester,
+    ) async {
       await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(find.byType(ContextSentenceBuilder));
+      final builder = tester.widget<ContextSentenceBuilder>(
+        find.byType(ContextSentenceBuilder),
+      );
       builder.onConfirmed();
       await tester.pump();
       await tester.pumpAndSettle();
@@ -655,78 +783,96 @@ void main() {
       expect(find.byType(GameFeedbackCard), findsOneWidget);
     });
 
-    testWidgets('24. displays failure feedback card with retry when answered incorrectly', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '24. displays failure feedback card with retry when answered incorrectly',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('CRUEL'));
-      await tester.pump();
-      await tester.tap(find.byType(SynonymWarpGate));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('CRUEL'));
+        await tester.pump();
+        await tester.tap(find.byType(SynonymWarpGate));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+      },
+    );
 
-    testWidgets('25. tapping continue on feedback card dispatches NextQuestion()', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '25. tapping continue on feedback card dispatches NextQuestion()',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(find.byType(ContextSentenceBuilder));
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pumpAndSettle();
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpAndSettle();
 
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pump();
+        await tester.tap(continueButton);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(any(that: isA<NextQuestion>()))).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(any(that: isA<NextQuestion>())),
+        ).called(1);
+      },
+    );
 
-    testWidgets('26. transitions from question 0 to question 1 cleanly on state change', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '26. transitions from question 0 to question 1 cleanly on state change',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.text('BENEVOLENT'), findsOneWidget);
+        expect(find.text('BENEVOLENT'), findsOneWidget);
 
-      final nextState = VocabularyLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-      );
-      vocabularyStreamController.add(nextState);
-      await tester.pump();
-      await tester.pumpAndSettle();
+        final nextState = VocabularyLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+        );
+        vocabularyStreamController.add(nextState);
+        await tester.pump();
+        await tester.pumpAndSettle();
 
-      expect(find.text('CANDID'), findsOneWidget);
-      expect(find.text('FRANK'), findsOneWidget);
-    });
+        expect(find.text('CANDID'), findsOneWidget);
+        expect(find.text('FRANK'), findsOneWidget);
+      },
+    );
 
-    testWidgets('27. handles quest without explanation cleanly (omits nuance scale without crashing)', (tester) async {
-      final noExplanationQuest = createQuest(explanation: null);
-      final singleState = VocabularyLoaded(
-        quests: [noExplanationQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-      );
-      await pumpScreen(tester, initialState: singleState);
+    testWidgets(
+      '27. handles quest without explanation cleanly (omits nuance scale without crashing)',
+      (tester) async {
+        final noExplanationQuest = createQuest(explanation: null);
+        final singleState = VocabularyLoaded(
+          quests: [noExplanationQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+        );
+        await pumpScreen(tester, initialState: singleState);
 
-      await tester.tap(find.text('KIND'));
-      await tester.pump();
-      await tester.tap(find.byType(SynonymWarpGate));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('KIND'));
+        await tester.pump();
+        await tester.tap(find.byType(SynonymWarpGate));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(SynonymNuanceScale), findsNothing);
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        expect(find.byType(SynonymNuanceScale), findsNothing);
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
-    testWidgets('28. handles minimal quest without optional fields cleanly', (tester) async {
+    testWidgets('28. handles minimal quest without optional fields cleanly', (
+      tester,
+    ) async {
       final minState = VocabularyLoaded(
         quests: [sampleMinimalQuest],
         currentIndex: 0,
@@ -741,13 +887,16 @@ void main() {
   });
 
   group('Group 6: Responsive Layout & Theme Adaptability', () {
-    testWidgets('29. renders cleanly without overflow on compact phone (320x568)', (tester) async {
-      await pumpScreen(tester, size: const Size(320, 568));
+    testWidgets(
+      '29. renders cleanly without overflow on compact phone (320x568)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(320, 568));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SynonymWarpGate), findsOneWidget);
-      expect(find.byType(SynonymWordShard), findsNWidgets(4));
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(SynonymWarpGate), findsOneWidget);
+        expect(find.byType(SynonymWordShard), findsNWidgets(4));
+      },
+    );
 
     testWidgets('30. renders cleanly on tablet (768x1024)', (tester) async {
       await pumpScreen(tester, size: const Size(768, 1024));
@@ -757,7 +906,9 @@ void main() {
       expect(find.byType(SynonymWordShard), findsNWidgets(4));
     });
 
-    testWidgets('31. renders cleanly in landscape mode (800x480)', (tester) async {
+    testWidgets('31. renders cleanly in landscape mode (800x480)', (
+      tester,
+    ) async {
       await pumpScreen(tester, size: const Size(800, 480));
 
       expect(tester.takeException(), isNull);
@@ -765,7 +916,9 @@ void main() {
       expect(find.byType(SynonymWordShard), findsNWidgets(4));
     });
 
-    testWidgets('32. renders cleanly under high text scale (1.5x)', (tester) async {
+    testWidgets('32. renders cleanly under high text scale (1.5x)', (
+      tester,
+    ) async {
       await pumpScreen(tester, textScale: 1.5);
 
       expect(tester.takeException(), isNull);
@@ -780,4 +933,3 @@ void main() {
     });
   });
 }
-

@@ -101,10 +101,7 @@ class _DialectDrillHologramConsoleState
               key: const ValueKey('dialect_drill_play_audio'),
               onTap: widget.onPlayTargetAudio,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 22.w,
-                  vertical: 12.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: widget.color.withValues(
                     alpha: widget.isDark ? 0.15 : 0.08,
@@ -258,9 +255,9 @@ class _DialectDrillHologramConsoleState
         builder: (context, candidateData, rejectedData) {
           String label =
               widget.quest.options != null &&
-                      widget.quest.options!.length > index
-                  ? widget.quest.options![index]
-                  : "Option 0${index + 1}";
+                  widget.quest.options!.length > index
+              ? widget.quest.options![index]
+              : "Option 0${index + 1}";
 
           label = label.replaceAll(
             RegExp(r'\s*\(American\)|\s*\(British\)'),

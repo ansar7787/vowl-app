@@ -148,10 +148,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                   bottom: BorderSide(color: primaryColor, width: 2.5),
                 ),
               ),
-              child: Text(
-                selected,
-                style: blankTextStyle,
-              ),
+              child: Text(selected, style: blankTextStyle),
             ),
           ),
       ];
@@ -166,10 +163,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
             alignment: PlaceholderAlignment.middle,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 6.w),
-              padding: EdgeInsets.symmetric(
-                horizontal: 10.w,
-                vertical: 2.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
@@ -180,10 +174,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                   ),
                 ),
               ),
-              child: Text(
-                selected ?? "       ",
-                style: blankTextStyle,
-              ),
+              child: Text(selected ?? "       ", style: blankTextStyle),
             ),
           ),
         );
@@ -264,7 +255,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     double horizontalMargin,
     bool isNarrow,
   ) {
-    final template = quest.sentenceWithBlank ??
+    final template =
+        quest.sentenceWithBlank ??
         quest.question ??
         quest.sentence ??
         "___ sentence.";
@@ -275,16 +267,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
       builder: (context, _) {
         final selectedText =
             (options.isNotEmpty && _selectedIndex.value < options.length)
-                ? options[_selectedIndex.value]
-                : null;
+            ? options[_selectedIndex.value]
+            : null;
 
         return Container(
           key: const ValueKey('modal_context_card'),
           width: double.infinity,
-          padding: EdgeInsets.symmetric(
-            horizontal: 20.w,
-            vertical: 20.h,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
           decoration: BoxDecoration(
             color: isDark
@@ -408,10 +397,12 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                 showConfettiNotifier,
               ]),
               builder: (context, _) {
-                final isAnswered = isAnsweredNotifier.value ||
+                final isAnswered =
+                    isAnsweredNotifier.value ||
                     (state is GrammarLoaded &&
                         state.answerStatus != AnswerStatus.unanswered);
-                final isCorrect = (isCorrectNotifier.value == true) ||
+                final isCorrect =
+                    (isCorrectNotifier.value == true) ||
                     (state is GrammarLoaded &&
                         state.answerStatus == AnswerStatus.correct);
 
@@ -434,8 +425,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor:
-                                  theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               crossAxisMargin: 2,
@@ -538,7 +530,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                             "";
                                         String fullSentence = sentence;
                                         if (sentence.contains(
-                                            RegExp(r'_{3,}'))) {
+                                          RegExp(r'_{3,}'),
+                                        )) {
                                           fullSentence = sentence.replaceFirst(
                                             RegExp(r'_{3,}'),
                                             options[_selectedIndex.value],
@@ -547,13 +540,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                             quest.sentence!.isNotEmpty) {
                                           fullSentence = quest.sentence!;
                                         }
-                                        final cleanTargetSentence =
-                                            fullSentence
-                                                .replaceAll(
-                                                  RegExp(r'\s+'),
-                                                  ' ',
-                                                )
-                                                .trim();
+                                        final cleanTargetSentence = fullSentence
+                                            .replaceAll(RegExp(r'\s+'), ' ')
+                                            .trim();
 
                                         if (cleanTargetSentence.isNotEmpty) {
                                           return SliverToBoxAdapter(
@@ -596,15 +585,15 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          MediaQuery.of(context)
-                                                      .viewInsets
-                                                      .bottom >
-                                                  0
-                                              ? MediaQuery.of(
-                                                      context,
-                                                    ).viewInsets.bottom +
-                                                  40.h
-                                              : 60.h,
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],

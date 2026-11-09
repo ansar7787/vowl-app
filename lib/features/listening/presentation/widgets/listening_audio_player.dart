@@ -27,9 +27,11 @@ class ListeningAudioPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = isDark &&
+    final isMidnight =
+        isDark &&
         (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
-            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface ==
+                AppColors.midnightSurface ||
             Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     return Semantics(
@@ -42,15 +44,15 @@ class ListeningAudioPlayer extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightCard
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.white.withValues(alpha: 0.5)),
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : Colors.white.withValues(alpha: 0.5)),
           borderRadius: BorderRadius.circular(30.r),
           border: Border.all(
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate100),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
             width: 1,
           ),
         ),

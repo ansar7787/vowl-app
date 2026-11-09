@@ -378,8 +378,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
             final currentOrder = _currentOrder.value.isNotEmpty
                 ? _currentOrder.value
                 : (quest.sentences != null
-                    ? List.generate(quest.sentences!.length, (i) => i)
-                    : const <int>[]);
+                      ? List.generate(quest.sentences!.length, (i) => i)
+                      : const <int>[]);
             final selectedIndex = _selectedTileIndex.value;
             return RawScrollbar(
               controller: _scrollController,
@@ -529,8 +529,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                           decoration: BoxDecoration(
                                             color: theme.primaryColor
                                                 .withValues(alpha: 0.1),
-                                            borderRadius:
-                                                BorderRadius.circular(8.r),
+                                            borderRadius: BorderRadius.circular(
+                                              8.r,
+                                            ),
                                           ),
                                           child: Text(
                                             _formatSequenceLogic(

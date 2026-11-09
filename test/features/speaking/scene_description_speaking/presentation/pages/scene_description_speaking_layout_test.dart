@@ -206,18 +206,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => 'mock_scene_rec.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => 'mock_scene_rec.m4a');
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
     when(() => mockSpeechService.isListening).thenReturn(false);
@@ -318,10 +323,7 @@ void main() {
                 textScaler: TextScaler.linear(textScaleFactor),
                 disableAnimations: reduceMotion,
               ),
-              child: SceneDescriptionScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              child: SceneDescriptionScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -350,18 +352,19 @@ void main() {
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('displays error view and retry button during SpeakingError state', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        state: const SpeakingError('Network connectivity failure'),
-      );
+    testWidgets(
+      'displays error view and retry button during SpeakingError state',
+      (tester) async {
+        await pumpSceneDescriptionScreen(
+          tester,
+          state: const SpeakingError('Network connectivity failure'),
+        );
 
-      expect(find.byType(GameErrorView), findsOneWidget);
-      expect(find.text('Network connectivity failure'), findsOneWidget);
-      expect(find.byIcon(Icons.refresh_rounded), findsOneWidget);
-    });
+        expect(find.byType(GameErrorView), findsOneWidget);
+        expect(find.text('Network connectivity failure'), findsOneWidget);
+        expect(find.byIcon(Icons.refresh_rounded), findsOneWidget);
+      },
+    );
 
     testWidgets('tapping retry dispatches FetchSpeakingQuests', (tester) async {
       await pumpSceneDescriptionScreen(
@@ -386,9 +389,7 @@ void main() {
   });
 
   group('2. Briefing Overlay Mechanics', () {
-    testWidgets('displays QuestBriefingOverlay on level 1', (
-      tester,
-    ) async {
+    testWidgets('displays QuestBriefingOverlay on level 1', (tester) async {
       await pumpSceneDescriptionScreen(tester, level: 1);
 
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
@@ -623,10 +624,7 @@ void main() {
         find.byKey(const Key('scene_description_explorer_guide_text')),
         findsOneWidget,
       );
-      expect(
-        find.byType(SceneDescriptionActivePromptCard),
-        findsNothing,
-      );
+      expect(find.byType(SceneDescriptionActivePromptCard), findsNothing);
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
 
@@ -643,31 +641,32 @@ void main() {
       expect(guideSemantics, findsOneWidget);
     });
 
-    testWidgets('tapping beacon 0 opens ActivePromptCard and SpeakToConfirmOverlay', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(tester);
+    testWidgets(
+      'tapping beacon 0 opens ActivePromptCard and SpeakToConfirmOverlay',
+      (tester) async {
+        await pumpSceneDescriptionScreen(tester);
 
-      final beacon0 = find.byKey(const Key('scene_description_beacon_0'));
-      await tester.tap(beacon0);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final beacon0 = find.byKey(const Key('scene_description_beacon_0'));
+        await tester.tap(beacon0);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts('Solar Array')).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockSoundService.playTts('Solar Array')).called(1);
 
-      expect(find.byType(SceneDescriptionActivePromptCard), findsOneWidget);
-      expect(
-        find.byKey(const Key('scene_description_active_prompt_card')),
-        findsOneWidget,
-      );
-      expect(
-        find.text('Describe the primary function of the solar array.'),
-        findsOneWidget,
-      );
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.byType(SceneDescriptionExplorerGuideCard), findsNothing);
-    });
+        expect(find.byType(SceneDescriptionActivePromptCard), findsOneWidget);
+        expect(
+          find.byKey(const Key('scene_description_active_prompt_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Describe the primary function of the solar array.'),
+          findsOneWidget,
+        );
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.byType(SceneDescriptionExplorerGuideCard), findsNothing);
+      },
+    );
 
     testWidgets('tapping beacon while recording suppresses TTS playback', (
       tester,
@@ -719,67 +718,81 @@ void main() {
       );
       expect(find.text('Target Vocabulary'), findsOneWidget);
 
-      expect(find.byKey(const Key('scene_description_vocab_0')), findsOneWidget);
-      expect(find.byKey(const Key('scene_description_vocab_1')), findsOneWidget);
-      expect(find.byKey(const Key('scene_description_vocab_2')), findsOneWidget);
-      expect(find.byKey(const Key('scene_description_vocab_3')), findsOneWidget);
+      expect(
+        find.byKey(const Key('scene_description_vocab_0')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('scene_description_vocab_1')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('scene_description_vocab_2')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('scene_description_vocab_3')),
+        findsOneWidget,
+      );
 
       expect(find.text('hydroponics'), findsOneWidget);
       expect(find.text('photosynthesis'), findsOneWidget);
     });
 
-    testWidgets('omits Target Vocabulary section if keyVocabulary is empty or null', (
-      tester,
-    ) async {
-      final noVocabQuest = createQuest(keyVocabulary: null);
-      final stateNoVocab = SpeakingLoaded(
-        quests: [noVocabQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.sceneDescriptionSpeaking,
-        level: 2,
-      );
+    testWidgets(
+      'omits Target Vocabulary section if keyVocabulary is empty or null',
+      (tester) async {
+        final noVocabQuest = createQuest(keyVocabulary: null);
+        final stateNoVocab = SpeakingLoaded(
+          quests: [noVocabQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.sceneDescriptionSpeaking,
+          level: 2,
+        );
 
-      await pumpSceneDescriptionScreen(tester, state: stateNoVocab);
+        await pumpSceneDescriptionScreen(tester, state: stateNoVocab);
 
-      expect(
-        find.byKey(const Key('scene_description_vocab_title')),
-        findsNothing,
-      );
-      expect(find.text('Target Vocabulary'), findsNothing);
-    });
+        expect(
+          find.byKey(const Key('scene_description_vocab_title')),
+          findsNothing,
+        );
+        expect(find.text('Target Vocabulary'), findsNothing);
+      },
+    );
   });
 
   group('8. Verbal Self-Evaluation Confirmation & Failure', () {
-    testWidgets('successful confirmation stabilizes beacon 0 and returns to guide card', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(tester);
+    testWidgets(
+      'successful confirmation stabilizes beacon 0 and returns to guide card',
+      (tester) async {
+        await pumpSceneDescriptionScreen(tester);
 
-      // Tap beacon 0
-      await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap beacon 0
+        await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Confirm hotspot 0
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Confirm hotspot 0
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      // Now 1 feature stabilized
-      expect(find.text('1 of 3 items described'), findsOneWidget);
-      expect(find.byType(SceneDescriptionExplorerGuideCard), findsOneWidget);
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
+        // Now 1 feature stabilized
+        expect(find.text('1 of 3 items described'), findsOneWidget);
+        expect(find.byType(SceneDescriptionExplorerGuideCard), findsOneWidget);
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
 
     testWidgets('tapping already inspected beacon 0 is ignored', (
       tester,
@@ -790,7 +803,9 @@ void main() {
       await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+      tester
+          .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+          .onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -808,58 +823,60 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
 
-    testWidgets('evaluation failure dispatches SubmitAnswer(false) and plays wrong sound', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(tester);
+    testWidgets(
+      'evaluation failure dispatches SubmitAnswer(false) and plays wrong sound',
+      (tester) async {
+        await pumpSceneDescriptionScreen(tester);
 
-      // Tap beacon 1
-      await tester.tap(find.byKey(const Key('scene_description_beacon_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Tap beacon 1
+        await tester.tap(find.byKey(const Key('scene_description_beacon_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Trigger skip / missed evaluation
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Trigger skip / missed evaluation
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Feedback card appears when answer is incorrect
-      final incorrectState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.incorrect,
-      );
-      when(() => mockSpeakingBloc.state).thenReturn(incorrectState);
-      speakingStreamController.add(incorrectState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Feedback card appears when answer is incorrect
+        final incorrectState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.incorrect,
+        );
+        when(() => mockSpeakingBloc.state).thenReturn(incorrectState);
+        speakingStreamController.add(incorrectState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+      },
+    );
 
-    testWidgets('evaluation failure records error journal for authenticated user', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(tester);
+    testWidgets(
+      'evaluation failure records error journal for authenticated user',
+      (tester) async {
+        await pumpSceneDescriptionScreen(tester);
 
-      await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('9. Multi-Hotspot Completion & Full Scene Description', () {
@@ -872,7 +889,9 @@ void main() {
       await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+      tester
+          .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+          .onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('1 of 3 items described'), findsOneWidget);
@@ -881,7 +900,9 @@ void main() {
       await tester.tap(find.byKey(const Key('scene_description_beacon_1')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+      tester
+          .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+          .onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('2 of 3 items described'), findsOneWidget);
@@ -890,7 +911,9 @@ void main() {
       await tester.tap(find.byKey(const Key('scene_description_beacon_2')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+      tester
+          .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+          .onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('3 of 3 items described'), findsOneWidget);
@@ -898,43 +921,48 @@ void main() {
       verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('displays Full Scene Description card when answered and correct', (
-      tester,
-    ) async {
-      await pumpSceneDescriptionScreen(tester, size: const Size(390, 1600));
+    testWidgets(
+      'displays Full Scene Description card when answered and correct',
+      (tester) async {
+        await pumpSceneDescriptionScreen(tester, size: const Size(390, 1600));
 
-      // Complete all 3 beacons
-      for (int i = 0; i < 3; i++) {
-        await tester.tap(find.byKey(Key('scene_description_beacon_$i')));
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-        tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-      }
+        // Complete all 3 beacons
+        for (int i = 0; i < 3; i++) {
+          await tester.tap(find.byKey(Key('scene_description_beacon_$i')));
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+          tester
+              .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+              .onConfirmed();
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+        }
 
-      // Check Full Scene Description card
-      expect(
-        find.byKey(const Key('scene_description_sample_answer_card')),
-        findsOneWidget,
-      );
-      expect(find.text('Example Description'), findsOneWidget);
-      expect(
-        find.byKey(const Key('scene_description_sample_answer_text')),
-        findsOneWidget,
-      );
-      expect(
-        find.descendant(
-          of: find.byKey(const Key('scene_description_sample_answer_card')),
-          matching: find.textContaining('The space station hydroponics facility uses'),
-        ),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('scene_description_sample_tts_button')),
-        findsOneWidget,
-      );
-    });
+        // Check Full Scene Description card
+        expect(
+          find.byKey(const Key('scene_description_sample_answer_card')),
+          findsOneWidget,
+        );
+        expect(find.text('Example Description'), findsOneWidget);
+        expect(
+          find.byKey(const Key('scene_description_sample_answer_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(
+            of: find.byKey(const Key('scene_description_sample_answer_card')),
+            matching: find.textContaining(
+              'The space station hydroponics facility uses',
+            ),
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('scene_description_sample_tts_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('tapping LISTEN button plays sample answer TTS', (
       tester,
@@ -945,12 +973,16 @@ void main() {
         await tester.tap(find.byKey(Key('scene_description_beacon_$i')));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
-        tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+        tester
+            .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+            .onConfirmed();
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
       }
 
-      final listenBtn = find.byKey(const Key('scene_description_sample_tts_button'));
+      final listenBtn = find.byKey(
+        const Key('scene_description_sample_tts_button'),
+      );
       expect(listenBtn, findsOneWidget);
 
       clearInteractions(mockHapticService);
@@ -960,13 +992,17 @@ void main() {
       await tester.pump();
 
       verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts(sampleQuest1.sampleAnswer!)).called(1);
+      verify(
+        () => mockSoundService.playTts(sampleQuest1.sampleAnswer!),
+      ).called(1);
     });
 
     testWidgets('sample answer TTS handles exceptions gracefully', (
       tester,
     ) async {
-      when(() => mockSoundService.playTts(any())).thenThrow(Exception('Audio hardware glitch'));
+      when(
+        () => mockSoundService.playTts(any()),
+      ).thenThrow(Exception('Audio hardware glitch'));
 
       await pumpSceneDescriptionScreen(tester, size: const Size(390, 1600));
 
@@ -974,12 +1010,16 @@ void main() {
         await tester.tap(find.byKey(Key('scene_description_beacon_$i')));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
-        tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+        tester
+            .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+            .onConfirmed();
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
       }
 
-      final listenBtn = find.byKey(const Key('scene_description_sample_tts_button'));
+      final listenBtn = find.byKey(
+        const Key('scene_description_sample_tts_button'),
+      );
       tester.widget<GestureDetector>(listenBtn).onTap?.call();
       await tester.pump();
 
@@ -1000,7 +1040,9 @@ void main() {
       await tester.tap(hintBtn);
       await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+      ).called(greaterThanOrEqualTo(1));
     });
 
     testWidgets('tapping CONTINUE in feedback card dispatches NextQuestion', (
@@ -1040,10 +1082,7 @@ void main() {
 
   group('11. Viewport Responsiveness & Layout Modes', () {
     testWidgets('renders cleanly on compact screen (320x568)', (tester) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+      await pumpSceneDescriptionScreen(tester, size: const Size(320, 568));
 
       expect(find.byType(SceneDescriptionScreen), findsOneWidget);
       expect(find.byType(SceneDescriptionScenicRadarMap), findsOneWidget);
@@ -1051,10 +1090,7 @@ void main() {
     });
 
     testWidgets('renders cleanly on tablet screen (768x1024)', (tester) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        size: const Size(768, 1024),
-      );
+      await pumpSceneDescriptionScreen(tester, size: const Size(768, 1024));
 
       expect(find.byType(SceneDescriptionScreen), findsOneWidget);
       expect(find.byType(SceneDescriptionScenicRadarMap), findsOneWidget);
@@ -1062,30 +1098,21 @@ void main() {
     });
 
     testWidgets('renders correctly in Light Theme', (tester) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        themeMode: ThemeMode.light,
-      );
+      await pumpSceneDescriptionScreen(tester, themeMode: ThemeMode.light);
 
       expect(find.byType(SceneDescriptionScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders correctly in Dark Theme', (tester) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        themeMode: ThemeMode.dark,
-      );
+      await pumpSceneDescriptionScreen(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(SceneDescriptionScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('adapts gracefully to 1.3x text scaling', (tester) async {
-      await pumpSceneDescriptionScreen(
-        tester,
-        textScaleFactor: 1.3,
-      );
+      await pumpSceneDescriptionScreen(tester, textScaleFactor: 1.3);
 
       expect(find.byType(SceneDescriptionScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -1093,53 +1120,53 @@ void main() {
   });
 
   group('12. Fallback & Edge Cases', () {
-    testWidgets('handles quest with null options by providing default objects', (
-      tester,
-    ) async {
-      final fallbackQuest = createQuest(options: null);
-      final fallbackState = SpeakingLoaded(
-        quests: [fallbackQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.sceneDescriptionSpeaking,
-        level: 2,
-      );
+    testWidgets(
+      'handles quest with null options by providing default objects',
+      (tester) async {
+        final fallbackQuest = createQuest(options: null);
+        final fallbackState = SpeakingLoaded(
+          quests: [fallbackQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.sceneDescriptionSpeaking,
+          level: 2,
+        );
 
-      await pumpSceneDescriptionScreen(tester, state: fallbackState);
+        await pumpSceneDescriptionScreen(tester, state: fallbackState);
 
-      expect(find.text('Object A'), findsOneWidget);
-      expect(find.text('Object B'), findsOneWidget);
-      expect(find.text('Object C'), findsOneWidget);
-    });
+        expect(find.text('Object A'), findsOneWidget);
+        expect(find.text('Object B'), findsOneWidget);
+        expect(find.text('Object C'), findsOneWidget);
+      },
+    );
 
-    testWidgets('handles quest with empty options by falling back to default 3 objects', (
-      tester,
-    ) async {
-      final fallbackQuest = createQuest(options: []);
-      final fallbackState = SpeakingLoaded(
-        quests: [fallbackQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.sceneDescriptionSpeaking,
-        level: 2,
-      );
+    testWidgets(
+      'handles quest with empty options by falling back to default 3 objects',
+      (tester) async {
+        final fallbackQuest = createQuest(options: []);
+        final fallbackState = SpeakingLoaded(
+          quests: [fallbackQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.sceneDescriptionSpeaking,
+          level: 2,
+        );
 
-      await pumpSceneDescriptionScreen(tester, state: fallbackState);
+        await pumpSceneDescriptionScreen(tester, state: fallbackState);
 
-      expect(find.text('Object A'), findsOneWidget);
-      expect(find.text('Object B'), findsOneWidget);
-      expect(find.text('Object C'), findsOneWidget);
-    });
+        expect(find.text('Object A'), findsOneWidget);
+        expect(find.text('Object B'), findsOneWidget);
+        expect(find.text('Object C'), findsOneWidget);
+      },
+    );
 
-    testWidgets('handles quest with null sceneText gracefully', (
-      tester,
-    ) async {
+    testWidgets('handles quest with null sceneText gracefully', (tester) async {
       final fallbackQuest = createQuest(sceneText: 'Visual Space Cabin');
       final fallbackState = SpeakingLoaded(
         quests: [fallbackQuest],
@@ -1193,7 +1220,9 @@ void main() {
       await tester.tap(find.byKey(const Key('scene_description_beacon_0')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
+      tester
+          .widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay))
+          .onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('1 of 3 items described'), findsOneWidget);

@@ -62,8 +62,8 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return ValueListenableBuilder<int>(
       valueListenable: _mistakeCount,
@@ -105,8 +105,8 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                   color: isMidnight
                       ? Colors.white.withValues(alpha: 0.12)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100),
                   width: 1.r,
                 ),
               ),

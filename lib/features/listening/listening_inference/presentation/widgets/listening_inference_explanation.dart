@@ -39,11 +39,7 @@ class ListeningInferenceExplanation extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.lightbulb_rounded,
-                color: color,
-                size: 18.r,
-              ),
+              Icon(Icons.lightbulb_rounded, color: color, size: 18.r),
               SizedBox(width: 8.w),
               Text(
                 "Explanation",

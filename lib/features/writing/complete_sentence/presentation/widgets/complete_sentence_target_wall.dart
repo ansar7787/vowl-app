@@ -39,7 +39,9 @@ class CompleteSentenceTargetWall extends StatelessWidget {
     final normalStyle = TextStyle(
       fontFamily: 'Outfit',
       fontSize: 18.5.sp,
-      color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+      color: isDark
+          ? Colors.white.withValues(alpha: 0.9)
+          : const Color(0xFF1E293B),
       fontWeight: FontWeight.w500,
       height: 1.55,
       letterSpacing: 0.2,
@@ -73,10 +75,7 @@ class CompleteSentenceTargetWall extends StatelessWidget {
         decoration: BoxDecoration(
           color: color.withValues(alpha: isDark ? 0.05 : 0.08),
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: color.withValues(alpha: 0.25),
-            width: 1.5,
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.25), width: 1.5),
           boxShadow: [
             BoxShadow(
               color: color.withValues(alpha: 0.04),
@@ -114,7 +113,9 @@ class CompleteSentenceTargetWall extends StatelessWidget {
                     child: MediaQuery(
                       data: MediaQuery.of(context).copyWith(
                         textScaler: TextScaler.linear(
-                          MediaQuery.of(context).textScaler.scale(1).clamp(0.85, 1.25),
+                          MediaQuery.of(
+                            context,
+                          ).textScaler.scale(1).clamp(0.85, 1.25),
                         ),
                       ),
                       child: RichText(

@@ -4,363 +4,393 @@
   "quests": [
     {
       "id": "ARENA_SS_B1_Q1",
-      "question": "My sister works as _____ engineer at a car factory.",
+      "question": "My flight leaves _____ 6:45 tomorrow morning, so I'll set an alarm.",
       "options": [
-        "a",
-        "the",
-        "an",
-        "some"
+        "in",
+        "on",
+        "to",
+        "at"
       ],
-      "correctAnswer": "an",
-      "explanation": "Use \"an\" before a vowel sound, and \"engineer\" starts with /e/. A job title after \"as\" takes an indefinite article because it names one role among many."
+      "correctAnswer": "at",
+      "explanation": "Use 'at' with exact clock times, for example at 6:45 or at noon.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q2",
-      "question": "The meeting starts _____ half past nine, so please don't be late.",
+      "question": "Could I have _____ glass of water, please?",
       "options": [
-        "at",
-        "in",
-        "on",
-        "by"
+        "an",
+        "many",
+        "a",
+        "much"
       ],
-      "correctAnswer": "at",
-      "explanation": "Clock times take \"at\". \"In\" is for months, years and longer periods, and \"on\" is for days and dates."
+      "correctAnswer": "a",
+      "explanation": "'Glass' is singular and starts with a consonant sound, so we use 'a'.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q3",
-      "question": "Everyone in the office _____ excited about the new coffee machine.",
+      "question": "My neighbours _____ really friendly when we moved in last May.",
       "options": [
-        "are",
         "were",
-        "have",
+        "was",
+        "are",
         "is"
       ],
-      "correctAnswer": "is",
-      "explanation": "\"Everyone\" refers to many people but is grammatically singular, so it takes \"is\". \"Were\" would also clash with the present-tense idea of a new machine."
+      "correctAnswer": "were",
+      "explanation": "A plural subject like 'neighbours' with a finished past time takes 'were', not 'was'.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q4",
-      "question": "I forgot my umbrella, so I got completely _____ on the way home.",
+      "question": "I don't have _____ time to cook on weekdays, so I order food.",
       "options": [
-        "wetly",
-        "wet",
-        "water",
-        "wetting"
+        "many",
+        "few",
+        "much",
+        "a few"
       ],
-      "correctAnswer": "wet",
-      "explanation": "After \"got\" in the sense of \"became\", we need an adjective that describes the person. \"Wetly\" is an adverb and \"water\" is a noun."
+      "correctAnswer": "much",
+      "explanation": "'Time' is uncountable, so use 'much'; 'many' and 'few' need plural nouns.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q5",
-      "question": "My brother _____ to the gym before work, usually at six.",
+      "question": "She _____ to the gym every morning before her shift starts.",
       "options": [
-        "go",
         "goes",
         "going",
+        "go",
         "is go"
       ],
       "correctAnswer": "goes",
-      "explanation": "A regular habit calls for the present simple, and a third-person singular subject adds -es to \"go\". \"Usually\" is the clue that this is a routine."
+      "explanation": "A routine uses the present simple, and 'she' takes -es: goes.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q6",
-      "question": "Which sentence is grammatically correct?",
-      "options": [
-        "She don't like spicy food.",
-        "She doesn't likes spicy food.",
-        "She not like spicy food.",
-        "She doesn't like spicy food."
-      ],
-      "correctAnswer": "She doesn't like spicy food.",
-      "explanation": "\"Doesn't\" already carries the third-person -s, so the main verb stays in its base form: \"like\". Negatives in the present simple need do/does + not."
-    },
-    {
-      "id": "ARENA_SS_B1_Q7",
-      "question": "I _____ my keys yesterday evening, so I had to ask the landlord for a spare.",
-      "options": [
-        "lost",
-        "have lost",
-        "lose",
-        "am losing"
-      ],
-      "correctAnswer": "lost",
-      "explanation": "\"Yesterday evening\" names a finished time in the past, so the past simple is needed. The present perfect cannot be used with a specific past time."
-    },
-    {
-      "id": "ARENA_SS_B1_Q8",
-      "question": "The bank is _____ the pharmacy and the bakery, so you can't miss it.",
+      "question": "The pharmacy is _____ the bank and the post office.",
       "options": [
         "among",
-        "along",
+        "through",
         "between",
         "during"
       ],
       "correctAnswer": "between",
-      "explanation": "\"Between\" is used when something sits in the space separating two clearly defined places. \"Among\" suggests a group of three or more, and \"during\" refers to time."
+      "explanation": "'Between' places something in the space separating two named places.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B1_Q7",
+      "question": "My bag was stolen _____ the train, so I reported it at the station.",
+      "options": [
+        "in",
+        "to",
+        "at",
+        "on"
+      ],
+      "correctAnswer": "on",
+      "explanation": "We say 'on' a train, bus or plane, but 'in' a car or taxi. The rule is about vehicle type.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SS_B1_Q8",
+      "question": "Sorry, I didn't _____ your call; my phone was on silent.",
+      "options": [
+        "heard",
+        "hear",
+        "listen",
+        "hearing"
+      ],
+      "correctAnswer": "hear",
+      "explanation": "After 'didn't' we need the base form; 'listen' would need 'to'.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q9",
-      "question": "You _____ wear a helmet when you ride a motorbike; it's the law.",
+      "question": "This phone is _____ expensive than that one, but the camera is better.",
       "options": [
-        "may",
-        "could",
-        "might",
-        "must"
+        "much",
+        "very",
+        "more",
+        "most"
       ],
-      "correctAnswer": "must",
-      "explanation": "\"Must\" expresses a strong obligation, such as a legal requirement. \"May\", \"could\" and \"might\" suggest possibility or permission, not duty."
+      "correctAnswer": "more",
+      "explanation": "'Than' signals a comparison, and long adjectives take 'more'.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q10",
-      "question": "\"Would you like some more rice?\"\n\"No, thank you. I've had _____.\"",
+      "question": "The phone rang while I _____ a shower, so I let it go.",
       "options": [
-        "enough",
-        "many",
-        "few",
-        "every"
+        "am taking",
+        "was taking",
+        "take",
+        "took"
       ],
-      "correctAnswer": "enough",
-      "explanation": "\"Enough\" can stand alone to mean a sufficient amount. \"Rice\" is uncountable, so \"many\" and \"few\" don't fit, and \"every\" must be followed by a noun."
+      "correctAnswer": "was taking",
+      "explanation": "The past continuous shows an action in progress when the phone rang.",
+      "difficulty": "easy"
     },
     {
       "id": "ARENA_SS_B1_Q11",
-      "question": "I wanted to go for a walk, _____ it started to rain, so I stayed home.",
+      "question": "The landlord asked for a security _____ equal to one month's rent.",
       "options": [
-        "because",
-        "so",
-        "but",
-        "or"
+        "deduction",
+        "deposit",
+        "donation",
+        "discount"
       ],
-      "correctAnswer": "but",
-      "explanation": "The rain contradicts the plan to walk, so we need a contrast connector. \"Because\" and \"so\" show cause and result, and \"or\" offers a choice."
+      "correctAnswer": "deposit",
+      "explanation": "A security deposit is money a landlord holds and returns when you leave.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q12",
-      "question": "Taking the train is usually _____ than driving in this city because of the traffic.",
+      "question": "Please _____ the form in capital letters and sign at the bottom.",
       "options": [
-        "fast",
-        "faster",
-        "fastest",
-        "more fast"
+        "fill on",
+        "fill down",
+        "fill in",
+        "fill at"
       ],
-      "correctAnswer": "faster",
-      "explanation": "\"Than\" signals a comparison between two things. Short adjectives such as \"fast\" form the comparative with -er, never with \"more\"."
+      "correctAnswer": "fill in",
+      "explanation": "'Fill in' means to write the required details on a form; you can also say 'fill out'.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q13",
-      "question": "We don't have _____ milk left, so could you buy some on your way home?",
+      "question": "My interview went well, but I won't know the result _____ next week.",
       "options": [
-        "any",
-        "some",
-        "many",
-        "a few"
+        "since",
+        "until",
+        "during",
+        "among"
       ],
-      "correctAnswer": "any",
-      "explanation": "In negative sentences we normally use \"any\" with uncountable nouns like milk. \"Many\" and \"a few\" belong with countable nouns."
+      "correctAnswer": "until",
+      "explanation": "'Until' marks the point when things change: the result comes next week.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q14",
-      "question": "We stayed in a small hotel near the beach. _____ hotel had only ten rooms, but every room had a sea view.",
+      "question": "The doctor advised me _____ strenuous exercise for two weeks.",
       "options": [
-        "A",
-        "An",
-        "The",
-        "Some"
+        "avoid",
+        "avoiding",
+        "that avoid",
+        "to avoid"
       ],
-      "correctAnswer": "The",
-      "explanation": "The hotel was introduced in the first sentence, so the listener now knows which one we mean and we use \"the\". \"An\" would also be wrong before a consonant sound."
+      "correctAnswer": "to avoid",
+      "explanation": "'Advise' + person takes a to-infinitive: advised me to avoid.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q15",
-      "question": "My colleague Mark and I are presenting the results. He will start, and then _____ will explain the budget.",
+      "question": "Our train was _____ by forty minutes because of a signal failure.",
       "options": [
-        "me",
-        "I",
-        "my",
-        "mine"
+        "deferred",
+        "cancelled",
+        "postponed",
+        "delayed"
       ],
-      "correctAnswer": "I",
-      "explanation": "The blank is the subject of \"will explain\", so we need the subject pronoun \"I\". \"Me\" is the object form and is a common slip when another person is mentioned."
+      "correctAnswer": "delayed",
+      "explanation": "Trains are 'delayed' when late; 'postponed' is for events moved to a later date.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q16",
-      "question": "Maria says she left her umbrella here, so I think this one is _____.",
+      "question": "Hi Sam, just a quick _____ that lunch is at one tomorrow.",
       "options": [
-        "her",
-        "she's",
-        "herself",
-        "hers"
+        "reminder",
+        "remainder",
+        "recall",
+        "remembrance"
       ],
-      "correctAnswer": "hers",
-      "explanation": "\"Hers\" is a possessive pronoun that replaces \"her umbrella\" without repeating the noun. \"Her\" needs a noun after it, and \"she's\" means \"she is\"."
+      "correctAnswer": "reminder",
+      "explanation": "A 'reminder' prompts you not to forget; 'remainder' means what is left over.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q17",
-      "question": "Look at those dark clouds. It _____ rain any minute.",
+      "question": "Everyone in the team _____ already seen the new schedule.",
       "options": [
-        "going to",
-        "is going",
-        "is going to",
-        "does going to"
+        "has",
+        "have",
+        "are",
+        "do"
       ],
-      "correctAnswer": "is going to",
-      "explanation": "We use \"be going to\" for predictions based on present evidence, here the dark clouds. The verb \"be\" cannot be dropped, and \"to\" is needed before the base verb."
+      "correctAnswer": "has",
+      "explanation": "'Everyone' is grammatically singular, so the present perfect uses 'has'.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q18",
-      "question": "Please speak quietly. The baby _____ in the next room right now.",
+      "question": "She apologised _____ the mix-up with my booking.",
       "options": [
-        "sleeps",
-        "is sleeping",
-        "sleep",
-        "slept"
+        "for",
+        "to",
+        "at",
+        "on"
       ],
-      "correctAnswer": "is sleeping",
-      "explanation": "\"Right now\" points to an action in progress, so the present continuous is needed. The present simple \"sleeps\" would describe a habit instead."
+      "correctAnswer": "for",
+      "explanation": "'Apologise for' introduces the problem; 'apologise to' introduces the person.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q19",
-      "question": "I _____ dinner when the power went out, so everything had to wait.",
+      "question": "The rent _____ everything except electricity and internet.",
       "options": [
-        "cooked",
-        "am cooking",
-        "cook",
-        "was cooking"
+        "holds",
+        "protects",
+        "contains",
+        "covers"
       ],
-      "correctAnswer": "was cooking",
-      "explanation": "The past continuous describes an action in progress that was interrupted by a shorter event in the past simple (\"went out\")."
+      "correctAnswer": "covers",
+      "explanation": "A payment 'covers' costs; 'contains' is for things inside a container.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q20",
-      "question": "The hotel receptionist was very _____ and helped us find a taxi at midnight.",
+      "question": "We'll have to _____ the meeting, because the client is travelling on Thursday.",
       "options": [
-        "helpful",
-        "help",
-        "helpfully",
-        "helping"
+        "rewind",
+        "repeat",
+        "restore",
+        "reschedule"
       ],
-      "correctAnswer": "helpful",
-      "explanation": "After \"was very\" we need an adjective to describe the receptionist. \"Helpful\" is the adjective form, while \"helpfully\" is an adverb."
+      "correctAnswer": "reschedule",
+      "explanation": "'Reschedule' means to change the time of a planned event, for example a meeting or a flight.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q21",
-      "question": "She spoke so _____ that nobody at the back of the room could hear her.",
+      "question": "Take this tablet _____ food to avoid an upset stomach.",
       "options": [
-        "quiet",
-        "quietly",
-        "quieter",
-        "quietness"
+        "at",
+        "with",
+        "by",
+        "for"
       ],
-      "correctAnswer": "quietly",
-      "explanation": "The word modifies the verb \"spoke\", so an adverb is required. Adjectives like \"quiet\" describe nouns, not actions."
+      "correctAnswer": "with",
+      "explanation": "Medicine labels say 'with food' to mean while eating or just after.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q22",
-      "question": "Could you _____ me your charger? Mine has stopped working.",
+      "question": "The new manager is easy to talk to, _____ makes the team more relaxed.",
       "options": [
-        "borrow",
-        "rent",
-        "owe",
-        "lend"
+        "which",
+        "who",
+        "that",
+        "what"
       ],
-      "correctAnswer": "lend",
-      "explanation": "\"Lend\" means to give something temporarily, and the owner is the one who does it. \"Borrow\" would be used by the person receiving it: \"Can I borrow your charger?\""
+      "correctAnswer": "which",
+      "explanation": "After a comma, 'which' can refer to the whole idea that came before.",
+      "difficulty": "medium"
     },
     {
       "id": "ARENA_SS_B1_Q23",
-      "question": "The manager _____ us that the office would close early on Friday.",
+      "question": "Not until I opened the parcel _____ the screen was cracked.",
       "options": [
-        "told",
-        "said",
-        "spoke",
-        "talked"
+        "did I realise",
+        "I realised",
+        "had I realised",
+        "I did realise"
       ],
-      "correctAnswer": "told",
-      "explanation": "\"Tell\" is followed directly by the person who hears the news. \"Said\" would need \"to us\", and \"spoke\" and \"talked\" cannot introduce a that-clause like this."
+      "correctAnswer": "did I realise",
+      "explanation": "'Not until' at the start of a sentence triggers inversion: did + subject + verb.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q24",
-      "question": "Before we leave, I need to _____ the dishes.",
+      "question": "She suggested that he _____ a second opinion before the surgery.",
       "options": [
-        "make",
-        "take",
-        "do",
-        "have"
+        "getting",
+        "got",
+        "gets",
+        "get"
       ],
-      "correctAnswer": "do",
-      "explanation": "English uses \"do\" with household chores: do the dishes, do the laundry. \"Make\" is for creating something, such as a meal or a mistake."
+      "correctAnswer": "get",
+      "explanation": "After 'suggest that', formal English uses the bare base form: get.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q25",
-      "question": "If the weather is nice on Saturday, we _____ a picnic in the park.",
+      "question": "By the time the ambulance arrived, the crowd _____ dispersed.",
       "options": [
-        "would have",
-        "have had",
-        "having",
-        "will have"
+        "have",
+        "was",
+        "had",
+        "has"
       ],
-      "correctAnswer": "will have",
-      "explanation": "A real future possibility uses the first conditional: present simple in the if-clause and \"will\" + base verb in the result clause."
+      "correctAnswer": "had",
+      "explanation": "The past perfect 'had dispersed' marks the earlier of two past events.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q26",
-      "question": "I'm looking forward _____ you at the conference next month.",
+      "question": "The results _____ that the drug may reduce symptoms, but trials continue.",
       "options": [
-        "to see",
-        "seeing",
-        "to seeing",
-        "for seeing"
+        "assure",
+        "guarantee",
+        "prove",
+        "indicate"
       ],
-      "correctAnswer": "to seeing",
-      "explanation": "In \"look forward to\", the word \"to\" is a preposition, so the verb that follows takes the -ing form."
+      "correctAnswer": "indicate",
+      "explanation": "'Indicate' is a cautious verb; 'prove' and 'guarantee' overstate early results.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q27",
-      "question": "Passengers must show their passports _____ boarding the plane.",
+      "question": "Hardly had she sat down _____ the phone rang again.",
       "options": [
-        "before",
-        "since",
-        "until",
-        "among"
+        "than",
+        "while",
+        "after",
+        "when"
       ],
-      "correctAnswer": "before",
-      "explanation": "\"Before\" can be followed by an -ing form to show that one action happens ahead of another. \"Since\" and \"until\" do not fit the meaning here."
+      "correctAnswer": "when",
+      "explanation": "'Hardly' pairs with 'when'; 'than' belongs with 'no sooner'.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q28",
-      "question": "Our deadline is next Friday, so we need to finish the report _____ then.",
+      "question": "The tenant is entitled _____ a refund if the flat is not as described.",
       "options": [
-        "until",
-        "by",
-        "since",
-        "during"
+        "to",
+        "for",
+        "of",
+        "on"
       ],
-      "correctAnswer": "by",
-      "explanation": "\"By\" marks the latest time something must be completed. \"Until\" is for a situation that continues up to a point, such as \"I'll wait until Friday\"."
+      "correctAnswer": "to",
+      "explanation": "'Entitled to' + noun names the right that someone legally has.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q29",
-      "question": "I'm sorry, the blue jacket is out of _____ at the moment, but we're expecting more on Tuesday.",
+      "question": "The company is _____ to a fine of up to £10,000 for late filing.",
       "options": [
-        "stock",
-        "store",
-        "storage",
-        "supply"
+        "likely",
+        "liable",
+        "prone",
+        "able"
       ],
-      "correctAnswer": "stock",
-      "explanation": "\"Out of stock\" is the fixed expression shops use when an item is unavailable. The other nouns are real words but do not form this collocation."
+      "correctAnswer": "liable",
+      "explanation": "'Liable to' a fine means legally subject to it; 'likely to' can't take a noun.",
+      "difficulty": "hard"
     },
     {
       "id": "ARENA_SS_B1_Q30",
-      "question": "How long _____ it take to get to the airport from here?",
+      "question": "Were the funding withdrawn tomorrow, the lab _____ close within a month.",
       "options": [
-        "do",
-        "is",
-        "does",
-        "has"
+        "did",
+        "has",
+        "will",
+        "would"
       ],
-      "correctAnswer": "does",
-      "explanation": "In a present simple question the auxiliary agrees with the subject. \"It\" is third-person singular, so we use \"does\" with the base verb \"take\"."
+      "correctAnswer": "would",
+      "explanation": "The inverted 'Were...' conditional takes 'would' in the result clause.",
+      "difficulty": "hard"
     }
   ]
 }

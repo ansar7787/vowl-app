@@ -72,16 +72,15 @@ class ScannedWordToken extends Equatable {
 
   @override
   List<Object?> get props => [
-        text,
-        cleanWord,
-        boundingBox,
-        ipa,
-        cefr,
-        definition,
-        translation,
-        grammarTip,
-        partOfSpeech,
-        isKeyword,
-      ];
+    text,
+    cleanWord,
+    boundingBox,
+    ipa,
+    cefr,
+    definition,
+    translation,
+    grammarTip,
+    partOfSpeech,
+    isKeyword,
+  ];
 }
-

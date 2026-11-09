@@ -21,16 +21,27 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-class MockProfileBloc extends MockBloc<ProfileEvent, ProfileState> implements ProfileBloc {}
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+
+class MockProfileBloc extends MockBloc<ProfileEvent, ProfileState>
+    implements ProfileBloc {}
+
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockAdService extends Mock implements AdService {}
 
 class FakeBuildContext extends Fake implements BuildContext {}
+
 class FakeProfileEvent extends Fake implements ProfileEvent {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeRewardItem extends Fake implements RewardItem {}
 
 void main() {
@@ -105,7 +116,10 @@ void main() {
     await di.sl.reset();
   });
 
-  void configureViewport(WidgetTester tester, [Size size = const Size(600, 1400)]) {
+  void configureViewport(
+    WidgetTester tester, [
+    Size size = const Size(600, 1400),
+  ]) {
     tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1.0;
     addTearDown(() {
@@ -120,8 +134,12 @@ void main() {
     Size screenSize = const Size(600, 1400),
   }) {
     final activeUser = user ?? testUser;
-    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(activeUser));
-    when(() => mockAuthBloc.stream).thenAnswer((_) => Stream.value(AuthState.authenticated(activeUser)));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(activeUser));
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => Stream.value(AuthState.authenticated(activeUser)));
 
     when(() => mockProfileBloc.state).thenReturn(const ProfileState());
     when(() => mockProfileBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -143,10 +161,9 @@ void main() {
           darkTheme: AppTheme.darkTheme,
           themeMode: themeMode,
           builder: (context, child) => MediaQuery(
-            data: MediaQuery.of(context).copyWith(
-              disableAnimations: true,
-              size: screenSize,
-            ),
+            data: MediaQuery.of(
+              context,
+            ).copyWith(disableAnimations: true, size: screenSize),
             child: child!,
           ),
           home: const BuddyBoutiqueScreen(),
@@ -156,7 +173,9 @@ void main() {
   }
 
   group('BuddyBoutiqueScreen Widget Tests', () {
-    testWidgets('1. Renders BuddyBoutiqueScreen with all core sections', (tester) async {
+    testWidgets('1. Renders BuddyBoutiqueScreen with all core sections', (
+      tester,
+    ) async {
       configureViewport(tester);
       await tester.pumpWidget(buildWidget());
       await tester.pumpAndSettle();
@@ -174,7 +193,9 @@ void main() {
       expect(find.byType(CustomScrollView), findsOneWidget);
     });
 
-    testWidgets('2. Displays buddy passport preview stats correctly', (tester) async {
+    testWidgets('2. Displays buddy passport preview stats correctly', (
+      tester,
+    ) async {
       configureViewport(tester);
       await tester.pumpWidget(buildWidget());
       await tester.pumpAndSettle();
@@ -235,201 +256,274 @@ void main() {
       expect(find.text('Tiny Cape'), findsOneWidget);
     });
 
-    testWidgets('5. Unequipping an already equipped accessory dispatches ProfileEquipAccessoryRequested(null)', (tester) async {
+    testWidgets(
+      '5. Unequipping an already equipped accessory dispatches ProfileEquipAccessoryRequested(null)',
+      (tester) async {
+        configureViewport(tester);
+        await tester.pumpWidget(buildWidget());
+        await tester.pumpAndSettle();
+
+        // 'cape_red' is equipped, status is "EQUIPPED"
+        expect(find.text('EQUIPPED'), findsOneWidget);
+
+        // Tap the equipped item
+        await tester.tap(find.text('Tiny Cape'));
+        await tester.pump();
+
+        verify(
+          () => mockProfileBloc.add(const ProfileEquipAccessoryRequested(null)),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '6. Equipping an unequipped owned accessory dispatches ProfileEquipAccessoryRequested(itemId)',
+      (tester) async {
+        configureViewport(tester);
+        // User owns 'shades_cool' but it's not equipped
+        final userWithShades = testUser.copyWith(
+          kidsOwnedAccessories: ['cape_red', 'shades_cool'],
+          kidsEquippedAccessory: 'cape_red',
+        );
+        await tester.pumpWidget(buildWidget(user: userWithShades));
+        await tester.pumpAndSettle();
+
+        // Find Cool Shades item card and tap it
+        expect(find.text('Cool Shades'), findsOneWidget);
+        await tester.tap(find.text('Cool Shades'));
+        await tester.pump();
+
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileEquipAccessoryRequested('shades_cool'),
+          ),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '7. Equipping an owned mascot dispatches ProfileUpdateMascotRequested',
+      (tester) async {
+        configureViewport(tester);
+        final userWithMascots = testUser.copyWith(
+          kidsOwnedAccessories: ['cape_red', 'mascot_robot'],
+          kidsMascot: 'mascot_sprout',
+          kidsEquippedAccessory: 'cape_red',
+        );
+        await tester.pumpWidget(buildWidget(user: userWithMascots));
+        await tester.pumpAndSettle();
+
+        // Switch to Buddies tab
+        await tester.ensureVisible(find.text('Buddies'));
+        await tester.tap(find.text('Buddies'));
+        await tester.pumpAndSettle();
+
+        // Find Sparky Robot (id: mascot_robot)
+        expect(find.text('Sparky Robot'), findsOneWidget);
+        await tester.tap(find.text('Sparky Robot'));
+        await tester.pump();
+
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileUpdateMascotRequested('mascot_robot'),
+          ),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '8. Tapping unowned item when coins < price plays wrong sound and shows warning',
+      (tester) async {
+        configureViewport(tester);
+        // User has only 10 coins, 'bell_gold' costs 200
+        final poorUser = testUser.copyWith(kidsCoins: 10);
+        await tester.pumpWidget(buildWidget(user: poorUser));
+        await tester.pumpAndSettle();
+
+        // Tap Toys tab to find Golden Bell
+        await tester.ensureVisible(find.text('Toys'));
+        await tester.tap(find.text('Toys'));
+        await tester.pumpAndSettle();
+
+        await tester.ensureVisible(find.text('Golden Bell'));
+        await tester.tap(find.text('Golden Bell'));
+        await tester.pump();
+
+        verify(() => mockSoundService.playWrong()).called(1);
+        expect(find.text('Keep playing to earn more coins!'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '9. Tapping unowned item when coins >= price opens purchase confirmation sheet',
+      (tester) async {
+        configureViewport(tester);
+        // User has 150 coins, 'Cool Shades' costs 30 and is unowned
+        await tester.pumpWidget(buildWidget());
+        await tester.pumpAndSettle();
+
+        // Tap Cool Shades
+        await tester.tap(find.text('Cool Shades'));
+        await tester.pumpAndSettle();
+
+        // Bottom sheet should open with purchase confirmation
+        expect(find.text('Buy for 30 coins?'), findsOneWidget);
+        expect(find.text('Not Now'), findsOneWidget);
+        expect(find.text('Buy Now!'), findsOneWidget);
+
+        // Dismiss via "Not Now"
+        await tester.tap(find.text('Not Now'));
+        await tester.pumpAndSettle();
+
+        // Bottom sheet dismissed, no buy event dispatched
+        expect(find.text('Buy for 30 coins?'), findsNothing);
+        verifyNever(
+          () => mockProfileBloc.add(
+            any(that: isA<ProfileBuyAccessoryRequested>()),
+          ),
+        );
+      },
+    );
+
+    testWidgets(
+      '10. Confirming purchase via Buy Now! dispatches ProfileBuyAccessoryRequested, equips item and plays correct sound',
+      (tester) async {
+        configureViewport(tester);
+        await tester.pumpWidget(buildWidget());
+        await tester.pumpAndSettle();
+
+        // Tap Cool Shades
+        await tester.tap(find.text('Cool Shades'));
+        await tester.pumpAndSettle();
+
+        // Tap Buy Now!
+        await tester.tap(find.text('Buy Now!'));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileBuyAccessoryRequested('shades_cool', 30),
+          ),
+        ).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileEquipAccessoryRequested('shades_cool'),
+          ),
+        ).called(1);
+        expect(find.text('Awesome! New item unlocked! ✨'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '11. Purchasing a mascot equips it via ProfileUpdateMascotRequested',
+      (tester) async {
+        configureViewport(tester);
+        // User has 5000 coins to buy Sparky Robot (price 3500)
+        final richUser = testUser.copyWith(
+          kidsCoins: 5000,
+          kidsOwnedAccessories: const ['cape_red'],
+        );
+        await tester.pumpWidget(buildWidget(user: richUser));
+        await tester.pumpAndSettle();
+
+        // Switch to Buddies tab
+        await tester.ensureVisible(find.text('Buddies'));
+        await tester.tap(find.text('Buddies'));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('Sparky Robot'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('Buy for 3500 coins?'), findsOneWidget);
+        await tester.tap(find.text('Buy Now!'));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileBuyAccessoryRequested('mascot_robot', 3500),
+          ),
+        ).called(1);
+        verify(
+          () => mockProfileBloc.add(
+            const ProfileUpdateMascotRequested('mascot_robot'),
+          ),
+        ).called(1);
+      },
+    );
+
+    testWidgets(
+      '12. Watch & Earn triggers AdService.showRewardedAd and awards 10 kids coins',
+      (tester) async {
+        configureViewport(tester);
+        when(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: any(named: 'isPremium'),
+            childSafe: any(named: 'childSafe'),
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).thenAnswer((invocation) async {
+          final onReward =
+              invocation.namedArguments[#onUserEarnedReward]
+                  as Function(RewardItem);
+          onReward(FakeRewardItem());
+          final onDismiss =
+              invocation.namedArguments[#onDismissed] as VoidCallback;
+          onDismiss();
+        });
+
+        await tester.pumpWidget(buildWidget());
+        await tester.pumpAndSettle();
+
+        await tester.scrollUntilVisible(
+          find.text('WATCH & EARN'),
+          500.0,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text('WATCH & EARN'), findsOneWidget);
+        await tester.tap(find.text('WATCH & EARN'));
+        await tester.pump();
+
+        verify(
+          () => mockAdService.showRewardedAd(
+            context: any(named: 'context'),
+            isPremium: false,
+            childSafe: true,
+            onUserEarnedReward: any(named: 'onUserEarnedReward'),
+            onDismissed: any(named: 'onDismissed'),
+          ),
+        ).called(1);
+
+        verify(
+          () => mockEconomyBloc.add(const EconomyAddKidsCoinsRequested(10)),
+        ).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
+
+    testWidgets('13. Back button navigates back via Navigator.pop', (
+      tester,
+    ) async {
       configureViewport(tester);
-      await tester.pumpWidget(buildWidget());
-      await tester.pumpAndSettle();
-
-      // 'cape_red' is equipped, status is "EQUIPPED"
-      expect(find.text('EQUIPPED'), findsOneWidget);
-
-      // Tap the equipped item
-      await tester.tap(find.text('Tiny Cape'));
-      await tester.pump();
-
-      verify(() => mockProfileBloc.add(const ProfileEquipAccessoryRequested(null))).called(1);
-    });
-
-    testWidgets('6. Equipping an unequipped owned accessory dispatches ProfileEquipAccessoryRequested(itemId)', (tester) async {
-      configureViewport(tester);
-      // User owns 'shades_cool' but it's not equipped
-      final userWithShades = testUser.copyWith(
-        kidsOwnedAccessories: ['cape_red', 'shades_cool'],
-        kidsEquippedAccessory: 'cape_red',
-      );
-      await tester.pumpWidget(buildWidget(user: userWithShades));
-      await tester.pumpAndSettle();
-
-      // Find Cool Shades item card and tap it
-      expect(find.text('Cool Shades'), findsOneWidget);
-      await tester.tap(find.text('Cool Shades'));
-      await tester.pump();
-
-      verify(() => mockProfileBloc.add(const ProfileEquipAccessoryRequested('shades_cool'))).called(1);
-    });
-
-    testWidgets('7. Equipping an owned mascot dispatches ProfileUpdateMascotRequested', (tester) async {
-      configureViewport(tester);
-      final userWithMascots = testUser.copyWith(
-        kidsOwnedAccessories: ['cape_red', 'mascot_robot'],
-        kidsMascot: 'mascot_sprout',
-        kidsEquippedAccessory: 'cape_red',
-      );
-      await tester.pumpWidget(buildWidget(user: userWithMascots));
-      await tester.pumpAndSettle();
-
-      // Switch to Buddies tab
-      await tester.ensureVisible(find.text('Buddies'));
-      await tester.tap(find.text('Buddies'));
-      await tester.pumpAndSettle();
-
-      // Find Sparky Robot (id: mascot_robot)
-      expect(find.text('Sparky Robot'), findsOneWidget);
-      await tester.tap(find.text('Sparky Robot'));
-      await tester.pump();
-
-      verify(() => mockProfileBloc.add(const ProfileUpdateMascotRequested('mascot_robot'))).called(1);
-    });
-
-    testWidgets('8. Tapping unowned item when coins < price plays wrong sound and shows warning', (tester) async {
-      configureViewport(tester);
-      // User has only 10 coins, 'bell_gold' costs 200
-      final poorUser = testUser.copyWith(kidsCoins: 10);
-      await tester.pumpWidget(buildWidget(user: poorUser));
-      await tester.pumpAndSettle();
-
-      // Tap Toys tab to find Golden Bell
-      await tester.ensureVisible(find.text('Toys'));
-      await tester.tap(find.text('Toys'));
-      await tester.pumpAndSettle();
-
-      await tester.ensureVisible(find.text('Golden Bell'));
-      await tester.tap(find.text('Golden Bell'));
-      await tester.pump();
-
-      verify(() => mockSoundService.playWrong()).called(1);
-      expect(find.text('Keep playing to earn more coins!'), findsOneWidget);
-    });
-
-    testWidgets('9. Tapping unowned item when coins >= price opens purchase confirmation sheet', (tester) async {
-      configureViewport(tester);
-      // User has 150 coins, 'Cool Shades' costs 30 and is unowned
-      await tester.pumpWidget(buildWidget());
-      await tester.pumpAndSettle();
-
-      // Tap Cool Shades
-      await tester.tap(find.text('Cool Shades'));
-      await tester.pumpAndSettle();
-
-      // Bottom sheet should open with purchase confirmation
-      expect(find.text('Buy for 30 coins?'), findsOneWidget);
-      expect(find.text('Not Now'), findsOneWidget);
-      expect(find.text('Buy Now!'), findsOneWidget);
-
-      // Dismiss via "Not Now"
-      await tester.tap(find.text('Not Now'));
-      await tester.pumpAndSettle();
-
-      // Bottom sheet dismissed, no buy event dispatched
-      expect(find.text('Buy for 30 coins?'), findsNothing);
-      verifyNever(() => mockProfileBloc.add(any(that: isA<ProfileBuyAccessoryRequested>())));
-    });
-
-    testWidgets('10. Confirming purchase via Buy Now! dispatches ProfileBuyAccessoryRequested, equips item and plays correct sound', (tester) async {
-      configureViewport(tester);
-      await tester.pumpWidget(buildWidget());
-      await tester.pumpAndSettle();
-
-      // Tap Cool Shades
-      await tester.tap(find.text('Cool Shades'));
-      await tester.pumpAndSettle();
-
-      // Tap Buy Now!
-      await tester.tap(find.text('Buy Now!'));
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockProfileBloc.add(const ProfileBuyAccessoryRequested('shades_cool', 30))).called(1);
-      verify(() => mockProfileBloc.add(const ProfileEquipAccessoryRequested('shades_cool'))).called(1);
-      expect(find.text('Awesome! New item unlocked! ✨'), findsOneWidget);
-    });
-
-    testWidgets('11. Purchasing a mascot equips it via ProfileUpdateMascotRequested', (tester) async {
-      configureViewport(tester);
-      // User has 5000 coins to buy Sparky Robot (price 3500)
-      final richUser = testUser.copyWith(
-        kidsCoins: 5000,
-        kidsOwnedAccessories: const ['cape_red'],
-      );
-      await tester.pumpWidget(buildWidget(user: richUser));
-      await tester.pumpAndSettle();
-
-      // Switch to Buddies tab
-      await tester.ensureVisible(find.text('Buddies'));
-      await tester.tap(find.text('Buddies'));
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Sparky Robot'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Buy for 3500 coins?'), findsOneWidget);
-      await tester.tap(find.text('Buy Now!'));
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockProfileBloc.add(const ProfileBuyAccessoryRequested('mascot_robot', 3500))).called(1);
-      verify(() => mockProfileBloc.add(const ProfileUpdateMascotRequested('mascot_robot'))).called(1);
-    });
-
-    testWidgets('12. Watch & Earn triggers AdService.showRewardedAd and awards 10 kids coins', (tester) async {
-      configureViewport(tester);
-      when(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: any(named: 'isPremium'),
-        childSafe: any(named: 'childSafe'),
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).thenAnswer((invocation) async {
-        final onReward = invocation.namedArguments[#onUserEarnedReward] as Function(RewardItem);
-        onReward(FakeRewardItem());
-        final onDismiss = invocation.namedArguments[#onDismissed] as VoidCallback;
-        onDismiss();
-      });
-
-      await tester.pumpWidget(buildWidget());
-      await tester.pumpAndSettle();
-
-      await tester.scrollUntilVisible(
-        find.text('WATCH & EARN'),
-        500.0,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.text('WATCH & EARN'), findsOneWidget);
-      await tester.tap(find.text('WATCH & EARN'));
-      await tester.pump();
-
-      verify(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: false,
-        childSafe: true,
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).called(1);
-
-      verify(() => mockEconomyBloc.add(const EconomyAddKidsCoinsRequested(10))).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
-
-    testWidgets('13. Back button navigates back via Navigator.pop', (tester) async {
-      configureViewport(tester);
-      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(testUser));
-      when(() => mockAuthBloc.stream).thenAnswer((_) => Stream.value(AuthState.authenticated(testUser)));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(testUser));
+      when(
+        () => mockAuthBloc.stream,
+      ).thenAnswer((_) => Stream.value(AuthState.authenticated(testUser)));
       when(() => mockProfileBloc.state).thenReturn(const ProfileState());
-      when(() => mockProfileBloc.stream).thenAnswer((_) => const Stream.empty());
+      when(
+        () => mockProfileBloc.stream,
+      ).thenAnswer((_) => const Stream.empty());
       when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-      when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
+      when(
+        () => mockEconomyBloc.stream,
+      ).thenAnswer((_) => const Stream.empty());
 
       await tester.pumpWidget(
         ScreenUtilInit(
@@ -453,7 +547,9 @@ void main() {
                 builder: (context) => ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const BuddyBoutiqueScreen()),
+                      MaterialPageRoute(
+                        builder: (_) => const BuddyBoutiqueScreen(),
+                      ),
                     );
                   },
                   child: const Text('Go To Boutique'),
@@ -487,7 +583,9 @@ void main() {
       expect(find.text('BUDDY PASSPORT'), findsOneWidget);
     });
 
-    testWidgets('15. Compact 320dp width renders without RenderFlex overflow', (tester) async {
+    testWidgets('15. Compact 320dp width renders without RenderFlex overflow', (
+      tester,
+    ) async {
       configureViewport(tester, const Size(320, 600));
       await tester.pumpWidget(buildWidget(screenSize: const Size(320, 600)));
       await tester.pumpAndSettle();

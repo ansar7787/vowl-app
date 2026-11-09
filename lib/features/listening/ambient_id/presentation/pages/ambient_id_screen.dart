@@ -51,10 +51,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   late AnimationController _radarController;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -186,7 +184,9 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         ),
                                       ),
                                       AmbientIdInstruction(
-                                        key: const ValueKey('ambient_instruction'),
+                                        key: const ValueKey(
+                                          'ambient_instruction',
+                                        ),
                                         color: theme.primaryColor,
                                         instruction:
                                             quest.instruction.isNotEmpty
@@ -199,7 +199,9 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                       ),
                                       SizedBox(height: 20.h),
                                       AmbientIdSonarField(
-                                        key: const ValueKey('ambient_sonar_field'),
+                                        key: const ValueKey(
+                                          'ambient_sonar_field',
+                                        ),
                                         options: quest.options ?? [],
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
@@ -219,9 +221,12 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                       ),
                                       SizedBox(height: 20.h),
                                       AmbientIdEmitterNode(
-                                        key: const ValueKey('ambient_emitter_node'),
+                                        key: const ValueKey(
+                                          'ambient_emitter_node',
+                                        ),
                                         onTap: () {
-                                          final text = quest.textToSpeak ??
+                                          final text =
+                                              quest.textToSpeak ??
                                               quest.audioTranscript ??
                                               quest.prompt ??
                                               quest.question ??

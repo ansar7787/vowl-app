@@ -305,8 +305,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                         primaryColor: theme.primaryColor,
                                         instruction:
                                             quest.instruction.trim().isNotEmpty
-                                                ? quest.instruction.trim()
-                                                : "Sentence Correction",
+                                            ? quest.instruction.trim()
+                                            : "Sentence Correction",
                                       ),
                                       SizedBox(height: 12.h),
                                       Padding(

@@ -48,8 +48,7 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
   final ValueNotifier<double> _progress = ValueNotifier(0.0);
   bool _isFusing = false;
 
-  bool get _isPrefix =>
-      widget.isPrefix ?? widget.suffix.trim().endsWith('-');
+  bool get _isPrefix => widget.isPrefix ?? widget.suffix.trim().endsWith('-');
 
   @override
   void didUpdateWidget(MorphInjectionRail oldWidget) {
@@ -114,8 +113,7 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                   valueListenable: _progress,
                   builder: (context, value, _) {
                     if (value <= 0.0) return const SizedBox.shrink();
-                    final glowWidth =
-                        (value * maxSlide) + (handleWidth / 2);
+                    final glowWidth = (value * maxSlide) + (handleWidth / 2);
 
                     return Positioned(
                       left: isPrefix ? null : 0,
@@ -166,7 +164,9 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                             widget.onMorph(widget.suffix);
                           },
                           onHorizontalDragUpdate: (details) {
-                            if (widget.isBlocked || _isFusing || maxSlide <= 0) {
+                            if (widget.isBlocked ||
+                                _isFusing ||
+                                maxSlide <= 0) {
                               return;
                             }
                             // Suffix drags right (+dx), Prefix drags left (-dx) towards word
@@ -174,8 +174,8 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                                 ? -details.delta.dx / maxSlide
                                 : details.delta.dx / maxSlide;
 
-                            _progress.value =
-                                (_progress.value + deltaStep).clamp(0.0, 1.0);
+                            _progress.value = (_progress.value + deltaStep)
+                                .clamp(0.0, 1.0);
 
                             if (_progress.value > 0.2) {
                               widget.onHover(widget.index);

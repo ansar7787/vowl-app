@@ -86,11 +86,7 @@ void main() {
     subtype: GameSubtype.paragraphSummary,
     passage:
         'Amara gets up early on school days. She packs her bag, eats rice and eggs, and catches the bus at seven. By half past seven, she is sitting at her desk.',
-    keywords: [
-      'School Morning',
-      'Getting Ready',
-      'Bus to School',
-    ],
+    keywords: ['School Morning', 'Getting Ready', 'Bus to School'],
     options: [
       'Amara is often late for the school bus in the mornings.',
       'Amara gets ready and travels to school in the morning.',
@@ -132,12 +128,14 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -149,8 +147,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(
       () => mockLocaleService.tr(
@@ -197,8 +196,12 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -207,7 +210,9 @@ void main() {
         tag: any(named: 'tag'),
       ),
     ).thenReturn(null);
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
@@ -268,9 +273,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: ParagraphSummaryScreen(level: level),
-            ),
+            home: Scaffold(body: ParagraphSummaryScreen(level: level)),
           ),
         ),
       ),
@@ -281,224 +284,229 @@ void main() {
 
   group('ParagraphSummaryScreen - Production Layout & Mechanics Tests', () {
     testWidgets(
-        '1. Initial rendering of instruction, passage tube, and pinch animation',
-        (tester) async {
-      await pumpParagraphSummary(tester);
+      '1. Initial rendering of instruction, passage tube, and pinch animation',
+      (tester) async {
+        await pumpParagraphSummary(tester);
 
-      // Verify instruction pill
-      expect(find.byType(ParagraphSummaryInstruction), findsOneWidget);
-      expect(
-        find.textContaining('summary for the paragraph'),
-        findsOneWidget,
-      );
+        // Verify instruction pill
+        expect(find.byType(ParagraphSummaryInstruction), findsOneWidget);
+        expect(
+          find.textContaining('summary for the paragraph'),
+          findsOneWidget,
+        );
 
-      // Verify tube with passage text
-      expect(find.byType(ParagraphSummaryTube), findsOneWidget);
-      expect(
-        find.textContaining('Amara gets up early on school days'),
-        findsOneWidget,
-      );
+        // Verify tube with passage text
+        expect(find.byType(ParagraphSummaryTube), findsOneWidget);
+        expect(
+          find.textContaining('Amara gets up early on school days'),
+          findsOneWidget,
+        );
 
-      // Verify pinch hint animation and instruction
-      expect(find.byType(PinchHintAnimation), findsOneWidget);
-      expect(
-        find.text('Pinch or tap the card to reveal key ideas'),
-        findsOneWidget,
-      );
+        // Verify pinch hint animation and instruction
+        expect(find.byType(PinchHintAnimation), findsOneWidget);
+        expect(
+          find.text('Pinch or tap the card to reveal key ideas'),
+          findsOneWidget,
+        );
 
-      // Verify option rack is not yet visible before distillation
-      expect(find.byType(ParagraphSummaryOptionRack), findsNothing);
-    });
-
-    testWidgets(
-        '2. Tapping tube distills passage into keywords and reveals option rack',
-        (tester) async {
-      await pumpParagraphSummary(tester);
-
-      // Tap on the tube to trigger distillation
-      final tubeFinder = find.byType(ParagraphSummaryTube);
-      expect(tubeFinder, findsOneWidget);
-
-      await tester.tap(tubeFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Verify heavy haptic feedback was triggered
-      verify(() => mockHapticService.heavy()).called(1);
-
-      // Verify PinchHintAnimation is gone
-      expect(find.byType(PinchHintAnimation), findsNothing);
-
-      // Verify distillation complete message
-      expect(
-        find.text('Choose the best summary below:'),
-        findsOneWidget,
-      );
-
-      // Verify keywords are revealed inside the tube
-      expect(find.text('School Morning'), findsOneWidget);
-      expect(find.text('Getting Ready'), findsOneWidget);
-      expect(find.text('Bus to School'), findsOneWidget);
-
-      // Verify ParagraphSummaryOptionRack is revealed with options
-      expect(find.byType(ParagraphSummaryOptionRack), findsOneWidget);
-      expect(
-        find.text('Amara gets ready and travels to school in the morning.'),
-        findsOneWidget,
-      );
-      expect(
-        find.text('Amara is often late for the school bus in the mornings.'),
-        findsOneWidget,
-      );
-    });
+        // Verify option rack is not yet visible before distillation
+        expect(find.byType(ParagraphSummaryOptionRack), findsNothing);
+      },
+    );
 
     testWidgets(
-        '3. Pinch gesture on tube distills passage and reveals option rack',
-        (tester) async {
-      await pumpParagraphSummary(tester);
+      '2. Tapping tube distills passage into keywords and reveals option rack',
+      (tester) async {
+        await pumpParagraphSummary(tester);
 
-      // Perform a pinch gesture (scale from 1.0 down to 0.4)
-      final tubeFinder = find.byType(ParagraphSummaryTube);
-      final center = tester.getCenter(tubeFinder);
+        // Tap on the tube to trigger distillation
+        final tubeFinder = find.byType(ParagraphSummaryTube);
+        expect(tubeFinder, findsOneWidget);
 
-      // Start pinch gesture with two pointers
-      final pointer1 = await tester.startGesture(center + const Offset(-60, 0));
-      final pointer2 = await tester.startGesture(center + const Offset(60, 0));
-      await tester.pump(const Duration(milliseconds: 50));
+        await tester.tap(tubeFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Move pointers together to simulate pinch
-      await pointer1.moveTo(center + const Offset(-10, 0));
-      await pointer2.moveTo(center + const Offset(10, 0));
-      await tester.pump(const Duration(milliseconds: 50));
+        // Verify heavy haptic feedback was triggered
+        verify(() => mockHapticService.heavy()).called(1);
 
-      await pointer1.up();
-      await pointer2.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Verify PinchHintAnimation is gone
+        expect(find.byType(PinchHintAnimation), findsNothing);
 
-      // Verify heavy haptic and distillation
-      verify(() => mockHapticService.heavy()).called(1);
-      expect(
-        find.text('Choose the best summary below:'),
-        findsOneWidget,
-      );
-      expect(find.byType(ParagraphSummaryOptionRack), findsOneWidget);
-    });
+        // Verify distillation complete message
+        expect(find.text('Choose the best summary below:'), findsOneWidget);
 
-    testWidgets(
-        '4. Selecting correct summary option dispatches SubmitAnswer(true) and plays success SFX',
-        (tester) async {
-      await pumpParagraphSummary(tester);
+        // Verify keywords are revealed inside the tube
+        expect(find.text('School Morning'), findsOneWidget);
+        expect(find.text('Getting Ready'), findsOneWidget);
+        expect(find.text('Bus to School'), findsOneWidget);
 
-      // Distill tube
-      await tester.tap(find.byType(ParagraphSummaryTube));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Tap on correct option
-      final correctOption = find.text(
-        'Amara gets ready and travels to school in the morning.',
-      );
-      expect(correctOption, findsOneWidget);
-      await tester.ensureVisible(correctOption);
-      await tester.pumpAndSettle();
-
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-
-      // Verify feedback and submission
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        // Verify ParagraphSummaryOptionRack is revealed with options
+        expect(find.byType(ParagraphSummaryOptionRack), findsOneWidget);
+        expect(
+          find.text('Amara gets ready and travels to school in the morning.'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Amara is often late for the school bus in the mornings.'),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets(
-        '5. Selecting incorrect summary option dispatches SubmitAnswer(false) and plays wrong SFX',
-        (tester) async {
-      await pumpParagraphSummary(tester);
+      '3. Pinch gesture on tube distills passage and reveals option rack',
+      (tester) async {
+        await pumpParagraphSummary(tester);
 
-      // Distill tube
-      await tester.tap(find.byType(ParagraphSummaryTube));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Perform a pinch gesture (scale from 1.0 down to 0.4)
+        final tubeFinder = find.byType(ParagraphSummaryTube);
+        final center = tester.getCenter(tubeFinder);
 
-      // Tap on incorrect option
-      final wrongOption = find.text(
-        'Amara is often late for the school bus in the mornings.',
-      );
-      expect(wrongOption, findsOneWidget);
-      await tester.ensureVisible(wrongOption);
-      await tester.pumpAndSettle();
+        // Start pinch gesture with two pointers
+        final pointer1 = await tester.startGesture(
+          center + const Offset(-60, 0),
+        );
+        final pointer2 = await tester.startGesture(
+          center + const Offset(60, 0),
+        );
+        await tester.pump(const Duration(milliseconds: 50));
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        // Move pointers together to simulate pinch
+        await pointer1.moveTo(center + const Offset(-10, 0));
+        await pointer2.moveTo(center + const Offset(10, 0));
+        await tester.pump(const Duration(milliseconds: 50));
 
-      // Verify wrong feedback and submission
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        await pointer1.up();
+        await pointer2.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-    testWidgets(
-        '6. Lockout: Tapping options after answer submitted ignores further taps',
-        (tester) async {
-      await pumpParagraphSummary(tester);
-
-      // Distill tube
-      await tester.tap(find.byType(ParagraphSummaryTube));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Tap correct option once
-      final correctOption = find.text(
-        'Amara gets ready and travels to school in the morning.',
-      );
-      await tester.ensureVisible(correctOption);
-      await tester.pumpAndSettle();
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Clear invocations count
-      clearInteractions(mockReadingBloc);
-
-      // Tap another option
-      final wrongOption = find.text(
-        'Amara is often late for the school bus in the mornings.',
-      );
-      await tester.tap(wrongOption, warnIfMissed: false);
-      await tester.pump();
-
-      // Verify no further submissions
-      verifyNever(() => mockReadingBloc.add(any()));
-    });
+        // Verify heavy haptic and distillation
+        verify(() => mockHapticService.heavy()).called(1);
+        expect(find.text('Choose the best summary below:'), findsOneWidget);
+        expect(find.byType(ParagraphSummaryOptionRack), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        '7. Post-answer state shows continue button which dispatches NextQuestion',
-        (tester) async {
-      const answeredState = ReadingLoaded(
-        quests: [testSummaryQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+      '4. Selecting correct summary option dispatches SubmitAnswer(true) and plays success SFX',
+      (tester) async {
+        await pumpParagraphSummary(tester);
 
-      await pumpParagraphSummary(tester, state: answeredState);
+        // Distill tube
+        await tester.tap(find.byType(ParagraphSummaryTube));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        // Tap on correct option
+        final correctOption = find.text(
+          'Amara gets ready and travels to school in the morning.',
+        );
+        expect(correctOption, findsOneWidget);
+        await tester.ensureVisible(correctOption);
+        await tester.pumpAndSettle();
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
-    });
+        // Verify feedback and submission
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
     testWidgets(
-        '8. Tapping hint button in header dispatches ReadingHintUsed',
-        (tester) async {
+      '5. Selecting incorrect summary option dispatches SubmitAnswer(false) and plays wrong SFX',
+      (tester) async {
+        await pumpParagraphSummary(tester);
+
+        // Distill tube
+        await tester.tap(find.byType(ParagraphSummaryTube));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Tap on incorrect option
+        final wrongOption = find.text(
+          'Amara is often late for the school bus in the mornings.',
+        );
+        expect(wrongOption, findsOneWidget);
+        await tester.ensureVisible(wrongOption);
+        await tester.pumpAndSettle();
+
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+
+        // Verify wrong feedback and submission
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
+
+    testWidgets(
+      '6. Lockout: Tapping options after answer submitted ignores further taps',
+      (tester) async {
+        await pumpParagraphSummary(tester);
+
+        // Distill tube
+        await tester.tap(find.byType(ParagraphSummaryTube));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Tap correct option once
+        final correctOption = find.text(
+          'Amara gets ready and travels to school in the morning.',
+        );
+        await tester.ensureVisible(correctOption);
+        await tester.pumpAndSettle();
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Clear invocations count
+        clearInteractions(mockReadingBloc);
+
+        // Tap another option
+        final wrongOption = find.text(
+          'Amara is often late for the school bus in the mornings.',
+        );
+        await tester.tap(wrongOption, warnIfMissed: false);
+        await tester.pump();
+
+        // Verify no further submissions
+        verifyNever(() => mockReadingBloc.add(any()));
+      },
+    );
+
+    testWidgets(
+      '7. Post-answer state shows continue button which dispatches NextQuestion',
+      (tester) async {
+        const answeredState = ReadingLoaded(
+          quests: [testSummaryQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
+
+        await pumpParagraphSummary(tester, state: answeredState);
+
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
+
+        await tester.tap(continueBtn);
+        await tester.pump();
+
+        verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
+      },
+    );
+
+    testWidgets('8. Tapping hint button in header dispatches ReadingHintUsed', (
+      tester,
+    ) async {
       await pumpParagraphSummary(tester);
 
       final hintFinder = find.byType(QuestHintButton);
@@ -510,9 +518,9 @@ void main() {
       verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
-    testWidgets(
-        '9. ReadingInitial state renders GameShimmerLoading',
-        (tester) async {
+    testWidgets('9. ReadingInitial state renders GameShimmerLoading', (
+      tester,
+    ) async {
       await pumpParagraphSummary(tester, state: const ReadingInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
@@ -520,25 +528,26 @@ void main() {
     });
 
     testWidgets(
-        '10. Level 1 displays GameBriefingLayer and dismisses on start tap',
-        (tester) async {
-      await pumpParagraphSummary(tester, level: 1);
+      '10. Level 1 displays GameBriefingLayer and dismisses on start tap',
+      (tester) async {
+        await pumpParagraphSummary(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      final startBtn = find.text('SUMMARIZE NOW');
-      expect(startBtn, findsOneWidget);
-      await tester.ensureVisible(startBtn);
-      await tester.pumpAndSettle();
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        final startBtn = find.text('SUMMARIZE NOW');
+        expect(startBtn, findsOneWidget);
+        await tester.ensureVisible(startBtn);
+        await tester.pumpAndSettle();
 
-      await tester.tap(startBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(startBtn);
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets(
-        '11. Dark theme mode renders cleanly without errors',
-        (tester) async {
+    testWidgets('11. Dark theme mode renders cleanly without errors', (
+      tester,
+    ) async {
       await pumpParagraphSummary(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(ParagraphSummaryTube), findsOneWidget);
@@ -550,18 +559,14 @@ void main() {
     });
 
     testWidgets(
-        '12. Compact 320dp small screen layout safety with zero overflow',
-        (tester) async {
-      await pumpParagraphSummary(
-        tester,
-        width: 320,
-        height: 568,
-      );
+      '12. Compact 320dp small screen layout safety with zero overflow',
+      (tester) async {
+        await pumpParagraphSummary(tester, width: 320, height: 568);
 
-      expect(find.byType(ParagraphSummaryScreen), findsOneWidget);
-      expect(find.byType(ParagraphSummaryTube), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ParagraphSummaryScreen), findsOneWidget);
+        expect(find.byType(ParagraphSummaryTube), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

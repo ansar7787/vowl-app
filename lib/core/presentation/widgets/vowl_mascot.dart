@@ -257,10 +257,7 @@ class VowlMascot extends StatelessWidget {
                 top: -botSize * 0.16,
                 child: Text(
                   emoji,
-                  style: TextStyle(
-                    fontSize: botSize * 0.42,
-                    height: 1.0,
-                  ),
+                  style: TextStyle(fontSize: botSize * 0.42, height: 1.0),
                 ),
               );
               break;
@@ -270,10 +267,7 @@ class VowlMascot extends StatelessWidget {
                 bottom: -botSize * 0.08,
                 child: Text(
                   emoji,
-                  style: TextStyle(
-                    fontSize: botSize * 0.38,
-                    height: 1.0,
-                  ),
+                  style: TextStyle(fontSize: botSize * 0.38, height: 1.0),
                 ),
               );
               break;
@@ -296,22 +290,19 @@ class VowlMascot extends StatelessWidget {
               backgroundChild = reduceMotion
                   ? auraGlow
                   : auraGlow
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.12, 1.12),
-                        duration: 2500.ms,
-                        curve: Curves.easeInOut,
-                      );
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.12, 1.12),
+                          duration: 2500.ms,
+                          curve: Curves.easeInOut,
+                        );
               overlayChild = Positioned(
                 top: -botSize * 0.08,
                 right: -botSize * 0.04,
                 child: Text(
                   emoji,
-                  style: TextStyle(
-                    fontSize: botSize * 0.3,
-                    height: 1.0,
-                  ),
+                  style: TextStyle(fontSize: botSize * 0.3, height: 1.0),
                 ),
               );
               break;
@@ -346,7 +337,9 @@ class VowlMascot extends StatelessWidget {
               overlayChild,
               if (level >= 100)
                 Positioned(
-                  top: slot == AccessorySlot.head ? -botSize * 0.26 : -botSize * 0.1,
+                  top: slot == AccessorySlot.head
+                      ? -botSize * 0.26
+                      : -botSize * 0.1,
                   child: Text('👑', style: TextStyle(fontSize: botSize * 0.28)),
                 ),
             ],

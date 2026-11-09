@@ -52,9 +52,7 @@ class PremiumFailureOverlay extends StatelessWidget {
     final closeBtnBg = isDark
         ? AppColors.slate800.withValues(alpha: 0.6)
         : const Color(0xFFF1F5F9);
-    final closeBtnBorder = isDark
-        ? AppColors.slate700
-        : AppColors.slate200;
+    final closeBtnBorder = isDark ? AppColors.slate700 : AppColors.slate200;
 
     Widget iconWidget = Container(
       width: 86.r,
@@ -68,7 +66,9 @@ class PremiumFailureOverlay extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFE11D48).withValues(alpha: isDark ? 0.45 : 0.25),
+            color: const Color(
+              0xFFE11D48,
+            ).withValues(alpha: isDark ? 0.45 : 0.25),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -159,7 +159,8 @@ class PremiumFailureOverlay extends StatelessWidget {
       errorMessage == null
           ? context.tr(
               'premium.failure_body_default',
-              fallback: 'The payment could not be completed. Please try again or use another payment method.',
+              fallback:
+                  'The payment could not be completed. Please try again or use another payment method.',
             )
           : context.tr(
               'premium.failure_body_retry_hint',
@@ -220,7 +221,9 @@ class PremiumFailureOverlay extends StatelessWidget {
                 color: isDark ? _LocalPalette.color8b9cf7 : AppColors.indigo600,
                 fontWeight: FontWeight.w700,
                 decoration: TextDecoration.underline,
-                decorationColor: isDark ? _LocalPalette.color8b9cf7 : AppColors.indigo600,
+                decorationColor: isDark
+                    ? _LocalPalette.color8b9cf7
+                    : AppColors.indigo600,
               ),
             ),
           ),
@@ -281,7 +284,9 @@ class PremiumFailureOverlay extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16.r),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFE11D48).withValues(alpha: isDark ? 0.4 : 0.25),
+                      color: const Color(
+                        0xFFE11D48,
+                      ).withValues(alpha: isDark ? 0.4 : 0.25),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
@@ -290,7 +295,11 @@ class PremiumFailureOverlay extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(LucideIcons.refreshCw, size: 14.sp, color: Colors.white),
+                    Icon(
+                      LucideIcons.refreshCw,
+                      size: 14.sp,
+                      color: Colors.white,
+                    ),
                     SizedBox(width: 6.w),
                     Text(
                       context
@@ -324,10 +333,7 @@ class PremiumFailureOverlay extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(
-          color: borderColor,
-          width: 1.2,
-        ),
+        border: Border.all(color: borderColor, width: 1.2),
         boxShadow: [
           BoxShadow(
             color: isDark

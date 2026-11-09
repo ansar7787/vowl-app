@@ -95,7 +95,11 @@ class EliteHintCard extends StatelessWidget {
     // other case with no real hint text to show.
     final hasRealHint = hintText != null && hintText!.trim().isNotEmpty;
     final resolvedHint = HintUtility.isGenericHint(hintText)
-        ? context.tr('games.lifeline_activated', fallback: 'LIFELINE ACTIVATED: Applying dynamic assistance. Eliminating unlikely options often reveals the truth.')
+        ? context.tr(
+            'games.lifeline_activated',
+            fallback:
+                'LIFELINE ACTIVATED: Applying dynamic assistance. Eliminating unlikely options often reveals the truth.',
+          )
         : (hasRealHint
               ? hintText!
               : context.tr(

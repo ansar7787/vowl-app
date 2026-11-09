@@ -30,10 +30,11 @@ class _WeatherPalette {
   static const Color woodFrameMedium = Color(0xFF8B5A2B); // Warm teak
   static const Color woodFrameBorder = Color(0xFF422817); // Deep wood border
 
-
   // Cloud Option Styling
   static const Color cloudWhite = Colors.white;
-  static const Color cloudShadow = Color(0xFF93C5FD); // Soft blue tactile shadow
+  static const Color cloudShadow = Color(
+    0xFF93C5FD,
+  ); // Soft blue tactile shadow
   static const Color cloudBorder = Color(0xFFBAE6FD); // Sky 200 outline
   static const Color cloudText = Color(0xFF0369A1); // Sky 700 bold
 
@@ -173,8 +174,8 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
     final question = quest.question ?? '';
     final textToSpeak = instruction.isNotEmpty
         ? (question.isNotEmpty && question != '?'
-            ? '$instruction $question'
-            : instruction)
+              ? '$instruction $question'
+              : instruction)
         : question;
 
     if (textToSpeak.isNotEmpty) {
@@ -197,6 +198,7 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -232,16 +234,14 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
                 width: contentWidth,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    bottom: 24.h,
-                    left: 4.w,
-                    right: 4.w,
-                  ),
+                  padding: EdgeInsets.only(bottom: 24.h, left: 4.w, right: 4.w),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight + 12.h),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight + 12.h,
+                      ),
 
                       // Sky Window Drop Target
                       _buildWeatherWindow(
@@ -308,8 +308,8 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
                 color: isHovering
                     ? _WeatherPalette.hoverGlow
                     : (isCorrect
-                        ? _WeatherPalette.successBorder
-                        : _WeatherPalette.woodFrameBorder),
+                          ? _WeatherPalette.successBorder
+                          : _WeatherPalette.woodFrameBorder),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
@@ -351,7 +351,11 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
                   ),
                   child: isCorrect
                       ? _buildCelebratoryWeatherReveal(quest)
-                      : _buildWeatherForecastPlaque(quest, isHovering, isNarrow: isNarrow),
+                      : _buildWeatherForecastPlaque(
+                          quest,
+                          isHovering,
+                          isNarrow: isNarrow,
+                        ),
                 ),
               ],
             ),
@@ -384,7 +388,9 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
               Icon(
                 Icons.wb_sunny_rounded,
                 size: 14.r,
-                color: isHovering ? _WeatherPalette.hoverGlow : Colors.amber.shade300,
+                color: isHovering
+                    ? _WeatherPalette.hoverGlow
+                    : Colors.amber.shade300,
               ),
               SizedBox(width: 6.w),
               Text(
@@ -428,7 +434,8 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
   }) {
     final instruction = InstructionHelper.getInstruction(quest);
     final question = quest.question ?? '';
-    final hasBoth = instruction.isNotEmpty && question.isNotEmpty && question != '?';
+    final hasBoth =
+        instruction.isNotEmpty && question.isNotEmpty && question != '?';
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -526,7 +533,9 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
           Text(
             hasBoth
                 ? question
-                : (question.isNotEmpty && question != '?' ? question : instruction),
+                : (question.isNotEmpty && question != '?'
+                      ? question
+                      : instruction),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: isNarrow ? 16.sp : 17.sp,
@@ -582,10 +591,7 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: _WeatherPalette.successBorder,
-          width: 2.5.w,
-        ),
+        border: Border.all(color: _WeatherPalette.successBorder, width: 2.5.w),
         boxShadow: [
           BoxShadow(
             color: _WeatherPalette.successBorder.withValues(alpha: 0.25),
@@ -598,10 +604,7 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Celebratory Emoji with animated scale & glow
-          Text(
-            emoji,
-            style: TextStyle(fontSize: 42.sp),
-          )
+          Text(emoji, style: TextStyle(fontSize: 42.sp))
               .animate()
               .scale(
                 duration: 400.ms,
@@ -650,10 +653,7 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.90),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: _WeatherPalette.cloudBorder,
-          width: 1.2.w,
-        ),
+        border: Border.all(color: _WeatherPalette.cloudBorder, width: 1.2.w),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -697,7 +697,9 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
     if (options.isEmpty) return const SizedBox.shrink();
 
     // Determine if options are short vocabulary or longer phrases/sentences
-    final bool areAllOptionsShort = options.every((opt) => opt.trim().length <= 16);
+    final bool areAllOptionsShort = options.every(
+      (opt) => opt.trim().length <= 16,
+    );
 
     // Identify distractor option to dim if hint is active
     String? hintDimOption;
@@ -918,15 +920,14 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.05,
-        child: Opacity(
-          opacity: 0.92,
-          child: cloudVisual,
-        ),
+        child: Opacity(opacity: 0.92, child: cloudVisual),
       ),
     );
 
     final interactiveCard = ScaleButton(
-      onTap: isAnswered ? null : () => _handleOptionSubmit(context, state, text),
+      onTap: isAnswered
+          ? null
+          : () => _handleOptionSubmit(context, state, text),
       child: cloudVisual,
     );
 
@@ -1010,7 +1011,10 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
               decoration: BoxDecoration(
                 color: _WeatherPalette.skyBackground,
                 shape: BoxShape.circle,
-                border: Border.all(color: _WeatherPalette.cloudBorder, width: 1.w),
+                border: Border.all(
+                  color: _WeatherPalette.cloudBorder,
+                  width: 1.w,
+                ),
               ),
               child: Icon(
                 Icons.cloud_rounded,
@@ -1068,7 +1072,10 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
       ),
     );
 
-    final feedbackWidth = (MediaQuery.sizeOf(context).width - 32.w).clamp(260.0, 480.0);
+    final feedbackWidth = (MediaQuery.sizeOf(context).width - 32.w).clamp(
+      260.0,
+      480.0,
+    );
     final feedbackWidget = Material(
       color: Colors.transparent,
       child: SizedBox(
@@ -1081,7 +1088,9 @@ class _KidsWeatherLayoutState extends State<KidsWeatherLayout> {
     );
 
     final interactiveBanner = ScaleButton(
-      onTap: isAnswered ? null : () => _handleOptionSubmit(context, state, text),
+      onTap: isAnswered
+          ? null
+          : () => _handleOptionSubmit(context, state, text),
       child: bannerVisual,
     );
 

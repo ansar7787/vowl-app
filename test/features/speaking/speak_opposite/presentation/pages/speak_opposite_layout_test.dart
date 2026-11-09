@@ -131,10 +131,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const SpeakingHintUsed());
     registerFallbackValue(
-      const FetchSpeakingQuests(
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      ),
+      const FetchSpeakingQuests(gameType: GameSubtype.speakOpposite, level: 2),
     );
     registerFallbackValue(const Duration(milliseconds: 50));
   });
@@ -177,18 +174,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => 'mock_opposite_rec.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => 'mock_opposite_rec.m4a');
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
     when(() => mockAudioRecorder.onAmplitudeChanged(any())).thenAnswer(
       (_) => Stream.fromIterable([
@@ -290,10 +292,7 @@ void main() {
                 textScaler: TextScaler.linear(textScaleFactor),
                 disableAnimations: reduceMotion,
               ),
-              child: SpeakOppositeScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              child: SpeakOppositeScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -317,45 +316,85 @@ void main() {
       expect(find.byType(SpeakOppositePositivePolePanel), findsOneWidget);
     });
 
-    testWidgets('1.3 renders key speak_opposite_positive_pole_panel', (tester) async {
+    testWidgets('1.3 renders key speak_opposite_positive_pole_panel', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_positive_pole_panel')), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_opposite_positive_pole_panel')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('1.4 renders GIVEN WORD label with key speak_opposite_given_word_label', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_given_word_label')), findsOneWidget);
-      expect(find.text('GIVEN WORD'), findsOneWidget);
-    });
+    testWidgets(
+      '1.4 renders GIVEN WORD label with key speak_opposite_given_word_label',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_given_word_label')),
+          findsOneWidget,
+        );
+        expect(find.text('GIVEN WORD'), findsOneWidget);
+      },
+    );
 
-    testWidgets('1.5 renders target word container with key speak_opposite_target_word_container', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_target_word_container')), findsOneWidget);
-    });
+    testWidgets(
+      '1.5 renders target word container with key speak_opposite_target_word_container',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_target_word_container')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.6 renders target word text with key speak_opposite_target_word_text', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_target_word_text')), findsOneWidget);
-      expect(find.text('hot'), findsOneWidget);
-    });
+    testWidgets(
+      '1.6 renders target word text with key speak_opposite_target_word_text',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_target_word_text')),
+          findsOneWidget,
+        );
+        expect(find.text('hot'), findsOneWidget);
+      },
+    );
 
-    testWidgets('1.7 renders listen button with key speak_opposite_listen_button', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_listen_button')), findsOneWidget);
-    });
+    testWidgets(
+      '1.7 renders listen button with key speak_opposite_listen_button',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_listen_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.8 renders RawScrollbar and CustomScrollView with custom keys', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_scrollbar')), findsOneWidget);
-      expect(find.byKey(const Key('speak_opposite_scroll_view')), findsOneWidget);
-    });
+    testWidgets(
+      '1.8 renders RawScrollbar and CustomScrollView with custom keys',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_scrollbar')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('speak_opposite_scroll_view')),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 2. Parser Logic & Data Binding (8 tests)
   // ---------------------------------------------------------------------------
   group('2. Parser Logic & Data Binding', () {
-    testWidgets('2.1 parses asterisks word into targetWord hot', (tester) async {
+    testWidgets('2.1 parses asterisks word into targetWord hot', (
+      tester,
+    ) async {
       final parsed = SpeakOppositeParser.parseQuestTexts(
         textToSpeak: 'The soup is *hot*.',
         fallbackInstruction: 'Opposite of hot',
@@ -363,64 +402,89 @@ void main() {
       expect(parsed.targetWord, 'hot');
     });
 
-    testWidgets('2.2 strips asterisks from textToSpeak into clean contextText', (tester) async {
-      final parsed = SpeakOppositeParser.parseQuestTexts(
-        textToSpeak: 'The soup is *hot*.',
-        fallbackInstruction: 'Opposite of hot',
-      );
-      expect(parsed.contextText, 'The soup is hot.');
-    });
+    testWidgets(
+      '2.2 strips asterisks from textToSpeak into clean contextText',
+      (tester) async {
+        final parsed = SpeakOppositeParser.parseQuestTexts(
+          textToSpeak: 'The soup is *hot*.',
+          fallbackInstruction: 'Opposite of hot',
+        );
+        expect(parsed.contextText, 'The soup is hot.');
+      },
+    );
 
-    testWidgets('2.3 handles empty textToSpeak by falling back to fallbackInstruction', (tester) async {
-      final parsed = SpeakOppositeParser.parseQuestTexts(
-        textToSpeak: '',
-        fallbackInstruction: 'big',
-      );
-      expect(parsed.targetWord, 'big');
-      expect(parsed.contextText, '');
-    });
+    testWidgets(
+      '2.3 handles empty textToSpeak by falling back to fallbackInstruction',
+      (tester) async {
+        final parsed = SpeakOppositeParser.parseQuestTexts(
+          textToSpeak: '',
+          fallbackInstruction: 'big',
+        );
+        expect(parsed.targetWord, 'big');
+        expect(parsed.contextText, '');
+      },
+    );
 
-    testWidgets('2.4 handles textToSpeak without asterisks by using entire string', (tester) async {
-      final parsed = SpeakOppositeParser.parseQuestTexts(
-        textToSpeak: 'ancient',
-        fallbackInstruction: 'ancient',
-      );
-      expect(parsed.targetWord, 'ancient');
-      expect(parsed.contextText, '');
-    });
+    testWidgets(
+      '2.4 handles textToSpeak without asterisks by using entire string',
+      (tester) async {
+        final parsed = SpeakOppositeParser.parseQuestTexts(
+          textToSpeak: 'ancient',
+          fallbackInstruction: 'ancient',
+        );
+        expect(parsed.targetWord, 'ancient');
+        expect(parsed.contextText, '');
+      },
+    );
 
     testWidgets('2.5 renders targetWord parsed from quest', (tester) async {
       await pumpScreen(tester);
       expect(find.text('hot'), findsOneWidget);
     });
 
-    testWidgets('2.6 renders contextText in italic style below targetWord', (tester) async {
+    testWidgets('2.6 renders contextText in italic style below targetWord', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_context_text')), findsOneWidget);
-      expect(find.text('The soup on the stove is too hot to eat right now.'), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_opposite_context_text')),
+        findsOneWidget,
+      );
+      expect(
+        find.text('The soup on the stove is too hot to eat right now.'),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('2.7 does not render contextText widget when contextText is empty', (tester) async {
-      final questNoContext = createQuest(
-        textToSpeak: 'huge',
-        correctAnswer: 'tiny',
-      );
-      final stateNoContext = SpeakingLoaded(
-        quests: [questNoContext],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      );
-      await pumpScreen(tester, state: stateNoContext);
-      expect(find.byKey(const Key('speak_opposite_context_text')), findsNothing);
-      expect(find.text('huge'), findsOneWidget);
-    });
+    testWidgets(
+      '2.7 does not render contextText widget when contextText is empty',
+      (tester) async {
+        final questNoContext = createQuest(
+          textToSpeak: 'huge',
+          correctAnswer: 'tiny',
+        );
+        final stateNoContext = SpeakingLoaded(
+          quests: [questNoContext],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakOpposite,
+          level: 2,
+        );
+        await pumpScreen(tester, state: stateNoContext);
+        expect(
+          find.byKey(const Key('speak_opposite_context_text')),
+          findsNothing,
+        );
+        expect(find.text('huge'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2.8 renders GameShimmerLoading when quest is null', (tester) async {
+    testWidgets('2.8 renders GameShimmerLoading when quest is null', (
+      tester,
+    ) async {
       await pumpScreen(tester, state: const SpeakingInitial());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(SpeakOppositePositivePolePanel), findsNothing);
@@ -431,11 +495,14 @@ void main() {
   // 3. Level 1 Briefing Overlay & Onboarding (6 tests)
   // ---------------------------------------------------------------------------
   group('3. Level 1 Briefing Overlay & Onboarding', () {
-    testWidgets('3.1 displays QuestBriefingOverlay on level 1 when not previously seen', (tester) async {
-      SharedPreferences.setMockInitialValues({});
-      await pumpScreen(tester, level: 1);
-      expect(find.byType(QuestBriefingOverlay), findsOneWidget);
-    });
+    testWidgets(
+      '3.1 displays QuestBriefingOverlay on level 1 when not previously seen',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({});
+        await pumpScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      },
+    );
 
     testWidgets('3.2 displays briefing title ANTONYM ORATOR', (tester) async {
       SharedPreferences.setMockInitialValues({});
@@ -443,7 +510,9 @@ void main() {
       expect(find.text('ANTONYM ORATOR'), findsOneWidget);
     });
 
-    testWidgets('3.3 displays action button with text SPEAK OPPOSITE', (tester) async {
+    testWidgets('3.3 displays action button with text SPEAK OPPOSITE', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 1);
       expect(find.text('SPEAK OPPOSITE'), findsOneWidget);
@@ -461,13 +530,17 @@ void main() {
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('3.5 does not display briefing overlay on level 2', (tester) async {
+    testWidgets('3.5 does not display briefing overlay on level 2', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 2);
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('3.6 briefing overlay is also displayed on level 100', (tester) async {
+    testWidgets('3.6 briefing overlay is also displayed on level 100', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 100);
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
     });
@@ -477,33 +550,41 @@ void main() {
   // 4. TTS Audio Playback & Microphone Controls (8 tests)
   // ---------------------------------------------------------------------------
   group('4. TTS Audio Playback & Microphone Controls', () {
-    testWidgets('4.1 tapping listen button calls soundService.playTts(targetWord)', (tester) async {
-      await pumpScreen(tester);
-      clearInteractions(mockSoundService);
+    testWidgets(
+      '4.1 tapping listen button calls soundService.playTts(targetWord)',
+      (tester) async {
+        await pumpScreen(tester);
+        clearInteractions(mockSoundService);
 
-      await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
-      await tester.pump();
+        await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('hot')).called(1);
-    });
+        verify(() => mockSoundService.playTts('hot')).called(1);
+      },
+    );
 
-    testWidgets('4.2 tapping listen button does NOT play TTS if audioRecorder.isRecording is true', (tester) async {
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await pumpScreen(tester);
-      clearInteractions(mockSoundService);
+    testWidgets(
+      '4.2 tapping listen button does NOT play TTS if audioRecorder.isRecording is true',
+      (tester) async {
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await pumpScreen(tester);
+        clearInteractions(mockSoundService);
 
-      await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
-      await tester.pump();
+        await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
+        await tester.pump();
 
-      verifyNever(() => mockSoundService.playTts(any()));
-    });
+        verifyNever(() => mockSoundService.playTts(any()));
+      },
+    );
 
     testWidgets('4.3 listen button has volume_up_rounded icon', (tester) async {
       await pumpScreen(tester);
       expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
     });
 
-    testWidgets('4.4 listen button has accessible Semantics label', (tester) async {
+    testWidgets('4.4 listen button has accessible Semantics label', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final semantics = find.ancestor(
         of: find.byKey(const Key('speak_opposite_listen_button')),
@@ -512,17 +593,23 @@ void main() {
       expect(semantics, findsWidgets);
     });
 
-    testWidgets('4.5 target word has accessible Semantics label', (tester) async {
+    testWidgets('4.5 target word has accessible Semantics label', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.label == 'Target word to find opposite: hot'),
+        find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Target word to find opposite: hot',
+        ),
         findsOneWidget,
       );
     });
 
-    testWidgets('4.6 mic hint row renders with key speak_opposite_mic_hint', (tester) async {
+    testWidgets('4.6 mic hint row renders with key speak_opposite_mic_hint', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_opposite_mic_hint')), findsOneWidget);
       expect(find.text('Hold mic to say the opposite'), findsOneWidget);
@@ -533,7 +620,9 @@ void main() {
       expect(find.byIcon(Icons.mic_rounded), findsWidgets);
     });
 
-    testWidgets('4.8 school_rounded icon renders beside GIVEN WORD label', (tester) async {
+    testWidgets('4.8 school_rounded icon renders beside GIVEN WORD label', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byIcon(Icons.school_rounded), findsOneWidget);
     });
@@ -543,26 +632,33 @@ void main() {
   // 5. AutoPlay Mechanics & TTS Barrier (_ttsFinished) (8 tests)
   // ---------------------------------------------------------------------------
   group('5. AutoPlay Mechanics & TTS Barrier (_ttsFinished)', () {
-    testWidgets('5.1 autoPlay triggers soundService.playTts on quest mount', (tester) async {
+    testWidgets('5.1 autoPlay triggers soundService.playTts on quest mount', (
+      tester,
+    ) async {
       clearInteractions(mockSoundService);
       await pumpScreen(tester);
       verify(() => mockSoundService.playTts('hot')).called(1);
     });
 
-    testWidgets('5.2 under lowAnimationModeOverride, _ttsFinished is immediately true', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpScreen(tester);
+    testWidgets(
+      '5.2 under lowAnimationModeOverride, _ttsFinished is immediately true',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpScreen(tester);
 
-      final absorbPointer = tester.widget<AbsorbPointer>(
-        find.descendant(
-          of: find.byType(CustomScrollView),
-          matching: find.byType(AbsorbPointer),
-        ),
-      );
-      expect(absorbPointer.absorbing, isFalse);
-    });
+        final absorbPointer = tester.widget<AbsorbPointer>(
+          find.descendant(
+            of: find.byType(CustomScrollView),
+            matching: find.byType(AbsorbPointer),
+          ),
+        );
+        expect(absorbPointer.absorbing, isFalse);
+      },
+    );
 
-    testWidgets('5.3 under lowAnimationModeOverride, opacity is 1.0', (tester) async {
+    testWidgets('5.3 under lowAnimationModeOverride, opacity is 1.0', (
+      tester,
+    ) async {
       VowlMotion.lowAnimationModeOverride.value = true;
       await pumpScreen(tester);
 
@@ -575,67 +671,82 @@ void main() {
       expect(animatedOpacity.opacity, 1.0);
     });
 
-    testWidgets('5.4 without lowAnimationModeOverride, autoPlayTimer sets _ttsFinished after timer', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = false;
-      await pumpScreen(tester);
-      await tester.pump(const Duration(seconds: 3));
+    testWidgets(
+      '5.4 without lowAnimationModeOverride, autoPlayTimer sets _ttsFinished after timer',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = false;
+        await pumpScreen(tester);
+        await tester.pump(const Duration(seconds: 3));
 
-      final absorbPointer = tester.widget<AbsorbPointer>(
-        find.descendant(
-          of: find.byType(CustomScrollView),
-          matching: find.byType(AbsorbPointer),
-        ),
-      );
-      expect(absorbPointer.absorbing, isFalse);
-    });
+        final absorbPointer = tester.widget<AbsorbPointer>(
+          find.descendant(
+            of: find.byType(CustomScrollView),
+            matching: find.byType(AbsorbPointer),
+          ),
+        );
+        expect(absorbPointer.absorbing, isFalse);
+      },
+    );
 
-    testWidgets('5.5 reduced motion via disableAnimations sets _ttsFinished to true', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = false;
-      await pumpScreen(tester, reduceMotion: true);
+    testWidgets(
+      '5.5 reduced motion via disableAnimations sets _ttsFinished to true',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = false;
+        await pumpScreen(tester, reduceMotion: true);
 
-      final absorbPointer = tester.widget<AbsorbPointer>(
-        find.descendant(
-          of: find.byType(CustomScrollView),
-          matching: find.byType(AbsorbPointer),
-        ),
-      );
-      expect(absorbPointer.absorbing, isFalse);
-    });
+        final absorbPointer = tester.widget<AbsorbPointer>(
+          find.descendant(
+            of: find.byType(CustomScrollView),
+            matching: find.byType(AbsorbPointer),
+          ),
+        );
+        expect(absorbPointer.absorbing, isFalse);
+      },
+    );
 
-    testWidgets('5.6 empty quest targetWord sets _ttsFinished to true immediately', (tester) async {
-      final emptyQuest = createQuest(textToSpeak: '', instruction: '');
-      final emptyState = SpeakingLoaded(
-        quests: [emptyQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      );
-      await pumpScreen(tester, state: emptyState);
+    testWidgets(
+      '5.6 empty quest targetWord sets _ttsFinished to true immediately',
+      (tester) async {
+        final emptyQuest = createQuest(textToSpeak: '', instruction: '');
+        final emptyState = SpeakingLoaded(
+          quests: [emptyQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakOpposite,
+          level: 2,
+        );
+        await pumpScreen(tester, state: emptyState);
 
-      final absorbPointer = tester.widget<AbsorbPointer>(
-        find.descendant(
-          of: find.byType(CustomScrollView),
-          matching: find.byType(AbsorbPointer),
-        ),
-      );
-      expect(absorbPointer.absorbing, isFalse);
-    });
+        final absorbPointer = tester.widget<AbsorbPointer>(
+          find.descendant(
+            of: find.byType(CustomScrollView),
+            matching: find.byType(AbsorbPointer),
+          ),
+        );
+        expect(absorbPointer.absorbing, isFalse);
+      },
+    );
 
-    testWidgets('5.7 multiple audio triggers safely cancel prior timers', (tester) async {
+    testWidgets('5.7 multiple audio triggers safely cancel prior timers', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
       await tester.pump();
       await tester.tap(find.byKey(const Key('speak_opposite_listen_button')));
       await tester.pump();
 
-      verify(() => mockSoundService.playTts('hot')).called(greaterThanOrEqualTo(2));
+      verify(
+        () => mockSoundService.playTts('hot'),
+      ).called(greaterThanOrEqualTo(2));
     });
 
-    testWidgets('5.8 autoPlay does not trigger if answerStatus is answered', (tester) async {
+    testWidgets('5.8 autoPlay does not trigger if answerStatus is answered', (
+      tester,
+    ) async {
       clearInteractions(mockSoundService);
       final answeredState = SpeakingLoaded(
         quests: [sampleQuest1],
@@ -656,15 +767,20 @@ void main() {
   // 6. SpeakToConfirmOverlay Configuration & Properties (8 tests)
   // ---------------------------------------------------------------------------
   group('6. SpeakToConfirmOverlay Configuration & Properties', () {
-    testWidgets('6.1 renders SpeakToConfirmOverlay with key speak_opposite_speak_to_confirm_overlay', (tester) async {
-      await pumpScreen(tester);
-      expect(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-        findsOneWidget,
-      );
-    });
+    testWidgets(
+      '6.1 renders SpeakToConfirmOverlay with key speak_opposite_speak_to_confirm_overlay',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('6.2 sets hideExpectedText to true so answer is not revealed', (tester) async {
+    testWidgets('6.2 sets hideExpectedText to true so answer is not revealed', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -689,7 +805,9 @@ void main() {
       expect(find.text('SAY THE OPPOSITE'), findsOneWidget);
     });
 
-    testWidgets('6.5 sets subtitle to Hold the mic and speak aloud', (tester) async {
+    testWidgets('6.5 sets subtitle to Hold the mic and speak aloud', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -698,57 +816,74 @@ void main() {
       expect(find.text('Hold the mic and speak aloud'), findsOneWidget);
     });
 
-    testWidgets('6.6 passes acceptedAntonyms into acceptedSynonyms of overlay', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      expect(overlay.acceptedSynonyms, ['cold', 'freezing', 'chilly']);
-      expect(overlay.expectedText, 'cold');
-    });
+    testWidgets(
+      '6.6 passes acceptedAntonyms into acceptedSynonyms of overlay',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        expect(overlay.acceptedSynonyms, ['cold', 'freezing', 'chilly']);
+        expect(overlay.expectedText, 'cold');
+      },
+    );
 
-    testWidgets('6.7 falls back to cleaned correctAnswer when acceptedSynonyms is empty', (tester) async {
-      final questNoSynonyms = createQuest(
-        acceptedSynonyms: [],
-        correctAnswer: 'cold!',
-      );
-      final stateNoSynonyms = SpeakingLoaded(
-        quests: [questNoSynonyms],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      );
-      await pumpScreen(tester, state: stateNoSynonyms);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      expect(overlay.acceptedSynonyms, ['cold']);
-      expect(overlay.expectedText, 'cold');
-    });
+    testWidgets(
+      '6.7 falls back to cleaned correctAnswer when acceptedSynonyms is empty',
+      (tester) async {
+        final questNoSynonyms = createQuest(
+          acceptedSynonyms: [],
+          correctAnswer: 'cold!',
+        );
+        final stateNoSynonyms = SpeakingLoaded(
+          quests: [questNoSynonyms],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakOpposite,
+          level: 2,
+        );
+        await pumpScreen(tester, state: stateNoSynonyms);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        expect(overlay.acceptedSynonyms, ['cold']);
+        expect(overlay.expectedText, 'cold');
+      },
+    );
 
-    testWidgets('6.8 unmounts SpeakToConfirmOverlay when question is answered', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')), findsOneWidget);
+    testWidgets(
+      '6.8 unmounts SpeakToConfirmOverlay when question is answered',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')), findsNothing);
-    });
+        expect(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 7. Verbal Evaluation Submission - Success Path (7 tests)
   // ---------------------------------------------------------------------------
   group('7. Verbal Evaluation Submission - Success Path', () {
-    testWidgets('7.1 onConfirmed triggers hapticService.success()', (tester) async {
+    testWidgets('7.1 onConfirmed triggers hapticService.success()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -759,7 +894,9 @@ void main() {
       verify(() => mockHapticService.success()).called(1);
     });
 
-    testWidgets('7.2 onConfirmed triggers soundService.playCorrect()', (tester) async {
+    testWidgets('7.2 onConfirmed triggers soundService.playCorrect()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -770,31 +907,41 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('7.3 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.3 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('7.4 onConfirmed mounts GameFeedbackCard with positive status', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.4 onConfirmed mounts GameFeedbackCard with positive status',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isTrue);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isTrue);
+      },
+    );
 
-    testWidgets('7.5 onConfirmed does not log error to ErrorJournalCollector', (tester) async {
+    testWidgets('7.5 onConfirmed does not log error to ErrorJournalCollector', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -805,34 +952,40 @@ void main() {
       verifyNever(() => mockAppLogger.error(any()));
     });
 
-    testWidgets('7.6 subsequent submission calls while answered are locked out', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.6 subsequent submission calls while answered are locked out',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      state.submitCorrectAnswer();
-      await tester.pump();
+        clearInteractions(mockSpeakingBloc);
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        state.submitCorrectAnswer();
+        await tester.pump();
 
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
 
-    testWidgets('7.7 onConfirmed sets confetti notifier for celebratory effect', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.7 onConfirmed sets confetti notifier for celebratory effect',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      expect(state.isCorrectNotifier.value, isTrue);
-      expect(state.isAnsweredNotifier.value, isTrue);
-    });
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        expect(state.isCorrectNotifier.value, isTrue);
+        expect(state.isAnsweredNotifier.value, isTrue);
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
@@ -850,7 +1003,9 @@ void main() {
       verify(() => mockHapticService.error()).called(1);
     });
 
-    testWidgets('8.2 onSkipped triggers soundService.playWrong()', (tester) async {
+    testWidgets('8.2 onSkipped triggers soundService.playWrong()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -861,18 +1016,23 @@ void main() {
       verify(() => mockSoundService.playWrong()).called(1);
     });
 
-    testWidgets('8.3 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.3 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('8.4 onSkipped mounts GameFeedbackCard with incorrect status', (tester) async {
+    testWidgets('8.4 onSkipped mounts GameFeedbackCard with incorrect status', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -881,24 +1041,33 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
+      final feedback = tester.widget<GameFeedbackCard>(
+        find.byType(GameFeedbackCard),
+      );
       expect(feedback.isCorrect, isFalse);
     });
 
-    testWidgets('8.5 onSkipped with authenticated user triggers ErrorJournal entry', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.5 onSkipped with authenticated user triggers ErrorJournal entry',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
 
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      expect(state.isCorrectNotifier.value, isFalse);
-    });
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        expect(state.isCorrectNotifier.value, isFalse);
+      },
+    );
 
-    testWidgets('8.6 handles unauthenticated user gracefully on error', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    testWidgets('8.6 handles unauthenticated user gracefully on error', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -909,7 +1078,28 @@ void main() {
       verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('8.7 subsequent error submissions while answered are locked out', (tester) async {
+    testWidgets(
+      '8.7 subsequent error submissions while answered are locked out',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
+
+        clearInteractions(mockSpeakingBloc);
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        state.submitWrongAnswer(quest: sampleQuest1);
+        await tester.pump();
+
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
+
+    testWidgets('8.8 unmounts SpeakToConfirmOverlay on failure', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -917,23 +1107,10 @@ void main() {
       overlay.onSkipped();
       await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      state.submitWrongAnswer(quest: sampleQuest1);
-      await tester.pump();
-
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
-
-    testWidgets('8.8 unmounts SpeakToConfirmOverlay on failure', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
+      expect(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        findsNothing,
       );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
-
-      expect(find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')), findsNothing);
     });
   });
 
@@ -941,7 +1118,9 @@ void main() {
   // 9. Feedback Card, Hints & Question Progression (8 tests)
   // ---------------------------------------------------------------------------
   group('9. Feedback Card, Hints & Question Progression', () {
-    testWidgets('9.1 GameFeedbackCard displays CONTINUE button', (tester) async {
+    testWidgets('9.1 GameFeedbackCard displays CONTINUE button', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
@@ -952,105 +1131,133 @@ void main() {
       expect(find.text('CONTINUE'), findsOneWidget);
     });
 
-    testWidgets('9.2 tapping CONTINUE button dispatches NextQuestion() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '9.2 tapping CONTINUE button dispatches NextQuestion() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump();
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      clearInteractions(mockSpeakingBloc);
-      expect(find.byType(QuestHintButton), findsOneWidget);
+    testWidgets(
+      '9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        clearInteractions(mockSpeakingBloc);
+        expect(find.byType(QuestHintButton), findsOneWidget);
 
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pump();
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('9.4 onQuestionReset resets _ttsFinished and cancels active timers', (tester) async {
-      await pumpScreen(tester);
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      state.onQuestionReset();
-      await tester.pump();
+    testWidgets(
+      '9.4 onQuestionReset resets _ttsFinished and cancels active timers',
+      (tester) async {
+        await pumpScreen(tester);
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        state.onQuestionReset();
+        await tester.pump();
 
-      expect(state.isAnsweredNotifier.value, isFalse);
-    });
+        expect(state.isAnsweredNotifier.value, isFalse);
+      },
+    );
 
-    testWidgets('9.5 state transition to next quest updates targetWord and contextText', (tester) async {
-      await pumpScreen(tester);
-      expect(find.text('hot'), findsOneWidget);
+    testWidgets(
+      '9.5 state transition to next quest updates targetWord and contextText',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.text('hot'), findsOneWidget);
 
-      final nextLoadedState = SpeakingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      );
-      speakingStreamController.add(nextLoadedState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final nextLoadedState = SpeakingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakOpposite,
+          level: 2,
+        );
+        speakingStreamController.add(nextLoadedState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('dark'), findsOneWidget);
-      expect(find.text('The room was completely dark before turning on the lamp.'), findsOneWidget);
-    });
+        expect(find.text('dark'), findsOneWidget);
+        expect(
+          find.text('The room was completely dark before turning on the lamp.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('9.6 progressing to second quest resets answered state and unmounts feedback card', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
+    testWidgets(
+      '9.6 progressing to second quest resets answered state and unmounts feedback card',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
 
-      final nextLoadedState = SpeakingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakOpposite,
-        level: 2,
-      );
-      speakingStreamController.add(nextLoadedState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 300));
+        final nextLoadedState = SpeakingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakOpposite,
+          level: 2,
+        );
+        speakingStreamController.add(nextLoadedState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsNothing);
-      expect(find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsNothing);
+        expect(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('9.7 SpeakingGameComplete state triggers game completion dialog', (tester) async {
-      await pumpScreen(tester);
-      const completeState = SpeakingGameComplete(
-        xpEarned: 50,
-        coinsEarned: 20,
-        questCount: 2,
-      );
-      speakingStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+    testWidgets(
+      '9.7 SpeakingGameComplete state triggers game completion dialog',
+      (tester) async {
+        await pumpScreen(tester);
+        const completeState = SpeakingGameComplete(
+          xpEarned: 50,
+          coinsEarned: 20,
+          questCount: 2,
+        );
+        speakingStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-    });
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+      },
+    );
 
-    testWidgets('9.8 SpeakingGameOver state renders with 0 lives remaining', (tester) async {
+    testWidgets('9.8 SpeakingGameOver state renders with 0 lives remaining', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final gameOverState = SpeakingGameOver(
         quests: [sampleQuest1],
@@ -1070,21 +1277,28 @@ void main() {
   // 10. Lifecycle, Viewports, Theming & Reduced Motion (8 tests)
   // ---------------------------------------------------------------------------
   group('10. Lifecycle, Viewports, Theming & Reduced Motion', () {
-    testWidgets('10.1 initGameLifecycle creates lifecycle listener', (tester) async {
+    testWidgets('10.1 initGameLifecycle creates lifecycle listener', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
       expect(state.level, 2);
       expect(state.gameType, GameSubtype.speakOpposite);
     });
 
-    testWidgets('10.2 disposing screen cancels timers and controllers cleanly', (tester) async {
-      await pumpScreen(tester);
-      await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pump();
-      expect(find.byType(SpeakOppositeScreen), findsNothing);
-    });
+    testWidgets(
+      '10.2 disposing screen cancels timers and controllers cleanly',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump();
+        expect(find.byType(SpeakOppositeScreen), findsNothing);
+      },
+    );
 
-    testWidgets('10.3 App pause and resume callbacks execute safely', (tester) async {
+    testWidgets('10.3 App pause and resume callbacks execute safely', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
       state.onGamePaused();
@@ -1093,36 +1307,49 @@ void main() {
       expect(find.byType(SpeakOppositeScreen), findsOneWidget);
     });
 
-    testWidgets('10.4 under lowAnimationModeOverride, _ttsFinished is immediately true', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpScreen(tester);
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      expect(state.level, 2);
-    });
+    testWidgets(
+      '10.4 under lowAnimationModeOverride, _ttsFinished is immediately true',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpScreen(tester);
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        expect(state.level, 2);
+      },
+    );
 
-    testWidgets('10.5 under disableAnimations, _ttsFinished is immediately true', (tester) async {
-      await pumpScreen(tester, reduceMotion: true);
-      final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
-      expect(state.level, 2);
-    });
+    testWidgets(
+      '10.5 under disableAnimations, _ttsFinished is immediately true',
+      (tester) async {
+        await pumpScreen(tester, reduceMotion: true);
+        final state = tester.state(find.byType(SpeakOppositeScreen)) as dynamic;
+        expect(state.level, 2);
+      },
+    );
 
-    testWidgets('10.6 renders without overflow on compact mobile viewport (360x640)', (tester) async {
-      await pumpScreen(tester, size: const Size(360, 640));
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.6 renders without overflow on compact mobile viewport (360x640)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(360, 640));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.7 renders without overflow on tablet viewport (820x1180)', (tester) async {
+    testWidgets('10.7 renders without overflow on tablet viewport (820x1180)', (
+      tester,
+    ) async {
       await pumpScreen(tester, size: const Size(820, 1180));
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.8 Dark and Light themes apply appropriate background styling', (tester) async {
-      await pumpScreen(tester, themeMode: ThemeMode.light);
-      expect(find.byType(SpeakOppositeScreen), findsOneWidget);
+    testWidgets(
+      '10.8 Dark and Light themes apply appropriate background styling',
+      (tester) async {
+        await pumpScreen(tester, themeMode: ThemeMode.light);
+        expect(find.byType(SpeakOppositeScreen), findsOneWidget);
 
-      await pumpScreen(tester, themeMode: ThemeMode.dark);
-      expect(find.byType(SpeakOppositeScreen), findsOneWidget);
-    });
+        await pumpScreen(tester, themeMode: ThemeMode.dark);
+        expect(find.byType(SpeakOppositeScreen), findsOneWidget);
+      },
+    );
   });
 }
-

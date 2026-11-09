@@ -19,23 +19,24 @@ void main() {
   }
 
   group('LaurelTrophy3DArtwork Tests', () {
-    testWidgets('renders Rank 1 Gold Trophy with Champion pedestal and #1 emblem', (tester) async {
-      await tester.pumpWidget(
-        buildTestWidget(
-          const LaurelTrophy3DArtwork(rank: 1, size: 160),
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Rank 1 Gold Trophy with Champion pedestal and #1 emblem',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(const LaurelTrophy3DArtwork(rank: 1, size: 160)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('#1'), findsOneWidget);
-      expect(find.text('CHAMPION'), findsOneWidget);
-    });
+        expect(find.text('#1'), findsOneWidget);
+        expect(find.text('CHAMPION'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders Rank 2 Silver Medallion with SILVER text and #2', (tester) async {
+    testWidgets('renders Rank 2 Silver Medallion with SILVER text and #2', (
+      tester,
+    ) async {
       await tester.pumpWidget(
-        buildTestWidget(
-          const LaurelTrophy3DArtwork(rank: 2, size: 160),
-        ),
+        buildTestWidget(const LaurelTrophy3DArtwork(rank: 2, size: 160)),
       );
       await tester.pumpAndSettle();
 
@@ -43,11 +44,11 @@ void main() {
       expect(find.text('SILVER'), findsOneWidget);
     });
 
-    testWidgets('renders Rank 3 Bronze Medallion with BRONZE text and #3', (tester) async {
+    testWidgets('renders Rank 3 Bronze Medallion with BRONZE text and #3', (
+      tester,
+    ) async {
       await tester.pumpWidget(
-        buildTestWidget(
-          const LaurelTrophy3DArtwork(rank: 3, size: 160),
-        ),
+        buildTestWidget(const LaurelTrophy3DArtwork(rank: 3, size: 160)),
       );
       await tester.pumpAndSettle();
 
@@ -55,11 +56,11 @@ void main() {
       expect(find.text('BRONZE'), findsOneWidget);
     });
 
-    testWidgets('renders Rank 7 Top 10 Shield with TOP 10 text and #7', (tester) async {
+    testWidgets('renders Rank 7 Top 10 Shield with TOP 10 text and #7', (
+      tester,
+    ) async {
       await tester.pumpWidget(
-        buildTestWidget(
-          const LaurelTrophy3DArtwork(rank: 7, size: 160),
-        ),
+        buildTestWidget(const LaurelTrophy3DArtwork(rank: 7, size: 160)),
       );
       await tester.pumpAndSettle();
 
@@ -68,4 +69,3 @@ void main() {
     });
   });
 }
-

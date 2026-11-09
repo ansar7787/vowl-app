@@ -7,7 +7,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-
 /// Panel displaying the interviewer's question, demeanor, and real-time reaction.
 class JobInterviewInterviewerPanel extends StatelessWidget {
   /// Question text delivered by the interviewer.
@@ -62,8 +61,8 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark
-                ? AppColors.slate900
-                : Colors.black.withValues(alpha: 0.02)),
+                  ? AppColors.slate900
+                  : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: reaction != null

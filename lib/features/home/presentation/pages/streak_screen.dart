@@ -125,7 +125,9 @@ class _StreakScreenState extends State<StreakScreen> {
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
-                              color: isDark ? Colors.white54 : AppColors.slate500,
+                              color: isDark
+                                  ? Colors.white54
+                                  : AppColors.slate500,
                             ),
                           ),
                           SizedBox(height: 16.h),
@@ -176,11 +178,13 @@ class _StreakScreenState extends State<StreakScreen> {
         right: AppSpacing.screen,
       ),
       decoration: BoxDecoration(
-        color: (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black)
+        color:
+            (isDark &&
+                Theme.of(context).scaffoldBackgroundColor == Colors.black)
             ? Colors.black.withValues(alpha: 0.94)
             : (isDark
-                ? AppColors.slate900.withValues(alpha: 0.92)
-                : Colors.white.withValues(alpha: 0.92)),
+                  ? AppColors.slate900.withValues(alpha: 0.92)
+                  : Colors.white.withValues(alpha: 0.92)),
         border: Border(
           bottom: BorderSide(
             color: (isDark ? Colors.white : Colors.black).withValues(
@@ -190,102 +194,92 @@ class _StreakScreenState extends State<StreakScreen> {
         ),
       ),
       child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Semantics(
-                button: true,
-                label: context.tr('common.back', fallback: 'Back'),
-                child: ScaleButton(
-                  onTap: () {
-                    if (context.canPop()) {
-                      context.pop();
-                    } else {
-                      context.go(AppRouter.homeRoute);
-                    }
-                  },
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Semantics(
+            button: true,
+            label: context.tr('common.back', fallback: 'Back'),
+            child: ScaleButton(
+              onTap: () {
+                if (context.canPop()) {
+                  context.pop();
+                } else {
+                  context.go(AppRouter.homeRoute);
+                }
+              },
+              child: Container(
+                constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
+                alignment: Alignment.center,
+                child: ExcludeSemantics(
                   child: Container(
-                    constraints: BoxConstraints(
-                      minWidth: 48.r,
-                      minHeight: 48.r,
-                    ),
-                    alignment: Alignment.center,
-                    child: ExcludeSemantics(
-                      child: Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: (isDark ? Colors.white : Colors.black)
-                                .withValues(alpha: 0.1),
-                          ),
-                        ),
-                        child: Icon(
-                          isRtl
-                              ? Icons.arrow_forward_ios_rounded
-                              : Icons.arrow_back_ios_new_rounded,
-                          color: contentColor,
-                          size: 20.r,
-                        ),
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: (isDark ? Colors.white : Colors.black)
+                            .withValues(alpha: 0.1),
                       ),
+                    ),
+                    child: Icon(
+                      isRtl
+                          ? Icons.arrow_forward_ios_rounded
+                          : Icons.arrow_back_ios_new_rounded,
+                      color: contentColor,
+                      size: 20.r,
                     ),
                   ),
                 ),
               ),
-              // Centered Title Pill
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: IllustrationColors.warmOrange.withValues(
-                      alpha: 0.15,
-                    ),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: IllustrationColors.warmOrange.withValues(
-                        alpha: 0.2,
-                      ),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.local_fire_department_rounded,
-                        color: IllustrationColors.warmOrange,
-                        size: 16.r,
-                      ),
-                      SizedBox(width: 8.w),
-                      Flexible(
-                        child: Text(
-                          context.tr(
-                            'streak.daily_streak_title',
-                            fallback: 'DAILY STREAK',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: contentColor,
-                            letterSpacing: 1.5,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              // Streak Freeze Inventory Pill
-              _buildStreakFreezeChip(context, user),
-            ],
+            ),
           ),
+          // Centered Title Pill
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: IllustrationColors.warmOrange.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: IllustrationColors.warmOrange.withValues(alpha: 0.2),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.local_fire_department_rounded,
+                    color: IllustrationColors.warmOrange,
+                    size: 16.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: Text(
+                      context.tr(
+                        'streak.daily_streak_title',
+                        fallback: 'DAILY STREAK',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: contentColor,
+                        letterSpacing: 1.5,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          // Streak Freeze Inventory Pill
+          _buildStreakFreezeChip(context, user),
+        ],
+      ),
     );
   }
 

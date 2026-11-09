@@ -69,7 +69,9 @@ class DescribeSituationPromptCard extends StatelessWidget {
                 MediaQuery(
                   data: MediaQuery.of(context).copyWith(
                     textScaler: TextScaler.linear(
-                      MediaQuery.of(context).textScaler.scale(1).clamp(0.8, 1.3),
+                      MediaQuery.of(
+                        context,
+                      ).textScaler.scale(1).clamp(0.8, 1.3),
                     ),
                   ),
                   child: Text(

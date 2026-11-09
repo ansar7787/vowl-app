@@ -106,10 +106,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(18.r),
-          border: Border.all(
-            color: borderColor,
-            width: isSelected ? 2.0 : 1.2,
-          ),
+          border: Border.all(color: borderColor, width: isSelected ? 2.0 : 1.2),
           boxShadow: [
             BoxShadow(
               color: showResult
@@ -128,15 +125,11 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
                 color: (isSelected || showResult)
                     ? textColor.withValues(alpha: 0.15)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : color.withValues(alpha: 0.08)),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : color.withValues(alpha: 0.08)),
                 shape: BoxShape.circle,
               ),
-              child: Icon(
-                iconData,
-                color: textColor,
-                size: 20.r,
-              ),
+              child: Icon(iconData, color: textColor, size: 20.r),
             ),
             SizedBox(width: 14.w),
             Expanded(

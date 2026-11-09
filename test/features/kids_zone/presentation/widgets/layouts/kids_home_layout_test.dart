@@ -87,7 +87,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -99,12 +101,16 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => true);
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
     when(() => mockTTSService.dispose()).thenAnswer((_) => Future.value());
 
@@ -129,11 +135,21 @@ void main() {
     });
 
     // Register mocks in service locator safely
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -143,11 +159,21 @@ void main() {
   });
 
   tearDown(() {
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
   });
 
   Widget buildTestScreen({
@@ -178,27 +204,32 @@ void main() {
   }
 
   group('KidsHomeLayout Production Tests', () {
-    testWidgets('renders dollhouse, instruction, and all options fully with no truncation', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'renders dollhouse, instruction, and all options fully with no truncation',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify all options are visible and legible
-      expect(find.text('A place to shop for food 🛒'), findsOneWidget);
-      expect(find.text('A place to live and rest 🏠'), findsOneWidget);
-      expect(find.text('A place to borrow books 📚'), findsOneWidget);
+        // Verify all options are visible and legible
+        expect(find.text('A place to shop for food 🛒'), findsOneWidget);
+        expect(find.text('A place to live and rest 🏠'), findsOneWidget);
+        expect(find.text('A place to borrow books 📚'), findsOneWidget);
 
-      // Verify action hint subtitle is present
-      expect(
-        find.text('Choose an answer or drag it to the house.'),
-        findsOneWidget,
-      );
+        // Verify action hint subtitle is present
+        expect(
+          find.text('Choose an answer or drag it to the house.'),
+          findsOneWidget,
+        );
 
-      // Verify dollhouse drop zone is present
-      expect(find.text('Drop answer here'), findsOneWidget);
-    });
+        // Verify dollhouse drop zone is present
+        expect(find.text('Drop answer here'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tap-to-answer submits correct answer to KidsBloc', (tester) async {
+    testWidgets('tap-to-answer submits correct answer to KidsBloc', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -214,46 +245,61 @@ void main() {
       verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
     });
 
-    testWidgets('tap-to-answer submits incorrect answer and speaks pronunciation', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'tap-to-answer submits incorrect answer and speaks pronunciation',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Tap on the wrong answer card
-      final wrongCard = find.text('A place to shop for food 🛒');
-      expect(wrongCard, findsOneWidget);
+        // Tap on the wrong answer card
+        final wrongCard = find.text('A place to shop for food 🛒');
+        expect(wrongCard, findsOneWidget);
 
-      await tester.tap(wrongCard);
-      await tester.pump();
+        await tester.tap(wrongCard);
+        await tester.pump();
 
-      // Verify SubmitKidsAnswer(false) was dispatched
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+        // Verify SubmitKidsAnswer(false) was dispatched
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
 
-      // Verify TTS pronounced the wrong card text
-      verify(() => mockTTSService.speak('A place to shop for food 🛒')).called(1);
-    });
+        // Verify TTS pronounced the wrong card text
+        verify(
+          () => mockTTSService.speak('A place to shop for food 🛒'),
+        ).called(1);
+      },
+    );
 
-    testWidgets('option audio speaker button plays option pronunciation via TTS without submitting answer', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'option audio speaker button plays option pronunciation via TTS without submitting answer',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Find speaker icons on option cards
-      final speakerIcons = find.byIcon(Icons.volume_up_rounded);
-      expect(speakerIcons, findsWidgets);
+        // Find speaker icons on option cards
+        final speakerIcons = find.byIcon(Icons.volume_up_rounded);
+        expect(speakerIcons, findsWidgets);
 
-      // Tap speaker on the third option
-      await tester.tap(speakerIcons.last);
-      await tester.pump();
+        // Tap speaker on the third option
+        await tester.tap(speakerIcons.last);
+        await tester.pump();
 
-      // Verify TTS spoke the option
-      verify(() => mockTTSService.speak('A place to borrow books 📚', force: any(named: 'force'))).called(1);
+        // Verify TTS spoke the option
+        verify(
+          () => mockTTSService.speak(
+            'A place to borrow books 📚',
+            force: any(named: 'force'),
+          ),
+        ).called(1);
 
-      // Verify no answer was submitted
-      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-    });
+        // Verify no answer was submitted
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
 
-    testWidgets('tapping dollhouse replays question instruction via TTS', (tester) async {
+    testWidgets('tapping dollhouse replays question instruction via TTS', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -266,34 +312,42 @@ void main() {
       await tester.pump();
 
       // Verify TTS spoke the instruction
-      verify(() => mockTTSService.speak('What is a home?', force: any(named: 'force'))).called(1);
+      verify(
+        () =>
+            mockTTSService.speak('What is a home?', force: any(named: 'force')),
+      ).called(1);
     });
 
-    testWidgets('drag-and-drop correct option onto dollhouse target submits answer', (tester) async {
-      await tester.pumpWidget(buildTestScreen());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    testWidgets(
+      'drag-and-drop correct option onto dollhouse target submits answer',
+      (tester) async {
+        await tester.pumpWidget(buildTestScreen());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final correctDraggable = find.byWidgetPredicate(
-        (widget) =>
-            widget is Draggable<String> &&
-            widget.data == 'A place to live and rest 🏠',
-      );
-      expect(correctDraggable, findsOneWidget);
+        final correctDraggable = find.byWidgetPredicate(
+          (widget) =>
+              widget is Draggable<String> &&
+              widget.data == 'A place to live and rest 🏠',
+        );
+        expect(correctDraggable, findsOneWidget);
 
-      final dropTarget = find.byType(DragTarget<String>);
-      expect(dropTarget, findsOneWidget);
+        final dropTarget = find.byType(DragTarget<String>);
+        expect(dropTarget, findsOneWidget);
 
-      // Drag option into the dollhouse drop target
-      await tester.drag(correctDraggable, const Offset(0, -280));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        // Drag option into the dollhouse drop target
+        await tester.drag(correctDraggable, const Offset(0, -280));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Verify SubmitKidsAnswer(true) was dispatched
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        // Verify SubmitKidsAnswer(true) was dispatched
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('unanswered state does not spoil answer emoji silhouette', (tester) async {
+    testWidgets('unanswered state does not spoil answer emoji silhouette', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestScreen());
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -301,28 +355,39 @@ void main() {
       // The answer emoji "🏠" should NOT be visible in the house in unanswered state
       // (It only appears in the option text "A place to live and rest 🏠")
       final solitaryEmojiFinder = find.byWidgetPredicate(
-        (widget) => widget is Text && widget.data == '🏠' && (widget.style?.fontSize ?? 0) > 30,
+        (widget) =>
+            widget is Text &&
+            widget.data == '🏠' &&
+            (widget.style?.fontSize ?? 0) > 30,
       );
       expect(solitaryEmojiFinder, findsNothing);
     });
 
-    testWidgets('correct state reveals triumphant celebration with answer emoji inside the house', (tester) async {
-      final correctState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'correct state reveals triumphant celebration with answer emoji inside the house',
+      (tester) async {
+        final correctState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await tester.pumpWidget(buildTestScreen(stateOverride: correctState));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildTestScreen(stateOverride: correctState));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Triumphant emoji should now be visible inside the dollhouse
-      final celebratoryEmoji = find.byWidgetPredicate(
-        (widget) => widget is Text && widget.data == '🏠' && (widget.style?.fontSize ?? 0) >= 35,
-      );
-      expect(celebratoryEmoji, findsOneWidget);
-    });
+        // Triumphant emoji should now be visible inside the dollhouse
+        final celebratoryEmoji = find.byWidgetPredicate(
+          (widget) =>
+              widget is Text &&
+              widget.data == '🏠' &&
+              (widget.style?.fontSize ?? 0) >= 35,
+        );
+        expect(celebratoryEmoji, findsOneWidget);
+      },
+    );
 
-    testWidgets('renders cleanly on compact 360x640 phone without overflow', (tester) async {
+    testWidgets('renders cleanly on compact 360x640 phone without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(360, 640);
       tester.view.devicePixelRatio = 1.0;
 
@@ -339,7 +404,9 @@ void main() {
       tester.view.resetDevicePixelRatio();
     });
 
-    testWidgets('renders cleanly on large 430x932 phone without overflow', (tester) async {
+    testWidgets('renders cleanly on large 430x932 phone without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(430, 932);
       tester.view.devicePixelRatio = 1.0;
 
@@ -356,4 +423,3 @@ void main() {
     });
   });
 }
-

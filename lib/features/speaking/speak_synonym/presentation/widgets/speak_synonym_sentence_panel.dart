@@ -35,8 +35,11 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
     final String cleanText = fullText.replaceAll('*', '');
 
     final tokens = Theme.of(context).extension<AppColorTokens>();
-    final Color sentenceTextColor = tokens?.textPrimary ??
-        (isDark ? Colors.white.withValues(alpha: 0.95) : const Color(0xFF1E293B));
+    final Color sentenceTextColor =
+        tokens?.textPrimary ??
+        (isDark
+            ? Colors.white.withValues(alpha: 0.95)
+            : const Color(0xFF1E293B));
 
     return Semantics(
       container: true,

@@ -20,7 +20,11 @@ void main() {
         expect(q.options, isNotNull);
         expect(q.options!.length, greaterThanOrEqualTo(3));
         expect(q.correctAnswerIndex, isNotNull);
-        expect(q.correctAnswerIndex! >= 0 && q.correctAnswerIndex! < q.options!.length, isTrue);
+        expect(
+          q.correctAnswerIndex! >= 0 &&
+              q.correctAnswerIndex! < q.options!.length,
+          isTrue,
+        );
       }
     });
 
@@ -64,4 +68,3 @@ void main() {
     });
   });
 }
-

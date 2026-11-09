@@ -48,9 +48,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
     final isLong = cleanText.length > 32;
     final isMedium = cleanText.length > 18;
 
-    final double fontSize = isLong
-        ? 13.sp
-        : (isMedium ? 13.5.sp : 14.5.sp);
+    final double fontSize = isLong ? 13.sp : (isMedium ? 13.5.sp : 14.5.sp);
 
     final FontWeight fontWeight = isSource
         ? (isLong ? FontWeight.w500 : FontWeight.w600)
@@ -60,17 +58,15 @@ class ReadAndMatchTerminal extends StatelessWidget {
     final Color bgColor = isMatched
         ? color.withValues(alpha: isDark ? 0.16 : 0.08)
         : (isActive
-            ? color.withValues(alpha: isDark ? 0.22 : 0.12)
-            : (isDark
-                ? const Color(0xFF1E202E)
-                : Colors.white));
+              ? color.withValues(alpha: isDark ? 0.22 : 0.12)
+              : (isDark ? const Color(0xFF1E202E) : Colors.white));
 
     // Border color and width
     final Color borderColor = isMatched || isActive
         ? color
         : (isDark
-            ? Colors.white.withValues(alpha: 0.12)
-            : const Color(0xFFE2E8F0));
+              ? Colors.white.withValues(alpha: 0.12)
+              : const Color(0xFFE2E8F0));
 
     final double borderWidth = (isMatched || isActive) ? 2.0 : 1.5;
 
@@ -78,8 +74,8 @@ class ReadAndMatchTerminal extends StatelessWidget {
     final Color textColor = isMatched || isActive
         ? (isDark ? Colors.white : color)
         : (isDark
-            ? Colors.white.withValues(alpha: 0.92)
-            : const Color(0xFF1E293B));
+              ? Colors.white.withValues(alpha: 0.92)
+              : const Color(0xFF1E293B));
 
     return Semantics(
       button: true,
@@ -87,63 +83,64 @@ class ReadAndMatchTerminal extends StatelessWidget {
       selected: isActive,
       child: GestureDetector(
         onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 250),
-          width: double.infinity,
-          constraints: BoxConstraints(minHeight: 52.h),
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-          decoration: BoxDecoration(
-            color: bgColor,
-            borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(
-              color: borderColor,
-              width: borderWidth,
-            ),
-            boxShadow: [
-              if (isMatched || isActive)
-                BoxShadow(
-                  color: color.withValues(alpha: isDark ? 0.35 : 0.2),
-                  blurRadius: 8,
-                  offset: const Offset(0, 3),
+        child:
+            AnimatedContainer(
+                  duration: const Duration(milliseconds: 250),
+                  width: double.infinity,
+                  constraints: BoxConstraints(minHeight: 52.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 12.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: bgColor,
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(color: borderColor, width: borderWidth),
+                    boxShadow: [
+                      if (isMatched || isActive)
+                        BoxShadow(
+                          color: color.withValues(alpha: isDark ? 0.35 : 0.2),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
+                        )
+                      else
+                        BoxShadow(
+                          color: isDark
+                              ? Colors.black.withValues(alpha: 0.25)
+                              : Colors.black.withValues(alpha: 0.04),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    cleanText,
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: fontSize,
+                      height: 1.35,
+                      color: textColor,
+                      fontWeight: fontWeight,
+                    ),
+                  ),
                 )
-              else
-                BoxShadow(
-                  color: isDark
-                      ? Colors.black.withValues(alpha: 0.25)
-                      : Colors.black.withValues(alpha: 0.04),
-                  blurRadius: 4,
-                  offset: const Offset(0, 2),
+                .animate(
+                  target: shouldPulse ? 1 : 0,
+                  onPlay: (controller) {
+                    if (!VowlMotion.shouldReduceMotion(context)) {
+                      controller.repeat(reverse: true);
+                    }
+                  },
+                )
+                .scaleXY(
+                  begin: 1.0,
+                  end: 1.015,
+                  duration: 1.2.seconds,
+                  curve: Curves.easeInOutSine,
                 ),
-            ],
-          ),
-          alignment: Alignment.center,
-          child: Text(
-            cleanText,
-            textAlign: TextAlign.center,
-            softWrap: true,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: fontSize,
-              height: 1.35,
-              color: textColor,
-              fontWeight: fontWeight,
-            ),
-          ),
-        )
-            .animate(
-              target: shouldPulse ? 1 : 0,
-              onPlay: (controller) {
-                if (!VowlMotion.shouldReduceMotion(context)) {
-                  controller.repeat(reverse: true);
-                }
-              },
-            )
-            .scaleXY(
-              begin: 1.0,
-              end: 1.015,
-              duration: 1.2.seconds,
-              curve: Curves.easeInOutSine,
-            ),
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -42,9 +43,7 @@ class ProfileQuickActionHud extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
     final isVipReady = user.isVipGiftAvailable;
 
     return Padding(
@@ -157,8 +156,8 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF131A29)
-            : Colors.black.withValues(alpha: 0.035));
+              ? AppColors.midnightNavy
+              : Colors.black.withValues(alpha: 0.035));
 
     return Semantics(
       button: true,
@@ -172,10 +171,7 @@ class ProfileQuickActionHud extends StatelessWidget {
           decoration: BoxDecoration(
             color: podBg,
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: borderColor,
-              width: 1.0,
-            ),
+            border: Border.all(color: borderColor, width: 1.0),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -215,8 +211,8 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF131A29)
-            : Colors.black.withValues(alpha: 0.035));
+              ? AppColors.midnightNavy
+              : Colors.black.withValues(alpha: 0.035));
 
     if (isVipReady) {
       final shouldAnimate = !VowlMotion.shouldReduceMotion(context);
@@ -227,10 +223,7 @@ class ProfileQuickActionHud extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.amber500,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: AppColors.amber600,
-            width: 1.0,
-          ),
+          border: Border.all(color: AppColors.amber600, width: 1.0),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -279,11 +272,13 @@ class ProfileQuickActionHud extends StatelessWidget {
             );
           },
           child: shouldAnimate
-              ? containerWidget.animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                    begin: const Offset(1.0, 1.0),
-                    end: const Offset(1.03, 1.03),
-                    duration: 800.ms,
-                  )
+              ? containerWidget
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(1.0, 1.0),
+                      end: const Offset(1.03, 1.03),
+                      duration: 800.ms,
+                    )
               : containerWidget,
         ),
       );
@@ -316,10 +311,7 @@ class ProfileQuickActionHud extends StatelessWidget {
           decoration: BoxDecoration(
             color: podBg,
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: borderColor,
-              width: 1.0,
-            ),
+            border: Border.all(color: borderColor, width: 1.0),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

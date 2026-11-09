@@ -93,9 +93,7 @@ class ProfileHeader extends StatelessWidget {
 
     final standardBorderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     // XP progress within current level (0.0 - 1.0)
     final xpProgress = ((user.totalExp % 100) / 100).clamp(0.0, 1.0);
@@ -173,11 +171,13 @@ class ProfileHeader extends StatelessWidget {
                       ),
                       SizedBox(width: 3.w),
                       Text(
-                        context.tr(
-                          'profile.level_tag',
-                          fallback: 'LVL {0}',
-                          args: ['${user.level}'],
-                        ).toUpperCase(),
+                        context
+                            .tr(
+                              'profile.level_tag',
+                              fallback: 'LVL {0}',
+                              args: ['${user.level}'],
+                            )
+                            .toUpperCase(),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.5.sp,
@@ -226,7 +226,9 @@ class ProfileHeader extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            VowlAssets.getMascotName(user.vowlMascot ?? 'vowl_prime').toUpperCase(),
+                            VowlAssets.getMascotName(
+                              user.vowlMascot ?? 'vowl_prime',
+                            ).toUpperCase(),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 8.5.sp,
@@ -237,12 +239,17 @@ class ProfileHeader extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            context.tr('profile.mascot_buddy', fallback: 'BUDDY'),
+                            context.tr(
+                              'profile.mascot_buddy',
+                              fallback: 'BUDDY',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 8.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white70 : AppColors.slate600,
+                              color: isDark
+                                  ? Colors.white70
+                                  : AppColors.slate600,
                               letterSpacing: 0.6,
                               height: 1.1,
                             ),
@@ -331,7 +338,9 @@ class ProfileHeader extends StatelessWidget {
                         ],
                       ),
                       child: Icon(
-                        isPremium ? Icons.star_rounded : Icons.camera_alt_rounded,
+                        isPremium
+                            ? Icons.star_rounded
+                            : Icons.camera_alt_rounded,
                         color: Colors.white,
                         size: 11.r,
                       ),
@@ -350,10 +359,7 @@ class ProfileHeader extends StatelessWidget {
               onEditName();
             },
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 14.w,
-                vertical: 7.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.04)
@@ -514,10 +520,7 @@ class ProfileHeader extends StatelessWidget {
     );
 
     if (repaintKey != null) {
-      return RepaintBoundary(
-        key: repaintKey,
-        child: cardContent,
-      );
+      return RepaintBoundary(key: repaintKey, child: cardContent);
     }
 
     return cardContent;

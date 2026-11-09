@@ -1,6 +1,8 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Premium frosted-glass card with physically realistic blur and gradient overlay.
@@ -54,10 +56,11 @@ class GlassTile extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    // Detect midnight variant: scaffold background is fully black in dark mode.
-    // Using colorScheme.surface avoids a fragile `== Colors.black` comparison.
+    // Detect midnight variant: pure AMOLED black canvas in dark mode.
     final isMidnight =
-        isDark && theme.scaffoldBackgroundColor.computeLuminance() < 0.02;
+        isDark && (theme.scaffoldBackgroundColor == Colors.black ||
+                   theme.scaffoldBackgroundColor == AppColors.black ||
+                   theme.scaffoldBackgroundColor.computeLuminance() == 0.0);
 
     final r = borderRadius ?? BorderRadius.circular(32.r);
 
@@ -66,20 +69,24 @@ class GlassTile extends StatelessWidget {
     final sigma = reduceMotion ? 0.0 : (blur ?? 14.0);
     final hasBlur = sigma > 0;
 
+    // In light mode with Option 2, legacy slate100 borders are too faint against pure white (#FFFFFF).
+    // Automatically elevate them to AppTheme.borderLight (Slate 200) for crisp, visible hairline edges.
+    final effectiveBorderColor = (!isDark && borderColor == AppColors.slate100)
+        ? AppTheme.borderLight
+        : borderColor;
+
     // border prop takes precedence; otherwise build from color/width fields.
     final resolvedBorder =
         border ??
         Border.all(
           color:
-              borderColor ??
+              effectiveBorderColor ??
               (isDark
                   ? (isMidnight
-                      ? const Color(0x24FFFFFF)
-                      : const Color(0xFF334155)) // Crisp Slate 700 standard border
-                  : const Color(
-                      0xFF0F172A,
-                    ).withValues(alpha: borderOpacity ?? 0.08)),
-          width: borderWidth ?? (isDark ? 1.0 : 1.4),
+                        ? const Color(0x24FFFFFF)
+                        : AppTheme.borderDark)
+                  : AppTheme.borderLight),
+          width: borderWidth ?? 1.0,
         );
 
     return Container(
@@ -172,27 +179,30 @@ class _GlassOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     final defaultDarkSurface = isMidnight
         ? const Color(0xFF0B0F19)
-        : const Color(0xFF1E293B);
+        : AppTheme.cardDark;
 
-    final isWhiteBased = color != null &&
+    final isWhiteBased =
+        color != null &&
         (color == Colors.white ||
             (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
 
     if (!hasBlur) {
       final baseColor = isDark
-          ? ((color == null || isWhiteBased) ? defaultDarkSurface : color!)
+          ? ((color == null || isWhiteBased)
+                ? defaultDarkSurface
+                : color!)
           : (color ?? Colors.white);
 
       final opacity =
           glassOpacity ?? (isDark ? (isMidnight ? 0.98 : 0.94) : 1.0);
 
-      return Container(
-        color: baseColor.withValues(alpha: opacity),
-      );
+      return Container(color: baseColor.withValues(alpha: opacity));
     }
 
     if (isDark) {
-      final c = (color != null && !isWhiteBased) ? color! : null;
+      final c = (color != null && !isWhiteBased)
+          ? color!
+          : null;
       return Container(
         decoration: BoxDecoration(
           gradient: usePremiumStyle
@@ -206,35 +216,26 @@ class _GlassOverlay extends StatelessWidget {
                           c.withValues(alpha: 0.10),
                         ]
                       : (isMidnight
-                          ? const [
-                              Color(0xFF141926),
-                              Color(0xFF0B0F19),
-                              Color(0xFF070A11),
-                            ]
-                          : const [
-                              Color(0xFF243044),
-                              Color(0xFF1E293B),
-                              Color(0xFF16202E),
-                            ]),
+                            ? const [
+                                Color(0xFF141926),
+                                Color(0xFF0B0F19),
+                                Color(0xFF070A11),
+                              ]
+                            : const [
+                                Color(0xFF1A2337),
+                                Color(0xFF131A29),
+                                Color(0xFF0D1422),
+                              ]),
                   stops: const [0.0, 0.5, 1.0],
                 )
               : LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: c != null
-                      ? [
-                          c.withValues(alpha: 0.25),
-                          c.withValues(alpha: 0.12),
-                        ]
+                      ? [c.withValues(alpha: 0.25), c.withValues(alpha: 0.12)]
                       : (isMidnight
-                          ? const [
-                              Color(0xFF101622),
-                              Color(0xFF0B0F19),
-                            ]
-                          : const [
-                              Color(0xFF222D3E),
-                              Color(0xFF1E293B),
-                            ]),
+                            ? const [Color(0xFF101622), Color(0xFF0B0F19)]
+                            : const [Color(0xFF1A2337), Color(0xFF131A29)]),
                 ),
         ),
       );

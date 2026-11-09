@@ -63,7 +63,8 @@ class CollocationOptionBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final isSelected = selectedOption == text;
     final isPhase1Correct = isFirstStagePassed && isSelected;
     final isExploding =

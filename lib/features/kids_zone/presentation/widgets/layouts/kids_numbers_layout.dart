@@ -143,7 +143,7 @@ class _KidsNumbersLayoutState extends State<KidsNumbersLayout>
   @override
   void dispose() {
     _orbitController.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -226,7 +226,8 @@ class _KidsNumbersLayoutState extends State<KidsNumbersLayout>
         final quest = state.currentQuest;
 
         // Reset local selection when question is unanswered (new question or try-again)
-        if (state.answerStatus == AnswerStatus.unanswered && _selectedOption != null) {
+        if (state.answerStatus == AnswerStatus.unanswered &&
+            _selectedOption != null) {
           _selectedOption = null;
         }
 
@@ -244,9 +245,11 @@ class _KidsNumbersLayoutState extends State<KidsNumbersLayout>
             );
 
             final String questionText = quest.question?.trim() ?? '?';
-            final int alphaWordCount =
-                RegExp(r'[a-zA-Z]{2,}').allMatches(questionText).length;
-            final bool isStoryQuestion = questionText.length > 30 ||
+            final int alphaWordCount = RegExp(
+              r'[a-zA-Z]{2,}',
+            ).allMatches(questionText).length;
+            final bool isStoryQuestion =
+                questionText.length > 30 ||
                 questionText.contains('\n') ||
                 alphaWordCount >= 3;
 
@@ -405,10 +408,26 @@ class _RocketQuestionTarget extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               // Cosmic starry atmosphere inside cockpit porthole
-              Positioned(top: 22.r, left: 28.r, child: _StarGlyph(size: 9.r)),
-              Positioned(bottom: 26.r, right: 26.r, child: _StarGlyph(size: 12.r)),
-              Positioned(top: 36.r, right: 32.r, child: _StarGlyph(size: 8.r)),
-              Positioned(bottom: 36.r, left: 26.r, child: _StarGlyph(size: 8.r)),
+              Positioned(
+                top: 22.r,
+                left: 28.r,
+                child: _StarGlyph(size: 9.r),
+              ),
+              Positioned(
+                bottom: 26.r,
+                right: 26.r,
+                child: _StarGlyph(size: 12.r),
+              ),
+              Positioned(
+                top: 36.r,
+                right: 32.r,
+                child: _StarGlyph(size: 8.r),
+              ),
+              Positioned(
+                bottom: 36.r,
+                left: 26.r,
+                child: _StarGlyph(size: 8.r),
+              ),
 
               // Question content
               Padding(
@@ -434,7 +453,10 @@ class _RocketQuestionTarget extends StatelessWidget {
               Positioned(
                 bottom: 8.r,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 3.h,
+                  ),
                   decoration: BoxDecoration(
                     color: _CosmicPalette.spaceSlate.withValues(alpha: 0.85),
                     borderRadius: BorderRadius.circular(12.r),
@@ -715,10 +737,9 @@ class _OptionsLaunchpad extends StatelessWidget {
     return AnimatedBuilder(
       animation: orbitAnimation,
       builder: (context, _) {
-        final double motionOffset =
-            MediaQuery.disableAnimationsOf(context)
-                ? 0.0
-                : math.sin(orbitAnimation.value * math.pi) * 6.0;
+        final double motionOffset = MediaQuery.disableAnimationsOf(context)
+            ? 0.0
+            : math.sin(orbitAnimation.value * math.pi) * 6.0;
 
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -786,11 +807,7 @@ class _SphericalPlanetOption extends StatelessWidget {
         gradient: RadialGradient(
           center: const Alignment(-0.3, -0.3),
           radius: 0.9,
-          colors: [
-            theme.highlight,
-            theme.primary,
-            theme.shadow,
-          ],
+          colors: [theme.highlight, theme.primary, theme.shadow],
         ),
         border: Border.all(
           color: isSelected
@@ -858,10 +875,7 @@ class _SphericalPlanetOption extends StatelessWidget {
           ),
         ),
         childWhenDragging: Opacity(opacity: 0.35, child: planetContainer),
-        child: ScaleButton(
-          onTap: onTap,
-          child: planetContainer,
-        ),
+        child: ScaleButton(onTap: onTap, child: planetContainer),
       ),
     );
   }
@@ -900,7 +914,9 @@ class _CapsulePodOption extends StatelessWidget {
             : _CosmicPalette.spaceSlate.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isSelected ? theme.highlight : theme.primary.withValues(alpha: 0.5),
+          color: isSelected
+              ? theme.highlight
+              : theme.primary.withValues(alpha: 0.5),
           width: isSelected ? 2.5 : 1.5,
         ),
         boxShadow: [
@@ -988,7 +1004,8 @@ class _CapsulePodOption extends StatelessWidget {
     }
 
     return Semantics(
-      label: 'Option ${String.fromCharCode(65 + index)}: $option. Tap to choose or drag to the rocket.',
+      label:
+          'Option ${String.fromCharCode(65 + index)}: $option. Tap to choose or drag to the rocket.',
       button: true,
       child: Draggable<String>(
         data: option,
@@ -1000,10 +1017,7 @@ class _CapsulePodOption extends StatelessWidget {
           ),
         ),
         childWhenDragging: Opacity(opacity: 0.35, child: podContainer),
-        child: ScaleButton(
-          onTap: onTap,
-          child: podContainer,
-        ),
+        child: ScaleButton(onTap: onTap, child: podContainer),
       ),
     );
   }

@@ -325,12 +325,14 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                               color: hasSelection
                                                   ? theme.primaryColor
                                                   : (isDark
-                                                      ? Colors.white.withValues(
-                                                          alpha: 0.1,
-                                                        )
-                                                      : Colors.black.withValues(
-                                                          alpha: 0.08,
-                                                        )),
+                                                        ? Colors.white
+                                                              .withValues(
+                                                                alpha: 0.1,
+                                                              )
+                                                        : Colors.black
+                                                              .withValues(
+                                                                alpha: 0.08,
+                                                              )),
                                               boxShadow: [
                                                 if (hasSelection)
                                                   BoxShadow(
@@ -354,8 +356,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                                   color: hasSelection
                                                       ? Colors.white
                                                       : (isDark
-                                                          ? Colors.white38
-                                                          : Colors.black38),
+                                                            ? Colors.white38
+                                                            : Colors.black38),
                                                 ),
                                               ),
                                             ),

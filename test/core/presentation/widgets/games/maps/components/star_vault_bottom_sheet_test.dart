@@ -119,9 +119,9 @@ void main() {
           },
         );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(vaultUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(vaultUser));
 
         await tester.pumpWidget(createWidgetUnderTest());
         await tester.pumpAndSettle();
@@ -137,39 +137,37 @@ void main() {
       },
     );
 
-    testWidgets(
-      'omits bonus breakdown pill when magic_stars is 0',
-      (tester) async {
-        tester.view.physicalSize = const Size(390, 844);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() => tester.view.resetPhysicalSize());
-        addTearDown(() => tester.view.resetDevicePixelRatio());
+    testWidgets('omits bonus breakdown pill when magic_stars is 0', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        final pureUser = testUser.copyWith(
-          starRatings: {
-            'flashcards': {
-              '1': 3,
-              '2': 3,
-              '3': 2,
-              // Gameplay stars = 8, no magic stars
-            },
+      final pureUser = testUser.copyWith(
+        starRatings: {
+          'flashcards': {
+            '1': 3,
+            '2': 3,
+            '3': 2,
+            // Gameplay stars = 8, no magic stars
           },
-        );
+        },
+      );
 
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(pureUser),
-        );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(pureUser));
 
-        await tester.pumpWidget(createWidgetUnderTest());
-        await tester.pumpAndSettle();
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pumpAndSettle();
 
-        expect(find.text('Vault Stars'), findsOneWidget);
-        expect(find.text('8'), findsOneWidget);
+      expect(find.text('Vault Stars'), findsOneWidget);
+      expect(find.text('8'), findsOneWidget);
 
-        // Breakdown pill should not be shown
-        expect(find.textContaining('Bonus'), findsNothing);
-      },
-    );
+      // Breakdown pill should not be shown
+      expect(find.textContaining('Bonus'), findsNothing);
+    });
   });
 }
-

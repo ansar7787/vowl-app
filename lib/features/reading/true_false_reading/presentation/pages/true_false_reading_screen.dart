@@ -104,7 +104,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
       _pendingAnswer.value = isTrue;
       final passage = quest.passage ?? "";
       final evidenceStr = (quest.evidenceLine ?? "").trim();
-      final hasExactMatch = evidenceStr.isNotEmpty &&
+      final hasExactMatch =
+          evidenceStr.isNotEmpty &&
           passage.toLowerCase().contains(evidenceStr.toLowerCase());
 
       if (!hasExactMatch) {
@@ -202,16 +203,18 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     passage: quest.passage ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
-                                    onPlayAudio: () => soundService
-                                        .playTts(quest.passage ?? ""),
+                                    onPlayAudio: () => soundService.playTts(
+                                      quest.passage ?? "",
+                                    ),
                                   ),
                                   SizedBox(height: 16.h),
                                   TrueFalseReadingStatement(
                                     statement: quest.question ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
-                                    onPlayAudio: () => soundService
-                                        .playTts(quest.question ?? ""),
+                                    onPlayAudio: () => soundService.playTts(
+                                      quest.question ?? "",
+                                    ),
                                   ),
                                   SizedBox(height: 24.h),
                                   TrueFalseReadingCoinZone(
@@ -243,14 +246,15 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     ),
                                   ],
                                   SizedBox(
-                                    height: MediaQuery.of(context)
-                                                .viewInsets
-                                                .bottom >
+                                    height:
+                                        MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom >
                                             0
-                                        ? MediaQuery.of(context)
-                                                .viewInsets
-                                                .bottom +
-                                            40.h
+                                        ? MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom +
+                                              40.h
                                         : 120.h,
                                   ),
                                 ],

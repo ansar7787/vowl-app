@@ -144,16 +144,16 @@ class _FeatureDirectoryBottomSheetState
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                    ? const Color(0xFF13141C).withValues(alpha: 0.96)
-                    : Colors.white.withValues(alpha: 0.97)),
+                      ? AppColors.midnightNavy.withValues(alpha: 0.96)
+                      : Colors.white.withValues(alpha: 0.97)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
             border: Border(
               top: BorderSide(
                 color: isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate200),
               ),
             ),
           ),

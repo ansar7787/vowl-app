@@ -18,7 +18,6 @@ import 'components/shadow_waveform_visualizer.dart';
 import 'components/shadow_playback_button.dart';
 import 'components/shadow_eval_controls.dart';
 
-
 /// Enhanced speaking self-evaluation with visual waveform comparison.
 ///
 /// Records the user's voice, then shows a side-by-side waveform comparison

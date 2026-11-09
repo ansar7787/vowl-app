@@ -116,7 +116,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
   }
 
   void _playAudio(ListeningQuest quest, double speed) {
-    final rawAudio = quest.textToSpeak ??
+    final rawAudio =
+        quest.textToSpeak ??
         quest.prompt ??
         quest.question ??
         quest.sentence ??
@@ -127,7 +128,11 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
     if (text.startsWith('http')) {
       soundService.playUrl(text);
     } else {
-      soundService.playTts(text, speed: speed, pauseMarkers: quest.pauseMarkers);
+      soundService.playTts(
+        text,
+        speed: speed,
+        pauseMarkers: quest.pauseMarkers,
+      );
     }
     hapticService.selection();
   }
@@ -213,10 +218,9 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.fastSpeechDecoder_instruction',
-                                          fallback:
-                                              quest.instruction.isNotEmpty
-                                                  ? quest.instruction
-                                                  : 'Listen to the fast speech and choose the correct sentence.',
+                                          fallback: quest.instruction.isNotEmpty
+                                              ? quest.instruction
+                                              : 'Listen to the fast speech and choose the correct sentence.',
                                         ),
                                       ),
                                       SizedBox(height: 24.h),
@@ -276,10 +280,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                             quest.correctAnswerIndex ?? 0,
                                         color: theme.primaryColor,
                                         isAnswered: isAnsweredNotifier.value,
-                                        isCorrectState:
-                                            isCorrectNotifier.value,
-                                        selectedIndex:
-                                            _selectedIndex.value,
+                                        isCorrectState: isCorrectNotifier.value,
+                                        selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
                                           if (isAnsweredNotifier.value ||
                                               _pendingSelectedIndex.value !=

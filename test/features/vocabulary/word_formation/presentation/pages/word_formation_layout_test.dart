@@ -212,13 +212,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -323,27 +325,36 @@ void main() {
   }
 
   group('Group 1: Component Rendering & Initial State', () {
-    testWidgets('1. renders GameShimmerLoading when state has no quest', (tester) async {
+    testWidgets('1. renders GameShimmerLoading when state has no quest', (
+      tester,
+    ) async {
       await pumpScreen(tester, state: const VocabularyInitial());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('2. renders InstructionPanel with instruction text and hint definition', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '2. renders InstructionPanel with instruction text and hint definition',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(InstructionPanel), findsOneWidget);
-      expect(find.text(sampleQuest1.hint!), findsOneWidget);
-      expect(find.byIcon(Icons.school_rounded), findsOneWidget);
-    });
+        expect(find.byType(InstructionPanel), findsOneWidget);
+        expect(find.text(sampleQuest1.hint!), findsOneWidget);
+        expect(find.byIcon(Icons.school_rounded), findsOneWidget);
+      },
+    );
 
-    testWidgets('3. renders ReactionCore displaying uppercase root word', (tester) async {
+    testWidgets('3. renders ReactionCore displaying uppercase root word', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(ReactionCore), findsOneWidget);
       expect(find.text('CREATE'), findsOneWidget);
     });
 
-    testWidgets('4. renders all affix option chips in MorphInjectionRail', (tester) async {
+    testWidgets('4. renders all affix option chips in MorphInjectionRail', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(MorphInjectionRail), findsNWidgets(4));
@@ -353,78 +364,107 @@ void main() {
       expect(find.text('-FUL'), findsOneWidget);
     });
 
-    testWidgets('5. renders header controls including QuestHintButton', (tester) async {
+    testWidgets('5. renders header controls including QuestHintButton', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       expect(find.byType(QuestHintButton), findsOneWidget);
     });
 
-    testWidgets('6. initial state has phase 2 TypeToConfirmOverlay not displayed', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '6. initial state has phase 2 TypeToConfirmOverlay not displayed',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(TypeToConfirmOverlay), findsNothing);
-    });
+        expect(find.byType(TypeToConfirmOverlay), findsNothing);
+      },
+    );
   });
 
   group('Group 2: Phase 1 Morph Selection Mechanics', () {
-    testWidgets('7. tapping correct affix chip triggers success haptic and advances to Phase 2', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '7. tapping correct affix chip triggers success haptic and advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('-TION').first);
-      await tester.pump();
+        await tester.tap(find.text('-TION').first);
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
+        verify(() => mockHapticService.success()).called(1);
 
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pumpAndSettle();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-    });
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('8. tapping incorrect affix triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '8. tapping incorrect affix triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('-MENT').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('-MENT').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('9. sliding handle past hover threshold (> 0.2) triggers hover and selection haptic', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '9. sliding handle past hover threshold (> 0.2) triggers hover and selection haptic',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.drag(find.text('-TION').first, const Offset(150, 0));
-      await tester.pump();
+        await tester.drag(find.text('-TION').first, const Offset(150, 0));
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('10. dragging handle all the way (>= 0.95) fuses and advances to phase 2', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10. dragging handle all the way (>= 0.95) fuses and advances to phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Drag completely across the rail
-      await tester.drag(find.text('-TION').first, const Offset(300, 0));
-      await tester.pump();
+        // Drag completely across the rail
+        await tester.drag(find.text('-TION').first, const Offset(300, 0));
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
+        verify(() => mockHapticService.success()).called(1);
 
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pumpAndSettle();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-    });
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('11. morph selection is blocked after stage 1 is passed', (tester) async {
+    testWidgets('11. morph selection is blocked after stage 1 is passed', (
+      tester,
+    ) async {
       await advanceToPhase2(tester);
 
       // Try tapping another option chip
@@ -435,97 +475,155 @@ void main() {
       verifyNever(() => mockSoundService.playWrong());
     });
 
-    testWidgets('12. ReactionCore updates root word to uppercase target word upon advancing', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '12. ReactionCore updates root word to uppercase target word upon advancing',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      expect(find.text('CREATION'), findsWidgets);
-    });
+        expect(find.text('CREATION'), findsWidgets);
+      },
+    );
   });
 
   group('Group 3: Phase 2 Confirmation Mechanics (TypeToConfirmOverlay)', () {
-    testWidgets('13. TypeToConfirmOverlay renders expected uppercase text prompt', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '13. TypeToConfirmOverlay renders expected uppercase text prompt',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlayFinder = find.byType(TypeToConfirmOverlay);
-      expect(overlayFinder, findsOneWidget);
+        final overlayFinder = find.byType(TypeToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(overlayFinder);
-      expect(overlay.expectedText, equals('creation'));
-      expect(find.textContaining('CREATION'), findsWidgets);
-    });
+        final overlay = tester.widget<TypeToConfirmOverlay>(overlayFinder);
+        expect(overlay.expectedText, equals('creation'));
+        expect(find.textContaining('CREATION'), findsWidgets);
+      },
+    );
 
-    testWidgets('14. confirming stage 2 via onConfirmed triggers sound, haptic, and SubmitAnswer(true)', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '14. confirming stage 2 via onConfirmed triggers sound, haptic, and SubmitAnswer(true)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onConfirmed();
-      await tester.pump();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
 
-      verify(() => mockSoundService.playCorrect()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(2));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playCorrect(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(2));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isTrue,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('15. skipping stage 2 via onSkipped dispatches SubmitAnswer(false)', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '15. skipping stage 2 via onSkipped dispatches SubmitAnswer(false)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onSkipped();
-      await tester.pump();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onSkipped();
+        await tester.pump();
 
-      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
-      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playWrong(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isFalse,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('16. bypassing stage 2 via onBypassed dispatches SubmitAnswer(true)', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '16. bypassing stage 2 via onBypassed dispatches SubmitAnswer(true)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onBypassed?.call();
-      await tester.pump();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onBypassed?.call();
+        await tester.pump();
 
-      verify(() => mockSoundService.playCorrect()).called(greaterThanOrEqualTo(1));
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockSoundService.playCorrect(),
+        ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isTrue,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('17. typing correct target word in TextField and submitting confirms stage 2', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '17. typing correct target word in TextField and submitting confirms stage 2',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final textField = find.byType(TextField);
-      expect(textField, findsOneWidget);
+        final textField = find.byType(TextField);
+        expect(textField, findsOneWidget);
 
-      await tester.enterText(textField, 'creation');
-      await tester.pump();
+        await tester.enterText(textField, 'creation');
+        await tester.pump();
 
-      final submitButton = find.text('SUBMIT');
-      expect(submitButton, findsOneWidget);
+        final submitButton = find.text('SUBMIT');
+        expect(submitButton, findsOneWidget);
 
-      await tester.tap(submitButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 900));
-      await tester.pumpAndSettle();
+        await tester.tap(submitButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 900));
+        await tester.pumpAndSettle();
 
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
-        ),
-      ).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                isTrue,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('18. typing gibberish or incorrect word shows mismatch diff', (tester) async {
+    testWidgets('18. typing gibberish or incorrect word shows mismatch diff', (
+      tester,
+    ) async {
       await advanceToPhase2(tester);
 
       final textField = find.byType(TextField);
@@ -539,38 +637,54 @@ void main() {
       // SubmitAnswer should not be called with true
       verifyNever(
         () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
+          any(
+            that: isA<SubmitAnswer>().having(
+              (e) => e.isCorrect,
+              'isCorrect',
+              isTrue,
+            ),
+          ),
         ),
       );
     });
   });
 
   group('Group 4: Hint System & Guidance', () {
-    testWidgets('19. tapping hint button calls TtsService.speak with target word', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '19. tapping hint button calls TtsService.speak with target word',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
+        await tester.tap(hintButton);
+        await tester.pump();
 
-      verify(() => mockTtsService.speak('creation')).called(1);
-      verify(() => mockVocabularyBloc.add(any(that: isA<VocabularyHintUsed>()))).called(1);
-    });
+        verify(() => mockTtsService.speak('creation')).called(1);
+        verify(
+          () => mockVocabularyBloc.add(any(that: isA<VocabularyHintUsed>())),
+        ).called(1);
+      },
+    );
 
-    testWidgets('20. tapping hint highlights correct affix in ReactionCore and sets hovering index', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '20. tapping hint highlights correct affix in ReactionCore and sets hovering index',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pump();
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pump();
 
-      // Hovering index 0 sets activeSuffix to -tion, displaying + -TION in ReactionCore
-      expect(find.text('-TION'), findsWidgets);
-      expect(find.byIcon(Icons.add_rounded), findsOneWidget);
-    });
+        // Hovering index 0 sets activeSuffix to -tion, displaying + -TION in ReactionCore
+        expect(find.text('-TION'), findsWidgets);
+        expect(find.byIcon(Icons.add_rounded), findsOneWidget);
+      },
+    );
 
-    testWidgets('21. hint highlight auto-clears after timer expiry', (tester) async {
+    testWidgets('21. hint highlight auto-clears after timer expiry', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       await tester.tap(find.byType(QuestHintButton));
@@ -585,7 +699,9 @@ void main() {
       expect(find.byIcon(Icons.add_rounded), findsNothing);
     });
 
-    testWidgets('22. QuestHintButton is hidden when question is answered', (tester) async {
+    testWidgets('22. QuestHintButton is hidden when question is answered', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       // Fail question
@@ -598,94 +714,118 @@ void main() {
   });
 
   group('Group 5: Answer State, Feedback & Question Advancement', () {
-    testWidgets('23. displays GameFeedbackCard with explanation when answered correctly', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '23. displays GameFeedbackCard with explanation when answered correctly',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pumpAndSettle();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text(sampleQuest1.explanation!), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text(sampleQuest1.explanation!), findsOneWidget);
+      },
+    );
 
-    testWidgets('24. displays GameFeedbackCard with failure title when answered incorrectly', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '24. displays GameFeedbackCard with failure title when answered incorrectly',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('-MENT').first);
-      await tester.pump();
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('-MENT').first);
+        await tester.pump();
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('NOT QUITE!'), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('NOT QUITE!'), findsOneWidget);
+      },
+    );
 
-    testWidgets('25. tapping continue button in GameFeedbackCard dispatches NextQuestion()', (tester) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '25. tapping continue button in GameFeedbackCard dispatches NextQuestion()',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final overlay = tester.widget<TypeToConfirmOverlay>(find.byType(TypeToConfirmOverlay));
-      overlay.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pumpAndSettle();
+        final overlay = tester.widget<TypeToConfirmOverlay>(
+          find.byType(TypeToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpAndSettle();
 
-      final continueButton = find.text('CONTINUE');
-      expect(continueButton, findsOneWidget);
+        final continueButton = find.text('CONTINUE');
+        expect(continueButton, findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pump();
+        await tester.tap(continueButton);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(any(that: isA<NextQuestion>()))).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(any(that: isA<NextQuestion>())),
+        ).called(1);
+      },
+    );
 
-    testWidgets('26. transitions cleanly from quest 1 to quest 2 and resets state', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '26. transitions cleanly from quest 1 to quest 2 and resets state',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.text('CREATE'), findsOneWidget);
+        expect(find.text('CREATE'), findsOneWidget);
 
-      final nextState = VocabularyLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      vocabularyStreamController.add(nextState);
-      await tester.pump();
-      await tester.pumpAndSettle();
+        final nextState = VocabularyLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        vocabularyStreamController.add(nextState);
+        await tester.pump();
+        await tester.pumpAndSettle();
 
-      expect(find.text('DEVELOP'), findsOneWidget);
-      expect(find.text(sampleQuest2.hint!), findsOneWidget);
-      expect(find.byType(TypeToConfirmOverlay), findsNothing);
-    });
+        expect(find.text('DEVELOP'), findsOneWidget);
+        expect(find.text(sampleQuest2.hint!), findsOneWidget);
+        expect(find.byType(TypeToConfirmOverlay), findsNothing);
+      },
+    );
 
-    testWidgets('27. handles minimal quest without optional hint or explanation cleanly', (tester) async {
-      final minimalLoadedState = VocabularyLoaded(
-        quests: [sampleMinimalQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-      );
+    testWidgets(
+      '27. handles minimal quest without optional hint or explanation cleanly',
+      (tester) async {
+        final minimalLoadedState = VocabularyLoaded(
+          quests: [sampleMinimalQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpScreen(tester, state: minimalLoadedState);
+        await pumpScreen(tester, state: minimalLoadedState);
 
-      expect(find.text('ACT'), findsOneWidget);
-      expect(find.text('-TION'), findsOneWidget);
-      expect(find.text('-MENT'), findsOneWidget);
-    });
+        expect(find.text('ACT'), findsOneWidget);
+        expect(find.text('-TION'), findsOneWidget);
+        expect(find.text('-MENT'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 6: Responsive Layout & Theme Adaptability', () {
-    testWidgets('28. renders cleanly without overflow on compact phone (320x568)', (tester) async {
-      await pumpScreen(tester, size: const Size(320, 568));
+    testWidgets(
+      '28. renders cleanly without overflow on compact phone (320x568)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(320, 568));
 
-      expect(find.text('CREATE'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.text('CREATE'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('29. renders cleanly on tablet (768x1024)', (tester) async {
       await pumpScreen(tester, size: const Size(768, 1024));
@@ -694,14 +834,18 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('30. renders cleanly in landscape mode (800x480)', (tester) async {
+    testWidgets('30. renders cleanly in landscape mode (800x480)', (
+      tester,
+    ) async {
       await pumpScreen(tester, size: const Size(800, 480));
 
       expect(find.text('CREATE'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('31. renders cleanly under high text scale (1.5x)', (tester) async {
+    testWidgets('31. renders cleanly under high text scale (1.5x)', (
+      tester,
+    ) async {
       await pumpScreen(tester, textScale: 1.5);
 
       expect(find.text('CREATE'), findsOneWidget);
@@ -715,52 +859,58 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('33. MorphInjectionRail exposes accessible Semantics labels', (tester) async {
+    testWidgets('33. MorphInjectionRail exposes accessible Semantics labels', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       final railSemantics = find.byWidgetPredicate(
-        (w) => w is Semantics && (w.properties.label?.startsWith('Suffix -tion') ?? false),
+        (w) =>
+            w is Semantics &&
+            (w.properties.label?.startsWith('Suffix -tion') ?? false),
       );
       expect(railSemantics, findsOneWidget);
     });
 
-    testWidgets('34. displays prefix on the left side of root word and slides inward/left', (tester) async {
-      final prefixQuest = createQuest(
-        id: 'quest_wf_prefix',
-        word: 'invited',
-        rootWord: 'invited',
-        correctAnswer: 'uninvited',
-        options: ['dis-', 'mis-', 'un-', 'non-'],
-        hint: 'An uninvited guest.',
-        instruction: 'Add the correct prefix.',
-        explanation: 'UN- + INVITED = UNINVITED',
-      );
-      final prefixState = VocabularyLoaded(
-        quests: [prefixQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-      );
+    testWidgets(
+      '34. displays prefix on the left side of root word and slides inward/left',
+      (tester) async {
+        final prefixQuest = createQuest(
+          id: 'quest_wf_prefix',
+          word: 'invited',
+          rootWord: 'invited',
+          correctAnswer: 'uninvited',
+          options: ['dis-', 'mis-', 'un-', 'non-'],
+          hint: 'An uninvited guest.',
+          instruction: 'Add the correct prefix.',
+          explanation: 'UN- + INVITED = UNINVITED',
+        );
+        final prefixState = VocabularyLoaded(
+          quests: [prefixQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpScreen(tester, state: prefixState);
+        await pumpScreen(tester, state: prefixState);
 
-      expect(find.text('UN-'), findsOneWidget);
-      expect(find.text('INVITED'), findsOneWidget);
+        expect(find.text('UN-'), findsOneWidget);
+        expect(find.text('INVITED'), findsOneWidget);
 
-      // Slide prefix handle to the left towards the word
-      await tester.drag(find.text('UN-').first, const Offset(-300, 0));
-      await tester.pump();
-      verify(() => mockHapticService.success()).called(1);
+        // Slide prefix handle to the left towards the word
+        await tester.drag(find.text('UN-').first, const Offset(-300, 0));
+        await tester.pump();
+        verify(() => mockHapticService.success()).called(1);
 
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pump(const Duration(milliseconds: 600));
-      await tester.pumpAndSettle();
+        await tester.pump(const Duration(milliseconds: 400));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-      expect(find.textContaining('UNINVITED'), findsWidgets);
-    });
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+        expect(find.textContaining('UNINVITED'), findsWidgets);
+      },
+    );
   });
 }
-

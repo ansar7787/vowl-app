@@ -120,15 +120,17 @@ class GamificationRepositoryImpl
           // or network delay), synthesize the root profile from the cached profile or
           // authenticated user so level progress, stars, coins, and name are NEVER dropped.
           final cachedUser = await _localDataSource.getCachedUser();
-          final effectiveName = (cachedUser != null &&
+          final effectiveName =
+              (cachedUser != null &&
                   cachedUser.id == user.uid &&
                   cachedUser.displayName != null &&
                   cachedUser.displayName!.trim().isNotEmpty)
               ? cachedUser.displayName
               : (user.displayName != null && user.displayName!.trim().isNotEmpty
-                  ? user.displayName
-                  : null);
-          final effectiveEmail = (cachedUser != null &&
+                    ? user.displayName
+                    : null);
+          final effectiveEmail =
+              (cachedUser != null &&
                   cachedUser.id == user.uid &&
                   cachedUser.email.trim().isNotEmpty)
               ? cachedUser.email
@@ -219,20 +221,25 @@ class GamificationRepositoryImpl
 
       final UserModel userData;
       if (isDocInCache) {
-        userData = UserModel.fromMap(doc.data() as Map<String, dynamic>, doc.id);
+        userData = UserModel.fromMap(
+          doc.data() as Map<String, dynamic>,
+          doc.id,
+        );
       } else {
         final user = _firebaseAuth.currentUser;
         if (user == null) return Left(AuthFailure('user-not-logged-in'));
         final cachedUser = await _localDataSource.getCachedUser();
-        final effectiveName = (cachedUser != null &&
+        final effectiveName =
+            (cachedUser != null &&
                 cachedUser.id == user.uid &&
                 cachedUser.displayName != null &&
                 cachedUser.displayName!.trim().isNotEmpty)
             ? cachedUser.displayName
             : (user.displayName != null && user.displayName!.trim().isNotEmpty
-                ? user.displayName
-                : null);
-        final effectiveEmail = (cachedUser != null &&
+                  ? user.displayName
+                  : null);
+        final effectiveEmail =
+            (cachedUser != null &&
                 cachedUser.id == user.uid &&
                 cachedUser.email.trim().isNotEmpty)
             ? cachedUser.email
@@ -316,6 +323,7 @@ class GamificationRepositoryImpl
     // ---- Replay detection ----
     final categoryCompleted = completedLevels[gameType] ?? <int>[];
     final bool isReplay = categoryCompleted.contains(level);
+    final bool isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
 
     // ---- XP multiplier calculation ----
     var xpMultiplier = 1.0;
@@ -326,9 +334,11 @@ class GamificationRepositoryImpl
       xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
     }
 
-    final baseXp = isReplay
-        ? (xpIncrease * UserGameConstants.kReplayXpFraction)
-        : xpIncrease.toDouble();
+    final baseXp = isKidsGame
+        ? 0.0
+        : (isReplay
+              ? (xpIncrease * UserGameConstants.kReplayXpFraction)
+              : xpIncrease.toDouble());
     final finalXpIncrease = (baseXp * xpMultiplier).round();
 
     // ---- Completed & unlocked levels ----
@@ -408,7 +418,9 @@ class GamificationRepositoryImpl
 
         if (dayDiff <= 1) {
           // Same day or consecutive day: advance streak
-          newStreak = (userData.currentStreak > 0) ? userData.currentStreak + 1 : 1;
+          newStreak = (userData.currentStreak > 0)
+              ? userData.currentStreak + 1
+              : 1;
         } else {
           // Missed 1+ days: check if protected by shield or Elite Level 50 auto-shield
           final hasShield = userData.streakFreezes > 0 || userData.level >= 50;
@@ -444,8 +456,6 @@ class GamificationRepositoryImpl
         : activities;
 
     // ---- Coin reward calculation ----
-    final isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
-
     var finalCoinIncrease = (!isVaultReward && isReplay && !isDoubleReward)
         ? 0
         : coinIncrease;
@@ -462,7 +472,9 @@ class GamificationRepositoryImpl
     // ---- Coin history ----
     if (finalCoinIncrease > 0) {
       final coinTitle = isVaultReward
-          ? (claimChestTier != null ? 'coin_history.daily_chest' : 'coin_history.ad_reward')
+          ? (claimChestTier != null
+                ? 'coin_history.daily_chest'
+                : 'coin_history.ad_reward')
           : 'coin_history.quest_reward';
       coinHistoryList = _recordCoinHistory(
         coinHistoryList,
@@ -475,7 +487,8 @@ class GamificationRepositoryImpl
 
     // ---- Anti-Fraud Referral Milestone Activation: Adventure Level 1 ----
     int referralBonusCoins = 0;
-    final bool activatesReferral = !isVaultReward &&
+    final bool activatesReferral =
+        !isVaultReward &&
         level == 1 &&
         userData.pendingReferralCode != null &&
         userData.pendingReferralCode!.trim().isNotEmpty &&
@@ -493,14 +506,34 @@ class GamificationRepositoryImpl
       final pendingCode = userData.pendingReferralCode!.trim().toUpperCase();
       try {
         if (di.sl.isRegistered<ReferralRepository>()) {
-          unawaited(di.sl<ReferralRepository>().onFriendCompletedLevelOne(
-            friendUserId: userData.id,
-            referrerCode: pendingCode,
-          ));
+          unawaited(
+            di.sl<ReferralRepository>().onFriendCompletedLevelOne(
+              friendUserId: userData.id,
+              referrerCode: pendingCode,
+            ),
+          );
         }
       } catch (e) {
-        debugPrint('[GamificationRepositoryImpl] Friend milestone notify error: $e');
+        debugPrint(
+          '[GamificationRepositoryImpl] Friend milestone notify error: $e',
+        );
       }
+    }
+
+    int? kidsTotalStars;
+    if (isKidsGame) {
+      int sum = 0;
+      for (final entry in starRatings.entries) {
+        if (UserGameConstants.kKidsGameTypes.contains(entry.key)) {
+          for (final starEntry in entry.value.entries) {
+            if (starEntry.key != 'magic_stars' &&
+                starEntry.key != 'claimed_chests') {
+              sum += starEntry.value;
+            }
+          }
+        }
+      }
+      kidsTotalStars = sum;
     }
 
     final updates = <String, dynamic>{
@@ -516,6 +549,10 @@ class GamificationRepositoryImpl
       'unlockedLevels': unlockedLevels,
       'starRatings': starRatings,
     };
+
+    if (kidsTotalStars != null) {
+      updates['kidsTotalStars'] = kidsTotalStars;
+    }
 
     if (activatesReferral) {
       final pendingCode = userData.pendingReferralCode!.trim().toUpperCase();
@@ -567,11 +604,9 @@ class GamificationRepositoryImpl
           final maxLevels = CurriculumManifest.getLevels(categoryId);
           unlockedLevels[categoryId] = math.min(maxLevels, newLevel);
           if (!doc.exists || doc.data() == null) {
-            transaction.set(
-              docRef,
-              {'unlockedLevels': unlockedLevels},
-              SetOptions(merge: true),
-            );
+            transaction.set(docRef, {
+              'unlockedLevels': unlockedLevels,
+            }, SetOptions(merge: true));
           } else {
             transaction.update(docRef, {'unlockedLevels': unlockedLevels});
           }
@@ -621,11 +656,9 @@ class GamificationRepositoryImpl
 
         currentStats[categoryId] = newScore;
         if (!doc.exists || doc.data() == null) {
-          transaction.set(
-            docRef,
-            {'categoryStats': currentStats},
-            SetOptions(merge: true),
-          );
+          transaction.set(docRef, {
+            'categoryStats': currentStats,
+          }, SetOptions(merge: true));
         } else {
           transaction.update(docRef, {'categoryStats': currentStats});
         }
@@ -1194,20 +1227,26 @@ class GamificationRepositoryImpl
 
         // Check if already claimed
         final claimed = _parseStringList(data['claimedBadgeRewards']);
-        final hasClaimed = claimed.any((b) => b.toLowerCase().trim() == canonicalId);
+        final hasClaimed = claimed.any(
+          (b) => b.toLowerCase().trim() == canonicalId,
+        );
         if (hasClaimed) {
           _log('[GamificationRepositoryImpl] Trophy $badgeId already claimed.');
           return Left(AuthFailure('trophy-already-claimed'));
         }
 
         // Validate that trophy is earned either via badges list OR live progress criteria
-        final badges = _parseStringList(data['badges']).map((b) => b.toLowerCase().trim()).toList();
+        final badges = _parseStringList(
+          data['badges'],
+        ).map((b) => b.toLowerCase().trim()).toList();
         final userModel = UserModel.fromMap(data, user.uid);
         final progress = trophy.calculateProgress(userModel, badges);
         final isEarned = badges.contains(canonicalId) || progress >= 1.0;
 
         if (!isEarned) {
-          _log('[GamificationRepositoryImpl] Trophy $badgeId not earned (progress: $progress, badges: $badges)');
+          _log(
+            '[GamificationRepositoryImpl] Trophy $badgeId not earned (progress: $progress, badges: $badges)',
+          );
           return Left(AuthFailure('trophy-not-earned'));
         }
 
@@ -1220,10 +1259,7 @@ class GamificationRepositoryImpl
           titleKey: 'coin_history.trophy_reward',
           amount: coinReward,
           isEarned: true,
-          params: {
-            'trophyId': badgeId,
-            'trophyName': trophy.name,
-          },
+          params: {'trophyId': badgeId, 'trophyName': trophy.name},
         );
 
         // 2. Daily XP History update
@@ -1237,6 +1273,27 @@ class GamificationRepositoryImpl
           UserGameConstants.kDailyXpHistoryLimit,
         );
 
+        // 3. Recent Activities audit entry
+        final activities = List<Map<String, dynamic>>.from(
+          (data['recentActivities'] as List?)
+                  ?.map((e) => Map<String, dynamic>.from(e as Map))
+                  .toList() ??
+              [],
+        );
+        activities.insert(0, <String, dynamic>{
+          'titleKey': 'activity.badge_unlocked',
+          'gameType': 'badgeReward',
+          'badgeName': trophy.name,
+          'xpEarned': xpReward,
+          'coinsEarned': coinReward,
+          'timestamp': Timestamp.now(),
+          'type': 'badge',
+        });
+        final trimmedActivities =
+            activities.length > UserGameConstants.kActivityHistoryLimit
+            ? activities.sublist(0, UserGameConstants.kActivityHistoryLimit)
+            : activities;
+
         final totalExp = (data['totalExp'] as num?)?.toInt() ?? 0;
 
         transaction.update(docRef, {
@@ -1246,10 +1303,13 @@ class GamificationRepositoryImpl
           'totalExp': totalExp + xpReward,
           'dailyXpHistory': dailyHistory,
           'coinHistory': history,
+          'recentActivities': trimmedActivities,
           'lastRewardTimestamp': FieldValue.serverTimestamp(),
         });
 
-        _log('[GamificationRepositoryImpl] Successfully claimed trophy $badgeId: +$xpReward XP, +$coinReward Coins');
+        _log(
+          '[GamificationRepositoryImpl] Successfully claimed trophy $badgeId: +$xpReward XP, +$coinReward Coins',
+        );
         return const Right<Failure, void>(null);
       });
     } catch (e) {
@@ -1297,7 +1357,10 @@ class GamificationRepositoryImpl
   /// Parses a Firestore list of strings defensively.
   static List<String> _parseStringList(dynamic raw) {
     if (raw == null || raw is! List) return const [];
-    return raw.map((e) => e?.toString() ?? '').where((s) => s.isNotEmpty).toList();
+    return raw
+        .map((e) => e?.toString() ?? '')
+        .where((s) => s.isNotEmpty)
+        .toList();
   }
 
   /// Prepends a coin-history entry and trims to the configured retention

@@ -57,11 +57,7 @@ class ModalsSelectionInstruction extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              Icons.tune_rounded,
-              size: 15.sp,
-              color: primaryColor,
-            ),
+            Icon(Icons.tune_rounded, size: 15.sp, color: primaryColor),
             SizedBox(width: 8.w),
             Flexible(
               child: Text(

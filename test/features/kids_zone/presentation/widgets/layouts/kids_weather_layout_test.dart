@@ -68,7 +68,8 @@ void main() {
     id: 'KIDS_WEATHER_L91_Q2',
     gameType: 'weather',
     level: 91,
-    instruction: 'A teacher asks the class what makes the booming sound of thunder.',
+    instruction:
+        'A teacher asks the class what makes the booming sound of thunder.',
     question: 'What causes thunder?',
     correctAnswer: 'Lightning heats air that suddenly expands',
     options: [
@@ -116,7 +117,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedStateShort);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -128,12 +131,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -141,26 +149,44 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX()).thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -216,7 +242,9 @@ void main() {
   }
 
   group('KidsWeatherLayout - Component Rendering', () {
-    testWidgets('renders forecast plaque with question text and audio button', (tester) async {
+    testWidgets('renders forecast plaque with question text and audio button', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester);
 
       expect(find.text('WEATHER CLUE'), findsOneWidget);
@@ -227,7 +255,9 @@ void main() {
       expect(find.byIcon(Icons.volume_up_rounded), findsWidgets);
     });
 
-    testWidgets('renders 4 puffy weather cloud options for short vocabulary', (tester) async {
+    testWidgets('renders 4 puffy weather cloud options for short vocabulary', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester);
 
       expect(find.text('Sunny'), findsOneWidget);
@@ -236,7 +266,9 @@ void main() {
       expect(find.text('Snowy'), findsOneWidget);
     });
 
-    testWidgets('renders wide sky banner plaques when options are sentences', (tester) async {
+    testWidgets('renders wide sky banner plaques when options are sentences', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester, state: testLoadedStateLong);
 
       expect(
@@ -259,54 +291,65 @@ void main() {
   });
 
   group('KidsWeatherLayout - Interaction & Submission', () {
-    testWidgets('tap on correct cloud submits SubmitKidsAnswer(true) and speaks answer', (tester) async {
-      await pumpWeatherLayout(tester);
+    testWidgets(
+      'tap on correct cloud submits SubmitKidsAnswer(true) and speaks answer',
+      (tester) async {
+        await pumpWeatherLayout(tester);
 
-      final sunnyOption = find.text('Sunny');
-      expect(sunnyOption, findsOneWidget);
-      await tester.ensureVisible(sunnyOption);
+        final sunnyOption = find.text('Sunny');
+        expect(sunnyOption, findsOneWidget);
+        await tester.ensureVisible(sunnyOption);
 
-      await tester.tap(sunnyOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(sunnyOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockTTSService.speak('Sunny', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-    });
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(() => mockTTSService.speak('Sunny', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+      },
+    );
 
-    testWidgets('tap on incorrect cloud submits SubmitKidsAnswer(false) and triggers error haptic', (tester) async {
-      await pumpWeatherLayout(tester);
+    testWidgets(
+      'tap on incorrect cloud submits SubmitKidsAnswer(false) and triggers error haptic',
+      (tester) async {
+        await pumpWeatherLayout(tester);
 
-      final foggyOption = find.text('Foggy');
-      expect(foggyOption, findsOneWidget);
-      await tester.ensureVisible(foggyOption);
+        final foggyOption = find.text('Foggy');
+        expect(foggyOption, findsOneWidget);
+        await tester.ensureVisible(foggyOption);
 
-      await tester.tap(foggyOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(foggyOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-      verify(() => mockTTSService.speak('Foggy', force: true)).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+        verify(() => mockTTSService.speak('Foggy', force: true)).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
 
-    testWidgets('tapping speaker icon on cloud pronounces option without submitting', (tester) async {
-      await pumpWeatherLayout(tester);
+    testWidgets(
+      'tapping speaker icon on cloud pronounces option without submitting',
+      (tester) async {
+        await pumpWeatherLayout(tester);
 
-      final hearButton = find.byKey(const ValueKey('speaker_cloud_Sunny'));
-      expect(hearButton, findsOneWidget);
-      await tester.ensureVisible(hearButton);
+        final hearButton = find.byKey(const ValueKey('speaker_cloud_Sunny'));
+        expect(hearButton, findsOneWidget);
+        await tester.ensureVisible(hearButton);
 
-      await tester.tap(hearButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hearButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Sunny', force: true)).called(1);
-      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-    });
+        verify(() => mockTTSService.speak('Sunny', force: true)).called(1);
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
 
-    testWidgets('drag-and-drop cloud to sky window submits answer', (tester) async {
+    testWidgets('drag-and-drop cloud to sky window submits answer', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester);
 
       final sunnyFinder = find.text('Sunny');
@@ -332,25 +375,30 @@ void main() {
   });
 
   group('KidsWeatherLayout - Feedback & Lifeline Scaffolding', () {
-    testWidgets('displays celebratory reveal with emoji when answered correctly', (tester) async {
-      const correctState = KidsLoaded(
-        quests: [testQuestShortOptions],
-        originalTotalQuests: 1,
-        gameType: 'weather',
-        level: 1,
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+    testWidgets(
+      'displays celebratory reveal with emoji when answered correctly',
+      (tester) async {
+        const correctState = KidsLoaded(
+          quests: [testQuestShortOptions],
+          originalTotalQuests: 1,
+          gameType: 'weather',
+          level: 1,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
 
-      await pumpWeatherLayout(tester, state: correctState);
+        await pumpWeatherLayout(tester, state: correctState);
 
-      expect(find.text('☀️'), findsOneWidget);
-      expect(find.text('Sunny'), findsWidgets);
-      expect(find.byIcon(Icons.check_circle_rounded), findsWidgets);
-    });
+        expect(find.text('☀️'), findsOneWidget);
+        expect(find.text('Sunny'), findsWidgets);
+        expect(find.byIcon(Icons.check_circle_rounded), findsWidgets);
+      },
+    );
 
-    testWidgets('hint lifeline dims distractor cloud when hintUsed is true', (tester) async {
+    testWidgets('hint lifeline dims distractor cloud when hintUsed is true', (
+      tester,
+    ) async {
       const hintState = KidsLoaded(
         quests: [testQuestShortOptions],
         originalTotalQuests: 1,
@@ -371,7 +419,9 @@ void main() {
   });
 
   group('KidsWeatherLayout - Responsive Layout Safety', () {
-    testWidgets('renders cleanly without overflow on narrow 320dp screen', (tester) async {
+    testWidgets('renders cleanly without overflow on narrow 320dp screen', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester, width: 320, height: 600);
 
       expect(find.text('WEATHER CLUE'), findsOneWidget);
@@ -379,7 +429,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders cleanly without overflow on tablet 600dp screen', (tester) async {
+    testWidgets('renders cleanly without overflow on tablet 600dp screen', (
+      tester,
+    ) async {
       await pumpWeatherLayout(tester, width: 600, height: 960);
 
       expect(find.text('WEATHER CLUE'), findsOneWidget);
@@ -388,4 +440,3 @@ void main() {
     });
   });
 }
-

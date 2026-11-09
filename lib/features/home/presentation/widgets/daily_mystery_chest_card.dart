@@ -29,12 +29,10 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 /// - Dual `SizeTransition` + `ScaleTransition` "eating" collapse animation
 ///   that smoothly folds the card to 0dp height once claimed.
 class DailyMysteryChestCard extends StatefulWidget {
-  final void Function({required Offset originOffset, required int coins})? onClaimed;
+  final void Function({required Offset originOffset, required int coins})?
+  onClaimed;
 
-  const DailyMysteryChestCard({
-    super.key,
-    this.onClaimed,
-  });
+  const DailyMysteryChestCard({super.key, this.onClaimed});
 
   @override
   State<DailyMysteryChestCard> createState() => _DailyMysteryChestCardState();
@@ -203,15 +201,18 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     // Main Card Widget wrapped in Semantics for accessibility
     Widget cardContent = Semantics(
       button: true,
       label: _awardedCoins != null
-          ? context.tr('home.chest_coins_collected', fallback: 'Coins collected')
+          ? context.tr(
+              'home.chest_coins_collected',
+              fallback: 'Coins collected',
+            )
           : '${context.tr('home.chest_daily_mystery', fallback: 'Daily mystery')}, ${context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil')}',
       child: Container(
         width: double.infinity,
@@ -234,8 +235,8 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate100),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate200),
             width: 1.0,
           ),
         ),
@@ -265,159 +266,162 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
               behavior: HitTestBehavior.opaque,
               onTap: _handleClaim,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardCompact, vertical: 8.h),
-                child: Row(
-              children: [
-                // Glowing circular gift badge
-                Container(
-                  width: 34.r,
-                  height: 34.r,
-                  decoration: BoxDecoration(
-                    color: AppColors.amber500.withValues(
-                      alpha: isDark ? 0.16 : 0.10,
-                    ),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: AppColors.amber500.withValues(alpha: 0.35),
-                      width: 1,
-                    ),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      LucideIcons.gift,
-                      color: AppColors.amber500,
-                      size: 16.r,
-                    ),
-                  ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSpacing.cardCompact,
+                  vertical: 8.h,
                 ),
-                SizedBox(width: 10.w),
+                child: Row(
+                  children: [
+                    // Glowing circular gift badge
+                    Container(
+                      width: 34.r,
+                      height: 34.r,
+                      decoration: BoxDecoration(
+                        color: AppColors.amber500.withValues(
+                          alpha: isDark ? 0.16 : 0.10,
+                        ),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.amber500.withValues(alpha: 0.35),
+                          width: 1,
+                        ),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          LucideIcons.gift,
+                          color: AppColors.amber500,
+                          size: 16.r,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
 
-                // Title & Subtitle or Victory state
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Row(
+                    // Title & Subtitle or Victory state
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Flexible(
-                            child: AutoSizeText(
-                              _awardedCoins != null
-                                  ? context.tr(
-                                      'home.chest_coins_collected',
-                                      fallback: 'COINS COLLECTED',
-                                    )
-                                  : context.tr(
-                                      'home.chest_daily_mystery',
-                                      fallback: 'DAILY MYSTERY',
-                                    ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w800,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
-                                letterSpacing: 0.4,
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: AutoSizeText(
+                                  _awardedCoins != null
+                                      ? context.tr(
+                                          'home.chest_coins_collected',
+                                          fallback: 'COINS COLLECTED',
+                                        )
+                                      : context.tr(
+                                          'home.chest_daily_mystery',
+                                          fallback: 'DAILY MYSTERY',
+                                        ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                    letterSpacing: 0.4,
+                                  ),
+                                  maxLines: 1,
+                                  minFontSize: 9,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                              maxLines: 1,
-                              minFontSize: 9,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                              SizedBox(width: 4.w),
+                              Icon(
+                                LucideIcons.sparkles,
+                                color: AppColors.amber500,
+                                size: 11.r,
+                              ),
+                            ],
                           ),
-                          SizedBox(width: 4.w),
-                          Icon(
-                            LucideIcons.sparkles,
-                            color: AppColors.amber500,
-                            size: 11.r,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 2.h),
-                      AutoSizeText(
-                        _awardedCoins != null
-                          ? '+$_awardedCoins ${context.tr('home.coins', fallback: 'COINS')}!'
-                          : context.tr(
-                              'home.chest_tap_unveil',
-                              fallback: 'TAP TO UNVEIL',
-                            ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: _awardedCoins != null
-                              ? FontWeight.w800
-                              : FontWeight.w500,
-                          color: _awardedCoins != null
-                              ? AppColors.amber500
-                              : (isDark
-                                  ? AppColors.slate400
-                                  : AppColors.slate600),
-                        ),
-                        maxLines: 1,
-                        minFontSize: 9,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 8.w),
-
-                // Tactile Claim CTA
-                ScaleButton(
-                  onTap: _handleClaim,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [
-                          IllustrationColors.warmOrange,
-                          AppColors.amber500,
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.amber500.withValues(alpha: 0.3),
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: _awardedCoins != null
-                        ? Icon(
-                            LucideIcons.check,
-                            size: 14.r,
-                            color: Colors.black,
-                          )
-                        : Text(
-                            context.tr(
-                              'streak.milestone_claim_cta',
-                              fallback: 'CLAIM',
-                            ),
+                          SizedBox(height: 2.h),
+                          AutoSizeText(
+                            _awardedCoins != null
+                                ? '+$_awardedCoins ${context.tr('home.coins', fallback: 'COINS')}!'
+                                : context.tr(
+                                    'home.chest_tap_unveil',
+                                    fallback: 'TAP TO UNVEIL',
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 11.5.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.black,
-                              letterSpacing: 0.8,
+                              fontSize: 11.sp,
+                              fontWeight: _awardedCoins != null
+                                  ? FontWeight.w800
+                                  : FontWeight.w500,
+                              color: _awardedCoins != null
+                                  ? AppColors.amber500
+                                  : (isDark
+                                        ? AppColors.slate400
+                                        : AppColors.slate600),
                             ),
+                            maxLines: 1,
+                            minFontSize: 9,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                  ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+
+                    // Tactile Claim CTA
+                    ScaleButton(
+                      onTap: _handleClaim,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              IllustrationColors.warmOrange,
+                              AppColors.amber500,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(12.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.amber500.withValues(alpha: 0.3),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: _awardedCoins != null
+                            ? Icon(
+                                LucideIcons.check,
+                                size: 14.r,
+                                color: Colors.black,
+                              )
+                            : Text(
+                                context.tr(
+                                  'streak.milestone_claim_cta',
+                                  fallback: 'CLAIM',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.5.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  letterSpacing: 0.8,
+                                ),
+                              ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
-        ],
       ),
-    ),
-  );
+    );
 
     // Eating animation: smooth reverse SizeTransition (vertical shrink) + ScaleTransition
     Widget animatedCard = SizeTransition(
@@ -426,7 +430,12 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 0),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.screen,
+            14.h,
+            AppSpacing.screen,
+            0,
+          ),
           child: cardContent,
         ),
       ),

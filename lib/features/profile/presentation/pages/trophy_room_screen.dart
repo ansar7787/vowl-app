@@ -50,10 +50,7 @@ class _TrophyRoomView extends StatelessWidget {
       listener: (context, authState) {
         final u = authState.user;
         if (u != null) {
-          context.read<TrophyRoomCubit>().updateUser(
-            badges: u.badges,
-            user: u,
-          );
+          context.read<TrophyRoomCubit>().updateUser(badges: u.badges, user: u);
         }
       },
       child: Scaffold(
@@ -68,11 +65,7 @@ class _TrophyRoomView extends StatelessWidget {
                         const Color(0xFF0F172A),
                         const Color(0xFF0B101D),
                       ]
-                    : [
-                        Colors.white,
-                        const Color(0xFFF8FAFC),
-                        Colors.white,
-                      ],
+                    : [Colors.white, const Color(0xFFF8FAFC), Colors.white],
               ),
 
             SafeArea(
@@ -91,7 +84,8 @@ class _TrophyRoomView extends StatelessWidget {
                         builder: (context, state) {
                           final hasEarned = state.allEarnedBadges.isNotEmpty;
                           final nextBadgeId = state.nextInReachBadgeId;
-                          final showRadar = state.nextInReachProgress > 0.0 &&
+                          final showRadar =
+                              state.nextInReachProgress > 0.0 &&
                               nextBadgeId != null &&
                               !state.allEarnedBadges.contains(nextBadgeId);
 
@@ -124,7 +118,8 @@ class _TrophyRoomView extends StatelessWidget {
                               SizedBox(height: 8.h),
                               _buildFilterTabs(context, state, isDark),
 
-                              if (state.currentFilter == TrophyFilter.standard) ...[
+                              if (state.currentFilter ==
+                                  TrophyFilter.standard) ...[
                                 SizedBox(height: 6.h),
                                 _buildSubCategoryChips(context, state, isDark),
                               ],
@@ -192,10 +187,7 @@ class _TrophyRoomView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                context.tr(
-                  'profile.total_earned',
-                  fallback: 'Total Earned',
-                ),
+                context.tr('profile.total_earned', fallback: 'Total Earned'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
@@ -262,7 +254,9 @@ class _TrophyRoomView extends StatelessWidget {
                             color: AppColors.indigo500,
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.indigo500.withValues(alpha: 0.4),
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.4,
+                                ),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -302,9 +296,9 @@ class _TrophyRoomView extends StatelessWidget {
             return VowlMotion.shouldReduceMotion(context)
                 ? trophyIcon
                 : trophyIcon.animate().scale(
-                      duration: 600.ms,
-                      curve: Curves.easeOutCubic,
-                    );
+                    duration: 600.ms,
+                    curve: Curves.easeOutCubic,
+                  );
           },
         ),
       ],
@@ -317,20 +311,18 @@ class _TrophyRoomView extends StatelessWidget {
     bool isDark,
   ) {
     final isLegendary = state.currentFilter == TrophyFilter.legendary;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final trackBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF0F172A).withValues(alpha: 0.75)
-            : Colors.black.withValues(alpha: 0.04));
+              ? AppColors.midnightNavy.withValues(alpha: 0.75)
+              : Colors.black.withValues(alpha: 0.04));
 
     final trackBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     final tabs = Container(
       height: 44.h,
@@ -355,9 +347,7 @@ class _TrophyRoomView extends StatelessWidget {
                 width: tabWidth,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: isLegendary
-                        ? AppColors.gold
-                        : AppColors.indigo500,
+                    color: isLegendary ? AppColors.gold : AppColors.indigo500,
                     borderRadius: BorderRadius.circular(24.r),
                     boxShadow: [
                       BoxShadow(
@@ -381,9 +371,9 @@ class _TrophyRoomView extends StatelessWidget {
                     isSelected: !isLegendary,
                     isDark: isDark,
                     activeColor: Colors.white,
-                    onTap: () => context
-                        .read<TrophyRoomCubit>()
-                        .updateFilter(TrophyFilter.standard),
+                    onTap: () => context.read<TrophyRoomCubit>().updateFilter(
+                      TrophyFilter.standard,
+                    ),
                   ),
                   _buildSlidingTab(
                     title: context.tr(
@@ -393,9 +383,9 @@ class _TrophyRoomView extends StatelessWidget {
                     isSelected: isLegendary,
                     isDark: isDark,
                     activeColor: AppColors.slate950,
-                    onTap: () => context
-                        .read<TrophyRoomCubit>()
-                        .updateFilter(TrophyFilter.legendary),
+                    onTap: () => context.read<TrophyRoomCubit>().updateFilter(
+                      TrophyFilter.legendary,
+                    ),
                   ),
                 ],
               ),
@@ -447,8 +437,8 @@ class _TrophyRoomView extends StatelessWidget {
     TrophyRoomState state,
     bool isDark,
   ) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final categories = [
       ('all', 'All (40)'),
@@ -460,14 +450,12 @@ class _TrophyRoomView extends StatelessWidget {
     final containerBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? Colors.white.withValues(alpha: 0.04)
-            : Colors.black.withValues(alpha: 0.03));
+              ? Colors.white.withValues(alpha: 0.04)
+              : Colors.black.withValues(alpha: 0.03));
 
     final containerBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.10)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.06)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.06) : AppColors.slate200);
 
     return Container(
       padding: EdgeInsets.all(3.r),
@@ -516,8 +504,9 @@ class _TrophyRoomView extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight:
-                            isSelected ? FontWeight.w900 : FontWeight.w700,
+                        fontWeight: isSelected
+                            ? FontWeight.w900
+                            : FontWeight.w700,
                         color: isSelected
                             ? Colors.white
                             : (isDark ? Colors.white60 : AppColors.slate600),
@@ -577,10 +566,7 @@ class _TrophyRoomView extends StatelessWidget {
 
     final animatedMessage = VowlMotion.shouldReduceMotion(context)
         ? messageRow
-        : messageRow
-            .animate(key: ValueKey(text))
-            .fadeIn()
-            .slideX(begin: -0.1);
+        : messageRow.animate(key: ValueKey(text)).fadeIn().slideX(begin: -0.1);
 
     return Padding(
       padding: EdgeInsets.only(bottom: 16.h),
@@ -650,18 +636,18 @@ class _TrophyRoomView extends StatelessWidget {
     final borderColor = isLegendary
         ? AppColors.gold.withValues(alpha: 0.8)
         : (isMidnight
-            ? Colors.white.withValues(alpha: 0.12)
-            : (isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : AppColors.slate200));
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate200));
 
     final cardBgColor = isLegendary
         ? (isDark ? const Color(0xFF1E1408) : const Color(0xFFFFFBEB))
         : (isMidnight
-            ? AppColors.midnightSurface
-            : (isDark
-                ? const Color(0xFF0F172A).withValues(alpha: 0.90)
-                : Colors.white));
+              ? AppColors.midnightSurface
+              : (isDark
+                    ? AppColors.midnightNavy.withValues(alpha: 0.90)
+                    : Colors.white));
 
     return ScaleButton(
       key: ValueKey('${state.currentFilter.name}_${badgeId}_$index'),
@@ -673,8 +659,7 @@ class _TrophyRoomView extends StatelessWidget {
           isEarned: true,
           user: state.user,
           isPinned: state.pinnedBadgeIds.contains(badgeId),
-          onTogglePin: () =>
-              context.read<TrophyRoomCubit>().togglePin(badgeId),
+          onTogglePin: () => context.read<TrophyRoomCubit>().togglePin(badgeId),
         );
       },
       child: Container(
@@ -744,22 +729,20 @@ class _TrophyRoomView extends StatelessWidget {
     final isLegendary = TrophyRoomCubit.isLegendary(badgeId);
     final borderColor = isLegendary
         ? (isDark
-            ? AppColors.gold.withValues(alpha: 0.35)
-            : const Color(0xFFD97706).withValues(alpha: 0.35))
+              ? AppColors.gold.withValues(alpha: 0.35)
+              : const Color(0xFFD97706).withValues(alpha: 0.35))
         : (isMidnight
-            ? Colors.white.withValues(alpha: 0.12)
-            : (isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : AppColors.slate200));
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate200));
     final bgColor = isLegendary
-        ? (isDark
-            ? const Color(0xFF161005)
-            : const Color(0xFFFFFDF5))
+        ? (isDark ? const Color(0xFF161005) : const Color(0xFFFFFDF5))
         : (isMidnight
-            ? AppColors.midnightSurface
-            : (isDark
-                ? const Color(0xFF0F172A).withValues(alpha: 0.60)
-                : Colors.white));
+              ? AppColors.midnightSurface
+              : (isDark
+                    ? AppColors.midnightNavy.withValues(alpha: 0.60)
+                    : Colors.white));
 
     return ScaleButton(
       key: ValueKey('${state.currentFilter.name}_locked_$badgeId'),
@@ -843,7 +826,9 @@ class _TrophyRoomView extends StatelessWidget {
 
       if (isLocked) {
         tierColor = isLegendary
-            ? (isDark ? AppColors.gold.withValues(alpha: 0.5) : const Color(0xFFB45309).withValues(alpha: 0.55))
+            ? (isDark
+                  ? AppColors.gold.withValues(alpha: 0.5)
+                  : const Color(0xFFB45309).withValues(alpha: 0.55))
             : (isDark ? Colors.white38 : Colors.black38);
         categoryColor = isDark ? Colors.white60 : Colors.black54;
       } else if (isLegendary) {

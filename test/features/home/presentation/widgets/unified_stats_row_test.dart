@@ -139,38 +139,36 @@ void main() {
     totalExp: 3200,
     badges: ['pioneer', 'streak_master'],
     recentActivities: [],
-    completedLevels: {'flashcards': [1, 2, 3]},
-  );
-
-  testWidgets(
-    'renders UnifiedStatsRow with active user metrics and rank',
-    (tester) async {
-      await tester.pumpWidget(createSubject(user: testUser, globalRank: 4));
-      await tester.pumpAndSettle();
-
-      // Check values
-      expect(find.text('18'), findsOneWidget); // Streak
-      expect(find.text('1.5k'), findsOneWidget); // Coins formatted (1450 >= 1000)
-      expect(find.text('2'), findsOneWidget); // Badges count
-      expect(find.text('#4'), findsOneWidget); // Global Rank
-
-      // Check labels
-      expect(find.text('STREAK'), findsOneWidget);
-      expect(find.text('COINS'), findsOneWidget);
-      expect(find.text('BADGES'), findsOneWidget);
-      expect(find.text('Rank'), findsOneWidget);
+    completedLevels: {
+      'flashcards': [1, 2, 3],
     },
   );
 
-  testWidgets(
-    'renders dash when globalRank is null',
-    (tester) async {
-      await tester.pumpWidget(createSubject(user: testUser, globalRank: null));
-      await tester.pumpAndSettle();
+  testWidgets('renders UnifiedStatsRow with active user metrics and rank', (
+    tester,
+  ) async {
+    await tester.pumpWidget(createSubject(user: testUser, globalRank: 4));
+    await tester.pumpAndSettle();
 
-      expect(find.text('—'), findsOneWidget);
-    },
-  );
+    // Check values
+    expect(find.text('18'), findsOneWidget); // Streak
+    expect(find.text('1.5k'), findsOneWidget); // Coins formatted (1450 >= 1000)
+    expect(find.text('2'), findsOneWidget); // Badges count
+    expect(find.text('#4'), findsOneWidget); // Global Rank
+
+    // Check labels
+    expect(find.text('STREAK'), findsOneWidget);
+    expect(find.text('COINS'), findsOneWidget);
+    expect(find.text('BADGES'), findsOneWidget);
+    expect(find.text('Rank'), findsOneWidget);
+  });
+
+  testWidgets('renders dash when globalRank is null', (tester) async {
+    await tester.pumpWidget(createSubject(user: testUser, globalRank: null));
+    await tester.pumpAndSettle();
+
+    expect(find.text('—'), findsOneWidget);
+  });
 
   testWidgets(
     'tapping each of the 4 stats triggers haptics and navigates to correct route',
@@ -226,43 +224,30 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders cleanly on small screen (320dp) without overflow',
-    (tester) async {
-      tester.view.physicalSize = const Size(320 * 2, 568 * 2);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+  testWidgets('renders cleanly on small screen (320dp) without overflow', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(320 * 2, 568 * 2);
+    tester.view.devicePixelRatio = 2.0;
+    addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(
-        createSubject(
-          user: testUser,
-          globalRank: 12,
-          width: 320,
-          height: 568,
-        ),
-      );
-      await tester.pumpAndSettle();
+    await tester.pumpWidget(
+      createSubject(user: testUser, globalRank: 12, width: 320, height: 568),
+    );
+    await tester.pumpAndSettle();
 
-      expect(find.byType(UnifiedStatsRow), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(UnifiedStatsRow), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
-  testWidgets(
-    'renders cleanly in Light mode',
-    (tester) async {
-      await tester.pumpWidget(
-        createSubject(
-          user: testUser,
-          globalRank: 1,
-          themeMode: ThemeMode.light,
-        ),
-      );
-      await tester.pumpAndSettle();
+  testWidgets('renders cleanly in Light mode', (tester) async {
+    await tester.pumpWidget(
+      createSubject(user: testUser, globalRank: 1, themeMode: ThemeMode.light),
+    );
+    await tester.pumpAndSettle();
 
-      expect(find.byType(UnifiedStatsRow), findsOneWidget);
-      expect(find.text('#1'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(UnifiedStatsRow), findsOneWidget);
+    expect(find.text('#1'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }

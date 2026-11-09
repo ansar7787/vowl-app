@@ -63,288 +63,279 @@ class PremiumPlanCard extends StatelessWidget {
             final cardContent = Container(
               margin: EdgeInsets.only(bottom: 16.h),
               child: Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      AnimatedContainer(
-                        duration: 300.ms,
-                        curve: Curves.easeOutQuart,
-                        padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 20.h),
-                        decoration: BoxDecoration(
-                          color: isSelected
-                              ? (isDark
-                                    ? accentColor.withValues(alpha: 0.1)
-                                    : accentColor.withValues(alpha: 0.05))
-                              : (isDark
-                                    ? const Color(0x08FFFFFF)
-                                    : Colors.white),
-                          borderRadius: BorderRadius.circular(24.r),
-                          border: Border.all(
-                            color: isSelected
-                                ? accentColor
-                                : (isDark
-                                      ? const Color(0x1AFFFFFF)
-                                      : const Color(0x0A000000)),
-                            width: isSelected ? 2 : 1,
-                          ),
-                          boxShadow: isSelected
-                              ? [
-                                  BoxShadow(
-                                    color: accentColor.withValues(alpha: 0.25),
-                                    blurRadius: 20,
-                                    offset: const Offset(0, 8),
-                                  ),
-                                ]
-                              : [
-                                  if (!isDark)
-                                    BoxShadow(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.03,
-                                      ),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                ],
-                        ),
-                        child: Row(
-                          children: [
-                            // Radio indicator
-                            Container(
-                              width: 24.r,
-                              height: 24.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: isSelected
-                                      ? accentColor
-                                      : (isDark
-                                            ? Colors.white30
-                                            : Colors.black26),
-                                  width: isSelected ? 6.r : 2.r,
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 16.w),
-
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: AlignmentDirectional.centerStart,
-                                    child: Text(
-                                      plan.name.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: isDark
-                                            ? Colors.white
-                                            : Colors.black87,
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 1,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 4.h),
-                                  FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: AlignmentDirectional.centerStart,
-                                    child: Text(
-                                      context.tr(
-                                        'premium.days_of_elite_access',
-                                        fallback: 'Days of Elite Access',
-                                        args: ['${plan.days}'],
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: isDark
-                                            ? Colors.white60
-                                            : Colors.black54,
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 2.h),
-                                  if (!isGooglePlay) ...[
-                                    Builder(
-                                      builder: (context) {
-                                        final isYearly = plan.days >= 365 ||
-                                            plan.name.toLowerCase().contains('year');
-                                        final chaiSuffix = isYearly
-                                            ? ' • ${context.tr('premium.chai_anchor', fallback: 'Half a cup of chai ☕')}'
-                                            : '';
-                                        return FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          alignment: AlignmentDirectional.centerStart,
-                                          child: Text(
-                                            '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}$chaiSuffix',
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              color: accentColor.withValues(
-                                                alpha: 0.9,
-                                              ),
-                                              fontSize: 11.sp,
-                                              fontWeight: FontWeight.w700,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                ],
-                              ),
-                            ),
-
-                            SizedBox(width: 8.w),
-
-                            ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: 120.w),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  if (!isGooglePlay)
-                                    FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      alignment: AlignmentDirectional.centerEnd,
-                                      child: Text(
-                                        currencyFormat.format(plan.oldPrice),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: isDark
-                                              ? Colors.white30
-                                              : Colors.black38,
-                                          fontSize: 14.sp,
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                          decorationColor: isDark
-                                              ? Colors.white54
-                                              : Colors.black54,
-                                        ),
-                                      ),
-                                    ),
-                                  if (!isGooglePlay) SizedBox(height: 2.h),
-                                  FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    child: Text(
-                                      isGooglePlay
-                                          ? googlePlayPrice!
-                                          : currencyFormat.format(plan.price),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: isDark
-                                            ? Colors.white
-                                            : Colors.black,
-                                        fontSize: 24.sp,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: -0.5,
-                                      ),
-                                    ),
-                                  ),
-                                  if (!isGooglePlay && savingsPercent > 0) ...[
-                                    SizedBox(height: 4.h),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 6.w,
-                                        vertical: 2.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: const Color(
-                                          0xFF10B981,
-                                        ).withValues(alpha: 0.15),
-                                        borderRadius: BorderRadius.circular(
-                                          6.r,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        '${context.tr('premium.save', fallback: 'Save')} $savingsPercent%',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: AppColors.emerald500,
-                                          fontSize: 9.sp,
-                                          fontWeight: FontWeight.w800,
-                                          letterSpacing: 0.5,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                clipBehavior: Clip.none,
+                children: [
+                  AnimatedContainer(
+                    duration: 300.ms,
+                    curve: Curves.easeOutQuart,
+                    padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 20.h),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? (isDark
+                                ? accentColor.withValues(alpha: 0.1)
+                                : accentColor.withValues(alpha: 0.05))
+                          : (isDark ? const Color(0x08FFFFFF) : Colors.white),
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: isSelected
+                            ? accentColor
+                            : (isDark
+                                  ? const Color(0x1AFFFFFF)
+                                  : const Color(0x0A000000)),
+                        width: isSelected ? 2 : 1,
                       ),
+                      boxShadow: isSelected
+                          ? [
+                              BoxShadow(
+                                color: accentColor.withValues(alpha: 0.25),
+                                blurRadius: 20,
+                                offset: const Offset(0, 8),
+                              ),
+                            ]
+                          : [
+                              if (!isDark)
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.03),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 4),
+                                ),
+                            ],
+                    ),
+                    child: Row(
+                      children: [
+                        // Radio indicator
+                        Container(
+                          width: 24.r,
+                          height: 24.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: isSelected
+                                  ? accentColor
+                                  : (isDark ? Colors.white30 : Colors.black26),
+                              width: isSelected ? 6.r : 2.r,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 16.w),
 
-                      // The gorgeous floating tag at the top right
-                      if (plan.tag.isNotEmpty)
-                        PositionedDirectional(
-                          top: -12.h,
-                          end: 20.w,
-                          child: Builder(
-                            builder: (context) {
-                              final tagWidget = Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 12.w,
-                                  vertical: 6.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      accentColor,
-                                      accentColor.withValues(alpha: 0.8),
-                                    ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: AlignmentDirectional.centerStart,
+                                child: Text(
+                                  plan.name.toUpperCase(),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: accentColor.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                      blurRadius: 8,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
                                 ),
-                                child: FittedBox(
+                              ),
+                              SizedBox(height: 4.h),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: AlignmentDirectional.centerStart,
+                                child: Text(
+                                  context.tr(
+                                    'premium.days_of_elite_access',
+                                    fallback: 'Days of Elite Access',
+                                    args: ['${plan.days}'],
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: isDark
+                                        ? Colors.white60
+                                        : Colors.black54,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 2.h),
+                              if (!isGooglePlay) ...[
+                                Builder(
+                                  builder: (context) {
+                                    final isYearly =
+                                        plan.days >= 365 ||
+                                        plan.name.toLowerCase().contains(
+                                          'year',
+                                        );
+                                    final chaiSuffix = isYearly
+                                        ? ' • ${context.tr('premium.chai_anchor', fallback: 'Half a cup of chai ☕')}'
+                                        : '';
+                                    return FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      alignment:
+                                          AlignmentDirectional.centerStart,
+                                      child: Text(
+                                        '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}$chaiSuffix',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: accentColor.withValues(
+                                            alpha: 0.9,
+                                          ),
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(width: 8.w),
+
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 120.w),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              if (!isGooglePlay)
+                                FittedBox(
                                   fit: BoxFit.scaleDown,
+                                  alignment: AlignmentDirectional.centerEnd,
                                   child: Text(
-                                    plan.tag,
+                                    currencyFormat.format(plan.oldPrice),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      color: Colors.white,
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.bold,
-                                      letterSpacing: 1,
+                                      color: isDark
+                                          ? Colors.white30
+                                          : Colors.black38,
+                                      fontSize: 14.sp,
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationColor: isDark
+                                          ? Colors.white54
+                                          : Colors.black54,
                                     ),
                                   ),
                                 ),
-                              );
-                              return VowlMotion.shouldReduceMotion(context)
-                                  ? tagWidget
-                                  : tagWidget
-                                      .animate(target: isSelected ? 1 : 0)
-                                      .scale(
-                                        begin: const Offset(0.9, 0.9),
-                                        end: const Offset(1.1, 1.1),
-                                        duration: 300.ms,
-                                        curve: Curves.elasticOut,
-                                      );
-                            },
+                              if (!isGooglePlay) SizedBox(height: 2.h),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: AlignmentDirectional.centerEnd,
+                                child: Text(
+                                  isGooglePlay
+                                      ? googlePlayPrice!
+                                      : currencyFormat.format(plan.price),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: isDark ? Colors.white : Colors.black,
+                                    fontSize: 24.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: -0.5,
+                                  ),
+                                ),
+                              ),
+                              if (!isGooglePlay && savingsPercent > 0) ...[
+                                SizedBox(height: 4.h),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 6.w,
+                                    vertical: 2.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: const Color(
+                                      0xFF10B981,
+                                    ).withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(6.r),
+                                  ),
+                                  child: Text(
+                                    '${context.tr('premium.save', fallback: 'Save')} $savingsPercent%',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: AppColors.emerald500,
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w800,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
-                    ],
+                      ],
+                    ),
                   ),
-                );
+
+                  // The gorgeous floating tag at the top right
+                  if (plan.tag.isNotEmpty)
+                    PositionedDirectional(
+                      top: -12.h,
+                      end: 20.w,
+                      child: Builder(
+                        builder: (context) {
+                          final tagWidget = Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  accentColor,
+                                  accentColor.withValues(alpha: 0.8),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(20.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: accentColor.withValues(alpha: 0.4),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                plan.tag,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: Colors.white,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                            ),
+                          );
+                          return VowlMotion.shouldReduceMotion(context)
+                              ? tagWidget
+                              : tagWidget
+                                    .animate(target: isSelected ? 1 : 0)
+                                    .scale(
+                                      begin: const Offset(0.9, 0.9),
+                                      end: const Offset(1.1, 1.1),
+                                      duration: 300.ms,
+                                      curve: Curves.elasticOut,
+                                    );
+                        },
+                      ),
+                    ),
+                ],
+              ),
+            );
 
             return VowlMotion.shouldReduceMotion(context)
                 ? cardContent
                 : cardContent
-                    .animate(target: isSelected ? 1 : 0)
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.02, 1.02),
-                    );
+                      .animate(target: isSelected ? 1 : 0)
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.02, 1.02),
+                      );
           },
         ),
       ),

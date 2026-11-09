@@ -36,15 +36,13 @@ class TrophyHeroShowcase extends StatelessWidget {
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     final cardBgColor = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF0F172A).withValues(alpha: 0.85)
-            : Colors.white);
+              ? AppColors.midnightNavy.withValues(alpha: 0.85)
+              : Colors.white);
 
     // Arrange slots: [Left (Index 1), Center (Index 0 - Main), Right (Index 2)]
     final mainBadgeId = pinnedBadgeIds.isNotEmpty ? pinnedBadgeIds[0] : null;
@@ -177,7 +175,9 @@ class TrophyHeroShowcase extends StatelessWidget {
     final canonical = TrophyRoomCubit.canonicalizeBadgeId(badgeId);
     final parts = canonical.split('_');
     final tier = parts.isNotEmpty ? parts[0].toUpperCase() : 'NOVICE';
-    final category = parts.length > 1 ? parts.sublist(1).join(' ').toUpperCase() : metadata.category.toUpperCase();
+    final category = parts.length > 1
+        ? parts.sublist(1).join(' ').toUpperCase()
+        : metadata.category.toUpperCase();
 
     return GestureDetector(
       behavior: HitTestBehavior.opaque,

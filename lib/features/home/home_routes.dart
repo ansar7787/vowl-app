@@ -139,9 +139,8 @@ class HomeRoutes {
           routes: [
             GoRoute(
               path: ranksRoute,
-              builder: (context, state) => const LeaderboardScreen(
-                showBackButton: false,
-              ),
+              builder: (context, state) =>
+                  const LeaderboardScreen(showBackButton: false),
             ),
           ],
         ),
@@ -219,7 +218,8 @@ class HomeRoutes {
       path: leaderboardRoute,
       parentNavigatorKey: AppRouter.rootNavigatorKey,
       pageBuilder: (context, state) {
-        final isGlobal = state.uri.queryParameters['tab'] == 'global' ||
+        final isGlobal =
+            state.uri.queryParameters['tab'] == 'global' ||
             state.extra == LeaderboardTimeframe.allTime;
         return fadeTransitionPage(
           child: LeaderboardScreen(
@@ -243,7 +243,9 @@ class HomeRoutes {
       path: AppRouter.referralRoute,
       pageBuilder: (context, state) {
         final initialTab = (state.extra is int) ? (state.extra as int) : 0;
-        final inviteCode = (state.extra is String) ? (state.extra as String) : null;
+        final inviteCode = (state.extra is String)
+            ? (state.extra as String)
+            : null;
         return fadeTransitionPage(
           child: ReferralHubScreen(
             initialInviteCode: inviteCode,

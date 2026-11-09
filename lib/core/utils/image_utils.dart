@@ -70,8 +70,9 @@ class ImageUtils {
         targetDimension,
         targetDimension,
       );
-      final byteData =
-          await croppedImage.toByteData(format: ui.ImageByteFormat.png);
+      final byteData = await croppedImage.toByteData(
+        format: ui.ImageByteFormat.png,
+      );
 
       if (byteData == null) {
         return sourceFile;
@@ -82,7 +83,10 @@ class ImageUtils {
           'avatar_square_${DateTime.now().millisecondsSinceEpoch}.png';
       final croppedFile = File('${tempDir.path}/$fileName');
 
-      await croppedFile.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
+      await croppedFile.writeAsBytes(
+        byteData.buffer.asUint8List(),
+        flush: true,
+      );
       return croppedFile;
     } catch (e) {
       if (kDebugMode) {
@@ -92,4 +96,3 @@ class ImageUtils {
     }
   }
 }
-

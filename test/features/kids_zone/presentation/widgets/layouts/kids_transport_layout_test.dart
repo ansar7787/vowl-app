@@ -64,10 +64,10 @@ void main() {
     question: '?',
     correctAnswer: '🚗',
     options: ['⛵', '✈️', '🚗'],
-    hint: 'It has four wheels, drives on the road, and has room for a few people.',
+    hint:
+        'It has four wheels, drives on the road, and has room for a few people.',
     emoji: '🚗',
-    explanation:
-        'A car has four wheels and a motor, and it drives on roads.',
+    explanation: 'A car has four wheels and a motor, and it drives on roads.',
     funFact: 'Some cars today run on electricity from a battery.',
   );
 
@@ -108,7 +108,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedState);
-    when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -120,12 +122,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled()).thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -133,21 +140,43 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX()).thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer((inv) => inv.positionalArguments.first as String);
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>()) di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<TranslationService>()) di.sl.unregister<TranslationService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
+      di.sl.unregister<KidsAudioService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<TranslationService>()) {
+      di.sl.unregister<TranslationService>();
+    }
 
     final mockTranslationService = MockTranslationService();
-    when(() => mockTranslationService.isLanguageConfigured()).thenAnswer((_) async => true);
-    when(() => mockTranslationService.getConfiguredLanguageName()).thenAnswer((_) async => 'Spanish');
-    when(() => mockTranslationService.getConfiguredSourceLanguageName()).thenAnswer((_) async => 'English');
+    when(
+      () => mockTranslationService.isLanguageConfigured(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockTranslationService.getConfiguredLanguageName(),
+    ).thenAnswer((_) async => 'Spanish');
+    when(
+      () => mockTranslationService.getConfiguredSourceLanguageName(),
+    ).thenAnswer((_) async => 'English');
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -208,40 +237,45 @@ void main() {
   }
 
   group('KidsTransportLayout Production Audit Tests', () {
-    testWidgets('renders highway gantry, route badge, clue scenario, and 3 transit cards',
-        (tester) async {
-      await pumpTransportLayout(tester);
+    testWidgets(
+      'renders highway gantry, route badge, clue scenario, and 3 transit cards',
+      (tester) async {
+        await pumpTransportLayout(tester);
 
-      expect(find.text('Route 2'), findsOneWidget);
-      expect(
-        find.text(
-          'Which vehicle does a family often keep at home for trips to the shops?',
-        ),
-        findsWidgets,
-      );
-      expect(find.text('Car'), findsOneWidget);
-      expect(find.text('Sailboat'), findsOneWidget);
-      expect(find.text('Airplane'), findsOneWidget);
-      expect(find.text('Listen'), findsOneWidget);
-    });
+        expect(find.text('Route 2'), findsOneWidget);
+        expect(
+          find.text(
+            'Which vehicle does a family often keep at home for trips to the shops?',
+          ),
+          findsWidgets,
+        );
+        expect(find.text('Car'), findsOneWidget);
+        expect(find.text('Sailboat'), findsOneWidget);
+        expect(find.text('Airplane'), findsOneWidget);
+        expect(find.text('Listen'), findsOneWidget);
+      },
+    );
 
-    testWidgets('supports accessible tap-to-answer submission (dual interaction)',
-        (tester) async {
-      await pumpTransportLayout(tester);
+    testWidgets(
+      'supports accessible tap-to-answer submission (dual interaction)',
+      (tester) async {
+        await pumpTransportLayout(tester);
 
-      // Tap the Car option card
-      await tester.tap(find.text('Car'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        // Tap the Car option card
+        await tester.tap(find.text('Car'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockTTSService.speak('Car', force: true)).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-      verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
-    });
+        verify(() => mockTTSService.speak('Car', force: true)).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+        verify(() => mockLogger.debug(any())).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('supports drag-and-drop to highway gantry destination target',
-        (tester) async {
+    testWidgets('supports drag-and-drop to highway gantry destination target', (
+      tester,
+    ) async {
       await pumpTransportLayout(tester);
 
       final carFinder = find.text('Car');
@@ -264,8 +298,9 @@ void main() {
       verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
     });
 
-    testWidgets('replays clue audio when Listen button is tapped',
-        (tester) async {
+    testWidgets('replays clue audio when Listen button is tapped', (
+      tester,
+    ) async {
       await pumpTransportLayout(tester);
 
       final listenFinder = find.text('Listen');
@@ -283,8 +318,9 @@ void main() {
       ).called(1);
     });
 
-    testWidgets('pronounces vehicle name when card speaker button is tapped',
-        (tester) async {
+    testWidgets('pronounces vehicle name when card speaker button is tapped', (
+      tester,
+    ) async {
       await pumpTransportLayout(tester);
 
       final speakerButtons = find.byIcon(Icons.volume_up_rounded);
@@ -300,8 +336,9 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('displays celebratory route clear banner upon correct answer',
-        (tester) async {
+    testWidgets('displays celebratory route clear banner upon correct answer', (
+      tester,
+    ) async {
       const solvedState = KidsLoaded(
         quests: [testQuestBasic],
         originalTotalQuests: 1,
@@ -318,8 +355,9 @@ void main() {
       expect(find.text('Car'), findsWidgets);
     });
 
-    testWidgets('renders walking scenario with pedestrians correctly',
-        (tester) async {
+    testWidgets('renders walking scenario with pedestrians correctly', (
+      tester,
+    ) async {
       const walkingState = KidsLoaded(
         quests: [testQuestWalking],
         originalTotalQuests: 1,
@@ -343,8 +381,9 @@ void main() {
       expect(find.text('Car'), findsOneWidget);
     });
 
-    testWidgets('dims a wrong distractor when lifeline hintUsed is true',
-        (tester) async {
+    testWidgets('dims a wrong distractor when lifeline hintUsed is true', (
+      tester,
+    ) async {
       const hintState = KidsLoaded(
         quests: [testQuestBasic],
         originalTotalQuests: 1,
@@ -366,8 +405,9 @@ void main() {
       expect(animatedOpacities.any((ao) => ao.opacity == 0.32), isTrue);
     });
 
-    testWidgets('locks interaction when question is already answered',
-        (tester) async {
+    testWidgets('locks interaction when question is already answered', (
+      tester,
+    ) async {
       const answeredState = KidsLoaded(
         quests: [testQuestBasic],
         originalTotalQuests: 1,
@@ -382,7 +422,9 @@ void main() {
 
       reset(mockKidsBloc);
       when(() => mockKidsBloc.state).thenReturn(answeredState);
-      when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
+      when(
+        () => mockKidsBloc.stream,
+      ).thenAnswer((_) => const Stream<KidsState>.empty());
 
       // Tapping option should not submit again
       await tester.tap(find.text('Car').first, warnIfMissed: false);
@@ -392,167 +434,250 @@ void main() {
       verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
     });
 
-    testWidgets('renders without overflow on narrow 320dp screen',
-        (tester) async {
+    testWidgets('renders without overflow on narrow 320dp screen', (
+      tester,
+    ) async {
       await pumpTransportLayout(tester, width: 320, height: 568);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders without overflow on large 430dp screen',
-        (tester) async {
+    testWidgets('renders without overflow on large 430dp screen', (
+      tester,
+    ) async {
       await pumpTransportLayout(tester, width: 430, height: 932);
       expect(tester.takeException(), isNull);
     });
   });
 
   group('GameInstructionService Integration Tests', () {
-    testWidgets('GameInstructionService Level 1 transport briefing matches game mechanics',
-        (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              final briefing = GameInstructionService.getBriefing(
-                context,
-                null,
-                'transport',
-                level: 1,
-              );
-              expect(briefing.title, 'Zoom Zoom!');
-              expect(briefing.actionText, 'Start Engine');
-              expect(briefing.icon, Icons.directions_car_rounded);
-              expect(briefing.objective, contains('highway sign'));
-              expect(briefing.rules.length, 3);
-              expect(briefing.rules[0], 'Read or listen to the clue on the highway sign');
-              expect(briefing.rules[1], 'Tap or drag the matching vehicle to answer');
-              expect(briefing.rules[2], 'Tap any card\'s speaker to hear the word pronounced');
-              expect(briefing.tip, contains('Think about where each vehicle travels'));
-              return const SizedBox.shrink();
-            },
+    testWidgets(
+      'GameInstructionService Level 1 transport briefing matches game mechanics',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                final briefing = GameInstructionService.getBriefing(
+                  context,
+                  null,
+                  'transport',
+                  level: 1,
+                );
+                expect(briefing.title, 'Zoom Zoom!');
+                expect(briefing.actionText, 'Start Engine');
+                expect(briefing.icon, Icons.directions_car_rounded);
+                expect(briefing.objective, contains('highway sign'));
+                expect(briefing.rules.length, 3);
+                expect(
+                  briefing.rules[0],
+                  'Read or listen to the clue on the highway sign',
+                );
+                expect(
+                  briefing.rules[1],
+                  'Tap or drag the matching vehicle to answer',
+                );
+                expect(
+                  briefing.rules[2],
+                  'Tap any card\'s speaker to hear the word pronounced',
+                );
+                expect(
+                  briefing.tip,
+                  contains('Think about where each vehicle travels'),
+                );
+                return const SizedBox.shrink();
+              },
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
 
-    testWidgets('GameInstructionService Level 100 milestone briefing recognizes century achievement',
-        (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              final briefing100 = GameInstructionService.getBriefing(
-                context,
-                null,
-                'transport',
-                level: 100,
-              );
-              expect(briefing100.title, 'Century Traveler! 🏆');
-              expect(briefing100.actionText, 'Start Level 100');
-              expect(briefing100.icon, Icons.emoji_events_rounded);
-              expect(briefing100.objective, contains('Level 100'));
-              expect(briefing100.rules.length, 3);
-              expect(briefing100.rules[0], contains('milestone clue'));
-              expect(briefing100.rules[1], contains('Tap or drag'));
-              expect(briefing100.rules[2], contains('Celebrate 100 levels'));
-              expect(briefing100.tip, contains('land, sea, and air'));
-              return const SizedBox.shrink();
-            },
+    testWidgets(
+      'GameInstructionService Level 100 milestone briefing recognizes century achievement',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                final briefing100 = GameInstructionService.getBriefing(
+                  context,
+                  null,
+                  'transport',
+                  level: 100,
+                );
+                expect(briefing100.title, 'Century Traveler! 🏆');
+                expect(briefing100.actionText, 'Start Level 100');
+                expect(briefing100.icon, Icons.emoji_events_rounded);
+                expect(briefing100.objective, contains('Level 100'));
+                expect(briefing100.rules.length, 3);
+                expect(briefing100.rules[0], contains('milestone clue'));
+                expect(briefing100.rules[1], contains('Tap or drag'));
+                expect(briefing100.rules[2], contains('Celebrate 100 levels'));
+                expect(briefing100.tip, contains('land, sea, and air'));
+                return const SizedBox.shrink();
+              },
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   });
 
   group('StoryService Transport Integration Tests', () {
-    testWidgets('StoryService provides human, educational narrative beats for Level 1 and Level 100',
-        (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              final storyService = StoryService();
+    testWidgets(
+      'StoryService provides human, educational narrative beats for Level 1 and Level 100',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) {
+                final storyService = StoryService();
 
-              // Level 1: Welcome beat
-              final beat1 = storyService.getStoryBeat(context, 'transport', 1);
-              expect(beat1, isNotNull);
-              expect(beat1!.title, 'NEW QUEST');
-              expect(beat1.text, contains('Welcome traveler!'));
-              expect(beat1.text, contains('land, sea, and in the air!'));
+                // Level 1: Welcome beat
+                final beat1 = storyService.getStoryBeat(
+                  context,
+                  'transport',
+                  1,
+                );
+                expect(beat1, isNotNull);
+                expect(beat1!.title, 'NEW QUEST');
+                expect(beat1.text, contains('Welcome traveler!'));
+                expect(beat1.text, contains('land, sea, and in the air!'));
 
-              // Level 100: Grand milestone beat
-              final beat100 = storyService.getStoryBeat(context, 'transport', 100);
-              expect(beat100, isNotNull);
-              expect(beat100!.title, 'ADVENTURE LOG');
-              expect(beat100.text, contains('One hundred levels of travel!'));
-              expect(beat100.text, contains('road, across oceans, and up in the sky!'));
+                // Level 100: Grand milestone beat
+                final beat100 = storyService.getStoryBeat(
+                  context,
+                  'transport',
+                  100,
+                );
+                expect(beat100, isNotNull);
+                expect(beat100!.title, 'ADVENTURE LOG');
+                expect(beat100.text, contains('One hundred levels of travel!'));
+                expect(
+                  beat100.text,
+                  contains('road, across oceans, and up in the sky!'),
+                );
 
-              return const SizedBox.shrink();
-            },
+                return const SizedBox.shrink();
+              },
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   });
 
-  group('Curriculum Forensic Verification (All 20 Batches, 200 Levels, 600 Quests)', () {
-    test('validates all 600 quests across 20 transport batches', () {
-      int totalLevels = 0;
-      int totalQuests = 0;
+  group(
+    'Curriculum Forensic Verification (All 20 Batches, 200 Levels, 600 Quests)',
+    () {
+      test('validates all 600 quests across 20 transport batches', () {
+        int totalLevels = 0;
+        int totalQuests = 0;
 
-      for (int b = 1; b <= 20; b++) {
-        final file = File('assets/curriculum/kids/transport/transport_batch_$b.json');
-        expect(file.existsSync(), isTrue, reason: 'Batch $b file must exist');
+        for (int b = 1; b <= 20; b++) {
+          final file = File(
+            'assets/curriculum/kids/transport/transport_batch_$b.json',
+          );
+          expect(file.existsSync(), isTrue, reason: 'Batch $b file must exist');
 
-        final content = jsonDecode(file.readAsStringSync()) as List<dynamic>;
-        expect(content.length, 10, reason: 'Each batch must contain exactly 10 levels');
+          final content = jsonDecode(file.readAsStringSync()) as List<dynamic>;
+          expect(
+            content.length,
+            10,
+            reason: 'Each batch must contain exactly 10 levels',
+          );
 
-        for (final levelData in content) {
-          totalLevels++;
-          final quests = levelData['quests'] as List<dynamic>;
-          expect(quests.length, 3, reason: 'Level ${levelData['level']} must contain 3 quests');
+          for (final levelData in content) {
+            totalLevels++;
+            final quests = levelData['quests'] as List<dynamic>;
+            expect(
+              quests.length,
+              3,
+              reason: 'Level ${levelData['level']} must contain 3 quests',
+            );
 
-          for (final q in quests) {
-            totalQuests++;
-            final id = q['id'] as String;
-            final instruction = q['instruction'] as String;
-            final correctAnswer = q['correctAnswer'] as String;
-            final options = (q['options'] as List<dynamic>).cast<String>();
-            final hint = q['hint'] as String;
-            final emoji = q['emoji'] as String;
-            final explanation = q['explanation'] as String;
-            final funFact = q['funFact'] as String;
+            for (final q in quests) {
+              totalQuests++;
+              final id = q['id'] as String;
+              final instruction = q['instruction'] as String;
+              final correctAnswer = q['correctAnswer'] as String;
+              final options = (q['options'] as List<dynamic>).cast<String>();
+              final hint = q['hint'] as String;
+              final emoji = q['emoji'] as String;
+              final explanation = q['explanation'] as String;
+              final funFact = q['funFact'] as String;
 
-            expect(id, isNotEmpty, reason: '$id has empty id');
-            expect(instruction, isNotEmpty, reason: '$id has empty instruction');
-            expect(correctAnswer, isNotEmpty, reason: '$id has empty correctAnswer');
-            expect(options.length, 3, reason: '$id options length must be 3');
-            expect(options.contains(correctAnswer), isTrue, reason: '$id options must contain correctAnswer');
-            expect(hint, isNotEmpty, reason: '$id has empty hint');
-            expect(emoji, isNotEmpty, reason: '$id has empty emoji');
-            expect(explanation, isNotEmpty, reason: '$id has empty explanation');
-            expect(funFact, isNotEmpty, reason: '$id has empty funFact');
+              expect(id, isNotEmpty, reason: '$id has empty id');
+              expect(
+                instruction,
+                isNotEmpty,
+                reason: '$id has empty instruction',
+              );
+              expect(
+                correctAnswer,
+                isNotEmpty,
+                reason: '$id has empty correctAnswer',
+              );
+              expect(options.length, 3, reason: '$id options length must be 3');
+              expect(
+                options.contains(correctAnswer),
+                isTrue,
+                reason: '$id options must contain correctAnswer',
+              );
+              expect(hint, isNotEmpty, reason: '$id has empty hint');
+              expect(emoji, isNotEmpty, reason: '$id has empty emoji');
+              expect(
+                explanation,
+                isNotEmpty,
+                reason: '$id has empty explanation',
+              );
+              expect(funFact, isNotEmpty, reason: '$id has empty funFact');
 
-            // Verify that TransportVocabularyHelper safely processes all options
-            for (final opt in options) {
-              expect(() => TransportVocabularyHelper.getLabel(opt), returnsNormally);
-              expect(() => TransportVocabularyHelper.getSpeechText(opt), returnsNormally);
+              // Verify that TransportVocabularyHelper safely processes all options
+              for (final opt in options) {
+                expect(
+                  () => TransportVocabularyHelper.getLabel(opt),
+                  returnsNormally,
+                );
+                expect(
+                  () => TransportVocabularyHelper.getSpeechText(opt),
+                  returnsNormally,
+                );
+              }
             }
           }
         }
-      }
 
-      expect(totalLevels, 200);
-      expect(totalQuests, 600);
+        expect(totalLevels, 200);
+        expect(totalQuests, 600);
 
-      // Verify core transport vocabulary coverage
-      const coreVehicles = ['🚗', '🚙', '🚌', '🚆', '🚄', '✈️', '🚁', '🚢', '⛵', '🚲', '🏍️', '🚕', '🚖', '🚑', '🚒', '🚓'];
-      for (final v in coreVehicles) {
-        expect(
-          TransportVocabularyHelper.getLabel(v),
-          isNotEmpty,
-          reason: 'Core transport vehicle $v must have an English label',
-        );
-      }
-    });
-  });
+        // Verify core transport vocabulary coverage
+        const coreVehicles = [
+          '🚗',
+          '🚙',
+          '🚌',
+          '🚆',
+          '🚄',
+          '✈️',
+          '🚁',
+          '🚢',
+          '⛵',
+          '🚲',
+          '🏍️',
+          '🚕',
+          '🚖',
+          '🚑',
+          '🚒',
+          '🚓',
+        ];
+        for (final v in coreVehicles) {
+          expect(
+            TransportVocabularyHelper.getLabel(v),
+            isNotEmpty,
+            reason: 'Core transport vehicle $v must have an English label',
+          );
+        }
+      });
+    },
+  );
 }

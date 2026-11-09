@@ -35,7 +35,10 @@ class AudioFillBlanksJar extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: color.withValues(alpha: 0.12),
-            border: Border.all(color: color.withValues(alpha: 0.32), width: 2.w),
+            border: Border.all(
+              color: color.withValues(alpha: 0.32),
+              width: 2.w,
+            ),
             boxShadow: [
               BoxShadow(
                 color: color.withValues(alpha: 0.18),

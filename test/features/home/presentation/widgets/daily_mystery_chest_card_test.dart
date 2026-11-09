@@ -50,7 +50,9 @@ void main() {
     coins: 150,
     totalExp: 1200,
     badges: const ['first_win'],
-    completedLevels: const {'vocabulary': [1, 2]},
+    completedLevels: const {
+      'vocabulary': [1, 2],
+    },
     isPremium: false,
     hasClaimedReferral: false,
   );
@@ -176,29 +178,26 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
 
-    await tester.pumpWidget(createSubject(
-      themeMode: themeMode,
-      width: width,
-      height: height,
-    ));
+    await tester.pumpWidget(
+      createSubject(themeMode: themeMode, width: width, height: height),
+    );
   }
 
-  testWidgets(
-    'renders nothing when isDailyRewardAvailable is false',
-    (tester) async {
-      whenListen(
-        mockEconomyBloc,
-        Stream.value(const EconomyState(isDailyRewardAvailable: false)),
-        initialState: const EconomyState(isDailyRewardAvailable: false),
-      );
+  testWidgets('renders nothing when isDailyRewardAvailable is false', (
+    tester,
+  ) async {
+    whenListen(
+      mockEconomyBloc,
+      Stream.value(const EconomyState(isDailyRewardAvailable: false)),
+      initialState: const EconomyState(isDailyRewardAvailable: false),
+    );
 
-      await pumpCard(tester);
-      await tester.pump();
+    await pumpCard(tester);
+    await tester.pump();
 
-      expect(find.byType(DailyMysteryChestCard), findsOneWidget);
-      expect(find.text('DAILY MYSTERY'), findsNothing);
-    },
-  );
+    expect(find.byType(DailyMysteryChestCard), findsOneWidget);
+    expect(find.text('DAILY MYSTERY'), findsNothing);
+  });
 
   testWidgets(
     'renders card with vector gift icon and sparkles when available',
@@ -216,23 +215,22 @@ void main() {
     },
   );
 
-  testWidgets(
-    'hides card when user already claimed today in SharedPreferences',
-    (tester) async {
-      final now = DateTime.now().toLocal();
-      final todayStr =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      SharedPreferences.setMockInitialValues({
-        'last_daily_mystery_claimed_date_user_123': todayStr,
-      });
+  testWidgets('hides card when user already claimed today in SharedPreferences', (
+    tester,
+  ) async {
+    final now = DateTime.now().toLocal();
+    final todayStr =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    SharedPreferences.setMockInitialValues({
+      'last_daily_mystery_claimed_date_user_123': todayStr,
+    });
 
-      await pumpCard(tester);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+    await pumpCard(tester);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.text('DAILY MYSTERY'), findsNothing);
-    },
-  );
+    expect(find.text('DAILY MYSTERY'), findsNothing);
+  });
 
   testWidgets(
     'tapping CLAIM triggers audio, haptic, bloc dispatch, and collapse animation',
@@ -252,7 +250,9 @@ void main() {
 
       // Verify EconomyBloc received the claim event
       verify(
-        () => mockEconomyBloc.add(any(that: isA<EconomyClaimDailyChestRequested>())),
+        () => mockEconomyBloc.add(
+          any(that: isA<EconomyClaimDailyChestRequested>()),
+        ),
       ).called(1);
 
       // Verify victory text displays
@@ -280,16 +280,12 @@ void main() {
     },
   );
 
-  testWidgets(
-    'renders cleanly in Light Mode without errors',
-    (tester) async {
-      await pumpCard(tester, themeMode: ThemeMode.light);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+  testWidgets('renders cleanly in Light Mode without errors', (tester) async {
+    await pumpCard(tester, themeMode: ThemeMode.light);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(DailyMysteryChestCard), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+    expect(find.byType(DailyMysteryChestCard), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }
-

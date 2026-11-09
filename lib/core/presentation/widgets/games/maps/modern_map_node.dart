@@ -187,10 +187,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
   }
 
   Widget _buildMascotMarker(BuildContext context) {
-    final theme = LevelThemeHelper.of(
-      context,
-      widget.gameType,
-    );
+    final theme = LevelThemeHelper.of(context, widget.gameType);
     final user = context.read<AuthBloc>().state.user;
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
 
@@ -298,7 +295,8 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     bool isNextZone,
     Color tierColor,
   ) {
-    final isMidnight = widget.isDark &&
+    final isMidnight =
+        widget.isDark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final darkNodeBase = isMidnight ? Colors.black : AppColors.slate900;
 
@@ -697,7 +695,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}',
                           );
                           if (context.mounted) {
-                            context.read<AuthBloc>().add(const AuthRefreshUser());
+                            context.read<AuthBloc>().add(
+                              const AuthRefreshUser(),
+                            );
                           }
                         },
                         child: ExcludeSemantics(

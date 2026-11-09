@@ -149,7 +149,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
-                        color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
+                        color: isDark
+                            ? Colors.amber.shade300
+                            : Colors.amber.shade800,
                         fontWeight: FontWeight.w600,
                         height: 1.3,
                       ),
@@ -207,7 +209,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.03),
                 borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(
-                  color: outlineColor.withValues(alpha: text.isEmpty ? 0.1 : 0.3),
+                  color: outlineColor.withValues(
+                    alpha: text.isEmpty ? 0.1 : 0.3,
+                  ),
                   width: 1.0,
                 ),
               ),
@@ -274,7 +278,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
-                        color: isDark ? Colors.grey.shade200 : AppColors.slate800,
+                        color: isDark
+                            ? Colors.grey.shade200
+                            : AppColors.slate800,
                         height: 1.35,
                       ),
                     ),
@@ -287,7 +293,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
+                        color: isDark
+                            ? Colors.grey.shade400
+                            : Colors.grey.shade600,
                         height: 1.3,
                       ),
                     ),

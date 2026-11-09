@@ -128,6 +128,7 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -197,7 +198,8 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                             Icon(
                               Icons.restaurant_rounded,
                               size: 16.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : AppColors.rose700,
@@ -208,7 +210,8 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                                 state.answerStatus == AnswerStatus.correct
                                     ? context.tr(
                                         'games.kids_food_done',
-                                        fallback: 'Delicious! Order served correctly!',
+                                        fallback:
+                                            'Delicious! Order served correctly!',
                                       )
                                     : context.tr(
                                         'games.kids_food_drag',
@@ -219,7 +222,8 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.85)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -288,7 +292,9 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                   width: width,
                   height: height,
                   decoration: BoxDecoration(
-                    color: isHovering ? _LocalPalette.colorfef2f2 : Colors.white,
+                    color: isHovering
+                        ? _LocalPalette.colorfef2f2
+                        : Colors.white,
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: isHovering
@@ -316,8 +322,7 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           if (quest.emoji != null &&
-                              (quest.question == '?' ||
-                                  quest.question == null))
+                              (quest.question == '?' || quest.question == null))
                             state.answerStatus == AnswerStatus.correct
                                 ? Text(
                                     quest.emoji!,
@@ -334,20 +339,20 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                                     ),
                                   ),
                           if (state.answerStatus != AnswerStatus.correct ||
-                              (quest.question != '?' &&
-                                  quest.question != null))
+                              (quest.question != '?' && quest.question != null))
                             KidsFittedText(
                               quest.question ?? '?',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize:
                                     (quest.question == '?' ||
-                                            quest.question == null)
-                                        ? 48.sp
-                                        : 20.sp,
+                                        quest.question == null)
+                                    ? 48.sp
+                                    : 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.rose700.withValues(
-                                  alpha: (quest.question == '?' ||
+                                  alpha:
+                                      (quest.question == '?' ||
                                           quest.question == null)
                                       ? 0.7
                                       : 1.0,
@@ -550,8 +555,9 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                 height: 44.h,
                 decoration: BoxDecoration(
                   color: AppColors.slate200,
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(30.r)),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(30.r),
+                  ),
                   border: Border.all(color: AppColors.slate400, width: 1.5),
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
@@ -605,8 +611,9 @@ class _KidsFoodLayoutState extends State<KidsFoodLayout> {
                 height: 60.h,
                 decoration: BoxDecoration(
                   color: AppColors.slate100,
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(14.r)),
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.circular(14.r),
+                  ),
                   border: Border.all(color: AppColors.slate400, width: 1.5),
                   boxShadow: [
                     BoxShadow(

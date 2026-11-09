@@ -53,15 +53,15 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
               color: isHovering
                   ? color.withValues(alpha: isDark ? 0.2 : 0.1)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.04)
-                      : Colors.white),
+                        ? Colors.white.withValues(alpha: 0.04)
+                        : Colors.white),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
                 color: isHovering
                     ? color
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : color.withValues(alpha: 0.15)),
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : color.withValues(alpha: 0.15)),
                 width: isHovering ? 2.0 : 1.5,
               ),
               boxShadow: [
@@ -69,8 +69,8 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
                   color: isHovering
                       ? color.withValues(alpha: 0.2)
                       : (isDark
-                          ? Colors.black.withValues(alpha: 0.2)
-                          : Colors.black.withValues(alpha: 0.03)),
+                            ? Colors.black.withValues(alpha: 0.2)
+                            : Colors.black.withValues(alpha: 0.03)),
                   blurRadius: isHovering ? 16 : 10,
                   offset: const Offset(0, 3),
                 ),

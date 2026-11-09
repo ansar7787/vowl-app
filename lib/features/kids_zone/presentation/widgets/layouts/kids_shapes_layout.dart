@@ -238,6 +238,7 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
     } catch (_) {}
     return null;
   }
+
   @override
   void dispose() {
     try {
@@ -270,13 +271,17 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
             final isCompactHeight = availableHeight < 680;
             final isUltraCompactHeight = availableHeight < 580;
 
-            final craneArmWidth = (constraints.maxWidth * 0.48).clamp(140.0, 210.0).w;
-            final blueprintWidth = (constraints.maxWidth * 0.92).clamp(280.0, 420.0).w;
+            final craneArmWidth = (constraints.maxWidth * 0.48)
+                .clamp(140.0, 210.0)
+                .w;
+            final blueprintWidth = (constraints.maxWidth * 0.92)
+                .clamp(280.0, 420.0)
+                .w;
             final blueprintHeight = isUltraCompactHeight
                 ? 170.h
                 : isCompactHeight
-                    ? 195.h
-                    : 220.h;
+                ? 195.h
+                : 220.h;
 
             return SingleChildScrollView(
               physics: const ClampingScrollPhysics(),
@@ -287,7 +292,9 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight,
+                      ),
 
                       // Construction Crane Assembly holding Blueprint
                       _buildBlueprintCrane(
@@ -313,7 +320,12 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                       SizedBox(height: isCompactHeight ? 8.h : 10.h),
 
                       // The Toy Building Blocks (Shape Options)
-                      _buildToyBlocksRow(context, state, quest, isCompact: isCompactHeight),
+                      _buildToyBlocksRow(
+                        context,
+                        state,
+                        quest,
+                        isCompact: isCompactHeight,
+                      ),
 
                       SizedBox(height: 14.h),
                     ],
@@ -349,7 +361,8 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         final isAnswered = state.answerStatus.isAnswered;
-        final isCorrectAnswer = isAnswered &&
+        final isCorrectAnswer =
+            isAnswered &&
             (_selectedOption == quest.correctAnswer ||
                 state.answerStatus == AnswerStatus.correct);
 
@@ -421,8 +434,8 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                       color: isCorrectAnswer
                           ? const Color(0xFF10B981)
                           : isHovering
-                              ? const Color(0xFFFACC15)
-                              : Colors.white.withValues(alpha: 0.85),
+                          ? const Color(0xFFFACC15)
+                          : Colors.white.withValues(alpha: 0.85),
                       width: isHovering || isCorrectAnswer ? 3.5 : 2.5,
                     ),
                     boxShadow: [
@@ -430,8 +443,8 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                         color: isHovering
                             ? const Color(0xFFFACC15).withValues(alpha: 0.35)
                             : isCorrectAnswer
-                                ? const Color(0xFF10B981).withValues(alpha: 0.35)
-                                : Colors.black.withValues(alpha: 0.3),
+                            ? const Color(0xFF10B981).withValues(alpha: 0.35)
+                            : Colors.black.withValues(alpha: 0.3),
                         blurRadius: isHovering || isCorrectAnswer ? 16 : 10,
                         offset: const Offset(0, 6),
                       ),
@@ -449,13 +462,28 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
 
                       // Blueprint Corner Drafting Pins
                       Positioned(top: 6.h, left: 6.w, child: _buildCornerPin()),
-                      Positioned(top: 6.h, right: 6.w, child: _buildCornerPin()),
-                      Positioned(bottom: 6.h, left: 6.w, child: _buildCornerPin()),
-                      Positioned(bottom: 6.h, right: 6.w, child: _buildCornerPin()),
+                      Positioned(
+                        top: 6.h,
+                        right: 6.w,
+                        child: _buildCornerPin(),
+                      ),
+                      Positioned(
+                        bottom: 6.h,
+                        left: 6.w,
+                        child: _buildCornerPin(),
+                      ),
+                      Positioned(
+                        bottom: 6.h,
+                        right: 6.w,
+                        child: _buildCornerPin(),
+                      ),
 
                       // Blueprint Content
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 8.h,
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -464,21 +492,29 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Flexible(
-                                  child: _buildSubtypeBadge(_extractSubtype(quest)),
+                                  child: _buildSubtypeBadge(
+                                    _extractSubtype(quest),
+                                  ),
                                 ),
                                 SizedBox(width: 6.w),
                                 ScaleButton(
-                                  onTap: isAnswered ? null : () => _replayQuestionAudio(quest),
+                                  onTap: isAnswered
+                                      ? null
+                                      : () => _replayQuestionAudio(quest),
                                   child: Semantics(
                                     label: 'Replay clue audio',
                                     button: !isAnswered,
                                     child: Container(
                                       padding: EdgeInsets.all(5.w),
                                       decoration: BoxDecoration(
-                                        color: Colors.white.withValues(alpha: 0.15),
+                                        color: Colors.white.withValues(
+                                          alpha: 0.15,
+                                        ),
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                          color: Colors.white.withValues(alpha: 0.25),
+                                          color: Colors.white.withValues(
+                                            alpha: 0.25,
+                                          ),
                                           width: 1,
                                         ),
                                       ),
@@ -491,57 +527,60 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                                   ),
                                 ),
                               ],
-                          ),
+                            ),
 
-                          // Target Center Silhouette / Object Display
-                          Expanded(
-                            child: Center(
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: _buildTargetCenter(
-                                  quest: quest,
-                                  isHovering: isHovering,
-                                  isCorrectAnswer: isCorrectAnswer,
-                                  isCompact: isCompact,
+                            // Target Center Silhouette / Object Display
+                            Expanded(
+                              child: Center(
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: _buildTargetCenter(
+                                    quest: quest,
+                                    isHovering: isHovering,
+                                    isCorrectAnswer: isCorrectAnswer,
+                                    isCompact: isCompact,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
 
-                          // Bottom Blueprint Blueprint Stamp
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.25),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              isCorrectAnswer
-                                  ? '✨ Nice Match! ✨'
-                                  : isHovering
-                                      ? 'Drop shape here'
-                                      : 'Shape • Level ${state.level}',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 0.4,
-                                color: isCorrectAnswer
-                                    ? const Color(0xFF34D399)
-                                    : isHovering
-                                        ? const Color(0xFFFDE047)
-                                        : Colors.white.withValues(alpha: 0.85),
+                            // Bottom Blueprint Blueprint Stamp
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 4.h,
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.clip,
+                              decoration: BoxDecoration(
+                                color: Colors.black.withValues(alpha: 0.25),
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Text(
+                                isCorrectAnswer
+                                    ? '✨ Nice Match! ✨'
+                                    : isHovering
+                                    ? 'Drop shape here'
+                                    : 'Shape • Level ${state.level}',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.4,
+                                  color: isCorrectAnswer
+                                      ? const Color(0xFF34D399)
+                                      : isHovering
+                                      ? const Color(0xFFFDE047)
+                                      : Colors.white.withValues(alpha: 0.85),
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.clip,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
               ),
             ),
           ],
@@ -622,15 +661,15 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
         color: isHovering
             ? const Color(0xFFFACC15).withValues(alpha: 0.15)
             : isCorrectAnswer
-                ? const Color(0xFF10B981).withValues(alpha: 0.2)
-                : Colors.white.withValues(alpha: 0.08),
+            ? const Color(0xFF10B981).withValues(alpha: 0.2)
+            : Colors.white.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
           color: isCorrectAnswer
               ? const Color(0xFF34D399)
               : isHovering
-                  ? const Color(0xFFFDE047)
-                  : Colors.white.withValues(alpha: 0.3),
+              ? const Color(0xFFFDE047)
+              : Colors.white.withValues(alpha: 0.3),
           width: 1.5,
           strokeAlign: BorderSide.strokeAlignCenter,
         ),
@@ -640,22 +679,18 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (emojiText != null && emojiText.isNotEmpty)
-            Text(
-              emojiText,
-              style: TextStyle(fontSize: emojiSize),
-            ).animate(
-              onPlay: (controller) => controller.repeat(reverse: true),
-            ).scale(
-              begin: const Offset(0.96, 0.96),
-              end: const Offset(1.04, 1.04),
-              duration: 1800.ms,
-              curve: Curves.easeInOut,
-            )
+            Text(emojiText, style: TextStyle(fontSize: emojiSize))
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .scale(
+                  begin: const Offset(0.96, 0.96),
+                  end: const Offset(1.04, 1.04),
+                  duration: 1800.ms,
+                  curve: Curves.easeInOut,
+                )
           else
-            Text(
-              '📐',
-              style: TextStyle(fontSize: emojiSize),
-            ),
+            Text('📐', style: TextStyle(fontSize: emojiSize)),
           if (isCorrectAnswer) ...[
             SizedBox(width: 8.w),
             Container(
@@ -693,96 +728,96 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
         label: 'Shape clue: $instruction. Tap to listen.',
         button: !state.answerStatus.isAnswered,
         child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.dark
-              ? const Color(0xFF1E293B)
-              : Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.06),
-              offset: const Offset(0, 3),
-              blurRadius: 8,
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: Theme.of(context).brightness == Brightness.dark
+                ? const Color(0xFF1E293B)
+                : Colors.white,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
+              width: 1.5,
             ),
-          ],
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Question Clue Icon
-            Container(
-              width: 38.w,
-              height: 38.w,
-              decoration: BoxDecoration(
-                color: const Color(0xFFFEF3C7),
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: const Color(0xFFF59E0B),
-                  width: 1.5,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                offset: const Offset(0, 3),
+                blurRadius: 8,
+              ),
+            ],
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Question Clue Icon
+              Container(
+                width: 38.w,
+                height: 38.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFEF3C7),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: const Color(0xFFF59E0B),
+                    width: 1.5,
+                  ),
+                ),
+                child: Center(
+                  child: Text('📐', style: TextStyle(fontSize: 18.sp)),
                 ),
               ),
-              child: Center(
-                child: Text('📐', style: TextStyle(fontSize: 18.sp)),
-              ),
-            ),
-            SizedBox(width: 12.w),
+              SizedBox(width: 12.w),
 
-            // Instruction Clue Text
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'SHAPE CLUE',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0.5,
-                      color: const Color(0xFFD97706),
+              // Instruction Clue Text
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'SHAPE CLUE',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.5,
+                        color: const Color(0xFFD97706),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    instruction,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w600,
-                      height: 1.3,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white
-                          : const Color(0xFF1F2937),
+                    SizedBox(height: 2.h),
+                    Text(
+                      instruction,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        height: 1.3,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : const Color(0xFF1F2937),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(width: 8.w),
+              SizedBox(width: 8.w),
 
-            // Tap-to-Speak Button
-            Container(
-              padding: EdgeInsets.all(7.w),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                shape: BoxShape.circle,
+              // Tap-to-Speak Button
+              Container(
+                padding: EdgeInsets.all(7.w),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.volume_up_rounded,
+                  size: 20.sp,
+                  color: const Color(0xFFD97706),
+                ),
               ),
-              child: Icon(
-                Icons.volume_up_rounded,
-                size: 20.sp,
-                color: const Color(0xFFD97706),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
       ),
     );
   }
@@ -917,21 +952,19 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
         // Studs on top of the Lego block
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: List.generate(
-            2,
-            (i) => _buildStud(studColor, shadowColor),
-          ),
+          children: List.generate(2, (i) => _buildStud(studColor, shadowColor)),
         ),
 
         // Main Block Body
         Container(
-          constraints: BoxConstraints(
-            minHeight: isCompact ? 76.h : 84.h,
-          ),
+          constraints: BoxConstraints(minHeight: isCompact ? 76.h : 84.h),
           decoration: BoxDecoration(
             color: brickColor,
             borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
+            border: Border.all(
+              color: borderColor,
+              width: isSelected ? 2.5 : 1.5,
+            ),
             boxShadow: [
               BoxShadow(
                 color: shadowColor.withValues(alpha: 0.7),
@@ -956,7 +989,9 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.25),
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(12.r),
+                    ),
                   ),
                 ),
               ),
@@ -973,7 +1008,10 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
                       children: [
                         // Geometric Shape Icon Pill
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 6.w,
+                            vertical: 2.h,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.25),
                             borderRadius: BorderRadius.circular(10.r),
@@ -1059,17 +1097,11 @@ class _KidsShapesLayoutState extends State<KidsShapesLayout> {
           scale: 1.06,
           child: Opacity(
             opacity: 0.95,
-            child: SizedBox(
-              width: 95.w,
-              child: blockWidget,
-            ),
+            child: SizedBox(width: 95.w, child: blockWidget),
           ),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.25,
-        child: blockWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.25, child: blockWidget),
       child: Semantics(
         label: '$option shape block. Tap or drag to answer.',
         button: true,
@@ -1160,7 +1192,11 @@ class _HazardStripePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     const stripeWidth = 10.0;
-    for (double x = -size.height; x < size.width + size.height; x += stripeWidth * 2) {
+    for (
+      double x = -size.height;
+      x < size.width + size.height;
+      x += stripeWidth * 2
+    ) {
       final path = Path()
         ..moveTo(x, size.height)
         ..lineTo(x + stripeWidth, size.height)

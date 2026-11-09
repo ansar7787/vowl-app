@@ -106,9 +106,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
   );
   sl.registerLazySingleton<AppUpdateService>(
-    () => AppUpdateServiceImpl(
-      remoteConfig: sl<RemoteConfigService>(),
-    ),
+    () => AppUpdateServiceImpl(remoteConfig: sl<RemoteConfigService>()),
   );
   // FIX (HIGH — RESOURCE LEAK): NotificationService.dispose() already
   // existed (cancels 4 StreamSubscriptions: onMessage, onTokenRefresh,

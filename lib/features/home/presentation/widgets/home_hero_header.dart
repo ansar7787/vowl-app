@@ -76,7 +76,8 @@ class HomeHeroHeader extends StatelessWidget {
   static bool isTodayActive(UserEntity user) => user.hasCompletedDailyGoal;
 
   /// Evaluates whether the user has already completed their daily learning goal today.
-  static bool isDailyGoalCompleted(UserEntity user) => user.hasCompletedDailyGoal;
+  static bool isDailyGoalCompleted(UserEntity user) =>
+      user.hasCompletedDailyGoal;
 
   @override
   Widget build(BuildContext context) {
@@ -121,9 +122,9 @@ class HomeHeroHeader extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xFF6366F1).withValues(
-                      alpha: isDark ? 0.85 : 0.95,
-                    ),
+                    color: const Color(
+                      0xFF6366F1,
+                    ).withValues(alpha: isDark ? 0.85 : 0.95),
                     letterSpacing: 0.5,
                     height: 1.1,
                   ),
@@ -169,10 +170,11 @@ class HomeHeroHeader extends StatelessWidget {
                               : IllustrationColors.warmOrange,
                           boxShadow: [
                             BoxShadow(
-                              color: (todayActive
-                                      ? AppColors.emerald500
-                                      : IllustrationColors.warmOrange)
-                                  .withValues(alpha: 0.4),
+                              color:
+                                  (todayActive
+                                          ? AppColors.emerald500
+                                          : IllustrationColors.warmOrange)
+                                      .withValues(alpha: 0.4),
                               blurRadius: 4,
                             ),
                           ],
@@ -181,12 +183,14 @@ class HomeHeroHeader extends StatelessWidget {
                         context,
                         (w) => !todayActive && !reduceMotion
                             ? w
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .scale(
-                                  begin: const Offset(0.8, 0.8),
-                                  end: const Offset(1.3, 1.3),
-                                  duration: 1000.ms,
-                                )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(0.8, 0.8),
+                                    end: const Offset(1.3, 1.3),
+                                    duration: 1000.ms,
+                                  )
                             : w,
                       ),
                       SizedBox(width: 6.w),
@@ -231,7 +235,10 @@ class HomeHeroHeader extends StatelessWidget {
     );
 
     if (reduceMotion) return header;
-    return header.animate().fadeIn(duration: 400.ms).slideY(begin: -0.04, end: 0);
+    return header
+        .animate()
+        .fadeIn(duration: 400.ms)
+        .slideY(begin: -0.04, end: 0);
   }
 
   /// Avatar wrapped in a concentric XP progress halo ring with docked level badge.
@@ -243,9 +250,7 @@ class HomeHeroHeader extends StatelessWidget {
     required bool reduceMotion,
   }) {
     final isPremium = user.isPremium;
-    final ringColor = isPremium
-        ? AppColors.amber500
-        : AppColors.indigo500;
+    final ringColor = isPremium ? AppColors.amber500 : AppColors.indigo500;
 
     return SizedBox(
       width: 56.r,
@@ -283,8 +288,10 @@ class HomeHeroHeader extends StatelessWidget {
                         backgroundColor: isDark
                             ? Colors.white.withValues(alpha: 0.1)
                             : (isPremium
-                                ? AppColors.amber500.withValues(alpha: 0.15)
-                                : AppColors.indigo500.withValues(alpha: 0.12)),
+                                  ? AppColors.amber500.withValues(alpha: 0.15)
+                                  : AppColors.indigo500.withValues(
+                                      alpha: 0.12,
+                                    )),
                         color: ringColor,
                         strokeCap: StrokeCap.round,
                       ),
@@ -298,10 +305,7 @@ class HomeHeroHeader extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: isDark ? AppColors.slate900 : Colors.white,
                         border: isPremium
-                            ? Border.all(
-                                color: AppColors.amber500,
-                                width: 2.r,
-                              )
+                            ? Border.all(color: AppColors.amber500, width: 2.r)
                             : null,
                         boxShadow: isPremium
                             ? null
@@ -388,8 +392,9 @@ class HomeHeroHeader extends StatelessWidget {
     final mascotId = user.vowlMascot ?? 'vowl_prime';
     final accessoryId = user.vowlEquippedAccessory;
     final mascotName = VowlAssets.mascotNames[mascotId] ?? mascotId;
-    final accessoryName =
-        accessoryId != null ? VowlAssets.getAccessoryName(accessoryId) : null;
+    final accessoryName = accessoryId != null
+        ? VowlAssets.getAccessoryName(accessoryId)
+        : null;
     final displayLabel = accessoryName != null
         ? '$mascotName ($accessoryName)'
         : mascotName;
@@ -429,18 +434,18 @@ class HomeHeroHeader extends StatelessWidget {
     required bool isDark,
     required bool todayActive,
   }) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final capsuleBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? AppColors.slate900.withValues(alpha: 0.90)
-            : Colors.white.withValues(alpha: 0.95));
+              ? AppColors.slate900.withValues(alpha: 0.90)
+              : Colors.white.withValues(alpha: 0.95));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.14)
         : (isDark
-            ? AppColors.slate700.withValues(alpha: 0.6)
-            : AppColors.slate100);
+              ? AppColors.slate700.withValues(alpha: 0.6)
+              : AppColors.slate100);
 
     return Semantics(
       container: true,
@@ -561,10 +566,13 @@ class HomeHeroHeader extends StatelessWidget {
   String _resolveDisplayName(BuildContext context) {
     final rawName =
         (user.displayName != null && user.displayName!.trim().isNotEmpty)
-            ? user.displayName!.trim()
-            : user.getSafeDisplayName(
-                fallback: context.tr('home.default_seeker_name', fallback: 'Seeker'),
-              );
+        ? user.displayName!.trim()
+        : user.getSafeDisplayName(
+            fallback: context.tr(
+              'home.default_seeker_name',
+              fallback: 'Seeker',
+            ),
+          );
     final cleanName = rawName.replaceAll(RegExp(r'\s+'), ' ');
     // Protect against absurd string spam (>30 chars) without penalizing legitimate names
     if (cleanName.length > 30) {

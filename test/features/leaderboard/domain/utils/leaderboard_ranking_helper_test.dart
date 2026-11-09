@@ -15,7 +15,10 @@ void main() {
     kidsCoins: 50,
     completedLevels: {
       'reading': List.generate(20, (i) => i + 1),
-      'kids_animals': List.generate(5, (i) => i + 1),
+      'animals': List.generate(5, (i) => i + 1),
+    },
+    starRatings: {
+      'animals': {'1': 3},
     },
   );
 
@@ -29,7 +32,10 @@ void main() {
     kidsCoins: 100,
     completedLevels: {
       'reading': List.generate(30, (i) => i + 1),
-      'kids_animals': List.generate(10, (i) => i + 1),
+      'animals': List.generate(10, (i) => i + 1),
+    },
+    starRatings: {
+      'animals': {'1': 3, '2': 3},
     },
   );
 
@@ -43,13 +49,20 @@ void main() {
     kidsCoins: 80,
     completedLevels: {
       'reading': List.generate(25, (i) => i + 1),
-      'kids_animals': List.generate(10, (i) => i + 1),
+      'animals': List.generate(10, (i) => i + 1),
+    },
+    starRatings: {
+      'animals': {'1': 3, '2': 3, '3': 3},
     },
   );
 
   group('LeaderboardRankingHelper.sortAllTime', () {
     test('sorts by totalExp descending and resolves ties via streak', () {
-      final sorted = LeaderboardRankingHelper.sortAllTime([userA, userB, userC]);
+      final sorted = LeaderboardRankingHelper.sortAllTime([
+        userA,
+        userB,
+        userC,
+      ]);
       expect(sorted.length, 3);
       expect(sorted[0].id, 'user_c'); // 8000 XP, 15 streak
       expect(sorted[1].id, 'user_b'); // 8000 XP, 5 streak
@@ -62,20 +75,20 @@ void main() {
         email: 'me@vowl.app',
         totalExp: 10000,
       );
-      final sorted = LeaderboardRankingHelper.sortAllTime(
-        [userA, userB],
-        currentUser: currentUser,
-      );
+      final sorted = LeaderboardRankingHelper.sortAllTime([
+        userA,
+        userB,
+      ], currentUser: currentUser);
       expect(sorted.length, 3);
       expect(sorted[0].id, 'me');
     });
 
     test('updates current user in list if already present', () {
       final updatedUserA = userA.copyWith(totalExp: 12000);
-      final sorted = LeaderboardRankingHelper.sortAllTime(
-        [userA, userB],
-        currentUser: updatedUserA,
-      );
+      final sorted = LeaderboardRankingHelper.sortAllTime([
+        userA,
+        userB,
+      ], currentUser: updatedUserA);
       expect(sorted.length, 2);
       expect(sorted[0].id, 'user_a');
       expect(sorted[0].totalExp, 12000);
@@ -92,11 +105,28 @@ void main() {
   });
 
   group('LeaderboardRankingHelper.sortKids', () {
-    test('sorts by kidsTotalLevelsCompleted descending', () {
+    test('sorts by kidsTotalStars descending and resolves ties via levels', () {
       final sorted = LeaderboardRankingHelper.sortKids([userA, userB, userC]);
-      expect(sorted[0].id, 'user_c'); // 10 levels, 15 streak
-      expect(sorted[1].id, 'user_b'); // 10 levels, 5 streak
-      expect(sorted[2].id, 'user_a'); // 5 levels
+      expect(sorted[0].id, 'user_c'); // 9 stars, 10 levels
+      expect(sorted[1].id, 'user_b'); // 6 stars, 10 levels
+      expect(sorted[2].id, 'user_a'); // 3 stars, 5 levels
+    });
+
+    test('resolves ties via coins and streak when stars and levels are equal', () {
+      final userX = userB.copyWith(kidsCoins: 120, currentStreak: 5);
+      final userY = UserEntity(
+        id: 'user_y',
+        email: 'y@vowl.app',
+        displayName: 'User Y',
+        totalExp: userB.totalExp,
+        kidsCoins: 80,
+        currentStreak: 10,
+        completedLevels: userB.completedLevels,
+        starRatings: userB.starRatings,
+      );
+      final sorted = LeaderboardRankingHelper.sortKids([userY, userX]);
+      expect(sorted[0].id, 'user_b'); // Higher coins (120 vs 80)
+      expect(sorted[1].id, 'user_y');
     });
   });
 
@@ -110,7 +140,10 @@ void main() {
 
     test('returns null when user is not found or id is null', () {
       final sorted = [userC, userB, userA];
-      expect(LeaderboardRankingHelper.getRankPosition(sorted, 'unknown'), isNull);
+      expect(
+        LeaderboardRankingHelper.getRankPosition(sorted, 'unknown'),
+        isNull,
+      );
       expect(LeaderboardRankingHelper.getRankPosition(sorted, null), isNull);
     });
   });

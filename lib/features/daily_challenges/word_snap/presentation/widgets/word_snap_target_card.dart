@@ -45,19 +45,13 @@ class WordSnapTargetCard extends StatelessWidget {
 
     final cardBgGradient = LinearGradient(
       colors: isMidnight
-          ? const [
-              AppColors.midnightSurface,
-              Colors.black,
-            ]
+          ? const [AppColors.midnightSurface, Color(0xFF0F1523)]
           : (isDark
-              ? [
-                  const Color(0xFF2E081D).withValues(alpha: 0.55),
-                  const Color(0xFF0F172A).withValues(alpha: 0.78),
-                ]
-              : const [
-                  Colors.white,
-                  Color(0xFFFDF2F8),
-                ]),
+                ? [
+                    const Color(0xFF2E081D).withValues(alpha: 0.55),
+                    AppColors.midnightNavy.withValues(alpha: 0.78),
+                  ]
+                : const [Colors.white, Color(0xFFFDF2F8)]),
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );
@@ -82,7 +76,10 @@ class WordSnapTargetCard extends StatelessWidget {
               // Challenge Badge
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.5.h,
+                  ),
                   decoration: BoxDecoration(
                     color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.1),
                     borderRadius: BorderRadius.circular(10.r),
@@ -104,7 +101,10 @@ class WordSnapTargetCard extends StatelessWidget {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            context.tr('home.daily_challenge', fallback: 'DAILY CHALLENGE'),
+                            context.tr(
+                              'home.daily_challenge',
+                              fallback: 'DAILY CHALLENGE',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.5.sp,
@@ -125,7 +125,10 @@ class WordSnapTargetCard extends StatelessWidget {
               // Difficulty & CEFR Pill
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.5.h,
+                  ),
                   decoration: BoxDecoration(
                     color: puzzle.difficultyColor.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(10.r),
@@ -190,7 +193,9 @@ class WordSnapTargetCard extends StatelessWidget {
                     width: 38.r,
                     height: 38.r,
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: isDark ? 0.18 : 0.1),
+                      color: primaryColor.withValues(
+                        alpha: isDark ? 0.18 : 0.1,
+                      ),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: primaryColor.withValues(alpha: 0.25),

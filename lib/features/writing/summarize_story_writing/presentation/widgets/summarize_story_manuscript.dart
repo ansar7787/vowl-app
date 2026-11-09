@@ -29,18 +29,13 @@ class SummarizeStoryManuscript extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.25), width: 1.5),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18.5.r),
         child: Stack(
           children: [
-            const Positioned.fill(
-              child: TechPatternOverlay(opacity: 0.03),
-            ),
+            const Positioned.fill(child: TechPatternOverlay(opacity: 0.03)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
               child: Column(
@@ -48,11 +43,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(
-                        Icons.menu_book_rounded,
-                        size: 16.r,
-                        color: color,
-                      ),
+                      Icon(Icons.menu_book_rounded, size: 16.r, color: color),
                       SizedBox(width: 8.w),
                       Text(
                         'STORY',

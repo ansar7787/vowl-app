@@ -106,7 +106,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   }
 
   void _playAudio(ListeningQuest quest) {
-    final rawAudio = quest.textToSpeak ??
+    final rawAudio =
+        quest.textToSpeak ??
         quest.prompt ??
         quest.question ??
         quest.sentence ??
@@ -275,10 +276,7 @@ class _AudioTrueFalseContentState extends State<_AudioTrueFalseContent> {
             physics: const BouncingScrollPhysics(),
             slivers: [
               SliverPadding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 24.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
                 sliver: SliverToBoxAdapter(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -340,9 +338,7 @@ class _AudioTrueFalseContentState extends State<_AudioTrueFalseContent> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: SizedBox(
-                  height: widget.isAnswered ? 200.h : 60.h,
-                ),
+                child: SizedBox(height: widget.isAnswered ? 200.h : 60.h),
               ),
             ],
           ),

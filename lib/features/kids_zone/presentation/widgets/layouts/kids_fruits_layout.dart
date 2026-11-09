@@ -128,6 +128,7 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -197,7 +198,8 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                             Icon(
                               Icons.storefront_rounded,
                               size: 16.r,
-                              color: Theme.of(context).brightness ==
+                              color:
+                                  Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.white70
                                   : _LocalPalette.color92400e,
@@ -208,7 +210,8 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                                 state.answerStatus == AnswerStatus.correct
                                     ? context.tr(
                                         'games.kids_fruits_done',
-                                        fallback: 'Fresh pick! Correct fruit chosen!',
+                                        fallback:
+                                            'Fresh pick! Correct fruit chosen!',
                                       )
                                     : context.tr(
                                         'games.kids_fruits_drag',
@@ -219,7 +222,8 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: isNarrow ? 12.5.sp : 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness ==
+                                  color:
+                                      Theme.of(context).brightness ==
                                           Brightness.dark
                                       ? Colors.white.withValues(alpha: 0.85)
                                       : Colors.black.withValues(alpha: 0.75),
@@ -341,8 +345,9 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                                     quest.question == null))
                               ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  const Color(0xFF78350F)
-                                      .withValues(alpha: 0.18),
+                                  const Color(
+                                    0xFF78350F,
+                                  ).withValues(alpha: 0.18),
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -350,8 +355,7 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                                   style: TextStyle(fontSize: 64.sp),
                                 ),
                               ),
-                            if (quest.question != '?' &&
-                                quest.question != null)
+                            if (quest.question != '?' && quest.question != null)
                               KidsFittedText(
                                 quest.question!,
                                 style: TextStyle(
@@ -371,8 +375,9 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                                   fontFamily: 'Outfit',
                                   fontSize: 48.sp,
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.amber900
-                                      .withValues(alpha: 0.75),
+                                  color: AppColors.amber900.withValues(
+                                    alpha: 0.75,
+                                  ),
                                 ),
                                 textAlign: TextAlign.center,
                                 maxLines: 1,
@@ -434,8 +439,9 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
                           color: Colors.black.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: _LocalPalette.color92400e
-                                .withValues(alpha: 0.6),
+                            color: _LocalPalette.color92400e.withValues(
+                              alpha: 0.6,
+                            ),
                             width: 1.5,
                           ),
                         ),
@@ -536,8 +542,8 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
               color: isSelected
                   ? KidsColors.warmAmber
                   : (isAnswered && isCorrect)
-                      ? Colors.green.shade600
-                      : Colors.transparent,
+                  ? Colors.green.shade600
+                  : Colors.transparent,
               width: (isSelected || (isAnswered && isCorrect)) ? 3.0 : 0.0,
             ),
           ),

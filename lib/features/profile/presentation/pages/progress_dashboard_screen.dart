@@ -738,9 +738,9 @@ class _ContinueLearningSection extends StatelessWidget {
           final animatedCard = VowlMotion.shouldReduceMotion(context)
               ? card
               : card
-                  .animate()
-                  .fadeIn(delay: (300 + index * 100).ms)
-                  .slideX(begin: 0.05);
+                    .animate()
+                    .fadeIn(delay: (300 + index * 100).ms)
+                    .slideX(begin: 0.05);
           return Padding(
             padding: EdgeInsets.only(bottom: 12.h),
             child: animatedCard,

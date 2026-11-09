@@ -234,6 +234,7 @@ class EliteMasteryGameComplete extends EliteMasteryState
   final int xpEarned;
   @override
   final int coinsEarned;
+
   /// Total count of completed quests in the finished level.
   final int questCount;
 

@@ -395,7 +395,9 @@ void main() {
       await pumpScreen(tester);
 
       expect(
-        find.text('Read the sentence and find the missing word from the clues.'),
+        find.text(
+          'Read the sentence and find the missing word from the clues.',
+        ),
         findsOneWidget,
       );
     });
@@ -416,7 +418,7 @@ void main() {
 
         expect(find.byType(ContextCluesEvidenceSentence), findsWidgets);
         final sentenceFinder = find.descendant(
-            of: find.byType(ContextCluesEvidenceSentence),
+          of: find.byType(ContextCluesEvidenceSentence),
           matching: find.byType(RichText),
         );
         final richText = tester.widget<RichText>(sentenceFinder.first);
@@ -500,7 +502,9 @@ void main() {
         final scannerFinder = find.byType(ContextCluesScanner);
         expect(scannerFinder, findsOneWidget);
 
-        final gesture = await tester.startGesture(tester.getCenter(scannerFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(scannerFinder),
+        );
         for (int i = 0; i < 45; i++) {
           await gesture.moveBy(const Offset(1, 0));
           await tester.pump(const Duration(milliseconds: 16));
@@ -520,7 +524,9 @@ void main() {
         await pumpScreen(tester);
 
         final scannerFinder = find.byType(ContextCluesScanner);
-        final gesture = await tester.startGesture(tester.getCenter(scannerFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(scannerFinder),
+        );
         await gesture.moveBy(const Offset(1000, 0));
         await tester.pump();
         await gesture.up();
@@ -629,7 +635,9 @@ void main() {
         final evidenceWrapper = find.byType(EvidenceHighlightWrapper);
         expect(evidenceWrapper, findsOneWidget);
         expect(
-          find.text('Tap the clue words in the sentence that support your answer'),
+          find.text(
+            'Tap the clue words in the sentence that support your answer',
+          ),
           findsOneWidget,
         );
       },

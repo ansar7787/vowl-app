@@ -69,19 +69,19 @@ class MinimalPairsDroneOption extends StatelessWidget {
     Color borderColor = color.withValues(alpha: isDark ? 0.35 : 0.25);
     Color cardBg = isDark
         ? (context.isMidnight
-            ? AppColors.midnightSurface
-            : const Color(0xFF1E2230))
+              ? AppColors.midnightSurface
+              : const Color(0xFF1E2230))
         : Colors.white;
 
     if (isAnswered && isSelected) {
       borderColor = correct ? tokens.gameCorrect : tokens.gameIncorrect;
       cardBg = isDark
           ? (correct
-              ? tokens.gameCorrect.withValues(alpha: 0.15)
-              : tokens.gameIncorrect.withValues(alpha: 0.15))
+                ? tokens.gameCorrect.withValues(alpha: 0.15)
+                : tokens.gameIncorrect.withValues(alpha: 0.15))
           : (correct
-              ? tokens.gameCorrect.withValues(alpha: 0.08)
-              : tokens.gameIncorrect.withValues(alpha: 0.08));
+                ? tokens.gameCorrect.withValues(alpha: 0.08)
+                : tokens.gameIncorrect.withValues(alpha: 0.08));
     } else if (isSelected) {
       borderColor = color;
     }
@@ -121,11 +121,13 @@ class MinimalPairsDroneOption extends StatelessWidget {
                       BoxShadow(
                         color: (isSelected && isAnswered)
                             ? (correct
-                                ? tokens.gameCorrect.withValues(alpha: 0.25)
-                                : tokens.gameIncorrect.withValues(alpha: 0.25))
+                                  ? tokens.gameCorrect.withValues(alpha: 0.25)
+                                  : tokens.gameIncorrect.withValues(
+                                      alpha: 0.25,
+                                    ))
                             : (isDark
-                                ? Colors.black.withValues(alpha: 0.3)
-                                : color.withValues(alpha: 0.08)),
+                                  ? Colors.black.withValues(alpha: 0.3)
+                                  : color.withValues(alpha: 0.08)),
                         blurRadius: isSelected ? 12 : 8,
                         offset: const Offset(0, 3),
                       ),

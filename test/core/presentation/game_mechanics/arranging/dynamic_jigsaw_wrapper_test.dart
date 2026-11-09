@@ -13,7 +13,10 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -25,7 +28,9 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
     mockHapticService = MockHapticService();
-    when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(const AuthState.unauthenticated());
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
 
     if (di.sl.isRegistered<HapticService>()) {

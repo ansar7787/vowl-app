@@ -336,7 +336,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: widget.displayFontSize ?? 20.sp,
-                          fontWeight: widget.displayFontWeight ?? FontWeight.w700,
+                          fontWeight:
+                              widget.displayFontWeight ?? FontWeight.w700,
                           color: textColor,
                           letterSpacing: 0.5,
                           height: 1.4,

@@ -125,60 +125,67 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
               di.sl<SoundService>().playTtsComparison(word);
             },
             child: Semantics(
-              label: "Target phonetic sound: $targetSound. Tap to compare pronunciation.",
+              label:
+                  "Target phonetic sound: $targetSound. Tap to compare pronunciation.",
               button: true,
-              child: Container(
-                key: const Key('pronunciation_focus_target_phoneme_badge'),
-                padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.lerp(
-                        _LocalPalette.color1f1c2c,
-                        _LocalPalette.colorff512f,
-                        heatLevel,
-                      )!,
-                      Color.lerp(
-                        _LocalPalette.color928dab,
-                        _LocalPalette.colordd2476,
-                        heatLevel,
-                      )!,
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.lerp(
-                        primaryColor,
-                        Colors.orangeAccent,
-                        heatLevel,
-                      )!.withValues(alpha: 0.3 + heatLevel * 0.2),
-                      blurRadius: 12.r + heatLevel * 8.r,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Text(
-                  targetSound,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 26.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              )
-                  .animate(
-                    target: reduceMotion ? 0 : 1,
-                    onPlay: (c) =>
-                        reduceMotion ? c.stop() : c.repeat(reverse: true),
-                  )
-                  .slideY(
-                    begin: -0.04,
-                    end: 0.04,
-                    duration: const Duration(milliseconds: 1500),
-                  ),
+              child:
+                  Container(
+                        key: const Key(
+                          'pronunciation_focus_target_phoneme_badge',
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 28.w,
+                          vertical: 12.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.lerp(
+                                _LocalPalette.color1f1c2c,
+                                _LocalPalette.colorff512f,
+                                heatLevel,
+                              )!,
+                              Color.lerp(
+                                _LocalPalette.color928dab,
+                                _LocalPalette.colordd2476,
+                                heatLevel,
+                              )!,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(20.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.lerp(
+                                primaryColor,
+                                Colors.orangeAccent,
+                                heatLevel,
+                              )!.withValues(alpha: 0.3 + heatLevel * 0.2),
+                              blurRadius: 12.r + heatLevel * 8.r,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          targetSound,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 26.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      )
+                      .animate(
+                        target: reduceMotion ? 0 : 1,
+                        onPlay: (c) =>
+                            reduceMotion ? c.stop() : c.repeat(reverse: true),
+                      )
+                      .slideY(
+                        begin: -0.04,
+                        end: 0.04,
+                        duration: const Duration(milliseconds: 1500),
+                      ),
             ),
           ),
           SizedBox(height: 8.h),
@@ -205,12 +212,16 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       if (di.sl<AudioRecordingService>().isRecording) return;
-                      final word = quest.targetWord ?? quest.textToSpeak ?? targetSound;
+                      final word =
+                          quest.targetWord ?? quest.textToSpeak ?? targetSound;
                       di.sl<SoundService>().playTts(word, speed: 0.28);
                     },
                     borderRadius: BorderRadius.circular(10.r),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 6.h,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

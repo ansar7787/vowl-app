@@ -180,18 +180,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => 'mock_missing_rec.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => 'mock_missing_rec.m4a');
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
     when(() => mockAudioRecorder.onAmplitudeChanged(any())).thenAnswer(
       (_) => Stream.fromIterable([
@@ -294,10 +299,7 @@ void main() {
                 textScaler: TextScaler.linear(textScaleFactor),
                 disableAnimations: reduceMotion,
               ),
-              child: SpeakMissingWordScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              child: SpeakMissingWordScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -326,32 +328,54 @@ void main() {
       expect(find.byType(SpeakMissingWordVortexSentence), findsOneWidget);
     });
 
-    testWidgets('1.4 renders SpeakMissingWordMagnetArena when word is not placed', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byType(SpeakMissingWordMagnetArena), findsOneWidget);
-      expect(find.byKey(const Key('speak_missing_word_magnet_arena')), findsOneWidget);
-    });
+    testWidgets(
+      '1.4 renders SpeakMissingWordMagnetArena when word is not placed',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.byType(SpeakMissingWordMagnetArena), findsOneWidget);
+        expect(
+          find.byKey(const Key('speak_missing_word_magnet_arena')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.5 renders center vortex icon with key speak_missing_word_vortex_center', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_missing_word_vortex_center')), findsOneWidget);
-    });
+    testWidgets(
+      '1.5 renders center vortex icon with key speak_missing_word_vortex_center',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_missing_word_vortex_center')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.6 renders all option chips from quest.options', (tester) async {
+    testWidgets('1.6 renders all option chips from quest.options', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       for (int i = 0; i < sampleQuest1.options!.length; i++) {
         expect(find.byKey(Key('speak_missing_word_option_$i')), findsOneWidget);
-        expect(find.text(sampleQuest1.options![i].toUpperCase()), findsOneWidget);
+        expect(
+          find.text(sampleQuest1.options![i].toUpperCase()),
+          findsOneWidget,
+        );
       }
     });
 
-    testWidgets('1.7 renders GameShimmerLoading when state is not SpeakingLoaded or quest is null', (tester) async {
-      await pumpScreen(tester, state: const SpeakingInitial());
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-      expect(find.byType(SpeakMissingWordMagnetArena), findsNothing);
-    });
+    testWidgets(
+      '1.7 renders GameShimmerLoading when state is not SpeakingLoaded or quest is null',
+      (tester) async {
+        await pumpScreen(tester, state: const SpeakingInitial());
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+        expect(find.byType(SpeakMissingWordMagnetArena), findsNothing);
+      },
+    );
 
-    testWidgets('1.8 renders RawScrollbar and CustomScrollView', (tester) async {
+    testWidgets('1.8 renders RawScrollbar and CustomScrollView', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byType(RawScrollbar), findsOneWidget);
       expect(find.byType(CustomScrollView), findsOneWidget);
@@ -362,13 +386,18 @@ void main() {
   // 2. Level 1 Briefing Overlay & Onboarding (6 tests)
   // ---------------------------------------------------------------------------
   group('2. Level 1 Briefing Overlay & Onboarding', () {
-    testWidgets('2.1 displays QuestBriefingOverlay on level 1 when not previously seen', (tester) async {
-      SharedPreferences.setMockInitialValues({});
-      await pumpScreen(tester, level: 1);
-      expect(find.byType(QuestBriefingOverlay), findsOneWidget);
-    });
+    testWidgets(
+      '2.1 displays QuestBriefingOverlay on level 1 when not previously seen',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({});
+        await pumpScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('2.2 displays action button with text SPEAK WORD (uppercase)', (tester) async {
+    testWidgets('2.2 displays action button with text SPEAK WORD (uppercase)', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 1);
       expect(find.text('SPEAK WORD'), findsOneWidget);
@@ -386,19 +415,25 @@ void main() {
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('2.4 displays correct briefing title and description', (tester) async {
+    testWidgets('2.4 displays correct briefing title and description', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 1);
       expect(find.text('VOCAL DECODER'), findsOneWidget);
     });
 
-    testWidgets('2.5 does NOT display briefing overlay on level 2', (tester) async {
+    testWidgets('2.5 does NOT display briefing overlay on level 2', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 2);
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('2.6 tapping start dismisses briefing overlay on level 1', (tester) async {
+    testWidgets('2.6 tapping start dismisses briefing overlay on level 1', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 1);
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
       await tester.ensureVisible(find.text('SPEAK WORD'));
@@ -412,44 +447,66 @@ void main() {
   // 3. Instruction Component Behavior (6 tests)
   // ---------------------------------------------------------------------------
   group('3. Instruction Component Behavior', () {
-    testWidgets('3.1 instruction displays FIND THE WORD badge when word is not placed', (tester) async {
-      await pumpScreen(tester);
-      expect(find.text('FIND THE WORD'), findsOneWidget);
-    });
+    testWidgets(
+      '3.1 instruction displays FIND THE WORD badge when word is not placed',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.text('FIND THE WORD'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3.2 instruction displays quest instruction subtitle initially', (tester) async {
-      await pumpScreen(tester);
-      expect(find.textContaining('Select and speak the missing word.'), findsOneWidget);
-    });
+    testWidgets(
+      '3.2 instruction displays quest instruction subtitle initially',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.textContaining('Select and speak the missing word.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('3.3 instruction displays READ THE SENTENCE badge when word is placed', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '3.3 instruction displays READ THE SENTENCE badge when word is placed',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.text('READ THE SENTENCE'), findsOneWidget);
-    });
+        expect(find.text('READ THE SENTENCE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3.4 instruction displays Read the full sentence aloud when word is placed', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '3.4 instruction displays Read the full sentence aloud when word is placed',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Read the full sentence aloud.'), findsOneWidget);
-    });
+        expect(find.text('Read the full sentence aloud.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3.5 instruction header has accessible Semantics header', (tester) async {
+    testWidgets('3.5 instruction header has accessible Semantics header', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final headerFinder = find.descendant(
         of: find.byType(SpeakMissingWordInstruction),
-        matching: find.byWidgetPredicate((w) => w is Semantics && w.properties.header == true),
+        matching: find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.header == true,
+        ),
       );
       expect(headerFinder, findsOneWidget);
     });
 
-    testWidgets('3.6 handles long instruction text without RenderFlex overflow', (tester) async {
+    testWidgets('3.6 handles long instruction text without RenderFlex overflow', (
+      tester,
+    ) async {
       final longQuest = createQuest(
-        instruction: 'Carefully identify the missing noun from the vortex options and complete the full sentence.',
+        instruction:
+            'Carefully identify the missing noun from the vortex options and complete the full sentence.',
       );
       final state = testLoadedState.copyWith(quests: [longQuest]);
       await pumpScreen(tester, state: state);
@@ -461,39 +518,71 @@ void main() {
   // 4. Vortex Sentence Rendering & Word Insertion (8 tests)
   // ---------------------------------------------------------------------------
   group('4. Vortex Sentence Rendering & Word Insertion', () {
-    testWidgets('4.1 displays initial sentence text containing blank underscores', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_missing_word_sentence_text')), findsOneWidget);
-      expect(find.textContaining('___'), findsOneWidget);
-    });
+    testWidgets(
+      '4.1 displays initial sentence text containing blank underscores',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_missing_word_sentence_text')),
+          findsOneWidget,
+        );
+        expect(find.textContaining('___'), findsOneWidget);
+      },
+    );
 
-    testWidgets('4.2 vortex constructor header renders with key speak_missing_word_vortex_header', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_missing_word_vortex_header')), findsOneWidget);
-    });
+    testWidgets(
+      '4.2 vortex constructor header renders with key speak_missing_word_vortex_header',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_missing_word_vortex_header')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('4.3 does NOT render locked option pill when word is not placed', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_missing_word_locked_option')), findsNothing);
-    });
+    testWidgets(
+      '4.3 does NOT render locked option pill when word is not placed',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_missing_word_locked_option')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('4.4 replaces blank with completed sentence when word is placed', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '4.4 replaces blank with completed sentence when word is placed',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.text('The robot operates the system safely.'), findsOneWidget);
-    });
+        expect(
+          find.text('The robot operates the system safely.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('4.5 renders locked option pill with key speak_missing_word_locked_option when placed', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '4.5 renders locked option pill with key speak_missing_word_locked_option when placed',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speak_missing_word_locked_option')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('speak_missing_word_locked_option')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('4.6 locked option pill displays placed word in uppercase', (tester) async {
+    testWidgets('4.6 locked option pill displays placed word in uppercase', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -501,33 +590,41 @@ void main() {
       expect(find.text('SELECTED WORD: ROBOT'), findsOneWidget);
     });
 
-    testWidgets('4.7 has accessible Semantics container with full sentence label', (tester) async {
-      await pumpScreen(tester);
-      final semanticsFinder = find.descendant(
-        of: find.byType(SpeakMissingWordVortexSentence),
-        matching: find.byWidgetPredicate((w) => w is Semantics && w.container == true),
-      );
-      expect(semanticsFinder, findsOneWidget);
-    });
+    testWidgets(
+      '4.7 has accessible Semantics container with full sentence label',
+      (tester) async {
+        await pumpScreen(tester);
+        final semanticsFinder = find.descendant(
+          of: find.byType(SpeakMissingWordVortexSentence),
+          matching: find.byWidgetPredicate(
+            (w) => w is Semantics && w.container == true,
+          ),
+        );
+        expect(semanticsFinder, findsOneWidget);
+      },
+    );
 
-    testWidgets('4.8 handles null correctAnswer by regex replacing blank underscores', (tester) async {
-      final questNoCorrect = createQuest(
-        correctAnswer: null,
-      );
-      final state = testLoadedState.copyWith(quests: [questNoCorrect]);
-      await pumpScreen(tester, state: state);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '4.8 handles null correctAnswer by regex replacing blank underscores',
+      (tester) async {
+        final questNoCorrect = createQuest(correctAnswer: null);
+        final state = testLoadedState.copyWith(quests: [questNoCorrect]);
+        await pumpScreen(tester, state: state);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 5. Magnet Arena Interaction & Word Selection (8 tests)
   // ---------------------------------------------------------------------------
   group('5. Magnet Arena Interaction & Word Selection', () {
-    testWidgets('5.1 arena displays all options from quest.options', (tester) async {
+    testWidgets('5.1 arena displays all options from quest.options', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.text('ROBOT'), findsOneWidget);
       expect(find.text('HUMAN'), findsOneWidget);
@@ -535,7 +632,9 @@ void main() {
       expect(find.text('PILOT'), findsOneWidget);
     });
 
-    testWidgets('5.2 each option chip has Semantics button and label', (tester) async {
+    testWidgets('5.2 each option chip has Semantics button and label', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final semantics = find.byWidgetPredicate(
         (w) => w is Semantics && w.properties.label == 'Select word: robot',
@@ -543,35 +642,53 @@ void main() {
       expect(semantics, findsOneWidget);
     });
 
-    testWidgets('5.3 tapping option chip triggers hapticService.selection()', (tester) async {
+    testWidgets('5.3 tapping option chip triggers hapticService.selection()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('5.4 tapping option instantly selects word and completes pull', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '5.4 tapping option instantly selects word and completes pull',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(SpeakMissingWordMagnetArena), findsNothing);
-      expect(find.byKey(const Key('speak_missing_word_shadow_compare')), findsOneWidget);
-    });
+        expect(find.byType(SpeakMissingWordMagnetArena), findsNothing);
+        expect(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('5.5 onPullStart gesture triggers selection haptic', (tester) async {
+    testWidgets('5.5 onPullStart gesture triggers selection haptic', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      final arena = tester.widget<SpeakMissingWordMagnetArena>(find.byType(SpeakMissingWordMagnetArena));
+      final arena = tester.widget<SpeakMissingWordMagnetArena>(
+        find.byType(SpeakMissingWordMagnetArena),
+      );
       arena.onPullStart('robot');
       await tester.pump();
 
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('5.6 onPullEnd reverses pull when pull not completed', (tester) async {
+    testWidgets('5.6 onPullEnd reverses pull when pull not completed', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      final arena = tester.widget<SpeakMissingWordMagnetArena>(find.byType(SpeakMissingWordMagnetArena));
+      final arena = tester.widget<SpeakMissingWordMagnetArena>(
+        find.byType(SpeakMissingWordMagnetArena),
+      );
       arena.onPullStart('robot');
       await tester.pump();
 
@@ -581,7 +698,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('5.7 AbsorbPointer absorbs taps once word is placed', (tester) async {
+    testWidgets('5.7 AbsorbPointer absorbs taps once word is placed', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -590,41 +709,56 @@ void main() {
         of: find.byType(SpeakMissingWordScreen),
         matching: find.byType(AbsorbPointer),
       );
-      final absorbPointer = tester.widgetList<AbsorbPointer>(absorbFinder).firstWhere((w) => w.absorbing == true);
+      final absorbPointer = tester
+          .widgetList<AbsorbPointer>(absorbFinder)
+          .firstWhere((w) => w.absorbing == true);
       expect(absorbPointer.absorbing, isTrue);
     });
 
-    testWidgets('5.8 arena handles null options by falling back to missingWord', (tester) async {
-      final noOptionsQuest = createQuest(options: null);
-      final state = testLoadedState.copyWith(quests: [noOptionsQuest]);
-      await pumpScreen(tester, state: state);
+    testWidgets(
+      '5.8 arena handles null options by falling back to missingWord',
+      (tester) async {
+        final noOptionsQuest = createQuest(options: null);
+        final state = testLoadedState.copyWith(quests: [noOptionsQuest]);
+        await pumpScreen(tester, state: state);
 
-      expect(find.text('ROBOT'), findsOneWidget);
-    });
+        expect(find.text('ROBOT'), findsOneWidget);
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 6. Correct Word Placement & ShadowPlaybackCompare Integration (8 tests)
   // ---------------------------------------------------------------------------
   group('6. Correct Word Placement & ShadowPlaybackCompare Integration', () {
-    testWidgets('6.1 placing correct word triggers hapticService.success() and soundService.playClick()', (tester) async {
+    testWidgets(
+      '6.1 placing correct word triggers hapticService.success() and soundService.playClick()',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playClick()).called(1);
+      },
+    );
+
+    testWidgets('6.2 placing correct word renders ShadowPlaybackCompare', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playClick()).called(1);
+      expect(
+        find.byKey(const Key('speak_missing_word_shadow_compare')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('6.2 placing correct word renders ShadowPlaybackCompare', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
-
-      expect(find.byKey(const Key('speak_missing_word_shadow_compare')), findsOneWidget);
-    });
-
-    testWidgets('6.3 ShadowPlaybackCompare receives full completed sentence', (tester) async {
+    testWidgets('6.3 ShadowPlaybackCompare receives full completed sentence', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -632,18 +766,26 @@ void main() {
       final shadowCompare = tester.widget<ShadowPlaybackCompare>(
         find.byKey(const Key('speak_missing_word_shadow_compare')),
       );
-      expect(shadowCompare.expectedText, 'The robot operates the system safely.');
+      expect(
+        shadowCompare.expectedText,
+        'The robot operates the system safely.',
+      );
     });
 
-    testWidgets('6.4 initial mic button with ValueKey shadow_mic_btn is visible', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '6.4 initial mic button with ValueKey shadow_mic_btn is visible',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const ValueKey('shadow_mic_btn')), findsOneWidget);
-    });
+        expect(find.byKey(const ValueKey('shadow_mic_btn')), findsOneWidget);
+      },
+    );
 
-    testWidgets('6.5 tapping mic button initiates audio recording', (tester) async {
+    testWidgets('6.5 tapping mic button initiates audio recording', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -654,35 +796,43 @@ void main() {
       verify(() => mockAudioRecorder.startRecording()).called(1);
     });
 
-    testWidgets('6.6 tapping mic button while recording stops audio recording', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '6.6 tapping mic button while recording stops audio recording',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
-      await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
+        await tester.pump();
 
-      await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
+        await tester.pumpAndSettle();
 
-      verify(() => mockAudioRecorder.stopRecording()).called(1);
-    });
+        verify(() => mockAudioRecorder.stopRecording()).called(1);
+      },
+    );
 
-    testWidgets('6.7 shows mic warning when recorded audio is too quiet or short', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '6.7 shows mic warning when recorded audio is too quiet or short',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
-      await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
+        await tester.pump();
 
-      await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey('shadow_mic_btn')));
+        await tester.pumpAndSettle();
 
-      expect(find.text("We couldn't hear you. Try again?"), findsOneWidget);
-    });
+        expect(find.text("We couldn't hear you. Try again?"), findsOneWidget);
+      },
+    );
 
-    testWidgets('6.8 stops background TTS and audio before recording', (tester) async {
+    testWidgets('6.8 stops background TTS and audio before recording', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -691,7 +841,9 @@ void main() {
       await tester.pump();
 
       verify(() => mockSoundService.stopTts()).called(greaterThanOrEqualTo(1));
-      verify(() => mockSoundService.stopAudio()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockSoundService.stopAudio(),
+      ).called(greaterThanOrEqualTo(1));
     });
   });
 
@@ -699,41 +851,37 @@ void main() {
   // 7. Incorrect Word Placement Immediate Fail (8 tests)
   // ---------------------------------------------------------------------------
   group('7. Incorrect Word Placement Immediate Fail', () {
-    testWidgets('7.1 placing incorrect word does NOT render ShadowPlaybackCompare', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1'))); // 'human' != 'robot'
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.1 placing incorrect word does NOT render ShadowPlaybackCompare',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(
+          find.byKey(const Key('speak_missing_word_option_1')),
+        ); // 'human' != 'robot'
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speak_missing_word_shadow_compare')), findsNothing);
-    });
+        expect(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+          findsNothing,
+        );
+      },
+    );
 
-    testWidgets('7.2 placing incorrect word triggers hapticService.error() and soundService.playWrong()', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.2 placing incorrect word triggers hapticService.error() and soundService.playWrong()',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
 
-    testWidgets('7.3 submits SubmitAnswer(false) immediately to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
-      await tester.pumpAndSettle();
-
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-    });
-
-    testWidgets('7.4 records error in ErrorJournalCollector for authenticated user', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
-      await tester.pumpAndSettle();
-
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('7.5 handles unauthenticated state gracefully on wrong answer', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    testWidgets('7.3 submits SubmitAnswer(false) immediately to SpeakingBloc', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
       await tester.pumpAndSettle();
@@ -741,171 +889,239 @@ void main() {
       verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('7.6 sets isAnsweredNotifier to true and isCorrectNotifier to false', (tester) async {
+    testWidgets(
+      '7.4 records error in ErrorJournalCollector for authenticated user',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '7.5 handles unauthenticated state gracefully on wrong answer',
+      (tester) async {
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(const AuthState.unauthenticated());
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
+        await tester.pumpAndSettle();
+
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
+
+    testWidgets(
+      '7.6 sets isAnsweredNotifier to true and isCorrectNotifier to false',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+      },
+    );
+
+    testWidgets('7.7 shows GameFeedbackCard with incorrect status', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
       await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-    });
-
-    testWidgets('7.7 shows GameFeedbackCard with incorrect status', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
-      await tester.pumpAndSettle();
-
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
+      final feedback = tester.widget<GameFeedbackCard>(
+        find.byType(GameFeedbackCard),
+      );
       expect(feedback.isCorrect, isFalse);
     });
 
-    testWidgets('7.8 calling evaluation when already answered does not double-submit', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.8 calling evaluation when already answered does not double-submit',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));
+        await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      final state = tester.state(find.byType(SpeakMissingWordScreen)) as dynamic;
-      state.submitWrongAnswer(quest: sampleQuest1);
-      await tester.pump();
+        clearInteractions(mockSpeakingBloc);
+        final state =
+            tester.state(find.byType(SpeakMissingWordScreen)) as dynamic;
+        state.submitWrongAnswer(quest: sampleQuest1);
+        await tester.pump();
 
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 8. Verbal Self-Evaluation in ShadowPlaybackCompare (8 tests)
   // ---------------------------------------------------------------------------
   group('8. Verbal Self-Evaluation in ShadowPlaybackCompare', () {
-    testWidgets('8.1 onConfirmed triggers hapticService.success() and soundService.playCorrect()', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.1 onConfirmed triggers hapticService.success() and soundService.playCorrect()',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onConfirmed();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onConfirmed();
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(2); // 1 on word place + 1 on confirm
-      verify(() => mockSoundService.playCorrect()).called(1);
-    });
+        verify(
+          () => mockHapticService.success(),
+        ).called(2); // 1 on word place + 1 on confirm
+        verify(() => mockSoundService.playCorrect()).called(1);
+      },
+    );
 
-    testWidgets('8.2 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.2 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onConfirmed();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onConfirmed();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('8.3 onConfirmed sets isCorrectNotifier to true and shows positive GameFeedbackCard', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.3 onConfirmed sets isCorrectNotifier to true and shows positive GameFeedbackCard',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onConfirmed();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onConfirmed();
+        await tester.pumpAndSettle();
 
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isTrue);
-    });
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isTrue);
+      },
+    );
 
-    testWidgets('8.4 onSkipped triggers hapticService.error() and soundService.playWrong()', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.4 onSkipped triggers hapticService.error() and soundService.playWrong()',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onSkipped();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onSkipped();
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+      },
+    );
 
-    testWidgets('8.5 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.5 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onSkipped();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onSkipped();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('8.6 onSkipped sets isCorrectNotifier to false and shows negative GameFeedbackCard', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.6 onSkipped sets isCorrectNotifier to false and shows negative GameFeedbackCard',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onSkipped();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onSkipped();
+        await tester.pumpAndSettle();
 
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isFalse);
-    });
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isFalse);
+      },
+    );
 
-    testWidgets('8.7 calling onConfirmed when already answered does not double-submit', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.7 calling onConfirmed when already answered does not double-submit',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onConfirmed();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onConfirmed();
+        await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      shadowCompare.onConfirmed();
-      await tester.pump();
+        clearInteractions(mockSpeakingBloc);
+        shadowCompare.onConfirmed();
+        await tester.pump();
 
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
 
-    testWidgets('8.8 calling onSkipped when already answered does not double-submit', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.8 calling onSkipped when already answered does not double-submit',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onSkipped();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onSkipped();
+        await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      shadowCompare.onSkipped();
-      await tester.pump();
+        clearInteractions(mockSpeakingBloc);
+        shadowCompare.onSkipped();
+        await tester.pump();
 
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 9. Feedback Card, Hints & Question Progression (6 tests)
   // ---------------------------------------------------------------------------
   group('9. Feedback Card, Hints & Question Progression', () {
-    testWidgets('9.1 GameFeedbackCard displays continue button', (tester) async {
+    testWidgets('9.1 GameFeedbackCard displays continue button', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -920,40 +1136,54 @@ void main() {
       expect(find.text('CONTINUE'), findsOneWidget);
     });
 
-    testWidgets('9.2 tapping continue button dispatches NextQuestion() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '9.2 tapping continue button dispatches NextQuestion() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      final shadowCompare = tester.widget<ShadowPlaybackCompare>(
-        find.byKey(const Key('speak_missing_word_shadow_compare')),
-      );
-      shadowCompare.onConfirmed();
-      await tester.pumpAndSettle();
+        final shadowCompare = tester.widget<ShadowPlaybackCompare>(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+        );
+        shadowCompare.onConfirmed();
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump();
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pump();
+    testWidgets(
+      '9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('9.4 when hintUsed is true, hint button is disabled', (tester) async {
+    testWidgets('9.4 when hintUsed is true, hint button is disabled', (
+      tester,
+    ) async {
       final hintState = testLoadedState.copyWith(hintUsed: true);
       await pumpScreen(tester, state: hintState);
 
-      final hintButton = tester.widget<QuestHintButton>(find.byType(QuestHintButton));
+      final hintButton = tester.widget<QuestHintButton>(
+        find.byType(QuestHintButton),
+      );
       expect(hintButton.used, isTrue);
     });
 
-    testWidgets('9.5 onQuestionReset resets all local ValueNotifiers cleanly', (tester) async {
+    testWidgets('9.5 onQuestionReset resets all local ValueNotifiers cleanly', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
@@ -967,43 +1197,56 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(SpeakMissingWordMagnetArena), findsOneWidget);
-      expect(find.byKey(const Key('speak_missing_word_sentence_text')), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_missing_word_sentence_text')),
+        findsOneWidget,
+      );
       expect(find.textContaining('___'), findsOneWidget);
     });
 
-    testWidgets('9.6 progressing to second quest syncs new options to Magnet Arena', (tester) async {
-      await pumpScreen(tester);
-      final nextState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      speakingStreamController.add(nextState);
-      await tester.pumpAndSettle();
+    testWidgets(
+      '9.6 progressing to second quest syncs new options to Magnet Arena',
+      (tester) async {
+        await pumpScreen(tester);
+        final nextState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        speakingStreamController.add(nextState);
+        await tester.pumpAndSettle();
 
-      expect(find.text('DEGREES'), findsOneWidget);
-      expect(find.text('METERS'), findsOneWidget);
-      expect(find.text('LITERS'), findsOneWidget);
-      expect(find.text('GRAMS'), findsOneWidget);
-    });
+        expect(find.text('DEGREES'), findsOneWidget);
+        expect(find.text('METERS'), findsOneWidget);
+        expect(find.text('LITERS'), findsOneWidget);
+        expect(find.text('GRAMS'), findsOneWidget);
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 10. Lifecycle, Reduced Motion, Viewports & Theming (12 tests)
   // ---------------------------------------------------------------------------
   group('10. Lifecycle, Reduced Motion, Viewports & Theming', () {
-    testWidgets('10.1 initGameLifecycle creates lifecycle listener', (tester) async {
+    testWidgets('10.1 initGameLifecycle creates lifecycle listener', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.2 disposing screen cancels scroll timer, controllers, and notifiers cleanly', (tester) async {
-      await pumpScreen(tester);
-      await tester.pumpWidget(const SizedBox());
-      await tester.pump(const Duration(milliseconds: 300));
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.2 disposing screen cancels scroll timer, controllers, and notifiers cleanly',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.pumpWidget(const SizedBox());
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.3 App pause/resume callbacks execute safely', (tester) async {
+    testWidgets('10.3 App pause/resume callbacks execute safely', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final state = tester.state<State<SpeakMissingWordScreen>>(
         find.byType(SpeakMissingWordScreen),
@@ -1014,17 +1257,25 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.4 under lowAnimationModeOverride, vortex rotation is disabled', (tester) async {
-      await pumpScreen(tester, reduceMotion: true);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.4 under lowAnimationModeOverride, vortex rotation is disabled',
+      (tester) async {
+        await pumpScreen(tester, reduceMotion: true);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.5 under MediaQuery.disableAnimations, vortex rotation is disabled', (tester) async {
-      await pumpScreen(tester, reduceMotion: true);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.5 under MediaQuery.disableAnimations, vortex rotation is disabled',
+      (tester) async {
+        await pumpScreen(tester, reduceMotion: true);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.6 didChangeDependencies updates vortex animation state', (tester) async {
+    testWidgets('10.6 didChangeDependencies updates vortex animation state', (
+      tester,
+    ) async {
       await pumpScreen(tester, reduceMotion: false);
       expect(tester.takeException(), isNull);
 
@@ -1033,43 +1284,64 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
     });
 
-    testWidgets('10.7 tapping word under lowAnimationModeOverride completes placement immediately', (tester) async {
-      await pumpScreen(tester, reduceMotion: true);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '10.7 tapping word under lowAnimationModeOverride completes placement immediately',
+      (tester) async {
+        await pumpScreen(tester, reduceMotion: true);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speak_missing_word_shadow_compare')), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('speak_missing_word_shadow_compare')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('10.8 scrolling jumps immediately under lowAnimationModeOverride', (tester) async {
-      await pumpScreen(tester, reduceMotion: true);
-      await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
-      await tester.pumpAndSettle();
+    testWidgets(
+      '10.8 scrolling jumps immediately under lowAnimationModeOverride',
+      (tester) async {
+        await pumpScreen(tester, reduceMotion: true);
+        await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.9 renders without overflow on small mobile viewport (360x640)', (tester) async {
-      await pumpScreen(tester, size: const Size(360, 640));
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.9 renders without overflow on small mobile viewport (360x640)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(360, 640));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.10 renders without overflow on standard viewport (390x844)', (tester) async {
-      await pumpScreen(tester, size: const Size(390, 844));
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.10 renders without overflow on standard viewport (390x844)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(390, 844));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.11 renders without overflow on tablet viewport (820x1180)', (tester) async {
-      await pumpScreen(tester, size: const Size(820, 1180));
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.11 renders without overflow on tablet viewport (820x1180)',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(820, 1180));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.12 Dark and Light themes apply correct theme colors and backgrounds', (tester) async {
-      await pumpScreen(tester, themeMode: ThemeMode.light);
-      expect(tester.takeException(), isNull);
+    testWidgets(
+      '10.12 Dark and Light themes apply correct theme colors and backgrounds',
+      (tester) async {
+        await pumpScreen(tester, themeMode: ThemeMode.light);
+        expect(tester.takeException(), isNull);
 
-      await pumpScreen(tester, themeMode: ThemeMode.dark);
-      expect(tester.takeException(), isNull);
-    });
+        await pumpScreen(tester, themeMode: ThemeMode.dark);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

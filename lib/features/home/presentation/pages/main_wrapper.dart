@@ -1,16 +1,17 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
+import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/app_update_dialog.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/app_update_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/utils/app_update_service.dart';
-import 'package:vowl/core/presentation/widgets/app_update_dialog.dart';
 
 /// Root application scaffold wrapping top-level tab destinations in a stateful shell.
 class MainWrapper extends StatefulWidget {
@@ -57,139 +58,140 @@ class _MainWrapperState extends State<MainWrapper> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final bottomInset = MediaQuery.paddingOf(context).bottom;
+
+    // Resilient safe-area clearance across all device form factors:
+    // viewPaddingOf retains physical navigation bar hardware/software insets even if keyboard opens.
+    final systemBottom = math.max(
+      MediaQuery.paddingOf(context).bottom,
+      MediaQuery.viewPaddingOf(context).bottom,
+    );
+
+    // Adaptive bottom margin:
+    // 1. Android 3-Button Navigation (systemBottom >= 36dp, typically 48-56dp):
+    //    OS already renders a thick black system bar. Adding 6dp gives a tight, grounded
+    //    cushion so the floating bar doesn't awkwardly float high in the sky.
+    // 2. Gesture Pill / iOS Home Indicator (systemBottom between 16dp and 34dp):
+    //    Adds 10dp cushion so quick thumb taps never accidentally trigger the system "Home" swipe.
+    // 3. Hardware Button / Chin Bezel (systemBottom == 0):
+    //    Guarantees at least 14dp clearance so the bar never collides with the physical screen bezel.
+    final double adaptiveBottomMargin = systemBottom >= 36
+        ? (systemBottom + 6.h)
+        : (systemBottom > 0 ? (systemBottom + 10.h) : 14.h);
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // WhatsApp iOS & Apple HIG Tab Bar Standard Geometry
+    // ─────────────────────────────────────────────────────────────────────────
+    const navBarHeight = 58.0;
+    const cornerRadius = 29.0;
+
+    final navDecoration = BoxDecoration(
+      color: isMidnight
+          ? Colors.black.withValues(alpha: 0.92)
+          : (isDark
+              ? AppColors.slate900.withValues(alpha: 0.88)
+              : Colors.white.withValues(alpha: 0.92)),
+      borderRadius: BorderRadius.circular(cornerRadius.r),
+      border: Border.all(
+        color: isMidnight
+            ? Colors.white.withValues(alpha: 0.14)
+            : (isDark
+                ? Colors.white.withValues(alpha: 0.10)
+                : AppColors.slate200.withValues(alpha: 0.80)),
+        width: 1.0,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.08),
+          blurRadius: 28,
+          offset: const Offset(0, 8),
+        ),
+        BoxShadow(
+          color: (isDark ? Colors.black : AppColors.indigo500)
+              .withValues(alpha: isDark ? 0.20 : 0.04),
+          blurRadius: 10,
+          offset: const Offset(0, 2),
+        ),
+      ],
+    );
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       extendBody: true,
+      resizeToAvoidBottomInset: false,
       body: widget.navigationShell,
       bottomNavigationBar: RepaintBoundary(
         child: Container(
-          height: 82.h,
-          margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h + bottomInset),
-          child:
-              Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  // 1. Premium Glass Background
-                  VowlMotion.lowAnimationModeOverride.value
-                      ? Container(
-                          height: 65.h,
-                          decoration: BoxDecoration(
-                            color: isMidnight
-                                ? Colors.black.withValues(alpha: 0.96)
-                                : (isDark
-                                      ? const Color(0xFF0B101D).withValues(alpha: 0.95)
-                                      : Colors.white.withValues(alpha: 0.96)),
-                            borderRadius: BorderRadius.circular(24.r),
-                            border: Border.all(
-                              color: isMidnight
-                                  ? Colors.white.withValues(alpha: 0.12)
-                                  : (isDark
-                                        ? Colors.white.withValues(alpha: 0.10)
-                                        : AppColors.slate200),
-                              width: 1.0,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(
-                                  alpha: isDark ? 0.40 : 0.08,
-                                ),
-                                blurRadius: 24,
-                                offset: const Offset(0, 8),
-                              ),
-                            ],
-                          ),
-                        )
-                      : ClipRRect(
-                          borderRadius: BorderRadius.circular(24.r),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-                            child: Container(
-                              height: 65.h,
-                              decoration: BoxDecoration(
-                                color: isMidnight
-                                    ? Colors.black.withValues(alpha: 0.88)
-                                    : (isDark
-                                          ? const Color(0xFF0B101D).withValues(alpha: 0.88)
-                                          : Colors.white.withValues(alpha: 0.90)),
-                                borderRadius: BorderRadius.circular(24.r),
-                                border: Border.all(
-                                  color: isMidnight
-                                      ? Colors.white.withValues(alpha: 0.12)
-                                      : (isDark
-                                            ? Colors.white.withValues(alpha: 0.10)
-                                            : AppColors.slate200),
-                                  width: 1.0,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(
-                                      alpha: isDark ? 0.40 : 0.08,
-                                    ),
-                                    blurRadius: 24,
-                                    offset: const Offset(0, 8),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-
-                  // 2. Navigation Items
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: SizedBox(
-                      height: 65.h,
-                      child: Semantics(
-                        container: true,
-                        explicitChildNodes: true,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            _buildNavItem(
-                              context,
-                              0,
-                              Icons.home_outlined,
-                              Icons.home_rounded,
-                              context.tr('nav.home', fallback: 'Home'),
-                            ),
-                            _buildNavItem(
-                              context,
-                              1,
-                              Icons.sports_esports_outlined,
-                              Icons.sports_esports_rounded,
-                              context.tr('nav.games', fallback: 'Games'),
-                            ),
-                            _buildNavItem(
-                              context,
-                              2,
-                              Icons.leaderboard_outlined,
-                              Icons.leaderboard_rounded,
-                              context.tr('nav.ranks', fallback: 'Ranks'),
-                            ),
-                            _buildNavItem(
-                              context,
-                              3,
-                              Icons.person_outline_rounded,
-                              Icons.person_rounded,
-                              context.tr('nav.profile', fallback: 'Profile'),
-                            ),
-                          ],
+          height: navBarHeight.h,
+          margin: EdgeInsets.fromLTRB(16.w, 0, 16.w, adaptiveBottomMargin),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // 1. Premium Glass Surface (Optimized for 120fps hardware rasterizer)
+              VowlMotion.lowAnimationModeOverride.value
+                  ? Container(
+                      height: navBarHeight.h,
+                      decoration: navDecoration,
+                    )
+                  : ClipRRect(
+                      borderRadius: BorderRadius.circular(cornerRadius.r),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                        child: Container(
+                          height: navBarHeight.h,
+                          decoration: navDecoration,
                         ),
                       ),
                     ),
+
+              // 2. Navigation Items (Fixed-Ratio Grid with 120Hz Implicit Animators)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                child: SizedBox(
+                  height: navBarHeight.h,
+                  child: Semantics(
+                    container: true,
+                    explicitChildNodes: true,
+                    child: Row(
+                      children: [
+                        _buildNavItem(
+                          context,
+                          0,
+                          LucideIcons.home,
+                          context.tr('nav.home', fallback: 'Home'),
+                        ),
+                        _buildNavItem(
+                          context,
+                          1,
+                          LucideIcons.gamepad2,
+                          context.tr('nav.games', fallback: 'Games'),
+                        ),
+                        _buildNavItem(
+                          context,
+                          2,
+                          LucideIcons.trophy,
+                          context.tr('nav.ranks', fallback: 'Ranks'),
+                        ),
+                        _buildNavItem(
+                          context,
+                          3,
+                          LucideIcons.user,
+                          context.tr('nav.profile', fallback: 'Profile'),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ).animateIf(
-                context,
-                (w) => w.animate().slideY(
-                  begin: 0.5,
-                  end: 0,
-                  duration: 350.ms,
-                  curve: Curves.easeOutCubic,
                 ),
               ),
+            ],
+          ).animateIf(
+            context,
+            (w) => w.animate().slideY(
+              begin: 0.5,
+              end: 0,
+              duration: VowlMotion.entrance,
+              curve: VowlMotion.entranceCurve,
+            ),
+          ),
         ),
       ),
     );
@@ -198,103 +200,77 @@ class _MainWrapperState extends State<MainWrapper> {
   Widget _buildNavItem(
     BuildContext context,
     int index,
-    IconData inactiveIcon,
-    IconData activeIcon,
+    IconData icon,
     String label,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isSelected = widget.navigationShell.currentIndex == index;
-    const accentColor = IllustrationColors.brightBlue;
+
+    // Vowl Brand Palette
+    final activeColor =
+        isDark ? AppColors.indigo400 : AppColors.indigo600;
+    final inactiveColor =
+        isDark ? AppColors.slate400 : AppColors.slate500;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    return Semantics(
-      button: true,
-      selected: isSelected,
-      label: label,
-      child: GestureDetector(
-        onTap: () => _onTap(context, index),
-        behavior: HitTestBehavior.opaque,
-        child: Container(
-          // Invisible floor so every tab — selected (with label) or
-          // collapsed to just an icon — keeps at least a 48dp tap target,
-          // regardless of how tight the visual padding below is.
-          constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
-          alignment: Alignment.center,
-          child: ExcludeSemantics(
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-              padding: EdgeInsets.symmetric(
-                horizontal: isSelected ? 12.w : 8.w,
-                vertical: 8.h,
-              ),
-              decoration: BoxDecoration(
-                color: isSelected
-                    ? accentColor.withValues(alpha: 0.15)
-                    : Colors.transparent,
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Row(
+    return Expanded(
+      child: Semantics(
+        button: true,
+        selected: isSelected,
+        label: label,
+        child: GestureDetector(
+          onTap: () => _onTap(context, index),
+          behavior: HitTestBehavior.opaque,
+          child: Container(
+            constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
+            alignment: Alignment.center,
+            child: ExcludeSemantics(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  reduceMotion
-                      ? Icon(
-                          isSelected ? activeIcon : inactiveIcon,
-                          color: isSelected
-                              ? accentColor
-                              : (isDark ? Colors.white54 : Colors.black45),
-                          size: 24.r,
-                        )
-                      : Icon(
-                          isSelected ? activeIcon : inactiveIcon,
-                          color: isSelected
-                              ? accentColor
-                              : (isDark ? Colors.white54 : Colors.black45),
-                          size: 24.r,
-                        )
-                          .animate(target: isSelected ? 1 : 0)
-                          .shimmer(
-                            delay: 400.ms,
-                            duration: 1200.ms,
-                            color: Colors.white24,
-                          )
-                          .scale(
-                            begin: const Offset(1, 1),
-                            end: const Offset(1.1, 1.1),
-                          ),
-
-                  if (isSelected) ...[
-                    SizedBox(width: 4.w),
-                    Flexible(
-                      child: reduceMotion
-                          ? AutoSizeText(
-                              label,
-                              maxLines: 1,
-                              minFontSize: 6,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w700,
-                                color: accentColor,
-                                letterSpacing: 0.5,
-                              ),
-                            )
-                          : AutoSizeText(
-                              label,
-                              maxLines: 1,
-                              minFontSize: 6,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w700,
-                                color: accentColor,
-                                letterSpacing: 0.5,
-                              ),
-                            ).animate().fadeIn().slideX(begin: -0.2),
+                  // WhatsApp iOS Compact Pill Indicator
+                  AnimatedContainer(
+                    duration: VowlMotion.fast,
+                    curve: Curves.easeOutCubic,
+                    width: 48.w,
+                    height: 28.h,
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? (isDark
+                              ? AppColors.indigo400.withValues(alpha: 0.20)
+                              : AppColors.indigo500.withValues(alpha: 0.12))
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.circular(14.r),
                     ),
-                  ],
+                    alignment: Alignment.center,
+                    child: _NavIconSpring(
+                      icon: icon,
+                      color: isSelected ? activeColor : inactiveColor,
+                      size: 23.r,
+                      isSelected: isSelected,
+                      reduceMotion: reduceMotion,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  // WhatsApp iOS 10.5sp Typography
+                  AnimatedDefaultTextStyle(
+                    duration: VowlMotion.fast,
+                    curve: Curves.easeOutCubic,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.5.sp,
+                      fontWeight:
+                          isSelected ? FontWeight.w600 : FontWeight.w500,
+                      color: isSelected ? activeColor : inactiveColor,
+                      letterSpacing: 0.15,
+                    ),
+                    child: Text(
+                      label,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -305,25 +281,29 @@ class _MainWrapperState extends State<MainWrapper> {
   }
 
   void _onTap(BuildContext context, int index) {
+    HapticFeedback.selectionClick();
+
     if (widget.navigationShell.currentIndex == index) {
       final String? controllerName = switch (index) {
         0 => 'home',
         1 => 'games',
-        2 => di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')
-            ? 'leaderboard'
-            : 'ranks',
+        2 =>
+          di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')
+              ? 'leaderboard'
+              : 'ranks',
         3 => 'profile',
         _ => null,
       };
 
       if (controllerName != null &&
           di.sl.isRegistered<ScrollController>(instanceName: controllerName)) {
-        final controller =
-            di.sl<ScrollController>(instanceName: controllerName);
+        final controller = di.sl<ScrollController>(
+          instanceName: controllerName,
+        );
         if (controller.hasClients) {
           controller.animateTo(
             0.0,
-            duration: const Duration(milliseconds: 500),
+            duration: VowlMotion.slow,
             curve: Curves.fastOutSlowIn,
           );
         }
@@ -333,6 +313,83 @@ class _MainWrapperState extends State<MainWrapper> {
     widget.navigationShell.goBranch(
       index,
       initialLocation: index == widget.navigationShell.currentIndex,
+    );
+  }
+}
+
+/// Hardware-accelerated 120fps spring pop for navigation bar icons.
+///
+/// Executes an elastic micro-bounce on selection, then settles smoothly to 1.0x
+/// so all icons remain optically identical in size at rest.
+class _NavIconSpring extends StatefulWidget {
+  final IconData icon;
+  final Color color;
+  final double size;
+  final bool isSelected;
+  final bool reduceMotion;
+
+  const _NavIconSpring({
+    required this.icon,
+    required this.color,
+    required this.size,
+    required this.isSelected,
+    required this.reduceMotion,
+  });
+
+  @override
+  State<_NavIconSpring> createState() => _NavIconSpringState();
+}
+
+class _NavIconSpringState extends State<_NavIconSpring>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 220),
+    );
+
+    // Idle at 1.0x -> Pops to 1.15x -> Settles smoothly back to 1.0x
+    _scaleAnimation = TweenSequence<double>([
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 1.0, end: 1.15)
+            .chain(CurveTween(curve: Curves.easeOutCubic)),
+        weight: 35,
+      ),
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 1.15, end: 1.0)
+            .chain(CurveTween(curve: Curves.easeOutBack)),
+        weight: 65,
+      ),
+    ]).animate(_controller);
+  }
+
+  @override
+  void didUpdateWidget(covariant _NavIconSpring oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.isSelected && !oldWidget.isSelected && !widget.reduceMotion) {
+      _controller.forward(from: 0.0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.reduceMotion) {
+      return Icon(widget.icon, color: widget.color, size: widget.size);
+    }
+    return ScaleTransition(
+      scale: _scaleAnimation,
+      child: Icon(widget.icon, color: widget.color, size: widget.size),
     );
   }
 }

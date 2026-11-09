@@ -25,8 +25,9 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
 
-    when(() => mockSoundService.playTts(any(), speed: any(named: 'speed')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playTts(any(), speed: any(named: 'speed')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playHint()).thenAnswer((_) async {});
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -50,8 +51,9 @@ void main() {
   }
 
   group('WordSnapTargetCard Tests', () {
-    testWidgets('renders target word, letter count, and triggers TTS on tap',
-        (tester) async {
+    testWidgets('renders target word, letter count, and triggers TTS on tap', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
@@ -83,8 +85,9 @@ void main() {
   });
 
   group('WordSnapHintCard Tests', () {
-    testWidgets('starts collapsed, expands on tap, and plays hint sound',
-        (tester) async {
+    testWidgets('starts collapsed, expands on tap, and plays hint sound', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
@@ -123,77 +126,85 @@ void main() {
   });
 
   group('WordSnapCompletedView Tests', () {
-    testWidgets('renders completed state, solved word, and handles practice mode',
-        (tester) async {
-      await tester.binding.setSurfaceSize(const Size(390, 844));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders completed state, solved word, and handles practice mode',
+      (tester) async {
+        await tester.binding.setSurfaceSize(const Size(390, 844));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      bool practiceTapped = false;
+        bool practiceTapped = false;
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordSnapCompletedView(
-            puzzle: samplePuzzle,
-            streak: 5,
-            primaryColor: IllustrationColors.vibrantPink,
-            soundService: mockSoundService,
-            hapticService: mockHapticService,
-            onPracticeAgain: () => practiceTapped = true,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordSnapCompletedView(
+              puzzle: samplePuzzle,
+              streak: 5,
+              primaryColor: IllustrationColors.vibrantPink,
+              soundService: mockSoundService,
+              hapticService: mockHapticService,
+              onPracticeAgain: () => practiceTapped = true,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Challenge Complete!'), findsOneWidget);
-      expect(find.text('ZEBRINE'), findsOneWidget);
-      expect(find.text('5 Day Streak'), findsOneWidget);
+        expect(find.text('Challenge Complete!'), findsOneWidget);
+        expect(find.text('ZEBRINE'), findsOneWidget);
+        expect(find.text('5 Day Streak'), findsOneWidget);
 
-      final practiceFinder = find.text('Practice Another Word');
-      expect(practiceFinder, findsOneWidget);
-      await tester.ensureVisible(practiceFinder);
-      await tester.pumpAndSettle();
+        final practiceFinder = find.text('Practice Another Word');
+        expect(practiceFinder, findsOneWidget);
+        await tester.ensureVisible(practiceFinder);
+        await tester.pumpAndSettle();
 
-      await tester.tap(practiceFinder);
-      await tester.pump();
+        await tester.tap(practiceFinder);
+        await tester.pump();
 
-      expect(practiceTapped, isTrue);
-    });
+        expect(practiceTapped, isTrue);
+      },
+    );
 
-    testWidgets('renders practice complete title and description when isPracticeMode is true',
-        (tester) async {
-      await tester.binding.setSurfaceSize(const Size(390, 844));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders practice complete title and description when isPracticeMode is true',
+      (tester) async {
+        await tester.binding.setSurfaceSize(const Size(390, 844));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordSnapCompletedView(
-            puzzle: samplePuzzle,
-            streak: 0,
-            primaryColor: IllustrationColors.vibrantPink,
-            soundService: mockSoundService,
-            hapticService: mockHapticService,
-            onPracticeAgain: () {},
-            isPracticeMode: true,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordSnapCompletedView(
+              puzzle: samplePuzzle,
+              streak: 0,
+              primaryColor: IllustrationColors.vibrantPink,
+              soundService: mockSoundService,
+              hapticService: mockHapticService,
+              onPracticeAgain: () {},
+              isPracticeMode: true,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Practice Complete!'), findsOneWidget);
-      expect(find.text('Well done! Keep practicing to strengthen your vocabulary.'), findsOneWidget);
-    });
+        expect(find.text('Practice Complete!'), findsOneWidget);
+        expect(
+          find.text(
+            'Well done! Keep practicing to strengthen your vocabulary.',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('WordSnapTopBar Tests', () {
-    testWidgets('renders title and streak badge when streak > 0',
-        (tester) async {
+    testWidgets('renders title and streak badge when streak > 0', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
       await tester.pumpWidget(
-        wrapWithScreenUtil(
-          const WordSnapTopBar(streak: 12),
-        ),
+        wrapWithScreenUtil(const WordSnapTopBar(streak: 12)),
       );
       await tester.pumpAndSettle();
 

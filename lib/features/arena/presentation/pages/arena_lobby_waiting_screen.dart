@@ -44,7 +44,8 @@ class ArenaLobbyWaitingScreen extends StatefulWidget {
   }
 
   @override
-  State<ArenaLobbyWaitingScreen> createState() => _ArenaLobbyWaitingScreenState();
+  State<ArenaLobbyWaitingScreen> createState() =>
+      _ArenaLobbyWaitingScreenState();
 }
 
 class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
@@ -96,14 +97,16 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
 
     CustomSnackBar.show(
       context: context,
-      message: '⚔️ ${activeSession.guestName ?? "Challenger"} joined! Duel starting...',
+      message:
+          '⚔️ ${activeSession.guestName ?? "Challenger"} joined! Duel starting...',
       type: CustomSnackBarType.success,
       duration: const Duration(seconds: 2),
     );
 
-    Navigator.of(context, rootNavigator: true).pushReplacement(
-      ArenaDuelScreen.route(session: activeSession),
-    );
+    Navigator.of(
+      context,
+      rootNavigator: true,
+    ).pushReplacement(ArenaDuelScreen.route(session: activeSession));
   }
 
   @override
@@ -168,15 +171,15 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
     final user = authState.user;
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.midnightSurface : Colors.white);
     final borderColor = isDark
         ? AppColors.indigo500.withValues(alpha: 0.22)
         : AppColors.indigo500.withValues(alpha: 0.16);
@@ -220,7 +223,10 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
 
                 // Top Badge: Entry Pill
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 6.h,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.amber500.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(20.r),
@@ -233,7 +239,11 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(LucideIcons.coins, color: AppColors.amber500, size: 14.r),
+                        Icon(
+                          LucideIcons.coins,
+                          color: AppColors.amber500,
+                          size: 14.r,
+                        ),
                         SizedBox(width: 6.w),
                         Text(
                           'Entry 30🪙 each • Winner takes 50🪙 + 5 XP',
@@ -260,7 +270,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                     border: Border.all(color: borderColor),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.indigo500.withValues(alpha: isDark ? 0.08 : 0.04),
+                        color: AppColors.indigo500.withValues(
+                          alpha: isDark ? 0.08 : 0.04,
+                        ),
                         blurRadius: 16,
                         offset: const Offset(0, 4),
                       ),
@@ -293,7 +305,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                 vertical: 2.h,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.emerald500.withValues(alpha: 0.15),
+                                color: AppColors.emerald500.withValues(
+                                  alpha: 0.15,
+                                ),
                                 borderRadius: BorderRadius.circular(6.r),
                               ),
                               child: Text(
@@ -317,7 +331,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                           Container(
                             padding: EdgeInsets.all(8.r),
                             decoration: BoxDecoration(
-                              color: AppColors.indigo500.withValues(alpha: 0.15),
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.15,
+                              ),
                               shape: BoxShape.circle,
                             ),
                             child: Text(
@@ -347,15 +363,24 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                     AnimatedBuilder(
                                       animation: _radarAnimation,
                                       builder: (context, _) {
-                                        final scale = 0.85 + (_radarAnimation.value * 0.35);
-                                        final opacity = (1.0 - _radarAnimation.value).clamp(0.0, 1.0);
+                                        final scale =
+                                            0.85 +
+                                            (_radarAnimation.value * 0.35);
+                                        final opacity =
+                                            (1.0 - _radarAnimation.value).clamp(
+                                              0.0,
+                                              1.0,
+                                            );
                                         return Container(
                                           width: 54.r * scale,
                                           height: 54.r * scale,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: AppColors.indigo500.withValues(alpha: opacity * 0.45),
+                                              color: AppColors.indigo500
+                                                  .withValues(
+                                                    alpha: opacity * 0.45,
+                                                  ),
                                               width: 1.5,
                                             ),
                                           ),
@@ -368,16 +393,20 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: isDark
-                                            ? const Color(0xFF1E293B)
-                                            : const Color(0xFFF1F5F9),
+                                            ? AppColors.slate800
+                                            : AppColors.slate100,
                                         border: Border.all(
-                                          color: AppColors.indigo500.withValues(alpha: 0.3),
+                                          color: AppColors.indigo500.withValues(
+                                            alpha: 0.3,
+                                          ),
                                         ),
                                       ),
                                       child: Icon(
                                         LucideIcons.userPlus,
                                         size: 20.r,
-                                        color: isDark ? AppColors.indigo400 : AppColors.indigo500,
+                                        color: isDark
+                                            ? AppColors.indigo400
+                                            : AppColors.indigo500,
                                       ),
                                     ),
                                   ],
@@ -401,7 +430,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                 vertical: 2.h,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.amber500.withValues(alpha: 0.15),
+                                color: AppColors.amber500.withValues(
+                                  alpha: 0.15,
+                                ),
                                 borderRadius: BorderRadius.circular(6.r),
                               ),
                               child: Text(
@@ -476,9 +507,12 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                             child: ScaleButton(
                               onTap: () {
                                 try {
-                                  Clipboard.setData(ClipboardData(
-                                    text: widget.session.roomCode.toUpperCase(),
-                                  ));
+                                  Clipboard.setData(
+                                    ClipboardData(
+                                      text: widget.session.roomCode
+                                          .toUpperCase(),
+                                    ),
+                                  );
                                   CustomSnackBar.show(
                                     context: context,
                                     message: 'Room code copied to clipboard!',
@@ -492,11 +526,15 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   color: isDark
-                                      ? AppColors.indigo950.withValues(alpha: 0.4)
+                                      ? AppColors.indigo950.withValues(
+                                          alpha: 0.4,
+                                        )
                                       : AppColors.indigo50,
                                   borderRadius: BorderRadius.circular(12.r),
                                   border: Border.all(
-                                    color: AppColors.indigo500.withValues(alpha: 0.25),
+                                    color: AppColors.indigo500.withValues(
+                                      alpha: 0.25,
+                                    ),
                                   ),
                                 ),
                                 child: Row(
@@ -505,7 +543,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                     Icon(
                                       LucideIcons.copy,
                                       size: 14.r,
-                                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                                      color: isDark
+                                          ? AppColors.indigo400
+                                          : AppColors.indigo600,
                                     ),
                                     SizedBox(width: 6.w),
                                     Text(
@@ -514,7 +554,9 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
-                                        color: isDark ? Colors.white : AppColors.indigo600,
+                                        color: isDark
+                                            ? Colors.white
+                                            : AppColors.indigo600,
                                       ),
                                     ),
                                   ],
@@ -542,12 +584,17 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   gradient: const LinearGradient(
-                                    colors: [AppColors.indigo500, AppColors.indigo600],
+                                    colors: [
+                                      AppColors.indigo500,
+                                      AppColors.indigo600,
+                                    ],
                                   ),
                                   borderRadius: BorderRadius.circular(12.r),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: AppColors.indigo500.withValues(alpha: 0.35),
+                                      color: AppColors.indigo500.withValues(
+                                        alpha: 0.35,
+                                      ),
                                       blurRadius: 8,
                                       offset: const Offset(0, 2),
                                     ),
@@ -621,4 +668,3 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
     );
   }
 }
-

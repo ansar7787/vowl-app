@@ -406,9 +406,9 @@ class _InstructionBanner extends StatelessWidget {
       child: reduceMotion
           ? bannerContent
           : bannerContent
-              .animate()
-              .fadeIn(duration: 400.ms)
-              .slideY(begin: -0.2, end: 0),
+                .animate()
+                .fadeIn(duration: 400.ms)
+                .slideY(begin: -0.2, end: 0),
     );
   }
 }

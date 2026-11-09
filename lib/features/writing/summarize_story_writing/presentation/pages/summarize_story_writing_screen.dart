@@ -157,7 +157,9 @@ class _SummarizeStoryWritingScreenState
   void _onTimerExpired() {
     if (_pendingSubmit.value) return;
     final state = context.read<WritingBloc>().state;
-    final quest = (state is WritingLoaded) ? state.currentQuestOrNull : _lastQuest;
+    final quest = (state is WritingLoaded)
+        ? state.currentQuestOrNull
+        : _lastQuest;
     if (quest != null) {
       submitWrongAnswer(quest: quest);
     }
@@ -263,7 +265,8 @@ class _SummarizeStoryWritingScreenState
               final rawInstruction = quest != null
                   ? InstructionHelper.getInstruction(quest)
                   : '';
-              final instruction = (rawInstruction.isNotEmpty &&
+              final instruction =
+                  (rawInstruction.isNotEmpty &&
                       rawInstruction != 'Sequence the key events.')
                   ? rawInstruction
                   : context.tr(
@@ -350,7 +353,9 @@ class _SummarizeStoryWritingScreenState
                                       !isAnswered &&
                                       !_pendingSubmit.value)
                                     ScaleButton(
-                                      key: const Key('summarize_story_check_button'),
+                                      key: const Key(
+                                        'summarize_story_check_button',
+                                      ),
                                       onTap: () =>
                                           _submitAnswer(isAnswered, quest),
                                       child: Container(

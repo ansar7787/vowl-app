@@ -37,20 +37,33 @@ import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_ove
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
 class MockWritingBloc extends Mock implements WritingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
+
 class FakeWritingState extends Fake implements WritingState {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeEconomyState extends Fake implements EconomyState {}
 
 void main() {
@@ -69,10 +82,12 @@ void main() {
 
   const sampleQuest1 = WritingQuest(
     id: 'ssw_q1',
-    instruction: 'Arrange key events in chronological order to summarize the story.',
+    instruction:
+        'Arrange key events in chronological order to summarize the story.',
     difficulty: 2,
     subtype: GameSubtype.summarizeStoryWriting,
-    story: 'Maya discovered an ancient map inside a dusty library book. She followed the coordinates into the forgotten valley. At the summit, she uncovered the lost crystal of Eldoria.',
+    story:
+        'Maya discovered an ancient map inside a dusty library book. She followed the coordinates into the forgotten valley. At the summit, she uncovered the lost crystal of Eldoria.',
     options: [
       'Maya discovered an ancient map in a library book.',
       'She followed coordinates into a forgotten valley.',
@@ -80,8 +95,10 @@ void main() {
     ],
     correctOrder: [0, 1, 2],
     hint: 'Start with the discovery of the map.',
-    explanation: 'The story follows a chronological journey from discovery to the crystal.',
-    sampleAnswer: 'Maya discovered an ancient map in a library book. She followed coordinates into a forgotten valley. At the summit, she uncovered the lost crystal.',
+    explanation:
+        'The story follows a chronological journey from discovery to the crystal.',
+    sampleAnswer:
+        'Maya discovered an ancient map in a library book. She followed coordinates into a forgotten valley. At the summit, she uncovered the lost crystal.',
     xpReward: 30,
     coinReward: 20,
   );
@@ -91,7 +108,8 @@ void main() {
     instruction: 'Summarize the mission sequence.',
     difficulty: 2,
     subtype: GameSubtype.summarizeStoryWriting,
-    story: 'The probe initiated thruster ignition. It entered lunar orbit 48 hours later. Finally, the probe landed safely on the South Pole basin.',
+    story:
+        'The probe initiated thruster ignition. It entered lunar orbit 48 hours later. Finally, the probe landed safely on the South Pole basin.',
     options: [
       'The probe initiated thruster ignition.',
       'It entered lunar orbit 48 hours later.',
@@ -100,7 +118,8 @@ void main() {
     correctOrder: [0, 1, 2],
     hint: 'Begin with thruster ignition.',
     explanation: 'Chronological timeline of the lunar probe flight path.',
-    sampleAnswer: 'The probe initiated thruster ignition. It entered lunar orbit 48 hours later. Finally, the probe landed safely on the South Pole basin.',
+    sampleAnswer:
+        'The probe initiated thruster ignition. It entered lunar orbit 48 hours later. Finally, the probe landed safely on the South Pole basin.',
     xpReward: 35,
     coinReward: 25,
   );
@@ -177,7 +196,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     // Analytics
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     // Auth mock
     when(() => mockAuthBloc.state).thenReturn(
@@ -191,13 +212,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -292,7 +315,10 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
   }
 
-  Future<void> scrollAndTapOption(WidgetTester tester, String optionText) async {
+  Future<void> scrollAndTapOption(
+    WidgetTester tester,
+    String optionText,
+  ) async {
     final optionFinder = find.byKey(Key('summarize_story_option_$optionText'));
     await tester.ensureVisible(optionFinder);
     await tester.pump(const Duration(milliseconds: 200));
@@ -301,11 +327,16 @@ void main() {
   }
 
   group('SummarizeStoryWritingScreen - 1. Initial Rendering & Layout', () {
-    testWidgets('renders all screen components properly at level 2', (tester) async {
+    testWidgets('renders all screen components properly at level 2', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       expect(find.byType(WritingBaseLayout), findsOneWidget);
-      expect(find.byKey(const Key('summarize_story_scroll_view')), findsOneWidget);
+      expect(
+        find.byKey(const Key('summarize_story_scroll_view')),
+        findsOneWidget,
+      );
       expect(find.byType(SummarizeStoryWritingInstruction), findsOneWidget);
       expect(find.byType(SummarizeStoryManuscript), findsOneWidget);
       expect(find.byType(SummarizeStoryFilmStrip), findsOneWidget);
@@ -323,12 +354,17 @@ void main() {
       }
 
       // Check Answer button is initially hidden because slots are empty
-      expect(find.byKey(const Key('summarize_story_check_button')), findsNothing);
+      expect(
+        find.byKey(const Key('summarize_story_check_button')),
+        findsNothing,
+      );
     });
   });
 
   group('SummarizeStoryWritingScreen - 2. Interactive Slotting & Removal', () {
-    testWidgets('tapping an option slots it into the first available slot', (tester) async {
+    testWidgets('tapping an option slots it into the first available slot', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       final option0 = sampleQuest1.options![0];
@@ -337,47 +373,63 @@ void main() {
       verify(() => mockHapticService.success()).called(1);
 
       // Slot 0 now displays option0
-      expect(find.descendant(
-        of: find.byKey(const Key('summarize_story_slot_0')),
-        matching: find.text(option0),
-      ), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('summarize_story_slot_0')),
+          matching: find.text(option0),
+        ),
+        findsOneWidget,
+      );
 
       // Frame vault no longer displays option0
       expect(find.byKey(Key('summarize_story_option_$option0')), findsNothing);
 
       // Check answer button is still not visible (only 1 of 3 filled)
-      expect(find.byKey(const Key('summarize_story_check_button')), findsNothing);
+      expect(
+        find.byKey(const Key('summarize_story_check_button')),
+        findsNothing,
+      );
     });
 
-    testWidgets('tapping all 3 options populates all slots and reveals Check Answer button', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping all 3 options populates all slots and reveals Check Answer button',
+      (tester) async {
+        await pumpScreen(tester);
 
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
+        for (final opt in sampleQuest1.options!) {
+          await scrollAndTapOption(tester, opt);
+        }
 
-      // All 3 slots filled
-      for (int i = 0; i < 3; i++) {
-        expect(find.descendant(
-          of: find.byKey(Key('summarize_story_slot_$i')),
-          matching: find.text(sampleQuest1.options![i]),
-        ), findsOneWidget);
-      }
+        // All 3 slots filled
+        for (int i = 0; i < 3; i++) {
+          expect(
+            find.descendant(
+              of: find.byKey(Key('summarize_story_slot_$i')),
+              matching: find.text(sampleQuest1.options![i]),
+            ),
+            findsOneWidget,
+          );
+        }
 
-      // Frame vault has no available options left
-      for (final opt in sampleQuest1.options!) {
-        expect(find.byKey(Key('summarize_story_option_$opt')), findsNothing);
-      }
+        // Frame vault has no available options left
+        for (final opt in sampleQuest1.options!) {
+          expect(find.byKey(Key('summarize_story_option_$opt')), findsNothing);
+        }
 
-      // Check Answer button is now visible
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(checkButton, findsOneWidget);
-      expect(find.text('CHECK ANSWER'), findsOneWidget);
-    });
+        // Check Answer button is now visible
+        final checkButton = find.byKey(
+          const Key('summarize_story_check_button'),
+        );
+        await tester.ensureVisible(checkButton);
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(checkButton, findsOneWidget);
+        expect(find.text('CHECK ANSWER'), findsOneWidget);
+      },
+    );
 
-    testWidgets('tapping a filled slot clears it and returns option to vault', (tester) async {
+    testWidgets('tapping a filled slot clears it and returns option to vault', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       final option0 = sampleQuest1.options![0];
@@ -393,16 +445,24 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
 
       // Slot 0 is now empty again
-      expect(find.descendant(
-        of: slot0,
-        matching: find.text('Tap or drag an event here'),
-      ), findsOneWidget);
+      expect(
+        find.descendant(
+          of: slot0,
+          matching: find.text('Tap or drag an event here'),
+        ),
+        findsOneWidget,
+      );
 
       // Option returns to frame vault
-      expect(find.byKey(Key('summarize_story_option_$option0')), findsOneWidget);
+      expect(
+        find.byKey(Key('summarize_story_option_$option0')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('drag and drop accepts sentence into target slot', (tester) async {
+    testWidgets('drag and drop accepts sentence into target slot', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       final option0 = sampleQuest1.options![0];
@@ -425,214 +485,288 @@ void main() {
       verify(() => mockHapticService.success()).called(1);
 
       // Slot 0 has received option0
-      expect(find.descendant(
-        of: find.byKey(const Key('summarize_story_slot_0')),
-        matching: find.text(option0),
-      ), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('summarize_story_slot_0')),
+          matching: find.text(option0),
+        ),
+        findsOneWidget,
+      );
     });
   });
 
   group('SummarizeStoryWritingScreen - 3. Check Answer & Validation', () {
-    testWidgets('wrong order submission triggers error haptics and submitWrongAnswer', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'wrong order submission triggers error haptics and submitWrongAnswer',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Slot in wrong order: opt 2, opt 1, opt 0
-      final opt0 = sampleQuest1.options![0];
-      final opt1 = sampleQuest1.options![1];
-      final opt2 = sampleQuest1.options![2];
+        // Slot in wrong order: opt 2, opt 1, opt 0
+        final opt0 = sampleQuest1.options![0];
+        final opt1 = sampleQuest1.options![1];
+        final opt2 = sampleQuest1.options![2];
 
-      await scrollAndTapOption(tester, opt2);
-      await scrollAndTapOption(tester, opt1);
-      await scrollAndTapOption(tester, opt0);
+        await scrollAndTapOption(tester, opt2);
+        await scrollAndTapOption(tester, opt1);
+        await scrollAndTapOption(tester, opt0);
 
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 200));
+        final checkButton = find.byKey(
+          const Key('summarize_story_check_button'),
+        );
+        await tester.ensureVisible(checkButton);
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(checkButton);
+        await tester.pump(const Duration(milliseconds: 200));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(
-        () => mockWritingBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(
+          () => mockWritingBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('correct order submission triggers success and reveals TypeToConfirmOverlay', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'correct order submission triggers success and reveals TypeToConfirmOverlay',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Slot in correct order: 0, 1, 2
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
+        // Slot in correct order: 0, 1, 2
+        for (final opt in sampleQuest1.options!) {
+          await scrollAndTapOption(tester, opt);
+        }
 
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 400));
+        final checkButton = find.byKey(
+          const Key('summarize_story_check_button'),
+        );
+        await tester.ensureVisible(checkButton);
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(checkButton);
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(1));
-      // TypeToConfirmOverlay is now rendered!
-      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-      expect(find.byKey(const Key('summarize_story_check_button')), findsNothing);
-    });
+        verify(
+          () => mockHapticService.success(),
+        ).called(greaterThanOrEqualTo(1));
+        // TypeToConfirmOverlay is now rendered!
+        expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+        expect(
+          find.byKey(const Key('summarize_story_check_button')),
+          findsNothing,
+        );
+      },
+    );
   });
 
-  group('SummarizeStoryWritingScreen - 4. Stage 2 TypeToConfirmOverlay & Confirmation', () {
-    testWidgets('TypeToConfirmOverlay renders expected summary text', (tester) async {
-      await pumpScreen(tester);
+  group(
+    'SummarizeStoryWritingScreen - 4. Stage 2 TypeToConfirmOverlay & Confirmation',
+    () {
+      testWidgets('TypeToConfirmOverlay renders expected summary text', (
+        tester,
+      ) async {
+        await pumpScreen(tester);
 
-      // Fill in correct order
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
+        // Fill in correct order
+        for (final opt in sampleQuest1.options!) {
+          await scrollAndTapOption(tester, opt);
+        }
 
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 400));
+        final checkButton = find.byKey(
+          const Key('summarize_story_check_button'),
+        );
+        await tester.ensureVisible(checkButton);
+        await tester.tap(checkButton);
+        await tester.pump(const Duration(milliseconds: 400));
 
-      final overlayFinder = find.byType(TypeToConfirmOverlay);
-      expect(overlayFinder, findsOneWidget);
+        final overlayFinder = find.byType(TypeToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
 
-      final expectedSummary = sampleQuest1.options!.join(' ');
-      expect(find.descendant(
-        of: overlayFinder,
-        matching: find.text(expectedSummary),
-      ), findsOneWidget);
+        final expectedSummary = sampleQuest1.options!.join(' ');
+        expect(
+          find.descendant(
+            of: overlayFinder,
+            matching: find.text(expectedSummary),
+          ),
+          findsOneWidget,
+        );
 
-      expect(find.descendant(
-        of: overlayFinder,
-        matching: find.byType(TextField),
-      ), findsOneWidget);
-    });
-
-    testWidgets('typing matching summary and tapping submit confirms correct answer', (tester) async {
-      await pumpScreen(tester);
-
-      // Fill in correct order
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
-
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 400));
-
-      final expectedSummary = sampleQuest1.options!.join(' ');
-      final textFieldFinder = find.byType(TextField);
-      await tester.ensureVisible(textFieldFinder);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.enterText(textFieldFinder, expectedSummary);
-      await tester.pump(const Duration(milliseconds: 100));
-
-      final submitBtnFinder = find.text('SUBMIT');
-      await tester.ensureVisible(submitBtnFinder);
-      await tester.tap(submitBtnFinder);
-      await tester.pump(const Duration(milliseconds: 100));
-
-      // Advance through evaluate delayed timer (800ms)
-      await tester.pump(const Duration(milliseconds: 900));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-
-      verify(
-        () => mockWritingBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', true)),
-        ),
-      ).called(1);
-    });
-
-    testWidgets('free user skip button displays ad and calls submitWrongAnswer on dismissal', (tester) async {
-      when(
-        () => mockAdService.showRewardedAd(
-          context: any(named: 'context'),
-          isPremium: false,
-          onUserEarnedReward: any(named: 'onUserEarnedReward'),
-          onDismissed: any(named: 'onDismissed'),
-        ),
-      ).thenAnswer((invocation) async {
-        final onDismissed = invocation.namedArguments[#onDismissed] as VoidCallback?;
-        onDismissed?.call();
+        expect(
+          find.descendant(of: overlayFinder, matching: find.byType(TextField)),
+          findsOneWidget,
+        );
       });
 
-      await pumpScreen(tester, isPremium: false);
+      testWidgets(
+        'typing matching summary and tapping submit confirms correct answer',
+        (tester) async {
+          await pumpScreen(tester);
 
-      // Fill in correct order
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
+          // Fill in correct order
+          for (final opt in sampleQuest1.options!) {
+            await scrollAndTapOption(tester, opt);
+          }
 
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 400));
+          final checkButton = find.byKey(
+            const Key('summarize_story_check_button'),
+          );
+          await tester.ensureVisible(checkButton);
+          await tester.tap(checkButton);
+          await tester.pump(const Duration(milliseconds: 400));
 
-      final skipBtn = find.byType(GameSkipBypassButton);
-      await tester.ensureVisible(skipBtn);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(skipBtn);
-      await tester.pump(const Duration(milliseconds: 200));
+          final expectedSummary = sampleQuest1.options!.join(' ');
+          final textFieldFinder = find.byType(TextField);
+          await tester.ensureVisible(textFieldFinder);
+          await tester.pump(const Duration(milliseconds: 200));
+          await tester.enterText(textFieldFinder, expectedSummary);
+          await tester.pump(const Duration(milliseconds: 100));
 
-      verify(
-        () => mockAdService.showRewardedAd(
-          context: any(named: 'context'),
-          isPremium: false,
-          onUserEarnedReward: any(named: 'onUserEarnedReward'),
-          onDismissed: any(named: 'onDismissed'),
-        ),
-      ).called(1);
-    });
+          final submitBtnFinder = find.text('SUBMIT');
+          await tester.ensureVisible(submitBtnFinder);
+          await tester.tap(submitBtnFinder);
+          await tester.pump(const Duration(milliseconds: 100));
 
-    testWidgets('premium user skip button triggers bypass confirmation', (tester) async {
-      await pumpScreen(tester, isPremium: true);
+          // Advance through evaluate delayed timer (800ms)
+          await tester.pump(const Duration(milliseconds: 900));
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 400));
 
-      // Fill in correct order
-      for (final opt in sampleQuest1.options!) {
-        await scrollAndTapOption(tester, opt);
-      }
+          verify(
+            () => mockWritingBloc.add(
+              any(
+                that: isA<SubmitAnswer>().having(
+                  (e) => e.isCorrect,
+                  'isCorrect',
+                  true,
+                ),
+              ),
+            ),
+          ).called(1);
+        },
+      );
 
-      final checkButton = find.byKey(const Key('summarize_story_check_button'));
-      await tester.ensureVisible(checkButton);
-      await tester.tap(checkButton);
-      await tester.pump(const Duration(milliseconds: 400));
+      testWidgets(
+        'free user skip button displays ad and calls submitWrongAnswer on dismissal',
+        (tester) async {
+          when(
+            () => mockAdService.showRewardedAd(
+              context: any(named: 'context'),
+              isPremium: false,
+              onUserEarnedReward: any(named: 'onUserEarnedReward'),
+              onDismissed: any(named: 'onDismissed'),
+            ),
+          ).thenAnswer((invocation) async {
+            final onDismissed =
+                invocation.namedArguments[#onDismissed] as VoidCallback?;
+            onDismissed?.call();
+          });
 
-      final skipBtn = find.byType(GameSkipBypassButton);
-      await tester.ensureVisible(skipBtn);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.tap(skipBtn);
-      await tester.pump(const Duration(milliseconds: 200));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+          await pumpScreen(tester, isPremium: false);
 
-      verify(
-        () => mockWritingBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', true)),
-        ),
-      ).called(1);
-    });
-  });
+          // Fill in correct order
+          for (final opt in sampleQuest1.options!) {
+            await scrollAndTapOption(tester, opt);
+          }
+
+          final checkButton = find.byKey(
+            const Key('summarize_story_check_button'),
+          );
+          await tester.ensureVisible(checkButton);
+          await tester.tap(checkButton);
+          await tester.pump(const Duration(milliseconds: 400));
+
+          final skipBtn = find.byType(GameSkipBypassButton);
+          await tester.ensureVisible(skipBtn);
+          await tester.pump(const Duration(milliseconds: 200));
+          await tester.tap(skipBtn);
+          await tester.pump(const Duration(milliseconds: 200));
+
+          verify(
+            () => mockAdService.showRewardedAd(
+              context: any(named: 'context'),
+              isPremium: false,
+              onUserEarnedReward: any(named: 'onUserEarnedReward'),
+              onDismissed: any(named: 'onDismissed'),
+            ),
+          ).called(1);
+        },
+      );
+
+      testWidgets('premium user skip button triggers bypass confirmation', (
+        tester,
+      ) async {
+        await pumpScreen(tester, isPremium: true);
+
+        // Fill in correct order
+        for (final opt in sampleQuest1.options!) {
+          await scrollAndTapOption(tester, opt);
+        }
+
+        final checkButton = find.byKey(
+          const Key('summarize_story_check_button'),
+        );
+        await tester.ensureVisible(checkButton);
+        await tester.tap(checkButton);
+        await tester.pump(const Duration(milliseconds: 400));
+
+        final skipBtn = find.byType(GameSkipBypassButton);
+        await tester.ensureVisible(skipBtn);
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(skipBtn);
+        await tester.pump(const Duration(milliseconds: 200));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+
+        verify(
+          () => mockWritingBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
+            ),
+          ),
+        ).called(1);
+      });
+    },
+  );
 
   group('SummarizeStoryWritingScreen - 5. SpeedChallengeTimer & Expiry', () {
-    testWidgets('SpeedChallengeTimer onTimeUp triggers submitWrongAnswer when not pending submit', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'SpeedChallengeTimer onTimeUp triggers submitWrongAnswer when not pending submit',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final timerWidget = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
-      timerWidget.onTimeUp();
-      await tester.pump(const Duration(milliseconds: 100));
+        final timerWidget = tester.widget<SpeedChallengeTimer>(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerWidget.onTimeUp();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(
-        () => mockWritingBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(
+          () => mockWritingBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('SpeedChallengeTimer is ignored when pending submit is true', (tester) async {
+    testWidgets('SpeedChallengeTimer is ignored when pending submit is true', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       // Fill in correct order
@@ -651,7 +785,9 @@ void main() {
   });
 
   group('SummarizeStoryWritingScreen - 6. State Transitions & Lifecycle', () {
-    testWidgets('GameShimmerLoading rendered when state has no current quest', (tester) async {
+    testWidgets('GameShimmerLoading rendered when state has no current quest', (
+      tester,
+    ) async {
       const emptyLoadedState = WritingLoaded(
         quests: [],
         currentIndex: 0,
@@ -676,10 +812,13 @@ void main() {
       final opt0 = sampleQuest1.options![0];
       await scrollAndTapOption(tester, opt0);
 
-      expect(find.descendant(
-        of: find.byKey(const Key('summarize_story_slot_0')),
-        matching: find.text(opt0),
-      ), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('summarize_story_slot_0')),
+          matching: find.text(opt0),
+        ),
+        findsOneWidget,
+      );
 
       // Transition through answered (wrong attempt) to new unanswered attempt
       const answeredState = WritingLoaded(
@@ -740,7 +879,9 @@ void main() {
       expect(find.text('Tap or drag an event here'), findsNWidgets(3));
     });
 
-    testWidgets('tapping hint button dispatches WritingHintUsed', (tester) async {
+    testWidgets('tapping hint button dispatches WritingHintUsed', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -751,50 +892,58 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('feedback card renders on correct answered state and tapping continue dispatches NextQuestion', (tester) async {
-      const correctState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.correct,
-        gameType: GameSubtype.summarizeStoryWriting,
-        level: 2,
-      );
+    testWidgets(
+      'feedback card renders on correct answered state and tapping continue dispatches NextQuestion',
+      (tester) async {
+        const correctState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.correct,
+          gameType: GameSubtype.summarizeStoryWriting,
+          level: 2,
+        );
 
-      await pumpScreen(tester, state: correctState);
+        await pumpScreen(tester, state: correctState);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('CONTINUE'), findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('CONTINUE'), findsOneWidget);
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('feedback card renders on incorrect answered state with final failure', (tester) async {
-      const incorrectState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 0,
-        livesRemaining: 0,
-        wrongCount: 3,
-        isFinalFailure: true,
-        hintUsed: false,
-        answerStatus: AnswerStatus.incorrect,
-        gameType: GameSubtype.summarizeStoryWriting,
-        level: 2,
-      );
+    testWidgets(
+      'feedback card renders on incorrect answered state with final failure',
+      (tester) async {
+        const incorrectState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 0,
+          livesRemaining: 0,
+          wrongCount: 3,
+          isFinalFailure: true,
+          hintUsed: false,
+          answerStatus: AnswerStatus.incorrect,
+          gameType: GameSubtype.summarizeStoryWriting,
+          level: 2,
+        );
 
-      await pumpScreen(tester, state: incorrectState);
+        await pumpScreen(tester, state: incorrectState);
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('WRITING CONTEXT'), findsOneWidget);
-      expect(find.text(sampleQuest1.explanation!), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('WRITING CONTEXT'), findsOneWidget);
+        expect(find.text(sampleQuest1.explanation!), findsOneWidget);
+      },
+    );
 
-    testWidgets('WritingGameComplete displays level complete dialog', (tester) async {
+    testWidgets('WritingGameComplete displays level complete dialog', (
+      tester,
+    ) async {
       await pumpScreen(tester);
 
       const completeState = WritingGameComplete(
@@ -839,51 +988,38 @@ void main() {
   });
 
   group('SummarizeStoryWritingScreen - 7. Responsiveness & Accessibility', () {
-    testWidgets('renders cleanly on small screen (320x568) without overflow', (tester) async {
-      await pumpScreen(
-        tester,
-        surfaceSize: const Size(320, 568),
-      );
+    testWidgets('renders cleanly on small screen (320x568) without overflow', (
+      tester,
+    ) async {
+      await pumpScreen(tester, surfaceSize: const Size(320, 568));
 
       expect(find.byType(SummarizeStoryWritingScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders cleanly on tablet screen (800x1280)', (tester) async {
-      await pumpScreen(
-        tester,
-        surfaceSize: const Size(800, 1280),
-      );
+      await pumpScreen(tester, surfaceSize: const Size(800, 1280));
 
       expect(find.byType(SummarizeStoryWritingScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders cleanly with 1.3x text scale factor', (tester) async {
-      await pumpScreen(
-        tester,
-        textScaleFactor: 1.3,
-      );
+      await pumpScreen(tester, textScaleFactor: 1.3);
 
       expect(find.byType(SummarizeStoryWritingScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders cleanly with light theme', (tester) async {
-      await pumpScreen(
-        tester,
-        themeMode: ThemeMode.light,
-      );
+      await pumpScreen(tester, themeMode: ThemeMode.light);
 
       expect(find.byType(SummarizeStoryWritingScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders cleanly with level 1 theme', (tester) async {
-      await pumpScreen(
-        tester,
-        level: 1,
-      );
+      await pumpScreen(tester, level: 1);
 
       expect(find.byType(SummarizeStoryWritingScreen), findsOneWidget);
       expect(tester.takeException(), isNull);

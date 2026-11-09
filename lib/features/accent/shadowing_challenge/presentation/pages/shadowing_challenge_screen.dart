@@ -71,7 +71,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
     _scrollController.dispose();
     _selectedIndex.dispose();
     _currentSpeed.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -109,15 +109,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
       if (currentQuest != null) {
-        submitWrongAnswer(
-          quest: currentQuest,
-          userAnswer: '',
-        );
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       } else {
         hapticService.error();
         soundService.playWrong();
@@ -133,15 +131,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
       if (currentQuest != null) {
-        submitWrongAnswer(
-          quest: currentQuest,
-          userAnswer: '',
-        );
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       } else {
         hapticService.error();
         soundService.playWrong();

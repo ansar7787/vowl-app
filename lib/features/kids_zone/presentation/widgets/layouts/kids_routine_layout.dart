@@ -23,11 +23,7 @@ class RoutineOptionData {
   final String title;
   final String? emoji;
 
-  const RoutineOptionData({
-    required this.raw,
-    required this.title,
-    this.emoji,
-  });
+  const RoutineOptionData({required this.raw, required this.title, this.emoji});
 
   factory RoutineOptionData.parse(String text) {
     final trimmed = text.trim();
@@ -247,6 +243,7 @@ class _KidsRoutineLayoutState extends State<KidsRoutineLayout> {
       di.sl<HapticService>().selection();
     }
   }
+
   @override
   void dispose() {
     try {
@@ -561,10 +558,10 @@ class _BedroomWindowTarget extends StatelessWidget {
                           color: isHovering
                               ? const Color(0xFFF97316)
                               : isCorrect
-                                  ? AppColors.emerald500
-                                  : isIncorrect
-                                      ? AppColors.rose500
-                                      : Colors.white,
+                              ? AppColors.emerald500
+                              : isIncorrect
+                              ? AppColors.rose500
+                              : Colors.white,
                           width: isHovering ? 4.r : 3.r,
                         ),
                         boxShadow: [
@@ -572,8 +569,8 @@ class _BedroomWindowTarget extends StatelessWidget {
                             color: isHovering
                                 ? const Color(0xFFF97316).withValues(alpha: 0.4)
                                 : isCorrect
-                                    ? AppColors.emerald500.withValues(alpha: 0.35)
-                                    : Colors.black.withValues(alpha: 0.16),
+                                ? AppColors.emerald500.withValues(alpha: 0.35)
+                                : Colors.black.withValues(alpha: 0.16),
                             blurRadius: isHovering ? 20 : 12,
                             offset: const Offset(0, 6),
                           ),
@@ -756,10 +753,7 @@ class _WindowSkyView extends StatelessWidget {
         );
         break;
       default:
-        gradientColors = const [
-          Color(0xFFBAE6FD),
-          Color(0xFF38BDF8),
-        ];
+        gradientColors = const [Color(0xFFBAE6FD), Color(0xFF38BDF8)];
         skyElement = const SizedBox.shrink();
     }
 
@@ -839,10 +833,7 @@ class _WindowCenterContent extends StatelessWidget {
             Text(
               parsed.emoji ?? quest.emoji ?? '✨',
               style: TextStyle(fontSize: 32.sp),
-            ).animate().scale(
-                  duration: 400.ms,
-                  curve: Curves.elasticOut,
-                ),
+            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
             SizedBox(height: 2.h),
             Text(
               parsed.title,
@@ -914,10 +905,7 @@ class _WindowCenterContent extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white.withValues(alpha: 0.9),
           borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(
-            color: Colors.white,
-            width: 2,
-          ),
+          border: Border.all(color: Colors.white, width: 2),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.08),
@@ -950,10 +938,7 @@ class _WindowCenterContent extends StatelessWidget {
       );
     }
 
-    return FittedBox(
-      fit: BoxFit.scaleDown,
-      child: content,
-    );
+    return FittedBox(fit: BoxFit.scaleDown, child: content);
   }
 }
 
@@ -1081,11 +1066,7 @@ class _BedOptionsArea extends StatelessWidget {
 
         // The Pillows Row sitting on the bed
         Padding(
-          padding: EdgeInsets.only(
-            bottom: 12.h,
-            left: 8.w,
-            right: 8.w,
-          ),
+          padding: EdgeInsets.only(bottom: 12.h, left: 8.w, right: 8.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -1160,17 +1141,12 @@ class _PillowOptionWidget extends StatelessWidget {
     final pillowWidget = AnimatedContainer(
       duration: const Duration(milliseconds: 240),
       curve: Curves.easeOutCubic,
-      constraints: BoxConstraints(
-        minHeight: 88.h,
-      ),
+      constraints: BoxConstraints(minHeight: 88.h),
       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: borderColor,
-          width: borderWidth,
-        ),
+        border: Border.all(color: borderColor, width: borderWidth),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.12),
@@ -1184,10 +1160,7 @@ class _PillowOptionWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Top Emoji inside card
-          Text(
-            optionData.emoji ?? '🛏️',
-            style: TextStyle(fontSize: 28.sp),
-          ),
+          Text(optionData.emoji ?? '🛏️', style: TextStyle(fontSize: 28.sp)),
           SizedBox(height: 4.h),
 
           // Routine Title Text strictly below emoji on its own separate line
@@ -1200,8 +1173,8 @@ class _PillowOptionWidget extends StatelessWidget {
               color: isAnswered && isSelected && isCorrect
                   ? AppColors.emerald600
                   : isAnswered && isSelected && !isCorrect
-                      ? AppColors.rose700
-                      : AppColors.slate800,
+                  ? AppColors.rose700
+                  : AppColors.slate800,
               height: 1.2,
             ),
             textAlign: TextAlign.center,
@@ -1254,17 +1227,11 @@ class _PillowOptionWidget extends StatelessWidget {
           width: 100.w,
           child: Transform.scale(
             scale: 1.06,
-            child: Opacity(
-              opacity: 0.95,
-              child: pillowWidget,
-            ),
+            child: Opacity(opacity: 0.95, child: pillowWidget),
           ),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.35,
-        child: pillowWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.35, child: pillowWidget),
       child: ScaleButton(
         onTap: onTap,
         child: Semantics(

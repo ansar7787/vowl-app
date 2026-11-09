@@ -54,10 +54,7 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.06 : 0.05),
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.18),
-          width: 1.2,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.18), width: 1.2),
       ),
       child: Row(
         children: [

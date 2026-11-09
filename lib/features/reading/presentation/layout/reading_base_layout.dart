@@ -134,7 +134,11 @@ class ReadingBaseLayout extends StatelessWidget {
           onRestoreLife: () =>
               context.read<ReadingBloc>().add(const RestoreLife()),
           headerBuilder: (context, s, progress, lvs) {
-            final theme = LevelThemeHelper.of(context, gameType.name, level: level);
+            final theme = LevelThemeHelper.of(
+              context,
+              gameType.name,
+              level: level,
+            );
 
             final gameProgressHeader = GameProgressHeader(
               level: level,
@@ -179,7 +183,11 @@ class ReadingBaseLayout extends StatelessWidget {
           },
           feedbackBuilder: (context, s) {
             if (s is! ReadingLoaded) return const SizedBox.shrink();
-            final theme = LevelThemeHelper.of(context, gameType.name, level: level);
+            final theme = LevelThemeHelper.of(
+              context,
+              gameType.name,
+              level: level,
+            );
             final quest = s.currentQuest;
             String? explanation = quest.explanation;
             final resolvedIsFinalFailure = s.isFinalFailure;

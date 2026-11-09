@@ -368,8 +368,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                               style: TextStyle(
                                                                 fontFamily:
                                                                     'Outfit',
-                                                                fontSize:
-                                                                    12.sp,
+                                                                fontSize: 12.sp,
                                                                 color: theme
                                                                     .primaryColor,
                                                                 fontWeight:
@@ -419,61 +418,64 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
 
                                                   // Context Card with Sticker Slots
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 20.w,
-                                                        ),
-                                                    child: Container(
-                                                      key: const ValueKey(
-                                                        'punctuation_context_card',
-                                                      ),
-                                                      width: double.infinity,
-                                                      padding: EdgeInsets.all(
-                                                        isCompact
-                                                            ? 12.r
-                                                            : 16.r,
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: isDark
-                                                            ? Colors.white
-                                                                .withValues(
-                                                                  alpha: 0.05,
-                                                                )
-                                                            : Colors.black
-                                                                .withValues(
-                                                                  alpha: 0.03,
-                                                                ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              isCompact
-                                                                  ? 16.r
-                                                                  : 20.r,
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 20.w,
                                                             ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.18,
+                                                        child: Container(
+                                                          key: const ValueKey(
+                                                            'punctuation_context_card',
+                                                          ),
+                                                          width:
+                                                              double.infinity,
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                isCompact
+                                                                    ? 12.r
+                                                                    : 16.r,
                                                               ),
-                                                          width: 1.5,
-                                                        ),
-                                                      ),
-                                                      child:
-                                                          _buildStickerSentence(
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 16.r
+                                                                      : 20.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.18,
+                                                                  ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: _buildStickerSentence(
                                                             quest.sentence ??
                                                                 "Missing sentence.",
                                                             theme.primaryColor,
                                                             isDark,
                                                             isCompact,
                                                           ),
-                                                    ),
-                                                  )
-                                                  .animate()
-                                                  .fadeIn(duration: 400.ms)
-                                                  .slideY(
-                                                    begin: 0.1,
-                                                    end: 0,
-                                                  ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 400.ms)
+                                                      .slideY(
+                                                        begin: 0.1,
+                                                        end: 0,
+                                                      ),
 
                                                   // Space between Context Card and Sticker Sheet / Type Confirm
                                                   SizedBox(
@@ -504,36 +506,30 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                       cleanTargetSentence
                                                           .isNotEmpty)
                                                     Expanded(
-                                                      child:
-                                                          SingleChildScrollView(
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets.symmetric(
-                                                                    horizontal:
-                                                                        20.w,
-                                                                  ),
-                                                              child:
-                                                                  TypeToConfirmOverlay(
-                                                                    expectedText:
-                                                                        cleanTargetSentence,
-                                                                    primaryColor:
-                                                                        theme
-                                                                            .primaryColor,
-                                                                    onConfirmed:
-                                                                        () =>
-                                                                            _submitFinalAnswer(
-                                                                              true,
-                                                                            ),
-                                                                    onSkipped:
-                                                                        () =>
-                                                                            _submitFinalAnswer(
-                                                                              false,
-                                                                            ),
-                                                                    isPositioned:
-                                                                        false,
-                                                                  ),
-                                                            ),
+                                                      child: SingleChildScrollView(
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    20.w,
+                                                              ),
+                                                          child: TypeToConfirmOverlay(
+                                                            expectedText:
+                                                                cleanTargetSentence,
+                                                            primaryColor: theme
+                                                                .primaryColor,
+                                                            onConfirmed: () =>
+                                                                _submitFinalAnswer(
+                                                                  true,
+                                                                ),
+                                                            onSkipped: () =>
+                                                                _submitFinalAnswer(
+                                                                  false,
+                                                                ),
+                                                            isPositioned: false,
                                                           ),
+                                                        ),
+                                                      ),
                                                     ),
 
                                                   if (!_pendingTyping.value)
@@ -561,45 +557,42 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                           height: isCompact
                                                               ? 46.h
                                                               : 50.h,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius.circular(
-                                                                      isCompact
-                                                                          ? 14.r
-                                                                          : 16.r,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 14.r
+                                                                      : 16.r,
+                                                                ),
+                                                            gradient: LinearGradient(
+                                                              colors: [
+                                                                theme
+                                                                    .primaryColor,
+                                                                theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.85,
                                                                     ),
-                                                                gradient:
-                                                                    LinearGradient(
-                                                                      colors: [
-                                                                        theme
-                                                                            .primaryColor,
-                                                                        theme
-                                                                            .primaryColor
-                                                                            .withValues(
-                                                                              alpha:
-                                                                                  0.85,
-                                                                            ),
-                                                                      ],
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.35,
                                                                     ),
-                                                                boxShadow: [
-                                                                  BoxShadow(
-                                                                    color: theme
-                                                                        .primaryColor
-                                                                        .withValues(
-                                                                          alpha:
-                                                                              0.35,
-                                                                        ),
-                                                                    blurRadius:
-                                                                        16,
-                                                                    offset:
-                                                                        const Offset(
-                                                                          0,
-                                                                          6,
-                                                                        ),
-                                                                  ),
-                                                                ],
+                                                                blurRadius: 16,
+                                                                offset:
+                                                                    const Offset(
+                                                                      0,
+                                                                      6,
+                                                                    ),
                                                               ),
+                                                            ],
+                                                          ),
                                                           child: Center(
                                                             child: Text(
                                                               "CHECK ANSWER",
@@ -751,9 +744,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                       ? primaryColor
                       : Colors.transparent,
                   width: isHighlight ? 2 : 1.5,
-                  style: hasMarks
-                      ? BorderStyle.none
-                      : BorderStyle.solid,
+                  style: hasMarks ? BorderStyle.none : BorderStyle.solid,
                 ),
                 boxShadow: [
                   if (hasMarks)

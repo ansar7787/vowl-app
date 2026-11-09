@@ -31,9 +31,11 @@ class ReadingPassageArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    final isMidnight = isDark &&
+    final isMidnight =
+        isDark &&
         (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
-            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface ==
+                AppColors.midnightSurface ||
             Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     Widget container = Semantics(
@@ -48,15 +50,15 @@ class ReadingPassageArea extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightCard
               : (isDark
-                  ? Colors.black.withValues(alpha: 0.2)
-                  : Colors.white.withValues(alpha: 0.8)),
+                    ? Colors.black.withValues(alpha: 0.2)
+                    : Colors.white.withValues(alpha: 0.8)),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.12)
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : AppColors.slate100),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
             width: 1,
           ),
         ),

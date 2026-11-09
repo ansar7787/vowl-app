@@ -154,14 +154,20 @@ class AccentBaseLayout extends StatelessWidget {
               state.currentQuest.phoneticRule!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.psychology_rounded,
-              title: context.tr('games.phonetic_rule', fallback: 'Phonetic Rule'),
+              title: context.tr(
+                'games.phonetic_rule',
+                fallback: 'Phonetic Rule',
+              ),
               rule: state.currentQuest.phoneticRule!,
             ),
           if (state.currentQuest.mouthPosition != null &&
               state.currentQuest.mouthPosition!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.face_retouching_natural_rounded,
-              title: context.tr('games.mouth_position', fallback: 'Mouth Position'),
+              title: context.tr(
+                'games.mouth_position',
+                fallback: 'Mouth Position',
+              ),
               rule: state.currentQuest.mouthPosition!,
             ),
           if (state.currentQuest.dialectNote != null &&
@@ -182,21 +188,30 @@ class AccentBaseLayout extends StatelessWidget {
               state.currentQuest.vowelTensionRule!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.waves_rounded,
-              title: context.tr('games.vowel_tension', fallback: 'Vowel Tension'),
+              title: context.tr(
+                'games.vowel_tension',
+                fallback: 'Vowel Tension',
+              ),
               rule: state.currentQuest.vowelTensionRule!,
             ),
           if (state.currentQuest.modulationPattern != null &&
               state.currentQuest.modulationPattern!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.graphic_eq_rounded,
-              title: context.tr('games.modulation_pattern', fallback: 'Modulation Pattern'),
+              title: context.tr(
+                'games.modulation_pattern',
+                fallback: 'Modulation Pattern',
+              ),
               rule: state.currentQuest.modulationPattern!,
             ),
           if (state.currentQuest.emphasisRule != null &&
               state.currentQuest.emphasisRule!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.priority_high_rounded,
-              title: context.tr('games.emphasis_rule', fallback: 'Emphasis Rule'),
+              title: context.tr(
+                'games.emphasis_rule',
+                fallback: 'Emphasis Rule',
+              ),
               rule: state.currentQuest.emphasisRule!,
             ),
           if (state.currentQuest.flowRule != null &&
@@ -224,24 +239,27 @@ class AccentBaseLayout extends StatelessWidget {
               state.currentQuest.meaningShift!.trim().isNotEmpty)
             PedagogicalRuleItem(
               icon: Icons.compare_arrows_rounded,
-              title: context.tr('games.meaning_shift', fallback: 'Meaning Shift'),
+              title: context.tr(
+                'games.meaning_shift',
+                fallback: 'Meaning Shift',
+              ),
               rule: state.currentQuest.meaningShift!,
             ),
         ];
 
-        final String? resolvedCorrectAnswer =
-            (!success && state.isFinalFailure)
-                ? (state.currentQuest.correctAnswer ??
-                    state.currentQuest.word ??
-                    (state.currentQuest.options != null &&
-                            state.currentQuest.correctAnswerIndex != null &&
-                            state.currentQuest.correctAnswerIndex! >= 0 &&
-                            state.currentQuest.correctAnswerIndex! <
-                                state.currentQuest.options!.length
-                        ? state.currentQuest.options![
-                            state.currentQuest.correctAnswerIndex!]
-                        : null))
-                : null;
+        final String? resolvedCorrectAnswer = (!success && state.isFinalFailure)
+            ? (state.currentQuest.correctAnswer ??
+                  state.currentQuest.word ??
+                  (state.currentQuest.options != null &&
+                          state.currentQuest.correctAnswerIndex != null &&
+                          state.currentQuest.correctAnswerIndex! >= 0 &&
+                          state.currentQuest.correctAnswerIndex! <
+                              state.currentQuest.options!.length
+                      ? state.currentQuest.options![state
+                            .currentQuest
+                            .correctAnswerIndex!]
+                      : null))
+            : null;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

@@ -41,9 +41,7 @@ class ReadingConclusionLogicChain extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? primaryColor.withValues(alpha: 0.08)
-            : Colors.white,
+        color: isDark ? primaryColor.withValues(alpha: 0.08) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
@@ -142,8 +140,7 @@ class ReadingConclusionLogicChain extends StatelessWidget {
                 ),
                 if (!isLast)
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: 11.r, top: 3.h, bottom: 3.h),
+                    padding: EdgeInsets.only(left: 11.r, top: 3.h, bottom: 3.h),
                     child: Container(
                       width: 2.w,
                       height: 16.h,

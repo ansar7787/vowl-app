@@ -96,18 +96,14 @@ class KidsBackgroundRenderer extends StatelessWidget {
               _LocalPalette.color388e3c,
             ];
     } else {
-      // Default: The Kids Level Map "Mesh Gradient" aesthetic based on primaryColor
+      // Default: Clean pure white aesthetic in light mode; Slate in dark mode.
       gradientColors = isDark
           ? [
               primaryColor.withAlpha(100),
               AppColors.slate900,
               primaryColor.withAlpha(80),
             ]
-          : [
-              primaryColor.withAlpha(60),
-              AppColors.white,
-              primaryColor.withAlpha(40),
-            ];
+          : const [Colors.white, Colors.white, Colors.white];
     }
 
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
@@ -177,9 +173,11 @@ class KidsBackgroundRenderer extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Icon(
       Icons.cloud_rounded,
-      color: (isDark ? Colors.white.withAlpha(15) : Colors.white).withAlpha(
-        (180 * opacity).round(),
-      ),
+      color:
+          (isDark
+                  ? Colors.white.withAlpha(20)
+                  : AppColors.slate200.withAlpha(120))
+              .withAlpha((180 * opacity).round()),
       size: width,
     );
   }

@@ -27,21 +27,20 @@ class FakeReferralRepository implements ReferralRepository {
   Future<int> syncAmbassadorRewards(UserEntity user) async => syncedCount;
 
   @override
-  Future<List<AmbassadorLeaderboardItem>> getMonthlyAmbassadorLeaderboard({String? monthKey}) async =>
-      leaderboard;
+  Future<List<AmbassadorLeaderboardItem>> getMonthlyAmbassadorLeaderboard({
+    String? monthKey,
+  }) async => leaderboard;
 
   @override
   Future<ReferralClaimResult> claimReferralCode({
     required String code,
     required UserEntity user,
-  }) async =>
-      claimResult;
+  }) async => claimResult;
 
   @override
   Future<AmbassadorRewardClaimResult> claimMonthlyAmbassadorReward({
     required UserEntity user,
-  }) async =>
-      cupResult;
+  }) async => cupResult;
 
   @override
   Future<void> onFriendCompletedLevelOne({
@@ -118,4 +117,3 @@ void main() {
     });
   });
 }
-

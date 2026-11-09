@@ -52,12 +52,11 @@ class UserAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final resolvedBg = backgroundColor ??
-        (isDark
-            ? Colors.white.withValues(alpha: 0.1)
-            : AppColors.slate100);
-    final resolvedIconColor = iconColor ??
-        (isDark ? Colors.white38 : AppColors.slate400);
+    final resolvedBg =
+        backgroundColor ??
+        (isDark ? Colors.white.withValues(alpha: 0.1) : AppColors.slate100);
+    final resolvedIconColor =
+        iconColor ?? (isDark ? Colors.white38 : AppColors.slate400);
     final resolvedIconSize = iconSize ?? (size * 0.52);
 
     final widgetChild = Container(
@@ -113,10 +112,8 @@ class UserAvatar extends StatelessWidget {
 
     if (isNetwork) {
       final cacheSize = (size * 2.5).round().clamp(80, 800);
-      final shimmerBase =
-          isDark ? AppColors.slate800 : AppColors.slate100;
-      final shimmerHighlight =
-          isDark ? AppColors.slate700 : AppColors.white;
+      final shimmerBase = isDark ? AppColors.slate800 : AppColors.slate100;
+      final shimmerHighlight = isDark ? AppColors.slate700 : AppColors.white;
 
       return CachedNetworkImage(
         imageUrl: url,
@@ -129,11 +126,7 @@ class UserAvatar extends StatelessWidget {
         placeholder: (context, _) => Shimmer.fromColors(
           baseColor: shimmerBase,
           highlightColor: shimmerHighlight,
-          child: Container(
-            width: size,
-            height: size,
-            color: Colors.white,
-          ),
+          child: Container(width: size, height: size, color: Colors.white),
         ),
         errorWidget: (context, url, error) => Center(
           child: Icon(
@@ -146,7 +139,9 @@ class UserAvatar extends StatelessWidget {
     }
 
     // Otherwise, treat as a local filesystem image (e.g. freshly picked from camera/gallery)
-    final filePath = url.startsWith('file://') ? url.replaceFirst('file://', '') : url;
+    final filePath = url.startsWith('file://')
+        ? url.replaceFirst('file://', '')
+        : url;
     final file = File(filePath);
 
     return Image.file(
@@ -165,4 +160,3 @@ class UserAvatar extends StatelessWidget {
     );
   }
 }
-

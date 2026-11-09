@@ -33,7 +33,9 @@ class DetailSpotlightPrompt extends StatelessWidget {
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(
-          isAnswered ? "Answer: $detail" : "Drag the spotlight to find the answer",
+          isAnswered
+              ? "Answer: $detail"
+              : "Drag the spotlight to find the answer",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

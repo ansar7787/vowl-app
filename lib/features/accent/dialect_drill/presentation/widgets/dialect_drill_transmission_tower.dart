@@ -81,11 +81,11 @@ class DialectDrillTransmissionTower extends StatelessWidget {
       final isWin = isCorrect ?? false;
       cardBg = isDark
           ? (isWin
-              ? tokens.gameCorrect.withValues(alpha: 0.15)
-              : tokens.gameIncorrect.withValues(alpha: 0.15))
+                ? tokens.gameCorrect.withValues(alpha: 0.15)
+                : tokens.gameIncorrect.withValues(alpha: 0.15))
           : (isWin
-              ? tokens.gameCorrect.withValues(alpha: 0.08)
-              : tokens.gameIncorrect.withValues(alpha: 0.08));
+                ? tokens.gameCorrect.withValues(alpha: 0.08)
+                : tokens.gameIncorrect.withValues(alpha: 0.08));
     } else if (isHovered) {
       cardBg = isDark
           ? color.withValues(alpha: 0.12)
@@ -93,8 +93,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
     } else {
       cardBg = isDark
           ? (context.isMidnight
-              ? AppColors.midnightSurface
-              : const Color(0xFF1E2230))
+                ? AppColors.midnightSurface
+                : const Color(0xFF1E2230))
           : Colors.white;
     }
 
@@ -145,13 +145,13 @@ class DialectDrillTransmissionTower extends StatelessWidget {
               BoxShadow(
                 color: isSelected
                     ? ((isCorrect ?? false)
-                        ? tokens.gameCorrect.withValues(alpha: 0.25)
-                        : tokens.gameIncorrect.withValues(alpha: 0.25))
+                          ? tokens.gameCorrect.withValues(alpha: 0.25)
+                          : tokens.gameIncorrect.withValues(alpha: 0.25))
                     : (isHovered
-                        ? towerColor.withValues(alpha: 0.2)
-                        : (isDark
-                            ? Colors.black.withValues(alpha: 0.25)
-                            : Colors.black.withValues(alpha: 0.06))),
+                          ? towerColor.withValues(alpha: 0.2)
+                          : (isDark
+                                ? Colors.black.withValues(alpha: 0.25)
+                                : Colors.black.withValues(alpha: 0.06))),
                 blurRadius: isHovered ? 12 : 8,
                 offset: const Offset(0, 3),
               ),
@@ -172,8 +172,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                 child: Icon(
                   isSelected
                       ? ((isCorrect ?? false)
-                          ? Icons.check_rounded
-                          : Icons.close_rounded)
+                            ? Icons.check_rounded
+                            : Icons.close_rounded)
                       : Icons.record_voice_over_rounded,
                   size: 22.r,
                   color: (isHovered || isSelected)

@@ -52,7 +52,8 @@ class WordSnapPuzzle {
       phonetic.trim().isNotEmpty && !phonetic.contains('[placeholder');
 
   bool get hasExample =>
-      exampleSentence.trim().isNotEmpty && !exampleSentence.contains('[placeholder');
+      exampleSentence.trim().isNotEmpty &&
+      !exampleSentence.contains('[placeholder');
 
   bool get hasSynonyms => synonyms.isNotEmpty;
 
@@ -66,9 +67,13 @@ class WordSnapPuzzle {
 
   /// Creates a [WordSnapPuzzle] from a curriculum JSON map.
   factory WordSnapPuzzle.fromMap(Map<String, dynamic> map) {
-    final id = map['id'] is int ? map['id'] as int : int.tryParse('${map['id']}') ?? 1;
+    final id = map['id'] is int
+        ? map['id'] as int
+        : int.tryParse('${map['id']}') ?? 1;
     final rawWord = (map['word'] as String? ?? '').trim().toUpperCase();
-    final rawQuestion = (map['question'] as String? ?? map['definition'] as String? ?? '').trim();
+    final rawQuestion =
+        (map['question'] as String? ?? map['definition'] as String? ?? '')
+            .trim();
 
     // 1. Sanitize the full definition for human reading & display
     final cleanDef = _sanitizeDefinition(rawQuestion);
@@ -88,42 +93,60 @@ class WordSnapPuzzle {
 
     // 5. Length & Difficulty metrics
     final length = rawWord.replaceAll(' ', '').length;
-    final diffLabel = (map['difficulty'] as String?) ?? _computeDifficultyLabel(length);
+    final diffLabel =
+        (map['difficulty'] as String?) ?? _computeDifficultyLabel(length);
     final diffColor = _computeDifficultyColor(diffLabel, length);
 
     // 6. Enhanced fields
     final rawPhonetic = (map['phonetic'] as String? ?? '').trim();
-    final rawPos = (map['partOfSpeech'] as String? ?? map['part_of_speech'] as String? ?? '').trim();
+    final rawPos =
+        (map['partOfSpeech'] as String? ??
+                map['part_of_speech'] as String? ??
+                '')
+            .trim();
     final pos = rawPos.isNotEmpty && !rawPos.contains('[placeholder')
         ? rawPos.toLowerCase()
         : _inferPartOfSpeech(cleanDef);
 
-    final rawCefr = (map['cefrLevel'] as String? ?? map['cefr_level'] as String? ?? '').trim();
+    final rawCefr =
+        (map['cefrLevel'] as String? ?? map['cefr_level'] as String? ?? '')
+            .trim();
     final cefr = rawCefr.isNotEmpty && !rawCefr.contains('[placeholder')
         ? rawCefr.toUpperCase()
         : _computeCefr(length);
 
-    final rawEx = (map['example'] as String? ?? map['example_sentence'] as String? ?? '').trim();
-    final example = rawEx.isNotEmpty && !rawEx.contains('[placeholder') ? rawEx : '';
+    final rawEx =
+        (map['example'] as String? ?? map['example_sentence'] as String? ?? '')
+            .trim();
+    final example = rawEx.isNotEmpty && !rawEx.contains('[placeholder')
+        ? rawEx
+        : '';
 
-    final rawCloze = (map['clozeSentence'] as String? ?? map['cloze_sentence'] as String? ?? '').trim();
+    final rawCloze =
+        (map['clozeSentence'] as String? ??
+                map['cloze_sentence'] as String? ??
+                '')
+            .trim();
     final cloze = rawCloze.isNotEmpty && !rawCloze.contains('[placeholder')
         ? rawCloze
         : 'The definition of ______ is: $cleanDef';
 
-    final rawSynonyms = (map['synonyms'] as List<dynamic>?)
+    final rawSynonyms =
+        (map['synonyms'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty && !e.contains('[placeholder'))
             .toList() ??
         <String>[];
 
-    final rawSyllables = (map['syllables'] as List<dynamic>?)
+    final rawSyllables =
+        (map['syllables'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty && !e.contains('[placeholder'))
             .toList() ??
         <String>[];
 
-    final rawTags = (map['tags'] as List<dynamic>?)
+    final rawTags =
+        (map['tags'] as List<dynamic>?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList() ??
@@ -138,7 +161,9 @@ class WordSnapPuzzle {
       difficultyLabel: diffLabel,
       difficultyColor: diffColor,
       rawQuestion: rawQuestion,
-      cleanDefinition: cleanDef.isNotEmpty ? cleanDef : 'A vocabulary word challenge.',
+      cleanDefinition: cleanDef.isNotEmpty
+          ? cleanDef
+          : 'A vocabulary word challenge.',
       playableSentence: playable,
       playableWords: words,
       hintClue: hint,
@@ -197,14 +222,22 @@ class WordSnapPuzzle {
     final rawClauses = cleanDef
         .split(RegExp(r'[;\.]'))
         .map((c) => c.trim())
-        .where((c) => c.isNotEmpty && !c.startsWith('See ') && !c.startsWith('Written '))
+        .where(
+          (c) =>
+              c.isNotEmpty &&
+              !c.startsWith('See ') &&
+              !c.startsWith('Written '),
+        )
         .toList();
 
     String candidate = '';
 
     if (rawClauses.isNotEmpty) {
       for (final clause in rawClauses) {
-        final words = clause.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+        final words = clause
+            .split(RegExp(r'\s+'))
+            .where((w) => w.isNotEmpty)
+            .toList();
         if (words.length >= 4 && words.length <= 10) {
           candidate = clause;
           break;
@@ -213,7 +246,10 @@ class WordSnapPuzzle {
 
       if (candidate.isEmpty) {
         final first = rawClauses.first;
-        final firstWords = first.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+        final firstWords = first
+            .split(RegExp(r'\s+'))
+            .where((w) => w.isNotEmpty)
+            .toList();
 
         if (firstWords.length > 10) {
           final commaParts = first
@@ -222,7 +258,10 @@ class WordSnapPuzzle {
               .where((p) => p.isNotEmpty)
               .toList();
           if (commaParts.isNotEmpty) {
-            final partWords = commaParts.first.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+            final partWords = commaParts.first
+                .split(RegExp(r'\s+'))
+                .where((w) => w.isNotEmpty)
+                .toList();
             if (partWords.length >= 4 && partWords.length <= 10) {
               candidate = commaParts.first;
             }
@@ -235,7 +274,10 @@ class WordSnapPuzzle {
         } else if (firstWords.length < 4) {
           if (rawClauses.length > 1) {
             final second = rawClauses[1];
-            final secondWords = second.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+            final secondWords = second
+                .split(RegExp(r'\s+'))
+                .where((w) => w.isNotEmpty)
+                .toList();
             if (secondWords.length >= 4 && secondWords.length <= 10) {
               candidate = second;
             } else if (firstWords.length + secondWords.length <= 10) {
@@ -244,7 +286,10 @@ class WordSnapPuzzle {
           }
           if (candidate.isEmpty) {
             final cleanWordLower = word.toLowerCase();
-            final term = first.toLowerCase().replaceAll(RegExp(r'[\.,;:]+$'), '');
+            final term = first.toLowerCase().replaceAll(
+              RegExp(r'[\.,;:]+$'),
+              '',
+            );
             candidate = 'The word $cleanWordLower means $term';
           }
         }
@@ -257,7 +302,10 @@ class WordSnapPuzzle {
 
     candidate = candidate.replaceAll(RegExp(r'[\.,;:!?]+$'), '').trim();
 
-    final candWords = candidate.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+    final candWords = candidate
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
     if (candWords.length < 4) {
       final cleanWordLower = word.toLowerCase();
       String term = candidate.toLowerCase();
@@ -278,7 +326,9 @@ class WordSnapPuzzle {
 
   static String _inferPartOfSpeech(String definition) {
     final lower = definition.toLowerCase();
-    if (lower.startsWith('to ') || lower.contains('to cause to') || lower.contains('to make')) {
+    if (lower.startsWith('to ') ||
+        lower.contains('to cause to') ||
+        lower.contains('to make')) {
       return 'verb';
     }
     if (lower.startsWith('pertaining to') ||
@@ -303,18 +353,32 @@ class WordSnapPuzzle {
   }
 
   static String _computeCefr(int length) {
-    if (length <= 4) return 'A2';
-    if (length <= 6) return 'B1';
-    if (length <= 8) return 'B2';
-    if (length <= 10) return 'C1';
+    if (length <= 4) {
+      return 'A2';
+    }
+    if (length <= 6) {
+      return 'B1';
+    }
+    if (length <= 8) {
+      return 'B2';
+    }
+    if (length <= 10) {
+      return 'C1';
+    }
     return 'C2';
   }
 
   static Color _computeDifficultyColor(String label, int length) {
     final normalized = label.toLowerCase();
-    if (normalized == 'easy' || length <= 4) return AppColors.emerald500;
-    if (normalized == 'medium' || length <= 6) return AppColors.amber500;
-    if (normalized == 'hard' || length <= 8) return IllustrationColors.warmOrange;
+    if (normalized == 'easy' || length <= 4) {
+      return AppColors.emerald500;
+    }
+    if (normalized == 'medium' || length <= 6) {
+      return AppColors.amber500;
+    }
+    if (normalized == 'hard' || length <= 8) {
+      return IllustrationColors.warmOrange;
+    }
     return AppColors.red500;
   }
 

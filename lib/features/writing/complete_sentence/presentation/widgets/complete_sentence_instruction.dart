@@ -23,13 +23,12 @@ class CompleteSentenceInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseText =
-        (text != null && text!.trim().isNotEmpty)
-            ? text!
-            : context.tr(
-                'games.completeSentence_instruction',
-                fallback: 'Select the missing word to complete the sentence',
-              );
+    final baseText = (text != null && text!.trim().isNotEmpty)
+        ? text!
+        : context.tr(
+            'games.completeSentence_instruction',
+            fallback: 'Select the missing word to complete the sentence',
+          );
     final fullText = grammarFocus != null && grammarFocus!.trim().isNotEmpty
         ? '$baseText (${grammarFocus!.toUpperCase()})'
         : baseText;
@@ -62,7 +61,9 @@ class CompleteSentenceInstruction extends StatelessWidget {
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(
                   textScaler: TextScaler.linear(
-                    MediaQuery.of(context).textScaler.scale(1).clamp(0.85, 1.25),
+                    MediaQuery.of(
+                      context,
+                    ).textScaler.scale(1).clamp(0.85, 1.25),
                   ),
                 ),
                 child: Text(

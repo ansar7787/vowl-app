@@ -37,21 +37,35 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 
 class MockWritingBloc extends Mock implements WritingBloc {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockEconomyBloc extends Mock implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockTtsService extends Mock implements TtsService {}
+
 class MockLocaleService extends Mock implements LocaleService {}
+
 class MockAppLogger extends Mock implements AppLogger {}
+
 class MockAnalyticsService extends Mock implements AnalyticsService {}
+
 class MockAdService extends Mock implements AdService {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
+
 class MockLanguageIdService extends Mock implements LanguageIdService {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
+
 class FakeWritingState extends Fake implements WritingState {}
+
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
+
 class FakeEconomyState extends Fake implements EconomyState {}
 
 void main() {
@@ -72,13 +86,16 @@ void main() {
   const sampleQuest1 = WritingQuest(
     id: 'saw_q1',
     instruction: 'Answer the prompt using the required keywords.',
-    prompt: 'How do deep-sea hydrothermal vent ecosystems survive without sunlight?',
+    prompt:
+        'How do deep-sea hydrothermal vent ecosystems survive without sunlight?',
     difficulty: 2,
     subtype: GameSubtype.shortAnswerWriting,
     options: ['bacteria', 'sulfide', 'chemosynthesis'],
     hint: 'Mention chemosynthesis by bacteria using sulfide.',
-    explanation: 'Chemosynthetic bacteria convert hydrogen sulfide into organic matter.',
-    sampleAnswer: 'Bacteria use hydrogen sulfide for chemosynthesis to produce food.',
+    explanation:
+        'Chemosynthetic bacteria convert hydrogen sulfide into organic matter.',
+    sampleAnswer:
+        'Bacteria use hydrogen sulfide for chemosynthesis to produce food.',
     xpReward: 25,
     coinReward: 15,
   );
@@ -86,13 +103,15 @@ void main() {
   const sampleQuest2 = WritingQuest(
     id: 'saw_q2',
     instruction: 'Explain renewable energy advantages.',
-    prompt: 'Why are solar and wind energy important for combating climate change?',
+    prompt:
+        'Why are solar and wind energy important for combating climate change?',
     difficulty: 2,
     subtype: GameSubtype.shortAnswerWriting,
     options: ['clean', 'renewable', 'emissions'],
     hint: 'Focus on zero emissions from clean sources.',
     explanation: 'Clean renewable sources reduce greenhouse gas emissions.',
-    sampleAnswer: 'Clean renewable energy dramatically reduces global emissions.',
+    sampleAnswer:
+        'Clean renewable energy dramatically reduces global emissions.',
     xpReward: 30,
     coinReward: 20,
   );
@@ -181,20 +200,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
 
     // Language ID mock
-    when(() => mockLanguageIdService.identifyLanguage(any()))
-        .thenAnswer((_) async => 'en');
+    when(
+      () => mockLanguageIdService.identifyLanguage(any()),
+    ).thenAnswer((_) async => 'en');
 
     // Writing Bloc default state
     when(() => mockWritingBloc.state).thenReturn(testLoadedState);
@@ -281,7 +303,9 @@ void main() {
   }
 
   group('ShortAnswerScreen - 1. Initial Rendering & Layout', () {
-    testWidgets('renders all screen components properly at level 2', (tester) async {
+    testWidgets('renders all screen components properly at level 2', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       expect(find.byType(WritingBaseLayout), findsOneWidget);
@@ -291,18 +315,26 @@ void main() {
       expect(find.byType(ShortAnswerBoosterTokens), findsOneWidget);
       expect(find.byType(ShortAnswerInkwell), findsOneWidget);
       expect(find.byKey(const Key('short_answer_text_field')), findsOneWidget);
-      expect(find.byKey(const Key('short_answer_submit_button')), findsOneWidget);
+      expect(
+        find.byKey(const Key('short_answer_submit_button')),
+        findsOneWidget,
+      );
       expect(find.text('SUBMIT'), findsOneWidget);
       expect(find.text('PROMPT'), findsOneWidget);
       expect(find.text('REQUIRED KEYWORDS (USE ALL)'), findsOneWidget);
 
       // Verify all required booster tokens render
       for (final kw in sampleQuest1.options!) {
-        expect(find.byKey(Key('short_answer_booster_token_$kw')), findsOneWidget);
+        expect(
+          find.byKey(Key('short_answer_booster_token_$kw')),
+          findsOneWidget,
+        );
       }
     });
 
-    testWidgets('renders shimmer loading when state has null quest', (tester) async {
+    testWidgets('renders shimmer loading when state has null quest', (
+      tester,
+    ) async {
       const initialWritingState = WritingInitial();
       await pumpScreen(tester, state: initialWritingState, level: 2);
 
@@ -331,16 +363,23 @@ void main() {
       expect(find.text('0 / 4 WORDS MIN'), findsOneWidget);
 
       final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'Bacteria live near hydrothermal vents.');
+      await tester.enterText(
+        textField,
+        'Bacteria live near hydrothermal vents.',
+      );
       await tester.pumpAndSettle();
 
       expect(find.text('5 / 4 WORDS MIN'), findsOneWidget);
     });
 
-    testWidgets('typing target keywords updates booster token indicators', (tester) async {
+    testWidgets('typing target keywords updates booster token indicators', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
-      final tokenBacteria = find.byKey(const Key('short_answer_booster_token_bacteria'));
+      final tokenBacteria = find.byKey(
+        const Key('short_answer_booster_token_bacteria'),
+      );
       expect(
         find.descendant(
           of: tokenBacteria,
@@ -362,7 +401,9 @@ void main() {
       );
     });
 
-    testWidgets('inkwell and textfield are disabled when quest is answered', (tester) async {
+    testWidgets('inkwell and textfield are disabled when quest is answered', (
+      tester,
+    ) async {
       const answeredState = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -384,151 +425,206 @@ void main() {
   });
 
   group('ShortAnswerScreen - 3. Submission & Client-Side Validation', () {
-    testWidgets('tapping SUBMIT with empty text does not submit or count strikes', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'tapping SUBMIT with empty text does not submit or count strikes',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('submitting without initial capital letter shows warning and strike count', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting without initial capital letter shows warning and strike count',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'bacteria use sulfide chemosynthesis.');
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        await tester.enterText(
+          textField,
+          'bacteria use sulfide chemosynthesis.',
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      expect(
-        find.text('Please start your answer with a capital letter. (2 tries left)'),
-        findsOneWidget,
-      );
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        expect(
+          find.text(
+            'Please start your answer with a capital letter. (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('submitting without proper ending punctuation shows warning and strike count', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting without proper ending punctuation shows warning and strike count',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'Bacteria use sulfide chemosynthesis');
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        await tester.enterText(
+          textField,
+          'Bacteria use sulfide chemosynthesis',
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      expect(
-        find.text('Please end your answer with proper punctuation (., !, or ?). (2 tries left)'),
-        findsOneWidget,
-      );
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        expect(
+          find.text(
+            'Please end your answer with proper punctuation (., !, or ?). (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('submitting with fewer than 4 words shows warning and strike count', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting with fewer than 4 words shows warning and strike count',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'Bacteria survive peacefully.');
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        await tester.enterText(textField, 'Bacteria survive peacefully.');
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      expect(
-        find.text('Keep writing! A valid answer requires at least 4 words. (2 tries left)'),
-        findsOneWidget,
-      );
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        expect(
+          find.text(
+            'Keep writing! A valid answer requires at least 4 words. (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('submitting non-English text triggers language warning and strike count', (tester) async {
-      when(() => mockLanguageIdService.identifyLanguage(any()))
-          .thenAnswer((_) async => 'es');
+    testWidgets(
+      'submitting non-English text triggers language warning and strike count',
+      (tester) async {
+        when(
+          () => mockLanguageIdService.identifyLanguage(any()),
+        ).thenAnswer((_) async => 'es');
 
-      await pumpScreen(tester, level: 2);
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'Las bacterias sobreviven sin luz solar.');
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        await tester.enterText(
+          textField,
+          'Las bacterias sobreviven sin luz solar.',
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      expect(
-        find.text('Your answer must be written in English. Please write a natural sentence! (2 tries left)'),
-        findsOneWidget,
-      );
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        expect(
+          find.text(
+            'Your answer must be written in English. Please write a natural sentence! (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('submitting without all required keywords shows warning and strike count', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'submitting without all required keywords shows warning and strike count',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      // Contains 'bacteria' and 'sulfide', but missing 'chemosynthesis'
-      await tester.enterText(textField, 'Bacteria utilize hydrogen sulfide deeply.');
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        // Contains 'bacteria' and 'sulfide', but missing 'chemosynthesis'
+        await tester.enterText(
+          textField,
+          'Bacteria utilize hydrogen sulfide deeply.',
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      expect(
-        find.text('Use all key words to complete your answer! (2 tries left)'),
-        findsOneWidget,
-      );
-      verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+        expect(
+          find.text(
+            'Use all key words to complete your answer! (2 tries left)',
+          ),
+          findsOneWidget,
+        );
+        verifyNever(() => mockWritingBloc.add(any(that: isA<SubmitAnswer>())));
+      },
+    );
 
-    testWidgets('three consecutive validation failures triggers SubmitAnswer(false)', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'three consecutive validation failures triggers SubmitAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
+        final textField = find.byKey(const Key('short_answer_text_field'));
 
-      // Strike 1
-      await tester.enterText(textField, 'bacteria without capital letter.');
-      await tester.pump(const Duration(milliseconds: 600));
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 600));
+        // Strike 1
+        await tester.enterText(textField, 'bacteria without capital letter.');
+        await tester.pump(const Duration(milliseconds: 600));
+        await scrollAndTapSubmitButton(tester);
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Strike 2
-      await tester.enterText(textField, 'bacteria without capital letter again.');
-      await tester.pump(const Duration(milliseconds: 600));
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 600));
+        // Strike 2
+        await tester.enterText(
+          textField,
+          'bacteria without capital letter again.',
+        );
+        await tester.pump(const Duration(milliseconds: 600));
+        await scrollAndTapSubmitButton(tester);
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Strike 3 (Terminal Strike)
-      await tester.enterText(textField, 'bacteria without capital letter third time.');
-      await tester.pump(const Duration(milliseconds: 600));
-      await scrollAndTapSubmitButton(tester);
-      await tester.pump(const Duration(milliseconds: 600));
+        // Strike 3 (Terminal Strike)
+        await tester.enterText(
+          textField,
+          'bacteria without capital letter third time.',
+        );
+        await tester.pump(const Duration(milliseconds: 600));
+        await scrollAndTapSubmitButton(tester);
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('valid answer with all keywords and correct grammar dispatches SubmitAnswer(true)', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'valid answer with all keywords and correct grammar dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      // Valid sentence with bacteria, sulfide, chemosynthesis
-      await tester.enterText(
-        textField,
-        'Bacteria use hydrogen sulfide for chemosynthesis to produce food.',
-      );
-      await tester.pumpAndSettle();
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        // Valid sentence with bacteria, sulfide, chemosynthesis
+        await tester.enterText(
+          textField,
+          'Bacteria use hydrogen sulfide for chemosynthesis to produce food.',
+        );
+        await tester.pumpAndSettle();
 
-      await scrollAndTapSubmitButton(tester);
-      await tester.pumpAndSettle();
+        await scrollAndTapSubmitButton(tester);
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockWritingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
   });
 
   group('ShortAnswerScreen - 4. Sample Answer & Explanation Display', () {
-    testWidgets('shows sample answer and explanation when answered correctly', (tester) async {
+    testWidgets('shows sample answer and explanation when answered correctly', (
+      tester,
+    ) async {
       const correctState = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -546,7 +642,9 @@ void main() {
       expect(find.text(sampleQuest1.explanation!), findsAtLeast(1));
     });
 
-    testWidgets('shows sample answer and explanation on final failure', (tester) async {
+    testWidgets('shows sample answer and explanation on final failure', (
+      tester,
+    ) async {
       const finalFailureState = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -567,7 +665,9 @@ void main() {
   });
 
   group('ShortAnswerScreen - 5. Feedback, Navigation & Reset', () {
-    testWidgets('displays feedback card when answered correctly', (tester) async {
+    testWidgets('displays feedback card when answered correctly', (
+      tester,
+    ) async {
       const state = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,
@@ -604,7 +704,9 @@ void main() {
       verify(() => mockWritingBloc.add(const NextQuestion())).called(1);
     });
 
-    testWidgets('tapping Hint button dispatches WritingHintUsed', (tester) async {
+    testWidgets('tapping Hint button dispatches WritingHintUsed', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       final hintButton = find.byType(QuestHintButton);
@@ -615,35 +717,43 @@ void main() {
       verify(() => mockWritingBloc.add(const WritingHintUsed())).called(1);
     });
 
-    testWidgets('onQuestionReset resets text controller and word count on question change', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'onQuestionReset resets text controller and word count on question change',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
-      await tester.enterText(textField, 'Some initial response written here.');
-      await tester.pumpAndSettle();
-      expect(find.text('5 / 4 WORDS MIN'), findsOneWidget);
+        final textField = find.byKey(const Key('short_answer_text_field'));
+        await tester.enterText(
+          textField,
+          'Some initial response written here.',
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('5 / 4 WORDS MIN'), findsOneWidget);
 
-      const nextState = WritingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.shortAnswerWriting,
-        level: 2,
-      );
-      when(() => mockWritingBloc.state).thenReturn(nextState);
-      writingStreamController.add(nextState);
-      await tester.pumpAndSettle();
+        const nextState = WritingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.shortAnswerWriting,
+          level: 2,
+        );
+        when(() => mockWritingBloc.state).thenReturn(nextState);
+        writingStreamController.add(nextState);
+        await tester.pumpAndSettle();
 
-      expect(find.text('0 / 4 WORDS MIN'), findsOneWidget);
-      expect(find.text(sampleQuest2.prompt!), findsOneWidget);
-    });
+        expect(find.text('0 / 4 WORDS MIN'), findsOneWidget);
+        expect(find.text(sampleQuest2.prompt!), findsOneWidget);
+      },
+    );
   });
 
   group('ShortAnswerScreen - 6. Completion, Game Over & Error Journal', () {
-    testWidgets('shows completion dialog on WritingGameComplete', (tester) async {
+    testWidgets('shows completion dialog on WritingGameComplete', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2);
 
       const completeState = WritingGameComplete(
@@ -683,20 +793,23 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('records to ErrorJournal when answering incorrectly as authenticated user', (tester) async {
-      await pumpScreen(tester, level: 2);
+    testWidgets(
+      'records to ErrorJournal when answering incorrectly as authenticated user',
+      (tester) async {
+        await pumpScreen(tester, level: 2);
 
-      final textField = find.byKey(const Key('short_answer_text_field'));
+        final textField = find.byKey(const Key('short_answer_text_field'));
 
-      // Exhaust strikes to submit incorrect answer
-      for (int i = 0; i < 3; i++) {
-        await tester.enterText(textField, 'invalid lower attempt.');
-        await tester.pump(const Duration(milliseconds: 600));
-        await scrollAndTapSubmitButton(tester);
-      }
+        // Exhaust strikes to submit incorrect answer
+        for (int i = 0; i < 3; i++) {
+          await tester.enterText(textField, 'invalid lower attempt.');
+          await tester.pump(const Duration(milliseconds: 600));
+          await scrollAndTapSubmitButton(tester);
+        }
 
-      verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockWritingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
   });
 
   group('ShortAnswerScreen - 7. Responsiveness & Accessibility', () {
@@ -716,7 +829,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders with 1.3x high text scale without overflow', (tester) async {
+    testWidgets('renders with 1.3x high text scale without overflow', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 2, textScaleFactor: 1.3);
 
       expect(find.byType(WritingBaseLayout), findsOneWidget);
@@ -730,7 +845,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (tester) async {
+    testWidgets('briefing overlay shows at level 1 and dismisses on tap', (
+      tester,
+    ) async {
       const lvl1State = WritingLoaded(
         quests: [sampleQuest1],
         currentIndex: 0,

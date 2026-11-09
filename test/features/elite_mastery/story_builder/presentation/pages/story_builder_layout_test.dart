@@ -274,9 +274,9 @@ void main() {
     });
 
     // Theme mock (dark default)
-    when(
-      () => mockThemeCubit.state,
-    ).thenReturn(const ThemeState(themeMode: ThemeMode.dark, isMidnight: false));
+    when(() => mockThemeCubit.state).thenReturn(
+      const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
+    );
     when(
       () => mockThemeCubit.stream,
     ).thenAnswer((_) => const Stream<ThemeState>.empty());
@@ -473,10 +473,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        expect(
-          find.text('Cause & effect'),
-          findsOneWidget,
-        );
+        expect(find.text('Cause & effect'), findsOneWidget);
       },
     );
 
@@ -653,8 +650,9 @@ void main() {
         final reorderableFinder = find.byType(SliverReorderableList);
         expect(reorderableFinder, findsOneWidget);
 
-        final reorderableList =
-            tester.widget<SliverReorderableList>(reorderableFinder);
+        final reorderableList = tester.widget<SliverReorderableList>(
+          reorderableFinder,
+        );
         // Move item 0 to position 2 (after item 1)
         reorderableList.onReorder(0, 2);
         await tester.pump();
@@ -789,9 +787,7 @@ void main() {
       await tester.tap(find.byKey(const Key('story_builder_tile_1')));
       await tester.pump();
 
-      await tester.tap(
-        find.byKey(const Key('story_builder_finalize_button')),
-      );
+      await tester.tap(find.byKey(const Key('story_builder_finalize_button')));
       await tester.pumpAndSettle();
 
       expect(
@@ -800,29 +796,30 @@ void main() {
       );
     });
 
-    testWidgets('passing Stage 1 locks narrative tiles into non-reorderable list', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'passing Stage 1 locks narrative tiles into non-reorderable list',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.byKey(const Key('story_builder_tile_0')));
-      await tester.pump();
-      await tester.tap(find.byKey(const Key('story_builder_tile_1')));
-      await tester.pump();
+        await tester.tap(find.byKey(const Key('story_builder_tile_0')));
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('story_builder_tile_1')));
+        await tester.pump();
 
-      await tester.tap(
-        find.byKey(const Key('story_builder_finalize_button')),
-      );
-      await tester.pumpAndSettle();
+        await tester.tap(
+          find.byKey(const Key('story_builder_finalize_button')),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(SliverReorderableList), findsNothing);
-      expect(find.byType(SliverList), findsOneWidget);
+        expect(find.byType(SliverReorderableList), findsNothing);
+        expect(find.byType(SliverList), findsOneWidget);
 
-      final tile = tester.widget<StoryBuilderNarrativeTile>(
-        find.byType(StoryBuilderNarrativeTile).first,
-      );
-      expect(tile.isReorderable, isFalse);
-    });
+        final tile = tester.widget<StoryBuilderNarrativeTile>(
+          find.byType(StoryBuilderNarrativeTile).first,
+        );
+        expect(tile.isReorderable, isFalse);
+      },
+    );
 
     testWidgets('tapping FINALIZE STORY when already answered is ignored', (
       tester,
@@ -866,10 +863,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('READ THE STORY'), findsOneWidget);
-        expect(
-          find.text('Read your completed story aloud'),
-          findsOneWidget,
-        );
+        expect(find.text('Read your completed story aloud'), findsOneWidget);
 
         // Expected concatenated text in correct order [1, 0, 2, 3]
         final expectedText = [
@@ -956,8 +950,9 @@ void main() {
         await tester.tap(continueBtn);
         await tester.pumpAndSettle();
 
-        verify(() => mockEliteBloc.add(any(that: isA<NextEliteQuestion>())))
-            .called(1);
+        verify(
+          () => mockEliteBloc.add(any(that: isA<NextEliteQuestion>())),
+        ).called(1);
       },
     );
 
@@ -999,9 +994,7 @@ void main() {
       await tester.pump();
       await tester.tap(find.byKey(const Key('story_builder_tile_1')));
       await tester.pump();
-      await tester.tap(
-        find.byKey(const Key('story_builder_finalize_button')),
-      );
+      await tester.tap(find.byKey(const Key('story_builder_finalize_button')));
       await tester.pumpAndSettle();
 
       expect(
@@ -1019,36 +1012,33 @@ void main() {
       );
     });
 
-    testWidgets(
-      'tapping tiles is disabled after question is answered',
-      (tester) async {
-        await pumpScreen(tester);
+    testWidgets('tapping tiles is disabled after question is answered', (
+      tester,
+    ) async {
+      await pumpScreen(tester);
 
-        // Advance to Stage 2 and complete
-        await tester.tap(find.byKey(const Key('story_builder_tile_0')));
-        await tester.pump();
-        await tester.tap(find.byKey(const Key('story_builder_tile_1')));
-        await tester.pump();
-        await tester.tap(
-          find.byKey(const Key('story_builder_finalize_button')),
-        );
-        await tester.pumpAndSettle();
-        await tester.tap(find.byType(GameSkipBypassButton));
-        await tester.pumpAndSettle();
+      // Advance to Stage 2 and complete
+      await tester.tap(find.byKey(const Key('story_builder_tile_0')));
+      await tester.pump();
+      await tester.tap(find.byKey(const Key('story_builder_tile_1')));
+      await tester.pump();
+      await tester.tap(find.byKey(const Key('story_builder_finalize_button')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(GameSkipBypassButton));
+      await tester.pumpAndSettle();
 
-        // Invoking tap on narrative tile in answered state should not select it
-        final tile = tester.widget<StoryBuilderNarrativeTile>(
-          find.byType(StoryBuilderNarrativeTile).first,
-        );
-        tile.onTap?.call();
-        await tester.pump();
+      // Invoking tap on narrative tile in answered state should not select it
+      final tile = tester.widget<StoryBuilderNarrativeTile>(
+        find.byType(StoryBuilderNarrativeTile).first,
+      );
+      tile.onTap?.call();
+      await tester.pump();
 
-        final updatedTile = tester.widget<StoryBuilderNarrativeTile>(
-          find.byType(StoryBuilderNarrativeTile).first,
-        );
-        expect(updatedTile.isSelected, isFalse);
-      },
-    );
+      final updatedTile = tester.widget<StoryBuilderNarrativeTile>(
+        find.byType(StoryBuilderNarrativeTile).first,
+      );
+      expect(updatedTile.isSelected, isFalse);
+    });
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -1091,31 +1081,30 @@ void main() {
         expect(find.text(sampleStoryQuest1.hint!), findsOneWidget);
       });
 
-      testWidgets(
-        'narrative tiles display #N position badges when hint is visible',
-        (tester) async {
-          final hintState = EliteMasteryLoaded(
-            gameType: GameSubtype.storyBuilder,
-            level: 2,
-            quests: [sampleStoryQuest1],
-            currentIndex: 0,
-            livesRemaining: 3,
-            isHintVisible: true,
-          );
+      testWidgets('narrative tiles display #N position badges when hint is visible', (
+        tester,
+      ) async {
+        final hintState = EliteMasteryLoaded(
+          gameType: GameSubtype.storyBuilder,
+          level: 2,
+          quests: [sampleStoryQuest1],
+          currentIndex: 0,
+          livesRemaining: 3,
+          isHintVisible: true,
+        );
 
-          await pumpScreen(tester, state: hintState);
+        await pumpScreen(tester, state: hintState);
 
-          // In sampleStoryQuest1, correctOrder is [1, 0, 2, 3]
-          // Sentence 0 (originalIndex 0) belongs at correctOrder index 1 -> badge #2
-          // Sentence 1 (originalIndex 1) belongs at correctOrder index 0 -> badge #1
-          // Sentence 2 (originalIndex 2) belongs at correctOrder index 2 -> badge #3
-          // Sentence 3 (originalIndex 3) belongs at correctOrder index 3 -> badge #4
-          expect(find.text('#1'), findsOneWidget);
-          expect(find.text('#2'), findsOneWidget);
-          expect(find.text('#3'), findsOneWidget);
-          expect(find.text('#4'), findsOneWidget);
-        },
-      );
+        // In sampleStoryQuest1, correctOrder is [1, 0, 2, 3]
+        // Sentence 0 (originalIndex 0) belongs at correctOrder index 1 -> badge #2
+        // Sentence 1 (originalIndex 1) belongs at correctOrder index 0 -> badge #1
+        // Sentence 2 (originalIndex 2) belongs at correctOrder index 2 -> badge #3
+        // Sentence 3 (originalIndex 3) belongs at correctOrder index 3 -> badge #4
+        expect(find.text('#1'), findsOneWidget);
+        expect(find.text('#2'), findsOneWidget);
+        expect(find.text('#3'), findsOneWidget);
+        expect(find.text('#4'), findsOneWidget);
+      });
 
       testWidgets('omits hint button in header when quest.hint is null', (
         tester,
@@ -1134,22 +1123,21 @@ void main() {
         expect(find.byType(QuestHintButton), findsNothing);
       });
 
-      testWidgets(
-        'renders EliteMasteryGameOver dimmed layout with 0 lives',
-        (tester) async {
-          final gameOverState = EliteMasteryGameOver(
-            gameType: GameSubtype.storyBuilder,
-            level: 2,
-            quests: [sampleStoryQuest1],
-            currentIndex: 0,
-          );
+      testWidgets('renders EliteMasteryGameOver dimmed layout with 0 lives', (
+        tester,
+      ) async {
+        final gameOverState = EliteMasteryGameOver(
+          gameType: GameSubtype.storyBuilder,
+          level: 2,
+          quests: [sampleStoryQuest1],
+          currentIndex: 0,
+        );
 
-          await pumpScreen(tester, state: gameOverState);
+        await pumpScreen(tester, state: gameOverState);
 
-          expect(find.byType(EliteBaseLayout), findsOneWidget);
-          expect(find.byType(Opacity), findsWidgets);
-        },
-      );
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(Opacity), findsWidgets);
+      });
 
       testWidgets(
         'renders EliteMasteryGameComplete and flushes confetti timers cleanly',
@@ -1186,8 +1174,9 @@ void main() {
       testWidgets(
         'renders GameErrorView when in EliteMasteryError state and dispatches FetchEliteMasteryQuests on retry',
         (tester) async {
-          const errorState =
-              EliteMasteryError('Failed to load story builder quests');
+          const errorState = EliteMasteryError(
+            'Failed to load story builder quests',
+          );
 
           await pumpScreen(tester, state: errorState);
 
@@ -1216,10 +1205,7 @@ void main() {
       testWidgets(
         'renders cleanly on compact screen (320x568) without overflow',
         (tester) async {
-          await pumpScreen(
-            tester,
-            surfaceSize: const Size(320, 568),
-          );
+          await pumpScreen(tester, surfaceSize: const Size(320, 568));
 
           expect(find.byType(StoryBuilderScreen), findsOneWidget);
           expect(tester.takeException(), isNull);
@@ -1268,4 +1254,3 @@ void main() {
     },
   );
 }
-

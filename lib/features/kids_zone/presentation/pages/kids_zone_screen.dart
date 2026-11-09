@@ -187,7 +187,9 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacing.screen,
+                    ),
                     sliver: SliverToBoxAdapter(
                       child: Column(
                         children: [
@@ -208,7 +210,9 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacing.screen,
+                    ),
                     sliver: SliverToBoxAdapter(
                       child: KidsMagicChest(
                         onClaimed: _spawnCoins,

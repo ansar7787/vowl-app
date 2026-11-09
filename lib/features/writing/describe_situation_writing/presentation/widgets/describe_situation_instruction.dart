@@ -22,7 +22,8 @@ class DescribeSituationInstruction extends StatelessWidget {
     final displayText = context.tr(
       'games.describeSituationWriting_instruction',
       fallback:
-          instruction ?? "Tap the emojis to reveal keywords, then describe the situation.",
+          instruction ??
+          "Tap the emojis to reveal keywords, then describe the situation.",
     );
 
     return Semantics(

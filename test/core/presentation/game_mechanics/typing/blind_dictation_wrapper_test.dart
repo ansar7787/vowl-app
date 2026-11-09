@@ -12,7 +12,10 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
+    implements EconomyBloc {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -24,7 +27,9 @@ void main() {
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
     mockHapticService = MockHapticService();
-    when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(const AuthState.unauthenticated());
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -42,165 +47,169 @@ void main() {
     }
   });
 
-  testWidgets('BlindDictationWrapper renders natural header, badge, and submit button', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'BlindDictationWrapper renders natural header, badge, and submit button',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp(
-            theme: AppTheme.lightTheme,
-            home: Scaffold(
-              body: Stack(
-                children: [
-                  BlindDictationWrapper(
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => MultiBlocProvider(
+            providers: [
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: MaterialApp(
+              theme: AppTheme.lightTheme,
+              home: Scaffold(
+                body: Stack(
+                  children: [
+                    BlindDictationWrapper(
+                      expectedText: 'listen to this audio',
+                      primaryColor: Colors.blue,
+                      onConfirmed: () {},
+                      onSkipped: () {},
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Verify non-buzzword header and submit button, no coin badge
+      expect(find.text('LISTEN & TYPE'), findsOneWidget);
+      expect(find.text('+5 coins'), findsNothing);
+      expect(find.text('SUBMIT'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'BlindDictationWrapper with isPositioned: false renders as card with rounded corners and no handle bar',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => MultiBlocProvider(
+            providers: [
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: MaterialApp(
+              theme: AppTheme.lightTheme,
+              home: Scaffold(
+                body: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: BlindDictationWrapper(
                     expectedText: 'listen to this audio',
                     primaryColor: Colors.blue,
+                    isPositioned: false,
                     onConfirmed: () {},
                     onSkipped: () {},
                   ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
-
-    // Verify non-buzzword header and submit button, no coin badge
-    expect(find.text('LISTEN & TYPE'), findsOneWidget);
-    expect(find.text('+5 coins'), findsNothing);
-    expect(find.text('SUBMIT'), findsOneWidget);
-  });
-
-  testWidgets('BlindDictationWrapper with isPositioned: false renders as card with rounded corners and no handle bar', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
-
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp(
-            theme: AppTheme.lightTheme,
-            home: Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: BlindDictationWrapper(
-                  expectedText: 'listen to this audio',
-                  primaryColor: Colors.blue,
-                  isPositioned: false,
-                  onConfirmed: () {},
-                  onSkipped: () {},
                 ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
-    expect(find.text('LISTEN & TYPE'), findsOneWidget);
-    expect(find.text('SUBMIT'), findsOneWidget);
+      expect(find.text('LISTEN & TYPE'), findsOneWidget);
+      expect(find.text('SUBMIT'), findsOneWidget);
 
-    // Verify container has all-around rounded corners (card)
-    final container = tester.widget<Container>(
-      find.descendant(
-        of: find.byType(BlindDictationWrapper),
-        matching: find.byType(Container),
-      ).first,
-    );
-    final boxDecoration = container.decoration as BoxDecoration;
-    expect(boxDecoration.borderRadius, BorderRadius.circular(24.r));
-  });
+      // Verify container has all-around rounded corners (card)
+      final container = tester.widget<Container>(
+        find
+            .descendant(
+              of: find.byType(BlindDictationWrapper),
+              matching: find.byType(Container),
+            )
+            .first,
+      );
+      final boxDecoration = container.decoration as BoxDecoration;
+      expect(boxDecoration.borderRadius, BorderRadius.circular(24.r));
+    },
+  );
 
-  testWidgets('BlindDictationWrapper text write field has 4-side curves, anti-alias clipping, and visible border', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'BlindDictationWrapper text write field has 4-side curves, anti-alias clipping, and visible border',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
-            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
-          ],
-          child: MaterialApp(
-            theme: AppTheme.lightTheme,
-            home: Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: BlindDictationWrapper(
-                  expectedText: 'apple',
-                  primaryColor: Colors.deepPurple,
-                  isPositioned: false,
-                  onConfirmed: () {},
-                  onSkipped: () {},
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => MultiBlocProvider(
+            providers: [
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: MaterialApp(
+              theme: AppTheme.lightTheme,
+              home: Scaffold(
+                body: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: BlindDictationWrapper(
+                    expectedText: 'apple',
+                    primaryColor: Colors.deepPurple,
+                    isPositioned: false,
+                    onConfirmed: () {},
+                    onSkipped: () {},
+                  ),
                 ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
-    // Find TextField and verify its unified OutlineInputBorder and fill
-    final textFieldFinder = find.byType(TextField);
-    expect(textFieldFinder, findsOneWidget);
+      // Find TextField and verify its unified OutlineInputBorder and fill
+      final textFieldFinder = find.byType(TextField);
+      expect(textFieldFinder, findsOneWidget);
 
-    final textField = tester.widget<TextField>(textFieldFinder);
-    final inputDec = textField.decoration!;
-    expect(inputDec.filled, isTrue);
+      final textField = tester.widget<TextField>(textFieldFinder);
+      final inputDec = textField.decoration!;
+      expect(inputDec.filled, isTrue);
 
-    // Verify 4-side curve on OutlineInputBorder
-    expect(inputDec.border, isA<OutlineInputBorder>());
-    final outlineBorder = inputDec.border as OutlineInputBorder;
-    expect(outlineBorder.borderRadius, BorderRadius.circular(16.r));
-    expect(outlineBorder.borderSide.width, 1.5.w);
-    expect(outlineBorder.borderSide.color, isNotNull);
+      // Verify 4-side curve on OutlineInputBorder
+      expect(inputDec.border, isA<OutlineInputBorder>());
+      final outlineBorder = inputDec.border as OutlineInputBorder;
+      expect(outlineBorder.borderRadius, BorderRadius.circular(16.r));
+      expect(outlineBorder.borderSide.width, 1.5.w);
+      expect(outlineBorder.borderSide.color, isNotNull);
 
-    // Verify enabled and focused borders share identical 16.r curves
-    final enabledBorder = inputDec.enabledBorder as OutlineInputBorder;
-    expect(enabledBorder.borderRadius, BorderRadius.circular(16.r));
-    expect(enabledBorder.borderSide.width, 1.5.w);
-  });
+      // Verify enabled and focused borders share identical 16.r curves
+      final enabledBorder = inputDec.enabledBorder as OutlineInputBorder;
+      expect(enabledBorder.borderRadius, BorderRadius.circular(16.r));
+      expect(enabledBorder.borderSide.width, 1.5.w);
+    },
+  );
 }
-

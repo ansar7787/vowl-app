@@ -90,11 +90,8 @@ void main() {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, _) => const Scaffold(
-            body: SingleChildScrollView(
-              child: ToolsStrip(),
-            ),
-          ),
+          builder: (context, _) =>
+              const Scaffold(body: SingleChildScrollView(child: ToolsStrip())),
         ),
         GoRoute(
           path: AppRouter.kidsZoneRoute,
@@ -169,24 +166,32 @@ void main() {
   }
 
   group('Piece 8: ToolsStrip Core Rendering & Architecture Tests', () {
-    testWidgets('renders 3 Swiss Horizon cards: Kids Zone, Daily Words, and Translate', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders 3 Swiss Horizon cards: Kids Zone, Daily Words, and Translate',
+      (tester) async {
+        await tester.pumpWidget(createSubject());
+        await tester.pumpAndSettle();
 
-      expect(find.text('Kids Zone'), findsOneWidget);
-      expect(find.text('Fun learning games'), findsOneWidget);
-      expect(find.text('KIDS'), findsOneWidget);
+        expect(find.text('Kids Zone'), findsOneWidget);
+        expect(find.text('Fun learning games'), findsOneWidget);
+        expect(find.text('KIDS'), findsOneWidget);
 
-      expect(find.text('Daily Words'), findsOneWidget);
-      expect(find.text('5 new words today'), findsOneWidget);
-      expect(find.text('TODAY'), findsOneWidget);
+        expect(find.text('Daily Words'), findsOneWidget);
+        expect(find.text('5 new words today'), findsOneWidget);
+        expect(find.text('TODAY'), findsOneWidget);
 
-      expect(find.text('Translate'), findsOneWidget);
-      expect(find.text('Offline translation for 50+ languages'), findsOneWidget);
-      expect(find.text('OFFLINE'), findsOneWidget);
-    });
+        expect(find.text('Translate'), findsOneWidget);
+        expect(
+          find.text('Offline translation for 50+ languages'),
+          findsOneWidget,
+        );
+        expect(find.text('OFFLINE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders 2-column Bento row: Photo Vocab & Scan & Learn', (tester) async {
+    testWidgets('renders 2-column Bento row: Photo Vocab & Scan & Learn', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -201,13 +206,18 @@ void main() {
       expect(find.text('OCR SCAN'), findsOneWidget);
     });
 
-    testWidgets('renders Arcade Vault strip with 2 speed word games hidden', (tester) async {
+    testWidgets('renders Arcade Vault strip with 2 speed word games hidden', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
       expect(find.text('ARCADE VAULT'), findsOneWidget);
       expect(find.text('2 GAMES'), findsOneWidget);
-      expect(find.text('Speed vocabulary & anagram challenges'), findsOneWidget);
+      expect(
+        find.text('Speed vocabulary & anagram challenges'),
+        findsOneWidget,
+      );
       expect(find.text('Unfold +2'), findsOneWidget);
     });
   });
@@ -223,7 +233,9 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.kidsZoneRoute));
     });
 
-    testWidgets('tapping Daily Words navigates to dailyWordsRoute', (tester) async {
+    testWidgets('tapping Daily Words navigates to dailyWordsRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -233,7 +245,9 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.dailyWordsRoute));
     });
 
-    testWidgets('tapping Translate navigates to translateRoute', (tester) async {
+    testWidgets('tapping Translate navigates to translateRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -243,7 +257,9 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.translateRoute));
     });
 
-    testWidgets('tapping Photo Vocab navigates to photoVocabularyRoute', (tester) async {
+    testWidgets('tapping Photo Vocab navigates to photoVocabularyRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -253,7 +269,9 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.photoVocabularyRoute));
     });
 
-    testWidgets('tapping Scan & Learn navigates to scanAndLearnRoute', (tester) async {
+    testWidgets('tapping Scan & Learn navigates to scanAndLearnRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
@@ -263,69 +281,78 @@ void main() {
       expect(navigatedRoutes, contains(AppRouter.scanAndLearnRoute));
     });
 
-    testWidgets('tapping Unfold +2 expands and reveals inline bento cells for Word Snap and Word Mixer', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'tapping Unfold +2 expands and reveals inline bento cells for Word Snap and Word Mixer',
+      (tester) async {
+        await tester.pumpWidget(createSubject());
+        await tester.pumpAndSettle();
 
-      // Tap unfold
-      await tester.tap(find.text('Unfold +2'));
-      await tester.pumpAndSettle();
+        // Tap unfold
+        await tester.tap(find.text('Unfold +2'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('ACTIVE'), findsOneWidget);
-      expect(find.text('Fold'), findsOneWidget);
+        expect(find.text('ACTIVE'), findsOneWidget);
+        expect(find.text('Fold'), findsOneWidget);
 
-      // Now Word Snap and Word Mixer exist as expanded bento sub-cells
-      expect(find.text('Word Snap'), findsOneWidget);
-      expect(find.text('Word Mixer'), findsOneWidget);
-      expect(find.text('MEMORY MATCH'), findsOneWidget);
-      expect(find.text('ANAGRAM SPRINT'), findsOneWidget);
+        // Now Word Snap and Word Mixer exist as expanded bento sub-cells
+        expect(find.text('Word Snap'), findsOneWidget);
+        expect(find.text('Word Mixer'), findsOneWidget);
+        expect(find.text('MEMORY MATCH'), findsOneWidget);
+        expect(find.text('ANAGRAM SPRINT'), findsOneWidget);
 
-      // Tap Fold to collapse
-      await tester.ensureVisible(find.text('Fold'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Fold'));
-      await tester.pumpAndSettle();
-      expect(find.text('Unfold +2'), findsOneWidget);
+        // Tap Fold to collapse
+        await tester.ensureVisible(find.text('Fold'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Fold'));
+        await tester.pumpAndSettle();
+        expect(find.text('Unfold +2'), findsOneWidget);
 
-      // Re-unfold and tap Word Snap to test navigation
-      await tester.tap(find.text('Unfold +2'));
-      await tester.pumpAndSettle();
-      await tester.ensureVisible(find.text('Word Snap'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Word Snap'));
-      await tester.pumpAndSettle();
-      expect(navigatedRoutes, contains(AppRouter.wordSnapRoute));
-    });
+        // Re-unfold and tap Word Snap to test navigation
+        await tester.tap(find.text('Unfold +2'));
+        await tester.pumpAndSettle();
+        await tester.ensureVisible(find.text('Word Snap'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Word Snap'));
+        await tester.pumpAndSettle();
+        expect(navigatedRoutes, contains(AppRouter.wordSnapRoute));
+      },
+    );
   });
 
   group('Piece 8: ToolsStrip Small Screen & Accessibility Robustness', () {
-    testWidgets('renders cleanly on 320dp small screen (iPhone SE) without overflow', (tester) async {
-      tester.view.physicalSize = const Size(320, 600);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'renders cleanly on 320dp small screen (iPhone SE) without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320, 600);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(createSubject(width: 320, height: 600));
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(createSubject(width: 320, height: 600));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(ToolsStrip), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ToolsStrip), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale without overflow', (tester) async {
-      tester.view.physicalSize = const Size(320, 600);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+    testWidgets(
+      'renders cleanly with 1.3x accessibility text scale without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320, 600);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      await tester.pumpWidget(
-        createSubject(width: 320, height: 600, textScale: 1.3),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          createSubject(width: 320, height: 600, textScale: 1.3),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(ToolsStrip), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ToolsStrip), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('renders cleanly in Light theme mode', (tester) async {
       await tester.pumpWidget(createSubject(themeMode: ThemeMode.light));
@@ -335,19 +362,21 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('dynamically updates when DiscoveryDeck.notifySequenceCompleted() is invoked', (tester) async {
-      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'dynamically updates when DiscoveryDeck.notifySequenceCompleted() is invoked',
+      (tester) async {
+        when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
+        await tester.pumpWidget(createSubject());
+        await tester.pumpAndSettle();
 
-      expect(find.text('TODAY'), findsOneWidget);
+        expect(find.text('TODAY'), findsOneWidget);
 
-      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(true);
-      DiscoveryDeck.notifySequenceCompleted();
-      await tester.pumpAndSettle();
+        when(() => mockDailyWordsService.isTodayCompleted).thenReturn(true);
+        DiscoveryDeck.notifySequenceCompleted();
+        await tester.pumpAndSettle();
 
-      expect(find.text('COMPLETED ✓'), findsOneWidget);
-    });
+        expect(find.text('COMPLETED ✓'), findsOneWidget);
+      },
+    );
   });
 }
-

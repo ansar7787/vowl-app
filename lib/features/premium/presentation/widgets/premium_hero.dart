@@ -80,130 +80,138 @@ class PremiumHero extends StatelessWidget {
 
         // Gradient Shader Text for a 2026 athletic ultra-premium feel (1-Line Punchy Hero)
         Builder(
-          builder: (context) {
-            String title = context.tr(
-              'premium.hero_title',
-              fallback: 'Master English Faster',
-            );
-            if (title.endsWith('.') || title.endsWith('।') || title.endsWith('。')) {
-              title = title.substring(0, title.length - 1);
-            }
-            if (title == 'Unlimited Growth' ||
-                title == 'Unlimited Growth.' ||
-                title == 'Learn English Without Limits') {
-              title = 'Master English Faster';
-            }
+              builder: (context) {
+                String title = context.tr(
+                  'premium.hero_title',
+                  fallback: 'Master English Faster',
+                );
+                if (title.endsWith('.') ||
+                    title.endsWith('।') ||
+                    title.endsWith('。')) {
+                  title = title.substring(0, title.length - 1);
+                }
+                if (title == 'Unlimited Growth' ||
+                    title == 'Unlimited Growth.' ||
+                    title == 'Learn English Without Limits') {
+                  title = 'Master English Faster';
+                }
 
-            return FittedBox(
-              fit: BoxFit.scaleDown,
-              child: ShaderMask(
-                shaderCallback: (bounds) => const LinearGradient(
-                  colors: [AppColors.indigo500, AppColors.violet500],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ).createShader(bounds),
-                child: Text(
-                  title,
-                  maxLines: 1,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: Colors.white, // Required for ShaderMask to work
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -0.5,
-                    height: 1.15,
+                return FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: ShaderMask(
+                    shaderCallback: (bounds) => const LinearGradient(
+                      colors: [AppColors.indigo500, AppColors.violet500],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ).createShader(bounds),
+                    child: Text(
+                      title,
+                      maxLines: 1,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white, // Required for ShaderMask to work
+                        fontSize: 28.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -0.5,
+                        height: 1.15,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            );
-          },
-        )
-        .animate()
-        .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 100.ms)
-        .fadeIn(),
+                );
+              },
+            )
+            .animate()
+            .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 100.ms)
+            .fadeIn(),
 
         SizedBox(height: 8.h),
 
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Builder(
-            builder: (context) {
-              String subtitle = context.tr(
-                'premium.hero_subtitle',
-                fallback:
-                    '25,000 ad-free levels with real US & UK voices\nEverything you need to speak with confidence',
-              );
-              if (subtitle.endsWith('.') || subtitle.endsWith('।') || subtitle.endsWith('。')) {
-                subtitle = subtitle.substring(0, subtitle.length - 1);
-              }
-              return Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark
-                      ? const Color(0x99FFFFFF)
-                      : const Color(0x8A000000),
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 0.2,
-                  height: 1.35,
-                ),
-              );
-            },
-          ),
-        )
-        .animate()
-        .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 150.ms)
-        .fadeIn(),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Builder(
+                builder: (context) {
+                  String subtitle = context.tr(
+                    'premium.hero_subtitle',
+                    fallback:
+                        '25,000 ad-free levels with real US & UK voices\nEverything you need to speak with confidence',
+                  );
+                  if (subtitle.endsWith('.') ||
+                      subtitle.endsWith('।') ||
+                      subtitle.endsWith('。')) {
+                    subtitle = subtitle.substring(0, subtitle.length - 1);
+                  }
+                  return Text(
+                    subtitle,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark
+                          ? const Color(0x99FFFFFF)
+                          : const Color(0x8A000000),
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 0.2,
+                      height: 1.35,
+                    ),
+                  );
+                },
+              ),
+            )
+            .animate()
+            .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 150.ms)
+            .fadeIn(),
 
         SizedBox(height: 12.h),
 
         // Authentic Vowl Capability Badge (100% Real - Zero Ads & 25,000+ Levels across 125 Games)
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
-          decoration: BoxDecoration(
-            color: isDark
-                ? AppColors.emerald500.withValues(alpha: 0.12)
-                : AppColors.emerald500.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: AppColors.emerald500.withValues(alpha: isDark ? 0.35 : 0.25),
-              width: 1,
-            ),
-          ),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  LucideIcons.sparkles,
-                  color: AppColors.emerald500,
-                  size: 13.sp,
-                ),
-                SizedBox(width: 6.w),
-                Text(
-                  context.tr(
-                    'premium.hero_badge',
-                    fallback: '100% AD-FREE • 25,000+ LEVELS',
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? AppColors.emerald500.withValues(alpha: 0.12)
+                    : AppColors.emerald500.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: AppColors.emerald500.withValues(
+                    alpha: isDark ? 0.35 : 0.25,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.5.sp,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 0.8,
-                    color: isDark ? AppColors.emerald400 : AppColors.emerald600,
-                  ),
+                  width: 1,
                 ),
-              ],
-            ),
-          ),
-        )
-        .animate()
-        .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 200.ms)
-        .fadeIn(),
+              ),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      LucideIcons.sparkles,
+                      color: AppColors.emerald500,
+                      size: 13.sp,
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      context.tr(
+                        'premium.hero_badge',
+                        fallback: '100% AD-FREE • 25,000+ LEVELS',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.8,
+                        color: isDark
+                            ? AppColors.emerald400
+                            : AppColors.emerald600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+            .animate()
+            .slideY(begin: 0.2, end: 0, duration: 600.ms, delay: 200.ms)
+            .fadeIn(),
       ],
     );
   }

@@ -252,7 +252,10 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                       feedbackBuilder: widget.feedbackBuilder,
                       mascotBuilder: widget.mascotBuilder,
                       backgroundOverlay: widget.backgroundOverlay,
-                      showBriefing: _showBriefing && !isComplete && baseState is! GameOverState,
+                      showBriefing:
+                          _showBriefing &&
+                          !isComplete &&
+                          baseState is! GameOverState,
                       onBriefingDismiss: () {
                         _showBriefing = false;
                         _updateState();

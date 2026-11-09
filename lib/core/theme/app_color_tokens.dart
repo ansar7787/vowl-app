@@ -1,11 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorf1f5f9 = Color(0xFFF1F5F9);
-}
-
 /// Semantic color tokens for the Vowl design system.
 ///
 /// This [ThemeExtension] provides mode-aware (light/dark/midnight) semantic
@@ -325,10 +320,10 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
     textSecondary: AppColors.slate600,
     textTertiary: AppColors.slate400,
     textDisabled: AppColors.slate300,
-    // Borders
-    border: AppColors.slate100,
-    borderSubtle: _LocalPalette.colorf1f5f9, // slate100 — barely visible
-    divider: AppColors.slate100,
+    // Borders (Option 2: Slate 200 for visible white-on-white card definition)
+    border: AppColors.slate200,
+    borderSubtle: AppColors.slate100,
+    divider: AppColors.slate200,
     // Success
     success: AppColors.emerald500,
     successContainer: AppColors.emerald50,
@@ -365,8 +360,8 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
   /// Dark mode semantic tokens.
   static const dark = AppColorTokens(
     // Surfaces
-    surface: AppColors.slate800,
-    surfaceVariant: AppColors.slate700,
+    surface: AppColors.midnightNavy,
+    surfaceVariant: AppColors.slate800,
     surfaceDim: AppColors.slate900,
     // Text
     textPrimary: AppColors.slate50,

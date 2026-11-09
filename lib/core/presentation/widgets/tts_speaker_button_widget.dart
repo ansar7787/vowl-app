@@ -137,8 +137,8 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
 
     // Fast-path: Only wait for stop if an engine is actively speaking right now,
     // avoiding redundant MethodChannel delays on cold/idle taps.
-    final bool isEngineActive = di.sl.isRegistered<TtsService>() &&
-        di.sl<TtsService>().isSpeaking;
+    final bool isEngineActive =
+        di.sl.isRegistered<TtsService>() && di.sl<TtsService>().isSpeaking;
     if (isEngineActive) {
       await TtsSpeakerButtonWidget.stopAll();
     }

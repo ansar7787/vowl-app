@@ -87,7 +87,12 @@ void main() {
     String id = 'quest_synonym_1',
     String textToSpeak = 'Wow, your new apartment is *big*!',
     String? correctAnswer = 'large',
-    List<String>? acceptedSynonyms = const ['roomy', 'huge', 'spacious', 'large'],
+    List<String>? acceptedSynonyms = const [
+      'roomy',
+      'huge',
+      'spacious',
+      'large',
+    ],
     String instruction = 'Say a synonym for the highlighted word.',
     String? hint = 'Think of plenty of room.',
     int difficulty = 1,
@@ -131,10 +136,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const SpeakingHintUsed());
     registerFallbackValue(
-      const FetchSpeakingQuests(
-        gameType: GameSubtype.speakSynonym,
-        level: 2,
-      ),
+      const FetchSpeakingQuests(gameType: GameSubtype.speakSynonym, level: 2),
     );
     registerFallbackValue(const Duration(milliseconds: 50));
   });
@@ -177,18 +179,23 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.stopRecording())
-        .thenAnswer((_) async => 'mock_synonym_rec.m4a');
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.stopRecording(),
+    ).thenAnswer((_) async => 'mock_synonym_rec.m4a');
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
     when(() => mockAudioRecorder.onAmplitudeChanged(any())).thenAnswer(
       (_) => Stream.fromIterable([
@@ -290,10 +297,7 @@ void main() {
                 textScaler: TextScaler.linear(textScaleFactor),
                 disableAnimations: reduceMotion,
               ),
-              child: SpeakSynonymScreen(
-                level: level,
-                gameType: gameType,
-              ),
+              child: SpeakSynonymScreen(level: level, gameType: gameType),
             ),
           ),
         ),
@@ -312,81 +316,145 @@ void main() {
       expect(find.byType(SpeakingBaseLayout), findsOneWidget);
     });
 
-    testWidgets('1.2 renders SpeakSynonymHeader with key speak_synonym_header', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byType(SpeakSynonymHeader), findsOneWidget);
-      expect(find.byKey(const Key('speak_synonym_header')), findsOneWidget);
-    });
+    testWidgets(
+      '1.2 renders SpeakSynonymHeader with key speak_synonym_header',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.byType(SpeakSynonymHeader), findsOneWidget);
+        expect(find.byKey(const Key('speak_synonym_header')), findsOneWidget);
+      },
+    );
 
-    testWidgets('1.3 renders SYNONYM CHALLENGE badge with key speak_synonym_challenge_badge', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_challenge_badge')), findsOneWidget);
-      expect(find.text('SYNONYM CHALLENGE'), findsOneWidget);
-    });
+    testWidgets(
+      '1.3 renders SYNONYM CHALLENGE badge with key speak_synonym_challenge_badge',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_challenge_badge')),
+          findsOneWidget,
+        );
+        expect(find.text('SYNONYM CHALLENGE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('1.4 renders instruction text with key speak_synonym_instruction_text', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_instruction_text')), findsOneWidget);
-      expect(find.text('Say a synonym for the highlighted word.'), findsOneWidget);
-      final textWidget = tester.widget<Text>(find.byKey(const Key('speak_synonym_instruction_text')));
-      expect(textWidget.textAlign, TextAlign.center);
-    });
+    testWidgets(
+      '1.4 renders instruction text with key speak_synonym_instruction_text',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_instruction_text')),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Say a synonym for the highlighted word.'),
+          findsOneWidget,
+        );
+        final textWidget = tester.widget<Text>(
+          find.byKey(const Key('speak_synonym_instruction_text')),
+        );
+        expect(textWidget.textAlign, TextAlign.center);
+      },
+    );
 
-    testWidgets('1.5 renders SpeakSynonymSentencePanel with key speak_synonym_sentence_panel', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byType(SpeakSynonymSentencePanel), findsOneWidget);
-      expect(find.byKey(const Key('speak_synonym_sentence_panel')), findsOneWidget);
-    });
+    testWidgets(
+      '1.5 renders SpeakSynonymSentencePanel with key speak_synonym_sentence_panel',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.byType(SpeakSynonymSentencePanel), findsOneWidget);
+        expect(
+          find.byKey(const Key('speak_synonym_sentence_panel')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.6 renders RawScrollbar with key speak_synonym_scrollbar', (tester) async {
+    testWidgets('1.6 renders RawScrollbar with key speak_synonym_scrollbar', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_scrollbar')), findsOneWidget);
     });
 
-    testWidgets('1.7 renders CustomScrollView with key speak_synonym_scroll_view', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_scroll_view')), findsOneWidget);
-    });
+    testWidgets(
+      '1.7 renders CustomScrollView with key speak_synonym_scroll_view',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_scroll_view')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('1.8 renders SpeakToConfirmOverlay with key speak_synonym_speak_to_confirm_overlay', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')), findsOneWidget);
-      final sliverPaddings = tester.widgetList<SliverPadding>(find.byType(SliverPadding)).toList();
-      final confirmSliverPadding = sliverPaddings.last;
-      final padding = confirmSliverPadding.padding.resolve(TextDirection.ltr);
-      expect(padding.left, greaterThan(0));
-      expect(padding.right, greaterThan(0));
-      expect(padding.left, equals(padding.right));
-    });
+    testWidgets(
+      '1.8 renders SpeakToConfirmOverlay with key speak_synonym_speak_to_confirm_overlay',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
+        final sliverPaddings = tester
+            .widgetList<SliverPadding>(find.byType(SliverPadding))
+            .toList();
+        final confirmSliverPadding = sliverPaddings.last;
+        final padding = confirmSliverPadding.padding.resolve(TextDirection.ltr);
+        expect(padding.left, greaterThan(0));
+        expect(padding.right, greaterThan(0));
+        expect(padding.left, equals(padding.right));
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 2. Sentence Parser & RichText Formatting (8 tests)
   // ---------------------------------------------------------------------------
   group('2. Sentence Parser & RichText Formatting', () {
-    testWidgets('2.1 renders RichText with key speak_synonym_rich_text', (tester) async {
+    testWidgets('2.1 renders RichText with key speak_synonym_rich_text', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_rich_text')), findsOneWidget);
-      final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
+      final richText = tester.widget<RichText>(
+        find.byKey(const Key('speak_synonym_rich_text')),
+      );
       expect(richText.textAlign, TextAlign.center);
       expect(richText.softWrap, isTrue);
     });
 
-    testWidgets('2.2 splits text with asterisks into highlighted target chip', (tester) async {
+    testWidgets('2.2 splits text with asterisks into highlighted target chip', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_target_chip_1')), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_synonym_target_chip_1')),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('2.3 renders target word text with key speak_synonym_target_text_1', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_target_text_1')), findsOneWidget);
-      expect(find.text('big'), findsOneWidget);
-    });
+    testWidgets(
+      '2.3 renders target word text with key speak_synonym_target_text_1',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_target_text_1')),
+          findsOneWidget,
+        );
+        expect(find.text('big'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2.4 non-target segments are rendered as plain text spans', (tester) async {
+    testWidgets('2.4 non-target segments are rendered as plain text spans', (
+      tester,
+    ) async {
       await pumpScreen(tester);
-      final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
-      expect(richText.text.toPlainText(), contains('Wow, your new apartment is '));
+      final richText = tester.widget<RichText>(
+        find.byKey(const Key('speak_synonym_rich_text')),
+      );
+      expect(
+        richText.text.toPlainText(),
+        contains('Wow, your new apartment is '),
+      );
     });
 
     testWidgets('2.5 handles sentence with multiple asterisks', (tester) async {
@@ -404,16 +472,22 @@ void main() {
         level: 2,
       );
       await pumpScreen(tester, state: multiState);
-      expect(find.byKey(const Key('speak_synonym_target_chip_1')), findsOneWidget);
-      expect(find.byKey(const Key('speak_synonym_target_chip_3')), findsOneWidget);
+      expect(
+        find.byKey(const Key('speak_synonym_target_chip_1')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const Key('speak_synonym_target_chip_3')),
+        findsOneWidget,
+      );
       expect(find.text('quick'), findsOneWidget);
       expect(find.text('lazy'), findsOneWidget);
     });
 
-    testWidgets('2.6 handles sentence without asterisks gracefully', (tester) async {
-      final plainQuest = createQuest(
-        textToSpeak: 'The house is very clean.',
-      );
+    testWidgets('2.6 handles sentence without asterisks gracefully', (
+      tester,
+    ) async {
+      final plainQuest = createQuest(textToSpeak: 'The house is very clean.');
       final plainState = SpeakingLoaded(
         quests: [plainQuest],
         currentIndex: 0,
@@ -425,12 +499,19 @@ void main() {
         level: 2,
       );
       await pumpScreen(tester, state: plainState);
-      expect(find.byKey(const Key('speak_synonym_target_chip_1')), findsNothing);
-      final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
+      expect(
+        find.byKey(const Key('speak_synonym_target_chip_1')),
+        findsNothing,
+      );
+      final richText = tester.widget<RichText>(
+        find.byKey(const Key('speak_synonym_rich_text')),
+      );
       expect(richText.text.toPlainText(), contains('The house is very clean.'));
     });
 
-    testWidgets('2.7 handles empty textToSpeak without crashing', (tester) async {
+    testWidgets('2.7 handles empty textToSpeak without crashing', (
+      tester,
+    ) async {
       final emptyQuest = createQuest(textToSpeak: '');
       final emptyState = SpeakingLoaded(
         quests: [emptyQuest],
@@ -446,7 +527,9 @@ void main() {
       expect(find.byType(SpeakSynonymSentencePanel), findsOneWidget);
     });
 
-    testWidgets('2.8 renders GameShimmerLoading when quest is null', (tester) async {
+    testWidgets('2.8 renders GameShimmerLoading when quest is null', (
+      tester,
+    ) async {
       await pumpScreen(tester, state: const SpeakingInitial());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(SpeakSynonymSentencePanel), findsNothing);
@@ -457,13 +540,18 @@ void main() {
   // 3. Level 1 Briefing Overlay & Onboarding (6 tests)
   // ---------------------------------------------------------------------------
   group('3. Level 1 Briefing Overlay & Onboarding', () {
-    testWidgets('3.1 displays QuestBriefingOverlay on level 1 when not previously seen', (tester) async {
-      SharedPreferences.setMockInitialValues({});
-      await pumpScreen(tester, level: 1);
-      expect(find.byType(QuestBriefingOverlay), findsOneWidget);
-    });
+    testWidgets(
+      '3.1 displays QuestBriefingOverlay on level 1 when not previously seen',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({});
+        await pumpScreen(tester, level: 1);
+        expect(find.byType(QuestBriefingOverlay), findsOneWidget);
+      },
+    );
 
-    testWidgets('3.2 displays briefing title containing SYNONYM', (tester) async {
+    testWidgets('3.2 displays briefing title containing SYNONYM', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 1);
       expect(find.textContaining('SYNONYM'), findsWidgets);
@@ -487,13 +575,17 @@ void main() {
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('3.5 does not display briefing overlay on level 2', (tester) async {
+    testWidgets('3.5 does not display briefing overlay on level 2', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 2);
       expect(find.byType(QuestBriefingOverlay), findsNothing);
     });
 
-    testWidgets('3.6 briefing overlay is also displayed on level 100', (tester) async {
+    testWidgets('3.6 briefing overlay is also displayed on level 100', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
       await pumpScreen(tester, level: 100);
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
@@ -504,67 +596,91 @@ void main() {
   // 4. TTS Audio Playback & Listen Controls (8 tests)
   // ---------------------------------------------------------------------------
   group('4. TTS Audio Playback & Listen Controls', () {
-    testWidgets('4.1 tapping listen button calls soundService.playTts with stripped sentence', (tester) async {
-      await pumpScreen(tester);
-      clearInteractions(mockSoundService);
+    testWidgets(
+      '4.1 tapping listen button calls soundService.playTts with stripped sentence',
+      (tester) async {
+        await pumpScreen(tester);
+        clearInteractions(mockSoundService);
 
-      await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
-      await tester.pump();
+        await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('Wow, your new apartment is big!')).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts('Wow, your new apartment is big!'),
+        ).called(1);
+      },
+    );
 
-    testWidgets('4.2 tapping listen button does NOT play TTS if audioRecorder.isRecording is true', (tester) async {
-      when(() => mockAudioRecorder.isRecording).thenReturn(true);
-      await pumpScreen(tester);
-      clearInteractions(mockSoundService);
+    testWidgets(
+      '4.2 tapping listen button does NOT play TTS if audioRecorder.isRecording is true',
+      (tester) async {
+        when(() => mockAudioRecorder.isRecording).thenReturn(true);
+        await pumpScreen(tester);
+        clearInteractions(mockSoundService);
 
-      await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
-      await tester.pump();
+        await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
+        await tester.pump();
 
-      verifyNever(() => mockSoundService.playTts(any()));
-    });
+        verifyNever(() => mockSoundService.playTts(any()));
+      },
+    );
 
     testWidgets('4.3 listen button has volume_up_rounded icon', (tester) async {
       await pumpScreen(tester);
       expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
     });
 
-    testWidgets('4.4 listen button has accessible Semantics label', (tester) async {
+    testWidgets('4.4 listen button has accessible Semantics label', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.button == true &&
-            w.properties.label == 'Listen to sentence'),
+        find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.button == true &&
+              w.properties.label == 'Listen to sentence',
+        ),
         findsOneWidget,
       );
     });
 
-    testWidgets('4.5 sentence panel has accessible Semantics label containing clean sentence', (tester) async {
-      await pumpScreen(tester);
-      expect(
-        find.byWidgetPredicate((w) =>
-            w is Semantics &&
-            w.properties.label == 'Sentence: Wow, your new apartment is big!'),
-        findsOneWidget,
-      );
-    });
+    testWidgets(
+      '4.5 sentence panel has accessible Semantics label containing clean sentence',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label ==
+                    'Sentence: Wow, your new apartment is big!',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('4.6 header has Semantics with header: true', (tester) async {
       await pumpScreen(tester);
       expect(
-        find.byWidgetPredicate((w) => w is Semantics && w.properties.header == true),
+        find.byWidgetPredicate(
+          (w) => w is Semantics && w.properties.header == true,
+        ),
         findsWidgets,
       );
     });
 
-    testWidgets('4.7 header challenge badge contains eco_rounded icon', (tester) async {
+    testWidgets('4.7 header challenge badge contains eco_rounded icon', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byIcon(Icons.eco_rounded), findsOneWidget);
     });
 
-    testWidgets('4.8 listen button is mounted inside sentence panel', (tester) async {
+    testWidgets('4.8 listen button is mounted inside sentence panel', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(
         find.descendant(
@@ -580,29 +696,39 @@ void main() {
   // 5. AutoPlay Mechanics & TTS Barrier (_ttsFinished) (8 tests)
   // ---------------------------------------------------------------------------
   group('5. AutoPlay Mechanics & TTS Barrier (_ttsFinished)', () {
-    testWidgets('5.1 autoPlay triggers soundService.playTts with cleaned sentence on mount', (tester) async {
-      clearInteractions(mockSoundService);
-      await pumpScreen(tester);
-      verify(() => mockSoundService.playTts('Wow, your new apartment is big!')).called(1);
-    });
+    testWidgets(
+      '5.1 autoPlay triggers soundService.playTts with cleaned sentence on mount',
+      (tester) async {
+        clearInteractions(mockSoundService);
+        await pumpScreen(tester);
+        verify(
+          () => mockSoundService.playTts('Wow, your new apartment is big!'),
+        ).called(1);
+      },
+    );
 
-    testWidgets('5.2 under lowAnimationModeOverride, _ttsFinished is immediately true', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpScreen(tester);
+    testWidgets(
+      '5.2 under lowAnimationModeOverride, _ttsFinished is immediately true',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpScreen(tester);
 
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      expect(state.ttsFinishedNotifier.value, isTrue);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        expect(state.ttsFinishedNotifier.value, isTrue);
 
-      final absorbPointer = tester.widget<AbsorbPointer>(
-        find.descendant(
-          of: find.byType(CustomScrollView),
-          matching: find.byType(AbsorbPointer),
-        ),
-      );
-      expect(absorbPointer.absorbing, isFalse);
-    });
+        final absorbPointer = tester.widget<AbsorbPointer>(
+          find.descendant(
+            of: find.byType(CustomScrollView),
+            matching: find.byType(AbsorbPointer),
+          ),
+        );
+        expect(absorbPointer.absorbing, isFalse);
+      },
+    );
 
-    testWidgets('5.3 under lowAnimationModeOverride, opacity is 1.0', (tester) async {
+    testWidgets('5.3 under lowAnimationModeOverride, opacity is 1.0', (
+      tester,
+    ) async {
       VowlMotion.lowAnimationModeOverride.value = true;
       await pumpScreen(tester);
 
@@ -615,52 +741,70 @@ void main() {
       expect(animatedOpacity.opacity, 1.0);
     });
 
-    testWidgets('5.4 without lowAnimationModeOverride, autoPlayTimer sets _ttsFinished after timer', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = false;
-      await pumpScreen(tester);
-      await tester.pump(const Duration(seconds: 3));
+    testWidgets(
+      '5.4 without lowAnimationModeOverride, autoPlayTimer sets _ttsFinished after timer',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = false;
+        await pumpScreen(tester);
+        await tester.pump(const Duration(seconds: 3));
 
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      expect(state.ttsFinishedNotifier.value, isTrue);
-    });
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        expect(state.ttsFinishedNotifier.value, isTrue);
+      },
+    );
 
-    testWidgets('5.5 reduced motion via disableAnimations sets _ttsFinished to true', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = false;
-      await pumpScreen(tester, reduceMotion: true);
+    testWidgets(
+      '5.5 reduced motion via disableAnimations sets _ttsFinished to true',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = false;
+        await pumpScreen(tester, reduceMotion: true);
 
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      expect(state.ttsFinishedNotifier.value, isTrue);
-    });
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        expect(state.ttsFinishedNotifier.value, isTrue);
+      },
+    );
 
-    testWidgets('5.6 empty quest textToSpeak sets _ttsFinished to true immediately', (tester) async {
-      final emptyQuest = createQuest(textToSpeak: '', instruction: 'Say something');
-      final emptyState = SpeakingLoaded(
-        quests: [emptyQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakSynonym,
-        level: 2,
-      );
-      await pumpScreen(tester, state: emptyState);
+    testWidgets(
+      '5.6 empty quest textToSpeak sets _ttsFinished to true immediately',
+      (tester) async {
+        final emptyQuest = createQuest(
+          textToSpeak: '',
+          instruction: 'Say something',
+        );
+        final emptyState = SpeakingLoaded(
+          quests: [emptyQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakSynonym,
+          level: 2,
+        );
+        await pumpScreen(tester, state: emptyState);
 
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      expect(state.ttsFinishedNotifier.value, isTrue);
-    });
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        expect(state.ttsFinishedNotifier.value, isTrue);
+      },
+    );
 
-    testWidgets('5.7 multiple audio triggers safely play without crashing', (tester) async {
+    testWidgets('5.7 multiple audio triggers safely play without crashing', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
       await tester.pump();
       await tester.tap(find.byKey(const Key('speak_synonym_listen_button')));
       await tester.pump();
 
-      verify(() => mockSoundService.playTts('Wow, your new apartment is big!')).called(greaterThanOrEqualTo(2));
+      verify(
+        () => mockSoundService.playTts('Wow, your new apartment is big!'),
+      ).called(greaterThanOrEqualTo(2));
     });
 
-    testWidgets('5.8 autoPlay does not trigger if answerStatus is answered', (tester) async {
+    testWidgets('5.8 autoPlay does not trigger if answerStatus is answered', (
+      tester,
+    ) async {
       clearInteractions(mockSoundService);
       final answeredState = SpeakingLoaded(
         quests: [sampleQuest1],
@@ -681,21 +825,27 @@ void main() {
   // 6. SpeakToConfirmOverlay Configuration & Properties (8 tests)
   // ---------------------------------------------------------------------------
   group('6. SpeakToConfirmOverlay Configuration & Properties', () {
-    testWidgets('6.1 renders SpeakToConfirmOverlay with key speak_synonym_speak_to_confirm_overlay', (tester) async {
-      await pumpScreen(tester);
-      expect(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-        findsOneWidget,
-      );
-    });
+    testWidgets(
+      '6.1 renders SpeakToConfirmOverlay with key speak_synonym_speak_to_confirm_overlay',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('6.2 sets hideExpectedText to true so synonym is not revealed', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      expect(overlay.hideExpectedText, isTrue);
-    });
+    testWidgets(
+      '6.2 sets hideExpectedText to true so synonym is not revealed',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        expect(overlay.hideExpectedText, isTrue);
+      },
+    );
 
     testWidgets('6.3 sets allowSkip to false', (tester) async {
       await pumpScreen(tester);
@@ -714,7 +864,9 @@ void main() {
       expect(find.text('SPEAK A SYNONYM'), findsOneWidget);
     });
 
-    testWidgets('6.5 sets subtitle to Say your answer aloud to confirm', (tester) async {
+    testWidgets('6.5 sets subtitle to Say your answer aloud to confirm', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -732,48 +884,62 @@ void main() {
       expect(overlay.expectedText, 'large');
     });
 
-    testWidgets('6.7 falls back to correctAnswer when acceptedSynonyms is empty', (tester) async {
-      final questNoSynonyms = createQuest(
-        acceptedSynonyms: [],
-        correctAnswer: 'huge',
-      );
-      final stateNoSynonyms = SpeakingLoaded(
-        quests: [questNoSynonyms],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakSynonym,
-        level: 2,
-      );
-      await pumpScreen(tester, state: stateNoSynonyms);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      expect(overlay.acceptedSynonyms, ['huge']);
-      expect(overlay.expectedText, 'huge');
-    });
+    testWidgets(
+      '6.7 falls back to correctAnswer when acceptedSynonyms is empty',
+      (tester) async {
+        final questNoSynonyms = createQuest(
+          acceptedSynonyms: [],
+          correctAnswer: 'huge',
+        );
+        final stateNoSynonyms = SpeakingLoaded(
+          quests: [questNoSynonyms],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakSynonym,
+          level: 2,
+        );
+        await pumpScreen(tester, state: stateNoSynonyms);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        expect(overlay.acceptedSynonyms, ['huge']);
+        expect(overlay.expectedText, 'huge');
+      },
+    );
 
-    testWidgets('6.8 unmounts SpeakToConfirmOverlay when question is answered', (tester) async {
-      await pumpScreen(tester);
-      expect(find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')), findsOneWidget);
+    testWidgets(
+      '6.8 unmounts SpeakToConfirmOverlay when question is answered',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+          findsOneWidget,
+        );
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')), findsNothing);
-    });
+        expect(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+          findsNothing,
+        );
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 7. Verbal Evaluation Submission - Success Path (7 tests)
   // ---------------------------------------------------------------------------
   group('7. Verbal Evaluation Submission - Success Path', () {
-    testWidgets('7.1 onConfirmed triggers hapticService.success()', (tester) async {
+    testWidgets('7.1 onConfirmed triggers hapticService.success()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -784,7 +950,9 @@ void main() {
       verify(() => mockHapticService.success()).called(1);
     });
 
-    testWidgets('7.2 onConfirmed triggers soundService.playCorrect()', (tester) async {
+    testWidgets('7.2 onConfirmed triggers soundService.playCorrect()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -795,29 +963,37 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
     });
 
-    testWidgets('7.3 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.3 onConfirmed dispatches SubmitAnswer(true) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('7.4 onConfirmed mounts GameFeedbackCard with positive status', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.4 onConfirmed mounts GameFeedbackCard with positive status',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
-      expect(feedback.isCorrect, isTrue);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final feedback = tester.widget<GameFeedbackCard>(
+          find.byType(GameFeedbackCard),
+        );
+        expect(feedback.isCorrect, isTrue);
+      },
+    );
 
     testWidgets('7.5 onConfirmed sets bloomProgress to 1.0', (tester) async {
       await pumpScreen(tester);
@@ -831,23 +1007,28 @@ void main() {
       expect(state.bloomProgressNotifier.value, 1.0);
     });
 
-    testWidgets('7.6 subsequent submission calls while answered are locked out', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.6 subsequent submission calls while answered are locked out',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      state.submitEvaluation(true);
-      await tester.pump();
+        clearInteractions(mockSpeakingBloc);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        state.submitEvaluation(true);
+        await tester.pump();
 
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
 
-    testWidgets('7.7 onConfirmed sets confetti and answered state', (tester) async {
+    testWidgets('7.7 onConfirmed sets confetti and answered state', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -876,7 +1057,9 @@ void main() {
       verify(() => mockHapticService.error()).called(1);
     });
 
-    testWidgets('8.2 onSkipped triggers soundService.playWrong()', (tester) async {
+    testWidgets('8.2 onSkipped triggers soundService.playWrong()', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -887,18 +1070,23 @@ void main() {
       verify(() => mockSoundService.playWrong()).called(1);
     });
 
-    testWidgets('8.3 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.3 onSkipped dispatches SubmitAnswer(false) to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
 
-      verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('8.4 onSkipped mounts GameFeedbackCard with incorrect status', (tester) async {
+    testWidgets('8.4 onSkipped mounts GameFeedbackCard with incorrect status', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -907,25 +1095,34 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final feedback = tester.widget<GameFeedbackCard>(find.byType(GameFeedbackCard));
+      final feedback = tester.widget<GameFeedbackCard>(
+        find.byType(GameFeedbackCard),
+      );
       expect(feedback.isCorrect, isFalse);
     });
 
-    testWidgets('8.5 onSkipped with authenticated user triggers ErrorJournal entry', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '8.5 onSkipped with authenticated user triggers ErrorJournal entry',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
 
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      expect(state.isCorrectNotifier.value, isFalse);
-      expect(state.bloomProgressNotifier.value, 0.0);
-    });
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        expect(state.isCorrectNotifier.value, isFalse);
+        expect(state.bloomProgressNotifier.value, 0.0);
+      },
+    );
 
-    testWidgets('8.6 handles unauthenticated user gracefully on error', (tester) async {
-      when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    testWidgets('8.6 handles unauthenticated user gracefully on error', (
+      tester,
+    ) async {
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -936,7 +1133,28 @@ void main() {
       verify(() => mockSpeakingBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('8.7 subsequent error submissions while answered are locked out', (tester) async {
+    testWidgets(
+      '8.7 subsequent error submissions while answered are locked out',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onSkipped();
+        await tester.pumpAndSettle();
+
+        clearInteractions(mockSpeakingBloc);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        state.submitEvaluation(false);
+        await tester.pump();
+
+        verifyNever(() => mockSpeakingBloc.add(any()));
+      },
+    );
+
+    testWidgets('8.8 unmounts SpeakToConfirmOverlay on failure', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -944,23 +1162,10 @@ void main() {
       overlay.onSkipped();
       await tester.pumpAndSettle();
 
-      clearInteractions(mockSpeakingBloc);
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      state.submitEvaluation(false);
-      await tester.pump();
-
-      verifyNever(() => mockSpeakingBloc.add(any()));
-    });
-
-    testWidgets('8.8 unmounts SpeakToConfirmOverlay on failure', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
+      expect(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        findsNothing,
       );
-      overlay.onSkipped();
-      await tester.pumpAndSettle();
-
-      expect(find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')), findsNothing);
     });
   });
 
@@ -968,7 +1173,9 @@ void main() {
   // 9. Feedback Card, Hints & Question Progression (8 tests)
   // ---------------------------------------------------------------------------
   group('9. Feedback Card, Hints & Question Progression', () {
-    testWidgets('9.1 GameFeedbackCard displays CONTINUE button', (tester) async {
+    testWidgets('9.1 GameFeedbackCard displays CONTINUE button', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       final overlay = tester.widget<SpeakToConfirmOverlay>(
         find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
@@ -979,120 +1186,162 @@ void main() {
       expect(find.text('CONTINUE'), findsOneWidget);
     });
 
-    testWidgets('9.2 tapping CONTINUE button dispatches NextQuestion() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '9.2 tapping CONTINUE button dispatches NextQuestion() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump();
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockSpeakingBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
-    testWidgets('9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc', (tester) async {
-      await pumpScreen(tester);
-      clearInteractions(mockSpeakingBloc);
-      expect(find.byType(QuestHintButton), findsOneWidget);
+    testWidgets(
+      '9.3 tapping hint button dispatches SpeakingHintUsed() to SpeakingBloc',
+      (tester) async {
+        await pumpScreen(tester);
+        clearInteractions(mockSpeakingBloc);
+        expect(find.byType(QuestHintButton), findsOneWidget);
 
-      await tester.tap(find.byType(QuestHintButton));
-      await tester.pump();
+        await tester.tap(find.byType(QuestHintButton));
+        await tester.pump();
 
-      verify(() => mockSpeakingBloc.add(const SpeakingHintUsed())).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockSpeakingBloc.add(const SpeakingHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('9.4 when hintUsed is true and hint exists, renders hint card', (tester) async {
-      final hintState = SpeakingLoaded(
-        quests: [sampleQuest1],
-        currentIndex: 0,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: true,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakSynonym,
-        level: 2,
-      );
-      await pumpScreen(tester, state: hintState);
+    testWidgets(
+      '9.4 when hintUsed is true and hint exists, renders hint card',
+      (tester) async {
+        final hintState = SpeakingLoaded(
+          quests: [sampleQuest1],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: true,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakSynonym,
+          level: 2,
+        );
+        await pumpScreen(tester, state: hintState);
 
-      expect(find.byKey(const Key('speak_synonym_hint_card')), findsOneWidget);
-      expect(find.byKey(const Key('speak_synonym_hint_icon')), findsOneWidget);
-      expect(find.byKey(const Key('speak_synonym_hint_text')), findsOneWidget);
-      expect(find.text('Think of plenty of room.'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('speak_synonym_hint_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('speak_synonym_hint_icon')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('speak_synonym_hint_text')),
+          findsOneWidget,
+        );
+        expect(find.text('Think of plenty of room.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('9.5 does not render hint card when hintUsed is false', (tester) async {
+    testWidgets('9.5 does not render hint card when hintUsed is false', (
+      tester,
+    ) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_hint_card')), findsNothing);
     });
 
-    testWidgets('9.6 onQuestionReset resets _ttsFinished, _bloomProgress, and active timers', (tester) async {
-      await pumpScreen(tester);
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      state.onQuestionReset();
-      await tester.pump();
+    testWidgets(
+      '9.6 onQuestionReset resets _ttsFinished, _bloomProgress, and active timers',
+      (tester) async {
+        await pumpScreen(tester);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        state.onQuestionReset();
+        await tester.pump();
 
-      expect(state.isAnsweredNotifier.value, isFalse);
-      expect(state.bloomProgressNotifier.value, 0.0);
-    });
+        expect(state.isAnsweredNotifier.value, isFalse);
+        expect(state.bloomProgressNotifier.value, 0.0);
+      },
+    );
 
-    testWidgets('9.7 state transition to next quest updates sentence and target chip', (tester) async {
-      await pumpScreen(tester);
-      expect(find.text('big'), findsOneWidget);
+    testWidgets(
+      '9.7 state transition to next quest updates sentence and target chip',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.text('big'), findsOneWidget);
 
-      final nextLoadedState = SpeakingLoaded(
-        quests: [sampleQuest1, sampleQuest2],
-        currentIndex: 1,
-        livesRemaining: 3,
-        wrongCount: 0,
-        hintUsed: false,
-        answerStatus: AnswerStatus.unanswered,
-        gameType: GameSubtype.speakSynonym,
-        level: 2,
-      );
-      speakingStreamController.add(nextLoadedState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+        final nextLoadedState = SpeakingLoaded(
+          quests: [sampleQuest1, sampleQuest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.speakSynonym,
+          level: 2,
+        );
+        speakingStreamController.add(nextLoadedState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('small'), findsOneWidget);
-      final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
-      expect(richText.text.toPlainText(), contains("Don't worry, it's only a"));
-    });
+        expect(find.text('small'), findsOneWidget);
+        final richText = tester.widget<RichText>(
+          find.byKey(const Key('speak_synonym_rich_text')),
+        );
+        expect(
+          richText.text.toPlainText(),
+          contains("Don't worry, it's only a"),
+        );
+      },
+    );
 
-    testWidgets('9.8 SpeakingGameComplete state triggers game completion dialog', (tester) async {
-      await pumpScreen(tester);
-      const completeState = SpeakingGameComplete(
-        xpEarned: 50,
-        coinsEarned: 20,
-        questCount: 2,
-      );
-      speakingStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
+    testWidgets(
+      '9.8 SpeakingGameComplete state triggers game completion dialog',
+      (tester) async {
+        await pumpScreen(tester);
+        const completeState = SpeakingGameComplete(
+          xpEarned: 50,
+          coinsEarned: 20,
+          questCount: 2,
+        );
+        speakingStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
-    });
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+      },
+    );
   });
 
   // ---------------------------------------------------------------------------
   // 10. Viewports, Theming, Edge Cases & Robustness (8 tests)
   // ---------------------------------------------------------------------------
   group('10. Viewports, Theming, Edge Cases & Robustness', () {
-    testWidgets('10.1 renders cleanly on compact phone viewport (320x640)', (tester) async {
+    testWidgets('10.1 renders cleanly on compact phone viewport (320x640)', (
+      tester,
+    ) async {
       await pumpScreen(tester, size: const Size(320, 640));
       expect(find.byType(SpeakSynonymScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.2 renders cleanly on large tablet viewport (800x1280)', (tester) async {
+    testWidgets('10.2 renders cleanly on large tablet viewport (800x1280)', (
+      tester,
+    ) async {
       await pumpScreen(tester, size: const Size(800, 1280));
       expect(find.byType(SpeakSynonymScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.3 supports light theme mode without errors', (tester) async {
+    testWidgets('10.3 supports light theme mode without errors', (
+      tester,
+    ) async {
       await pumpScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(SpeakSynonymScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -1104,51 +1353,62 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('10.5 handles extreme text scale factors (1.5x) via clamped scaler', (tester) async {
-      await pumpScreen(tester, textScaleFactor: 1.5);
-      expect(find.byType(SpeakSynonymScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.5 handles extreme text scale factors (1.5x) via clamped scaler',
+      (tester) async {
+        await pumpScreen(tester, textScaleFactor: 1.5);
+        expect(find.byType(SpeakSynonymScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.6 submitEvaluation test helper sets isCorrectNotifier properly', (tester) async {
-      await pumpScreen(tester);
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      state.submitEvaluation(true);
-      await tester.pumpAndSettle();
+    testWidgets(
+      '10.6 submitEvaluation test helper sets isCorrectNotifier properly',
+      (tester) async {
+        await pumpScreen(tester);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        state.submitEvaluation(true);
+        await tester.pumpAndSettle();
 
-      expect(state.isCorrectNotifier.value, isTrue);
-      expect(state.isAnsweredNotifier.value, isTrue);
-      expect(state.bloomProgressNotifier.value, 1.0);
-    });
+        expect(state.isCorrectNotifier.value, isTrue);
+        expect(state.isAnsweredNotifier.value, isTrue);
+        expect(state.bloomProgressNotifier.value, 1.0);
+      },
+    );
 
-    testWidgets('10.7 rapid quest switching does not produce unhandled exceptions', (tester) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '10.7 rapid quest switching does not produce unhandled exceptions',
+      (tester) async {
+        await pumpScreen(tester);
 
-      for (int i = 0; i < 3; i++) {
-        final toggleState = SpeakingLoaded(
-          quests: [sampleQuest1, sampleQuest2],
-          currentIndex: i % 2,
-          livesRemaining: 3,
-          wrongCount: 0,
-          hintUsed: false,
-          answerStatus: AnswerStatus.unanswered,
-          gameType: GameSubtype.speakSynonym,
-          level: 2,
-        );
-        speakingStreamController.add(toggleState);
-        await tester.pump();
-      }
-      await tester.pump(const Duration(milliseconds: 300));
-      expect(tester.takeException(), isNull);
-    });
+        for (int i = 0; i < 3; i++) {
+          final toggleState = SpeakingLoaded(
+            quests: [sampleQuest1, sampleQuest2],
+            currentIndex: i % 2,
+            livesRemaining: 3,
+            wrongCount: 0,
+            hintUsed: false,
+            answerStatus: AnswerStatus.unanswered,
+            gameType: GameSubtype.speakSynonym,
+            level: 2,
+          );
+          speakingStreamController.add(toggleState);
+          await tester.pump();
+        }
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('10.8 lifecycle pause and resume methods execute without errors', (tester) async {
-      await pumpScreen(tester);
-      final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
-      state.onGamePaused();
-      state.onGameResumed();
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '10.8 lifecycle pause and resume methods execute without errors',
+      (tester) async {
+        await pumpScreen(tester);
+        final state = tester.state(find.byType(SpeakSynonymScreen)) as dynamic;
+        state.onGamePaused();
+        state.onGameResumed();
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

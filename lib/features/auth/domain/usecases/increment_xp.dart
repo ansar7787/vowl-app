@@ -34,4 +34,3 @@ class IncrementXp extends UseCase<void, IncrementXpParams> {
     return await repository.incrementXp(amount: params.amount);
   }
 }
-

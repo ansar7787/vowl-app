@@ -5,15 +5,12 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
-import 'package:vowl/features/arena/presentation/widgets/arena_refuel_dialog.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_stats_screen.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Card component showcasing the user's 1v1 Word Arena performance.
@@ -49,84 +46,12 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
     }
 
     final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
-    if (liveUser.coins < 30) {
-      _showRefuelDialog(context, liveUser);
-      return;
-    }
 
-    Navigator.of(context, rootNavigator: true).push(
-      ArenaMatchmakingScreen.route(user: liveUser),
-    );
-  }
-
-  void _showRefuelDialog(BuildContext context, UserEntity liveUser) {
-    ArenaRefuelDialog.show(
-      context: context,
-      currentCoins: liveUser.coins,
-      requiredCoins: 30,
-      isPremium: liveUser.isPremium,
-      onWatchAd: () => _refuelCoins(context, liveUser),
-    );
-  }
-
-  Future<void> _refuelCoins(BuildContext context, UserEntity liveUser) async {
-    if (liveUser.isPremium) {
-      try {
-        if (di.sl.isRegistered<UpdateUserCoins>()) {
-          await di.sl<UpdateUserCoins>()(
-            const UpdateUserCoinsParams(
-              amountChange: 30,
-              title: 'VIP Arena Refuel',
-            ),
-          );
-        }
-        if (context.mounted) {
-          context.read<AuthBloc>().add(AuthRefreshUser());
-          CustomSnackBar.show(
-            context: context,
-            message: '👑 +30 VIP Coins added! Ready to enter duel.',
-            type: CustomSnackBarType.success,
-          );
-        }
-      } catch (e) {
-        debugPrint('[ProfileArenaCard] VIP refuel error: $e');
-      }
-      return;
-    }
-
-    _watchAdForCoins(context, liveUser);
-  }
-
-  void _watchAdForCoins(BuildContext context, UserEntity liveUser) {
-    if (!di.sl.isRegistered<AdService>()) return;
-    final adService = di.sl<AdService>();
-    adService.showRewardedAd(
-      context: context,
-      isPremium: liveUser.isPremium,
-      onDismissed: () {},
-      onUserEarnedReward: (_) async {
-        try {
-          if (di.sl.isRegistered<UpdateUserCoins>()) {
-            await di.sl<UpdateUserCoins>()(
-              const UpdateUserCoinsParams(
-                amountChange: 30,
-                title: 'Arena Refuel',
-              ),
-            );
-          }
-          if (context.mounted) {
-            context.read<AuthBloc>().add(AuthRefreshUser());
-            CustomSnackBar.show(
-              context: context,
-              message: '+30 Coins added! Ready to enter duel.',
-              type: CustomSnackBarType.success,
-            );
-          }
-        } catch (e) {
-          debugPrint('[ProfileArenaCard] Refuel reward error: $e');
-        }
-      },
-    );
+    // Navigate to Arena Stats screen — coin check happens at Play button there
+    Navigator.of(
+      context,
+      rootNavigator: true,
+    ).push(ArenaStatsScreen.route(user: liveUser));
   }
 
   @override
@@ -136,13 +61,15 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
-    final totalDuels = widget.user.duelWins + widget.user.duelLosses;
+    final liveUser =
+        context.select<AuthBloc, UserEntity?>((bloc) => bloc.state.user) ??
+        widget.user;
+
+    final totalDuels = liveUser.duelWins + liveUser.duelLosses;
     final winRate = totalDuels > 0
-        ? ((widget.user.duelWins / totalDuels) * 100).toInt()
+        ? ((liveUser.duelWins / totalDuels) * 100).toInt()
         : 0;
 
     return ScaleButton(
@@ -234,10 +161,10 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isMidnight
-                      ? Colors.white.withValues(alpha: 0.08)
+                      ? Colors.white.withValues(alpha: 0.12)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : AppColors.slate100),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate200),
                   width: 1.0,
                 ),
               ),
@@ -247,7 +174,7 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                     child: _statItem(
                       context,
                       context.tr('profile.duel_wins', fallback: 'Victories'),
-                      '${widget.user.duelWins}',
+                      '${liveUser.duelWins}',
                       AppColors.emerald500,
                     ),
                   ),
@@ -256,7 +183,7 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                     child: _statItem(
                       context,
                       context.tr('profile.duel_losses', fallback: 'Defeats'),
-                      '${widget.user.duelLosses}',
+                      '${liveUser.duelLosses}',
                       AppColors.rose500,
                     ),
                   ),
@@ -274,7 +201,7 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                     child: _statItem(
                       context,
                       context.tr('profile.duel_today', fallback: 'Today'),
-                      '${widget.user.dailyDuelsPlayedToday}',
+                      '${ArenaStatsScreen.calculateDailyDuelsPlayedToday(liveUser)}',
                       AppColors.amber500,
                     ),
                   ),
@@ -305,30 +232,34 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          val,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w900,
-            color: color,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            val,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w900,
+              color: color,
+            ),
           ),
         ),
         SizedBox(height: 2.h),
-        Text(
-          label,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w600,
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.white54
-                : Colors.black45,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            label,
+            softWrap: true,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w600,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white54
+                  : Colors.black45,
+            ),
           ),
         ),
       ],

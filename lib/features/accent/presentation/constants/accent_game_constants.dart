@@ -36,8 +36,10 @@ abstract final class AccentGameConstants {
   static const int nudgeDelayMs = 1200;
 
   /// Message spoken when the player drops to their last life.
-  static String nudgeMessage(BuildContext context) =>
-      context.tr('games.kids_nudge', fallback: 'Focus! Use a hint if you need help saving your last life.');
+  static String nudgeMessage(BuildContext context) => context.tr(
+    'games.kids_nudge',
+    fallback: 'Focus! Use a hint if you need help saving your last life.',
+  );
 
   // ── Briefing ──────────────────────────────────────────────────────────────
   /// Levels that auto-show the quest briefing overlay on entry.

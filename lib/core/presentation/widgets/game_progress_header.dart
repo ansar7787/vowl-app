@@ -224,11 +224,7 @@ class _LivesBadge extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              Icons.favorite_rounded,
-              color: heartColor,
-              size: 16.r,
-            ),
+            Icon(Icons.favorite_rounded, color: heartColor, size: 16.r),
             SizedBox(width: 4.w),
             Text(
               '$lives',

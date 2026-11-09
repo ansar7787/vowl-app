@@ -343,10 +343,10 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
           color: isFeedback
               ? widget.primaryColor
               : (isMidnight
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.grey.shade300)),
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : Colors.grey.shade300)),
           width: isFeedback ? 3 : 2,
         ),
         // Chunky 3D Duolingo-style bottom shadow

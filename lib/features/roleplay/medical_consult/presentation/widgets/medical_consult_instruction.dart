@@ -33,7 +33,8 @@ class MedicalConsultInstruction extends StatelessWidget {
         ),
       ),
       child: Text(
-        instruction ?? "Examine the patient and identify the matching symptoms.",
+        instruction ??
+            "Examine the patient and identify the matching symptoms.",
         textAlign: TextAlign.center,
         softWrap: true,
         style: TextStyle(

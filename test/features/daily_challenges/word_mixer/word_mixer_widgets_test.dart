@@ -60,7 +60,9 @@ void main() {
   }
 
   group('WordMixerTopBar Tests', () {
-    testWidgets('renders title and streak badge when streak > 0', (tester) async {
+    testWidgets('renders title and streak badge when streak > 0', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
@@ -68,10 +70,7 @@ void main() {
 
       await tester.pumpWidget(
         wrapWithScreenUtil(
-          WordMixerTopBar(
-            onBackPressed: () => backTapped = true,
-            streak: 7,
-          ),
+          WordMixerTopBar(onBackPressed: () => backTapped = true, streak: 7),
         ),
       );
       await tester.pumpAndSettle();
@@ -87,7 +86,9 @@ void main() {
       expect(backTapped, isTrue);
     });
 
-    testWidgets('renders practice mode title when isPracticeMode is true', (tester) async {
+    testWidgets('renders practice mode title when isPracticeMode is true', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
@@ -108,28 +109,35 @@ void main() {
   });
 
   group('WordMixerInfoCard Tests', () {
-    testWidgets('renders difficulty, length, and title properly without overflow', (tester) async {
-      await tester.binding.setSurfaceSize(const Size(320, 568)); // Small screen test
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders difficulty, length, and title properly without overflow',
+      (tester) async {
+        await tester.binding.setSurfaceSize(
+          const Size(320, 568),
+        ); // Small screen test
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordMixerInfoCard(
-            puzzle: samplePuzzle,
-            primaryColor: IllustrationColors.richPurple,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordMixerInfoCard(
+              puzzle: samplePuzzle,
+              primaryColor: IllustrationColors.richPurple,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('DAILY CHALLENGE'), findsOneWidget);
-      expect(find.text('HARD'), findsOneWidget); // 7 letters is Hard
-      expect(find.text('7 letters'), findsOneWidget);
-    });
+        expect(find.text('DAILY CHALLENGE'), findsOneWidget);
+        expect(find.text('HARD'), findsOneWidget); // 7 letters is Hard
+        expect(find.text('7 letters'), findsOneWidget);
+      },
+    );
   });
 
   group('WordMixerHintCard Tests', () {
-    testWidgets('starts collapsed, expands on tap, and plays TTS', (tester) async {
+    testWidgets('starts collapsed, expands on tap, and plays TTS', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(390, 844));
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
@@ -175,124 +183,136 @@ void main() {
   });
 
   group('WordMixerCompletedView Tests', () {
-    testWidgets('renders victory state, solved word, definition review, and practice button', (tester) async {
-      await tester.binding.setSurfaceSize(const Size(390, 844));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders victory state, solved word, definition review, and practice button',
+      (tester) async {
+        await tester.binding.setSurfaceSize(const Size(390, 844));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      bool practiceTapped = false;
-      bool goBackTapped = false;
+        bool practiceTapped = false;
+        bool goBackTapped = false;
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordMixerCompletedView(
-            puzzle: samplePuzzle,
-            streak: 4,
-            onGoBack: () => goBackTapped = true,
-            onPracticeMore: () => practiceTapped = true,
-            primaryColor: IllustrationColors.richPurple,
-            hapticService: mockHapticService,
-            ttsService: mockTtsService,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordMixerCompletedView(
+              puzzle: samplePuzzle,
+              streak: 4,
+              onGoBack: () => goBackTapped = true,
+              onPracticeMore: () => practiceTapped = true,
+              primaryColor: IllustrationColors.richPurple,
+              hapticService: mockHapticService,
+              ttsService: mockTtsService,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Challenge Complete!'), findsOneWidget);
-      expect(find.text('OCTOPUS'), findsOneWidget);
-      expect(
-        find.textContaining('A marine cephalopod having eight fleshy arms'),
-        findsOneWidget,
-      );
-      expect(find.text('4 Day Streak'), findsOneWidget);
+        expect(find.text('Challenge Complete!'), findsOneWidget);
+        expect(find.text('OCTOPUS'), findsOneWidget);
+        expect(
+          find.textContaining('A marine cephalopod having eight fleshy arms'),
+          findsOneWidget,
+        );
+        expect(find.text('4 Day Streak'), findsOneWidget);
 
-      // Tap speaker button to pronounce word
-      final speakerBtn = find.byIcon(Icons.volume_up_rounded);
-      expect(speakerBtn, findsOneWidget);
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        // Tap speaker button to pronounce word
+        final speakerBtn = find.byIcon(Icons.volume_up_rounded);
+        expect(speakerBtn, findsOneWidget);
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockTtsService.speak('OCTOPUS')).called(1);
+        verify(() => mockTtsService.speak('OCTOPUS')).called(1);
 
-      // Tap Practice Another Word button
-      final practiceBtn = find.text('Practice Another Word');
-      expect(practiceBtn, findsOneWidget);
-      await tester.ensureVisible(practiceBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(practiceBtn);
-      await tester.pump();
+        // Tap Practice Another Word button
+        final practiceBtn = find.text('Practice Another Word');
+        expect(practiceBtn, findsOneWidget);
+        await tester.ensureVisible(practiceBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(practiceBtn);
+        await tester.pump();
 
-      expect(practiceTapped, isTrue);
+        expect(practiceTapped, isTrue);
 
-      // Tap Back to Home button
-      final returnBtn = find.text('GO BACK');
-      expect(returnBtn, findsOneWidget);
-      await tester.ensureVisible(returnBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(returnBtn);
-      await tester.pump();
+        // Tap Back to Home button
+        final returnBtn = find.text('GO BACK');
+        expect(returnBtn, findsOneWidget);
+        await tester.ensureVisible(returnBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(returnBtn);
+        await tester.pump();
 
-      expect(goBackTapped, isTrue);
-    });
+        expect(goBackTapped, isTrue);
+      },
+    );
 
-    testWidgets('renders practice complete title and description when isPracticeMode is true', (tester) async {
-      await tester.binding.setSurfaceSize(const Size(390, 844));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders practice complete title and description when isPracticeMode is true',
+      (tester) async {
+        await tester.binding.setSurfaceSize(const Size(390, 844));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordMixerCompletedView(
-            puzzle: samplePuzzle,
-            streak: 0,
-            onGoBack: () {},
-            onPracticeMore: () {},
-            isPracticeMode: true,
-            hapticService: mockHapticService,
-            ttsService: mockTtsService,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordMixerCompletedView(
+              puzzle: samplePuzzle,
+              streak: 0,
+              onGoBack: () {},
+              onPracticeMore: () {},
+              isPracticeMode: true,
+              hapticService: mockHapticService,
+              ttsService: mockTtsService,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Practice Complete!'), findsOneWidget);
-      expect(find.text('Great job! Keep practicing to build your vocabulary.'), findsOneWidget);
-    });
+        expect(find.text('Practice Complete!'), findsOneWidget);
+        expect(
+          find.text('Great job! Keep practicing to build your vocabulary.'),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('WordMixerSpellingCard Tests', () {
-    testWidgets('renders letter bank, allows placing and clearing tiles, and submits answer', (tester) async {
-      await tester.binding.setSurfaceSize(const Size(390, 844));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+    testWidgets(
+      'renders letter bank, allows placing and clearing tiles, and submits answer',
+      (tester) async {
+        await tester.binding.setSurfaceSize(const Size(390, 844));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
 
-      bool successCalled = false;
+        bool successCalled = false;
 
-      await tester.pumpWidget(
-        wrapWithScreenUtil(
-          WordMixerSpellingCard(
-            puzzle: samplePuzzle,
-            primaryColor: IllustrationColors.richPurple,
-            onSuccess: () => successCalled = true,
-            soundService: mockSoundService,
-            hapticService: mockHapticService,
+        await tester.pumpWidget(
+          wrapWithScreenUtil(
+            WordMixerSpellingCard(
+              puzzle: samplePuzzle,
+              primaryColor: IllustrationColors.richPurple,
+              onSuccess: () => successCalled = true,
+              soundService: mockSoundService,
+              hapticService: mockHapticService,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('SPELL IT!'), findsOneWidget);
-      expect(find.text('0/7 letters placed'), findsOneWidget);
-      expect(find.text('CHECK ANSWER'), findsOneWidget);
+        expect(find.text('SPELL IT!'), findsOneWidget);
+        expect(find.text('0/7 letters placed'), findsOneWidget);
+        expect(find.text('CHECK ANSWER'), findsOneWidget);
 
-      // Verify Clear button is present
-      expect(find.text('Clear'), findsOneWidget);
+        // Verify Clear button is present
+        expect(find.text('Clear'), findsOneWidget);
 
-      // Verify letters from OCTOPUS exist in the bank
-      expect(find.text('O'), findsWidgets); // OCTOPUS has two O's
-      expect(find.text('C'), findsOneWidget);
-      expect(find.text('T'), findsOneWidget);
-      expect(find.text('P'), findsOneWidget);
-      expect(find.text('U'), findsOneWidget);
-      expect(find.text('S'), findsOneWidget);
-      expect(successCalled, isFalse);
-    });
+        // Verify letters from OCTOPUS exist in the bank
+        expect(find.text('O'), findsWidgets); // OCTOPUS has two O's
+        expect(find.text('C'), findsOneWidget);
+        expect(find.text('T'), findsOneWidget);
+        expect(find.text('P'), findsOneWidget);
+        expect(find.text('U'), findsOneWidget);
+        expect(find.text('S'), findsOneWidget);
+        expect(successCalled, isFalse);
+      },
+    );
   });
 }

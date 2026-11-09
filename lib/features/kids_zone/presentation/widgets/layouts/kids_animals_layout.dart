@@ -153,7 +153,8 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
       );
     }
     try {
-      final textToSpeak = (text == quest.correctAnswer && quest.animalSound != null)
+      final textToSpeak =
+          (text == quest.correctAnswer && quest.animalSound != null)
           ? '${quest.question ?? ''}. ${quest.animalSound}'
           : text;
       di.sl<KidsTTSService>().speak(textToSpeak, force: true);
@@ -172,9 +173,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
     final instruction = InstructionHelper.getInstruction(quest);
     final question = quest.question ?? '';
     final textToSpeak = instruction.isNotEmpty
-        ? (question.isNotEmpty && question != '?'
-            ? instruction
-            : instruction)
+        ? (question.isNotEmpty && question != '?' ? instruction : instruction)
         : question;
 
     if (textToSpeak.isNotEmpty) {
@@ -197,6 +196,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
       }
     }
   }
+
   @override
   void dispose() {
     try {
@@ -273,7 +273,8 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           SizedBox(
-                            height: KidsGameBaseScreen.mascotClearanceHeight + 12.h,
+                            height:
+                                KidsGameBaseScreen.mascotClearanceHeight + 12.h,
                           ),
 
                           // Safari Binoculars Target Zone
@@ -343,8 +344,8 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
                 color: isHovering
                     ? _SafariPalette.hoverGlow
                     : (isCorrect
-                        ? _SafariPalette.successBorder
-                        : _SafariPalette.leatherDark),
+                          ? _SafariPalette.successBorder
+                          : _SafariPalette.leatherDark),
                 width: isHovering ? 4.5.w : 3.5.w,
               ),
               boxShadow: [
@@ -411,10 +412,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
       decoration: BoxDecoration(
         color: _SafariPalette.leatherDark,
         border: Border(
-          bottom: BorderSide(
-            color: _SafariPalette.brassDark,
-            width: 1.5.w,
-          ),
+          bottom: BorderSide(color: _SafariPalette.brassDark, width: 1.5.w),
         ),
       ),
       child: Row(
@@ -585,10 +583,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: _SafariPalette.successBorder,
-          width: 2.w,
-        ),
+        border: Border.all(color: _SafariPalette.successBorder, width: 2.w),
         boxShadow: [
           BoxShadow(
             color: _SafariPalette.successBorder.withValues(alpha: 0.2),
@@ -601,10 +596,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Spotted Animal Emoji with celebratory pop
-          Text(
-            emoji,
-            style: TextStyle(fontSize: 48.sp),
-          )
+          Text(emoji, style: TextStyle(fontSize: 48.sp))
               .animate()
               .scale(
                 duration: 400.ms,
@@ -857,7 +849,9 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
                         child: Icon(
                           Icons.volume_up_rounded,
                           size: 14.r,
-                          color: _SafariPalette.leatherDark.withValues(alpha: 0.7),
+                          color: _SafariPalette.leatherDark.withValues(
+                            alpha: 0.7,
+                          ),
                         ),
                       ),
                     ),
@@ -890,10 +884,7 @@ class _KidsAnimalsLayoutState extends State<KidsAnimalsLayout> {
       color: Colors.transparent,
       child: Transform.scale(
         scale: 1.12,
-        child: Opacity(
-          opacity: 0.95,
-          child: signpostVisual,
-        ),
+        child: Opacity(opacity: 0.95, child: signpostVisual),
       ),
     );
 

@@ -21,8 +21,8 @@ class SpeakOppositeHeader extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final displayInstruction =
         (instruction != null && instruction!.trim().isNotEmpty)
-            ? instruction!.trim()
-            : 'Speak the opposite of the given word.';
+        ? instruction!.trim()
+        : 'Speak the opposite of the given word.';
 
     return Semantics(
       header: true,
@@ -44,11 +44,7 @@ class SpeakOppositeHeader extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.swap_horiz_rounded,
-                  size: 15.r,
-                  color: primaryColor,
-                ),
+                Icon(Icons.swap_horiz_rounded, size: 15.r, color: primaryColor),
                 SizedBox(width: 6.w),
                 Text(
                   "OPPOSITE CHALLENGE",

@@ -104,7 +104,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
     }
 
     final selectedVoice = _isPassive.value ? "Passive" : "Active";
-    final isCorrect = selectedVoice.toLowerCase() ==
+    final isCorrect =
+        selectedVoice.toLowerCase() ==
         (quest.correctAnswerCategory?.toLowerCase() ??
             quest.correctAnswer?.toLowerCase());
 
@@ -118,7 +119,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
       String expectedConversion = match?.group(1) ?? "";
 
       if (expectedConversion.isEmpty) {
-        final isCurrentPassive = (quest.correctAnswerCategory?.toLowerCase() ??
+        final isCurrentPassive =
+            (quest.correctAnswerCategory?.toLowerCase() ??
                 quest.correctAnswer?.toLowerCase()) ==
             'passive';
         expectedConversion = isCurrentPassive
@@ -196,8 +198,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
           if (expectedConversion.isEmpty) {
             final isCurrentPassive =
                 (quest.correctAnswerCategory?.toLowerCase() ??
-                        quest.correctAnswer?.toLowerCase()) ==
-                    'passive';
+                    quest.correctAnswer?.toLowerCase()) ==
+                'passive';
             expectedConversion = isCurrentPassive
                 ? (quest.activeVoice ?? "")
                 : (quest.passiveVoice ?? "");
@@ -217,7 +219,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value &&
+              isAnswered:
+                  isAnsweredNotifier.value &&
                   (isCorrectNotifier.value != null ||
                       !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
@@ -233,8 +236,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                       builder: (context, constraints) {
                         final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 680;
-                        final reduceMotion =
-                            VowlMotion.shouldReduceMotion(context);
+                        final reduceMotion = VowlMotion.shouldReduceMotion(
+                          context,
+                        );
 
                         return AnimatedPadding(
                           duration: const Duration(milliseconds: 150),
@@ -259,8 +263,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                 SliverFillRemaining(
                                   hasScrollBody: false,
                                   child: IgnorePointer(
-                                    ignoring:
-                                        isFirstStagePassedNotifier.value,
+                                    ignoring: isFirstStagePassedNotifier.value,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 20.w,
@@ -297,30 +300,32 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                 decoration: BoxDecoration(
                                                   color: isDark
                                                       ? AppColors.slate800
-                                                          .withValues(alpha: 0.9)
+                                                            .withValues(
+                                                              alpha: 0.9,
+                                                            )
                                                       : Colors.white,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                    isCompact ? 16.r : 20.r,
-                                                  ),
+                                                        isCompact ? 16.r : 20.r,
+                                                      ),
                                                   border: Border.all(
                                                     color: theme.primaryColor
                                                         .withValues(
-                                                      alpha: 0.18,
-                                                    ),
+                                                          alpha: 0.18,
+                                                        ),
                                                     width: 1.5,
                                                   ),
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: isDark
                                                           ? Colors.black
-                                                              .withValues(
-                                                              alpha: 0.25,
-                                                            )
+                                                                .withValues(
+                                                                  alpha: 0.25,
+                                                                )
                                                           : Colors.black
-                                                              .withValues(
-                                                              alpha: 0.05,
-                                                            ),
+                                                                .withValues(
+                                                                  alpha: 0.05,
+                                                                ),
                                                       blurRadius: 10,
                                                       offset: const Offset(
                                                         0,
@@ -342,8 +347,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                         ? Colors.white
                                                         : AppColors.slate900,
                                                     height: 1.45,
-                                                    fontWeight:
-                                                        FontWeight.w600,
+                                                    fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
                                               );
@@ -365,8 +369,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                               'voice_swap_toggle',
                                             ),
                                             isPassive: _isPassive.value,
-                                            isAnswered: isAnsweredNotifier
-                                                    .value &&
+                                            isAnswered:
+                                                isAnsweredNotifier.value &&
                                                 (isCorrectNotifier.value !=
                                                         null ||
                                                     !isFirstStagePassedNotifier
@@ -394,8 +398,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                    16.r,
-                                                  ),
+                                                        16.r,
+                                                      ),
                                                   gradient: LinearGradient(
                                                     begin: Alignment.topLeft,
                                                     end: Alignment.bottomRight,
@@ -403,16 +407,16 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                       theme.primaryColor,
                                                       theme.primaryColor
                                                           .withValues(
-                                                        alpha: 0.85,
-                                                      ),
+                                                            alpha: 0.85,
+                                                          ),
                                                     ],
                                                   ),
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: theme.primaryColor
                                                           .withValues(
-                                                        alpha: 0.35,
-                                                      ),
+                                                            alpha: 0.35,
+                                                          ),
                                                       blurRadius: 14,
                                                       offset: const Offset(
                                                         0,
@@ -469,28 +473,29 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
                                             _submitVerbalEvaluation(
-                                          true,
-                                          quest,
-                                        ),
+                                              true,
+                                              quest,
+                                            ),
                                         onSkipped: () =>
                                             _submitVerbalEvaluation(
-                                          false,
-                                          quest,
-                                        ),
+                                              false,
+                                              quest,
+                                            ),
                                         isPositioned: false,
                                       ),
                                     ),
                                   ),
                                 SliverToBoxAdapter(
                                   child: SizedBox(
-                                    height: MediaQuery.of(context)
-                                                .viewInsets
-                                                .bottom >
+                                    height:
+                                        MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom >
                                             0
-                                        ? MediaQuery.of(context)
-                                                .viewInsets
-                                                .bottom +
-                                            200.h
+                                        ? MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom +
+                                              200.h
                                         : 60.h,
                                   ),
                                 ),

@@ -79,4 +79,3 @@ class ChalkDustPainter extends CustomPainter {
   bool shouldRepaint(covariant ChalkDustPainter oldDelegate) =>
       oldDelegate.progress != progress;
 }
-

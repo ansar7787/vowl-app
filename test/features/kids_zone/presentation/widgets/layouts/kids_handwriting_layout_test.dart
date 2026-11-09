@@ -35,61 +35,58 @@ void main() {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, _) => MaterialApp(
-        home: Scaffold(
-          body: SizedBox(
-            width: 390,
-            height: 844,
-            child: child,
-          ),
-        ),
+        home: Scaffold(body: SizedBox(width: 390, height: 844, child: child)),
       ),
     );
   }
 
   group('HandwritingCanvas Widget Tests', () {
-    testWidgets('renders chalkboard canvas, guidelines, and slate ledge toolbar', (tester) async {
-      Ink? receivedInk;
-      bool cleared = false;
+    testWidgets(
+      'renders chalkboard canvas, guidelines, and slate ledge toolbar',
+      (tester) async {
+        Ink? receivedInk;
+        bool cleared = false;
 
-      await tester.pumpWidget(
-        createTestWidget(
-          HandwritingCanvas(
-            ghostText: 'A',
-            showGuidelines: true,
-            initialShowGuide: true,
-            onInkUpdated: (ink) => receivedInk = ink,
-            onClear: () => cleared = true,
+        await tester.pumpWidget(
+          createTestWidget(
+            HandwritingCanvas(
+              ghostText: 'A',
+              showGuidelines: true,
+              initialShowGuide: true,
+              onInkUpdated: (ink) => receivedInk = ink,
+              onClear: () => cleared = true,
+            ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      // Check toolbar actionable buttons
-      expect(find.text('Trace'), findsOneWidget);
-      expect(find.text('Demo'), findsOneWidget);
-      expect(find.text('Undo'), findsOneWidget);
-      expect(find.text('Clear'), findsOneWidget);
+        // Check toolbar actionable buttons
+        expect(find.text('Trace'), findsOneWidget);
+        expect(find.text('Demo'), findsOneWidget);
+        expect(find.text('Undo'), findsOneWidget);
+        expect(find.text('Clear'), findsOneWidget);
 
-      // Verify canvas interaction (drag / pan two strokes)
-      final canvasFinder = find.byType(GestureDetector).first;
-      await tester.drag(canvasFinder, const Offset(0, 50));
-      await tester.pumpAndSettle();
-      await tester.drag(canvasFinder, const Offset(50, 0));
-      await tester.pumpAndSettle();
+        // Verify canvas interaction (drag / pan two strokes)
+        final canvasFinder = find.byType(GestureDetector).first;
+        await tester.drag(canvasFinder, const Offset(0, 50));
+        await tester.pumpAndSettle();
+        await tester.drag(canvasFinder, const Offset(50, 0));
+        await tester.pumpAndSettle();
 
-      expect(receivedInk, isNotNull);
-      expect(receivedInk!.strokes.length, equals(2));
+        expect(receivedInk, isNotNull);
+        expect(receivedInk!.strokes.length, equals(2));
 
-      // Tap Undo (removes 1 stroke, 1 stroke remains)
-      await tester.tap(find.text('Undo'));
-      await tester.pumpAndSettle();
-      expect(receivedInk!.strokes.length, equals(1));
+        // Tap Undo (removes 1 stroke, 1 stroke remains)
+        await tester.tap(find.text('Undo'));
+        await tester.pumpAndSettle();
+        expect(receivedInk!.strokes.length, equals(1));
 
-      // Tap Clear (clears the remaining stroke)
-      await tester.tap(find.text('Clear'));
-      await tester.pumpAndSettle();
-      expect(cleared, isTrue);
-    });
+        // Tap Clear (clears the remaining stroke)
+        await tester.tap(find.text('Clear'));
+        await tester.pumpAndSettle();
+        expect(cleared, isTrue);
+      },
+    );
 
     testWidgets('toggles tracing guide visibility', (tester) async {
       await tester.pumpWidget(

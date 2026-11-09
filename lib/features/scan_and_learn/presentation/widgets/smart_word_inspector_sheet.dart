@@ -43,7 +43,8 @@ class SmartWordInspectorSheet extends StatefulWidget {
   }
 
   @override
-  State<SmartWordInspectorSheet> createState() => _SmartWordInspectorSheetState();
+  State<SmartWordInspectorSheet> createState() =>
+      _SmartWordInspectorSheetState();
 }
 
 class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
@@ -119,15 +120,16 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.95)
-                    : Colors.white.withValues(alpha: 0.95)),
+                      ? AppColors.midnightNavy.withValues(alpha: 0.95)
+                      : Colors.white.withValues(alpha: 0.95)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border.all(
               color: isMidnight
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate200),
+              width: 1.0,
             ),
           ),
           child: Column(
@@ -179,7 +181,10 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.indigo500.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(12.r),
@@ -205,10 +210,14 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(18.r),
                   border: Border.all(
-                    color: isDark ? Colors.white.withValues(alpha: 0.06) : Colors.black.withValues(alpha: 0.04),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.06)
+                        : Colors.black.withValues(alpha: 0.04),
                   ),
                 ),
                 child: Column(
@@ -229,7 +238,11 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(LucideIcons.lightbulb, size: 14.r, color: AppColors.amber500),
+                          Icon(
+                            LucideIcons.lightbulb,
+                            size: 14.r,
+                            color: AppColors.amber500,
+                          ),
                           SizedBox(width: 6.w),
                           Expanded(
                             child: Text(
@@ -257,17 +270,28 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                   ScaleButton(
                     onTap: _onPronounce,
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 14.h,
+                      ),
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : Colors.black.withValues(alpha: 0.05),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
-                          color: isDark ? Colors.white.withValues(alpha: 0.12) : Colors.black.withValues(alpha: 0.08),
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.12)
+                              : Colors.black.withValues(alpha: 0.08),
                         ),
                       ),
                       child: Row(
                         children: [
-                          Icon(LucideIcons.volume2, size: 18.r, color: AppColors.indigo400),
+                          Icon(
+                            LucideIcons.volume2,
+                            size: 18.r,
+                            color: AppColors.indigo400,
+                          ),
                           SizedBox(width: 6.w),
                           Text(
                             context.tr('common.audio', fallback: 'Listen'),
@@ -289,12 +313,18 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                     child: ScaleButton(
                       onTap: _onToggleSave,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 14.h,
+                        ),
                         decoration: BoxDecoration(
                           gradient: _isSaved
                               ? null
                               : const LinearGradient(
-                                  colors: [AppColors.indigo500, AppColors.teal500],
+                                  colors: [
+                                    AppColors.indigo500,
+                                    AppColors.teal500,
+                                  ],
                                 ),
                           color: _isSaved
                               ? (isDark ? Colors.white12 : Colors.black12)
@@ -305,20 +335,32 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              _isSaved ? LucideIcons.checkCheck : LucideIcons.bookmarkPlus,
+                              _isSaved
+                                  ? LucideIcons.checkCheck
+                                  : LucideIcons.bookmarkPlus,
                               size: 18.r,
-                              color: _isSaved ? AppColors.teal400 : Colors.white,
+                              color: _isSaved
+                                  ? AppColors.teal400
+                                  : Colors.white,
                             ),
                             SizedBox(width: 8.w),
                             Text(
                               _isSaved
-                                  ? context.tr('word_bank.saved', fallback: 'In Word Bank ✓')
-                                  : context.tr('word_bank.add', fallback: 'Add to Word Bank'),
+                                  ? context.tr(
+                                      'word_bank.saved',
+                                      fallback: 'In Word Bank ✓',
+                                    )
+                                  : context.tr(
+                                      'word_bank.add',
+                                      fallback: 'Add to Word Bank',
+                                    ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w800,
-                                color: _isSaved ? (isDark ? Colors.white70 : Colors.black87) : Colors.white,
+                                color: _isSaved
+                                    ? (isDark ? Colors.white70 : Colors.black87)
+                                    : Colors.white,
                               ),
                             ),
                           ],
@@ -349,10 +391,18 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.playCircle, size: 18.r, color: AppColors.teal400),
+                      Icon(
+                        LucideIcons.playCircle,
+                        size: 18.r,
+                        color: AppColors.teal400,
+                      ),
                       SizedBox(width: 8.w),
                       Text(
-                        context.tr('scan.play_word_challenge', fallback: 'Play Snap Challenge on this word (+10 Coins)'),
+                        context.tr(
+                          'scan.play_word_challenge',
+                          fallback:
+                              'Play Snap Challenge on this word (+10 Coins)',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,

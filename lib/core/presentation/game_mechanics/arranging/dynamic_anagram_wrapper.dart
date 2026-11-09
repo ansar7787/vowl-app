@@ -12,7 +12,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
-
 /// Anagram unscrambling mechanic that presents jumbled letter tiles for word reconstruction.
 class DynamicAnagramWrapper extends StatefulWidget {
   final String expectedText;
@@ -272,7 +271,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
             valueListenable: _hasError,
             builder: (context, hasError, child) {
               return Container(
-                padding: EdgeInsets.fromLTRB(AppSpacing.cardSpacious, 20.h, AppSpacing.cardSpacious, 32.h),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.cardSpacious,
+                  20.h,
+                  AppSpacing.cardSpacious,
+                  32.h,
+                ),
                 decoration: BoxDecoration(
                   color: bgColor,
                   borderRadius: widget.isPositioned
@@ -759,8 +763,8 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         color: isPlaced
             ? widget.primaryColor.withValues(alpha: isHovering ? 0.3 : 0.1)
             : (isMidnight
-                ? AppColors.midnightSurface
-                : (isDark ? AppColors.slate800 : Colors.white)),
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate800 : Colors.white)),
         borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
           color: isPlaced

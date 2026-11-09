@@ -16,7 +16,8 @@ class TopicMachineHead extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     final outerRing = Container(
@@ -29,10 +30,7 @@ class TopicMachineHead extends StatelessWidget {
           width: 1,
         ),
         boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: 0.1),
-            blurRadius: 20,
-          ),
+          BoxShadow(color: primaryColor.withValues(alpha: 0.1), blurRadius: 20),
         ],
       ),
     );
@@ -43,8 +41,8 @@ class TopicMachineHead extends StatelessWidget {
       coreChild = reduceMotion
           ? emojiWidget
           : emojiWidget
-              .animate(onPlay: (c) => c.repeat())
-              .shimmer(duration: 2.seconds);
+                .animate(onPlay: (c) => c.repeat())
+                .shimmer(duration: 2.seconds);
     } else {
       coreChild = Icon(Icons.bolt_rounded, color: primaryColor, size: 30.r);
     }
@@ -59,11 +57,11 @@ class TopicMachineHead extends StatelessWidget {
           reduceMotion
               ? outerRing
               : outerRing
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.1, 1.2),
-                  ),
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.1, 1.2),
+                    ),
 
           // The Core Machine
           Container(
@@ -88,9 +86,7 @@ class TopicMachineHead extends StatelessWidget {
                 ),
               ],
             ),
-            child: Center(
-              child: coreChild,
-            ),
+            child: Center(child: coreChild),
           ),
 
           // Vent Details

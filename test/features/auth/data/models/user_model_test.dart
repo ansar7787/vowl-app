@@ -23,15 +23,18 @@ void main() {
       expect(model.safeDisplayName, 'Susan Clark');
     });
 
-    test('replaces "unknown" case-insensitively with clean email derivation', () {
-      final model = UserModel.fromMap({
-        'id': 'u3',
-        'email': 'peter_parker@marvel.com',
-        'displayName': 'UNKNOWN',
-      });
-      expect(model.displayName, 'Peter Parker');
-      expect(model.safeDisplayName, 'Peter Parker');
-    });
+    test(
+      'replaces "unknown" case-insensitively with clean email derivation',
+      () {
+        final model = UserModel.fromMap({
+          'id': 'u3',
+          'email': 'peter_parker@marvel.com',
+          'displayName': 'UNKNOWN',
+        });
+        expect(model.displayName, 'Peter Parker');
+        expect(model.safeDisplayName, 'Peter Parker');
+      },
+    );
 
     test('replaces empty displayName with email derivation', () {
       final model = UserModel.fromMap({
@@ -43,26 +46,35 @@ void main() {
       expect(model.safeDisplayName, 'Tony Stark');
     });
 
-    test('replaces "Vowl Learner" case-insensitively with clean email derivation', () {
-      final model = UserModel.fromMap({
-        'id': 'u6',
-        'email': 'ayesha.khan@gmail.com',
-        'displayName': 'Vowl Learner',
-      });
-      expect(model.displayName, 'Ayesha Khan');
-      expect(model.safeDisplayName, 'Ayesha Khan');
-    });
+    test(
+      'replaces "Vowl Learner" case-insensitively with clean email derivation',
+      () {
+        final model = UserModel.fromMap({
+          'id': 'u6',
+          'email': 'ayesha.khan@gmail.com',
+          'displayName': 'Vowl Learner',
+        });
+        expect(model.displayName, 'Ayesha Khan');
+        expect(model.safeDisplayName, 'Ayesha Khan');
+      },
+    );
 
-    test('falls back gracefully when neither displayName nor email are valid', () {
-      final model = UserModel.fromMap({
-        'id': 'u5',
-        'email': '',
-        'displayName': 'Unknown User',
-      });
-      expect(model.displayName, isNull);
-      expect(model.getSafeDisplayName(fallback: 'Anonymous Player'), 'Anonymous Player');
-      expect(model.safeDisplayName, 'Vowl Learner');
-    });
+    test(
+      'falls back gracefully when neither displayName nor email are valid',
+      () {
+        final model = UserModel.fromMap({
+          'id': 'u5',
+          'email': '',
+          'displayName': 'Unknown User',
+        });
+        expect(model.displayName, isNull);
+        expect(
+          model.getSafeDisplayName(fallback: 'Anonymous Player'),
+          'Anonymous Player',
+        );
+        expect(model.safeDisplayName, 'Vowl Learner');
+      },
+    );
   });
 
   group('UserModel Referral & PvP serialization', () {
@@ -122,30 +134,32 @@ void main() {
       expect(reconstructed.duelLosses, 2);
     });
 
-    test('serializes and deserializes weekly league previousRank and previousRankWeekKey correctly', () {
-      final model = UserModel(
-        id: 'u12',
-        email: 'league.winner@vowl.app',
-        dailyXpHistory: const {},
-        previousRank: 1,
-        previousRankWeekKey: '2026-W45',
-        claimedWeeklyRewardWeekKeys: const ['2026-W44'],
-      );
+    test(
+      'serializes and deserializes weekly league previousRank and previousRankWeekKey correctly',
+      () {
+        final model = UserModel(
+          id: 'u12',
+          email: 'league.winner@vowl.app',
+          dailyXpHistory: const {},
+          previousRank: 1,
+          previousRankWeekKey: '2026-W45',
+          claimedWeeklyRewardWeekKeys: const ['2026-W44'],
+        );
 
-      final map = model.toMap();
-      final reconstructed = UserModel.fromMap(map);
+        final map = model.toMap();
+        final reconstructed = UserModel.fromMap(map);
 
-      expect(reconstructed.previousRank, 1);
-      expect(reconstructed.previousRankWeekKey, '2026-W45');
-      expect(reconstructed.claimedWeeklyRewardWeekKeys, ['2026-W44']);
+        expect(reconstructed.previousRank, 1);
+        expect(reconstructed.previousRankWeekKey, '2026-W45');
+        expect(reconstructed.claimedWeeklyRewardWeekKeys, ['2026-W44']);
 
-      final copy = reconstructed.copyWith(
-        previousRank: 2,
-        previousRankWeekKey: '2026-W46',
-      );
-      expect(copy.previousRank, 2);
-      expect(copy.previousRankWeekKey, '2026-W46');
-    });
+        final copy = reconstructed.copyWith(
+          previousRank: 2,
+          previousRankWeekKey: '2026-W46',
+        );
+        expect(copy.previousRank, 2);
+        expect(copy.previousRankWeekKey, '2026-W46');
+      },
+    );
   });
 }
-

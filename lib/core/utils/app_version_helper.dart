@@ -17,7 +17,9 @@ class AppVersionHelper {
     final parts1 = clean1.split('.').map((s) => int.tryParse(s) ?? 0).toList();
     final parts2 = clean2.split('.').map((s) => int.tryParse(s) ?? 0).toList();
 
-    final maxLen = parts1.length > parts2.length ? parts1.length : parts2.length;
+    final maxLen = parts1.length > parts2.length
+        ? parts1.length
+        : parts2.length;
     for (int i = 0; i < maxLen; i++) {
       final p1 = i < parts1.length ? parts1[i] : 0;
       final p2 = i < parts2.length ? parts2[i] : 0;
@@ -58,4 +60,3 @@ class AppVersionHelper {
     return s.isEmpty ? '0.0.0' : s;
   }
 }
-

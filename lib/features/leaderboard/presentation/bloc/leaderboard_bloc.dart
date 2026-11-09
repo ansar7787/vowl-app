@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 
 /// BLoC component managing global and Kids Zone leaderboard rankings,
@@ -32,31 +32,9 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
           : await repository.getTopUsers();
 
       result.fold((failure) => emit(LeaderboardError(failure.message)), (data) {
-        // Sort
-        final sortedUsers = List<UserEntity>.from(data.users)
-          ..sort((a, b) {
-            if (event.isKids) {
-              final aLevels = a.kidsTotalLevelsCompleted;
-              final bLevels = b.kidsTotalLevelsCompleted;
-              if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-              if (b.currentStreak != a.currentStreak) {
-                return b.currentStreak.compareTo(a.currentStreak);
-              }
-              return b.kidsCoins.compareTo(a.kidsCoins);
-            } else {
-              // Default to Weekly XP ranking with daily streak as primary tie-breaker
-              final aWeekly = a.currentWeeklyExp;
-              final bWeekly = b.currentWeeklyExp;
-              if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
-              if (b.currentStreak != a.currentStreak) {
-                return b.currentStreak.compareTo(a.currentStreak);
-              }
-              if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
-                return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
-              }
-              return b.totalExp.compareTo(a.totalExp);
-            }
-          });
+        final sortedUsers = event.isKids
+            ? LeaderboardRankingHelper.sortKids(data.users)
+            : LeaderboardRankingHelper.sortWeekly(data.users);
 
         emit(
           LeaderboardLoaded(

@@ -120,12 +120,14 @@ void main() {
     addTearDown(() => tester.view.resetPhysicalSize());
     addTearDown(() => tester.view.resetDevicePixelRatio());
 
-    await tester.pumpWidget(createSubject(
-      user: user,
-      themeMode: themeMode,
-      width: width,
-      height: height,
-    ));
+    await tester.pumpWidget(
+      createSubject(
+        user: user,
+        themeMode: themeMode,
+        width: width,
+        height: height,
+      ),
+    );
     await tester.pumpAndSettle();
   }
 
@@ -136,7 +138,9 @@ void main() {
   );
 
   group('ReviewMistakesHomeCard - Visibility & Rendering', () {
-    testWidgets('renders SizedBox.shrink when error count is 0', (tester) async {
+    testWidgets('renders SizedBox.shrink when error count is 0', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[],
       });
@@ -147,7 +151,9 @@ void main() {
       expect(find.text('Review & Master'), findsNothing);
     });
 
-    testWidgets('renders card with singular subtitle when count is 1', (tester) async {
+    testWidgets('renders card with singular subtitle when count is 1', (
+      tester,
+    ) async {
       final mistake = jsonEncode({
         'id': 'entry_1',
         'gameType': 'syllableStress',
@@ -167,7 +173,9 @@ void main() {
       expect(find.byIcon(Icons.crisis_alert_rounded), findsOneWidget);
     });
 
-    testWidgets('renders card with plural count when count > 1', (tester) async {
+    testWidgets('renders card with plural count when count > 1', (
+      tester,
+    ) async {
       final mistake1 = jsonEncode({
         'id': 'entry_1',
         'gameType': 'syllableStress',
@@ -206,31 +214,36 @@ void main() {
   });
 
   group('ReviewMistakesHomeCard - Interaction & Navigation', () {
-    testWidgets('tapping card triggers haptics and navigates to /review-mistakes', (tester) async {
-      final mistake = jsonEncode({
-        'id': 'entry_1',
-        'gameType': 'syllableStress',
-        'question': 'Identify stress',
-        'userAnswer': 'wrong',
-        'correctAnswer': 'right',
-        'level': 1,
-      });
-      SharedPreferences.setMockInitialValues({
-        'vowl_local_error_journal': [mistake],
-      });
+    testWidgets(
+      'tapping card triggers haptics and navigates to /review-mistakes',
+      (tester) async {
+        final mistake = jsonEncode({
+          'id': 'entry_1',
+          'gameType': 'syllableStress',
+          'question': 'Identify stress',
+          'userAnswer': 'wrong',
+          'correctAnswer': 'right',
+          'level': 1,
+        });
+        SharedPreferences.setMockInitialValues({
+          'vowl_local_error_journal': [mistake],
+        });
 
-      await pumpSubject(tester, user: localUser);
+        await pumpSubject(tester, user: localUser);
 
-      await tester.tap(find.text('Review & Master'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Review & Master'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(navigatedRoutes, contains('/review-mistakes'));
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(navigatedRoutes, contains('/review-mistakes'));
+      },
+    );
   });
 
   group('ReviewMistakesHomeCard - Screen Size & Theme Resilience', () {
-    testWidgets('renders cleanly on compact 320dp screen without overflow', (tester) async {
+    testWidgets('renders cleanly on compact 320dp screen without overflow', (
+      tester,
+    ) async {
       final mistake = jsonEncode({
         'id': 'entry_1',
         'gameType': 'syllableStress',
@@ -270,4 +283,3 @@ void main() {
     });
   });
 }
-

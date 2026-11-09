@@ -57,7 +57,12 @@ class ScanEmptyState extends StatelessWidget {
       laserLine = RepaintBoundary(
         child: laserLine
             .animate(onPlay: (c) => c.repeat(reverse: true))
-            .slideY(begin: -0.38, end: 0.38, duration: 2.2.seconds, curve: Curves.easeInOut),
+            .slideY(
+              begin: -0.38,
+              end: 0.38,
+              duration: 2.2.seconds,
+              curve: Curves.easeInOut,
+            ),
       );
     }
 
@@ -78,16 +83,16 @@ class ScanEmptyState extends StatelessWidget {
       context,
       icon: LucideIcons.image,
       label: context.tr('common.gallery', fallback: 'Gallery'),
-      subtitle: context.tr(
-        'translation.pick_saved',
-        fallback: 'Pick photo',
-      ),
+      subtitle: context.tr('translation.pick_saved', fallback: 'Pick photo'),
       onTap: () => onPickImage(ImageSource.gallery),
       isDark: isDark,
       isPrimary: false,
     );
     if (!reduceMotion) {
-      galleryBtn = galleryBtn.animate(delay: 300.ms).fadeIn().slideY(begin: 0.15);
+      galleryBtn = galleryBtn
+          .animate(delay: 300.ms)
+          .fadeIn()
+          .slideY(begin: 0.15);
     }
 
     Widget content = SingleChildScrollView(
@@ -120,25 +125,41 @@ class ScanEmptyState extends StatelessWidget {
                   Positioned(
                     top: 10.h,
                     left: 10.w,
-                    child: _buildCornerBracket(primaryIndigo, top: true, left: true),
+                    child: _buildCornerBracket(
+                      primaryIndigo,
+                      top: true,
+                      left: true,
+                    ),
                   ),
                   // Top-Right Corner Bracket
                   Positioned(
                     top: 10.h,
                     right: 10.w,
-                    child: _buildCornerBracket(primaryIndigo, top: true, left: false),
+                    child: _buildCornerBracket(
+                      primaryIndigo,
+                      top: true,
+                      left: false,
+                    ),
                   ),
                   // Bottom-Left Corner Bracket
                   Positioned(
                     bottom: 10.h,
                     left: 10.w,
-                    child: _buildCornerBracket(primaryIndigo, top: false, left: true),
+                    child: _buildCornerBracket(
+                      primaryIndigo,
+                      top: false,
+                      left: true,
+                    ),
                   ),
                   // Bottom-Right Corner Bracket
                   Positioned(
                     bottom: 10.h,
                     right: 10.w,
-                    child: _buildCornerBracket(primaryIndigo, top: false, left: false),
+                    child: _buildCornerBracket(
+                      primaryIndigo,
+                      top: false,
+                      left: false,
+                    ),
                   ),
 
                   // Center Document & OCR Scanner Icon
@@ -160,7 +181,9 @@ class ScanEmptyState extends StatelessWidget {
                       child: Icon(
                         Icons.document_scanner_rounded,
                         size: 36.r,
-                        color: isDark ? _LocalPalette.color818cf8 : primaryIndigo,
+                        color: isDark
+                            ? _LocalPalette.color818cf8
+                            : primaryIndigo,
                       ),
                     ),
                   ),
@@ -191,7 +214,10 @@ class ScanEmptyState extends StatelessWidget {
                 SizedBox(width: 6.w),
                 Text(
                   context
-                      .tr('translation.system_standby', fallback: 'SIGN & TEXT READER')
+                      .tr(
+                        'translation.system_standby',
+                        fallback: 'SIGN & TEXT READER',
+                      )
                       .toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -274,7 +300,11 @@ class ScanEmptyState extends StatelessWidget {
     return content;
   }
 
-  Widget _buildCornerBracket(Color color, {required bool top, required bool left}) {
+  Widget _buildCornerBracket(
+    Color color, {
+    required bool top,
+    required bool left,
+  }) {
     return Container(
       width: 22.w,
       height: 22.w,
@@ -342,19 +372,25 @@ class ScanEmptyState extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     primaryIndigo.withValues(alpha: isPrimary ? 0.22 : 0.1),
-                    _LocalPalette.color4f46e5.withValues(alpha: isPrimary ? 0.1 : 0.03),
+                    _LocalPalette.color4f46e5.withValues(
+                      alpha: isPrimary ? 0.1 : 0.03,
+                    ),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
-                  color: primaryIndigo.withValues(alpha: isPrimary ? 0.45 : 0.25),
+                  color: primaryIndigo.withValues(
+                    alpha: isPrimary ? 0.45 : 0.25,
+                  ),
                   width: 1.5.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: primaryIndigo.withValues(alpha: isPrimary ? 0.15 : 0.05),
+                    color: primaryIndigo.withValues(
+                      alpha: isPrimary ? 0.15 : 0.05,
+                    ),
                     blurRadius: 16,
                     offset: const Offset(0, 6),
                   ),

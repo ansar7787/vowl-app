@@ -372,9 +372,8 @@ void main() {
 
       verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
       verify(
-        () => mockLogger.debug(
-          any(that: contains('dropped onto clock target')),
-        ),
+        () =>
+            mockLogger.debug(any(that: contains('dropped onto clock target'))),
       ).called(1);
     });
 
@@ -397,9 +396,7 @@ void main() {
         ),
       ).called(1);
       verify(
-        () => mockLogger.debug(
-          any(that: contains('Replaying question audio')),
-        ),
+        () => mockLogger.debug(any(that: contains('Replaying question audio'))),
       ).called(1);
     });
 

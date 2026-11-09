@@ -20,7 +20,6 @@ import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_opti
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_origin_card.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
-
 /// Interactive chat-style idioms game screen where learners decipher figurative idioms from emoji and dialogue clues.
 class IdiomsScreen extends StatefulWidget {
   /// The active curriculum difficulty level.
@@ -232,7 +231,8 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                   SliverToBoxAdapter(
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
-                                        minHeight: isFirstStagePassedNotifier.value
+                                        minHeight:
+                                            isFirstStagePassedNotifier.value
                                             ? 0
                                             : constraints.maxHeight,
                                       ),
@@ -251,15 +251,15 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                           ),
                                           Center(
                                             child: ConstrainedBox(
-                                              constraints:
-                                                  const BoxConstraints(
-                                                    maxWidth: 600,
-                                                  ),
+                                              constraints: const BoxConstraints(
+                                                maxWidth: 600,
+                                              ),
                                               child: Column(
                                                 children: [
                                                   IgnorePointer(
                                                     ignoring:
-                                                        isFirstStagePassedNotifier.value,
+                                                        isFirstStagePassedNotifier
+                                                            .value,
                                                     child: _buildChatInterface(
                                                       quest,
                                                       theme.primaryColor,
@@ -288,25 +288,22 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                                               quest.example !=
                                                                   null)
                                                             IdiomsOriginCard(
-                                                              origin: quest
-                                                                  .origin,
+                                                              origin:
+                                                                  quest.origin,
                                                               literalVsFigurative:
                                                                   quest
                                                                       .literalVsFigurative,
                                                               contextSentence:
                                                                   quest
                                                                       .contextSentence ??
-                                                                  quest
-                                                                      .example,
+                                                                  quest.example,
                                                               color: theme
                                                                   .primaryColor,
                                                             ),
                                                         ],
                                                       ),
                                                     ),
-                                                  SizedBox(
-                                                    height: 30.h,
-                                                  ),
+                                                  SizedBox(height: 30.h),
                                                 ],
                                               ),
                                             ),
@@ -408,7 +405,9 @@ class _IdiomsScreenState extends State<IdiomsScreen>
               fontFamily: 'Outfit',
               fontSize: isCompact ? 13.sp : 15.sp,
               fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white.withValues(alpha: 0.9) : AppColors.slate800,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : AppColors.slate800,
               height: 1.35,
             ),
           ),
@@ -444,9 +443,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      SizedBox(
-                        width: (isCompact ? 28.r : 36.r) + 10.w,
-                      ),
+                      SizedBox(width: (isCompact ? 28.r : 36.r) + 10.w),
                       Flexible(
                         child: IdiomsStrangerTextMessage(
                           text: quest.hint!,
@@ -460,15 +457,13 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                   SizedBox(height: 6.h),
                   Row(
                     children: [
-                      SizedBox(
-                        width: (isCompact ? 28.r : 36.r) + 10.w,
-                      ),
+                      SizedBox(width: (isCompact ? 28.r : 36.r) + 10.w),
                       GestureDetector(
                         onTap: () {
                           _showHint.value = true;
-                          context
-                              .read<VocabularyBloc>()
-                              .add(const VocabularyHintUsed());
+                          context.read<VocabularyBloc>().add(
+                            const VocabularyHintUsed(),
+                          );
                           // Only VocabularyBloc consumes the hint — avoids double decrement
                         },
                         child: Container(
@@ -584,9 +579,9 @@ class _IdiomsScreenState extends State<IdiomsScreen>
             return reduceMotion
                 ? optionsBox
                 : optionsBox
-                    .animate()
-                    .fadeIn(delay: 500.ms)
-                    .slideY(begin: 0.2, curve: Curves.easeOutCubic);
+                      .animate()
+                      .fadeIn(delay: 500.ms)
+                      .slideY(begin: 0.2, curve: Curves.easeOutCubic);
           },
         ),
         SizedBox(height: gapBottom),

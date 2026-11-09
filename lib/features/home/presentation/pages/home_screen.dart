@@ -31,6 +31,7 @@ import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
+import 'package:vowl/features/home/presentation/widgets/weekly_league_reward_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
@@ -56,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final math.Random _random = math.Random();
   late final ConfettiController _confettiController;
-  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
+  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier(
+    [],
+  );
 
   static const List<Color> _celebrationConfettiColors = [
     Color(0xFFFFD700), // Brilliant Gold
@@ -129,22 +132,25 @@ class _HomeScreenState extends State<HomeScreen> {
       // "Looking up a deactivated widget's ancestor is unsafe".
       if (!mounted) return;
 
-      result.fold((_) {
-        if (mounted) _isRankLoading.value = false;
-      }, (data) {
-        final currentUser = context.read<AuthBloc>().state.user;
-        final sorted = LeaderboardRankingHelper.sortAllTime(
-          data.users,
-          currentUser: currentUser,
-        );
-        if (currentUser != null && mounted) {
-          _globalRank.value = LeaderboardRankingHelper.getRankPosition(
-            sorted,
-            currentUser.id,
+      result.fold(
+        (_) {
+          if (mounted) _isRankLoading.value = false;
+        },
+        (data) {
+          final currentUser = context.read<AuthBloc>().state.user;
+          final sorted = LeaderboardRankingHelper.sortAllTime(
+            data.users,
+            currentUser: currentUser,
           );
-        }
-        if (mounted) _isRankLoading.value = false;
-      });
+          if (currentUser != null && mounted) {
+            _globalRank.value = LeaderboardRankingHelper.getRankPosition(
+              sorted,
+              currentUser.id,
+            );
+          }
+          if (mounted) _isRankLoading.value = false;
+        },
+      );
     } catch (e) {
       if (mounted) _isRankLoading.value = false;
       // Leaderboard rank is a "nice to have" enhancement on this screen —
@@ -317,7 +323,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 1. HERO HEADER (Identity & XP)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.screen,
+                        ),
                         sliver: SliverToBoxAdapter(
                           child: HomeHeroHeader(user: user),
                         ),
@@ -333,19 +341,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // --------------------------------------------------
+                      // 1.55 WEEKLY LEAGUE REWARD CLAIM (Conditional Inline)
+                      // --------------------------------------------------
+                      SliverToBoxAdapter(
+                        child: WeeklyLeagueRewardHomeCard(user: user),
+                      ),
+
+                      // --------------------------------------------------
                       // 1.6 DAILY MYSTERY CHEST (Conditional Inline Claim)
                       // --------------------------------------------------
                       SliverToBoxAdapter(
-                        child: DailyMysteryChestCard(
-                          onClaimed: _spawnCoins,
-                        ),
+                        child: DailyMysteryChestCard(onClaimed: _spawnCoins),
                       ),
 
                       // --------------------------------------------------
                       // 2. PRIMARY CTA — "Continue Learning"
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.screen,
+                        ),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -360,7 +375,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 3. UNIFIED STATS ROW (Streak | Coins | Badges | Level)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.screen,
+                        ),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -388,9 +405,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       // --------------------------------------------------
                       // 4. PROGRESSIVE RPG GATING (Beginner Lock vs Full Cockpit)
                       // --------------------------------------------------
-                      if (!_bypassBeginnerGate && user.totalLevelsCompleted < 2) ...[
+                      if (!_bypassBeginnerGate &&
+                          user.totalLevelsCompleted < 2) ...[
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSpacing.screen,
+                          ),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -433,7 +453,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 5. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSpacing.screen,
+                          ),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -466,7 +488,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 6. PROGRESS CARD (Total levels + Rank)
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSpacing.screen,
+                          ),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -506,7 +530,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 8. DAILY NOTE / LANGUAGE NOTE
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.screen,
+                        ),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             SizedBox(height: 24.h),
@@ -514,7 +540,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               streakCount: user.currentStreak,
                             ),
                             SizedBox(
-                              height: 120.h +
+                              height:
+                                  120.h +
                                   MediaQuery.paddingOf(context).bottom +
                                   24.h,
                             ),
@@ -616,10 +643,9 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
       duration: const Duration(milliseconds: 750),
     );
 
-    _animX = Tween<double>(
-      begin: widget.startX,
-      end: widget.targetX,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic));
+    _animX = Tween<double>(begin: widget.startX, end: widget.targetX).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic),
+    );
 
     // Upward curved arc into the top-right coin capsule
     _animY = Tween<double>(
@@ -628,8 +654,14 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInQuad));
 
     _animScale = TweenSequence([
-      TweenSequenceItem(tween: Tween<double>(begin: 0.2, end: 1.35), weight: 35),
-      TweenSequenceItem(tween: Tween<double>(begin: 1.35, end: 0.8), weight: 65),
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 0.2, end: 1.35),
+        weight: 35,
+      ),
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 1.35, end: 0.8),
+        weight: 65,
+      ),
     ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
     _animOpacity = TweenSequence([

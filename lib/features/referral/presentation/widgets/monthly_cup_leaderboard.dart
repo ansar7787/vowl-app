@@ -15,6 +15,7 @@ class MonthlyCupLeaderboard extends StatefulWidget {
   final List<AmbassadorLeaderboardItem> items;
   final bool isLoading;
   final String? currentUserId;
+  final String? currentUserPhotoUrl;
   final int myMonthlyReferrals;
   final VoidCallback? onClaimPastMonth;
   final bool isClaimingPastMonth;
@@ -26,6 +27,7 @@ class MonthlyCupLeaderboard extends StatefulWidget {
     required this.items,
     this.isLoading = false,
     this.currentUserId,
+    this.currentUserPhotoUrl,
     this.myMonthlyReferrals = 0,
     this.onClaimPastMonth,
     this.isClaimingPastMonth = false,
@@ -45,7 +47,10 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
   void initState() {
     super.initState();
     _calculateTimeUntilReset();
-    _timer = Timer.periodic(const Duration(minutes: 1), (_) => _calculateTimeUntilReset());
+    _timer = Timer.periodic(
+      const Duration(minutes: 1),
+      (_) => _calculateTimeUntilReset(),
+    );
   }
 
   @override
@@ -68,7 +73,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
   static String _rankPrizeText(int rank) {
     if (rank == 1) return '1 Mo VIP';
     if (rank == 2) return '1 Wk VIP';
-    if (rank == 3) return '500🪙 + 3d VIP';
+    if (rank == 3) return '500 Coins + 3d VIP';
     if (rank <= 10) return '200 Coins';
     return 'Badge';
   }
@@ -77,17 +82,21 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
-    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
-    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+    final textPrimary = isDark
+        ? Colors.white
+        : (tokens?.textPrimary ?? const Color(0xFF0F172A));
+    final textSecondary = isDark
+        ? AppColors.slate400
+        : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
     final hours = _timeUntilReset.inHours;
     final days = _timeUntilReset.inDays;
@@ -104,10 +113,14 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
     final thirdPlace = displayItems.length > 2 ? displayItems[2] : null;
 
     // Remaining 4-50 ranks
-    final remainingItems = displayItems.length > 3 ? displayItems.sublist(3) : <AmbassadorLeaderboardItem>[];
+    final remainingItems = displayItems.length > 3
+        ? displayItems.sublist(3)
+        : <AmbassadorLeaderboardItem>[];
 
     // Current user rank
-    final myItemIndex = displayItems.indexWhere((e) => e.userId == widget.currentUserId);
+    final myItemIndex = displayItems.indexWhere(
+      (e) => e.userId == widget.currentUserId,
+    );
     final myRank = myItemIndex != -1 ? displayItems[myItemIndex].rank : null;
 
     return Column(
@@ -120,7 +133,11 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             Expanded(
               child: Row(
                 children: [
-                  Icon(LucideIcons.trophy, size: 20.sp, color: const Color(0xFFF59E0B)),
+                  Icon(
+                    LucideIcons.trophy,
+                    size: 20.sp,
+                    color: const Color(0xFFF59E0B),
+                  ),
                   SizedBox(width: 8.w),
                   Flexible(
                     child: FittedBox(
@@ -216,9 +233,14 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.centerRight,
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 9.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+                        color: isDark
+                            ? const Color(0xFF1E293B)
+                            : const Color(0xFFF1F5F9),
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(color: borderColor),
                       ),
@@ -254,7 +276,11 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                               ),
                             ),
                           ),
-                          Icon(LucideIcons.clock, size: 10.5.sp, color: textSecondary),
+                          Icon(
+                            LucideIcons.clock,
+                            size: 10.5.sp,
+                            color: textSecondary,
+                          ),
                           SizedBox(width: 3.w),
                           Text(
                             remainingText,
@@ -337,7 +363,8 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
         ),
 
         // Unclaimed Past Month Reward Trigger
-        if (widget.hasUnclaimedPastMonth && widget.onClaimPastMonth != null) ...[
+        if (widget.hasUnclaimedPastMonth &&
+            widget.onClaimPastMonth != null) ...[
           SizedBox(height: 12.h),
           Container(
             padding: EdgeInsets.all(12.w),
@@ -372,18 +399,31 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: widget.isClaimingPastMonth ? null : widget.onClaimPastMonth,
+                  onPressed: widget.isClaimingPastMonth
+                      ? null
+                      : widget.onClaimPastMonth,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: const Color(0xFFD97706),
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 8.h,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
                   ),
                   child: widget.isClaimingPastMonth
-                      ? const VowlMicroLoader(size: 14, color: Color(0xFFD97706))
+                      ? const VowlMicroLoader(
+                          size: 14,
+                          color: Color(0xFFD97706),
+                        )
                       : Text(
                           'Claim',
-                          style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w800),
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                 ),
               ],
@@ -399,11 +439,19 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             child: Center(
               child: Column(
                 children: [
-                  Icon(LucideIcons.sparkles, size: 24.sp, color: const Color(0xFFF59E0B)),
+                  Icon(
+                    LucideIcons.sparkles,
+                    size: 24.sp,
+                    color: const Color(0xFFF59E0B),
+                  ),
                   SizedBox(height: 8.h),
                   Text(
                     'Loading Monthly Cup Leaderboard...',
-                    style: TextStyle(fontSize: 12.sp, color: textSecondary, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: textSecondary,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ],
               ),
@@ -419,7 +467,11 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             ),
             child: Column(
               children: [
-                Icon(LucideIcons.trophy, size: 28.sp, color: AppColors.amber500),
+                Icon(
+                  LucideIcons.trophy,
+                  size: 28.sp,
+                  color: AppColors.amber500,
+                ),
                 SizedBox(height: 8.h),
                 Text(
                   'Be the First Ambassador This Month',
@@ -497,8 +549,8 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             child: Row(
               children: [
                 Container(
-                  width: 32.w,
-                  height: 32.w,
+                  width: 32.r,
+                  height: 32.r,
                   decoration: BoxDecoration(
                     color: AppColors.indigo500.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
@@ -511,6 +563,15 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                       fontWeight: FontWeight.w900,
                       color: AppColors.indigo500,
                     ),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                UserAvatar(
+                  photoUrl: widget.currentUserPhotoUrl,
+                  size: 34.r,
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.3),
+                    width: 1.5,
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -552,7 +613,9 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: Text(
-                    widget.myMonthlyReferrals >= 1 ? 'QUALIFIED' : '0 / 1 INVITED',
+                    widget.myMonthlyReferrals >= 1
+                        ? 'QUALIFIED'
+                        : '0 / 1 INVITED',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 9.sp,
@@ -668,9 +731,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
       decoration: BoxDecoration(
         color: AppColors.indigo500.withValues(alpha: isDark ? 0.10 : 0.06),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: AppColors.indigo500.withValues(alpha: 0.20),
-        ),
+        border: Border.all(color: AppColors.indigo500.withValues(alpha: 0.20)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -866,6 +927,9 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
     final hasReferrals = item.referralCount >= 1;
     final colors = _rankColors(rank);
     final avatarSize = isCenter ? 54.r : 44.r;
+    final avatarUrl = isMe
+        ? (widget.currentUserPhotoUrl ?? item.photoUrl)
+        : item.photoUrl;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -893,7 +957,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
               ),
               padding: EdgeInsets.all(isCenter ? 3.r : 2.5.r),
               child: UserAvatar(
-                photoUrl: item.photoUrl,
+                photoUrl: avatarUrl,
                 size: avatarSize - (isCenter ? 6.r : 5.r),
               ),
             ),
@@ -902,10 +966,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
             Positioned(
               bottom: -5.h,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 8.w,
-                  vertical: 2.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: colors),
                   borderRadius: BorderRadius.circular(10.r),
@@ -939,10 +1000,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                 top: -2.h,
                 right: -4.w,
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 6.w,
-                    vertical: 2.h,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: colors),
                     borderRadius: BorderRadius.circular(8.r),
@@ -1013,20 +1071,23 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
 
                   // Small pill card: lock icon with 0 ref, unlock icon with >0 ref
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.5.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 7.w,
+                      vertical: 2.5.h,
+                    ),
                     decoration: BoxDecoration(
                       color: hasReferrals
                           ? colors[0].withValues(alpha: isDark ? 0.22 : 0.14)
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.06)
-                              : AppColors.slate200.withValues(alpha: 0.6)),
+                                ? Colors.white.withValues(alpha: 0.06)
+                                : AppColors.slate200.withValues(alpha: 0.6)),
                       borderRadius: BorderRadius.circular(10.r),
                       border: Border.all(
                         color: hasReferrals
                             ? colors[0].withValues(alpha: 0.35)
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : AppColors.slate300.withValues(alpha: 0.5)),
+                                  ? Colors.white.withValues(alpha: 0.1)
+                                  : AppColors.slate300.withValues(alpha: 0.5)),
                         width: 0.8,
                       ),
                     ),
@@ -1069,10 +1130,16 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
     required Color accentColor,
     required bool isDark,
   }) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final columnBg = isMidnight
+        ? const Color(0xFF0F1523)
+        : (isDark ? const Color(0xFF1A2338) : const Color(0xFFF8FAFC));
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+        color: columnBg,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
           color: accentColor.withValues(alpha: 0.25),
@@ -1168,10 +1235,10 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10
-            ? AppColors.blue500
-            : rank <= 25
-                ? const Color(0xFF06B6D4)
-                : (isDark ? AppColors.slate400 : AppColors.slate600);
+        ? AppColors.blue500
+        : rank <= 25
+        ? const Color(0xFF06B6D4)
+        : (isDark ? AppColors.slate400 : AppColors.slate600);
 
     return Container(
       margin: EdgeInsets.only(bottom: 8.h),
@@ -1182,8 +1249,8 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
         border: Border.all(
           color: isMe
               ? (isDark
-                  ? AppColors.blue500.withValues(alpha: 0.6)
-                  : AppColors.indigo500.withValues(alpha: 0.5))
+                    ? AppColors.blue500.withValues(alpha: 0.6)
+                    : AppColors.indigo500.withValues(alpha: 0.5))
               : borderColor,
           width: 1.0,
         ),
@@ -1208,7 +1275,9 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
 
           // Avatar with subtle tier border
           UserAvatar(
-            photoUrl: item.photoUrl,
+            photoUrl: isMe
+                ? (widget.currentUserPhotoUrl ?? item.photoUrl)
+                : item.photoUrl,
             size: 34.r,
             border: Border.all(
               color: tierColor.withValues(alpha: 0.25),
@@ -1284,11 +1353,7 @@ class _MonthlyCupLeaderboardState extends State<MonthlyCupLeaderboard> {
                       ),
                     ] else ...[
                       // Clean lock icon when not qualified (NO "unqualified" text badge)
-                      Icon(
-                        LucideIcons.lock,
-                        size: 11.sp,
-                        color: textSecondary,
-                      ),
+                      Icon(LucideIcons.lock, size: 11.sp, color: textSecondary),
                       SizedBox(width: 4.w),
                       Text(
                         '0 Friends Joined',

@@ -32,10 +32,8 @@ class AppUpdateDialog extends StatelessWidget {
       context: context,
       barrierDismissible: !updateInfo.isForced,
       barrierColor: Colors.black.withValues(alpha: 0.65),
-      builder: (dialogContext) => AppUpdateDialog(
-        updateInfo: updateInfo,
-        updateService: updateService,
-      ),
+      builder: (dialogContext) =>
+          AppUpdateDialog(updateInfo: updateInfo, updateService: updateService),
     );
   }
 
@@ -47,14 +45,19 @@ class AppUpdateDialog extends StatelessWidget {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final service = updateService ?? di.sl<AppUpdateService>();
 
-    final cleanCurrent =
-        AppVersionHelper.cleanDisplayVersion(updateInfo.currentVersion);
-    final cleanLatest =
-        AppVersionHelper.cleanDisplayVersion(updateInfo.latestVersion);
+    final cleanCurrent = AppVersionHelper.cleanDisplayVersion(
+      updateInfo.currentVersion,
+    );
+    final cleanLatest = AppVersionHelper.cleanDisplayVersion(
+      updateInfo.latestVersion,
+    );
 
     final title = updateInfo.isForced
         ? context.tr('update.required_title', fallback: 'Update Required')
-        : context.tr('update.available_title', fallback: 'New Version Available!');
+        : context.tr(
+            'update.available_title',
+            fallback: 'New Version Available!',
+          );
 
     final subtitle = updateInfo.isForced
         ? context.tr(
@@ -64,7 +67,8 @@ class AppUpdateDialog extends StatelessWidget {
           )
         : context.tr(
             'update.available_subtitle',
-            fallback: 'Discover the latest quests, enhancements, and speed upgrades!',
+            fallback:
+                'Discover the latest quests, enhancements, and speed upgrades!',
           );
 
     final notes = updateInfo.releaseNotes.trim().isNotEmpty
@@ -90,11 +94,11 @@ class AppUpdateDialog extends StatelessWidget {
                 borderColor: updateInfo.isForced
                     ? AppColors.rose500.withValues(alpha: 0.45)
                     : (isDark
-                        ? AppColors.blue500.withValues(alpha: 0.4)
-                        : AppColors.indigo500.withValues(alpha: 0.3)),
+                          ? AppColors.blue500.withValues(alpha: 0.4)
+                          : AppColors.indigo500.withValues(alpha: 0.3)),
                 color: isMidnight
                     ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : Colors.white),
+                    : (isDark ? AppColors.midnightNavy : Colors.white),
                 borderWidth: 1.5,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -129,8 +133,8 @@ class AppUpdateDialog extends StatelessWidget {
                           color: updateInfo.isForced
                               ? AppColors.rose500
                               : (isDark
-                                  ? AppColors.blue300
-                                  : AppColors.indigo600),
+                                    ? AppColors.blue300
+                                    : AppColors.indigo600),
                           letterSpacing: 0.5,
                         ),
                       ),
@@ -292,7 +296,10 @@ class AppUpdateDialog extends StatelessWidget {
                           }
                         },
                         child: Text(
-                          context.tr('update.maybe_later', fallback: 'Maybe Later'),
+                          context.tr(
+                            'update.maybe_later',
+                            fallback: 'Maybe Later',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
@@ -335,8 +342,9 @@ class AppUpdateDialog extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: (updateInfo.isForced ? AppColors.rose500 : AppColors.indigo500)
-                .withValues(alpha: 0.35),
+            color:
+                (updateInfo.isForced ? AppColors.rose500 : AppColors.indigo500)
+                    .withValues(alpha: 0.35),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -362,4 +370,3 @@ class AppUpdateDialog extends StatelessWidget {
         .moveY(begin: -2, end: 2, duration: 1600.ms, curve: Curves.easeInOut);
   }
 }
-

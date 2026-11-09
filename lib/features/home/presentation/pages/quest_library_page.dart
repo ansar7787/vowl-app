@@ -18,7 +18,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
-
 /// Comprehensive curriculum library page for exploring, filtering, and launching all games.
 class QuestLibraryPage extends StatefulWidget {
   /// Creates a [QuestLibraryPage].
@@ -449,16 +448,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final totalLevels = _allSubtypes.length * 200;
     final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
 
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Semantics(
       label: context.tr(
@@ -713,8 +710,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   Widget _buildSearchField(bool isDark, Color contentColor) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final fieldFill = isMidnight
         ? const Color(0xFF070B14)
         : (isDark ? AppColors.slate800 : Colors.white);
@@ -768,17 +765,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             fillColor: fieldFill,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
-              borderSide: BorderSide(
-                color: fieldBorder,
-                width: 1.0,
-              ),
+              borderSide: BorderSide(color: fieldBorder, width: 1.0),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
-              borderSide: BorderSide(
-                color: fieldBorder,
-                width: 1.0,
-              ),
+              borderSide: BorderSide(color: fieldBorder, width: 1.0),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
@@ -1033,16 +1024,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && completedCount == 0;
     final contentColor = Theme.of(context).colorScheme.onSurface;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Semantics(
       button: true,
@@ -1239,16 +1228,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final completedPercent = totalLevels > 0
         ? (completedCount / totalLevels * 100).toInt()
         : 0;
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Semantics(
       button: true,

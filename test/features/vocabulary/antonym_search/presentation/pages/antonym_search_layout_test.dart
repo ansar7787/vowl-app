@@ -200,12 +200,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -233,7 +235,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/antonym_test.m4a');
@@ -368,7 +372,9 @@ void main() {
       expect(find.text('BELLIGERENT'), findsOneWidget);
     });
 
-    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (tester) async {
+    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 3);
       verify(
         () => mockVocabularyBloc.add(
@@ -407,15 +413,18 @@ void main() {
       verify(() => mockHapticService.light()).called(1);
     });
 
-    testWidgets('2.2 tapping core without selecting any shard is a safe no-op', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      final core = find.byType(AntonymNebulaCore);
-      await tester.tap(core);
-      await tester.pump(const Duration(milliseconds: 350));
-      verifyNever(() => mockVocabularyBloc.add(any(that: isA<SubmitAnswer>())));
-    });
+    testWidgets(
+      '2.2 tapping core without selecting any shard is a safe no-op',
+      (tester) async {
+        await pumpScreen(tester);
+        final core = find.byType(AntonymNebulaCore);
+        await tester.tap(core);
+        await tester.pump(const Duration(milliseconds: 350));
+        verifyNever(
+          () => mockVocabularyBloc.add(any(that: isA<SubmitAnswer>())),
+        );
+      },
+    );
 
     testWidgets(
       '2.3 selecting correct shard and tapping core fuses shard and advances to Phase 2',
@@ -456,7 +465,9 @@ void main() {
         await tester.pump(const Duration(milliseconds: 350));
 
         // Verifies wrong answer dispatched
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
         verify(() => mockHapticService.error()).called(1);
       },
@@ -532,7 +543,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 350));
       await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockHapticService.selection(),
+      ).called(greaterThanOrEqualTo(1));
       expect(find.byType(AntonymGradientScale), findsOneWidget);
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
     });
@@ -573,7 +586,9 @@ void main() {
         await gesture.up();
         await tester.pump(const Duration(milliseconds: 100));
 
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
         verify(() => mockHapticService.error()).called(1);
       },
@@ -613,13 +628,14 @@ void main() {
       );
     });
 
-    testWidgets('4.3 renders SpeakToConfirmOverlay with formatted displayText', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('TRANSPARENT   ↔   OPAQUE'), findsOneWidget);
-    });
+    testWidgets(
+      '4.3 renders SpeakToConfirmOverlay with formatted displayText',
+      (tester) async {
+        await advanceToPhase2(tester);
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.text('TRANSPARENT   ↔   OPAQUE'), findsOneWidget);
+      },
+    );
 
     testWidgets(
       '4.4 SpeakToConfirmOverlay is padded with horizontal margins preventing edge touching',
@@ -664,7 +680,9 @@ void main() {
         overlay.onConfirmed();
         await tester.pump(const Duration(milliseconds: 100));
 
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
@@ -681,7 +699,9 @@ void main() {
         overlay.onSkipped();
         await tester.pump(const Duration(milliseconds: 100));
 
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(false))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
         verify(() => mockHapticService.error()).called(1);
       },
@@ -712,10 +732,12 @@ void main() {
 
       // Verify Phase 1 is locked out with IgnorePointer
       final ignorePointer = tester.widget<IgnorePointer>(
-        find.descendant(
-          of: find.byType(AntonymSearchScreen),
-          matching: find.byType(IgnorePointer),
-        ).first,
+        find
+            .descendant(
+              of: find.byType(AntonymSearchScreen),
+              matching: find.byType(IgnorePointer),
+            )
+            .first,
       );
       expect(ignorePointer.ignoring, isTrue);
     });
@@ -748,26 +770,27 @@ void main() {
   });
 
   group('7. Progression, State Transitions & Cleanup', () {
-    testWidgets('7.1 answered state mounts GameFeedbackCard with CONTINUE button', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      await tester.tap(find.text('OPAQUE'));
-      await tester.pump(const Duration(milliseconds: 50));
-      await tester.tap(find.byType(AntonymNebulaCore));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '7.1 answered state mounts GameFeedbackCard with CONTINUE button',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.text('OPAQUE'));
+        await tester.pump(const Duration(milliseconds: 50));
+        await tester.tap(find.byType(AntonymNebulaCore));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byType(SpeakToConfirmOverlay),
-      );
-      overlay.onConfirmed();
-      await tester.pump(const Duration(milliseconds: 100));
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byType(SpeakToConfirmOverlay),
+        );
+        overlay.onConfirmed();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('CONTINUE'), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('CONTINUE'), findsOneWidget);
+      },
+    );
 
     testWidgets('7.2 tapping CONTINUE dispatches NextQuestion', (tester) async {
       await pumpScreen(tester);
@@ -790,16 +813,19 @@ void main() {
       verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
     });
 
-    testWidgets('7.3 tapping header hint button dispatches VocabularyHintUsed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
-      await tester.tap(hintButton);
-      await tester.pump(const Duration(milliseconds: 100));
-      verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(greaterThanOrEqualTo(1));
-    });
+    testWidgets(
+      '7.3 tapping header hint button dispatches VocabularyHintUsed',
+      (tester) async {
+        await pumpScreen(tester);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
+        await tester.tap(hintButton);
+        await tester.pump(const Duration(milliseconds: 100));
+        verify(
+          () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
     testWidgets(
       '7.4 transitioning to second quest resets state and displays second word',
@@ -820,26 +846,27 @@ void main() {
       },
     );
 
-    testWidgets('7.5 VocabularyGameComplete state triggers LEVEL COMPLETE dialog', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '7.5 VocabularyGameComplete state triggers LEVEL COMPLETE dialog',
+      (tester) async {
+        await pumpScreen(tester);
 
-      vocabularyStreamController.add(
-        const VocabularyGameComplete(
-          xpEarned: 50,
-          coinsEarned: 15,
-          questCount: 2,
-        ),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        vocabularyStreamController.add(
+          const VocabularyGameComplete(
+            xpEarned: 50,
+            coinsEarned: 15,
+            questCount: 2,
+          ),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      // Dismiss dialog to ensure all internal periodic timers are canceled
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        // Dismiss dialog to ensure all internal periodic timers are canceled
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
 
     testWidgets('7.6 renders GameShimmerLoading when quests are loading/null', (
       tester,

@@ -136,12 +136,14 @@ void main() {
     mockAdService = MockAdService();
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockReadingBloc.state).thenReturn(testLoadedState);
-    when(() => mockReadingBloc.stream)
-        .thenAnswer((_) => const Stream<ReadingState>.empty());
+    when(
+      () => mockReadingBloc.stream,
+    ).thenAnswer((_) => const Stream<ReadingState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -153,8 +155,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(
       () => mockLocaleService.tr(
@@ -201,8 +204,12 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
     when(
       () => mockLogger.error(
         any(),
@@ -211,7 +218,9 @@ void main() {
         tag: any(named: 'tag'),
       ),
     ).thenReturn(null);
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     di.sl.reset();
     di.sl.registerSingleton<HapticService>(mockHapticService);
@@ -261,9 +270,7 @@ void main() {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
-            home: Scaffold(
-              body: ReadingConclusionScreen(level: level),
-            ),
+            home: Scaffold(body: ReadingConclusionScreen(level: level)),
           ),
         ),
       ),
@@ -274,152 +281,159 @@ void main() {
 
   group('ReadingConclusionScreen - Production Layout & Mechanics Tests', () {
     testWidgets(
-        '1. Initial rendering of instruction, passage, and options without logic chain',
-        (tester) async {
-      await pumpReadingConclusion(tester);
+      '1. Initial rendering of instruction, passage, and options without logic chain',
+      (tester) async {
+        await pumpReadingConclusion(tester);
 
-      // Verify instruction
-      expect(find.byType(ReadingConclusionInstruction), findsOneWidget);
-      expect(
-        find.textContaining('select the correct conclusion'),
-        findsOneWidget,
-      );
+        // Verify instruction
+        expect(find.byType(ReadingConclusionInstruction), findsOneWidget);
+        expect(
+          find.textContaining('select the correct conclusion'),
+          findsOneWidget,
+        );
 
-      // Verify passage container
-      expect(find.byType(ReadingConclusionPassage), findsOneWidget);
-      expect(
-        find.textContaining('Maya left her bicycle outside overnight'),
-        findsOneWidget,
-      );
+        // Verify passage container
+        expect(find.byType(ReadingConclusionPassage), findsOneWidget);
+        expect(
+          find.textContaining('Maya left her bicycle outside overnight'),
+          findsOneWidget,
+        );
 
-      // Verify options rack
-      expect(find.byType(ReadingConclusionOptions), findsOneWidget);
-      expect(find.text('It rained during the night.'), findsOneWidget);
-      expect(
-        find.text('Maya washed her bicycle before going to bed.'),
-        findsOneWidget,
-      );
-      expect(
-        find.text('The bicycle was stored inside a garage.'),
-        findsOneWidget,
-      );
-      expect(
-        find.text('Someone poured water on the bicycle on purpose.'),
-        findsOneWidget,
-      );
+        // Verify options rack
+        expect(find.byType(ReadingConclusionOptions), findsOneWidget);
+        expect(find.text('It rained during the night.'), findsOneWidget);
+        expect(
+          find.text('Maya washed her bicycle before going to bed.'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('The bicycle was stored inside a garage.'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Someone poured water on the bicycle on purpose.'),
+          findsOneWidget,
+        );
 
-      // Logic chain should NOT be visible when unanswered
-      expect(find.byType(ReadingConclusionLogicChain), findsNothing);
-      expect(find.text('LOGICAL DEDUCTION'), findsNothing);
-    });
-
-    testWidgets(
-        '2. Selecting correct option dispatches SubmitAnswer(true), plays success SFX, and reveals Logic Chain',
-        (tester) async {
-      await pumpReadingConclusion(tester);
-
-      final correctOptionFinder = find.text('It rained during the night.');
-      expect(correctOptionFinder, findsOneWidget);
-
-      await tester.ensureVisible(correctOptionFinder);
-      await tester.pumpAndSettle();
-
-      await tester.tap(correctOptionFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Verify haptic & sound
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
-
-      // Verify logic chain is now revealed
-      expect(find.byType(ReadingConclusionLogicChain), findsOneWidget);
-      expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
-      expect(find.text('Bike left outside overnight'), findsOneWidget);
-      expect(find.text('water found on bike'), findsOneWidget);
-      expect(find.text('no one touched it'), findsOneWidget);
-      expect(find.text('rain fell overnight'), findsOneWidget);
-    });
+        // Logic chain should NOT be visible when unanswered
+        expect(find.byType(ReadingConclusionLogicChain), findsNothing);
+        expect(find.text('LOGICAL DEDUCTION'), findsNothing);
+      },
+    );
 
     testWidgets(
-        '3. Selecting incorrect option dispatches SubmitAnswer(false), plays wrong SFX, and reveals Logic Chain',
-        (tester) async {
-      await pumpReadingConclusion(tester);
+      '2. Selecting correct option dispatches SubmitAnswer(true), plays success SFX, and reveals Logic Chain',
+      (tester) async {
+        await pumpReadingConclusion(tester);
 
-      final wrongOptionFinder = find.text(
-        'Maya washed her bicycle before going to bed.',
-      );
-      expect(wrongOptionFinder, findsOneWidget);
+        final correctOptionFinder = find.text('It rained during the night.');
+        expect(correctOptionFinder, findsOneWidget);
 
-      await tester.ensureVisible(wrongOptionFinder);
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(correctOptionFinder);
+        await tester.pumpAndSettle();
 
-      await tester.tap(wrongOptionFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(correctOptionFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Verify error feedback
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+        // Verify haptic & sound
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
 
-      // Verify logic chain is revealed even on incorrect answers to help player learn
-      expect(find.byType(ReadingConclusionLogicChain), findsOneWidget);
-      expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
-      expect(find.text('rain fell overnight'), findsOneWidget);
-    });
-
-    testWidgets(
-        '4. Lockout: Tapping options after answer submitted ignores further taps',
-        (tester) async {
-      await pumpReadingConclusion(tester);
-
-      final correctOptionFinder = find.text('It rained during the night.');
-      await tester.ensureVisible(correctOptionFinder);
-      await tester.pumpAndSettle();
-      await tester.tap(correctOptionFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Reset invocations count on bloc
-      clearInteractions(mockReadingBloc);
-
-      // Tap another option
-      final anotherOption = find.text('The bicycle was stored inside a garage.');
-      await tester.tap(anotherOption, warnIfMissed: false);
-      await tester.pump();
-
-      // Verify no further submissions
-      verifyNever(() => mockReadingBloc.add(any()));
-    });
+        // Verify logic chain is now revealed
+        expect(find.byType(ReadingConclusionLogicChain), findsOneWidget);
+        expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
+        expect(find.text('Bike left outside overnight'), findsOneWidget);
+        expect(find.text('water found on bike'), findsOneWidget);
+        expect(find.text('no one touched it'), findsOneWidget);
+        expect(find.text('rain fell overnight'), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        '5. Post-answer state shows continue button which dispatches NextQuestion',
-        (tester) async {
-      const answeredState = ReadingLoaded(
-        quests: [testConclusionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
+      '3. Selecting incorrect option dispatches SubmitAnswer(false), plays wrong SFX, and reveals Logic Chain',
+      (tester) async {
+        await pumpReadingConclusion(tester);
 
-      await pumpReadingConclusion(tester, state: answeredState);
+        final wrongOptionFinder = find.text(
+          'Maya washed her bicycle before going to bed.',
+        );
+        expect(wrongOptionFinder, findsOneWidget);
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        await tester.ensureVisible(wrongOptionFinder);
+        await tester.pumpAndSettle();
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(wrongOptionFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
-    });
+        // Verify error feedback
+        verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockReadingBloc.add(const SubmitAnswer(false))).called(1);
+
+        // Verify logic chain is revealed even on incorrect answers to help player learn
+        expect(find.byType(ReadingConclusionLogicChain), findsOneWidget);
+        expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
+        expect(find.text('rain fell overnight'), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        '6. Tapping hint button in header dispatches ReadingHintUsed',
-        (tester) async {
+      '4. Lockout: Tapping options after answer submitted ignores further taps',
+      (tester) async {
+        await pumpReadingConclusion(tester);
+
+        final correctOptionFinder = find.text('It rained during the night.');
+        await tester.ensureVisible(correctOptionFinder);
+        await tester.pumpAndSettle();
+        await tester.tap(correctOptionFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Reset invocations count on bloc
+        clearInteractions(mockReadingBloc);
+
+        // Tap another option
+        final anotherOption = find.text(
+          'The bicycle was stored inside a garage.',
+        );
+        await tester.tap(anotherOption, warnIfMissed: false);
+        await tester.pump();
+
+        // Verify no further submissions
+        verifyNever(() => mockReadingBloc.add(any()));
+      },
+    );
+
+    testWidgets(
+      '5. Post-answer state shows continue button which dispatches NextQuestion',
+      (tester) async {
+        const answeredState = ReadingLoaded(
+          quests: [testConclusionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
+
+        await pumpReadingConclusion(tester, state: answeredState);
+
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
+
+        await tester.tap(continueBtn);
+        await tester.pump();
+
+        verify(() => mockReadingBloc.add(const NextQuestion())).called(1);
+      },
+    );
+
+    testWidgets('6. Tapping hint button in header dispatches ReadingHintUsed', (
+      tester,
+    ) async {
       await pumpReadingConclusion(tester);
 
       final hintFinder = find.byType(QuestHintButton);
@@ -431,9 +445,9 @@ void main() {
       verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
-    testWidgets(
-        '7. ReadingInitial state renders GameShimmerLoading',
-        (tester) async {
+    testWidgets('7. ReadingInitial state renders GameShimmerLoading', (
+      tester,
+    ) async {
       await pumpReadingConclusion(tester, state: const ReadingInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
@@ -441,25 +455,26 @@ void main() {
     });
 
     testWidgets(
-        '8. Level 1 displays GameBriefingLayer and dismisses on start tap',
-        (tester) async {
-      await pumpReadingConclusion(tester, level: 1);
+      '8. Level 1 displays GameBriefingLayer and dismisses on start tap',
+      (tester) async {
+        await pumpReadingConclusion(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-      final startBtn = find.text('PREDICT FINAL');
-      expect(startBtn, findsOneWidget);
-      await tester.ensureVisible(startBtn);
-      await tester.pumpAndSettle();
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
+        final startBtn = find.text('PREDICT FINAL');
+        expect(startBtn, findsOneWidget);
+        await tester.ensureVisible(startBtn);
+        await tester.pumpAndSettle();
 
-      await tester.tap(startBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(startBtn);
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameBriefingLayer), findsNothing);
-    });
+        expect(find.byType(GameBriefingLayer), findsNothing);
+      },
+    );
 
-    testWidgets(
-        '9. Dark theme mode renders cleanly without errors',
-        (tester) async {
+    testWidgets('9. Dark theme mode renders cleanly without errors', (
+      tester,
+    ) async {
       await pumpReadingConclusion(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(ReadingConclusionPassage), findsOneWidget);
@@ -471,81 +486,76 @@ void main() {
     });
 
     testWidgets(
-        '10. Compact 320dp small screen layout safety with zero overflow',
-        (tester) async {
-      await pumpReadingConclusion(
-        tester,
-        width: 320,
-        height: 568,
-      );
+      '10. Compact 320dp small screen layout safety with zero overflow',
+      (tester) async {
+        await pumpReadingConclusion(tester, width: 320, height: 568);
 
-      expect(find.byType(ReadingConclusionScreen), findsOneWidget);
-      expect(find.byType(ReadingConclusionPassage), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ReadingConclusionScreen), findsOneWidget);
+        expect(find.byType(ReadingConclusionPassage), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets(
-        '11. Empty logic chain edge case does not crash or render LogicChain widget',
-        (tester) async {
-      const stateWithNoChain = ReadingLoaded(
-        quests: [testNoChainQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-      );
+      '11. Empty logic chain edge case does not crash or render LogicChain widget',
+      (tester) async {
+        const stateWithNoChain = ReadingLoaded(
+          quests: [testNoChainQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
 
-      await pumpReadingConclusion(tester, state: stateWithNoChain);
+        await pumpReadingConclusion(tester, state: stateWithNoChain);
 
-      final optionA = find.text('Option A');
-      expect(optionA, findsOneWidget);
-      await tester.tap(optionA);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final optionA = find.text('Option A');
+        expect(optionA, findsOneWidget);
+        await tester.tap(optionA);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(ReadingConclusionLogicChain), findsNothing);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets(
-        '12. Multi-step logic chain parses into distinct numbered deduction nodes',
-        (tester) async {
-      const stateAnswered = ReadingLoaded(
-        quests: [testConclusionQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.correct,
-      );
-
-      await pumpReadingConclusion(
-        tester,
-        state: stateAnswered,
-        height: 1200,
-      );
-
-      final logicChainFinder = find.byType(ReadingConclusionLogicChain);
-      expect(logicChainFinder, findsOneWidget);
-      expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
-      expect(
-        find.descendant(of: logicChainFinder, matching: find.text('1')),
-        findsOneWidget,
-      );
-      expect(
-        find.descendant(of: logicChainFinder, matching: find.text('2')),
-        findsOneWidget,
-      );
-      expect(
-        find.descendant(of: logicChainFinder, matching: find.text('3')),
-        findsOneWidget,
-      );
-      expect(
-        find.descendant(of: logicChainFinder, matching: find.text('4')),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(ReadingConclusionLogicChain), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets(
-        '13. Instruction text has TextAlign.center and wraps cleanly',
-        (tester) async {
+      '12. Multi-step logic chain parses into distinct numbered deduction nodes',
+      (tester) async {
+        const stateAnswered = ReadingLoaded(
+          quests: [testConclusionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+        );
+
+        await pumpReadingConclusion(tester, state: stateAnswered, height: 1200);
+
+        final logicChainFinder = find.byType(ReadingConclusionLogicChain);
+        expect(logicChainFinder, findsOneWidget);
+        expect(find.text('LOGICAL DEDUCTION'), findsOneWidget);
+        expect(
+          find.descendant(of: logicChainFinder, matching: find.text('1')),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(of: logicChainFinder, matching: find.text('2')),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(of: logicChainFinder, matching: find.text('3')),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(of: logicChainFinder, matching: find.text('4')),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('13. Instruction text has TextAlign.center and wraps cleanly', (
+      tester,
+    ) async {
       const longInstructionQuest = ReadingQuest(
         id: 'RDG_READINGCONCLUSION_L1_Q_LONG',
         instruction:
@@ -579,26 +589,26 @@ void main() {
     });
 
     testWidgets(
-        '14. Option cards render clean letter indicators (A, B, C, D) without text truncation',
-        (tester) async {
-      await pumpReadingConclusion(tester);
+      '14. Option cards render clean letter indicators (A, B, C, D) without text truncation',
+      (tester) async {
+        await pumpReadingConclusion(tester);
 
-      expect(find.text('A'), findsOneWidget);
-      expect(find.text('B'), findsOneWidget);
-      expect(find.text('C'), findsOneWidget);
-      expect(find.text('D'), findsOneWidget);
+        expect(find.text('A'), findsOneWidget);
+        expect(find.text('B'), findsOneWidget);
+        expect(find.text('C'), findsOneWidget);
+        expect(find.text('D'), findsOneWidget);
 
-      // Verify no Text has ellipsis overflow in option cards
-      final optionTexts = tester.widgetList<Text>(
-        find.descendant(
-          of: find.byType(ReadingConclusionOptions),
-          matching: find.byType(Text),
-        ),
-      );
-      for (final text in optionTexts) {
-        expect(text.overflow, isNot(TextOverflow.ellipsis));
-      }
-    });
+        // Verify no Text has ellipsis overflow in option cards
+        final optionTexts = tester.widgetList<Text>(
+          find.descendant(
+            of: find.byType(ReadingConclusionOptions),
+            matching: find.byType(Text),
+          ),
+        );
+        for (final text in optionTexts) {
+          expect(text.overflow, isNot(TextOverflow.ellipsis));
+        }
+      },
+    );
   });
 }
-

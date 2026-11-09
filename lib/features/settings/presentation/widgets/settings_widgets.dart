@@ -33,10 +33,7 @@ class SettingsSectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final effectiveColor =
-        tintColor ??
-        (isDark
-            ? Colors.white70
-            : AppColors.slate700);
+        tintColor ?? (isDark ? Colors.white70 : AppColors.slate700);
     return Padding(
       padding: EdgeInsets.only(left: 4.w, bottom: 12.h),
       child: Row(
@@ -88,9 +85,7 @@ class SettingsGroup extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
@@ -380,9 +375,7 @@ class SettingsThemeMatrix extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     final platformBrightness = MediaQuery.platformBrightnessOf(context);
     final isPlatformDark = platformBrightness == Brightness.dark;
@@ -408,17 +401,20 @@ class SettingsThemeMatrix extends StatelessWidget {
             children: [
               Expanded(
                 child: _ThemeOptionCard(
-                  title: context.tr('settings.theme_system', fallback: 'System'),
+                  title: context.tr(
+                    'settings.theme_system',
+                    fallback: 'System',
+                  ),
                   subtitle: isSystemActive
                       ? (isPlatformDark
-                          ? context.tr(
-                              'settings.theme_auto_dark',
-                              fallback: 'Auto (Dark)',
-                            )
-                          : context.tr(
-                              'settings.theme_auto_light',
-                              fallback: 'Auto (Light)',
-                            ))
+                            ? context.tr(
+                                'settings.theme_auto_dark',
+                                fallback: 'Auto (Dark)',
+                              )
+                            : context.tr(
+                                'settings.theme_auto_light',
+                                fallback: 'Auto (Light)',
+                              ))
                       : context.tr(
                           'settings.theme_system_sub',
                           fallback: 'Match Device',
@@ -589,9 +585,7 @@ class _ThemeOptionCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return ScaleButton(
       onTap: onTap,
@@ -603,8 +597,8 @@ class _ThemeOptionCard extends StatelessWidget {
           color: isSelected
               ? AppColors.indigo500.withValues(alpha: isDark ? 0.20 : 0.10)
               : (isDark
-                  ? Colors.white.withValues(alpha: 0.04)
-                  : Colors.black.withValues(alpha: 0.03)),
+                    ? Colors.white.withValues(alpha: 0.04)
+                    : Colors.black.withValues(alpha: 0.03)),
           borderRadius: BorderRadius.circular(18.r),
           border: Border.all(
             color: isSelected ? AppColors.indigo500 : borderColor,
@@ -774,7 +768,10 @@ class SettingsLogoutButton extends StatelessWidget {
                 },
                 borderRadius: BorderRadius.circular(24.r),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 16.w),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 18.h,
+                    horizontal: 16.w,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

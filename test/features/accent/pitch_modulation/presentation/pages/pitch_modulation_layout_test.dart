@@ -168,8 +168,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -181,12 +182,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -223,7 +226,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_test.m4a');
@@ -233,15 +238,21 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
-    when(() => mockAdService.showRewardedAd(
-          context: any(named: 'context'),
-          isPremium: any(named: 'isPremium'),
-          onUserEarnedReward: any(named: 'onUserEarnedReward'),
-          onDismissed: any(named: 'onDismissed'),
-        )).thenAnswer((inv) async {
+    when(
+      () => mockAdService.showRewardedAd(
+        context: any(named: 'context'),
+        isPremium: any(named: 'isPremium'),
+        onUserEarnedReward: any(named: 'onUserEarnedReward'),
+        onDismissed: any(named: 'onDismissed'),
+      ),
+    ).thenAnswer((inv) async {
       final onReward = inv.namedArguments[#onUserEarnedReward] as dynamic;
       onReward?.call(RewardItem(1, 'coin'));
     });
@@ -327,10 +338,14 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
 
-    testWidgets('tapping pulse speaker triggers TTS and haptic feedback', (tester) async {
+    testWidgets('tapping pulse speaker triggers TTS and haptic feedback', (
+      tester,
+    ) async {
       await pumpPitchModulation(tester);
 
-      final speakerBtn = find.byKey(const ValueKey('pitch_modulation_speaker_btn'));
+      final speakerBtn = find.byKey(
+        const ValueKey('pitch_modulation_speaker_btn'),
+      );
       expect(speakerBtn, findsOneWidget);
 
       await tester.tap(speakerBtn);
@@ -340,19 +355,26 @@ void main() {
       verify(() => mockSoundService.playTts('Record')).called(1);
     });
 
-    testWidgets('tapping hint button dispatches AccentHintUsed without duplicates', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'tapping hint button dispatches AccentHintUsed without duplicates',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      final hintBtn = find.byType(QuestHintButton);
-      expect(hintBtn, findsOneWidget);
+        final hintBtn = find.byType(QuestHintButton);
+        expect(hintBtn, findsOneWidget);
 
-      await tester.tap(hintBtn);
-      await tester.pump();
+        await tester.tap(hintBtn);
+        await tester.pump();
 
-      verify(() => mockAccentBloc.add(any(that: isA<AccentHintUsed>()))).called(1);
-    });
+        verify(
+          () => mockAccentBloc.add(any(that: isA<AccentHintUsed>())),
+        ).called(1);
+      },
+    );
 
-    testWidgets('renders GameShimmerLoading when in AccentInitial state', (tester) async {
+    testWidgets('renders GameShimmerLoading when in AccentInitial state', (
+      tester,
+    ) async {
       await pumpPitchModulation(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
@@ -361,59 +383,68 @@ void main() {
   });
 
   group('PitchModulationScreen - Phase 1 Option & Dial Selection Flow', () {
-    testWidgets('tapping wrong option triggers error audio/haptics and submits wrong answer', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'tapping wrong option triggers error audio/haptics and submits wrong answer',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Option 1 ('re-CORD') is wrong (correct is index 0)
-      final wrongOption = find.byKey(const ValueKey('pitch_modulation_option_1'));
-      expect(wrongOption, findsOneWidget);
+        // Option 1 ('re-CORD') is wrong (correct is index 0)
+        final wrongOption = find.byKey(
+          const ValueKey('pitch_modulation_option_1'),
+        );
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
-      // Stage 2 remains unmounted
-      expect(find.byType(SpeakToConfirmOverlay), findsNothing);
-    });
+        // Stage 2 remains unmounted
+        expect(find.byType(SpeakToConfirmOverlay), findsNothing);
+      },
+    );
 
-    testWidgets('tapping correct option advances to Stage 2 without submitting answer yet', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'tapping correct option advances to Stage 2 without submitting answer yet',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Option 0 ('RE-cord') is correct
-      final correctOption = find.byKey(const ValueKey('pitch_modulation_option_0'));
-      expect(correctOption, findsOneWidget);
+        // Option 0 ('RE-cord') is correct
+        final correctOption = find.byKey(
+          const ValueKey('pitch_modulation_option_0'),
+        );
+        expect(correctOption, findsOneWidget);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
 
-      // Instruction changes to stage 2 prompt
-      expect(
-        find.text('Great job! Now speak the phrase to confirm.'),
-        findsOneWidget,
-      );
+        // Instruction changes to stage 2 prompt
+        expect(
+          find.text('Great job! Now speak the phrase to confirm.'),
+          findsOneWidget,
+        );
 
-      // Scroll down to bring SpeakToConfirmOverlay into viewport
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll down to bring SpeakToConfirmOverlay into viewport
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.text('NOW SAY IT'), findsOneWidget);
-    });
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.text('NOW SAY IT'), findsOneWidget);
+      },
+    );
 
-    testWidgets('dragging vertical fader selects option via drag threshold', (tester) async {
+    testWidgets('dragging vertical fader selects option via drag threshold', (
+      tester,
+    ) async {
       await pumpPitchModulation(tester);
 
       final fader = find.byKey(const ValueKey('pitch_modulation_fader'));
@@ -429,11 +460,15 @@ void main() {
       verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('interaction lockout prevents further taps once answered', (tester) async {
+    testWidgets('interaction lockout prevents further taps once answered', (
+      tester,
+    ) async {
       await pumpPitchModulation(tester);
 
       // Submit wrong answer
-      final wrongOption = find.byKey(const ValueKey('pitch_modulation_option_1'));
+      final wrongOption = find.byKey(
+        const ValueKey('pitch_modulation_option_1'),
+      );
       await tester.tap(wrongOption);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
@@ -441,7 +476,9 @@ void main() {
       verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
       // Further taps on correct option are ignored
-      final correctOption = find.byKey(const ValueKey('pitch_modulation_option_0'));
+      final correctOption = find.byKey(
+        const ValueKey('pitch_modulation_option_0'),
+      );
       await tester.tap(correctOption, warnIfMissed: false);
       await tester.pump();
 
@@ -450,156 +487,173 @@ void main() {
   });
 
   group('PitchModulationScreen - Phase 2 Speaking Practice', () {
-    testWidgets('completing speaking practice awards 10 coins and dispatches SubmitAnswer(true)', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'completing speaking practice awards 10 coins and dispatches SubmitAnswer(true)',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Advance stage 1
-      await tester.tap(find.byKey(const ValueKey('pitch_modulation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance stage 1
+        await tester.tap(
+          find.byKey(const ValueKey('pitch_modulation_option_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Scroll to SpeakToConfirmOverlay
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll to SpeakToConfirmOverlay
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
 
-      // Switch to manual evaluation controls
-      final manualEvalOption = find.text('Evaluate myself manually');
-      expect(manualEvalOption, findsOneWidget);
-      await tester.tap(manualEvalOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Switch to manual evaluation controls
+        final manualEvalOption = find.text('Evaluate myself manually');
+        expect(manualEvalOption, findsOneWidget);
+        await tester.tap(manualEvalOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Record and evaluate
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      expect(micBtn, findsOneWidget);
+        // Record and evaluate
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        expect(micBtn, findsOneWidget);
 
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Stop recording
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Stop recording
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Nailed It
-      final nailedItBtn = find.text('Nailed It');
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Tap Nailed It
+        final nailedItBtn = find.text('Nailed It');
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAccentBloc.add(const AccentSpeakConfirmed(10))).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(
+          () => mockAccentBloc.add(const AccentSpeakConfirmed(10)),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Advance stage 1
-      await tester.tap(find.byKey(const ValueKey('pitch_modulation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance stage 1
+        await tester.tap(
+          find.byKey(const ValueKey('pitch_modulation_option_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Scroll to SpeakToConfirmOverlay
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll to SpeakToConfirmOverlay
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // Switch to manual evaluation
-      await tester.tap(find.text('Evaluate myself manually'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Switch to manual evaluation
+        await tester.tap(find.text('Evaluate myself manually'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final needsWorkBtn = find.text('Needs Work');
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.ensureVisible(needsWorkBtn);
-      await tester.tap(needsWorkBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final needsWorkBtn = find.text('Needs Work');
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.ensureVisible(needsWorkBtn);
+        await tester.tap(needsWorkBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('tapping rewarded skip button bypasses speaking challenge and submits answer', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'tapping rewarded skip button bypasses speaking challenge and submits answer',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Advance stage 1
-      await tester.tap(find.byKey(const ValueKey('pitch_modulation_option_0')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance stage 1
+        await tester.tap(
+          find.byKey(const ValueKey('pitch_modulation_option_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Scroll to SpeakToConfirmOverlay
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Scroll to SpeakToConfirmOverlay
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final skipBtn = find.byType(GameSkipBypassButton);
-      expect(skipBtn, findsOneWidget);
+        final skipBtn = find.byType(GameSkipBypassButton);
+        expect(skipBtn, findsOneWidget);
 
-      await tester.tap(skipBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(skipBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAdService.showRewardedAd(
+        verify(
+          () => mockAdService.showRewardedAd(
             context: any(named: 'context'),
             isPremium: any(named: 'isPremium'),
             onUserEarnedReward: any(named: 'onUserEarnedReward'),
             onDismissed: any(named: 'onDismissed'),
-          )).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-    });
+          ),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (tester) async {
-      await pumpPitchModulation(tester);
+    testWidgets(
+      'tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpPitchModulation(tester);
 
-      // Submit wrong answer to become answered
-      final wrongOption = find.byKey(const ValueKey('pitch_modulation_option_1'));
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Submit wrong answer to become answered
+        final wrongOption = find.byKey(
+          const ValueKey('pitch_modulation_option_1'),
+        );
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final continueBtn = find.text('TRY AGAIN');
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('TRY AGAIN');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(continueBtn);
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
   });
 
   group('PitchModulationScreen - Briefing, Small Screens & Accessibility', () {
-    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (tester) async {
+    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_pitchModulation': false,
       });
@@ -621,33 +675,40 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
-    testWidgets('renders cleanly on small device (320x568) in dark theme without overflow', (tester) async {
-      await pumpPitchModulation(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
+    testWidgets(
+      'renders cleanly on small device (320x568) in dark theme without overflow',
+      (tester) async {
+        await pumpPitchModulation(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PitchModulationPromptCard), findsOneWidget);
-      expect(find.byType(PitchModulationDialControl), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PitchModulationPromptCard), findsOneWidget);
+        expect(find.byType(PitchModulationDialControl), findsOneWidget);
+      },
+    );
 
-    testWidgets('respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
+    testWidgets(
+      'respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
 
-      await pumpPitchModulation(tester);
+        await pumpPitchModulation(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PitchModulationScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PitchModulationScreen), findsOneWidget);
 
-      final speakerBtn = find.byKey(const ValueKey('pitch_modulation_speaker_btn'));
-      await tester.tap(speakerBtn);
-      await tester.pump();
+        final speakerBtn = find.byKey(
+          const ValueKey('pitch_modulation_speaker_btn'),
+        );
+        await tester.tap(speakerBtn);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts('Record')).called(1);
-    });
+        verify(() => mockSoundService.playTts('Record')).called(1);
+      },
+    );
   });
 }
-

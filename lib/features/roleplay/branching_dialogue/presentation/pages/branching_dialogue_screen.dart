@@ -303,156 +303,176 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 controller: _scrollController,
                                 physics:
                                     (!isFirstStagePassedNotifier.value &&
-                                            !isAnsweredNotifier.value)
-                                        ? const NeverScrollableScrollPhysics()
-                                        : const BouncingScrollPhysics(),
+                                        !isAnsweredNotifier.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
                                 slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: 24.h),
                                   ),
-                                  child: Column(
-                                    children: [
-                                      BranchingDialogueInstruction(
-                                        key: const Key(
-                                          'branching_dialogue_instruction',
-                                        ),
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                  SliverToBoxAdapter(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
                                       ),
-                                      SizedBox(height: 12.h),
-                                      if (isAnsweredNotifier.value &&
-                                          _selectedIndex.value != null &&
-                                          quest.consequenceScores != null &&
-                                          _selectedIndex.value! <
-                                              quest.consequenceScores!.length)
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                            bottom: 12.h,
-                                          ),
-                                          child: BranchingDialogueRelationshipMeter(
+                                      child: Column(
+                                        children: [
+                                          BranchingDialogueInstruction(
                                             key: const Key(
-                                              'branching_dialogue_relationship_meter',
+                                              'branching_dialogue_instruction',
                                             ),
-                                            consequenceScore:
-                                                quest
-                                                    .consequenceScores![_selectedIndex
-                                                    .value!],
                                             primaryColor: theme.primaryColor,
                                             isDark: isDark,
+                                            instruction:
+                                                InstructionHelper.getInstruction(
+                                                  quest,
+                                                ),
                                           ),
-                                        ),
-                                      BranchingDialoguePersonaConsole(
-                                        key: const Key(
-                                          'branching_dialogue_persona_console',
-                                        ),
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onListen: () => _triggerAutoPlay(quest),
+                                          SizedBox(height: 12.h),
+                                          if (isAnsweredNotifier.value &&
+                                              _selectedIndex.value != null &&
+                                              quest.consequenceScores != null &&
+                                              _selectedIndex.value! <
+                                                  quest
+                                                      .consequenceScores!
+                                                      .length)
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                bottom: 12.h,
+                                              ),
+                                              child: BranchingDialogueRelationshipMeter(
+                                                key: const Key(
+                                                  'branching_dialogue_relationship_meter',
+                                                ),
+                                                consequenceScore:
+                                                    quest
+                                                        .consequenceScores![_selectedIndex
+                                                        .value!],
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isDark: isDark,
+                                              ),
+                                            ),
+                                          BranchingDialoguePersonaConsole(
+                                            key: const Key(
+                                              'branching_dialogue_persona_console',
+                                            ),
+                                            quest: quest,
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            onListen: () =>
+                                                _triggerAutoPlay(quest),
+                                          ),
+                                          SizedBox(height: 16.h),
+                                        ],
                                       ),
-                                      SizedBox(height: 16.h),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height: boardHeight,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
                                     ),
-                                    child: ListenableBuilder(
-                                      listenable: Listenable.merge([
-                                        _probeOffset,
-                                        _hoveredIndex,
-                                      ]),
-                                      builder: (context, _) {
-                                        return BranchingDialogueConsoleBoard(
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: boardHeight,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        child: ListenableBuilder(
+                                          listenable: Listenable.merge([
+                                            _probeOffset,
+                                            _hoveredIndex,
+                                          ]),
+                                          builder: (context, _) {
+                                            return BranchingDialogueConsoleBoard(
+                                              key: const Key(
+                                                'branching_dialogue_console_board',
+                                              ),
+                                              options: options,
+                                              consequencePreviews:
+                                                  quest.consequencePreviews ??
+                                                  [],
+                                              correctIndex:
+                                                  quest.correctAnswerIndex ?? 0,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              probeOffset: _probeOffset.value,
+                                              hoveredIndex: _hoveredIndex.value,
+                                              selectedIndex:
+                                                  _selectedIndex.value,
+                                              isAnswered:
+                                                  isAnsweredNotifier.value ||
+                                                  isFirstStagePassedNotifier
+                                                      .value,
+                                              onProbeDragStart:
+                                                  _onProbeDragStart,
+                                              onProbeDragUpdate:
+                                                  _onProbeDragUpdate,
+                                              onProbeDragEnd: (idx) =>
+                                                  _onProbeDragEnd(idx, quest),
+                                              onOptionTapped: (index) =>
+                                                  _submitChoice(
+                                                    index,
+                                                    quest.correctAnswerIndex ??
+                                                        0,
+                                                    quest,
+                                                  ),
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  if (isFirstStagePassedNotifier.value &&
+                                      !isAnsweredNotifier.value &&
+                                      _selectedIndex.value != null)
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 16.h,
+                                        ),
+                                        child: SpeakToConfirmOverlay(
                                           key: const Key(
-                                            'branching_dialogue_console_board',
+                                            'branching_dialogue_speak_overlay',
                                           ),
-                                          options: options,
-                                          consequencePreviews:
-                                              quest.consequencePreviews ?? [],
-                                          correctIndex:
-                                              quest.correctAnswerIndex ?? 0,
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          probeOffset: _probeOffset.value,
-                                          hoveredIndex: _hoveredIndex.value,
-                                          selectedIndex: _selectedIndex.value,
-                                          isAnswered:
-                                              isAnsweredNotifier.value ||
-                                              isFirstStagePassedNotifier.value,
-                                          onProbeDragStart: _onProbeDragStart,
-                                          onProbeDragUpdate: _onProbeDragUpdate,
-                                          onProbeDragEnd: (idx) =>
-                                              _onProbeDragEnd(idx, quest),
-                                          onOptionTapped: (index) =>
-                                              _submitChoice(
-                                                index,
-                                                quest.correctAnswerIndex ?? 0,
+                                          expectedText:
+                                              options[_selectedIndex.value!],
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () {
+                                            context.read<RoleplayBloc>().add(
+                                              const RoleplaySpeakConfirmed(5),
+                                            );
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              quest,
+                                            );
+                                          },
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(
+                                                false,
                                                 quest,
                                               ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              if (isFirstStagePassedNotifier.value &&
-                                  !isAnsweredNotifier.value &&
-                                  _selectedIndex.value != null)
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: SpeakToConfirmOverlay(
-                                      key: const Key(
-                                        'branching_dialogue_speak_overlay',
+                                        ),
                                       ),
-                                      expectedText:
-                                          options[_selectedIndex.value!],
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true, quest);
-                                      },
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false, quest),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 80.h,
                                     ),
                                   ),
-                                ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewInsets.bottom >
-                                          0
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            40.h
-                                      : 80.h,
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    );
+                                ],
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
             );

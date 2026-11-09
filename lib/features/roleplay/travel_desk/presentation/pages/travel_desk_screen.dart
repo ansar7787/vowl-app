@@ -70,7 +70,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   void _scrollToBottom() {
     final bool reduceMotion =
         (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) ||
-            VowlMotion.lowAnimationModeOverride.value;
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_scrollController.hasClients) {
         _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
@@ -114,7 +114,8 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion && _rippleController.isAnimating) {
       _rippleController.stop();
@@ -163,7 +164,8 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
       submitCorrectAnswer();
     } else {
       final effectiveOptions = quest.itinerary ?? quest.options ?? [];
-      final userAnswer = (_selectedIndex.value != null &&
+      final userAnswer =
+          (_selectedIndex.value != null &&
               _selectedIndex.value! < effectiveOptions.length)
           ? effectiveOptions[_selectedIndex.value!]
           : null;
@@ -265,14 +267,17 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                               isDark: isDark,
                                               travelDocument:
                                                   quest.travelDocuments,
-                                              selectedIndex: _selectedIndex.value,
+                                              selectedIndex:
+                                                  _selectedIndex.value,
                                               hoveredIndex: _hoveredIndex.value,
                                               isAnswered:
                                                   isAnsweredNotifier.value ||
                                                   isFirstStagePassedNotifier
                                                       .value,
-                                              isCorrect: isCorrectNotifier.value,
-                                              rippleAnimation: _rippleController,
+                                              isCorrect:
+                                                  isCorrectNotifier.value,
+                                              rippleAnimation:
+                                                  _rippleController,
                                               onSubmitStamp:
                                                   (index, correctIndex) =>
                                                       _submitStamp(
@@ -365,8 +370,8 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                       title: "CONFIRM DESTINATION",
                                       subtitle:
                                           "Say the destination aloud to confirm",
-                                      expectedText: (_selectedIndex.value !=
-                                                  null &&
+                                      expectedText:
+                                          (_selectedIndex.value != null &&
                                               _selectedIndex.value! <
                                                   options.length)
                                           ? options[_selectedIndex.value!]

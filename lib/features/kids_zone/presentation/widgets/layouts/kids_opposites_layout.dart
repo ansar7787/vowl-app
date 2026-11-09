@@ -215,7 +215,7 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
   void dispose() {
     _pulseController.dispose();
     _isHoveringTarget.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -369,12 +369,15 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
             ),
             boxShadow: [
               BoxShadow(
-                color: (isCorrect
-                        ? _OppositesPalette.successBorder
-                        : isHovering
-                        ? AppColors.indigo500
-                        : Colors.black)
-                    .withValues(alpha: isHovering || isCorrect ? 0.22 : 0.08),
+                color:
+                    (isCorrect
+                            ? _OppositesPalette.successBorder
+                            : isHovering
+                            ? AppColors.indigo500
+                            : Colors.black)
+                        .withValues(
+                          alpha: isHovering || isCorrect ? 0.22 : 0.08,
+                        ),
                 blurRadius: isHovering || isCorrect ? 18 : 10,
                 offset: const Offset(0, 4),
               ),
@@ -460,7 +463,9 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
                     color: _OppositesPalette.warmChipBg,
                     borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
-                      color: _OppositesPalette.warmBorder.withValues(alpha: 0.8),
+                      color: _OppositesPalette.warmBorder.withValues(
+                        alpha: 0.8,
+                      ),
                       width: 1,
                     ),
                   ),
@@ -547,12 +552,17 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
 
                 // Replay Audio Pill
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 3.h,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.9),
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
-                      color: _OppositesPalette.warmBorder.withValues(alpha: 0.7),
+                      color: _OppositesPalette.warmBorder.withValues(
+                        alpha: 0.7,
+                      ),
                       width: 1,
                     ),
                   ),
@@ -589,9 +599,7 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
   Widget _buildMeridianNexus(bool isCorrect, bool isHovering) {
     return Container(
       width: 24.w,
-      decoration: const BoxDecoration(
-        color: _OppositesPalette.portalDivider,
-      ),
+      decoration: const BoxDecoration(color: _OppositesPalette.portalDivider),
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -631,10 +639,11 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: (isCorrect
-                                ? _OppositesPalette.successBorder
-                                : Colors.black)
-                            .withValues(alpha: isCorrect ? 0.3 : 0.08),
+                        color:
+                            (isCorrect
+                                    ? _OppositesPalette.successBorder
+                                    : Colors.black)
+                                .withValues(alpha: isCorrect ? 0.3 : 0.08),
                         blurRadius: 4,
                       ),
                     ],
@@ -708,10 +717,7 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
             children: [
               // Top Realm Header Badge
               Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10.w,
-                  vertical: 3.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
                 decoration: BoxDecoration(
                   color: _OppositesPalette.coolChipBg,
                   borderRadius: BorderRadius.circular(8.r),
@@ -864,10 +870,7 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
       decoration: BoxDecoration(
         color: _OppositesPalette.successBg,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: _OppositesPalette.successBorder,
-          width: 1.5,
-        ),
+        border: Border.all(color: _OppositesPalette.successBorder, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: _OppositesPalette.successBorder.withValues(alpha: 0.15),
@@ -1010,12 +1013,15 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
         ),
         boxShadow: [
           BoxShadow(
-            color: (isSuccessState
-                    ? _OppositesPalette.successBorder
-                    : isErrorState
-                    ? _OppositesPalette.errorBorder
-                    : _OppositesPalette.cardShadow)
-                .withValues(alpha: isSuccessState || isErrorState ? 0.25 : 0.35),
+            color:
+                (isSuccessState
+                        ? _OppositesPalette.successBorder
+                        : isErrorState
+                        ? _OppositesPalette.errorBorder
+                        : _OppositesPalette.cardShadow)
+                    .withValues(
+                      alpha: isSuccessState || isErrorState ? 0.25 : 0.35,
+                    ),
             offset: const Offset(0, 3),
             blurRadius: 0,
           ),
@@ -1104,34 +1110,31 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
 
     // Draggable & Tappable Card
     return Semantics(
-      label: 'Option: $text. Tap to choose or drag to opposite target.',
-      button: true,
-      enabled: !isAnswered,
-      child: Draggable<String>(
-        data: text,
-        maxSimultaneousDrags: isAnswered ? 0 : 1,
-        feedback: Material(
-          color: Colors.transparent,
-          child: SizedBox(
-            width: 100.w,
-            child: Transform.scale(
-              scale: 1.05,
-              child: Opacity(
-                opacity: 0.95,
-                child: cardWidget,
+          label: 'Option: $text. Tap to choose or drag to opposite target.',
+          button: true,
+          enabled: !isAnswered,
+          child: Draggable<String>(
+            data: text,
+            maxSimultaneousDrags: isAnswered ? 0 : 1,
+            feedback: Material(
+              color: Colors.transparent,
+              child: SizedBox(
+                width: 100.w,
+                child: Transform.scale(
+                  scale: 1.05,
+                  child: Opacity(opacity: 0.95, child: cardWidget),
+                ),
               ),
             ),
+            childWhenDragging: Opacity(opacity: 0.25, child: cardWidget),
+            child: ScaleButton(
+              onTap: isAnswered
+                  ? null
+                  : () => _handleOptionSubmit(context, state, text),
+              child: cardWidget,
+            ),
           ),
-        ),
-        childWhenDragging: Opacity(opacity: 0.25, child: cardWidget),
-        child: ScaleButton(
-          onTap: isAnswered
-              ? null
-              : () => _handleOptionSubmit(context, state, text),
-          child: cardWidget,
-        ),
-      ),
-    )
+        )
         .animate()
         .fadeIn(
           delay: (index * 80).ms,

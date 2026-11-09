@@ -65,7 +65,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   void dispose() {
     _isChecking.dispose();
     _hasInk.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -161,7 +161,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     // Delegate success/failure feedback (sound chime, haptic pulse, lives & score) to KidsBloc
     context.read<KidsBloc>().add(SubmitKidsAnswer(correct));
   }
-
 
   /// Calculates responsive font size based on string length to guarantee zero text overflow.
   double _calculateTargetFontSize(String target) {
@@ -352,13 +351,21 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                             _hasInk.value = count > 0;
                           },
                           onInkUpdated: (ink) {
-                            if (state.answerStatus.isAnswered || _isChecking.value) return;
+                            if (state.answerStatus.isAnswered ||
+                                _isChecking.value) {
+                              return;
+                            }
                             _currentInk = ink;
                             _hasInk.value = ink.strokes.isNotEmpty;
-                            if (_isCorrect != null) _isCorrect = null;
+                            if (_isCorrect != null) {
+                              _isCorrect = null;
+                            }
                           },
                           onClear: () {
-                            if (state.answerStatus.isAnswered || _isChecking.value) return;
+                            if (state.answerStatus.isAnswered ||
+                                _isChecking.value) {
+                              return;
+                            }
                             _currentInk = null;
                             _hasInk.value = false;
                             _isCorrect = null;
@@ -384,8 +391,10 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                             final Color buttonColor = isChecking
                                 ? Colors.grey.shade400
                                 : (hasInk
-                                    ? widget.primaryColor
-                                    : widget.primaryColor.withValues(alpha: 0.65));
+                                      ? widget.primaryColor
+                                      : widget.primaryColor.withValues(
+                                          alpha: 0.65,
+                                        ));
 
                             return ScaleButton(
                               onTap: isChecking
@@ -445,7 +454,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: isCompactScreen ? 20.sp : 22.sp,
+                                            fontSize: isCompactScreen
+                                                ? 20.sp
+                                                : 22.sp,
                                             fontWeight: FontWeight.w700,
                                             color: Colors.white,
                                             letterSpacing: 0.5,

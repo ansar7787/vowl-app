@@ -197,11 +197,13 @@ void main() {
     blocTest<SignUpCubit, SignUpState>(
       'emits success when signup and email verification succeed',
       build: () {
-        when(
-          () => mockSignUp(any()),
-        ).thenAnswer(
+        when(() => mockSignUp(any())).thenAnswer(
           (_) async => const Right(
-            UserEntity(id: 'u1', email: 'alex@example.com', displayName: 'Alex'),
+            UserEntity(
+              id: 'u1',
+              email: 'alex@example.com',
+              displayName: 'Alex',
+            ),
           ),
         );
         when(
@@ -220,18 +222,18 @@ void main() {
     blocTest<SignUpCubit, SignUpState>(
       'emits success with warning message when verification email fails but account created',
       build: () {
-        when(
-          () => mockSignUp(any()),
-        ).thenAnswer(
+        when(() => mockSignUp(any())).thenAnswer(
           (_) async => const Right(
-            UserEntity(id: 'u1', email: 'alex@example.com', displayName: 'Alex'),
+            UserEntity(
+              id: 'u1',
+              email: 'alex@example.com',
+              displayName: 'Alex',
+            ),
           ),
         );
         when(
           () => mockSendEmailVerification(any()),
-        ).thenAnswer(
-          (_) async => const Left(ServerFailure('email-send-fail')),
-        );
+        ).thenAnswer((_) async => const Left(ServerFailure('email-send-fail')));
         return cubit;
       },
       seed: () => validSeed,
@@ -249,9 +251,7 @@ void main() {
     blocTest<SignUpCubit, SignUpState>(
       'emits failure error when signup fails',
       build: () {
-        when(
-          () => mockSignUp(any()),
-        ).thenAnswer(
+        when(() => mockSignUp(any())).thenAnswer(
           (_) async => const Left(ServerFailure('email-already-in-use')),
         );
         return cubit;
@@ -262,8 +262,7 @@ void main() {
         validSeed.copyWith(isSubmitting: true),
         validSeed.copyWith(
           isSubmitting: false,
-          errorMessage: () =>
-              AuthErrorHandler.getKey('email-already-in-use'),
+          errorMessage: () => AuthErrorHandler.getKey('email-already-in-use'),
         ),
       ],
     );

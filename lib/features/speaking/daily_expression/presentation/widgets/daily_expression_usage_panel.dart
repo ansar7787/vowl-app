@@ -37,8 +37,8 @@ class DailyExpressionUsagePanel extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark
             ? (context.isMidnight
-                ? AppColors.midnightSurface
-                : _LocalPalette.color0f0f1a)
+                  ? AppColors.midnightSurface
+                  : _LocalPalette.color0f0f1a)
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(

@@ -74,8 +74,9 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
 
-    when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
-        .thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
@@ -191,12 +192,20 @@ void main() {
       'awards milestone badge when level reaches milestone',
       build: () {
         final mockAwardBadge = MockAwardBadge();
-        when(() => mockAwardBadge(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
-        when(() => mockUpdateUnlockedLevel(any())).thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateUserRewards(any())).thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUnlockedLevel(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
         return EliteMasteryBloc(
           getQuests: mockGetQuests,
           updateUserCoins: mockUpdateUserCoins,
@@ -209,10 +218,7 @@ void main() {
           awardBadge: mockAwardBadge,
         );
       },
-      seed: () => tLoadedState.copyWith(
-        currentIndex: 2,
-        level: 5,
-      ),
+      seed: () => tLoadedState.copyWith(currentIndex: 2, level: 5),
       act: (bloc) async {
         bloc.add(const SubmitEliteAnswer(true));
         bloc.add(NextEliteQuestion());

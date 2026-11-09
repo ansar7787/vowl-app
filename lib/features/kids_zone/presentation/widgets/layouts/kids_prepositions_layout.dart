@@ -191,7 +191,7 @@ class _KidsPrepositionsLayoutState extends State<KidsPrepositionsLayout> {
   @override
   void dispose() {
     _isHoveringTarget.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -1202,10 +1202,7 @@ class _KidsPrepositionsLayoutState extends State<KidsPrepositionsLayout> {
         alignment: Alignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              right: 24.w,
-            ),
+            padding: EdgeInsets.only(left: 14.w, right: 24.w),
             child: KidsFittedText(
               text,
               style: TextStyle(

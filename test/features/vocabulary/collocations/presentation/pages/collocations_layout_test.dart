@@ -148,10 +148,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const VocabularyHintUsed());
     registerFallbackValue(
-      const FetchVocabularyQuests(
-        gameType: GameSubtype.collocations,
-        level: 2,
-      ),
+      const FetchVocabularyQuests(gameType: GameSubtype.collocations, level: 2),
     );
     registerFallbackValue(sampleQuest1);
   });
@@ -188,12 +185,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -343,7 +342,9 @@ void main() {
       expect(find.text('A REST'), findsWidgets);
     });
 
-    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (tester) async {
+    testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (
+      tester,
+    ) async {
       await pumpScreen(tester, level: 3);
       verify(
         () => mockVocabularyBloc.add(
@@ -434,23 +435,24 @@ void main() {
     testWidgets(
       '3.2 dragging correct option and dropping onto anchor fuses and advances to Phase 2',
       (tester) async {
-      await pumpScreen(tester);
+        await pumpScreen(tester);
 
-      final option = find.text('A DECISION').first;
-      final anchor = find.byType(CollocationAnchorBubble);
+        final option = find.text('A DECISION').first;
+        final anchor = find.byType(CollocationAnchorBubble);
 
-      final gesture = await tester.startGesture(tester.getCenter(option));
-      await gesture.moveTo(tester.getCenter(anchor));
-      await tester.pump(const Duration(milliseconds: 50));
+        final gesture = await tester.startGesture(tester.getCenter(option));
+        await gesture.moveTo(tester.getCenter(anchor));
+        await tester.pump(const Duration(milliseconds: 50));
 
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
     testWidgets(
       '3.3 dragging incorrect option onto anchor submits wrong answer',
@@ -487,15 +489,16 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
     }
 
-    testWidgets('4.1 renders CollocationsWrongPairs with COMMON MISTAKES header', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
-      expect(find.byType(CollocationsWrongPairs), findsOneWidget);
-      expect(find.text('COMMON MISTAKES'), findsOneWidget);
-      expect(find.text('do a decision'), findsOneWidget);
-      expect(find.text('pay a decision'), findsOneWidget);
-    });
+    testWidgets(
+      '4.1 renders CollocationsWrongPairs with COMMON MISTAKES header',
+      (tester) async {
+        await advanceToPhase2(tester);
+        expect(find.byType(CollocationsWrongPairs), findsOneWidget);
+        expect(find.text('COMMON MISTAKES'), findsOneWidget);
+        expect(find.text('do a decision'), findsOneWidget);
+        expect(find.text('pay a decision'), findsOneWidget);
+      },
+    );
 
     testWidgets(
       '4.2 CollocationsWrongPairs filters out correct pair if present in wrong list',
@@ -523,7 +526,9 @@ void main() {
         await advanceToPhase2(tester);
         expect(find.byType(ContextSentenceBuilder), findsOneWidget);
         expect(
-          find.textContaining('It is time to make a decision and move forward.'),
+          find.textContaining(
+            'It is time to make a decision and move forward.',
+          ),
           findsOneWidget,
         );
       },
@@ -552,7 +557,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
 
-        verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
@@ -572,7 +579,13 @@ void main() {
 
         verify(
           () => mockVocabularyBloc.add(
-            any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
           ),
         ).called(1);
         verify(() => mockSoundService.playWrong()).called(1);
@@ -613,50 +626,52 @@ void main() {
       verifyNever(() => mockVocabularyBloc.add(any()));
     });
 
-    testWidgets('6.2 answered state mounts GameFeedbackCard with CONTINUE button', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      await tester.tap(find.text('A DECISION').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '6.2 answered state mounts GameFeedbackCard with CONTINUE button',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.text('A DECISION').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      expect(find.text('CONTINUE'), findsOneWidget);
-    });
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.text('CONTINUE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('6.3 tapping CONTINUE on correct answer dispatches NextQuestion', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      await tester.tap(find.text('A DECISION').first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 350));
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      '6.3 tapping CONTINUE on correct answer dispatches NextQuestion',
+      (tester) async {
+        await pumpScreen(tester);
+        await tester.tap(find.text('A DECISION').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.tap(find.text('CONTINUE'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(find.text('CONTINUE'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets(
       '6.4 tapping TRY AGAIN on wrong answer (non-final failure) resets for retry',
@@ -684,32 +699,34 @@ void main() {
   });
 
   group('7. Progression, State Transitions & Cleanup', () {
-    testWidgets('7.1 tapping header hint button dispatches VocabularyHintUsed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
-      await tester.tap(hintButton);
-      await tester.pump(const Duration(milliseconds: 100));
-      verify(
-        () => mockVocabularyBloc.add(const VocabularyHintUsed()),
-      ).called(greaterThanOrEqualTo(1));
-    });
+    testWidgets(
+      '7.1 tapping header hint button dispatches VocabularyHintUsed',
+      (tester) async {
+        await pumpScreen(tester);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
+        await tester.tap(hintButton);
+        await tester.pump(const Duration(milliseconds: 100));
+        verify(
+          () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('7.2 when hint is used, correct option bubble shows hint styling', (
-      tester,
-    ) async {
-      final hintState = testLoadedState.copyWith(hintUsed: true);
-      await pumpScreen(tester, state: hintState);
+    testWidgets(
+      '7.2 when hint is used, correct option bubble shows hint styling',
+      (tester) async {
+        final hintState = testLoadedState.copyWith(hintUsed: true);
+        await pumpScreen(tester, state: hintState);
 
-      final correctOptionFinder = find.byWidgetPredicate((widget) {
-        return widget is CollocationOptionBubble &&
-            widget.text == 'a decision' &&
-            widget.isHintUsed == true;
-      });
-      expect(correctOptionFinder, findsOneWidget);
-    });
+        final correctOptionFinder = find.byWidgetPredicate((widget) {
+          return widget is CollocationOptionBubble &&
+              widget.text == 'a decision' &&
+              widget.isHintUsed == true;
+        });
+        expect(correctOptionFinder, findsOneWidget);
+      },
+    );
 
     testWidgets(
       '7.3 transitioning to second quest resets state and displays second word',

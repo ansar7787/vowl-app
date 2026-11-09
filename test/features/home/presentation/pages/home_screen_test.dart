@@ -152,21 +152,19 @@ void main() {
           inv.positionalArguments.first as String,
     );
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(testUser),
-    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockProgressionBloc.state).thenReturn(const ProgressionState());
 
-    when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-        .thenAnswer(
-          (_) async => Right(
-            LeaderboardResult(
-              users: [testUser],
-              lastUpdated: DateTime.now(),
-            ),
-          ),
-        );
+    when(
+      () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+    ).thenAnswer(
+      (_) async => Right(
+        LeaderboardResult(users: [testUser], lastUpdated: DateTime.now()),
+      ),
+    );
   });
 
   tearDown(() {
@@ -297,10 +295,7 @@ void main() {
     addTearDown(() => tester.view.resetDevicePixelRatio());
 
     await tester.pumpWidget(
-      createWidgetUnderTest(
-        themeMode: themeMode,
-        customRouter: customRouter,
-      ),
+      createWidgetUnderTest(themeMode: themeMode, customRouter: customRouter),
     );
     await tester.pumpAndSettle();
   }
@@ -370,35 +365,32 @@ void main() {
       },
     );
 
-    testWidgets(
-      'renders level 1 and habit focus for a new learner',
-      (tester) async {
-        const rookieUser = UserEntity(
-          id: 'user_rookie',
-          email: 'rookie@vowl.app',
-          displayName: 'New Learner',
-          totalExp: 50, // Level 1
-        );
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(rookieUser),
-        );
-        when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer(
-              (_) async => Right(
-                LeaderboardResult(
-                  users: [rookieUser],
-                  lastUpdated: DateTime.now(),
-                ),
-              ),
-            );
+    testWidgets('renders level 1 and habit focus for a new learner', (
+      tester,
+    ) async {
+      const rookieUser = UserEntity(
+        id: 'user_rookie',
+        email: 'rookie@vowl.app',
+        displayName: 'New Learner',
+        totalExp: 50, // Level 1
+      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(rookieUser));
+      when(
+        () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+      ).thenAnswer(
+        (_) async => Right(
+          LeaderboardResult(users: [rookieUser], lastUpdated: DateTime.now()),
+        ),
+      );
 
-        await pumpHomeScreen(tester);
+      await pumpHomeScreen(tester);
 
-        expect(find.textContaining('New Learner'), findsOneWidget);
-        expect(find.text('1'), findsWidgets);
-        expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
-      },
-    );
+      expect(find.textContaining('New Learner'), findsOneWidget);
+      expect(find.text('1'), findsWidgets);
+      expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
+    });
   });
 
   group('Group 3: Continue Learning CTA Card', () {
@@ -438,69 +430,72 @@ void main() {
 
         expect(find.byType(UnifiedStatsRow), findsOneWidget);
         expect(find.text('12'), findsWidgets); // Current streak
-        expect(find.descendant(of: find.byType(UnifiedStatsRow), matching: find.text('350')), findsOneWidget); // Coins in UnifiedStatsRow
+        expect(
+          find.descendant(
+            of: find.byType(UnifiedStatsRow),
+            matching: find.text('350'),
+          ),
+          findsOneWidget,
+        ); // Coins in UnifiedStatsRow
         expect(find.text('2'), findsWidgets); // Badges count
         expect(find.text('#1'), findsWidgets); // Global rank from mock repo
       },
     );
 
-    testWidgets(
-      'tapping streak stat tile navigates to /streak',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping streak stat tile navigates to /streak', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.tap(find.text('STREAK'));
-        await tester.pumpAndSettle();
+      await tester.tap(find.text('STREAK'));
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/streak'));
-      },
-    );
+      expect(navigatedRoutes, contains('/streak'));
+    });
 
-    testWidgets(
-      'tapping coins stat tile navigates to /coins-details',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping coins stat tile navigates to /coins-details', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.tap(find.text('COINS'));
-        await tester.pumpAndSettle();
+      await tester.tap(find.text('COINS'));
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains(AppRouter.questCoinsRoute));
-      },
-    );
+      expect(navigatedRoutes, contains(AppRouter.questCoinsRoute));
+    });
 
-    testWidgets(
-      'tapping badges stat tile navigates to /trophy-room',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping badges stat tile navigates to /trophy-room', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.tap(find.text('BADGES'));
-        await tester.pumpAndSettle();
+      await tester.tap(find.text('BADGES'));
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/trophy-room'));
-      },
-    );
+      expect(navigatedRoutes, contains('/trophy-room'));
+    });
 
-    testWidgets(
-      'tapping global rank stat tile navigates to /leaderboard',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping global rank stat tile navigates to /leaderboard', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.tap(find.text('Rank'));
-        await tester.pumpAndSettle();
+      await tester.tap(find.text('Rank'));
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes, contains('/leaderboard'));
-      },
-    );
+      expect(navigatedRoutes, contains('/leaderboard'));
+    });
   });
 
   group('Group 5: Leaderboard Rank Fetching & Error Resilience', () {
     testWidgets(
       'gracefully handles LeaderboardRepository failure showing fallback dash for rank',
       (tester) async {
-        when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer(
-              (_) async => const Left(ServerFailure('Connection refused')),
-            );
+        when(
+          () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+        ).thenAnswer(
+          (_) async => const Left(ServerFailure('Connection refused')),
+        );
 
         await pumpHomeScreen(tester);
 
@@ -517,8 +512,9 @@ void main() {
     testWidgets(
       'gracefully catches exceptions from LeaderboardRepository without failing UI',
       (tester) async {
-        when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-            .thenThrow(Exception('Simulated crash in repository'));
+        when(
+          () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+        ).thenThrow(Exception('Simulated crash in repository'));
 
         await pumpHomeScreen(tester);
 
@@ -596,10 +592,12 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        final firstCategoryTile = find.descendant(
-          of: find.byType(BentoArena),
-          matching: find.byType(ScaleButton),
-        ).first;
+        final firstCategoryTile = find
+            .descendant(
+              of: find.byType(BentoArena),
+              matching: find.byType(ScaleButton),
+            )
+            .first;
 
         await tester.tap(firstCategoryTile);
         await tester.pumpAndSettle();
@@ -611,36 +609,33 @@ void main() {
   });
 
   group('Group 7: Review Mistakes Card Gating', () {
-    testWidgets(
-      'omits ReviewMistakesHomeCard when user is in kidsModeOnly',
-      (tester) async {
-        const kidsUser = UserEntity(
-          id: 'user_kids',
-          email: 'kids@vowl.app',
-          displayName: 'Junior',
-          totalExp: 0,
-          completedLevels: {
-            'kidsAlphabet': [1, 2],
-          },
-        );
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(kidsUser),
-        );
-        when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer(
-              (_) async => Right(
-                LeaderboardResult(
-                  users: [kidsUser],
-                  lastUpdated: DateTime.now(),
-                ),
-              ),
-            );
+    testWidgets('omits ReviewMistakesHomeCard when user is in kidsModeOnly', (
+      tester,
+    ) async {
+      const kidsUser = UserEntity(
+        id: 'user_kids',
+        email: 'kids@vowl.app',
+        displayName: 'Junior',
+        totalExp: 0,
+        completedLevels: {
+          'kidsAlphabet': [1, 2],
+        },
+      );
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(kidsUser));
+      when(
+        () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+      ).thenAnswer(
+        (_) async => Right(
+          LeaderboardResult(users: [kidsUser], lastUpdated: DateTime.now()),
+        ),
+      );
 
-        await pumpHomeScreen(tester);
+      await pumpHomeScreen(tester);
 
-        expect(find.byType(ReviewMistakesHomeCard), findsNothing);
-      },
-    );
+      expect(find.byType(ReviewMistakesHomeCard), findsNothing);
+    });
 
     testWidgets(
       'omits mistake card body when non-kids user has 0 mistakes in journal',
@@ -677,18 +672,16 @@ void main() {
             'vocabulary': [1, 2],
           },
         );
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(guestUser),
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(guestUser));
+        when(
+          () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
+        ).thenAnswer(
+          (_) async => Right(
+            LeaderboardResult(users: [guestUser], lastUpdated: DateTime.now()),
+          ),
         );
-        when(() => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')))
-            .thenAnswer(
-              (_) async => Right(
-                LeaderboardResult(
-                  users: [guestUser],
-                  lastUpdated: DateTime.now(),
-                ),
-              ),
-            );
 
         final prefs = await SharedPreferences.getInstance();
         await prefs.setStringList('vowl_local_error_journal', [
@@ -754,39 +747,37 @@ void main() {
   });
 
   group('Group 9: Explore & Tools Strip', () {
-    testWidgets(
-      'renders Explore & Tools section header and ToolsStrip',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('renders Explore & Tools section header and ToolsStrip', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1100);
-        await tester.pumpAndSettle();
+      homeScrollController.jumpTo(1100);
+      await tester.pumpAndSettle();
 
-        expect(find.text('EXPLORE & TOOLS'), findsOneWidget);
-        expect(find.byType(ToolsStrip), findsOneWidget);
-      },
-    );
+      expect(find.text('EXPLORE & TOOLS'), findsOneWidget);
+      expect(find.byType(ToolsStrip), findsOneWidget);
+    });
 
-    testWidgets(
-      'tapping Unfold +2 in ToolsStrip expands gaming drawer',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping Unfold +2 in ToolsStrip expands gaming drawer', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1200);
-        await tester.pumpAndSettle();
+      homeScrollController.jumpTo(1200);
+      await tester.pumpAndSettle();
 
-        final unfoldBtn = find.text('Unfold +2');
-        expect(unfoldBtn, findsOneWidget);
-        await tester.ensureVisible(unfoldBtn);
-        await tester.pumpAndSettle();
+      final unfoldBtn = find.text('Unfold +2');
+      expect(unfoldBtn, findsOneWidget);
+      await tester.ensureVisible(unfoldBtn);
+      await tester.pumpAndSettle();
 
-        await tester.tap(unfoldBtn);
-        await tester.pumpAndSettle();
+      await tester.tap(unfoldBtn);
+      await tester.pumpAndSettle();
 
-        expect(find.text('Word Snap'), findsOneWidget);
-        expect(find.text('Word Mixer'), findsOneWidget);
-      },
-    );
+      expect(find.text('Word Snap'), findsOneWidget);
+      expect(find.text('Word Mixer'), findsOneWidget);
+    });
   });
 
   group('Group 10: Discovery Hub Carousel', () {
@@ -803,49 +794,46 @@ void main() {
       },
     );
 
-    testWidgets(
-      'tapping a themed quest card launches quest sequence route',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('tapping a themed quest card launches quest sequence route', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.scrollUntilVisible(
-          find.byType(DiscoveryDeck),
-          300,
-          scrollable: find.byType(Scrollable).first,
-        );
-        await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.byType(DiscoveryDeck),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.pumpAndSettle();
 
-        final discoveryDeck = find.byType(DiscoveryDeck);
-        final deckCard = find.descendant(
-          of: discoveryDeck,
-          matching: find.byType(ScaleButton),
-        ).first;
+      final discoveryDeck = find.byType(DiscoveryDeck);
+      final deckCard = find
+          .descendant(of: discoveryDeck, matching: find.byType(ScaleButton))
+          .first;
 
-        await tester.tap(deckCard);
-        await tester.pumpAndSettle();
+      await tester.tap(deckCard);
+      await tester.pumpAndSettle();
 
-        expect(navigatedRoutes.length, 1);
-        expect(navigatedRoutes.first, startsWith('/quest-sequence?id='));
-      },
-    );
+      expect(navigatedRoutes.length, 1);
+      expect(navigatedRoutes.first, startsWith('/quest-sequence?id='));
+    });
   });
 
   group('Group 11: Daily Wisdom Card', () {
-    testWidgets(
-      'renders DailyMotivationCard with current streak count',
-      (tester) async {
-        await pumpHomeScreen(tester);
+    testWidgets('renders DailyMotivationCard with current streak count', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
 
-        await tester.scrollUntilVisible(
-          find.byType(DailyMotivationCard),
-          300,
-          scrollable: find.byType(Scrollable).first,
-        );
-        await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.byType(DailyMotivationCard),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.pumpAndSettle();
 
-        expect(find.byType(DailyMotivationCard), findsOneWidget);
-      },
-    );
+      expect(find.byType(DailyMotivationCard), findsOneWidget);
+    });
   });
 
   group('Group 12: Pull-to-Refresh Interaction', () {
@@ -944,62 +932,48 @@ void main() {
     testWidgets(
       'renders without RenderFlex overflow on small mobile (320x568)',
       (tester) async {
-        await pumpHomeScreen(
-          tester,
-          surfaceSize: const Size(320, 568),
-        );
+        await pumpHomeScreen(tester, surfaceSize: const Size(320, 568));
 
         expect(find.byType(HomeScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      'renders without issues on tablet viewport (800x1280)',
-      (tester) async {
-        await pumpHomeScreen(
-          tester,
-          surfaceSize: const Size(800, 1280),
-        );
+    testWidgets('renders without issues on tablet viewport (800x1280)', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester, surfaceSize: const Size(800, 1280));
 
-        expect(find.byType(HomeScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(HomeScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
-    testWidgets(
-      'renders cleanly under 1.3x accessibility text scaling',
-      (tester) async {
-        tester.view.physicalSize = const Size(390, 1600);
-        tester.view.devicePixelRatio = 1.0;
-        addTearDown(() => tester.view.resetPhysicalSize());
-        addTearDown(() => tester.view.resetDevicePixelRatio());
+    testWidgets('renders cleanly under 1.3x accessibility text scaling', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(390, 1600);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
 
-        await tester.pumpWidget(
-          MediaQuery(
-            data: const MediaQueryData(textScaler: TextScaler.linear(1.3)),
-            child: createWidgetUnderTest(),
-          ),
-        );
-        await tester.pumpAndSettle();
+      await tester.pumpWidget(
+        MediaQuery(
+          data: const MediaQueryData(textScaler: TextScaler.linear(1.3)),
+          child: createWidgetUnderTest(),
+        ),
+      );
+      await tester.pumpAndSettle();
 
-        expect(find.byType(HomeScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(HomeScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
-    testWidgets(
-      'renders cleanly in dark theme mode',
-      (tester) async {
-        await pumpHomeScreen(
-          tester,
-          themeMode: ThemeMode.dark,
-        );
+    testWidgets('renders cleanly in dark theme mode', (tester) async {
+      await pumpHomeScreen(tester, themeMode: ThemeMode.dark);
 
-        expect(find.byType(HomeScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(HomeScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('Group 15: Progressive RPG Gating', () {
@@ -1013,9 +987,9 @@ void main() {
           totalExp: 0,
           currentStreak: 1,
         );
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(beginnerUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(beginnerUser));
 
         await pumpHomeScreen(tester);
 
@@ -1035,9 +1009,9 @@ void main() {
           totalExp: 0,
           currentStreak: 1,
         );
-        when(() => mockAuthBloc.state).thenReturn(
-          AuthState.authenticated(beginnerUser),
-        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(beginnerUser));
 
         await pumpHomeScreen(tester);
 

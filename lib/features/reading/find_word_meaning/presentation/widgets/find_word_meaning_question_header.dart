@@ -37,11 +37,7 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
               color: color.withValues(alpha: 0.14),
               borderRadius: BorderRadius.circular(12.r),
             ),
-            child: Icon(
-              Icons.menu_book_rounded,
-              color: color,
-              size: 20.r,
-            ),
+            child: Icon(Icons.menu_book_rounded, color: color, size: 20.r),
           ),
           SizedBox(width: 14.w),
           Expanded(

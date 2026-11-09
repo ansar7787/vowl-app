@@ -32,11 +32,7 @@ class TrueFalseReadingInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.fact_check_outlined,
-            size: 15.r,
-            color: primaryColor,
-          ),
+          Icon(Icons.fact_check_outlined, size: 15.r, color: primaryColor),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(

@@ -43,8 +43,8 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDark
               ? (context.isMidnight
-                  ? AppColors.midnightSurface
-                  : _LocalPalette.color0f0f1a)
+                    ? AppColors.midnightSurface
+                    : _LocalPalette.color0f0f1a)
               : primaryColor.withValues(alpha: 0.04),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(

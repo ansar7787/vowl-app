@@ -42,14 +42,14 @@ class AppTheme {
   // Palette — Light mode surfaces (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
-  /// Light scaffold background (pure white).
+  /// Light scaffold background (Option 2: Pure White canvas).
   static const Color scaffoldLight = AppColors.white;
 
   /// Light card surface (pure white).
   static const Color cardLight = AppColors.white;
 
-  /// Light border colour (Slate 100 — subtle & clean).
-  static const Color borderLight = AppColors.slate100;
+  /// Light border colour (Option 2: Slate 200 — crisp hairline boundary for white-on-white).
+  static const Color borderLight = AppColors.slate200;
 
   // ---------------------------------------------------------------------------
   // Palette — Dark mode surfaces (delegating to AppColors)
@@ -58,8 +58,8 @@ class AppTheme {
   /// Dark scaffold background (Slate 900).
   static const Color scaffoldDark = AppColors.slate900;
 
-  /// Dark card surface (Slate 800).
-  static const Color cardDark = AppColors.slate800;
+  /// Dark card surface (Midnight Navy #131A29).
+  static const Color cardDark = AppColors.midnightNavy;
 
   /// Dark border colour (Slate 700).
   static const Color borderDark = AppColors.slate700;
@@ -442,4 +442,3 @@ extension AppThemeContextExtension on BuildContext {
           ? AppColorTokens.midnight
           : (isDark ? AppColorTokens.dark : AppColorTokens.light));
 }
-

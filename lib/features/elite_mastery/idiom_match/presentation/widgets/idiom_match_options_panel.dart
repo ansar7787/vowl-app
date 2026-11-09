@@ -130,8 +130,8 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         color: (isCorrect || isSelected)
                             ? Colors.green
                             : (isWrong
-                                ? (tokens?.gameIncorrect ?? AppColors.red500)
-                                : primaryColor),
+                                  ? (tokens?.gameIncorrect ?? AppColors.red500)
+                                  : primaryColor),
                         size: 18.r,
                       ),
                     ),

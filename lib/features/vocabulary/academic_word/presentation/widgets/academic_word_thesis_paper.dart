@@ -65,7 +65,8 @@ class AcademicWordThesisPaper extends StatelessWidget {
             key: const Key('academic_word_thesis_paper'),
             width: cardWidth,
             constraints: BoxConstraints(
-              maxHeight: constraints.maxHeight.isFinite && constraints.maxHeight > 0
+              maxHeight:
+                  constraints.maxHeight.isFinite && constraints.maxHeight > 0
                   ? constraints.maxHeight * 0.75
                   : double.infinity,
             ),
@@ -280,8 +281,8 @@ class _AnswerSlot extends StatelessWidget {
       button: true,
       label: isAnswered
           ? (isCorrect == true
-              ? 'Answer: $correctAnswer'
-              : 'Incorrect: $userSpelledWord')
+                ? 'Answer: $correctAnswer'
+                : 'Incorrect: $userSpelledWord')
           : (isSlotSelected ? 'Slot selected' : 'Slot pending'),
       child: GestureDetector(
         key: const Key('academic_word_slot_detector'),
@@ -297,19 +298,25 @@ class _AnswerSlot extends StatelessWidget {
             color: effectiveColor,
             borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
-              color: isSlotSelected ? color : borderColor.withValues(alpha: 0.6),
+              color: isSlotSelected
+                  ? color
+                  : borderColor.withValues(alpha: 0.6),
               width: isSlotSelected ? 2.0 : 1.5,
             ),
           ),
           child: Center(
             child:
                 (isAnswered && isCorrect == true) ||
-                    (isAnswered && isCorrect == false && userSpelledWord != null)
+                    (isAnswered &&
+                        isCorrect == false &&
+                        userSpelledWord != null)
                 ? FittedBox(
                     fit: BoxFit.scaleDown,
                     child: VowlMotion.lowAnimationModeOverride.value
                         ? Text(
-                            (isCorrect == true ? correctAnswer : userSpelledWord)
+                            (isCorrect == true
+                                        ? correctAnswer
+                                        : userSpelledWord)
                                     ?.toUpperCase() ??
                                 '',
                             key: const Key('academic_word_slot_answered_text'),
@@ -320,7 +327,9 @@ class _AnswerSlot extends StatelessWidget {
                                   ),
                           )
                         : Text(
-                            (isCorrect == true ? correctAnswer : userSpelledWord)
+                            (isCorrect == true
+                                        ? correctAnswer
+                                        : userSpelledWord)
                                     ?.toUpperCase() ??
                                 '',
                             key: const Key('academic_word_slot_answered_text'),
@@ -346,20 +355,20 @@ class _AnswerSlot extends StatelessWidget {
                             ),
                           )
                         : Text(
-                            AcademicWordStrings.slotPending,
-                            key: const Key('academic_word_slot_pending_text'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: isSlotSelected ? color : pendingColor,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 0.3,
-                            ),
-                          )
-                            .animate(
-                              onPlay: (c) => c.repeat(),
-                            )
-                            .shimmer(duration: 2.seconds),
+                                AcademicWordStrings.slotPending,
+                                key: const Key(
+                                  'academic_word_slot_pending_text',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: isSlotSelected ? color : pendingColor,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.3,
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat())
+                              .shimmer(duration: 2.seconds),
                   ),
           ),
         ),

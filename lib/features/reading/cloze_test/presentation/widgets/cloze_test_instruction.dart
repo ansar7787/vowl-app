@@ -44,11 +44,7 @@ class ClozeTestInstruction extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.menu_book_rounded,
-                size: 16.r,
-                color: primaryColor,
-              ),
+              Icon(Icons.menu_book_rounded, size: 16.r, color: primaryColor),
               SizedBox(width: 8.w),
               Flexible(
                 child: Text(
@@ -63,8 +59,8 @@ class ClozeTestInstruction extends StatelessWidget {
                     color: isDark
                         ? Colors.white.withValues(alpha: 0.95)
                         : (primaryColor == Colors.white
-                            ? const Color(0xFF1E293B)
-                            : primaryColor),
+                              ? const Color(0xFF1E293B)
+                              : primaryColor),
                     height: 1.35,
                     letterSpacing: 0.15,
                   ),

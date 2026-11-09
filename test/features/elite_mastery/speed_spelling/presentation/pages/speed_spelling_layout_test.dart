@@ -196,9 +196,9 @@ void main() {
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
 
     // Theme mock
-    when(
-      () => mockThemeCubit.state,
-    ).thenReturn(const ThemeState(themeMode: ThemeMode.dark, isMidnight: false));
+    when(() => mockThemeCubit.state).thenReturn(
+      const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
+    );
     when(
       () => mockThemeCubit.stream,
     ).thenAnswer((_) => const Stream<ThemeState>.empty());
@@ -215,13 +215,15 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     // Economy mock
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -335,35 +337,37 @@ void main() {
   // GROUP 1: Initial Rendering & Layout Hierarchy
   // ═══════════════════════════════════════════════════════════════════════════
   group('SpeedSpellingScreen - 1. Initial Rendering & Layout Hierarchy', () {
-    testWidgets('renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(EliteBaseLayout), findsOneWidget);
-      expect(find.byType(EliteGameHeader), findsOneWidget);
-      expect(
-        find.byKey(const Key('speed_spelling_scroll_view')),
-        findsOneWidget,
-      );
-      expect(
-        find.byKey(const Key('speed_spelling_instruction_banner')),
-        findsOneWidget,
-      );
-      expect(find.text(sampleSpeedQuest1.instruction), findsOneWidget);
-    });
+        expect(find.byType(EliteBaseLayout), findsOneWidget);
+        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(
+          find.byKey(const Key('speed_spelling_scroll_view')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const Key('speed_spelling_instruction_banner')),
+          findsOneWidget,
+        );
+        expect(find.text(sampleSpeedQuest1.instruction), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders replay audio button with volume icon when quest.word is present', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders replay audio button with volume icon when quest.word is present',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final replayBtn = find.byKey(
-        const Key('speed_spelling_replay_audio_button'),
-      );
-      expect(replayBtn, findsOneWidget);
-      expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
-    });
+        final replayBtn = find.byKey(
+          const Key('speed_spelling_replay_audio_button'),
+        );
+        expect(replayBtn, findsOneWidget);
+        expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
+      },
+    );
 
     testWidgets('omits replay audio button when quest.word is null', (
       tester,
@@ -392,18 +396,22 @@ void main() {
       );
     });
 
-    testWidgets('renders difficulty tier badge with correct tier label and icon', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders difficulty tier badge with correct tier label and icon',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(
-        find.byKey(const Key('speed_spelling_difficulty_badge')),
-        findsOneWidget,
-      );
-      expect(find.text('RARE'), findsOneWidget);
-      expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
-    });
+        expect(
+          find.byKey(const Key('speed_spelling_difficulty_badge')),
+          findsOneWidget,
+        );
+        expect(find.text('RARE'), findsOneWidget);
+        expect(
+          find.byIcon(Icons.local_fire_department_rounded),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('renders Advanced difficulty tier badge with star half icon', (
       tester,
@@ -422,31 +430,33 @@ void main() {
       expect(find.byIcon(Icons.star_half_rounded), findsOneWidget);
     });
 
-    testWidgets('renders speed bonus timer countdown bar and SPEED BONUS label', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders speed bonus timer countdown bar and SPEED BONUS label',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.text('SPEED BONUS'), findsOneWidget);
-      expect(find.byType(LinearProgressIndicator), findsOneWidget);
-    });
+        expect(find.text('SPEED BONUS'), findsOneWidget);
+        expect(find.byType(LinearProgressIndicator), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders SpeedSpellingInputField and SpeedSpellingCharacterDeck', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'renders SpeedSpellingInputField and SpeedSpellingCharacterDeck',
+      (tester) async {
+        await pumpScreen(tester);
 
-      expect(find.byType(SpeedSpellingInputField), findsOneWidget);
-      expect(
-        find.byKey(const Key('speed_spelling_input_field')),
-        findsOneWidget,
-      );
-      expect(find.byType(SpeedSpellingCharacterDeck), findsOneWidget);
-      expect(
-        find.byKey(const Key('speed_spelling_character_deck')),
-        findsOneWidget,
-      );
-    });
+        expect(find.byType(SpeedSpellingInputField), findsOneWidget);
+        expect(
+          find.byKey(const Key('speed_spelling_input_field')),
+          findsOneWidget,
+        );
+        expect(find.byType(SpeedSpellingCharacterDeck), findsOneWidget);
+        expect(
+          find.byKey(const Key('speed_spelling_character_deck')),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets('automatically plays TTS on initial post-frame load', (
       tester,
@@ -456,20 +466,21 @@ void main() {
       verify(() => mockTtsService.speak('RHYTHM')).called(1);
     });
 
-    testWidgets('tapping audio replay button triggers TTS speech for target word', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping audio replay button triggers TTS speech for target word',
+      (tester) async {
+        await pumpScreen(tester);
 
-      clearInteractions(mockTtsService);
+        clearInteractions(mockTtsService);
 
-      await tester.tap(
-        find.byKey(const Key('speed_spelling_replay_audio_button')),
-      );
-      await tester.pump();
+        await tester.tap(
+          find.byKey(const Key('speed_spelling_replay_audio_button')),
+        );
+        await tester.pump();
 
-      verify(() => mockTtsService.speak('RHYTHM')).called(1);
-    });
+        verify(() => mockTtsService.speak('RHYTHM')).called(1);
+      },
+    );
 
     testWidgets('renders ShimmerLoading when EliteMasteryLoading is active', (
       tester,
@@ -480,194 +491,206 @@ void main() {
       expect(find.byType(ShimmerLoading), findsWidgets);
     });
 
-    testWidgets('renders GameErrorView on EliteMasteryError and retries on tap', (
-      tester,
-    ) async {
-      const errorState = EliteMasteryError('Failed to load speed spelling');
-      await pumpScreen(tester, state: errorState);
+    testWidgets(
+      'renders GameErrorView on EliteMasteryError and retries on tap',
+      (tester) async {
+        const errorState = EliteMasteryError('Failed to load speed spelling');
+        await pumpScreen(tester, state: errorState);
 
-      expect(find.byType(GameErrorView), findsOneWidget);
-      expect(find.text('Failed to load speed spelling'), findsOneWidget);
+        expect(find.byType(GameErrorView), findsOneWidget);
+        expect(find.text('Failed to load speed spelling'), findsOneWidget);
 
-      final retryBtn = find.text('RETRY');
-      if (retryBtn.evaluate().isNotEmpty) {
-        await tester.tap(retryBtn);
-        await tester.pump();
-        verify(
-          () => mockEliteBloc.add(
-            const FetchEliteMasteryQuests(
-              gameType: GameSubtype.speedSpelling,
-              level: 2,
+        final retryBtn = find.text('RETRY');
+        if (retryBtn.evaluate().isNotEmpty) {
+          await tester.tap(retryBtn);
+          await tester.pump();
+          verify(
+            () => mockEliteBloc.add(
+              const FetchEliteMasteryQuests(
+                gameType: GameSubtype.speedSpelling,
+                level: 2,
+              ),
             ),
-          ),
-        ).called(greaterThanOrEqualTo(1));
-      }
-    });
+          ).called(greaterThanOrEqualTo(1));
+        }
+      },
+    );
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 2: Input Field, Letter Tapping & Deck Interactions
   // ═══════════════════════════════════════════════════════════════════════════
-  group('SpeedSpellingScreen - 2. Input Field, Letter Tapping & Deck Interactions', () {
-    testWidgets('tapping letter tiles appends characters to input field and triggers light haptic', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+  group(
+    'SpeedSpellingScreen - 2. Input Field, Letter Tapping & Deck Interactions',
+    () {
+      testWidgets(
+        'tapping letter tiles appends characters to input field and triggers light haptic',
+        (tester) async {
+          await pumpScreen(tester);
 
-      // Tap tile 0
-      final tile0 = find.byKey(const Key('speed_spelling_tile_0'));
-      expect(tile0, findsOneWidget);
+          // Tap tile 0
+          final tile0 = find.byKey(const Key('speed_spelling_tile_0'));
+          expect(tile0, findsOneWidget);
 
-      await tester.tap(tile0);
-      await tester.pump(const Duration(milliseconds: 100));
+          await tester.tap(tile0);
+          await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockHapticService.light()).called(1);
+          verify(() => mockHapticService.light()).called(1);
 
-      // Input field now has 1 character
-      final inputField = tester.widget<SpeedSpellingInputField>(
-        find.byType(SpeedSpellingInputField),
-      );
-      expect(inputField.currentInput.length, 1);
-    });
-
-    testWidgets('tapping empty/used tile in deck does nothing and does not duplicate', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      final tile0 = find.byKey(const Key('speed_spelling_tile_0'));
-      await tester.tap(tile0);
-      await tester.pump(const Duration(milliseconds: 100));
-
-      clearInteractions(mockHapticService);
-
-      // Tap tile 0 again (now it is empty string)
-      await tester.tap(tile0, warnIfMissed: false);
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verifyNever(() => mockHapticService.light());
-
-      final inputField = tester.widget<SpeedSpellingInputField>(
-        find.byType(SpeedSpellingInputField),
-      );
-      expect(inputField.currentInput.length, 1);
-    });
-
-    testWidgets('backspace button is hidden when input is empty and visible when input has text', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      expect(
-        find.byKey(const Key('speed_spelling_backspace_button')),
-        findsNothing,
-      );
-      expect(
-        find.byKey(const Key('speed_spelling_clear_button')),
-        findsNothing,
+          // Input field now has 1 character
+          final inputField = tester.widget<SpeedSpellingInputField>(
+            find.byType(SpeedSpellingInputField),
+          );
+          expect(inputField.currentInput.length, 1);
+        },
       );
 
-      // Tap tile 0
-      await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
-      await tester.pump(const Duration(milliseconds: 100));
+      testWidgets(
+        'tapping empty/used tile in deck does nothing and does not duplicate',
+        (tester) async {
+          await pumpScreen(tester);
 
-      expect(
-        find.byKey(const Key('speed_spelling_backspace_button')),
-        findsOneWidget,
+          final tile0 = find.byKey(const Key('speed_spelling_tile_0'));
+          await tester.tap(tile0);
+          await tester.pump(const Duration(milliseconds: 100));
+
+          clearInteractions(mockHapticService);
+
+          // Tap tile 0 again (now it is empty string)
+          await tester.tap(tile0, warnIfMissed: false);
+          await tester.pump(const Duration(milliseconds: 100));
+
+          verifyNever(() => mockHapticService.light());
+
+          final inputField = tester.widget<SpeedSpellingInputField>(
+            find.byType(SpeedSpellingInputField),
+          );
+          expect(inputField.currentInput.length, 1);
+        },
       );
-      expect(
-        find.byKey(const Key('speed_spelling_clear_button')),
-        findsOneWidget,
+
+      testWidgets(
+        'backspace button is hidden when input is empty and visible when input has text',
+        (tester) async {
+          await pumpScreen(tester);
+
+          expect(
+            find.byKey(const Key('speed_spelling_backspace_button')),
+            findsNothing,
+          );
+          expect(
+            find.byKey(const Key('speed_spelling_clear_button')),
+            findsNothing,
+          );
+
+          // Tap tile 0
+          await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
+          await tester.pump(const Duration(milliseconds: 100));
+
+          expect(
+            find.byKey(const Key('speed_spelling_backspace_button')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const Key('speed_spelling_clear_button')),
+            findsOneWidget,
+          );
+        },
       );
-    });
 
-    testWidgets('tapping backspace button removes last character and restores it to character deck', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+      testWidgets(
+        'tapping backspace button removes last character and restores it to character deck',
+        (tester) async {
+          await pumpScreen(tester);
 
-      // Tap tile 0
-      await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
-      await tester.pump(const Duration(milliseconds: 100));
+          // Tap tile 0
+          await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
+          await tester.pump(const Duration(milliseconds: 100));
 
-      // Tap backspace
-      final backspace = find.byKey(
-        const Key('speed_spelling_backspace_button'),
+          // Tap backspace
+          final backspace = find.byKey(
+            const Key('speed_spelling_backspace_button'),
+          );
+          await tester.tap(backspace);
+          await tester.pump(const Duration(milliseconds: 100));
+
+          verify(() => mockHapticService.selection()).called(1);
+
+          final inputField = tester.widget<SpeedSpellingInputField>(
+            find.byType(SpeedSpellingInputField),
+          );
+          expect(inputField.currentInput, '');
+
+          // Backspace and clear buttons are hidden again
+          expect(
+            find.byKey(const Key('speed_spelling_backspace_button')),
+            findsNothing,
+          );
+        },
       );
-      await tester.tap(backspace);
-      await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockHapticService.selection()).called(1);
+      testWidgets(
+        'tapping clear button clears all typed characters and restores deck',
+        (tester) async {
+          await pumpScreen(tester);
 
-      final inputField = tester.widget<SpeedSpellingInputField>(
-        find.byType(SpeedSpellingInputField),
+          // Tap tiles 0, 1, 2
+          await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
+          await tester.pump(const Duration(milliseconds: 50));
+          await tester.tap(find.byKey(const Key('speed_spelling_tile_1')));
+          await tester.pump(const Duration(milliseconds: 50));
+          await tester.tap(find.byKey(const Key('speed_spelling_tile_2')));
+          await tester.pump(const Duration(milliseconds: 100));
+
+          var inputField = tester.widget<SpeedSpellingInputField>(
+            find.byType(SpeedSpellingInputField),
+          );
+          expect(inputField.currentInput.length, 3);
+
+          // Tap clear
+          final clearBtn = find.byKey(const Key('speed_spelling_clear_button'));
+          await tester.tap(clearBtn);
+          await tester.pump(const Duration(milliseconds: 100));
+
+          verify(() => mockHapticService.selection()).called(1);
+
+          inputField = tester.widget<SpeedSpellingInputField>(
+            find.byType(SpeedSpellingInputField),
+          );
+          expect(inputField.currentInput, '');
+        },
       );
-      expect(inputField.currentInput, '');
-
-      // Backspace and clear buttons are hidden again
-      expect(
-        find.byKey(const Key('speed_spelling_backspace_button')),
-        findsNothing,
-      );
-    });
-
-    testWidgets('tapping clear button clears all typed characters and restores deck', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      // Tap tiles 0, 1, 2
-      await tester.tap(find.byKey(const Key('speed_spelling_tile_0')));
-      await tester.pump(const Duration(milliseconds: 50));
-      await tester.tap(find.byKey(const Key('speed_spelling_tile_1')));
-      await tester.pump(const Duration(milliseconds: 50));
-      await tester.tap(find.byKey(const Key('speed_spelling_tile_2')));
-      await tester.pump(const Duration(milliseconds: 100));
-
-      var inputField = tester.widget<SpeedSpellingInputField>(
-        find.byType(SpeedSpellingInputField),
-      );
-      expect(inputField.currentInput.length, 3);
-
-      // Tap clear
-      final clearBtn = find.byKey(const Key('speed_spelling_clear_button'));
-      await tester.tap(clearBtn);
-      await tester.pump(const Duration(milliseconds: 100));
-
-      verify(() => mockHapticService.selection()).called(1);
-
-      inputField = tester.widget<SpeedSpellingInputField>(
-        find.byType(SpeedSpellingInputField),
-      );
-      expect(inputField.currentInput, '');
-    });
-  });
+    },
+  );
 
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 3: Submission & Answer Evaluation
   // ═══════════════════════════════════════════════════════════════════════════
   group('SpeedSpellingScreen - 3. Submission & Answer Evaluation', () {
-    testWidgets('submit button is rendered with disabled opacity when input length is incomplete', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'submit button is rendered with disabled opacity when input length is incomplete',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final submitBtnFinder = find.byKey(
-        const Key('speed_spelling_submit_button'),
-      );
-      expect(submitBtnFinder, findsOneWidget);
+        final submitBtnFinder = find.byKey(
+          const Key('speed_spelling_submit_button'),
+        );
+        expect(submitBtnFinder, findsOneWidget);
 
-      final opacityWidget = tester.widget<Opacity>(
-        find.ancestor(of: submitBtnFinder, matching: find.byType(Opacity)),
-      );
-      expect(opacityWidget.opacity, 0.5);
+        final opacityWidget = tester.widget<Opacity>(
+          find.ancestor(of: submitBtnFinder, matching: find.byType(Opacity)),
+        );
+        expect(opacityWidget.opacity, 0.5);
 
-      // Tapping disabled submit button does nothing
-      await tester.tap(submitBtnFinder, warnIfMissed: false);
-      await tester.pump();
+        // Tapping disabled submit button does nothing
+        await tester.tap(submitBtnFinder, warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockEliteBloc.add(any(that: isA<SubmitEliteAnswer>())));
-    });
+        verifyNever(
+          () => mockEliteBloc.add(any(that: isA<SubmitEliteAnswer>())),
+        );
+      },
+    );
 
     testWidgets('filling all letters enables submit button (opacity 1.0)', (
       tester,
@@ -689,69 +712,75 @@ void main() {
       expect(opacityWidget.opacity, 1.0);
     });
 
-    testWidgets('submitting correct spelling triggers success haptics, correct sound, and SubmitEliteAnswer(true)', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'submitting correct spelling triggers success haptics, correct sound, and SubmitEliteAnswer(true)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Type the exact target word letters in sequence by finding the tile that contains each character
-      final word = sampleSpeedQuest1.word!;
-      final deck = tester.widget<SpeedSpellingCharacterDeck>(
-        find.byType(SpeedSpellingCharacterDeck),
-      );
-      final currentChars = List<String>.from(deck.shuffledChars);
+        // Type the exact target word letters in sequence by finding the tile that contains each character
+        final word = sampleSpeedQuest1.word!;
+        final deck = tester.widget<SpeedSpellingCharacterDeck>(
+          find.byType(SpeedSpellingCharacterDeck),
+        );
+        final currentChars = List<String>.from(deck.shuffledChars);
 
-      for (int i = 0; i < word.length; i++) {
-        final char = word[i];
-        final index = currentChars.indexOf(char);
-        expect(index, isNot(-1));
-        currentChars[index] = ""; // mark consumed
+        for (int i = 0; i < word.length; i++) {
+          final char = word[i];
+          final index = currentChars.indexOf(char);
+          expect(index, isNot(-1));
+          currentChars[index] = ""; // mark consumed
 
-        await tester.tap(find.byKey(Key('speed_spelling_tile_$index')));
-        await tester.pump(const Duration(milliseconds: 50));
-      }
+          await tester.tap(find.byKey(Key('speed_spelling_tile_$index')));
+          await tester.pump(const Duration(milliseconds: 50));
+        }
 
-      // Tap SUBMIT
-      await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
-      await tester.pumpAndSettle();
+        // Tap SUBMIT
+        await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('submitting wrong spelling triggers error haptics, wrong sound, and SubmitEliteAnswer(false)', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'submitting wrong spelling triggers error haptics, wrong sound, and SubmitEliteAnswer(false)',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Intentionally tap tiles in order 0, 1, 2, 3, 4, 5 without matching word
-      // If by chance the shuffle was identical, reverse it
-      final word = sampleSpeedQuest1.word!;
-      final deck = tester.widget<SpeedSpellingCharacterDeck>(
-        find.byType(SpeedSpellingCharacterDeck),
-      );
-      final currentChars = List<String>.from(deck.shuffledChars);
+        // Intentionally tap tiles in order 0, 1, 2, 3, 4, 5 without matching word
+        // If by chance the shuffle was identical, reverse it
+        final word = sampleSpeedQuest1.word!;
+        final deck = tester.widget<SpeedSpellingCharacterDeck>(
+          find.byType(SpeedSpellingCharacterDeck),
+        );
+        final currentChars = List<String>.from(deck.shuffledChars);
 
-      // Make sure the typed string != word
-      List<int> tapOrder = [0, 1, 2, 3, 4, 5];
-      final spelled = tapOrder.map((idx) => currentChars[idx]).join();
-      if (spelled.toLowerCase() == word.toLowerCase()) {
-        tapOrder = [5, 4, 3, 2, 1, 0];
-      }
+        // Make sure the typed string != word
+        List<int> tapOrder = [0, 1, 2, 3, 4, 5];
+        final spelled = tapOrder.map((idx) => currentChars[idx]).join();
+        if (spelled.toLowerCase() == word.toLowerCase()) {
+          tapOrder = [5, 4, 3, 2, 1, 0];
+        }
 
-      for (final idx in tapOrder) {
-        await tester.tap(find.byKey(Key('speed_spelling_tile_$idx')));
-        await tester.pump(const Duration(milliseconds: 50));
-      }
+        for (final idx in tapOrder) {
+          await tester.tap(find.byKey(Key('speed_spelling_tile_$idx')));
+          await tester.pump(const Duration(milliseconds: 50));
+        }
 
-      await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockEliteBloc.add(const SubmitEliteAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockEliteBloc.add(const SubmitEliteAnswer(false)),
+        ).called(1);
+      },
+    );
 
     testWidgets('once answered, submit button is hidden', (tester) async {
       await pumpScreen(tester);
@@ -818,20 +847,21 @@ void main() {
   // GROUP 4: Game Lifecycle, Hints & State Transitions
   // ═══════════════════════════════════════════════════════════════════════════
   group('SpeedSpellingScreen - 4. Game Lifecycle, Hints & State Transitions', () {
-    testWidgets('tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final hintBtn = find.byType(QuestHintButton);
-      expect(hintBtn, findsOneWidget);
+        final hintBtn = find.byType(QuestHintButton);
+        expect(hintBtn, findsOneWidget);
 
-      await tester.tap(hintBtn);
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hintBtn);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockEliteBloc.add(const MarkEliteHintUsed())).called(1);
-      verify(() => mockEliteBloc.add(const ShowEliteHint())).called(1);
-    });
+        verify(() => mockEliteBloc.add(const MarkEliteHintUsed())).called(1);
+        verify(() => mockEliteBloc.add(const ShowEliteHint())).called(1);
+      },
+    );
 
     testWidgets('displays EliteHintCard when isHintVisible is true', (
       tester,
@@ -851,9 +881,7 @@ void main() {
       expect(find.text(sampleSpeedQuest1.hint!), findsOneWidget);
     });
 
-    testWidgets('omits hint button when quest.hint is null', (
-      tester,
-    ) async {
+    testWidgets('omits hint button when quest.hint is null', (tester) async {
       final noHintQuest = EliteMasteryQuest(
         id: 'no_hint_sp',
         type: QuestType.eliteMastery,
@@ -876,64 +904,66 @@ void main() {
       expect(find.byType(QuestHintButton), findsNothing);
     });
 
-    testWidgets('GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Submit correct answer
-      final word = sampleSpeedQuest1.word!;
-      final deck = tester.widget<SpeedSpellingCharacterDeck>(
-        find.byType(SpeedSpellingCharacterDeck),
-      );
-      final currentChars = List<String>.from(deck.shuffledChars);
+        // Submit correct answer
+        final word = sampleSpeedQuest1.word!;
+        final deck = tester.widget<SpeedSpellingCharacterDeck>(
+          find.byType(SpeedSpellingCharacterDeck),
+        );
+        final currentChars = List<String>.from(deck.shuffledChars);
 
-      for (int i = 0; i < word.length; i++) {
-        final char = word[i];
-        final index = currentChars.indexOf(char);
-        currentChars[index] = "";
-        await tester.tap(find.byKey(Key('speed_spelling_tile_$index')));
-        await tester.pump(const Duration(milliseconds: 50));
-      }
+        for (int i = 0; i < word.length; i++) {
+          final char = word[i];
+          final index = currentChars.indexOf(char);
+          currentChars[index] = "";
+          await tester.tap(find.byKey(Key('speed_spelling_tile_$index')));
+          await tester.pump(const Duration(milliseconds: 50));
+        }
 
-      await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
+        await tester.pumpAndSettle();
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
 
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pumpAndSettle();
+        await tester.tap(continueBtn);
+        await tester.pumpAndSettle();
 
-      verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
-    });
+        verify(() => mockEliteBloc.add(const NextEliteQuestion())).called(1);
+      },
+    );
 
-    testWidgets('state transition to EliteMasteryGameComplete shows level complete dialog and flushes confetti', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      'state transition to EliteMasteryGameComplete shows level complete dialog and flushes confetti',
+      (tester) async {
+        await pumpScreen(tester);
 
-      const completeState = EliteMasteryGameComplete(
-        xpEarned: 5,
-        coinsEarned: 10,
-        questCount: 3,
-      );
+        const completeState = EliteMasteryGameComplete(
+          xpEarned: 5,
+          coinsEarned: 10,
+          questCount: 3,
+        );
 
-      when(() => mockEliteBloc.state).thenReturn(completeState);
-      eliteStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        when(() => mockEliteBloc.state).thenReturn(completeState);
+        eliteStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      // Clean up dialog and flush confetti timer cycles
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      for (int i = 0; i < 5; i++) {
-        await tester.pump(const Duration(seconds: 2));
-      }
-    });
+        // Clean up dialog and flush confetti timer cycles
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        for (int i = 0; i < 5; i++) {
+          await tester.pump(const Duration(seconds: 2));
+        }
+      },
+    );
 
     testWidgets('EliteMasteryGameOver renders dimmed view with zero lives', (
       tester,
@@ -970,58 +1000,62 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   // GROUP 5: Responsive Layout, Text Scaling & Accessibility
   // ═══════════════════════════════════════════════════════════════════════════
-  group('SpeedSpellingScreen - 5. Responsive Layout, Text Scaling & Accessibility', () {
-    testWidgets('renders cleanly on compact screen (320x568) without overflow', (
-      tester,
-    ) async {
-      await pumpScreen(tester, surfaceSize: const Size(320, 568));
+  group(
+    'SpeedSpellingScreen - 5. Responsive Layout, Text Scaling & Accessibility',
+    () {
+      testWidgets(
+        'renders cleanly on compact screen (320x568) without overflow',
+        (tester) async {
+          await pumpScreen(tester, surfaceSize: const Size(320, 568));
 
-      expect(find.byType(SpeedSpellingScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('renders cleanly on tablet viewport (800x1280)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, surfaceSize: const Size(800, 1280));
-
-      expect(find.byType(SpeedSpellingScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('renders properly with enlarged textScaler (1.3x)', (
-      tester,
-    ) async {
-      await pumpScreen(tester, textScaleFactor: 1.3);
-
-      expect(find.byType(SpeedSpellingScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('accessible semantics: letter tiles have button semantics and labels', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-
-      final tileSemantics = tester.getSemantics(
-        find.byKey(const Key('speed_spelling_tile_0')),
+          expect(find.byType(SpeedSpellingScreen), findsOneWidget);
+          expect(tester.takeException(), isNull);
+        },
       );
-      expect(tileSemantics.flagsCollection.isButton, isTrue);
-    });
 
-    testWidgets('renders cleanly in light and dark theme modes', (
-      tester,
-    ) async {
-      await pumpScreen(tester, themeMode: ThemeMode.light);
+      testWidgets('renders cleanly on tablet viewport (800x1280)', (
+        tester,
+      ) async {
+        await pumpScreen(tester, surfaceSize: const Size(800, 1280));
 
-      expect(find.byType(SpeedSpellingScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
+        expect(find.byType(SpeedSpellingScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
 
-      await pumpScreen(tester, themeMode: ThemeMode.dark);
+      testWidgets('renders properly with enlarged textScaler (1.3x)', (
+        tester,
+      ) async {
+        await pumpScreen(tester, textScaleFactor: 1.3);
 
-      expect(find.byType(SpeedSpellingScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-  });
+        expect(find.byType(SpeedSpellingScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+
+      testWidgets(
+        'accessible semantics: letter tiles have button semantics and labels',
+        (tester) async {
+          await pumpScreen(tester);
+
+          final tileSemantics = tester.getSemantics(
+            find.byKey(const Key('speed_spelling_tile_0')),
+          );
+          expect(tileSemantics.flagsCollection.isButton, isTrue);
+        },
+      );
+
+      testWidgets('renders cleanly in light and dark theme modes', (
+        tester,
+      ) async {
+        await pumpScreen(tester, themeMode: ThemeMode.light);
+
+        expect(find.byType(SpeedSpellingScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await pumpScreen(tester, themeMode: ThemeMode.dark);
+
+        expect(find.byType(SpeedSpellingScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+    },
+  );
 }
-

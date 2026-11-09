@@ -31,7 +31,9 @@ class _LocalPalette {
 
 /// Helper to extract educational phonics clues from quest instruction without modifying JSON
 class _PhonicsClueHelper {
-  static final RegExp _blankPattern = RegExp(r'[A-Za-z]+_{1,4}[A-Za-z]*|_{1,4}[A-Za-z]+|_{2,4}');
+  static final RegExp _blankPattern = RegExp(
+    r'[A-Za-z]+_{1,4}[A-Za-z]*|_{1,4}[A-Za-z]+|_{2,4}',
+  );
   static final RegExp _quotedPattern = RegExp(r'[“"«]([^”"»]+)[”"»]');
   static final RegExp _phonemePattern = RegExp(r'\/([^\/]+)\/');
 
@@ -95,7 +97,7 @@ class _KidsPhonicsLayoutState extends State<KidsPhonicsLayout>
   @override
   void dispose() {
     _animController.dispose();
-        try {
+    try {
       if (di.sl.isRegistered<KidsTTSService>()) {
         di.sl<KidsTTSService>().stop();
       }
@@ -216,11 +218,19 @@ class _KidsPhonicsLayoutState extends State<KidsPhonicsLayout>
                   child: KidsFittedText(
                     isAnswered
                         ? (state.answerStatus == AnswerStatus.correct
-                            ? context.tr('games.kids_phonics_correct', fallback: 'Great job! You found the right sound.')
-                            : context.tr('games.kids_phonics_incorrect', fallback: 'Listen carefully and try again.'))
+                              ? context.tr(
+                                  'games.kids_phonics_correct',
+                                  fallback:
+                                      'Great job! You found the right sound.',
+                                )
+                              : context.tr(
+                                  'games.kids_phonics_incorrect',
+                                  fallback: 'Listen carefully and try again.',
+                                ))
                         : context.tr(
                             'games.kids_phonics_drag',
-                            fallback: 'Choose the matching sound, or drag it to the speaker.',
+                            fallback:
+                                'Choose the matching sound, or drag it to the speaker.',
                           ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -247,7 +257,8 @@ class _KidsPhonicsLayoutState extends State<KidsPhonicsLayout>
                     isAllShort: isAllShort,
                     animController: _animController,
                     isCompactHeight: isCompactHeight,
-                    onOptionSelected: (option) => _submitAnswer(context, state, option),
+                    onOptionSelected: (option) =>
+                        _submitAnswer(context, state, option),
                   ),
                 ),
               ],
@@ -285,247 +296,271 @@ class _StudioMonitor extends StatelessWidget {
     final phoneme = _PhonicsClueHelper.extractPhoneme(quest.instruction);
 
     return Semantics(
-      label: 'Speaker area. Tap Listen to hear the clue, or select a sound below.',
+      label:
+          'Speaker area. Tap Listen to hear the clue, or select a sound below.',
       child: Container(
-          width: 290.w,
-          height: monitorHeight,
-            decoration: BoxDecoration(
-              color: _LocalPalette.color09090b,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: isHovering
-                    ? _LocalPalette.color818cf8
-                    : (isCorrect
-                        ? _LocalPalette.color22c55e
-                        : _LocalPalette.color52525b),
-                width: isHovering ? 3.r : 2.r,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: isHovering
-                      ? _LocalPalette.color818cf8.withValues(alpha: 0.35)
-                      : Colors.black.withValues(alpha: 0.35),
-                  blurRadius: isHovering ? 16 : 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+        width: 290.w,
+        height: monitorHeight,
+        decoration: BoxDecoration(
+          color: _LocalPalette.color09090b,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: isHovering
+                ? _LocalPalette.color818cf8
+                : (isCorrect
+                      ? _LocalPalette.color22c55e
+                      : _LocalPalette.color52525b),
+            width: isHovering ? 3.r : 2.r,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isHovering
+                  ? _LocalPalette.color818cf8.withValues(alpha: 0.35)
+                  : Colors.black.withValues(alpha: 0.35),
+              blurRadius: isHovering ? 16 : 12,
+              offset: const Offset(0, 4),
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(14.r),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Animated Soundwave Equalizer Background
-                  Positioned(
-                    bottom: 0,
-                    left: 8.w,
-                    right: 8.w,
-                    height: 90.h,
-                    child: _EqualizerVisualizer(
-                      animController: animController,
-                      isHovering: isHovering,
-                      isCorrect: isCorrect,
-                    ),
-                  ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(14.r),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Animated Soundwave Equalizer Background
+              Positioned(
+                bottom: 0,
+                left: 8.w,
+                right: 8.w,
+                height: 90.h,
+                child: _EqualizerVisualizer(
+                  animController: animController,
+                  isHovering: isHovering,
+                  isCorrect: isCorrect,
+                ),
+              ),
 
-                  // Top Status Header
-                  Positioned(
-                    top: 10.h,
-                    left: 12.w,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 8.r,
-                          height: 8.r,
-                          decoration: BoxDecoration(
-                            color: isCorrect
-                                ? _LocalPalette.color22c55e
-                                : (isHovering
-                                    ? _LocalPalette.color818cf8
-                                    : const Color(0xFF38BDF8)),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        SizedBox(width: 6.w),
-                        Text(
-                          isCorrect
-                              ? context.tr('games.matched', fallback: 'Matched!')
-                              : context.tr('games.listen_and_match', fallback: 'Listen & Match'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 0.4,
-                            color: Colors.white.withValues(alpha: 0.8),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // Audio Replay Button at Bottom Right (Clean and Unobstructed)
-                  Positioned(
-                    bottom: 10.h,
-                    right: 12.w,
-                    child: ScaleButton(
-                      onTap: onReplayAudio,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(14.r),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.3),
-                            width: 1,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.volume_up_rounded,
-                              color: Colors.amberAccent,
-                              size: 15.r,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              context.tr('games.listen', fallback: 'Listen'),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
+              // Top Status Header
+              Positioned(
+                top: 10.h,
+                left: 12.w,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 8.r,
+                      height: 8.r,
+                      decoration: BoxDecoration(
+                        color: isCorrect
+                            ? _LocalPalette.color22c55e
+                            : (isHovering
+                                  ? _LocalPalette.color818cf8
+                                  : const Color(0xFF38BDF8)),
+                        shape: BoxShape.circle,
                       ),
                     ),
-                  ),
-
-                  // Center Content Display
-                  Padding(
-                    padding: EdgeInsets.only(top: 24.h, bottom: 8.h, left: 12.w, right: 12.w),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                        // Emoji with clean halo (NO clashing text overlay!)
-                        if (quest.emoji != null && quest.emoji!.isNotEmpty) ...[
-                          Container(
-                            padding: EdgeInsets.all(6.r),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isCorrect
-                                  ? _LocalPalette.color22c55e.withValues(alpha: 0.2)
-                                  : Colors.white.withValues(alpha: 0.08),
+                    SizedBox(width: 6.w),
+                    Text(
+                      isCorrect
+                          ? context.tr('games.matched', fallback: 'Matched!')
+                          : context.tr(
+                              'games.listen_and_match',
+                              fallback: 'Listen & Match',
                             ),
-                            child: Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 48.sp),
-                            ),
-                          ),
-                          SizedBox(height: 6.h),
-                        ],
-
-                        // Target Clue Display (Blank Word, Quoted Word, or Phoneme)
-                        if (blankWord != null)
-                          _buildBlankWordBadge(blankWord, isCorrect)
-                        else if (targetWord != null)
-                          _buildTargetWordBadge(targetWord, phoneme, isCorrect)
-                        else if (phoneme != null)
-                          _buildPhonemeBadge(phoneme, isCorrect)
-                        else if (quest.question != null && quest.question != '?')
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            child: KidsFittedText(
-                              quest.question!,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                            ),
-                          )
-                        else
-                          // Subtle sound target prompt
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.graphic_eq_rounded,
-                                  color: _LocalPalette.color818cf8,
-                                  size: 16.r,
-                                ),
-                                SizedBox(width: 6.w),
-                                Text(
-                                  isCorrect ? (quest.correctAnswer ?? 'Matched!') : 'Match the sound',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: isCorrect ? _LocalPalette.color22c55e : Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                      ],
-                      ),
-                    ),
-                  ),
-
-                  // Turntable Vinyl Spin Overlay on Correct Answer
-                  if (isCorrect)
-                    Positioned(
-                      bottom: 8.h,
-                      left: 12.w,
-                      child: AnimatedBuilder(
-                        animation: animController,
-                        builder: (context, child) {
-                          return Transform.rotate(
-                            angle: animController.value * 2 * math.pi,
-                            child: child,
-                          );
-                        },
-                        child: Container(
-                          width: 32.r,
-                          height: 32.r,
-                          decoration: BoxDecoration(
-                            color: _LocalPalette.color18181b,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: _LocalPalette.color22c55e, width: 2),
-                          ),
-                          child: Center(
-                            child: Container(
-                              width: 8.r,
-                              height: 8.r,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                          ),
-                        ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.4,
+                        color: Colors.white.withValues(alpha: 0.8),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-          );
-        }
+
+              // Audio Replay Button at Bottom Right (Clean and Unobstructed)
+              Positioned(
+                bottom: 10.h,
+                right: 12.w,
+                child: ScaleButton(
+                  onTap: onReplayAudio,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 5.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.3),
+                        width: 1,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.volume_up_rounded,
+                          color: Colors.amberAccent,
+                          size: 15.r,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          context.tr('games.listen', fallback: 'Listen'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              // Center Content Display
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 24.h,
+                  bottom: 8.h,
+                  left: 12.w,
+                  right: 12.w,
+                ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Emoji with clean halo (NO clashing text overlay!)
+                      if (quest.emoji != null && quest.emoji!.isNotEmpty) ...[
+                        Container(
+                          padding: EdgeInsets.all(6.r),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: isCorrect
+                                ? _LocalPalette.color22c55e.withValues(
+                                    alpha: 0.2,
+                                  )
+                                : Colors.white.withValues(alpha: 0.08),
+                          ),
+                          child: Text(
+                            quest.emoji!,
+                            style: TextStyle(fontSize: 48.sp),
+                          ),
+                        ),
+                        SizedBox(height: 6.h),
+                      ],
+
+                      // Target Clue Display (Blank Word, Quoted Word, or Phoneme)
+                      if (blankWord != null)
+                        _buildBlankWordBadge(blankWord, isCorrect)
+                      else if (targetWord != null)
+                        _buildTargetWordBadge(targetWord, phoneme, isCorrect)
+                      else if (phoneme != null)
+                        _buildPhonemeBadge(phoneme, isCorrect)
+                      else if (quest.question != null && quest.question != '?')
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                          child: KidsFittedText(
+                            quest.question!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                          ),
+                        )
+                      else
+                        // Subtle sound target prompt
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.graphic_eq_rounded,
+                                color: _LocalPalette.color818cf8,
+                                size: 16.r,
+                              ),
+                              SizedBox(width: 6.w),
+                              Text(
+                                isCorrect
+                                    ? (quest.correctAnswer ?? 'Matched!')
+                                    : 'Match the sound',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isCorrect
+                                      ? _LocalPalette.color22c55e
+                                      : Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Turntable Vinyl Spin Overlay on Correct Answer
+              if (isCorrect)
+                Positioned(
+                  bottom: 8.h,
+                  left: 12.w,
+                  child: AnimatedBuilder(
+                    animation: animController,
+                    builder: (context, child) {
+                      return Transform.rotate(
+                        angle: animController.value * 2 * math.pi,
+                        child: child,
+                      );
+                    },
+                    child: Container(
+                      width: 32.r,
+                      height: 32.r,
+                      decoration: BoxDecoration(
+                        color: _LocalPalette.color18181b,
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: _LocalPalette.color22c55e,
+                          width: 2,
+                        ),
+                      ),
+                      child: Center(
+                        child: Container(
+                          width: 8.r,
+                          height: 8.r,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   Widget _buildBlankWordBadge(String blankWord, bool isCorrect) {
     // If answered correctly, replace blanks with the correct answer
@@ -541,7 +576,9 @@ class _StudioMonitor extends StatelessWidget {
             : Colors.black.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: isCorrect ? _LocalPalette.color22c55e : _LocalPalette.color818cf8,
+          color: isCorrect
+              ? _LocalPalette.color22c55e
+              : _LocalPalette.color818cf8,
           width: 1.5,
         ),
       ),
@@ -558,7 +595,11 @@ class _StudioMonitor extends StatelessWidget {
     );
   }
 
-  Widget _buildTargetWordBadge(String targetWord, String? phoneme, bool isCorrect) {
+  Widget _buildTargetWordBadge(
+    String targetWord,
+    String? phoneme,
+    bool isCorrect,
+  ) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
       decoration: BoxDecoration(
@@ -638,7 +679,21 @@ class _EqualizerVisualizer extends StatelessWidget {
   });
 
   static const List<double> _baseHeights = [
-    18.0, 42.0, 26.0, 68.0, 34.0, 52.0, 80.0, 58.0, 36.0, 72.0, 44.0, 24.0, 50.0, 20.0, 35.0,
+    18.0,
+    42.0,
+    26.0,
+    68.0,
+    34.0,
+    52.0,
+    80.0,
+    58.0,
+    36.0,
+    72.0,
+    44.0,
+    24.0,
+    50.0,
+    20.0,
+    35.0,
   ];
 
   @override
@@ -650,8 +705,8 @@ class _EqualizerVisualizer extends StatelessWidget {
         final barColor = isCorrect
             ? _LocalPalette.color22c55e.withValues(alpha: 0.45)
             : (isHovering
-                ? _LocalPalette.color818cf8.withValues(alpha: 0.5)
-                : const Color(0xFF22C55E).withValues(alpha: 0.25));
+                  ? _LocalPalette.color818cf8.withValues(alpha: 0.5)
+                  : const Color(0xFF22C55E).withValues(alpha: 0.25));
 
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -660,7 +715,8 @@ class _EqualizerVisualizer extends StatelessWidget {
             final baseH = _baseHeights[index];
             // Sine-wave dynamic pulsing factor per bar
             final offset = (index / _baseHeights.length) * 2 * math.pi;
-            final dynamicFactor = 0.6 + 0.4 * math.sin(animVal * 2 * math.pi + offset);
+            final dynamicFactor =
+                0.6 + 0.4 * math.sin(animVal * 2 * math.pi + offset);
             final currentHeight = (baseH * dynamicFactor).clamp(10.0, 85.0);
 
             return Container(
@@ -718,7 +774,10 @@ class _StudioDeskArea extends StatelessWidget {
             color: _LocalPalette.studioDeck,
             borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
             border: Border(
-              top: BorderSide(color: _LocalPalette.studioDeckBorder, width: 2.h),
+              top: BorderSide(
+                color: _LocalPalette.studioDeckBorder,
+                width: 2.h,
+              ),
             ),
             boxShadow: [
               BoxShadow(
@@ -849,10 +908,7 @@ class _VinylOptionItem extends StatelessWidget {
           ),
         ),
         childWhenDragging: Opacity(opacity: 0.25, child: cardWidget),
-        child: ScaleButton(
-          onTap: onTap,
-          child: cardWidget,
-        ),
+        child: ScaleButton(onTap: onTap, child: cardWidget),
       ),
     );
   }
@@ -869,7 +925,9 @@ class _VinylOptionItem extends StatelessWidget {
           color: isCorrect && state.answerStatus == AnswerStatus.correct
               ? _LocalPalette.color22c55e
               : _LocalPalette.color3f3f46,
-          width: isCorrect && state.answerStatus == AnswerStatus.correct ? 2.5 : 1,
+          width: isCorrect && state.answerStatus == AnswerStatus.correct
+              ? 2.5
+              : 1,
         ),
         boxShadow: [
           BoxShadow(
@@ -1023,11 +1081,7 @@ class _VinylOptionItem extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 4.w),
-              Icon(
-                Icons.music_note_rounded,
-                color: labelColor,
-                size: 13.r,
-              ),
+              Icon(Icons.music_note_rounded, color: labelColor, size: 13.r),
             ],
           ),
           SizedBox(height: 6.h),

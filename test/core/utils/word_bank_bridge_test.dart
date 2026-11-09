@@ -60,7 +60,8 @@ void main() {
         word: 'espresso',
         phonetic: '/eˈspres.əʊ/',
         partOfSpeech: 'noun',
-        definition: 'Strong black coffee made by forcing steam through ground beans.',
+        definition:
+            'Strong black coffee made by forcing steam through ground beans.',
         example: 'He ordered a double espresso.',
       );
 

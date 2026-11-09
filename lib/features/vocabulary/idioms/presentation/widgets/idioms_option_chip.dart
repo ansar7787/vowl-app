@@ -49,8 +49,12 @@ class IdiomsOptionChip extends StatelessWidget {
     final isCorrectOption = isAnswered && text == correct && isCorrect == true;
 
     Color cardBg = isDark ? color.withValues(alpha: 0.08) : Colors.white;
-    Color cardBorder = isDark ? color.withValues(alpha: 0.25) : color.withValues(alpha: 0.2);
-    Color textColor = isDark ? Colors.white.withValues(alpha: 0.9) : AppColors.slate900;
+    Color cardBorder = isDark
+        ? color.withValues(alpha: 0.25)
+        : color.withValues(alpha: 0.2);
+    Color textColor = isDark
+        ? Colors.white.withValues(alpha: 0.9)
+        : AppColors.slate900;
 
     if (isCorrectOption) {
       cardBg = AppColors.gameCorrect.withValues(alpha: isDark ? 0.2 : 0.12);

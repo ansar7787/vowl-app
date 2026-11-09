@@ -9,6 +9,7 @@ import 'package:vowl/features/photo_vocabulary/domain/entities/visual_object_tar
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/visual_object_badges.dart';
 
 class MockHapticService extends Mock implements HapticService {}
+
 class MockSoundService extends Mock implements SoundService {}
 
 Widget _wrap(Widget child) {
@@ -16,9 +17,7 @@ Widget _wrap(Widget child) {
     designSize: const Size(390, 844),
     minTextAdapt: true,
     builder: (context, _) => MaterialApp(
-      home: Scaffold(
-        body: SingleChildScrollView(child: child),
-      ),
+      home: Scaffold(body: SingleChildScrollView(child: child)),
     ),
   );
 }
@@ -84,7 +83,9 @@ void main() {
       expect(selected!.label, equals('Coffee cup'));
     });
 
-    testWidgets('triggers onStartChallenge when snap challenge button tapped', (tester) async {
+    testWidgets('triggers onStartChallenge when snap challenge button tapped', (
+      tester,
+    ) async {
       bool challengeStarted = false;
 
       await tester.pumpWidget(
@@ -99,7 +100,9 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      final challengeBtn = find.text('Play 3-Question Snap Challenge (+10 Coins)');
+      final challengeBtn = find.text(
+        'Play 3-Question Snap Challenge (+10 Coins)',
+      );
       expect(challengeBtn, findsOneWidget);
 
       await tester.ensureVisible(challengeBtn);
@@ -110,7 +113,9 @@ void main() {
       expect(challengeStarted, isTrue);
     });
 
-    testWidgets('renders empty state safely when objects list is empty', (tester) async {
+    testWidgets('renders empty state safely when objects list is empty', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         _wrap(
           VisualObjectBadges(
@@ -124,7 +129,10 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(VisualObjectBadges), findsOneWidget);
-      expect(find.text('Play 3-Question Snap Challenge (+10 Coins)'), findsNothing);
+      expect(
+        find.text('Play 3-Question Snap Challenge (+10 Coins)'),
+        findsNothing,
+      );
     });
   });
 }

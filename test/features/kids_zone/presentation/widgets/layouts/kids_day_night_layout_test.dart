@@ -139,8 +139,9 @@ void main() {
     mockLocaleService = MockLocaleService();
 
     when(() => mockKidsBloc.state).thenReturn(testLoadedDayNightState);
-    when(() => mockKidsBloc.stream)
-        .thenAnswer((_) => const Stream<KidsState>.empty());
+    when(
+      () => mockKidsBloc.stream,
+    ).thenAnswer((_) => const Stream<KidsState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -152,14 +153,17 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
-    when(() => mockTTSService.speak(any(), force: any(named: 'force')))
-        .thenAnswer((_) async => true);
+    when(
+      () => mockTTSService.speak(any(), force: any(named: 'force')),
+    ).thenAnswer((_) async => true);
     when(() => mockTTSService.stop()).thenAnswer((_) => Future.value());
-    when(() => mockTTSService.isNarrationEnabled())
-        .thenAnswer((_) async => false);
+    when(
+      () => mockTTSService.isNarrationEnabled(),
+    ).thenAnswer((_) async => false);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -167,29 +171,44 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    when(() => mockAudioService.playLevelCompleteSFX())
-        .thenAnswer((_) async {});
+    when(
+      () => mockAudioService.playLevelCompleteSFX(),
+    ).thenAnswer((_) async {});
 
-    when(() => mockLocaleService.tr(any())).thenAnswer(
-      (inv) => inv.positionalArguments.first as String,
-    );
+    when(
+      () => mockLocaleService.tr(any()),
+    ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    when(() => mockLogger.debug(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.warning(any(), tag: any(named: 'tag'))).thenReturn(null);
-    when(() => mockLogger.error(
-          any(),
-          error: any(named: 'error'),
-          stackTrace: any(named: 'stackTrace'),
-          tag: any(named: 'tag'),
-        )).thenReturn(null);
+    when(
+      () => mockLogger.debug(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.warning(any(), tag: any(named: 'tag')),
+    ).thenReturn(null);
+    when(
+      () => mockLogger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+        tag: any(named: 'tag'),
+      ),
+    ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
@@ -250,52 +269,72 @@ void main() {
   }
 
   group('KidsDayNightLayout - Initial Rendering & Celestial Aesthetics', () {
-    testWidgets('renders observatory sky view, stars, prompt banner, and celestial cards',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'renders observatory sky view, stars, prompt banner, and celestial cards',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      // Verify instruction text rendered in header bubble
-      expect(
-        find.text(
-          'The Sun is shining high above the playground, and the slide feels warm. Is it daytime or nighttime?',
-        ),
-        findsOneWidget,
-      );
+        // Verify instruction text rendered in header bubble
+        expect(
+          find.text(
+            'The Sun is shining high above the playground, and the slide feels warm. Is it daytime or nighttime?',
+          ),
+          findsOneWidget,
+        );
 
-      // Verify prompt banner text
-      expect(
-        find.text('Tap or drag the correct sky card to the observatory!'),
-        findsOneWidget,
-      );
+        // Verify prompt banner text
+        expect(
+          find.text('Tap or drag the correct sky card to the observatory!'),
+          findsOneWidget,
+        );
 
-      // Verify celestial cards rendered
-      expect(find.byKey(const ValueKey('day_night_option_Daytime')), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Nighttime')), findsOneWidget);
+        // Verify celestial cards rendered
+        expect(
+          find.byKey(const ValueKey('day_night_option_Daytime')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('day_night_option_Nighttime')),
+          findsOneWidget,
+        );
 
-      // Verify sun and moon icons are present
-      expect(find.byIcon(Icons.wb_sunny_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.mode_night_rounded), findsOneWidget);
+        // Verify sun and moon icons are present
+        expect(find.byIcon(Icons.wb_sunny_rounded), findsOneWidget);
+        expect(find.byIcon(Icons.mode_night_rounded), findsOneWidget);
 
-      // Verify audio replay button
-      expect(find.byKey(const ValueKey('day_night_audio_replay_btn')), findsOneWidget);
-    });
+        // Verify audio replay button
+        expect(
+          find.byKey(const ValueKey('day_night_audio_replay_btn')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('renders nighttime quest with appropriate moon icon and question placeholder',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedNightState);
+    testWidgets(
+      'renders nighttime quest with appropriate moon icon and question placeholder',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedNightState);
 
-      expect(
-        find.text(
-          'Mia looks out her window and sees the Moon and lots of tiny twinkling stars. When is she looking?',
-        ),
-        findsOneWidget,
-      );
-      expect(find.byKey(const ValueKey('day_night_option_Nighttime')), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Daytime')), findsOneWidget);
-    });
+        expect(
+          find.text(
+            'Mia looks out her window and sees the Moon and lots of tiny twinkling stars. When is she looking?',
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('day_night_option_Nighttime')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('day_night_option_Daytime')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('renders cleanly in dark mode without contrast issues',
-        (tester) async {
+    testWidgets('renders cleanly in dark mode without contrast issues', (
+      tester,
+    ) async {
       await pumpDayNightLayout(
         tester,
         state: testLoadedDayNightState,
@@ -303,123 +342,153 @@ void main() {
       );
 
       expect(find.byType(KidsDayNightLayout), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Daytime')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('day_night_option_Daytime')),
+        findsOneWidget,
+      );
     });
   });
 
   group('KidsDayNightLayout - Audio Scaffolding', () {
-    testWidgets('tapping sky view audio button replays question instruction via TTS',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'tapping sky view audio button replays question instruction via TTS',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final audioBtn = find.byKey(const ValueKey('day_night_audio_replay_btn'));
-      expect(audioBtn, findsOneWidget);
+        final audioBtn = find.byKey(
+          const ValueKey('day_night_audio_replay_btn'),
+        );
+        expect(audioBtn, findsOneWidget);
 
-      await tester.tap(audioBtn);
-      await tester.pump();
+        await tester.tap(audioBtn);
+        await tester.pump();
 
-      verify(() => mockTTSService.speak(
+        verify(
+          () => mockTTSService.speak(
             'The Sun is shining high above the playground, and the slide feels warm. Is it daytime or nighttime?',
             force: true,
-          )).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-    });
+          ),
+        ).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-    testWidgets('tapping option speaker button pronounces celestial name via TTS without submitting',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'tapping option speaker button pronounces celestial name via TTS without submitting',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final daytimeSpeaker = find.byKey(const ValueKey('day_night_speaker_Daytime'));
-      expect(daytimeSpeaker, findsOneWidget);
+        final daytimeSpeaker = find.byKey(
+          const ValueKey('day_night_speaker_Daytime'),
+        );
+        expect(daytimeSpeaker, findsOneWidget);
 
-      await tester.tap(daytimeSpeaker);
-      await tester.pump();
+        await tester.tap(daytimeSpeaker);
+        await tester.pump();
 
-      verify(() => mockTTSService.speak('Daytime', force: true)).called(1);
-      verify(() => mockHapticService.selection()).called(1);
-      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
-    });
+        verify(() => mockTTSService.speak('Daytime', force: true)).called(1);
+        verify(() => mockHapticService.selection()).called(1);
+        verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
+      },
+    );
   });
 
   group('KidsDayNightLayout - Dual Interaction (Tap & Drag)', () {
-    testWidgets('instant tap-to-answer correct option dispatches SubmitKidsAnswer(true) and success haptics',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'instant tap-to-answer correct option dispatches SubmitKidsAnswer(true) and success haptics',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final daytimeOption = find.byKey(const ValueKey('day_night_option_Daytime'));
-      await tester.tap(daytimeOption);
-      await tester.pump();
+        final daytimeOption = find.byKey(
+          const ValueKey('day_night_option_Daytime'),
+        );
+        await tester.tap(daytimeOption);
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
-      verifyNever(() => mockHapticService.error());
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verifyNever(() => mockHapticService.error());
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('instant tap-to-answer incorrect option dispatches SubmitKidsAnswer(false), error haptics and TTS pronunciation',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'instant tap-to-answer incorrect option dispatches SubmitKidsAnswer(false), error haptics and TTS pronunciation',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final nighttimeOption = find.byKey(const ValueKey('day_night_option_Nighttime'));
-      await tester.tap(nighttimeOption);
-      await tester.pump();
+        final nighttimeOption = find.byKey(
+          const ValueKey('day_night_option_Nighttime'),
+        );
+        await tester.tap(nighttimeOption);
+        await tester.pump();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockTTSService.speak('Nighttime')).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockTTSService.speak('Nighttime')).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('drag-and-drop correct celestial card onto observatory sky view triggers SubmitKidsAnswer(true)',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'drag-and-drop correct celestial card onto observatory sky view triggers SubmitKidsAnswer(true)',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final draggableFinder = find.byWidgetPredicate(
-        (w) => w is Draggable<String> && w.data == 'Daytime',
-      );
-      final dragTargetFinder = find.byType(DragTarget<String>);
+        final draggableFinder = find.byWidgetPredicate(
+          (w) => w is Draggable<String> && w.data == 'Daytime',
+        );
+        final dragTargetFinder = find.byType(DragTarget<String>);
 
-      expect(draggableFinder, findsOneWidget);
-      expect(dragTargetFinder, findsOneWidget);
+        expect(draggableFinder, findsOneWidget);
+        expect(dragTargetFinder, findsOneWidget);
 
-      final dragGesture = await tester.startGesture(tester.getCenter(draggableFinder));
-      await tester.pump();
+        final dragGesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
+        await tester.pump();
 
-      // Move over the drag target observatory
-      await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
-      await tester.pump();
+        // Move over the drag target observatory
+        await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
+        await tester.pump();
 
-      // Drop
-      await dragGesture.up();
-      await tester.pump();
+        // Drop
+        await dragGesture.up();
+        await tester.pump();
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('drag-and-drop incorrect celestial card onto observatory sky view triggers SubmitKidsAnswer(false)',
-        (tester) async {
-      await pumpDayNightLayout(tester, state: testLoadedDayNightState);
+    testWidgets(
+      'drag-and-drop incorrect celestial card onto observatory sky view triggers SubmitKidsAnswer(false)',
+      (tester) async {
+        await pumpDayNightLayout(tester, state: testLoadedDayNightState);
 
-      final draggableFinder = find.byWidgetPredicate(
-        (w) => w is Draggable<String> && w.data == 'Nighttime',
-      );
-      final dragTargetFinder = find.byType(DragTarget<String>);
+        final draggableFinder = find.byWidgetPredicate(
+          (w) => w is Draggable<String> && w.data == 'Nighttime',
+        );
+        final dragTargetFinder = find.byType(DragTarget<String>);
 
-      final dragGesture = await tester.startGesture(tester.getCenter(draggableFinder));
-      await tester.pump();
+        final dragGesture = await tester.startGesture(
+          tester.getCenter(draggableFinder),
+        );
+        await tester.pump();
 
-      await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
-      await tester.pump();
+        await dragGesture.moveTo(tester.getCenter(dragTargetFinder));
+        await tester.pump();
 
-      await dragGesture.up();
-      await tester.pump();
+        await dragGesture.up();
+        await tester.pump();
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockTTSService.speak('Nighttime')).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockTTSService.speak('Nighttime')).called(1);
+        verify(() => mockKidsBloc.add(const SubmitKidsAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('locks interaction when quest is already answered',
-        (tester) async {
+    testWidgets('locks interaction when quest is already answered', (
+      tester,
+    ) async {
       const answeredState = KidsLoaded(
         quests: [testDayNightQuest],
         originalTotalQuests: 1,
@@ -432,7 +501,9 @@ void main() {
 
       await pumpDayNightLayout(tester, state: answeredState);
 
-      final daytimeOption = find.byKey(const ValueKey('day_night_option_Daytime'));
+      final daytimeOption = find.byKey(
+        const ValueKey('day_night_option_Daytime'),
+      );
       await tester.tap(daytimeOption, warnIfMissed: false);
       await tester.pump();
 
@@ -440,44 +511,66 @@ void main() {
     });
   });
 
-  group('KidsDayNightLayout - Small Screen (320dp) & Complex Curriculum Safety', () {
-    testWidgets('renders 4 lunar phase options on compact 320dp width without RenderFlex overflow',
+  group(
+    'KidsDayNightLayout - Small Screen (320dp) & Complex Curriculum Safety',
+    () {
+      testWidgets(
+        'renders 4 lunar phase options on compact 320dp width without RenderFlex overflow',
         (tester) async {
-      await pumpDayNightLayout(
-        tester,
-        state: testLoadedFourOptionsState,
-        level: 190,
-        width: 320,
-        height: 568,
+          await pumpDayNightLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 190,
+            width: 320,
+            height: 568,
+          );
+
+          // Verify all 4 lunar options are visible
+          expect(
+            find.byKey(const ValueKey('day_night_option_New Moon')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('day_night_option_Full Moon')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('day_night_option_Crescent Moon')),
+            findsOneWidget,
+          );
+          expect(
+            find.byKey(const ValueKey('day_night_option_Quarter Moon')),
+            findsOneWidget,
+          );
+
+          // Verify zero overflow exceptions
+          expect(tester.takeException(), isNull);
+        },
       );
 
-      // Verify all 4 lunar options are visible
-      expect(find.byKey(const ValueKey('day_night_option_New Moon')), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Full Moon')), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Crescent Moon')), findsOneWidget);
-      expect(find.byKey(const ValueKey('day_night_option_Quarter Moon')), findsOneWidget);
-
-      // Verify zero overflow exceptions
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('tapping option on 320dp screen still triggers correct answer flow',
+      testWidgets(
+        'tapping option on 320dp screen still triggers correct answer flow',
         (tester) async {
-      await pumpDayNightLayout(
-        tester,
-        state: testLoadedFourOptionsState,
-        level: 190,
-        width: 320,
-        height: 568,
+          await pumpDayNightLayout(
+            tester,
+            state: testLoadedFourOptionsState,
+            level: 190,
+            width: 320,
+            height: 568,
+          );
+
+          final fullMoonOption = find.byKey(
+            const ValueKey('day_night_option_Full Moon'),
+          );
+          await tester.tap(fullMoonOption);
+          await tester.pump();
+
+          verify(() => mockHapticService.success()).called(1);
+          verify(
+            () => mockKidsBloc.add(const SubmitKidsAnswer(true)),
+          ).called(1);
+        },
       );
-
-      final fullMoonOption = find.byKey(const ValueKey('day_night_option_Full Moon'));
-      await tester.tap(fullMoonOption);
-      await tester.pump();
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockKidsBloc.add(const SubmitKidsAnswer(true))).called(1);
-    });
-  });
+    },
+  );
 }
-

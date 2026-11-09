@@ -138,9 +138,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
           ' ____ ',
         );
         final clauseA = parts[0];
-        final clauseB = parts.length > 1
-            ? parts.sublist(1).join(' ____ ')
-            : "";
+        final clauseB = parts.length > 1 ? parts.sublist(1).join(' ____ ') : "";
         final options = quest?.options ?? [];
 
         String cleanTargetSentence = "";
@@ -201,7 +199,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 620 ||
+                        final isCompact =
+                            constraints.maxHeight < 620 ||
                             constraints.maxWidth < 360;
 
                         return Stack(
@@ -225,12 +224,10 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              constraints.maxWidth < 360
-                                                  ? 12.w
-                                                  : 20.w,
-                                          vertical:
-                                              isCompact ? 12.h : 20.h,
+                                          horizontal: constraints.maxWidth < 360
+                                              ? 12.w
+                                              : 20.w,
+                                          vertical: isCompact ? 12.h : 20.h,
                                         ),
                                         child: Column(
                                           mainAxisAlignment:
@@ -258,7 +255,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                                       ),
                                                   border: Border.all(
                                                     color: theme.primaryColor
-                                                        .withValues(alpha: 0.25),
+                                                        .withValues(
+                                                          alpha: 0.25,
+                                                        ),
                                                   ),
                                                 ),
                                                 child: Text(
@@ -306,12 +305,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                                   isCompact,
                                                 );
                                                 return VowlMotion.shouldReduceMotion(
-                                                          context,
-                                                        )
+                                                      context,
+                                                    )
                                                     ? plateB
                                                     : plateB.animate().fadeIn(
-                                                          delay: 300.ms,
-                                                        );
+                                                        delay: 300.ms,
+                                                      );
                                               },
                                             ),
                                             SizedBox(
@@ -338,10 +337,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                     SliverToBoxAdapter(
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              constraints.maxWidth < 360
-                                                  ? 12.w
-                                                  : 20.w,
+                                          horizontal: constraints.maxWidth < 360
+                                              ? 12.w
+                                              : 20.w,
                                           vertical: 10.h,
                                         ),
                                         child: TypeToConfirmOverlay(
@@ -355,8 +353,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                           subtitle:
                                               "Type the full sentence below to confirm",
                                           primaryColor: theme.primaryColor,
-                                          displayFontSize:
-                                              isCompact ? 15.sp : 17.sp,
+                                          displayFontSize: isCompact
+                                              ? 15.sp
+                                              : 17.sp,
                                           displayFontWeight: FontWeight.w600,
                                           displayTextAlign: TextAlign.center,
                                           onConfirmed: () =>
@@ -414,25 +413,24 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
         final isHighlight = candidateData.isNotEmpty;
         final isSuccess = isAnswered
             ? (isCorrectNotifier.value == true ||
-                (state is GrammarLoaded &&
-                    state.answerStatus == AnswerStatus.correct))
+                  (state is GrammarLoaded &&
+                      state.answerStatus == AnswerStatus.correct))
             : _pendingTypeSubmit.value;
         final portColor = (isAnswered || _pendingTypeSubmit.value)
-            ? (isSuccess
-                  ? AppColors.gameCorrect
-                  : AppColors.gameIncorrect)
+            ? (isSuccess ? AppColors.gameCorrect : AppColors.gameIncorrect)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.35));
 
         final shouldReduceMotion = VowlMotion.shouldReduceMotion(context);
-        final resolvedConnector = _draggingConnector.value ??
+        final resolvedConnector =
+            _draggingConnector.value ??
             (state is GrammarLoaded &&
                     state.answerStatus != AnswerStatus.unanswered
                 ? (quest.correctAnswer ??
-                    (options.isNotEmpty && quest.correctAnswerIndex != null
-                        ? options[quest.correctAnswerIndex!]
-                        : ""))
+                      (options.isNotEmpty && quest.correctAnswerIndex != null
+                          ? options[quest.correctAnswerIndex!]
+                          : ""))
                 : "");
 
         final connectorWidget = _buildConnector(
@@ -476,10 +474,11 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
           child: Center(
             child: (isAnsweredNotifier.value || _pendingTypeSubmit.value)
                 ? (shouldReduceMotion
-                    ? connectorWidget
-                    : connectorWidget
-                        .animate()
-                        .scale(duration: 400.ms, curve: Curves.elasticOut))
+                      ? connectorWidget
+                      : connectorWidget.animate().scale(
+                          duration: 400.ms,
+                          curve: Curves.elasticOut,
+                        ))
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
@@ -563,34 +562,32 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
       alignment: WrapAlignment.center,
       spacing: isCompact ? 10.w : 14.w,
       runSpacing: isCompact ? 10.h : 14.h,
-      children: options.asMap().entries.map(
-        (entry) {
-          final index = entry.key;
-          final opt = entry.value;
-          return Draggable<String>(
-            data: opt,
-            feedback: Material(
-              color: Colors.transparent,
-              child: _buildConnector(
-                opt,
-                primaryColor,
-                isDark,
-                isCompact,
-                isDragging: true,
-              ),
+      children: options.asMap().entries.map((entry) {
+        final index = entry.key;
+        final opt = entry.value;
+        return Draggable<String>(
+          data: opt,
+          feedback: Material(
+            color: Colors.transparent,
+            child: _buildConnector(
+              opt,
+              primaryColor,
+              isDark,
+              isCompact,
+              isDragging: true,
             ),
-            childWhenDragging: Opacity(
-              opacity: 0.2,
-              child: _buildConnector(opt, primaryColor, isDark, isCompact),
-            ),
-            child: ScaleButton(
-              key: ValueKey('connector_option_$index'),
-              onTap: () => _onSnap(opt, correctIndex, options, quest),
-              child: _buildConnector(opt, primaryColor, isDark, isCompact),
-            ),
-          );
-        },
-      ).toList(),
+          ),
+          childWhenDragging: Opacity(
+            opacity: 0.2,
+            child: _buildConnector(opt, primaryColor, isDark, isCompact),
+          ),
+          child: ScaleButton(
+            key: ValueKey('connector_option_$index'),
+            onTap: () => _onSnap(opt, correctIndex, options, quest),
+            child: _buildConnector(opt, primaryColor, isDark, isCompact),
+          ),
+        );
+      }).toList(),
     );
   }
 

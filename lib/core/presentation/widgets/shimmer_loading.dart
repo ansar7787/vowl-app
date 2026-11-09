@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 
 // ---------------------------------------------------------------------------
@@ -48,20 +49,31 @@ class ShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    final defaultBaseColor = isMidnight
+        ? const Color(0xFF141A26)
+        : (isDark ? AppColors.slate800 : AppColors.slate200);
+
+    final defaultHighlightColor = isMidnight
+        ? const Color(0xFF242E42)
+        : (isDark ? AppColors.slate700 : const Color(0xFFF8FAFC));
+
+    final effectiveBaseColor = baseColor ?? defaultBaseColor;
 
     return RepaintBoundary(
       child: Shimmer.fromColors(
-        baseColor:
-            baseColor ??
-            (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[300]!),
-        highlightColor:
-            highlightColor ??
-            (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[100]!),
+        baseColor: effectiveBaseColor,
+        highlightColor: highlightColor ?? defaultHighlightColor,
         period: const Duration(milliseconds: 1500),
         child: Container(
           width: width,
           height: height,
-          decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),
+          decoration: ShapeDecoration(
+            color: effectiveBaseColor,
+            shape: shapeBorder,
+          ),
         ),
       ),
     );
@@ -79,8 +91,6 @@ class GameShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accent = primaryColor;
-
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Padding(
@@ -126,17 +136,24 @@ class GameShimmerLoading extends StatelessWidget {
               width: double.infinity,
               height: 320.h,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(32.r),
+                color: (Theme.of(context).brightness == Brightness.dark &&
+                        Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                    ? AppColors.midnightSurface
+                    : (Theme.of(context).brightness == Brightness.dark
+                          ? AppColors.midnightNavy
+                          : Colors.white),
+                borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: (accent ?? Colors.grey).withValues(
-                    alpha: Theme.of(context).brightness == Brightness.dark
-                        ? 0.15
-                        : 0.08,
-                  ),
-                  width: 2,
+                  color: (Theme.of(context).brightness == Brightness.dark &&
+                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                      ? Colors.white.withValues(alpha: 0.12)
+                      : (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppTheme.borderLight),
+                  width: 1.0,
                 ),
               ),
-              child: ShimmerLoading.rounded(height: 320.h, borderRadius: 32),
+              child: ShimmerLoading.rounded(height: 320.h, borderRadius: 24),
             ),
             SizedBox(height: 50.h),
             // Footer buttons
@@ -168,6 +185,16 @@ class LeaderboardShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
+
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Column(
@@ -198,7 +225,35 @@ class LeaderboardShimmerLoading extends StatelessWidget {
               itemCount: 6,
               itemBuilder: (context, index) => Padding(
                 padding: EdgeInsets.only(bottom: 12.h),
-                child: ShimmerLoading.rounded(height: 80, borderRadius: 24),
+                child: Container(
+                  height: 74.h,
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: cardBg,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(color: borderColor, width: 1.0),
+                  ),
+                  child: Row(
+                    children: [
+                      ShimmerLoading.rounded(width: 24.w, height: 16.h, borderRadius: 6),
+                      SizedBox(width: 14.w),
+                      ShimmerLoading.circular(width: 44.r, height: 44.r),
+                      SizedBox(width: 14.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ShimmerLoading.rounded(width: 110.w, height: 14.h, borderRadius: 6),
+                            SizedBox(height: 6.h),
+                            ShimmerLoading.rounded(width: 70.w, height: 10.h, borderRadius: 4),
+                          ],
+                        ),
+                      ),
+                      ShimmerLoading.rounded(width: 50.w, height: 20.h, borderRadius: 10),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
@@ -230,12 +285,14 @@ class HomeShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final cardBg = isDark
-        ? AppColors.slate800.withValues(alpha: 0.6)
-        : Colors.white.withValues(alpha: 0.85);
-    final borderColor = isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : Colors.black.withValues(alpha: 0.05);
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
@@ -254,9 +311,17 @@ class HomeShimmerLoading extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ShimmerLoading.rounded(height: 12.h, width: 110.w, borderRadius: 6),
+                    ShimmerLoading.rounded(
+                      height: 12.h,
+                      width: 110.w,
+                      borderRadius: 6,
+                    ),
                     SizedBox(height: 8.h),
-                    ShimmerLoading.rounded(height: 24.h, width: 170.w, borderRadius: 8),
+                    ShimmerLoading.rounded(
+                      height: 24.h,
+                      width: 170.w,
+                      borderRadius: 8,
+                    ),
                   ],
                 ),
                 ShimmerLoading.circular(width: 48.r, height: 48.r),
@@ -350,6 +415,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 26.w,
                       labelWidth: 36.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -358,6 +424,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 34.w,
                       labelWidth: 30.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -366,6 +433,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 22.w,
                       labelWidth: 38.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -374,6 +442,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 28.w,
                       labelWidth: 26.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                 ],
@@ -385,8 +454,16 @@ class HomeShimmerLoading extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ShimmerLoading.rounded(height: 18.h, width: 130.w, borderRadius: 6),
-                ShimmerLoading.rounded(height: 14.h, width: 56.w, borderRadius: 6),
+                ShimmerLoading.rounded(
+                  height: 18.h,
+                  width: 130.w,
+                  borderRadius: 6,
+                ),
+                ShimmerLoading.rounded(
+                  height: 14.h,
+                  width: 56.w,
+                  borderRadius: 6,
+                ),
               ],
             ),
             SizedBox(height: 14.h),
@@ -406,19 +483,24 @@ class HomeShimmerLoading extends StatelessWidget {
     required double valueWidth,
     required double labelWidth,
     required bool isDark,
+    bool isMidnight = false,
   }) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 2.w),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.02)
-            : AppColors.slate100,
+        color: isMidnight
+            ? Colors.white.withValues(alpha: 0.04)
+            : (isDark
+                  ? Colors.white.withValues(alpha: 0.03)
+                  : AppColors.slate100),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.04)
-              : Colors.black.withValues(alpha: 0.03),
-          width: 1,
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.08)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : AppTheme.borderLight),
+          width: 1.0,
         ),
       ),
       child: Column(
@@ -454,47 +536,83 @@ class ProfileShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
+
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-            SizedBox(height: 60.h),
-            const ShimmerLoading.circular(width: 120, height: 120),
-            SizedBox(height: 24.h),
-            ShimmerLoading.rounded(height: 32, width: 200),
-            SizedBox(height: 8.h),
-            ShimmerLoading.rounded(height: 16, width: 150),
-            SizedBox(height: 40.h),
-            ShimmerLoading.rounded(height: 100, borderRadius: 24),
-            SizedBox(height: 20.h),
-            Row(
-              children: [
-                Expanded(
-                  child: ShimmerLoading.rounded(height: 80, borderRadius: 20),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: ShimmerLoading.rounded(height: 80, borderRadius: 20),
-                ),
-              ],
+            SizedBox(height: 30.h),
+            // Header card
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20.r),
+              decoration: BoxDecoration(
+                color: cardBg,
+                borderRadius: BorderRadius.circular(28.r),
+                border: Border.all(color: borderColor, width: 1.0),
+              ),
+              child: Column(
+                children: [
+                  const ShimmerLoading.circular(width: 80, height: 80),
+                  SizedBox(height: 14.h),
+                  ShimmerLoading.rounded(height: 20.h, width: 150.w, borderRadius: 8),
+                  SizedBox(height: 8.h),
+                  ShimmerLoading.rounded(height: 12.h, width: 100.w, borderRadius: 6),
+                  SizedBox(height: 18.h),
+                  ShimmerLoading.rounded(height: 8.h, width: double.infinity, borderRadius: 4),
+                ],
+              ),
             ),
-            SizedBox(height: 20.h),
-            ShimmerLoading.rounded(height: 100, borderRadius: 24),
-            SizedBox(height: 40.h),
-            ShimmerLoading.rounded(height: 24, width: 150),
             SizedBox(height: 16.h),
-            SizedBox(
-              height: 100.h,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, i) => Container(
-                  width: 100.w,
-                  margin: EdgeInsets.only(right: 16.w),
-                  child: ShimmerLoading.rounded(height: 100, borderRadius: 20),
+            // 4 Bento Stats Row
+            Row(
+              children: List.generate(
+                4,
+                (i) => Expanded(
+                  child: Container(
+                    height: 72.h,
+                    margin: EdgeInsets.only(right: i < 3 ? 8.w : 0),
+                    decoration: BoxDecoration(
+                      color: cardBg,
+                      borderRadius: BorderRadius.circular(18.r),
+                      border: Border.all(color: borderColor, width: 1.0),
+                    ),
+                    child: Center(
+                      child: ShimmerLoading.circular(width: 28.r, height: 28.r),
+                    ),
+                  ),
                 ),
+              ),
+            ),
+            SizedBox(height: 16.h),
+            // Arena card
+            Container(
+              width: double.infinity,
+              height: 120.h,
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                color: cardBg,
+                borderRadius: BorderRadius.circular(22.r),
+                border: Border.all(color: borderColor, width: 1.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ShimmerLoading.rounded(height: 16.h, width: 140.w, borderRadius: 6),
+                  const Spacer(),
+                  ShimmerLoading.rounded(height: 40.h, width: double.infinity, borderRadius: 14),
+                ],
               ),
             ),
           ],

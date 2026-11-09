@@ -242,8 +242,9 @@ class RoleplayBaseLayout extends StatelessWidget {
                     color: (theme.primaryColor as Color).withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color:
-                          (theme.primaryColor as Color).withValues(alpha: 0.2),
+                      color: (theme.primaryColor as Color).withValues(
+                        alpha: 0.2,
+                      ),
                     ),
                   ),
                   child: Icon(

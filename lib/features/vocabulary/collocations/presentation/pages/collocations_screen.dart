@@ -600,7 +600,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   Widget _buildInstruction(Color color, bool isDark, String instruction) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final container = Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),

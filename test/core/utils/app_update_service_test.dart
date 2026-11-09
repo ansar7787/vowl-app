@@ -85,54 +85,65 @@ void main() {
       expect(result.hasUpdate, isFalse);
     });
 
-    test('returns AppUpdateType.force when current version < minAppVersion', () async {
-      final mockConfig = MockRemoteConfigService(
-        mockMinVersion: '1.1.0',
-        mockLatestVersion: '1.2.0',
-        mockReleaseNotes: 'Security patch',
-      );
-      final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
+    test(
+      'returns AppUpdateType.force when current version < minAppVersion',
+      () async {
+        final mockConfig = MockRemoteConfigService(
+          mockMinVersion: '1.1.0',
+          mockLatestVersion: '1.2.0',
+          mockReleaseNotes: 'Security patch',
+        );
+        final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
 
-      final result = await service.checkForUpdate();
-      expect(result.type, AppUpdateType.force);
-      expect(result.isForced, isTrue);
-      expect(result.hasUpdate, isTrue);
-      expect(result.releaseNotes, 'Security patch');
-    });
+        final result = await service.checkForUpdate();
+        expect(result.type, AppUpdateType.force);
+        expect(result.isForced, isTrue);
+        expect(result.hasUpdate, isTrue);
+        expect(result.releaseNotes, 'Security patch');
+      },
+    );
 
-    test('returns AppUpdateType.flexible when latest > current and current >= min', () async {
-      final mockConfig = MockRemoteConfigService(
-        mockMinVersion: '1.0.0',
-        mockLatestVersion: '1.0.5',
-        mockReleaseNotes: 'Bug fixes',
-      );
-      final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
+    test(
+      'returns AppUpdateType.flexible when latest > current and current >= min',
+      () async {
+        final mockConfig = MockRemoteConfigService(
+          mockMinVersion: '1.0.0',
+          mockLatestVersion: '1.0.5',
+          mockReleaseNotes: 'Bug fixes',
+        );
+        final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
 
-      final result = await service.checkForUpdate();
-      expect(result.type, AppUpdateType.flexible);
-      expect(result.isFlexible, isTrue);
-      expect(result.hasUpdate, isTrue);
-      expect(result.releaseNotes, 'Bug fixes');
-    });
+        final result = await service.checkForUpdate();
+        expect(result.type, AppUpdateType.flexible);
+        expect(result.isFlexible, isTrue);
+        expect(result.hasUpdate, isTrue);
+        expect(result.releaseNotes, 'Bug fixes');
+      },
+    );
 
-    test('respects 24-hour frequency cap for flexible update when dismissed', () async {
-      final mockConfig = MockRemoteConfigService(
-        mockMinVersion: '1.0.0',
-        mockLatestVersion: '1.0.5',
-      );
-      final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
+    test(
+      'respects 24-hour frequency cap for flexible update when dismissed',
+      () async {
+        final mockConfig = MockRemoteConfigService(
+          mockMinVersion: '1.0.0',
+          mockLatestVersion: '1.0.5',
+        );
+        final service = AppUpdateServiceImpl(remoteConfig: mockConfig);
 
-      // Record dismissal for 1.0.5
-      await service.recordDismissal('1.0.5');
+        // Record dismissal for 1.0.5
+        await service.recordDismissal('1.0.5');
 
-      // Subsequent check within 24h should return none
-      final result = await service.checkForUpdate();
-      expect(result.type, AppUpdateType.none);
+        // Subsequent check within 24h should return none
+        final result = await service.checkForUpdate();
+        expect(result.type, AppUpdateType.none);
 
-      // But if ignoreFrequencyCap is true, returns flexible
-      final forcedCheck = await service.checkForUpdate(ignoreFrequencyCap: true);
-      expect(forcedCheck.type, AppUpdateType.flexible);
-    });
+        // But if ignoreFrequencyCap is true, returns flexible
+        final forcedCheck = await service.checkForUpdate(
+          ignoreFrequencyCap: true,
+        );
+        expect(forcedCheck.type, AppUpdateType.flexible);
+      },
+    );
 
     test('force update bypasses frequency capping', () async {
       final mockConfig = MockRemoteConfigService(
@@ -151,4 +162,3 @@ void main() {
     });
   });
 }
-

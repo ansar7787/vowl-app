@@ -12,11 +12,7 @@ class WordSnapTopBar extends StatelessWidget {
   final int streak;
   final VoidCallback? onBackPressed;
 
-  const WordSnapTopBar({
-    super.key,
-    required this.streak,
-    this.onBackPressed,
-  });
+  const WordSnapTopBar({super.key, required this.streak, this.onBackPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +58,9 @@ class WordSnapTopBar extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.2 : 0.04,
+                      ),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),

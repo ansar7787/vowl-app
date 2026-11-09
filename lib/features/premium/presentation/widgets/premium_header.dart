@@ -54,10 +54,7 @@ class PremiumHeader extends StatelessWidget {
 
           Flexible(
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 14.w,
-                vertical: 8.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -73,35 +70,35 @@ class PremiumHeader extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                      Icon(
-                        LucideIcons.sparkles,
-                        color: AppColors.amber500,
-                        size: 14.r,
-                      ),
-                      SizedBox(width: 6.w),
-                      Flexible(
-                        child: Text(
-                          context.tr(
-                            'premium.verified_pro_badge',
-                            fallback: 'VERIFIED PRO',
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Theme.of(context).colorScheme.onSurface,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ],
+                  Icon(
+                    LucideIcons.sparkles,
+                    color: AppColors.amber500,
+                    size: 14.r,
                   ),
-                ),
+                  SizedBox(width: 6.w),
+                  Flexible(
+                    child: Text(
+                      context.tr(
+                        'premium.verified_pro_badge',
+                        fallback: 'VERIFIED PRO',
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Theme.of(context).colorScheme.onSurface,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        );
+        ],
+      ),
+    );
   }
 }

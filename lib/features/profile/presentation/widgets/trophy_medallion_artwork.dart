@@ -64,7 +64,8 @@ class TrophyMedallionArtwork extends StatelessWidget {
             ],
           ),
           border: Border.all(
-            color: catColor, // SAME COLOR as background: gives the circle a large, full bleed feel!
+            color:
+                catColor, // SAME COLOR as background: gives the circle a large, full bleed feel!
             width: 2.2.r,
           ),
           boxShadow: [
@@ -77,11 +78,7 @@ class TrophyMedallionArtwork extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Icon(
-            metadata.icon,
-            size: rSize * 0.48,
-            color: Colors.white,
-          ),
+          child: Icon(metadata.icon, size: rSize * 0.48, color: Colors.white),
         ),
       ),
     );
@@ -106,7 +103,8 @@ class TrophyMedallionArtwork extends StatelessWidget {
             ],
           ),
           border: Border.all(
-            color: AppColors.gold, // SAME COLOR as background: big full bleed feel!
+            color: AppColors
+                .gold, // SAME COLOR as background: big full bleed feel!
             width: 2.5.r,
           ),
           boxShadow: [
@@ -158,10 +156,7 @@ class TrophyMedallionArtwork extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: lockedColor,
-            border: Border.all(
-              color: lockedBorder,
-              width: 1.5.r,
-            ),
+            border: Border.all(color: lockedBorder, width: 1.5.r),
           ),
           child: Center(
             child: Icon(

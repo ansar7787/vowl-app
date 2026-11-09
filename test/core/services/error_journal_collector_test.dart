@@ -35,9 +35,15 @@ void main() {
       final jsonMap = entry.toJson();
       expect(jsonMap['id'], 'entry_123');
       expect(jsonMap['gameType'], 'repeatSentence');
-      expect(jsonMap['question'], 'The quick brown fox jumps over the lazy dog.');
+      expect(
+        jsonMap['question'],
+        'The quick brown fox jumps over the lazy dog.',
+      );
       expect(jsonMap['userAnswer'], 'The quick brown fox jumped over the dog.');
-      expect(jsonMap['correctAnswer'], 'The quick brown fox jumps over the lazy dog.');
+      expect(
+        jsonMap['correctAnswer'],
+        'The quick brown fox jumps over the lazy dog.',
+      );
       expect(jsonMap['level'], 3);
       expect(jsonMap['timestamp'], now.toIso8601String());
       expect(jsonMap['options'], ['jumps', 'jumped', 'jumping']);
@@ -49,7 +55,10 @@ void main() {
       expect(reconstituted.userAnswer, entry.userAnswer);
       expect(reconstituted.correctAnswer, entry.correctAnswer);
       expect(reconstituted.level, entry.level);
-      expect(reconstituted.timestamp?.millisecondsSinceEpoch, now.millisecondsSinceEpoch);
+      expect(
+        reconstituted.timestamp?.millisecondsSinceEpoch,
+        now.millisecondsSinceEpoch,
+      );
       expect(reconstituted.options, entry.options);
     });
 
@@ -94,11 +103,26 @@ void main() {
   // =========================================================================
   group('Group 2: Human-Readable Game Names Converter', () {
     test('converts camelCase game types into titled space-separated names', () {
-      expect(ErrorJournalCollector.humanReadableName('syllableStress'), 'Syllable Stress');
-      expect(ErrorJournalCollector.humanReadableName('readAndAnswer'), 'Read And Answer');
-      expect(ErrorJournalCollector.humanReadableName('fastSpeechDecoder'), 'Fast Speech Decoder');
-      expect(ErrorJournalCollector.humanReadableName('minimalPairs'), 'Minimal Pairs');
-      expect(ErrorJournalCollector.humanReadableName('sentenceBuilder'), 'Sentence Builder');
+      expect(
+        ErrorJournalCollector.humanReadableName('syllableStress'),
+        'Syllable Stress',
+      );
+      expect(
+        ErrorJournalCollector.humanReadableName('readAndAnswer'),
+        'Read And Answer',
+      );
+      expect(
+        ErrorJournalCollector.humanReadableName('fastSpeechDecoder'),
+        'Fast Speech Decoder',
+      );
+      expect(
+        ErrorJournalCollector.humanReadableName('minimalPairs'),
+        'Minimal Pairs',
+      );
+      expect(
+        ErrorJournalCollector.humanReadableName('sentenceBuilder'),
+        'Sentence Builder',
+      );
     });
 
     test('handles single-word, lowercase, and empty strings gracefully', () {
@@ -136,54 +160,60 @@ void main() {
       expect(count, 0);
     });
 
-    test('records a new mistake to SharedPreferences and increments notifier', () async {
-      var notifiedCount = 0;
-      ErrorJournalCollector.updateNotifier.addListener(() => notifiedCount++);
+    test(
+      'records a new mistake to SharedPreferences and increments notifier',
+      () async {
+        var notifiedCount = 0;
+        ErrorJournalCollector.updateNotifier.addListener(() => notifiedCount++);
 
-      await ErrorJournalCollector.record(
-        userId: 'local',
-        gameType: 'repeatSentence',
-        question: 'Repeat this sentence',
-        userAnswer: 'Wrong answer',
-        correctAnswer: 'Right answer',
-        level: 1,
-        options: const ['A', 'B'],
-      );
+        await ErrorJournalCollector.record(
+          userId: 'local',
+          gameType: 'repeatSentence',
+          question: 'Repeat this sentence',
+          userAnswer: 'Wrong answer',
+          correctAnswer: 'Right answer',
+          level: 1,
+          options: const ['A', 'B'],
+        );
 
-      expect(notifiedCount, 1);
-      final entries = await ErrorJournalCollector.fetch(userId: 'local');
-      expect(entries.length, 1);
-      expect(entries.first.question, 'Repeat this sentence');
-      expect(entries.first.userAnswer, 'Wrong answer');
-      expect(entries.first.correctAnswer, 'Right answer');
-      expect(entries.first.options, ['A', 'B']);
-    });
+        expect(notifiedCount, 1);
+        final entries = await ErrorJournalCollector.fetch(userId: 'local');
+        expect(entries.length, 1);
+        expect(entries.first.question, 'Repeat this sentence');
+        expect(entries.first.userAnswer, 'Wrong answer');
+        expect(entries.first.correctAnswer, 'Right answer');
+        expect(entries.first.options, ['A', 'B']);
+      },
+    );
 
-    test('deduplicates identical question and replaces with latest timestamp', () async {
-      await ErrorJournalCollector.record(
-        userId: 'local',
-        gameType: 'repeatSentence',
-        question: 'Deduplicate question',
-        userAnswer: 'First wrong attempt',
-        correctAnswer: 'Correct answer',
-        level: 1,
-      );
+    test(
+      'deduplicates identical question and replaces with latest timestamp',
+      () async {
+        await ErrorJournalCollector.record(
+          userId: 'local',
+          gameType: 'repeatSentence',
+          question: 'Deduplicate question',
+          userAnswer: 'First wrong attempt',
+          correctAnswer: 'Correct answer',
+          level: 1,
+        );
 
-      await Future<void>.delayed(const Duration(milliseconds: 10));
+        await Future<void>.delayed(const Duration(milliseconds: 10));
 
-      await ErrorJournalCollector.record(
-        userId: 'local',
-        gameType: 'repeatSentence',
-        question: 'Deduplicate question',
-        userAnswer: 'Second wrong attempt',
-        correctAnswer: 'Correct answer',
-        level: 1,
-      );
+        await ErrorJournalCollector.record(
+          userId: 'local',
+          gameType: 'repeatSentence',
+          question: 'Deduplicate question',
+          userAnswer: 'Second wrong attempt',
+          correctAnswer: 'Correct answer',
+          level: 1,
+        );
 
-      final entries = await ErrorJournalCollector.fetch(userId: 'local');
-      expect(entries.length, 1);
-      expect(entries.first.userAnswer, 'Second wrong attempt');
-    });
+        final entries = await ErrorJournalCollector.fetch(userId: 'local');
+        expect(entries.length, 1);
+        expect(entries.first.userAnswer, 'Second wrong attempt');
+      },
+    );
 
     test('enforces maxEntries limit (200) by pruning oldest entries', () async {
       final initialLogs = <String>[];
@@ -215,7 +245,10 @@ void main() {
         level: 1,
       );
 
-      final entries = await ErrorJournalCollector.fetch(userId: 'local', limit: 250);
+      final entries = await ErrorJournalCollector.fetch(
+        userId: 'local',
+        limit: 250,
+      );
       expect(entries.length, 200);
       // The oldest question 'Question 0' was pruned
       expect(entries.any((e) => e.question == 'Question 0'), isFalse);
@@ -260,7 +293,10 @@ void main() {
     });
 
     test('respects limit parameter', () async {
-      final entries = await ErrorJournalCollector.fetch(userId: 'local', limit: 2);
+      final entries = await ErrorJournalCollector.fetch(
+        userId: 'local',
+        limit: 2,
+      );
       expect(entries.length, 2);
     });
 
@@ -332,17 +368,20 @@ void main() {
       expect(after.any((e) => e.id == targetId), isFalse);
     });
 
-    test('clearLevelMistakes clears entries for specific gameType and level', () async {
-      await ErrorJournalCollector.clearLevelMistakes(
-        userId: 'local',
-        gameType: 'reading',
-        level: 1,
-      );
+    test(
+      'clearLevelMistakes clears entries for specific gameType and level',
+      () async {
+        await ErrorJournalCollector.clearLevelMistakes(
+          userId: 'local',
+          gameType: 'reading',
+          level: 1,
+        );
 
-      final remaining = await ErrorJournalCollector.fetch(userId: 'local');
-      expect(remaining.length, 1);
-      expect(remaining.first.level, 2);
-    });
+        final remaining = await ErrorJournalCollector.fetch(userId: 'local');
+        expect(remaining.length, 1);
+        expect(remaining.first.level, 2);
+      },
+    );
 
     test('clearAll removes all error journal entries completely', () async {
       expect(await ErrorJournalCollector.count(userId: 'local'), 3);
@@ -358,48 +397,55 @@ void main() {
   // GROUP 6: Error Resilience & Graceful Fallbacks
   // =========================================================================
   group('Group 6: Error Resilience & Graceful Fallbacks', () {
-    test('unauthenticated or uninitialized cloud calls return safe fallbacks without throwing', () async {
-      // Calling cloud methods without Firebase initialized must catch and return safe defaults
-      final entries = await ErrorJournalCollector.fetch(userId: 'cloud_user_123');
-      expect(entries, isEmpty);
-
-      final count = await ErrorJournalCollector.count(userId: 'cloud_user_123');
-      expect(count, 0);
-
-      // Mutative calls must not throw uncaught exceptions
-      expect(
-        ErrorJournalCollector.record(
+    test(
+      'unauthenticated or uninitialized cloud calls return safe fallbacks without throwing',
+      () async {
+        // Calling cloud methods without Firebase initialized must catch and return safe defaults
+        final entries = await ErrorJournalCollector.fetch(
           userId: 'cloud_user_123',
-          gameType: 'grammar',
-          question: 'Cloud Q',
-          userAnswer: 'Wrong',
-          correctAnswer: 'Right',
-          level: 1,
-        ),
-        completes,
-      );
+        );
+        expect(entries, isEmpty);
 
-      expect(
-        ErrorJournalCollector.dismiss(
+        final count = await ErrorJournalCollector.count(
           userId: 'cloud_user_123',
-          entryId: 'entry_1',
-        ),
-        completes,
-      );
+        );
+        expect(count, 0);
 
-      expect(
-        ErrorJournalCollector.clearLevelMistakes(
-          userId: 'cloud_user_123',
-          gameType: 'grammar',
-          level: 1,
-        ),
-        completes,
-      );
+        // Mutative calls must not throw uncaught exceptions
+        expect(
+          ErrorJournalCollector.record(
+            userId: 'cloud_user_123',
+            gameType: 'grammar',
+            question: 'Cloud Q',
+            userAnswer: 'Wrong',
+            correctAnswer: 'Right',
+            level: 1,
+          ),
+          completes,
+        );
 
-      expect(
-        ErrorJournalCollector.clearAll(userId: 'cloud_user_123'),
-        completes,
-      );
-    });
+        expect(
+          ErrorJournalCollector.dismiss(
+            userId: 'cloud_user_123',
+            entryId: 'entry_1',
+          ),
+          completes,
+        );
+
+        expect(
+          ErrorJournalCollector.clearLevelMistakes(
+            userId: 'cloud_user_123',
+            gameType: 'grammar',
+            level: 1,
+          ),
+          completes,
+        );
+
+        expect(
+          ErrorJournalCollector.clearAll(userId: 'cloud_user_123'),
+          completes,
+        );
+      },
+    );
   });
 }

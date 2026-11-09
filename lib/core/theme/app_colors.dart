@@ -187,6 +187,10 @@ class AppColors {
   /// Pure black canvas base for midnight AMOLED mode.
   static const Color midnightBase = Color(0xFF000000);
 
+  /// Midnight Navy — dark card surface (#131A29). Rich deep navy that unifies
+  /// Home, Games, Profile, Leaderboard, and all app cards.
+  static const Color midnightNavy = Color(0xFF131A29);
+
   /// Near-black card base for midnight mode.
   static const Color midnightSurface = Color(0xFF0B0F19);
 

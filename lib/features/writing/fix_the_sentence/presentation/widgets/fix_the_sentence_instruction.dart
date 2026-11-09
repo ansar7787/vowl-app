@@ -33,7 +33,10 @@ class FixTheSentenceInstruction extends StatelessWidget {
       );
     }
 
-    final raw = context.tr('games.fixTheSentence_instruction', fallback: instruction);
+    final raw = context.tr(
+      'games.fixTheSentence_instruction',
+      fallback: instruction,
+    );
     final lower = raw.trim().toLowerCase();
     if (lower.contains('scrub') ||
         lower.contains('restore the sentence') ||

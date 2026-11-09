@@ -33,8 +33,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MockVocabularyBloc
-    extends MockBloc<VocabularyEvent, VocabularyState>
+class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
     implements VocabularyBloc {}
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
@@ -83,7 +82,8 @@ void main() {
     String instruction = 'Select the correct particle to unlock the vault.',
     String literalVsFigurative =
         'Literal: To shout loudly away from someone.\nFigurative: To cancel a planned event or meeting.',
-    String contextSentence = 'They decided to call __ the concert due to heavy rain.',
+    String contextSentence =
+        'They decided to call __ the concert due to heavy rain.',
     String explanation = 'Call off means to cancel something.',
     String hint = 'DEFINITION: To cancel an event',
     int difficulty = 1,
@@ -145,10 +145,7 @@ void main() {
     registerFallbackValue(const NextQuestion());
     registerFallbackValue(const VocabularyHintUsed());
     registerFallbackValue(
-      const FetchVocabularyQuests(
-        gameType: GameSubtype.phrasalVerbs,
-        level: 2,
-      ),
+      const FetchVocabularyQuests(gameType: GameSubtype.phrasalVerbs, level: 2),
     );
     registerFallbackValue(sampleQuest1);
   });
@@ -185,12 +182,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -341,13 +340,14 @@ void main() {
       expect(find.text('To cancel an event'), findsNothing);
     });
 
-    testWidgets('1.4 renders central PhrasalVerbsVaultHandle with target verb', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      expect(find.byType(PhrasalVerbsVaultHandle), findsOneWidget);
-      expect(find.text('CALL'), findsOneWidget);
-    });
+    testWidgets(
+      '1.4 renders central PhrasalVerbsVaultHandle with target verb',
+      (tester) async {
+        await pumpScreen(tester);
+        expect(find.byType(PhrasalVerbsVaultHandle), findsOneWidget);
+        expect(find.text('CALL'), findsOneWidget);
+      },
+    );
 
     testWidgets('1.5 renders all particle option keys with uppercase text', (
       tester,
@@ -384,62 +384,71 @@ void main() {
   });
 
   group('2. Phase 1 Option Selection & Visual Feedback', () {
-    testWidgets('2.1 selecting incorrect option submits wrong answer with error feedback', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '2.1 selecting incorrect option submits wrong answer with error feedback',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('OUT'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('OUT'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('2.2 selecting correct option triggers selection haptics and advances to Phase 2', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '2.2 selecting correct option triggers selection haptics and advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
 
-      await tester.tap(find.text('OFF'));
-      await tester.pump();
+        await tester.tap(find.text('OFF'));
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
+        verify(() => mockHapticService.selection()).called(1);
 
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.byType(PhrasalVerbsLiteralComparison), findsOneWidget);
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-    });
+        expect(find.byType(PhrasalVerbsLiteralComparison), findsOneWidget);
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+      },
+    );
 
-    testWidgets('2.3 tapping options while answered or in transition is locked out', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '2.3 tapping options while answered or in transition is locked out',
+      (tester) async {
+        await pumpScreen(tester);
 
-      // Select correct option
-      await tester.tap(find.text('OFF'));
-      await tester.pump();
+        // Select correct option
+        await tester.tap(find.text('OFF'));
+        await tester.pump();
 
-      clearInteractions(mockHapticService);
+        clearInteractions(mockHapticService);
 
-      // Immediately tap another option
-      await tester.tap(find.text('UP'), warnIfMissed: false);
-      await tester.pump();
+        // Immediately tap another option
+        await tester.tap(find.text('UP'), warnIfMissed: false);
+        await tester.pump();
 
-      verifyNever(() => mockHapticService.selection());
-      verifyNever(() => mockHapticService.error());
+        verifyNever(() => mockHapticService.selection());
+        verifyNever(() => mockHapticService.error());
 
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 600));
-    });
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 600));
+      },
+    );
   });
 
   group('3. Phase 2 Literal vs Figurative & Sentence Construction', () {
@@ -452,98 +461,110 @@ void main() {
       expect(find.text('LITERAL VS FIGURATIVE'), findsOneWidget);
       expect(find.text('LITERAL'), findsOneWidget);
       expect(find.text('FIGURATIVE'), findsOneWidget);
-      expect(
-        find.text('To shout loudly away from someone.'),
-        findsOneWidget,
-      );
+      expect(find.text('To shout loudly away from someone.'), findsOneWidget);
       expect(
         find.text('To cancel a planned event or meeting.'),
         findsOneWidget,
       );
     });
 
-    testWidgets('3.2 renders ContextSentenceBuilder with formatted target keyword and example sentence', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '3.2 renders ContextSentenceBuilder with formatted target keyword and example sentence',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      expect(builder.targetKeyword, 'call off');
-      expect(
-        builder.exampleSentence,
-        'They decided to call off the concert due to heavy rain.',
-      );
-    });
+        expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        expect(builder.targetKeyword, 'call off');
+        expect(
+          builder.exampleSentence,
+          'They decided to call off the concert due to heavy rain.',
+        );
+      },
+    );
 
-    testWidgets('3.3 confirming in ContextSentenceBuilder dispatches SubmitAnswer(true)', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '3.3 confirming in ContextSentenceBuilder dispatches SubmitAnswer(true)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
+      },
+    );
 
-    testWidgets('3.4 skipping in ContextSentenceBuilder dispatches SubmitAnswer(false)', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '3.4 skipping in ContextSentenceBuilder dispatches SubmitAnswer(false)',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      builder.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockVocabularyBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
-        ),
-      ).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockHapticService.error()).called(1);
-    });
+        verify(
+          () => mockVocabularyBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+      },
+    );
   });
 
   group('4. Hint System & Audio Lifecycle', () {
-    testWidgets('4.1 tapping header hint button dispatches VocabularyHintUsed', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '4.1 tapping header hint button dispatches VocabularyHintUsed',
+      (tester) async {
+        await pumpScreen(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
+        await tester.tap(hintButton);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(greaterThanOrEqualTo(1));
-    });
+        verify(
+          () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+        ).called(greaterThanOrEqualTo(1));
+      },
+    );
 
-    testWidgets('4.2 when hint is used, correct option key receives isHintUsed styling', (
-      tester,
-    ) async {
-      final hintState = testLoadedState.copyWith(hintUsed: true);
-      await pumpScreen(tester, state: hintState);
+    testWidgets(
+      '4.2 when hint is used, correct option key receives isHintUsed styling',
+      (tester) async {
+        final hintState = testLoadedState.copyWith(hintUsed: true);
+        await pumpScreen(tester, state: hintState);
 
-      final optionKeys = tester.widgetList<PhrasalVerbsOptionKey>(
-        find.byType(PhrasalVerbsOptionKey),
-      );
-      final correctKey = optionKeys.firstWhere((k) => k.text == 'off');
-      expect(correctKey.isHintUsed, isTrue);
-    });
+        final optionKeys = tester.widgetList<PhrasalVerbsOptionKey>(
+          find.byType(PhrasalVerbsOptionKey),
+        );
+        final correctKey = optionKeys.firstWhere((k) => k.text == 'off');
+        expect(correctKey.isHintUsed, isTrue);
+      },
+    );
   });
 
   group('5. State Progression, Dialogs & Error Handling', () {
@@ -556,35 +577,36 @@ void main() {
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('5.2 renders GameFeedbackCard on correct answer and CONTINUE dispatches NextQuestion', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '5.2 renders GameFeedbackCard on correct answer and CONTINUE dispatches NextQuestion',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      final builder = tester.widget<ContextSentenceBuilder>(
-        find.byType(ContextSentenceBuilder),
-      );
-      builder.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final builder = tester.widget<ContextSentenceBuilder>(
+          find.byType(ContextSentenceBuilder),
+        );
+        builder.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Emit answered state
-      final answeredState = testLoadedState.copyWith(
-        answerStatus: AnswerStatus.correct,
-      );
-      vocabularyStreamController.add(answeredState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Emit answered state
+        final answeredState = testLoadedState.copyWith(
+          answerStatus: AnswerStatus.correct,
+        );
+        vocabularyStreamController.add(answeredState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(GameFeedbackCard), findsOneWidget);
-      final continueBtn = find.text('CONTINUE');
-      expect(continueBtn, findsOneWidget);
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
+        await tester.tap(continueBtn);
+        await tester.pump();
 
-      verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+      },
+    );
 
     testWidgets('5.3 renders GameFeedbackCard on wrong answer with TRY AGAIN', (
       tester,
@@ -618,74 +640,79 @@ void main() {
       expect(find.byType(PhrasalVerbsOptionKey), findsNWidgets(4));
     });
 
-    testWidgets('5.4 advancing to next question resets Phase 1 & 2 state cleanly', (
-      tester,
-    ) async {
-      await advanceToPhase2(tester);
+    testWidgets(
+      '5.4 advancing to next question resets Phase 1 & 2 state cleanly',
+      (tester) async {
+        await advanceToPhase2(tester);
 
-      // Advance to quest 2
-      final nextQuestState = testLoadedState.copyWith(
-        currentIndex: 1,
-        answerStatus: AnswerStatus.unanswered,
-      );
-      vocabularyStreamController.add(nextQuestState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        // Advance to quest 2
+        final nextQuestState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        vocabularyStreamController.add(nextQuestState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.text('GIVE'), findsOneWidget);
-      expect(find.text('UP'), findsOneWidget);
-      expect(find.byType(PhrasalVerbsLiteralComparison), findsNothing);
-      expect(find.byType(ContextSentenceBuilder), findsNothing);
-    });
+        expect(find.text('GIVE'), findsOneWidget);
+        expect(find.text('UP'), findsOneWidget);
+        expect(find.byType(PhrasalVerbsLiteralComparison), findsNothing);
+        expect(find.byType(ContextSentenceBuilder), findsNothing);
+      },
+    );
 
-    testWidgets('5.5 VocabularyGameComplete state displays LEVEL COMPLETE dialog and disposes cleanly', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
+    testWidgets(
+      '5.5 VocabularyGameComplete state displays LEVEL COMPLETE dialog and disposes cleanly',
+      (tester) async {
+        await pumpScreen(tester);
 
-      const completeState = VocabularyGameComplete(
-        xpEarned: 50,
-        coinsEarned: 10,
-        questCount: 2,
-      );
-      vocabularyStreamController.add(completeState);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        const completeState = VocabularyGameComplete(
+          xpEarned: 50,
+          coinsEarned: 10,
+          questCount: 2,
+        );
+        vocabularyStreamController.add(completeState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+        expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
 
-      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
-      await tester.pump(const Duration(milliseconds: 500));
-    });
+        Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
   });
 
   group('6. Viewport Responsiveness, Theming & Accessibility', () {
-    testWidgets('6.1 renders on compact mobile screen (320x568) without overflow', (
-      tester,
-    ) async {
-      await pumpScreen(tester, size: const Size(320, 568));
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
-      expect(find.text('CALL'), findsOneWidget);
-    });
+    testWidgets(
+      '6.1 renders on compact mobile screen (320x568) without overflow',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(320, 568));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
+        expect(find.text('CALL'), findsOneWidget);
+      },
+    );
 
-    testWidgets('6.2 renders on tablet screen (768x1024) with responsive layout', (
-      tester,
-    ) async {
-      await pumpScreen(tester, size: const Size(768, 1024));
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
-      expect(find.text('CALL'), findsOneWidget);
-    });
+    testWidgets(
+      '6.2 renders on tablet screen (768x1024) with responsive layout',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(768, 1024));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
+        expect(find.text('CALL'), findsOneWidget);
+      },
+    );
 
-    testWidgets('6.3 renders in landscape orientation (800x480) without overflow', (
-      tester,
-    ) async {
-      await pumpScreen(tester, size: const Size(800, 480));
-      expect(tester.takeException(), isNull);
-      expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
-      expect(find.text('CALL'), findsOneWidget);
-    });
+    testWidgets(
+      '6.3 renders in landscape orientation (800x480) without overflow',
+      (tester) async {
+        await pumpScreen(tester, size: const Size(800, 480));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PhrasalVerbsScreen), findsOneWidget);
+        expect(find.text('CALL'), findsOneWidget);
+      },
+    );
 
     testWidgets('6.4 adapts to high text scale (1.5x) gracefully', (
       tester,
@@ -696,9 +723,7 @@ void main() {
       expect(find.text('CALL'), findsOneWidget);
     });
 
-    testWidgets('6.5 renders cleanly in light theme mode', (
-      tester,
-    ) async {
+    testWidgets('6.5 renders cleanly in light theme mode', (tester) async {
       await pumpScreen(tester, themeMode: ThemeMode.light);
       expect(tester.takeException(), isNull);
       expect(find.byType(PhrasalVerbsScreen), findsOneWidget);

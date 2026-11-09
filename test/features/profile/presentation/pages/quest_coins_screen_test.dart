@@ -114,16 +114,20 @@ void main() {
 
   setUpAll(() {
     registerFallbackValue(const AuthReloadUser());
-    registerFallbackValue(const EconomyPurchaseHintRequested(750, hintAmount: 5));
-    registerFallbackValue(const EconomyPurchaseHintRequested(200, hintAmount: 1));
-    registerFallbackValue(const EconomyPurchaseHintRequested(1000, hintAmount: 10));
+    registerFallbackValue(
+      const EconomyPurchaseHintRequested(750, hintAmount: 5),
+    );
+    registerFallbackValue(
+      const EconomyPurchaseHintRequested(200, hintAmount: 1),
+    );
+    registerFallbackValue(
+      const EconomyPurchaseHintRequested(1000, hintAmount: 10),
+    );
   });
 
   setUp(() async {
     VowlMotion.lowAnimationModeOverride.value = true;
-    SharedPreferences.setMockInitialValues({
-      'reward_limits_coins_count': 0,
-    });
+    SharedPreferences.setMockInitialValues({'reward_limits_coins_count': 0});
     navigatedRoutes = [];
 
     mockAuthBloc = MockAuthBloc();
@@ -136,11 +140,13 @@ void main() {
     mockAdService = MockAdService();
     economyStateController = StreamController<EconomyState>.broadcast();
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => economyStateController.stream);
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => economyStateController.stream);
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -148,11 +154,13 @@ void main() {
     when(() => mockHapticService.warning()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
 
-    when(() => mockPaymentService.init(
-          onSuccess: any(named: 'onSuccess'),
-          onFailure: any(named: 'onFailure'),
-          onExternalWallet: any(named: 'onExternalWallet'),
-        )).thenAnswer((_) {});
+    when(
+      () => mockPaymentService.init(
+        onSuccess: any(named: 'onSuccess'),
+        onFailure: any(named: 'onFailure'),
+        onExternalWallet: any(named: 'onExternalWallet'),
+      ),
+    ).thenAnswer((_) {});
     when(() => mockCoinPacksService.fetchPacks()).thenAnswer((_) async => []);
 
     if (di.sl.isRegistered<HapticService>()) {
@@ -163,11 +171,13 @@ void main() {
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -273,8 +283,9 @@ void main() {
 
   group('Group 1: Unauthenticated / Null User State', () {
     testWidgets('renders SizedBox.shrink when user is null', (tester) async {
-      when(() => mockAuthBloc.state)
-          .thenReturn(const AuthState.unauthenticated());
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(const AuthState.unauthenticated());
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -285,7 +296,9 @@ void main() {
   });
 
   group('Group 2: AppBar & Navigation', () {
-    testWidgets('renders title, coin badge, and back button pops screen', (tester) async {
+    testWidgets('renders title, coin badge, and back button pops screen', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget(startAtRoot: true));
       await tester.pumpAndSettle();
 
@@ -305,72 +318,86 @@ void main() {
   });
 
   group('Group 3: Coin Balance Hero Card', () {
-    testWidgets('renders total balance, formatted coins, weekly earnings, and hints glance', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders total balance, formatted coins, weekly earnings, and hints glance',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('TOTAL BALANCE'), findsOneWidget);
-      expect(find.text('15,450'), findsWidgets);
-      expect(find.text('7 hints available'), findsOneWidget);
-      expect(find.byIcon(Icons.trending_up_rounded), findsOneWidget);
-      expect(find.textContaining('this week'), findsOneWidget);
-    });
+        expect(find.text('TOTAL BALANCE'), findsOneWidget);
+        expect(find.text('15,450'), findsWidgets);
+        expect(find.text('7 hints available'), findsOneWidget);
+        expect(find.byIcon(Icons.trending_up_rounded), findsOneWidget);
+        expect(find.textContaining('this week'), findsOneWidget);
+      },
+    );
 
-    testWidgets('hides weekly earnings pill when user has 0 earned coins in past 7 days', (tester) async {
-      final userNoEarned = testUser.copyWith(coinHistory: [
-        {
-          'titleKey': 'coin_history.purchased_hint_pack',
-          'amount': -750,
-          'isEarned': false,
-          'date': now.subtract(const Duration(hours: 1)).toIso8601String(),
-        },
-      ]);
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(userNoEarned));
+    testWidgets(
+      'hides weekly earnings pill when user has 0 earned coins in past 7 days',
+      (tester) async {
+        final userNoEarned = testUser.copyWith(
+          coinHistory: [
+            {
+              'titleKey': 'coin_history.purchased_hint_pack',
+              'amount': -750,
+              'isEarned': false,
+              'date': now.subtract(const Duration(hours: 1)).toIso8601String(),
+            },
+          ],
+        );
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(userNoEarned));
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.byIcon(Icons.trending_up_rounded), findsNothing);
-      expect(find.textContaining('this week'), findsNothing);
-    });
+        expect(find.byIcon(Icons.trending_up_rounded), findsNothing);
+        expect(find.textContaining('this week'), findsNothing);
+      },
+    );
   });
 
   group('Group 4: Ways to Earn Section', () {
-    testWidgets('renders Ways to Earn section with streak item, AdRewardCard, and HintAdCard', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Ways to Earn section with streak item, AdRewardCard, and HintAdCard',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      final scrollable = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text('WAYS TO EARN'),
-        50.0,
-        scrollable: scrollable,
-      );
-      await tester.pumpAndSettle();
+        final scrollable = find.byType(Scrollable).first;
+        await tester.scrollUntilVisible(
+          find.text('WAYS TO EARN'),
+          50.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('WAYS TO EARN'), findsOneWidget);
+        expect(find.text('WAYS TO EARN'), findsOneWidget);
 
-      await tester.scrollUntilVisible(
-        find.text('Maintain Daily Streak'),
-        100.0,
-        scrollable: scrollable,
-      );
-      await tester.pumpAndSettle();
+        await tester.scrollUntilVisible(
+          find.text('Maintain Daily Streak'),
+          100.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Maintain Daily Streak'), findsOneWidget);
-      expect(find.byType(AdRewardCard), findsOneWidget);
-      expect(find.byType(HintAdCard), findsOneWidget);
+        expect(find.text('Maintain Daily Streak'), findsOneWidget);
+        expect(find.byType(AdRewardCard), findsOneWidget);
+        expect(find.byType(HintAdCard), findsOneWidget);
 
-      await tester.tap(find.text('Maintain Daily Streak'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Maintain Daily Streak'));
+        await tester.pumpAndSettle();
 
-      expect(navigatedRoutes.contains(AppRouter.streakRoute), isTrue);
-    });
+        expect(navigatedRoutes.contains(AppRouter.streakRoute), isTrue);
+      },
+    );
   });
 
   group('Group 5: Where to Spend Section Navigation', () {
-    testWidgets('tapping Streak Boosters navigates to streakRoute', (tester) async {
+    testWidgets('tapping Streak Boosters navigates to streakRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -388,7 +415,9 @@ void main() {
       expect(navigatedRoutes.contains(AppRouter.streakRoute), isTrue);
     });
 
-    testWidgets('tapping Adventure Store navigates to adventureXPRoute', (tester) async {
+    testWidgets('tapping Adventure Store navigates to adventureXPRoute', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -408,97 +437,112 @@ void main() {
   });
 
   group('Group 6: Hint Store & Purchases', () {
-    testWidgets('renders Hint Store packs and confirming purchase dispatches EconomyPurchaseHintRequested', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Hint Store packs and confirming purchase dispatches EconomyPurchaseHintRequested',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      final scrollable = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text('Hint Store'),
-        100.0,
-        scrollable: scrollable,
-      );
-      await tester.pumpAndSettle();
+        final scrollable = find.byType(Scrollable).first;
+        await tester.scrollUntilVisible(
+          find.text('Hint Store'),
+          100.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('1 Hint'), findsOneWidget);
-      expect(find.text('5 Hints'), findsOneWidget);
-      expect(find.text('10 Hints'), findsOneWidget);
-      expect(find.text('BEST VALUE'), findsOneWidget);
+        expect(find.text('1 Hint'), findsOneWidget);
+        expect(find.text('5 Hints'), findsOneWidget);
+        expect(find.text('10 Hints'), findsOneWidget);
+        expect(find.text('BEST VALUE'), findsOneWidget);
 
-      // Tap 5 Hints pack
-      await tester.tap(find.text('5 Hints'));
-      await tester.pumpAndSettle();
+        // Tap 5 Hints pack
+        await tester.tap(find.text('5 Hints'));
+        await tester.pumpAndSettle();
 
-      // Confirmation dialog should be displayed
-      expect(find.text('Unlock 5 Hints'), findsOneWidget);
-      final confirmButton = find.text('CONFIRM');
-      expect(confirmButton, findsOneWidget);
+        // Confirmation dialog should be displayed
+        expect(find.text('Unlock 5 Hints'), findsOneWidget);
+        final confirmButton = find.text('CONFIRM');
+        expect(confirmButton, findsOneWidget);
 
-      await tester.tap(confirmButton);
-      await tester.pumpAndSettle();
+        await tester.tap(confirmButton);
+        await tester.pumpAndSettle();
 
-      verify(() => mockEconomyBloc.add(
+        verify(
+          () => mockEconomyBloc.add(
             const EconomyPurchaseHintRequested(750, hintAmount: 5),
-          )).called(1);
-      verify(() => mockHapticService.heavy()).called(1);
-    });
+          ),
+        ).called(1);
+        verify(() => mockHapticService.heavy()).called(1);
+      },
+    );
 
-    testWidgets('tapping hint pack when user cannot afford triggers light haptic and error snackbar', (tester) async {
-      final poorUser = testUser.copyWith(coins: 50);
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(poorUser));
+    testWidgets(
+      'tapping hint pack when user cannot afford triggers light haptic and error snackbar',
+      (tester) async {
+        final poorUser = testUser.copyWith(coins: 50);
+        when(
+          () => mockAuthBloc.state,
+        ).thenReturn(AuthState.authenticated(poorUser));
 
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      final scrollable = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text('Hint Store'),
-        100.0,
-        scrollable: scrollable,
-      );
-      await tester.pumpAndSettle();
+        final scrollable = find.byType(Scrollable).first;
+        await tester.scrollUntilVisible(
+          find.text('Hint Store'),
+          100.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Need 150 more'), findsOneWidget);
+        expect(find.text('Need 150 more'), findsOneWidget);
 
-      await tester.tap(find.text('1 Hint'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('1 Hint'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.light()).called(1);
-      expect(find.text('Not enough coins'), findsOneWidget);
-      verifyNever(() => mockEconomyBloc.add(any()));
-    });
+        verify(() => mockHapticService.light()).called(1);
+        expect(find.text('Not enough coins'), findsOneWidget);
+        verifyNever(() => mockEconomyBloc.add(any()));
+      },
+    );
   });
 
   group('Group 7: Buy More Coins Card', () {
-    testWidgets('renders Buy More Coins and tapping opens PremiumStoreBottomSheet', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders Buy More Coins and tapping opens PremiumStoreBottomSheet',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
 
-      final scrollable = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text('Buy More Coins'),
-        100.0,
-        scrollable: scrollable,
-      );
-      await tester.pumpAndSettle();
+        final scrollable = find.byType(Scrollable).first;
+        await tester.scrollUntilVisible(
+          find.text('Buy More Coins'),
+          100.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Buy More Coins'), findsOneWidget);
-      expect(find.text('Get coin packs with real money'), findsOneWidget);
+        expect(find.text('Buy More Coins'), findsOneWidget);
+        expect(find.text('Get coin packs with real money'), findsOneWidget);
 
-      await tester.tap(find.text('Buy More Coins'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Buy More Coins'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockHapticService.selection()).called(1);
-      expect(find.byType(PremiumStoreBottomSheet), findsOneWidget);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        expect(find.byType(PremiumStoreBottomSheet), findsOneWidget);
+      },
+    );
   });
 
   group('Group 8: Coin History Ledger', () {
-    testWidgets('renders empty state when coinHistory is empty', (tester) async {
+    testWidgets('renders empty state when coinHistory is empty', (
+      tester,
+    ) async {
       final emptyHistoryUser = testUser.copyWith(coinHistory: []);
-      when(() => mockAuthBloc.state)
-          .thenReturn(AuthState.authenticated(emptyHistoryUser));
+      when(
+        () => mockAuthBloc.state,
+      ).thenReturn(AuthState.authenticated(emptyHistoryUser));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
@@ -512,35 +556,43 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('No Transactions Yet'), findsOneWidget);
-      expect(find.text('Complete a quest to earn your first coins!'), findsOneWidget);
-    });
-
-    testWidgets('renders transaction items with localized titles, amounts, and relative times', (tester) async {
-      await tester.pumpWidget(buildTestWidget());
-      await tester.pumpAndSettle();
-
-      final scrollable = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text('COIN LEDGER'),
-        100.0,
-        scrollable: scrollable,
+      expect(
+        find.text('Complete a quest to earn your first coins!'),
+        findsOneWidget,
       );
-      await tester.pumpAndSettle();
-
-      expect(find.text('COIN LEDGER'), findsOneWidget);
-      expect(find.text('Beginner Discovery Quests Reward'), findsOneWidget);
-      expect(find.text('Trophy Bounty – Novice Speaking'), findsOneWidget);
-      expect(find.text('Purchased Hint Pack'), findsOneWidget);
-      expect(find.text('Ad Reward'), findsOneWidget);
-      expect(find.text('Legacy Raw Title'), findsOneWidget);
-      expect(find.text('30m ago'), findsOneWidget);
-      expect(find.text('3h ago'), findsOneWidget);
-      expect(find.text('Yesterday'), findsOneWidget);
     });
+
+    testWidgets(
+      'renders transaction items with localized titles, amounts, and relative times',
+      (tester) async {
+        await tester.pumpWidget(buildTestWidget());
+        await tester.pumpAndSettle();
+
+        final scrollable = find.byType(Scrollable).first;
+        await tester.scrollUntilVisible(
+          find.text('COIN LEDGER'),
+          100.0,
+          scrollable: scrollable,
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text('COIN LEDGER'), findsOneWidget);
+        expect(find.text('Beginner Discovery Quests Reward'), findsOneWidget);
+        expect(find.text('Trophy Bounty – Novice Speaking'), findsOneWidget);
+        expect(find.text('Purchased Hint Pack'), findsOneWidget);
+        expect(find.text('Ad Reward'), findsOneWidget);
+        expect(find.text('Legacy Raw Title'), findsOneWidget);
+        expect(find.text('30m ago'), findsOneWidget);
+        expect(find.text('3h ago'), findsOneWidget);
+        expect(find.text('Yesterday'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 9: Refresh Indicator', () {
-    testWidgets('pull to refresh dispatches AuthReloadUser event', (tester) async {
+    testWidgets('pull to refresh dispatches AuthReloadUser event', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
@@ -555,37 +607,41 @@ void main() {
   });
 
   group('Group 10: Responsiveness & Themes', () {
-    testWidgets('renders cleanly on compact mobile (320x568) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(
-        screenSize: const Size(320, 568),
-      ));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on compact mobile (320x568) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly on tablet viewport (800x1280) without overflow', (tester) async {
-      await tester.pumpWidget(buildTestWidget(
-        screenSize: const Size(800, 1280),
-      ));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders cleanly on tablet viewport (800x1280) without overflow',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestWidget(screenSize: const Size(800, 1280)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders cleanly with 1.3x accessibility text scale', (tester) async {
-      await tester.pumpWidget(buildTestWidget(
-        textScaleFactor: 1.3,
-      ));
+    testWidgets('renders cleanly with 1.3x accessibility text scale', (
+      tester,
+    ) async {
+      await tester.pumpWidget(buildTestWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('renders cleanly in dark theme mode', (tester) async {
-      await tester.pumpWidget(buildTestWidget(
-        themeMode: ThemeMode.dark,
-      ));
+      await tester.pumpWidget(buildTestWidget(themeMode: ThemeMode.dark));
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);

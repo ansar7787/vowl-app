@@ -34,9 +34,9 @@ class GuessTitleScreen extends StatefulWidget {
 }
 
 class _GuessTitleScreenState extends State<GuessTitleScreen>
-  with
-    GameScreenMixin<GuessTitleScreen>,
-    ReadingGameScreenMixin<GuessTitleScreen> {
+    with
+        GameScreenMixin<GuessTitleScreen>,
+        ReadingGameScreenMixin<GuessTitleScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -179,7 +179,9 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                               onSelect: (title) {
                                                 _selectedTitle.value = title;
                                                 final isCorrect =
-                                                    title.trim().toLowerCase() ==
+                                                    title
+                                                        .trim()
+                                                        .toLowerCase() ==
                                                     (quest.correctAnswer ?? "")
                                                         .trim()
                                                         .toLowerCase();

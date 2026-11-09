@@ -21,10 +21,8 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
   /// Default completion dialog title matching the standardized level complete banner.
   /// Subclasses can override if a specialized localized string is required.
-  String getCompletionTitle(BuildContext context) => context.tr(
-        'games.level_complete_caps',
-        fallback: 'LEVEL COMPLETE!',
-      );
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   late final HapticService hapticService = di.sl<HapticService>();
   late final SoundService soundService = di.sl<SoundService>();
@@ -51,7 +49,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   /// Returns the current question step within the active level (1, 2, 3, or 4 for frenzy).
   int get currentComboStep {
     if (_sessionHotStreak >= 5) return 4;
-    final int target = lastProcessedIndex >= 0 ? lastProcessedIndex + 1 : _levelQuestionIndex + 1;
+    final int target = lastProcessedIndex >= 0
+        ? lastProcessedIndex + 1
+        : _levelQuestionIndex + 1;
     return target.clamp(1, 3);
   }
 
@@ -102,10 +102,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     // the completion immediately upon navigation, before or while Firestore transactions run.
     try {
       context.read<AuthBloc>().add(
-        AuthLevelCompletedOptimistic(
-          gameType: gameType.name,
-          level: level,
-        ),
+        AuthLevelCompletedOptimistic(gameType: gameType.name, level: level),
       );
     } catch (_) {
       // Defensive fallback in case AuthBloc is not provided in isolated widget tests
@@ -216,7 +213,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       if (di.sl.isRegistered<PraiseService>()) {
         Timer(const Duration(milliseconds: 400), () {
           try {
-            di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+            di.sl<PraiseService>().givePraise(
+              context: PraiseContext.hotStreak5,
+            );
           } catch (_) {}
         });
       }
@@ -224,7 +223,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       if (di.sl.isRegistered<PraiseService>()) {
         Timer(const Duration(milliseconds: 400), () {
           try {
-            di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+            di.sl<PraiseService>().givePraise(
+              context: PraiseContext.hotStreak10,
+            );
           } catch (_) {}
         });
       }

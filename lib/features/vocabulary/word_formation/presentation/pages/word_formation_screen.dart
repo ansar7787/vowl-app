@@ -132,7 +132,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -289,20 +290,31 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                           reduceMotion
                                               ? instructionWidget
                                               : instructionWidget
-                                                  .animate()
-                                                  .fadeIn(duration: 400.ms)
-                                                  .slideY(
-                                                    begin: -0.2,
-                                                    end: 0,
-                                                    duration: 400.ms,
-                                                    curve: Curves.easeOutCubic,
-                                                  ),
-                                          SizedBox(height: (gapMiddle * 0.5).clamp(8.0, 16.0)),
+                                                    .animate()
+                                                    .fadeIn(duration: 400.ms)
+                                                    .slideY(
+                                                      begin: -0.2,
+                                                      end: 0,
+                                                      duration: 400.ms,
+                                                      curve:
+                                                          Curves.easeOutCubic,
+                                                    ),
+                                          SizedBox(
+                                            height: (gapMiddle * 0.5).clamp(
+                                              8.0,
+                                              16.0,
+                                            ),
+                                          ),
 
                                           // Word Formation Hub Card
                                           reactionCoreWidget,
 
-                                          SizedBox(height: (gapMiddle * 0.8).clamp(10.0, 20.0)),
+                                          SizedBox(
+                                            height: (gapMiddle * 0.8).clamp(
+                                              10.0,
+                                              20.0,
+                                            ),
+                                          ),
 
                                           // Affix Option Rails
                                           _buildInjectionRails(
@@ -336,8 +348,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                     ),
                                     child: TypeToConfirmOverlay(
                                       expectedText: quest.correctAnswer ?? '',
-                                      displayText:
-                                          quest.correctAnswer?.toUpperCase(),
+                                      displayText: quest.correctAnswer
+                                          ?.toUpperCase(),
                                       primaryColor: theme.primaryColor,
                                       displayFontSize: 22.sp,
                                       displayFontWeight: FontWeight.w700,
@@ -385,16 +397,13 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               color: color,
               isDark: isDark,
               isBlocked:
-                  _controller.isAnswered ||
-                  _controller.isFirstStagePassed,
-              isPrefix: entry.value.trim().endsWith('-') ||
+                  _controller.isAnswered || _controller.isFirstStagePassed,
+              isPrefix:
+                  entry.value.trim().endsWith('-') ||
                   (!entry.value.trim().startsWith('-') &&
                       correct.toLowerCase().startsWith(
-                            entry.value
-                                .replaceAll('-', '')
-                                .trim()
-                                .toLowerCase(),
-                          )),
+                        entry.value.replaceAll('-', '').trim().toLowerCase(),
+                      )),
               onMorph: (suffix) {
                 _controller.submitMorph(suffix, root, correct, entry.key);
               },

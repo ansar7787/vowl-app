@@ -165,8 +165,8 @@ class ScanResultBlock extends StatelessWidget {
     final borderColor = containsBounty
         ? primaryIndigo
         : (isDark
-            ? Colors.white.withValues(alpha: 0.15)
-            : Colors.black.withValues(alpha: 0.06));
+              ? Colors.white.withValues(alpha: 0.15)
+              : Colors.black.withValues(alpha: 0.06));
 
     final wordCount = block.text
         .trim()
@@ -175,207 +175,425 @@ class ScanResultBlock extends StatelessWidget {
         .length;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-        child: Container(
-          padding: EdgeInsets.all(18.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? (containsBounty
-                    ? primaryIndigo.withValues(alpha: 0.16)
-                    : Colors.black.withValues(alpha: 0.55))
-                : (containsBounty
-                    ? primaryIndigo.withValues(alpha: 0.08)
-                    : Colors.white.withValues(alpha: 0.85)),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: borderColor,
-              width: containsBounty ? 2.w : 1.5.w,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: containsBounty
-                    ? primaryIndigo.withValues(alpha: 0.22)
-                    : primaryIndigo.withValues(alpha: 0.06),
-                blurRadius: 18,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // 1. Bounty Match Highlight Banner
-              if (containsBounty && bountyWord != null) ...[
-                Container(
-                  margin: EdgeInsets.only(bottom: 12.h),
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: AppColors.amber500.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(
-                      color: AppColors.amber500.withValues(alpha: 0.6),
-                      width: 1.w,
-                    ),
+          borderRadius: BorderRadius.circular(20.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+            child: Container(
+              padding: EdgeInsets.all(18.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? (containsBounty
+                          ? primaryIndigo.withValues(alpha: 0.16)
+                          : Colors.black.withValues(alpha: 0.55))
+                    : (containsBounty
+                          ? primaryIndigo.withValues(alpha: 0.08)
+                          : Colors.white.withValues(alpha: 0.85)),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: borderColor,
+                  width: containsBounty ? 2.w : 1.5.w,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: containsBounty
+                        ? primaryIndigo.withValues(alpha: 0.22)
+                        : primaryIndigo.withValues(alpha: 0.06),
+                    blurRadius: 18,
+                    offset: const Offset(0, 8),
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        LucideIcons.sparkles,
-                        size: 13.r,
-                        color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 1. Bounty Match Highlight Banner
+                  if (containsBounty && bountyWord != null) ...[
+                    Container(
+                      margin: EdgeInsets.only(bottom: 12.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.h,
                       ),
-                      SizedBox(width: 6.w),
+                      decoration: BoxDecoration(
+                        color: AppColors.amber500.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(
+                          color: AppColors.amber500.withValues(alpha: 0.6),
+                          width: 1.w,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.sparkles,
+                            size: 13.r,
+                            color: isDark
+                                ? Colors.amber.shade300
+                                : Colors.amber.shade800,
+                          ),
+                          SizedBox(width: 6.w),
+                          Text(
+                            context.tr(
+                              'translation.bounty_block_match',
+                              args: [bountyWord!],
+                              fallback: 'TARGET WORD DETECTED: "$bountyWord"',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.5,
+                              color: isDark
+                                  ? Colors.amber.shade300
+                                  : Colors.amber.shade800,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+
+                  // 2. Header Row: Metadata + Action Toolbar
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Data indicator bar
+                      Container(
+                        width: 4.w,
+                        height: 22.h,
+                        decoration: BoxDecoration(
+                          color: containsBounty
+                              ? AppColors.amber500
+                              : primaryIndigo,
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        Icons.text_format_rounded,
+                        size: 14.r,
+                        color: primaryIndigo,
+                      ),
+                      SizedBox(width: 4.w),
                       Text(
                         context.tr(
-                          'translation.bounty_block_match',
-                          args: [bountyWord!],
-                          fallback: 'TARGET WORD DETECTED: "$bountyWord"',
+                          'translation.words_count',
+                          args: [wordCount.toString()],
+                          fallback: '$wordCount words',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 11.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          letterSpacing: 0.5,
-                          color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
+                          color: primaryIndigo,
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ],
+                      const Spacer(),
 
-              // 2. Header Row: Metadata + Action Toolbar
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // Data indicator bar
-                  Container(
-                    width: 4.w,
-                    height: 22.h,
-                    decoration: BoxDecoration(
-                      color: containsBounty ? AppColors.amber500 : primaryIndigo,
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Icon(
-                    Icons.text_format_rounded,
-                    size: 14.r,
-                    color: primaryIndigo,
-                  ),
-                  SizedBox(width: 4.w),
-                  Text(
-                    context.tr(
-                      'translation.words_count',
-                      args: [wordCount.toString()],
-                      fallback: '$wordCount words',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: primaryIndigo,
-                    ),
-                  ),
-                  const Spacer(),
-
-                  // Copy to Clipboard Button
-                  Semantics(
-                    label: 'Copy scanned text',
-                    button: true,
-                    child: ScaleButton(
-                      onTap: () => _copyToClipboard(context),
-                      child: Container(
-                        padding: EdgeInsets.all(7.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : Colors.black.withValues(alpha: 0.04),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.15)
-                                : Colors.black.withValues(alpha: 0.1),
-                            width: 1.w,
-                          ),
-                        ),
-                        child: Icon(
-                          LucideIcons.copy,
-                          size: 15.r,
-                          color: isDark ? Colors.white70 : Colors.black87,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-
-                  // Listen Audio Button
-                  Semantics(
-                    label: 'Listen to scanned text',
-                    button: true,
-                    child: ScaleButton(
-                      onTap: () {
-                        try {
-                          di.sl<HapticService>().light();
-                        } catch (_) {}
-                        onPlayPronunciation(block.text);
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(7.r),
-                        decoration: BoxDecoration(
-                          color: primaryIndigo.withValues(alpha: 0.15),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: primaryIndigo.withValues(alpha: 0.35),
-                            width: 1.w,
-                          ),
-                        ),
-                        child: Icon(
-                          Icons.volume_up_rounded,
-                          color: isDark ? _LocalPalette.color818cf8 : primaryIndigo,
-                          size: 16.r,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  // Vocab Notebook Bookmark Button
-                  if (onToggleSave != null) ...[
-                    SizedBox(width: 8.w),
-                    Semantics(
-                      label: isSaved
-                          ? 'Remove from Vocab Notebook'
-                          : 'Save to Vocab Notebook',
-                      button: true,
-                      child: ScaleButton(
-                        onTap: () => onToggleSave!(block.text),
-                        child: Container(
-                          padding: EdgeInsets.all(7.r),
-                          decoration: BoxDecoration(
-                            color: isSaved
-                                ? AppColors.amber500.withValues(alpha: 0.2)
-                                : (isDark
-                                    ? Colors.white.withValues(alpha: 0.08)
-                                    : Colors.black.withValues(alpha: 0.04)),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: isSaved
-                                  ? AppColors.amber500.withValues(alpha: 0.6)
-                                  : (isDark
-                                      ? Colors.white.withValues(alpha: 0.15)
-                                      : Colors.black.withValues(alpha: 0.1)),
-                              width: 1.w,
+                      // Copy to Clipboard Button
+                      Semantics(
+                        label: 'Copy scanned text',
+                        button: true,
+                        child: ScaleButton(
+                          onTap: () => _copyToClipboard(context),
+                          child: Container(
+                            padding: EdgeInsets.all(7.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : Colors.black.withValues(alpha: 0.04),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.15)
+                                    : Colors.black.withValues(alpha: 0.1),
+                                width: 1.w,
+                              ),
+                            ),
+                            child: Icon(
+                              LucideIcons.copy,
+                              size: 15.r,
+                              color: isDark ? Colors.white70 : Colors.black87,
                             ),
                           ),
-                          child: Icon(
-                            isSaved ? Icons.star_rounded : Icons.star_outline_rounded,
-                            color: isSaved
-                                ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
-                                : (isDark ? Colors.white54 : Colors.black45),
-                            size: 16.r,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+
+                      // Listen Audio Button
+                      Semantics(
+                        label: 'Listen to scanned text',
+                        button: true,
+                        child: ScaleButton(
+                          onTap: () {
+                            try {
+                              di.sl<HapticService>().light();
+                            } catch (_) {}
+                            onPlayPronunciation(block.text);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(7.r),
+                            decoration: BoxDecoration(
+                              color: primaryIndigo.withValues(alpha: 0.15),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: primaryIndigo.withValues(alpha: 0.35),
+                                width: 1.w,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.volume_up_rounded,
+                              color: isDark
+                                  ? _LocalPalette.color818cf8
+                                  : primaryIndigo,
+                              size: 16.r,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      // Vocab Notebook Bookmark Button
+                      if (onToggleSave != null) ...[
+                        SizedBox(width: 8.w),
+                        Semantics(
+                          label: isSaved
+                              ? 'Remove from Vocab Notebook'
+                              : 'Save to Vocab Notebook',
+                          button: true,
+                          child: ScaleButton(
+                            onTap: () => onToggleSave!(block.text),
+                            child: Container(
+                              padding: EdgeInsets.all(7.r),
+                              decoration: BoxDecoration(
+                                color: isSaved
+                                    ? AppColors.amber500.withValues(alpha: 0.2)
+                                    : (isDark
+                                          ? Colors.white.withValues(alpha: 0.08)
+                                          : Colors.black.withValues(
+                                              alpha: 0.04,
+                                            )),
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: isSaved
+                                      ? AppColors.amber500.withValues(
+                                          alpha: 0.6,
+                                        )
+                                      : (isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.15,
+                                              )
+                                            : Colors.black.withValues(
+                                                alpha: 0.1,
+                                              )),
+                                  width: 1.w,
+                                ),
+                              ),
+                              child: Icon(
+                                isSaved
+                                    ? Icons.star_rounded
+                                    : Icons.star_outline_rounded,
+                                color: isSaved
+                                    ? (isDark
+                                          ? Colors.amber.shade300
+                                          : AppColors.amber500)
+                                    : (isDark
+                                          ? Colors.white54
+                                          : Colors.black45),
+                                size: 16.r,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+
+                  // 3. Primary Scanned English Text
+                  SelectableText(
+                    block.text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w700,
+                      color: textColor,
+                      height: 1.35,
+                    ),
+                  ),
+
+                  // 4. Reading / Phonics Tip
+                  if (_isLikelyEnglish(block.text)) ...[
+                    SizedBox(height: 14.h),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(12.r),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.lightbulb_outline_rounded,
+                                size: 16.r,
+                                color: isDark
+                                    ? Colors.amber.shade300
+                                    : Colors.amber.shade700,
+                              ),
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: Text(
+                                  generateReadingTip(context, block.text),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
+                                    fontStyle: FontStyle.italic,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          if (translatedTip != null) ...[
+                            SizedBox(height: 6.h),
+                            Padding(
+                              padding: EdgeInsets.only(left: 24.w),
+                              child: Text(
+                                translatedTip,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.5.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: primaryIndigo,
+                                  fontStyle: FontStyle.italic,
+                                  height: 1.3,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
+
+                  // 5. Native Language Translation or Translate Action
+                  if (translatedBlockText != null) ...[
+                    SizedBox(height: 14.h),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: primaryIndigo.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(14.r),
+                        border: Border.all(
+                          color: primaryIndigo.withValues(alpha: 0.28),
+                          width: 1.w,
+                        ),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.g_translate_rounded,
+                            color: primaryIndigo,
+                            size: 18.r,
+                          ),
+                          SizedBox(width: 10.w),
+                          Expanded(
+                            child: Text(
+                              translatedBlockText,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                color: isDark
+                                    ? _LocalPalette.color818cf8
+                                    : primaryIndigo,
+                                fontWeight: FontWeight.w700,
+                                height: 1.35,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ] else if (isTranslating) ...[
+                    SizedBox(height: 14.h),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(2.r),
+                      child: SizedBox(
+                        height: 4.h,
+                        width: double.infinity,
+                        child: LinearProgressIndicator(
+                          color: primaryIndigo,
+                          backgroundColor: primaryIndigo.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ),
+                  ] else ...[
+                    SizedBox(height: 14.h),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Semantics(
+                        label: 'Translate text',
+                        button: true,
+                        child: ScaleButton(
+                          onTap: () => onTranslate(index, block.text),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 9.h,
+                            ),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  primaryIndigo.withValues(alpha: 0.22),
+                                  _LocalPalette.color4f46e5.withValues(
+                                    alpha: 0.08,
+                                  ),
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: primaryIndigo.withValues(alpha: 0.4),
+                                width: 1.w,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.g_translate_rounded,
+                                  color: primaryIndigo,
+                                  size: 16.r,
+                                ),
+                                SizedBox(width: 6.w),
+                                Text(
+                                  context.tr(
+                                    'translation.translate',
+                                    fallback: 'Translate',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.5.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: primaryIndigo,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -383,196 +601,9 @@ class ScanResultBlock extends StatelessWidget {
                   ],
                 ],
               ),
-              SizedBox(height: 12.h),
-
-              // 3. Primary Scanned English Text
-              SelectableText(
-                block.text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: textColor,
-                  height: 1.35,
-                ),
-              ),
-
-              // 4. Reading / Phonics Tip
-              if (_isLikelyEnglish(block.text)) ...[
-                SizedBox(height: 14.h),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.lightbulb_outline_rounded,
-                            size: 16.r,
-                            color: isDark ? Colors.amber.shade300 : Colors.amber.shade700,
-                          ),
-                          SizedBox(width: 8.w),
-                          Expanded(
-                            child: Text(
-                              generateReadingTip(context, block.text),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w500,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                                fontStyle: FontStyle.italic,
-                                height: 1.3,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      if (translatedTip != null) ...[
-                        SizedBox(height: 6.h),
-                        Padding(
-                          padding: EdgeInsets.only(left: 24.w),
-                          child: Text(
-                            translatedTip,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.5.sp,
-                              fontWeight: FontWeight.w600,
-                              color: primaryIndigo,
-                              fontStyle: FontStyle.italic,
-                              height: 1.3,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ],
-                  ),
-                ),
-              ],
-
-              // 5. Native Language Translation or Translate Action
-              if (translatedBlockText != null) ...[
-                SizedBox(height: 14.h),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(14.r),
-                  decoration: BoxDecoration(
-                    color: primaryIndigo.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(
-                      color: primaryIndigo.withValues(alpha: 0.28),
-                      width: 1.w,
-                    ),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Icon(
-                        Icons.g_translate_rounded,
-                        color: primaryIndigo,
-                        size: 18.r,
-                      ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: Text(
-                          translatedBlockText,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            color: isDark
-                                ? _LocalPalette.color818cf8
-                                : primaryIndigo,
-                            fontWeight: FontWeight.w700,
-                            height: 1.35,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ] else if (isTranslating) ...[
-                SizedBox(height: 14.h),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(2.r),
-                  child: SizedBox(
-                    height: 4.h,
-                    width: double.infinity,
-                    child: LinearProgressIndicator(
-                      color: primaryIndigo,
-                      backgroundColor: primaryIndigo.withValues(alpha: 0.2),
-                    ),
-                  ),
-                ),
-              ] else ...[
-                SizedBox(height: 14.h),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Semantics(
-                    label: 'Translate text',
-                    button: true,
-                    child: ScaleButton(
-                      onTap: () => onTranslate(index, block.text),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 9.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              primaryIndigo.withValues(alpha: 0.22),
-                              _LocalPalette.color4f46e5.withValues(alpha: 0.08),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(
-                            color: primaryIndigo.withValues(alpha: 0.4),
-                            width: 1.w,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.g_translate_rounded,
-                              color: primaryIndigo,
-                              size: 16.r,
-                            ),
-                            SizedBox(width: 6.w),
-                            Text(
-                              context.tr(
-                                'translation.translate',
-                                fallback: 'Translate',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.5.sp,
-                                fontWeight: FontWeight.bold,
-                                color: primaryIndigo,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ],
+            ),
           ),
-        ),
-      ),
-    )
+        )
         .animate(delay: (60 * index).ms)
         .fadeIn(duration: 350.ms)
         .slideY(begin: 0.1, curve: Curves.easeOutCubic);
