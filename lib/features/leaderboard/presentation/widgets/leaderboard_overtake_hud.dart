@@ -104,7 +104,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'LEAGUE LEADER',
+                          isWeekly ? 'LEAGUE LEADER' : 'ALL-TIME LEADER',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
@@ -179,8 +179,8 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                   Flexible(
                     child: Text(
                       isWeekly
-                          ? 'Dominating the global weekly league'
-                          : 'Dominating the global all-time rankings',
+                          ? 'Rank 1 · Defending Champion'
+                          : 'Rank 1 · All-Time Legend',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -305,7 +305,9 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                         fit: BoxFit.scaleDown,
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'NEXT TARGET · OVERTAKE',
+                          isWeekly
+                              ? 'NEXT TARGET · OVERTAKE'
+                              : 'NEXT TARGET · GLOBAL RANK',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
@@ -435,7 +437,11 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    '1 quick quest to pass',
+                    xpDiff <= 60
+                        ? '1 quest to pass'
+                        : (xpDiff <= 150
+                              ? 'A few quests to pass'
+                              : 'Keep climbing 🔥'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

@@ -3,3 +3,4 @@ enum LeaderboardTimeframe {
   thisWeek,
   allTime,
 }
+

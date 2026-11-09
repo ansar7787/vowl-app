@@ -51,8 +51,8 @@ class LeaderboardRankCard extends StatelessWidget {
     if (isKids) {
       primaryScoreText = '${currentUser.kidsTotalStars} ⭐ Stars';
       statusZoneText = isRanked
-          ? '${currentUser.kidsTotalLevelsCompleted} Levels Cleared · ${currentUser.kidsCoins} Coins'
-          : 'Play Kids games to collect Star Vault stars!';
+          ? '${currentUser.kidsTotalLevelsCompleted} Levels · ${currentUser.kidsCoins} Coins'
+          : 'Play games to collect stars!';
       final topStars = allUsers.isNotEmpty ? allUsers.first.kidsTotalStars : 1;
       relativeProgress = topStars > 0
           ? (currentUser.kidsTotalStars / topStars).clamp(0.05, 1.0)
@@ -60,13 +60,13 @@ class LeaderboardRankCard extends StatelessWidget {
     } else if (isWeekly) {
       primaryScoreText = '${currentUser.currentWeeklyExp} Weekly XP';
       if (rank >= 1 && rank <= 3) {
-        statusZoneText = '🏆 Podium Zone · VIP + Coins Reward';
+        statusZoneText = '🏆 Podium · VIP + Coins';
       } else if (rank >= 4 && rank <= 10) {
-        statusZoneText = '⚡ Top 10 Division · 100 Coins Reward';
+        statusZoneText = '⚡ Top 10 · 100 Coins';
       } else if (isRanked) {
-        statusZoneText = '🏃 Contender Zone · Push for Top 10';
+        statusZoneText = '🏃 Contender · Push for Top 10';
       } else {
-        statusZoneText = 'Join this week\'s league race!';
+        statusZoneText = 'Play quests to join the race!';
       }
       final topWeeklyXp = allUsers.isNotEmpty
           ? allUsers.first.currentWeeklyExp
