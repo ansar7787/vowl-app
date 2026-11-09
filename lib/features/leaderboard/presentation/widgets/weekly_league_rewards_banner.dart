@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -131,10 +132,10 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.slate800 : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
     final textSecondary = isDark
         ? AppColors.slate400
         : (tokens?.textSecondary ?? const Color(0xFF64748B));

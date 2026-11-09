@@ -1,5 +1,6 @@
 import 'package:intl/intl.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -89,10 +90,10 @@ class LeaderboardRankTile extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100)),
+                        : AppTheme.borderLight)),
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? const Color(0xFF131A29) : Colors.white),
+            : (isDark ? AppColors.slate800 : Colors.white),
         borderWidth: 1.0,
         child: Material(
           color: Colors.transparent,

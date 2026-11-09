@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -42,7 +43,7 @@ class ProfileQuickActionHud extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
     final isVipReady = user.isVipGiftAvailable;
 
     return Padding(
@@ -155,7 +156,7 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF131A29)
+              ? AppColors.slate800
               : Colors.black.withValues(alpha: 0.035));
 
     return Semantics(
@@ -210,7 +211,7 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF131A29)
+              ? AppColors.slate800
               : Colors.black.withValues(alpha: 0.035));
 
     if (isVipReady) {

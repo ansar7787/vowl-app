@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -377,7 +378,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
         padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
         blur: 0,
         borderColor: AppColors.violet500.withValues(alpha: 0.35),
-        borderWidth: 1.2,
+        borderWidth: 1.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -431,7 +432,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
     final progress = total > 0 ? (earned / total).clamp(0.0, 1.0) : 0.0;
 
     return GlassTile(

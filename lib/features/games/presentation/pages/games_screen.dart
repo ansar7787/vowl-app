@@ -7,6 +7,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -541,10 +542,10 @@ class _QuickResumeHeroCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.slate800 : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     return Padding(
       padding: EdgeInsets.fromLTRB(
@@ -1965,10 +1966,10 @@ class _CurriculumMasteryCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.slate800 : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     return Padding(
       padding: EdgeInsets.fromLTRB(
@@ -2628,10 +2629,10 @@ class _QuestGridCard extends StatelessWidget {
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
+        : (isDark ? AppColors.slate800 : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     return ScaleButton(
       // Tapping card body opens level roadmap

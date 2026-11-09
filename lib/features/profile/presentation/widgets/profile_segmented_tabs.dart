@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -34,7 +35,7 @@ class ProfileSegmentedTabs extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     final tabs = [
       (
@@ -59,7 +60,7 @@ class ProfileSegmentedTabs extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                    ? const Color(0xFF131A29)
+                    ? AppColors.slate800
                     : Colors.black.withValues(alpha: 0.04)),
           borderRadius: BorderRadius.circular(22.r),
           border: Border.all(color: borderColor, width: 1.0),

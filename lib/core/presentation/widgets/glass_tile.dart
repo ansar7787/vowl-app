@@ -185,9 +185,14 @@ class _GlassOverlay extends StatelessWidget {
         (color == Colors.white ||
             (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
 
+    final isLegacyDarkSurface =
+        color != null && color == const Color(0xFF131A29);
+
     if (!hasBlur) {
       final baseColor = isDark
-          ? ((color == null || isWhiteBased) ? defaultDarkSurface : color!)
+          ? ((color == null || isWhiteBased || isLegacyDarkSurface)
+                ? defaultDarkSurface
+                : color!)
           : (color ?? Colors.white);
 
       final opacity =
@@ -197,7 +202,9 @@ class _GlassOverlay extends StatelessWidget {
     }
 
     if (isDark) {
-      final c = (color != null && !isWhiteBased) ? color! : null;
+      final c = (color != null && !isWhiteBased && !isLegacyDarkSurface)
+          ? color!
+          : null;
       return Container(
         decoration: BoxDecoration(
           gradient: usePremiumStyle
