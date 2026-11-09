@@ -161,10 +161,10 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isMidnight
-                      ? Colors.white.withValues(alpha: 0.08)
+                      ? Colors.white.withValues(alpha: 0.12)
                       : (isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : AppColors.slate100),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate200),
                   width: 1.0,
                 ),
               ),

@@ -52,15 +52,15 @@ class StoryDialogueBox extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isMidnight
                               ? AppColors.midnightSurface
-                              : (isDark ? AppColors.slate900 : Colors.white),
+                              : (isDark ? AppColors.midnightNavy : Colors.white),
                           borderRadius: BorderRadius.circular(32.r),
                           border: Border.all(
                             color: isMidnight
                                 ? Colors.white.withValues(alpha: 0.12)
                                 : (isDark
                                       ? Colors.white.withValues(alpha: 0.08)
-                                      : AppColors.slate100),
-                            width: 1.5,
+                                      : AppColors.slate200),
+                            width: 1.0,
                           ),
                         ),
                         child: Column(

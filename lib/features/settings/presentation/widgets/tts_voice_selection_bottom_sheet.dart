@@ -197,10 +197,14 @@ class _TtsVoiceSelectionBottomSheetState
 
   void _showPostSignupVoiceInfoDialog() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: isDark ? const Color(0xFF1E2235) : Colors.white,
+        backgroundColor: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.midnightNavy : Colors.white),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
@@ -330,7 +334,7 @@ class _TtsVoiceSelectionBottomSheetState
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Container(
       constraints: BoxConstraints(

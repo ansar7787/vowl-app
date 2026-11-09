@@ -71,6 +71,17 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = widget.isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (widget.isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = widget.isDark
+        ? (isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.white.withValues(alpha: 0.08))
+        : AppColors.slate200;
+
     return Semantics(
       label:
           'Word: ${widget.quest.word ?? ""}. Definition: ${widget.quest.definition ?? ""}. '
@@ -80,13 +91,11 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
         width: widget.width,
         height: widget.height,
         decoration: BoxDecoration(
-          color: widget.isDark ? AppColors.slate900 : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: widget.isDark
-                ? Colors.white10
-                : widget.color.withValues(alpha: 0.3),
-            width: 1.5,
+            color: borderColor,
+            width: 1.0,
           ),
         ),
         child: ClipRRect(

@@ -421,7 +421,7 @@ class VowlCoinsScreen extends StatelessWidget {
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
                 ? Colors.white.withValues(alpha: 0.12)
                 : Colors.white.withValues(alpha: 0.08))
-          : AppColors.slate100,
+          : AppColors.slate200,
       color: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
                 ? AppColors.midnightSurface

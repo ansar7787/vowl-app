@@ -41,7 +41,7 @@ class TrophyHeroShowcase extends StatelessWidget {
     final cardBgColor = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+              ? AppColors.midnightNavy.withValues(alpha: 0.85)
               : Colors.white);
 
     // Arrange slots: [Left (Index 1), Center (Index 0 - Main), Right (Index 2)]

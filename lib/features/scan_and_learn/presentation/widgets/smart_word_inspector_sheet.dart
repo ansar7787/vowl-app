@@ -120,7 +120,7 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                      ? const Color(0xFF0F172A).withValues(alpha: 0.95)
+                      ? AppColors.midnightNavy.withValues(alpha: 0.95)
                       : Colors.white.withValues(alpha: 0.95)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border.all(
@@ -128,7 +128,8 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                        : AppColors.slate200),
+              width: 1.0,
             ),
           ),
           child: Column(

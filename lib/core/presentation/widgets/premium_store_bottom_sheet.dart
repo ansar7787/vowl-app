@@ -1093,7 +1093,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         Container(
           decoration: BoxDecoration(
             color: isDark
-                ? AppColors.slate800.withValues(alpha: 0.5)
+                ? AppColors.midnightNavy
                 : Colors.white,
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
@@ -1283,7 +1283,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                         Theme.of(context).scaffoldBackgroundColor ==
                             Colors.black)
                     ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : Colors.white),
+                    : (isDark ? AppColors.midnightNavy : Colors.white),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: pack.isBestValue
@@ -1294,7 +1294,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             ? Colors.white.withValues(alpha: 0.12)
                             : (isDark
                                   ? Colors.white.withValues(alpha: 0.08)
-                                  : AppColors.slate100)),
+                                  : AppColors.slate200)),
                   width: pack.isBestValue ? 2.w : 1.w,
                 ),
                 boxShadow: [

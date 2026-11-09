@@ -48,10 +48,10 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate900 : (tokens?.surface ?? Colors.white));
+        : (isDark ? AppColors.midnightNavy : (tokens?.surface ?? Colors.white));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
     final textPrimary = isDark
         ? Colors.white
         : (tokens?.textPrimary ?? const Color(0xFF0F172A));

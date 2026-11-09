@@ -32,11 +32,11 @@ class WordMixerInfoCard extends StatelessWidget {
 
     final cardBgGradient = LinearGradient(
       colors: isMidnight
-          ? const [AppColors.midnightSurface, Colors.black]
+          ? const [AppColors.midnightSurface, Color(0xFF0F1523)]
           : (isDark
                 ? [
                     const Color(0xFF26123D).withValues(alpha: 0.65),
-                    const Color(0xFF0F172A).withValues(alpha: 0.85),
+                    AppColors.midnightNavy.withValues(alpha: 0.85),
                   ]
                 : const [Colors.white, Color(0xFFFAF5FF)]),
       begin: Alignment.topLeft,

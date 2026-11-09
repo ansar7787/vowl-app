@@ -277,11 +277,11 @@ class _GamesAppBar extends StatelessWidget {
     final pillBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF1E293B).withValues(alpha: 0.92)
+              ? AppColors.midnightNavy.withValues(alpha: 0.92)
               : Colors.white.withValues(alpha: 0.92));
     final pillBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,
@@ -2845,6 +2845,16 @@ class _QuestHubShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+
     return SafeArea(
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -2886,7 +2896,32 @@ class _QuestHubShimmer extends StatelessWidget {
               SizedBox(height: 20.h),
 
               // Quick Resume Card Shimmer
-              ShimmerLoading.rounded(height: 150.h, borderRadius: 24),
+              Container(
+                width: double.infinity,
+                height: 150.h,
+                padding: EdgeInsets.all(18.r),
+                decoration: BoxDecoration(
+                  color: cardBg,
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(color: borderColor, width: 1.0),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ShimmerLoading.rounded(width: 100.w, height: 16.h, borderRadius: 6),
+                        ShimmerLoading.circular(width: 32.r, height: 32.r),
+                      ],
+                    ),
+                    const Spacer(),
+                    ShimmerLoading.rounded(width: 160.w, height: 22.h, borderRadius: 8),
+                    SizedBox(height: 8.h),
+                    ShimmerLoading.rounded(width: double.infinity, height: 8.h, borderRadius: 4),
+                  ],
+                ),
+              ),
 
               SizedBox(height: 12.h),
 
@@ -2894,16 +2929,46 @@ class _QuestHubShimmer extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: ShimmerLoading.rounded(
+                    child: Container(
                       height: 130.h,
-                      borderRadius: 20,
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: cardBg,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(color: borderColor, width: 1.0),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShimmerLoading.circular(width: 36.r, height: 36.r),
+                          const Spacer(),
+                          ShimmerLoading.rounded(width: 70.w, height: 16.h, borderRadius: 6),
+                          SizedBox(height: 6.h),
+                          ShimmerLoading.rounded(width: 50.w, height: 10.h, borderRadius: 4),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(width: 10.w),
                   Expanded(
-                    child: ShimmerLoading.rounded(
+                    child: Container(
                       height: 130.h,
-                      borderRadius: 20,
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: cardBg,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(color: borderColor, width: 1.0),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShimmerLoading.circular(width: 36.r, height: 36.r),
+                          const Spacer(),
+                          ShimmerLoading.rounded(width: 70.w, height: 16.h, borderRadius: 6),
+                          SizedBox(height: 6.h),
+                          ShimmerLoading.rounded(width: 50.w, height: 10.h, borderRadius: 4),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -2912,7 +2977,24 @@ class _QuestHubShimmer extends StatelessWidget {
               SizedBox(height: 12.h),
 
               // Milestone Shimmer
-              ShimmerLoading.rounded(height: 58.h, borderRadius: 18),
+              Container(
+                height: 58.h,
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                decoration: BoxDecoration(
+                  color: cardBg,
+                  borderRadius: BorderRadius.circular(18.r),
+                  border: Border.all(color: borderColor, width: 1.0),
+                ),
+                child: Row(
+                  children: [
+                    ShimmerLoading.circular(width: 28.r, height: 28.r),
+                    SizedBox(width: 12.w),
+                    ShimmerLoading.rounded(width: 120.w, height: 14.h, borderRadius: 6),
+                    const Spacer(),
+                    ShimmerLoading.rounded(width: 40.w, height: 18.h, borderRadius: 8),
+                  ],
+                ),
+              ),
 
               SizedBox(height: 16.h),
 
@@ -2945,16 +3027,46 @@ class _QuestHubShimmer extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: ShimmerLoading.rounded(
+                    child: Container(
                       height: 160.h,
-                      borderRadius: 20,
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: cardBg,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(color: borderColor, width: 1.0),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShimmerLoading.circular(width: 40.r, height: 40.r),
+                          const Spacer(),
+                          ShimmerLoading.rounded(width: 90.w, height: 16.h, borderRadius: 6),
+                          SizedBox(height: 6.h),
+                          ShimmerLoading.rounded(width: 60.w, height: 10.h, borderRadius: 4),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(width: 10.w),
                   Expanded(
-                    child: ShimmerLoading.rounded(
+                    child: Container(
                       height: 160.h,
-                      borderRadius: 20,
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: cardBg,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(color: borderColor, width: 1.0),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShimmerLoading.circular(width: 40.r, height: 40.r),
+                          const Spacer(),
+                          ShimmerLoading.rounded(width: 90.w, height: 16.h, borderRadius: 6),
+                          SizedBox(height: 6.h),
+                          ShimmerLoading.rounded(width: 60.w, height: 10.h, borderRadius: 4),
+                        ],
+                      ),
                     ),
                   ),
                 ],

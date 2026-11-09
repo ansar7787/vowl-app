@@ -73,11 +73,11 @@ class RivalChallengeSheet extends StatelessWidget {
               ? const Color(0xFF131A29)
               : (tokens?.surface ?? Colors.white));
     final cardBgColor = isMidnight
-        ? const Color(0xFF0F172A)
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        ? const Color(0xFF0F1523)
+        : (isDark ? const Color(0xFF1A2338) : const Color(0xFFF8FAFC));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
     final textPrimary = isDark
         ? Colors.white
         : (tokens?.textPrimary ?? const Color(0xFF0F172A));

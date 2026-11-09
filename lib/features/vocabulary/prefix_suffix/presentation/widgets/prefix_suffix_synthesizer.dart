@@ -145,7 +145,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: widget.isDark ? AppColors.slate800 : Colors.white,
+        color: widget.isDark ? AppColors.midnightNavy : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: widget.primaryColor.withValues(alpha: 0.35),
@@ -181,7 +181,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     Widget chip = Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: widget.isDark ? AppColors.slate800 : Colors.white,
+        color: widget.isDark ? AppColors.midnightNavy : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
           color: isHinted
@@ -252,7 +252,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: widget.isDark ? AppColors.slate800 : Colors.white,
+                color: widget.isDark ? AppColors.midnightNavy : Colors.white,
                 borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(color: widget.primaryColor, width: 2),
                 boxShadow: [

@@ -212,8 +212,8 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final cardBg = isMidnight
-        ? const Color(0xFF090D16)
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = _accentColor.withValues(alpha: 0.35);
 
     final now = DateTime.now();

@@ -132,7 +132,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                               ? Colors.white.withValues(alpha: 0.12)
                               : (isDark
                                     ? Colors.white.withValues(alpha: 0.08)
-                                    : AppColors.slate100),
+                                    : AppColors.slate200),
                           borderWidth: 1.0,
                           child: Stack(
                             children: [

@@ -396,7 +396,7 @@ class _LanguageSelectionBottomSheetState
         : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.85,
@@ -559,14 +559,14 @@ class _LanguageSelectionBottomSheetState
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate100,
+                      color: isDark ? Colors.white12 : AppColors.slate200,
                       width: 1.0,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate100,
+                      color: isDark ? Colors.white12 : AppColors.slate200,
                       width: 1.0,
                     ),
                   ),
@@ -871,7 +871,7 @@ class _LanguageSelectionBottomSheetState
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final rowBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),

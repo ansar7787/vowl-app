@@ -133,7 +133,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                               Colors.black)
                       ? AppColors.midnightSurface
                       : (Theme.of(context).brightness == Brightness.dark
-                            ? AppColors.slate800
+                            ? AppColors.midnightNavy
                             : Colors.white),
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(32.r),
@@ -146,7 +146,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         ? Colors.white.withValues(alpha: 0.12)
                         : (Theme.of(context).brightness == Brightness.dark
                               ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate100),
+                              : AppColors.slate200),
                     width: 1.0,
                   ),
                   boxShadow: [

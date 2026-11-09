@@ -45,11 +45,11 @@ class WordSnapTargetCard extends StatelessWidget {
 
     final cardBgGradient = LinearGradient(
       colors: isMidnight
-          ? const [AppColors.midnightSurface, Colors.black]
+          ? const [AppColors.midnightSurface, Color(0xFF0F1523)]
           : (isDark
                 ? [
                     const Color(0xFF2E081D).withValues(alpha: 0.55),
-                    const Color(0xFF0F172A).withValues(alpha: 0.78),
+                    AppColors.midnightNavy.withValues(alpha: 0.78),
                   ]
                 : const [Colors.white, Color(0xFFFDF2F8)]),
       begin: Alignment.topLeft,

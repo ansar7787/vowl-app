@@ -222,7 +222,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         : (tokens?.textSecondary ?? const Color(0xFF64748B));
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return Scaffold(
       backgroundColor: backgroundColor,

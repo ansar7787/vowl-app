@@ -98,7 +98,7 @@ class AppUpdateDialog extends StatelessWidget {
                           : AppColors.indigo500.withValues(alpha: 0.3)),
                 color: isMidnight
                     ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : Colors.white),
+                    : (isDark ? AppColors.midnightNavy : Colors.white),
                 borderWidth: 1.5,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

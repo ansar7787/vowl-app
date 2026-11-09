@@ -33,7 +33,7 @@ class PitchPatternMatchPromptCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
       decoration: BoxDecoration(
         color: isDark
-            ? AppColors.slate800.withValues(alpha: 0.6)
+            ? AppColors.midnightNavy
             : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(

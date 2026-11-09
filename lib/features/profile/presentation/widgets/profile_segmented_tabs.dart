@@ -90,7 +90,7 @@ class ProfileSegmentedTabs extends StatelessWidget {
                             ? Colors.white.withValues(alpha: 0.12)
                             : (isDark
                                   ? Colors.white.withValues(alpha: 0.08)
-                                  : AppColors.slate100),
+                                  : AppColors.slate200),
                         width: 1.0,
                       ),
                       boxShadow: [

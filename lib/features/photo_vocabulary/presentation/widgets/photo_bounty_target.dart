@@ -62,7 +62,7 @@ class PhotoBountyTarget extends StatelessWidget {
             colors: isDark
                 ? [
                     const Color(0xFF042F2E).withValues(alpha: 0.45),
-                    const Color(0xFF0F172A).withValues(alpha: 0.78),
+                    AppColors.midnightNavy.withValues(alpha: 0.78),
                   ]
                 : [Colors.white, const Color(0xFFF8FAFC)],
             begin: Alignment.topLeft,

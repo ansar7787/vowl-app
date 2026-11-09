@@ -162,13 +162,18 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
               padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.96)
+                    ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+                          ? AppColors.midnightSurface
+                          : AppColors.midnightNavy).withValues(alpha: 0.96)
                     : Colors.white.withValues(alpha: 0.96),
                 borderRadius: BorderRadius.circular(28.r),
                 border: Border.all(
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.12)
-                      : Colors.black.withValues(alpha: 0.08),
+                      ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+                            ? Colors.white.withValues(alpha: 0.12)
+                            : Colors.white.withValues(alpha: 0.08))
+                      : AppColors.slate200,
+                  width: 1.0,
                 ),
                 boxShadow: [
                   BoxShadow(

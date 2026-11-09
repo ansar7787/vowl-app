@@ -62,7 +62,7 @@ class NextInReachRadar extends StatelessWidget {
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+              ? AppColors.midnightNavy.withValues(alpha: 0.85)
               : Colors.white);
 
     final borderColor = isDark

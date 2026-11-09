@@ -18,13 +18,10 @@ import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
-import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widget.dart';
-import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-/// Category-specific hub screen displaying games, radar metrics, and level roadmaps.
+/// Category-specific hub screen displaying games, mastery progress, and level roadmaps.
 class CategoryGamesPage extends StatefulWidget {
   /// Category identifier (e.g., 'speaking', 'vocabulary', 'grammar').
   final String categoryId;
@@ -141,8 +138,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }
 
     final contentColor = Theme.of(context).colorScheme.onSurface;
-    final hasBlueprint =
-        PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
 
     return Scaffold(
       backgroundColor: theme.backgroundColors[1],
@@ -174,82 +169,35 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   child: _buildMasteryDashboard(theme, user, _games, isDark),
                 ),
 
-                // 3.5 Global Adaptive Learning Dashboard
-                if (hasBlueprint) ...[
-                  SliverToBoxAdapter(
-                    child: ValueListenableBuilder<String>(
-                      valueListenable: _searchQuery,
-                      builder: (context, query, _) {
-                        if (query.trim().isNotEmpty) {
-                          return const SizedBox.shrink();
-                        }
-                        return Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 8.h),
-                              child: CategoryRadarChart(
-                                user: user,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                categoryId: widget.categoryId,
-                              ),
-                            ),
-                            AdaptiveSmartMixWidget(
-                              user: user,
-                              categoryId: widget.categoryId,
-                            ),
-                          ],
-                        );
-                      },
+                // 4. Practice Library Header & View Mode Switcher
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 8.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          context.tr(
+                            'category.practice_library',
+                            fallback: 'PRACTICE LIBRARY',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                        _buildViewModeToggle(
+                          theme.primaryColor,
+                          contentColor,
+                          isDark,
+                        ),
+                      ],
                     ),
                   ),
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 8.h),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            context.tr(
-                              'category.practice_library',
-                              fallback: 'PRACTICE LIBRARY',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white70 : Colors.black54,
-                              letterSpacing: 2,
-                            ),
-                          ),
-                          _buildViewModeToggle(
-                            theme.primaryColor,
-                            contentColor,
-                            isDark,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-
-                if (!hasBlueprint)
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 4.h),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          _buildViewModeToggle(
-                            theme.primaryColor,
-                            contentColor,
-                            isDark,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                ),
 
                 // 4. Edge-to-Edge Status Filter Bar (Fluid scroll, zero side clipping)
                 SliverToBoxAdapter(
@@ -1591,7 +1539,10 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             color: isSelected
                 ? displayColor
                 : (isDark
-                      ? const Color(0xFF0F172A).withValues(alpha: 0.75)
+                      ? (Theme.of(context).scaffoldBackgroundColor ==
+                                Colors.black
+                            ? AppColors.midnightSurface
+                            : AppColors.midnightNavy).withValues(alpha: 0.75)
                       : Colors.white.withValues(alpha: 0.85)),
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(

@@ -350,7 +350,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         : (isDark ? AppColors.slate900 : AppColors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,

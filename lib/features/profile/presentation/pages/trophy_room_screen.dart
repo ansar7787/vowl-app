@@ -317,7 +317,7 @@ class _TrophyRoomView extends StatelessWidget {
     final trackBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? const Color(0xFF0F172A).withValues(alpha: 0.75)
+              ? AppColors.midnightNavy.withValues(alpha: 0.75)
               : Colors.black.withValues(alpha: 0.04));
 
     final trackBorder = isMidnight
@@ -646,7 +646,7 @@ class _TrophyRoomView extends StatelessWidget {
         : (isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.90)
+                    ? AppColors.midnightNavy.withValues(alpha: 0.90)
                     : Colors.white));
 
     return ScaleButton(
@@ -741,7 +741,7 @@ class _TrophyRoomView extends StatelessWidget {
         : (isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.60)
+                    ? AppColors.midnightNavy.withValues(alpha: 0.60)
                     : Colors.white));
 
     return ScaleButton(

@@ -116,7 +116,7 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
             color: isMidnight
                 ? AppColors.midnightSurface
                 : (isDark
-                      ? const Color(0xFF11131E).withValues(alpha: 0.97)
+                      ? AppColors.midnightNavy.withValues(alpha: 0.97)
                       : Colors.white.withValues(alpha: 0.98)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border(
@@ -125,7 +125,7 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100),
+                          : AppColors.slate200),
                 width: 1.2,
               ),
             ),

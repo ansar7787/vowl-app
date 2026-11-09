@@ -65,14 +65,14 @@ class TranslationMonetizationController {
                   color: isMidnight
                       ? AppColors.midnightSurface
                       : (isDark
-                            ? AppColors.slate900.withValues(alpha: 0.85)
+                            ? AppColors.midnightNavy.withValues(alpha: 0.92)
                             : Colors.white.withValues(alpha: 0.9)),
                   border: Border.all(
                     color: isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
                               ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate100),
+                              : AppColors.slate200),
                     width: 1,
                   ),
                   borderRadius: BorderRadius.circular(28.r),

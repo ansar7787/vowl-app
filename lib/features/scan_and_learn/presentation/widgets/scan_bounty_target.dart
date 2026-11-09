@@ -58,7 +58,7 @@ class ScanBountyTarget extends StatelessWidget {
             colors: isDark
                 ? [
                     const Color(0xFF1E1B4B).withValues(alpha: 0.55),
-                    const Color(0xFF0F172A).withValues(alpha: 0.78),
+                    AppColors.midnightNavy.withValues(alpha: 0.78),
                   ]
                 : [Colors.white, const Color(0xFFF8FAFC)],
             begin: Alignment.topLeft,

@@ -90,14 +90,16 @@ class _ContactPhoneBottomSheetState extends State<ContactPhoneBottomSheet> {
         color: isDark
             ? (context.isMidnight
                   ? AppColors.midnightSurface
-                  : const Color(0xFF0F172A))
+                  : AppColors.midnightNavy)
             : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
+              ? (context.isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : Colors.white.withValues(alpha: 0.08))
               : AppColors.slate200,
-          width: 1,
+          width: 1.0,
         ),
       ),
       child: SafeArea(

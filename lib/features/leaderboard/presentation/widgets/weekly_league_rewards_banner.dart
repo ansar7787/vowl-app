@@ -498,10 +498,16 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     required Color accentColor,
     required bool isDark,
   }) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final columnBg = isMidnight
+        ? const Color(0xFF0F1523)
+        : (isDark ? const Color(0xFF1A2338) : const Color(0xFFF8FAFC));
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+        color: columnBg,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
           color: accentColor.withValues(alpha: 0.25),

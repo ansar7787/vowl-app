@@ -70,7 +70,7 @@ class HintPurchaseDialog {
             borderColor: AppColors.amber500.withValues(alpha: 0.3),
             color: ctx.isMidnight
                 ? AppColors.midnightSurface
-                : (ctx.isDark ? AppColors.slate800 : Colors.white),
+                : (ctx.isDark ? AppColors.midnightNavy : Colors.white),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

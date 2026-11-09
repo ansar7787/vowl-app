@@ -197,13 +197,17 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
     final totalLetters = widget.puzzle.letterCount;
     final isComplete = _placedTiles.length == totalLetters;
 
+    final isMidnight =
+        isDark && theme.scaffoldBackgroundColor == Colors.black;
     final cardBgGradient = LinearGradient(
-      colors: isDark
-          ? [
-              const Color(0xFF1E1035).withValues(alpha: 0.8),
-              const Color(0xFF0F172A).withValues(alpha: 0.9),
-            ]
-          : [Colors.white, const Color(0xFFFAF5FF)],
+      colors: isMidnight
+          ? const [AppColors.midnightSurface, Color(0xFF0F1523)]
+          : (isDark
+                ? [
+                    const Color(0xFF1E1035).withValues(alpha: 0.8),
+                    AppColors.midnightNavy.withValues(alpha: 0.9),
+                  ]
+                : const [Colors.white, Color(0xFFFAF5FF)]),
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );

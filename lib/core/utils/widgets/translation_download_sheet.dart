@@ -140,7 +140,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           decoration: BoxDecoration(
             color: isMidnight
                 ? AppColors.midnightSurface
-                : (isDark ? AppColors.slate900 : Colors.white),
+                : (isDark ? AppColors.midnightNavy : Colors.white),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border(
               top: BorderSide(
@@ -148,7 +148,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100),
+                          : AppColors.slate200),
                 width: 1,
               ),
             ),

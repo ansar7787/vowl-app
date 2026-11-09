@@ -88,7 +88,7 @@ class OfflineBanner extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           color: isDark
-                              ? AppColors.slate800.withValues(alpha: 0.92)
+                              ? AppColors.midnightNavy.withValues(alpha: 0.92)
                               : Colors.white.withValues(alpha: 0.92),
                           borderRadius: BorderRadius.circular(24.r),
                           border: Border.all(
