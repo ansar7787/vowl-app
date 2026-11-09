@@ -91,8 +91,6 @@ class GameShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accent = primaryColor;
-
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Padding(

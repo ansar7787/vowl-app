@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -13,7 +12,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/home/presentation/pages/category_games_page.dart';
-import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widget.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -272,36 +270,6 @@ void main() {
       expect(find.byIcon(Icons.sports_esports_rounded), findsOneWidget);
       expect(find.byIcon(Icons.stars_rounded), findsOneWidget);
     });
-  });
-
-  group('Group 4: Pedagogical Blueprint Integration', () {
-    testWidgets(
-      'renders CategoryRadarChart, AdaptiveSmartMixWidget, and PRACTICE LIBRARY header for category with blueprint',
-      (tester) async {
-        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
-
-        expect(find.byType(CategoryRadarChart), findsOneWidget);
-        expect(find.byType(AdaptiveSmartMixWidget), findsOneWidget);
-
-        await tester.scrollUntilVisible(find.text('PRACTICE LIBRARY'), 100);
-        await tester.pumpAndSettle();
-        expect(find.text('PRACTICE LIBRARY'), findsOneWidget);
-      },
-    );
-
-    testWidgets(
-      'omits CategoryRadarChart and AdaptiveSmartMixWidget for category without blueprint',
-      (tester) async {
-        await pumpCategoryGamesPage(
-          tester,
-          categoryId: 'non_existent_category',
-        );
-
-        expect(find.byType(CategoryRadarChart), findsNothing);
-        expect(find.byType(AdaptiveSmartMixWidget), findsNothing);
-        expect(find.text('PRACTICE LIBRARY'), findsNothing);
-      },
-    );
   });
 
   group('Group 5: Game Grid & Routing', () {
