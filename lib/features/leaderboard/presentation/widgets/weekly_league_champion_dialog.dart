@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
@@ -406,15 +407,9 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                         ),
                         alignment: Alignment.center,
                         child: _isClaiming
-                            ? SizedBox(
-                                width: 22.r,
-                                height: 22.r,
-                                child: const CircularProgressIndicator(
-                                  strokeWidth: 2.5,
-                                  valueColor: AlwaysStoppedAnimation(
-                                    Colors.white,
-                                  ),
-                                ),
+                            ? const VowlMicroLoader(
+                                size: 18,
+                                color: Colors.white,
                               )
                             : Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
