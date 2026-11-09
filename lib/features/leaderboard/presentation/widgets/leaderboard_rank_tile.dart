@@ -69,7 +69,7 @@ class LeaderboardRankTile extends StatelessWidget {
           'Rank $rank: $displayName. '
           '$score $scoreLabel. '
           '${user.currentStreak}-day streak. '
-          '$levelsCleared levels cleared.'
+          '${isKids ? "$levelsCleared levels cleared." : "Level ${user.level}."}'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
       child: GlassTile(
         padding: EdgeInsets.zero,
@@ -284,7 +284,7 @@ class LeaderboardRankTile extends StatelessWidget {
                                 : context.tr(
                                     'leaderboard.lvs',
                                     fallback: 'Lv. {0}',
-                                    args: [levelsCleared.toString()],
+                                    args: [user.level.toString()],
                                   ),
                             style: TextStyle(
                               fontFamily: 'Outfit',

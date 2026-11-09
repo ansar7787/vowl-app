@@ -49,7 +49,8 @@ abstract final class UserGameConstants {
   // ---------------------------------------------------------------------------
 
   /// XP per user level. Level = (totalExp / kXpPerLevel).floor() + 1.
-  static const int kXpPerLevel = 100;
+  /// Scaled to 250 XP per level so advancing levels requires meaningful quest progress.
+  static const int kXpPerLevel = 250;
 
   /// Additional XP multiplier granted by a permanent XP boost (10%).
   static const double kPermanentXpBoostMultiplier = 1.1;

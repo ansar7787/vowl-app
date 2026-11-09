@@ -6,14 +6,14 @@ void main() {
     const tUser = UserEntity(
       id: '1',
       email: 'test@vowl.com',
-      totalExp: 250, // Should be Level 3 ((250/100).floor() + 1 = 2+1 = 3)
+      totalExp: 500, // Should be Level 3 ((500/250).floor() + 1 = 2+1 = 3)
       categoryStats: {'sentenceCorrection': 50, 'wordReorder': 30},
     );
 
     test('should calculate level correctly from totalExp', () {
       expect(tUser.level, 3);
 
-      final level10User = tUser.copyWith(totalExp: 950);
+      final level10User = tUser.copyWith(totalExp: 2250);
       expect(level10User.level, 10);
     });
 
