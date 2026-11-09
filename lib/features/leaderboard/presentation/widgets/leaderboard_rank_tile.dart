@@ -108,7 +108,7 @@ class LeaderboardRankTile extends StatelessWidget {
                 children: [
                   // Rank number & Change Indicator side-by-side
                   SizedBox(
-                    width: 44.w,
+                    width: 52.w,
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.centerLeft,
@@ -120,16 +120,16 @@ class LeaderboardRankTile extends StatelessWidget {
                             '$rank',
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 20.sp,
+                              fontSize: 19.sp,
                               fontWeight: FontWeight.w900,
-                              letterSpacing: -0.8,
+                              letterSpacing: -0.6,
                               color: isDark
                                   ? tierColor.withValues(alpha: 0.9)
                                   : tierColor.withValues(alpha: 0.8),
                             ),
                           ),
                           if (!isKids && isWeekly) ...[
-                            SizedBox(width: 3.w),
+                            SizedBox(width: 4.w),
                             _buildRankChangeIndicator(
                               user.previousRank ?? rank,
                               rank,
@@ -326,63 +326,60 @@ class LeaderboardRankTile extends StatelessWidget {
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {
     final diff = previousRank - currentRank;
-    if (diff > 0) {
-      // Improved rank (e.g. from 10 to 5)
-      return Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_drop_up_rounded,
-            color: AppColors.emerald500,
-            size: 14.r,
-          ),
-          Text(
-            '$diff',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.5.sp,
-              fontWeight: FontWeight.w800,
-              color: AppColors.emerald500,
-              height: 1.0,
-            ),
-          ),
-        ],
-      );
-    } else if (diff < 0) {
-      // Dropped rank (e.g. from 5 to 10)
-      return Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.arrow_drop_down_rounded,
-            color: AppColors.red500,
-            size: 14.r,
-          ),
-          Text(
-            '${diff.abs()}',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.5.sp,
-              fontWeight: FontWeight.w800,
-              color: AppColors.red500,
-              height: 1.0,
-            ),
-          ),
-        ],
-      );
+    final bool improved = diff > 0;
+    final bool dropped = diff < 0;
+    final Color color;
+    final Color bgColor;
+
+    if (improved) {
+      color = AppColors.emerald500;
+      bgColor = AppColors.emerald500.withValues(alpha: 0.14);
+    } else if (dropped) {
+      color = AppColors.red500;
+      bgColor = AppColors.red500.withValues(alpha: 0.14);
     } else {
-      // No change
-      return Container(
-        width: 6.w,
-        height: 2.h,
-        margin: EdgeInsets.only(left: 2.w),
-        decoration: BoxDecoration(
-          color: Colors.grey.withValues(alpha: 0.6),
-          borderRadius: BorderRadius.circular(2.r),
-        ),
-      );
+      color = Colors.grey;
+      bgColor = Colors.grey.withValues(alpha: 0.12);
     }
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(7.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.25),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            improved
+                ? Icons.arrow_drop_up_rounded
+                : (dropped
+                      ? Icons.arrow_drop_down_rounded
+                      : Icons.remove_rounded),
+            color: color,
+            size: 13.r,
+          ),
+          if (diff != 0) ...[
+            SizedBox(width: 2.w),
+            Text(
+              '${diff.abs()}',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                height: 1.0,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
   }
 }
