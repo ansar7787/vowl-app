@@ -147,7 +147,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (isRanked && !isKids && isWeekly) ...[
+                if (isRanked && (isWeekly || isKids)) ...[
                   SizedBox(width: 5.w),
                   _buildRankChangeIndicator(previousRank ?? rank, rank),
                 ],
@@ -244,14 +244,14 @@ class LeaderboardRankCard extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            isWeekly
-                                ? (rank >= 1 && rank <= 3
-                                      ? '🏆 Podium'
-                                      : (rank <= 10
-                                            ? '⚡ Top 10'
-                                            : '🏃 Contender'))
-                                : (isKids
-                                      ? '${currentUser.kidsCoins} ⭐'
+                            isKids
+                                ? '⭐ ${currentUser.kidsTotalStars} Stars'
+                                : (isWeekly
+                                      ? (rank >= 1 && rank <= 3
+                                            ? '🏆 Podium'
+                                            : (rank <= 10
+                                                  ? '⚡ Top 10'
+                                                  : '🏃 Contender'))
                                       : '${currentUser.currentStreak}d 🔥'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -296,7 +296,9 @@ class LeaderboardRankCard extends StatelessWidget {
                               child: Container(
                                 height: 5.h,
                                 decoration: BoxDecoration(
-                                  color: AppColors.indigo500,
+                                  color: isKids
+                                      ? AppColors.amber500
+                                      : AppColors.indigo500,
                                   borderRadius: BorderRadius.circular(3.r),
                                 ),
                               ),

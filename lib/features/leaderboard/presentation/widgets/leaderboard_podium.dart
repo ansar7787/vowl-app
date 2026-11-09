@@ -322,22 +322,38 @@ class _PodiumSlot extends StatelessWidget {
                     // Primary score — single metric, high-contrast across light/dark
                     AutoSizeText(
                       isKids
-                          ? '${user.kidsTotalStars} ⭐ · ${user.kidsTotalLevelsCompleted} Levels'
+                          ? '⭐ ${user.kidsTotalStars} Stars'
                           : '$score $scoreLabel',
                       maxLines: 1,
                       minFontSize: 7,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: isFirst ? 10.sp : 9.sp,
-                        fontWeight: FontWeight.w800,
-                        color: rank == 2
-                            ? (isDark
-                                  ? _LocalPalette.colorc0c0c0
-                                  : AppColors.slate700)
-                            : colors[0].withValues(alpha: 0.9),
+                        fontSize: isFirst ? 10.5.sp : 9.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isKids
+                            ? AppColors.amber500
+                            : (rank == 2
+                                  ? (isDark
+                                        ? _LocalPalette.colorc0c0c0
+                                        : AppColors.slate700)
+                                  : colors[0].withValues(alpha: 0.9)),
                         height: 1.1,
                       ),
                     ),
+                    if (isKids) ...[
+                      SizedBox(height: 1.h),
+                      AutoSizeText(
+                        '${user.kidsTotalLevelsCompleted} Levels Cleared',
+                        maxLines: 1,
+                        minFontSize: 6,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isFirst ? 8.5.sp : 7.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white60 : AppColors.slate600,
+                        ),
+                      ),
+                    ],
                     if (!isKids && isWeekly) ...[
                       SizedBox(height: 2.h),
                       _buildRankChangeIndicator(

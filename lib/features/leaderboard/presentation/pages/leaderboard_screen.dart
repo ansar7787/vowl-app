@@ -492,6 +492,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         user: user,
         rank: rank,
         isWeekly: isWeekly,
+        isKids: widget.state.isKids,
         onShareRank: () => _showShareCard(user, rank),
       );
     } else if (!widget.state.isKids && widget.currentUser != null) {
@@ -517,13 +518,16 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   }
 
   void _showShareCard(UserEntity user, int rank) {
+    final isKids = widget.state.isKids;
     final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
-    final xp = isWeekly ? user.currentWeeklyExp : user.totalExp;
+    final score = isKids
+        ? user.kidsTotalStars
+        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final data = ShareCardData.fromRank(
       userName: user.safeDisplayName,
       userPhotoUrl: user.photoUrl,
       rank: rank,
-      totalXp: xp,
+      totalXp: score,
       streak: user.currentStreak,
       referralCode: user.referralCode,
     );

@@ -1170,8 +1170,21 @@ exports.updateLeaderboardCache = onSchedule('0 * * * *', async (event) => {
 
       let stars = typeof data.kidsTotalStars === 'number' ? data.kidsTotalStars : 0;
       if (stars === 0 && data.starRatings && typeof data.starRatings === 'object') {
-        Object.values(data.starRatings).forEach((val) => {
-          if (typeof val === 'number') stars += val;
+        const kidsGames = new Set([
+          'alphabet', 'numbers', 'colors', 'shapes', 'animals',
+          'fruits', 'family', 'school', 'verbs', 'routine',
+          'emotions', 'prepositions', 'phonics', 'day_night', 'nature',
+          'home', 'food', 'transport', 'time', 'opposites',
+          'body_parts', 'clothing', 'handwriting', 'weather', 'professions'
+        ]);
+        Object.entries(data.starRatings).forEach(([gameKey, gameStars]) => {
+          if (kidsGames.has(gameKey) && gameStars && typeof gameStars === 'object') {
+            Object.entries(gameStars).forEach(([starKey, starVal]) => {
+              if (starKey !== 'magic_stars' && starKey !== 'claimed_chests' && typeof starVal === 'number') {
+                stars += starVal;
+              }
+            });
+          }
         });
       }
 

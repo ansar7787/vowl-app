@@ -224,7 +224,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             Flexible(
                               child: Text(
                                 isKids
-                                    ? '${user.kidsTotalStars} ⭐ · ${user.kidsTotalLevelsCompleted} Levels'
+                                    ? '${user.kidsTotalLevelsCompleted} Levels · ${user.kidsCoins} Coins'
                                     : '$score $scoreLabel · ${user.currentStreak}',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
@@ -239,7 +239,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             ),
                             SizedBox(width: 3.w),
                             Icon(
-                              isKids ? Icons.star_rounded : LucideIcons.flame,
+                              isKids ? Icons.monetization_on_rounded : LucideIcons.flame,
                               size: 12.r,
                               color: isKids
                                   ? AppColors.amber500
@@ -269,7 +269,7 @@ class LeaderboardRankTile extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                       child: Text(
                         isKids
-                            ? '${user.kidsCoins} ⭐'
+                            ? '⭐ ${user.kidsTotalStars}'
                             : context.tr(
                                 'leaderboard.lvs',
                                 fallback: 'Lv. {0}',
