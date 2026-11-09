@@ -112,8 +112,8 @@ class LeaderboardRankCard extends StatelessWidget {
                 '$primaryScoreText.',
       child: GlassTile(
         padding: EdgeInsets.symmetric(
-          horizontal: 14.w,
-          vertical: 8.h - (1.h * collapseProgress),
+          horizontal: 16.w,
+          vertical: 9.h - (1.h * collapseProgress),
         ),
         borderRadius: BorderRadius.circular(22.r),
         blur: 0,
@@ -165,10 +165,10 @@ class LeaderboardRankCard extends StatelessWidget {
                   ),
                 ),
                 if (isRanked && isWeekly) ...[
-                  SizedBox(width: 5.w),
+                  SizedBox(width: 7.w),
                   _buildRankChangeIndicator(previousRank ?? rank, rank),
                 ],
-                SizedBox(width: 8.w),
+                SizedBox(width: 10.w),
                 // Avatar (36.r — horizontally & vertically centered with rank)
                 UserAvatar(
                   photoUrl: currentUser.photoUrl,
@@ -180,7 +180,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     width: 1.5,
                   ),
                 ),
-                SizedBox(width: 8.w),
+                SizedBox(width: 10.w),
                 // Name + label (vertically centered in row)
                 Expanded(
                   child: Column(
@@ -482,10 +482,14 @@ class LeaderboardRankCard extends StatelessWidget {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.5.h),
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(6.r),
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.25),
+          width: 1,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -498,15 +502,15 @@ class LeaderboardRankCard extends StatelessWidget {
                       ? Icons.arrow_drop_down_rounded
                       : Icons.remove_rounded),
             color: color,
-            size: 12.r,
+            size: 13.r,
           ),
           if (diff != 0) ...[
-            SizedBox(width: 1.5.w),
+            SizedBox(width: 2.5.w),
             Text(
               '${diff.abs()}',
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 9.sp,
+                fontSize: 9.5.sp,
                 fontWeight: FontWeight.w900,
                 color: color,
                 height: 1.0,
