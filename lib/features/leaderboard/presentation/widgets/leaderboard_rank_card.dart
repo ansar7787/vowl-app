@@ -164,7 +164,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (isRanked && (isWeekly || isKids)) ...[
+                if (isRanked && isWeekly) ...[
                   SizedBox(width: 5.w),
                   _buildRankChangeIndicator(previousRank ?? rank, rank),
                 ],
