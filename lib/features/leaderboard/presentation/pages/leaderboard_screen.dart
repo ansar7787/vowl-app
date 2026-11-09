@@ -110,7 +110,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                           padding: EdgeInsets.only(
                             top: 6.h,
                             left: 12.w,
-                            right: AppSpacing.compact,
+                            right: AppSpacing.screen,
                             bottom: 4.h,
                           ),
                           child: Row(
@@ -187,7 +187,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                               state is LeaderboardInitial)) ...[
                         Padding(
                           padding: EdgeInsets.symmetric(
-                            horizontal: AppSpacing.compact,
+                            horizontal: AppSpacing.screen,
                             vertical: 8.h,
                           ),
                           child: _LeaderboardHeroSwitch(
@@ -605,7 +605,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // 1. Header with last-updated timestamp
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
@@ -629,8 +629,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.only(
-                      left: AppSpacing.compact,
-                      right: AppSpacing.compact,
+                      left: AppSpacing.screen,
+                      right: AppSpacing.screen,
                       top: 14.h,
                       bottom: 4.h,
                     ),
@@ -655,7 +655,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: RepaintBoundary(
                     child: LeaderboardPodium(
                       top3: users.take(3).toList(),
@@ -704,7 +704,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSpacing.compact,
+                    horizontal: AppSpacing.screen,
                     vertical: 12.h,
                   ),
                   child: Row(
@@ -758,7 +758,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Rank 4-N list
               if (users.length > 3)
                 SliverPadding(
-                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
@@ -990,7 +990,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             bottom:
                 (widget.showBackButton ? 24.h : 104.h) +
                 MediaQuery.paddingOf(context).bottom,
-            right: AppSpacing.compact,
+            right: AppSpacing.screen,
             child: Semantics(
               button: true,
               label: context.tr(
@@ -1117,7 +1117,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
             // Rank card content — centered vertically with generous padding
             Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: AppSpacing.compact,
+                horizontal: AppSpacing.screen,
                 vertical: 6.h,
               ),
               child: OverflowBox(

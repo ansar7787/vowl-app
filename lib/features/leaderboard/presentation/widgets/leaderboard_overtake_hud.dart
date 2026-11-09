@@ -43,7 +43,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
     if (myRank == 1) {
       return Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSpacing.compact,
+          horizontal: AppSpacing.screen,
           vertical: 6.h,
         ),
         child: GlassTile(
@@ -244,7 +244,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.compact,
+        horizontal: AppSpacing.screen,
         vertical: 6.h,
       ),
       child: GlassTile(

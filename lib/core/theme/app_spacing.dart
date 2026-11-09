@@ -11,9 +11,9 @@ class AppSpacing {
 
   // ── Screen Horizontal Insets ──────────────────────────────────────────────
 
-  /// Standard screen edge padding (20.w) — used for Home, Profile, Leaderboard,
-  /// Settings, Category maps, and Audio-focused games.
-  static double get screen => 20.w;
+  /// Standard screen edge padding (16.w) — standardized across Home, Profile,
+  /// Leaderboard, Games, Settings, and primary scroll feeds.
+  static double get screen => 16.w;
 
   /// Compact screen padding (16.w) — used for interactive game question screens,
   /// jigsaw builders, cloze tests, roleplay branching dialogs, and translation.

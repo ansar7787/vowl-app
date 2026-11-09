@@ -158,8 +158,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     return Container(
       margin: EdgeInsets.only(
-        left: AppSpacing.compact,
-        right: AppSpacing.compact,
+        left: AppSpacing.screen,
+        right: AppSpacing.screen,
         top: 6.h,
         bottom: 0,
       ),
