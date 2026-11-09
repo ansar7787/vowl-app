@@ -1042,12 +1042,16 @@ function resolveDisplayName(data) {
 }
 
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
-// Runs daily at 00:00 UTC to establish clean daily rank deltas with minimal read cost.
-exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
+// Runs hourly at minute 0 for active, near-real-time weekly & kids competition.
+// Previous rank (daily baseline) is anchored at 00:00 UTC for clean daily +/- movement deltas.
+exports.updateLeaderboardCache = onSchedule('0 * * * *', async (event) => {
   const db = admin.firestore();
-  console.log('Starting scheduled leaderboard update...');
+  console.log('Starting hourly scheduled leaderboard update...');
 
   try {
+    const now = new Date();
+    const isMidnightUtc = now.getUTCHours() === 0;
+
     const cacheRef = db.collection('metadata').doc('leaderboard_cache');
     const oldCacheSnap = await cacheRef.get();
     const oldRankMap = {};
@@ -1055,7 +1059,15 @@ exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
       const oldUsers = oldCacheSnap.data().users || [];
       oldUsers.forEach((u, i) => {
         if (u && u.id) {
-          oldRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+          // At 00:00 UTC, anchor yesterday's ending rank as the new previousRank baseline.
+          // During hours 1-23, preserve the midnight baseline so daily +/- badges remain accurate.
+          if (isMidnightUtc) {
+            oldRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+          } else {
+            oldRankMap[u.id] = typeof u.previousRank === 'number'
+              ? u.previousRank
+              : (typeof u.currentRank === 'number' ? u.currentRank : i + 1);
+          }
         }
       });
     }
@@ -1067,7 +1079,6 @@ exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
       .get();
 
     const usersData = [];
-    const now = new Date();
 
     snapshot.docs.forEach((doc, index) => {
       const data = doc.data();
@@ -1119,20 +1130,37 @@ exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
       const oldKids = oldKidsSnap.data().users || [];
       oldKids.forEach((u, i) => {
         if (u && u.id) {
-          oldKidsRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+          if (isMidnightUtc) {
+            oldKidsRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
+          } else {
+            oldKidsRankMap[u.id] = typeof u.previousRank === 'number'
+              ? u.previousRank
+              : (typeof u.currentRank === 'number' ? u.currentRank : i + 1);
+          }
         }
       });
     }
 
-    const kidsSnapshot = await db
-      .collection('users')
-      .orderBy('kidsCoins', 'desc')
-      .limit(50)
-      .get();
+    let kidsDocs = [];
+    try {
+      const kidsSnap = await db
+        .collection('users')
+        .orderBy('kidsTotalStars', 'desc')
+        .limit(50)
+        .get();
+      kidsDocs = kidsSnap.docs;
+    } catch (_) {
+      // Fallback query if kidsTotalStars index is pending
+      const fallbackSnap = await db
+        .collection('users')
+        .orderBy('kidsCoins', 'desc')
+        .limit(50)
+        .get();
+      kidsDocs = fallbackSnap.docs;
+    }
 
-    const kidsData = [];
-
-    kidsSnapshot.docs.forEach((doc, index) => {
+    // Sort strictly by: 1. Stars desc, 2. Levels completed desc, 3. Coins desc, 4. Streak desc
+    const rawKidsUsers = kidsDocs.map((doc) => {
       const data = doc.data();
       const isKidsUserPremium =
         data.isPremium === true &&
@@ -1140,27 +1168,53 @@ exports.updateLeaderboardCache = onSchedule('0 0 * * *', async (event) => {
           (data.premiumExpiryDate.toDate &&
             data.premiumExpiryDate.toDate() > now));
 
-      const currentRank = index + 1;
-      const prevRank =
-        oldKidsRankMap[doc.id] !== undefined
-          ? oldKidsRankMap[doc.id]
-          : data.previousRank || currentRank;
+      let stars = typeof data.kidsTotalStars === 'number' ? data.kidsTotalStars : 0;
+      if (stars === 0 && data.starRatings && typeof data.starRatings === 'object') {
+        Object.values(data.starRatings).forEach((val) => {
+          if (typeof val === 'number') stars += val;
+        });
+      }
 
-      kidsData.push({
+      const levelsCompletedCount =
+        typeof data.kidsTotalLevelsCompleted === 'number'
+          ? data.kidsTotalLevelsCompleted
+          : (data.completedLevels && typeof data.completedLevels === 'object'
+              ? Object.values(data.completedLevels).reduce((acc, l) => acc + (Array.isArray(l) ? l.length : 0), 0)
+              : 0);
+
+      return {
         id: doc.id,
         displayName: resolveDisplayName(data),
         photoUrl: data.photoUrl || null,
+        kidsTotalStars: stars,
+        kidsTotalLevelsCompleted: levelsCompletedCount,
         kidsCoins: data.kidsCoins || 0,
-        kidsTotalLevelsCompleted:
-          typeof data.kidsTotalLevelsCompleted === 'number'
-            ? data.kidsTotalLevelsCompleted
-            : 0,
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
+        starRatings: data.starRatings || {},
         isPremium: isKidsUserPremium,
+      };
+    });
+
+    rawKidsUsers.sort((a, b) => {
+      if (b.kidsTotalStars !== a.kidsTotalStars) return b.kidsTotalStars - a.kidsTotalStars;
+      if (b.kidsTotalLevelsCompleted !== a.kidsTotalLevelsCompleted) return b.kidsTotalLevelsCompleted - a.kidsTotalLevelsCompleted;
+      if (b.kidsCoins !== a.kidsCoins) return b.kidsCoins - a.kidsCoins;
+      return b.currentStreak - a.currentStreak;
+    });
+
+    const kidsData = rawKidsUsers.map((u, index) => {
+      const currentRank = index + 1;
+      const prevRank =
+        oldKidsRankMap[u.id] !== undefined
+          ? oldKidsRankMap[u.id]
+          : currentRank;
+
+      return {
+        ...u,
         currentRank: currentRank,
         previousRank: prevRank,
-      });
+      };
     });
 
     await kidsCacheRef.set(
