@@ -111,7 +111,7 @@ class _GamesScreenState extends State<GamesScreen> {
                 color: AppColors.blue500,
                 backgroundColor: isMidnight
                     ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : Colors.white),
+                    : (isDark ? AppColors.midnightNavy : Colors.white),
                 child: CustomScrollView(
                   controller: di.sl<ScrollController>(instanceName: 'games'),
                   physics: const AlwaysScrollableScrollPhysics(
@@ -542,7 +542,7 @@ class _QuickResumeHeroCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
@@ -1966,7 +1966,7 @@ class _CurriculumMasteryCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
@@ -2629,7 +2629,7 @@ class _QuestGridCard extends StatelessWidget {
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);

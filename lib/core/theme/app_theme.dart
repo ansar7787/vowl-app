@@ -58,8 +58,8 @@ class AppTheme {
   /// Dark scaffold background (Slate 900).
   static const Color scaffoldDark = AppColors.slate900;
 
-  /// Dark card surface (Slate 800).
-  static const Color cardDark = AppColors.slate800;
+  /// Dark card surface (Midnight Navy #131A29).
+  static const Color cardDark = AppColors.midnightNavy;
 
   /// Dark border colour (Slate 700).
   static const Color borderDark = AppColors.slate700;

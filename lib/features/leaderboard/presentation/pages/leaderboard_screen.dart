@@ -508,7 +508,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         color: AppColors.indigo500,
         backgroundColor: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? AppColors.slate800 : Colors.white),
+            : (isDark ? AppColors.midnightNavy : Colors.white),
         displacement: 36.h,
         child: CustomScrollView(
           controller: _scrollController,
@@ -589,7 +589,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           color: AppColors.indigo500,
           backgroundColor: isMidnight
               ? AppColors.midnightSurface
-              : (isDark ? AppColors.slate800 : Colors.white),
+              : (isDark ? AppColors.midnightNavy : Colors.white),
           displacement: 36.h,
           child: CustomScrollView(
             controller: _scrollController,

@@ -256,10 +256,10 @@ class _AboutScreenState extends State<AboutScreen> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return GestureDetector(
       onTap: onTap,
@@ -326,10 +326,10 @@ class _AboutScreenState extends State<AboutScreen> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return GestureDetector(
       onTap: onTap,

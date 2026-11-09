@@ -102,7 +102,7 @@ class VowlCoinsScreen extends StatelessWidget {
                     context.read<AuthBloc>().add(const AuthReloadUser());
                     await Future.delayed(const Duration(milliseconds: 800));
                   },
-                  backgroundColor: isDark ? AppColors.slate800 : Colors.white,
+                  backgroundColor: isDark ? AppColors.midnightNavy : Colors.white,
                   color: isDark ? Colors.white : AppColors.emerald500,
                   child: CustomScrollView(
                     physics: const AlwaysScrollableScrollPhysics(
@@ -425,7 +425,7 @@ class VowlCoinsScreen extends StatelessWidget {
       color: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
                 ? AppColors.midnightSurface
-                : AppColors.slate800)
+                : AppColors.midnightNavy)
           : Colors.white,
       borderWidth: 1.0,
       child: SizedBox(
@@ -1196,7 +1196,7 @@ class VowlCoinsScreen extends StatelessWidget {
               color: isDark
                   ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
                         ? AppColors.midnightSurface
-                        : AppColors.slate800)
+                        : AppColors.midnightNavy)
                   : Colors.white,
               borderWidth: 1,
               child: Row(

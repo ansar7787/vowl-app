@@ -571,12 +571,12 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
                 final cardBg = isMidnight
                     ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : Colors.white);
+                    : (isDark ? AppColors.midnightNavy : Colors.white);
                 final cardBorder = isMidnight
                     ? Colors.white.withValues(alpha: 0.12)
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100);
+                          : AppColors.slate200);
 
                 return Container(
                   padding: EdgeInsets.all(20.r),

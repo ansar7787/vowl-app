@@ -132,7 +132,7 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);

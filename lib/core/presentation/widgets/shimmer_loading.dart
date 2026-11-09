@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 
 // ---------------------------------------------------------------------------
@@ -48,20 +49,31 @@ class ShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    final defaultBaseColor = isMidnight
+        ? const Color(0xFF141A26)
+        : (isDark ? AppColors.slate800 : AppColors.slate200);
+
+    final defaultHighlightColor = isMidnight
+        ? const Color(0xFF242E42)
+        : (isDark ? AppColors.slate700 : const Color(0xFFF8FAFC));
+
+    final effectiveBaseColor = baseColor ?? defaultBaseColor;
 
     return RepaintBoundary(
       child: Shimmer.fromColors(
-        baseColor:
-            baseColor ??
-            (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[300]!),
-        highlightColor:
-            highlightColor ??
-            (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[100]!),
+        baseColor: effectiveBaseColor,
+        highlightColor: highlightColor ?? defaultHighlightColor,
         period: const Duration(milliseconds: 1500),
         child: Container(
           width: width,
           height: height,
-          decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),
+          decoration: ShapeDecoration(
+            color: effectiveBaseColor,
+            shape: shapeBorder,
+          ),
         ),
       ),
     );
@@ -126,17 +138,24 @@ class GameShimmerLoading extends StatelessWidget {
               width: double.infinity,
               height: 320.h,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(32.r),
+                color: (Theme.of(context).brightness == Brightness.dark &&
+                        Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                    ? AppColors.midnightSurface
+                    : (Theme.of(context).brightness == Brightness.dark
+                          ? AppColors.midnightNavy
+                          : Colors.white),
+                borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: (accent ?? Colors.grey).withValues(
-                    alpha: Theme.of(context).brightness == Brightness.dark
-                        ? 0.15
-                        : 0.08,
-                  ),
-                  width: 2,
+                  color: (Theme.of(context).brightness == Brightness.dark &&
+                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                      ? Colors.white.withValues(alpha: 0.12)
+                      : (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppTheme.borderLight),
+                  width: 1.0,
                 ),
               ),
-              child: ShimmerLoading.rounded(height: 320.h, borderRadius: 32),
+              child: ShimmerLoading.rounded(height: 320.h, borderRadius: 24),
             ),
             SizedBox(height: 50.h),
             // Footer buttons
@@ -230,12 +249,14 @@ class HomeShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final cardBg = isDark
-        ? AppColors.slate800.withValues(alpha: 0.6)
-        : Colors.white.withValues(alpha: 0.85);
-    final borderColor = isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : Colors.black.withValues(alpha: 0.05);
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppTheme.borderLight);
 
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
@@ -358,6 +379,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 26.w,
                       labelWidth: 36.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -366,6 +388,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 34.w,
                       labelWidth: 30.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -374,6 +397,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 22.w,
                       labelWidth: 38.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                   SizedBox(width: 4.w),
@@ -382,6 +406,7 @@ class HomeShimmerLoading extends StatelessWidget {
                       valueWidth: 28.w,
                       labelWidth: 26.w,
                       isDark: isDark,
+                      isMidnight: isMidnight,
                     ),
                   ),
                 ],
@@ -422,19 +447,24 @@ class HomeShimmerLoading extends StatelessWidget {
     required double valueWidth,
     required double labelWidth,
     required bool isDark,
+    bool isMidnight = false,
   }) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 2.w),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.02)
-            : AppColors.slate100,
+        color: isMidnight
+            ? Colors.white.withValues(alpha: 0.04)
+            : (isDark
+                  ? Colors.white.withValues(alpha: 0.03)
+                  : AppColors.slate100),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.04)
-              : Colors.black.withValues(alpha: 0.03),
-          width: 1,
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.08)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : AppTheme.borderLight),
+          width: 1.0,
         ),
       ),
       child: Column(

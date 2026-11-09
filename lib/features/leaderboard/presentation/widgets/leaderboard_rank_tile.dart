@@ -93,7 +93,7 @@ class LeaderboardRankTile extends StatelessWidget {
                         : AppTheme.borderLight)),
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? AppColors.slate800 : Colors.white),
+            : (isDark ? AppColors.midnightNavy : Colors.white),
         borderWidth: 1.0,
         child: Material(
           color: Colors.transparent,

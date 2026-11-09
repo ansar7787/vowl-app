@@ -925,8 +925,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   }
 
   Widget _buildShimmerLoading(bool isDark) {
-    final baseColor = isDark ? Colors.white10 : Colors.grey[300]!;
-    final highlightColor = isDark ? Colors.white24 : Colors.grey[100]!;
+    final baseColor = isDark ? AppColors.slate800 : AppColors.slate200;
+    final highlightColor = isDark ? AppColors.slate700 : const Color(0xFFF8FAFC);
 
     return SafeArea(
       child: Padding(

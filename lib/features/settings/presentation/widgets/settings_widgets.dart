@@ -85,7 +85,7 @@ class SettingsGroup extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
@@ -375,7 +375,7 @@ class SettingsThemeMatrix extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     final platformBrightness = MediaQuery.platformBrightnessOf(context);
     final isPlatformDark = platformBrightness == Brightness.dark;
@@ -585,7 +585,7 @@ class _ThemeOptionCard extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     return ScaleButton(
       onTap: onTap,

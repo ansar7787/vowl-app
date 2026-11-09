@@ -23,14 +23,14 @@ void main() {
     );
 
     test(
-      'Dark theme has Slate-900 scaffold background and Slate-800 surface',
+      'Dark theme has Slate-900 scaffold background and MidnightNavy surface',
       () {
         final dark = AppTheme.darkTheme;
         expect(dark.scaffoldBackgroundColor, AppColors.slate900);
         expect(dark.brightness, Brightness.dark);
         final tokens = dark.extension<AppColorTokens>();
         expect(tokens, isNotNull);
-        expect(tokens!.surface, AppColors.slate800);
+        expect(tokens!.surface, AppColors.midnightNavy);
         expect(tokens.textPrimary, AppColors.slate50);
       },
     );

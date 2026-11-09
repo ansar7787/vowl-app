@@ -360,8 +360,8 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
   /// Dark mode semantic tokens.
   static const dark = AppColorTokens(
     // Surfaces
-    surface: AppColors.slate800,
-    surfaceVariant: AppColors.slate700,
+    surface: AppColors.midnightNavy,
+    surfaceVariant: AppColors.slate800,
     surfaceDim: AppColors.slate900,
     // Text
     textPrimary: AppColors.slate50,

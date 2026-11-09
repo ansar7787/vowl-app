@@ -369,7 +369,7 @@ class _ArenaHeroCard extends StatelessWidget {
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
@@ -673,7 +673,7 @@ class _CenteredMetricTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.10)
@@ -790,7 +790,7 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.10)
@@ -1016,7 +1016,7 @@ class _ArenaRecentMatches extends StatelessWidget {
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
+        : (isDark ? AppColors.midnightNavy : Colors.white);
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.10)
@@ -1371,8 +1371,8 @@ class _ArenaStatsShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseColor = isDark ? Colors.white10 : AppColors.slate200;
-    final highlightColor = isDark ? Colors.white24 : AppColors.slate100;
+    final baseColor = isDark ? AppColors.slate800 : AppColors.slate200;
+    final highlightColor = isDark ? AppColors.slate700 : const Color(0xFFF8FAFC);
 
     return Shimmer.fromColors(
       baseColor: baseColor,

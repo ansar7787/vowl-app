@@ -156,7 +156,7 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? AppColors.slate800
+              ? AppColors.midnightNavy
               : Colors.black.withValues(alpha: 0.035));
 
     return Semantics(
@@ -211,7 +211,7 @@ class ProfileQuickActionHud extends StatelessWidget {
     final podBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-              ? AppColors.slate800
+              ? AppColors.midnightNavy
               : Colors.black.withValues(alpha: 0.035));
 
     if (isVipReady) {

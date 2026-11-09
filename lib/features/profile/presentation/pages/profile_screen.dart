@@ -820,7 +820,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
-            : (isDark ? AppColors.slate800 : Colors.white),
+            : (isDark ? AppColors.midnightNavy : Colors.white),
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(
           color: isDark

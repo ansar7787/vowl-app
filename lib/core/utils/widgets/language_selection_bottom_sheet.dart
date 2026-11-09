@@ -728,11 +728,11 @@ class _LanguageSelectionBottomSheetState
   /// Modern shimmer loading skeleton mirroring the exact layout of the bottom sheet.
   Widget _buildShimmerLoading(bool isDark) {
     final baseColor = isDark
-        ? Colors.white.withValues(alpha: 0.04)
-        : AppColors.slate200.withValues(alpha: 0.7);
+        ? AppColors.slate800
+        : AppColors.slate200;
     final highlightColor = isDark
-        ? Colors.white.withValues(alpha: 0.10)
-        : Colors.white.withValues(alpha: 0.95);
+        ? AppColors.slate700
+        : const Color(0xFFF8FAFC);
 
     return Shimmer.fromColors(
       key: const ValueKey('shimmer_skeleton'),

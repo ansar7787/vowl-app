@@ -563,8 +563,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
   Widget _buildShimmerItem(bool isDark) {
     return Shimmer.fromColors(
-      baseColor: isDark ? AppColors.slate800 : Colors.grey[300]!,
-      highlightColor: isDark ? AppColors.slate700 : Colors.grey[100]!,
+      baseColor: isDark ? AppColors.slate800 : AppColors.slate200,
+      highlightColor: isDark ? AppColors.slate700 : const Color(0xFFF8FAFC),
       child: Container(
         height: 140.h,
         decoration: BoxDecoration(
@@ -1326,7 +1326,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         decoration: BoxDecoration(
           color: isSelected
               ? color
-              : (isDark ? AppColors.slate800 : Colors.white),
+              : (isDark ? AppColors.midnightNavy : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: isSelected

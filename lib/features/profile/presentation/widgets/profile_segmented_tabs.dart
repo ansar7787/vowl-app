@@ -60,7 +60,7 @@ class ProfileSegmentedTabs extends StatelessWidget {
           color: isMidnight
               ? AppColors.midnightSurface
               : (isDark
-                    ? AppColors.slate800
+                    ? AppColors.midnightNavy
                     : Colors.black.withValues(alpha: 0.04)),
           borderRadius: BorderRadius.circular(22.r),
           border: Border.all(color: borderColor, width: 1.0),

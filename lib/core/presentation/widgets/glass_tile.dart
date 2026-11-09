@@ -179,19 +179,16 @@ class _GlassOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     final defaultDarkSurface = isMidnight
         ? const Color(0xFF0B0F19)
-        : const Color(0xFF1E293B);
+        : AppTheme.cardDark;
 
     final isWhiteBased =
         color != null &&
         (color == Colors.white ||
             (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
 
-    final isLegacyDarkSurface =
-        color != null && color == const Color(0xFF131A29);
-
     if (!hasBlur) {
       final baseColor = isDark
-          ? ((color == null || isWhiteBased || isLegacyDarkSurface)
+          ? ((color == null || isWhiteBased)
                 ? defaultDarkSurface
                 : color!)
           : (color ?? Colors.white);
@@ -203,7 +200,7 @@ class _GlassOverlay extends StatelessWidget {
     }
 
     if (isDark) {
-      final c = (color != null && !isWhiteBased && !isLegacyDarkSurface)
+      final c = (color != null && !isWhiteBased)
           ? color!
           : null;
       return Container(
@@ -225,9 +222,9 @@ class _GlassOverlay extends StatelessWidget {
                                 Color(0xFF070A11),
                               ]
                             : const [
-                                Color(0xFF243044),
-                                Color(0xFF1E293B),
-                                Color(0xFF16202E),
+                                Color(0xFF1A2337),
+                                Color(0xFF131A29),
+                                Color(0xFF0D1422),
                               ]),
                   stops: const [0.0, 0.5, 1.0],
                 )
@@ -238,7 +235,7 @@ class _GlassOverlay extends StatelessWidget {
                       ? [c.withValues(alpha: 0.25), c.withValues(alpha: 0.12)]
                       : (isMidnight
                             ? const [Color(0xFF101622), Color(0xFF0B0F19)]
-                            : const [Color(0xFF222D3E), Color(0xFF1E293B)]),
+                            : const [Color(0xFF1A2337), Color(0xFF131A29)]),
                 ),
         ),
       );
