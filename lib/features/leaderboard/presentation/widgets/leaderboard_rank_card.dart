@@ -50,8 +50,9 @@ class LeaderboardRankCard extends StatelessWidget {
 
     if (isKids) {
       primaryScoreText = '${currentUser.kidsTotalStars} ⭐ Stars';
-      statusZoneText =
-          '${currentUser.kidsTotalLevelsCompleted} Levels Cleared · ${currentUser.kidsCoins} Coins';
+      statusZoneText = isRanked
+          ? '${currentUser.kidsTotalLevelsCompleted} Levels Cleared · ${currentUser.kidsCoins} Coins'
+          : 'Play Kids games to collect Star Vault stars!';
       final topStars = allUsers.isNotEmpty ? allUsers.first.kidsTotalStars : 1;
       relativeProgress = topStars > 0
           ? (currentUser.kidsTotalStars / topStars).clamp(0.05, 1.0)

@@ -584,10 +584,19 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      'Complete lessons to appear on the leaderboard!',
+                    Text(
+                      widget.state.isKids
+                          ? context.tr(
+                              'leaderboard.kids_empty',
+                              fallback: 'Be the first kid on the leaderboard!',
+                            )
+                          : context.tr(
+                              'leaderboard.empty_subtitle',
+                              fallback:
+                                  'Complete lessons to appear on the leaderboard!',
+                            ),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14,
                         color: Colors.grey,

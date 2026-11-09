@@ -111,6 +111,23 @@ void main() {
       expect(sorted[1].id, 'user_b'); // 6 stars, 10 levels
       expect(sorted[2].id, 'user_a'); // 3 stars, 5 levels
     });
+
+    test('resolves ties via coins and streak when stars and levels are equal', () {
+      final userX = userB.copyWith(kidsCoins: 120, currentStreak: 5);
+      final userY = UserEntity(
+        id: 'user_y',
+        email: 'y@vowl.app',
+        displayName: 'User Y',
+        totalExp: userB.totalExp,
+        kidsCoins: 80,
+        currentStreak: 10,
+        completedLevels: userB.completedLevels,
+        starRatings: userB.starRatings,
+      );
+      final sorted = LeaderboardRankingHelper.sortKids([userY, userX]);
+      expect(sorted[0].id, 'user_b'); // Higher coins (120 vs 80)
+      expect(sorted[1].id, 'user_y');
+    });
   });
 
   group('LeaderboardRankingHelper.getRankPosition', () {
