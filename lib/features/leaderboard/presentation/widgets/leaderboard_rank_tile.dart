@@ -314,11 +314,12 @@ class LeaderboardRankTile extends StatelessWidget {
         height: 12.h,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.arrow_upward_rounded,
+              Icons.arrow_drop_up_rounded,
               color: AppColors.emerald500,
-              size: 10.r,
+              size: 13.r,
             ),
             Text(
               '$diff',
@@ -339,11 +340,12 @@ class LeaderboardRankTile extends StatelessWidget {
         height: 12.h,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.arrow_downward_rounded,
+              Icons.arrow_drop_down_rounded,
               color: AppColors.red500,
-              size: 10.r,
+              size: 13.r,
             ),
             Text(
               '${diff.abs()}',

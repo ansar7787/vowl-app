@@ -425,11 +425,12 @@ class _PodiumSlot extends StatelessWidget {
     if (diff > 0) {
       return Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
-            Icons.arrow_upward_rounded,
+            Icons.arrow_drop_up_rounded,
             color: AppColors.emerald500,
-            size: 8.r,
+            size: 11.r,
           ),
           Text(
             '$diff',
@@ -438,6 +439,7 @@ class _PodiumSlot extends StatelessWidget {
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
               color: AppColors.emerald500,
+              height: 1.0,
             ),
           ),
         ],
@@ -445,11 +447,12 @@ class _PodiumSlot extends StatelessWidget {
     } else if (diff < 0) {
       return Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
-            Icons.arrow_downward_rounded,
+            Icons.arrow_drop_down_rounded,
             color: AppColors.red500,
-            size: 8.r,
+            size: 11.r,
           ),
           Text(
             '${diff.abs()}',
@@ -458,6 +461,7 @@ class _PodiumSlot extends StatelessWidget {
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
               color: AppColors.red500,
+              height: 1.0,
             ),
           ),
         ],

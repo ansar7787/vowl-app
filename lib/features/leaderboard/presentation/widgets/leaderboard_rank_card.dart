@@ -493,12 +493,12 @@ class LeaderboardRankCard extends StatelessWidget {
         children: [
           Icon(
             improved
-                ? Icons.arrow_upward_rounded
+                ? Icons.arrow_drop_up_rounded
                 : (dropped
-                      ? Icons.arrow_downward_rounded
+                      ? Icons.arrow_drop_down_rounded
                       : Icons.remove_rounded),
             color: color,
-            size: 10.r,
+            size: 12.r,
           ),
           if (diff != 0) ...[
             SizedBox(width: 1.5.w),
