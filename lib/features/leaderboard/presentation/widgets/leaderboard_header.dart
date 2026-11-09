@@ -138,14 +138,13 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
     final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
     final subtitle = _getSubtitle(context);
 
     final header = Semantics(
-      // Announce title, subtitle, next update countdown, and last-updated time.
+      // Announce title, subtitle, and next update countdown.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. $subtitle. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. $subtitle. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}.',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,36 +284,16 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                       ],
                     ),
                     SizedBox(height: 2.h),
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            subtitle,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark
-                                  ? Colors.white60
-                                  : AppColors.slate600,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        SizedBox(width: 6.w),
-                        Text(
-                          '•  $timeAgo',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark
-                                ? Colors.white38
-                                : AppColors.slate400,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white60 : AppColors.slate600,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
@@ -326,31 +305,5 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
     );
     if (VowlMotion.shouldReduceMotion(context)) return header;
     return header.animate().fadeIn(duration: 500.ms);
-  }
-
-  String _formatTimeAgo(BuildContext context, DateTime dateTime) {
-    final difference = DateTime.now().difference(dateTime);
-    if (difference.inMinutes < 1) {
-      return context.tr('leaderboard.just_now', fallback: 'Just now');
-    }
-    if (difference.inMinutes < 60) {
-      return context.tr(
-        'leaderboard.mins_ago',
-        fallback: '{0} mins ago',
-        args: [difference.inMinutes.toString()],
-      );
-    }
-    if (difference.inHours < 24) {
-      return context.tr(
-        'leaderboard.hours_ago',
-        fallback: '{0} hours ago',
-        args: [difference.inHours.toString()],
-      );
-    }
-    return context.tr(
-      'leaderboard.days_ago',
-      fallback: '{0} days ago',
-      args: [difference.inDays.toString()],
-    );
   }
 }

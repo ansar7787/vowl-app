@@ -18,7 +18,6 @@ void main() {
 
     test('correctly evaluates hasUnclaimedReward', () {
       final now = DateTime.utc(2026, 11, 4);
-      final prevWeek = WeeklyLeagueRewardHelper.getPreviousWeekKey(now);
 
       const winnerUnclaimed = UserEntity(
         id: 'u1',
