@@ -319,7 +319,7 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
     // Surfaces
     surface: AppColors.white,
     surfaceVariant: AppColors.slate100,
-    surfaceDim: AppColors.white,
+    surfaceDim: AppColors.slate50,
     // Text
     textPrimary: AppColors.slate900,
     textSecondary: AppColors.slate600,
