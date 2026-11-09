@@ -31,6 +31,7 @@ import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
+import 'package:vowl/features/home/presentation/widgets/weekly_league_reward_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
@@ -337,6 +338,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: InlineNotificationCard(
                           streak: user.currentStreak,
                         ),
+                      ),
+
+                      // --------------------------------------------------
+                      // 1.55 WEEKLY LEAGUE REWARD CLAIM (Conditional Inline)
+                      // --------------------------------------------------
+                      SliverToBoxAdapter(
+                        child: WeeklyLeagueRewardHomeCard(user: user),
                       ),
 
                       // --------------------------------------------------

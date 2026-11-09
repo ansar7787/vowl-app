@@ -28,7 +28,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
   final int vipDays;
   final int coins;
   final String weekKey;
-  final Future<void> Function() onClaim;
+  final Future<void> Function()? onClaim;
+  final bool isAlreadyClaimed;
 
   const WeeklyLeagueChampionDialog({
     super.key,
@@ -37,7 +38,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
     required this.vipDays,
     required this.coins,
     required this.weekKey,
-    required this.onClaim,
+    this.onClaim,
+    this.isAlreadyClaimed = false,
   });
 
   /// Displays the celebration dialog with smooth backdrop fade.
@@ -48,7 +50,8 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
     required int vipDays,
     required int coins,
     required String weekKey,
-    required Future<void> Function() onClaim,
+    Future<void> Function()? onClaim,
+    bool isAlreadyClaimed = false,
   }) {
     return showGeneralDialog(
       context: context,
@@ -71,6 +74,7 @@ class WeeklyLeagueChampionDialog extends StatefulWidget {
             coins: coins,
             weekKey: weekKey,
             onClaim: onClaim,
+            isAlreadyClaimed: isAlreadyClaimed,
           ),
     );
   }
@@ -179,7 +183,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     }
 
     try {
-      await widget.onClaim();
+      await widget.onClaim?.call();
     } finally {
       if (mounted) {
         Navigator.of(context).pop();
@@ -386,9 +390,17 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
 
                     SizedBox(height: 24.h),
 
-                    // Primary Action: Claim & Celebrate
+                    // Primary Action: Claim & Celebrate or Got It!
                     ScaleButton(
-                      onTap: _isClaiming ? null : _handleClaim,
+                      onTap: _isClaiming
+                          ? null
+                          : () async {
+                              if (widget.isAlreadyClaimed) {
+                                Navigator.of(context).pop();
+                              } else {
+                                await _handleClaim();
+                              }
+                            },
                       child: Container(
                         width: double.infinity,
                         height: 52.h,
@@ -421,10 +433,12 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                                   ),
                                   SizedBox(width: 8.w),
                                   Text(
-                                    context.tr(
-                                      'leaderboard.claim_and_celebrate',
-                                      fallback: 'Claim & Celebrate',
-                                    ),
+                                    widget.isAlreadyClaimed
+                                        ? 'Got It!'
+                                        : context.tr(
+                                            'leaderboard.claim_and_celebrate',
+                                            fallback: 'Claim & Celebrate',
+                                          ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 15.sp,

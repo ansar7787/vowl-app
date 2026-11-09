@@ -20,15 +20,14 @@ import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc.dar
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_header.dart';
 import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
+import 'package:vowl/features/leaderboard/domain/utils/weekly_league_reward_helper.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
@@ -429,61 +428,15 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final currentUser = widget.currentUser;
     if (currentUser == null) return;
 
-    final now = DateTime.now();
-    final DateTime? newExpiry;
-    if (vipDays > 0) {
-      if (currentUser.isPremium &&
-          currentUser.premiumExpiryDate != null &&
-          currentUser.premiumExpiryDate!.isAfter(now)) {
-        newExpiry = currentUser.premiumExpiryDate!.add(Duration(days: vipDays));
-      } else {
-        newExpiry = now.add(Duration(days: vipDays));
-      }
-    } else {
-      newExpiry = null;
-    }
-
-    final updatedKeys = [...currentUser.claimedWeeklyRewardWeekKeys, weekKey];
-    final coinHistoryEntry = {
-      'titleKey': 'coin_history.weekly_league_reward',
-      'amount': coins,
-      'isEarned': true,
-      'timestamp': Timestamp.now(),
-    };
-    try {
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(currentUser.id)
-          .update({
-            'claimedWeeklyRewardWeekKeys': updatedKeys,
-            if (coins > 0) ...{
-              'coins': FieldValue.increment(coins),
-              'coinHistory': FieldValue.arrayUnion([coinHistoryEntry]),
-            },
-            if (vipDays > 0) ...{
-              'isPremium': true,
-              'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
-            },
-            'lastRewardTimestamp': FieldValue.serverTimestamp(),
-          });
-
-      if (mounted) {
-        di.sl<HapticService>().success();
-        if (di.sl.isRegistered<SoundService>()) {
-          di.sl<SoundService>().playCoinTally(count: 8);
-        }
-        context.read<AuthBloc>().add(const AuthRefreshUser());
-        context.read<AuthBloc>().add(const AuthReloadUser());
-        CustomSnackBar.show(
-          context: context,
-          message:
-              'Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
-          type: CustomSnackBarType.success,
-        );
-      }
-    } catch (e) {
-      debugPrint('[LeaderboardScreen] Claim weekly error: $e');
-    }
+    await WeeklyLeagueRewardHelper.claimReward(
+      context: context,
+      user: currentUser,
+      rank: rank,
+      vipDays: vipDays,
+      coins: coins,
+      weekKey: weekKey,
+      showCelebrationDialog: false,
+    );
   }
 
   void _handleTileTap(UserEntity user, int rank, bool isMe) {
