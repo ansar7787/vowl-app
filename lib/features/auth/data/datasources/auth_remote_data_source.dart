@@ -328,15 +328,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     } else {
       // RETURNING USER: In-app customizations are authoritative and sacred.
       // Never overwrite the user's custom avatar or custom display name with Google OAuth defaults.
-      final isExistingNameGeneric =
-          existingName == null ||
-          existingName.isEmpty ||
-          existingName.toLowerCase() == 'unknown user' ||
-          existingName.toLowerCase() == 'unknown' ||
-          existingName.toLowerCase() == 'vowl learner';
+      final hasCustomName =
+          existingName != null &&
+          existingName.isNotEmpty &&
+          existingName.toLowerCase() != 'unknown user' &&
+          existingName.toLowerCase() != 'unknown' &&
+          existingName.toLowerCase() != 'vowl learner';
 
       final googleName = googleUser.displayName?.trim();
-      final effectiveName = (!isExistingNameGeneric && existingName != null)
+      final effectiveName = hasCustomName
           ? existingName
           : ((googleName != null &&
                     googleName.isNotEmpty &&
@@ -365,7 +365,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       final updates = <String, dynamic>{
         'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
       };
-      if (isExistingNameGeneric && effectiveName != 'Vowl Learner') {
+      if (!hasCustomName && effectiveName != 'Vowl Learner') {
         updates['displayName'] = effectiveName;
       }
       if (!hasCustomPhoto && effectivePhoto != null && effectivePhoto.isNotEmpty) {
