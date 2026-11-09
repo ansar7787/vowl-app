@@ -236,7 +236,7 @@ class _BentoHeroCard extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                        : AppColors.slate200),
               width: 1.r,
             ),
           ),
@@ -577,7 +577,7 @@ class _BentoGridCell extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.12)
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.08)
-                        : AppColors.slate100),
+                        : AppColors.slate200),
               width: 1.r,
             ),
           ),
