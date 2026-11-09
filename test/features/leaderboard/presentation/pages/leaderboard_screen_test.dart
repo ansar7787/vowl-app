@@ -365,7 +365,7 @@ void main() {
           find.text('Complete more quests to climb the ranks!'),
           findsOneWidget,
         );
-        expect(find.text('See how you rank globally!'), findsWidgets);
+        expect(find.text("This week's rankings"), findsWidgets);
       },
     );
   });

@@ -8,18 +8,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/leaderboard/domain/entities/leaderboard_timeframe.dart';
 import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
   final DateTime lastUpdated;
   final bool isKids;
+  final LeaderboardTimeframe timeframe;
   final Future<void> Function()? onSync;
 
   const LeaderboardHeader({
     super.key,
     required this.lastUpdated,
     this.isKids = false,
+    this.timeframe = LeaderboardTimeframe.thisWeek,
     this.onSync,
   });
 
@@ -113,16 +116,36 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
     );
   }
 
+  String _getSubtitle(BuildContext context) {
+    if (widget.isKids) {
+      return context.tr(
+        'leaderboard.kids_subtitle_short',
+        fallback: 'Star Vault rankings',
+      );
+    }
+    if (widget.timeframe == LeaderboardTimeframe.allTime) {
+      return context.tr(
+        'leaderboard.all_time_subtitle_short',
+        fallback: 'All-time rankings',
+      );
+    }
+    return context.tr(
+      'leaderboard.weekly_subtitle_short',
+      fallback: "This week's rankings",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
     final countdown = LeaderboardCountdownHelper.getRemainingFormatted();
+    final subtitle = _getSubtitle(context);
 
     final header = Semantics(
       // Announce title, subtitle, next update countdown, and last-updated time.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!')}. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. $subtitle. ${context.tr('leaderboard.next_update_in', fallback: 'Next in {0}', args: [countdown])}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -266,16 +289,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                       children: [
                         Flexible(
                           child: Text(
-                            widget.isKids
-                                ? context.tr(
-                                    'leaderboard.kids_subtitle',
-                                    fallback:
-                                        'See how your child ranks globally!',
-                                  )
-                                : context.tr(
-                                    'leaderboard.subtitle',
-                                    fallback: 'See how you rank globally!',
-                                  ),
+                            subtitle,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,

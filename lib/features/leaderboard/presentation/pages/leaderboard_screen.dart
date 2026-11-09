@@ -33,8 +33,10 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overt
 import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/prestige_trophy_sheet.dart';
+import 'package:vowl/features/leaderboard/domain/entities/leaderboard_timeframe.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
+export 'package:vowl/features/leaderboard/domain/entities/leaderboard_timeframe.dart';
 
 /// Main leaderboard rankings screen featuring podium top 3 positions,
 /// personal rank card, and toggleable standard/kids leaderboards.
@@ -654,6 +656,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
+                    timeframe: widget.timeframe,
                     onSync: () async {
                       final completer = Completer<void>();
                       context.read<LeaderboardBloc>().add(
@@ -983,14 +986,19 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         Text(
                           widget.state.isKids
                               ? context.tr(
-                                  'leaderboard.kids_subtitle',
-                                  fallback:
-                                      'See how your child ranks globally!',
+                                  'leaderboard.kids_subtitle_short',
+                                  fallback: 'Star Vault rankings',
                                 )
-                              : context.tr(
-                                  'leaderboard.subtitle',
-                                  fallback: 'See how you rank globally!',
-                                ),
+                              : (widget.timeframe ==
+                                      LeaderboardTimeframe.allTime
+                                  ? context.tr(
+                                      'leaderboard.all_time_subtitle_short',
+                                      fallback: 'All-time rankings',
+                                    )
+                                  : context.tr(
+                                      'leaderboard.weekly_subtitle_short',
+                                      fallback: "This week's rankings",
+                                    )),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -1257,12 +1265,6 @@ class _LeaderboardErrorView extends StatelessWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Timeframe enumeration
-// ---------------------------------------------------------------------------
-
-enum LeaderboardTimeframe { thisWeek, allTime }
 
 // ---------------------------------------------------------------------------
 // Primary Hero Segmented Switch: Weekly League vs Hall of Fame
