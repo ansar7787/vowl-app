@@ -106,12 +106,14 @@ class LeaderboardRankTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  // Rank number & Change Indicator side-by-side
+                  // Rank number & Change Indicator side-by-side (adaptive width for Weekly vs Global/Kids)
                   SizedBox(
-                    width: 52.w,
+                    width: (!isKids && isWeekly) ? 50.w : 28.w,
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
+                      alignment: (!isKids && isWeekly)
+                          ? Alignment.centerLeft
+                          : Alignment.center,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -120,7 +122,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             '$rank',
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 19.sp,
+                              fontSize: (!isKids && isWeekly) ? 19.sp : 21.sp,
                               fontWeight: FontWeight.w900,
                               letterSpacing: -0.6,
                               color: isDark
