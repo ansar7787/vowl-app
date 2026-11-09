@@ -317,7 +317,7 @@ void main() {
       ).thenReturn(LeaderboardLoaded(const [], now, isKids: false));
 
       await tester.pumpWidget(buildTestWidget());
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 700));
 
       expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
       expect(find.text('No rankings yet'), findsOneWidget);
@@ -335,7 +335,7 @@ void main() {
         ).thenReturn(LeaderboardLoaded(const [], now, isKids: true));
 
         await tester.pumpWidget(buildTestWidget(isKids: true));
-        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 700));
 
         expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
         expect(find.text('No rankings yet'), findsOneWidget);
@@ -430,7 +430,7 @@ void main() {
           // Scroll down to reveal ranks in the list
           await tester.drag(
             find.byType(CustomScrollView),
-            const Offset(0, -550),
+            const Offset(0, -450),
           );
           await tester.pump(const Duration(milliseconds: 500));
           await tester.pump(const Duration(seconds: 1));
@@ -440,6 +440,13 @@ void main() {
           // Rank 4 & 5
           expect(find.text('Evan Great'), findsOneWidget);
           expect(find.text('Fiona Swift'), findsOneWidget);
+
+          // Scroll slightly more to bring currentUser (Rank 7) fully into list viewport
+          await tester.drag(
+            find.byType(CustomScrollView),
+            const Offset(0, -250),
+          );
+          await tester.pump(const Duration(milliseconds: 500));
 
           // Current user appears in Sticky RankCard and in RankTile list
           expect(find.text('Alice Champion'), findsNWidgets(2));

@@ -266,6 +266,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   late final ScrollController _scrollController;
   bool _ownsScrollController = false;
   bool _initialAnimateComplete = false;
+  Timer? _entranceTimer;
 
   @override
   void initState() {
@@ -278,7 +279,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     }
     // Only run entrance animations once on initial screen mount.
     // Recycled tiles during scrolling will render statically at native 120 FPS.
-    Future.delayed(const Duration(milliseconds: 650), () {
+    _entranceTimer = Timer(const Duration(milliseconds: 650), () {
       if (mounted) {
         setState(() => _initialAnimateComplete = true);
       }
@@ -287,6 +288,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
   @override
   void dispose() {
+    _entranceTimer?.cancel();
     if (_ownsScrollController) {
       _scrollController.dispose();
     }
