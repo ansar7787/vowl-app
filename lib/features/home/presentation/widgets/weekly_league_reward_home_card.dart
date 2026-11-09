@@ -107,129 +107,131 @@ class _WeeklyLeagueRewardHomeCardState
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF131A29) : Colors.white);
 
-    return Container(
-      margin: EdgeInsets.only(
-        left: AppSpacing.screen,
-        right: AppSpacing.screen,
-        top: 10.h,
-        bottom: 2.h,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: accentColor.withValues(alpha: isDark ? 0.45 : 0.35),
-          width: 1.5.w,
+    return RepaintBoundary(
+      child: Container(
+        margin: EdgeInsets.only(
+          left: AppSpacing.screen,
+          right: AppSpacing.screen,
+          top: 10.h,
+          bottom: 2.h,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: accentColor.withValues(alpha: isDark ? 0.16 : 0.10),
-            blurRadius: 14,
-            offset: const Offset(0, 4),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: accentColor.withValues(alpha: isDark ? 0.45 : 0.35),
+            width: 1.5.w,
           ),
-        ],
-      ),
-      child: Row(
-        children: [
-          // Glowing Icon Badge
-          Container(
-            padding: EdgeInsets.all(9.r),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: [
-                  accentColor.withValues(alpha: 0.3),
-                  accentColor.withValues(alpha: 0.12),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              border: Border.all(
-                color: accentColor.withValues(alpha: 0.45),
-                width: 1.2,
-              ),
+          boxShadow: [
+            BoxShadow(
+              color: accentColor.withValues(alpha: isDark ? 0.16 : 0.10),
+              blurRadius: 14,
+              offset: const Offset(0, 4),
             ),
-            child: Icon(icon, size: 20.sp, color: accentColor),
-          ),
-          SizedBox(width: 12.w),
-
-          // Title & Subtitle Column
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.5.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: -0.2,
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  subtitle,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? AppColors.slate300 : AppColors.slate600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(width: 10.w),
-
-          // 1-Tap Claim Button
-          ScaleButton(
-            onTap: _isClaiming
-                ? null
-                : () => _handleClaim(rank, vipDays, coins, weekKey),
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.w,
-                vertical: 8.5.h,
-              ),
+          ],
+        ),
+        child: Row(
+          children: [
+            // Glowing Icon Badge
+            Container(
+              padding: EdgeInsets.all(9.r),
               decoration: BoxDecoration(
+                shape: BoxShape.circle,
                 gradient: LinearGradient(
                   colors: [
-                    accentColor,
-                    accentColor.withValues(alpha: 0.85),
+                    accentColor.withValues(alpha: 0.3),
+                    accentColor.withValues(alpha: 0.12),
                   ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: accentColor.withValues(alpha: 0.3),
-                    blurRadius: 6,
-                    offset: const Offset(0, 2),
+                border: Border.all(
+                  color: accentColor.withValues(alpha: 0.45),
+                  width: 1.2,
+                ),
+              ),
+              child: Icon(icon, size: 20.sp, color: accentColor),
+            ),
+            SizedBox(width: 12.w),
+
+            // Title & Subtitle Column
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.5.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      letterSpacing: -0.2,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    subtitle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? AppColors.slate300 : AppColors.slate600,
+                    ),
                   ),
                 ],
               ),
-              child: _isClaiming
-                  ? const VowlMicroLoader(size: 14, color: Colors.white)
-                  : Text(
-                      'Claim',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 0.5,
-                        color: rank == 1 ? Colors.black : Colors.white,
-                      ),
-                    ),
             ),
-          ),
-        ],
+            SizedBox(width: 10.w),
+
+            // 1-Tap Claim Button
+            ScaleButton(
+              onTap: _isClaiming
+                  ? null
+                  : () => _handleClaim(rank, vipDays, coins, weekKey),
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                  vertical: 8.5.h,
+                ),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      accentColor,
+                      accentColor.withValues(alpha: 0.85),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: accentColor.withValues(alpha: 0.3),
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: _isClaiming
+                    ? const VowlMicroLoader(size: 14, color: Colors.white)
+                    : Text(
+                        'Claim',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 0.5,
+                          color: rank == 1 ? Colors.black : Colors.white,
+                        ),
+                      ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

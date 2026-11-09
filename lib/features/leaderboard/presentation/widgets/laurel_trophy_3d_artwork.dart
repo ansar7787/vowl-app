@@ -22,56 +22,67 @@ class LaurelTrophy3DArtwork extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = _getTierColors(rank);
 
-    return SizedBox(
-      width: size.r,
-      height: size.r,
-      child: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          // 1. Ambient Rotating Sunburst Rays
-          if (rotationController != null)
-            AnimatedBuilder(
-              animation: rotationController!,
-              builder: (context, _) {
-                return Transform.rotate(
-                  angle: rotationController!.value * 2 * math.pi,
-                  child: CustomPaint(
-                    size: Size(size.r * 1.25, size.r * 1.25),
-                    painter: _SunburstPainter(
-                      rayColor: colors.highlight.withValues(alpha: 0.18),
-                      rayCount: 16,
+    return RepaintBoundary(
+      child: SizedBox(
+        width: size.r,
+        height: size.r,
+        child: Stack(
+          alignment: Alignment.center,
+          clipBehavior: Clip.none,
+          children: [
+            // 1. Ambient Rotating Sunburst Rays (Hardware rasterized once, matrix-rotated on GPU)
+            if (rotationController != null)
+              RepaintBoundary(
+                child: AnimatedBuilder(
+                  animation: rotationController!,
+                  child: RepaintBoundary(
+                    child: CustomPaint(
+                      size: Size(size.r * 1.25, size.r * 1.25),
+                      painter: _SunburstPainter(
+                        rayColor: colors.highlight.withValues(alpha: 0.18),
+                        rayCount: 16,
+                      ),
                     ),
                   ),
-                );
-              },
-            ),
+                  builder: (context, child) {
+                    return Transform.rotate(
+                      angle: rotationController!.value * 2 * math.pi,
+                      child: child,
+                    );
+                  },
+                ),
+              ),
 
-          // 2. Ambient Soft Radial Glow
-          Container(
-            width: size.r * 0.9,
-            height: size.r * 0.9,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  colors.primary.withValues(alpha: 0.35),
-                  colors.shadow.withValues(alpha: 0.0),
-                ],
-                stops: const [0.2, 1.0],
+            // 2. Ambient Soft Radial Glow
+            Container(
+              width: size.r * 0.9,
+              height: size.r * 0.9,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    colors.primary.withValues(alpha: 0.35),
+                    colors.shadow.withValues(alpha: 0.0),
+                  ],
+                  stops: const [0.2, 1.0],
+                ),
               ),
             ),
-          ),
 
-          // 3. Laurel Wreath Leaves (Left and Right Wings)
-          CustomPaint(
-            size: Size(size.r, size.r),
-            painter: _LaurelWreathPainter(tierColors: colors),
-          ),
+            // 3. Laurel Wreath Leaves (Left and Right Wings - Static Layer)
+            RepaintBoundary(
+              child: CustomPaint(
+                size: Size(size.r, size.r),
+                painter: _LaurelWreathPainter(tierColors: colors),
+              ),
+            ),
 
-          // 4. Center Trophy Cup or Tier Medallion
-          _buildCenterEmblem(colors),
-        ],
+            // 4. Center Trophy Cup or Tier Medallion (Static Layer)
+            RepaintBoundary(
+              child: _buildCenterEmblem(colors),
+            ),
+          ],
+        ),
       ),
     );
   }
