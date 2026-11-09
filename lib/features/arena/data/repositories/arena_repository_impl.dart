@@ -111,50 +111,63 @@ class ArenaRepositoryImpl implements ArenaRepository {
                 oppData['roomCode'] as String? ??
                 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
 
-            // Delete from queue and form live room
-            await queueRef.doc(oppDoc.id).delete();
+            // Atomic claim via transaction to prevent concurrent matchmaking races
+            bool claimed = false;
+            try {
+              await _firestore.runTransaction((tx) async {
+                final freshSnap = await tx.get(queueRef.doc(oppDoc.id));
+                if (freshSnap.exists) {
+                  tx.delete(queueRef.doc(oppDoc.id));
+                  claimed = true;
+                }
+              }).timeout(const Duration(seconds: 3));
+            } catch (_) {
+              claimed = false;
+            }
 
-            final session = ArenaDuelSession(
-              roomCode: roomCode,
-              hostId: oppId,
-              hostName: oppName,
-              hostPhotoUrl: oppPhoto,
-              guestId: currentUser.id,
-              guestName: currentUser.safeDisplayName,
-              guestPhotoUrl: currentUser.photoUrl,
-              stake: _kStakeCoins,
-              pot: _kStakeCoins * 2,
-              status: 'in_progress',
-              questions: questions,
-              createdAt: DateTime.now(),
-            );
+            if (claimed) {
+              final session = ArenaDuelSession(
+                roomCode: roomCode,
+                hostId: oppId,
+                hostName: oppName,
+                hostPhotoUrl: oppPhoto,
+                guestId: currentUser.id,
+                guestName: currentUser.safeDisplayName,
+                guestPhotoUrl: currentUser.photoUrl,
+                stake: _kStakeCoins,
+                pot: _kStakeCoins * 2,
+                status: 'in_progress',
+                questions: questions,
+                createdAt: DateTime.now(),
+              );
 
-            await _firestore
-                .collection('arena_rooms')
-                .doc(roomCode)
-                .set({
-                  'roomCode': roomCode,
-                  'hostId': oppId,
-                  'hostName': oppName,
-                  'hostPhotoUrl': oppPhoto,
-                  'guestId': currentUser.id,
-                  'guestName': currentUser.safeDisplayName,
-                  'guestPhotoUrl': currentUser.photoUrl,
-                  'stake': _kStakeCoins,
-                  'pot': _kStakeCoins * 2,
-                  'status': 'in_progress',
-                  'hostScore': 0,
-                  'guestScore': 0,
-                  'hostCorrectCount': 0,
-                  'guestCorrectCount': 0,
-                  'hostTotalTimeMs': 0,
-                  'guestTotalTimeMs': 0,
-                  'questions': questions.map((q) => q.toMap()).toList(),
-                  'createdAt': FieldValue.serverTimestamp(),
-                })
-                .timeout(_kNetworkTimeout);
+              await _firestore
+                  .collection('arena_rooms')
+                  .doc(roomCode)
+                  .set({
+                    'roomCode': roomCode,
+                    'hostId': oppId,
+                    'hostName': oppName,
+                    'hostPhotoUrl': oppPhoto,
+                    'guestId': currentUser.id,
+                    'guestName': currentUser.safeDisplayName,
+                    'guestPhotoUrl': currentUser.photoUrl,
+                    'stake': _kStakeCoins,
+                    'pot': _kStakeCoins * 2,
+                    'status': 'in_progress',
+                    'hostScore': 0,
+                    'guestScore': 0,
+                    'hostCorrectCount': 0,
+                    'guestCorrectCount': 0,
+                    'hostTotalTimeMs': 0,
+                    'guestTotalTimeMs': 0,
+                    'questions': questions.map((q) => q.toMap()).toList(),
+                    'createdAt': FieldValue.serverTimestamp(),
+                  })
+                  .timeout(_kNetworkTimeout);
 
-            return session;
+              return session;
+            }
           }
         }
 
@@ -392,16 +405,25 @@ class ArenaRepositoryImpl implements ArenaRepository {
     await _deductEntryStake(currentUser.id);
 
     try {
-      await docRef
-          .update({
-            'guestId': currentUser.id,
-            'guestName': currentUser.safeDisplayName,
-            'guestPhotoUrl': currentUser.photoUrl,
-            'status': 'in_progress',
-          })
-          .timeout(_kNetworkTimeout);
+      await _firestore.runTransaction((tx) async {
+        final snap = await tx.get(docRef);
+        if (!snap.exists || snap.data() == null) {
+          throw Exception('Duel room $cleanCode not found.');
+        }
+        final roomData = snap.data()!;
+        if (roomData['status'] != 'waiting' ||
+            (roomData['guestId'] != null && roomData['guestId'] != currentUser.id)) {
+          throw Exception('This duel room is already full.');
+        }
+        tx.update(docRef, {
+          'guestId': currentUser.id,
+          'guestName': currentUser.safeDisplayName,
+          'guestPhotoUrl': currentUser.photoUrl,
+          'status': 'in_progress',
+        });
+      }).timeout(_kNetworkTimeout);
 
-      final updatedSnap = await docRef.get();
+      final updatedSnap = await docRef.get().timeout(_kNetworkTimeout);
       return _mapSession(cleanCode, updatedSnap.data()!);
     } catch (e) {
       await _refundEntryStake(currentUser.id);
