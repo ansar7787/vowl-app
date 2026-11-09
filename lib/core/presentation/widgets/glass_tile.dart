@@ -56,10 +56,11 @@ class GlassTile extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    // Detect midnight variant: scaffold background is fully black in dark mode.
-    // Using colorScheme.surface avoids a fragile `== Colors.black` comparison.
+    // Detect midnight variant: pure AMOLED black canvas in dark mode.
     final isMidnight =
-        isDark && theme.scaffoldBackgroundColor.computeLuminance() < 0.02;
+        isDark && (theme.scaffoldBackgroundColor == Colors.black ||
+                   theme.scaffoldBackgroundColor == AppColors.black ||
+                   theme.scaffoldBackgroundColor.computeLuminance() == 0.0);
 
     final r = borderRadius ?? BorderRadius.circular(32.r);
 

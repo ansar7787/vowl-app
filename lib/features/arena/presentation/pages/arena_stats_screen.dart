@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
@@ -45,8 +46,7 @@ class ArenaStatsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final isMidnight =
-        isDark && theme.scaffoldBackgroundColor.computeLuminance() < 0.02;
+    final isMidnight = AppTheme.isMidnight(context);
     final bottomInset = MediaQuery.paddingOf(context).bottom;
 
     return BlocBuilder<AuthBloc, AuthState>(
