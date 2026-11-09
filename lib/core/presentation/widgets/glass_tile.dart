@@ -1,6 +1,8 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Premium frosted-glass card with physically realistic blur and gradient overlay.
@@ -66,22 +68,24 @@ class GlassTile extends StatelessWidget {
     final sigma = reduceMotion ? 0.0 : (blur ?? 14.0);
     final hasBlur = sigma > 0;
 
+    // In light mode with Option 2, legacy slate100 borders are too faint against pure white (#FFFFFF).
+    // Automatically elevate them to AppTheme.borderLight (Slate 200) for crisp, visible hairline edges.
+    final effectiveBorderColor = (!isDark && borderColor == AppColors.slate100)
+        ? AppTheme.borderLight
+        : borderColor;
+
     // border prop takes precedence; otherwise build from color/width fields.
     final resolvedBorder =
         border ??
         Border.all(
           color:
-              borderColor ??
+              effectiveBorderColor ??
               (isDark
                   ? (isMidnight
                         ? const Color(0x24FFFFFF)
-                        : const Color(
-                            0xFF334155,
-                          )) // Crisp Slate 700 standard border
-                  : const Color(
-                      0xFF0F172A,
-                    ).withValues(alpha: borderOpacity ?? 0.11)),
-          width: borderWidth ?? (isDark ? 1.0 : 1.4),
+                        : AppTheme.borderDark)
+                  : AppTheme.borderLight),
+          width: borderWidth ?? 1.0,
         );
 
     return Container(
