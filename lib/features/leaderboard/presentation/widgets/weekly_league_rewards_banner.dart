@@ -357,7 +357,7 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Rank #${widget.currentUser!.previousRank} Last Week! 🏆',
+                          'Rank #${widget.currentUser!.previousRank} Last Week!',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,

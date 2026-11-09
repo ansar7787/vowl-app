@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -193,14 +194,25 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                   SizedBox(width: 8.w),
                   FittedBox(
                     fit: BoxFit.scaleDown,
-                    child: Text(
-                      'Keep practicing daily 🔥',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xFFF59E0B),
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Keep practicing daily',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: const Color(0xFFF59E0B),
+                          ),
+                        ),
+                        SizedBox(width: 3.w),
+                        Icon(
+                          LucideIcons.flame,
+                          size: 11.sp,
+                          color: const Color(0xFFF59E0B),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -422,32 +434,60 @@ class LeaderboardOvertakeHud extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(
-                  child: Text(
-                    '⚡ +$xpDiff XP to take Rank #$rivalRank',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white70 : AppColors.slate700,
-                    ),
-                    overflow: TextOverflow.ellipsis,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.zap,
+                        size: 11.sp,
+                        color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                      ),
+                      SizedBox(width: 3.w),
+                      Flexible(
+                        child: Text(
+                          '+$xpDiff XP to take Rank #$rivalRank',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white70 : AppColors.slate700,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 8.w),
                 FittedBox(
                   fit: BoxFit.scaleDown,
-                  child: Text(
-                    xpDiff <= 60
-                        ? '1 quest to pass'
-                        : (xpDiff <= 150
-                              ? 'A few quests to pass'
-                              : 'Keep climbing 🔥'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        xpDiff <= 60
+                            ? '1 quest to pass'
+                            : (xpDiff <= 150
+                                  ? 'A few quests to pass'
+                                  : 'Keep climbing'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark
+                              ? AppColors.indigo400
+                              : AppColors.indigo600,
+                        ),
+                      ),
+                      if (xpDiff > 150) ...[
+                        SizedBox(width: 3.w),
+                        Icon(
+                          LucideIcons.flame,
+                          size: 11.sp,
+                          color: IllustrationColors.warmOrange,
+                        ),
+                      ],
+                    ],
                   ),
                 ),
               ],

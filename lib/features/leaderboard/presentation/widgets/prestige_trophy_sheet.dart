@@ -187,7 +187,7 @@ class PrestigeTrophySheet extends StatelessWidget {
                           ? 'Stars'
                           : (isWeekly ? 'Weekly XP' : 'Lifetime XP'),
                       isKids
-                          ? '⭐ ${user.kidsTotalStars}'
+                          ? '${user.kidsTotalStars}'
                           : '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
                       isKids ? Icons.star_rounded : LucideIcons.zap,
                       isKids ? AppColors.amber500 : AppColors.indigo500,
@@ -242,7 +242,7 @@ class PrestigeTrophySheet extends StatelessWidget {
                 label: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    '🏆 Share My Rank',
+                    'Share My Rank',
                     style: TextStyle(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w700,

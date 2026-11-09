@@ -477,7 +477,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         CustomSnackBar.show(
           context: context,
           message:
-              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+              'Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
           type: CustomSnackBarType.success,
         );
       }
@@ -837,8 +837,16 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                 ),
                               ),
                               SizedBox(width: 8.w),
+                              Icon(
+                                Icons.directions_run_rounded,
+                                size: 13.sp,
+                                color: isDark
+                                    ? AppColors.slate400
+                                    : AppColors.slate500,
+                              ),
+                              SizedBox(width: 4.w),
                               Text(
-                                '🏃 Contender Zone · Push for Top 10',
+                                'Contender Zone · Push for Top 10',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 10.sp,

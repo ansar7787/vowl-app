@@ -145,7 +145,7 @@ class _PodiumSlot extends StatelessWidget {
         ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? '⭐'
+        ? 'Stars'
         : (isWeekly
               ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
               : context.tr('leaderboard.xp', fallback: 'XP'));
@@ -319,26 +319,41 @@ class _PodiumSlot extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 2.h),
-                    // Primary score — single metric, high-contrast across light/dark
-                    AutoSizeText(
-                      isKids
-                          ? '⭐ ${user.kidsTotalStars} Stars'
-                          : '$score $scoreLabel',
-                      maxLines: 1,
-                      minFontSize: 7,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isFirst ? 10.5.sp : 9.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isKids
-                            ? AppColors.amber500
-                            : (rank == 2
-                                  ? (isDark
-                                        ? _LocalPalette.colorc0c0c0
-                                        : AppColors.slate700)
-                                  : colors[0].withValues(alpha: 0.9)),
-                        height: 1.1,
-                      ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (isKids) ...[
+                          Icon(
+                            Icons.star_rounded,
+                            size: isFirst ? 13.r : 11.r,
+                            color: AppColors.amber500,
+                          ),
+                          SizedBox(width: 2.w),
+                        ],
+                        Flexible(
+                          child: AutoSizeText(
+                            isKids
+                                ? '${user.kidsTotalStars} Stars'
+                                : '$score $scoreLabel',
+                            maxLines: 1,
+                            minFontSize: 7,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: isFirst ? 10.5.sp : 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isKids
+                                  ? AppColors.amber500
+                                  : (rank == 2
+                                        ? (isDark
+                                              ? _LocalPalette.colorc0c0c0
+                                              : AppColors.slate700)
+                                        : colors[0].withValues(alpha: 0.9)),
+                              height: 1.1,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     if (isKids) ...[
                       SizedBox(height: 1.h),

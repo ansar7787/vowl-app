@@ -120,7 +120,7 @@ void main() {
       expect(find.byIcon(Icons.monetization_on_rounded), findsNWidgets(4));
 
       // Unclaimed banner
-      expect(find.text('Rank #1 Last Week! 🏆'), findsOneWidget);
+      expect(find.text('Rank #1 Last Week!'), findsOneWidget);
       expect(find.text('Claim'), findsOneWidget);
     },
   );

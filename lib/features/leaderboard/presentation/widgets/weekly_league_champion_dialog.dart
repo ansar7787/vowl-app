@@ -123,22 +123,22 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
       case 1:
         return context.tr(
           'leaderboard.champion_title_1',
-          fallback: 'LEAGUE CHAMPION 🏆',
+          fallback: 'LEAGUE CHAMPION',
         );
       case 2:
         return context.tr(
           'leaderboard.champion_title_2',
-          fallback: 'SILVER RUNNER-UP 🥈',
+          fallback: 'SILVER RUNNER-UP',
         );
       case 3:
         return context.tr(
           'leaderboard.champion_title_3',
-          fallback: 'BRONZE PODIUM 🥉',
+          fallback: 'BRONZE PODIUM',
         );
       default:
         return context.tr(
           'leaderboard.champion_title_top10',
-          fallback: 'TOP 10 FINISHER 🎖️',
+          fallback: 'TOP 10 FINISHER',
         );
     }
   }

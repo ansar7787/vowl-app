@@ -47,7 +47,7 @@ class LeaderboardRankTile extends StatelessWidget {
         ? user.kidsTotalStars
         : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? '⭐'
+        ? 'Stars'
         : (isWeekly
               ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
               : context.tr('leaderboard.xp', fallback: 'XP'));
@@ -267,20 +267,33 @@ class LeaderboardRankTile extends StatelessWidget {
                     ),
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
-                      child: Text(
-                        isKids
-                            ? '⭐ ${user.kidsTotalStars}'
-                            : context.tr(
-                                'leaderboard.lvs',
-                                fallback: 'Lv. {0}',
-                                args: [levelsCleared.toString()],
-                              ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isKids ? AppColors.amber500 : tierColor,
-                        ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (isKids) ...[
+                            Icon(
+                              Icons.star_rounded,
+                              size: 13.sp,
+                              color: AppColors.amber500,
+                            ),
+                            SizedBox(width: 2.w),
+                          ],
+                          Text(
+                            isKids
+                                ? '${user.kidsTotalStars}'
+                                : context.tr(
+                                    'leaderboard.lvs',
+                                    fallback: 'Lv. {0}',
+                                    args: [levelsCleared.toString()],
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isKids ? AppColors.amber500 : tierColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

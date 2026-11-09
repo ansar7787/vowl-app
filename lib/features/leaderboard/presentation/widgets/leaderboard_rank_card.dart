@@ -1,7 +1,9 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -46,13 +48,17 @@ class LeaderboardRankCard extends StatelessWidget {
 
     final String primaryScoreText;
     final String statusZoneText;
+    final IconData statusZoneIcon;
+    final Color statusZoneIconColor;
     final double relativeProgress;
 
     if (isKids) {
-      primaryScoreText = '${currentUser.kidsTotalStars} ⭐ Stars';
+      primaryScoreText = '${currentUser.kidsTotalStars} Stars';
       statusZoneText = isRanked
           ? '${currentUser.kidsTotalLevelsCompleted} Levels · ${currentUser.kidsCoins} Coins'
           : 'Play games to collect stars!';
+      statusZoneIcon = isRanked ? Icons.star_rounded : Icons.sports_esports_rounded;
+      statusZoneIconColor = AppColors.amber500;
       final topStars = allUsers.isNotEmpty ? allUsers.first.kidsTotalStars : 1;
       relativeProgress = topStars > 0
           ? (currentUser.kidsTotalStars / topStars).clamp(0.05, 1.0)
@@ -60,13 +66,21 @@ class LeaderboardRankCard extends StatelessWidget {
     } else if (isWeekly) {
       primaryScoreText = '${currentUser.currentWeeklyExp} Weekly XP';
       if (rank >= 1 && rank <= 3) {
-        statusZoneText = '🏆 Podium · VIP + Coins';
+        statusZoneText = 'Podium · VIP + Coins';
+        statusZoneIcon = LucideIcons.trophy;
+        statusZoneIconColor = const Color(0xFFF59E0B);
       } else if (rank >= 4 && rank <= 10) {
-        statusZoneText = '⚡ Top 10 · 100 Coins';
+        statusZoneText = 'Top 10 · 100 Coins';
+        statusZoneIcon = LucideIcons.zap;
+        statusZoneIconColor = isDark ? AppColors.indigo400 : AppColors.indigo600;
       } else if (isRanked) {
-        statusZoneText = '🏃 Contender · Push for Top 10';
+        statusZoneText = 'Contender · Push for Top 10';
+        statusZoneIcon = Icons.directions_run_rounded;
+        statusZoneIconColor = isDark ? AppColors.slate400 : AppColors.slate600;
       } else {
         statusZoneText = 'Play quests to join the race!';
+        statusZoneIcon = Icons.flag_rounded;
+        statusZoneIconColor = isDark ? AppColors.slate400 : AppColors.slate600;
       }
       final topWeeklyXp = allUsers.isNotEmpty
           ? allUsers.first.currentWeeklyExp
@@ -77,7 +91,9 @@ class LeaderboardRankCard extends StatelessWidget {
     } else {
       primaryScoreText = '${currentUser.totalExp} Lifetime XP';
       statusZoneText =
-          '${currentUser.totalLevelsCompleted} Quests · ${currentUser.currentStreak}d Streak 🔥';
+          '${currentUser.totalLevelsCompleted} Quests · ${currentUser.currentStreak}d Streak';
+      statusZoneIcon = LucideIcons.flame;
+      statusZoneIconColor = IllustrationColors.warmOrange;
       final topTotalXp = allUsers.isNotEmpty ? allUsers.first.totalExp : 1;
       relativeProgress = topTotalXp > 0
           ? (currentUser.totalExp / topTotalXp).clamp(0.05, 1.0)
@@ -244,22 +260,95 @@ class LeaderboardRankCard extends StatelessWidget {
                         SizedBox(height: 1.h),
                         FittedBox(
                           fit: BoxFit.scaleDown,
-                          child: Text(
-                            isKids
-                                ? '⭐ ${currentUser.kidsTotalStars} Stars'
-                                : (isWeekly
-                                      ? (rank >= 1 && rank <= 3
-                                            ? '🏆 Podium'
-                                            : (rank <= 10
-                                                  ? '⚡ Top 10'
-                                                  : '🏃 Contender'))
-                                      : '${currentUser.currentStreak}d 🔥'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 8.5.sp,
-                              fontWeight: FontWeight.w700,
-                              color: secondaryTextColor,
-                            ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (isKids) ...[
+                                Icon(
+                                  Icons.star_rounded,
+                                  size: 11.sp,
+                                  color: AppColors.amber500,
+                                ),
+                                SizedBox(width: 2.w),
+                                Text(
+                                  '${currentUser.kidsTotalStars} Stars',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 8.5.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: secondaryTextColor,
+                                  ),
+                                ),
+                              ] else if (isWeekly) ...[
+                                if (rank >= 1 && rank <= 3) ...[
+                                  Icon(
+                                    LucideIcons.trophy,
+                                    size: 10.sp,
+                                    color: const Color(0xFFF59E0B),
+                                  ),
+                                  SizedBox(width: 3.w),
+                                  Text(
+                                    'Podium',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 8.5.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: secondaryTextColor,
+                                    ),
+                                  ),
+                                ] else if (rank <= 10) ...[
+                                  Icon(
+                                    LucideIcons.zap,
+                                    size: 10.sp,
+                                    color: isDark
+                                        ? AppColors.indigo400
+                                        : AppColors.indigo600,
+                                  ),
+                                  SizedBox(width: 3.w),
+                                  Text(
+                                    'Top 10',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 8.5.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: secondaryTextColor,
+                                    ),
+                                  ),
+                                ] else ...[
+                                  Icon(
+                                    Icons.directions_run_rounded,
+                                    size: 11.sp,
+                                    color: secondaryTextColor,
+                                  ),
+                                  SizedBox(width: 2.w),
+                                  Text(
+                                    'Contender',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 8.5.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: secondaryTextColor,
+                                    ),
+                                  ),
+                                ],
+                              ] else ...[
+                                Icon(
+                                  LucideIcons.flame,
+                                  size: 10.sp,
+                                  color: IllustrationColors.warmOrange,
+                                ),
+                                SizedBox(width: 2.w),
+                                Text(
+                                  '${currentUser.currentStreak}d Streak',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 8.5.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: secondaryTextColor,
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
                       ],
@@ -311,17 +400,30 @@ class LeaderboardRankCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Flexible(
-                              child: Text(
-                                statusZoneText,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : AppColors.slate700,
-                                ),
-                                overflow: TextOverflow.ellipsis,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    statusZoneIcon,
+                                    size: 11.sp,
+                                    color: statusZoneIconColor,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Flexible(
+                                    child: Text(
+                                      statusZoneText,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: isDark
+                                            ? Colors.white70
+                                            : AppColors.slate700,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(width: 8.w),
