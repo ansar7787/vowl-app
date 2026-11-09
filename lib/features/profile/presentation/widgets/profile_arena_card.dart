@@ -201,7 +201,7 @@ class _ProfileArenaCardState extends State<ProfileArenaCard> {
                     child: _statItem(
                       context,
                       context.tr('profile.duel_today', fallback: 'Today'),
-                      '${liveUser.dailyDuelsPlayedToday}',
+                      '${ArenaStatsScreen.calculateDailyDuelsPlayedToday(liveUser)}',
                       AppColors.amber500,
                     ),
                   ),

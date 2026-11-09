@@ -379,25 +379,31 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     }
 
     final bool isScoreTie = state.myScore == finalRivalScore;
+    final bool isTimeTie = state.myTotalTimeMs == finalRivalTimeMs;
+    final bool isDraw = isScoreTie && isTimeTie;
     final bool isWinner;
     final bool isSpeedTieBreak;
     final double speedDiff;
 
-    if (!isScoreTie) {
+    if (isDraw) {
+      isWinner = false;
+      isSpeedTieBreak = false;
+      speedDiff = 0.0;
+    } else if (!isScoreTie) {
       isWinner = state.myScore > finalRivalScore;
       isSpeedTieBreak = false;
       speedDiff = 0.0;
     } else {
-      // ZERO-TIE RESOLUTION: Decisive millisecond tiebreaker
+      // Millisecond speed tiebreaker
       isSpeedTieBreak = true;
-      isWinner = state.myTotalTimeMs <= finalRivalTimeMs;
+      isWinner = state.myTotalTimeMs < finalRivalTimeMs;
       speedDiff =
           ((finalRivalTimeMs - state.myTotalTimeMs).abs()) / 1000.0;
     }
 
     final totalQ = state.session?.questions.length ?? 5;
     final isPerfect = isWinner && state.myCorrectCount >= totalQ;
-    final payout = isWinner ? (isPerfect ? 60 : 50) : 10;
+    final payout = isDraw ? 30 : (isWinner ? (isPerfect ? 60 : 50) : 10);
 
     emit(
       state.copyWith(
@@ -406,7 +412,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         rivalCorrectCount: finalRivalCorrect,
         rivalTotalTimeMs: finalRivalTimeMs,
         isWinner: isWinner,
-        isDraw: false,
+        isDraw: isDraw,
         isSpeedTieBreak: isSpeedTieBreak,
         speedDiffSeconds: speedDiff,
         payoutCoins: payout,
@@ -418,7 +424,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         roomCode: state.session!.roomCode,
         currentUser: currentUser,
         isWinner: isWinner,
-        isDraw: false,
+        isDraw: isDraw,
         isPerfect: isPerfect,
       );
     }

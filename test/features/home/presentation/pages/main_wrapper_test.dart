@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -230,18 +231,26 @@ void main() {
         expect(find.byType(MainWrapper), findsOneWidget);
         expect(find.text('Home Item 0'), findsOneWidget);
 
-        // Home tab is active: has active icon and 'Home' label
-        expect(find.byIcon(Icons.home_rounded), findsOneWidget);
+        // All 4 modern Lucide icons are rendered
+        expect(find.byIcon(LucideIcons.home), findsOneWidget);
+        expect(find.byIcon(LucideIcons.gamepad2), findsOneWidget);
+        expect(find.byIcon(LucideIcons.trophy), findsOneWidget);
+        expect(find.byIcon(LucideIcons.user), findsOneWidget);
+
+        // Labels are rendered in stacked layout for immediate legibility
         expect(find.text('Home'), findsOneWidget);
+        expect(find.text('Games'), findsOneWidget);
+        expect(find.text('Ranks'), findsOneWidget);
+        expect(find.text('Profile'), findsOneWidget);
 
-        // Inactive tabs show outline icons and do NOT show label texts
-        expect(find.byIcon(Icons.sports_esports_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.leaderboard_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.person_outline_rounded), findsOneWidget);
-
-        expect(find.text('Games'), findsNothing);
-        expect(find.text('Ranks'), findsNothing);
-        expect(find.text('Profile'), findsNothing);
+        // Home is selected
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == true,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
 
@@ -269,12 +278,25 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Games Item 0'), findsOneWidget);
-        expect(find.byIcon(Icons.sports_esports_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.gamepad2), findsOneWidget);
         expect(find.text('Games'), findsOneWidget);
 
-        // Home should now be inactive
-        expect(find.byIcon(Icons.home_outlined), findsOneWidget);
-        expect(find.text('Home'), findsNothing);
+        // Games tab is now selected, Home is not
+        final gamesSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Games' &&
+              w.properties.selected == true,
+        );
+        expect(gamesSemantics, findsOneWidget);
+
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == false,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
 
@@ -290,12 +312,17 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Ranks Screen Content'), findsOneWidget);
-        expect(find.byIcon(Icons.leaderboard_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.trophy), findsOneWidget);
         expect(find.text('Ranks'), findsOneWidget);
 
-        // Games and Home are inactive
-        expect(find.byIcon(Icons.home_outlined), findsOneWidget);
-        expect(find.byIcon(Icons.sports_esports_outlined), findsOneWidget);
+        // Ranks tab is now selected
+        final ranksSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Ranks' &&
+              w.properties.selected == true,
+        );
+        expect(ranksSemantics, findsOneWidget);
       },
     );
 
@@ -311,8 +338,17 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('Profile Screen Content'), findsOneWidget);
-        expect(find.byIcon(Icons.person_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.user), findsOneWidget);
         expect(find.text('Profile'), findsOneWidget);
+
+        // Profile tab is now selected
+        final profileSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Profile' &&
+              w.properties.selected == true,
+        );
+        expect(profileSemantics, findsOneWidget);
       },
     );
 
@@ -340,7 +376,15 @@ void main() {
         await tester.tap(find.bySemanticsLabel('Home'));
         await tester.pumpAndSettle();
         expect(find.text('Home Item 0'), findsOneWidget);
-        expect(find.byIcon(Icons.home_rounded), findsOneWidget);
+        expect(find.byIcon(LucideIcons.home), findsOneWidget);
+
+        final homeSemantics = find.byWidgetPredicate(
+          (w) =>
+              w is Semantics &&
+              w.properties.label == 'Home' &&
+              w.properties.selected == true,
+        );
+        expect(homeSemantics, findsOneWidget);
       },
     );
   });

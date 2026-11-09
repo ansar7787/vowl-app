@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,6 +35,79 @@ class ArenaStatsScreen extends StatelessWidget {
     required this.user,
     this.isLoading = false,
   });
+
+  /// Accurately computes how many 1v1 Arena matches the user has played today.
+  ///
+  /// Combines timestamp verification from the authentic [coinHistory] ledger
+  /// with calendar day validation of [lastDuelDate], avoiding any legacy
+  /// accumulation bugs.
+  static int calculateDailyDuelsPlayedToday(UserEntity user) {
+    final now = DateTime.now();
+
+    // 1. Count actual duel transactions recorded today in coinHistory
+    int matchesTodayFromHistory = 0;
+    for (final entry in user.coinHistory) {
+      final titleKey = entry['titleKey'] as String? ?? '';
+      final isDuelEvent = titleKey.contains('arena_duel_win') ||
+          titleKey.contains('arena_duel_perfect') ||
+          titleKey.contains('arena_duel_consolation') ||
+          titleKey.contains('arena_duel_refund');
+      if (!isDuelEvent) continue;
+
+      final rawDate = entry['date'] ?? entry['timestamp'];
+      if (rawDate == null) continue;
+      try {
+        DateTime dt;
+        if (rawDate is DateTime) {
+          dt = rawDate;
+        } else if (rawDate is String) {
+          dt = DateTime.parse(rawDate);
+        } else {
+          final dynamic ts = rawDate;
+          dt = ts.toDate() as DateTime;
+        }
+        final localDt = dt.toLocal();
+        if (localDt.year == now.year &&
+            localDt.month == now.month &&
+            localDt.day == now.day) {
+          matchesTodayFromHistory++;
+        }
+      } catch (_) {}
+    }
+
+    if (matchesTodayFromHistory > 0) {
+      return matchesTodayFromHistory;
+    }
+
+    // 2. Validate calendar day of lastDuelDate if recorded
+    final lastDuel = user.lastDuelDate?.toLocal();
+    if (lastDuel != null) {
+      final bool isDuelToday = lastDuel.year == now.year &&
+          lastDuel.month == now.month &&
+          lastDuel.day == now.day;
+
+      // If last duel was definitively on an earlier date, count is strictly 0
+      if (!isDuelToday) {
+        return 0;
+      }
+    }
+
+    // If the user has coinHistory records but none from today, and no duel timestamp today:
+    if (user.coinHistory.isNotEmpty && lastDuel == null) {
+      return 0;
+    }
+
+    // 3. Fallback to dailyDuelsPlayedToday, guarding against legacy all-time duplication
+    if (user.dailyDuelsPlayedToday > 0) {
+      final totalDuels = user.duelWins + user.duelLosses;
+      if (totalDuels > 0 && user.dailyDuelsPlayedToday >= totalDuels) {
+        return 1;
+      }
+      return user.dailyDuelsPlayedToday;
+    }
+
+    return 0;
+  }
 
   /// Static route builder.
   static Route<void> route({required UserEntity user}) {
@@ -364,8 +438,8 @@ class _ArenaHeroCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Dynamic division title & accent color
-    final (String rankTitle, Color rankColor, IconData rankIcon) = _getRank();
+    final Color gaugeColor =
+        winRatePercent >= 50 ? AppColors.emerald500 : AppColors.indigo500;
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
@@ -373,7 +447,7 @@ class _ArenaHeroCard extends StatelessWidget {
 
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? rankColor.withValues(alpha: 0.25) : AppColors.slate200);
+        : (isDark ? gaugeColor.withValues(alpha: 0.25) : AppColors.slate200);
 
     return Container(
       padding: EdgeInsets.all(16.r),
@@ -396,14 +470,14 @@ class _ArenaHeroCard extends StatelessWidget {
             photoUrl: user.photoUrl,
             size: 54.r,
             border: Border.all(
-              color: rankColor.withValues(alpha: 0.4),
+              color: gaugeColor.withValues(alpha: 0.4),
               width: 2,
             ),
           ),
 
           SizedBox(width: 14.w),
 
-          // Player Name & Clean Rank Text (No card-in-card)
+          // Player Name & Real All-time 1v1 Arena Matches Record
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -428,24 +502,19 @@ class _ArenaHeroCard extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(rankIcon, size: 13.r, color: rankColor),
-                    SizedBox(width: 4.w),
+                    Icon(
+                      LucideIcons.swords,
+                      size: 13.r,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                    ),
+                    SizedBox(width: 5.w),
                     Text(
-                      rankTitle,
+                      '$totalDuels ${totalDuels == 1 ? "match" : "matches"} played',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.5.sp,
-                        fontWeight: FontWeight.w800,
-                        color: rankColor,
-                      ),
-                    ),
-                    Text(
-                      ' • $totalDuels played',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white54 : AppColors.slate500,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white70 : AppColors.slate600,
                       ),
                     ),
                   ],
@@ -460,23 +529,12 @@ class _ArenaHeroCard extends StatelessWidget {
           _CircularGauge(
             percent: winRatePercent,
             ratio: winRateRatio,
-            color: rankColor,
+            color: gaugeColor,
             isDark: isDark,
           ),
         ],
       ),
     );
-  }
-
-  (String, Color, IconData) _getRank() {
-    if (winRateRatio >= 0.70 && totalDuels >= 10) {
-      return ('Grandmaster', AppColors.amber500, LucideIcons.crown);
-    } else if (winRateRatio >= 0.50 && totalDuels >= 5) {
-      return ('Champion', AppColors.indigo500, LucideIcons.swords);
-    } else if (totalDuels >= 1) {
-      return ('Gladiator', AppColors.emerald500, LucideIcons.shieldCheck);
-    }
-    return ('Challenger', AppColors.blue500, LucideIcons.zap);
   }
 }
 
@@ -588,6 +646,8 @@ class _ArenaMetricsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dailyPlayed = ArenaStatsScreen.calculateDailyDuelsPlayedToday(user);
+
     return Column(
       children: [
         Row(
@@ -636,7 +696,7 @@ class _ArenaMetricsGrid extends StatelessWidget {
               child: _CenteredMetricTile(
                 icon: LucideIcons.flame,
                 label: 'Played Today',
-                value: '${user.dailyDuelsPlayedToday}',
+                value: '$dailyPlayed',
                 subtitle: 'Daily matches',
                 color: AppColors.amber500,
                 isDark: isDark,
@@ -783,8 +843,28 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalStaked = totalDuels * 30;
-    final totalEarned = (user.duelWins * 50) + (user.duelLosses * 10);
+    // 1. All-time career totals based on user's real duel record:
+    // 30 coins staked per duel played
+    final careerStaked = totalDuels * 30;
+    final careerEarned = (user.duelWins * 50) + (user.duelLosses * 10);
+
+    // 2. Incorporate any perfect win bonuses (+60) or recorded stakes from ledger:
+    int historyEarned = 0;
+    int historyStaked = 0;
+    for (final entry in user.coinHistory) {
+      final key = entry['titleKey'] as String? ?? '';
+      final amt = (entry['amount'] as num?)?.toInt() ?? 0;
+      if (key.contains('arena_duel_win') ||
+          key.contains('arena_duel_perfect') ||
+          key.contains('arena_duel_consolation')) {
+        historyEarned += amt;
+      } else if (key.contains('arena_duel_stake')) {
+        historyStaked += amt.abs();
+      }
+    }
+
+    final totalEarned = max(careerEarned, historyEarned);
+    final totalStaked = max(careerStaked, historyStaked);
     final netCoins = totalEarned - totalStaked;
     final bool isNetPositive = netCoins >= 0;
 
@@ -859,7 +939,7 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '+$totalEarned🪙',
+                      totalEarned > 0 ? '+$totalEarned🪙' : '0🪙',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -884,7 +964,7 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '-$totalStaked🪙',
+                      totalStaked > 0 ? '-$totalStaked🪙' : '0🪙',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -1006,13 +1086,51 @@ class _ArenaRecentMatches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Authentic 1v1 Word Arena activity history:
+    // - Entry stakes (-30 coins deducted at enter time)
+    // - Victories (+50 / +60 coins)
+    // - Defeats / consolations (+10 coins)
+    // - Draws / refunds (+30 coins)
     final duelHistory = user.coinHistory.where((entry) {
       final titleKey = entry['titleKey'] as String? ?? '';
       return titleKey.contains('arena_duel_win') ||
           titleKey.contains('arena_duel_perfect') ||
           titleKey.contains('arena_duel_consolation') ||
-          titleKey.contains('arena_duel_refund');
+          titleKey.contains('arena_duel_refund') ||
+          titleKey.contains('arena_duel_stake') ||
+          titleKey.contains('arena_duel_draw');
     }).toList();
+
+    // Fallback for legacy user accounts that hold duelWins/duelLosses
+    // before the coinHistory ledger was introduced:
+    final List<Map<String, dynamic>> resolvedHistory;
+    if (duelHistory.isNotEmpty) {
+      resolvedHistory = duelHistory;
+    } else if (user.duelWins > 0 || user.duelLosses > 0) {
+      final synthetic = <Map<String, dynamic>>[];
+      for (int i = 0; i < user.duelWins && synthetic.length < 10; i++) {
+        synthetic.add({
+          'titleKey': 'coin_history.arena_duel_win',
+          'amount': 50,
+          'isEarned': true,
+          'date': user.lastDuelDate?.toIso8601String() ?? '',
+        });
+      }
+      for (int i = 0; i < user.duelLosses && synthetic.length < 10; i++) {
+        synthetic.add({
+          'titleKey': 'coin_history.arena_duel_consolation',
+          'amount': 10,
+          'isEarned': true,
+          'date': user.lastDuelDate?.toIso8601String() ?? '',
+        });
+      }
+      resolvedHistory = synthetic;
+    } else {
+      resolvedHistory = [];
+    }
+
+    // Show up to 10 latest authentic match ledger cards
+    final displayHistory = resolvedHistory.take(10).toList();
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
@@ -1037,9 +1155,9 @@ class _ArenaRecentMatches extends StatelessWidget {
                 color: isDark ? Colors.white : AppColors.slate900,
               ),
             ),
-            if (duelHistory.isNotEmpty)
+            if (displayHistory.isNotEmpty)
               Text(
-                '${duelHistory.length} matches',
+                '${displayHistory.length} matches',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -1052,7 +1170,7 @@ class _ArenaRecentMatches extends StatelessWidget {
 
         SizedBox(height: 8.h),
 
-        if (duelHistory.isEmpty)
+        if (displayHistory.isEmpty)
           Container(
             padding: EdgeInsets.all(22.r),
             decoration: BoxDecoration(
@@ -1098,40 +1216,66 @@ class _ArenaRecentMatches extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
-            itemCount: duelHistory.length > 8 ? 8 : duelHistory.length,
+            itemCount: displayHistory.length,
             separatorBuilder: (_, _) => SizedBox(height: 6.h),
             itemBuilder: (context, index) {
-              final entry = duelHistory[index];
+              final entry = displayHistory[index];
               final titleKey = entry['titleKey'] as String? ?? '';
-              final amount = entry['amount'] as int? ?? 0;
+              final amount = (entry['amount'] as num?)?.toInt() ?? 0;
               final rawDate = entry['date'] ?? entry['timestamp'];
               final timeAgo = _formatRelativeTime(rawDate);
 
+              final bool isStake =
+                  titleKey.contains('arena_duel_stake') || amount < 0;
               final bool isWin =
                   titleKey.contains('win') || titleKey.contains('perfect');
               final bool isPerfect = titleKey.contains('perfect');
-              final bool isDraw = titleKey.contains('refund');
+              final bool isDraw =
+                  titleKey.contains('refund') || titleKey.contains('draw');
+              final bool isLoss = titleKey.contains('consolation') ||
+                  (!isStake && !isWin && !isDraw);
 
               final String label;
+              final String subtitle;
+              final String amountText;
               final Color statusColor;
               final IconData statusIcon;
 
-              if (isPerfect) {
+              if (isStake) {
+                // Entry fee deducted at matchmaking time -> RED color as required
+                label = 'Match Entry';
+                subtitle = '30 Coins Deducted';
+                amountText = '-${amount.abs()}🪙';
+                statusColor = AppColors.rose500;
+                statusIcon = LucideIcons.arrowDownRight;
+              } else if (isPerfect) {
+                // Perfect win 5/5 -> GREEN color
                 label = 'Perfect Win';
-                statusColor = AppColors.amber500;
+                subtitle = '+$amount Coins • +5 XP';
+                amountText = '+$amount🪙';
+                statusColor = AppColors.emerald500;
                 statusIcon = LucideIcons.crown;
               } else if (isWin) {
+                // Victory -> GREEN color
                 label = 'Victory';
+                subtitle = '+$amount Coins • +5 XP';
+                amountText = '+$amount🪙';
                 statusColor = AppColors.emerald500;
                 statusIcon = LucideIcons.trophy;
-              } else if (isDraw) {
-                label = 'Draw';
-                statusColor = AppColors.blue500;
-                statusIcon = LucideIcons.equal;
-              } else {
+              } else if (isLoss) {
+                // Defeat / Consolation -> BLUE color as required
                 label = 'Defeat';
-                statusColor = AppColors.rose500;
+                subtitle = '+$amount Coins Consolation';
+                amountText = '+$amount🪙';
+                statusColor = AppColors.blue500;
                 statusIcon = LucideIcons.shieldAlert;
+              } else {
+                // Draw / Refund -> AMBER color
+                label = 'Draw';
+                subtitle = '+$amount Coins Refunded';
+                amountText = '+$amount🪙';
+                statusColor = AppColors.amber500;
+                statusIcon = LucideIcons.equal;
               }
 
               return Container(
@@ -1167,11 +1311,7 @@ class _ArenaRecentMatches extends StatelessWidget {
                           ),
                           SizedBox(height: 1.h),
                           Text(
-                            isWin
-                                ? '+$amount Coins • +5 XP'
-                                : (isDraw
-                                      ? '+$amount Coins Refunded'
-                                      : '+$amount Coins'),
+                            subtitle,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.5.sp,
@@ -1189,7 +1329,7 @@ class _ArenaRecentMatches extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          '+$amount🪙',
+                          amountText,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
@@ -1227,15 +1367,17 @@ class _ArenaRecentMatches extends StatelessWidget {
     try {
       DateTime dt;
       if (timestamp is DateTime) {
-        dt = timestamp;
+        dt = timestamp.toLocal();
       } else if (timestamp is String) {
-        dt = DateTime.parse(timestamp);
+        dt = DateTime.parse(timestamp).toLocal();
+      } else if (timestamp is num) {
+        dt = DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()).toLocal();
       } else {
         final dynamic ts = timestamp;
-        dt = ts.toDate() as DateTime;
+        dt = (ts.toDate() as DateTime).toLocal();
       }
       final diff = DateTime.now().difference(dt);
-      if (diff.inSeconds < 60) return 'Just now';
+      if (diff.isNegative || diff.inSeconds < 60) return 'Just now';
       if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
       if (diff.inHours < 24) return '${diff.inHours}h ago';
       if (diff.inDays < 7) return '${diff.inDays}d ago';

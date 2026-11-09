@@ -579,6 +579,18 @@ class ArenaRepositoryImpl implements ArenaRepository {
         updatedDailyXpHistory = rawDailyXp;
       }
 
+      // Calculate daily duels: reset to 1 on a new day or increment if today
+      final now = DateTime.now();
+      final lastDuel =
+          (userDoc.data()?['lastDuelDate'] as Timestamp?)?.toDate();
+      final isSameCalendarDay = lastDuel != null &&
+          lastDuel.year == now.year &&
+          lastDuel.month == now.month &&
+          lastDuel.day == now.day;
+      final int newDailyDuels = isSameCalendarDay
+          ? (((userDoc.data()?['dailyDuelsPlayedToday'] as num?)?.toInt() ?? 0) + 1)
+          : 1;
+
       // Update user profile in Firestore
       final userRef = _firestore.collection('users').doc(currentUser.id);
       await userRef.update({
@@ -587,7 +599,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
           'totalExp': FieldValue.increment(5), // +5 XP TO DUEL WINNER
         if (isWinner) 'duelWins': FieldValue.increment(1),
         if (!isWinner && !isDraw) 'duelLosses': FieldValue.increment(1),
-        'dailyDuelsPlayedToday': FieldValue.increment(1),
+        'dailyDuelsPlayedToday': newDailyDuels,
         'coinHistory': updatedHistory,
         'recentActivities': updatedActivities,
         ...updatedDailyXpHistory != null
