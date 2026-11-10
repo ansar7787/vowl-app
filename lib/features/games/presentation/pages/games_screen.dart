@@ -31,6 +31,7 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/toll_gate_helper.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 
@@ -538,6 +539,11 @@ class _QuickResumeHeroCard extends StatelessWidget {
     final info = _QuickResumeInfo.resolve(user);
     final metadata = GameHelper.getGameMetadata(info.subtype, isDark: isDark);
     final color = metadata.color;
+    final isTollGate = TollGateHelper.isTollGate(
+      user: user,
+      gameType: info.subtype.name,
+      level: info.activeLevel,
+    );
 
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
@@ -752,12 +758,20 @@ class _QuickResumeHeroCard extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 16.w),
-                          // 1-Tap Play Button
+                          // 1-Tap Play / Toll Gate Unlock Button
                           ScaleButton(
                             onTap: () {
                               try {
                                 Haptics.vibrate(HapticsType.medium);
                               } catch (_) {}
+                              if (TollGateHelper.handleTollGateIfNeeded(
+                                context: context,
+                                user: user,
+                                gameType: info.subtype.name,
+                                level: info.activeLevel,
+                              )) {
+                                return;
+                              }
                               context.push(
                                 '/game?category=${Uri.encodeQueryComponent(info.category)}&gameType=${Uri.encodeQueryComponent(info.subtype.name)}&level=${info.activeLevel}',
                               );
@@ -769,15 +783,23 @@ class _QuickResumeHeroCard extends StatelessWidget {
                               ),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
-                                  colors: [
-                                    color,
-                                    color.withValues(alpha: 0.85),
-                                  ],
+                                  colors: isTollGate
+                                      ? [
+                                          AppColors.amber500,
+                                          const Color(0xFFD97706),
+                                        ]
+                                      : [
+                                          color,
+                                          color.withValues(alpha: 0.85),
+                                        ],
                                 ),
                                 borderRadius: BorderRadius.circular(14.r),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: color.withValues(alpha: 0.35),
+                                    color: (isTollGate
+                                            ? AppColors.amber500
+                                            : color)
+                                        .withValues(alpha: 0.35),
                                     blurRadius: 10,
                                     offset: const Offset(0, 3),
                                   ),
@@ -787,16 +809,23 @@ class _QuickResumeHeroCard extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
-                                    Icons.play_arrow_rounded,
+                                    isTollGate
+                                        ? Icons.lock_rounded
+                                        : Icons.play_arrow_rounded,
                                     color: Colors.white,
                                     size: 16.r,
                                   ),
                                   SizedBox(width: 4.w),
                                   Text(
-                                    context.tr(
-                                      'game.continue_button',
-                                      fallback: 'PLAY',
-                                    ),
+                                    isTollGate
+                                        ? context.tr(
+                                            'toll_gate.unlock_button',
+                                            fallback: 'UNLOCK (1 🗝️)',
+                                          )
+                                        : context.tr(
+                                            'game.continue_button',
+                                            fallback: 'PLAY',
+                                          ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 13.sp,
@@ -2644,6 +2673,11 @@ class _QuestGridCard extends StatelessWidget {
     final currentLevel = isMastered ? maxLevels : levelsCleared + 1;
     final isNew =
         levelsCleared == 0 && !user.categoryStats.containsKey(subtype.name);
+    final isTollGate = TollGateHelper.isTollGate(
+      user: user,
+      gameType: subtype.name,
+      level: currentLevel,
+    );
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
@@ -2732,12 +2766,20 @@ class _QuestGridCard extends StatelessWidget {
               ],
             ),
 
-            // Bottom CTA: Direct Play Button (1-Tap Entry!)
+            // Bottom CTA: Direct Play Button (1-Tap Entry / Toll Gate Unlock!)
             ScaleButton(
               onTap: () {
                 try {
                   Haptics.vibrate(HapticsType.light);
                 } catch (_) {}
+                if (TollGateHelper.handleTollGateIfNeeded(
+                  context: context,
+                  user: user,
+                  gameType: subtype.name,
+                  level: currentLevel,
+                )) {
+                  return;
+                }
                 context.push(
                   '/game?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(subtype.name)}&level=$currentLevel',
                 );
@@ -2747,10 +2789,16 @@ class _QuestGridCard extends StatelessWidget {
                 height: 28.h,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: displayColor.withValues(alpha: isDark ? 0.2 : 0.12),
+                  color: isTollGate
+                      ? AppColors.amber500
+                          .withValues(alpha: isDark ? 0.25 : 0.15)
+                      : displayColor
+                          .withValues(alpha: isDark ? 0.2 : 0.12),
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color: displayColor.withValues(alpha: 0.3),
+                    color: isTollGate
+                        ? AppColors.amber500.withValues(alpha: 0.45)
+                        : displayColor.withValues(alpha: 0.3),
                     width: 1.0,
                   ),
                 ),
@@ -2758,18 +2806,29 @@ class _QuestGridCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.play_arrow_rounded,
-                      color: displayColor,
-                      size: 14.r,
+                      isTollGate
+                          ? Icons.lock_rounded
+                          : Icons.play_arrow_rounded,
+                      color: isTollGate
+                          ? AppColors.amber500
+                          : displayColor,
+                      size: isTollGate ? 12.r : 14.r,
                     ),
                     SizedBox(width: 3.w),
                     Text(
-                      'PLAY',
+                      isTollGate
+                          ? context.tr(
+                              'toll_gate.unlock_short',
+                              fallback: 'UNLOCK',
+                            )
+                          : 'PLAY',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
-                        color: displayColor,
+                        color: isTollGate
+                            ? AppColors.amber500
+                            : displayColor,
                         letterSpacing: 0.8,
                       ),
                     ),

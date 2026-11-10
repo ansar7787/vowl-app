@@ -12,7 +12,9 @@ import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/quest_coins_screen.dart';
 import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
+import 'package:vowl/core/utils/toll_gate_helper.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // ---------------------------------------------------------------------------
@@ -136,6 +138,27 @@ class GameRoutes {
   static final List<RouteBase> routes = [
     GoRoute(
       path: '/game',
+      redirect: (context, state) {
+        final authBloc =
+            di.sl.isRegistered<AuthBloc>() ? di.sl<AuthBloc>() : null;
+        final user = authBloc?.state.user;
+        final gameTypeStr = state.uri.queryParameters['gameType'] ??
+            state.uri.queryParameters['subtype'];
+        final level =
+            int.tryParse(state.uri.queryParameters['level'] ?? '1') ?? 1;
+
+        if (gameTypeStr != null &&
+            TollGateHelper.isTollGate(
+              user: user,
+              gameType: gameTypeStr,
+              level: level,
+            )) {
+          final category =
+              state.uri.queryParameters['category'] ?? 'reading';
+          return '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(gameTypeStr)}';
+        }
+        return null;
+      },
       pageBuilder: (context, state) {
         final category = state.uri.queryParameters['category'] ?? 'reading';
         final level =
