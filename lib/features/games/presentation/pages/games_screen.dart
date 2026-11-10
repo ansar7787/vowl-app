@@ -15,6 +15,7 @@ import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_lobby_waiting_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
+import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
@@ -856,6 +857,10 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     _lastMatchTapTime = now;
 
     if (_isLoading) return;
+
+    if (!await ArenaNetworkHelper.ensureOnline(context)) return;
+    if (!mounted) return;
+
     final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
     if (liveUser.coins < 30) {
       _showRefuelDialog();
@@ -868,7 +873,10 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     ).push(ArenaMatchmakingScreen.route(user: liveUser));
   }
 
-  void _showJoinRoomDialog() {
+  Future<void> _showJoinRoomDialog() async {
+    if (!await ArenaNetworkHelper.ensureOnline(context)) return;
+    if (!mounted) return;
+
     final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
     if (liveUser.coins < 30) {
       _showRefuelDialog();
@@ -1167,6 +1175,12 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                             }
                             if (code.isEmpty) return;
 
+                            if (!await ArenaNetworkHelper.ensureOnline(context)) {
+                              setDialogState(() => isJoining = false);
+                              return;
+                            }
+                            if (!mounted) return;
+
                             setDialogState(() => isJoining = true);
                             try {
                               final repo = di.sl<ArenaRepository>();
@@ -1245,6 +1259,10 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
   Future<void> _createDuelInvite() async {
     if (_isLoading) return;
+
+    if (!await ArenaNetworkHelper.ensureOnline(context)) return;
+    if (!mounted) return;
+
     final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
     if (liveUser.coins < 30) {
       _showRefuelDialog();

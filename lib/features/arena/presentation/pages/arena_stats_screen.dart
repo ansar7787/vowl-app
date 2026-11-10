@@ -12,6 +12,7 @@ import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
+import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -1484,10 +1485,13 @@ class _PlayArenaDock extends StatelessWidget {
     );
   }
 
-  void _handlePlay(BuildContext context) {
+  Future<void> _handlePlay(BuildContext context) async {
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
+
+    if (!await ArenaNetworkHelper.ensureOnline(context)) return;
+    if (!context.mounted) return;
 
     final liveUser = context.read<AuthBloc>().state.user ?? user;
     if (liveUser.coins < 30) {

@@ -10,9 +10,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
@@ -100,6 +102,13 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
   }
 
   Future<void> _executeMatchmaking() async {
+    if (!await ArenaNetworkHelper.ensureOnline(context)) {
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
+      return;
+    }
+
     try {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.quickMatch(currentUser: widget.user);
@@ -117,6 +126,11 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
         return;
       }
       if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Matchmaking failed. Please check your connection and try again!',
+          type: CustomSnackBarType.error,
+        );
         Navigator.of(context).pop();
       }
     }

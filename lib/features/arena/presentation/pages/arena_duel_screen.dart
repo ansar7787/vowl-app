@@ -24,6 +24,7 @@ import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.
 import 'package:vowl/features/arena/presentation/widgets/arena_quit_match_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_result_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_score_hud.dart';
+import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_context_blitz_hero.dart';
@@ -820,10 +821,13 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
     );
   }
 
-  void _triggerRematch(BuildContext context, dynamic user) {
+  Future<void> _triggerRematch(BuildContext context, dynamic user) async {
     final authState = context.read<AuthBloc>().state;
     final currentUser = authState.user ?? (user is UserEntity ? user : null);
     if (currentUser == null) return;
+
+    if (!await ArenaNetworkHelper.ensureOnline(context)) return;
+    if (!context.mounted) return;
 
     if (currentUser.coins < 30) {
       ArenaRefuelHelper.showRefuelDialog(
