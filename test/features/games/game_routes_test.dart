@@ -459,4 +459,67 @@ void main() {
       },
     );
   });
+
+  group('GameRoutes - /game Toll Gate Redirect Guard', () {
+    late GoRoute gameRoute;
+
+    setUp(() {
+      gameRoute = findRoute('/game');
+    });
+
+    test('redirects to /levels when free user attempts to access Toll Gate level', () {
+      const freeUser = UserEntity(
+        id: 'u_free',
+        email: 'free@vowl.app',
+        isPremium: false,
+        unlockedLevels: {'sentenceBuilder': 3},
+      );
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(freeUser));
+
+      final state = createMockState(
+        '/game?category=writing&gameType=sentenceBuilder&level=4',
+      );
+      final redirect = gameRoute.redirect!(mockContext, state);
+
+      expect(
+        redirect,
+        equals('/levels?category=writing&gameType=sentenceBuilder'),
+      );
+    });
+
+    test('allows access (returns null) when level is unlocked for free user', () {
+      const freeUser = UserEntity(
+        id: 'u_free',
+        email: 'free@vowl.app',
+        isPremium: false,
+        unlockedLevels: {'sentenceBuilder': 3},
+      );
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(freeUser));
+
+      final state = createMockState(
+        '/game?category=writing&gameType=sentenceBuilder&level=3',
+      );
+      final redirect = gameRoute.redirect!(mockContext, state);
+
+      expect(redirect, isNull);
+    });
+
+    test('allows access (returns null) for premium user on any level', () {
+      const premiumUser = UserEntity(
+        id: 'u_prem',
+        email: 'prem@vowl.app',
+        isPremium: true,
+        unlockedLevels: {'sentenceBuilder': 3},
+      );
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(premiumUser));
+
+      final state = createMockState(
+        '/game?category=writing&gameType=sentenceBuilder&level=10',
+      );
+      final redirect = gameRoute.redirect!(mockContext, state);
+
+      expect(redirect, isNull);
+    });
+  });
 }
+

@@ -252,6 +252,53 @@ void main() {
     );
 
     testWidgets(
+      'renders Quick Resume Hero Card with UNLOCK (1 🗝️) button and intercepts with TollGateBottomSheet when at toll gate',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 2400);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+
+        const tollGateUser = UserEntity(
+          id: 'user_toll',
+          email: 'toll@vowl.app',
+          displayName: 'Alex Learner',
+          coins: 100,
+          currentStreak: 5,
+          isPremium: false,
+          completedLevels: {
+            'sentenceBuilder': [1, 2, 3],
+          },
+          unlockedLevels: {
+            'sentenceBuilder': 3,
+          },
+          categoryStats: {
+            'writing': 65,
+          },
+        );
+
+        when(() => mockAuthBloc.state)
+            .thenReturn(AuthState.authenticated(tollGateUser));
+
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('QUICK RESUME'), findsOneWidget);
+        expect(find.text('UNLOCK (1 🗝️)'), findsOneWidget);
+        expect(find.byIcon(Icons.lock_rounded), findsWidgets);
+
+        // Tapping the unlock button opens TollGateBottomSheet instead of pushing /game
+        await tester.tap(find.text('UNLOCK (1 🗝️)'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(BottomSheet), findsOneWidget);
+        expect(navigatedRoutes.any((r) => r.contains('/game')), isFalse);
+      },
+    );
+
+    testWidgets(
       'renders 1v1 PvP Duel and Quick Drills with exact production rewards',
       (tester) async {
         tester.view.physicalSize = const Size(800, 2400);
