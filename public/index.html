@@ -6,8 +6,19 @@
     <title>VOWL • Gamified English Learning App & 1v1 Arena Duels</title>
     <meta name="description" content="Master English fluency with Vowl. Interactive gamified curriculum across 9 realms, real-time 1v1 multiplayer duels, voice accent phonetics, and safe Kids Zone.">
     <meta name="keywords" content="Vowl, Learn English, English Learning App, English Duels, Gamified English, Vocabulary, Accent Training, Grammar Quests">
+    
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/icon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png">
+    <meta name="theme-color" content="#070B14">
+
+    <!-- OpenGraph & Social Sharing -->
     <meta property="og:title" content="VOWL • Learn English with Interactive Quests">
     <meta property="og:description" content="Master English speaking, vocabulary, and grammar through gamified lessons and live 1v1 Arena duels.">
+    <meta property="og:image" content="https://vowl.in/icon-512.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vowl.in/">
 
@@ -58,11 +69,11 @@
         /* Ambient glowing background meshes */
         .ambient-mesh {
             position: fixed;
-            width: 600px;
-            height: 600px;
+            width: 700px;
+            height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-            top: -150px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, transparent 70%);
+            top: -200px;
             left: 50%;
             transform: translateX(-50%);
             pointer-events: none;
@@ -71,12 +82,12 @@
 
         .ambient-mesh-2 {
             position: fixed;
-            width: 500px;
-            height: 500px;
+            width: 550px;
+            height: 550px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
-            bottom: 10%;
-            right: -100px;
+            bottom: 15%;
+            right: -120px;
             pointer-events: none;
             z-index: 0;
         }
@@ -95,7 +106,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
+            padding: 20px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -107,7 +118,15 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 12px;
+        }
+
+        .brand-app-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            object-fit: cover;
         }
 
         .brand-logo span {
@@ -147,10 +166,31 @@
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
         }
 
-        /* Hero Section */
+        /* Hero Section with Mascot */
         .hero {
-            padding: 70px 0 40px;
+            padding: 70px 0 30px;
             text-align: center;
+            position: relative;
+        }
+
+        .hero-mascot-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .hero-mascot-img {
+            width: 140px;
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(99, 102, 241, 0.35));
+            animation: mascotFloat 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes mascotFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+            100% { transform: translateY(4px) rotate(-1deg); }
         }
 
         .badge-pill {
@@ -165,15 +205,15 @@
             font-weight: 800;
             letter-spacing: 0.5px;
             color: #A5B4FC;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 3.6rem;
+            font-size: 3.8rem;
             font-weight: 900;
             line-height: 1.15;
             letter-spacing: -1.5px;
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto 24px;
         }
 
@@ -383,7 +423,7 @@
 
         .pillar-card-large {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 40px;
             align-items: center;
             background: var(--card-surface);
@@ -394,7 +434,7 @@
         }
 
         .pillar-card-large.reverse {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.9fr 1.1fr;
             direction: rtl;
         }
 
@@ -403,7 +443,7 @@
         }
 
         .pillar-content h3 {
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: 900;
             margin-bottom: 16px;
             line-height: 1.25;
@@ -484,24 +524,28 @@
         }
 
         .avatar-circle {
-            width: 64px;
-            height: 64px;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #1E293B;
+            overflow: hidden;
         }
 
-        .vs-badge {
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--amber);
-            background: rgba(245, 158, 11, 0.15);
-            padding: 8px 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(245, 158, 11, 0.3);
+        .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vs-badge-svg {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.4));
         }
 
         /* Dynamic Global Pricing Section */
@@ -718,6 +762,18 @@
             margin-top: 14px;
         }
 
+        .play-store-badge-img {
+            height: 48px;
+            width: auto;
+            border-radius: 8px;
+            margin-top: 16px;
+            transition: opacity 0.2s ease;
+        }
+
+        .play-store-badge-img:hover {
+            opacity: 0.9;
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding-top: 28px;
@@ -742,6 +798,7 @@
             .hero h1 { font-size: 2.1rem; }
             .stats-bar { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; }
             .footer-grid { grid-template-columns: 1fr; }
+            .hero-mascot-img { width: 110px; }
         }
     </style>
 </head>
@@ -750,9 +807,12 @@
     <div class="ambient-mesh-2"></div>
 
     <div class="container">
-        <!-- Top Navigation -->
+        <!-- Top Navigation with Authentic App Icon -->
         <nav>
-            <a href="/" class="brand-logo">VOWL<span>.</span></a>
+            <a href="/" class="brand-logo">
+                <img src="/icon-192.png" alt="Vowl App Icon" class="brand-app-icon">
+                <span>VOWL.</span>
+            </a>
             <div class="nav-links">
                 <a href="#realms">Curriculum</a>
                 <a href="#features">1v1 Arenas</a>
@@ -764,8 +824,12 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
+        <!-- Hero Section with Vowly Mascot -->
         <section class="hero">
+            <div class="hero-mascot-wrapper">
+                <img src="/assets/mascot/vowly_happy.webp" alt="Vowly Mascot" class="hero-mascot-img">
+            </div>
+
             <div class="badge-pill">
                 <span>⚡</span> GAMIFIED ENGLISH LEARNING & MULTIPLAYER ARENA
             </div>
@@ -890,7 +954,7 @@
             </div>
         </section>
 
-        <!-- Core Innovations Pillars -->
+        <!-- Core Innovations Pillars with Authentic Assets -->
         <section id="features" class="pillars-section">
             <div class="section-header">
                 <div class="section-tag">GAMEPLAY INNOVATION</div>
@@ -900,7 +964,7 @@
                 </p>
             </div>
 
-            <!-- Pillar 1: 1v1 Arena -->
+            <!-- Pillar 1: 1v1 Arena with SVG assets -->
             <div class="pillar-card-large">
                 <div class="pillar-content">
                     <span class="badge-pill" style="color: #FBBF24; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">⚔️ 1v1 MULTIPLAYER ARENA</span>
@@ -918,24 +982,29 @@
                     <div class="duel-badge-live">● LIVE MATCHMAKING ACTIVE</div>
                     <div class="duel-preview-match">
                         <div class="duel-player">
-                            <div class="avatar-circle" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">🦊</div>
+                            <div class="avatar-circle">
+                                <img src="/assets/mascot/vowly_happy.webp" alt="Vowly Avatar">
+                            </div>
                             <strong style="font-size: 0.95rem;">You (Challenger)</strong>
                             <span style="font-size: 0.8rem; color: #FBBF24;">⭐ Gold Tier</span>
                         </div>
-                        <div class="vs-badge">VS</div>
+                        <img src="/assets/illustrations/duel_vs.svg" alt="VS Badge" class="vs-badge-svg">
                         <div class="duel-player">
-                            <div class="avatar-circle" style="background: linear-gradient(135deg, #F59E0B, #D97706);">🦁</div>
+                            <div class="avatar-circle" style="background: linear-gradient(135deg, #F59E0B, #D97706); font-size: 1.8rem; color: white;">
+                                🦁
+                            </div>
                             <strong style="font-size: 0.95rem;">Global Opponent</strong>
                             <span style="font-size: 0.8rem; color: #94A3B8;">50 Coin Pot</span>
                         </div>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; font-size: 0.85rem; color: #94A3B8;">
-                        ⚡ Fast-paced 45-second round • Winner takes all coins!
+                    <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; font-size: 0.85rem; color: #94A3B8; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <img src="/assets/illustrations/duel_trophy.svg" alt="Trophy" style="width: 20px; height: 20px;">
+                        <span>Fast-paced 45-second round • Winner takes all coins!</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Pillar 2: Kids Star Vault -->
+            <!-- Pillar 2: Kids Star Vault with Vowly Thinking Mascot -->
             <div class="pillar-card-large reverse">
                 <div class="pillar-content">
                     <span class="badge-pill" style="color: #34D399; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">⭐ SAFE KIDS ZONE</span>
@@ -950,7 +1019,7 @@
                     </ul>
                 </div>
                 <div class="mockup-display" style="border-color: rgba(16, 185, 129, 0.2);">
-                    <div style="font-size: 2.4rem; margin-bottom: 12px;">🌟 ⭐ 🚀</div>
+                    <img src="/assets/mascot/vowly_thinking.webp" alt="Kids Mascot Vowly" style="width: 100px; height: auto; margin-bottom: 8px; filter: drop-shadow(0 10px 20px rgba(16,185,129,0.3));">
                     <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; color: #6EE7B7;">Kids Star Vault Active</h4>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
                         Earn golden stars on every perfect pronunciation and spelling quest!
@@ -1048,15 +1117,21 @@
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer with Play Store Badge & Assets -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="/" class="brand-logo" style="margin-bottom: 8px;">VOWL<span>.</span></a>
+                    <a href="/" class="brand-logo" style="margin-bottom: 8px;">
+                        <img src="/icon-192.png" alt="Vowl Icon" class="brand-app-icon" style="width: 32px; height: 32px;">
+                        <span>VOWL.</span>
+                    </a>
                     <p class="footer-desc">
                         An elite interactive language learning mobile app designed to make English fluency rewarding, accessible, and thrilling through gamified quests and live 1v1 arenas.
                     </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
+                        <img src="/assets/images/play_store.png" alt="Get it on Google Play" class="play-store-badge-img">
+                    </a>
                 </div>
                 <div class="footer-col">
                     <h4>Learning Arenas</h4>
