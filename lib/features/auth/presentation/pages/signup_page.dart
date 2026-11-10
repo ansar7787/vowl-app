@@ -519,10 +519,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               recognizer: TapGestureRecognizer()
                                                                                 ..onTap = () async {
                                                                                   final url = Uri.parse(
-                                                                                    context.tr(
-                                                                                      'settings.terms_url',
-                                                                                      fallback: AppUrls.termsOfService,
-                                                                                    ),
+                                                                                    AppUrls.termsOfService,
                                                                                   );
                                                                                   if (await canLaunchUrl(
                                                                                     url,
@@ -560,10 +557,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               recognizer: TapGestureRecognizer()
                                                                                 ..onTap = () async {
                                                                                   final url = Uri.parse(
-                                                                                    context.tr(
-                                                                                      'settings.privacy_url',
-                                                                                      fallback: AppUrls.privacyPolicy,
-                                                                                    ),
+                                                                                    AppUrls.privacyPolicy,
                                                                                   );
                                                                                   if (await canLaunchUrl(
                                                                                     url,
