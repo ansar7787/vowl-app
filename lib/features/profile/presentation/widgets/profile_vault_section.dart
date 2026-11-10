@@ -25,6 +25,7 @@ class _LocalPalette {
   _LocalPalette._();
   static const Color color4f46e5 = Color(0xFF4F46E5);
   static const Color colordc2626 = Color(0xFFDC2626);
+  static const Color colore11d48 = Color(0xFFE11D48);
 }
 
 /// Vault & Rewards section containing Ambassador referral tools, Key/Coin store,
@@ -580,7 +581,7 @@ class ProfileVaultSection extends StatelessWidget {
               },
             ),
 
-          // 4. Quarantined Kids Zone
+          // 4. Kids Zone
           if (hasKidsData) ...[
             SizedBox(height: 20.h),
             Text(
@@ -593,6 +594,28 @@ class ProfileVaultSection extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12.h),
+            ProfileFeatureCard(
+              iconContent: Icon(
+                Icons.child_care_rounded,
+                color: Colors.white,
+                size: 24.r,
+              ),
+              color: AppColors.rose500,
+              shadowColor: _LocalPalette.colore11d48,
+              title: context.tr(
+                'profile.kids_learning_zone_title',
+                fallback: 'Kids Learning Zone',
+              ),
+              subtitle: context.tr(
+                'profile.kids_learning_zone_subtitle',
+                fallback: 'Phonics, alphabet, animals & 12 early learning worlds!',
+              ),
+              onTap: () {
+                di.sl<HapticService>().selection();
+                context.push(AppRouter.kidsZoneRoute);
+              },
+            ),
+            SizedBox(height: 14.h),
             ProfileFeatureCard(
               iconContent: const Icon(
                 Icons.toys_rounded,
