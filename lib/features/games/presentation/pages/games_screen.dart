@@ -819,8 +819,8 @@ class _QuickResumeHeroCard extends StatelessWidget {
                                   Text(
                                     isTollGate
                                         ? context.tr(
-                                            'toll_gate.unlock_button',
-                                            fallback: 'UNLOCK (1 🗝️)',
+                                            'toll_gate.unlock_short',
+                                            fallback: 'UNLOCK',
                                           )
                                         : context.tr(
                                             'game.continue_button',
@@ -834,6 +834,14 @@ class _QuickResumeHeroCard extends StatelessWidget {
                                       letterSpacing: 0.8,
                                     ),
                                   ),
+                                  if (isTollGate) ...[
+                                    SizedBox(width: 4.w),
+                                    Icon(
+                                      Icons.vpn_key_rounded,
+                                      color: Colors.white,
+                                      size: 14.r,
+                                    ),
+                                  ],
                                 ],
                               ),
                             ),
@@ -1570,7 +1578,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                                             ),
                                             SizedBox(width: 5.w),
                                             Text(
-                                              'Battle (30🪙)',
+                                              'Battle 30🪙',
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 11.5.sp,
@@ -2812,7 +2820,7 @@ class _QuestGridCard extends StatelessWidget {
                       color: isTollGate
                           ? AppColors.amber500
                           : displayColor,
-                      size: isTollGate ? 12.r : 14.r,
+                      size: isTollGate ? 11.r : 14.r,
                     ),
                     SizedBox(width: 3.w),
                     Text(
@@ -2824,7 +2832,7 @@ class _QuestGridCard extends StatelessWidget {
                           : 'PLAY',
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
+                        fontSize: isTollGate ? 9.5.sp : 10.sp,
                         fontWeight: FontWeight.w900,
                         color: isTollGate
                             ? AppColors.amber500
@@ -2832,6 +2840,14 @@ class _QuestGridCard extends StatelessWidget {
                         letterSpacing: 0.8,
                       ),
                     ),
+                    if (isTollGate) ...[
+                      SizedBox(width: 3.w),
+                      Icon(
+                        Icons.vpn_key_rounded,
+                        color: AppColors.amber500,
+                        size: 11.r,
+                      ),
+                    ],
                   ],
                 ),
               ),
