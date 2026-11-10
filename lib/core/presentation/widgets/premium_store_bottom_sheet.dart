@@ -18,6 +18,7 @@ import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
@@ -977,7 +978,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               onTap: () {
                 di.sl<HapticService>().selection();
                 final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/terms.html',
+                  AppUrls.termsOfService,
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
@@ -1008,7 +1009,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               onTap: () {
                 di.sl<HapticService>().selection();
                 final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/privacy.html',
+                  AppUrls.privacyPolicy,
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
@@ -1039,7 +1040,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               onTap: () {
                 di.sl<HapticService>().selection();
                 final url = Uri.parse(
-                  'https://vowl-official.github.io/vowl-legal/refund.html',
+                  AppUrls.refundPolicy,
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/network/network_info.dart';
@@ -360,8 +361,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
         context.tr('settings.terms_of_service', fallback: 'Terms of Service');
 
     final urlString = isTerms
-        ? 'https://vowl-official.github.io/vowl-legal/terms.html'
-        : 'https://vowl-official.github.io/vowl-legal/privacy.html';
+        ? AppUrls.termsOfService
+        : AppUrls.privacyPolicy;
 
     final Uri url = Uri.parse(urlString);
 

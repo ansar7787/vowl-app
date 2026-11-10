@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
 import 'package:vowl/features/referral/presentation/bloc/referral_state.dart';
@@ -55,7 +56,7 @@ class ReferralCubit extends Cubit<ReferralState> {
     final message =
         '🚀 Join me on Vowl to level up your English skills!\n'
         'Use my invite code $code to unlock 100 Bonus Coins + 1 Day VIP Trial immediately:\n'
-        'https://vowl-acbc5.web.app/invite/$code';
+        '${AppUrls.invite(code)}';
 
     await SharePlus.instance.share(
       ShareParams(

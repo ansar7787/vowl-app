@@ -21,6 +21,7 @@ import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 
@@ -520,7 +521,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                                   final url = Uri.parse(
                                                                                     context.tr(
                                                                                       'settings.terms_url',
-                                                                                      fallback: 'https://vowl-official.github.io/vowl-legal/terms.html',
+                                                                                      fallback: AppUrls.termsOfService,
                                                                                     ),
                                                                                   );
                                                                                   if (await canLaunchUrl(
@@ -561,7 +562,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                                   final url = Uri.parse(
                                                                                     context.tr(
                                                                                       'settings.privacy_url',
-                                                                                      fallback: 'https://vowl-official.github.io/vowl-legal/privacy.html',
+                                                                                      fallback: AppUrls.privacyPolicy,
                                                                                     ),
                                                                                   );
                                                                                   if (await canLaunchUrl(
