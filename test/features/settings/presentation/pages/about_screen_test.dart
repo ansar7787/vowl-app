@@ -208,7 +208,7 @@ void main() {
 
       expect(
         fakeUrlLauncher.lastLaunchedUrl,
-        'https://vowl-official.github.io/vowl-legal/privacy.html',
+        'https://vowl.in/privacy.html',
       );
       expect(
         fakeUrlLauncher.lastOptions?.mode,
@@ -235,7 +235,7 @@ void main() {
 
       expect(
         fakeUrlLauncher.lastLaunchedUrl,
-        'https://vowl-official.github.io/vowl-legal/terms.html',
+        'https://vowl.in/terms.html',
       );
       expect(
         fakeUrlLauncher.lastOptions?.mode,

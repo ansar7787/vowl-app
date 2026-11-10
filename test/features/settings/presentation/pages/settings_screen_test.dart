@@ -807,7 +807,7 @@ void main() {
 
       expect(
         mockUrlLauncher.lastLaunchedUrl,
-        'https://vowl-official.github.io/vowl-legal/terms.html',
+        'https://vowl.in/terms.html',
       );
     });
 
@@ -821,7 +821,7 @@ void main() {
 
       expect(
         mockUrlLauncher.lastLaunchedUrl,
-        'https://vowl-official.github.io/vowl-legal/privacy.html',
+        'https://vowl.in/privacy.html',
       );
     });
 

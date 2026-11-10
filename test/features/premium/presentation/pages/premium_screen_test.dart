@@ -1481,19 +1481,19 @@ void main() {
         await scrollAndTap(tester, find.text('Terms'));
         expect(
           mockUrlLauncherPlatform.lastLaunchedUrl,
-          equals('https://vowl-official.github.io/vowl-legal/terms.html'),
+          equals('https://vowl.in/terms.html'),
         );
 
         await scrollAndTap(tester, find.text('Privacy'));
         expect(
           mockUrlLauncherPlatform.lastLaunchedUrl,
-          equals('https://vowl-official.github.io/vowl-legal/privacy.html'),
+          equals('https://vowl.in/privacy.html'),
         );
 
         await scrollAndTap(tester, find.text('Refund Policy'));
         expect(
           mockUrlLauncherPlatform.lastLaunchedUrl,
-          equals('https://vowl-official.github.io/vowl-legal/refund.html'),
+          equals('https://vowl.in/refund.html'),
         );
 
         await tester.pumpWidget(const SizedBox());
