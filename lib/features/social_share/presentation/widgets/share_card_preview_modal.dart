@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
@@ -40,7 +41,7 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
       shareText =
           '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
           'Can you beat my score? Enter room code: $code in the app, or tap:\n'
-          'https://vowl-acbc5.web.app/duel/$code';
+          '${AppUrls.duel(code)}';
     } else if (widget.data.type == ShareCardType.arenaInvite) {
       final code = widget.data.roomCode ?? 'VOWL';
       shareText =
@@ -48,19 +49,19 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
           'Room Code: $code\n'
           'Winner takes 50 Coins + 5 XP!\n\n'
           'Tap to join the duel:\n'
-          'https://vowl-acbc5.web.app/duel/$code';
+          '${AppUrls.duel(code)}';
     } else if (widget.data.type == ShareCardType.referral) {
       final code = widget.data.referralCode ?? '';
       shareText =
           '🚀 Join me on Vowl to level up your English skills!\n'
           'Use my invite code $code to unlock 100 Bonus Coins + Free VIP access immediately:\n'
-          'https://vowl-acbc5.web.app/invite/$code';
+          '${AppUrls.invite(code)}';
     } else {
       final inviteCopy = widget.data.referralCode != null
           ? 'Join me on Vowl using code ${widget.data.referralCode} to claim 100 Bonus Coins & Free VIP!'
           : 'Leveling up my English skills on Vowl!';
       shareText =
-          '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\nhttps://vowl-acbc5.web.app';
+          '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\n${AppUrls.baseDomain}';
     }
 
     await SocialShareRasterizer.captureAndShare(

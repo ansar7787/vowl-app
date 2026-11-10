@@ -296,11 +296,11 @@ The function is written in Node.js and uses `googleapis` and `firebase-admin`.
 
 ## Legal
 
-Policies are hosted on GitHub Pages for store listings:
+Official policies hosted on production domain (`vowl.in`):
 
-- [Privacy Policy](https://vowl-official.github.io/vowl-legal/privacy.html)
-- [Terms of Service](https://vowl-official.github.io/vowl-legal/terms.html)
-- [Refund Policy](https://vowl-official.github.io/vowl-legal/refund.html)
+- [Privacy Policy](https://vowl.in/privacy.html)
+- [Terms of Service](https://vowl.in/terms.html)
+- [Refund Policy](https://vowl.in/refund.html)
 
 ---
 

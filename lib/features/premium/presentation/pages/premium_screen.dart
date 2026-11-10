@@ -1,3 +1,4 @@
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -1875,7 +1876,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
               onTap: () => _launchLegalUrl(
-                'https://vowl-official.github.io/vowl-legal/terms.html',
+                AppUrls.termsOfService,
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
@@ -1902,7 +1903,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
               onTap: () => _launchLegalUrl(
-                'https://vowl-official.github.io/vowl-legal/privacy.html',
+                AppUrls.privacyPolicy,
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
@@ -1929,7 +1930,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
               onTap: () => _launchLegalUrl(
-                'https://vowl-official.github.io/vowl-legal/refund.html',
+                AppUrls.refundPolicy,
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),

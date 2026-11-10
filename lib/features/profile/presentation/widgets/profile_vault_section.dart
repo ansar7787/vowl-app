@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
@@ -357,7 +358,7 @@ class ProfileVaultSection extends StatelessWidget {
                           await SharePlus.instance.share(
                             ShareParams(
                               text:
-                                  'Practice English with me on Vowl! Use my invite code $code to unlock 100 Bonus Coins and 1 Day of VIP access:\nhttps://vowl-acbc5.web.app/invite/$code',
+                                  'Practice English with me on Vowl! Use my invite code $code to unlock 100 Bonus Coins and 1 Day of VIP access:\n${AppUrls.invite(code)}',
                               subject: 'Join me on Vowl!',
                             ),
                           );

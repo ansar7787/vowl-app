@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -92,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final shareText =
         'Proud of my learning progress on Vowl! 🚀\n'
         'Use my invite code $code to unlock 100 Bonus Coins & VIP perks:\n'
-        'https://vowl-acbc5.web.app/invite/$code';
+        '${AppUrls.invite(code)}';
 
     try {
       await SocialShareRasterizer.captureAndShare(

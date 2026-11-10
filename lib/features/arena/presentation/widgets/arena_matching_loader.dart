@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
@@ -318,7 +319,7 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                                       '⚔️ I\'m waiting for you in the Vowl 1v1 Arena!\n'
                                       'Room Code: $code\n\n'
                                       'Tap the link to join our vocabulary duel:\n'
-                                      'https://vowl-acbc5.web.app/duel/$code',
+                                      '${AppUrls.duel(code)}',
                                   subject: '⚔️ 1v1 Vocabulary Duel Challenge',
                                 ),
                               );

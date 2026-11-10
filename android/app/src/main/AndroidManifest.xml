@@ -67,11 +67,13 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="vowl"/>
             </intent-filter>
-            <!-- Deep linking with HTTPS App Links (vowl-acbc5.web.app) -->
+            <!-- Deep linking with HTTPS App Links (vowl.in & vowl-acbc5.web.app) -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="vowl.in" android:pathPrefix="/duel"/>
+                <data android:scheme="https" android:host="vowl.in" android:pathPrefix="/invite"/>
                 <data android:scheme="https" android:host="vowl-acbc5.web.app" android:pathPrefix="/duel"/>
                 <data android:scheme="https" android:host="vowl-acbc5.web.app" android:pathPrefix="/invite"/>
             </intent-filter>

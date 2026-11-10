@@ -1,3 +1,4 @@
+import 'package:vowl/core/constants/app_urls.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
@@ -176,7 +177,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         icon: Icons.policy_rounded,
                         isDark: isDark,
                         onTap: () => _launchUrl(
-                          'https://vowl-official.github.io/vowl-legal/privacy.html',
+                          AppUrls.privacyPolicy,
                         ),
                       ),
                       SizedBox(height: 16.h),
@@ -186,7 +187,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         icon: Icons.description_rounded,
                         isDark: isDark,
                         onTap: () => _launchUrl(
-                          'https://vowl-official.github.io/vowl-legal/terms.html',
+                          AppUrls.termsOfService,
                         ),
                       ),
                     ],
