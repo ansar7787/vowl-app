@@ -3,182 +3,1137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOWL - Learn English with Interactive Quests</title>
+    <title>VOWL • Gamified English Learning App & 1v1 Arena Duels</title>
+    <meta name="description" content="Master English fluency with Vowl. Interactive gamified curriculum across 9 realms, real-time 1v1 multiplayer duels, voice accent phonetics, and safe Kids Zone.">
+    <meta name="keywords" content="Vowl, Learn English, English Learning App, English Duels, Gamified English, Vocabulary, Accent Training, Grammar Quests">
+    <meta property="og:title" content="VOWL • Learn English with Interactive Quests">
+    <meta property="og:description" content="Master English speaking, vocabulary, and grammar through gamified lessons and live 1v1 Arena duels.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vowl.in/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #4F46E5;
-            --primary-dark: #3730A3;
+            --primary: #6366F1;
+            --primary-hover: #4F46E5;
+            --primary-light: rgba(99, 102, 241, 0.15);
             --amber: #F59E0B;
-            --dark: #0F172A;
-            --slate: #475569;
-            --bg-light: #F8FAFC;
+            --amber-hover: #D97706;
+            --amber-light: rgba(245, 158, 11, 0.15);
+            --emerald: #10B981;
+            --emerald-light: rgba(16, 185, 129, 0.15);
+            --dark-bg: #070B14;
+            --dark-surface: #0E1526;
+            --card-surface: #141C31;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: rgba(99, 102, 241, 0.35);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-sub: #64748B;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; background: var(--bg-light); color: var(--dark); line-height: 1.6; }
-        
-        /* Navbar */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 1.75rem; font-weight: 900; color: var(--primary); letter-spacing: -0.5px; }
-        .logo span { color: var(--amber); }
-        .nav-links a { margin-left: 24px; text-decoration: none; color: var(--slate); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
 
-        /* Hero */
-        .hero { max-width: 1000px; margin: 40px auto; padding: 0 24px; text-align: center; }
-        .badge { display: inline-block; background: #EEF2FF; color: var(--primary); padding: 8px 18px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid #C7D2FE; }
-        h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: var(--dark); letter-spacing: -1px; }
-        h1 span { background: linear-gradient(135deg, var(--primary), #818CF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.25rem; color: var(--slate); max-width: 700px; margin: 0 auto 32px; }
-        
-        /* Features */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 60px auto; padding: 0 24px; }
-        .feature-card { background: white; padding: 32px; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; text-align: left; }
-        .feature-icon { font-size: 2.2rem; margin-bottom: 16px; }
-        .feature-card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 800; color: var(--dark); }
-        .feature-card p { color: var(--slate); font-size: 0.95rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        /* Pricing & Digital Offerings */
-        .pricing-section { max-width: 1000px; margin: 80px auto; padding: 0 24px; text-align: center; }
-        .pricing-section h2 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
-        .pricing-section .sub { color: var(--slate); margin-bottom: 40px; font-size: 1.1rem; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .pricing-card { background: white; border-radius: 24px; padding: 36px 28px; border: 1px solid #E2E8F0; position: relative; }
-        .pricing-card.featured { border: 2px solid var(--primary); box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1); }
-        .pricing-card .tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; }
-        .pricing-card h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
-        .price { font-size: 2.4rem; font-weight: 900; color: var(--dark); margin-bottom: 16px; }
-        .price span { font-size: 0.9rem; font-weight: 600; color: var(--slate); }
-        .pricing-card ul { list-style: none; text-align: left; margin: 24px 0; }
-        .pricing-card li { margin-bottom: 12px; font-size: 0.95rem; color: var(--slate); display: flex; align-items: center; }
-        .pricing-card li::before { content: "✓"; color: #10B981; font-weight: 900; margin-right: 10px; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        /* Footer & Compliance */
-        footer { background: var(--dark); color: #94A3B8; padding: 60px 24px 30px; margin-top: 100px; }
-        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-        .footer-brand h3 { color: white; font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; }
-        .footer-brand p { font-size: 0.95rem; line-height: 1.7; max-width: 400px; }
-        .footer-links h4 { color: white; font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #94A3B8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        .footer-links a:hover { color: white; }
-        .bottom-bar { border-top: 1px solid #1E293B; margin-top: 48px; padding-top: 24px; text-align: center; font-size: 0.85rem; }
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            nav { padding: 16px 24px; }
-            .footer-content { grid-template-columns: 1fr; gap: 32px; }
+        /* Ambient glowing background meshes */
+        .ambient-mesh {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-mesh-2 {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            bottom: 10%;
+            right: -100px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .brand-logo {
+            font-size: 1.85rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .brand-logo span {
+            color: var(--amber);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 0 40px;
+            text-align: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 6px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #A5B4FC;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            max-width: 900px;
+            margin: 0 auto 24px;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #A5B4FC, #6366F1, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card-surface);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Stat highlights bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: rgba(20, 28, 49, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 24px 32px;
+            max-width: 960px;
+            margin: 0 auto 80px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .stat-number.gold { color: var(--amber); }
+        .stat-number.indigo { color: #818CF8; }
+        .stat-number.emerald { color: var(--emerald); }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--amber);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* 9 Realms Grid */
+        .realms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 100px;
+        }
+
+        .realm-card {
+            background: var(--card-surface);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .realm-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .realm-icon-box {
+            width: 58px;
+            height: 58px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .realm-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .realm-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .realm-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Specific Realm Category Colors */
+        .speaking-theme { background: rgba(216, 67, 21, 0.15); color: #FF7043; border: 1px solid rgba(216, 67, 21, 0.3); }
+        .listening-theme { background: rgba(0, 131, 143, 0.15); color: #4DD0E1; border: 1px solid rgba(0, 131, 143, 0.3); }
+        .reading-theme { background: rgba(46, 125, 50, 0.15); color: #66BB6A; border: 1px solid rgba(46, 125, 50, 0.3); }
+        .writing-theme { background: rgba(94, 53, 177, 0.15); color: #B388FF; border: 1px solid rgba(94, 53, 177, 0.3); }
+        .grammar-theme { background: rgba(21, 101, 192, 0.15); color: #64B5F6; border: 1px solid rgba(21, 101, 192, 0.3); }
+        .vocab-theme { background: rgba(106, 27, 154, 0.15); color: #CE93D8; border: 1px solid rgba(106, 27, 154, 0.3); }
+        .accent-theme { background: rgba(0, 151, 167, 0.15); color: #26C6DA; border: 1px solid rgba(0, 151, 167, 0.3); }
+        .roleplay-theme { background: rgba(183, 28, 28, 0.15); color: #EF5350; border: 1px solid rgba(183, 28, 28, 0.3); }
+        .mastery-theme { background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+        /* Feature Pillars Showcase */
+        .pillars-section {
+            padding: 40px 0 100px;
+        }
+
+        .pillar-card-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--card-surface);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            padding: 48px;
+            margin-bottom: 40px;
+        }
+
+        .pillar-card-large.reverse {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl;
+        }
+
+        .pillar-card-large.reverse > * {
+            direction: ltr;
+        }
+
+        .pillar-content h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .pillar-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
+
+        .bullet-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--emerald-light);
+            color: var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 900;
+        }
+
+        /* Mockup Box inside pillar */
+        .mockup-display {
+            background: #090E1B;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            position: relative;
+        }
+
+        .duel-badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #F87171;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .duel-preview-match {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .duel-player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .avatar-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .vs-badge {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--amber);
+            background: rgba(245, 158, 11, 0.15);
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Dynamic Global Pricing Section */
+        .pricing-section {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .currency-toggle-wrapper {
+            display: inline-flex;
+            background: var(--dark-surface);
+            border: 1px solid var(--card-border);
+            padding: 4px;
+            border-radius: 999px;
+            margin-bottom: 40px;
+            gap: 4px;
+        }
+
+        .currency-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .currency-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--card-surface);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 40px 32px;
+            text-align: left;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 25px 50px -15px rgba(99, 102, 241, 0.25);
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.08) 0%, var(--card-surface) 100%);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), #818CF8);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .plan-name {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .plan-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .plan-price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .plan-period {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .plan-features li {
+            font-size: 0.95rem;
+            color: #CBD5E1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 0;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .plan-btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+        }
+
+        .plan-btn.primary:hover {
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .plan-btn.outline {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: white;
+        }
+
+        .plan-btn.outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-note {
+            margin-top: 32px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            background: #04070D;
+            padding: 70px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 380px;
+            margin-top: 14px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.6rem; }
+            .pillar-card-large, .pillar-card-large.reverse { grid-template-columns: 1fr; padding: 32px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-links a:not(.btn-nav) { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.1rem; }
+            .stats-bar { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">VOWL<span>.</span></div>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+    <div class="ambient-mesh"></div>
+    <div class="ambient-mesh-2"></div>
 
-    <section class="hero">
-        <div class="badge">🚀 GAMIFIED ENGLISH LEARNING APP</div>
-        <h1>Master English Fluency With <span>Interactive Quests</span></h1>
-        <p>Learn vocabulary, grammar, accent pronunciation, and listening with structured gamified lessons, voice speech recognition, and instant phonetic feedback.</p>
-    </section>
+    <div class="container">
+        <!-- Top Navigation -->
+        <nav>
+            <a href="/" class="brand-logo">VOWL<span>.</span></a>
+            <div class="nav-links">
+                <a href="#realms">Curriculum</a>
+                <a href="#features">1v1 Arenas</a>
+                <a href="#pricing">Pricing</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="btn-nav">
+                    Get App 📱
+                </a>
+            </div>
+        </nav>
 
-    <section id="features" class="features">
-        <div class="feature-card">
-            <div class="feature-icon">🎙️</div>
-            <h3>Speech & Accent Analysis</h3>
-            <p>Practice speaking and receive instantaneous on-device phonetic feedback to refine your accent and natural cadence.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🏆</div>
-            <h3>9 Interactive Arenas</h3>
-            <p>Master vocabulary, grammar, reading comprehension, writing, and roleplay through bite-sized interactive quests.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Daily Streak & Trophies</h3>
-            <p>Maintain daily streaks, collect XP rewards, unlock achievement badges, and compete globally on leaderboards.</p>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing-section">
-        <h2>Transparent Pricing</h2>
-        <p class="sub">Choose the plan that suits your learning journey. All purchases deliver instant in-app digital access.</p>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h4>Starter Pack</h4>
-                <div class="price">₹49 <span>/ 100 Coins</span></div>
-                <p style="color: var(--slate); font-size: 0.85rem;">Virtual In-App Currency</p>
-                <ul>
-                    <li>100 Virtual Coins</li>
-                    <li>Unlock Hint Boosters</li>
-                    <li>Freeze Daily Streaks</li>
-                    <li>Instant Electronic Delivery</li>
-                </ul>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge-pill">
+                <span>⚡</span> GAMIFIED ENGLISH LEARNING & MULTIPLAYER ARENA
+            </div>
+            <h1>
+                Master English Fluency With <span class="gradient-text">Interactive Quests & 1v1 Duels</span>
+            </h1>
+            <p>
+                Level up your speech, vocabulary, accent pronunciation, and grammar across 9 interactive realms. Compete in live 1v1 multiplayer duels and unlock global leaderboard achievements.
+            </p>
+            <div class="hero-ctas">
+                <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="btn-primary">
+                    <span>📱</span> Download on Google Play
+                </a>
+                <a href="/duel" class="btn-secondary">
+                    <span>⚔️</span> Accept a 1v1 Duel
+                </a>
             </div>
 
-            <div class="pricing-card featured">
-                <div class="tag">RECOMMENDED</div>
-                <h4>Monthly VIP</h4>
-                <div class="price">₹199 <span>/ Month</span></div>
-                <p style="color: var(--slate); font-size: 0.85rem;">1-Month Time-Limited Access</p>
-                <ul>
-                    <li>100% Ad-Free Experience</li>
-                    <li>Infinite Lives in all Quests</li>
-                    <li>3X Coin Multiplier on Levels</li>
-                    <li>Exclusive VIP Trophies</li>
-                </ul>
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number gold">9</div>
+                    <div class="stat-label">Curriculum Realms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number indigo">1v1 PvP</div>
+                    <div class="stat-label">Live Coin Duels</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number emerald">Real-time</div>
+                    <div class="stat-label">Speech Phonetics</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold">Dedicated</div>
+                    <div class="stat-label">Kids Star Vault</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9 Curriculum Realms Showcase -->
+        <section id="realms">
+            <div class="section-header">
+                <div class="section-tag">COMPREHENSIVE CURRICULUM</div>
+                <h2 class="section-title">Explore The 9 Learning Realms</h2>
+                <p class="section-desc">
+                    Each realm is crafted with specialized gamified levels, immediate acoustic and tactile dopamine feedback, and continuous S-curve mastery progression.
+                </p>
             </div>
 
-            <div class="pricing-card">
-                <h4>Yearly VIP</h4>
-                <div class="price">₹999 <span>/ Year</span></div>
-                <p style="color: var(--slate); font-size: 0.85rem;">12-Months Time-Limited Access</p>
-                <ul>
-                    <li>Everything in Monthly VIP</li>
-                    <li>Full Access to all 9 Arenas</li>
-                    <li>Priority Speech Engine Voices</li>
-                    <li>Best Long-Term Value</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <div class="realms-grid">
+                <!-- Realm 1: Speaking -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(216, 67, 21, 0.15);">🎙️</div>
+                    <span class="realm-badge speaking-theme">BURNT ORANGE REALM</span>
+                    <h3 style="margin-top: 12px;">Speaking & Fluency</h3>
+                    <p>Practice aloud with advanced on-device speech processing that evaluates pronunciation, tone cadence, and verbal agility.</p>
+                </div>
 
+                <!-- Realm 2: Listening -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(0, 131, 143, 0.15);">🎧</div>
+                    <span class="realm-badge listening-theme">TEAL OCEAN REALM</span>
+                    <h3 style="margin-top: 12px;">Listening Comprehension</h3>
+                    <p>Train your ear to distinguish tricky phonemes, native speaking cadences, and nuanced conversational cues.</p>
+                </div>
+
+                <!-- Realm 3: Reading -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(46, 125, 50, 0.15);">📖</div>
+                    <span class="realm-badge reading-theme">EMERALD FOREST REALM</span>
+                    <h3 style="margin-top: 12px;">Speed & Context Reading</h3>
+                    <p>Accelerate your comprehension through structured story sprints, contextual clues, and analytical reading quests.</p>
+                </div>
+
+                <!-- Realm 4: Writing -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(94, 53, 177, 0.15);">✍️</div>
+                    <span class="realm-badge writing-theme">VIOLET REALM</span>
+                    <h3 style="margin-top: 12px;">Writing & Syntax</h3>
+                    <p>Construct cohesive sentences, build dynamic syntax structures, and master creative prose composition with ease.</p>
+                </div>
+
+                <!-- Realm 5: Grammar -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(21, 101, 192, 0.15);">⚡</div>
+                    <span class="realm-badge grammar-theme">ROYAL BLUE REALM</span>
+                    <h3 style="margin-top: 12px;">Grammar Mechanics</h3>
+                    <p>Conquer tenses, subject-verb harmony, prepositions, and complex grammatical rules through dynamic puzzles.</p>
+                </div>
+
+                <!-- Realm 6: Vocabulary -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(106, 27, 154, 0.15);">💎</div>
+                    <span class="realm-badge vocab-theme">DEEP PURPLE REALM</span>
+                    <h3 style="margin-top: 12px;">Vocabulary Vault</h3>
+                    <p>Acquire high-frequency terms, business vocabulary, idioms, and powerful synonyms to speak with precision.</p>
+                </div>
+
+                <!-- Realm 7: Accent -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(0, 151, 167, 0.15);">🎯</div>
+                    <span class="realm-badge accent-theme">CYAN REALM</span>
+                    <h3 style="margin-top: 12px;">Accent & Pronunciation</h3>
+                    <p>Isolate vowel length, consonant articulation, and syllable stress to produce clear, confident international English.</p>
+                </div>
+
+                <!-- Realm 8: Roleplay -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(183, 28, 28, 0.15);">🎭</div>
+                    <span class="realm-badge roleplay-theme">CRIMSON CORAL REALM</span>
+                    <h3 style="margin-top: 12px;">Interactive Roleplay</h3>
+                    <p>Simulate practical everyday scenarios: job interviews, travel airport checkpoints, boardroom debates, and social cafes.</p>
+                </div>
+
+                <!-- Realm 9: Elite Mastery -->
+                <div class="realm-card">
+                    <div class="realm-icon-box" style="background: rgba(245, 158, 11, 0.15);">👑</div>
+                    <span class="realm-badge mastery-theme">ROYAL GOLD REALM</span>
+                    <h3 style="margin-top: 12px;">Elite Mastery & Bosses</h3>
+                    <p>Ultimate speed trials and boss evaluations combining all skills to unlock permanent crown badges and tier prestige.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Innovations Pillars -->
+        <section id="features" class="pillars-section">
+            <div class="section-header">
+                <div class="section-tag">GAMEPLAY INNOVATION</div>
+                <h2 class="section-title">Built For Dopamine & Long-Term Retention</h2>
+                <p class="section-desc">
+                    Learning a language shouldn't feel like a chore. Vowl integrates competitive gaming mechanics with pedagogical science.
+                </p>
+            </div>
+
+            <!-- Pillar 1: 1v1 Arena -->
+            <div class="pillar-card-large">
+                <div class="pillar-content">
+                    <span class="badge-pill" style="color: #FBBF24; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">⚔️ 1v1 MULTIPLAYER ARENA</span>
+                    <h3>Live English Duels for Virtual Coins</h3>
+                    <p>
+                        Put your skills to the test in fast-paced 1v1 showdowns. Stake 50 coins, answer dynamic grammar and vocabulary prompts under clock pressure, and claim victory on the weekly podium!
+                    </p>
+                    <ul class="feature-bullets">
+                        <li><span class="bullet-check">✓</span> Instant matchmaking with learners worldwide</li>
+                        <li><span class="bullet-check">✓</span> Custom Room Codes to challenge friends directly</li>
+                        <li><span class="bullet-check">✓</span> Live coin pots and trophy multipliers</li>
+                    </ul>
+                </div>
+                <div class="mockup-display">
+                    <div class="duel-badge-live">● LIVE MATCHMAKING ACTIVE</div>
+                    <div class="duel-preview-match">
+                        <div class="duel-player">
+                            <div class="avatar-circle" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">🦊</div>
+                            <strong style="font-size: 0.95rem;">You (Challenger)</strong>
+                            <span style="font-size: 0.8rem; color: #FBBF24;">⭐ Gold Tier</span>
+                        </div>
+                        <div class="vs-badge">VS</div>
+                        <div class="duel-player">
+                            <div class="avatar-circle" style="background: linear-gradient(135deg, #F59E0B, #D97706);">🦁</div>
+                            <strong style="font-size: 0.95rem;">Global Opponent</strong>
+                            <span style="font-size: 0.8rem; color: #94A3B8;">50 Coin Pot</span>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; font-size: 0.85rem; color: #94A3B8;">
+                        ⚡ Fast-paced 45-second round • Winner takes all coins!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 2: Kids Star Vault -->
+            <div class="pillar-card-large reverse">
+                <div class="pillar-content">
+                    <span class="badge-pill" style="color: #34D399; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">⭐ SAFE KIDS ZONE</span>
+                    <h3>Dedicated Kids Star Vault & COPPA Safety</h3>
+                    <p>
+                        Learners under 16 are automatically protected in a dedicated Kids Zone. Kids Star Vault isolates young learners' achievements from adult XP rankings, ensuring an encouraging, age-appropriate experience.
+                    </p>
+                    <ul class="feature-bullets">
+                        <li><span class="bullet-check">✓</span> Zero personal tracking & COPPA compliant</li>
+                        <li><span class="bullet-check">✓</span> Dedicated Kids Stars leaderboard with joyful stickers</li>
+                        <li><span class="bullet-check">✓</span> Safe parent-monitored profile settings</li>
+                    </ul>
+                </div>
+                <div class="mockup-display" style="border-color: rgba(16, 185, 129, 0.2);">
+                    <div style="font-size: 2.4rem; margin-bottom: 12px;">🌟 ⭐ 🚀</div>
+                    <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; color: #6EE7B7;">Kids Star Vault Active</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+                        Earn golden stars on every perfect pronunciation and spelling quest!
+                    </p>
+                    <div style="display: inline-block; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #A7F3D0; padding: 6px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: 700;">
+                        100% Kid Safe & Ad-Isolated
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Multi-Currency Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="section-header">
+                <div class="section-tag">TRANSPARENT VALUE</div>
+                <h2 class="section-title">Invest In Your English Fluency</h2>
+                <p class="section-desc">
+                    Learn 100% free with daily quests or upgrade to VIP for an ad-free, infinite-lives experience. Select your preferred currency below:
+                </p>
+            </div>
+
+            <!-- Interactive Currency Toggle -->
+            <div class="currency-toggle-wrapper">
+                <button class="currency-btn active" onclick="setCurrency('USD')">USD ($)</button>
+                <button class="currency-btn" onclick="setCurrency('INR')">INR (₹)</button>
+                <button class="currency-btn" onclick="setCurrency('EUR')">EUR (€)</button>
+                <button class="currency-btn" onclick="setCurrency('GBP')">GBP (£)</button>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan 1: Starter Coins -->
+                <div class="pricing-card">
+                    <div class="plan-name">Starter Pack</div>
+                    <div class="plan-subtitle">100 Virtual In-App Coins</div>
+                    <div class="plan-price">
+                        <span id="price-starter">$0.99</span>
+                        <span class="plan-period">/ pack</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="bullet-check">✓</span> 100 Virtual Coins for Arena stakes</li>
+                        <li><span class="bullet-check">✓</span> Unlock smart hint boosters in quizzes</li>
+                        <li><span class="bullet-check">✓</span> Protect your streak with streak freeze</li>
+                        <li><span class="bullet-check">✓</span> Instant electronic delivery to your UID</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="plan-btn outline">
+                        Get on Google Play
+                    </a>
+                </div>
+
+                <!-- Plan 2: Monthly VIP (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-tag">MOST POPULAR</div>
+                    <div class="plan-name">Monthly VIP</div>
+                    <div class="plan-subtitle">1-Month Unrestricted Access</div>
+                    <div class="plan-price">
+                        <span id="price-monthly" style="color: #A5B4FC;">$2.99</span>
+                        <span class="plan-period">/ month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="bullet-check">✓</span> <strong>100% Ad-Free Experience</strong></li>
+                        <li><span class="bullet-check">✓</span> Infinite lives across all 9 realms</li>
+                        <li><span class="bullet-check">✓</span> 3X Coin Multiplier on level completion</li>
+                        <li><span class="bullet-check">✓</span> Exclusive Verified PRO profile badge</li>
+                        <li><span class="bullet-check">✓</span> Offline lesson caching support</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="plan-btn primary">
+                        Start Monthly VIP
+                    </a>
+                </div>
+
+                <!-- Plan 3: Yearly VIP -->
+                <div class="pricing-card">
+                    <div class="plan-name">Yearly VIP</div>
+                    <div class="plan-subtitle">12-Months Full Year Access (Save ~60%)</div>
+                    <div class="plan-price">
+                        <span id="price-yearly">$19.99</span>
+                        <span class="plan-period">/ year</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="bullet-check">✓</span> <strong>Everything in Monthly VIP</strong></li>
+                        <li><span class="bullet-check">✓</span> Instant access to all newly released arenas</li>
+                        <li><span class="bullet-check">✓</span> Priority neural speech analysis engines</li>
+                        <li><span class="bullet-check">✓</span> Unlimited streak restores & bonus starter pack</li>
+                        <li><span class="bullet-check">✓</span> Maximum value per month</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="plan-btn outline">
+                        Get Yearly VIP
+                    </a>
+                </div>
+            </div>
+
+            <p class="pricing-note">
+                * Prices are automatically localized in your regional Google Play Store upon checkout. All purchases are digital goods delivered electronically and immediately within the Vowl mobile application. In India, transactions are processed securely via Google Play and Razorpay.
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>VOWL</h3>
-                <p>An interactive, educational language learning application dedicated to making English fluency accessible, engaging, and rewarding for learners of all ages.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="brand-logo" style="margin-bottom: 8px;">VOWL<span>.</span></a>
+                    <p class="footer-desc">
+                        An elite interactive language learning mobile app designed to make English fluency rewarding, accessible, and thrilling through gamified quests and live 1v1 arenas.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Learning Arenas</h4>
+                    <ul>
+                        <li><a href="#realms">Speaking & Fluency</a></li>
+                        <li><a href="#realms">Accent & Phonetics</a></li>
+                        <li><a href="#realms">Grammar Mechanics</a></li>
+                        <li><a href="#realms">1v1 PvP Arenas</a></li>
+                        <li><a href="#features">Kids Star Vault</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal Policies</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Cancellation & Refund</a></li>
+                        <li><a href="app-ads.txt">AdMob app-ads.txt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="mailto:support.vowl.app@gmail.com">support.vowl.app@gmail.com</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">Google Play Store</a></li>
+                        <li>Kerala, India</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Legal Policies</h4>
-                <ul>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="refund.html">Cancellation & Refund</a></li>
-                </ul>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 VOWL. All rights reserved. Registered Educational Software.
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <a href="privacy.html" style="color: var(--text-sub); text-decoration: none;">Privacy</a>
+                    <a href="terms.html" style="color: var(--text-sub); text-decoration: none;">Terms</a>
+                    <a href="refund.html" style="color: var(--text-sub); text-decoration: none;">Refunds</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="mailto:support.vowl.app@gmail.com">support.vowl.app@gmail.com</a></li>
-                    <li>Location: Kerala, India</li>
-                </ul>
-            </div>
-        </div>
-        <div class="bottom-bar">
-            &copy; 2026 VOWL. All rights reserved. Payments for India are securely processed via Razorpay.
         </div>
     </footer>
+
+    <!-- Interactive Currency Switching Script -->
+    <script>
+        const pricingData = {
+            USD: { starter: '$0.99', monthly: '$2.99', yearly: '$19.99' },
+            INR: { starter: '₹49', monthly: '₹199', yearly: '₹999' },
+            EUR: { starter: '€0.99', monthly: '€2.99', yearly: '€19.99' },
+            GBP: { starter: '£0.89', monthly: '£2.49', yearly: '£16.99' }
+        };
+
+        function setCurrency(currency) {
+            // Update button styles
+            document.querySelectorAll('.currency-btn').forEach(btn => {
+                if (btn.textContent.includes(currency)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update price displays smoothly
+            const data = pricingData[currency] || pricingData.USD;
+            document.getElementById('price-starter').textContent = data.starter;
+            document.getElementById('price-monthly').textContent = data.monthly;
+            document.getElementById('price-yearly').textContent = data.yearly;
+        }
+
+        // Auto-detect Indian users or default to USD
+        try {
+            const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            if (userTimeZone.includes('Calcutta') || userTimeZone.includes('Kolkata') || userTimeZone.includes('Asia/Colombo')) {
+                setCurrency('INR');
+            }
+        } catch (_) {}
+    </script>
 </body>
 </html>
-
