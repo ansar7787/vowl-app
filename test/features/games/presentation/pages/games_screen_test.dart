@@ -252,7 +252,7 @@ void main() {
     );
 
     testWidgets(
-      'renders Quick Resume Hero Card with UNLOCK (1 🗝️) button and intercepts with TollGateBottomSheet when at toll gate',
+      'renders Quick Resume Hero Card with UNLOCK button and key icon, intercepting with TollGateBottomSheet when at toll gate',
       (tester) async {
         tester.view.physicalSize = const Size(800, 2400);
         tester.view.devicePixelRatio = 1.0;
@@ -285,11 +285,12 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
 
         expect(find.text('QUICK RESUME'), findsOneWidget);
-        expect(find.text('UNLOCK (1 🗝️)'), findsOneWidget);
+        expect(find.text('UNLOCK'), findsWidgets);
         expect(find.byIcon(Icons.lock_rounded), findsWidgets);
+        expect(find.byIcon(Icons.vpn_key_rounded), findsWidgets);
 
         // Tapping the unlock button opens TollGateBottomSheet instead of pushing /game
-        await tester.tap(find.text('UNLOCK (1 🗝️)'));
+        await tester.tap(find.text('UNLOCK').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
