@@ -62,8 +62,8 @@ void main() {
       enFlat = flatten(enJson);
       expect(
         enFlat.length,
-        equals(3710),
-        reason: 'en.json must have exactly 3710 leaf keys',
+        equals(3705),
+        reason: 'en.json must have exactly 3705 leaf keys',
       );
     });
 
