@@ -113,9 +113,9 @@ abstract final class VowlShowcaseCatalog {
 
     // ── Slide 3: Buddy & Rewards ───────────────────────────────────────────
     ShowcaseSlide(
-      title: 'Buddy Boutique & Kids World',
+      title: 'Buddy Boutique & Rewards',
       subtitle:
-          'Dress up your companion mascot, care for your pet, and collect milestone stickers as you learn.',
+          'Dress up your companion mascot, earn achievements, and build daily learning streaks.',
       heroIcon: LucideIcons.sparkles,
       heroTag: 'MASCOT & REWARDS',
       gradientColors: [Color(0xFFF43F5E), Color(0xFFFB923C)],
@@ -125,20 +125,20 @@ abstract final class VowlShowcaseCatalog {
           icon: LucideIcons.shirt,
           title: 'Buddy Boutique',
           subtitle:
-              'Unlock cute outfits, hats, glasses, and accessories for your buddy',
+              'Unlock stylish outfits, hats, glasses, and accessories for your buddy',
           tint: Color(0xFFF43F5E),
         ),
         ShowcaseHighlight(
-          icon: LucideIcons.penTool,
-          title: '100-Sticker Album',
-          subtitle: 'Complete learning quests and collect milestone stickers',
+          icon: LucideIcons.medal,
+          title: 'Badges & Achievements',
+          subtitle: 'Complete learning quests and collect milestone badges',
           tint: Color(0xFFF59E0B),
         ),
         ShowcaseHighlight(
-          icon: LucideIcons.baby,
-          title: 'Safe Kids Zone',
+          icon: LucideIcons.trophy,
+          title: 'Streaks & Progression',
           subtitle:
-              'Gentle phonics games, pet care, and fun beginner activities',
+              'Build consistent daily habits, level up, and unlock rewards',
           tint: Color(0xFFFB923C),
         ),
       ],

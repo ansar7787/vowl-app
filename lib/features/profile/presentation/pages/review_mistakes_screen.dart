@@ -1237,7 +1237,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                       adService.showRewardedAd(
                         context: context,
                         isPremium: false,
-                        childSafe: false,
                         onUserEarnedReward: (_) {
                           earned = true;
                           if (!completer.isCompleted) {

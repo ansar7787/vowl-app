@@ -203,13 +203,6 @@ void main() {
           builder: (context, state) => const AdventureXPScreen(),
         ),
         GoRoute(
-          path: AppRouter.kidsZoneRoute,
-          builder: (context, state) {
-            navigatedRoutes.add(AppRouter.kidsZoneRoute);
-            return const Scaffold(body: Text('Kids Zone Screen'));
-          },
-        ),
-        GoRoute(
           path: AppRouter.categoryGamesRoute,
           builder: (context, state) {
             final category = state.uri.queryParameters['category'] ?? '';
@@ -308,24 +301,27 @@ void main() {
 
   group('Group 5: Language Mastery Grid', () {
     testWidgets(
-      'renders AdventureMasteryGrid and tapping kids pushes kidsZoneRoute',
+      'renders AdventureMasteryGrid and tapping category pushes categoryGamesRoute',
       (tester) async {
         await tester.pumpWidget(buildTestWidget());
         await tester.pumpAndSettle();
 
         await tester.scrollUntilVisible(
-          find.text('Kids'),
+          find.text('Writing'),
           100.0,
           scrollable: find.byType(Scrollable).first,
         );
         await tester.pumpAndSettle();
 
         expect(find.byType(AdventureMasteryGrid), findsOneWidget);
-        expect(find.text('Kids'), findsOneWidget);
+        expect(find.text('Writing'), findsOneWidget);
 
-        await tester.tap(find.text('Kids'));
+        await tester.tap(find.text('Writing'));
         await tester.pumpAndSettle();
-        expect(navigatedRoutes, contains(AppRouter.kidsZoneRoute));
+        expect(
+          navigatedRoutes,
+          contains('${AppRouter.categoryGamesRoute}?category=writing'),
+        );
       },
     );
   });

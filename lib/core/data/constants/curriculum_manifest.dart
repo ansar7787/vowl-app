@@ -2,7 +2,7 @@
 // Run: dart run scripts/generate_curriculum_manifest.dart
 //
 // Generated: 2026-10-06T09:52:16.094088
-// Total game types: 125 (100 main + 25 kids)
+// Total game types: 100 main games
 
 import 'package:flutter/foundation.dart';
 
@@ -10,9 +10,6 @@ import 'package:flutter/foundation.dart';
 ///
 /// Each entry maps a game type to its total number of available levels,
 /// derived from the highest batch file found in `assets/curriculum/`.
-///
-/// **Main games** use their gameType as-is (e.g., `repeatSentence`).
-/// **Kids games** are prefixed with `kids_` (e.g., `kids_alphabet`).
 ///
 /// This eliminates runtime asset manifest scanning entirely.
 @immutable
@@ -126,73 +123,9 @@ abstract class CurriculumManifest {
     'wordReorder': 200,
     'writingEmail': 200,
     'yesNoSpeaking': 200,
-
-    // ── Kids Games (25) ──
-    'kids_alphabet': 200,
-    'kids_animals': 200,
-    'kids_body_parts': 200,
-    'kids_clothing': 200,
-    'kids_colors': 200,
-    'kids_day_night': 200,
-    'kids_emotions': 200,
-    'kids_family': 200,
-    'kids_food': 200,
-    'kids_fruits': 200,
-    'kids_home': 200,
-    'kids_nature': 200,
-    'kids_numbers': 200,
-    'kids_opposites': 200,
-    'kids_phonics': 200,
-    'kids_prepositions': 200,
-    'kids_professions': 200,
-    'kids_routine': 200,
-    'kids_school': 200,
-    'kids_shapes': 200,
-    'kids_time': 200,
-    'kids_transport': 200,
-    'kids_verbs': 200,
-    'kids_weather': 200,
   };
 
-  /// Kids game level counts (without the `kids_` prefix).
-  /// Use this when looking up kids games by their raw topic name.
-  static const Map<String, int> kidsLevelCounts = {
-    'alphabet': 200,
-    'animals': 200,
-    'body_parts': 200,
-    'clothing': 200,
-    'colors': 200,
-    'day_night': 200,
-    'emotions': 200,
-    'family': 200,
-    'food': 200,
-    'fruits': 200,
-    'home': 200,
-    'nature': 200,
-    'numbers': 200,
-    'opposites': 200,
-    'phonics': 200,
-    'prepositions': 200,
-    'professions': 200,
-    'routine': 200,
-    'school': 200,
-    'shapes': 200,
-    'time': 200,
-    'transport': 200,
-    'verbs': 200,
-    'weather': 200,
-  };
-
-  /// Returns the level count for [gameType], supporting both main games
-  /// and kids games (with or without `kids_` prefix), falling back to [defaultLevelCount].
+  /// Returns the level count for [gameType], falling back to [defaultLevelCount].
   static int getLevels(String gameType) =>
-      levelCounts[gameType] ??
-      kidsLevelCounts[gameType] ??
-      levelCounts['kids_$gameType'] ??
-      defaultLevelCount;
-
-  /// Returns the level count for a kids game by topic name.
-  /// Accepts both `"alphabet"` and `"kids_alphabet"` forms.
-  static int getKidsLevels(String topic) =>
-      kidsLevelCounts[topic] ?? levelCounts['kids_$topic'] ?? defaultLevelCount;
+      levelCounts[gameType] ?? defaultLevelCount;
 }

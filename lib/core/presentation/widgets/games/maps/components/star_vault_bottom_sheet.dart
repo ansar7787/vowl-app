@@ -11,7 +11,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
@@ -89,14 +88,14 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   }
 
   ({int totalStars, int gameplayStars, int magicStars}) _calculateStars(
-    Map<String, dynamic> categoryStars,
+    Map<String, int> categoryStars,
   ) {
     int gameplayStars = 0;
-    final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
+    final magicStars = categoryStars['magic_stars'] ?? 0;
 
     categoryStars.forEach((key, value) {
       if (key != 'magic_stars' && key != 'claimed_chests') {
-        gameplayStars += (value as num?)?.toInt() ?? 0;
+        gameplayStars += value;
       }
     });
     return (
@@ -175,12 +174,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
       return;
     }
 
-    final isKidsMode = UserGameConstants.kKidsGameTypes.contains(
-      widget.gameType,
-    );
-    final currencyName = isKidsMode
-        ? context.tr('store.toys', fallback: 'Toys')
-        : context.tr('store.coins', fallback: 'Coins');
+    final currencyName = context.tr('store.coins', fallback: 'Coins');
 
     context.read<AuthBloc>().add(const AuthRefreshUser());
 
@@ -359,16 +353,14 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         final user = authState.user;
         if (user == null) return const SizedBox.shrink();
 
-        final categoryStars = user.starRatings[widget.gameType] ?? {};
+        final categoryStars =
+            user.starRatings[widget.gameType] ?? const <String, int>{};
         final starsData = _calculateStars(categoryStars);
         final totalStars = starsData.totalStars;
         final gameplayStars = starsData.gameplayStars;
         final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
         final isPremium = user.isPremium;
-        final isKidsMode = UserGameConstants.kKidsGameTypes.contains(
-          widget.gameType,
-        );
 
         // Find next target
         int nextTierIndex = claimedTier;
@@ -993,9 +985,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               SizedBox(height: 32.h),
 
-                              // Magic Star Ad Button (hidden for kids games and premium users)
-                              if (!isKidsMode &&
-                                  !isPremium &&
+                              // Magic Star Ad Button (hidden for premium users)
+                              if (!isPremium &&
                                   claimedTier < _chestTiers.length &&
                                   totalStars < nextRequirement) ...[
                                 Padding(

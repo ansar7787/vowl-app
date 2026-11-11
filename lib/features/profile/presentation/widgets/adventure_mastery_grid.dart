@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -106,24 +105,6 @@ class AdventureMasteryGrid extends StatelessWidget {
       );
     }).toList();
 
-    // ── Kids category ──
-    final kidsMaxLevels = 12 * 200;
-    final kidsRawProg = kidsMaxLevels > 0
-        ? (user.kidsTotalLevelsCompleted / kidsMaxLevels)
-        : 0.0;
-    final kidsProg = (sqrt(kidsRawProg) * 100).toInt().clamp(0, 100);
-
-    categories.add(
-      _MasteryCategory(
-        id: 'kids',
-        name: 'Kids',
-        icon: Icons.child_care_rounded,
-        progress: kidsProg,
-        levelsCompleted: user.kidsTotalLevelsCompleted,
-        color: IllustrationColors.vibrantPink,
-      ),
-    );
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -187,13 +168,9 @@ class AdventureMasteryGrid extends StatelessWidget {
                   '${cat.name}, ${cat.progress}% ${context.tr('adventure.progress', fallback: 'progress')}, $levelLabel, ${cat.levelsCompleted} ${context.tr('adventure.levels', fallback: 'levels')}',
               child: ScaleButton(
                 onTap: () {
-                  if (cat.id == 'kids') {
-                    context.push(AppRouter.kidsZoneRoute);
-                  } else {
-                    context.push(
-                      '${AppRouter.categoryGamesRoute}?category=${cat.id}',
-                    );
-                  }
+                  context.push(
+                    '${AppRouter.categoryGamesRoute}?category=${cat.id}',
+                  );
                 },
                 child: GlassTile(
                   blur: 0, // Performance: skip BackdropFilter in grid

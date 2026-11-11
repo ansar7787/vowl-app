@@ -12,7 +12,6 @@ abstract class GamificationRepository {
   ///
   /// - Applies a 50 % XP reduction for replayed levels.
   /// - Respects permanent XP boost and active Double-XP power-up multipliers.
-  /// - Routes coin rewards to [kidsCoins] for Kids Zone game types.
   /// - Doubles coin rewards for premium users or users at level ≥ 100.
   Future<Either<Failure, void>> updateUserRewards({
     required String gameType,
@@ -68,25 +67,14 @@ abstract class GamificationRepository {
 
   /// Deducts [cost] Golden Keys and explicitly increments the unlocked level
   /// for the specified [gameType] by 3. Used for Toll Gate monetization.
-  ///
-  /// [isKidsMode] is accepted for API symmetry with [purchaseGoldenKey] but is
-  /// not used to select a currency here: Golden Keys are a single universal
-  /// currency shared by both Kids Zone and standard content (see
-  /// [purchaseGoldenKey], which always credits the same balance regardless of
-  /// [isKidsMode]), so there is no separate kids-mode key balance to deduct
-  /// from.
   Future<Either<Failure, void>> purchaseLevelUnlock({
     required String gameType,
     required int cost,
-    bool isKidsMode = false,
   });
 
-  /// Deducts [cost] from [kidsCoins] (when [isKidsMode] is true) or [coins]
-  /// (otherwise) and grants one Golden Key. Golden Keys themselves are a
-  /// single universal balance regardless of [isKidsMode].
+  /// Deducts [cost] from [coins] and grants one Golden Key.
   Future<Either<Failure, void>> purchaseGoldenKey({
     required int cost,
-    required bool isKidsMode,
   });
 
   /// Credits [amount] Golden Keys with no balance check (a pure grant, e.g.

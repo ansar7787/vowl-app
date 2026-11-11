@@ -44,9 +44,6 @@ abstract class RemoteConfigService {
   /// Gets the standard coins rewarded per quest victory.
   int get coinsPerVictory;
 
-  /// Gets the kids-zone coins rewarded per quest victory.
-  int get kidsCoinsPerVictory;
-
   /// Gets the difficulty modifier applied to level quest engines.
   double get levelDifficultyModifier;
 
@@ -73,7 +70,6 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   static const String keyUpdateStoreUrl = 'update_store_url';
   static const String keyLevelDifficultyModifier = 'level_difficulty_modifier';
   static const String keyCoinsPerVictory = 'coins_per_victory';
-  static const String keyKidsCoinsPerVictory = 'kids_coins_per_victory';
   static const String keyDailyRewardLimit = 'daily_reward_limit';
   static const String keyInterstitialCooldownMinutes =
       'interstitial_cooldown_minutes';
@@ -99,7 +95,6 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
         keyUpdateStoreUrl: '',
         keyLevelDifficultyModifier: 1.0,
         keyCoinsPerVictory: 10,
-        keyKidsCoinsPerVictory: 5,
         keyDailyRewardLimit: 5,
         keyInterstitialCooldownMinutes: 3,
         keyHintCoinCost: 15,
@@ -149,9 +144,6 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
 
   @override
   int get coinsPerVictory => _remoteConfig.getInt(keyCoinsPerVictory);
-
-  @override
-  int get kidsCoinsPerVictory => _remoteConfig.getInt(keyKidsCoinsPerVictory);
 
   @override
   double get levelDifficultyModifier =>

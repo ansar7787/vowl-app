@@ -18,7 +18,6 @@ class PedagogicalRuleBox extends StatefulWidget {
   final String rule;
   final Color shadowColor;
   final bool isDark;
-  final bool isKids;
 
   const PedagogicalRuleBox({
     super.key,
@@ -30,7 +29,6 @@ class PedagogicalRuleBox extends StatefulWidget {
     required this.rule,
     required this.shadowColor,
     required this.isDark,
-    this.isKids = false,
   });
 
   @override
@@ -111,7 +109,6 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                       TtsSpeakerButtonWidget(
                         text: displayText,
                         color: widget.shadowColor,
-                        isKids: widget.isKids,
                         locale: translatedTextValue != null
                             ? _translatedLocale
                             : null,
@@ -120,7 +117,6 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                         SizedBox(width: 8.w),
                         TranslateButtonWidget(
                           originalText: widget.rule,
-                          isKidsZone: widget.isKids,
                           onTranslationComplete: (translated) {
                             TtsSpeakerButtonWidget.stopAll();
                             if (mounted) {

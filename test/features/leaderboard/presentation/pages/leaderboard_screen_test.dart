@@ -53,10 +53,8 @@ void main() {
     dailyXpHistory: {todayKey: 8400},
     currentStreak: 15,
     coins: 100,
-    kidsCoins: 120,
     completedLevels: {
       'reading': List.generate(42, (i) => i + 1),
-      'kids_animals': List.generate(8, (i) => i + 1),
     },
   );
 
@@ -68,10 +66,8 @@ void main() {
       totalExp: 15200,
       dailyXpHistory: {todayKey: 15200},
       currentStreak: 45,
-      kidsCoins: 500,
       completedLevels: {
         'reading': List.generate(95, (i) => i + 1),
-        'kids_animals': List.generate(24, (i) => i + 1),
       },
     ),
     UserEntity(
@@ -81,10 +77,8 @@ void main() {
       totalExp: 12100,
       dailyXpHistory: {todayKey: 12100},
       currentStreak: 30,
-      kidsCoins: 420,
       completedLevels: {
         'reading': List.generate(80, (i) => i + 1),
-        'kids_animals': List.generate(20, (i) => i + 1),
       },
     ),
     UserEntity(
@@ -94,10 +88,8 @@ void main() {
       totalExp: 10500,
       dailyXpHistory: {todayKey: 10500},
       currentStreak: 25,
-      kidsCoins: 380,
       completedLevels: {
         'reading': List.generate(70, (i) => i + 1),
-        'kids_animals': List.generate(18, (i) => i + 1),
       },
     ),
     UserEntity(
@@ -168,7 +160,7 @@ void main() {
     ).thenReturn(AuthState.authenticated(testCurrentUser));
     when(
       () => mockLeaderboardBloc.state,
-    ).thenReturn(LeaderboardLoaded(testUsersList, now, isKids: false));
+    ).thenReturn(LeaderboardLoaded(testUsersList, now));
     when(
       () => mockLeaderboardBloc.stream,
     ).thenAnswer((_) => leaderboardStateController.stream);
@@ -214,7 +206,6 @@ void main() {
   });
 
   Widget buildTestWidget({
-    bool isKids = false,
     bool? showBackButton,
     ThemeData? theme,
     double fontScale = 1.0,
@@ -235,7 +226,6 @@ void main() {
           home: BlocProvider<AuthBloc>.value(
             value: mockAuthBloc,
             child: LeaderboardScreen(
-              isKids: isKids,
               showBackButton: showBackButton,
             ),
           ),
@@ -260,7 +250,7 @@ void main() {
         expect(find.text('Hall of Fame'), findsOneWidget);
         expect(find.text('Kids Zone'), findsNothing);
         verify(
-          () => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false)),
+          () => mockLeaderboardBloc.add(const LoadLeaderboard()),
         ).called(1);
       },
     );
@@ -304,7 +294,7 @@ void main() {
 
         // Initial add on create + 1 tap on retry = 2 calls
         verify(
-          () => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false)),
+          () => mockLeaderboardBloc.add(const LoadLeaderboard()),
         ).called(2);
       },
     );
@@ -314,7 +304,7 @@ void main() {
     testWidgets('renders empty state when users list is empty', (tester) async {
       when(
         () => mockLeaderboardBloc.state,
-      ).thenReturn(LeaderboardLoaded(const [], now, isKids: false));
+      ).thenReturn(LeaderboardLoaded(const [], now));
 
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 700));
@@ -328,21 +318,6 @@ void main() {
     });
 
     testWidgets(
-      'renders kids empty state when users list is empty in kids mode',
-      (tester) async {
-        when(
-          () => mockLeaderboardBloc.state,
-        ).thenReturn(LeaderboardLoaded(const [], now, isKids: true));
-
-        await tester.pumpWidget(buildTestWidget(isKids: true));
-        await tester.pump(const Duration(milliseconds: 700));
-
-        expect(find.byIcon(Icons.emoji_events_outlined), findsOneWidget);
-        expect(find.text('No rankings yet'), findsOneWidget);
-      },
-    );
-
-    testWidgets(
       'renders empty placeholder under podium when users length <= 3',
       (tester) async {
         // Top 3 only, with currentUser in the top 3 so total count <= 3
@@ -352,7 +327,7 @@ void main() {
         ).thenReturn(AuthState.authenticated(top3Only.first));
         when(
           () => mockLeaderboardBloc.state,
-        ).thenReturn(LeaderboardLoaded(top3Only, now, isKids: false));
+        ).thenReturn(LeaderboardLoaded(top3Only, now));
 
         await tester.pumpWidget(buildTestWidget());
         await tester.pump(const Duration(milliseconds: 500));
@@ -531,24 +506,6 @@ void main() {
 
         expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
         expect(find.textContaining('Weekly XP'), findsWidgets);
-      },
-    );
-
-    testWidgets(
-      'renders Kids Leaderboard header, back button, and Levels label when isKids is true',
-      (tester) async {
-        when(
-          () => mockLeaderboardBloc.state,
-        ).thenReturn(LeaderboardLoaded(testUsersList, now, isKids: true));
-
-        await tester.pumpWidget(buildTestWidget(isKids: true));
-        await tester.pump(const Duration(milliseconds: 500));
-        await tester.pump(const Duration(milliseconds: 500));
-
-        expect(find.text('Kids Leaderboard'), findsOneWidget);
-        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-        expect(find.text('Weekly League'), findsNothing);
-        expect(find.textContaining('Levels'), findsWidgets);
       },
     );
 

@@ -176,7 +176,6 @@ void main() {
         locale: any(named: 'locale'),
         pauseMarkers: any(named: 'pauseMarkers'),
         forcedPreset: any(named: 'forcedPreset'),
-        isKids: any(named: 'isKids'),
       ),
     ).thenAnswer((_) async {});
 

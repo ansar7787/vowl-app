@@ -5,7 +5,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/parental_gate_dialog.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -28,7 +27,6 @@ class KeyShopBottomSheet {
 
   static void show({
     required BuildContext context,
-    required bool isKidsMode,
     Color primaryColor = Colors.amber,
   }) {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
@@ -44,7 +42,6 @@ class KeyShopBottomSheet {
       builder: (sheetContext) {
         return _KeyShopContent(
           parentContext: context,
-          isKidsMode: isKidsMode,
           primaryColor: primaryColor,
         );
       },
@@ -54,12 +51,10 @@ class KeyShopBottomSheet {
 
 class _KeyShopContent extends StatefulWidget {
   final BuildContext parentContext;
-  final bool isKidsMode;
   final Color primaryColor;
 
   const _KeyShopContent({
     required this.parentContext,
-    required this.isKidsMode,
     required this.primaryColor,
   });
 
@@ -247,9 +242,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       BlocBuilder<AuthBloc, AuthState>(
                         builder: (context, authState) {
                           final user = authState.user;
-                          final userCoins = widget.isKidsMode
-                              ? (user?.kidsCoins ?? 0)
-                              : (user?.coins ?? 0);
+                          final userCoins = user?.coins ?? 0;
                           const int cost = 150;
 
                           return ScaleButton(
@@ -262,29 +255,18 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                       showDialog(
                                         context: context,
                                         builder: (ctx) => ModernGameDialog(
-                                          title: widget.isKidsMode
-                                              ? context.tr(
-                                                  'store.not_enough_toys_title',
-                                                  fallback: 'NOT ENOUGH TOYS',
-                                                )
-                                              : context.tr(
-                                                  'store.not_enough_coins_title',
-                                                  fallback: 'NOT ENOUGH COINS',
-                                                ),
+                                          title: context.tr(
+                                            'store.not_enough_coins_title',
+                                            fallback: 'NOT ENOUGH COINS',
+                                          ),
                                           description: context.tr(
                                             'store.not_enough_currency_desc',
                                             args: [
                                               '$cost',
-                                              widget.isKidsMode
-                                                  ? context.tr(
-                                                      'store.toys_lower',
-                                                    )
-                                                  : context.tr(
-                                                      'store.coins_lower',
-                                                    ),
+                                              context.tr('store.coins_lower'),
                                             ],
                                             fallback:
-                                                'You need $cost ${widget.isKidsMode ? 'toys' : 'coins'} to get a key!',
+                                                'You need $cost coins to get a key!',
                                           ),
                                           buttonText: context.tr(
                                             'games.keep_playing',
@@ -304,9 +286,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                     final result = await di
                                         .sl<PurchaseGoldenKey>()
                                         .call(
-                                          PurchaseGoldenKeyParams(
+                                          const PurchaseGoldenKeyParams(
                                             cost: cost,
-                                            isKidsMode: widget.isKidsMode,
                                           ),
                                         );
 
@@ -453,17 +434,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         ),
                                         SizedBox(width: 8.w),
                                         Text(
-                                          widget.isKidsMode
-                                              ? context.tr(
-                                                  'store.buy_for_toys',
-                                                  args: ['$cost'],
-                                                  fallback: '$cost Toys',
-                                                )
-                                              : context.tr(
-                                                  'store.buy_for_coins',
-                                                  args: ['$cost'],
-                                                  fallback: '$cost Coins',
-                                                ),
+                                          context.tr(
+                                            'store.buy_for_coins',
+                                            args: ['$cost'],
+                                            fallback: '$cost Coins',
+                                          ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 16.sp,
@@ -533,10 +508,6 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                   adService.showRewardedAd(
                                     context: context,
                                     isPremium: isPremium,
-                                    // FIX: COPPA compliance — when the key shop is opened
-                                    // from Kids Zone (isKidsMode: true), force child-safe
-                                    // ad parameters.
-                                    childSafe: widget.isKidsMode,
                                     onUserEarnedReward: (_) {
                                       rewardEarned = true;
                                     },
@@ -770,17 +741,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             SizedBox(width: 12.w),
                             Expanded(
                               child: ScaleButton(
-                                onTap: () async {
-                                  if (widget.isKidsMode) {
-                                    final passed =
-                                        await ParentalGateDialog.show(context);
-                                    if (!passed || !context.mounted) return;
-                                  }
-                                  if (!context.mounted) return;
+                                onTap: () {
                                   Navigator.pop(context);
                                   PremiumStoreBottomSheet.show(
                                     context: widget.parentContext,
-                                    isKidsMode: widget.isKidsMode,
                                   );
                                 },
                                 child: Container(

@@ -53,7 +53,6 @@ class FakeTtsService implements TtsService {
   Future<void> preWarm({
     String? locale,
     TtsVoicePreset? preset,
-    bool isKids = false,
   }) async {}
 
   @override
@@ -63,7 +62,6 @@ class FakeTtsService implements TtsService {
     String? locale,
     List<int>? pauseMarkers,
     TtsVoicePreset? forcedPreset,
-    bool isKids = false,
   }) async {}
 
   @override
@@ -388,10 +386,10 @@ void main() {
         await tester.tap(backButton);
         await tester.pump(const Duration(milliseconds: 400));
 
-        // Exit confirmation dialog appears with KEEP PLAYING and Quit actions
+        // Exit confirmation dialog appears with KEEP PLAYING and EXIT actions
         expect(find.byType(ModernGameDialog), findsOneWidget);
         expect(find.text('KEEP PLAYING'), findsOneWidget);
-        expect(find.text('QUIT'), findsOneWidget);
+        expect(find.text('EXIT'), findsOneWidget);
 
         // Dismiss dialog cleanly to cancel repeating animations before test teardown
         await tester.tap(find.text('KEEP PLAYING'));

@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/network/network_info.dart';
@@ -74,26 +73,25 @@ class AdService {
 
   static const int _maxFailedLoadAttempts = 3;
 
-  /// Builds an ad request.
+  /// Builds a high-yield adult / general-audience ad request.
   ///
-  /// Dynamically returns personalized or non-personalized ads based on
-  /// the age gate result:
-  /// - User said 16+ → personalized ads (2-3x higher eCPM)
-  /// - User said under 16 or hasn't completed age gate → non-personalized
-  ///
-  /// Individual call sites can still override this with `childSafe: true`
-  /// for Kids Zone contexts (those always force non-personalized).
-  static AdRequest _buildAdRequest({bool forceChildSafe = false}) {
-    final bool useNonPersonalized =
-        forceChildSafe || !AgeGateService.isAdultCached;
-    return AdRequest(
-      keywords: <String>['game', 'learning', 'education'],
-      contentUrl: 'https://Vowl-quest.com',
-      nonPersonalizedAds: useNonPersonalized,
+  /// Personalized ads are enabled by default for maximum fill-rate and
+  /// premium eCPM yields.
+  static AdRequest _buildAdRequest() {
+    return const AdRequest(
+      keywords: <String>[
+        'game',
+        'learning',
+        'education',
+        'language',
+        'vocabulary',
+      ],
+      contentUrl: 'https://vowl-quest.com',
+      nonPersonalizedAds: false,
     );
   }
 
-  /// Cached request instance — rebuilt when age gate state changes.
+  /// Cached request instance.
   static AdRequest _adRequest = _buildAdRequest();
 
   // ── Lifecycle ─────────────────────────────────────────────────────────────
@@ -123,9 +121,7 @@ class AdService {
         _isInitialized = true;
         if (kDebugMode) debugPrint('AdService: MobileAds initialised.');
 
-        // Dynamic configuration based on age gate result:
-        // - Adults (16+): unrestricted ads = higher eCPM
-        // - Kids/unknown: child-directed = COPPA compliant
+        // Full adult audience configuration: unrestricted ads for maximum eCPM
         _applyRequestConfiguration();
 
         // Stagger ad loading to avoid competing with app startup rendering.
@@ -154,47 +150,31 @@ class AdService {
     _rewardedAd = null;
   }
 
-  /// Applies the correct RequestConfiguration based on the age gate result.
+  /// Applies global general-audience request configuration for maximum eCPM.
   ///
-  /// - Under-16 or unknown: child-directed, under-age consent, G-rated only
-  /// - Adult (16+): unspecified (SDK default), no age restriction
-  ///
-  /// This is called once during [init] and can be refreshed via
-  /// [refreshAdConfig] after the age gate is completed mid-session.
+  /// Sets AgeRestrictedTreatment.unspecified with MaxAdContentRating.ma to
+  /// allow high-yield premium advertiser bids.
   void _applyRequestConfiguration() {
-    final isAdult = AgeGateService.isAdultCached;
-
     MobileAds.instance.updateRequestConfiguration(
       RequestConfiguration(
         testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
-        ageRestrictedTreatment: isAdult
-            ? AgeRestrictedTreatment.unspecified
-            : AgeRestrictedTreatment.child,
-        maxAdContentRating: isAdult
-            ? MaxAdContentRating.ma
-            : MaxAdContentRating.g,
+        ageRestrictedTreatment: AgeRestrictedTreatment.unspecified,
+        maxAdContentRating: MaxAdContentRating.ma,
       ),
     );
 
     if (kDebugMode) {
       debugPrint(
-        'AdService: RequestConfiguration applied — '
-        'isAdult=$isAdult, personalized=$isAdult',
+        'AdService: RequestConfiguration applied — General Audience / Personalized',
       );
     }
   }
 
-  /// Re-applies ad configuration after the age gate is completed.
-  ///
-  /// Call this from the age gate screen after [AgeGateService.completeAgeGate]
-  /// to immediately switch to personalized ads for adult users without
-  /// requiring an app restart.
+  /// Re-applies global ad configuration.
   void refreshAdConfig() {
     _adRequest = _buildAdRequest();
     if (_isInitialized && !_isDisposed) {
       _applyRequestConfiguration();
-      // Reload ads with the new request configuration so the next ad
-      // shown uses the updated personalization setting.
       loadInterstitialAd();
       loadRewardedAd();
     }
@@ -481,31 +461,10 @@ class AdService {
     required bool isPremium,
     required Function(RewardItem) onUserEarnedReward,
     required VoidCallback onDismissed,
-
-    /// When true, forces child-safe ad request parameters.
-    /// All Kids Zone call sites should pass `childSafe: true`.
-    bool childSafe = false,
   }) async {
     if (isPremium) {
       onUserEarnedReward(RewardItem(1, 'Premium Reward'));
       onDismissed();
-      return;
-    }
-
-    // COPPA FIX: If childSafe is requested but the pre-loaded ad was built
-    // with personalized params (adult user in Kids Zone), dispose it and
-    // reload with a forced child-safe request. This ensures COPPA compliance
-    // regardless of the age gate result.
-    if (childSafe && (_rewardedAd == null || AgeGateService.isAdultCached)) {
-      if (_rewardedAd != null) {
-        _rewardedAd!.dispose();
-        _rewardedAd = null;
-      }
-      await _loadAndShowChildSafeRewarded(
-        context: context,
-        onUserEarnedReward: onUserEarnedReward,
-        onDismissed: onDismissed,
-      );
       return;
     }
 
@@ -627,179 +586,12 @@ class AdService {
     required bool isPremium,
     required VoidCallback onHintEarned,
     required VoidCallback onDismissed,
-    bool childSafe = false,
   }) {
     showRewardedAd(
       context: context,
       isPremium: isPremium,
-      childSafe: childSafe,
       onUserEarnedReward: (_) => onHintEarned(),
       onDismissed: onDismissed,
-    );
-  }
-
-  /// Loads a fresh rewarded ad with forced child-safe request parameters,
-  /// then shows it immediately upon successful load.
-  ///
-  /// Used when an adult user enters Kids Zone — the pre-loaded ad was built
-  /// with personalized params, so we must reload with COPPA-compliant settings.
-  Future<void> _loadAndShowChildSafeRewarded({
-    BuildContext? context,
-    required Function(RewardItem) onUserEarnedReward,
-    required VoidCallback onDismissed,
-  }) async {
-    final adUnitId = _rewardedAdUnitId();
-    if (adUnitId.isEmpty) {
-      onDismissed();
-      return;
-    }
-
-    if (context != null && context.mounted) {
-      final networkInfo = di.sl.isRegistered<NetworkInfo>()
-          ? di.sl<NetworkInfo>()
-          : null;
-      final hasRealConnection = networkInfo != null
-          ? await networkInfo.hasRealConnection
-          : true;
-
-      if (!hasRealConnection) {
-        if (context.mounted) {
-          CustomSnackBar.show(
-            context: context,
-            message: context.tr(
-              'connectivity.no_internet_for_ads',
-              fallback:
-                  'No internet connection. Please check your network to watch ads.',
-            ),
-            type: CustomSnackBarType.warning,
-          );
-        }
-        onDismissed();
-        return;
-      }
-
-      if (!context.mounted) {
-        onDismissed();
-        return;
-      }
-    }
-
-    final childSafeRequest = _buildAdRequest(forceChildSafe: true);
-
-    Timer? timeoutTimer;
-    bool hasCompleted = false;
-    bool isCancelled = false;
-
-    if (context != null && context.mounted) {
-      showDialog<void>(
-        context: context,
-        barrierDismissible: false,
-        builder: (dialogCtx) => _AdLoadingDialog(
-          onCancel: () {
-            isCancelled = true;
-            hasCompleted = true;
-            timeoutTimer?.cancel();
-            Navigator.of(dialogCtx).pop();
-            onDismissed();
-          },
-        ),
-      );
-    }
-
-    timeoutTimer = Timer(const Duration(seconds: 5), () {
-      if (hasCompleted) return;
-      hasCompleted = true;
-      if (kDebugMode) {
-        debugPrint('AdService: Child-safe rewarded ad load timed out.');
-      }
-      if (context != null && context.mounted && !isCancelled) {
-        Navigator.of(context, rootNavigator: true).pop();
-        CustomSnackBar.show(
-          context: context,
-          message: context.tr(
-            'games.ad_loading_retry',
-            fallback: 'Ad is still loading. Please try again in a few moments.',
-          ),
-          type: CustomSnackBarType.warning,
-        );
-      }
-      onDismissed();
-    });
-
-    RewardedAd.load(
-      adUnitId: adUnitId,
-      request: childSafeRequest,
-      rewardedAdLoadCallback: RewardedAdLoadCallback(
-        onAdLoaded: (ad) {
-          if (hasCompleted) {
-            ad.dispose();
-            return;
-          }
-          hasCompleted = true;
-          timeoutTimer?.cancel();
-
-          if (context != null && context.mounted && !isCancelled) {
-            Navigator.of(context, rootNavigator: true).pop();
-          }
-
-          if (isCancelled || _isDisposed) {
-            ad.dispose();
-            onDismissed();
-            return;
-          }
-
-          ad.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (ad) {
-              ad.dispose();
-              loadRewardedAd(); // Reload normal ad for next time
-              onDismissed();
-            },
-            onAdFailedToShowFullScreenContent: (ad, error) {
-              if (kDebugMode) {
-                debugPrint(
-                  'AdService: Child-safe rewarded failed to show: $error',
-                );
-              }
-              ad.dispose();
-              loadRewardedAd();
-              onDismissed();
-            },
-          );
-
-          ad.setImmersiveMode(true);
-          ad.show(
-            onUserEarnedReward: (_, reward) => onUserEarnedReward(reward),
-          );
-        },
-        onAdFailedToLoad: (error) {
-          if (hasCompleted) return;
-          hasCompleted = true;
-          timeoutTimer?.cancel();
-
-          if (context != null && context.mounted && !isCancelled) {
-            Navigator.of(context, rootNavigator: true).pop();
-          }
-
-          if (kDebugMode) {
-            debugPrint(
-              'AdService: Child-safe rewarded load failed (${error.code}): ${error.message}',
-            );
-          }
-          if (context != null && context.mounted && !isCancelled) {
-            CustomSnackBar.show(
-              context: context,
-              message: context.tr(
-                'games.ad_loading_retry',
-                fallback:
-                    'Ad is still loading. Please try again in a few moments.',
-              ),
-              type: CustomSnackBarType.warning,
-            );
-          }
-          loadRewardedAd(); // Reload normal ad for next time
-          onDismissed();
-        },
-      ),
     );
   }
 }

@@ -26,9 +26,8 @@ We do **not** collect voice recordings, GPS location, contacts, or phone numbers
 
 Our app includes optional third-party advertisements via **Google AdMob**. Ad networks may collect device identifiers to provide relevant ads. We use Google's UMP (User Messaging Platform) to collect your consent before serving personalised ads, in compliance with GDPR.
 
-- **Adults with consent:** Personalised ads may be shown.
-- **Adults without consent:** Only non-personalised ads are shown.
-- **Kids Zone users (under 16):** No personalised ads are ever shown.
+- **Users with consent:** Personalised ads may be shown.
+- **Users without consent:** Only non-personalised ads are shown.
 - **Premium users:** All ads are removed entirely.
 
 We use **Firebase Analytics** to understand how the app is used. You can opt out of analytics collection in Settings.
@@ -72,17 +71,13 @@ You can delete your account at any time from **Settings → Danger Zone → Dele
 
 This action is irreversible.
 
-## 8. Children's Privacy (Kids Zone)
+## 8. Age Restrictions and Children's Privacy
 
-Vowl includes a dedicated **Kids Zone** for users under 16:
+Vowl is designed for a general audience of adult language learners and individuals aged 13 and older (or 16 and older in the European Economic Area / UK). Vowl does not direct its services to children under these ages.
 
-- **No personalised ads** are ever shown to children.
-- **Parental gate** (math challenge) is required before any purchase.
-- **Minimal data collection:** Only educational progress data is collected.
-- Children cannot access adult features or make unsupervised purchases.
-- We comply with COPPA and equivalent regulations.
+We do not knowingly collect, maintain, or process personal information from children under the age of 13 (or under 16 where required by applicable local law). If you are under this minimum age, you may not register for an account or use the application.
 
-If we learn we have collected personal information from a child without parental consent, we will delete that information promptly.
+If we become aware that personal information has been collected from an individual under the applicable minimum age without verified parental consent, we will take immediate steps to delete that information from our servers and terminate the associated account. If you believe that a minor has provided us with personal information, please contact our support team immediately.
 
 ## 9. Your Rights
 

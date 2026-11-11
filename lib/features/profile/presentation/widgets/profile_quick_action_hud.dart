@@ -78,7 +78,6 @@ class ProfileQuickActionHud extends StatelessWidget {
                       di.sl<HapticService>().selection();
                       PremiumStoreBottomSheet.show(
                         context: context,
-                        isKidsMode: false,
                       );
                     },
                     icon: Icons.storefront_rounded,
@@ -97,7 +96,6 @@ class ProfileQuickActionHud extends StatelessWidget {
                       di.sl<HapticService>().selection();
                       KeyShopBottomSheet.show(
                         context: context,
-                        isKidsMode: false,
                       );
                     },
                     icon: Icons.key_rounded,

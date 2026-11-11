@@ -256,202 +256,6 @@ class StoryServiceImpl implements StoryService {
         "Listen to the speaker and choose the right answer. Once you've got it, grab your mic and try repeating the sentence exactly how they said it.",
   };
 
-  static const Map<String, List<String>> kidsScripts = {
-    'weather': [
-      "Welcome to the Weather Window! Look outside and let's explore sunshine, rain, wind, and clouds together.",
-      "Ten weather clues solved! You're getting so good at telling what kind of day it is outside.",
-      "Twenty weather levels explored! Rain or shine, you always know what to wear and how the sky changes.",
-      "Fifty weather challenges completed! From gentle morning breezes to stormy skies, you understand how nature works.",
-      "One hundred weather levels completed! You can read the sky like a true weather expert. What an amazing achievement!",
-      "Two hundred weather adventures finished! You've mastered all kinds of seasons, temperatures, and sky clues. You should be so proud!",
-    ],
-    'professions': [
-      "Welcome to our neighborhood! Let's explore all the amazing jobs and helpers who take care of our community!",
-      "Ten jobs explored! You're learning how doctors, teachers, and firefighters help keep everyone safe and smiling.",
-      "Twenty community helpers! You know who to turn to whenever someone needs a helping hand or a problem solved.",
-      "Halfway to 100! From bakers to bus drivers, you understand so many important roles that keep a town running smoothly.",
-      "One hundred levels completed! You know our community inside and out, and you appreciate everyone who makes a difference.",
-      "Two hundred levels! You've learned about so many caring helpers and how we all work together to make the world a wonderful place.",
-    ],
-
-    'alphabet': [
-      "Hey there! Ready to start learning your letters? Let's go!",
-      "You're getting the hang of this! Keep up the good work.",
-      "Wow, 20 levels down! You're getting really good at recognizing these sounds.",
-      "Halfway to 100! You've learned so many new letters and words today.",
-      "Level 100! That's incredible. You know your alphabet so well now!",
-      "You finished all the levels! Now you can read so many new words all on your own.",
-    ],
-    'numbers': [
-      "Welcome aboard our little rocket! Let's count the twinkling stars together as we set off on our space journey.",
-      "You're flying high! You've already counted past your first ten star clusters, and your rocket is zooming ahead.",
-      "Look at you go! Twenty missions complete. You're spotting numbers as smoothly as an astronaut navigating the galaxy.",
-      "Halfway to 100! Your number skills are shining bright across the stars. Keep exploring, space captain!",
-      "One hundred missions finished! You've counted all the way across the galaxy and back. That's a wonderful accomplishment!",
-      "Two hundred space journeys complete! You know your numbers from front to back, and the whole universe is proud of you!",
-    ],
-    'colors': [
-      "The world is a giant rainbow! Can you help me find the juicy red apple?",
-      "You've painted the whole sky a beautiful blue! Everything looks so pretty!",
-      "A kaleidoscope of magic colors! You're a brilliant little artist, friend!",
-      "You found the Golden Glow! The world is so bright and happy because of you!",
-      "100 colors mastered! You are now the official Master of the Rainbow!",
-      "The Color King! You've made the whole world look like a beautiful castle!",
-    ],
-    'shapes': [
-      "Circles, squares, and triangles! Let's explore shapes all around us and see how they build our world.",
-      "Great job on your first 10 levels! You're spotting straight sides, round curves, and corners with confidence.",
-      "Twenty levels complete! You can easily tell circles, triangles, rectangles, and stars apart. Keep exploring!",
-      "Fifty levels done! From flat 2D shapes to solid 3D cubes and cones, your shape vocabulary is growing strong!",
-      "One hundred levels of shapes! You understand how shapes connect, stack, and fit together in everyday life.",
-      "Two hundred levels completed! You are a true shape explorer with a sharp eye for every pattern and form!",
-    ],
-    'animals': [
-      "Welcome to the Great Safari! Can you help me find the king of the jungle?",
-      "The Jungle is cheering for you! You're a kind friend to every animal we meet!",
-      "You found the hidden Giraffe! You're a brave and smart explorer, adventurer!",
-      "The Ocean is deep and blue! Let's dive in and play with our fishy friends!",
-      "100 animal friends found! You are now the leader of the Jungle Safari!",
-      "Master of Nature! All the animals in the world want to be your best friend!",
-    ],
-    'fruits': [
-      "Mmm, yummy! Let's match the fruits to their names!",
-      "You're a natural! You know so many fruits now!",
-      "Great job! You've unlocked even more tasty fruits to learn!",
-      "Wow, 50 levels! You're getting so fast at reading these names!",
-      "100 levels of fruit fun! You are a true fruit expert!",
-      "Amazing! You've matched every single fruit!",
-    ],
-    'family': [
-      "Family is love! Let's meet everyone in our happy little house!",
-      "You're a great helper! Everyone is so proud of you today, friend!",
-      "The Family Tree is blooming with love. You're a very special branch!",
-      "A celebration of love! You bring so much joy to everyone you meet!",
-      "100 levels of family fun! You are the heart of our happy home!",
-      "Master of Hearts! Your kindness makes every family happy!",
-    ],
-    'school': [
-      "Welcome to the classroom! Let's unpack our backpacks and explore all the wonderful things we use at school every day.",
-      "Great job on your first 10 levels! You already know the names of so many classroom tools, teachers, and spaces.",
-      "Twenty levels complete! From art supplies to the library, you're learning how our school day works together.",
-      "Halfway to 100! Fifty levels done, and your classroom vocabulary is growing stronger and clearer every day.",
-      "One hundred levels completed! Amazing work! You know all about classroom routines, school helpers, and learning together.",
-      "Two hundred levels completed! Incredible achievement! You have mastered all school and classroom vocabulary in English!",
-    ],
-    'verbs': [
-      "Welcome to the stadium! Run, jump, and play as we discover action words for everything we do every day!",
-      "Great job on your first 10 levels! You're already spotting action words like run, catch, and jump so easily!",
-      "Twenty levels complete! Look at you go—you know what animals, players, and friends are doing in every story!",
-      "Halfway to 100! Fifty levels done, and your action-word vocabulary is growing stronger and clearer every day!",
-      "One hundred levels completed! Amazing achievement! You know action words for playing, cooking, working, and resting!",
-      "Two hundred levels completed! Incredible work! You have mastered all action verbs and can describe anything someone is doing!",
-    ],
-    'routine': [
-      "Welcome to Daily Routines! From waking up in the morning to cozy bedtime, let's learn how we spend our day together.",
-      "Great job on your first 10 levels! You're already recognizing morning, afternoon, and evening routines so easily.",
-      "Look at you go! Twenty levels complete, and you know just what to do at every time of the day.",
-      "Halfway to 100! Fifty levels done, and your daily routine English words are getting stronger every day.",
-      "One hundred levels completed! Amazing work! You know all the daily routines that keep our days happy, healthy, and organized.",
-      "Two hundred levels completed! Incredible achievement! You have mastered daily routine vocabulary in English!",
-    ],
-    'emotions': [
-      "How are you feeling today? Let's find the biggest, brightest happy face!",
-      "It's okay to feel a little sad sometimes. You're a very kind and caring friend.",
-      "You're an Emotion Expert! You know exactly how to make everyone feel better!",
-      "The Heart Garden is full of love and kindness because of your big heart!",
-      "100 levels of feelings! You have a heart of pure gold and a soul of light!",
-      "Master of Hearts! You have the magic power to make everyone in the world smile!",
-    ],
-    'prepositions': [
-      "In, on, and under! Let's explore where objects and animals are placed in everyday sentences.",
-      "Great job on your first 10 levels! You're already getting so good at telling where things are.",
-      "Look at you go! Twenty levels complete, and you're placing words like 'next to' and 'between' with ease.",
-      "Halfway to 100! Fifty levels done, and your understanding of position words is growing so strong.",
-      "One hundred levels completed! You've mastered how words connect places, objects, and sentences together!",
-      "Two hundred levels completed! Fantastic achievement! You can describe where anything is with complete confidence!",
-    ],
-    'phonics': [
-      "Welcome to Phonics! Every letter has its own sound. Let's listen closely and match the sounds to words together.",
-      "Great job on your first 10 levels! You're already getting so good at hearing the beginning and ending sounds of words.",
-      "Look at you go! Twenty levels complete, and you can hear how sounds blend together into everyday words.",
-      "Halfway to 100! You're matching consonant blends and word families with wonderful confidence.",
-      "One hundred levels completed! You've mastered vowel teams, letter patterns, and word blanks. That's a huge reading milestone!",
-      "Two hundred levels completed! Incredible achievement! You can sound out syllables, chunks, and new words all on your own!",
-    ],
-    'time': [
-      "Welcome to Time! Look at the clock, listen to daily clues, and let's explore hours, minutes, and schedules together!",
-      "Great job on your first 10 levels! You're already getting so good at telling morning, afternoon, and night apart.",
-      "Look at you go! Twenty levels complete, and you can read o'clock times and follow the clock hands with ease!",
-      "Halfway to 100! Fifty levels done, and you're reading half past, quarter hours, and daily schedules with confidence! ⏳",
-      "One hundred levels completed! Amazing achievement! You can read clocks, solve timetables, and count hours like a true champion!",
-      "Two hundred levels completed! Fantastic work! You have completely mastered telling time and daily schedules in English!",
-    ],
-    'opposites': [
-      "Welcome to Opposites! Hot and cold, big and small—let's discover all the word pairs together!",
-      "Great job on your first 10 levels! You're already getting so good at finding opposite word pairs.",
-      "Look at you go! Twenty levels complete, and you can spot the opposite of almost any word.",
-      "Halfway to 100! You've matched 50 levels of opposites, and your English vocabulary is growing so fast.",
-      "One hundred levels completed! You are an opposites master—you know both sides of so many English words!",
-      "Two hundred levels completed! Incredible achievement! You have mastered all opposites in English!",
-    ],
-    'daynight': [
-      "Let's learn about daytime and nighttime! Are you ready?",
-      "Great job! You're getting really good at telling day from night.",
-      "Sun or moon? You know exactly when things happen!",
-      "You've learned so much about the day and night cycle.",
-      "Amazing! You are an expert at daytime and nighttime.",
-      "Incredible! You know everything about the sun and the stars!",
-    ],
-    'nature': [
-      "Welcome to Nature! Let's explore plants, trees, weather, habitats, and the world around us.",
-      "Great start! You are learning wonderful words for living things and natural places.",
-      "You are doing so well! You can recognize different trees, animals, and weather patterns.",
-      "Halfway to 100! You understand how sunlight, soil, water, and living things connect.",
-      "100 levels completed! You know all about forests, oceans, seasons, and caring for our living world.",
-      "200 levels completed! You have mastered all nature vocabulary and science concepts.",
-    ],
-    'home': [
-      "Welcome home! Let's explore the rooms, parts of a house, and learn helpful words together.",
-      "Great work! You are learning how different rooms and parts of a house fit together.",
-      "You're doing wonderful! You know so many parts of a home and the things we use every day.",
-      "Halfway to 100! You understand how homes keep us safe, cozy, and cared for.",
-      "100 levels completed! You know all about rooms, everyday home items, and staying safe at home.",
-      "200 levels completed! You have mastered all home vocabulary and safety habits.",
-    ],
-    'food': [
-      "Yum yum! Let's cook up some magic in the kitchen today!",
-      "Chef de Cuisine! Your taste in words is absolutely delicious!",
-      "A feast of knowledge! You're feeding your mind with greatness!",
-      "The Table is set! You're a master of the culinary arts!",
-      "100 levels of flavor! You are the Master of the Feast!",
-      "Gourmet Legend! You've tasted all the wisdom in the world!",
-    ],
-    'transport': [
-      "Welcome traveler! Let's start our journey and discover all the wonderful ways people travel on land, sea, and in the air!",
-      "To the sky! You're flying above the clouds and spotting vehicles from all around the world!",
-      "All aboard! You're riding trains, buses, and ferries with confidence and curiosity!",
-      "Halfway to 100! You know so many amazing vehicles that help people travel and explore every day!",
-      "One hundred levels of travel! You've mastered words for vehicles on the road, across oceans, and up in the sky!",
-      "Master Traveler! You have completed every travel journey and learned all the transport words in English!",
-    ],
-    'bodyparts': [
-      "Head, shoulders, knees, and toes! Let's learn the names of our body parts!",
-      "Great job! You're learning how to talk about the things your body can do.",
-      "Keep it up! You're doing so well matching the body parts with their jobs.",
-      "Halfway there! You are really getting to know all the words for our body parts.",
-      "Wow, 100 levels! You know so much about how your body works!",
-      "Amazing! You have learned every single body part word in this game!",
-    ],
-    'clothing': [
-      "Listen closely! Let's solve the riddle and put the right clothes in the closet!",
-      "Great listening! You're getting so fast at solving these fun clues!",
-      "You have such sharp ears! You found the exact match for the riddle!",
-      "Halfway to 100! You're solving every clothing riddle like a true detective!",
-      "100 riddles solved! You know all your clothes so perfectly!",
-      "Wow! You've listened to every clue and matched all the clothes beautifully!",
-    ],
-  };
-
   static const Map<String, List<String>> legacyAdultScripts = {
     'academicword': [
       "",
@@ -1347,7 +1151,7 @@ class StoryServiceImpl implements StoryService {
     final int beatIndex = milestones.indexOf(level);
     final String cleanId = categoryId.toLowerCase().replaceAll('_', '');
 
-    // 1. Level 1: Granular "NEW QUEST" Matching (Modern & Kids)
+    // 1. Level 1: Granular "NEW QUEST" Matching
     if (level == 1) {
       // Check Granular Modern First
       if (modernGameScripts.containsKey(categoryId)) {
@@ -1362,52 +1166,6 @@ class StoryServiceImpl implements StoryService {
         );
       }
 
-      // Check Kids (using cleanId)
-      if (kidsScripts.containsKey(cleanId)) {
-        return StoryBeat(
-          title: context.tr('story.new_quest', fallback: 'NEW QUEST'),
-          text: context.tr(
-            'story_scripts.${cleanId}_beat_0',
-            fallback: context.tr(
-              'story_scripts.$cleanId',
-              fallback: kidsScripts[cleanId]![0],
-            ),
-          ),
-          mascotEmoji: _getMascotEmoji(cleanId),
-          themeColor: _getCategoryColor(cleanId),
-        );
-      }
-
-      // Universal Fallback with Category Intelligence
-      final bool isKids =
-          categoryId.contains('kids') ||
-          [
-            'alphabet',
-            'numbers',
-            'colors',
-            'shapes',
-            'animals',
-            'fruits',
-            'family',
-            'school',
-            'verbs',
-            'routine',
-            'emotions',
-            'prepositions',
-            'phonics',
-            'time',
-            'opposites',
-            'daynight',
-            'nature',
-            'home',
-            'food',
-            'transport',
-            'bodyparts',
-            'clothing',
-            'weather',
-            'professions',
-          ].contains(cleanId);
-
       final String broadCategory = _getBroadCategory(categoryId);
       final String categoryName = broadCategory.isNotEmpty
           ? broadCategory[0].toUpperCase() + broadCategory.substring(1)
@@ -1415,36 +1173,14 @@ class StoryServiceImpl implements StoryService {
 
       return StoryBeat(
         title: context.tr('story.new_quest', fallback: 'NEW QUEST'),
-        text: isKids
-            ? context.tr(
-                'story.fallback_kids',
-                fallback: 'Let\'s go on an adventure!',
-                args: [categoryName],
-              )
-            : context.tr(
-                'story.fallback_modern',
-                fallback: 'Your mission begins now.',
-                args: [categoryName],
-              ),
-        mascotEmoji: isKids ? "✨" : "🚀",
+        text: context.tr(
+          'story.fallback_modern',
+          fallback: 'Your mission begins now.',
+          args: [categoryName],
+        ),
+        mascotEmoji: "🚀",
         themeColor: _getCategoryColor(cleanId),
       );
-    }
-
-    // 2. Milestones: 10, 20, 50, 100, 200 (Legacy Scripts)
-    if (kidsScripts.containsKey(cleanId)) {
-      final script = kidsScripts[cleanId]!;
-      if (beatIndex < script.length) {
-        return StoryBeat(
-          title: context.tr('story.adventure_log', fallback: 'ADVENTURE LOG'),
-          text: context.tr(
-            'story_scripts.${cleanId}_beat_$beatIndex',
-            fallback: script[beatIndex],
-          ),
-          mascotEmoji: _getMascotEmoji(cleanId),
-          themeColor: _getCategoryColor(cleanId),
-        );
-      }
     }
 
     // 3. Milestones > 1 (Legacy Scripts)
@@ -1485,14 +1221,11 @@ class StoryServiceImpl implements StoryService {
   }
 
   /// Resolves [gameType] to its authoritative [QuestType] category via the
-  /// [GameSubtype] enum, or `null` if it isn't a recognized adult/modern
-  /// subtype id (in which case it's most likely a kids-zone topic id like
-  /// 'animal' or 'food', handled separately via [kidsScripts]).
+  /// [GameSubtype] enum, or `null` if it isn't a recognized subtype id.
   ///
   /// Shared by [_getBroadCategory], [_getMascotEmoji], and
   /// [_getCategoryColor] so all three theming lookups agree with each
-  /// other and with the exact category the legacy milestone scripts use -
-  /// see the doc comment on [_getMascotEmoji] for why this matters.
+  /// other and with the exact category the milestone scripts use.
   QuestType? _resolveQuestType(String gameType) {
     final String id = gameType.toLowerCase();
     final bool isKnownSubtype = GameSubtype.values.any(
@@ -1503,14 +1236,10 @@ class StoryServiceImpl implements StoryService {
   }
 
   String _getBroadCategory(String gameType) {
-    // Not a recognized adult/modern GameSubtype id (most likely a
-    // kids-zone topic id like 'animal' or 'food', which is handled
-    // earlier in getStoryBeat() via kidsScripts - this path is only
-    // reached as a fallback). No broad adult category applies.
     return _resolveQuestType(gameType)?.serializedName ?? '';
   }
 
-  /// Emoji shown per broad category for every *recognized* adult/modern
+  /// Emoji shown per broad category for every *recognized*
   /// [GameSubtype] id, keyed by the same [QuestType] used for milestone
   /// script selection (see [legacyAdultScripts]).
   static const Map<QuestType, String> _categoryEmoji = {
@@ -1525,27 +1254,8 @@ class StoryServiceImpl implements StoryService {
     QuestType.vocabulary: '📚',
   };
 
-  /// BUG FIX: this previously matched *every* id (kids-zone topics AND
-  /// adult/modern GameSubtype ids alike) purely by checking whether the
-  /// lowercased id string *contains* a handful of category substrings, in
-  /// a fixed priority order. That worked by coincidence for ids that happen
-  /// to literally contain their category's keyword, but produced wrong
-  /// results wherever a subtype's name doesn't: e.g. `phrasalVerbs` (a
-  /// **Vocabulary** subtype) contains "verb" and so matched the kids-zone
-  /// "verbs" branch (🏃) instead of a vocabulary emoji; `consonantClarity`,
-  /// `dialectDrill`, `connectedSpeech`, etc. (all **Accent** subtypes)
-  /// don't literally contain "accent" and fell through to the generic
-  /// default; and `accentShadowing` (an **Elite Mastery** subtype)
-  /// contains "accent" and so was themed as plain Accent instead of Elite.
-  /// Vocabulary additionally had no emoji branch at all.
-  ///
-  /// Now, any id that's a recognized [GameSubtype] is themed via the exact
-  /// enum-backed category lookup already used for milestone script
-  /// selection (guaranteed correct, no substring guessing). The original
-  /// substring heuristic is preserved unchanged as the fallback for
-  /// kids-zone topic ids (which aren't part of the [GameSubtype] enum and
-  /// have no authoritative category to look up), so no kids-zone behavior
-  /// changes.
+  /// Any id that's a recognized [GameSubtype] is themed via the exact
+  /// enum-backed category lookup used for milestone script selection.
   String _getMascotEmoji(String categoryId) {
     final resolvedCategory = _resolveQuestType(categoryId);
     if (resolvedCategory != null) {
@@ -1586,12 +1296,6 @@ class StoryServiceImpl implements StoryService {
     return '🦉';
   }
 
-  /// BUG FIX: same class of cross-category substring collision as
-  /// [_getMascotEmoji] (see its doc comment for concrete examples) -
-  /// resolved the same way: recognized [GameSubtype] ids are themed via
-  /// the authoritative enum-backed category lookup first; the original
-  /// substring heuristic remains, unchanged, as the fallback for kids-zone
-  /// topic ids.
   Color _getCategoryColor(String categoryId) {
     final resolvedCategory = _resolveQuestType(categoryId);
     if (resolvedCategory != null) {
@@ -1599,16 +1303,6 @@ class StoryServiceImpl implements StoryService {
     }
 
     final String id = categoryId.toLowerCase();
-
-    // Kids Zone exact color matching
-    // Fallback on LevelThemeHelper's unified method for all 25 kids games
-    // We check if it's a known kids game color by seeing if it matches one of the kids IDs.
-    // Actually, we can just check if it's one of the known 25, or let the adult fallback handle it.
-    final kidsColor = LevelThemeHelper.getKidsGameColor(id);
-    if (kidsColor != Colors.blue || id == 'numbers') {
-      // 'numbers' is blue, so it's a valid return
-      return kidsColor;
-    }
 
     // Adult category fallbacks
     if (id.contains('speak') || id.contains('dialogue')) {

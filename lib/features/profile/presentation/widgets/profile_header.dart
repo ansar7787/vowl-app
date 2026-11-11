@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -96,7 +97,10 @@ class ProfileHeader extends StatelessWidget {
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
 
     // XP progress within current level (0.0 - 1.0)
-    final xpProgress = ((user.totalExp % 100) / 100).clamp(0.0, 1.0);
+    final xpProgress =
+        ((user.totalExp % UserGameConstants.kXpPerLevel) /
+                UserGameConstants.kXpPerLevel)
+            .clamp(0.0, 1.0);
     final rankTitle = _getRankTitle(context, user.level);
 
     final cardContent = GlassTile(

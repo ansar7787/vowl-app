@@ -7,24 +7,24 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 // CRITICAL FIX — READ BEFORE MODIFYING THIS FILE
 //
 // The previous implementation of GlobalAudioFeedbackListener wired 9
-// BlocListeners directly to `di.sl<KidsBloc>()`, `di.sl<GrammarBloc>()`,
+// BlocListeners directly to `di.sl<GrammarBloc>()`,
 // `di.sl<SpeakingBloc>()`, etc., resolved fresh inside this widget's own
 // build() method. That never worked: every one of those 9 Bloc types is
 // registered with `sl.registerFactory<T>(...)` in `di_features.dart` (not
 // `registerLazySingleton`) - confirmed directly against that file rather
 // than assumed - specifically so that each game screen gets its own
-// freshly-constructed Bloc instance per visit. Calling `di.sl<KidsBloc>()`
+// freshly-constructed Bloc instance per visit. Calling `di.sl<GrammarBloc>()`
 // a SECOND time here, from a widget documented as living "near the root of
 // the widget tree", constructs yet another brand-new, never-updated
 // instance - not the one the active game screen is actually dispatching
-// events to. The result: `_praiseListener` / `_kidsListener` were
+// events to. The result: `_praiseListener` was
 // listening to orphaned Blocs that never receive a single event, so
 // praise audio never played, for any game, ever, in production.
 //
 // A root-level widget structurally CANNOT observe a Bloc that's scoped
 // per-screen via a `BlocProvider` mounted deep inside a pushed route's
 // subtree either (Provider/`context.read` only searches UP the tree from
-// the calling context - there is no ancestor `BlocProvider<KidsBloc>`
+// the calling context - there is no ancestor `BlocProvider<GrammarBloc>`
 // above the root to find). So neither the old DI-resolution approach nor
 // a naive switch to `context.read<T>()` can work from this widget's
 // position in the tree.
@@ -48,18 +48,13 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 // mirroring the two `listenWhen` conditions the old code used per Bloc.
 // Two concrete examples (the other 7 Blocs follow the identical shape):
 //
-//   // Inside KidsBloc, wherever it emits KidsLoaded(lastAnswerCorrect: true, ...)
-//   // or KidsGameComplete(...):
-//   sl<GamePraiseSignal>().fire(isKids: true);
-//
 //   // Inside GrammarBloc, wherever it emits GrammarLoaded with
 //   // answerStatus.isCorrect flipping true, or GrammarGameComplete:
 //   sl<GamePraiseSignal>().fire();
 //
 // (SpeakingBloc, ReadingBloc, WritingBloc, ListeningBloc, AccentBloc,
 // RoleplayBloc, VocabularyBloc all call `sl<GamePraiseSignal>().fire()`
-// with no arguments, same as GrammarBloc - only Kids Zone passes
-// `isKids: true`.) Optionally also add
+// with no arguments.) Optionally also add
 // `sl.registerLazySingleton<GamePraiseSignal>(() => GamePraiseSignal());`
 // to `di_core.dart` for an explicit, central registration - not required
 // for correctness (see [_resolvePraiseSignal]), but keeps the DI graph

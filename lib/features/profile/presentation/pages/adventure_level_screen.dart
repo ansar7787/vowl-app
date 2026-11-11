@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/constants/badge_constants.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -116,8 +117,9 @@ class AdventureLevelScreen extends StatelessWidget {
             if (user == null) return const SizedBox.shrink();
 
             final currentLevel = user.level;
-            final xpInCurrentLevel = user.totalExp % 100;
-            final progress = xpInCurrentLevel / 100;
+            final xpInCurrentLevel =
+                user.totalExp % UserGameConstants.kXpPerLevel;
+            final progress = xpInCurrentLevel / UserGameConstants.kXpPerLevel;
 
             return Stack(
               children: [
@@ -395,8 +397,8 @@ class AdventureLevelScreen extends StatelessWidget {
 
   Widget _buildXPProgressDetails(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final xpInCurrentLevel = user.totalExp % 100;
-    final xpNeeded = 100 - xpInCurrentLevel;
+    final xpInCurrentLevel = user.totalExp % UserGameConstants.kXpPerLevel;
+    final xpNeeded = UserGameConstants.kXpPerLevel - xpInCurrentLevel;
     final nextLevel = user.level + 1;
 
     return GlassTile(

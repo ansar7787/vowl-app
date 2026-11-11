@@ -10,7 +10,7 @@ enum TtsVoicePreset {
   friendlyTeacher(
     'friendly_teacher',
     'Friendly Teacher',
-    'Warm, cheerful & encouraging (recommended for Kids & Phonics)',
+    'Warm, cheerful & encouraging guide for foundational phonics and natural accent training',
     Icons.school_rounded,
     isPremium: false,
   ),
@@ -73,7 +73,7 @@ enum TtsVoicePreset {
 }
 
 /// Centralized utility managing high-fidelity voice resolution, engine calibration,
-/// and user preference persistence across both Kids Zone and general learning modules.
+/// and user preference persistence across all learning modules.
 class TtsVoiceHelper {
   TtsVoiceHelper._();
 
@@ -176,7 +176,6 @@ class TtsVoiceHelper {
   static Future<void> applyPresetToTts(
     FlutterTts tts, {
     required TtsVoicePreset preset,
-    bool isKids = false,
     String? explicitLocale,
   }) async {
     try {
@@ -192,15 +191,9 @@ class TtsVoiceHelper {
       await tts.setLanguage(targetLocale);
 
       // 2. Cadence and Pitch Calibration
-      // Kids mode: 0.42 speech rate (patient and clear) with 1.03 pitch (warm teacher, no chipmunk distortion)
-      // Adult mode: 0.44 speech rate with 1.0 pitch (natural human cadence)
-      if (isKids) {
-        await tts.setSpeechRate(0.42);
-        await tts.setPitch(1.03);
-      } else {
-        await tts.setSpeechRate(0.44);
-        await tts.setPitch(1.0);
-      }
+      // Standard adult language learning mode: 0.44 speech rate with 1.0 natural pitch
+      await tts.setSpeechRate(0.44);
+      await tts.setPitch(1.0);
 
       await tts.setVolume(1.0);
       await tts.awaitSpeakCompletion(true);

@@ -52,9 +52,7 @@ class InstructionHelper {
     String? gameTypeName;
 
     try {
-      if (quest.runtimeType.toString().contains('KidsQuest')) {
-        gameTypeName = quest.gameType?.toString();
-      } else if (quest.subtype != null) {
+      if (quest.subtype != null) {
         gameTypeName = quest.subtype.toString().split('.').last;
       }
     } catch (_) {}

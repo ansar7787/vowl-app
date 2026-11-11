@@ -460,7 +460,8 @@ class GameDialogHelper {
         isSuccess: true,
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         isExitConfirmation: true,
-        adButtonText: context.tr('games.kids_quit_button', fallback: 'QUIT'),
+        adButtonText:
+            context.tr('common.exit', fallback: 'EXIT').toUpperCase(),
         onAdAction: () {
           Navigator.of(dialogCtx).pop();
           onQuit();

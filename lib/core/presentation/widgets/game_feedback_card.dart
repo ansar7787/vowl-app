@@ -25,8 +25,7 @@ class PedagogicalRuleItem {
   });
 }
 
-/// A universal, production-grade feedback card used across all 100 main games
-/// and 25 kids games.
+/// A universal, production-grade feedback card used across all 100 main games.
 ///
 /// Features:
 /// - Deterministic on-demand TTS audio speaker button (stops on re-tap, stops on continue,
@@ -81,9 +80,6 @@ class GameFeedbackCard extends StatelessWidget {
   /// Whether this is a 2-stage game. If true, pedagogical fields are hidden to avoid redundancy.
   final bool isTwoStageGame;
 
-  /// Whether this game belongs to the Kids Zone (routes TTS to warm teacher cadence).
-  final bool isKids;
-
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
@@ -101,7 +97,6 @@ class GameFeedbackCard extends StatelessWidget {
     this.requiredPoints,
     this.customContent,
     this.isTwoStageGame = false,
-    this.isKids = false,
   });
 
   static const _successGradient = [AppColors.teal400, AppColors.emerald500];
@@ -210,11 +205,10 @@ class GameFeedbackCard extends StatelessWidget {
                         rule: correctAnswer!,
                         shadowColor: shadowColor,
                         isDark: isDark,
-                        isKids: isKids,
                       ),
                     ],
 
-                    // Single pedagogical rule (Grammar, Kids Fun Fact, etc.)
+                    // Single pedagogical rule (Grammar, Fun Fact, etc.)
                     if (showPedagogicalFields &&
                         ruleContent != null &&
                         ruleContent!.trim().isNotEmpty) ...[
@@ -228,7 +222,6 @@ class GameFeedbackCard extends StatelessWidget {
                         rule: ruleContent!,
                         shadowColor: shadowColor,
                         isDark: isDark,
-                        isKids: isKids,
                       ),
                     ],
 
@@ -245,7 +238,6 @@ class GameFeedbackCard extends StatelessWidget {
                           rule: item.rule,
                           shadowColor: shadowColor,
                           isDark: isDark,
-                          isKids: isKids,
                         ),
                       ],
                     ],
@@ -259,7 +251,6 @@ class GameFeedbackCard extends StatelessWidget {
                         originalExplanation: explanation!,
                         accentColor: shadowColor,
                         isDark: isDark,
-                        isKids: isKids,
                       ),
                     ],
 
@@ -276,7 +267,6 @@ class GameFeedbackCard extends StatelessWidget {
                         rule: sampleAnswer!,
                         shadowColor: shadowColor,
                         isDark: isDark,
-                        isKids: isKids,
                       ),
                     ],
 
@@ -293,7 +283,6 @@ class GameFeedbackCard extends StatelessWidget {
                         rule: requiredPoints!.join("\n• "),
                         shadowColor: shadowColor,
                         isDark: isDark,
-                        isKids: isKids,
                       ),
                     ],
                   ],
@@ -429,13 +418,11 @@ class _ExplanationCard extends StatefulWidget {
   final String originalExplanation;
   final Color accentColor;
   final bool isDark;
-  final bool isKids;
 
   const _ExplanationCard({
     required this.originalExplanation,
     required this.accentColor,
     required this.isDark,
-    this.isKids = false,
   });
 
   @override
@@ -520,7 +507,6 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       TtsSpeakerButtonWidget(
                         text: displayText,
                         color: widget.accentColor,
-                        isKids: widget.isKids,
                         locale: translatedText != null
                             ? _translatedLocale
                             : null,
@@ -529,7 +515,6 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                         SizedBox(width: 8.w),
                         TranslateButtonWidget(
                           originalText: widget.originalExplanation,
-                          isKidsZone: widget.isKids,
                           onTranslationComplete: (translated) {
                             TtsSpeakerButtonWidget.stopAll();
                             if (mounted) {

@@ -103,7 +103,7 @@ void main() {
     email: 'aria@vowl.app',
     displayName: 'Aria Stark',
     currentStreak: 14,
-    totalExp: 1450, // Level 15 (Commander tier)
+    totalExp: 3500, // Level 15 (Commander tier: 14 * 250 = 3500)
     coins: 1250,
   );
 

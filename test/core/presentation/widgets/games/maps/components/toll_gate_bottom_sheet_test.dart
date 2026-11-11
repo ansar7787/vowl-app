@@ -38,7 +38,6 @@ void main() {
       const PurchaseLevelUnlockParams(
         gameType: 'flashcards',
         cost: 1,
-        isKidsMode: false,
       ),
     );
   });

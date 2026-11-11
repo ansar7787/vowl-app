@@ -30,13 +30,10 @@ import 'package:vowl/core/presentation/widgets/contact_phone_bottom_sheet.dart';
 
 /// Bottom sheet presenting currency packs and subscription plans for in-app purchase.
 class PremiumStoreBottomSheet extends StatefulWidget {
-  final bool isKidsMode;
-
-  const PremiumStoreBottomSheet({super.key, this.isKidsMode = false});
+  const PremiumStoreBottomSheet({super.key});
 
   static Future<void> show({
     required BuildContext context,
-    bool isKidsMode = false,
   }) {
     return showModalBottomSheet(
       context: context,
@@ -44,7 +41,7 @@ class PremiumStoreBottomSheet extends StatefulWidget {
       useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => PremiumStoreBottomSheet(isKidsMode: isKidsMode),
+      builder: (context) => const PremiumStoreBottomSheet(),
     );
   }
 

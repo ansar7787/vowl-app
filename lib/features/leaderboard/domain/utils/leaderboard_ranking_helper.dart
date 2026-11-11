@@ -75,41 +75,6 @@ final class LeaderboardRankingHelper {
     return list;
   }
 
-  /// Sorts users for the Kids Zone leaderboard:
-  /// 1. [kidsTotalStars] (primary, descending)
-  /// 2. [kidsTotalLevelsCompleted] (tie-breaker, descending)
-  /// 3. [kidsCoins] (tie-breaker, descending)
-  /// 4. [currentStreak] (tie-breaker, descending)
-  static List<UserEntity> sortKids(
-    List<UserEntity> rawUsers, {
-    UserEntity? currentUser,
-  }) {
-    final list = List<UserEntity>.from(rawUsers);
-    if (currentUser != null) {
-      final idx = list.indexWhere((u) => u.id == currentUser.id);
-      if (idx >= 0) {
-        list[idx] = currentUser;
-      } else {
-        list.add(currentUser);
-      }
-    }
-
-    list.sort((a, b) {
-      final aStars = a.kidsTotalStars;
-      final bStars = b.kidsTotalStars;
-      if (bStars != aStars) return bStars.compareTo(aStars);
-      final aLevels = a.kidsTotalLevelsCompleted;
-      final bLevels = b.kidsTotalLevelsCompleted;
-      if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-      if (b.kidsCoins != a.kidsCoins) {
-        return b.kidsCoins.compareTo(a.kidsCoins);
-      }
-      return b.currentStreak.compareTo(a.currentStreak);
-    });
-
-    return list;
-  }
-
   /// Computes the 1-based rank position of [userId] in [sortedUsers].
   /// Returns `null` if unranked.
   static int? getRankPosition(List<UserEntity> sortedUsers, String? userId) {

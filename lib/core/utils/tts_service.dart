@@ -37,7 +37,6 @@ abstract class TtsService {
     String? locale,
     List<int>? pauseMarkers,
     TtsVoicePreset? forcedPreset,
-    bool isKids = false,
   });
 
   /// Aborts active audio speech outputs immediately.
@@ -84,7 +83,6 @@ abstract class TtsService {
   Future<void> preWarm({
     String? locale,
     TtsVoicePreset? preset,
-    bool isKids = false,
   }) async {}
 }
 
@@ -99,7 +97,6 @@ class TtsServiceImpl implements TtsService {
   void Function(String word)? _wordCallback;
   Timer? _watchdogTimer;
   TtsVoicePreset? _activeEnginePreset;
-  bool _activeIsKids = false;
   String? _activeLocale;
   double? _activeRate;
   TtsEngineStatus _engineStatus = TtsEngineStatus.initializing;
@@ -188,13 +185,11 @@ class TtsServiceImpl implements TtsService {
 
       final preset = await TtsVoiceHelper.getSavedPreset(force: true);
       _activeEnginePreset = preset;
-      _activeIsKids = false;
       _activeLocale = null;
       _activeRate = 0.44;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
-        isKids: false,
       );
 
       _setupDefaultHandlers();
@@ -251,13 +246,11 @@ class TtsServiceImpl implements TtsService {
       }
       final preset = await TtsVoiceHelper.getSavedPreset(force: true);
       _activeEnginePreset = preset;
-      _activeIsKids = false;
       _activeLocale = null;
       _activeRate = 0.44;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
-        isKids: false,
       );
     } catch (e) {
       sl<AppLogger>().error(
@@ -271,7 +264,6 @@ class TtsServiceImpl implements TtsService {
   Future<void> preWarm({
     String? locale,
     TtsVoicePreset? preset,
-    bool isKids = false,
   }) async {
     await _initFuture;
     try {
@@ -279,20 +271,17 @@ class TtsServiceImpl implements TtsService {
       final targetLocale = locale ?? 'en-US';
       final bool needsCalibration =
           _activeEnginePreset != targetPreset ||
-          _activeIsKids != isKids ||
           _activeLocale != targetLocale;
 
       if (needsCalibration) {
         await TtsVoiceHelper.applyPresetToTts(
           _flutterTts,
           preset: targetPreset,
-          isKids: isKids,
           explicitLocale: targetLocale,
         );
         _activeEnginePreset = targetPreset;
-        _activeIsKids = isKids;
         _activeLocale = targetLocale;
-        _activeRate = isKids ? 0.42 : 0.44;
+        _activeRate = 0.44;
       }
     } catch (e) {
       sl<AppLogger>().warning('TtsService: preWarm failed: $e', tag: 'TTS');
@@ -321,13 +310,11 @@ class TtsServiceImpl implements TtsService {
 
     try {
       _activeEnginePreset = null;
-      _activeIsKids = false;
       _activeLocale = null;
       _activeRate = null;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
-        isKids: preset == TtsVoicePreset.friendlyTeacher,
       );
 
       if (sessionId != _activeSessionId) return;
@@ -394,7 +381,6 @@ class TtsServiceImpl implements TtsService {
     String? locale,
     List<int>? pauseMarkers,
     TtsVoicePreset? forcedPreset,
-    bool isKids = false,
   }) async {
     if (text.isEmpty) return;
 
@@ -445,23 +431,20 @@ class TtsServiceImpl implements TtsService {
           forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
       final bool needsCalibration =
           _activeEnginePreset != targetPreset ||
-          _activeIsKids != isKids ||
           _activeLocale != locale;
 
       if (needsCalibration) {
         await TtsVoiceHelper.applyPresetToTts(
           _flutterTts,
           preset: targetPreset,
-          isKids: isKids,
           explicitLocale: locale,
         );
         _activeEnginePreset = targetPreset;
-        _activeIsKids = isKids;
         _activeLocale = locale;
-        _activeRate = isKids ? 0.42 : 0.44;
+        _activeRate = 0.44;
       }
 
-      final targetRate = rate ?? (isKids ? 0.42 : 0.44);
+      final targetRate = rate ?? 0.44;
       if (_activeRate != targetRate) {
         await _flutterTts.setSpeechRate(targetRate);
         _activeRate = targetRate;

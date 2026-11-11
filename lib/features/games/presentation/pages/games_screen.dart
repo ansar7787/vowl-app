@@ -33,7 +33,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
-import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -97,11 +96,6 @@ class _GamesScreenState extends State<GamesScreen> {
               : null;
 
           if (user == null) return const _QuestHubShimmer();
-
-          // Kids Mode isolation
-          if (user.isKidsModeOnly) {
-            return _buildKidsHub(context, user, isDark, isMidnight);
-          }
 
           return Stack(
             children: [
@@ -195,66 +189,6 @@ class _GamesScreenState extends State<GamesScreen> {
       ),
     );
   }
-
-  Widget _buildKidsHub(
-    BuildContext context,
-    UserEntity user,
-    bool isDark,
-    bool isMidnight,
-  ) {
-    return Stack(
-      children: [
-        const MeshGradientBackground(showLetters: false),
-        CustomScrollView(
-          controller: di.sl<ScrollController>(instanceName: 'games'),
-          physics: const AlwaysScrollableScrollPhysics(
-            parent: BouncingScrollPhysics(),
-          ),
-          slivers: [
-            _GamesAppBar(isDark: isDark, user: user, isKids: true),
-            SliverPadding(
-              padding: EdgeInsets.fromLTRB(
-                AppSpacing.screen,
-                16.h,
-                AppSpacing.screen,
-                120.h + MediaQuery.paddingOf(context).bottom,
-              ),
-              sliver: SliverList(
-                delegate: SliverChildListDelegate([
-                  Text(
-                    context.tr(
-                      'games.kids_zone_title',
-                      fallback: 'Kids Learning Zone',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    context.tr(
-                      'games.kids_zone_subtitle',
-                      fallback: 'Educational games for early learners',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      color: isDark ? Colors.white60 : AppColors.slate600,
-                    ),
-                  ),
-                  SizedBox(height: 18.h),
-                  KidsCategoryShelf(user: user),
-                ]),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -264,12 +198,10 @@ class _GamesScreenState extends State<GamesScreen> {
 class _GamesAppBar extends StatelessWidget {
   final bool isDark;
   final UserEntity user;
-  final bool isKids;
 
   const _GamesAppBar({
     required this.isDark,
     required this.user,
-    this.isKids = false,
   });
 
   @override
@@ -332,24 +264,17 @@ class _GamesAppBar extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
-                          isKids
-                              ? Icons.child_care_rounded
-                              : Icons.sports_esports_rounded,
+                          Icons.sports_esports_rounded,
                           color: AppColors.blue500,
                           size: 14.r,
                         ),
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        isKids
-                            ? context.tr(
-                                'games.tools_kids_zone',
-                                fallback: 'Kids Zone',
-                              )
-                            : context.tr(
-                                'games.quest_hub',
-                                fallback: 'Quest Hub',
-                              ),
+                        context.tr(
+                          'games.quest_hub',
+                          fallback: 'Quest Hub',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,

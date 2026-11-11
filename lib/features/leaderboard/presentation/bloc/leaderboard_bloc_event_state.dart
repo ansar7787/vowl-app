@@ -24,12 +24,11 @@ abstract class LeaderboardEvent extends Equatable {
 /// testing assertions.
 class LoadLeaderboard extends LeaderboardEvent {
   final Completer<void>? completer;
-  final bool isKids;
 
-  const LoadLeaderboard({this.completer, this.isKids = false});
+  const LoadLeaderboard({this.completer});
 
   @override
-  List<Object?> get props => [isKids];
+  List<Object?> get props => [];
 }
 
 // ---------------------------------------------------------------------------
@@ -64,14 +63,11 @@ class LeaderboardLoaded extends LeaderboardState {
   /// The timestamp of the last successful rank cache update.
   final DateTime lastUpdated;
 
-  /// Whether this ranking represents the young learners leaderboard.
-  final bool isKids;
-
   /// Creates a [LeaderboardLoaded] state.
-  const LeaderboardLoaded(this.users, this.lastUpdated, {this.isKids = false});
+  const LeaderboardLoaded(this.users, this.lastUpdated);
 
   @override
-  List<Object?> get props => [users, lastUpdated, isKids];
+  List<Object?> get props => [users, lastUpdated];
 }
 
 /// Failure state containing a diagnostic error message.

@@ -23,7 +23,6 @@ class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
   final int rank;
   final bool isMe;
-  final bool isKids;
   final bool isWeekly;
   final VoidCallback? onTap;
 
@@ -32,7 +31,6 @@ class LeaderboardRankTile extends StatelessWidget {
     required this.user,
     required this.rank,
     required this.isMe,
-    this.isKids = false,
     this.isWeekly = true,
     this.onTap,
   });
@@ -42,17 +40,10 @@ class LeaderboardRankTile extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final levelsCleared = isKids
-        ? user.kidsTotalLevelsCompleted
-        : user.totalLevelsCompleted;
-    final score = isKids
-        ? user.kidsTotalStars
-        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
-    final scoreLabel = isKids
-        ? 'Stars'
-        : (isWeekly
-              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-              : context.tr('leaderboard.xp', fallback: 'XP'));
+    final score = isWeekly ? user.currentWeeklyExp : user.totalExp;
+    final scoreLabel = isWeekly
+        ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+        : context.tr('leaderboard.xp', fallback: 'XP');
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10
@@ -71,7 +62,7 @@ class LeaderboardRankTile extends StatelessWidget {
           'Rank $rank: $displayName. '
           '$score $scoreLabel. '
           '${user.currentStreak}-day streak. '
-          '${isKids ? "$levelsCleared levels cleared." : "Level ${user.level}."}'
+          'Level ${user.level}.'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
       child: GlassTile(
         padding: EdgeInsets.zero,
@@ -107,12 +98,12 @@ class LeaderboardRankTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  // Rank number & Change Indicator side-by-side (adaptive width for Weekly vs Global/Kids)
+                  // Rank number & Change Indicator side-by-side (adaptive width for Weekly vs Global)
                   SizedBox(
-                    width: (!isKids && isWeekly) ? 50.w : 28.w,
+                    width: isWeekly ? 50.w : 28.w,
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
-                      alignment: (!isKids && isWeekly)
+                      alignment: isWeekly
                           ? Alignment.centerLeft
                           : Alignment.center,
                       child: Row(
@@ -123,7 +114,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             '$rank',
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: (!isKids && isWeekly) ? 19.sp : 21.sp,
+                              fontSize: isWeekly ? 19.sp : 21.sp,
                               fontWeight: FontWeight.w900,
                               letterSpacing: -0.6,
                               color: isDark
@@ -131,7 +122,7 @@ class LeaderboardRankTile extends StatelessWidget {
                                   : tierColor.withValues(alpha: 0.8),
                             ),
                           ),
-                          if (!isKids && isWeekly) ...[
+                          if (isWeekly) ...[
                             SizedBox(width: 4.w),
                             _buildRankChangeIndicator(
                               user.previousRank ?? rank,
@@ -228,9 +219,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           children: [
                             Flexible(
                               child: Text(
-                                isKids
-                                    ? '${user.kidsTotalLevelsCompleted} Levels · ${user.kidsCoins} Coins'
-                                    : 'Lv. ${user.level} · ${user.currentStreak}d',
+                                'Lv. ${user.level} · ${user.currentStreak}d',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 10.sp,
@@ -244,11 +233,9 @@ class LeaderboardRankTile extends StatelessWidget {
                             ),
                             SizedBox(width: 3.w),
                             Icon(
-                              isKids ? Icons.monetization_on_rounded : LucideIcons.flame,
+                              LucideIcons.flame,
                               size: 12.r,
-                              color: isKids
-                                  ? AppColors.amber500
-                                  : IllustrationColors.warmOrange,
+                              color: IllustrationColors.warmOrange,
                             ),
                           ],
                         ),
@@ -266,12 +253,10 @@ class LeaderboardRankTile extends StatelessWidget {
                       vertical: 5.h,
                     ),
                     decoration: BoxDecoration(
-                      color: (isKids ? AppColors.amber500 : tierColor)
-                          .withValues(alpha: 0.08),
+                      color: tierColor.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(10.r),
                       border: Border.all(
-                        color: (isKids ? AppColors.amber500 : tierColor)
-                            .withValues(alpha: 0.25),
+                        color: tierColor.withValues(alpha: 0.25),
                       ),
                     ),
                     child: FittedBox(
@@ -280,33 +265,15 @@ class LeaderboardRankTile extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          if (isKids) ...[
-                            Icon(
-                              Icons.star_rounded,
-                              size: 13.sp,
-                              color: AppColors.amber500,
+                          Text(
+                            '${_formatScore(score)} XP',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
+                              color: tierColor,
                             ),
-                            SizedBox(width: 2.w),
-                            Text(
-                              _formatScore(user.kidsTotalStars),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.amber500,
-                              ),
-                            ),
-                          ] else ...[
-                            Text(
-                              '${_formatScore(score)} XP',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w900,
-                                color: tierColor,
-                              ),
-                            ),
-                          ],
+                          ),
                         ],
                       ),
                     ),

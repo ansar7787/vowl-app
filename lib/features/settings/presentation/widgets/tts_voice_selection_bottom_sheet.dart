@@ -13,7 +13,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 /// Modal bottom sheet allowing users to customize speech pronunciation voice style.
 /// Designed with responsive layout to prevent overflows across all screen sizes and text scales.
@@ -277,9 +276,6 @@ class _TtsVoiceSelectionBottomSheetState
     try {
       if (di.sl.isRegistered<TtsService>()) {
         await di.sl<TtsService>().reloadVoice();
-      }
-      if (di.sl.isRegistered<KidsTTSService>()) {
-        await di.sl<KidsTTSService>().reloadVoice();
       }
     } catch (_) {}
   }
@@ -666,40 +662,6 @@ class _TtsVoiceSelectionBottomSheetState
                                               ).colorScheme.onSurface,
                                       ),
                                     ),
-                                    if (preset ==
-                                        TtsVoicePreset.friendlyTeacher)
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 6.w,
-                                          vertical: 2.h,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: isDark
-                                              ? const Color(0xFF14291E)
-                                              : const Color(0xFFE8F5E9),
-                                          borderRadius: BorderRadius.circular(
-                                            5.r,
-                                          ),
-                                          border: Border.all(
-                                            color: isDark
-                                                ? const Color(0xFF1E462E)
-                                                : const Color(0xFFC8E6C9),
-                                            width: 0.8,
-                                          ),
-                                        ),
-                                        child: Text(
-                                          'KIDS FAVORITE',
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 9.sp,
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 0.4,
-                                            color: isDark
-                                                ? const Color(0xFF81C784)
-                                                : const Color(0xFF2E7D32),
-                                          ),
-                                        ),
-                                      ),
                                     if (preset.isPremium)
                                       Container(
                                         padding: EdgeInsets.symmetric(

@@ -19,13 +19,11 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 class StoryDialogueBox extends StatelessWidget {
   final StoryBeat beat;
   final VoidCallback onDismiss;
-  final bool isKidsMode;
 
   const StoryDialogueBox({
     super.key,
     required this.beat,
     required this.onDismiss,
-    this.isKidsMode = false,
   });
 
   @override
@@ -158,9 +156,7 @@ class StoryDialogueBox extends StatelessWidget {
     // context.read misses updates; context.select rebuilds only when the
     // selected values change.
     final mascotId = context.select<AuthBloc, String>(
-      (b) => isKidsMode
-          ? (b.state.user?.kidsMascot ?? 'owly')
-          : (b.state.user?.vowlMascot ?? 'vowl_prime'),
+      (b) => b.state.user?.vowlMascot ?? 'vowl_prime',
     );
     final level = context.select<AuthBloc, int>(
       (b) => b.state.user?.level ?? 1,
@@ -180,7 +176,6 @@ class StoryDialogueBox extends StatelessWidget {
             useFloatingAnimation: true,
             level: level,
             mascotId: mascotId,
-            isKidsMode: isKidsMode,
           ),
           SizedBox(height: 24.h),
           Text(

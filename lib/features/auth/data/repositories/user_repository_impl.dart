@@ -68,7 +68,7 @@ class UserRepositoryImpl
 
       // FIX (CRITICAL — DATA LOSS): Firestore Security Rules enforce a
       // rate-limit guard that requires `lastRewardTimestamp == request.time`
-      // on any write that changes `totalExp`, `coins`, or `kidsCoins`.
+      // on any write that changes `totalExp` or `coins`.
       // Without this, the generic updateUser() merge-write silently gets
       // PERMISSION_DENIED whenever it touches those fields, causing data
       // to appear saved in-memory but never actually persist to Firestore.
@@ -82,9 +82,7 @@ class UserRepositoryImpl
       // the rules only enforce the cooldown when those fields *actually*
       // differ from the server value, and `FieldValue.serverTimestamp()`
       // always satisfies `== request.time`.
-      if (map.containsKey('totalExp') ||
-          map.containsKey('coins') ||
-          map.containsKey('kidsCoins')) {
+      if (map.containsKey('totalExp') || map.containsKey('coins')) {
         map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
       }
 

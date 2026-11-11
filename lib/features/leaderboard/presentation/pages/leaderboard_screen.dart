@@ -37,16 +37,14 @@ import 'package:vowl/features/social_share/domain/entities/share_card_data.dart'
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 export 'package:vowl/features/leaderboard/domain/entities/leaderboard_timeframe.dart';
 
-/// Main leaderboard rankings screen featuring podium top 3 positions,
-/// personal rank card, and toggleable standard/kids leaderboards.
+/// Main leaderboard rankings screen featuring podium top 3 positions
+/// and personal rank card.
 class LeaderboardScreen extends StatefulWidget {
-  final bool isKids;
   final LeaderboardTimeframe initialTimeframe;
   final bool? showBackButton;
 
   const LeaderboardScreen({
     super.key,
-    this.isKids = false,
     this.initialTimeframe = LeaderboardTimeframe.thisWeek,
     this.showBackButton,
   });
@@ -87,7 +85,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
     return BlocProvider(
       create: (_) =>
-          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: widget.isKids)),
+          di.sl<LeaderboardBloc>()..add(const LoadLeaderboard()),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -105,7 +103,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                   bottom: false,
                   child: Column(
                     children: [
-                      if (widget.showBackButton ?? widget.isKids) ...[
+                      if (widget.showBackButton ?? false) ...[
                         Padding(
                           padding: EdgeInsets.only(
                             top: 6.h,
@@ -119,9 +117,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                 button: true,
                                 label: context.tr(
                                   'common.back',
-                                  fallback: widget.isKids
-                                      ? 'Back to Kids Zone'
-                                      : 'Back to Home',
+                                  fallback: 'Back to Home',
                                 ),
                                 child: GestureDetector(
                                   behavior: HitTestBehavior.opaque,
@@ -129,11 +125,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                     if (context.canPop()) {
                                       context.pop();
                                     } else {
-                                      context.go(
-                                        widget.isKids
-                                            ? AppRouter.kidsZoneRoute
-                                            : AppRouter.homeRoute,
-                                      );
+                                      context.go(AppRouter.homeRoute);
                                     }
                                   },
                                   child: Container(
@@ -158,12 +150,10 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                         ),
                                         SizedBox(width: 6.w),
                                         Text(
-                                          widget.isKids
-                                              ? 'Kids Zone'
-                                              : context.tr(
-                                                  'nav.home',
-                                                  fallback: 'Home',
-                                                ),
+                                          context.tr(
+                                            'nav.home',
+                                            fallback: 'Home',
+                                          ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 14.sp,
@@ -182,9 +172,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                           ),
                         ),
                       ],
-                      if (!widget.isKids &&
-                          (state is LeaderboardLoading ||
-                              state is LeaderboardInitial)) ...[
+                      if (state is LeaderboardLoading ||
+                          state is LeaderboardInitial) ...[
                         Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: AppSpacing.screen,
@@ -208,7 +197,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                 currentUser: currentUser,
                                 timeframe: _timeframe,
                                 showBackButton:
-                                    widget.showBackButton ?? widget.isKids,
+                                    widget.showBackButton ?? false,
                                 onTimeframeChanged: (selected) {
                                   setState(() => _timeframe = selected);
                                 },
@@ -221,7 +210,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                 message: state.message,
                                 onRetry: () =>
                                     context.read<LeaderboardBloc>().add(
-                                      LoadLeaderboard(isKids: widget.isKids),
+                                      const LoadLeaderboard(),
                                     ),
                               );
                             }
@@ -297,16 +286,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   }
 
   /// Deterministic sort ensuring consistency across timeframes via [LeaderboardRankingHelper]:
-  /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
   /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
   /// - All-Time: Lifetime total XP (primary), daily streak (tie-breaker), levels
   List<UserEntity> get _sortedUsers {
-    if (widget.state.isKids) {
-      return LeaderboardRankingHelper.sortKids(
-        widget.state.users,
-        currentUser: widget.currentUser,
-      );
-    } else if (widget.timeframe == LeaderboardTimeframe.thisWeek) {
+    if (widget.timeframe == LeaderboardTimeframe.thisWeek) {
       return LeaderboardRankingHelper.sortWeekly(
         widget.state.users,
         currentUser: widget.currentUser,
@@ -358,12 +341,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final screenHeight = MediaQuery.sizeOf(context).height;
     final podiumHeight = (screenHeight * 0.24).clamp(185.0, 210.0);
     final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
-    final bannerHeight = (!widget.state.isKids && isWeekly) ? 106.h : 0.0;
-    final overtakeHudHeight =
-        (!widget.state.isKids && widget.currentUser != null) ? 96.h : 0.0;
+    final bannerHeight = isWeekly ? 106.h : 0.0;
+    final overtakeHudHeight = widget.currentUser != null ? 96.h : 0.0;
 
-    final switchHeight = widget.state.isKids ? 0.0 : (48.h + 18.h);
-    final topPadding = widget.state.isKids ? 16.h : 8.h;
+    final switchHeight = 48.h + 18.h;
+    final topPadding = 8.h;
 
     // Exact cumulative overhead before rank 4-N SliverList:
     // topPadding + header(~52.h) + switch(66.h) + banner + spacing(14.h) + podium + spacing(12.h)
@@ -385,7 +367,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final tileHeight = 74.h;
     final tileIndex = rankIndex - 3;
     final divisionDividerOffset =
-        (!widget.state.isKids && isWeekly && tileIndex >= 7) ? 20.h : 0.0;
+        (isWeekly && tileIndex >= 7) ? 20.h : 0.0;
     final tileCenterOffset =
         overhead +
         divisionDividerOffset +
@@ -447,10 +429,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         user: user,
         rank: rank,
         isWeekly: isWeekly,
-        isKids: widget.state.isKids,
         onShareRank: () => _showShareCard(user, rank),
       );
-    } else if (!widget.state.isKids && widget.currentUser != null) {
+    } else if (widget.currentUser != null) {
       final myRank =
           _sortedUsers.indexWhere((u) => u.id == widget.currentUser!.id) + 1;
       RivalChallengeSheet.show(
@@ -473,11 +454,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
   }
 
   void _showShareCard(UserEntity user, int rank) {
-    final isKids = widget.state.isKids;
     final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
-    final score = isKids
-        ? user.kidsTotalStars
-        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
+    final score = isWeekly ? user.currentWeeklyExp : user.totalExp;
     final data = ShareCardData.fromRank(
       userName: user.safeDisplayName,
       userPhotoUrl: user.photoUrl,
@@ -500,7 +478,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         onRefresh: () async {
           final completer = Completer<void>();
           context.read<LeaderboardBloc>().add(
-            LoadLeaderboard(completer: completer, isKids: widget.state.isKids),
+            LoadLeaderboard(completer: completer),
           );
           context.read<AuthBloc>().add(const AuthRefreshUser());
           await completer.future;
@@ -540,16 +518,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      widget.state.isKids
-                          ? context.tr(
-                              'leaderboard.kids_empty',
-                              fallback: 'Be the first kid on the leaderboard!',
-                            )
-                          : context.tr(
-                              'leaderboard.empty_subtitle',
-                              fallback:
-                                  'Complete lessons to appear on the leaderboard!',
-                            ),
+                      context.tr(
+                        'leaderboard.empty_subtitle',
+                        fallback:
+                            'Complete lessons to appear on the leaderboard!',
+                      ),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontFamily: 'Outfit',
@@ -580,7 +553,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             context.read<LeaderboardBloc>().add(
               LoadLeaderboard(
                 completer: completer,
-                isKids: widget.state.isKids,
               ),
             );
             context.read<AuthBloc>().add(const AuthRefreshUser());
@@ -599,7 +571,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             slivers: [
               // Top spacing
               SliverToBoxAdapter(
-                child: SizedBox(height: widget.state.isKids ? 16.h : 8.h),
+                child: SizedBox(height: 8.h),
               ),
 
               // 1. Header with last-updated timestamp
@@ -608,13 +580,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
-                    isKids: widget.state.isKids,
                     timeframe: widget.timeframe,
                     onSync: () async {
                       final completer = Completer<void>();
                       context.read<LeaderboardBloc>().add(
                         LoadLeaderboard(
-                          isKids: widget.state.isKids,
                           completer: completer,
                         ),
                       );
@@ -625,7 +595,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               ),
 
               // 2. Timeframe Hero Switch (Weekly League vs Hall of Fame)
-              if (!widget.state.isKids && widget.onTimeframeChanged != null)
+              if (widget.onTimeframeChanged != null)
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.only(
@@ -642,7 +612,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 ),
 
               // 3. Weekly League Podium Rewards Banner (Visible in Weekly mode)
-              if (!widget.state.isKids && isWeekly)
+              if (isWeekly)
                 SliverToBoxAdapter(
                   child: WeeklyLeagueRewardsBanner(
                     currentUser: widget.currentUser,
@@ -659,7 +629,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   child: RepaintBoundary(
                     child: LeaderboardPodium(
                       top3: users.take(3).toList(),
-                      isKids: widget.state.isKids,
                       isWeekly: isWeekly,
                       currentUserId: widget.currentUser?.id,
                       onUserTap: (user, rank, isMe) =>
@@ -680,7 +649,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   isWeekly: isWeekly,
                   child: LeaderboardRankCard(
                     allUsers: users,
-                    isKids: widget.state.isKids,
                     isWeekly: isWeekly,
                     onTap: _scrollToMe,
                   ),
@@ -690,7 +658,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(child: SizedBox(height: 6.h)),
 
               // Overtake Alert HUD (XP gap to next player, dropped rank alert)
-              if (!widget.state.isKids && widget.currentUser != null)
+              if (widget.currentUser != null)
                 SliverToBoxAdapter(
                   child: LeaderboardOvertakeHud(
                     allUsers: users,
@@ -728,12 +696,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        widget.state.isKids
-                            ? 'Top Explorers'
-                            : context.tr(
-                                'leaderboard.top_challengers',
-                                fallback: 'Top Challengers',
-                              ),
+                        context.tr(
+                          'leaderboard.top_challengers',
+                          fallback: 'Top Challengers',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -774,7 +740,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         context,
                       );
                       Widget? dividerBeforeTile;
-                      if (!widget.state.isKids && isWeekly && rank == 11) {
+                      if (isWeekly && rank == 11) {
                         dividerBeforeTile = Padding(
                           padding: EdgeInsets.only(top: 4.h, bottom: 10.h),
                           child: Row(
@@ -834,7 +800,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                               user: user,
                               rank: rank,
                               isMe: isMe,
-                              isKids: widget.state.isKids,
                               isWeekly: isWeekly,
                               onTap: () => _handleTileTap(user, rank, isMe),
                             ),
@@ -873,7 +838,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   ),
                 )
               else
-                // Empty state when no users beyond top 3 (e.g. Kids Zone)
+                // Empty state when no users beyond top 3
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -886,9 +851,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         RepaintBoundary(
                           child: reduceMotion
                               ? Icon(
-                                  widget.state.isKids
-                                      ? Icons.child_care_rounded
-                                      : Icons.emoji_events_outlined,
+                                  Icons.emoji_events_outlined,
                                   size: 56.r,
                                   color: isDark
                                       ? const Color(
@@ -899,9 +862,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                         ).withValues(alpha: 0.3),
                                 )
                               : Icon(
-                                      widget.state.isKids
-                                          ? Icons.child_care_rounded
-                                          : Icons.emoji_events_outlined,
+                                      Icons.emoji_events_outlined,
                                       size: 56.r,
                                       color: isDark
                                           ? const Color(
@@ -923,17 +884,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         ),
                         SizedBox(height: 16.h),
                         Text(
-                          widget.state.isKids
-                              ? context.tr(
-                                  'leaderboard.kids_empty',
-                                  fallback:
-                                      'Be the first kid on the leaderboard!',
-                                )
-                              : context.tr(
-                                  'leaderboard.empty',
-                                  fallback:
-                                      'Complete more quests to climb the ranks!',
-                                ),
+                          context.tr(
+                            'leaderboard.empty',
+                            fallback:
+                                'Complete more quests to climb the ranks!',
+                          ),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -945,21 +900,15 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         ),
                         SizedBox(height: 8.h),
                         Text(
-                          widget.state.isKids
+                          widget.timeframe == LeaderboardTimeframe.allTime
                               ? context.tr(
-                                  'leaderboard.kids_subtitle_short',
-                                  fallback: 'Star Vault rankings',
+                                  'leaderboard.all_time_subtitle_short',
+                                  fallback: 'All-time rankings',
                                 )
-                              : (widget.timeframe ==
-                                      LeaderboardTimeframe.allTime
-                                  ? context.tr(
-                                      'leaderboard.all_time_subtitle_short',
-                                      fallback: 'All-time rankings',
-                                    )
-                                  : context.tr(
-                                      'leaderboard.weekly_subtitle_short',
-                                      fallback: "This week's rankings",
-                                    )),
+                              : context.tr(
+                                  'leaderboard.weekly_subtitle_short',
+                                  fallback: "This week's rankings",
+                                ),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -1126,7 +1075,6 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
                 alignment: Alignment.center,
                 child: LeaderboardRankCard(
                   allUsers: (child as LeaderboardRankCard).allUsers,
-                  isKids: (child as LeaderboardRankCard).isKids,
                   isWeekly: isWeekly,
                   collapseProgress: collapseProgress,
                   onTap: (child as LeaderboardRankCard).onTap,

@@ -9,8 +9,7 @@ import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 
 /// Concrete implementation of [ShopRepository] managing virtual currency
-/// balances, daily reward claims, hint packs, Kids Zone purchases, and
-/// accessory management.
+/// balances, daily reward claims, hint packs, and accessory management.
 ///
 /// All write operations that involve balance checks or duplicate-claim guards
 /// run inside Firestore transactions, eliminating double-spend and double-claim
@@ -90,27 +89,6 @@ class ShopRepositoryImpl
         transaction.update(docRef, updates);
         return const Right<Failure, void>(null);
       });
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // awardKidsCoins
-  // ---------------------------------------------------------------------------
-
-  @override
-  Future<Either<Failure, void>> awardKidsCoins(int amount) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      // FieldValue.increment is atomically safe for server-side increments.
-      await _firestore.collection('users').doc(user.uid).update({
-        'kidsCoins': FieldValue.increment(amount),
-        'lastRewardTimestamp': FieldValue.serverTimestamp(),
-      });
-      return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
     }
@@ -243,58 +221,6 @@ class ShopRepositoryImpl
   }
 
   // ---------------------------------------------------------------------------
-  // claimKidsDailyReward
-  // ---------------------------------------------------------------------------
-
-  /// Claims the Kids Zone daily reward of [amount] kids-coins.
-  ///
-  /// Duplicate-claim guard: reads [lastKidsDailyRewardDate] inside the
-  /// transaction and rejects if already claimed today.
-  @override
-  Future<Either<Failure, void>> claimKidsDailyReward(int amount) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      final docRef = _firestore.collection('users').doc(user.uid);
-      _log('ShopRepository: Kids Daily Reward claim initiated for ${user.uid}');
-
-      return await _firestore.runTransaction<Either<Failure, void>>((
-        transaction,
-      ) async {
-        final doc = await transaction.get(docRef);
-        if (!doc.exists || doc.data() == null) {
-          return Left(ServerFailure('user-data-not-found'));
-        }
-
-        // Same defensive-parsing rationale as claimDailyChest above.
-        final userData = UserModel.fromMap(doc.data()!, doc.id);
-        final lastClaim = userData.lastKidsDailyRewardDate;
-        if (lastClaim != null) {
-          final now = DateTime.now();
-          final isSameDay = _isSameCalendarDay(lastClaim, now);
-          final isFuture = lastClaim.isAfter(
-            now.add(const Duration(minutes: 5)),
-          );
-          if (isSameDay || isFuture) {
-            return Left(AuthFailure('kids-daily-reward-already-claimed'));
-          }
-        }
-
-        transaction.update(docRef, {
-          'kidsCoins': FieldValue.increment(amount),
-          'lastKidsDailyRewardDate': Timestamp.now(),
-          'lastRewardTimestamp': FieldValue.serverTimestamp(),
-        });
-        return const Right<Failure, void>(null);
-      });
-    } catch (e) {
-      _log('ShopRepository: Kids Daily Reward ERROR: $e');
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
   // useHint
   // ---------------------------------------------------------------------------
 
@@ -372,168 +298,6 @@ class ShopRepositoryImpl
           'hintCount': FieldValue.increment(hintAmount),
           'coinHistory': history,
         });
-        return const Right<Failure, void>(null);
-      });
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // awardKidsSticker
-  // ---------------------------------------------------------------------------
-
-  @override
-  Future<Either<Failure, void>> awardKidsSticker(String stickerId) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      await _firestore.collection('users').doc(user.uid).update({
-        'kidsStickers': FieldValue.arrayUnion([stickerId]),
-      });
-      return const Right(null);
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // updateKidsMascot
-  // ---------------------------------------------------------------------------
-
-  @override
-  Future<Either<Failure, void>> updateKidsMascot(String mascotId) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      await _firestore.collection('users').doc(user.uid).update({
-        'kidsMascot': mascotId,
-      });
-      return const Right(null);
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // buyKidsAccessory
-  // ---------------------------------------------------------------------------
-
-  @override
-  Future<Either<Failure, void>> buyKidsAccessory(
-    String accessoryId,
-    int cost,
-  ) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      final docRef = _firestore.collection('users').doc(user.uid);
-      return await _firestore.runTransaction<Either<Failure, void>>((
-        transaction,
-      ) async {
-        final snapshot = await transaction.get(docRef);
-        if (!snapshot.exists) {
-          return Left(ServerFailure('user-data-not-found'));
-        }
-
-        final data = snapshot.data()!;
-        final currentCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
-        final owned = List<String>.from(
-          data['kidsOwnedAccessories'] as List? ?? [],
-        );
-
-        // Idempotent: silently succeed if already owned.
-        if (owned.contains(accessoryId)) {
-          return const Right<Failure, void>(null);
-        }
-
-        if (currentCoins < cost) {
-          return Left(AuthFailure('insufficient-kids-coins'));
-        }
-
-        transaction.update(docRef, {
-          'kidsCoins': currentCoins - cost,
-          'kidsOwnedAccessories': FieldValue.arrayUnion([accessoryId]),
-        });
-        return const Right<Failure, void>(null);
-      });
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // equipKidsAccessory
-  // ---------------------------------------------------------------------------
-
-  @override
-  Future<Either<Failure, void>> equipKidsAccessory(String? accessoryId) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      await _firestore.collection('users').doc(user.uid).update({
-        'kidsEquippedAccessory': accessoryId,
-      });
-      return const Right(null);
-    } catch (e) {
-      return Left(handleFirebaseException(e));
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // buyKidsFurniture
-  // ---------------------------------------------------------------------------
-
-  /// Replaces ProfileBloc._onBuyFurniture's previous client-side
-  /// read-then-write via a generic UpdateUser call (flagged in that
-  /// method's own doc comment as needing exactly this).
-  @override
-  Future<Either<Failure, void>> buyKidsFurniture({
-    required String category,
-    required String furnitureId,
-    required int cost,
-  }) async {
-    try {
-      final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('user-not-logged-in'));
-
-      final docRef = _firestore.collection('users').doc(user.uid);
-      return await _firestore.runTransaction<Either<Failure, void>>((
-        transaction,
-      ) async {
-        final snapshot = await transaction.get(docRef);
-        if (!snapshot.exists) {
-          return Left(ServerFailure('user-data-not-found'));
-        }
-
-        final data = snapshot.data()!;
-        final currentCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
-        final owned = List<String>.from(
-          data['kidsOwnedFurniture'] as List? ?? [],
-        );
-        final equipped = Map<String, String>.from(
-          data['kidsEquippedFurniture'] as Map? ?? {},
-        );
-
-        // Re-equipping something already owned is always free — only a new
-        // purchase needs the balance check.
-        final alreadyOwned = owned.contains(furnitureId);
-        if (!alreadyOwned && currentCoins < cost) {
-          return Left(AuthFailure('insufficient-kids-coins'));
-        }
-
-        equipped[category] = furnitureId;
-        final updates = <String, dynamic>{'kidsEquippedFurniture': equipped};
-        if (!alreadyOwned) {
-          updates['kidsCoins'] = currentCoins - cost;
-          updates['kidsOwnedFurniture'] = FieldValue.arrayUnion([furnitureId]);
-        }
-
-        transaction.update(docRef, updates);
         return const Right<Failure, void>(null);
       });
     } catch (e) {

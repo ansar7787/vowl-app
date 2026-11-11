@@ -8,13 +8,11 @@ import 'dart:async';
 
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // Modular Feature Routes
 import 'package:vowl/features/auth/auth_routes.dart';
-import 'package:vowl/features/kids_zone/kids_routes.dart';
 import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
 import 'package:vowl/features/daily_words/daily_words_routes.dart';
@@ -52,11 +50,9 @@ class AppRouter {
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
   static const String ranksRoute = '/ranks';
-  static const String kidsLeaderboardRoute = '/kids-leaderboard';
   static const String forgotPasswordRoute = '/forgot-password';
   static const String trophyRoomRoute = '/trophy-room';
   static const String verifyEmailRoute = '/verify-email';
-  static const String ageGateRoute = '/age-gate';
   static const String levelsRoute = '/levels';
   static const String categoryGamesRoute = '/category-games';
   static const String libraryRoute = '/library';
@@ -84,48 +80,8 @@ class AppRouter {
   static const String wordMixerRoute = '/word-mixer';
   static const String handwritingRoute = '/handwriting';
 
-  // ── Kids Zone routes ──────────────────────────────────────────────────────
-
-  static const String kidsZoneRoute = '/kids-zone';
-  static const String kidsLevelMapRoute = '/kids/map/:gameType';
-  static const String kidsAlphabetRoute = '/kids-alphabet';
-  static const String kidsNumbersRoute = '/kids-numbers';
-  static const String kidsColorsRoute = '/kids-colors';
-  static const String kidsShapesRoute = '/kids-shapes';
-  static const String kidsAnimalsRoute = '/kids-animals';
-  static const String kidsFruitsRoute = '/kids-fruits';
-  static const String kidsFamilyRoute = '/kids-family';
-  static const String kidsSchoolRoute = '/kids-school';
-  static const String kidsVerbsRoute = '/kids-verbs';
-  static const String kidsStickerBookRoute = '/kids-stickers';
-  static const String kidsMascotSelectionRoute = '/kids-mascot';
-  static const String kidsRoutineRoute = '/kids-routine';
-  static const String kidsEmotionsRoute = '/kids-emotions';
-  static const String kidsPrepositionsRoute = '/kids-prepositions';
-  static const String kidsPhonicsRoute = '/kids-phonics';
-  static const String kidsTimeRoute = '/kids-time';
-  static const String kidsOppositesRoute = '/kids-opposites';
-  static const String kidsDayNightRoute = '/kids-day-night';
-  static const String kidsNatureRoute = '/kids-nature';
-  static const String kidsHomeRoute = '/kids-home';
-  static const String kidsFoodRoute = '/kids-food';
-  static const String kidsTransportRoute = '/kids-transport';
-  static const String kidsBodyPartsRoute = '/kids-body-parts';
-  static const String kidsClothingRoute = '/kids-clothing';
-  static const String kidsWeatherRoute = '/kids-weather';
-  static const String kidsProfessionsRoute = '/kids-professions';
-  static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
-  static const String kidsRoomRoute = '/kids-room';
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';
-
-  // ── Backwards compatibility ───────────────────────────────────────────────
-
-  static String getKidsGameTitle(String gameType) =>
-      KidsRoutes.getKidsGameTitle(gameType);
-
-  static Color getKidsGameColor(String gameType) =>
-      KidsRoutes.getKidsGameColor(gameType);
 
   // ── Router instance ───────────────────────────────────────────────────────
 
@@ -145,7 +101,6 @@ class AppRouter {
     redirect: _redirect,
     routes: [
       ...AuthRoutes.routes,
-      ...KidsRoutes.routes,
       ...GameRoutes.routes,
       ...HomeRoutes.routes,
       ...DailyWordsRoutes.routes,
@@ -226,41 +181,16 @@ class AppRouter {
       return null;
     }
 
-    // 5. Age Gate check — MUST complete before entering the main app.
-    if (!AgeGateService.isCompletedCached) {
-      if (path != ageGateRoute) return ageGateRoute;
-      return null; // Let them stay on the age gate
-    }
-
-    // 5.5. COPPA Loophole Preventer: Restrict under-16 users to Kids Zone
-    if (!AgeGateService.isAdultCached) {
-      final isKidsRoute = path.startsWith('/kids') || path == kidsZoneRoute;
-      // Let them complete onboarding (hatching) or auth if needed.
-      // We also allow settingsRoute so they can reset their age if they made a mistake.
-      if (!isKidsRoute &&
-          !isAuthRoute &&
-          path != verifyEmailRoute &&
-          path != splashRoute &&
-          path != ageGateRoute &&
-          path != settingsRoute &&
-          path != hatchingRoute &&
-          path != onboardingRoute) {
-        return kidsZoneRoute; // Force into Kids Zone
-      }
-    }
-
     // Process pending deep link if app cold-started from notification
-    // Processed AFTER age gate and COPPA to prevent bypasses
     if (AppRouter.pendingDeepLink != null) {
       final link = AppRouter.pendingDeepLink!;
       AppRouter.pendingDeepLink = null;
       return link;
     }
 
-    // 6. Authenticated, verified, and age-gated — redirect away from auth/verify/root/ageGate.
+    // 5. Authenticated and verified — redirect away from auth/verify/root.
     if (isAuthRoute ||
         path == verifyEmailRoute ||
-        path == ageGateRoute ||
         path == '/') {
       // FIX (TESTABILITY): resolve FirebaseAuth through the DI container,
       // like every other dependency this method reads (`di.sl<AuthBloc>()`
@@ -286,8 +216,7 @@ class AppRouter {
             : (currentUser.displayName ?? 'Traveler');
         return '$hatchingRoute?name=${Uri.encodeComponent(name)}';
       }
-      // Route directly to the appropriate home based on age gate status
-      return AgeGateService.isAdultCached ? homeRoute : kidsZoneRoute;
+      return homeRoute;
     }
 
     return null;

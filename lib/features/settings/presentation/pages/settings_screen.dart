@@ -33,7 +33,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
 import 'package:vowl/features/settings/presentation/widgets/tts_voice_selection_bottom_sheet.dart';
@@ -990,32 +989,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                     context,
                                                     user?.email ?? '',
                                                   ),
-                                            ),
-                                            SettingsTile(
-                                              title: context.tr(
-                                                'settings.age_verification',
-                                                fallback: 'Age Verification',
-                                              ),
-                                              subtitle: context.tr(
-                                                'settings.age_verification_subtitle',
-                                                fallback:
-                                                    'Recalibrate age settings & parental gate',
-                                              ),
-                                              icon: Icons.verified_user_rounded,
-                                              color: AppColors.violet500,
-                                              onTap: () async {
-                                                final confirm =
-                                                    await SettingsDialogs.showAgeVerificationReset(
-                                                      context,
-                                                    );
-                                                if (confirm == true &&
-                                                    context.mounted) {
-                                                  await AgeGateService.resetAgeGate();
-                                                  if (context.mounted) {
-                                                    context.go('/age-gate');
-                                                  }
-                                                }
-                                              },
                                             ),
                                             SettingsSwitchTile(
                                               title: context.tr(

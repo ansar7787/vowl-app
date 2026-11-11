@@ -35,7 +35,6 @@ class MlMonetizationController {
     required String adButtonLabel,
     String? featureKey,
     int? freeDailyLimit,
-    bool isKidsZone = false,
   }) async {
     final authState = context.read<AuthBloc>().state;
     final isPremium = authState.user?.isPremium ?? false;
@@ -111,7 +110,6 @@ class MlMonetizationController {
         featureTitle: title,
         featureSubtitle: subtitle,
         adButtonLabel: adButtonLabel,
-        isKidsZone: isKidsZone,
         onSuccess: onSuccess,
       ),
     );
@@ -133,7 +131,6 @@ class MlMonetizationController {
       di.sl<AdService>().showRewardedAd(
         context: context,
         isPremium: false,
-        childSafe: isKidsZone,
         onUserEarnedReward: (_) => onSuccess(),
         onDismissed: () {},
       );
@@ -190,7 +187,6 @@ class _MlFeatureGateDialog extends StatelessWidget {
   final String featureTitle;
   final String featureSubtitle;
   final String adButtonLabel;
-  final bool isKidsZone;
   final VoidCallback onSuccess;
 
   const _MlFeatureGateDialog({
@@ -198,7 +194,6 @@ class _MlFeatureGateDialog extends StatelessWidget {
     required this.featureTitle,
     required this.featureSubtitle,
     required this.adButtonLabel,
-    required this.isKidsZone,
     required this.onSuccess,
   });
 

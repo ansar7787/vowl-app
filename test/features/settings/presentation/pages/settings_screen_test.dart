@@ -29,7 +29,6 @@ import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/settings/presentation/pages/settings_screen.dart';
 import 'package:vowl/features/settings/presentation/widgets/language_picker_sheet.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
@@ -46,8 +45,6 @@ class MockThemeCubit extends MockCubit<ThemeState> implements ThemeCubit {}
 class MockHapticService extends Mock implements HapticService {}
 
 class MockSoundService extends Mock implements SoundService {}
-
-class MockKidsTTSService extends Mock implements KidsTTSService {}
 
 class MockNotificationService extends Mock implements NotificationService {}
 
@@ -149,7 +146,6 @@ void main() {
   late MockThemeCubit mockThemeCubit;
   late MockHapticService mockHapticService;
   late MockSoundService mockSoundService;
-  late MockKidsTTSService mockKidsTtsService;
   late MockNotificationService mockNotificationService;
   late MockLocaleService mockLocaleService;
   late MockFirebaseAnalyticsPlatform mockAnalyticsPlatform;
@@ -184,7 +180,6 @@ void main() {
     mockThemeCubit = MockThemeCubit();
     mockHapticService = MockHapticService();
     mockSoundService = MockSoundService();
-    mockKidsTtsService = MockKidsTTSService();
     mockNotificationService = MockNotificationService();
     mockLocaleService = MockLocaleService();
     mockAnalyticsPlatform = MockFirebaseAnalyticsPlatform();
@@ -240,7 +235,6 @@ void main() {
 
     when(() => mockSoundService.setMuted(any())).thenReturn(null);
     when(() => mockSoundService.setGameSoundsEnabled(any())).thenReturn(null);
-    when(() => mockKidsTtsService.stop()).thenAnswer((_) async {});
     when(
       () => mockNotificationService.onNotificationPreferenceChanged(any()),
     ).thenAnswer((_) async {});
@@ -255,11 +249,6 @@ void main() {
 
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     di.sl.registerSingleton<SoundService>(mockSoundService);
-
-    if (di.sl.isRegistered<KidsTTSService>()) {
-      di.sl.unregister<KidsTTSService>();
-    }
-    di.sl.registerSingleton<KidsTTSService>(mockKidsTtsService);
 
     if (di.sl.isRegistered<NotificationService>()) {
       di.sl.unregister<NotificationService>();
@@ -353,13 +342,6 @@ void main() {
           builder: (context, state) {
             navigatedRoutes.add('/about');
             return const Scaffold(body: Text('About Screen'));
-          },
-        ),
-        GoRoute(
-          path: '/age-gate',
-          builder: (context, state) {
-            navigatedRoutes.add('/age-gate');
-            return const Scaffold(body: Text('Age Gate Screen'));
           },
         ),
       ],
@@ -522,9 +504,7 @@ void main() {
 
       expect(find.text('ACCOUNT, STORAGE & PRIVACY'), findsOneWidget);
       expect(find.text('Security & Password'), findsOneWidget);
-      expect(find.text('Age Verification'), findsOneWidget);
       expect(find.byIcon(Icons.lock_person_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.verified_user_rounded), findsOneWidget);
     });
 
     testWidgets(
@@ -548,25 +528,6 @@ void main() {
           ),
         ).called(1);
         expect(find.text('Reset link sent!'), findsOneWidget);
-      },
-    );
-
-    testWidgets(
-      'tapping Age Verification opens dialog, confirming calls resetAgeGate and navigates',
-      (tester) async {
-        await tester.pumpWidget(buildTestableWidget(tester: tester));
-        await tester.pumpAndSettle();
-
-        await tapVisible(tester, find.text('Age Verification'));
-
-        expect(find.text('Reset Age Verification?'), findsOneWidget);
-
-        // Tap Continue
-        await tester.tap(find.text('Continue'));
-        await tester.pumpAndSettle();
-
-        expect(navigatedRoutes.contains('/age-gate'), isTrue);
-        expect(find.text('Age Gate Screen'), findsOneWidget);
       },
     );
   });

@@ -92,39 +92,6 @@ void main() {
       },
     );
 
-    test(
-      'KidsPraiseStrategy supplies cheerful phrases for all PraiseContexts',
-      () {
-        final strategy = KidsPraiseStrategy();
-
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.standard).isNotEmpty,
-          isTrue,
-        );
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.flawless).isNotEmpty,
-          isTrue,
-        );
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.hotStreak5).isNotEmpty,
-          isTrue,
-        );
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.hotStreak10).isNotEmpty,
-          isTrue,
-        );
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.streakSecured).isNotEmpty,
-          isTrue,
-        );
-
-        expect(
-          strategy.getPhrasesForContext(PraiseContext.flawless),
-          contains('Wow! Superstar! Perfect score!'),
-        );
-      },
-    );
-
     test('PraiseService calls speak with contextual encouragement', () async {
       when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
 

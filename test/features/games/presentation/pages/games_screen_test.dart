@@ -15,7 +15,6 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/games/presentation/pages/games_screen.dart';
-import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -367,34 +366,6 @@ void main() {
       expect(find.text('100+ Games'), findsOneWidget);
       expect(find.text('All (100)'), findsOneWidget);
       expect(find.byType(TextField), findsOneWidget);
-    });
-  });
-
-  group('GamesScreen - Kids Mode & Isolation', () {
-    testWidgets('renders Kids Zone shelf when in kidsModeOnly', (tester) async {
-      tester.view.physicalSize = const Size(800, 2400);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      const kidsUser = UserEntity(
-        id: 'kids_1',
-        email: 'kid@vowl.app',
-        totalExp: 0,
-        completedLevels: {
-          'kids_alphabet': [1],
-        },
-      );
-      when(
-        () => mockAuthBloc.state,
-      ).thenReturn(AuthState.authenticated(kidsUser));
-
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byType(KidsCategoryShelf), findsOneWidget);
-      expect(find.text('1v1 PvP Duel'), findsNothing); // Adult PvP hidden
     });
   });
 
