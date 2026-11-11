@@ -1042,7 +1042,7 @@ function resolveDisplayName(data) {
 }
 
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
-// Runs hourly at minute 0 for active, near-real-time weekly & kids competition.
+// Runs hourly at minute 0 for active, near-real-time global & weekly competition.
 // Previous rank (daily baseline) is anchored at 00:00 UTC for clean daily +/- movement deltas.
 exports.updateLeaderboardCache = onSchedule('0 * * * *', async (event) => {
   const db = admin.firestore();
@@ -1118,128 +1118,6 @@ exports.updateLeaderboardCache = onSchedule('0 * * * *', async (event) => {
 
     console.log(
       `Successfully updated leaderboard cache with top ${usersData.length} users.`,
-    );
-
-    // Also update kids leaderboard cache
-    const kidsCacheRef = db
-      .collection('metadata')
-      .doc('kids_leaderboard_cache');
-    const oldKidsSnap = await kidsCacheRef.get();
-    const oldKidsRankMap = {};
-    if (oldKidsSnap.exists) {
-      const oldKids = oldKidsSnap.data().users || [];
-      oldKids.forEach((u, i) => {
-        if (u && u.id) {
-          if (isMidnightUtc) {
-            oldKidsRankMap[u.id] = typeof u.currentRank === 'number' ? u.currentRank : i + 1;
-          } else {
-            oldKidsRankMap[u.id] = typeof u.previousRank === 'number'
-              ? u.previousRank
-              : (typeof u.currentRank === 'number' ? u.currentRank : i + 1);
-          }
-        }
-      });
-    }
-
-    let kidsDocs = [];
-    try {
-      const kidsSnap = await db
-        .collection('users')
-        .orderBy('kidsTotalStars', 'desc')
-        .limit(50)
-        .get();
-      kidsDocs = kidsSnap.docs;
-    } catch (_) {
-      // Fallback query if kidsTotalStars index is pending
-      const fallbackSnap = await db
-        .collection('users')
-        .orderBy('kidsCoins', 'desc')
-        .limit(50)
-        .get();
-      kidsDocs = fallbackSnap.docs;
-    }
-
-    // Sort strictly by: 1. Stars desc, 2. Levels completed desc, 3. Coins desc, 4. Streak desc
-    const rawKidsUsers = kidsDocs.map((doc) => {
-      const data = doc.data();
-      const isKidsUserPremium =
-        data.isPremium === true &&
-        (!data.premiumExpiryDate ||
-          (data.premiumExpiryDate.toDate &&
-            data.premiumExpiryDate.toDate() > now));
-
-      let stars = typeof data.kidsTotalStars === 'number' ? data.kidsTotalStars : 0;
-      if (stars === 0 && data.starRatings && typeof data.starRatings === 'object') {
-        const kidsGames = new Set([
-          'alphabet', 'numbers', 'colors', 'shapes', 'animals',
-          'fruits', 'family', 'school', 'verbs', 'routine',
-          'emotions', 'prepositions', 'phonics', 'day_night', 'nature',
-          'home', 'food', 'transport', 'time', 'opposites',
-          'body_parts', 'clothing', 'handwriting', 'weather', 'professions'
-        ]);
-        Object.entries(data.starRatings).forEach(([gameKey, gameStars]) => {
-          if (kidsGames.has(gameKey) && gameStars && typeof gameStars === 'object') {
-            Object.entries(gameStars).forEach(([starKey, starVal]) => {
-              if (starKey !== 'magic_stars' && starKey !== 'claimed_chests' && typeof starVal === 'number') {
-                stars += starVal;
-              }
-            });
-          }
-        });
-      }
-
-      const levelsCompletedCount =
-        typeof data.kidsTotalLevelsCompleted === 'number'
-          ? data.kidsTotalLevelsCompleted
-          : (data.completedLevels && typeof data.completedLevels === 'object'
-              ? Object.values(data.completedLevels).reduce((acc, l) => acc + (Array.isArray(l) ? l.length : 0), 0)
-              : 0);
-
-      return {
-        id: doc.id,
-        displayName: resolveDisplayName(data),
-        photoUrl: data.photoUrl || null,
-        kidsTotalStars: stars,
-        kidsTotalLevelsCompleted: levelsCompletedCount,
-        kidsCoins: data.kidsCoins || 0,
-        currentStreak: data.currentStreak || 0,
-        completedLevels: data.completedLevels || {},
-        starRatings: data.starRatings || {},
-        isPremium: isKidsUserPremium,
-      };
-    });
-
-    rawKidsUsers.sort((a, b) => {
-      if (b.kidsTotalStars !== a.kidsTotalStars) return b.kidsTotalStars - a.kidsTotalStars;
-      if (b.kidsTotalLevelsCompleted !== a.kidsTotalLevelsCompleted) return b.kidsTotalLevelsCompleted - a.kidsTotalLevelsCompleted;
-      if (b.kidsCoins !== a.kidsCoins) return b.kidsCoins - a.kidsCoins;
-      return b.currentStreak - a.currentStreak;
-    });
-
-    const kidsData = rawKidsUsers.map((u, index) => {
-      const currentRank = index + 1;
-      const prevRank =
-        oldKidsRankMap[u.id] !== undefined
-          ? oldKidsRankMap[u.id]
-          : currentRank;
-
-      return {
-        ...u,
-        currentRank: currentRank,
-        previousRank: prevRank,
-      };
-    });
-
-    await kidsCacheRef.set(
-      {
-        lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-        users: kidsData,
-      },
-      { merge: true },
-    );
-
-    console.log(
-      `Successfully updated kids leaderboard cache with top ${kidsData.length} users.`,
     );
   } catch (error) {
     console.error('Error updating leaderboard cache:', error);
