@@ -39,7 +39,6 @@ class KidsAssets {
     'transport': ['🚀', '🚁', '🚢', '🛸'],
     'body_parts': ['👀', '👂', '👃', '💪'],
     'clothing': ['👕', '👖', '👟', '🎩'],
-    'handwriting': ['✍️', '✏️', '📝', '✒️'],
     'weather': ['☀️', '🌧️', '❄️', '🌩️'],
     'professions': ['👨‍⚕️', '👩‍🏫', '👮', '👨‍🚒'],
   };

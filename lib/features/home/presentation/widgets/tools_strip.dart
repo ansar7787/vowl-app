@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
@@ -300,6 +301,29 @@ class _ToolsStripState extends State<ToolsStrip> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 10.h),
+                            _SwissHorizonCard(
+                              tag: context.tr(
+                                'home.tools_handwriting_tag',
+                                fallback: 'CHALK TRACING',
+                              ),
+                              title: context.tr(
+                                'home.tools_handwriting',
+                                fallback: 'Handwriting',
+                              ),
+                              subtitle: context.tr(
+                                'home.tools_handwriting_tip',
+                                fallback:
+                                    'Chalkboard stroke & letter tracing practice',
+                              ),
+                              icon: Icons.draw_rounded,
+                              color: AppColors.teal500,
+                              onTap: () => _handleNavigation(
+                                context,
+                                AppRouter.handwritingRoute,
+                              ),
+                              isDark: isDark,
+                            ),
                           ],
                         )
                       : const SizedBox.shrink(),
@@ -314,7 +338,11 @@ class _ToolsStripState extends State<ToolsStrip> {
                     try {
                       di.sl<HapticService>().selection();
                     } catch (_) {}
-                    _isExpanded.value = !_isExpanded.value;
+                    final nextExpanded = !_isExpanded.value;
+                    _isExpanded.value = nextExpanded;
+                    if (nextExpanded) {
+                      _prewarmHandwritingModel();
+                    }
                   },
                 ),
               ],
@@ -323,6 +351,14 @@ class _ToolsStripState extends State<ToolsStrip> {
         ),
       ),
     );
+  }
+
+  void _prewarmHandwritingModel() {
+    try {
+      if (di.sl.isRegistered<DigitalInkService>()) {
+        di.sl<DigitalInkService>().downloadModel();
+      }
+    } catch (_) {}
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -853,7 +889,7 @@ class _ArcadeVaultStrip extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4.r),
                           ),
                           child: Text(
-                            isExpanded ? 'ACTIVE' : '2 GAMES',
+                            isExpanded ? 'ACTIVE' : '3 GAMES',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 8.sp,
@@ -870,7 +906,8 @@ class _ArcadeVaultStrip extends StatelessWidget {
                       isExpanded
                           ? context.tr(
                               'home.tools_arcade_expanded',
-                              fallback: 'Word Snap & Word Mixer ready to play',
+                              fallback:
+                                  'Word Snap, Word Mixer & Handwriting ready to play',
                             )
                           : context.tr(
                               'home.tools_arcade_teaser',

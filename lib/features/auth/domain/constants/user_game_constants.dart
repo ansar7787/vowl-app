@@ -328,7 +328,6 @@ abstract final class UserGameConstants {
     'opposites': 1,
     'body_parts': 1,
     'clothing': 1,
-    'handwriting': 1,
     'weather': 1,
     'professions': 1,
   };

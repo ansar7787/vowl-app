@@ -35,12 +35,6 @@ class KidsGameHelper {
   /// Comprehensive catalog of all available Kids Zone games.
   static const List<KidsGameMetadata> allGames = [
     KidsGameMetadata(
-      gameType: 'handwriting',
-      gridTitle: 'Write & Learn',
-      subtitle: 'Handwriting Fun',
-      icon: Icons.edit_rounded,
-    ),
-    KidsGameMetadata(
       gameType: 'alphabet',
       gridTitle: 'ABC',
       subtitle: 'Letters & Phonics',

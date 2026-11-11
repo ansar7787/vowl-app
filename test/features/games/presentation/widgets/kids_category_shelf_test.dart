@@ -136,8 +136,8 @@ void main() {
         const newUser = UserEntity(
           id: 'new_kid',
           email: 'kid@vowl.app',
-          unlockedLevels: {'handwriting': 1},
-          completedLevels: {'handwriting': []},
+          unlockedLevels: {'alphabet': 1},
+          completedLevels: {'alphabet': []},
         );
 
         await tester.pumpWidget(createWidgetUnderTest(user: newUser));

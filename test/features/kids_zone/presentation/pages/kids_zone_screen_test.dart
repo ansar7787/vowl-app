@@ -14,7 +14,6 @@ import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -42,8 +41,6 @@ class MockSoundService extends Mock implements SoundService {}
 
 class MockLeaderboardRepository extends Mock implements LeaderboardRepository {}
 
-class MockDigitalInkService extends Mock implements DigitalInkService {}
-
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -53,7 +50,6 @@ void main() {
   late MockAppLogger mockLogger;
   late MockSoundService mockSoundService;
   late MockLeaderboardRepository mockLeaderboardRepo;
-  late MockDigitalInkService mockDigitalInkService;
   final mockLocaleService = MockLocaleService();
   late List<String> navigatedRoutes;
 
@@ -81,7 +77,6 @@ void main() {
     mockLogger = MockAppLogger();
     mockSoundService = MockSoundService();
     mockLeaderboardRepo = MockLeaderboardRepository();
-    mockDigitalInkService = MockDigitalInkService();
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
@@ -90,16 +85,12 @@ void main() {
     if (di.sl.isRegistered<LeaderboardRepository>()) {
       di.sl.unregister<LeaderboardRepository>();
     }
-    if (di.sl.isRegistered<DigitalInkService>()) {
-      di.sl.unregister<DigitalInkService>();
-    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     di.sl.registerSingleton<AppLogger>(mockLogger);
     di.sl.registerSingleton<SoundService>(mockSoundService);
     di.sl.registerSingleton<LeaderboardRepository>(mockLeaderboardRepo);
-    di.sl.registerSingleton<DigitalInkService>(mockDigitalInkService);
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
     when(
@@ -116,9 +107,6 @@ void main() {
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
-    when(
-      () => mockDigitalInkService.isModelDownloaded(),
-    ).thenAnswer((_) async => true);
     when(
       () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
     ).thenAnswer(
@@ -149,9 +137,6 @@ void main() {
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<LeaderboardRepository>()) {
       di.sl.unregister<LeaderboardRepository>();
-    }
-    if (di.sl.isRegistered<DigitalInkService>()) {
-      di.sl.unregister<DigitalInkService>();
     }
   });
 

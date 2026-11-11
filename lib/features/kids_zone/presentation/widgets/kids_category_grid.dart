@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,16 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/network/network_info.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
 class _LocalPalette {
@@ -36,7 +30,6 @@ class _SectionDef {
 
 const _kSections = [
   _SectionDef('Language', '📚', AppColors.rose500, [
-    'handwriting',
     'alphabet',
     'phonics',
     'verbs',
@@ -85,31 +78,6 @@ class KidsCategoryGrid extends StatefulWidget {
 }
 
 class _KidsCategoryGridState extends State<KidsCategoryGrid> {
-  final ValueNotifier<bool> _isCheckingModel = ValueNotifier(true);
-  final ValueNotifier<bool> _isModelDownloaded = ValueNotifier(false);
-
-  @override
-  void initState() {
-    super.initState();
-    _checkModelStatus();
-  }
-
-  @override
-  void dispose() {
-    _isCheckingModel.dispose();
-    _isModelDownloaded.dispose();
-    super.dispose();
-  }
-
-  Future<void> _checkModelStatus() async {
-    final service = di.sl<DigitalInkService>();
-    final isDownloaded = await service.isModelDownloaded();
-    if (mounted) {
-      _isModelDownloaded.value = isDownloaded;
-      _isCheckingModel.value = false;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     // Use context.select to only rebuild when completedLevels changes
@@ -199,136 +167,6 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                   final currentLevel = isMastered
                       ? totalLevels
                       : math.min(totalLevels, highestCompleted + 1);
-
-                  if (game.gameType == 'handwriting') {
-                    return ListenableBuilder(
-                      listenable: Listenable.merge([
-                        _isCheckingModel,
-                        _isModelDownloaded,
-                      ]),
-                      builder: (context, _) {
-                        return _buildCategoryCard(
-                          context,
-                          () async {
-                            if (!_isModelDownloaded.value) {
-                              final networkInfo = di.sl<NetworkInfo>();
-                              final isConnected = await networkInfo.isConnected;
-                              if (!isConnected && context.mounted) {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: context.tr(
-                                    'kids_zone.internet_required_smart_pen',
-                                    fallback:
-                                        'Connect to the internet to get your chalkboard ready!',
-                                  ),
-                                  type: CustomSnackBarType.warning,
-                                );
-                                return;
-                              }
-                            }
-
-                            final service = di.sl<DigitalInkService>();
-                            bool isDownloaded = await service
-                                .isModelDownloaded();
-
-                            if (!isDownloaded && context.mounted) {
-                              final success = await showDialog<bool>(
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (context) => _DownloadModelDialog(
-                                  primaryColor: game.color,
-                                ),
-                              );
-
-                              if (success != true) {
-                                if (context.mounted) {
-                                  CustomSnackBar.show(
-                                    context: context,
-                                    message: context.tr(
-                                      'kids_zone.failed_download_smart_pen',
-                                      fallback:
-                                          'Couldn\'t set up the chalkboard. Please check your internet and try again.',
-                                    ),
-                                    type: CustomSnackBarType.error,
-                                  );
-                                }
-                                return;
-                              }
-
-                              _isModelDownloaded.value = true;
-                            }
-
-                            if (context.mounted) {
-                              context.push(
-                                '/kids/map/handwriting',
-                                extra: {
-                                  'title': game.fullTitle,
-                                  'primaryColor': game.color,
-                                },
-                              );
-                            }
-                          },
-                          game.gridTitle,
-                          _isCheckingModel.value
-                              ? context.tr(
-                                  'kids_zone.checking',
-                                  fallback: 'Checking...',
-                                )
-                              : (!_isModelDownloaded.value
-                                    ? context.tr(
-                                        'kids_zone.download_required',
-                                        fallback: 'Download Required',
-                                      )
-                                    : game.subtitle),
-                          game.color,
-                          game.icon,
-                          currentLevel: currentLevel,
-                          completedCount: completedCount,
-                          totalLevels: totalLevels,
-                          isMastered: isMastered,
-                          trailing: _isCheckingModel.value
-                              ? RepaintBoundary(
-                                  child:
-                                      Icon(
-                                            Icons.sync_rounded,
-                                            color: game.color,
-                                            size: 24.sp,
-                                          )
-                                          .animate(onPlay: (c) => c.repeat())
-                                          .rotate(duration: 1.5.seconds),
-                                )
-                              : (!_isModelDownloaded.value
-                                    ? Builder(
-                                        builder: (context) {
-                                          final reduceMotion =
-                                              MediaQuery.disableAnimationsOf(
-                                                context,
-                                              );
-                                          Widget icon = Icon(
-                                            Icons.cloud_download_rounded,
-                                            color: game.color,
-                                            size: 28.sp,
-                                          );
-                                          if (!reduceMotion) {
-                                            icon = icon
-                                                .animate(
-                                                  onPlay: (c) =>
-                                                      c.repeat(reverse: true),
-                                                )
-                                                .scaleXY(
-                                                  begin: 1.0,
-                                                  end: 1.15,
-                                                  duration: 1.seconds,
-                                                );
-                                          }
-                                          return icon;
-                                        },
-                                      )
-                                    : null),
-                        );
-                      },
-                    );
-                  }
 
                   return _buildCategoryCard(
                     context,
@@ -634,154 +472,4 @@ class _ProgressRingPainter extends CustomPainter {
       oldDelegate.progress != progress || oldDelegate.color != color;
 }
 
-class _DownloadModelDialog extends StatefulWidget {
-  final Color primaryColor;
-  const _DownloadModelDialog({required this.primaryColor});
 
-  @override
-  State<_DownloadModelDialog> createState() => _DownloadModelDialogState();
-}
-
-class _DownloadModelDialogState extends State<_DownloadModelDialog> {
-  final ValueNotifier<double> _progress = ValueNotifier(0.0);
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _startMockProgress();
-    _downloadModel();
-  }
-
-  void _startMockProgress() {
-    _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
-      if (!mounted) {
-        timer.cancel();
-        return;
-      }
-      if (_progress.value < 0.85) {
-        _progress.value += 0.02; // Fast up to 85%
-      } else if (_progress.value < 0.95) {
-        _progress.value += 0.005; // Slow crawl to 95%
-      }
-    });
-  }
-
-  Future<void> _downloadModel() async {
-    final service = di.sl<DigitalInkService>();
-    final success = await service.downloadModel();
-    if (mounted) {
-      if (success) {
-        Navigator.of(context).pop(true);
-      } else {
-        Navigator.of(context).pop(false);
-      }
-    }
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    _progress.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      backgroundColor: AppColors.slate800,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.r)),
-      child: Padding(
-        padding: EdgeInsets.all(AppSpacing.cardSpacious),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Builder(
-              builder: (context) {
-                final reduceMotion = MediaQuery.disableAnimationsOf(context);
-                Widget icon = Icon(
-                  Icons.cloud_download_rounded,
-                  size: 80.r,
-                  color: widget.primaryColor,
-                );
-                if (!reduceMotion) {
-                  icon = icon
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .moveY(begin: -5, end: 5, duration: 1.seconds);
-                }
-                return icon;
-              },
-            ),
-            SizedBox(height: 24.h),
-            Text(
-              context.tr(
-                'kids_zone.downloading_smart_pen',
-                fallback: "Setting up your chalkboard...",
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: widget.primaryColor,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 8.h),
-            Text(
-              context.tr(
-                'kids_zone.download_once_note',
-                fallback: "This only happens once!",
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                color: Colors.grey,
-              ),
-            ),
-            SizedBox(height: 32.h),
-            ValueListenableBuilder<double>(
-              valueListenable: _progress,
-              builder: (context, progressValue, _) {
-                return Column(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 20.h,
-                      decoration: BoxDecoration(
-                        color: widget.primaryColor.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: Stack(
-                        children: [
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 100),
-                            width: 250.w * progressValue,
-                            height: 20.h,
-                            decoration: BoxDecoration(
-                              color: widget.primaryColor,
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      "${(progressValue * 100).toInt()}%",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                        color: widget.primaryColor,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}

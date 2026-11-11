@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/handwriting_evaluator.dart';
+import 'package:vowl/features/daily_challenges/handwriting/presentation/utils/handwriting_evaluator.dart';
 
 void main() {
   const evaluator = HandwritingEvaluator();

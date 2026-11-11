@@ -257,14 +257,6 @@ class StoryServiceImpl implements StoryService {
   };
 
   static const Map<String, List<String>> kidsScripts = {
-    'handwriting': [
-      "Welcome to the chalkboard! Let's warm up your fingers and draw our very first strokes together.",
-      "Look at how steady your hand is getting! Your lines and shapes are looking clearer every day.",
-      "You're building real confidence! Writing whole letters is starting to feel natural and smooth.",
-      "Fifty levels completed! You're connecting letters into words with such wonderful care and patience.",
-      "One hundred levels of handwriting! You should be so proud of your hard work and how beautiful your writing has become.",
-      "You've mastered the chalkboard! From simple lines to complete sentences, your writing shines with confidence.",
-    ],
     'weather': [
       "Welcome to the Weather Window! Look outside and let's explore sunshine, rain, wind, and clouds together.",
       "Ten weather clues solved! You're getting so good at telling what kind of day it is outside.",
@@ -1412,7 +1404,6 @@ class StoryServiceImpl implements StoryService {
             'transport',
             'bodyparts',
             'clothing',
-            'handwriting',
             'weather',
             'professions',
           ].contains(cleanId);

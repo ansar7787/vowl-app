@@ -99,9 +99,6 @@ class KidsRoutes {
   /// Route for the virtual buddy room.
   static const String kidsRoomRoute = '/kids-room';
 
-  /// Route for the handwriting practice game.
-  static const String kidsHandwritingRoute = '/kids-handwriting';
-
   /// Route for the weather game.
   static const String kidsWeatherRoute = '/kids-weather';
 
@@ -157,8 +154,6 @@ class KidsRoutes {
         return 'Body Parts';
       case 'clothing':
         return 'Clothing';
-      case 'handwriting':
-        return 'Handwriting';
       case 'weather':
         return 'Weather';
       case 'professions':
@@ -523,18 +518,6 @@ class KidsRoutes {
       path: kidsRoomRoute,
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const KidsRoomScreen(), state: state),
-    ),
-    GoRoute(
-      path: kidsHandwritingRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          UnifiedKidsGameScreen(
-            gameType: 'handwriting',
-            level: state.extra as int? ?? 1,
-          ),
-        ),
-        state: state,
-      ),
     ),
     GoRoute(
       path: kidsWeatherRoute,

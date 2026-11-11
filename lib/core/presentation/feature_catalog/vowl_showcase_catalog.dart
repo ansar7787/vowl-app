@@ -131,7 +131,7 @@ abstract final class VowlShowcaseCatalog {
         ShowcaseHighlight(
           icon: LucideIcons.penTool,
           title: '100-Sticker Album',
-          subtitle: 'Learn letter handwriting and collect milestone stickers',
+          subtitle: 'Complete learning quests and collect milestone stickers',
           tint: Color(0xFFF59E0B),
         ),
         ShowcaseHighlight(

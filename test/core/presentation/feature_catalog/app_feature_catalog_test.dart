@@ -34,7 +34,7 @@ void main() {
       expect(ids.contains('buddy_boutique'), isTrue);
       expect(ids.contains('kids_zone'), isTrue);
       expect(ids.contains('kids_room'), isTrue);
-      expect(ids.contains('kids_handwriting'), isTrue);
+      expect(ids.contains('handwriting'), isTrue);
       expect(ids.contains('kids_stickers'), isTrue);
       expect(ids.contains('voice_accents'), isTrue);
     });

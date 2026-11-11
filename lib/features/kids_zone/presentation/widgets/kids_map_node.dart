@@ -788,7 +788,6 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       'transport': AppRouter.kidsTransportRoute,
       'body_parts': AppRouter.kidsBodyPartsRoute,
       'clothing': AppRouter.kidsClothingRoute,
-      'handwriting': AppRouter.kidsHandwritingRoute,
       'weather': AppRouter.kidsWeatherRoute,
       'professions': AppRouter.kidsProfessionsRoute,
     };

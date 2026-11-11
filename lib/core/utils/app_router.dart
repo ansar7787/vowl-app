@@ -21,6 +21,7 @@ import 'package:vowl/features/daily_words/daily_words_routes.dart';
 import 'package:vowl/features/translation/translation_routes.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
+import 'package:vowl/features/daily_challenges/handwriting/presentation/pages/handwriting_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
 
 /// Central declarative application router configuring all modular feature routes,
@@ -81,6 +82,7 @@ class AppRouter {
   static const String translateRoute = '/translate';
   static const String wordSnapRoute = '/word-snap';
   static const String wordMixerRoute = '/word-mixer';
+  static const String handwritingRoute = '/handwriting';
 
   // ── Kids Zone routes ──────────────────────────────────────────────────────
 
@@ -110,7 +112,6 @@ class AppRouter {
   static const String kidsTransportRoute = '/kids-transport';
   static const String kidsBodyPartsRoute = '/kids-body-parts';
   static const String kidsClothingRoute = '/kids-clothing';
-  static const String kidsHandwritingRoute = '/kids-handwriting';
   static const String kidsWeatherRoute = '/kids-weather';
   static const String kidsProfessionsRoute = '/kids-professions';
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
@@ -157,6 +158,10 @@ class AppRouter {
       GoRoute(
         path: wordMixerRoute,
         builder: (context, state) => const WordMixerScreen(),
+      ),
+      GoRoute(
+        path: handwritingRoute,
+        builder: (context, state) => const HandwritingScreen(level: 1),
       ),
       GoRoute(
         path: duelRoute,

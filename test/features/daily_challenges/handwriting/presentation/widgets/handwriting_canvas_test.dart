@@ -5,7 +5,7 @@ import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_re
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/kids_zone/presentation/widgets/handwriting/handwriting_canvas.dart';
+import 'package:vowl/features/daily_challenges/handwriting/presentation/widgets/handwriting_canvas.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 

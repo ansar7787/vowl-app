@@ -20,7 +20,6 @@ class _LocalPalette {
   static const Color colorea580c = Color(0xFFEA580C);
   static const Color color0ea5e9 = Color(0xFF0EA5E9);
   static const Color colora855f7 = Color(0xFFA855F7);
-  static const Color color4f46e5 = Color(0xFF4F46E5);
   static const Color color38bdf8 = Color(0xFF38BDF8);
   static const Color color0d9488 = Color(0xFF0D9488);
   static const Color color000000 = Color(0xFF000000);
@@ -212,7 +211,7 @@ class LevelThemeHelper {
       case 'clothing':
         return _LocalPalette.colora855f7;
       case 'handwriting':
-        return _LocalPalette.color4f46e5;
+        return AppColors.teal500;
       case 'weather':
         return _LocalPalette.color38bdf8;
       case 'professions':
