@@ -15,7 +15,7 @@
 
 ## Overview
 
-Vowl is a gamified language-learning app with a separate Kids Zone. It has **100+ game types**, a **200-level curriculum per game**, and **60,000+ learning challenges** across vocabulary, grammar, listening, speaking, reading, writing, and more.
+Vowl is a gamified language-learning app designed for general learners (ages 13+). It has **100+ game types**, a **200-level curriculum per game**, and **60,000+ learning challenges** across vocabulary, grammar, listening, speaking, reading, writing, and more.
 
 I designed and built everything myself: the Flutter app, the Firebase backend, and the Cloud Function that validates in-app purchases.
 
@@ -40,7 +40,6 @@ Add real screenshots to docs/screenshots/ and uncomment this section.
 <div align="center">
   <img src="docs/screenshots/home.png" alt="Home" width="200"/>
   <img src="docs/screenshots/game.png" alt="Game" width="200"/>
-  <img src="docs/screenshots/kids-zone.png" alt="Kids Zone" width="200"/>
   <img src="docs/screenshots/profile.png" alt="Profile and streaks" width="200"/>
 </div>
 
@@ -116,10 +115,10 @@ Demo video: [Watch on YouTube](PASTE_YOUR_VIDEO_LINK_HERE)
 - Timezone-aware daily streaks.
 - Achievements, badges, and leaderboards.
 
-### Kids Zone
+### Explore & Utilities Hub
 
-- Simplified interface with 25 learning topics, including alphabet, numbers, colors, animals, phonics, and handwriting.
-- Parental gate: randomized math questions protect settings, external links, and purchases.
+- Daily curated 5-word accelerator, AI vision camera (Photo Vocab), and OCR document inspector (Scan & Learn).
+- Offline 50+ languages translation suite and digital ink handwriting recognition.
 
 ### Accounts and monetization
 
@@ -156,7 +155,6 @@ lib/
 │   ├── auth/              # OAuth, email login, legal consents
 │   ├── games/             # The 100+ game types & category maps
 │   ├── home/              # Bento dashboard, quick stats, daily goal
-│   ├── kids_zone/         # Parental gate, kids curriculum
 │   ├── leaderboard/       # Dual-timeframe rankings, leagues, Hall of Fame
 │   ├── monetization/      # IAP repositories, paywalls, coin packs
 │   ├── photo_vocabulary/  # On-device visual object missions (ML Kit)
