@@ -38,8 +38,6 @@ import 'package:vowl/core/utils/ml_services/text_recognition_service.dart';
 import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.dart';
 
@@ -165,14 +163,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
   );
   sl.registerLazySingleton<AudioRecordingService>(
     () => AudioRecordingService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<KidsTTSService>(
-    () => KidsTTSService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<KidsAudioService>(
-    () => KidsAudioService(),
     dispose: (service) => service.dispose(),
   );
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());

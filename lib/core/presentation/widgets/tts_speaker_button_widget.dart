@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 /// Production-grade audio speaker button for on-demand Text-to-Speech narration.
 ///
@@ -17,7 +16,6 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 class TtsSpeakerButtonWidget extends StatefulWidget {
   final String text;
   final Color color;
-  final bool isKids;
   final double? size;
   final String? locale;
 
@@ -25,7 +23,6 @@ class TtsSpeakerButtonWidget extends StatefulWidget {
     super.key,
     required this.text,
     required this.color,
-    this.isKids = false,
     this.size,
     this.locale,
   });
@@ -155,15 +152,10 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
 
     try {
       final double? targetRate = slow ? 0.3 : null;
-      if (widget.isKids &&
-          widget.locale == null &&
-          di.sl.isRegistered<KidsTTSService>()) {
-        await di.sl<KidsTTSService>().speak(widget.text, force: true);
-      } else if (di.sl.isRegistered<TtsService>()) {
+      if (di.sl.isRegistered<TtsService>()) {
         await di.sl<TtsService>().speak(
           widget.text,
           rate: targetRate,
-          isKids: widget.isKids,
           locale: widget.locale,
         );
       }

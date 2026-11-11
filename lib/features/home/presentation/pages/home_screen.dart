@@ -477,8 +477,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context.push(AppRouter.libraryRoute),
                                 ),
                                 BentoArena(user: user, collapsed: true),
-                                if (!user.isKidsModeOnly)
-                                  ReviewMistakesHomeCard(user: user),
+                                ReviewMistakesHomeCard(user: user),
                               ],
                             ),
                           ),

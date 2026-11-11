@@ -51,9 +51,6 @@ class MockRemoteConfigService implements RemoteConfigService {
   bool get isRemoteDataFresh => true;
 
   @override
-  int get kidsCoinsPerVictory => 5;
-
-  @override
   double get levelDifficultyModifier => 1.0;
 
   @override

@@ -9,7 +9,6 @@ import 'package:google_mobile_ads/src/ad_instance_manager.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/remote_config_service.dart';
 
@@ -54,7 +53,6 @@ void main() {
     adService = AdService();
 
     SharedPreferences.setMockInitialValues({});
-    await AgeGateService.loadCached();
 
     dotenv.loadFromString(
       envString:
@@ -199,42 +197,17 @@ void main() {
     );
 
     test(
-      'refreshAdConfig updates configuration mid-session for adult',
+      'refreshAdConfig updates configuration mid-session',
       () async {
         await adService.init();
-
-        // Complete age gate as adult
-        await AgeGateService.completeAgeGate(isAdult: true);
         adService.refreshAdConfig();
 
         final updateCalls = channelCalls
             .where((c) => c.method == 'MobileAds#updateRequestConfiguration')
             .toList();
         expect(updateCalls.length, greaterThanOrEqualTo(2));
-        final lastUpdate = updateCalls.last;
-        expect(
-          lastUpdate.arguments['ageRestrictedTreatment'],
-          equals(AgeRestrictedTreatment.unspecified.index),
-        );
       },
     );
-
-    test('refreshAdConfig configures child restriction for minor', () async {
-      await adService.init();
-
-      // Set age gate as minor (under 16)
-      await AgeGateService.completeAgeGate(isAdult: false);
-      adService.refreshAdConfig();
-
-      final updateCalls = channelCalls
-          .where((c) => c.method == 'MobileAds#updateRequestConfiguration')
-          .toList();
-      final lastUpdate = updateCalls.last;
-      expect(
-        lastUpdate.arguments['ageRestrictedTreatment'],
-        equals(AgeRestrictedTreatment.child.index),
-      );
-    });
   });
 
   // ===========================================================================
@@ -707,73 +680,6 @@ void main() {
         expect(hintEarned, isTrue);
 
         await simulateAdEvent(adId, 'onAdDismissedFullScreenContent');
-        expect(dismissed, isTrue);
-      },
-    );
-  });
-
-  // ===========================================================================
-  // GROUP 7: COPPA / Child-Safe Rewarded Flow
-  // ===========================================================================
-  group('7. COPPA & Child-Safe Mode', () {
-    test(
-      'childSafe flag in adult session flushes personalized ad and reloads child-safe',
-      () async {
-        await AgeGateService.completeAgeGate(isAdult: true);
-
-        adService.loadRewardedAd();
-        final originalAdId = lastLoadedRewardedAdId!;
-        await simulateAdEvent(originalAdId, 'onAdLoaded', {
-          'responseInfo': null,
-        });
-        expect(adService.isRewardedAdLoaded, isTrue);
-
-        RewardItem? earnedReward;
-        var dismissed = false;
-
-        // Adult requesting child-safe ad (e.g. entering Kids Zone)
-        adService.showRewardedAd(
-          isPremium: false,
-          childSafe: true,
-          onUserEarnedReward: (reward) => earnedReward = reward,
-          onDismissed: () => dismissed = true,
-        );
-
-        // Verify original ad was disposed for COPPA compliance
-        expect(
-          channelCalls.any(
-            (c) =>
-                c.method == 'disposeAd' && c.arguments['adId'] == originalAdId,
-          ),
-          isTrue,
-        );
-
-        // Verify a fresh child-safe ad was requested
-        final childSafeAdId = lastLoadedRewardedAdId!;
-        expect(childSafeAdId, isNot(equals(originalAdId)));
-
-        // Simulate child-safe load and show
-        await simulateAdEvent(childSafeAdId, 'onAdLoaded', {
-          'responseInfo': null,
-        });
-        expect(
-          channelCalls.any(
-            (c) =>
-                c.method == 'showAdWithoutView' &&
-                c.arguments['adId'] == childSafeAdId,
-          ),
-          isTrue,
-        );
-
-        final reward = RewardItem(10, 'Stars');
-        await simulateAdEvent(childSafeAdId, 'onRewardedAdUserEarnedReward', {
-          'rewardItem': reward,
-        });
-        expect(earnedReward, isNotNull);
-        expect(earnedReward!.amount, equals(10));
-        expect(earnedReward!.type, equals('Stars'));
-
-        await simulateAdEvent(childSafeAdId, 'onAdDismissedFullScreenContent');
         expect(dismissed, isTrue);
       },
     );

@@ -12,7 +12,6 @@ void main() {
     totalExp: 5000,
     dailyXpHistory: {todayKey: 1000},
     currentStreak: 10,
-    kidsCoins: 50,
     completedLevels: {
       'reading': List.generate(20, (i) => i + 1),
       'animals': List.generate(5, (i) => i + 1),
@@ -29,7 +28,6 @@ void main() {
     totalExp: 8000,
     dailyXpHistory: {todayKey: 2000},
     currentStreak: 5,
-    kidsCoins: 100,
     completedLevels: {
       'reading': List.generate(30, (i) => i + 1),
       'animals': List.generate(10, (i) => i + 1),
@@ -46,7 +44,6 @@ void main() {
     totalExp: 8000,
     dailyXpHistory: {todayKey: 2000},
     currentStreak: 15, // Higher streak tie-breaker
-    kidsCoins: 80,
     completedLevels: {
       'reading': List.generate(25, (i) => i + 1),
       'animals': List.generate(10, (i) => i + 1),
@@ -101,32 +98,6 @@ void main() {
       expect(sorted[0].id, 'user_c'); // 2000 weekly, 15 streak
       expect(sorted[1].id, 'user_b'); // 2000 weekly, 5 streak
       expect(sorted[2].id, 'user_a'); // 1000 weekly
-    });
-  });
-
-  group('LeaderboardRankingHelper.sortKids', () {
-    test('sorts by kidsTotalStars descending and resolves ties via levels', () {
-      final sorted = LeaderboardRankingHelper.sortKids([userA, userB, userC]);
-      expect(sorted[0].id, 'user_c'); // 9 stars, 10 levels
-      expect(sorted[1].id, 'user_b'); // 6 stars, 10 levels
-      expect(sorted[2].id, 'user_a'); // 3 stars, 5 levels
-    });
-
-    test('resolves ties via coins and streak when stars and levels are equal', () {
-      final userX = userB.copyWith(kidsCoins: 120, currentStreak: 5);
-      final userY = UserEntity(
-        id: 'user_y',
-        email: 'y@vowl.app',
-        displayName: 'User Y',
-        totalExp: userB.totalExp,
-        kidsCoins: 80,
-        currentStreak: 10,
-        completedLevels: userB.completedLevels,
-        starRatings: userB.starRatings,
-      );
-      final sorted = LeaderboardRankingHelper.sortKids([userY, userX]);
-      expect(sorted[0].id, 'user_b'); // Higher coins (120 vs 80)
-      expect(sorted[1].id, 'user_y');
     });
   });
 

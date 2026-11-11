@@ -58,13 +58,6 @@ class UserModel extends UserEntity {
     super.recentActivities,
     super.lastVipGiftDate,
     super.lastDailyRewardDate,
-    super.lastKidsDailyRewardDate,
-    super.kidsCoins,
-    super.kidsStickers,
-    super.kidsMascot,
-    super.kidsEquippedSticker,
-    super.kidsOwnedAccessories,
-    super.kidsEquippedAccessory,
     super.vowlMascot,
     super.vowlEquippedAccessory,
     super.vowlOwnedAccessories,
@@ -74,21 +67,9 @@ class UserModel extends UserEntity {
     super.claimedBadgeRewards,
     super.coinHistory,
     super.hasPermanentXPBoost,
-    super.kidsOwnedFurniture,
-    super.kidsEquippedFurniture,
     super.keys,
     super.previousRank,
     super.previousRankWeekKey,
-    super.kidsBuddyMood,
-    super.kidsBuddyEnergy,
-    super.kidsBuddyHunger,
-    super.kidsLastCareDate,
-    super.kidsCareStreak,
-    super.kidsRoomLevel,
-    super.kidsRoomTheme,
-    super.kidsLastFeedTime,
-    super.kidsGamesPlayedToday,
-    super.kidsLastGameDate,
     super.referralCode,
     super.referredBy,
     super.pendingReferralCode,
@@ -155,13 +136,6 @@ class UserModel extends UserEntity {
       recentActivities: _parseDynamicMapList(map['recentActivities']),
       lastVipGiftDate: _parseDateTime(map['lastVipGiftDate']),
       lastDailyRewardDate: _parseDateTime(map['lastDailyRewardDate']),
-      lastKidsDailyRewardDate: _parseDateTime(map['lastKidsDailyRewardDate']),
-      kidsCoins: (map['kidsCoins'] as num?)?.toInt() ?? 0,
-      kidsStickers: _parseStringList(map['kidsStickers']),
-      kidsMascot: map['kidsMascot'] as String?,
-      kidsEquippedSticker: map['kidsEquippedSticker'] as String?,
-      kidsOwnedAccessories: _parseStringList(map['kidsOwnedAccessories']),
-      kidsEquippedAccessory: map['kidsEquippedAccessory'] as String?,
       vowlMascot: map['vowlMascot'] as String?,
       vowlEquippedAccessory: map['vowlEquippedAccessory'] as String?,
       vowlOwnedAccessories: _parseStringList(map['vowlOwnedAccessories']),
@@ -173,29 +147,9 @@ class UserModel extends UserEntity {
       claimedBadgeRewards: _parseStringList(map['claimedBadgeRewards']),
       coinHistory: _parseDynamicMapList(map['coinHistory']),
       hasPermanentXPBoost: (map['hasPermanentXPBoost'] as bool?) ?? false,
-      kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
-          ? _parseStringList(map['kidsOwnedFurniture'])
-          : UserGameConstants.kDefaultKidsOwnedFurniture,
-      // Was a raw, unguarded `Map<String, String>.from(...)` cast — any
-      // non-String value under a key (e.g. a null written by some future
-      // "unequip" path) would throw mid-parse. Routed through the same
-      // defensive-per-value pattern every other Map field here already uses.
-      kidsEquippedFurniture: map['kidsEquippedFurniture'] != null
-          ? _parseStringMap(map['kidsEquippedFurniture'])
-          : UserGameConstants.kDefaultKidsEquippedFurniture,
       keys: (map['keys'] as num?)?.toInt() ?? 0,
       previousRank: (map['previousRank'] as num?)?.toInt(),
       previousRankWeekKey: map['previousRankWeekKey'] as String?,
-      kidsBuddyMood: (map['kidsBuddyMood'] as String?) ?? 'happy',
-      kidsBuddyEnergy: (map['kidsBuddyEnergy'] as num?)?.toInt() ?? 100,
-      kidsBuddyHunger: (map['kidsBuddyHunger'] as num?)?.toInt() ?? 0,
-      kidsLastCareDate: _parseDateTime(map['kidsLastCareDate']),
-      kidsCareStreak: (map['kidsCareStreak'] as num?)?.toInt() ?? 0,
-      kidsRoomLevel: (map['kidsRoomLevel'] as num?)?.toInt() ?? 1,
-      kidsRoomTheme: (map['kidsRoomTheme'] as String?) ?? 'nature',
-      kidsLastFeedTime: _parseDateTime(map['kidsLastFeedTime']),
-      kidsGamesPlayedToday: (map['kidsGamesPlayedToday'] as num?)?.toInt() ?? 0,
-      kidsLastGameDate: _parseDateTime(map['kidsLastGameDate']),
       referralCode: map['referralCode'] as String?,
       referredBy: map['referredBy'] as String?,
       pendingReferralCode: map['pendingReferralCode'] as String?,
@@ -262,13 +216,6 @@ class UserModel extends UserEntity {
       recentActivities: entity.recentActivities,
       lastVipGiftDate: entity.lastVipGiftDate,
       lastDailyRewardDate: entity.lastDailyRewardDate,
-      lastKidsDailyRewardDate: entity.lastKidsDailyRewardDate,
-      kidsCoins: entity.kidsCoins,
-      kidsStickers: entity.kidsStickers,
-      kidsMascot: entity.kidsMascot,
-      kidsEquippedSticker: entity.kidsEquippedSticker,
-      kidsOwnedAccessories: entity.kidsOwnedAccessories,
-      kidsEquippedAccessory: entity.kidsEquippedAccessory,
       vowlMascot: entity.vowlMascot,
       vowlEquippedAccessory: entity.vowlEquippedAccessory,
       vowlOwnedAccessories: entity.vowlOwnedAccessories,
@@ -278,21 +225,9 @@ class UserModel extends UserEntity {
       claimedBadgeRewards: entity.claimedBadgeRewards,
       coinHistory: entity.coinHistory,
       hasPermanentXPBoost: entity.hasPermanentXPBoost,
-      kidsOwnedFurniture: entity.kidsOwnedFurniture,
-      kidsEquippedFurniture: entity.kidsEquippedFurniture,
       keys: entity.keys,
       previousRank: entity.previousRank,
       previousRankWeekKey: entity.previousRankWeekKey,
-      kidsBuddyMood: entity.kidsBuddyMood,
-      kidsBuddyEnergy: entity.kidsBuddyEnergy,
-      kidsBuddyHunger: entity.kidsBuddyHunger,
-      kidsLastCareDate: entity.kidsLastCareDate,
-      kidsCareStreak: entity.kidsCareStreak,
-      kidsRoomLevel: entity.kidsRoomLevel,
-      kidsRoomTheme: entity.kidsRoomTheme,
-      kidsLastFeedTime: entity.kidsLastFeedTime,
-      kidsGamesPlayedToday: entity.kidsGamesPlayedToday,
-      kidsLastGameDate: entity.kidsLastGameDate,
       referralCode: entity.referralCode,
       referredBy: entity.referredBy,
       pendingReferralCode: entity.pendingReferralCode,
@@ -361,15 +296,6 @@ class UserModel extends UserEntity {
       'lastDailyRewardDate': lastDailyRewardDate != null
           ? Timestamp.fromDate(lastDailyRewardDate!)
           : null,
-      'lastKidsDailyRewardDate': lastKidsDailyRewardDate != null
-          ? Timestamp.fromDate(lastKidsDailyRewardDate!)
-          : null,
-      'kidsCoins': kidsCoins,
-      'kidsStickers': kidsStickers,
-      'kidsMascot': kidsMascot,
-      'kidsEquippedSticker': kidsEquippedSticker,
-      'kidsOwnedAccessories': kidsOwnedAccessories,
-      'kidsEquippedAccessory': kidsEquippedAccessory,
       'vowlMascot': vowlMascot,
       'vowlEquippedAccessory': vowlEquippedAccessory,
       'vowlOwnedAccessories': vowlOwnedAccessories,
@@ -379,27 +305,9 @@ class UserModel extends UserEntity {
       'claimedBadgeRewards': claimedBadgeRewards,
       'coinHistory': coinHistory,
       'hasPermanentXPBoost': hasPermanentXPBoost,
-      'kidsOwnedFurniture': kidsOwnedFurniture,
-      'kidsEquippedFurniture': kidsEquippedFurniture,
       'keys': keys,
       'previousRank': previousRank,
       'previousRankWeekKey': previousRankWeekKey,
-      'kidsBuddyMood': kidsBuddyMood,
-      'kidsBuddyEnergy': kidsBuddyEnergy,
-      'kidsBuddyHunger': kidsBuddyHunger,
-      'kidsLastCareDate': kidsLastCareDate != null
-          ? Timestamp.fromDate(kidsLastCareDate!)
-          : null,
-      'kidsCareStreak': kidsCareStreak,
-      'kidsRoomLevel': kidsRoomLevel,
-      'kidsRoomTheme': kidsRoomTheme,
-      'kidsLastFeedTime': kidsLastFeedTime != null
-          ? Timestamp.fromDate(kidsLastFeedTime!)
-          : null,
-      'kidsGamesPlayedToday': kidsGamesPlayedToday,
-      'kidsLastGameDate': kidsLastGameDate != null
-          ? Timestamp.fromDate(kidsLastGameDate!)
-          : null,
       'referralCode': referralCode,
       'referredBy': referredBy,
       'pendingReferralCode': pendingReferralCode,
@@ -459,28 +367,16 @@ class UserModel extends UserEntity {
     bool? isAdmin,
     bool? isEmailVerified,
     bool? isPremium,
-    int? kidsCoins,
-    List<String>? kidsOwnedAccessories,
-    List<String>? kidsStickers,
     int? streakFreezes,
     int? totalExp,
     Map<String, int>? unlockedLevels,
     bool? hasPermanentXPBoost,
     List<String>? vowlOwnedAccessories,
     List<String>? vowlOwnedMascots,
-    List<String>? kidsOwnedFurniture,
-    Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
     int? previousRank,
     String? previousRankWeekKey,
-    String? kidsBuddyMood,
-    int? kidsBuddyEnergy,
-    int? kidsBuddyHunger,
-    int? kidsCareStreak,
-    int? kidsRoomLevel,
-    String? kidsRoomTheme,
-    int? kidsGamesPlayedToday,
     bool? hasClaimedReferral,
     int? totalReferralsCount,
     int? monthlyReferralsCount,
@@ -498,15 +394,8 @@ class UserModel extends UserEntity {
     Object? doubleXPExpiry = _absent,
     Object? lastVipGiftDate = _absent,
     Object? lastDailyRewardDate = _absent,
-    Object? lastKidsDailyRewardDate = _absent,
-    Object? kidsMascot = _absent,
-    Object? kidsEquippedSticker = _absent,
-    Object? kidsEquippedAccessory = _absent,
     Object? vowlMascot = _absent,
     Object? vowlEquippedAccessory = _absent,
-    Object? kidsLastCareDate = _absent,
-    Object? kidsLastFeedTime = _absent,
-    Object? kidsLastGameDate = _absent,
     Object? referralCode = _absent,
     Object? referredBy = _absent,
     Object? pendingReferralCode = _absent,
@@ -535,29 +424,16 @@ class UserModel extends UserEntity {
       isAdmin: isAdmin ?? this.isAdmin,
       isEmailVerified: isEmailVerified ?? this.isEmailVerified,
       isPremium: isPremium ?? this.isPremium,
-      kidsCoins: kidsCoins ?? this.kidsCoins,
-      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
-      kidsStickers: kidsStickers ?? this.kidsStickers,
       streakFreezes: streakFreezes ?? this.streakFreezes,
       totalExp: totalExp ?? this.totalExp,
       unlockedLevels: unlockedLevels ?? this.unlockedLevels,
       hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
       vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
       vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
-      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
-      kidsEquippedFurniture:
-          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
       previousRank: previousRank ?? this.previousRank,
       previousRankWeekKey: previousRankWeekKey ?? this.previousRankWeekKey,
-      kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
-      kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
-      kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
-      kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
-      kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
-      kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
-      kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
       hasClaimedReferral: hasClaimedReferral ?? this.hasClaimedReferral,
       totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
       monthlyReferralsCount:
@@ -596,33 +472,12 @@ class UserModel extends UserEntity {
       lastDailyRewardDate: identical(lastDailyRewardDate, _absent)
           ? this.lastDailyRewardDate
           : lastDailyRewardDate as DateTime?,
-      lastKidsDailyRewardDate: identical(lastKidsDailyRewardDate, _absent)
-          ? this.lastKidsDailyRewardDate
-          : lastKidsDailyRewardDate as DateTime?,
-      kidsMascot: identical(kidsMascot, _absent)
-          ? this.kidsMascot
-          : kidsMascot as String?,
-      kidsEquippedSticker: identical(kidsEquippedSticker, _absent)
-          ? this.kidsEquippedSticker
-          : kidsEquippedSticker as String?,
-      kidsEquippedAccessory: identical(kidsEquippedAccessory, _absent)
-          ? this.kidsEquippedAccessory
-          : kidsEquippedAccessory as String?,
       vowlMascot: identical(vowlMascot, _absent)
           ? this.vowlMascot
           : vowlMascot as String?,
       vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
           ? this.vowlEquippedAccessory
           : vowlEquippedAccessory as String?,
-      kidsLastCareDate: identical(kidsLastCareDate, _absent)
-          ? this.kidsLastCareDate
-          : kidsLastCareDate as DateTime?,
-      kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
-          ? this.kidsLastFeedTime
-          : kidsLastFeedTime as DateTime?,
-      kidsLastGameDate: identical(kidsLastGameDate, _absent)
-          ? this.kidsLastGameDate
-          : kidsLastGameDate as DateTime?,
       referralCode: identical(referralCode, _absent)
           ? this.referralCode
           : referralCode as String?,
@@ -708,22 +563,6 @@ class UserModel extends UserEntity {
     if (raw is! Map) return const {};
     final map = raw as Map<Object?, Object?>;
     return map.map((k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0));
-  }
-
-  /// Parses a Firestore map of {String → String} defensively, skipping any
-  /// entry whose value isn't actually a [String] (e.g. a `null` written by
-  /// some future "unequip" flow) instead of throwing mid-parse.
-  static Map<String, String> _parseStringMap(dynamic raw) {
-    if (raw is! Map) return const {};
-    final map = raw as Map<Object?, Object?>;
-    final result = <String, String>{};
-    for (final entry in map.entries) {
-      final value = entry.value;
-      if (value is String) {
-        result[entry.key.toString()] = value;
-      }
-    }
-    return result;
   }
 
   /// Parses a Firestore list of strings defensively.

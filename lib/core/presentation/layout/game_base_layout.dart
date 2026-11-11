@@ -141,7 +141,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
       if (!mounted) return;
       _ttsService.speak(
         context.tr(
-          'games.kids_nudge',
+          'games.life_nudge',
           fallback: 'Focus! Use a hint if you need help saving your last life.',
         ),
       );

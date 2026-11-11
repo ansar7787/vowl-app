@@ -14,14 +14,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 /// Sticky card showing the current logged-in user's rank position, score, and league status.
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
-  final bool isKids;
   final double collapseProgress;
   final VoidCallback? onTap;
 
   const LeaderboardRankCard({
     super.key,
     required this.allUsers,
-    this.isKids = false,
     this.isWeekly = true,
     this.collapseProgress = 0.0,
     this.onTap,
@@ -53,18 +51,7 @@ class LeaderboardRankCard extends StatelessWidget {
     final Color statusZoneIconColor;
     final double relativeProgress;
 
-    if (isKids) {
-      primaryScoreText = '${currentUser.kidsTotalStars} Stars';
-      statusZoneText = isRanked
-          ? '${currentUser.kidsTotalLevelsCompleted} Levels · ${currentUser.kidsCoins} Coins'
-          : 'Play games to collect stars!';
-      statusZoneIcon = isRanked ? Icons.star_rounded : Icons.sports_esports_rounded;
-      statusZoneIconColor = AppColors.amber500;
-      final topStars = allUsers.isNotEmpty ? allUsers.first.kidsTotalStars : 1;
-      relativeProgress = topStars > 0
-          ? (currentUser.kidsTotalStars / topStars).clamp(0.05, 1.0)
-          : 0.05;
-    } else if (isWeekly) {
+    if (isWeekly) {
       primaryScoreText = '${currentUser.currentWeeklyExp} Weekly XP';
       if (rank >= 1 && rank <= 3) {
         statusZoneText = 'Podium · VIP + Coins';
@@ -264,23 +251,7 @@ class LeaderboardRankCard extends StatelessWidget {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              if (isKids) ...[
-                                Icon(
-                                  Icons.star_rounded,
-                                  size: 11.sp,
-                                  color: AppColors.amber500,
-                                ),
-                                SizedBox(width: 2.w),
-                                Text(
-                                  '${currentUser.kidsTotalStars} Stars',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 8.5.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: secondaryTextColor,
-                                  ),
-                                ),
-                              ] else if (isWeekly) ...[
+                              if (isWeekly) ...[
                                 if (rank >= 1 && rank <= 3) ...[
                                   Icon(
                                     LucideIcons.trophy,
@@ -387,9 +358,7 @@ class LeaderboardRankCard extends StatelessWidget {
                               child: Container(
                                 height: 5.h,
                                 decoration: BoxDecoration(
-                                  color: isKids
-                                      ? AppColors.amber500
-                                      : AppColors.indigo500,
+                                  color: AppColors.indigo500,
                                   borderRadius: BorderRadius.circular(3.r),
                                 ),
                               ),

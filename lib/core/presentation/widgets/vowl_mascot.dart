@@ -1,5 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorf472b6 = Color(0xFFF472B6);
-  static const Color color60a5fa = Color(0xFF60A5FA);
-}
 
 /// Emotional and pedagogical states expressed by the [VowlMascot].
 enum VowlMascotState {
@@ -46,25 +37,19 @@ enum VowlMascotState {
 class _MascotUserData extends Equatable {
   final int level;
   final String? vowlMascot;
-  final String? kidsMascot;
   final String? vowlAccessory;
-  final String? kidsAccessory;
 
   const _MascotUserData({
     required this.level,
     this.vowlMascot,
-    this.kidsMascot,
     this.vowlAccessory,
-    this.kidsAccessory,
   });
 
   @override
   List<Object?> get props => [
     level,
     vowlMascot,
-    kidsMascot,
     vowlAccessory,
-    kidsAccessory,
   ];
 }
 
@@ -77,7 +62,6 @@ class VowlMascot extends StatelessWidget {
   final String? accessoryId;
   final String? mascotId;
   final int level;
-  final bool isKidsMode;
 
   const VowlMascot({
     super.key,
@@ -87,7 +71,6 @@ class VowlMascot extends StatelessWidget {
     this.accessoryId,
     this.mascotId,
     this.level = 1,
-    this.isKidsMode = false,
   });
 
   /// Returns the Vowly image asset path for the current [state].
@@ -105,51 +88,30 @@ class VowlMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>();
     // HIGH FIX: BlocSelector rebuilds ONLY when mascot-relevant user data
     // changes. Previously BlocBuilder rebuilt on every AuthState change.
     return BlocSelector<AuthBloc, AuthState, _MascotUserData>(
       selector: (s) => _MascotUserData(
         level: s.user?.level ?? 1,
         vowlMascot: s.user?.vowlMascot,
-        kidsMascot: s.user?.kidsMascot,
         vowlAccessory: s.user?.vowlEquippedAccessory,
-        kidsAccessory: s.user?.kidsEquippedAccessory,
       ),
       builder: (context, userData) {
         final reduceMotion = VowlMotion.shouldReduceMotion(context);
         final effectiveMascotId =
-            mascotId ??
-            (isKidsMode
-                ? (userData.kidsMascot ?? 'owly')
-                : (userData.vowlMascot ?? 'vowl_prime'));
+            mascotId ?? (userData.vowlMascot ?? 'vowl_prime');
 
         final isVowly = effectiveMascotId == 'vowly';
         final botSize = size ?? 120.r;
 
-        final mascotMap = isKidsMode
-            ? KidsAssets.mascotMap
-            : VowlAssets.mascotMap;
-        final accessoryMap = isKidsMode
-            ? KidsAssets.accessoryMap
-            : VowlAssets.accessoryMap;
+        final mascotMap = VowlAssets.mascotMap;
+        final accessoryMap = VowlAssets.accessoryMap;
 
         final buddyEmoji = mascotMap[effectiveMascotId] ?? '🦉';
 
         // ── Aura colour ───────────────────────────────────────────────────
         Color auraColor =
             VowlAssets.itemColors[effectiveMascotId] ?? Colors.blueAccent;
-        if (isKidsMode) {
-          auraColor = switch (effectiveMascotId) {
-            'owly' => Colors.brown[300]!,
-            'foxie' => Colors.orangeAccent,
-            'dino' => tokens?.gameCorrect ?? AppColors.emerald500,
-            'mascot_unicorn' => _LocalPalette.colorf472b6,
-            'mascot_robot' => _LocalPalette.color60a5fa,
-            'mascot_lion' => AppColors.amber400,
-            _ => auraColor,
-          };
-        }
 
         // ── Base bot widget ───────────────────────────────────────────────
         Widget bot = isVowly
@@ -238,15 +200,12 @@ class VowlMascot extends StatelessWidget {
 
         // ── Accessory overlay with slot-aware physical anchoring ──────────
         final effectiveAccessory =
-            accessoryId ??
-            (isKidsMode ? userData.kidsAccessory : userData.vowlAccessory);
+            accessoryId ?? userData.vowlAccessory;
 
         if (effectiveAccessory != null &&
             accessoryMap.containsKey(effectiveAccessory)) {
           final emoji = accessoryMap[effectiveAccessory]!;
-          final slot = isKidsMode
-              ? AccessorySlot.charm
-              : VowlAssets.getAccessorySlot(effectiveAccessory);
+          final slot = VowlAssets.getAccessorySlot(effectiveAccessory);
 
           late final Widget overlayChild;
           Widget? backgroundChild;

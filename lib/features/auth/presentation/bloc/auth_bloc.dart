@@ -392,9 +392,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final notificationCardDismissedTime = prefs.getInt(
         'notification_card_dismissed_time',
       );
-      // Age gate is device-scoped, not user-scoped — must survive logout/delete.
-      final ageGateCompleted = prefs.getBool('age_gate_completed');
-      final ageGateIsAdult = prefs.getBool('age_gate_is_adult');
       // Onboarding is device-scoped — users should never re-see the intro
       // carousel after sign-out; only after app uninstall/data wipe.
       final onboardingComplete = prefs.getBool(
@@ -462,12 +459,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           'notification_card_dismissed_time',
           notificationCardDismissedTime,
         );
-      }
-      if (ageGateCompleted != null) {
-        await prefs.setBool('age_gate_completed', ageGateCompleted);
-      }
-      if (ageGateIsAdult != null) {
-        await prefs.setBool('age_gate_is_adult', ageGateIsAdult);
       }
       if (onboardingComplete != null) {
         await prefs.setBool(
@@ -636,7 +627,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// FIX (CRITICAL — DATA REGRESSION): Previously only protected [completedLevels]
   /// and [unlockedLevels]. When a Firestore write was silently rejected by security
   /// rules (e.g. missing lastRewardTimestamp), the next snapshot carried stale values
-  /// for [coins], [totalExp], [kidsCoins], and [starRatings], snapping the UI back
+  /// for [coins], [totalExp], and [starRatings], snapping the UI back
   /// to old data. Now also takes the maximum of those numeric/map fields so that
   /// in-session progress is never visually reverted by a lagging snapshot.
   UserEntity _reconcileUserProgression({
@@ -679,13 +670,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       currentUser.totalExp,
     );
 
-    // Note: Currency balances ([coins], [kidsCoins]) are spendable accounts,
+    // Note: Currency balance ([coins]) is a spendable account,
     // NOT monotonic progression metrics. When a user spends coins (e.g. buying
     // Golden Keys, streak repairs, streak freezes, or hints), [remoteUser.coins]
     // is intentionally lower than [currentUser.coins]. Taking math.max() here
     // was a critical bug that prevented coins from ever being spent in-memory.
-    // [remoteUser.coins] and [remoteUser.kidsCoins] from Firestore transactions
-    // are the authoritative source of truth and are preserved directly.
+    // [remoteUser.coins] from Firestore transactions
+    // is the authoritative source of truth and is preserved directly.
 
     // ---- Identity (Name & Photo): Never let a minimal/stale snapshot wipe them ----
     final reconciledDisplayName =

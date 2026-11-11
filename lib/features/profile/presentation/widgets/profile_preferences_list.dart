@@ -25,8 +25,7 @@ class ProfilePreferencesList extends StatelessWidget {
       blur: 0,
       child: Column(
         children: [
-          if (!user.isKidsModeOnly)
-            _buildPreferenceTile(
+          _buildPreferenceTile(
               context,
               'Ambassador Program',
               Icons.card_giftcard_rounded,

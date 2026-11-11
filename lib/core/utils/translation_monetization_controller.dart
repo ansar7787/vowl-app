@@ -24,7 +24,6 @@ class TranslationMonetizationController {
   static Future<void> attemptTranslation(
     BuildContext context, {
     required VoidCallback onSuccess,
-    bool isKidsZone = false,
   }) async {
     final authState = context.read<AuthBloc>().state;
     final isPremium = authState.user?.isPremium ?? false;
@@ -143,7 +142,6 @@ class TranslationMonetizationController {
       adService.showRewardedAd(
         context: context,
         isPremium: isPremium, // We know it's false here
-        childSafe: isKidsZone,
         onUserEarnedReward: (RewardItem item) {
           // Ad watched successfully
           if (context.mounted) {

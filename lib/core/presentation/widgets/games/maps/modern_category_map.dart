@@ -142,7 +142,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 2500),
     );
 
-    // 3. Current-node subtle glow pulse (like Kids map)
+    // 3. Current-node subtle glow pulse
     _glowController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1800),
@@ -276,7 +276,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
     final double targetOffset = (targetLevel - 1) * rowSpacing;
-    // Uses the exact math from the Kids Map: ignoring header heights pushes the
+    // Uses precise vertical spacing: ignoring header heights pushes the
     // node perfectly into the comfortable lower-middle of the screen.
     final double targetY = math.max(0.0, targetOffset - 300.h);
 
@@ -896,7 +896,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               }
               KeyShopBottomSheet.show(
                 context: context,
-                isKidsMode: false,
                 primaryColor: theme.primaryColor,
               );
             },

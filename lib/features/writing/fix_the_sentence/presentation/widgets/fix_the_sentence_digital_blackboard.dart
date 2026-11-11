@@ -1,5 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -83,7 +83,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
       suffix = parts.length > 1 ? parts.sublist(1).join(targetWord) : "";
     }
 
-    final successColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
+    final successColor = isDark ? tokens.gameCorrect : AppColors.emerald500;
     final errorColor = isDark
         ? tokens.gameIncorrect
         : _LocalPalette.colordc2626;

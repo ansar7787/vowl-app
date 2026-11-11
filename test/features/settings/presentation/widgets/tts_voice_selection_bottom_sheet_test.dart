@@ -92,7 +92,6 @@ void main() {
 
       expect(find.text('Pronunciation Voice'), findsOneWidget);
       expect(find.text('Friendly Teacher'), findsOneWidget);
-      expect(find.text('KIDS FAVORITE'), findsOneWidget);
       expect(find.text('Clear Guide'), findsOneWidget);
       expect(find.text('British Accent'), findsOneWidget);
       expect(find.text('Australian Accent'), findsOneWidget);
@@ -116,7 +115,6 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Friendly Teacher'), findsOneWidget);
-      expect(find.text('KIDS FAVORITE'), findsOneWidget);
       expect(find.text('Australian Accent'), findsOneWidget);
       expect(tester.takeException(), isNull);
     },

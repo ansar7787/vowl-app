@@ -3,7 +3,7 @@ import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_reposi
 import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 
-/// BLoC component managing global and Kids Zone leaderboard rankings,
+/// BLoC component managing leaderboard rankings,
 /// background caching, and pull-to-refresh completers.
 class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
   final LeaderboardRepository repository;
@@ -27,20 +27,15 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
     // would leave the completer dangling, freezing the RefreshIndicator
     // spinner indefinitely with no recovery path for the user.
     try {
-      final result = event.isKids
-          ? await repository.getTopKidsUsers()
-          : await repository.getTopUsers();
+      final result = await repository.getTopUsers();
 
       result.fold((failure) => emit(LeaderboardError(failure.message)), (data) {
-        final sortedUsers = event.isKids
-            ? LeaderboardRankingHelper.sortKids(data.users)
-            : LeaderboardRankingHelper.sortWeekly(data.users);
+        final sortedUsers = LeaderboardRankingHelper.sortWeekly(data.users);
 
         emit(
           LeaderboardLoaded(
             sortedUsers,
             data.lastUpdated,
-            isKids: event.isKids,
           ),
         );
       });

@@ -14,6 +14,7 @@ class DailyChallengeService {
 
   static List<dynamic>? _cachedMixerItems;
   static List<dynamic>? _cachedSnapItems;
+  static List<dynamic>? _cachedHandwritingItems;
 
   /// Returns today's Word Mixer puzzle based on day offset.
   static Future<Map<String, dynamic>?> getTodayWordMixer() async {
@@ -42,6 +43,22 @@ class DailyChallengeService {
   /// Returns a random Word Snap puzzle for practice mode.
   static Future<Map<String, dynamic>?> getRandomWordSnap() async {
     final list = await _loadSnapList();
+    if (list.isEmpty) return null;
+    final index = (DateTime.now().microsecondsSinceEpoch) % list.length;
+    return Map<String, dynamic>.from(list[index] as Map);
+  }
+
+  /// Returns today's Handwriting puzzle based on day offset.
+  static Future<Map<String, dynamic>?> getTodayHandwriting() async {
+    final list = await _loadHandwritingList();
+    if (list.isEmpty) return null;
+    final index = _getTodayIndex(list.length);
+    return Map<String, dynamic>.from(list[index] as Map);
+  }
+
+  /// Returns a random Handwriting puzzle for practice mode.
+  static Future<Map<String, dynamic>?> getRandomHandwriting() async {
+    final list = await _loadHandwritingList();
     if (list.isEmpty) return null;
     final index = (DateTime.now().microsecondsSinceEpoch) % list.length;
     return Map<String, dynamic>.from(list[index] as Map);
@@ -93,6 +110,39 @@ class DailyChallengeService {
     } catch (e) {
       debugPrint(
         '[DailyChallengeService] Failed to load Word Snap curriculum: $e',
+      );
+    }
+
+    return const [];
+  }
+
+  static Future<List<dynamic>> _loadHandwritingList() async {
+    if (_cachedHandwritingItems != null) return _cachedHandwritingItems!;
+
+    try {
+      final List<dynamic> allQuests = [];
+      for (int i = 1; i <= 20; i++) {
+        try {
+          final path =
+              'assets/curriculum/daily_challenges/handwriting/handwriting_batch_$i.json';
+          final jsonStr = await rootBundle.loadString(path);
+          final dynamic decoded = jsonDecode(jsonStr);
+          if (decoded is List) {
+            for (final levelObj in decoded) {
+              if (levelObj is Map && levelObj['quests'] is List) {
+                allQuests.addAll(levelObj['quests'] as List);
+              }
+            }
+          }
+        } catch (_) {}
+      }
+      if (allQuests.isNotEmpty) {
+        _cachedHandwritingItems = allQuests;
+        return _cachedHandwritingItems!;
+      }
+    } catch (e) {
+      debugPrint(
+        '[DailyChallengeService] Failed to load Handwriting curriculum: $e',
       );
     }
 

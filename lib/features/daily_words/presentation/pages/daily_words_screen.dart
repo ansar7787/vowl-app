@@ -374,7 +374,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             adService.showRewardedAd(
                               context: sheetContext,
                               isPremium: false,
-                              childSafe: false,
                               onUserEarnedReward: (_) {
                                 earned = true;
                                 if (!completer.isCompleted) {
@@ -748,7 +747,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       if (!mounted) return;
       await TranslationMonetizationController.attemptTranslation(
         context,
-        isKidsZone: false,
         onSuccess: () async {
           if (!isDownloaded && mounted) {
             await TranslationDownloadSheet.show(

@@ -233,13 +233,6 @@ class HomeRoutes {
       },
     ),
     GoRoute(
-      path: AppRouter.kidsLeaderboardRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const LeaderboardScreen(isKids: true),
-        state: state,
-      ),
-    ),
-    GoRoute(
       path: AppRouter.referralRoute,
       pageBuilder: (context, state) {
         final initialTab = (state.extra is int) ? (state.extra as int) : 0;

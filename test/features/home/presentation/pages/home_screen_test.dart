@@ -77,7 +77,7 @@ void main() {
     email: 'learner@vowl.app',
     displayName: 'Aria Stark',
     currentStreak: 12,
-    totalExp: 1400, // Level 15 (Commander tier)
+    totalExp: 3500, // Level 15 (Commander tier: 14 * 250 = 3500)
     coins: 350,
     badges: ['first_win', 'streak_7'],
     completedLevels: {
@@ -609,36 +609,8 @@ void main() {
   });
 
   group('Group 7: Review Mistakes Card Gating', () {
-    testWidgets('omits ReviewMistakesHomeCard when user is in kidsModeOnly', (
-      tester,
-    ) async {
-      const kidsUser = UserEntity(
-        id: 'user_kids',
-        email: 'kids@vowl.app',
-        displayName: 'Junior',
-        totalExp: 0,
-        completedLevels: {
-          'kidsAlphabet': [1, 2],
-        },
-      );
-      when(
-        () => mockAuthBloc.state,
-      ).thenReturn(AuthState.authenticated(kidsUser));
-      when(
-        () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
-      ).thenAnswer(
-        (_) async => Right(
-          LeaderboardResult(users: [kidsUser], lastUpdated: DateTime.now()),
-        ),
-      );
-
-      await pumpHomeScreen(tester);
-
-      expect(find.byType(ReviewMistakesHomeCard), findsNothing);
-    });
-
     testWidgets(
-      'omits mistake card body when non-kids user has 0 mistakes in journal',
+      'omits mistake card body when user has 0 mistakes in journal',
       (tester) async {
         await pumpHomeScreen(tester);
 

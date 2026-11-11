@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
 /// Interactive text entry container featuring an ink gauge level and word counter metrics.
 class ShortAnswerInkwell extends StatelessWidget {
@@ -44,7 +43,7 @@ class ShortAnswerInkwell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final successColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
+    final successColor = isDark ? tokens.gameCorrect : AppColors.emerald500;
 
     return GestureDetector(
       onTap: isAnswered ? null : () => focusNode.requestFocus(),

@@ -4,7 +4,6 @@ import 'package:vowl/features/auth/presentation/pages/forgot_password_page.dart'
 import 'package:vowl/features/auth/presentation/pages/login_page.dart';
 import 'package:vowl/features/auth/presentation/pages/signup_page.dart';
 import 'package:vowl/features/auth/presentation/pages/verify_email_page.dart';
-import 'package:vowl/features/auth/presentation/pages/age_gate_screen.dart';
 import 'package:vowl/features/onboarding/presentation/pages/onboarding_page.dart';
 
 /// Route definitions for the authentication feature module.
@@ -29,9 +28,6 @@ abstract final class AuthRoutes {
   /// Route path for the email address verification page.
   static const String verifyEmailRoute = '/verify-email';
 
-  /// Route path for the age verification gate screen.
-  static const String ageGateRoute = '/age-gate';
-
   /// List of go_router route specifications for authentication flows.
   static final List<RouteBase> routes = [
     GoRoute(path: '/', builder: (context, state) => const AuthGate()),
@@ -48,10 +44,6 @@ abstract final class AuthRoutes {
     GoRoute(
       path: verifyEmailRoute,
       builder: (context, state) => const VerifyEmailPage(),
-    ),
-    GoRoute(
-      path: ageGateRoute,
-      builder: (context, state) => const AgeGateScreen(),
     ),
   ];
 }

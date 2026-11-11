@@ -8,10 +8,8 @@ import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
-import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_vip_gift.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_hint.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
@@ -50,13 +48,6 @@ class EconomyAddCoinsRequested extends EconomyEvent {
   List<Object?> get props => [amount, title, isEarned];
 }
 
-class EconomyAddKidsCoinsRequested extends EconomyEvent {
-  final int amount;
-  const EconomyAddKidsCoinsRequested(this.amount);
-  @override
-  List<Object?> get props => [amount];
-}
-
 class EconomyPurchaseHintRequested extends EconomyEvent {
   final int cost;
   final int hintAmount;
@@ -88,13 +79,6 @@ class EconomyTripleUpRewardsRequested extends EconomyEvent {
 class EconomyClaimDailyChestRequested extends EconomyEvent {
   final int amount;
   const EconomyClaimDailyChestRequested(this.amount);
-  @override
-  List<Object?> get props => [amount];
-}
-
-class EconomyClaimKidsDailyRewardRequested extends EconomyEvent {
-  final int amount;
-  const EconomyClaimKidsDailyRewardRequested(this.amount);
   @override
   List<Object?> get props => [amount];
 }
@@ -180,8 +164,6 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final ClaimDailyGift claimDailyGift;
   final UpdateUser updateUser;
   final ClaimDailyChest claimDailyChest;
-  final ClaimKidsDailyReward claimKidsDailyReward;
-  final AwardKidsCoins awardKidsCoins;
   final UseHint useHint;
   final IncrementXp incrementXp;
 
@@ -199,8 +181,6 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     required this.claimDailyGift,
     required this.updateUser,
     required this.claimDailyChest,
-    required this.claimKidsDailyReward,
-    required this.awardKidsCoins,
     required this.useHint,
     required this.incrementXp,
     required this.authBloc,
@@ -208,13 +188,11 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   }) : _networkInfo = networkInfo,
        super(const EconomyState()) {
     on<EconomyAddCoinsRequested>(_onAddCoins);
-    on<EconomyAddKidsCoinsRequested>(_onAddKidsCoins);
     on<EconomyPurchaseHintRequested>(_onPurchaseHint);
     on<EconomyConsumeHintRequested>(_onConsumeHint);
     on<EconomyClaimVipGiftRequested>(_onClaimVipGift);
     on<EconomyClaimDailyGiftRequested>(_onClaimDailyGift);
     on<EconomyTripleUpRewardsRequested>(_onTripleUp);
-    on<EconomyClaimKidsDailyRewardRequested>(_onClaimKidsDailyReward);
     on<EconomyClaimDailyChestRequested>(_onClaimDailyChest);
     on<EconomyAddBonusRewardsRequested>(_onAddBonusRewards);
     on<EconomyCheckDailyRewardRequested>(_onCheckDailyReward);
@@ -272,40 +250,6 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       },
       (_) {
         _log('EconomyBloc: AddCoins SUCCESS');
-        emit(state.copyWith(isLoading: false));
-        authBloc.add(const AuthRefreshUser());
-      },
-    );
-  }
-
-  Future<void> _onAddKidsCoins(
-    EconomyAddKidsCoinsRequested event,
-    Emitter<EconomyState> emit,
-  ) async {
-    if (state.isLoading) return;
-    if (!(await _networkInfo.isConnected)) {
-      emit(
-        state.copyWith(
-          isLoading: false,
-          message: () => AuthErrorHandler.getKey('network-unreachable'),
-        ),
-      );
-      return;
-    }
-    emit(state.copyWith(isLoading: true));
-    if (!_isAuthenticated) {
-      emit(state.copyWith(isLoading: false));
-      return;
-    }
-    final result = await awardKidsCoins(event.amount);
-    result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isLoading: false,
-          message: () => AuthErrorHandler.getKey(failure.message),
-        ),
-      ),
-      (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
@@ -634,45 +578,6 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
         _log('EconomyBloc: Daily chest SUCCESS');
         emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
         await _markDailyMysteryClaimedToday(event.amount);
-        authBloc.add(const AuthRefreshUser());
-      },
-    );
-  }
-
-  Future<void> _onClaimKidsDailyReward(
-    EconomyClaimKidsDailyRewardRequested event,
-    Emitter<EconomyState> emit,
-  ) async {
-    if (state.isLoading) return;
-    if (!(await _networkInfo.isConnected)) {
-      emit(
-        state.copyWith(
-          isLoading: false,
-          message: () => AuthErrorHandler.getKey('network-unreachable'),
-        ),
-      );
-      return;
-    }
-    emit(state.copyWith(isLoading: true));
-    if (!_isAuthenticated) {
-      emit(state.copyWith(isLoading: false));
-      return;
-    }
-    _log('EconomyBloc: Claiming kids daily reward (${event.amount} coins)…');
-    final result = await claimKidsDailyReward(event.amount);
-    result.fold(
-      (failure) {
-        _log('EconomyBloc: Kids daily reward FAILED: ${failure.message}');
-        emit(
-          state.copyWith(
-            isLoading: false,
-            message: () => AuthErrorHandler.getKey(failure.message),
-          ),
-        );
-      },
-      (_) {
-        _log('EconomyBloc: Kids daily reward SUCCESS');
-        emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
     );

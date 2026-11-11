@@ -200,7 +200,6 @@ class TollGateBottomSheet {
                               // on that timing coincidence.
                               KeyShopBottomSheet.show(
                                 context: parentContext,
-                                isKidsMode: false,
                                 primaryColor: Colors.amber,
                               );
                               return;
@@ -213,7 +212,6 @@ class TollGateBottomSheet {
                                   PurchaseLevelUnlockParams(
                                     gameType: gameType,
                                     cost: 1, // 1 Key
-                                    isKidsMode: false,
                                   ),
                                 );
 

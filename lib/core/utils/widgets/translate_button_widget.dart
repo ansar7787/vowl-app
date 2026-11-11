@@ -19,7 +19,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 /// 4. Returning the translated string via callback.
 class TranslateButtonWidget extends StatefulWidget {
   final String originalText;
-  final bool isKidsZone;
   final Function(String translatedText) onTranslationComplete;
   final Function(String translatedText, String? languageCode)?
   onTranslationWithLanguage;
@@ -29,7 +28,6 @@ class TranslateButtonWidget extends StatefulWidget {
     required this.originalText,
     required this.onTranslationComplete,
     this.onTranslationWithLanguage,
-    this.isKidsZone = false,
   });
 
   @override
@@ -67,7 +65,6 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       if (!mounted) return;
       await TranslationMonetizationController.attemptTranslation(
         context,
-        isKidsZone: widget.isKidsZone,
         onSuccess: () async {
           // Immediately silence audio before modal or translation
           await TtsSpeakerButtonWidget.stopAll();
@@ -123,9 +120,7 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
             width: 32.r,
             height: 32.r,
             decoration: BoxDecoration(
-              color: widget.isKidsZone
-                  ? Colors.white24
-                  : Theme.of(context).primaryColor.withValues(alpha: 0.1),
+              color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Center(
@@ -133,9 +128,7 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
                   Icon(
                         LucideIcons.sparkles,
                         size: 18.r,
-                        color: widget.isKidsZone
-                            ? Colors.white
-                            : Theme.of(context).primaryColor,
+                        color: Theme.of(context).primaryColor,
                       )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .scale(

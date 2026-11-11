@@ -469,7 +469,7 @@ class _FeatureDirectoryBottomSheetState
                                 context.tr(
                                   'feature_catalog.no_match_hint',
                                   fallback:
-                                      'Try searching for topics like words, speaking, camera, or kids.',
+                                      'Try searching for topics like words, speaking, camera, or handwriting.',
                                 ),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(

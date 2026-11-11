@@ -26,7 +26,6 @@ import 'package:vowl/features/profile/presentation/pages/profile_screen.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
-import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -66,16 +65,15 @@ void main() {
     email: 'aria.stark@vowl.app',
     displayName: 'Aria Stark',
     currentStreak: 15,
-    totalExp: 2600, // Level 26 -> Scholar
+    totalExp: 6500, // Level 27 -> Scholar: (26 * 250 = 6500)
     coins: 520,
     keys: 4,
     claimedLevelMilestones: [5, 10, 25],
     isPremium: false,
     vowlMascot: 'nova',
     vowlEquippedAccessory: 'cyber_wings',
-    kidsStickers: ['sticker_star', 'sticker_bear'],
     completedLevels: {
-      'kids_alphabet': [1, 2, 3],
+      'reading': [1, 2, 3],
     },
   );
 
@@ -243,13 +241,6 @@ void main() {
               builder: (context, state) {
                 navigatedRoutes.add(AppRouter.trophyRoomRoute);
                 return const Scaffold(body: Text('Trophy Room Page'));
-              },
-            ),
-            GoRoute(
-              path: '/kids-room',
-              builder: (context, state) {
-                navigatedRoutes.add('/kids-room');
-                return const Scaffold(body: Text('Kids Room Page'));
               },
             ),
             GoRoute(
@@ -599,7 +590,7 @@ void main() {
       },
     );
 
-    testWidgets('renders Review & Master when isKidsModeOnly is false', (
+    testWidgets('renders Review & Master', (
       tester,
     ) async {
       await pumpProfileScreen(tester);
@@ -613,24 +604,6 @@ void main() {
       verify(
         () => mockHapticService.selection(),
       ).called(greaterThanOrEqualTo(1));
-    });
-
-    testWidgets('omits Review & Master when isKidsModeOnly is true', (
-      tester,
-    ) async {
-      final kidsUser = testUser.copyWith(
-        totalExp: 0,
-        completedLevels: {
-          'kids_alphabet': [1, 2],
-        },
-      );
-      when(
-        () => mockAuthBloc.state,
-      ).thenReturn(AuthState.authenticated(kidsUser));
-
-      await pumpProfileScreen(tester);
-
-      expect(find.text('Review & Master'), findsNothing);
     });
   });
 
@@ -690,49 +663,6 @@ void main() {
 
       expect(find.text('Collection Progress'), findsOneWidget);
       expect(find.text('0 of 8'), findsOneWidget);
-    });
-  });
-
-  group('Group 9: Kids Zone (Conditional Rendering)', () {
-    testWidgets('renders Kids Zone section when stickers exist in Vault tab', (
-      tester,
-    ) async {
-      await pumpProfileScreen(tester);
-      await tester.tap(find.text('Vault'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Kids Zone'), findsOneWidget);
-      expect(find.text('Kids Room'), findsOneWidget);
-      expect(find.byType(ProfileStickersProgress), findsOneWidget);
-
-      await scrollToAndTap(tester, find.text('Kids Room'));
-
-      expect(navigatedRoutes, contains('/kids-room'));
-      verify(
-        () => mockHapticService.selection(),
-      ).called(greaterThanOrEqualTo(1));
-    });
-
-    testWidgets('omits Kids Zone section when stickers empty and levels zero', (
-      tester,
-    ) async {
-      final adultUser = testUser.copyWith(
-        kidsStickers: [],
-        completedLevels: {
-          'grammar': [1],
-        },
-      );
-      when(
-        () => mockAuthBloc.state,
-      ).thenReturn(AuthState.authenticated(adultUser));
-
-      await pumpProfileScreen(tester);
-      await tester.tap(find.text('Vault'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Kids Zone'), findsNothing);
-      expect(find.text('Kids Room'), findsNothing);
-      expect(find.byType(ProfileStickersProgress), findsNothing);
     });
   });
 

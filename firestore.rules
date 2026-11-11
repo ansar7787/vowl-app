@@ -36,13 +36,6 @@ service cloud.firestore {
     //   - recentActivities: list (optional) - list of recent activity entries
     //   - lastVipGiftDate: timestamp (optional) - last claimed VIP gift
     //   - lastDailyRewardDate: timestamp (optional) - last claimed daily reward
-    //   - lastKidsDailyRewardDate: timestamp (optional) - last claimed kids reward
-    //   - kidsCoins: int (optional, default 0) - kids coin balance
-    //   - kidsStickers: list (optional) - unlocked sticker IDs
-    //   - kidsMascot: string (optional) - equipped mascot
-    //   - kidsEquippedSticker: string (optional) - equipped sticker
-    //   - kidsOwnedAccessories: list (optional) - owned accessory IDs
-    //   - kidsEquippedAccessory: string (optional) - equipped accessory
     //   - vowlMascot: string (optional) - adult mascot ID
     //   - vowlEquippedAccessory: string (optional) - adult equipped accessory
     //   - vowlOwnedAccessories: list (optional) - adult owned accessory IDs
@@ -52,8 +45,6 @@ service cloud.firestore {
     //   - claimedBadgeRewards: list (optional) - claimed trophy and badge bounty rewards
     //   - coinHistory: list (optional) - ledger of coin adjustments
     //   - hasPermanentXPBoost: bool (optional) - permanent boost flag
-    //   - kidsOwnedFurniture: list (optional) - owned furniture IDs
-    //   - kidsEquippedFurniture: map (optional) - equipped furniture map
     //   - keys / goldenKeys: int (optional, default 0) - keys count
     //   - lastRewardTimestamp: timestamp (optional) - rate limit timestamp
     //   - referralCode: string (optional, 6-16 chars) - user's own viral referral code
@@ -130,7 +121,7 @@ service cloud.firestore {
     //   - createdAt: timestamp (required) - server timestamp of queue entry
     //
     // Collection: metadata/{cacheDoc}
-    //   - leaderboard_cache / kids_leaderboard_cache: precomputed top users
+    //   - leaderboard_cache: precomputed top users
     //
     // Collection: orders/{orderId}
     //   - userId: string (matches buyer's auth uid)
@@ -260,7 +251,6 @@ service cloud.firestore {
         && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
         && request.resource.data.get('totalExp', 0) <= 2000
         && request.resource.data.get('coins', 0) <= 250
-        && request.resource.data.get('kidsCoins', 0) <= 250
         && request.resource.data.get('goldenKeys', 0) <= 1
         && request.resource.data.get('keys', 0) <= 1
         && request.resource.data.get('hasClaimedReferral', false) == false
@@ -283,7 +273,6 @@ service cloud.firestore {
                 && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
                 && request.resource.data.get('totalExp', 0) <= 2000
                 && request.resource.data.get('coins', 0) <= 250
-                && request.resource.data.get('kidsCoins', 0) <= 250
                 && request.resource.data.get('goldenKeys', 0) <= 1
                 && request.resource.data.get('keys', 0) <= 1
                 && request.resource.data.get('hasClaimedReferral', false) == false
@@ -330,20 +319,15 @@ service cloud.firestore {
                       : request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 250 // Max 250 earned at once for normal games, referrals, and duels
                   )
                 )
-                && (
-                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
-                  || (request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0) + 250) // Max 250 earned at once
-                )
                 // ANTI-SPAM: Enforce a strict 2-second rate limit on ANY rewards (XP or Coins)
                 // This prevents hackers from bypassing the max-per-write limits by sending 100 writes/sec.
                 && (
-                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins', 'kidsCoins'])
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins'])
                   || (
                     // Bypass rate limit if it's a purchase/entry-fee/penalty (values are decreasing or staying the same)
                     (
                       request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) &&
-                      request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
-                      request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
+                      request.resource.data.get('coins', 0) <= resource.data.get('coins', 0)
                     )
                     // Bypass rate limit for milestone & tournament claims (already protected by counter/array checks)
                     || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedBadgeRewards', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys', 'totalReferralsCount'])
@@ -575,13 +559,6 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    match /metadata/kids_leaderboard_cache {
-      // Allow all users to read pre-calculated kids rankings
-      allow read: if isAuthenticated();
-      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data
-      allow write: if false;
-    }
-
     // ─── RATE LIMITING (Server-Side Only) ─────────────────────────────
     match /rate_limits/{document=**} {
       allow read, write: if false;
@@ -605,10 +582,6 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
     match /grammar_quests/{document=**} {
-      allow read: if isAuthenticated();
-      allow write: if isAdmin();
-    }
-    match /kids_quests/{document=**} {
       allow read: if isAuthenticated();
       allow write: if isAdmin();
     }

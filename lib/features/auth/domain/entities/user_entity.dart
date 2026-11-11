@@ -127,27 +127,6 @@ class UserEntity {
   /// Timestamp of the last daily reward claim.
   final DateTime? lastDailyRewardDate;
 
-  /// Timestamp of the last kids daily reward claim.
-  final DateTime? lastKidsDailyRewardDate;
-
-  /// Kids-specific coin balance.
-  final int kidsCoins;
-
-  /// List of sticker asset identifiers collected in kids zone.
-  final List<String> kidsStickers;
-
-  /// Currently selected mascot identifier for kids zone.
-  final String? kidsMascot;
-
-  /// Currently equipped sticker badge in kids zone.
-  final String? kidsEquippedSticker;
-
-  /// List of accessory identifiers unlocked in kids zone.
-  final List<String> kidsOwnedAccessories;
-
-  /// Identifier of the currently equipped accessory in kids zone.
-  final String? kidsEquippedAccessory;
-
   /// Identifier of the primary Vowl mascot chosen by user.
   final String? vowlMascot;
 
@@ -175,12 +154,6 @@ class UserEntity {
   /// Whether the user owns a permanent XP boost.
   final bool hasPermanentXPBoost;
 
-  /// List of furniture item IDs owned in kids room.
-  final List<String> kidsOwnedFurniture;
-
-  /// Equipped furniture mapping in kids room.
-  final Map<String, String> kidsEquippedFurniture;
-
   /// Count of golden keys owned.
   final int keys;
 
@@ -189,39 +162,6 @@ class UserEntity {
 
   /// ISO week key associated with previous leaderboard rank (e.g. '2026-W45').
   final String? previousRankWeekKey;
-
-  // ---------------------------------------------------------------------------
-  // Kids Room — Buddy Lifecycle (persisted)
-  // ---------------------------------------------------------------------------
-  /// Current emotional state of the kids buddy companion.
-  final String kidsBuddyMood; // happy, hungry, sleepy, bored
-
-  /// Energy percentage of the kids buddy companion (0-100).
-  final int kidsBuddyEnergy; // 0-100
-
-  /// Hunger percentage of the kids buddy companion (0-100).
-  final int kidsBuddyHunger; // 0-100
-
-  /// Timestamp of the last care interaction with the kids buddy.
-  final DateTime? kidsLastCareDate;
-
-  /// Consecutive day streak of caring for the kids buddy.
-  final int kidsCareStreak;
-
-  /// Room progression level in kids zone.
-  final int kidsRoomLevel;
-
-  /// Theme key for the kids room environment.
-  final String kidsRoomTheme; // nature, space, ocean, sweet
-
-  /// Timestamp when the kids buddy was last fed.
-  final DateTime? kidsLastFeedTime;
-
-  /// Number of minigames played in kids zone today.
-  final int kidsGamesPlayedToday;
-
-  /// Timestamp of the most recent kids game played.
-  final DateTime? kidsLastGameDate;
 
   // ---------------------------------------------------------------------------
   // Viral Social & Ambassador Engine (persisted)
@@ -298,16 +238,6 @@ class UserEntity {
     this.recentActivities = const [],
     this.lastVipGiftDate,
     this.lastDailyRewardDate,
-    this.lastKidsDailyRewardDate,
-    this.kidsOwnedFurniture = UserGameConstants.kDefaultKidsOwnedFurniture,
-    this.kidsEquippedFurniture =
-        UserGameConstants.kDefaultKidsEquippedFurniture,
-    this.kidsCoins = 0,
-    this.kidsStickers = const [],
-    this.kidsMascot,
-    this.kidsEquippedSticker,
-    this.kidsOwnedAccessories = const [],
-    this.kidsEquippedAccessory,
     this.vowlMascot,
     this.vowlEquippedAccessory,
     this.vowlOwnedAccessories = const [],
@@ -320,16 +250,6 @@ class UserEntity {
     this.keys = 0,
     this.previousRank,
     this.previousRankWeekKey,
-    this.kidsBuddyMood = 'happy',
-    this.kidsBuddyEnergy = 100,
-    this.kidsBuddyHunger = 0,
-    this.kidsLastCareDate,
-    this.kidsCareStreak = 0,
-    this.kidsRoomLevel = 1,
-    this.kidsRoomTheme = 'nature',
-    this.kidsLastFeedTime,
-    this.kidsGamesPlayedToday = 0,
-    this.kidsLastGameDate,
     this.referralCode,
     this.referredBy,
     this.pendingReferralCode,
@@ -352,58 +272,13 @@ class UserEntity {
   /// Current user level derived from total XP.
   int get level => (totalExp / UserGameConstants.kXpPerLevel).floor() + 1;
 
-  /// Total number of individual game levels completed across all adult categories.
+  /// Total number of individual game levels completed.
   int get totalLevelsCompleted {
     var count = 0;
     for (final levels in completedLevels.values) {
       count += levels.length;
     }
-    return count - kidsTotalLevelsCompleted;
-  }
-
-  /// Whether this account is exclusively used for Kids mode.
-  /// Used to hide complex analytical features like Review Mistakes.
-  bool get isKidsModeOnly => totalExp == 0 && kidsTotalLevelsCompleted > 0;
-
-  /// Total number of kids game levels completed.
-  int get kidsTotalLevelsCompleted {
-    final adultCategories = QuestType.values
-        .expand((q) => [q.name, q.serializedName])
-        .toSet();
-    adultCategories.addAll(GameSubtype.values.map((s) => s.name));
-    // Exclude standard non-kids core systems just in case
-    adultCategories.addAll([
-      'diagnostic',
-      'placement',
-      'placement_test',
-      'daily_challenge',
-    ]);
-
-    var count = 0;
-    for (final entry in completedLevels.entries) {
-      if (!adultCategories.contains(entry.key)) {
-        count += entry.value.length;
-      }
-    }
     return count;
-  }
-
-  /// Total number of gameplay stars collected across all 25 Kids Zone games.
-  /// Sums star ratings from [starRatings] for games defined in [UserGameConstants.kKidsGameTypes],
-  /// strictly excluding vault markers like 'magic_stars' and 'claimed_chests'.
-  int get kidsTotalStars {
-    var stars = 0;
-    for (final entry in starRatings.entries) {
-      if (UserGameConstants.kKidsGameTypes.contains(entry.key)) {
-        for (final starEntry in entry.value.entries) {
-          if (starEntry.key != 'magic_stars' &&
-              starEntry.key != 'claimed_chests') {
-            stars += starEntry.value;
-          }
-        }
-      }
-    }
-    return stars;
   }
 
   /// Whether the Double XP power-up is currently active.
@@ -630,28 +505,16 @@ class UserEntity {
     bool? isAdmin,
     bool? isEmailVerified,
     bool? isPremium,
-    int? kidsCoins,
-    List<String>? kidsOwnedAccessories,
-    List<String>? kidsStickers,
     int? streakFreezes,
     int? totalExp,
     Map<String, int>? unlockedLevels,
     bool? hasPermanentXPBoost,
     List<String>? vowlOwnedAccessories,
     List<String>? vowlOwnedMascots,
-    List<String>? kidsOwnedFurniture,
-    Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
     int? previousRank,
     String? previousRankWeekKey,
-    String? kidsBuddyMood,
-    int? kidsBuddyEnergy,
-    int? kidsBuddyHunger,
-    int? kidsCareStreak,
-    int? kidsRoomLevel,
-    String? kidsRoomTheme,
-    int? kidsGamesPlayedToday,
     bool? hasClaimedReferral,
     int? totalReferralsCount,
     int? monthlyReferralsCount,
@@ -671,15 +534,8 @@ class UserEntity {
     Object? doubleXPExpiry = _absent,
     Object? lastVipGiftDate = _absent,
     Object? lastDailyRewardDate = _absent,
-    Object? lastKidsDailyRewardDate = _absent,
-    Object? kidsMascot = _absent,
-    Object? kidsEquippedSticker = _absent,
-    Object? kidsEquippedAccessory = _absent,
     Object? vowlMascot = _absent,
     Object? vowlEquippedAccessory = _absent,
-    Object? kidsLastCareDate = _absent,
-    Object? kidsLastFeedTime = _absent,
-    Object? kidsLastGameDate = _absent,
     Object? referralCode = _absent,
     Object? referredBy = _absent,
     Object? pendingReferralCode = _absent,
@@ -709,29 +565,16 @@ class UserEntity {
       isAdmin: isAdmin ?? this.isAdmin,
       isEmailVerified: isEmailVerified ?? this.isEmailVerified,
       isPremium: isPremium ?? _rawIsPremium,
-      kidsCoins: kidsCoins ?? this.kidsCoins,
-      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
-      kidsStickers: kidsStickers ?? this.kidsStickers,
       streakFreezes: streakFreezes ?? this.streakFreezes,
       totalExp: totalExp ?? this.totalExp,
       unlockedLevels: unlockedLevels ?? this.unlockedLevels,
       hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
       vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
       vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
-      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
-      kidsEquippedFurniture:
-          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
       previousRank: previousRank ?? this.previousRank,
       previousRankWeekKey: previousRankWeekKey ?? this.previousRankWeekKey,
-      kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
-      kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
-      kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
-      kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
-      kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
-      kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
-      kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
       hasClaimedReferral: hasClaimedReferral ?? this.hasClaimedReferral,
       totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
       monthlyReferralsCount:
@@ -770,33 +613,12 @@ class UserEntity {
       lastDailyRewardDate: identical(lastDailyRewardDate, _absent)
           ? this.lastDailyRewardDate
           : lastDailyRewardDate as DateTime?,
-      lastKidsDailyRewardDate: identical(lastKidsDailyRewardDate, _absent)
-          ? this.lastKidsDailyRewardDate
-          : lastKidsDailyRewardDate as DateTime?,
-      kidsMascot: identical(kidsMascot, _absent)
-          ? this.kidsMascot
-          : kidsMascot as String?,
-      kidsEquippedSticker: identical(kidsEquippedSticker, _absent)
-          ? this.kidsEquippedSticker
-          : kidsEquippedSticker as String?,
-      kidsEquippedAccessory: identical(kidsEquippedAccessory, _absent)
-          ? this.kidsEquippedAccessory
-          : kidsEquippedAccessory as String?,
       vowlMascot: identical(vowlMascot, _absent)
           ? this.vowlMascot
           : vowlMascot as String?,
       vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
           ? this.vowlEquippedAccessory
           : vowlEquippedAccessory as String?,
-      kidsLastCareDate: identical(kidsLastCareDate, _absent)
-          ? this.kidsLastCareDate
-          : kidsLastCareDate as DateTime?,
-      kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
-          ? this.kidsLastFeedTime
-          : kidsLastFeedTime as DateTime?,
-      kidsLastGameDate: identical(kidsLastGameDate, _absent)
-          ? this.kidsLastGameDate
-          : kidsLastGameDate as DateTime?,
       referralCode: identical(referralCode, _absent)
           ? this.referralCode
           : referralCode as String?,
@@ -851,13 +673,6 @@ class UserEntity {
         _deepEq.equals(other.recentActivities, recentActivities) &&
         other.lastVipGiftDate == lastVipGiftDate &&
         other.lastDailyRewardDate == lastDailyRewardDate &&
-        other.lastKidsDailyRewardDate == lastKidsDailyRewardDate &&
-        other.kidsCoins == kidsCoins &&
-        _listEq.equals(other.kidsStickers, kidsStickers) &&
-        other.kidsMascot == kidsMascot &&
-        other.kidsEquippedSticker == kidsEquippedSticker &&
-        _listEq.equals(other.kidsOwnedAccessories, kidsOwnedAccessories) &&
-        other.kidsEquippedAccessory == kidsEquippedAccessory &&
         other.vowlMascot == vowlMascot &&
         other.vowlEquippedAccessory == vowlEquippedAccessory &&
         _listEq.equals(other.vowlOwnedAccessories, vowlOwnedAccessories) &&
@@ -870,21 +685,9 @@ class UserEntity {
         _listEq.equals(other.claimedBadgeRewards, claimedBadgeRewards) &&
         _deepEq.equals(other.coinHistory, coinHistory) &&
         other.hasPermanentXPBoost == hasPermanentXPBoost &&
-        _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
-        _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
         other.keys == keys &&
         other.previousRank == previousRank &&
         other.previousRankWeekKey == previousRankWeekKey &&
-        other.kidsBuddyMood == kidsBuddyMood &&
-        other.kidsBuddyEnergy == kidsBuddyEnergy &&
-        other.kidsBuddyHunger == kidsBuddyHunger &&
-        other.kidsLastCareDate == kidsLastCareDate &&
-        other.kidsCareStreak == kidsCareStreak &&
-        other.kidsRoomLevel == kidsRoomLevel &&
-        other.kidsRoomTheme == kidsRoomTheme &&
-        other.kidsLastFeedTime == kidsLastFeedTime &&
-        other.kidsGamesPlayedToday == kidsGamesPlayedToday &&
-        other.kidsLastGameDate == kidsLastGameDate &&
         other.referralCode == referralCode &&
         other.referredBy == referredBy &&
         other.pendingReferralCode == pendingReferralCode &&
@@ -942,13 +745,6 @@ class UserEntity {
       _deepEq.hash(recentActivities),
       lastVipGiftDate,
       lastDailyRewardDate,
-      lastKidsDailyRewardDate,
-      kidsCoins,
-      _listEq.hash(kidsStickers),
-      kidsMascot,
-      kidsEquippedSticker,
-      _listEq.hash(kidsOwnedAccessories),
-      kidsEquippedAccessory,
       vowlMascot,
       vowlEquippedAccessory,
       _listEq.hash(vowlOwnedAccessories),
@@ -957,26 +753,12 @@ class UserEntity {
       _listEq.hash(claimedLevelMilestones),
       _listEq.hash(claimedBadgeRewards),
       _deepEq.hash(coinHistory),
-    ]);
-    final h3 = Object.hashAll([
       hasPermanentXPBoost,
-      _listEq.hash(kidsOwnedFurniture),
-      _mapEq.hash(kidsEquippedFurniture),
       keys,
       previousRank,
       previousRankWeekKey,
-      kidsBuddyMood,
-      kidsBuddyEnergy,
-      kidsBuddyHunger,
-      kidsLastCareDate,
-      kidsCareStreak,
-      kidsRoomLevel,
-      kidsRoomTheme,
-      kidsLastFeedTime,
     ]);
-    final h4 = Object.hashAll([
-      kidsGamesPlayedToday,
-      kidsLastGameDate,
+    final h3 = Object.hashAll([
       referralCode,
       referredBy,
       pendingReferralCode,
@@ -991,6 +773,6 @@ class UserEntity {
       duelWins,
       duelLosses,
     ]);
-    return Object.hash(h1, h2, h3, h4);
+    return Object.hash(h1, h2, h3);
   }
 }

@@ -64,7 +64,7 @@ void main() {
     id: 'user_adv_level_123',
     email: 'aria.explorer@vowl.app',
     displayName: 'Aria Explorer',
-    totalExp: 2645, // Level 27, 45 XP in current level, 55 XP to next
+    totalExp: 6695, // Level 27: (26 * 250) + 195 = 6695 (55 XP to Level 28)
     coins: 750,
     claimedLevelMilestones: [
       10,
@@ -310,7 +310,7 @@ void main() {
       'renders LEVEL MASTERY PERKS section and perks horizontal list',
       (tester) async {
         // Test when user is level 56 so Level 50 perk is ACTIVE
-        final highLevelUser = testUser.copyWith(totalExp: 5500);
+        final highLevelUser = testUser.copyWith(totalExp: 13750);
         when(
           () => mockAuthBloc.state,
         ).thenReturn(AuthState.authenticated(highLevelUser));

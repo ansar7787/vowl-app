@@ -23,7 +23,7 @@ void main() {
       );
 
       // Verify Screen Tokens (at 1.0 scale ratio: 375 / 375 = 1)
-      expect(AppSpacing.screen, equals(20.0));
+      expect(AppSpacing.screen, equals(16.0));
       expect(AppSpacing.compact, equals(16.0));
       expect(AppSpacing.spacious, equals(24.0));
 
@@ -42,8 +42,8 @@ void main() {
       expect(AppSpacing.xxl, equals(32.0));
 
       // Verify Insets
-      expect(AppSpacing.screenPadding.left, equals(20.0));
-      expect(AppSpacing.screenPadding.right, equals(20.0));
+      expect(AppSpacing.screenPadding.left, equals(16.0));
+      expect(AppSpacing.screenPadding.right, equals(16.0));
       expect(AppSpacing.compactPadding.left, equals(16.0));
       expect(AppSpacing.spaciousPadding.left, equals(24.0));
       expect(AppSpacing.cardPadding.left, equals(16.0));

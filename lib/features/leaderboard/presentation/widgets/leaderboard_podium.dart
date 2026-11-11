@@ -21,7 +21,6 @@ class _LocalPalette {
 /// Gamified podium widget highlighting the top 3 global ranking players with avatars and trophies.
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
-  final bool isKids;
   final bool isWeekly;
   final String? currentUserId;
   final void Function(UserEntity user, int rank, bool isMe)? onUserTap;
@@ -29,7 +28,6 @@ class LeaderboardPodium extends StatelessWidget {
   const LeaderboardPodium({
     super.key,
     required this.top3,
-    this.isKids = false,
     this.isWeekly = true,
     this.currentUserId,
     this.onUserTap,
@@ -58,7 +56,6 @@ class LeaderboardPodium extends StatelessWidget {
                   user: top3[1],
                   rank: 2,
                   maxHeight: maxPodiumHeight,
-                  isKids: isKids,
                   isWeekly: isWeekly,
                   currentUserId: currentUserId,
                   onUserTap: onUserTap,
@@ -75,7 +72,6 @@ class LeaderboardPodium extends StatelessWidget {
                 user: top3[0],
                 rank: 1,
                 maxHeight: maxPodiumHeight,
-                isKids: isKids,
                 isWeekly: isWeekly,
                 currentUserId: currentUserId,
                 onUserTap: onUserTap,
@@ -91,7 +87,6 @@ class LeaderboardPodium extends StatelessWidget {
                   user: top3[2],
                   rank: 3,
                   maxHeight: maxPodiumHeight,
-                  isKids: isKids,
                   isWeekly: isWeekly,
                   currentUserId: currentUserId,
                   onUserTap: onUserTap,
@@ -114,7 +109,6 @@ class _PodiumSlot extends StatelessWidget {
   final UserEntity user;
   final int rank;
   final double maxHeight;
-  final bool isKids;
   final bool isWeekly;
   final String? currentUserId;
   final void Function(UserEntity user, int rank, bool isMe)? onUserTap;
@@ -123,7 +117,6 @@ class _PodiumSlot extends StatelessWidget {
     required this.user,
     required this.rank,
     required this.maxHeight,
-    this.isKids = false,
     this.isWeekly = true,
     this.currentUserId,
     this.onUserTap,
@@ -138,17 +131,11 @@ class _PodiumSlot extends StatelessWidget {
         ? maxHeight * 0.50
         : (rank == 2 ? maxHeight * 0.40 : maxHeight * 0.34);
     final colors = _rankColors(rank);
-    final levelsCleared = isKids
-        ? user.kidsTotalLevelsCompleted
-        : user.totalLevelsCompleted;
-    final score = isKids
-        ? user.kidsTotalStars
-        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
-    final scoreLabel = isKids
-        ? 'Stars'
-        : (isWeekly
-              ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
-              : context.tr('leaderboard.xp', fallback: 'XP'));
+    final levelsCleared = user.totalLevelsCompleted;
+    final score = isWeekly ? user.currentWeeklyExp : user.totalExp;
+    final scoreLabel = isWeekly
+        ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+        : context.tr('leaderboard.xp', fallback: 'XP');
     final isMe = currentUserId != null && user.id == currentUserId;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
@@ -323,53 +310,27 @@ class _PodiumSlot extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        if (isKids) ...[
-                          Icon(
-                            Icons.star_rounded,
-                            size: isFirst ? 13.r : 11.r,
-                            color: AppColors.amber500,
-                          ),
-                          SizedBox(width: 2.w),
-                        ],
                         Flexible(
                           child: AutoSizeText(
-                            isKids
-                                ? '${user.kidsTotalStars} Stars'
-                                : '$score $scoreLabel',
+                            '$score $scoreLabel',
                             maxLines: 1,
                             minFontSize: 7,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: isFirst ? 10.5.sp : 9.sp,
                               fontWeight: FontWeight.w900,
-                              color: isKids
-                                  ? AppColors.amber500
-                                  : (rank == 2
-                                        ? (isDark
-                                              ? _LocalPalette.colorc0c0c0
-                                              : AppColors.slate700)
-                                        : colors[0].withValues(alpha: 0.9)),
+                              color: rank == 2
+                                  ? (isDark
+                                        ? _LocalPalette.colorc0c0c0
+                                        : AppColors.slate700)
+                                  : colors[0].withValues(alpha: 0.9),
                               height: 1.1,
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (isKids) ...[
-                      SizedBox(height: 1.h),
-                      AutoSizeText(
-                        '${user.kidsTotalLevelsCompleted} Levels Cleared',
-                        maxLines: 1,
-                        minFontSize: 6,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isFirst ? 8.5.sp : 7.5.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white60 : AppColors.slate600,
-                        ),
-                      ),
-                    ],
-                    if (!isKids && isWeekly) ...[
+                    if (isWeekly) ...[
                       SizedBox(height: 2.h),
                       _buildRankChangeIndicator(
                         user.previousRank ?? rank,

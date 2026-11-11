@@ -94,13 +94,6 @@ void main() {
               const Scaffold(body: SingleChildScrollView(child: ToolsStrip())),
         ),
         GoRoute(
-          path: AppRouter.kidsZoneRoute,
-          builder: (context, _) {
-            navigatedRoutes.add(AppRouter.kidsZoneRoute);
-            return const Scaffold(body: Text('Kids Zone Screen'));
-          },
-        ),
-        GoRoute(
           path: AppRouter.dailyWordsRoute,
           builder: (context, _) {
             navigatedRoutes.add(AppRouter.dailyWordsRoute);
@@ -167,14 +160,10 @@ void main() {
 
   group('Piece 8: ToolsStrip Core Rendering & Architecture Tests', () {
     testWidgets(
-      'renders 3 Swiss Horizon cards: Kids Zone, Daily Words, and Translate',
+      'renders 2 Swiss Horizon cards: Daily Words and Translate',
       (tester) async {
         await tester.pumpWidget(createSubject());
         await tester.pumpAndSettle();
-
-        expect(find.text('Kids Zone'), findsOneWidget);
-        expect(find.text('Fun learning games'), findsOneWidget);
-        expect(find.text('KIDS'), findsOneWidget);
 
         expect(find.text('Daily Words'), findsOneWidget);
         expect(find.text('5 new words today'), findsOneWidget);
@@ -206,14 +195,14 @@ void main() {
       expect(find.text('OCR SCAN'), findsOneWidget);
     });
 
-    testWidgets('renders Arcade Vault strip with 2 speed word games hidden', (
+    testWidgets('renders Arcade Vault strip with speed word games hidden', (
       tester,
     ) async {
       await tester.pumpWidget(createSubject());
       await tester.pumpAndSettle();
 
       expect(find.text('ARCADE VAULT'), findsOneWidget);
-      expect(find.text('2 GAMES'), findsOneWidget);
+      expect(find.text('3 GAMES'), findsOneWidget);
       expect(
         find.text('Speed vocabulary & anagram challenges'),
         findsOneWidget,
@@ -223,16 +212,6 @@ void main() {
   });
 
   group('Piece 8: ToolsStrip Navigation & Inline Expansion Tests', () {
-    testWidgets('tapping Kids Zone navigates to kidsZoneRoute', (tester) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Kids Zone'));
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains(AppRouter.kidsZoneRoute));
-    });
-
     testWidgets('tapping Daily Words navigates to dailyWordsRoute', (
       tester,
     ) async {

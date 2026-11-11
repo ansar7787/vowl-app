@@ -8,7 +8,6 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 
 /// Reusable circular badge displaying the user's active companion buddy
 /// and equipped accessory inside an elegant translucent circle.
@@ -47,9 +46,6 @@ class VowlBuddyBadge extends StatelessWidget {
   /// Optional shadow for elevation separation.
   final List<BoxShadow>? boxShadow;
 
-  /// Whether running in Kids Mode. Defaults to false.
-  final bool isKidsMode;
-
   /// Creates a [VowlBuddyBadge].
   const VowlBuddyBadge({
     super.key,
@@ -63,7 +59,6 @@ class VowlBuddyBadge extends StatelessWidget {
     this.gradient,
     this.border,
     this.boxShadow,
-    this.isKidsMode = false,
   });
 
   @override
@@ -145,18 +140,14 @@ class VowlBuddyBadge extends StatelessWidget {
         size: innerMascotSize,
         mascotId: mascotId,
         accessoryId: accessoryId,
-        isKidsMode: isKidsMode,
         state: VowlMascotState.happy,
         useFloatingAnimation: false,
       );
     } else {
       // Standalone/fallback rendering for isolated widget tests without AuthBloc
-      final effectiveMascotId =
-          mascotId ?? (isKidsMode ? 'owly' : 'vowl_prime');
+      final effectiveMascotId = mascotId ?? 'vowl_prime';
       final isVowly = effectiveMascotId == 'vowly';
-      final emoji = isKidsMode
-          ? (KidsAssets.mascotMap[effectiveMascotId] ?? '🦉')
-          : VowlAssets.getMascotEmoji(effectiveMascotId);
+      final emoji = VowlAssets.getMascotEmoji(effectiveMascotId);
       final effectiveAccessory = accessoryId;
 
       Widget baseWidget = isVowly
@@ -176,12 +167,8 @@ class VowlBuddyBadge extends StatelessWidget {
             );
 
       if (effectiveAccessory != null && effectiveAccessory.isNotEmpty) {
-        final accessoryEmoji = isKidsMode
-            ? (KidsAssets.accessoryMap[effectiveAccessory] ?? '✨')
-            : VowlAssets.getAccessoryEmoji(effectiveAccessory);
-        final slot = isKidsMode
-            ? AccessorySlot.charm
-            : VowlAssets.getAccessorySlot(effectiveAccessory);
+        final accessoryEmoji = VowlAssets.getAccessoryEmoji(effectiveAccessory);
+        final slot = VowlAssets.getAccessorySlot(effectiveAccessory);
 
         Widget overlay;
         switch (slot) {

@@ -11,7 +11,6 @@ class PrestigeTrophySheet extends StatelessWidget {
   final UserEntity user;
   final int rank;
   final bool isWeekly;
-  final bool isKids;
   final VoidCallback onShareRank;
 
   const PrestigeTrophySheet({
@@ -19,7 +18,6 @@ class PrestigeTrophySheet extends StatelessWidget {
     required this.user,
     required this.rank,
     this.isWeekly = true,
-    this.isKids = false,
     required this.onShareRank,
   });
 
@@ -28,7 +26,6 @@ class PrestigeTrophySheet extends StatelessWidget {
     required UserEntity user,
     required int rank,
     bool isWeekly = true,
-    bool isKids = false,
     required VoidCallback onShareRank,
   }) {
     return showModalBottomSheet(
@@ -41,7 +38,6 @@ class PrestigeTrophySheet extends StatelessWidget {
         user: user,
         rank: rank,
         isWeekly: isWeekly,
-        isKids: isKids,
         onShareRank: onShareRank,
       ),
     );
@@ -161,11 +157,9 @@ class PrestigeTrophySheet extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      isKids
-                          ? 'Kids Zone Star Vault Standing'
-                          : (isWeekly
-                              ? 'Weekly League Standing'
-                              : 'Hall of Fame All-Time Standing'),
+                      isWeekly
+                          ? 'Weekly League Standing'
+                          : 'Hall of Fame All-Time Standing',
                       style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w600,
@@ -183,14 +177,10 @@ class PrestigeTrophySheet extends StatelessWidget {
                 children: [
                   Expanded(
                     child: _buildStatItem(
-                      isKids
-                          ? 'Stars'
-                          : (isWeekly ? 'Weekly XP' : 'Lifetime XP'),
-                      isKids
-                          ? '${user.kidsTotalStars}'
-                          : '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
-                      isKids ? Icons.star_rounded : LucideIcons.zap,
-                      isKids ? AppColors.amber500 : AppColors.indigo500,
+                      isWeekly ? 'Weekly XP' : 'Lifetime XP',
+                      '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
+                      LucideIcons.zap,
+                      AppColors.indigo500,
                       isDark,
                       borderColor,
                       textPrimary,
@@ -200,11 +190,9 @@ class PrestigeTrophySheet extends StatelessWidget {
                   SizedBox(width: 10.w),
                   Expanded(
                     child: _buildStatItem(
-                      isKids ? 'Levels' : 'Streak',
-                      isKids
-                          ? '${user.kidsTotalLevelsCompleted} Cleared'
-                          : '${user.currentStreak} Days',
-                      isKids ? LucideIcons.award : LucideIcons.flame,
+                      'Streak',
+                      '${user.currentStreak} Days',
+                      LucideIcons.flame,
                       const Color(0xFFF59E0B),
                       isDark,
                       borderColor,
@@ -215,11 +203,9 @@ class PrestigeTrophySheet extends StatelessWidget {
                   SizedBox(width: 10.w),
                   Expanded(
                     child: _buildStatItem(
-                      isKids ? 'Coins' : (isWeekly ? 'Lifetime XP' : 'Quests'),
-                      isKids
-                          ? '${user.kidsCoins} Coins'
-                          : '${isWeekly ? user.totalExp : user.totalLevelsCompleted}',
-                      isKids ? Icons.monetization_on_rounded : LucideIcons.award,
+                      isWeekly ? 'Lifetime XP' : 'Quests',
+                      '${isWeekly ? user.totalExp : user.totalLevelsCompleted}',
+                      LucideIcons.award,
                       const Color(0xFF10B981),
                       isDark,
                       borderColor,

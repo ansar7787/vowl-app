@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 
 /// Context category driving adaptive positive reinforcement praise.
 enum PraiseContext {
@@ -94,47 +93,6 @@ class StandardPraiseStrategy extends PraiseStrategy {
   String get localizedPrefix => 'praise.standard';
 }
 
-/// Praise strategy delivering cheerful, high-energy encouragement for young learners.
-class KidsPraiseStrategy extends PraiseStrategy {
-  @override
-  List<String> get encouragements => const [
-    "Yay! You did it!",
-    "Wow! You're so smart!",
-    "Great job, friend!",
-    "You found it! Awesome!",
-    "Superstar learner!",
-    "You're the best!",
-    "High five! That's right!",
-  ];
-
-  @override
-  List<String> get flawlessEncouragements => const [
-    "Wow! Superstar! Perfect score!",
-    "Three out of three! You are amazing!",
-    "Yay! Zero mistakes, super job!",
-  ];
-
-  @override
-  List<String> get hotStreak5Encouragements => const [
-    "High five! Five in a row!",
-    "Super speedy! Five stars in a row!",
-  ];
-
-  @override
-  List<String> get hotStreak10Encouragements => const [
-    "Unbelievable! Ten in a row, champion!",
-  ];
-
-  @override
-  List<String> get streakSecuredEncouragements => const [
-    "Yay! Your daily star is saved!",
-    "Super streak secured for today!",
-  ];
-
-  @override
-  String get localizedPrefix => 'praise.kids';
-}
-
 /// Abstract contract defining praise and positive reinforcement audio triggers.
 ///
 /// Decouples voice reinforcement logic from calling UI/Bloc controllers,
@@ -167,10 +125,7 @@ class PraiseServiceImpl implements PraiseService {
 
   @override
   void givePraise({PraiseContext context = PraiseContext.standard}) {
-    // Strategy based on age gate
-    final PraiseStrategy strategy = AgeGateService.isAdultCached
-        ? StandardPraiseStrategy()
-        : KidsPraiseStrategy();
+    final PraiseStrategy strategy = StandardPraiseStrategy();
 
     final pool = strategy.getPhrasesForContext(context);
     final index = _random.nextInt(pool.length);

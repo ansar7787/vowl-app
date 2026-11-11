@@ -2,21 +2,9 @@
 ///
 /// Extracted to a single source of truth, eliminating the critical duplication
 /// of [kDefaultUnlockedLevels] previously copy-pasted verbatim across both
-/// [UserEntity] and [UserModel] (100+ lines each).
+/// [UserEntity] and [UserModel].
 ///
 /// All repository implementations and domain entities import from here.
-///
-/// ### Internal composition
-/// [kDefaultUnlockedLevels] is composed from private per-category sub-maps
-/// (`_kSpeakingLevels`, `_kListeningLevels`, ... `_kKidsZoneLevels`, etc.) via
-/// const spreads. This is more than an organizational nicety: [kKidsGameTypes]
-/// is *derived* from `_kKidsZoneLevels.keys`, so the Kids Zone identifiers can
-/// never drift out of sync between the two collections the way two
-/// hand-typed, independently-maintained literals could. Adding a new Kids
-/// Zone game only requires touching `_kKidsZoneLevels`; every place that
-/// depends on "is this a kids game" or "what's its default level" updates
-/// automatically. The public surface (exactly [kDefaultUnlockedLevels] and
-/// [kKidsGameTypes]) is unchanged, so this is a pure internal refactor.
 abstract final class UserGameConstants {
   // ---------------------------------------------------------------------------
   // History & Collection Limits
@@ -103,22 +91,6 @@ abstract final class UserGameConstants {
   };
 
   // ---------------------------------------------------------------------------
-  // Kids Zone Defaults
-  // ---------------------------------------------------------------------------
-
-  /// Default furniture items unlocked for every new Kids Zone user.
-  static const List<String> kDefaultKidsOwnedFurniture = [
-    'default_bed',
-    'default_window',
-  ];
-
-  /// Default equipped furniture mapping for every new Kids Zone user.
-  static const Map<String, String> kDefaultKidsEquippedFurniture = {
-    'bed': 'default_bed',
-    'window': 'default_window',
-  };
-
-  // ---------------------------------------------------------------------------
   // Vowl Mascot Defaults
   // ---------------------------------------------------------------------------
 
@@ -130,26 +102,12 @@ abstract final class UserGameConstants {
   ];
 
   // ---------------------------------------------------------------------------
-  // Kids Game Type Registry
-  // ---------------------------------------------------------------------------
-
-  /// The complete set of Kids Zone game type identifiers.
-  ///
-  /// Used by [GamificationRepositoryImpl.updateUserRewards] to route rewards
-  /// into [kidsCoins] instead of the standard [coins] bucket.
-  ///
-  /// Derived from [_kKidsZoneLevels] (computed once, on first access, then
-  /// cached) rather than a second hand-typed literal — see class doc.
-  static final Set<String> kKidsGameTypes = _kKidsZoneLevels.keys.toSet();
-
-  // ---------------------------------------------------------------------------
   // Default Unlocked Levels
   // ---------------------------------------------------------------------------
 
   /// The full default unlocked-levels map assigned to every new user.
   ///
-  /// Every game and category starts at level 1. Previously this was duplicated
-  /// verbatim in both [UserEntity] and [UserModel]; it now lives here alone.
+  /// Every game and category starts at level 1.
   static const Map<String, int> kDefaultUnlockedLevels = {
     ..._kSpeakingLevels,
     ..._kListeningLevels,
@@ -160,7 +118,6 @@ abstract final class UserGameConstants {
     ..._kAccentLevels,
     ..._kRoleplayLevels,
     ..._kEliteMasteryLevels,
-    ..._kKidsZoneLevels,
     ..._kMetaCategoryLevels,
   };
 
@@ -298,39 +255,6 @@ abstract final class UserGameConstants {
     'idiomMatch': 1,
     'speedSpelling': 1,
     'accentShadowing': 1,
-  };
-
-  // 10. Kids Zone (25 Games)
-  //
-  // This is the single source of truth for Kids Zone game identifiers.
-  // [kKidsGameTypes] is derived from this map's keys — do not add a kids
-  // game anywhere else without adding it here first.
-  static const Map<String, int> _kKidsZoneLevels = {
-    'alphabet': 1,
-    'numbers': 1,
-    'colors': 1,
-    'shapes': 1,
-    'animals': 1,
-    'fruits': 1,
-    'family': 1,
-    'school': 1,
-    'verbs': 1,
-    'routine': 1,
-    'emotions': 1,
-    'prepositions': 1,
-    'phonics': 1,
-    'day_night': 1,
-    'nature': 1,
-    'home': 1,
-    'food': 1,
-    'transport': 1,
-    'time': 1,
-    'opposites': 1,
-    'body_parts': 1,
-    'clothing': 1,
-    'handwriting': 1,
-    'weather': 1,
-    'professions': 1,
   };
 
   // Meta-categories (9 Categories)

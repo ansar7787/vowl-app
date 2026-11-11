@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/pages/offline_quota_exhausted_page.dart';
@@ -42,7 +41,6 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   static const _offlineSilentRoutes = <String>{
     AppRouter.premiumRoute,
     AppRouter.splashRoute,
-    AppRouter.ageGateRoute,
     AppRouter.loginRoute,
     AppRouter.signupRoute,
     AppRouter.forgotPasswordRoute,
@@ -57,13 +55,11 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.forgotPasswordRoute,
     AppRouter.verifyEmailRoute,
     AppRouter.splashRoute,
-    AppRouter.ageGateRoute,
     AppRouter.premiumRoute,
     AppRouter.settingsRoute,
     AppRouter.profileRoute,
     AppRouter.leaderboardRoute,
     AppRouter.ranksRoute,
-    AppRouter.kidsLeaderboardRoute,
     AppRouter.homeRoute,
     AppRouter.gamesRoute,
     AppRouter.categoryGamesRoute,
@@ -72,12 +68,10 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.trophyRoomRoute,
     AppRouter.streakRoute,
     AppRouter.levelRoute,
-    AppRouter.kidsZoneRoute,
-    AppRouter.kidsBuddyBoutiqueRoute,
   };
 
   /// Evaluates whether [path] is a non-gameplay screen where offline gameplay
-  /// quota blocking should never be displayed (e.g. login, map, profile, boutique).
+  /// quota blocking should never be displayed (e.g. login, settings, profile).
   static bool _isNonGameplayRoute(String path) {
     if (path.isEmpty ||
         path == '/' ||
@@ -86,12 +80,6 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
       return true;
     }
     if (_nonGameplayRoutes.contains(path)) return true;
-    if (path.startsWith('/kids/map')) return true;
-    if (path == AppRouter.kidsStickerBookRoute ||
-        path == AppRouter.kidsMascotSelectionRoute ||
-        path == AppRouter.kidsRoomRoute) {
-      return true;
-    }
     return false;
   }
 
@@ -257,13 +245,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                                       if (AppRouter.router.canPop()) {
                                         AppRouter.router.pop();
                                       } else {
-                                        final isAdult =
-                                            AgeGateService.isAdultCached;
-                                        AppRouter.router.go(
-                                          isAdult
-                                              ? AppRouter.homeRoute
-                                              : AppRouter.kidsZoneRoute,
-                                        );
+                                        AppRouter.router.go(AppRouter.homeRoute);
                                       }
                                     },
                                   )

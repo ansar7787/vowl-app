@@ -14,14 +14,12 @@ import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_hel
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
   final DateTime lastUpdated;
-  final bool isKids;
   final LeaderboardTimeframe timeframe;
   final Future<void> Function()? onSync;
 
   const LeaderboardHeader({
     super.key,
     required this.lastUpdated,
-    this.isKids = false,
     this.timeframe = LeaderboardTimeframe.thisWeek,
     this.onSync,
   });
@@ -117,12 +115,6 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
   }
 
   String _getSubtitle(BuildContext context) {
-    if (widget.isKids) {
-      return context.tr(
-        'leaderboard.kids_subtitle_short',
-        fallback: 'Star Vault rankings',
-      );
-    }
     if (widget.timeframe == LeaderboardTimeframe.allTime) {
       return context.tr(
         'leaderboard.all_time_subtitle_short',
@@ -181,15 +173,10 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader>
                             fit: BoxFit.scaleDown,
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              widget.isKids
-                                  ? context.tr(
-                                      'leaderboard.kids_title',
-                                      fallback: 'Kids Leaderboard',
-                                    )
-                                  : context.tr(
-                                      'leaderboard.title',
-                                      fallback: 'Leaderboard',
-                                    ),
+                              context.tr(
+                                'leaderboard.title',
+                                fallback: 'Leaderboard',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 22.sp,

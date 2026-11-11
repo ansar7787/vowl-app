@@ -5,24 +5,6 @@ import 'package:vowl/core/theme/category_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color3b82f6 = Color(0xFF3B82F6);
-  static const Color colorec4899 = Color(0xFFEC4899);
-  static const Color coloreab308 = Color(0xFFEAB308);
-  static const Color color6366f1 = Color(0xFF6366F1);
-  static const Color colorf97316 = Color(0xFFF97316);
-  static const Color color06b6d4 = Color(0xFF06B6D4);
-  static const Color colord946ef = Color(0xFFD946EF);
-  static const Color color9333ea = Color(0xFF9333EA);
-  static const Color color84cc16 = Color(0xFF84CC16);
-  static const Color color1e3a8a = Color(0xFF1E3A8A);
-  static const Color color22c55e = Color(0xFF22C55E);
-  static const Color colorca8a04 = Color(0xFFCA8A04);
-  static const Color colorea580c = Color(0xFFEA580C);
-  static const Color color0ea5e9 = Color(0xFF0EA5E9);
-  static const Color colora855f7 = Color(0xFFA855F7);
-  static const Color color4f46e5 = Color(0xFF4F46E5);
-  static const Color color38bdf8 = Color(0xFF38BDF8);
-  static const Color color0d9488 = Color(0xFF0D9488);
   static const Color color000000 = Color(0xFF000000);
 }
 
@@ -161,66 +143,7 @@ class LevelThemeHelper {
     }
   }
 
-  static Color getKidsGameColor(String gameType) {
-    switch (gameType) {
-      case 'alphabet':
-        return AppColors.red500;
-      case 'numbers':
-        return _LocalPalette.color3b82f6;
-      case 'colors':
-        return AppColors.amber500;
-      case 'shapes':
-        return AppColors.emerald500;
-      case 'animals':
-        return AppColors.violet500;
-      case 'fruits':
-        return _LocalPalette.colorec4899;
-      case 'family':
-        return AppColors.rose500;
-      case 'school':
-        return _LocalPalette.coloreab308;
-      case 'verbs':
-        return _LocalPalette.color6366f1;
-      case 'routine':
-        return _LocalPalette.colorf97316;
-      case 'emotions':
-        return _LocalPalette.color06b6d4;
-      case 'prepositions':
-        return _LocalPalette.color9333ea;
-      case 'phonics':
-        return _LocalPalette.colord946ef;
-      case 'jumble':
-        return _LocalPalette.color9333ea;
-      case 'time':
-        return _LocalPalette.color84cc16;
-      case 'opposites':
-        return AppColors.teal500;
-      case 'day_night':
-      case 'daynight':
-        return _LocalPalette.color1e3a8a;
-      case 'nature':
-        return _LocalPalette.color22c55e;
-      case 'home':
-        return _LocalPalette.colorca8a04;
-      case 'food':
-        return _LocalPalette.colorea580c;
-      case 'transport':
-        return _LocalPalette.color0ea5e9;
-      case 'body_parts':
-      case 'bodyparts':
-        return AppColors.rose700;
-      case 'clothing':
-        return _LocalPalette.colora855f7;
-      case 'handwriting':
-        return _LocalPalette.color4f46e5;
-      case 'weather':
-        return _LocalPalette.color38bdf8;
-      case 'professions':
-        return _LocalPalette.color0d9488;
-      default:
-        return Colors.blue;
-    }
-  }
+
 
   /// Get a theme specifically for a category overview page.
   static ThemeResult getCategoryTheme(

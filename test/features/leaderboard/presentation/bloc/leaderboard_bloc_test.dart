@@ -25,7 +25,6 @@ void main() {
     totalExp: 1000,
     dailyXpHistory: {todayKey: 200},
     currentStreak: 5,
-    kidsCoins: 10,
     completedLevels: {
       'reading': [1, 2, 3],
     },
@@ -38,7 +37,6 @@ void main() {
     totalExp: 2000,
     dailyXpHistory: {todayKey: 500},
     currentStreak: 10,
-    kidsCoins: 20,
     completedLevels: {
       'reading': [1, 2, 3, 4, 5],
     },
@@ -71,7 +69,7 @@ void main() {
         ).thenAnswer((_) async => Right(rawResult));
         return bloc;
       },
-      act: (bloc) => bloc.add(const LoadLeaderboard(isKids: false)),
+      act: (bloc) => bloc.add(const LoadLeaderboard()),
       expect: () => [
         const LeaderboardLoading(),
         isA<LeaderboardLoaded>()
@@ -85,7 +83,6 @@ void main() {
               'last user is user1 (200 weekly)',
               'u1',
             )
-            .having((s) => s.isKids, 'isKids', false)
             .having((s) => s.lastUpdated, 'lastUpdated', testDate),
       ],
       verify: (_) {
@@ -103,7 +100,7 @@ void main() {
       },
       act: (bloc) async {
         final completer = Completer<void>();
-        bloc.add(LoadLeaderboard(isKids: false, completer: completer));
+        bloc.add(LoadLeaderboard(completer: completer));
         await completer.future; // Should complete cleanly without hang
       },
       expect: () => [
@@ -120,65 +117,12 @@ void main() {
         ).thenAnswer((_) async => Right(rawResult));
         return bloc;
       },
-      seed: () => LeaderboardLoaded([user1], testDate, isKids: false),
-      act: (bloc) => bloc.add(const LoadLeaderboard(isKids: false)),
+      seed: () => LeaderboardLoaded([user1], testDate),
+      act: (bloc) => bloc.add(const LoadLeaderboard()),
       expect: () => [
         isA<LeaderboardLoaded>()
-            .having((s) => s.users.length, 'users length', 2)
-            .having((s) => s.isKids, 'isKids', false),
+            .having((s) => s.users.length, 'users length', 2),
       ],
-    );
-  });
-
-  group('LoadLeaderboard (Kids Zone)', () {
-    final kidsUserA = UserEntity(
-      id: 'k1',
-      email: 'k1@vowl.app',
-      kidsCoins: 10,
-      currentStreak: 2,
-      completedLevels: {
-        'kids_animals': [1, 2, 3], // 3 levels
-      },
-    );
-
-    final kidsUserB = UserEntity(
-      id: 'k2',
-      email: 'k2@vowl.app',
-      kidsCoins: 50,
-      currentStreak: 5,
-      completedLevels: {
-        'kids_animals': [1, 2, 3, 4, 5, 6, 7], // 7 levels
-      },
-    );
-
-    final rawKidsResult = LeaderboardResult(
-      users: [kidsUserA, kidsUserB],
-      lastUpdated: testDate,
-    );
-
-    blocTest<LeaderboardBloc, LeaderboardState>(
-      'emits [LeaderboardLoading, LeaderboardLoaded] sorted by kids levels completed on successful fetch',
-      build: () {
-        when(
-          () => mockRepository.getTopKidsUsers(limit: any(named: 'limit')),
-        ).thenAnswer((_) async => Right(rawKidsResult));
-        return bloc;
-      },
-      act: (bloc) => bloc.add(const LoadLeaderboard(isKids: true)),
-      expect: () => [
-        const LeaderboardLoading(),
-        isA<LeaderboardLoaded>()
-            .having(
-              (s) => s.users.first.id,
-              'first user is k2 (7 levels)',
-              'k2',
-            )
-            .having((s) => s.users.last.id, 'last user is k1 (3 levels)', 'k1')
-            .having((s) => s.isKids, 'isKids', true),
-      ],
-      verify: (_) {
-        verify(() => mockRepository.getTopKidsUsers()).called(1);
-      },
     );
   });
 }

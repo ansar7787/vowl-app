@@ -67,14 +67,6 @@ import 'package:vowl/features/vocabulary/domain/usecases/get_vocabulary_quests.d
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
     as vocab;
 
-// Kids Zone
-import 'package:vowl/features/kids_zone/domain/repositories/kids_repository.dart';
-import 'package:vowl/features/kids_zone/data/repositories/kids_repository_impl.dart';
-import 'package:vowl/features/kids_zone/data/datasources/kids_remote_data_source.dart';
-import 'package:vowl/features/kids_zone/data/datasources/kids_local_data_source.dart';
-import 'package:vowl/features/kids_zone/domain/usecases/get_kids_quests.dart';
-import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-
 // Elite Mastery
 import 'package:vowl/features/elite_mastery/data/datasources/elite_mastery_data_source.dart';
 import 'package:vowl/features/elite_mastery/domain/repositories/elite_mastery_repository.dart';
@@ -102,7 +94,6 @@ import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
-import 'package:vowl/features/auth/domain/usecases/award_kids_sticker.dart';
 
 /// Registers all quest-specific feature modules.
 ///
@@ -120,7 +111,6 @@ void initFeatures(GetIt sl) {
   _initAccent(sl);
   _initListening(sl);
   _initVocabulary(sl);
-  _initKidsZone(sl);
   _initEliteMastery(sl);
   _initTranslation(sl);
   _initReferral(sl);
@@ -411,37 +401,6 @@ void _initVocabulary(GetIt sl) {
       hapticService: sl<HapticService>(),
       useHint: sl<UseHint>(),
       networkInfo: sl<NetworkInfo>(),
-    ),
-  );
-}
-
-// ── Kids Zone ─────────────────────────────────────────────────────────────────
-
-void _initKidsZone(GetIt sl) {
-  sl.registerLazySingleton<KidsRemoteDataSource>(
-    () => KidsRemoteDataSourceImpl(firestore: sl<FirebaseFirestore>()),
-  );
-  sl.registerLazySingleton<KidsLocalDataSource>(
-    () => KidsLocalDataSourceImpl(),
-  );
-  sl.registerLazySingleton<KidsRepository>(
-    () => KidsRepositoryImpl(
-      remoteDataSource: sl<KidsRemoteDataSource>(),
-      localDataSource: sl<KidsLocalDataSource>(),
-    ),
-  );
-  sl.registerLazySingleton<GetKidsQuests>(
-    () => GetKidsQuests(sl<KidsRepository>()),
-  );
-  sl.registerFactory<KidsBloc>(
-    () => KidsBloc(
-      getKidsQuests: sl<GetKidsQuests>(),
-      updateUserRewards: sl<UpdateUserRewards>(),
-      updateUnlockedLevel: sl<UpdateUnlockedLevel>(),
-      awardKidsSticker: sl<AwardKidsSticker>(),
-      useHint: sl<UseHint>(),
-      soundService: sl<SoundService>(),
-      hapticService: sl<HapticService>(),
     ),
   );
 }

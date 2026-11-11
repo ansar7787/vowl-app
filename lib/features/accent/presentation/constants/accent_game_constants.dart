@@ -37,7 +37,7 @@ abstract final class AccentGameConstants {
 
   /// Message spoken when the player drops to their last life.
   static String nudgeMessage(BuildContext context) => context.tr(
-    'games.kids_nudge',
+    'games.life_nudge',
     fallback: 'Focus! Use a hint if you need help saving your last life.',
   );
 

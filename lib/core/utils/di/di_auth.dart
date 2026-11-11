@@ -46,12 +46,6 @@ import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
-import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
-import 'package:vowl/features/auth/domain/usecases/award_kids_sticker.dart';
-import 'package:vowl/features/auth/domain/usecases/update_kids_mascot.dart';
-import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
-import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
@@ -61,7 +55,6 @@ import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.d
 import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
-import 'package:vowl/features/auth/domain/usecases/buy_kids_furniture.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_vowl_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_vowl_accessory.dart';
 import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
@@ -154,18 +147,6 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<AwardBadge>(
     () => AwardBadge(sl<GamificationRepository>()),
   );
-  sl.registerLazySingleton<AwardKidsSticker>(
-    () => AwardKidsSticker(sl<ShopRepository>()),
-  );
-  sl.registerLazySingleton<UpdateKidsMascot>(
-    () => UpdateKidsMascot(sl<ShopRepository>()),
-  );
-  sl.registerLazySingleton<BuyKidsAccessory>(
-    () => BuyKidsAccessory(sl<ShopRepository>()),
-  );
-  sl.registerLazySingleton<EquipKidsAccessory>(
-    () => EquipKidsAccessory(sl<ShopRepository>()),
-  );
   sl.registerLazySingleton<UpdateUnlockedLevel>(
     () => UpdateUnlockedLevel(sl<GamificationRepository>()),
   );
@@ -223,12 +204,6 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<ClaimDailyChest>(
     () => ClaimDailyChest(sl<ShopRepository>()),
   );
-  sl.registerLazySingleton<ClaimKidsDailyReward>(
-    () => ClaimKidsDailyReward(sl<ShopRepository>()),
-  );
-  sl.registerLazySingleton<AwardKidsCoins>(
-    () => AwardKidsCoins(sl<ShopRepository>()),
-  );
   sl.registerLazySingleton<RepairStreakFree>(
     () => RepairStreakFree(sl<GamificationRepository>()),
   );
@@ -246,9 +221,6 @@ void initAuthFeature(GetIt sl) {
   );
   sl.registerLazySingleton<IncrementXp>(
     () => IncrementXp(sl<GamificationRepository>()),
-  );
-  sl.registerLazySingleton<BuyKidsFurniture>(
-    () => BuyKidsFurniture(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<BuyVowlMascot>(
     () => BuyVowlMascot(sl<ShopRepository>()),
@@ -298,8 +270,6 @@ void initAuthFeature(GetIt sl) {
       claimDailyGift: sl<ClaimDailyGift>(),
       updateUser: sl<UpdateUser>(),
       claimDailyChest: sl<ClaimDailyChest>(),
-      claimKidsDailyReward: sl<ClaimKidsDailyReward>(),
-      awardKidsCoins: sl<AwardKidsCoins>(),
       useHint: sl<UseHint>(),
       incrementXp: sl<IncrementXp>(),
       authBloc: sl<AuthBloc>(),
@@ -328,12 +298,8 @@ void initAuthFeature(GetIt sl) {
     () => ProfileBloc(
       updateDisplayName: sl<UpdateDisplayName>(),
       updateProfilePicture: sl<UpdateProfilePicture>(),
-      updateKidsMascot: sl<UpdateKidsMascot>(),
-      buyKidsAccessory: sl<BuyKidsAccessory>(),
-      equipKidsAccessory: sl<EquipKidsAccessory>(),
       updateUser: sl<UpdateUser>(),
       authBloc: sl<AuthBloc>(),
-      buyKidsFurniture: sl<BuyKidsFurniture>(),
       buyVowlMascot: sl<BuyVowlMascot>(),
       buyVowlAccessory: sl<BuyVowlAccessory>(),
       purchaseGoldenKey: sl<PurchaseGoldenKey>(),

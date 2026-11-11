@@ -30,7 +30,6 @@ import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/production_guard.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -116,13 +115,11 @@ void main() async {
   final dotEnvFuture = safeLoadDotEnv();
   final firebaseFuture = safeInitializeFirebase();
   final securityFuture = safeCheckSecurity();
-  final ageGateFuture = AgeGateService.loadCached();
   final onboardingFuture = OnboardingService.loadCached();
 
   await dotEnvFuture;
   final FirebaseApp? firebaseApp = await firebaseFuture;
   final bool isSecure = await securityFuture;
-  await ageGateFuture;
   await onboardingFuture;
   await OfflinePlayGateService.instance.init();
 

@@ -323,7 +323,6 @@ class GamificationRepositoryImpl
     // ---- Replay detection ----
     final categoryCompleted = completedLevels[gameType] ?? <int>[];
     final bool isReplay = categoryCompleted.contains(level);
-    final bool isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
 
     // ---- XP multiplier calculation ----
     var xpMultiplier = 1.0;
@@ -334,11 +333,9 @@ class GamificationRepositoryImpl
       xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
     }
 
-    final baseXp = isKidsGame
-        ? 0.0
-        : (isReplay
-              ? (xpIncrease * UserGameConstants.kReplayXpFraction)
-              : xpIncrease.toDouble());
+    final baseXp = isReplay
+        ? (xpIncrease * UserGameConstants.kReplayXpFraction)
+        : xpIncrease.toDouble();
     final finalXpIncrease = (baseXp * xpMultiplier).round();
 
     // ---- Completed & unlocked levels ----
@@ -520,25 +517,9 @@ class GamificationRepositoryImpl
       }
     }
 
-    int? kidsTotalStars;
-    if (isKidsGame) {
-      int sum = 0;
-      for (final entry in starRatings.entries) {
-        if (UserGameConstants.kKidsGameTypes.contains(entry.key)) {
-          for (final starEntry in entry.value.entries) {
-            if (starEntry.key != 'magic_stars' &&
-                starEntry.key != 'claimed_chests') {
-              sum += starEntry.value;
-            }
-          }
-        }
-      }
-      kidsTotalStars = sum;
-    }
-
     final updates = <String, dynamic>{
       'totalExp': userData.totalExp + finalXpIncrease,
-      (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
+      'coins': FieldValue.increment(
         finalCoinIncrease + referralBonusCoins,
       ),
       'lastRewardTimestamp': FieldValue.serverTimestamp(),
@@ -549,10 +530,6 @@ class GamificationRepositoryImpl
       'unlockedLevels': unlockedLevels,
       'starRatings': starRatings,
     };
-
-    if (kidsTotalStars != null) {
-      updates['kidsTotalStars'] = kidsTotalStars;
-    }
 
     if (activatesReferral) {
       final pendingCode = userData.pendingReferralCode!.trim().toUpperCase();
@@ -933,7 +910,6 @@ class GamificationRepositoryImpl
   Future<Either<Failure, void>> purchaseLevelUnlock({
     required String gameType,
     required int cost,
-    bool isKidsMode = false,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
@@ -949,10 +925,6 @@ class GamificationRepositoryImpl
         }
 
         final data = doc.data()!;
-        // isKidsMode is intentionally not consulted here: Golden Keys are a
-        // single universal currency (purchaseGoldenKey always credits `keys`
-        // regardless of isKidsMode — see its interface doc), so there's no
-        // separate kids-mode balance to branch on for this purchase either.
         final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
         if (currentKeys < cost) {
           return Left(AuthFailure('insufficient-golden-keys'));
@@ -981,7 +953,6 @@ class GamificationRepositoryImpl
   @override
   Future<Either<Failure, void>> purchaseGoldenKey({
     required int cost,
-    required bool isKidsMode,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
@@ -998,35 +969,23 @@ class GamificationRepositoryImpl
 
         final data = doc.data()!;
         final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
-
-        if (isKidsMode) {
-          final currentKidsCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
-          if (currentKidsCoins < cost) {
-            return Left(AuthFailure('insufficient-kids-coins'));
-          }
-          transaction.update(docRef, {
-            'kidsCoins': currentKidsCoins - cost,
-            'keys': currentKeys + 1,
-          });
-        } else {
-          final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
-          if (currentCoins < cost) {
-            return Left(AuthFailure('insufficient-coins'));
-          }
-
-          final history = _recordCoinHistory(
-            _parseMapList(data['coinHistory']),
-            titleKey: 'coin_history.purchased_golden_key',
-            amount: -cost,
-            isEarned: false,
-          );
-
-          transaction.update(docRef, {
-            'coins': currentCoins - cost,
-            'keys': currentKeys + 1,
-            'coinHistory': history,
-          });
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) {
+          return Left(AuthFailure('insufficient-coins'));
         }
+
+        final history = _recordCoinHistory(
+          _parseMapList(data['coinHistory']),
+          titleKey: 'coin_history.purchased_golden_key',
+          amount: -cost,
+          isEarned: false,
+        );
+
+        transaction.update(docRef, {
+          'coins': currentCoins - cost,
+          'keys': currentKeys + 1,
+          'coinHistory': history,
+        });
         return const Right<Failure, void>(null);
       });
     } catch (e) {

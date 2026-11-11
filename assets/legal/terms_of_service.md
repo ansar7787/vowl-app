@@ -37,14 +37,9 @@ You agree not to:
 
 All purchases are final upon delivery. See our Refund Policy for eligible refund scenarios.
 
-## 6. Children's Use
+## 6. Age Requirements and Eligibility
 
-The App includes a "Kids Zone" for users under 16:
-
-- Adults must supervise children's use.
-- A parental gate (math challenge) is required for purchases in Kids mode.
-- No personalised advertising is shown to children.
-- Parents accept these Terms on behalf of their child.
+By using the App, you represent and warrant that you are at least 13 years of age (or at least 16 years of age in the European Economic Area / UK). If you are between the minimum age and the age of majority in your jurisdiction, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.
 
 ## 7. Intellectual Property
 

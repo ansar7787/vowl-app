@@ -1,7 +1,6 @@
 /// Shared text cleaning utilities for TTS engines.
 ///
-/// Centralizes emoji stripping and whitespace normalization to prevent
-/// duplication across [TtsServiceImpl] and [KidsTTSService].
+/// Centralizes emoji stripping and whitespace normalization for [TtsServiceImpl].
 class TtsTextCleaner {
   TtsTextCleaner._();
 
