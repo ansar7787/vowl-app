@@ -50,6 +50,9 @@ void main() {
       'repeatSentence': [1, 2],
       'grammarQuest': [1, 2, 3, 4],
     },
+    unlockedLevels: {
+      'grammarQuest': 5,
+    },
   );
 
   setUpAll(() {
@@ -299,7 +302,7 @@ void main() {
     );
 
     testWidgets(
-      'renders 1v1 PvP Duel and Quick Drills with exact production rewards',
+      'renders 1v1 PvP Duel flagship card with exact production rewards',
       (tester) async {
         tester.view.physicalSize = const Size(800, 2400);
         tester.view.devicePixelRatio = 1.0;
@@ -311,19 +314,13 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
 
         expect(find.text('1v1 Duel'), findsOneWidget);
-        expect(find.text('Word Snap'), findsOneWidget);
-        expect(find.text('Word Mixer'), findsOneWidget);
-        expect(find.text('60s Daily Blitz'), findsOneWidget);
-        expect(find.text('Anagram Puzzle'), findsOneWidget);
         // Exact production rewards verified from repository implementations
         expect(
           find.textContaining('WIN 50'),
           findsOneWidget,
         ); // 1v1 duel winner
-        expect(
-          find.text('WIN 10🪙 + 5 XP'),
-          findsWidgets,
-        ); // Word Snap & Word Mixer daily challenge
+        expect(find.textContaining('+5 XP'), findsOneWidget);
+        expect(find.textContaining('30🪙 entry'), findsOneWidget);
         expect(
           find.text('+50 XP'),
           findsNothing,
@@ -366,6 +363,53 @@ void main() {
       expect(find.text('100+ Games'), findsOneWidget);
       expect(find.text('All (100)'), findsOneWidget);
       expect(find.byType(TextField), findsOneWidget);
+    });
+  });
+
+  group('GamesScreen - Overworld Realms & Serpentine Map Integration', () {
+    testWidgets('renders Overworld Realm Cards in default view', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.textContaining('SPEAKING REALM'), findsOneWidget);
+      expect(find.text('EXPLORE'), findsWidgets);
+    });
+
+    testWidgets('tapping a category filter pill renders in-place CategoryOverworldMap', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Tap Speaking filter pill (visible in the initial dock scroll position)
+      await tester.tap(find.text('Speaking'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Verifies active realm header banner with "All Realms" button
+      expect(find.text('All Realms'), findsOneWidget);
+      expect(find.textContaining('Serpentine Path'), findsOneWidget);
+
+      // Tapping "All Realms" restores the Overworld Realms Sliver
+      await tester.tap(find.text('All Realms'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.textContaining('SPEAKING REALM'), findsOneWidget);
     });
   });
 

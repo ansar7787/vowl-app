@@ -18,6 +18,7 @@ import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/category_games_logic.dart';
 import 'package:vowl/features/home/presentation/widgets/category_overworld/category_overworld_map.dart';
 
 /// Category-specific hub screen displaying games, mastery progress, and level roadmaps.
@@ -64,7 +65,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   void _initData() {
-    _games = _CategoryGamesLogic.getGamesForCategory(widget.categoryId);
+    _games = CategoryGamesLogic.getGamesForCategory(widget.categoryId);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
@@ -331,7 +332,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final targetProgress = totalLevels > 0
         ? (clearedLevels / totalLevels)
         : 0.0;
-    final rankText = _CategoryGamesLogic.getRank(context, targetProgress);
+    final rankText = CategoryGamesLogic.getRank(context, targetProgress);
 
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
@@ -789,176 +790,5 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         ),
       ),
     );
-  }
-}
-
-/// Extracted Domain / Presentation Logic to keep the Widget clean
-class _CategoryGamesLogic {
-  static const Map<String, List<GameSubtype>> _journeyOrder = {
-    'vocabulary': [
-      GameSubtype.flashcards,
-      GameSubtype.topicVocab,
-      GameSubtype.wordFormation,
-      GameSubtype.prefixSuffix,
-      GameSubtype.synonymSearch,
-      GameSubtype.antonymSearch,
-      GameSubtype.contextClues,
-      GameSubtype.collocations,
-      GameSubtype.phrasalVerbs,
-      GameSubtype.idioms,
-      GameSubtype.academicWord,
-      GameSubtype.contextualUsage,
-    ],
-    'grammar': [
-      GameSubtype.partsOfSpeech,
-      GameSubtype.grammarQuest,
-      GameSubtype.wordReorder,
-      GameSubtype.sentenceCorrection,
-      GameSubtype.tenseMastery,
-      GameSubtype.subjectVerbAgreement,
-      GameSubtype.articleInsertion,
-      GameSubtype.questionFormatter,
-      GameSubtype.clauseConnector,
-      GameSubtype.voiceSwap,
-      GameSubtype.punctuationMastery,
-      GameSubtype.modifierPlacement,
-      GameSubtype.modalsSelection,
-      GameSubtype.prepositionChoice,
-      GameSubtype.pronounResolution,
-      GameSubtype.relativeClauses,
-      GameSubtype.conditionals,
-      GameSubtype.conjunctions,
-      GameSubtype.directIndirectSpeech,
-    ],
-    'listening': [
-      GameSubtype.audioFillBlanks,
-      GameSubtype.audioMultipleChoice,
-      GameSubtype.audioSentenceOrder,
-      GameSubtype.audioTrueFalse,
-      GameSubtype.soundImageMatch,
-      GameSubtype.detailSpotlight,
-      GameSubtype.emotionRecognition,
-      GameSubtype.fastSpeechDecoder,
-      GameSubtype.listeningInference,
-      GameSubtype.ambientId,
-    ],
-    'reading': [
-      GameSubtype.readAndAnswer,
-      GameSubtype.findWordMeaning,
-      GameSubtype.trueFalseReading,
-      GameSubtype.sentenceOrderReading,
-      GameSubtype.guessTitle,
-      GameSubtype.readAndMatch,
-      GameSubtype.skimmingScanning,
-      GameSubtype.paragraphSummary,
-      GameSubtype.readingSpeedCheck,
-      GameSubtype.readingInference,
-      GameSubtype.readingConclusion,
-      GameSubtype.clozeTest,
-    ],
-    'writing': [
-      GameSubtype.sentenceBuilder,
-      GameSubtype.completeSentence,
-      GameSubtype.fixTheSentence,
-      GameSubtype.describeSituationWriting,
-      GameSubtype.summarizeStoryWriting,
-      GameSubtype.shortAnswerWriting,
-      GameSubtype.opinionWriting,
-      GameSubtype.dailyJournal,
-      GameSubtype.writingEmail,
-      GameSubtype.correctionWriting,
-      GameSubtype.essayDrafting,
-    ],
-    'speaking': [
-      GameSubtype.repeatSentence,
-      GameSubtype.speakMissingWord,
-      GameSubtype.yesNoSpeaking,
-      GameSubtype.pronunciationFocus,
-      GameSubtype.speakSynonym,
-      GameSubtype.speakOpposite,
-      GameSubtype.dailyExpression,
-      GameSubtype.situationSpeaking,
-      GameSubtype.sceneDescriptionSpeaking,
-      GameSubtype.dialogueRoleplay,
-    ],
-    'accent': [
-      GameSubtype.minimalPairs,
-      GameSubtype.vowelDistinction,
-      GameSubtype.consonantClarity,
-      GameSubtype.syllableStress,
-      GameSubtype.wordLinking,
-      GameSubtype.connectedSpeech,
-      GameSubtype.intonationMimic,
-      GameSubtype.pitchModulation,
-      GameSubtype.pitchPatternMatch,
-      GameSubtype.speedVariance,
-      GameSubtype.shadowingChallenge,
-      GameSubtype.dialectDrill,
-    ],
-    'roleplay': [
-      GameSubtype.situationalResponse,
-      GameSubtype.branchingDialogue,
-      GameSubtype.socialSpark,
-      GameSubtype.travelDesk,
-      GameSubtype.gourmetOrder,
-      GameSubtype.jobInterview,
-      GameSubtype.medicalConsult,
-      GameSubtype.conflictResolver,
-      GameSubtype.elevatorPitch,
-      GameSubtype.emergencyHub,
-    ],
-    'elitemastery': [
-      GameSubtype.storyBuilder,
-      GameSubtype.idiomMatch,
-      GameSubtype.speedSpelling,
-      GameSubtype.accentShadowing,
-    ],
-  };
-
-  static List<GameSubtype> getGamesForCategory(String category) {
-    final List<GameSubtype> allGames = GameSubtype.values
-        .where((s) => s.category.name == category && !s.isLegacy)
-        .toList();
-
-    final order = _journeyOrder[category];
-    if (order != null) {
-      allGames.sort((a, b) {
-        final indexA = order.indexOf(a);
-        final indexB = order.indexOf(b);
-        if (indexA == -1 && indexB == -1) return 0;
-        if (indexA == -1) return 1;
-        if (indexB == -1) return -1;
-        return indexA.compareTo(indexB);
-      });
-    }
-
-    return allGames;
-  }
-
-  static String getRank(BuildContext context, double progress) {
-    if (progress <= 0.0) {
-      return context.tr('category_games.rank_beginner', fallback: 'BEGINNER');
-    }
-    if (progress < 0.15) {
-      return context.tr('category_games.rank_novice', fallback: 'NOVICE');
-    }
-    if (progress < 0.35) {
-      return context.tr('category_games.rank_scholar', fallback: 'SCHOLAR');
-    }
-    if (progress < 0.55) {
-      return context
-          .tr('home.discovery_diff_expert', fallback: 'Expert')
-          .toUpperCase();
-    }
-    if (progress < 0.80) {
-      return context.tr('category_games.rank_virtuoso', fallback: 'VIRTUOSO');
-    }
-    if (progress < 0.99) {
-      return context.tr(
-        'quest_archive.status_grandmaster',
-        fallback: 'GRANDMASTER',
-      );
-    }
-    return context.tr('quest_archive.status_legendary', fallback: 'LEGENDARY');
   }
 }
