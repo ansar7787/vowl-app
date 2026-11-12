@@ -2,7 +2,6 @@
 library;
 
 export 'premium_glow.dart';
-export 'premium_header.dart';
 export 'premium_hero.dart';
 export 'premium_plan_card.dart';
 export 'premium_feature_bar.dart';
