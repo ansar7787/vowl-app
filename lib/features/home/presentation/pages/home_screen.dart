@@ -34,7 +34,7 @@ import 'package:vowl/features/home/presentation/widgets/weekly_league_reward_hom
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
-import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_words_sprint_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
@@ -365,6 +365,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 16.h),
                               ContinueLearningCard(user: user),
+                              SizedBox(height: 12.h),
+                              const DailyWordsSprintCard(),
                             ],
                           ),
                         ),
@@ -506,25 +508,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
 
-                        // --------------------------------------------------
-                        // 7. EXPLORE & TOOLS (Horizontal strip)
-                        // --------------------------------------------------
-                        HomeSliverSectionHeader(
-                          title: context.tr(
-                            'home.tools_title',
-                            fallback: 'Explore & Tools',
-                          ),
-                          subtitle: context.tr(
-                            'home.tools_subtitle',
-                            fallback: 'Your learning toolkit',
-                          ),
-                          categoryColor: AppColors.emerald500,
-                        ),
-                        const SliverToBoxAdapter(child: ToolsStrip()),
                       ],
 
                       // --------------------------------------------------
-                      // 8. DAILY NOTE / LANGUAGE NOTE
+                      // 7. DAILY NOTE / LANGUAGE NOTE
                       // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(

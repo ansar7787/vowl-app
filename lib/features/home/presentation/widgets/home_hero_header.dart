@@ -224,7 +224,12 @@ class HomeHeroHeader extends StatelessWidget {
           ),
           SizedBox(width: 8.w),
 
-          // ── 3. LINEAR-STYLE DUAL METRIC HUD (STREAK + COINS) ──────
+          // ── 3. TRANSLATE QUICK ACTION CAPSULE ─────────────────────
+          _buildTranslateCapsule(context, isDark: isDark),
+
+          SizedBox(width: 6.w),
+
+          // ── 4. LINEAR-STYLE DUAL METRIC HUD (STREAK + COINS) ──────
           _buildDualMetricHud(
             context,
             isDark: isDark,
@@ -422,6 +427,83 @@ class HomeHeroHeader extends StatelessWidget {
             mascotId: mascotId,
             accessoryId: accessoryId,
             animate: true,
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Quick-action Translate capsule docked adjacent to the dual-metric HUD.
+  Widget _buildTranslateCapsule(
+    BuildContext context, {
+    required bool isDark,
+  }) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final capsuleBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+              ? AppColors.slate900.withValues(alpha: 0.90)
+              : Colors.white.withValues(alpha: 0.95));
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.14)
+        : (isDark
+              ? AppColors.slate700.withValues(alpha: 0.6)
+              : AppColors.slate100);
+
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    // On tablet viewports (>= 600dp), render full "[ 🌐 Translate ]" capsule.
+    // On mobile viewports (< 600dp), render sleek iconic "[ 🌐 ]" capsule to preserve greeting and HUD space.
+    final bool showLabel = screenWidth >= 600;
+
+    return Semantics(
+      button: true,
+      label: context.tr('home.translation_title', fallback: 'Translate'),
+      hint: context.tr(
+        'home.tools_translate_tip',
+        fallback: 'Offline translation for 50+ languages',
+      ),
+      child: Tooltip(
+        message: context.tr('home.translation_title', fallback: 'Translate'),
+        child: ScaleButton(
+          onTap: () {
+            _triggerHaptic();
+            context.push(AppRouter.translateRoute);
+          },
+          child: Container(
+            height: 38.h,
+            padding: EdgeInsets.symmetric(
+              horizontal: showLabel ? 9.w : 10.w,
+            ),
+            decoration: BoxDecoration(
+              color: capsuleBg,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: borderColor, width: 1),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.translate_rounded,
+                  size: 16.r,
+                  color: AppColors.emerald500,
+                ),
+                if (showLabel) ...[
+                  SizedBox(width: 4.w),
+                  Text(
+                    context.tr('home.translation_title', fallback: 'Translate'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? Colors.white : AppColors.slate800,
+                      height: 1,
+                    ),
+                  ),
+                ],
+              ],
+            ),
           ),
         ),
       ),

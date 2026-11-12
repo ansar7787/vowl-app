@@ -84,6 +84,13 @@ void main() {
             return const Scaffold(body: Text('Mascot Screen'));
           },
         ),
+        GoRoute(
+          path: AppRouter.translateRoute,
+          builder: (context, state) {
+            navigatedRoutes.add(AppRouter.translateRoute);
+            return const Scaffold(body: Text('Translate Screen'));
+          },
+        ),
       ],
     );
 
@@ -265,4 +272,41 @@ void main() {
     expect(find.byType(HomeHeroHeader), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'renders Translate quick action capsule and navigates to translateRoute on tap',
+    (tester) async {
+      await tester.pumpWidget(createSubject(user: testUserCommander));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      expect(find.byIcon(Icons.translate_rounded), findsOneWidget);
+
+      await tester.tap(find.byIcon(Icons.translate_rounded));
+      await tester.pumpAndSettle();
+
+      verify(() => mockHapticService.selection()).called(1);
+      expect(navigatedRoutes, contains(AppRouter.translateRoute));
+      expect(find.text('Translate Screen'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'renders full Translate label on tablet viewport (>= 600dp)',
+    (tester) async {
+      tester.view.physicalSize = const Size(800 * 2.0, 1200 * 2.0);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(
+        createSubject(user: testUserCommander, width: 800, height: 1200),
+      );
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      expect(find.byIcon(Icons.translate_rounded), findsOneWidget);
+      expect(find.text('Translate'), findsOneWidget);
+    },
+  );
 }

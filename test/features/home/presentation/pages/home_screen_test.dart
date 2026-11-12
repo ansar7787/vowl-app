@@ -33,7 +33,7 @@ import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
-import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_words_sprint_card.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
 
@@ -629,8 +629,17 @@ void main() {
     );
   });
 
-  group('Group 9: Explore & Tools Strip', () {
-    testWidgets('renders Explore & Tools section header and ToolsStrip', (
+  group('Group 9: Daily Words Sprint Card & Quick Translate', () {
+    testWidgets('renders DailyWordsSprintCard right below ContinueLearningCard', (
+      tester,
+    ) async {
+      await pumpHomeScreen(tester);
+
+      expect(find.byType(DailyWordsSprintCard), findsOneWidget);
+      expect(find.text('Daily Words'), findsOneWidget);
+    });
+
+    testWidgets('Explore & Tools section header is removed from home screen', (
       tester,
     ) async {
       await pumpHomeScreen(tester);
@@ -638,20 +647,15 @@ void main() {
       homeScrollController.jumpTo(1100);
       await tester.pumpAndSettle();
 
-      expect(find.text('EXPLORE & TOOLS'), findsOneWidget);
-      expect(find.byType(ToolsStrip), findsOneWidget);
+      expect(find.text('EXPLORE & TOOLS'), findsNothing);
     });
 
-    testWidgets('renders Swiss Horizon tools in ToolsStrip', (
+    testWidgets('renders Translate button in top hero header', (
       tester,
     ) async {
       await pumpHomeScreen(tester);
 
-      homeScrollController.jumpTo(1200);
-      await tester.pumpAndSettle();
-
-      expect(find.text('Daily Words'), findsOneWidget);
-      expect(find.text('Translate'), findsOneWidget);
+      expect(find.byIcon(Icons.translate_rounded), findsOneWidget);
     });
   });
 
@@ -870,12 +874,12 @@ void main() {
 
         expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
         expect(find.byType(BentoArena), findsNothing);
-        expect(find.byType(ToolsStrip), findsNothing);
+        expect(find.text('EXPLORE & TOOLS'), findsNothing);
       },
     );
 
     testWidgets(
-      'tapping bypass button in BeginnerMilestoneCard reveals full cockpit including BentoArena and ToolsStrip',
+      'tapping bypass button in BeginnerMilestoneCard reveals full cockpit including BentoArena',
       (tester) async {
         const beginnerUser = UserEntity(
           id: 'beg_user',
@@ -899,10 +903,6 @@ void main() {
 
         expect(find.byType(BeginnerMilestoneCard), findsNothing);
         expect(find.byType(BentoArena), findsOneWidget);
-
-        homeScrollController.jumpTo(1100);
-        await tester.pumpAndSettle();
-        expect(find.byType(ToolsStrip), findsOneWidget);
       },
     );
   });
