@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -26,16 +27,16 @@ class OverworldRealmsSliver extends StatelessWidget {
     required this.onRealmSelected,
   });
 
-  static const Map<QuestType, String> _realmSubtitles = {
-    QuestType.speaking: 'Pronunciation, Fluency & Voice Challenges',
-    QuestType.listening: 'Auditory Decoding & Audio Comprehension',
-    QuestType.reading: 'Text Analysis, Speed Reading & Inference',
-    QuestType.writing: 'Sentence Structure, Syntax & Composition',
-    QuestType.grammar: 'Tenses, Modals, Connectors & Mechanics',
-    QuestType.vocabulary: 'Idioms, Collocations & Wordcraft',
-    QuestType.accent: 'Cadence, Intonation, Stress & Minimal Pairs',
-    QuestType.roleplay: 'Conversational Dialogues & Immersion',
-    QuestType.eliteMastery: 'Fluency Gauntlet & Speed Challenges',
+  static const Map<QuestType, String> _categorySubtitles = {
+    QuestType.speaking: 'Pronunciation, voice practice & everyday dialogue',
+    QuestType.listening: 'Train your ear with real audio & dialogues',
+    QuestType.reading: 'Short stories, articles & comprehension',
+    QuestType.writing: 'Sentence building, corrections & essays',
+    QuestType.grammar: 'Tenses, connectors & everyday grammar rules',
+    QuestType.vocabulary: 'Essential words, common idioms & phrases',
+    QuestType.accent: 'Clear pronunciation, sounds & speech rhythm',
+    QuestType.roleplay: 'Real-world situations for travel & work',
+    QuestType.eliteMastery: 'Advanced speed & fluency challenges',
   };
 
   @override
@@ -62,7 +63,7 @@ class OverworldRealmsSliver extends StatelessWidget {
               isDark: isDark,
               isMidnight: isMidnight,
             );
-            final subtitle = _realmSubtitles[category] ?? 'Curriculum Quests';
+            final subtitle = _categorySubtitles[category] ?? 'Language practice';
 
             return Padding(
               padding: EdgeInsets.only(bottom: 12.h),
@@ -129,7 +130,7 @@ class OverworldRealmCard extends StatelessWidget {
 
     return Semantics(
       button: true,
-      label: '$titleText Realm, ${stats.masteredGames} of ${stats.totalGames} mastered, ${stats.earnedStars} stars',
+      label: '$titleText, ${stats.masteredGames} of ${stats.totalGames} completed, ${stats.earnedStars} stars',
       child: ScaleButton(
         scaleDown: 0.98,
         onTap: () {
@@ -209,7 +210,7 @@ class OverworldRealmCard extends StatelessWidget {
                                   children: [
                                     Flexible(
                                       child: Text(
-                                        '${titleText.toUpperCase()} REALM',
+                                        titleText.toUpperCase(),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
@@ -337,19 +338,19 @@ class OverworldRealmCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'EXPLORE',
+                                'Play',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 10.5.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 0.8,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w800,
+                                  letterSpacing: 0.4,
                                   color: displayColor,
                                 ),
                               ),
-                              SizedBox(width: 3.w),
+                              SizedBox(width: 2.w),
                               Icon(
-                                Icons.arrow_forward_ios_rounded,
-                                size: 10.r,
+                                LucideIcons.chevronRight,
+                                size: 14.r,
                                 color: displayColor,
                               ),
                             ],
