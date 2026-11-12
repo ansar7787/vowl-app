@@ -23,7 +23,6 @@ import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -68,7 +67,6 @@ class MockAdService extends Mock implements AdService {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class MockSmartReplyService extends Mock implements SmartReplyService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -86,7 +84,6 @@ void main() {
   late MockAnalyticsService mockAnalyticsService;
   late MockAdService mockAdService;
   late MockNetworkInfo mockNetworkInfo;
-  late MockSmartReplyService mockSmartReplyService;
   late StreamController<SpeakingState> speakingStreamController;
 
   SpeakingQuest createQuest({
@@ -172,7 +169,6 @@ void main() {
     mockAnalyticsService = MockAnalyticsService();
     mockAdService = MockAdService();
     mockNetworkInfo = MockNetworkInfo();
-    mockSmartReplyService = MockSmartReplyService();
     speakingStreamController = StreamController<SpeakingState>.broadcast();
 
     // Default Stubs
@@ -240,20 +236,6 @@ void main() {
     when(() => mockAudioRecorder.isRecording).thenReturn(false);
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockSmartReplyService.clearConversation()).thenReturn(null);
-    when(
-      () => mockSmartReplyService.addMessage(
-        any(),
-        isLocalUser: any(named: 'isLocalUser'),
-      ),
-    ).thenReturn(null);
-    when(() => mockSmartReplyService.getSuggestions()).thenAnswer(
-      (_) async => [
-        'Sure, it is right around the corner.',
-        'Yes, go straight down this street.',
-      ],
-    );
-    when(() => mockSmartReplyService.dispose()).thenReturn(null);
 
     when(
       () => mockLocaleService.tr(any(), fallback: any(named: 'fallback')),
@@ -279,10 +261,7 @@ void main() {
     }
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
-    if (di.sl.isRegistered<SmartReplyService>()) {
-      di.sl.unregister<SmartReplyService>();
-    }
-
+    
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
     di.sl.registerSingleton<TtsService>(mockTtsService);
@@ -293,8 +272,7 @@ void main() {
     di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
     di.sl.registerSingleton<AdService>(mockAdService);
     di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-    di.sl.registerSingleton<SmartReplyService>(mockSmartReplyService);
-  });
+      });
 
   tearDown(() {
     speakingStreamController.close();
@@ -316,10 +294,7 @@ void main() {
     }
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
-    if (di.sl.isRegistered<SmartReplyService>()) {
-      di.sl.unregister<SmartReplyService>();
-    }
-  });
+      });
 
   Future<void> pumpDialogueRoleplayScreen(
     WidgetTester tester, {
@@ -858,14 +833,12 @@ void main() {
     // -------------------------------------------------------------------------
     // 7. Smart Reply Suggestions & ML Integration (8 tests)
     // -------------------------------------------------------------------------
-    group('7. Smart Reply Suggestions & ML Integration', () {
+    group('7. Smart Reply Suggestions', () {
       testWidgets(
-        '7.1 fetches Smart Replies from SmartReplyService.getSuggestions on dialogue auto-play',
+        '7.1 populates Smart Replies from quest smartReplies / synonyms',
         (tester) async {
           await pumpDialogueRoleplayScreen(tester);
-          verify(
-            () => mockSmartReplyService.getSuggestions(),
-          ).called(greaterThanOrEqualTo(1));
+          expect(find.byType(SmartReplyChip), findsWidgets);
         },
       );
 
@@ -909,7 +882,7 @@ void main() {
       );
 
       testWidgets(
-        '7.5 autoplay prioritizes quest authored synonyms/smartReplies before ML replies',
+        '7.5 displays authored quest smartReplies',
         (tester) async {
           final priorityQuest = createQuest(
             smartReplies: const ['Sure, it is right around the corner.'],
@@ -924,17 +897,13 @@ void main() {
       );
 
       testWidgets(
-        '7.6 deduplicates replies between quest acceptedSynonyms and ML replies',
+        '7.6 falls back to acceptedSynonyms when smartReplies is null',
         (tester) async {
-          when(
-            () => mockSmartReplyService.getSuggestions(),
-          ).thenAnswer((_) async => ['Sure, it is right around the corner.']);
-
-          final dedupeQuest = createQuest(
+          final fallbackQuest = createQuest(
             smartReplies: null,
             acceptedSynonyms: const ['Sure, it is right around the corner.'],
           );
-          final state = testLoadedState.copyWith(quests: [dedupeQuest]);
+          final state = testLoadedState.copyWith(quests: [fallbackQuest]);
           await pumpDialogueRoleplayScreen(tester, state: state);
 
           expect(
@@ -948,9 +917,6 @@ void main() {
       testWidgets(
         '7.7 handles empty smart replies gracefully without crashing',
         (tester) async {
-          when(
-            () => mockSmartReplyService.getSuggestions(),
-          ).thenAnswer((_) async => []);
           final noRepliesQuest = createQuest(
             smartReplies: null,
             acceptedSynonyms: null,
@@ -959,16 +925,6 @@ void main() {
           await pumpDialogueRoleplayScreen(tester, state: state);
 
           expect(tester.takeException(), isNull);
-        },
-      );
-
-      testWidgets(
-        '7.8 clears SmartReplyService conversation on initial question (index 0)',
-        (tester) async {
-          await pumpDialogueRoleplayScreen(tester);
-          verify(
-            () => mockSmartReplyService.clearConversation(),
-          ).called(greaterThanOrEqualTo(1));
         },
       );
     });
@@ -1150,22 +1106,6 @@ void main() {
         },
       );
 
-      testWidgets(
-        '10.2 submitting correct evaluation adds chosen reply to SmartReplyService conversation context',
-        (tester) async {
-          await pumpDialogueRoleplayScreen(tester);
-          final overlay = tester.widget<SpeakToConfirmOverlay>(
-            find.byKey(const Key('dialogue_roleplay_speak_confirm_overlay')),
-          );
-          overlay.onConfirmed();
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 600));
-
-          verify(
-            () => mockSmartReplyService.addMessage(any(), isLocalUser: true),
-          ).called(1);
-        },
-      );
 
       testWidgets(
         '10.3 submitting wrong evaluation dispatches SubmitAnswer(false), plays wrong sound & haptic',

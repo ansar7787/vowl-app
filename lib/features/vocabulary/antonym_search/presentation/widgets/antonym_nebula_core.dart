@@ -1,4 +1,3 @@
-import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -73,47 +72,23 @@ class AntonymNebulaCore extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Builder(
-                        builder: (context) {
-                          final cleanWord = word.trim().toLowerCase();
-                          final entry =
-                              PhotoVocabularyDictionary.dictionary[cleanWord];
-                          return Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    word.toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: Theme.of(
-                                        context,
-                                      ).colorScheme.onSurface,
-                                      letterSpacing: 0.8,
-                                    ),
-                                  ),
-                                ),
-                                if (entry?.ipa != null) ...[
-                                  SizedBox(height: 3.h),
-                                  Text(
-                                    entry!.ipa!,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.5.sp,
-                                      color: color.withValues(alpha: 0.85),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12.w),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            word.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurface,
+                              letterSpacing: 0.8,
                             ),
-                          );
-                        },
+                          ),
+                        ),
                       ),
                     ],
                   ),

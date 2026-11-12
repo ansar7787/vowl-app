@@ -101,38 +101,10 @@ void main() {
           },
         ),
         GoRoute(
-          path: AppRouter.photoVocabularyRoute,
-          builder: (context, _) {
-            navigatedRoutes.add(AppRouter.photoVocabularyRoute);
-            return const Scaffold(body: Text('Photo Vocab Screen'));
-          },
-        ),
-        GoRoute(
-          path: AppRouter.scanAndLearnRoute,
-          builder: (context, _) {
-            navigatedRoutes.add(AppRouter.scanAndLearnRoute);
-            return const Scaffold(body: Text('Scan & Learn Screen'));
-          },
-        ),
-        GoRoute(
           path: AppRouter.translateRoute,
           builder: (context, _) {
             navigatedRoutes.add(AppRouter.translateRoute);
             return const Scaffold(body: Text('Translate Screen'));
-          },
-        ),
-        GoRoute(
-          path: AppRouter.wordSnapRoute,
-          builder: (context, _) {
-            navigatedRoutes.add(AppRouter.wordSnapRoute);
-            return const Scaffold(body: Text('Word Snap Screen'));
-          },
-        ),
-        GoRoute(
-          path: AppRouter.wordMixerRoute,
-          builder: (context, _) {
-            navigatedRoutes.add(AppRouter.wordMixerRoute);
-            return const Scaffold(body: Text('Word Mixer Screen'));
           },
         ),
       ],
@@ -158,7 +130,7 @@ void main() {
     );
   }
 
-  group('Piece 8: ToolsStrip Core Rendering & Architecture Tests', () {
+  group('ToolsStrip Core Rendering & Architecture Tests', () {
     testWidgets(
       'renders 2 Swiss Horizon cards: Daily Words and Translate',
       (tester) async {
@@ -177,41 +149,9 @@ void main() {
         expect(find.text('OFFLINE'), findsOneWidget);
       },
     );
-
-    testWidgets('renders 2-column Bento row: Photo Vocab & Scan & Learn', (
-      tester,
-    ) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      // Cell 1: Photo Vocab
-      expect(find.text('Photo Vocab'), findsOneWidget);
-      expect(find.text('AI Camera'), findsOneWidget);
-      expect(find.text('AI VISION'), findsOneWidget);
-
-      // Cell 2: Scan & Learn
-      expect(find.text('Scan & Learn'), findsOneWidget);
-      expect(find.text('Text Reader'), findsOneWidget);
-      expect(find.text('OCR SCAN'), findsOneWidget);
-    });
-
-    testWidgets('renders Arcade Vault strip with speed word games hidden', (
-      tester,
-    ) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      expect(find.text('ARCADE VAULT'), findsOneWidget);
-      expect(find.text('3 GAMES'), findsOneWidget);
-      expect(
-        find.text('Speed vocabulary & anagram challenges'),
-        findsOneWidget,
-      );
-      expect(find.text('Unfold +2'), findsOneWidget);
-    });
   });
 
-  group('Piece 8: ToolsStrip Navigation & Inline Expansion Tests', () {
+  group('ToolsStrip Navigation Tests', () {
     testWidgets('tapping Daily Words navigates to dailyWordsRoute', (
       tester,
     ) async {
@@ -235,70 +175,9 @@ void main() {
 
       expect(navigatedRoutes, contains(AppRouter.translateRoute));
     });
-
-    testWidgets('tapping Photo Vocab navigates to photoVocabularyRoute', (
-      tester,
-    ) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Photo Vocab'));
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains(AppRouter.photoVocabularyRoute));
-    });
-
-    testWidgets('tapping Scan & Learn navigates to scanAndLearnRoute', (
-      tester,
-    ) async {
-      await tester.pumpWidget(createSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Scan & Learn'));
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains(AppRouter.scanAndLearnRoute));
-    });
-
-    testWidgets(
-      'tapping Unfold +2 expands and reveals inline bento cells for Word Snap and Word Mixer',
-      (tester) async {
-        await tester.pumpWidget(createSubject());
-        await tester.pumpAndSettle();
-
-        // Tap unfold
-        await tester.tap(find.text('Unfold +2'));
-        await tester.pumpAndSettle();
-
-        expect(find.text('ACTIVE'), findsOneWidget);
-        expect(find.text('Fold'), findsOneWidget);
-
-        // Now Word Snap and Word Mixer exist as expanded bento sub-cells
-        expect(find.text('Word Snap'), findsOneWidget);
-        expect(find.text('Word Mixer'), findsOneWidget);
-        expect(find.text('MEMORY MATCH'), findsOneWidget);
-        expect(find.text('ANAGRAM SPRINT'), findsOneWidget);
-
-        // Tap Fold to collapse
-        await tester.ensureVisible(find.text('Fold'));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text('Fold'));
-        await tester.pumpAndSettle();
-        expect(find.text('Unfold +2'), findsOneWidget);
-
-        // Re-unfold and tap Word Snap to test navigation
-        await tester.tap(find.text('Unfold +2'));
-        await tester.pumpAndSettle();
-        await tester.ensureVisible(find.text('Word Snap'));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text('Word Snap'));
-        await tester.pumpAndSettle();
-        expect(navigatedRoutes, contains(AppRouter.wordSnapRoute));
-      },
-    );
   });
 
-  group('Piece 8: ToolsStrip Small Screen & Accessibility Robustness', () {
+  group('ToolsStrip Small Screen & Accessibility Robustness', () {
     testWidgets(
       'renders cleanly on 320dp small screen (iPhone SE) without overflow',
       (tester) async {

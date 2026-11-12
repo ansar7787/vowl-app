@@ -209,13 +209,6 @@ void main() {
               },
             ),
             GoRoute(
-              path: AppRouter.reviewMistakesRoute,
-              builder: (context, state) {
-                navigatedRoutes.add(AppRouter.reviewMistakesRoute);
-                return const Scaffold(body: Text('Review Mistakes Page'));
-              },
-            ),
-            GoRoute(
               path: AppRouter.levelRoute,
               builder: (context, state) {
                 navigatedRoutes.add(AppRouter.levelRoute);
@@ -572,7 +565,7 @@ void main() {
     });
   });
 
-  group('Group 6: Learning Report & Review Mistakes Feature Cards', () {
+  group('Group 6: Learning Report Feature Card', () {
     testWidgets(
       'renders Learning Report and tapping pushes progressDashboardRoute',
       (tester) async {
@@ -589,22 +582,6 @@ void main() {
         ).called(greaterThanOrEqualTo(1));
       },
     );
-
-    testWidgets('renders Review & Master', (
-      tester,
-    ) async {
-      await pumpProfileScreen(tester);
-
-      final reviewFinder = find.text('Review & Master');
-      expect(reviewFinder, findsOneWidget);
-
-      await scrollToAndTap(tester, reviewFinder);
-
-      expect(navigatedRoutes, contains(AppRouter.reviewMistakesRoute));
-      verify(
-        () => mockHapticService.selection(),
-      ).called(greaterThanOrEqualTo(1));
-    });
   });
 
   group('Group 7: Golden Keys Shop Banner', () {

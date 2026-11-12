@@ -939,18 +939,19 @@ void main() {
       },
     );
 
-    testWidgets('7.5 onConfirmed does not log error to ErrorJournalCollector', (
-      tester,
-    ) async {
-      await pumpScreen(tester);
-      final overlay = tester.widget<SpeakToConfirmOverlay>(
-        find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
-      );
-      overlay.onConfirmed();
-      await tester.pumpAndSettle();
+    testWidgets(
+      '7.5 onConfirmed executes cleanly without logging error',
+      (tester) async {
+        await pumpScreen(tester);
+        final overlay = tester.widget<SpeakToConfirmOverlay>(
+          find.byKey(const Key('speak_opposite_speak_to_confirm_overlay')),
+        );
+        overlay.onConfirmed();
+        await tester.pumpAndSettle();
 
-      verifyNever(() => mockAppLogger.error(any()));
-    });
+        verifyNever(() => mockAppLogger.error(any()));
+      },
+    );
 
     testWidgets(
       '7.6 subsequent submission calls while answered are locked out',

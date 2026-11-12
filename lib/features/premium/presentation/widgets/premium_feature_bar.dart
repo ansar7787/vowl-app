@@ -231,30 +231,12 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
               children: [
                 _buildListFeature(
                   context,
-                  icon: LucideIcons.bot,
+                  icon: LucideIcons.languages,
                   title: context.tr(
-                    'premium.feature_smart_reply',
-                    fallback: 'AI Smart Reply',
+                    'premium.feature_offline_translator',
+                    fallback: 'Offline 50+ Languages Translator',
                   ),
                   color: IllustrationColors.brightBlue,
-                ),
-                _buildListFeature(
-                  context,
-                  icon: LucideIcons.camera,
-                  title: context.tr(
-                    'premium.feature_photo_vocab',
-                    fallback: 'Photo Vocabulary',
-                  ),
-                  color: AppColors.teal500,
-                ),
-                _buildListFeature(
-                  context,
-                  icon: LucideIcons.scan,
-                  title: context.tr(
-                    'premium.feature_scan_learn',
-                    fallback: 'Scan & Learn',
-                  ),
-                  color: AppColors.indigo500,
                 ),
                 _buildListFeature(
                   context,

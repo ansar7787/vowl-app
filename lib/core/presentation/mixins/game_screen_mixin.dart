@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -167,28 +166,6 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     hapticService.error();
     soundService.playWrong();
 
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: gameType.name,
-        question:
-            quest.targetWord ??
-            quest.sentence ??
-            quest.question ??
-            quest.textToSpeak ??
-            getCompletionTitle(context),
-        userAnswer: userAnswer ?? '[Timeout]',
-        correctAnswer:
-            quest.correctAnswer ??
-            (quest.options != null && quest.options!.isNotEmpty
-                ? quest.options![quest.correctAnswerIndex ?? 0]
-                : ''),
-        level: level,
-        options: quest.options,
-      );
-    }
     isAnsweredNotifier.value = true;
     isCorrectNotifier.value = false;
   }

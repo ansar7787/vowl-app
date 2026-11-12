@@ -29,7 +29,6 @@ import 'package:vowl/features/home/presentation/widgets/continue_learning_card.d
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
-import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
 import 'package:vowl/features/home/presentation/widgets/weekly_league_reward_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
@@ -477,7 +476,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context.push(AppRouter.libraryRoute),
                                 ),
                                 BentoArena(user: user, collapsed: true),
-                                ReviewMistakesHomeCard(user: user),
                               ],
                             ),
                           ),

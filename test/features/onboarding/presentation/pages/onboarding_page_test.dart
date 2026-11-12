@@ -110,7 +110,7 @@ void main() {
 
         // Slide 2
         expect(find.text('2 of 5'), findsOneWidget);
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));

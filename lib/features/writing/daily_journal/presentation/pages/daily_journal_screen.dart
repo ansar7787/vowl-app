@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
@@ -14,7 +13,6 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_instruction.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_prompt.dart';
@@ -209,19 +207,6 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
     if (!GibberishDetectorService.isNaturalSentence(context, rawText)) {
       _isSubmitting.value = false;
-      return;
-    }
-
-    // ML Kit Language ID Gibberish Check
-    final langIdService = di.sl<LanguageIdService>();
-    final language = await langIdService.identifyLanguage(text);
-
-    if (!mounted) return;
-
-    if (language != 'en') {
-      _handleValidationFailure(
-        "Your answer must be written in English. Please write a natural sentence!",
-      );
       return;
     }
 

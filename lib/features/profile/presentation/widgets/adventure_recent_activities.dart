@@ -174,47 +174,11 @@ class AdventureRecentActivities extends StatelessWidget {
       );
     }
 
-    if (gameTypeRaw == 'word_snap' || gameTypeRaw == 'wordSnap') {
-      return const _ActivityMeta(
-        title: 'Word Snap',
-        icon: LucideIcons.zap,
-        color: AppColors.rose500,
-      );
-    }
-
-    if (gameTypeRaw == 'word_mixer' || gameTypeRaw == 'wordMixer') {
-      return const _ActivityMeta(
-        title: 'Word Mixer',
-        icon: LucideIcons.shuffle,
-        color: AppColors.violet500,
-      );
-    }
-
     if (gameTypeRaw == 'daily_words' || gameTypeRaw == 'dailyWords') {
       return const _ActivityMeta(
         title: 'Daily Words',
         icon: LucideIcons.calendarCheck,
         color: AppColors.teal500,
-      );
-    }
-
-    if (gameTypeRaw == 'photo_vocab' ||
-        gameTypeRaw == 'PhotoVocabulary' ||
-        gameTypeRaw == 'photoVocabulary') {
-      return const _ActivityMeta(
-        title: 'Photo Vocabulary',
-        icon: LucideIcons.camera,
-        color: AppColors.amber500,
-      );
-    }
-
-    if (gameTypeRaw == 'scan_and_learn' ||
-        gameTypeRaw == 'ScanAndLearn' ||
-        gameTypeRaw == 'scanAndLearn') {
-      return const _ActivityMeta(
-        title: 'Scan & Learn',
-        icon: LucideIcons.scanLine,
-        color: AppColors.emerald500,
       );
     }
 

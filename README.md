@@ -64,13 +64,11 @@ Demo video: [Watch on YouTube](PASTE_YOUR_VIDEO_LINK_HERE)
 - **Hall of Fame**: Visual celebration showcasing past weekly league champions.
 - **Transparent Progression Logic**: Deterministic, unmocked ranking (XP primary, Streak secondary, Last Active timestamp tiebreaker).
 
-### On-Device Vision Learning Studio
+### Offline Multi-Language Translation Suite
 
-- **100% Free On-Device Machine Learning**: Powered by Google ML Kit (Text Recognition & Image Labeling) with **$0.00 cloud API costs** and complete offline resilience.
-- **Scan & Learn**: Scan any book, sign, menu, or receipt with instant interactive word-tap, CEFR classification, and pronunciation audio.
-- **Photo Vocabulary**: 210 curated daily photo missions with zero artificial repetition.
-- **Word Bank Integration**: Save any scanned word directly into the user's personal review deck (`DailyWordsService`).
-- **Freemium Scan Quota**: 3 free scans per day; rewarded video ads for extra scans; unlimited scans for VIP subscribers.
+- **100% Free On-Device Machine Learning**: Powered by Google ML Kit Translation (`google_mlkit_translation`) with **$0.00 cloud API costs** and complete offline resilience across 50+ language pairs.
+- **Instant Language Translation**: Full offline translation and vocabulary lookup for multi-language learners.
+- **Word Bank Integration**: Save any translated or discovered word directly into the user's personal review deck (`DailyWordsService`).
 
 ### Viral Referral & VIP Extension Engine
 
@@ -117,8 +115,8 @@ Demo video: [Watch on YouTube](PASTE_YOUR_VIDEO_LINK_HERE)
 
 ### Explore & Utilities Hub
 
-- Daily curated 5-word accelerator, AI vision camera (Photo Vocab), and OCR document inspector (Scan & Learn).
-- Offline 50+ languages translation suite and digital ink handwriting recognition.
+- Daily curated 5-word accelerator (`DailyWordsService`).
+- Offline 50+ languages translation suite powered by Google ML Kit Translation.
 
 ### Accounts and monetization
 
@@ -157,10 +155,8 @@ lib/
 │   ├── home/              # Bento dashboard, quick stats, daily goal
 │   ├── leaderboard/       # Dual-timeframe rankings, leagues, Hall of Fame
 │   ├── monetization/      # IAP repositories, paywalls, coin packs
-│   ├── photo_vocabulary/  # On-device visual object missions (ML Kit)
 │   ├── profile/           # Streaks, trophy room, settings
 │   ├── referral/          # Viral invite engine, VIP extension
-│   └── scan_and_learn/    # On-device real-world OCR & word inspector (ML Kit)
 ├── config/                # Environment variables, keys
 └── main.dart              # Entry point and DI setup
 extensions/                # Infrastructure-as-Code for Firebase Extensions
@@ -319,4 +315,3 @@ flutter test
 
 <!-- Only after you verify your rules block client writes to entitlement fields: add to the Security Rules list -->
 - Clients cannot write entitlement fields such as Premium; only the Cloud Function can.
-

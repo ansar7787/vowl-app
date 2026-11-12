@@ -13,8 +13,6 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_instruction.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_vortex_sentence.dart';
@@ -223,18 +221,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
       hapticService.error();
       soundService.playWrong();
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: expectedWord,
-          userAnswer: _selectedWord.value ?? '[None]',
-          correctAnswer: expectedWord,
-          level: widget.level,
-        );
-      }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }

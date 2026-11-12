@@ -7,10 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
@@ -161,21 +159,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
       _handleValidationFailure(
         "Keep writing! A valid answer requires at least 4 words.",
         type: CustomSnackBarType.info,
-      );
-      return;
-    }
-
-    // --- ML KIT LANGUAGE ID CHECK ---
-    final languageIdService = di.sl<LanguageIdService>();
-    final String languageCode = await languageIdService.identifyLanguage(
-      rawText,
-    );
-
-    if (!mounted) return;
-
-    if (languageCode != 'en') {
-      _handleValidationFailure(
-        "Your answer must be written in English. Please write a natural sentence!",
       );
       return;
     }

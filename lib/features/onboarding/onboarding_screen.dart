@@ -75,12 +75,12 @@ const _slides = <_Slide>[
     ],
   ),
   _Slide(
-    headline: 'Turn the World Into Flashcards',
+    headline: 'Translate & Learn 50+ Languages',
     subtitle:
-        'Point your camera at real-world items or book pages to learn words anywhere.',
+        'Instant offline translations and daily word accelerators to expand your vocabulary anywhere.',
     features: [
-      _Feature(Icons.photo_camera_rounded, 'Camera Scan'),
-      _Feature(Icons.menu_book_rounded, 'Book Flashcards'),
+      _Feature(Icons.translate_rounded, 'Offline Translator'),
+      _Feature(Icons.auto_stories_rounded, 'Daily 5 Words'),
       _Feature(Icons.public_off_rounded, 'Offline Mode'),
     ],
   ),

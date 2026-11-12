@@ -13,8 +13,6 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
@@ -124,32 +122,6 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
       hapticService.error();
       soundService.playWrong();
 
-      final authState = context.read<AuthBloc>().state;
-      final speakingState = context.read<SpeakingBloc>().state;
-      String actualQuestion = 'Yes/No Listening Match';
-      if (speakingState is SpeakingLoaded &&
-          speakingState.currentQuestOrNull != null) {
-        final q = speakingState.currentQuestOrNull!;
-        actualQuestion =
-            q.targetWord ??
-            q.sentence ??
-            q.textToSpeak ??
-            q.question ??
-            q.prompt ??
-            'Yes/No Listening Match';
-      }
-
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: actualQuestion,
-          userAnswer: chosenMatch ? 'Yes' : 'No',
-          correctAnswer: doTheyMatch ? 'Yes' : 'No',
-          level: widget.level,
-        );
-      }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     } else {
@@ -208,18 +180,6 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
       hapticService.error();
       soundService.playWrong();
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: expectedText,
-          userAnswer: '[Failed Self-Evaluation]',
-          correctAnswer: expectedText,
-          level: widget.level,
-        );
-      }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }

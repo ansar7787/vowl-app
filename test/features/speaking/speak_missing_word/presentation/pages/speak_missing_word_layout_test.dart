@@ -890,7 +890,7 @@ void main() {
     });
 
     testWidgets(
-      '7.4 records error in ErrorJournalCollector for authenticated user',
+      '7.4 wrong answer execution completes cleanly',
       (tester) async {
         await pumpScreen(tester);
         await tester.tap(find.byKey(const Key('speak_missing_word_option_1')));

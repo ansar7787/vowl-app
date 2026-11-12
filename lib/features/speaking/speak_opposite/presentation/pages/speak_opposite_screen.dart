@@ -12,8 +12,6 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -122,31 +120,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
       hapticService.error();
       soundService.playWrong();
 
-      final authState = context.read<AuthBloc>().state;
-      final speakingState = context.read<SpeakingBloc>().state;
-      String actualQuestion = 'Speak Opposite';
-      if (speakingState is SpeakingLoaded &&
-          speakingState.currentQuestOrNull != null) {
-        final q = speakingState.currentQuestOrNull!;
-        actualQuestion =
-            q.targetWord ??
-            q.sentence ??
-            q.textToSpeak ??
-            q.question ??
-            'Speak Opposite';
-      }
-
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: actualQuestion,
-          userAnswer: '[Failed Antonym/Timer]',
-          correctAnswer: expectedText,
-          level: widget.level,
-        );
-      }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
