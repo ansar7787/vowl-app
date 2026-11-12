@@ -1949,21 +1949,21 @@ class _CategoryFilterDock extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            context.tr('common.see_all', fallback: 'DEEP DIVE'),
+                            context.tr('common.see_all', fallback: 'VIEW ALL'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w800,
                               color: GameHelper.getCategoryColor(
                                 selectedCategory!.name,
                               ),
-                              letterSpacing: 0.8,
+                              letterSpacing: 0.6,
                             ),
                           ),
                           SizedBox(width: 3.w),
                           Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            size: 9.r,
+                            LucideIcons.chevronRight,
+                            size: 10.r,
                             color: GameHelper.getCategoryColor(
                               selectedCategory!.name,
                             ),
@@ -2014,8 +2014,8 @@ class _CategoryFilterDock extends StatelessWidget {
                           ),
                           SizedBox(width: 3.w),
                           Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            size: 8.r,
+                            LucideIcons.chevronRight,
+                            size: 10.r,
                             color: AppColors.blue500,
                           ),
                         ],
@@ -2326,7 +2326,7 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          '${titleText.toUpperCase()} REALM',
+                          titleText.toUpperCase(),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -2362,7 +2362,7 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    '${stats.earnedStars} ⭐ earned • Serpentine Path',
+                    '${stats.earnedStars} ⭐ earned • Tap any level to play',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -2394,17 +2394,17 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      Icons.arrow_back_rounded,
+                      LucideIcons.arrowLeft,
                       size: 13.r,
                       color: isDark ? Colors.white70 : AppColors.slate700,
                     ),
                     SizedBox(width: 4.w),
                     Text(
-                      'All Realms',
+                      'All Topics',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.5.sp,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white70 : AppColors.slate700,
                       ),
                     ),

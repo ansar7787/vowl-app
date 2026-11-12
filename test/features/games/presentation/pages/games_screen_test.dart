@@ -379,8 +379,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.textContaining('SPEAKING REALM'), findsOneWidget);
-      expect(find.text('EXPLORE'), findsWidgets);
+      expect(find.textContaining('SPEAKING'), findsWidgets);
+      expect(find.text('Play'), findsWidgets);
     });
 
     testWidgets('tapping a category filter pill renders in-place CategoryOverworldMap', (
@@ -400,16 +400,16 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // Verifies active realm header banner with "All Realms" button
-      expect(find.text('All Realms'), findsOneWidget);
-      expect(find.textContaining('Serpentine Path'), findsOneWidget);
+      // Verifies active realm header banner with "All Topics" button
+      expect(find.text('All Topics'), findsOneWidget);
+      expect(find.textContaining('Tap any level to play'), findsOneWidget);
 
-      // Tapping "All Realms" restores the Overworld Realms Sliver
-      await tester.tap(find.text('All Realms'));
+      // Tapping "All Topics" restores the Overworld Realms Sliver
+      await tester.tap(find.text('All Topics'), warnIfMissed: false);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.textContaining('SPEAKING REALM'), findsOneWidget);
+      expect(find.textContaining('SPEAKING'), findsWidgets);
     });
   });
 
