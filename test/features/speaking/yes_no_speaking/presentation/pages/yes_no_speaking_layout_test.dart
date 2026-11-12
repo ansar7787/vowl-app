@@ -1138,7 +1138,7 @@ void main() {
     });
 
     testWidgets(
-      '8.5 onSkipped records error in ErrorJournalCollector when authenticated',
+      '8.6 onSkipped sets isCorrectNotifier to false',
       (tester) async {
         await pumpScreen(tester);
         await tester.tap(find.byKey(const Key('yes_no_speaking_gate_no')));

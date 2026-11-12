@@ -21,7 +21,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -58,7 +57,6 @@ class MockAdService extends Mock implements AdService {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class MockLanguageIdService extends Mock implements LanguageIdService {}
 
 class FakeWritingEvent extends Fake implements WritingEvent {}
 
@@ -80,7 +78,6 @@ void main() {
   late MockAnalyticsService mockAnalyticsService;
   late MockAdService mockAdService;
   late MockNetworkInfo mockNetworkInfo;
-  late MockLanguageIdService mockLanguageIdService;
   late StreamController<WritingState> writingStreamController;
 
   const sampleQuest1 = WritingQuest(
@@ -156,7 +153,6 @@ void main() {
     mockAnalyticsService = MockAnalyticsService();
     mockAdService = MockAdService();
     mockNetworkInfo = MockNetworkInfo();
-    mockLanguageIdService = MockLanguageIdService();
 
     writingStreamController = StreamController<WritingState>.broadcast();
 
@@ -213,10 +209,6 @@ void main() {
     // Network mock
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
 
-    // Language ID mock
-    when(
-      () => mockLanguageIdService.identifyLanguage(any()),
-    ).thenAnswer((_) async => 'en');
 
     // Writing Bloc default state
     when(() => mockWritingBloc.state).thenReturn(testLoadedState);
@@ -233,7 +225,6 @@ void main() {
     di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
     di.sl.registerSingleton<AdService>(mockAdService);
     di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-    di.sl.registerSingleton<LanguageIdService>(mockLanguageIdService);
 
     VowlMotion.lowAnimationModeOverride.value = true;
   });
@@ -510,18 +501,14 @@ void main() {
     );
 
     testWidgets(
-      'submitting non-English text triggers language warning and strike count',
+      'submitting non-English text triggers language warning',
       (tester) async {
-        when(
-          () => mockLanguageIdService.identifyLanguage(any()),
-        ).thenAnswer((_) async => 'es');
-
         await pumpScreen(tester, level: 2);
 
         final textField = find.byKey(const Key('short_answer_text_field'));
         await tester.enterText(
           textField,
-          'Las bacterias sobreviven sin luz solar.',
+          'The bacteria survive deep without sunlight because of chemosynthesis мир.',
         );
         await tester.pumpAndSettle();
 
@@ -530,7 +517,7 @@ void main() {
 
         expect(
           find.text(
-            'Your answer must be written in English. Please write a natural sentence! (2 tries left)',
+            'Your answer must be written in English. Please write a natural sentence!',
           ),
           findsOneWidget,
         );

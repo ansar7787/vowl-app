@@ -60,16 +60,7 @@ service cloud.firestore {
     //   - lastDuelDate: timestamp (optional) - timestamp of last 1v1 staking duel played
     //   - duelWins: int (optional, default 0) - lifetime 1v1 staking duel victories
     //   - duelLosses: int (optional, default 0) - lifetime 1v1 staking duel defeats
-    //
-    // Subcollection: users/{userId}/errorJournal/{errorId}
-    // Fields:
-    //   - gameType: string (< 100 chars)
-    //   - question: string (< 1000 chars)
-    //   - userAnswer: string (< 1000 chars)
-    //   - correctAnswer: string (< 1000 chars)
-    //   - level: dynamic
-    //   - options: list (< 20 items)
-    //   - timestamp: timestamp (server timestamp required)
+
     //
     // Collection: referrals/{referralCode}
     // Document ID: {referralCode} (e.g. 'VOWL-7K9A', uppercase alphanumeric with hyphens, 6-16 chars)
@@ -408,26 +399,6 @@ service cloud.firestore {
 
       // DELETE: Only own document
       allow delete: if isOwner(userId);
-      
-      // ERROR JOURNAL: Allow users to log and clear their wrong answers
-      match /errorJournal/{errorId} {
-        // Users can read and dismiss (delete) their own logs
-        allow read, delete: if isOwner(userId);
-        
-        // Strict create and update rules to prevent spamming huge payloads
-        // Update is necessary for deduplication (bumping timestamp on existing mistakes)
-        allow create, update: if isOwner(userId)
-          // FIELD WHITELIST: Prevents injecting arbitrary junk fields to inflate document size
-          && request.resource.data.keys().hasOnly(['gameType', 'question', 'userAnswer', 'correctAnswer', 'level', 'timestamp', 'options'])
-          // MAXIMUM payload length for strings and lists (Prevents storage DoS)
-          && (!('gameType' in request.resource.data) || (request.resource.data.gameType is string && request.resource.data.gameType.size() < 100))
-          && (!('question' in request.resource.data) || (request.resource.data.question is string && request.resource.data.question.size() < 1000))
-          && (!('userAnswer' in request.resource.data) || (request.resource.data.userAnswer is string && request.resource.data.userAnswer.size() < 1000))
-          && (!('correctAnswer' in request.resource.data) || (request.resource.data.correctAnswer is string && request.resource.data.correctAnswer.size() < 1000))
-          && (!('options' in request.resource.data) || (request.resource.data.options is list && request.resource.data.options.size() < 20))
-          // Ensures the timestamp is a true server-side timestamp
-          && request.resource.data.timestamp == request.time;
-      }
     }
 
     // ─── VIRAL REFERRAL ENGINE & AMBASSADOR CUP ───────────────────────

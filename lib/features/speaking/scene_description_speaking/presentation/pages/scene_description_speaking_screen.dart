@@ -10,13 +10,11 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
@@ -165,25 +163,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
       hapticService.error();
       try {
         soundService.playWrong();
-      } catch (_) {}
-
-      try {
-        final authState = context.read<AuthBloc>().state;
-        if (authState.status == AuthStatus.authenticated &&
-            authState.user != null) {
-          ErrorJournalCollector.record(
-            userId: authState.user!.id,
-            gameType: widget.gameType.name,
-            question: _hotspotPrompts.length > _activeHotspot.value
-                ? _hotspotPrompts[_activeHotspot.value]
-                : 'Scene Hotspot',
-            userAnswer: '[Failed Self-Evaluation]',
-            correctAnswer: _hotspotLabels.length > _activeHotspot.value
-                ? _hotspotLabels[_activeHotspot.value]
-                : '',
-            level: widget.level,
-          );
-        }
       } catch (_) {}
 
       isAnsweredNotifier.value = true;

@@ -17,9 +17,6 @@ import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
 import 'package:vowl/features/daily_words/daily_words_routes.dart';
 import 'package:vowl/features/translation/translation_routes.dart';
-import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
-import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
-import 'package:vowl/features/daily_challenges/handwriting/presentation/pages/handwriting_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
 
 /// Central declarative application router configuring all modular feature routes,
@@ -61,8 +58,6 @@ class AppRouter {
   static const String adventureXPRoute = '/xp-details';
   static const String questCoinsRoute = '/coins-details';
   static const String questSequenceRoute = '/quest-sequence';
-  static const String scanAndLearnRoute = '/scan-and-learn';
-  static const String photoVocabularyRoute = '/photo-vocabulary';
   static const String referralRoute = '/referral';
   static const String arenaRoute = '/arena';
   static const String duelRoute = '/duel/:roomCode';
@@ -72,13 +67,8 @@ class AppRouter {
   static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;
   static const String wordBankRoute = DailyWordsRoutes.wordBankRoute;
 
-  static const String reviewMistakesRoute = '/review-mistakes';
-
   // Translation
   static const String translateRoute = '/translate';
-  static const String wordSnapRoute = '/word-snap';
-  static const String wordMixerRoute = '/word-mixer';
-  static const String handwritingRoute = '/handwriting';
 
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';
@@ -106,18 +96,6 @@ class AppRouter {
       ...DailyWordsRoutes.routes,
       ...translationRoutes,
 
-      GoRoute(
-        path: wordSnapRoute,
-        builder: (context, state) => const WordSnapScreen(level: 1),
-      ),
-      GoRoute(
-        path: wordMixerRoute,
-        builder: (context, state) => const WordMixerScreen(),
-      ),
-      GoRoute(
-        path: handwritingRoute,
-        builder: (context, state) => const HandwritingScreen(level: 1),
-      ),
       GoRoute(
         path: duelRoute,
         builder: (context, state) {

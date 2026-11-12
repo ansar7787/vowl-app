@@ -12,8 +12,6 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
@@ -62,7 +60,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   final ScrollController _scrollController = ScrollController();
 
   List<String> _acceptedSyns = [];
-  SpeakingQuest? _currentQuest;
 
   @override
   void initState() {
@@ -126,21 +123,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
       hapticService.error();
       soundService.playWrong();
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null &&
-          _currentQuest != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: _currentQuest!.textToSpeak ?? 'Unknown',
-          userAnswer: '[Failed Synonym]',
-          correctAnswer:
-              _currentQuest!.correctAnswer ??
-              (_acceptedSyns.isNotEmpty ? _acceptedSyns.first : ''),
-          level: widget.level,
-        );
-      }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
@@ -206,7 +188,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
 
         String expectedText = "";
         if (quest != null) {
-          _currentQuest = quest;
           _extractTargetWord(
             quest.textToSpeak ?? "",
             quest.acceptedSynonyms ?? [],

@@ -69,7 +69,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 3
@@ -120,7 +120,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 3
@@ -169,7 +169,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
@@ -215,7 +215,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
@@ -261,7 +261,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
@@ -307,7 +307,7 @@ void main() {
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
+        expect(find.text('Translate & Learn 50+ Languages'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
@@ -435,8 +435,8 @@ void main() {
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Camera Scan'), findsOneWidget);
-      expect(find.text('Book Flashcards'), findsOneWidget);
+      expect(find.text('Offline Translator'), findsOneWidget);
+      expect(find.text('Daily 5 Words'), findsOneWidget);
       expect(find.text('Offline Mode'), findsOneWidget);
 
       // Slide 3 features
@@ -563,7 +563,7 @@ void main() {
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Camera Scan'), findsOneWidget);
+      expect(find.text('Offline Translator'), findsOneWidget);
 
       // Swipe back to Slide 1
       await tester.tap(find.bySemanticsLabel('Go to slide 1'));

@@ -421,7 +421,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                       if (isCorrect) {
                         onBlindSubmit(true);
                       } else {
-                        controller.text = option; // For ErrorJournalCollector
+                        controller.text = option;
                         onBlindSubmit(false);
                       }
                     },

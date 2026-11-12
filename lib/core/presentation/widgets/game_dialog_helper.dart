@@ -187,33 +187,8 @@ class GameDialogHelper {
             description: desc,
             buttonText: resolvedButtonText,
             starsListener: GamificationRepositoryImpl.lastEarnedStars,
-            onSecondaryPressed: mistakesMade > 0
-                ? () {
-                    final router = GoRouter.of(context);
-                    Navigator.of(dialogCtx).pop();
-                    if (context.mounted) {
-                      context.read<AuthBloc>().add(const AuthRefreshUser());
-                      try {
-                        if (router.canPop()) {
-                          router.pop(popResult);
-                        } else {
-                          Navigator.of(context).pop(popResult);
-                        }
-                      } catch (_) {
-                        Navigator.of(context).pop(popResult);
-                      }
-                      Future.delayed(const Duration(milliseconds: 300), () {
-                        router.push('/review-mistakes');
-                      });
-                    }
-                  }
-                : null,
-            secondaryButtonText: mistakesMade > 0
-                ? context.tr(
-                    'games.review_mistakes',
-                    fallback: 'Review & Master',
-                  )
-                : null,
+            onSecondaryPressed: null,
+            secondaryButtonText: null,
             onButtonPressed: () {
               Navigator.of(dialogCtx).pop();
               if (context.mounted) {
@@ -359,22 +334,8 @@ class GameDialogHelper {
           buttonText: resolvedButtonText,
           isSuccess: false,
           isRescueLife: onRestore != null,
-          onSecondaryPressed: () {
-            if (isActionTaken) return;
-            isActionTaken = true;
-            final router = GoRouter.of(context);
-            Navigator.of(dialogCtx).pop(true); // Pop dialog
-            if (context.mounted) {
-              Navigator.of(context).pop(true); // Pop game screen
-              Future.delayed(const Duration(milliseconds: 300), () {
-                router.push('/review-mistakes');
-              });
-            }
-          },
-          secondaryButtonText: context.tr(
-            'games.review_mistakes',
-            fallback: 'Review & Master',
-          ),
+          onSecondaryPressed: null,
+          secondaryButtonText: null,
           onButtonPressed: () {
             if (isActionTaken) return;
             isActionTaken = true;

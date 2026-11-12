@@ -32,12 +32,6 @@ import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
-import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
-import 'package:vowl/core/utils/ml_services/text_recognition_service.dart';
-import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
-import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
-import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.dart';
 
@@ -176,30 +170,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());
   sl.registerLazySingleton<DailyWordsService>(() => DailyWordsService());
-  sl.registerLazySingleton<LanguageIdService>(
-    () => LanguageIdService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<SmartReplyService>(
-    () => SmartReplyService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<TextRecognitionService>(
-    () => TextRecognitionService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<DigitalInkService>(
-    () => DigitalInkService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<EntityExtractionService>(
-    () => EntityExtractionService(),
-    dispose: (service) => service.dispose(),
-  );
-  sl.registerLazySingleton<ImageLabelingService>(
-    () => ImageLabelingService(),
-    dispose: (service) => service.dispose(),
-  );
   sl.registerLazySingleton<TranslationService>(
     () => TranslationService(),
     dispose: (service) => service.dispose(),

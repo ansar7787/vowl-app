@@ -16,6 +16,17 @@ class GibberishDetectorService {
     final wordsList = rawText.split(RegExp(r'\s+'));
     if (wordsList.isEmpty) return true;
 
+    // Reject foreign non-Latin scripts (e.g. Cyrillic, Arabic, Devanagari, CJK)
+    if (RegExp(r'[\u0400-\u04FF\u0600-\u06FF\u0900-\u0DFF\u4E00-\u9FFF]').hasMatch(rawText)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Your answer must be written in English. Please write a natural sentence!",
+        type: CustomSnackBarType.warning,
+      );
+      hapticService.selection();
+      return false;
+    }
+
     int wordsWithVowels = 0;
     int maxRepetitions = 0;
     int currentRepetitions = 1;

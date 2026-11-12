@@ -26,13 +26,9 @@ void main() {
       final ids = AppFeatureCatalog.allFeatures.map((f) => f.id).toSet();
       expect(ids.contains('games_hub'), isTrue);
       expect(ids.contains('speaking_pillar'), isTrue);
-      expect(ids.contains('photo_vocab'), isTrue);
-      expect(ids.contains('scan_and_learn'), isTrue);
       expect(ids.contains('offline_translate'), isTrue);
       expect(ids.contains('learning_report'), isTrue);
-      expect(ids.contains('review_mistakes'), isTrue);
       expect(ids.contains('buddy_boutique'), isTrue);
-      expect(ids.contains('handwriting'), isTrue);
       expect(ids.contains('voice_accents'), isTrue);
     });
   });

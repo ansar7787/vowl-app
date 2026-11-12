@@ -69,12 +69,6 @@ dependencies:
   # Google ML Kit (On-Device Intelligence)
   # ===========================================================================
   google_mlkit_translation: ^0.14.0
-  google_mlkit_language_id: ^0.14.0
-  google_mlkit_smart_reply: ^0.14.0
-  google_mlkit_text_recognition: ^0.16.0
-  google_mlkit_digital_ink_recognition: 0.14.0
-  google_mlkit_entity_extraction: ^0.16.0
-  google_mlkit_image_labeling: ^0.15.0
 
   # ===========================================================================
   # Monetization, Subscriptions & Store Engagement
@@ -193,8 +187,6 @@ flutter:
     - assets/curriculum/arena/context_blitz/
     - assets/curriculum/calendar/
     - assets/curriculum/daily_words/
-    - assets/curriculum/daily_challenges/
-    - assets/curriculum/daily_challenges/handwriting/
     - assets/images/mascot/
     - assets/legal/
 
@@ -221,7 +213,3 @@ flutter:
           weight: 600
         - asset: assets/fonts/Spectral-Bold.ttf
           weight: 700
-
-dependency_overrides:
-  google_mlkit_digital_ink_recognition:
-    path: packages/google_mlkit_digital_ink_recognition

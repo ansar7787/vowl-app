@@ -8,10 +8,8 @@ import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
@@ -83,9 +81,6 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     final initialBlocState = context.read<SpeakingBloc>().state;
     if (initialBlocState is SpeakingLoaded &&
         !initialBlocState.answerStatus.isAnswered) {
-      if (initialBlocState.currentIndex == 0) {
-        di.sl<SmartReplyService>().clearConversation();
-      }
       if (VowlMotion.lowAnimationModeOverride.value) {
         _triggerAutoPlay(initialBlocState.currentQuest);
       } else {
@@ -152,32 +147,15 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     if (quest.partnerDialogue != null) {
       soundService.playTts(quest.partnerDialogue!);
 
-      // Fetch suggestions based on the partner's dialogue
-      final smartReplyService = di.sl<SmartReplyService>();
-      smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
-
-      final suggestions = await smartReplyService.getSuggestions();
       final fallbackOptions = quest.smartReplies ?? quest.acceptedSynonyms;
       if (mounted) {
         final List<String> finalReplies = [];
 
-        // 1. Prioritize level-specific authored synonyms first
+        // Prioritize level-specific authored synonyms/replies
         if (fallbackOptions != null && fallbackOptions.isNotEmpty) {
           final List<String> availableSynonyms = List.from(fallbackOptions)
             ..shuffle();
           finalReplies.addAll(availableSynonyms);
-        }
-
-        // 2. Append suggested replies (up to 3) at the end
-        final List<String> mlReplies = suggestions
-            .where(
-              (s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s),
-            )
-            .toList();
-        for (var reply in mlReplies) {
-          if (!finalReplies.contains(reply)) {
-            finalReplies.add(reply);
-          }
         }
 
         _smartReplies.value = finalReplies;
@@ -203,14 +181,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   void _submitVerbalEvaluation(bool nailedIt, SpeakingQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    final responseText = _chosenReply.value.isNotEmpty
-        ? _chosenReply.value
-        : (_acceptedSynonyms.isNotEmpty
-              ? _acceptedSynonyms.first
-              : (quest.sentence ?? "Yes"));
-
+    
     if (nailedIt) {
-      di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
       submitCorrectAnswer();
     } else {
       submitWrongAnswer(quest: quest, userAnswer: '[Failed Dialogue]');
@@ -238,9 +210,6 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
       listener: (context, state) {
         onSpeakingStateChanged(context, state);
         if (state is SpeakingLoaded) {
-          if (state.currentIndex == 0) {
-            di.sl<SmartReplyService>().clearConversation();
-          }
           if (!state.answerStatus.isAnswered) {
             _smartReplies.value = [];
             _chosenReply.value = "";

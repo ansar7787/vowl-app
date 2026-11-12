@@ -25,7 +25,6 @@ import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -68,7 +67,6 @@ class MockAdService extends Mock implements AdService {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class MockLanguageIdService extends Mock implements LanguageIdService {}
 
 class MockAudioRecordingService extends Mock implements AudioRecordingService {}
 
@@ -97,7 +95,6 @@ void main() {
   late MockAnalyticsService mockAnalyticsService;
   late MockAdService mockAdService;
   late MockNetworkInfo mockNetworkInfo;
-  late MockLanguageIdService mockLanguageIdService;
   late MockAudioRecordingService mockAudioRecorder;
   late MockSpeechService mockSpeechService;
   late StreamController<WritingState> writingStreamController;
@@ -186,7 +183,6 @@ void main() {
     mockAnalyticsService = MockAnalyticsService();
     mockAdService = MockAdService();
     mockNetworkInfo = MockNetworkInfo();
-    mockLanguageIdService = MockLanguageIdService();
     mockAudioRecorder = MockAudioRecordingService();
 
     writingStreamController = StreamController<WritingState>.broadcast();
@@ -219,10 +215,6 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    // Language ID
-    when(
-      () => mockLanguageIdService.identifyLanguage(any()),
-    ).thenAnswer((_) async => 'en');
 
     // Audio Recorder
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
@@ -308,7 +300,6 @@ void main() {
     di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
     di.sl.registerSingleton<AdService>(mockAdService);
     di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-    di.sl.registerSingleton<LanguageIdService>(mockLanguageIdService);
     di.sl.registerSingleton<AudioRecordingService>(mockAudioRecorder);
     di.sl.registerSingleton<SpeechService>(mockSpeechService);
 
@@ -328,9 +319,6 @@ void main() {
     }
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
-    if (di.sl.isRegistered<LanguageIdService>()) {
-      di.sl.unregister<LanguageIdService>();
-    }
     if (di.sl.isRegistered<AudioRecordingService>()) {
       di.sl.unregister<AudioRecordingService>();
     }
@@ -685,16 +673,12 @@ void main() {
 
   group('DailyJournalScreen - 4. Language ID & Gibberish Detection', () {
     testWidgets('warns if language is detected as non-English', (tester) async {
-      when(
-        () => mockLanguageIdService.identifyLanguage(any()),
-      ).thenAnswer((_) async => 'es');
-
       await pumpScreen(tester, level: 2);
 
       final inputField = find.byKey(const Key('daily_journal_input_field'));
       await tester.enterText(
         inputField,
-        'The submersible descended deep into the dark mariana trench to explore.',
+        'The submersible explored deep into the dark mariana trench to discover мир.',
       );
       await tester.pump();
 
@@ -702,7 +686,7 @@ void main() {
 
       expect(
         find.text(
-          'Your answer must be written in English. Please write a natural sentence! (2 tries left)',
+          'Your answer must be written in English. Please write a natural sentence!',
         ),
         findsOneWidget,
       );

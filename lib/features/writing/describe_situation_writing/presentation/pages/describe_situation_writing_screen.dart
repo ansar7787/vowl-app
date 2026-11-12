@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
@@ -14,7 +13,6 @@ import 'package:vowl/features/writing/presentation/layout/writing_base_layout.da
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_instruction.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_prompt_card.dart';
@@ -311,19 +309,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     if (!GibberishDetectorService.isNaturalSentence(context, rawText)) {
       _isSubmitting.value = false;
-      return;
-    }
-
-    // ML Kit Language ID Gibberish Check
-    final langIdService = di.sl<LanguageIdService>();
-    final language = await langIdService.identifyLanguage(composedText);
-
-    if (!mounted) return;
-
-    if (language != 'en') {
-      _handleValidationFailure(
-        "Your answer must be written in English. Please write a natural sentence!",
-      );
       return;
     }
 

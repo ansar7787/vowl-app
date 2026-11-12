@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,6 @@ import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -35,7 +33,6 @@ import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
-import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
@@ -608,92 +605,6 @@ void main() {
     );
   });
 
-  group('Group 7: Review Mistakes Card Gating', () {
-    testWidgets(
-      'omits mistake card body when user has 0 mistakes in journal',
-      (tester) async {
-        await pumpHomeScreen(tester);
-
-        expect(find.byType(ReviewMistakesHomeCard), findsOneWidget);
-        expect(find.text('Review Mistakes'), findsNothing);
-      },
-    );
-
-    testWidgets(
-      'renders ReviewMistakesHomeCard and navigates to /review-mistakes when guest mistakes exist',
-      (tester) async {
-        final mockMistake = jsonEncode({
-          'id': 'entry_1',
-          'gameType': 'syllableStress',
-          'question': 'Identify stress in banana',
-          'userAnswer': 'ba-NA-na',
-          'correctAnswer': 'ba-NA-na',
-          'level': 1,
-        });
-
-        SharedPreferences.setMockInitialValues({
-          'has_seen_vowl_welcome_showcase': true,
-          'vowl_local_error_journal': [mockMistake],
-        });
-
-        const guestUser = UserEntity(
-          id: 'local',
-          email: 'guest@vowl.app',
-          displayName: 'Guest Learner',
-          completedLevels: {
-            'vocabulary': [1, 2],
-          },
-        );
-        when(
-          () => mockAuthBloc.state,
-        ).thenReturn(AuthState.authenticated(guestUser));
-        when(
-          () => mockLeaderboardRepo.getTopUsers(limit: any(named: 'limit')),
-        ).thenAnswer(
-          (_) async => Right(
-            LeaderboardResult(users: [guestUser], lastUpdated: DateTime.now()),
-          ),
-        );
-
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setStringList('vowl_local_error_journal', [
-          jsonEncode({
-            'id': 'test_mistake_1',
-            'gameType': 'vocabulary',
-            'question': 'What is an apple?',
-            'userAnswer': 'A vegetable',
-            'correctAnswer': 'A fruit',
-            'level': 1,
-            'timestamp': DateTime.now().toIso8601String(),
-          }),
-        ]);
-        ErrorJournalCollector.updateNotifier.value++;
-        addTearDown(() async {
-          final p = await SharedPreferences.getInstance();
-          await p.remove('vowl_local_error_journal');
-        });
-
-        await pumpHomeScreen(tester);
-
-        homeScrollController.jumpTo(550);
-        await tester.pumpAndSettle();
-
-        final mistakeCard = find.byType(ReviewMistakesHomeCard);
-        expect(mistakeCard, findsOneWidget);
-
-        final tapTarget = find.descendant(
-          of: mistakeCard,
-          matching: find.byType(ScaleButton),
-        );
-        await tester.tap(tapTarget);
-        await tester.pumpAndSettle();
-
-        verify(() => mockHapticService.selection()).called(1);
-        expect(navigatedRoutes, contains('/review-mistakes'));
-      },
-    );
-  });
-
   group('Group 8: Global Progress Card', () {
     testWidgets(
       'renders GlobalProgressCard displaying total completed levels and navigates to leaderboard',
@@ -731,7 +642,7 @@ void main() {
       expect(find.byType(ToolsStrip), findsOneWidget);
     });
 
-    testWidgets('tapping Unfold +2 in ToolsStrip expands gaming drawer', (
+    testWidgets('renders Swiss Horizon tools in ToolsStrip', (
       tester,
     ) async {
       await pumpHomeScreen(tester);
@@ -739,16 +650,8 @@ void main() {
       homeScrollController.jumpTo(1200);
       await tester.pumpAndSettle();
 
-      final unfoldBtn = find.text('Unfold +2');
-      expect(unfoldBtn, findsOneWidget);
-      await tester.ensureVisible(unfoldBtn);
-      await tester.pumpAndSettle();
-
-      await tester.tap(unfoldBtn);
-      await tester.pumpAndSettle();
-
-      expect(find.text('Word Snap'), findsOneWidget);
-      expect(find.text('Word Mixer'), findsOneWidget);
+      expect(find.text('Daily Words'), findsOneWidget);
+      expect(find.text('Translate'), findsOneWidget);
     });
   });
 
