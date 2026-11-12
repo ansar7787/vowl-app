@@ -107,7 +107,7 @@ class HomeHeroHeader extends StatelessWidget {
             rankColor: rank.color,
             reduceMotion: reduceMotion,
           ),
-          SizedBox(width: 14.w),
+          SizedBox(width: 11.w),
 
           // ── 2. IDENTITY (EYEBROW STACK) & HABIT FOCUS (OPTION B) ──
           Expanded(
@@ -224,13 +224,8 @@ class HomeHeroHeader extends StatelessWidget {
           ),
           SizedBox(width: 8.w),
 
-          // ── 3. TRANSLATE QUICK ACTION CAPSULE ─────────────────────
-          _buildTranslateCapsule(context, isDark: isDark),
-
-          SizedBox(width: 6.w),
-
-          // ── 4. LINEAR-STYLE DUAL METRIC HUD (STREAK + COINS) ──────
-          _buildDualMetricHud(
+          // ── 3. UNIFIED TRIO-METRIC HUD (STREAK + COINS + TRANSLATE) ──
+          _buildTrioMetricHud(
             context,
             isDark: isDark,
             todayActive: todayActive,
@@ -433,85 +428,8 @@ class HomeHeroHeader extends StatelessWidget {
     );
   }
 
-  /// Quick-action Translate capsule docked adjacent to the dual-metric HUD.
-  Widget _buildTranslateCapsule(
-    BuildContext context, {
-    required bool isDark,
-  }) {
-    final isMidnight =
-        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final capsuleBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark
-              ? AppColors.slate900.withValues(alpha: 0.90)
-              : Colors.white.withValues(alpha: 0.95));
-    final borderColor = isMidnight
-        ? Colors.white.withValues(alpha: 0.14)
-        : (isDark
-              ? AppColors.slate700.withValues(alpha: 0.6)
-              : AppColors.slate100);
-
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    // On tablet viewports (>= 600dp), render full "[ 🌐 Translate ]" capsule.
-    // On mobile viewports (< 600dp), render sleek iconic "[ 🌐 ]" capsule to preserve greeting and HUD space.
-    final bool showLabel = screenWidth >= 600;
-
-    return Semantics(
-      button: true,
-      label: context.tr('home.translation_title', fallback: 'Translate'),
-      hint: context.tr(
-        'home.tools_translate_tip',
-        fallback: 'Offline translation for 50+ languages',
-      ),
-      child: Tooltip(
-        message: context.tr('home.translation_title', fallback: 'Translate'),
-        child: ScaleButton(
-          onTap: () {
-            _triggerHaptic();
-            context.push(AppRouter.translateRoute);
-          },
-          child: Container(
-            height: 38.h,
-            padding: EdgeInsets.symmetric(
-              horizontal: showLabel ? 9.w : 10.w,
-            ),
-            decoration: BoxDecoration(
-              color: capsuleBg,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: borderColor, width: 1),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.translate_rounded,
-                  size: 16.r,
-                  color: AppColors.emerald500,
-                ),
-                if (showLabel) ...[
-                  SizedBox(width: 4.w),
-                  Text(
-                    context.tr('home.translation_title', fallback: 'Translate'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white : AppColors.slate800,
-                      height: 1,
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  /// Linear-style dual-metric HUD capsule displaying Streak and Coins.
-  Widget _buildDualMetricHud(
+  /// Unified Linear-style Trio-HUD glass capsule displaying Streak, Coins, and 1-tap Translate.
+  Widget _buildTrioMetricHud(
     BuildContext context, {
     required bool isDark,
     required bool todayActive,
@@ -529,6 +447,13 @@ class HomeHeroHeader extends StatelessWidget {
               ? AppColors.slate700.withValues(alpha: 0.6)
               : AppColors.slate100);
 
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final bool showLabel = screenWidth >= 600;
+
+    final dividerColor = isDark
+        ? Colors.white.withValues(alpha: 0.12)
+        : Colors.black.withValues(alpha: 0.08);
+
     return Semantics(
       container: true,
       child: Container(
@@ -538,12 +463,20 @@ class HomeHeroHeader extends StatelessWidget {
           color: capsuleBg,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: borderColor, width: 1),
+          boxShadow: [
+            if (!isDark)
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.03),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // ── Streak Segment ───────────────────────────────────────
+            // ── 1. Streak Segment ────────────────────────────────────
             Semantics(
               button: true,
               label: context.tr(
@@ -557,7 +490,7 @@ class HomeHeroHeader extends StatelessWidget {
                   context.push(AppRouter.streakRoute);
                 },
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 6.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -583,16 +516,14 @@ class HomeHeroHeader extends StatelessWidget {
               ),
             ),
 
-            // Hairline Divider
+            // Hairline Divider 1
             Container(
               width: 1,
               height: 16.h,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : Colors.black.withValues(alpha: 0.1),
+              color: dividerColor,
             ),
 
-            // ── Coins Segment ────────────────────────────────────────
+            // ── 2. Coins Segment ─────────────────────────────────────
             Semantics(
               button: true,
               label: context.tr(
@@ -606,7 +537,7 @@ class HomeHeroHeader extends StatelessWidget {
                   context.push(AppRouter.questCoinsRoute);
                 },
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 6.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -627,6 +558,58 @@ class HomeHeroHeader extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+            ),
+
+            // Hairline Divider 2
+            Container(
+              width: 1,
+              height: 16.h,
+              color: dividerColor,
+            ),
+
+            // ── 3. Translate Action Segment ──────────────────────────
+            Semantics(
+              button: true,
+              label: context.tr('home.translation_title', fallback: 'Translate'),
+              hint: context.tr(
+                'home.tools_translate_tip',
+                fallback: 'Offline translation for 50+ languages',
+              ),
+              child: Tooltip(
+                message: context.tr('home.translation_title', fallback: 'Translate'),
+                child: ScaleButton(
+                  onTap: () {
+                    _triggerHaptic();
+                    context.push(AppRouter.translateRoute);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 6.h),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.translate_rounded,
+                          size: 15.r,
+                          color: AppColors.emerald500,
+                        ),
+                        if (showLabel) ...[
+                          SizedBox(width: 4.w),
+                          Text(
+                            context.tr('home.translation_title', fallback: 'Translate'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark ? Colors.white : AppColors.slate800,
+                              height: 1,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
                   ),
                 ),
               ),
