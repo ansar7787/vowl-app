@@ -19,6 +19,7 @@ class CategoryOverworldMap extends StatelessWidget {
   final Color themeColor;
   final bool isDark;
   final bool isMidnight;
+  final double? bottomPadding;
 
   const CategoryOverworldMap({
     super.key,
@@ -28,6 +29,7 @@ class CategoryOverworldMap extends StatelessWidget {
     required this.themeColor,
     required this.isDark,
     required this.isMidnight,
+    this.bottomPadding,
   });
 
   /// Calculates alternating maximum-side node points with subtle organic harmonic variance.
@@ -64,7 +66,7 @@ class CategoryOverworldMap extends StatelessWidget {
     return SliverPadding(
       padding: EdgeInsets.only(
         top: 14.h,
-        bottom: MediaQuery.of(context).padding.bottom + 48.h,
+        bottom: bottomPadding ?? (MediaQuery.of(context).padding.bottom + 48.h),
       ),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate(

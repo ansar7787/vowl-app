@@ -29,10 +29,13 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/category_games_logic.dart';
+import 'package:vowl/features/home/presentation/widgets/category_overworld/category_overworld_map.dart';
+import 'package:vowl/features/games/presentation/widgets/overworld_realms_sliver.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -115,12 +118,10 @@ class _GamesScreenState extends State<GamesScreen> {
                   ),
                   slivers: [
                     _GamesAppBar(isDark: isDark, user: user),
-                    SliverPadding(
-                      padding: EdgeInsets.only(
-                        bottom: 120.h + MediaQuery.paddingOf(context).bottom,
-                      ),
-                      sliver: SliverList(
-                        delegate: SliverChildListDelegate([
+                    SliverToBoxAdapter(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           // 1. Quick Resume Hero Card (1-Tap Direct Play)
                           _QuickResumeHeroCard(user: user, isDark: isDark),
 
@@ -130,7 +131,7 @@ class _GamesScreenState extends State<GamesScreen> {
                           // 3. Curriculum Mastery Tier Card (Replaces 0.1% bar)
                           _CurriculumMasteryCard(user: user, isDark: isDark),
 
-                          // 6. Category Filter Dock & Search
+                          // 4. Category Filter Dock & Search
                           _CategoryFilterDock(
                             selectedCategory: _selectedCategory,
                             searchController: _searchController,
@@ -146,37 +147,53 @@ class _GamesScreenState extends State<GamesScreen> {
                               );
                             },
                           ),
-
-                          // 7. Responsive 2-Column Quest Cards Grid (With Smooth Category Transition)
-                          AnimatedSwitcher(
-                            duration: VowlMotion.shouldReduceMotion(context)
-                                ? Duration.zero
-                                : const Duration(milliseconds: 250),
-                            switchInCurve: Curves.easeOutCubic,
-                            switchOutCurve: Curves.easeInCubic,
-                            layoutBuilder: (currentChild, previousChildren) =>
-                                Stack(
-                                  alignment: Alignment.topCenter,
-                                  children: [
-                                    ...previousChildren,
-                                    ?currentChild,
-                                  ],
-                                ),
-                            child: KeyedSubtree(
-                              key: ValueKey<String>(
-                                '${_selectedCategory?.name ?? "all"}_$_searchQuery',
-                              ),
-                              child: _QuestCardsGrid(
-                                user: user,
-                                isDark: isDark,
-                                selectedCategory: _selectedCategory,
-                                searchQuery: _searchQuery,
-                              ),
-                            ),
-                          ),
-                        ]),
+                        ],
                       ),
                     ),
+                    if (_searchQuery.isNotEmpty)
+                      _QuestSearchSliver(
+                        user: user,
+                        isDark: isDark,
+                        selectedCategory: _selectedCategory,
+                        searchQuery: _searchQuery,
+                      )
+                    else if (_selectedCategory != null) ...[
+                      SliverToBoxAdapter(
+                        child: _ActiveRealmHeaderBanner(
+                          category: _selectedCategory!,
+                          user: user,
+                          isDark: isDark,
+                          isMidnight: isMidnight,
+                          onBack: () {
+                            _triggerHaptic();
+                            setState(() => _selectedCategory = null);
+                          },
+                        ),
+                      ),
+                      CategoryOverworldMap(
+                        games: CategoryGamesLogic.getGamesForCategory(
+                          _selectedCategory!.name,
+                        ),
+                        user: user,
+                        categoryId: _selectedCategory!.name,
+                        themeColor: GameHelper.getCategoryColor(
+                          _selectedCategory!.name,
+                        ),
+                        isDark: isDark,
+                        isMidnight: isMidnight,
+                        bottomPadding:
+                            120.h + MediaQuery.paddingOf(context).bottom,
+                      ),
+                    ] else
+                      OverworldRealmsSliver(
+                        user: user,
+                        isDark: isDark,
+                        isMidnight: isMidnight,
+                        onRealmSelected: (cat) {
+                          _triggerHaptic();
+                          setState(() => _selectedCategory = cat);
+                        },
+                      ),
                   ],
                 ),
               ),
@@ -2230,16 +2247,185 @@ class _FilterPill extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 7. Responsive 2-Column Quest Cards Grid (With 1-Tap Play & Map Fallback)
+// 7. Active Realm Header Banner & Interactive Search Sliver
 // ---------------------------------------------------------------------------
 
-class _QuestCardsGrid extends StatelessWidget {
+class _ActiveRealmHeaderBanner extends StatelessWidget {
+  final QuestType category;
+  final UserEntity user;
+  final bool isDark;
+  final bool isMidnight;
+  final VoidCallback onBack;
+
+  const _ActiveRealmHeaderBanner({
+    required this.category,
+    required this.user,
+    required this.isDark,
+    required this.isMidnight,
+    required this.onBack,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = LevelThemeHelper.getCategoryTheme(
+      category.name,
+      isDark: isDark,
+      isMidnight: isMidnight,
+    );
+    final stats = CategoryGamesLogic.getCategoryStats(user, category.name);
+    final displayColor = theme.primaryColor;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+
+    final titleText = context.tr(
+      'games.${category.serializedName}.title',
+      fallback: theme.title,
+    );
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        10.h,
+        AppSpacing.screen,
+        4.h,
+      ),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(
+            color: displayColor.withValues(alpha: isDark ? 0.28 : 0.20),
+            width: 1.0,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.05),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: displayColor.withValues(alpha: 0.14),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(theme.icon, color: displayColor, size: 18.r),
+            ),
+            SizedBox(width: 10.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          '${titleText.toUpperCase()} REALM',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 0.6,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6.w),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6.w,
+                          vertical: 1.5.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: displayColor.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        child: Text(
+                          '${stats.masteredGames}/${stats.totalGames} Done',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w800,
+                            color: displayColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    '${stats.earnedStars} ⭐ earned • Serpentine Path',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? AppColors.slate400 : AppColors.slate600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 8.w),
+            ScaleButton(
+              scaleDown: 0.96,
+              onTap: onBack,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100,
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.10)
+                        : AppColors.slate200,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.arrow_back_rounded,
+                      size: 13.r,
+                      color: isDark ? Colors.white70 : AppColors.slate700,
+                    ),
+                    SizedBox(width: 4.w),
+                    Text(
+                      'All Realms',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white70 : AppColors.slate700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _QuestSearchSliver extends StatelessWidget {
   final UserEntity user;
   final bool isDark;
   final QuestType? selectedCategory;
   final String searchQuery;
 
-  const _QuestCardsGrid({
+  const _QuestSearchSliver({
     required this.user,
     required this.isDark,
     required this.selectedCategory,
@@ -2281,58 +2467,60 @@ class _QuestCardsGrid extends StatelessWidget {
               selectedCategory!.subtypes.first,
             ).toUpperCase()
           : null;
-      return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSpacing.screen,
-          vertical: 32.h,
-        ),
-        child: Center(
-          child: Column(
-            children: [
-              Icon(
-                LucideIcons.searchX,
-                size: 36.r,
-                color: isDark ? Colors.white30 : AppColors.slate300,
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                categoryLabel != null
-                    ? 'No quests found in $categoryLabel for "$searchQuery"'
-                    : 'No quests found for "$searchQuery"',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white60 : AppColors.slate500,
+      return SliverToBoxAdapter(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacing.screen,
+            vertical: 48.h,
+          ),
+          child: Center(
+            child: Column(
+              children: [
+                Icon(
+                  LucideIcons.searchX,
+                  size: 36.r,
+                  color: isDark ? Colors.white30 : AppColors.slate300,
                 ),
-              ),
-            ],
+                SizedBox(height: 8.h),
+                Text(
+                  categoryLabel != null
+                      ? 'No quests found in $categoryLabel for "$searchQuery"'
+                      : 'No quests found for "$searchQuery"',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white60 : AppColors.slate500,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
     }
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-      child: MediaQuery.withClampedTextScaling(
-        minScaleFactor: 1.0,
-        maxScaleFactor: 1.3,
-        child: GridView.builder(
-          padding: EdgeInsets.only(top: 8.h, bottom: 16.h),
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10.w,
-            mainAxisSpacing: 10.h,
-            childAspectRatio: 0.88,
-          ),
-          itemCount: filtered.length,
-          itemBuilder: (context, index) {
+    return SliverPadding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        8.h,
+        AppSpacing.screen,
+        120.h + MediaQuery.paddingOf(context).bottom,
+      ),
+      sliver: SliverGrid(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.w,
+          mainAxisSpacing: 10.h,
+          childAspectRatio: 0.88,
+        ),
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
             final subtype = filtered[index];
             return _QuestGridCard(subtype: subtype, user: user, isDark: isDark);
           },
+          childCount: filtered.length,
         ),
       ),
     );
