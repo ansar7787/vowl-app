@@ -87,5 +87,36 @@ void main() {
         );
       },
     );
+
+    test('resolveLocaleForPreset returns expected language tags and respects explicitLocale', () {
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.britishAccent),
+        'en-GB',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.australianAccent),
+        'en-AU',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.indianEnglish),
+        'en-IN',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.clearGuide),
+        'en-US',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.friendlyTeacher),
+        'en-US',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.systemDefault),
+        'en-US',
+      );
+      expect(
+        TtsVoiceHelper.resolveLocaleForPreset(TtsVoicePreset.britishAccent, 'es-ES'),
+        'es-ES',
+      );
+    });
   });
 }
