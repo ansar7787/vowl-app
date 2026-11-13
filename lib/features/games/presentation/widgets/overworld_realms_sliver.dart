@@ -110,7 +110,8 @@ class OverworldRealmCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayColor = theme.primaryColor;
-    final isMastered = stats.totalGames > 0 && stats.masteredGames >= stats.totalGames;
+    final isMastered =
+        stats.totalLevels > 0 && stats.completedLevels >= stats.totalLevels;
     final rankTitle = CategoryGamesLogic.getRank(context, stats.progress);
 
     final cardBg = isMidnight
@@ -130,7 +131,8 @@ class OverworldRealmCard extends StatelessWidget {
 
     return Semantics(
       button: true,
-      label: '$titleText, ${stats.masteredGames} of ${stats.totalGames} completed, ${stats.earnedStars} stars',
+      label:
+          '$titleText, ${stats.completedLevels} of ${stats.totalLevels} levels completed, ${stats.earnedStars} stars',
       child: ScaleButton(
         scaleDown: 0.98,
         onTap: () {
@@ -293,47 +295,54 @@ class OverworldRealmCard extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            children: [
-                              Text(
-                                '${stats.masteredGames}/${stats.totalGames} Quests',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : AppColors.slate700,
-                                ),
+                          Flexible(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: AlignmentDirectional.centerStart,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    '${stats.completedLevels}/${CategoryGamesLogic.formatNumber(stats.totalLevels)} Levels',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: isDark
+                                          ? Colors.white70
+                                          : AppColors.slate700,
+                                    ),
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Container(
+                                    width: 3.r,
+                                    height: 3.r,
+                                    decoration: BoxDecoration(
+                                      color: isDark ? Colors.white30 : AppColors.slate400,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Icon(
+                                    Icons.star_rounded,
+                                    size: 14.r,
+                                    color: const Color(0xFFFFB300),
+                                  ),
+                                  SizedBox(width: 2.w),
+                                  Text(
+                                    '${stats.earnedStars}',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: const Color(0xFFFFB300),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 8.w),
-                              Container(
-                                width: 3.r,
-                                height: 3.r,
-                                decoration: BoxDecoration(
-                                  color: isDark ? Colors.white30 : AppColors.slate400,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              Icon(
-                                Icons.star_rounded,
-                                size: 14.r,
-                                color: const Color(0xFFFFB300),
-                              ),
-                              SizedBox(width: 2.w),
-                              Text(
-                                '${stats.earnedStars}',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: const Color(0xFFFFB300),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-
+                          SizedBox(width: 8.w),
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [

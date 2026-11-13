@@ -81,8 +81,8 @@ class _MainWrapperState extends State<MainWrapper> {
     // ─────────────────────────────────────────────────────────────────────────
     // WhatsApp iOS & Apple HIG Tab Bar Standard Geometry
     // ─────────────────────────────────────────────────────────────────────────
-    const navBarHeight = 58.0;
-    const cornerRadius = 29.0;
+    const navBarHeight = 62.0;
+    const cornerRadius = 31.0;
 
     final navDecoration = BoxDecoration(
       color: isMidnight
@@ -145,7 +145,7 @@ class _MainWrapperState extends State<MainWrapper> {
 
               // 2. Navigation Items (Fixed-Ratio Grid with 120Hz Implicit Animators)
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: SizedBox(
                   height: navBarHeight.h,
                   child: Semantics(
@@ -225,53 +225,56 @@ class _MainWrapperState extends State<MainWrapper> {
             constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
             alignment: Alignment.center,
             child: ExcludeSemantics(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // WhatsApp iOS Compact Pill Indicator
-                  AnimatedContainer(
-                    duration: VowlMotion.fast,
-                    curve: Curves.easeOutCubic,
-                    width: 48.w,
-                    height: 28.h,
-                    decoration: BoxDecoration(
-                      color: isSelected
-                          ? (isDark
-                              ? AppColors.indigo400.withValues(alpha: 0.20)
-                              : AppColors.indigo500.withValues(alpha: 0.12))
-                          : Colors.transparent,
-                      borderRadius: BorderRadius.circular(14.r),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // WhatsApp iOS Compact Pill Indicator
+                    AnimatedContainer(
+                      duration: VowlMotion.fast,
+                      curve: Curves.easeOutCubic,
+                      width: 48.w,
+                      height: 28.h,
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? (isDark
+                                ? AppColors.indigo400.withValues(alpha: 0.20)
+                                : AppColors.indigo500.withValues(alpha: 0.12))
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(14.r),
+                      ),
+                      alignment: Alignment.center,
+                      child: _NavIconSpring(
+                        icon: icon,
+                        color: isSelected ? activeColor : inactiveColor,
+                        size: 23.r,
+                        isSelected: isSelected,
+                        reduceMotion: reduceMotion,
+                      ),
                     ),
-                    alignment: Alignment.center,
-                    child: _NavIconSpring(
-                      icon: icon,
-                      color: isSelected ? activeColor : inactiveColor,
-                      size: 23.r,
-                      isSelected: isSelected,
-                      reduceMotion: reduceMotion,
+                    SizedBox(height: 2.h),
+                    // WhatsApp iOS 10.5sp Typography
+                    AnimatedDefaultTextStyle(
+                      duration: VowlMotion.fast,
+                      curve: Curves.easeOutCubic,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight:
+                            isSelected ? FontWeight.w600 : FontWeight.w500,
+                        color: isSelected ? activeColor : inactiveColor,
+                        letterSpacing: 0.15,
+                      ),
+                      child: Text(
+                        label,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 2.h),
-                  // WhatsApp iOS 10.5sp Typography
-                  AnimatedDefaultTextStyle(
-                    duration: VowlMotion.fast,
-                    curve: Curves.easeOutCubic,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight:
-                          isSelected ? FontWeight.w600 : FontWeight.w500,
-                      color: isSelected ? activeColor : inactiveColor,
-                      letterSpacing: 0.15,
-                    ),
-                    child: Text(
-                      label,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

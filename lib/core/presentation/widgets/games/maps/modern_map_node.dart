@@ -427,7 +427,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                               Shadow(
                                 color: Colors.black38,
                                 offset: Offset(0, 2.h),
-                                blurRadius: 4.r,
+                                blurRadius: (4.r).clamp(0.0, 50.0),
                               ),
                             ],
                           ),

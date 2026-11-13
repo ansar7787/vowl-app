@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/constants/badge_constants.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -157,7 +158,9 @@ class AdventureLevelScreen extends StatelessWidget {
                                 child: IconButton(
                                   padding: EdgeInsets.zero,
                                   iconSize: 18.r,
-                                  onPressed: () => context.pop(),
+                                  onPressed: () => context.canPop()
+                                      ? context.pop()
+                                      : context.go(AppRouter.profileRoute),
                                   icon: const Icon(
                                     Icons.arrow_back_ios_new_rounded,
                                   ),

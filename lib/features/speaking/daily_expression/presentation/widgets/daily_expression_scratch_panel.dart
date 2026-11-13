@@ -206,7 +206,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                             shadows: [
                               Shadow(
                                 color: primaryColor.withValues(alpha: 0.25),
-                                blurRadius: 8.r,
+                                blurRadius: (8.r).clamp(0.0, 50.0),
                               ),
                             ],
                           ),

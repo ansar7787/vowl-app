@@ -252,4 +252,12 @@ class CategoryGamesLogic {
     }
     return context.tr('quest_archive.status_legendary', fallback: 'LEGENDARY');
   }
+
+  /// Formats integers with thousands comma separation (e.g. 2000 -> 2,000).
+  static String formatNumber(int count) {
+    return count.toString().replaceAllMapped(
+      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+      (m) => '${m[1]},',
+    );
+  }
 }

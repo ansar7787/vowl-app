@@ -134,7 +134,7 @@ class PremiumHero extends StatelessWidget {
                   String subtitle = context.tr(
                     'premium.hero_subtitle',
                     fallback:
-                        '25,000 ad-free levels with real US & UK voices\nEverything you need to speak with confidence',
+                        '20,000 ad-free levels with real US & UK voices\nEverything you need to speak with confidence',
                   );
                   if (subtitle.endsWith('.') ||
                       subtitle.endsWith('।') ||
@@ -164,7 +164,7 @@ class PremiumHero extends StatelessWidget {
 
         SizedBox(height: 12.h),
 
-        // Authentic Vowl Capability Badge (100% Real - Zero Ads & 25,000+ Levels across 125 Games)
+        // Authentic Vowl Capability Badge (100% Real - Zero Ads & 20,000+ Levels across 100 Games)
         Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
               decoration: BoxDecoration(
@@ -193,7 +193,7 @@ class PremiumHero extends StatelessWidget {
                     Text(
                       context.tr(
                         'premium.hero_badge',
-                        fallback: '100% AD-FREE • 25,000+ LEVELS',
+                        fallback: '100% AD-FREE • 20,000+ LEVELS',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',

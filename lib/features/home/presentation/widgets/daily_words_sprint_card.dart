@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -65,9 +66,9 @@ class _DailyWordsSprintCardState extends State<DailyWordsSprintCard> {
     final subtitleText = isDone
         ? context.tr(
             'home.tools_daily_all_learned',
-            fallback: 'All 5 words mastered today!',
+            fallback: 'All 10 words mastered today!',
           )
-        : context.tr('home.tools_daily_desc', fallback: '5 new words today');
+        : context.tr('home.tools_daily_desc', fallback: '10 new words today');
 
     return Semantics(
       button: true,
@@ -298,8 +299,8 @@ class _DailyWordsSprintCardState extends State<DailyWordsSprintCard> {
                       ),
                       SizedBox(width: 3.w),
                       Icon(
-                        Icons.arrow_forward_rounded,
-                        size: 13.r,
+                        CupertinoIcons.chevron_forward,
+                        size: 12.r,
                         color: AppColors.amber500,
                       ),
                     ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -133,7 +134,9 @@ class AdventureXPScreen extends StatelessWidget {
                                       child: IconButton(
                                         padding: EdgeInsets.zero,
                                         iconSize: 18.r,
-                                        onPressed: () => context.pop(),
+                                        onPressed: () => context.canPop()
+                                            ? context.pop()
+                                            : context.go(AppRouter.profileRoute),
                                         icon: const Icon(
                                           Icons.arrow_back_ios_new_rounded,
                                         ),

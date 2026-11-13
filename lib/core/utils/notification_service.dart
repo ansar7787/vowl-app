@@ -86,6 +86,7 @@ class NotificationService {
   static const int milestoneNotificationId = 606;
   static const int dailyWordsReminderNotificationId = 505;
   static const int maxLocalNotificationModulo = 100000;
+  static const String androidNotificationIcon = 'ic_stat_notification';
 
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin _localNotifications =
@@ -115,6 +116,52 @@ class NotificationService {
       }
     }
     return tz.UTC;
+  }
+
+  Future<void> _safeShow({
+    required int id,
+    String? title,
+    String? body,
+    NotificationDetails? notificationDetails,
+    String? payload,
+  }) async {
+    try {
+      await _localNotifications.show(
+        id: id,
+        title: title,
+        body: body,
+        notificationDetails: notificationDetails,
+        payload: payload,
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('NotificationService _safeShow failed: $e');
+    }
+  }
+
+  Future<void> _safeZonedSchedule({
+    required int id,
+    String? title,
+    String? body,
+    required tz.TZDateTime scheduledDate,
+    required NotificationDetails notificationDetails,
+    required AndroidScheduleMode androidScheduleMode,
+    DateTimeComponents? matchDateTimeComponents,
+    String? payload,
+  }) async {
+    try {
+      await _localNotifications.zonedSchedule(
+        id: id,
+        title: title,
+        body: body,
+        scheduledDate: scheduledDate,
+        notificationDetails: notificationDetails,
+        androidScheduleMode: androidScheduleMode,
+        matchDateTimeComponents: matchDateTimeComponents,
+        payload: payload,
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('NotificationService _safeZonedSchedule failed: $e');
+    }
   }
 
   Future<void> init() async {
@@ -153,7 +200,7 @@ class NotificationService {
 
     // 3. Initialize Local Notifications
     const AndroidInitializationSettings androidSettings =
-        AndroidInitializationSettings('@drawable/ic_stat_notification');
+        AndroidInitializationSettings(androidNotificationIcon);
     const DarwinInitializationSettings iosSettings =
         DarwinInitializationSettings(
           requestAlertPermission: false,
@@ -640,7 +687,7 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -655,7 +702,7 @@ class NotificationService {
       iOS: iosDetails,
     );
 
-    await _localNotifications.show(
+    await _safeShow(
       id: _generateNotificationId(),
       title: title,
       body: body,
@@ -696,7 +743,7 @@ class NotificationService {
           channelDescription: 'Keeps you motivated to learn!',
           importance: Importance.max,
           priority: Priority.high,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -770,7 +817,7 @@ class NotificationService {
       resolvedBody = streakMessages.body;
     }
 
-    await _localNotifications.zonedSchedule(
+    await _safeZonedSchedule(
       id: streakReminderNotificationId,
       title: resolvedTitle,
       body: resolvedBody,
@@ -920,7 +967,7 @@ class NotificationService {
           channelDescription: 'Used for game updates and daily words',
           importance: Importance.max,
           priority: Priority.high,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -1015,7 +1062,7 @@ class NotificationService {
     }
 
     // Dynamic one-shot if specific due words were passed, recurring daily if generic
-    await _localNotifications.zonedSchedule(
+    await _safeZonedSchedule(
       id: dailyWordsReminderNotificationId,
       title: title,
       body: body,
@@ -1057,7 +1104,7 @@ class NotificationService {
           channelDescription: 'Sunday motivation!',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -1096,7 +1143,7 @@ class NotificationService {
     ];
     final msg = weeklyMessages[_idRandom.nextInt(weeklyMessages.length)];
 
-    await _localNotifications.zonedSchedule(
+    await _safeZonedSchedule(
       id: weeklyMotivationNotificationId,
       title: _t('notifications.weekly_motivation_title', fallback: msg.title),
       body: _t('notifications.weekly_motivation_body', fallback: msg.body),
@@ -1155,7 +1202,7 @@ class NotificationService {
               'Sunday league reset reminders and podium rewards',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -1177,7 +1224,7 @@ class NotificationService {
 
     final location = _currentLocation;
 
-    await _localNotifications.zonedSchedule(
+    await _safeZonedSchedule(
       id: sundayLeagueResetNotificationId,
       title: _t(
         'notifications.league_reset_title',
@@ -1245,7 +1292,7 @@ class NotificationService {
           channelDescription: 'Game updates and challenges',
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -1294,7 +1341,7 @@ class NotificationService {
     final msg =
         leaderboardMessages[_idRandom.nextInt(leaderboardMessages.length)];
 
-    await _localNotifications.zonedSchedule(
+    await _safeZonedSchedule(
       id: leaderboardChallengeNotificationId,
       title: _t('notifications.leaderboard_title', fallback: msg.title),
       body: _t('notifications.leaderboard_body', fallback: msg.body),
@@ -1330,7 +1377,7 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
-          icon: '@drawable/ic_stat_notification',
+          icon: androidNotificationIcon,
           color: Color(0xFF6366F1),
         );
 
@@ -1345,7 +1392,7 @@ class NotificationService {
       iOS: iosDetails,
     );
 
-    await _localNotifications.show(
+    await _safeShow(
       id: milestoneNotificationId,
       title: milestoneName,
       body: description,

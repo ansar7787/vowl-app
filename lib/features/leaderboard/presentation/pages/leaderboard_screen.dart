@@ -326,10 +326,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     HapticFeedback.mediumImpact();
 
     if (!_scrollController.hasClients) return;
+    final position = _scrollController.positions.isNotEmpty
+        ? _scrollController.positions.last
+        : null;
+    if (position == null) return;
 
     // User is on the podium (ranks 1-3): scroll smoothly to top to view podium
     if (rankIndex < 3) {
-      _scrollController.animateTo(
+      position.animateTo(
         0.0,
         duration: const Duration(milliseconds: 600),
         curve: Curves.easeOutCubic,
@@ -375,8 +379,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         (tileHeight / 2.0);
 
     // Visible viewport dimensions
-    final viewportHeight = _scrollController.position.hasViewportDimension
-        ? _scrollController.position.viewportDimension
+    final viewportHeight = position.hasViewportDimension
+        ? position.viewportDimension
         : screenHeight;
     final pinnedHeaderHeight = 70.h;
     final bottomBarPadding =
@@ -388,13 +392,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         pinnedHeaderHeight +
         ((viewportHeight - pinnedHeaderHeight - bottomBarPadding) / 2.0);
 
+    final maxScroll = position.hasContentDimensions ? position.maxScrollExtent : 0.0;
     // Scroll offset so tile's vertical center lands exactly on visibleCenter
     final targetOffset = (tileCenterOffset - visibleCenter).clamp(
       0.0,
-      _scrollController.position.maxScrollExtent,
+      maxScroll,
     );
 
-    _scrollController.animateTo(
+    position.animateTo(
       targetOffset,
       duration: const Duration(milliseconds: 600),
       curve: Curves.easeOutCubic,
@@ -1014,7 +1019,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
   final double minHeight;
   final double maxHeight;
-  final Widget child;
+  final LeaderboardRankCard child;
   final bool isWeekly;
 
   _StickyRankCardDelegate({
@@ -1042,10 +1047,10 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
-    final collapseProgress = (shrinkOffset / (maxExtent - minExtent)).clamp(
-      0.0,
-      1.0,
-    );
+    final range = maxExtent - minExtent;
+    final collapseProgress = range <= 0
+        ? 0.0
+        : (shrinkOffset / range).clamp(0.0, 1.0);
     final isPinned = collapseProgress > 0.5 || overlapsContent;
 
     // PERF: Avoid heavy BackdropFilter(sigma: 24) on every scroll frame.
@@ -1057,56 +1062,64 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
                 : (isDark ? AppColors.slate900 : Colors.white))
             .withValues(alpha: isPinned ? 0.96 : 0.7);
 
-    return RepaintBoundary(
-      child: ClipRect(
-        child: Stack(
-          children: [
-            // Frosted / solid backdrop that fully occludes content beneath
-            Positioned.fill(child: Container(color: backdropColor)),
-            // Rank card content — centered vertically with generous padding
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppSpacing.screen,
-                vertical: 6.h,
-              ),
-              child: OverflowBox(
-                minHeight: 0,
-                maxHeight: double.infinity,
-                alignment: Alignment.center,
-                child: LeaderboardRankCard(
-                  allUsers: (child as LeaderboardRankCard).allUsers,
-                  isWeekly: isWeekly,
-                  collapseProgress: collapseProgress,
-                  onTap: (child as LeaderboardRankCard).onTap,
+    // CRITICAL: The persistent header widget MUST expand to fill the full layout
+    // constraints provided by RenderSliverPinnedPersistentHeader. If it remains
+    // loose or smaller than maxExtent - scrollOffset, childExtent drops below
+    // layoutExtent, triggering Flutter's assertion:
+    // "SliverGeometry is not valid: The 'layoutExtent' exceeds the 'paintExtent'."
+    return SizedBox.expand(
+      child: RepaintBoundary(
+        child: ClipRect(
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              // Frosted / solid backdrop that fully occludes content beneath
+              Positioned.fill(child: Container(color: backdropColor)),
+              // Rank card content — centered vertically with generous padding
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSpacing.screen,
+                  vertical: 6.h,
                 ),
-              ),
-            ),
-            // Bottom shadow/divider — only visible when pinned
-            if (isPinned)
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 1,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.transparent,
-                        (isDark ? Colors.white : Colors.black).withValues(
-                          alpha: 0.08,
-                        ),
-                        (isDark ? Colors.white : Colors.black).withValues(
-                          alpha: 0.08,
-                        ),
-                        Colors.transparent,
-                      ],
-                      stops: const [0.0, 0.2, 0.8, 1.0],
-                    ),
+                child: OverflowBox(
+                  minHeight: 0,
+                  maxHeight: double.infinity,
+                  alignment: Alignment.center,
+                  child: LeaderboardRankCard(
+                    allUsers: child.allUsers,
+                    isWeekly: isWeekly,
+                    collapseProgress: collapseProgress,
+                    onTap: child.onTap,
                   ),
                 ),
               ),
-          ],
+              // Bottom shadow/divider — only visible when pinned
+              if (isPinned)
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 1,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.transparent,
+                          (isDark ? Colors.white : Colors.black).withValues(
+                            alpha: 0.08,
+                          ),
+                          (isDark ? Colors.white : Colors.black).withValues(
+                            alpha: 0.08,
+                          ),
+                          Colors.transparent,
+                        ],
+                        stops: const [0.0, 0.2, 0.8, 1.0],
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );

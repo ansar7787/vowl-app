@@ -280,7 +280,7 @@ class FlashcardGameBody extends StatelessWidget {
                   return TweenAnimationBuilder<double>(
                     tween: Tween<double>(begin: 0, end: flipped ? 1 : 0),
                     duration: 400.ms,
-                    curve: Curves.easeInOutBack,
+                    curve: Curves.easeInOutCubic,
                     builder: (context, value, _) {
                       return Transform(
                         transform: Matrix4.identity()
