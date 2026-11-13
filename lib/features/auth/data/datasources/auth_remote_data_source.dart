@@ -105,7 +105,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       displayName: name,
       photoUrl: currentFirebaseUser.photoURL,
       lastLoginDate: DateTime.now(),
-      currentStreak: 1,
+      currentStreak: 0,
+      previousStreak: 0,
+      lastStreakDate: null,
       dailyXpHistory: const {},
       recentActivities: const [],
     );
@@ -308,7 +310,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         photoUrl: initialPhotoUrl,
         isAdmin: false,
         lastLoginDate: DateTime.now(),
-        currentStreak: 1,
+        currentStreak: 0,
+        previousStreak: 0,
+        lastStreakDate: null,
         dailyXpHistory: const {},
         recentActivities: const [],
       );

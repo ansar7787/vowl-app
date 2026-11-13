@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
@@ -328,8 +329,13 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         ),
       );
     } else {
-      // Reset streak to 0 so Streak Repair can be used!
-      final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
+      // Save previousStreak so Streak Repair can restore it!
+      final updatedUser = user.copyWith(
+        currentStreak: 0,
+        previousStreak:
+            user.currentStreak > 0 ? user.currentStreak : user.previousStreak,
+        lastLoginDate: now,
+      );
       await updateUser(UpdateUserParams(user: updatedUser));
       notificationService.scheduleStreakReminder(0);
       emit(
@@ -455,6 +461,17 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     emit(state.copyWith(isLoading: true));
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
+      return;
+    }
+    final user = authBloc.state.user;
+    if (user != null &&
+        user.streakFreezes >= UserGameConstants.kMaxStreakShields) {
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => 'streak.max_shields_reached',
+        ),
+      );
       return;
     }
     final result = await purchaseStreakFreeze(event.cost);

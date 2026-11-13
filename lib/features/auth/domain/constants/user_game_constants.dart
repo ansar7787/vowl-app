@@ -49,6 +49,15 @@ abstract final class UserGameConstants {
   /// Standard coin cost to activate the 24-hour Double XP boost.
   static const int kDoubleXpCost = 1000;
 
+  /// Standard coin cost to repair a broken streak for any user.
+  static const int kStreakRepairCost = 300;
+
+  /// Standard coin cost to purchase a streak shield / freeze.
+  static const int kStreakShieldCost = 500;
+
+  /// Maximum number of streak shields / freezes a user can hold in inventory.
+  static const int kMaxStreakShields = 2;
+
   /// Fraction of base XP awarded when replaying an already-completed level.
   static const double kReplayXpFraction = 0.0;
 

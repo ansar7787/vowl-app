@@ -40,6 +40,8 @@ class UserModel extends UserEntity {
     super.totalExp,
     super.isAdmin,
     super.currentStreak,
+    super.previousStreak,
+    super.lastStreakDate,
     super.lastLoginDate,
     super.isEmailVerified,
     super.isPremium,
@@ -116,6 +118,8 @@ class UserModel extends UserEntity {
       totalExp: (map['totalExp'] as num?)?.toInt() ?? 0,
       isAdmin: (map['isAdmin'] as bool?) ?? false,
       currentStreak: (map['currentStreak'] as num?)?.toInt() ?? 0,
+      previousStreak: (map['previousStreak'] as num?)?.toInt() ?? 0,
+      lastStreakDate: map['lastStreakDate'] as String?,
       lastLoginDate: _parseDateTime(map['lastLoginDate']),
       isEmailVerified: (map['isEmailVerified'] as bool?) ?? false,
       isPremium: effectiveIsPremium,
@@ -198,6 +202,8 @@ class UserModel extends UserEntity {
       totalExp: entity.totalExp,
       isAdmin: entity.isAdmin,
       currentStreak: entity.currentStreak,
+      previousStreak: entity.previousStreak,
+      lastStreakDate: entity.lastStreakDate,
       lastLoginDate: entity.lastLoginDate,
       isEmailVerified: entity.isEmailVerified,
       isPremium: entity.isPremium,
@@ -265,6 +271,8 @@ class UserModel extends UserEntity {
       'totalExp': totalExp,
       'isAdmin': isAdmin,
       'currentStreak': currentStreak,
+      'previousStreak': previousStreak,
+      'lastStreakDate': lastStreakDate,
       'lastLoginDate': lastLoginDate != null
           ? Timestamp.fromDate(lastLoginDate!)
           : null,
@@ -360,6 +368,7 @@ class UserModel extends UserEntity {
     Map<String, List<int>>? completedLevels,
     Map<String, Map<String, int>>? starRatings,
     int? currentStreak,
+    int? previousStreak,
     Map<String, int>? dailyXpHistory,
     int? doubleXP,
     int? hintCount,
@@ -390,6 +399,7 @@ class UserModel extends UserEntity {
     Object? photoUrl = _absent,
     Object? fcmToken = _absent,
     Object? lastLoginDate = _absent,
+    Object? lastStreakDate = _absent,
     Object? premiumExpiryDate = _absent,
     Object? doubleXPExpiry = _absent,
     Object? lastVipGiftDate = _absent,
@@ -417,6 +427,7 @@ class UserModel extends UserEntity {
       completedLevels: completedLevels ?? this.completedLevels,
       starRatings: starRatings ?? this.starRatings,
       currentStreak: currentStreak ?? this.currentStreak,
+      previousStreak: previousStreak ?? this.previousStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
       doubleXP: doubleXP ?? this.doubleXP,
       hintCount: hintCount ?? this.hintCount,
@@ -460,6 +471,9 @@ class UserModel extends UserEntity {
       lastLoginDate: identical(lastLoginDate, _absent)
           ? this.lastLoginDate
           : lastLoginDate as DateTime?,
+      lastStreakDate: identical(lastStreakDate, _absent)
+          ? this.lastStreakDate
+          : lastStreakDate as String?,
       premiumExpiryDate: identical(premiumExpiryDate, _absent)
           ? this.premiumExpiryDate
           : premiumExpiryDate as DateTime?,

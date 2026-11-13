@@ -161,5 +161,36 @@ void main() {
         expect(copy.previousRankWeekKey, '2026-W46');
       },
     );
+
+    test('serializes and deserializes streak audit fields correctly', () {
+      final model = UserModel(
+        id: 'u13',
+        email: 'streak.master@vowl.app',
+        dailyXpHistory: const {},
+        currentStreak: 12,
+        previousStreak: 11,
+        lastStreakDate: '2026-11-13',
+        streakFreezes: 1,
+      );
+
+      final map = model.toMap();
+      expect(map['previousStreak'], 11);
+      expect(map['lastStreakDate'], '2026-11-13');
+
+      final reconstructed = UserModel.fromMap(map);
+      expect(reconstructed.currentStreak, 12);
+      expect(reconstructed.previousStreak, 11);
+      expect(reconstructed.lastStreakDate, '2026-11-13');
+      expect(reconstructed.streakFreezes, 1);
+
+      final copy = reconstructed.copyWith(
+        currentStreak: 0,
+        previousStreak: 12,
+        lastStreakDate: '2026-11-13',
+      );
+      expect(copy.currentStreak, 0);
+      expect(copy.previousStreak, 12);
+      expect(copy.lastStreakDate, '2026-11-13');
+    });
   });
 }
