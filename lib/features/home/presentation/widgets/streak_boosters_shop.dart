@@ -181,19 +181,25 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     fallback:
                         'Your flame is burning! Only needed when streak is lost.',
                   )
-                : context.tr(
-                    'streak.repair_subtitle',
-                    fallback:
-                        'Melt the ice and restore your flame from yesterday.',
-                  ),
+                : (user.previousStreak > 0
+                    ? context.tr(
+                        'streak.repair_restore_prev',
+                        args: [user.previousStreak.toString()],
+                        fallback:
+                            'Restore your lost ${user.previousStreak}-day flame from yesterday.',
+                      )
+                    : context.tr(
+                        'streak.repair_no_broken',
+                        fallback: 'No lost streak to repair.',
+                      )),
             icon: LucideIcons.flame,
             color: _LocalPalette.colorff5f6d,
             cost: UserGameConstants.kStreakRepairCost,
             currentCoins: user.coins,
             isPremiumOnly: false,
             isUserPremium: user.isPremium,
-            isDisabled: user.currentStreak > 0,
-            onTap: user.currentStreak > 0
+            isDisabled: user.currentStreak > 0 || user.previousStreak == 0,
+            onTap: (user.currentStreak > 0 || user.previousStreak == 0)
                 ? null
                 : () => _handlePurchase(
                       context,

@@ -431,12 +431,17 @@ class GamificationRepositoryImpl
               : 1;
         } else if (dayDiff > 1) {
           // Missed 1+ days: check if protected by shield or Elite Level 50 auto-shield
+          final missedDays = dayDiff - 1;
           final hasAutoShield = userData.level >= 50;
-          final hasShield = userData.streakFreezes > 0 || hasAutoShield;
-          if (hasShield && userData.currentStreak > 0) {
+          final hasEnoughShields =
+              hasAutoShield || (userData.streakFreezes >= missedDays);
+          if (hasEnoughShields && userData.currentStreak > 0) {
             newStreak = userData.currentStreak + 1;
-            if (!hasAutoShield && userData.streakFreezes > 0) {
-              updatedStreakFreezes = userData.streakFreezes - 1;
+            if (!hasAutoShield) {
+              updatedStreakFreezes = math.max(
+                0,
+                userData.streakFreezes - missedDays,
+              );
             }
           } else {
             // Unshielded gap: streak broken, save previousStreak for repair!
@@ -736,19 +741,16 @@ class GamificationRepositoryImpl
         final currentStreak = (data['currentStreak'] as num?)?.toInt() ?? 0;
         final previousStreak = (data['previousStreak'] as num?)?.toInt() ?? 0;
 
-        // If streak is already active and no broken streak was recorded, reject
-        if (currentStreak > 0 && previousStreak == 0) {
+        // If streak is already active or no broken streak was recorded, reject
+        if (currentStreak > 0 || previousStreak == 0) {
           return Left(ServerFailure('streak-not-broken'));
         }
 
         final now = DateTime.now();
         final todayKey = _dateKey(now);
 
-        // True Streak Repair: restores the user's actual previous streak + 1,
-        // or defaults to at least 2 if previous was 0 or 1.
-        final newStreak = previousStreak > 0
-            ? previousStreak + 1
-            : (currentStreak <= 1 ? 2 : currentStreak + 1);
+        // True Streak Repair: restores the user's actual previous streak + 1
+        final newStreak = previousStreak + 1;
 
         transaction.update(docRef, {
           'coins': currentCoins - cost,
@@ -795,12 +797,16 @@ class GamificationRepositoryImpl
         final data = snapshot.data()!;
         final currentStreak = (data['currentStreak'] as num?)?.toInt() ?? 0;
         final previousStreak = (data['previousStreak'] as num?)?.toInt() ?? 0;
+
+        // If streak is already active or no broken streak was recorded, reject
+        if (currentStreak > 0 || previousStreak == 0) {
+          return Left(ServerFailure('streak-not-broken'));
+        }
+
         final now = DateTime.now();
         final todayKey = _dateKey(now);
 
-        final newStreak = previousStreak > 0
-            ? previousStreak + 1
-            : (currentStreak <= 1 ? 2 : currentStreak + 1);
+        final newStreak = previousStreak + 1;
 
         transaction.update(docRef, {
           'currentStreak': newStreak,

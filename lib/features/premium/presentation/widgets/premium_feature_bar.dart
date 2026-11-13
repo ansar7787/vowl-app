@@ -312,6 +312,24 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                 ),
                 _buildListFeature(
                   context,
+                  icon: LucideIcons.bot,
+                  title: context.tr(
+                    'premium.feature_ai_tools',
+                    fallback: 'AI Learning Suite',
+                  ),
+                  color: AppColors.teal500,
+                ),
+                _buildListFeature(
+                  context,
+                  icon: LucideIcons.zap,
+                  title: context.tr(
+                    'premium.feature_2x_speed',
+                    fallback: '2X Speed Progress',
+                  ),
+                  color: IllustrationColors.warmOrange,
+                ),
+                _buildListFeature(
+                  context,
                   icon: LucideIcons.award,
                   title: context.tr(
                     'premium.feature_vip_badges',
