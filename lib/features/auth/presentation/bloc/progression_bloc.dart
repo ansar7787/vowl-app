@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
@@ -271,9 +272,25 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     _lastProcessedUser = user;
 
     final now = DateTime.now();
-    final lastLogin = user.lastLoginDate;
+    final localNow = now.toLocal();
+    final todayKey =
+        '${localNow.year}-${localNow.month.toString().padLeft(2, '0')}-${localNow.day.toString().padLeft(2, '0')}';
 
-    if (lastLogin == null) {
+    // 1. If today's streak was already recorded/maintained, streak cannot be broken today!
+    if (user.lastStreakDate == todayKey) {
+      notificationService.scheduleStreakReminder(user.currentStreak);
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
+
+    // Determine the reference date for consecutive streak calculation.
+    DateTime? refDate;
+    if (user.lastStreakDate != null) {
+      refDate = DateTime.tryParse(user.lastStreakDate!);
+    }
+    refDate ??= user.lastLoginDate?.toLocal();
+
+    if (refDate == null) {
       // First-ever login: initialize lastLoginDate, streak starts at 0 until first lesson
       final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
       await updateUser(UpdateUserParams(user: updatedUser));
@@ -282,19 +299,17 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       return;
     }
 
-    final localLastLogin = lastLogin.toLocal();
-    final localNow = now.toLocal();
-    final lastDateOnly = DateTime.utc(
-      localLastLogin.year,
-      localLastLogin.month,
-      localLastLogin.day,
+    final refDateOnly = DateTime.utc(
+      refDate.year,
+      refDate.month,
+      refDate.day,
     );
     final nowDateOnly = DateTime.utc(
       localNow.year,
       localNow.month,
       localNow.day,
     );
-    final dayDifference = nowDateOnly.difference(lastDateOnly).inDays;
+    final dayDifference = nowDateOnly.difference(refDateOnly).inDays;
 
     if (dayDifference <= 1) {
       // 0 = already opened today.
@@ -305,15 +320,20 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       return;
     }
 
-    // dayDifference > 1 — missed day! Check for streak protection
-    final hasShield = user.streakFreezes > 0;
+    // dayDifference > 1 — missed at least 1 calendar day! Check for streak protection
+    final missedDays = dayDifference - 1;
     final hasAutoShield = user.level >= 50;
+    final hasEnoughShields = hasAutoShield || user.streakFreezes >= missedDays;
 
-    if (hasShield || hasAutoShield) {
+    if (hasEnoughShields && user.currentStreak > 0) {
+      final yesterday = localNow.subtract(const Duration(days: 1));
+      final yesterdayKey =
+          '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
       final updatedUser = user.copyWith(
         streakFreezes: hasAutoShield
             ? user.streakFreezes
-            : user.streakFreezes - 1,
+            : user.streakFreezes - missedDays,
+        lastStreakDate: yesterdayKey,
         lastLoginDate: now.subtract(const Duration(days: 1)),
       );
       await updateUser(UpdateUserParams(user: updatedUser));
@@ -328,8 +348,13 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         ),
       );
     } else {
-      // Reset streak to 0 so Streak Repair can be used!
-      final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
+      // Unshielded gap: streak broken, save previousStreak so Streak Repair can restore it!
+      final updatedUser = user.copyWith(
+        currentStreak: 0,
+        previousStreak:
+            user.currentStreak > 0 ? user.currentStreak : user.previousStreak,
+        lastLoginDate: now,
+      );
       await updateUser(UpdateUserParams(user: updatedUser));
       notificationService.scheduleStreakReminder(0);
       emit(
@@ -455,6 +480,17 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     emit(state.copyWith(isLoading: true));
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
+      return;
+    }
+    final user = authBloc.state.user;
+    if (user != null &&
+        user.streakFreezes >= UserGameConstants.kMaxStreakShields) {
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => 'streak.max_shields_reached',
+        ),
+      );
       return;
     }
     final result = await purchaseStreakFreeze(event.cost);

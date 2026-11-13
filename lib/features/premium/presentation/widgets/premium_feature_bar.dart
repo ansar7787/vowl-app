@@ -77,8 +77,8 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                                 fallback: 'Show Less',
                               )
                             : context.tr(
-                                'premium.view_all_14',
-                                fallback: 'View All 14',
+                                'premium.view_all_12',
+                                fallback: 'View All 12',
                               ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -199,7 +199,7 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
           ),
         ),
 
-        // Expandable Full Detailed Manifest (All 14 Perks)
+        // Expandable Full Detailed Manifest (All 12 Perks)
         AnimatedCrossFade(
           firstChild: const SizedBox.shrink(),
           secondChild: Container(
@@ -276,15 +276,6 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                 ),
                 _buildListFeature(
                   context,
-                  icon: LucideIcons.flame,
-                  title: context.tr(
-                    'premium.feature_streak_repair',
-                    fallback: 'VIP Streak Repair',
-                  ),
-                  color: AppColors.amber500,
-                ),
-                _buildListFeature(
-                  context,
                   icon: LucideIcons.wifiOff,
                   title: context.tr(
                     'premium.feature_play_offline',
@@ -321,12 +312,21 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                 ),
                 _buildListFeature(
                   context,
-                  icon: LucideIcons.dumbbell,
+                  icon: LucideIcons.bot,
                   title: context.tr(
-                    'premium.feature_unlimited_practice',
-                    fallback: 'Unlimited Mastery Training',
+                    'premium.feature_ai_tools',
+                    fallback: 'AI Learning Suite',
                   ),
-                  color: AppColors.orange500,
+                  color: AppColors.teal500,
+                ),
+                _buildListFeature(
+                  context,
+                  icon: LucideIcons.zap,
+                  title: context.tr(
+                    'premium.feature_2x_speed',
+                    fallback: '2X Speed Progress',
+                  ),
+                  color: IllustrationColors.warmOrange,
                 ),
                 _buildListFeature(
                   context,

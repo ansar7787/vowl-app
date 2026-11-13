@@ -9,13 +9,9 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:go_router/go_router.dart';
-import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -179,44 +175,46 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           _buildShopItem(
             context,
             title: context.tr('streak.repair_title', fallback: 'STREAK REPAIR'),
-            subtitle: !user.isPremium
+            subtitle: user.currentStreak > 0
                 ? context.tr(
-                    'streak.repair_premium_required',
+                    'streak.repair_streak_active',
                     fallback:
-                        'Exclusive to Premium. Upgrade to restore your flame.',
+                        'Your flame is burning! Only needed when streak is lost.',
                   )
-                : context.tr(
-                    'streak.repair_subtitle',
-                    fallback:
-                        'Melt the ice and restore your flame from yesterday.',
-                  ),
+                : (user.previousStreak > 0
+                    ? context.tr(
+                        'streak.repair_restore_prev',
+                        args: [user.previousStreak.toString()],
+                        fallback:
+                            'Restore your lost ${user.previousStreak}-day flame from yesterday.',
+                      )
+                    : context.tr(
+                        'streak.repair_no_broken',
+                        fallback: 'No lost streak to repair.',
+                      )),
             icon: LucideIcons.flame,
             color: _LocalPalette.colorff5f6d,
-            cost: 0,
+            cost: UserGameConstants.kStreakRepairCost,
             currentCoins: user.coins,
-            isPremiumOnly: true,
+            isPremiumOnly: false,
             isUserPremium: user.isPremium,
-            isDisabled: user.isPremium && user.currentStreak > 0,
-            onTap: !user.isPremium
-                ? () {
-                    di.sl<HapticService>().selection();
-                    context.push(AppRouter.premiumRoute);
-                  }
-                : (user.currentStreak > 0
-                      ? null
-                      : () {
-                          di.sl<HapticService>().success();
-                          _executePurchase(
-                            context,
-                            name: context.tr(
-                              'adventure.streak_repair',
-                              fallback: 'Streak Repair',
-                            ),
-                            action: () => context.read<ProgressionBloc>().add(
-                              const ProgressionRepairStreakFreeRequested(),
-                            ),
-                          );
-                        }),
+            isDisabled: user.currentStreak > 0 || user.previousStreak == 0,
+            onTap: (user.currentStreak > 0 || user.previousStreak == 0)
+                ? null
+                : () => _handlePurchase(
+                      context,
+                      name: context.tr(
+                        'adventure.streak_repair',
+                        fallback: 'Streak Repair',
+                      ),
+                      cost: UserGameConstants.kStreakRepairCost,
+                      currentCoins: user.coins,
+                      action: () => context.read<ProgressionBloc>().add(
+                        const ProgressionRepairStreakRequested(
+                          UserGameConstants.kStreakRepairCost,
+                        ),
+                      ),
+                    ),
             onAdTap:
                 null, // Rewarded ad / free coin bypass removed per production policy
           ),
@@ -226,27 +224,38 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             title: context
                 .tr('adventure.streak_shield', fallback: 'Streak Shield')
                 .toUpperCase(),
-            subtitle: context.tr(
-              'streak.shield_subtitle',
-              fallback: 'A mystical barrier that prevents streak loss.',
-            ),
+            subtitle: user.streakFreezes >= UserGameConstants.kMaxStreakShields
+                ? context.tr(
+                    'streak.shield_max_reached',
+                    fallback: 'Maximum capacity reached (2/2 shields).',
+                  )
+                : context.tr(
+                    'streak.shield_subtitle',
+                    fallback: 'A mystical barrier that prevents streak loss.',
+                  ),
             icon: LucideIcons.shieldCheck,
             color: _LocalPalette.color38bdf8,
-            cost: 150,
+            cost: UserGameConstants.kStreakShieldCost,
             count: user.streakFreezes,
             currentCoins: user.coins,
-            onTap: () => _handlePurchase(
-              context,
-              name: context.tr(
-                'adventure.streak_shield',
-                fallback: 'Streak Shield',
-              ),
-              cost: 150,
-              currentCoins: user.coins,
-              action: () => context.read<ProgressionBloc>().add(
-                const ProgressionPurchaseStreakFreezeRequested(150),
-              ),
-            ),
+            isDisabled:
+                user.streakFreezes >= UserGameConstants.kMaxStreakShields,
+            onTap: user.streakFreezes >= UserGameConstants.kMaxStreakShields
+                ? null
+                : () => _handlePurchase(
+                      context,
+                      name: context.tr(
+                        'adventure.streak_shield',
+                        fallback: 'Streak Shield',
+                      ),
+                      cost: UserGameConstants.kStreakShieldCost,
+                      currentCoins: user.coins,
+                      action: () => context.read<ProgressionBloc>().add(
+                        const ProgressionPurchaseStreakFreezeRequested(
+                          UserGameConstants.kStreakShieldCost,
+                        ),
+                      ),
+                    ),
           ),
           SizedBox(height: 16.h),
           _buildShopItem(

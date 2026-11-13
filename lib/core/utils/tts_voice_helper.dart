@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -171,6 +172,22 @@ class TtsVoiceHelper {
     } catch (_) {}
   }
 
+  /// Resolves the canonical BCP-47 language locale for a given [preset].
+  static String resolveLocaleForPreset(
+    TtsVoicePreset preset, [
+    String? explicitLocale,
+  ]) {
+    if (explicitLocale != null && explicitLocale.trim().isNotEmpty) {
+      return explicitLocale.trim();
+    }
+    return switch (preset) {
+      TtsVoicePreset.britishAccent => 'en-GB',
+      TtsVoicePreset.australianAccent => 'en-AU',
+      TtsVoicePreset.indianEnglish => 'en-IN',
+      _ => 'en-US',
+    };
+  }
+
   /// Configures a [FlutterTts] instance with optimal high-fidelity on-device voices,
   /// natural human speaking rates, and pleasant pitches.
   static Future<void> applyPresetToTts(
@@ -179,15 +196,27 @@ class TtsVoiceHelper {
     String? explicitLocale,
   }) async {
     try {
+      // 0. Low-latency Queue Mode & iOS Audio Category
+      try {
+        await tts.setQueueMode(1); // QUEUE_FLUSH: immediate playback without queuing lag
+      } catch (_) {}
+
+      if (defaultTargetPlatform == TargetPlatform.iOS) {
+        try {
+          await tts.setIosAudioCategory(
+            IosTextToSpeechAudioCategory.ambientSolo,
+            [
+              IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+              IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+              IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+            ],
+            IosTextToSpeechAudioMode.voicePrompt,
+          );
+        } catch (_) {}
+      }
+
       // 1. Set Language Locale
-      final targetLocale =
-          explicitLocale ??
-          switch (preset) {
-            TtsVoicePreset.britishAccent => 'en-GB',
-            TtsVoicePreset.australianAccent => 'en-AU',
-            TtsVoicePreset.indianEnglish => 'en-IN',
-            _ => 'en-US',
-          };
+      final targetLocale = resolveLocaleForPreset(preset, explicitLocale);
       await tts.setLanguage(targetLocale);
 
       // 2. Cadence and Pitch Calibration

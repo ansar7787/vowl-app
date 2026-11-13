@@ -229,30 +229,24 @@ class GamificationRepositoryImpl
         final user = _firebaseAuth.currentUser;
         if (user == null) return Left(AuthFailure('user-not-logged-in'));
         final cachedUser = await _localDataSource.getCachedUser();
-        final effectiveName =
-            (cachedUser != null &&
-                cachedUser.id == user.uid &&
-                cachedUser.displayName != null &&
-                cachedUser.displayName!.trim().isNotEmpty)
-            ? cachedUser.displayName
-            : (user.displayName != null && user.displayName!.trim().isNotEmpty
+        if (cachedUser != null && cachedUser.id == user.uid) {
+          userData = UserModel.fromEntity(cachedUser);
+        } else {
+          final effectiveName =
+              (user.displayName != null && user.displayName!.trim().isNotEmpty
                   ? user.displayName
                   : null);
-        final effectiveEmail =
-            (cachedUser != null &&
-                cachedUser.id == user.uid &&
-                cachedUser.email.trim().isNotEmpty)
-            ? cachedUser.email
-            : (user.email ?? '');
+          final effectiveEmail = (user.email ?? '');
 
-        userData = UserModel(
-          id: user.uid,
-          email: effectiveEmail,
-          displayName: effectiveName,
-          photoUrl: user.photoURL ?? cachedUser?.photoUrl,
-          dailyXpHistory: const {},
-          recentActivities: const [],
-        );
+          userData = UserModel(
+            id: user.uid,
+            email: effectiveEmail,
+            displayName: effectiveName,
+            photoUrl: user.photoURL,
+            dailyXpHistory: const {},
+            recentActivities: const [],
+          );
+        }
       }
 
       final updates = _computeRewardUpdates(
@@ -385,54 +379,89 @@ class GamificationRepositoryImpl
     // ---- Daily XP history ----
     final now = DateTime.now();
     final todayKey = _dateKey(now);
-    final bool isFirstLessonToday = (dailyHistory[todayKey] ?? 0) == 0;
     dailyHistory[todayKey] = (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
     _trimOldestDailyEntries(
       dailyHistory,
       UserGameConstants.kDailyXpHistoryLimit,
     );
 
-    // ---- Streak updates on first real lesson completion today ----
+    // ---- Streak updates strictly ONCE per calendar day ----
     int? updatedStreak;
+    int? updatedPreviousStreak;
+    String? updatedLastStreakDate;
     DateTime? updatedLastLoginDate;
+    int? updatedStreakFreezes;
 
-    if (!isVaultReward && isFirstLessonToday) {
+    // Check if the streak was already awarded for today.
+    // Backward-compat: if lastStreakDate is null, fallback to checking lastLoginDate's calendar day.
+    final bool alreadyAwardedToday = userData.lastStreakDate == todayKey ||
+        (userData.lastStreakDate == null &&
+            userData.lastLoginDate != null &&
+            _dateKey(userData.lastLoginDate!.toLocal()) == todayKey &&
+            userData.currentStreak > 0);
+
+    if (!isVaultReward && !alreadyAwardedToday) {
       int newStreak = 1;
-      if (userData.lastLoginDate != null) {
-        final localLast = userData.lastLoginDate!.toLocal();
-        final localNow = now.toLocal();
-        final lastDateOnly = DateTime.utc(
-          localLast.year,
-          localLast.month,
-          localLast.day,
+      int newPreviousStreak = userData.previousStreak;
+
+      // Determine the reference date for consecutive streak calculation.
+      DateTime? refDate;
+      if (userData.lastStreakDate != null) {
+        refDate = DateTime.tryParse(userData.lastStreakDate!);
+      }
+      refDate ??= userData.lastLoginDate?.toLocal();
+
+      if (refDate != null) {
+        final refDateOnly = DateTime.utc(
+          refDate.year,
+          refDate.month,
+          refDate.day,
         );
         final nowDateOnly = DateTime.utc(
-          localNow.year,
-          localNow.month,
-          localNow.day,
+          now.year,
+          now.month,
+          now.day,
         );
-        final dayDiff = nowDateOnly.difference(lastDateOnly).inDays;
+        final dayDiff = nowDateOnly.difference(refDateOnly).inDays;
 
-        if (dayDiff <= 1) {
-          // Same day or consecutive day: advance streak
+        if (dayDiff == 1 || (dayDiff == 0 && userData.currentStreak == 0)) {
+          // Consecutive calendar day (or first lesson today starting from 0):
           newStreak = (userData.currentStreak > 0)
               ? userData.currentStreak + 1
               : 1;
-        } else {
+        } else if (dayDiff > 1) {
           // Missed 1+ days: check if protected by shield or Elite Level 50 auto-shield
-          final hasShield = userData.streakFreezes > 0 || userData.level >= 50;
-          if (hasShield && userData.currentStreak > 0) {
+          final missedDays = dayDiff - 1;
+          final hasAutoShield = userData.level >= 50;
+          final hasEnoughShields =
+              hasAutoShield || (userData.streakFreezes >= missedDays);
+          if (hasEnoughShields && userData.currentStreak > 0) {
             newStreak = userData.currentStreak + 1;
+            if (!hasAutoShield) {
+              updatedStreakFreezes = math.max(
+                0,
+                userData.streakFreezes - missedDays,
+              );
+            }
           } else {
-            // Unshielded gap: streak broken, reset to 1 on completion
+            // Unshielded gap: streak broken, save previousStreak for repair!
+            newPreviousStreak = userData.currentStreak > 0
+                ? userData.currentStreak
+                : userData.previousStreak;
             newStreak = 1;
           }
+        } else {
+          // Fallback (e.g. clock anomaly or same-day re-evaluation)
+          newStreak = (userData.currentStreak > 0) ? userData.currentStreak : 1;
         }
       } else {
+        // First lesson ever completed
         newStreak = 1;
       }
 
       updatedStreak = newStreak;
+      updatedPreviousStreak = newPreviousStreak;
+      updatedLastStreakDate = todayKey;
       updatedLastLoginDate = now;
     }
 
@@ -550,8 +579,17 @@ class GamificationRepositoryImpl
     if (updatedStreak != null) {
       updates['currentStreak'] = updatedStreak;
     }
+    if (updatedPreviousStreak != null) {
+      updates['previousStreak'] = updatedPreviousStreak;
+    }
+    if (updatedLastStreakDate != null) {
+      updates['lastStreakDate'] = updatedLastStreakDate;
+    }
     if (updatedLastLoginDate != null) {
       updates['lastLoginDate'] = Timestamp.fromDate(updatedLastLoginDate);
+    }
+    if (updatedStreakFreezes != null) {
+      updates['streakFreezes'] = updatedStreakFreezes;
     }
 
     return updates;
@@ -701,14 +739,26 @@ class GamificationRepositoryImpl
         );
 
         final currentStreak = (data['currentStreak'] as num?)?.toInt() ?? 0;
-        // Repairing a broken streak always sets it to at least 2 so the
-        // UI shows a meaningful restored value, even when the streak was 0 or 1.
-        final newStreak = currentStreak <= 1 ? 2 : currentStreak + 1;
+        final previousStreak = (data['previousStreak'] as num?)?.toInt() ?? 0;
+
+        // If streak is already active or no broken streak was recorded, reject
+        if (currentStreak > 0 || previousStreak == 0) {
+          return Left(ServerFailure('streak-not-broken'));
+        }
+
+        final now = DateTime.now();
+        final todayKey = _dateKey(now);
+
+        // True Streak Repair: restores the user's actual previous streak + 1
+        final newStreak = previousStreak + 1;
 
         transaction.update(docRef, {
           'coins': currentCoins - cost,
           'coinHistory': history,
           'currentStreak': newStreak,
+          'previousStreak': 0, // Consumed
+          'lastStreakDate': todayKey,
+          'lastLoginDate': Timestamp.fromDate(now),
         });
         return const Right<Failure, void>(null);
       });
@@ -744,11 +794,26 @@ class GamificationRepositoryImpl
           return Left(ServerFailure('user-data-not-found'));
         }
 
-        final currentStreak =
-            (snapshot.data()!['currentStreak'] as num?)?.toInt() ?? 0;
-        final newStreak = currentStreak <= 1 ? 2 : currentStreak + 1;
+        final data = snapshot.data()!;
+        final currentStreak = (data['currentStreak'] as num?)?.toInt() ?? 0;
+        final previousStreak = (data['previousStreak'] as num?)?.toInt() ?? 0;
 
-        transaction.update(docRef, {'currentStreak': newStreak});
+        // If streak is already active or no broken streak was recorded, reject
+        if (currentStreak > 0 || previousStreak == 0) {
+          return Left(ServerFailure('streak-not-broken'));
+        }
+
+        final now = DateTime.now();
+        final todayKey = _dateKey(now);
+
+        final newStreak = previousStreak + 1;
+
+        transaction.update(docRef, {
+          'currentStreak': newStreak,
+          'previousStreak': 0,
+          'lastStreakDate': todayKey,
+          'lastLoginDate': Timestamp.fromDate(now),
+        });
         return const Right<Failure, void>(null);
       });
     } catch (e) {
@@ -777,6 +842,15 @@ class GamificationRepositoryImpl
 
         final data = doc.data()!;
         final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        final currentFreezes = (data['streakFreezes'] as num?)?.toInt() ?? 0;
+
+        if (currentFreezes >= UserGameConstants.kMaxStreakShields) {
+          _log(
+            'GamificationRepository: purchaseStreakFreeze rejected — max shields limit reached.',
+          );
+          return Left(ServerFailure('max-streak-shields-reached'));
+        }
+
         if (currentCoins < cost) {
           return Left(AuthFailure('insufficient-coins'));
         }

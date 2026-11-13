@@ -73,6 +73,12 @@ class UserEntity {
   /// Current active daily login streak in days.
   final int currentStreak;
 
+  /// Streak value prior to the most recent streak loss, preserved for Streak Repair.
+  final int previousStreak;
+
+  /// ISO date string (YYYY-MM-DD) of the most recent day a streak increment was awarded.
+  final String? lastStreakDate;
+
   /// Timestamp of the user's most recent login.
   final DateTime? lastLoginDate;
 
@@ -219,6 +225,8 @@ class UserEntity {
     this.totalExp = 0,
     this.isAdmin = false,
     this.currentStreak = 0,
+    this.previousStreak = 0,
+    this.lastStreakDate,
     this.lastLoginDate,
     this.isEmailVerified = false,
     bool isPremium = false,
@@ -337,7 +345,13 @@ class UserEntity {
   }
 
   /// Whether the user has completed at least one learning lesson or earned XP today.
-  bool get hasCompletedDailyGoal => todayExp > 0;
+  bool get hasCompletedDailyGoal {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    return todayExp > 0 ||
+        (lastStreakDate != null && lastStreakDate == todayKey);
+  }
 
   /// Computes the total XP earned in the current ISO week (Monday through Sunday)
   /// by summing entries in [dailyXpHistory] matching the dates of this week.
@@ -498,6 +512,7 @@ class UserEntity {
     Map<String, List<int>>? completedLevels,
     Map<String, Map<String, int>>? starRatings,
     int? currentStreak,
+    int? previousStreak,
     Map<String, int>? dailyXpHistory,
     int? doubleXP,
     int? hintCount,
@@ -530,6 +545,7 @@ class UserEntity {
     Object? photoUrl = _absent,
     Object? fcmToken = _absent,
     Object? lastLoginDate = _absent,
+    Object? lastStreakDate = _absent,
     Object? premiumExpiryDate = _absent,
     Object? doubleXPExpiry = _absent,
     Object? lastVipGiftDate = _absent,
@@ -558,6 +574,7 @@ class UserEntity {
       completedLevels: completedLevels ?? this.completedLevels,
       starRatings: starRatings ?? this.starRatings,
       currentStreak: currentStreak ?? this.currentStreak,
+      previousStreak: previousStreak ?? this.previousStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
       doubleXP: doubleXP ?? this.doubleXP,
       hintCount: hintCount ?? this.hintCount,
@@ -601,6 +618,9 @@ class UserEntity {
       lastLoginDate: identical(lastLoginDate, _absent)
           ? this.lastLoginDate
           : lastLoginDate as DateTime?,
+      lastStreakDate: identical(lastStreakDate, _absent)
+          ? this.lastStreakDate
+          : lastStreakDate as String?,
       premiumExpiryDate: identical(premiumExpiryDate, _absent)
           ? this.premiumExpiryDate
           : premiumExpiryDate as DateTime?,
@@ -655,6 +675,8 @@ class UserEntity {
         other.totalExp == totalExp &&
         other.isAdmin == isAdmin &&
         other.currentStreak == currentStreak &&
+        other.previousStreak == previousStreak &&
+        other.lastStreakDate == lastStreakDate &&
         other.lastLoginDate == lastLoginDate &&
         other.isPremium == isPremium &&
         other.isEmailVerified == isEmailVerified &&
@@ -725,6 +747,8 @@ class UserEntity {
       totalExp,
       isAdmin,
       currentStreak,
+      previousStreak,
+      lastStreakDate,
       lastLoginDate,
       isPremium,
       isEmailVerified,

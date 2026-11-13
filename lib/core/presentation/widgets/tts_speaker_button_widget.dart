@@ -150,6 +150,19 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       });
     }
 
+    // Defensive watchdog timeout: fires ONLY if native OEM drops completion event completely
+    _watchdogTimer?.cancel();
+    _watchdogTimer = Timer(const Duration(seconds: 25), () {
+      if (mounted &&
+          _isSpeaking &&
+          TtsSpeakerButtonWidget._activeSessionNotifier.value == sessionId) {
+        TtsSpeakerButtonWidget._activeSessionNotifier.value = null;
+        setState(() {
+          _isSpeaking = false;
+        });
+      }
+    });
+
     try {
       final double? targetRate = slow ? 0.3 : null;
       if (di.sl.isRegistered<TtsService>()) {
@@ -160,6 +173,7 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
         );
       }
     } catch (_) {
+      _watchdogTimer?.cancel();
       if (mounted) {
         setState(() {
           _isSpeaking = false;
@@ -167,19 +181,6 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       }
       return;
     }
-
-    // Defensive single watchdog timeout: fires ONLY if native OEM drops completion event completely
-    _watchdogTimer?.cancel();
-    _watchdogTimer = Timer(const Duration(seconds: 30), () {
-      if (mounted &&
-          _isSpeaking &&
-          TtsSpeakerButtonWidget._activeSessionNotifier.value == sessionId) {
-        TtsSpeakerButtonWidget._activeSessionNotifier.value = null;
-        setState(() {
-          _isSpeaking = false;
-        });
-      }
-    });
   }
 
   @override

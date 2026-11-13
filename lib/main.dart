@@ -32,6 +32,7 @@ import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/production_guard.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -310,6 +311,11 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
       dueWords: dueWords,
       streak: dailyWordsService.streak,
     );
+  });
+  await runSafe('TtsServicePreWarm', () async {
+    if (di.sl.isRegistered<TtsService>()) {
+      await di.sl<TtsService>().preWarm();
+    }
   });
   // NotificationService is now initialized in main() before runApp() to
   // ensure pendingDeepLink is set before the router's first redirect.

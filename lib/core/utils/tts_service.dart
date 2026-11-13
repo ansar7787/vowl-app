@@ -130,34 +130,26 @@ class TtsServiceImpl implements TtsService {
 
   Future<void> _initTts() async {
     try {
-      // Yield slightly to allow native Android TextToSpeech service binding to establish
-      await Future<void>.delayed(const Duration(milliseconds: 350));
-
-      // Check if a TTS engine is available on the device with retries
-      // to accommodate asynchronous Android OS IPC service binding.
+      // Parallel non-blocking engine and language query
       bool hasEngine = false;
       bool isLangAvailable = false;
 
-      for (int attempt = 0; attempt < 3; attempt++) {
-        try {
-          final dynamic engines = await _flutterTts.getEngines;
-          if (engines is List && engines.isNotEmpty) {
-            hasEngine = true;
-          }
-          final dynamic isAvailable = await _flutterTts.isLanguageAvailable(
-            'en-US',
-          );
-          if (isAvailable == true || isAvailable == 1) {
-            hasEngine = true;
-            isLangAvailable = true;
-            break;
-          }
-        } catch (_) {}
+      try {
+        final results = await Future.wait<dynamic>([
+          _flutterTts.getEngines,
+          _flutterTts.isLanguageAvailable('en-US'),
+        ]);
+        final dynamic engines = results[0];
+        final dynamic isAvailable = results[1];
 
-        if (attempt < 2) {
-          await Future<void>.delayed(const Duration(milliseconds: 200));
+        if (engines is List && engines.isNotEmpty) {
+          hasEngine = true;
         }
-      }
+        if (isAvailable == true || isAvailable == 1) {
+          hasEngine = true;
+          isLangAvailable = true;
+        }
+      } catch (_) {}
 
       // Fallback check on platforms/devices where getEngines or isLanguageAvailable is erratic
       if (!hasEngine && !isLangAvailable) {
@@ -184,12 +176,14 @@ class TtsServiceImpl implements TtsService {
       await TtsVoiceHelper.warmUpVoices(_flutterTts);
 
       final preset = await TtsVoiceHelper.getSavedPreset(force: true);
+      final targetLocale = TtsVoiceHelper.resolveLocaleForPreset(preset);
       _activeEnginePreset = preset;
-      _activeLocale = null;
+      _activeLocale = targetLocale;
       _activeRate = 0.44;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
+        explicitLocale: targetLocale,
       );
 
       _setupDefaultHandlers();
@@ -245,12 +239,14 @@ class TtsServiceImpl implements TtsService {
         await _initTts();
       }
       final preset = await TtsVoiceHelper.getSavedPreset(force: true);
+      final targetLocale = TtsVoiceHelper.resolveLocaleForPreset(preset);
       _activeEnginePreset = preset;
-      _activeLocale = null;
+      _activeLocale = targetLocale;
       _activeRate = 0.44;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
+        explicitLocale: targetLocale,
       );
     } catch (e) {
       sl<AppLogger>().error(
@@ -268,7 +264,8 @@ class TtsServiceImpl implements TtsService {
     await _initFuture;
     try {
       final targetPreset = preset ?? await TtsVoiceHelper.getSavedPreset();
-      final targetLocale = locale ?? 'en-US';
+      final targetLocale =
+          TtsVoiceHelper.resolveLocaleForPreset(targetPreset, locale);
       final bool needsCalibration =
           _activeEnginePreset != targetPreset ||
           _activeLocale != targetLocale;
@@ -429,18 +426,20 @@ class TtsServiceImpl implements TtsService {
     try {
       final targetPreset =
           forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
+      final targetLocale =
+          TtsVoiceHelper.resolveLocaleForPreset(targetPreset, locale);
       final bool needsCalibration =
           _activeEnginePreset != targetPreset ||
-          _activeLocale != locale;
+          _activeLocale != targetLocale;
 
       if (needsCalibration) {
         await TtsVoiceHelper.applyPresetToTts(
           _flutterTts,
           preset: targetPreset,
-          explicitLocale: locale,
+          explicitLocale: targetLocale,
         );
         _activeEnginePreset = targetPreset;
-        _activeLocale = locale;
+        _activeLocale = targetLocale;
         _activeRate = 0.44;
       }
 
@@ -449,6 +448,13 @@ class TtsServiceImpl implements TtsService {
         await _flutterTts.setSpeechRate(targetRate);
         _activeRate = targetRate;
       }
+
+      if (_isSpeaking) {
+        try {
+          await _flutterTts.stop();
+        } catch (_) {}
+      }
+
       final estimatedSeconds = (cleanText.length / 5).ceil() + 3;
       final timeoutDuration = Duration(seconds: estimatedSeconds.clamp(3, 45));
 

@@ -159,5 +159,38 @@ void main() {
         expect(loggedInStreakUser.isTodayActive, true);
       },
     );
+
+    test('hasCompletedDailyGoal evaluates todayExp and lastStreakDate', () {
+      final now = DateTime.now();
+      final todayKey =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      // 1. Inactive user has not completed daily goal
+      const inactiveUser = UserEntity(id: 'inact', email: 'inact@vowl.app');
+      expect(inactiveUser.hasCompletedDailyGoal, false);
+
+      // 2. User with todayExp > 0 has completed daily goal
+      final xpUser = UserEntity(
+        id: 'xp',
+        email: 'xp@vowl.app',
+        dailyXpHistory: {todayKey: 25},
+      );
+      expect(xpUser.hasCompletedDailyGoal, true);
+
+      // 3. User with lastStreakDate == todayKey has completed daily goal (even if replay 0 XP)
+      const streakUser = UserEntity(
+        id: 'streak',
+        email: 'streak@vowl.app',
+        lastStreakDate: '9999-12-31',
+      );
+      expect(streakUser.hasCompletedDailyGoal, false);
+
+      final streakTodayUser = UserEntity(
+        id: 'streak_today',
+        email: 'streak@vowl.app',
+        lastStreakDate: todayKey,
+      );
+      expect(streakTodayUser.hasCompletedDailyGoal, true);
+    });
   });
 }
