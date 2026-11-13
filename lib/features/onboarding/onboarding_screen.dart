@@ -80,7 +80,7 @@ const _slides = <_Slide>[
         'Instant offline translations and daily word accelerators to expand your vocabulary anywhere.',
     features: [
       _Feature(Icons.translate_rounded, 'Offline Translator'),
-      _Feature(Icons.auto_stories_rounded, 'Daily 5 Words'),
+      _Feature(Icons.auto_stories_rounded, 'Daily 10 Words'),
       _Feature(Icons.public_off_rounded, 'Offline Mode'),
     ],
   ),

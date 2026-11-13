@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -124,10 +125,10 @@ void main() {
 
       expect(find.text('TODAY'), findsOneWidget);
       expect(find.text('Daily Words'), findsOneWidget);
-      expect(find.text('5 new words today'), findsOneWidget);
+      expect(find.text('10 new words today'), findsOneWidget);
       expect(find.text('Start'), findsOneWidget);
       expect(find.byIcon(Icons.menu_book_rounded), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_forward_rounded), findsOneWidget);
+      expect(find.byIcon(CupertinoIcons.chevron_forward), findsOneWidget);
     });
 
     testWidgets('renders completed state with COMPLETED ✓ badge and checkmark', (
@@ -140,7 +141,7 @@ void main() {
 
       expect(find.text('COMPLETED ✓'), findsOneWidget);
       expect(find.text('Daily Words'), findsOneWidget);
-      expect(find.text('All 5 words mastered today!'), findsOneWidget);
+      expect(find.text('All 10 words mastered today!'), findsOneWidget);
       expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
       expect(find.text('Start'), findsNothing);
     });
@@ -178,7 +179,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('COMPLETED ✓'), findsOneWidget);
-        expect(find.text('All 5 words mastered today!'), findsOneWidget);
+        expect(find.text('All 10 words mastered today!'), findsOneWidget);
       },
     );
   });

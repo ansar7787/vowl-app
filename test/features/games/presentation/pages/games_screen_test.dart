@@ -400,12 +400,12 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // Verifies active realm header banner with "All Topics" button
-      expect(find.text('All Topics'), findsOneWidget);
+      // Verifies active realm header banner renders cleanly without redundant All Topics button
+      expect(find.text('All Topics'), findsNothing);
       expect(find.textContaining('Tap any level to play'), findsOneWidget);
 
-      // Tapping "All Topics" restores the Overworld Realms Sliver
-      await tester.tap(find.text('All Topics'), warnIfMissed: false);
+      // Tapping "All" category pill in the dock restores the Overworld Realms Sliver
+      await tester.tap(find.textContaining('All ('), warnIfMissed: false);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 

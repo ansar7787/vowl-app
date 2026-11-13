@@ -164,10 +164,6 @@ class _GamesScreenState extends State<GamesScreen> {
                           user: user,
                           isDark: isDark,
                           isMidnight: isMidnight,
-                          onBack: () {
-                            _triggerHaptic();
-                            setState(() => _selectedCategory = null);
-                          },
                         ),
                       ),
                       CategoryOverworldMap(
@@ -2150,6 +2146,7 @@ class _CategoryFilterDock extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 14.h),
         ],
       ),
     );
@@ -2255,14 +2252,12 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
   final UserEntity user;
   final bool isDark;
   final bool isMidnight;
-  final VoidCallback onBack;
 
   const _ActiveRealmHeaderBanner({
     required this.category,
     required this.user,
     required this.isDark,
     required this.isMidnight,
-    required this.onBack,
   });
 
   @override
@@ -2349,7 +2344,7 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6.r),
                         ),
                         child: Text(
-                          '${stats.masteredGames}/${stats.totalGames} Done',
+                          '${stats.completedLevels}/${CategoryGamesLogic.formatNumber(stats.totalLevels)} Levels',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
@@ -2371,45 +2366,6 @@ class _ActiveRealmHeaderBanner extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-            ),
-            SizedBox(width: 8.w),
-            ScaleButton(
-              scaleDown: 0.96,
-              onTap: onBack,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100,
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.10)
-                        : AppColors.slate200,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      LucideIcons.arrowLeft,
-                      size: 13.r,
-                      color: isDark ? Colors.white70 : AppColors.slate700,
-                    ),
-                    SizedBox(width: 4.w),
-                    Text(
-                      'All Topics',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.5.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white70 : AppColors.slate700,
-                      ),
-                    ),
-                  ],
-                ),
               ),
             ),
           ],

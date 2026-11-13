@@ -735,7 +735,9 @@ class DailyWordsErrorView extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             ElevatedButton(
-              onPressed: () => context.pop(),
+              onPressed: () => context.canPop()
+                  ? context.pop()
+                  : context.go(AppRouter.homeRoute),
               child: const Text('Go Back'),
             ),
           ],
@@ -1070,7 +1072,9 @@ class SessionCompleteView extends StatelessWidget {
                 width: double.infinity,
                 height: 56.h,
                 child: ElevatedButton(
-                  onPressed: () => context.pop(),
+                  onPressed: () => context.canPop()
+                      ? context.pop()
+                      : context.go(AppRouter.homeRoute),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.indigo500,
                     foregroundColor: Colors.white,

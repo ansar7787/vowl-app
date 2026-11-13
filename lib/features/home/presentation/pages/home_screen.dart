@@ -365,7 +365,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 16.h),
                               ContinueLearningCard(user: user),
-                              SizedBox(height: 12.h),
+                              SizedBox(height: 14.h),
                               const DailyWordsSprintCard(),
                             ],
                           ),
@@ -382,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 24.h),
+                              SizedBox(height: 14.h),
                               ValueListenableBuilder<bool>(
                                 valueListenable: _isRankLoading,
                                 builder: (context, isRankLoading, _) {

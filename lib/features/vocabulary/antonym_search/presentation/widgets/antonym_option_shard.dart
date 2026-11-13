@@ -142,7 +142,7 @@ class AntonymOptionShard extends StatelessWidget {
           begin: const Offset(1, 1),
           end: const Offset(0, 0),
           duration: 400.ms,
-          curve: Curves.easeInBack,
+          curve: Curves.easeInCubic,
         )
         .fadeOut()
         .animate(target: active ? 1 : 0)

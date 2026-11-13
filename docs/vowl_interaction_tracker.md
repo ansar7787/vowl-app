@@ -1,4 +1,4 @@
-# VOWL Game-by-Game Interaction Tracker (125 Games) - DYNAMIC UI EDITION
+# VOWL Game-by-Game Interaction Tracker (100 Games) - DYNAMIC UI EDITION
 
 **Purpose:** This is the master checklist for upgrading every single game using the **Dynamic UI Strategy** (Jigsaw, Anagrams, Dictation). 
 **Rule:** We DO NOT change the JSON data. We dynamically split the correct answer string on the UI side to create new mechanics.

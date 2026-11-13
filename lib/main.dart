@@ -195,7 +195,14 @@ void main() async {
             return;
           }
         }
-        FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+        // Recoverable visual layout issues should be recorded as non-fatal so
+        // they do not artificially tank Crash-Free User metrics in Firebase.
+        final isOverflow = details.exceptionAsString().contains('overflowed by');
+        if (details.silent || isOverflow) {
+          FirebaseCrashlytics.instance.recordFlutterError(details);
+        } else {
+          FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+        }
       };
 
       PlatformDispatcher.instance.onError = (error, stack) {

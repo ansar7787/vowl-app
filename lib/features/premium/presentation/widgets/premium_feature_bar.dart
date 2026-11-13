@@ -15,7 +15,7 @@ class _LocalPalette {
 }
 
 /// Feature strip presenting the core VIP value pillars
-/// (Zero Ads, 25,000 Levels, Real Accents, and Offline Mode)
+/// (Zero Ads, 20,000 Levels, Real Accents, and Offline Mode)
 /// alongside an expandable detailed perks manifest.
 class ModernFeatureBar extends StatefulWidget {
   const ModernFeatureBar({super.key});
@@ -153,11 +153,11 @@ class _ModernFeatureBarState extends State<ModernFeatureBar> {
                   iconColor: AppColors.indigo500,
                   title: context.tr(
                     'premium.pillar_levels',
-                    fallback: '25,000 Levels',
+                    fallback: '20,000 Levels',
                   ),
                   subtitle: context.tr(
                     'premium.pillar_levels_sub',
-                    fallback: '125 games unlocked',
+                    fallback: '100 games unlocked',
                   ),
                 ),
               ),

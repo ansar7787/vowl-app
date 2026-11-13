@@ -6,7 +6,7 @@
 |--------|-------|
 | Main Categories | 9 (Vocabulary, Listening, Reading, Grammar, Writing, Speaking, Accent, Roleplay, Elite Mastery) |
 | Kids Category | 1 (25 sub-topics) |
-| Total Game Modules | 100 main + 25 kids = **125** |
+| Total Game Modules | **100 Games** (20,000 Levels, 60,000 Questions) |
 | Supported Languages | 18 (EN, HI, ES, PT, AR, FR, RU, ZH, KO, JA, DE, ML, KN, TA, TE, MR, BN, GU) |
 | Interaction Types | 55 unique types defined in `InteractionType` enum |
 | Existing Engagement | Streaks, Coins, XP, Leaderboard, Mystery Chest, Sticker Book, Kids Room |
@@ -15,9 +15,9 @@
 
 ## 🎯 ANSWER TO YOUR CORE QUESTIONS
 
-### Q1: "Is 125 games enough for users to actually learn English?"
+### Q1: "Is 100 games enough for users to actually learn English?"
 
-**YES, 125 games is MORE than enough content.** Duolingo launched with ~30 exercise types. Your 125 is extremely comprehensive. The issue isn't quantity — it's **depth and retention mechanics**. What's missing:
+**YES, 100 games (20,000 levels & 60,000 questions) is MORE than enough content.** Duolingo launched with ~30 exercise types. Your 100 games across 9 pillars is extremely comprehensive. The issue isn't quantity — it's **depth and retention mechanics**. What's missing:
 
 1. **No Spaced Repetition System (SRS)** — Users play once and move on. No review scheduling.
 2. **No "Word Bank" that grows** — Users don't build a personal vocabulary they can revisit.
@@ -348,7 +348,7 @@
 ## 🎓 PEDAGOGICAL VERDICT
 
 ### What's EXCELLENT ✅
-- **125 games** covering all 4 language skills (LSRW) + grammar + accent + roleplay
+- **100 games** (20,000 levels & 60,000 questions) covering all 4 language skills (LSRW) + grammar + accent + roleplay
 - **18 languages** for UI = massive market reach
 - **Kids Zone** with 25 topics, stickers, mascots, level maps = best-in-class
 - **Speaking games** use self-evaluation (no unreliable STT)

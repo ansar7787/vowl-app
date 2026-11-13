@@ -572,10 +572,21 @@ class AuthRepositoryImpl
     }
   }
 
+  static final firebase_auth.ActionCodeSettings _authActionCodeSettings =
+      firebase_auth.ActionCodeSettings(
+        url: 'https://vowl.in/auth-action',
+        handleCodeInApp: false,
+        androidPackageName: 'com.vowl.app',
+        androidInstallApp: false,
+      );
+
   @override
   Future<Either<Failure, void>> sendPasswordResetEmail(String email) async {
     try {
-      await _firebaseAuth.sendPasswordResetEmail(email: email);
+      await _firebaseAuth.sendPasswordResetEmail(
+        email: email,
+        actionCodeSettings: _authActionCodeSettings,
+      );
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -618,7 +629,7 @@ class AuthRepositoryImpl
       Object? lastException;
       for (int attempt = 1; attempt <= 3; attempt++) {
         try {
-          await activeUser.sendEmailVerification();
+          await activeUser.sendEmailVerification(_authActionCodeSettings);
           return const Right(null);
         } catch (e) {
           lastException = e;

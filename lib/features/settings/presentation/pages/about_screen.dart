@@ -4,6 +4,7 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -231,7 +232,9 @@ class _AboutScreenState extends State<AboutScreen> {
             color: isDark ? Colors.white : Colors.black,
           ),
         ),
-        onPressed: () => context.pop(),
+        onPressed: () => context.canPop()
+            ? context.pop()
+            : context.go(AppRouter.settingsRoute),
       ),
       title: Text(
         context.tr('settings.about', fallback: 'About'),

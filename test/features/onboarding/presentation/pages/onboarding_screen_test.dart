@@ -436,7 +436,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
       expect(find.text('Offline Translator'), findsOneWidget);
-      expect(find.text('Daily 5 Words'), findsOneWidget);
+      expect(find.text('Daily 10 Words'), findsOneWidget);
       expect(find.text('Offline Mode'), findsOneWidget);
 
       // Slide 3 features

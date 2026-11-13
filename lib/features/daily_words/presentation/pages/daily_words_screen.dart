@@ -816,7 +816,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             'You are on word ${state.currentIndex + 1} of ${state.totalWords}. Leaving now will pause your progress.',
       ),
       onQuit: () {
-        context.pop();
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go(AppRouter.homeRoute);
+        }
       },
     );
   }
@@ -1005,7 +1009,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             return;
                           }
                           if (state.isSessionDone || state.currentIndex == 0) {
-                            context.pop();
+                            if (context.canPop()) {
+                              context.pop();
+                            } else {
+                              context.go(AppRouter.homeRoute);
+                            }
                           } else {
                             _confirmExitSession(state);
                           }

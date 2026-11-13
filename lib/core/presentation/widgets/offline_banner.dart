@@ -179,9 +179,13 @@ class OfflineBanner extends StatelessWidget {
     required int max,
     required bool isDark,
   }) {
+    final navContext = AppRouter.rootNavigatorKey.currentContext ??
+        (Navigator.maybeOf(context) != null ? context : null);
+    if (navContext == null) return;
+
     Haptics.vibrate(HapticsType.selection);
     showModalBottomSheet<void>(
-      context: context,
+      context: navContext,
       useRootNavigator: true,
       useSafeArea: true,
       backgroundColor: Colors.transparent,

@@ -131,7 +131,9 @@ class VowlCoinsScreen extends StatelessWidget {
                                 child: IconButton(
                                   padding: EdgeInsets.zero,
                                   iconSize: 18.r,
-                                  onPressed: () => context.pop(),
+                                  onPressed: () => context.canPop()
+                                      ? context.pop()
+                                      : context.go(AppRouter.profileRoute),
                                   icon: Icon(
                                     Icons.arrow_back_ios_new_rounded,
                                     color: isDark
