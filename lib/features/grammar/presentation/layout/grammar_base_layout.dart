@@ -12,7 +12,6 @@ import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_s
 import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_mascot.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 /// Scaffold shell providing background styling, header HUD, peeking mascot, and feedback drawers for grammar subgames.
@@ -110,16 +109,13 @@ class GrammarBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'grammar',
-              onResume: () {},
               onRestart: () {
                 context.read<GrammarBloc>().add(
                   FetchGrammarQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.of(context).pop(),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             context.read<GrammarBloc>().add(const GrammarHintUsed());
             onHint();

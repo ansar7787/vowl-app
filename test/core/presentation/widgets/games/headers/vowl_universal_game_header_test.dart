@@ -163,5 +163,64 @@ void main() {
       expect(find.text('+1'), findsNothing);
       expect(find.text('0'), findsNothing);
     });
+
+    testWidgets('showBriefing is false by default, maintaining clean 4-pill header', (tester) async {
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(
+          UserEntity(id: '1', email: 'test@vowl.com', hintCount: 1),
+        ),
+      );
+
+      await tester.pumpWidget(
+        _buildTestableWidget(
+          authBloc: mockAuthBloc,
+          economyBloc: mockEconomyBloc,
+          child: VowlUniversalGameHeader(
+            level: 1,
+            category: 'grammar',
+            onPause: () {},
+            onHint: () {},
+          ),
+        ),
+      );
+
+      // Briefing icon should NOT be in the top row by default
+      expect(find.byIcon(Icons.info_outline_rounded), findsNothing);
+      // Top row maintains Pause, Level, Hearts, Hint
+      expect(find.bySemanticsLabel('Pause Game'), findsOneWidget);
+      expect(find.text('LEVEL 1'), findsOneWidget);
+      expect(find.byIcon(Icons.lightbulb_rounded), findsOneWidget);
+    });
+
+    testWidgets('renders briefing tile when showBriefing is true', (tester) async {
+      bool briefingCalled = false;
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(
+          UserEntity(id: '1', email: 'test@vowl.com', hintCount: 1),
+        ),
+      );
+
+      await tester.pumpWidget(
+        _buildTestableWidget(
+          authBloc: mockAuthBloc,
+          economyBloc: mockEconomyBloc,
+          child: VowlUniversalGameHeader(
+            level: 1,
+            category: 'grammar',
+            showBriefing: true,
+            onBriefing: () => briefingCalled = true,
+            onPause: () {},
+            onHint: () {},
+          ),
+        ),
+      );
+
+      final briefingBtn = find.byIcon(Icons.info_outline_rounded);
+      expect(briefingBtn, findsOneWidget);
+
+      await tester.tap(briefingBtn);
+      await tester.pump();
+      expect(briefingCalled, isTrue);
+    });
   });
 }

@@ -15,7 +15,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 // =============================================================================
@@ -145,16 +144,13 @@ class SpeakingBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'speaking',
-              onResume: () {},
               onRestart: () {
                 context.read<SpeakingBloc>().add(
                   FetchSpeakingQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.of(context).pop(),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             context.read<SpeakingBloc>().add(const SpeakingHintUsed());
             onHint();

@@ -12,7 +12,6 @@ import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_s
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 /// Base scaffolding layout providing standard header, peeking mascot, and footer for reading games.
@@ -154,16 +153,13 @@ class ReadingBaseLayout extends StatelessWidget {
                     VowlPauseBottomSheet.show(
                       context,
                       category: 'reading',
-                      onResume: () {},
                       onRestart: () {
                         context.read<ReadingBloc>().add(
                           FetchReadingQuests(gameType: gameType, level: level),
                         );
                       },
-                      onQuit: () => Navigator.of(context).pop(),
                     );
                   },
-                  onBriefing: () => GameBriefingScope.show(context),
                   onHint: () {
                     context.read<ReadingBloc>().add(const ReadingHintUsed());
                     onHint();

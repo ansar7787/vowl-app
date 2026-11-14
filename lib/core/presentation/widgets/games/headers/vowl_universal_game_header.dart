@@ -57,8 +57,13 @@ class VowlUniversalGameHeader extends StatelessWidget {
   /// Callback executed when tapping the Pause button.
   final VoidCallback onPause;
 
-  /// Callback executed when tapping the Briefing (ℹ️) button.
-  final VoidCallback onBriefing;
+  /// Whether the briefing (ℹ️) button should be displayed in the top row.
+  /// Defaults to false to provide an uncluttered 4-control header (Pause, Level, Hearts, Hint).
+  /// Briefing is readily accessible in the Pause bottom sheet.
+  final bool showBriefing;
+
+  /// Optional callback executed when tapping the Briefing (ℹ️) button.
+  final VoidCallback? onBriefing;
 
   /// Callback executed when activating the Hint (💡) action.
   final VoidCallback onHint;
@@ -80,9 +85,10 @@ class VowlUniversalGameHeader extends StatelessWidget {
     this.hintText,
     this.isHintUsedOnCurrentQuest = false,
     required this.onPause,
-    required this.onBriefing,
+    this.onBriefing,
     required this.onHint,
     this.showHint = true,
+    this.showBriefing = false,
     this.isHintEnabled = true,
   });
 
@@ -144,46 +150,46 @@ class VowlUniversalGameHeader extends StatelessWidget {
                   // 3. Vector Hearts Cluster (Standard 36dp Height, 3 Lives)
                   _buildLivesCluster(context, isDark),
 
-                  // 4. Utility Actions: Briefing (ℹ️) & Smart Hint (💡)
+                  // 4. Utility Actions: Optional Briefing (ℹ️) & Smart Hint (💡)
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Tactile Briefing Squircle Tile (Standard 36x36dp)
-                      Semantics(
-                        button: true,
-                        label: context.tr('games.briefing_tooltip', fallback: 'Level Briefing'),
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: onBriefing,
-                            borderRadius: BorderRadius.circular(12.r),
-                            child: Container(
-                              width: 36.w,
-                              height: 36.h,
-                              decoration: BoxDecoration(
-                                color: solidColor.withValues(alpha: isDark ? 0.15 : 0.08),
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: solidColor.withValues(alpha: isDark ? 0.35 : 0.25),
-                                  width: 1.2,
+                      // Tactile Briefing Squircle Tile (Standard 36x36dp, shown only when showBriefing: true)
+                      if (showBriefing && onBriefing != null) ...[
+                        Semantics(
+                          button: true,
+                          label: context.tr('games.briefing_tooltip', fallback: 'Level Briefing'),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: onBriefing,
+                              borderRadius: BorderRadius.circular(12.r),
+                              child: Container(
+                                width: 36.w,
+                                height: 36.h,
+                                decoration: BoxDecoration(
+                                  color: solidColor.withValues(alpha: isDark ? 0.15 : 0.08),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: solidColor.withValues(alpha: isDark ? 0.35 : 0.25),
+                                    width: 1.2,
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.info_outline_rounded,
-                                  color: solidColor,
-                                  size: 18.r,
+                                child: Center(
+                                  child: Icon(
+                                    Icons.info_outline_rounded,
+                                    color: solidColor,
+                                    size: 18.r,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      // Cohesive Unified Smart Hint Capsule (Standard 36dp Height)
-                      if (showHint) ...[
-                        SizedBox(width: 5.w),
-                        _buildUnifiedHintCapsule(context, isDark),
+                        if (showHint) SizedBox(width: 5.w),
                       ],
+                      // Cohesive Unified Smart Hint Capsule (Standard 36dp Height)
+                      if (showHint) _buildUnifiedHintCapsule(context, isDark),
                     ],
                   ),
                 ],

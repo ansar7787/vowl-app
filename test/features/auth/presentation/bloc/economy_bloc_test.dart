@@ -171,5 +171,43 @@ void main() {
       act: (bloc) => bloc.add(const EconomyCheckDailyRewardRequested()),
       expect: () => [const EconomyState(isDailyRewardAvailable: false)],
     );
+
+    blocTest<EconomyBloc, EconomyState>(
+      'EconomyConsumeHintRequested executes 0ms optimistic deduction on AuthBloc, calls useHint, and refreshes user',
+      build: () {
+        when(() => mockUseHint(any())).thenAnswer((_) async => const Right(null));
+        return bloc;
+      },
+      act: (bloc) => bloc.add(const EconomyConsumeHintRequested()),
+      expect: () => [
+        const EconomyState(isLoading: true),
+        const EconomyState(isLoading: false),
+      ],
+      verify: (_) {
+        verify(() => mockAuthBloc.add(const AuthHintConsumedOptimistic())).called(1);
+        verify(() => mockUseHint(any())).called(1);
+        verify(() => mockAuthBloc.add(const AuthRefreshUser())).called(1);
+      },
+    );
+
+    blocTest<EconomyBloc, EconomyState>(
+      'EconomyConsumeHintRequested rolls back AuthBloc state when useHint fails',
+      build: () {
+        when(() => mockUseHint(any())).thenAnswer(
+          (_) async => Left(ServerFailure('network-error')),
+        );
+        return bloc;
+      },
+      act: (bloc) => bloc.add(const EconomyConsumeHintRequested()),
+      expect: () => [
+        const EconomyState(isLoading: true),
+        isA<EconomyState>().having((s) => s.isLoading, 'isLoading', false),
+      ],
+      verify: (_) {
+        verify(() => mockAuthBloc.add(const AuthHintConsumedOptimistic())).called(1);
+        verify(() => mockUseHint(any())).called(1);
+        verify(() => mockAuthBloc.add(const AuthHintRollback())).called(1);
+      },
+    );
   });
 }

@@ -6,6 +6,7 @@ import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 
@@ -474,6 +475,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
                 : _service.currentDay,
           ),
         );
+        if (di.sl.isRegistered<AuthBloc>()) {
+          di.sl<AuthBloc>().add(const AuthRefreshUser());
+        }
       } catch (e) {
         if (kDebugMode) {
           debugPrint('DailyWordsBloc: failed to update rewards: $e');

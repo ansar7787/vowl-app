@@ -12,7 +12,6 @@ import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_peeking_mascot.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 /// Standard base layout scaffold for all roleplay minigames.
@@ -137,16 +136,13 @@ class RoleplayBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'roleplay',
-              onResume: () {},
               onRestart: () {
                 context.read<RoleplayBloc>().add(
                   FetchRoleplayQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.of(context).pop(),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             context.read<RoleplayBloc>().add(const RoleplayHintUsed());
             onHint();

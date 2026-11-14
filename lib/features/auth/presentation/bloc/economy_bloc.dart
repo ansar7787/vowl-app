@@ -325,11 +325,17 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       emit(state.copyWith(isLoading: false));
       return;
     }
+
+    // Single-bloc architectural encapsulation: Optimistic 0ms local deduction
+    authBloc.add(const AuthHintConsumedOptimistic());
+
     _log('EconomyBloc: Consuming hint…');
     final result = await useHint(const NoParams());
     result.fold(
       (failure) {
         _log('EconomyBloc: Hint consumption FAILED: ${failure.message}');
+        // Rollback state if remote Firestore transaction fails
+        authBloc.add(const AuthHintRollback());
         emit(
           state.copyWith(
             isLoading: false,

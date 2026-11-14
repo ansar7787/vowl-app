@@ -882,9 +882,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       builder: (context) {
                         final authUser = context.watch<AuthBloc>().state.user;
                         final streakVal =
-                            authUser != null && authUser.currentStreak > 0
-                            ? authUser.currentStreak
-                            : state.streak;
+                            authUser != null ? authUser.currentStreak : state.streak;
                         final wordsCount = state.learnedThisSession.isNotEmpty
                             ? state.learnedThisSession.length
                             : (state.wordSet?.words.length ?? 10);
@@ -1081,9 +1079,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     Builder(
                       builder: (context) {
                         final authUser = context.watch<AuthBloc>().state.user;
-                        final userStreak = authUser?.currentStreak ?? 0;
                         final streak =
-                            userStreak > 0 ? userStreak : state.streak;
+                            authUser != null ? authUser.currentStreak : state.streak;
                         if (streak == 0) return const SizedBox.shrink();
                         return Semantics(
                           label:

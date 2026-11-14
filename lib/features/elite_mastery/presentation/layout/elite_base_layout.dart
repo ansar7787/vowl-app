@@ -17,7 +17,6 @@ import 'package:vowl/features/elite_mastery/presentation/widgets/elite_peeking_m
 import '../bloc/elite_mastery_bloc.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 
@@ -168,16 +167,13 @@ class EliteBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'elitemastery',
-              onResume: () {},
               onRestart: () {
                 context.read<EliteMasteryBloc>().add(
                   FetchEliteMasteryQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.pop(context),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             final bloc = context.read<EliteMasteryBloc>();
             final s = bloc.state;

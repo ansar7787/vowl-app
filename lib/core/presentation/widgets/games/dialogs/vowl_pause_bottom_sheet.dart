@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -9,12 +10,14 @@ import 'package:vowl/core/utils/locale_service.dart';
 /// Features:
 /// - Freezes game timers and animations.
 /// - Resume: Dismisses sheet and resumes the game session.
+/// - Briefing: Opens the level rules and pedagogical objectives modal without cluttering the HUD.
 /// - Restart: Resets question state and begins the level fresh.
 /// - Quit: Safely navigates the player back to the category map.
 class VowlPauseBottomSheet extends StatelessWidget {
   final VoidCallback onResume;
   final VoidCallback onRestart;
   final VoidCallback onQuit;
+  final VoidCallback? onBriefing;
   final String? category;
 
   const VowlPauseBottomSheet({
@@ -22,26 +25,37 @@ class VowlPauseBottomSheet extends StatelessWidget {
     required this.onResume,
     required this.onRestart,
     required this.onQuit,
+    this.onBriefing,
     this.category,
   });
 
   /// Displays the pause menu sheet.
+  ///
+  /// Automatically resolves [onBriefing] from [GameBriefingScope] if not provided explicitly.
+  /// Defaults [onResume] to a no-op and [onQuit] to a standard navigator pop to eliminate boilerplate.
   static Future<void> show(
     BuildContext context, {
-    required VoidCallback onResume,
+    VoidCallback? onResume,
     required VoidCallback onRestart,
-    required VoidCallback onQuit,
+    VoidCallback? onQuit,
+    VoidCallback? onBriefing,
     String? category,
   }) {
+    final effectiveBriefing = onBriefing ??
+        (GameBriefingScope.of(context) != null
+            ? () => GameBriefingScope.show(context)
+            : null);
+
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       barrierColor: Colors.black.withValues(alpha: 0.65),
       builder: (ctx) => VowlPauseBottomSheet(
-        onResume: onResume,
+        onResume: onResume ?? () {},
         onRestart: onRestart,
-        onQuit: onQuit,
+        onQuit: onQuit ?? () => Navigator.of(context).pop(),
+        onBriefing: effectiveBriefing,
         category: category,
       ),
     );
@@ -146,9 +160,48 @@ class VowlPauseBottomSheet extends StatelessWidget {
             ),
           ),
 
+          // ── Action 2: View Rules & Briefing (when available) ─────────
+          if (onBriefing != null) ...[
+            SizedBox(height: 12.h),
+            SizedBox(
+              width: double.infinity,
+              height: 48.h,
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  onBriefing!();
+                },
+                icon: Icon(
+                  Icons.info_outline_rounded,
+                  size: 20.r,
+                  color: accentColor,
+                ),
+                label: Text(
+                  context.tr('games.view_briefing', fallback: 'LEVEL RULES & BRIEFING'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.5,
+                    color: accentColor,
+                  ),
+                ),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    color: accentColor.withValues(alpha: isDark ? 0.45 : 0.35),
+                    width: 1.2,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                ),
+              ),
+            ),
+          ],
+
           SizedBox(height: 12.h),
 
-          // ── Action 2: Restart Level ──────────────────────────────────
+          // ── Action 3: Restart Level ──────────────────────────────────
           SizedBox(
             width: double.infinity,
             height: 48.h,

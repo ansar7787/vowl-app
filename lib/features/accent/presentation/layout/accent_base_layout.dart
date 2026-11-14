@@ -11,7 +11,6 @@ import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_s
 import 'package:vowl/features/accent/presentation/widgets/accent_peeking_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 // ---------------------------------------------------------------------------
@@ -121,16 +120,13 @@ class AccentBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'accent',
-              onResume: () {},
               onRestart: () {
                 context.read<AccentBloc>().add(
                   FetchAccentQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.pop(context),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             context.read<AccentBloc>().add(const AccentHintUsed());
             onHint();

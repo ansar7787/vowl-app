@@ -21,7 +21,6 @@ import 'package:vowl/features/listening/presentation/widgets/listening_peeking_m
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
@@ -267,7 +266,6 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
                 VowlPauseBottomSheet.show(
                   context,
                   category: 'listening',
-                  onResume: () {},
                   onRestart: () {
                     context.read<ListeningBloc>().add(
                       FetchListeningQuests(
@@ -276,10 +274,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
                       ),
                     );
                   },
-                  onQuit: () => Navigator.of(context).pop(),
                 );
               },
-              onBriefing: () => GameBriefingScope.show(context),
               onHint: () => _dispatchHint(context, currentQuest?.hint),
             );
           },

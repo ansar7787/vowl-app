@@ -7,7 +7,6 @@ import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_peeking_mascot.dart';
@@ -109,16 +108,13 @@ class WritingBaseLayout extends StatelessWidget {
             VowlPauseBottomSheet.show(
               context,
               category: 'writing',
-              onResume: () {},
               onRestart: () {
                 context.read<WritingBloc>().add(
                   FetchWritingQuests(gameType: gameType, level: level),
                 );
               },
-              onQuit: () => Navigator.of(context).pop(),
             );
           },
-          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             context.read<WritingBloc>().add(const WritingHintUsed());
             onHint();

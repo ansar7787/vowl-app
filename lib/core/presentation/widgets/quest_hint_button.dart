@@ -108,20 +108,16 @@ class QuestHintButton extends StatelessWidget {
     }
 
     if (hintCount > 0) {
-      // 1. Optimistic instant deduction (0ms latency, local SharedPreferences update)
-      try {
-        context.read<AuthBloc>().add(const AuthHintConsumedOptimistic());
-      } catch (_) {}
-
-      // 2. Transaction-safe Cloud Firestore deduction
+      // 1. Dispatches single event to EconomyBloc, which handles 0ms optimistic deduction
+      //    via AuthBloc, remote Firestore transaction via useHint, and rollback on failure.
       try {
         context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
       } catch (_) {}
 
-      // 3. Audio, TTS, and CustomSnackBar pedagogical feedback
+      // 2. Audio, TTS, and CustomSnackBar pedagogical feedback
       _showHintFeedback(context);
 
-      // 4. Trigger in-game quest callback
+      // 3. Trigger in-game quest callback
       onTap();
     } else {
       // 0 hints remaining: Prompt Rewarded Ad dialog
