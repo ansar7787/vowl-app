@@ -19,7 +19,11 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; color: #334155; max-width: 800px; margin: 0 auto; padding: 24px; background: #f8fafc; }
-        .back-nav { display: inline-block; margin-bottom: 20px; font-weight: 600; color: #4F46E5; text-decoration: none; }
+        .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid #E2E8F0; }
+        .brand-logo { font-size: 1.4rem; font-weight: 900; color: #4F46E5; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .brand-app-icon { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2); object-fit: cover; }
+        .back-nav { font-weight: 600; color: #4F46E5; text-decoration: none; }
+        .back-nav:hover { text-decoration: underline; }
         h1 { color: #0F172A; text-align: center; font-size: 1.8rem; margin-bottom: 4px; }
         h2 { color: #1E293B; margin-top: 32px; margin-bottom: 12px; font-size: 1.15rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 6px; }
         p, li { margin-bottom: 12px; font-size: 0.95rem; }
@@ -32,7 +36,13 @@
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-nav">&larr; Back to VOWL</a>
+    <div class="top-nav">
+        <a href="/" class="brand-logo" title="Vowl Home">
+            <img src="/assets/images/vowl_logo.png" alt="Vowl Official Logo" class="brand-app-icon">
+            <span>VOWL<span style="color: #F59E0B;">.</span></span>
+        </a>
+        <a href="index.html" class="back-nav">&larr; Back to Home</a>
+    </div>
     <h1>CANCELLATION & REFUND POLICY</h1>
     <p class="date">Last Updated: September 25, 2026</p>
 

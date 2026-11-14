@@ -441,6 +441,9 @@ void main() {
         expect(find.text('/rɪˈzɪl.jənt/'), findsOneWidget);
         expect(find.text('Top 2,000'), findsOneWidget);
         expect(find.text('Intermediate (B1)'), findsOneWidget);
+        expect(find.text('ADJECTIVE'), findsOneWidget);
+        // Verify that theme is not rendered as a confusing badge on the card front
+        expect(find.text('Emotions'), findsNothing);
       },
     );
 

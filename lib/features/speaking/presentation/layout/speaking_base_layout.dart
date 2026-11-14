@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -10,7 +9,8 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/speaking/presentation/widgets/speaking_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 
@@ -129,29 +129,36 @@ class SpeakingBaseLayout extends StatelessWidget {
           context.read<SpeakingBloc>().add(const RestoreLife()),
 
       headerBuilder: (context, state, progress, lives) {
-        final currentQuest = state is SpeakingLoaded
-            ? state.currentQuestOrNull
-            : null;
-        final hintUsed = state is SpeakingLoaded ? state.hintUsed : false;
-        final streak = state is SpeakingLoaded ? state.currentIndex : 0;
+        final isLoaded = state is SpeakingLoaded;
+        final currentQuest = isLoaded ? state.currentQuestOrNull : null;
+        final isHintUsed = isLoaded ? state.hintUsed : false;
 
-        return SpeakingGameHeader(
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'speaking',
           progress: progress,
           lives: lives,
-          streak: streak,
-          quest: currentQuest,
-          isAnswered: isAnswered,
-          hintUsed: hintUsed,
-          soundService: soundService ?? di.sl<SoundService>(),
-          isDark: isDark,
-          showHintButton: showHintButton,
-          onBack: () => GameDialogHelper.showExitConfirmation(
-            context,
-            onQuit: () => Navigator.of(context).pop(),
-          ),
-          onHintTap: onHint,
-          onInfoTap: () => GameBriefingScope.show(context),
+          hintText: currentQuest?.hint,
+          isHintUsedOnCurrentQuest: isHintUsed,
+          isHintEnabled: showHintButton && currentQuest != null && !isAnswered,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'speaking',
+              onResume: () {},
+              onRestart: () {
+                context.read<SpeakingBloc>().add(
+                  FetchSpeakingQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.of(context).pop(),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
+          onHint: () {
+            context.read<SpeakingBloc>().add(const SpeakingHintUsed());
+            onHint();
+          },
         );
       },
       mascotBuilder: (context, state, lives) {

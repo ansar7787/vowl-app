@@ -193,7 +193,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
           disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
+          // FIX: WritingHintUsed is dispatched inside WritingBaseLayout / VowlUniversalGameHeader.
           // Passing it here caused a double dispatch — now a no-op.
           onHint: () {},
           child: ListenableBuilder(

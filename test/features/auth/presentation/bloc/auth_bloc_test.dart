@@ -457,5 +457,84 @@ void main() {
         isA<AuthState>().having((s) => s.message, 'message', isNull),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthCoinsAwardedOptimistic increments coins and prepends coinHistory',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(coins: 100, coinHistory: []),
+      ),
+      act: (bloc) => bloc.add(
+        const AuthCoinsAwardedOptimistic(
+          amount: 25,
+          titleKey: 'daily_mystery_chest',
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having((s) => s.user?.coins, 'coins', 125)
+            .having((s) => s.user?.coinHistory.length, 'coinHistory length', 1)
+            .having(
+              (s) => s.user?.coinHistory.first['titleKey'],
+              'titleKey',
+              'daily_mystery_chest',
+            ),
+      ],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthCoinsRollback decrements coins on failed backend update',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(
+          coins: 125,
+          coinHistory: [
+            {'titleKey': 'daily_mystery_chest', 'amount': 25},
+          ],
+        ),
+      ),
+      act: (bloc) => bloc.add(const AuthCoinsRollback(25)),
+      expect: () => [
+        isA<AuthState>()
+            .having((s) => s.user?.coins, 'coins', 100)
+            .having((s) => s.user?.coinHistory, 'coinHistory', isEmpty),
+      ],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthHintConsumedOptimistic decrements hintCount and caches user',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(hintCount: 3, isPremium: false),
+      ),
+      act: (bloc) => bloc.add(const AuthHintConsumedOptimistic()),
+      expect: () => [
+        isA<AuthState>()
+            .having((s) => s.user?.hintCount, 'hintCount', 2),
+      ],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthHintConsumedOptimistic does not decrement hintCount for premium user',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(hintCount: 3, isPremium: true),
+      ),
+      act: (bloc) => bloc.add(const AuthHintConsumedOptimistic()),
+      expect: () => [],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthHintRollback increments hintCount on failed backend transaction',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(hintCount: 2, isPremium: false),
+      ),
+      act: (bloc) => bloc.add(const AuthHintRollback()),
+      expect: () => [
+        isA<AuthState>()
+            .having((s) => s.user?.hintCount, 'hintCount', 3),
+      ],
+    );
   });
 }

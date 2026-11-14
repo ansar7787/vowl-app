@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
-import 'package:vowl/features/writing/presentation/widgets/writing_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_peeking_mascot.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
@@ -93,24 +92,37 @@ class WritingBaseLayout extends StatelessWidget {
       onRestoreLife: () => context.read<WritingBloc>().add(const RestoreLife()),
 
       headerBuilder: (context, state, progress, lives) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.of(context, 'writing', level: level);
-        final currentQuest = state is WritingLoaded
-            ? state.currentQuestOrNull
-            : null;
+        final isLoaded = state is WritingLoaded;
+        final currentQuest = isLoaded ? state.currentQuestOrNull : null;
+        final hintShouldBeEnabled = currentQuest != null && !isAnswered;
+        final isHintUsed = isLoaded ? state.hintUsed : false;
 
-        return WritingGameHeader(
-          state: state,
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'writing',
           progress: progress,
           lives: lives,
-          isAnswered: isAnswered,
-          quest: currentQuest,
-          theme: theme,
-          isDark: isDark,
-          soundService: di.sl<SoundService>(),
-          onInfoTap: () => GameBriefingScope.show(context),
-          onHint: onHint,
+          hintText: currentQuest?.hint,
+          isHintUsedOnCurrentQuest: isHintUsed,
+          isHintEnabled: hintShouldBeEnabled,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'writing',
+              onResume: () {},
+              onRestart: () {
+                context.read<WritingBloc>().add(
+                  FetchWritingQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.of(context).pop(),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
+          onHint: () {
+            context.read<WritingBloc>().add(const WritingHintUsed());
+            onHint();
+          },
         );
       },
       mascotBuilder: (context, state, lives) {

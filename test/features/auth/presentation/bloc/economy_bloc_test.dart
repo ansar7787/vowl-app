@@ -136,6 +136,25 @@ void main() {
     );
 
     blocTest<EconomyBloc, EconomyState>(
+      'EconomyClaimDailyChestRequested does NOT mark isDailyRewardAvailable false on transient network failure',
+      build: () {
+        when(() => mockClaimDailyChest(any())).thenAnswer(
+          (_) async => Left(ServerFailure('network-unreachable')),
+        );
+        return bloc;
+      },
+      seed: () => const EconomyState(isDailyRewardAvailable: true),
+      act: (bloc) => bloc.add(const EconomyClaimDailyChestRequested(25)),
+      expect: () => [
+        const EconomyState(isLoading: true, isDailyRewardAvailable: true),
+        isA<EconomyState>()
+            .having((s) => s.isLoading, 'isLoading', false)
+            .having((s) => s.isDailyRewardAvailable, 'isDailyRewardAvailable', true)
+            .having((s) => s.message, 'message', isNotNull),
+      ],
+    );
+
+    blocTest<EconomyBloc, EconomyState>(
       'EconomyCheckDailyRewardRequested emits isDailyRewardAvailable: false when user claimed today',
       build: () {
         when(() => mockAuthBloc.state).thenReturn(

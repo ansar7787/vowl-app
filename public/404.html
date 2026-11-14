@@ -54,10 +54,28 @@
             position: relative;
         }
         .brand {
-            font-size: 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.5rem;
             font-weight: 900;
-            color: white;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
             margin-bottom: 24px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .brand:hover {
+            transform: scale(1.02);
+        }
+        .brand-logo-img {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            object-fit: cover;
+            display: block;
         }
         .brand span { color: var(--amber); }
         .icon {
@@ -109,11 +127,35 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.14);
         }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --dark: #F8FAFC;
+                --surface: #FFFFFF;
+                --border: rgba(226, 232, 240, 0.9);
+                --text-main: #0F172A;
+                --text-muted: #475569;
+            }
+            body {
+                background: radial-gradient(circle at 50% 0%, #EEF2FF 0%, #F8FAFC 70%);
+            }
+            .btn-secondary {
+                background: #F1F5F9;
+                color: #0F172A;
+                border-color: #CBD5E1;
+            }
+            .btn-secondary:hover {
+                background: #E2E8F0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="brand">VOWL<span>.</span></div>
+        <a href="/" class="brand" title="Vowl Home">
+            <img src="/assets/images/vowl_logo.png" alt="Vowl Official Logo" class="brand-logo-img">
+            <span>VOWL<span>.</span></span>
+        </a>
         <div class="icon">🧭</div>
         <h1>Page Not Found</h1>
         <p>The page you're looking for doesn't exist or has moved. Looking to practice English or join an invite?</p>

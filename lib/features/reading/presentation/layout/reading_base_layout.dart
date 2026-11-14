@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_content_area.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
-import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
@@ -140,33 +137,33 @@ class ReadingBaseLayout extends StatelessWidget {
               level: level,
             );
 
-            final gameProgressHeader = GameProgressHeader(
-              level: level,
-              progress: progress,
-              lives: lvs,
-              theme: theme,
-              isDark: isDark,
-              onBack: () => GameDialogHelper.showExitConfirmation(
-                context,
-                onQuit: () => Navigator.of(context).pop(),
-              ),
-            );
-
             final currentQuest = s is ReadingLoaded ? s.currentQuest : null;
-            final hintUsed = s is ReadingLoaded ? s.hintUsed : false;
 
             return Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ReadingHeader(
-                  gameProgressHeader: gameProgressHeader,
-                  primaryColor: theme.primaryColor,
-                  currentQuest: currentQuest,
-                  isAnswered: isAnswered,
-                  hintUsed: hintUsed,
+                VowlUniversalGameHeader(
+                  level: level,
+                  category: 'reading',
+                  progress: progress,
                   lives: lvs,
-                  soundService: di.sl<SoundService>(),
-                  onInfoTap: () => GameBriefingScope.show(context),
+                  hintText: currentQuest?.hint,
+                  isHintUsedOnCurrentQuest: (s is ReadingLoaded) ? s.hintUsed : false,
+                  isHintEnabled: currentQuest != null && !isAnswered,
+                  onPause: () {
+                    VowlPauseBottomSheet.show(
+                      context,
+                      category: 'reading',
+                      onResume: () {},
+                      onRestart: () {
+                        context.read<ReadingBloc>().add(
+                          FetchReadingQuests(gameType: gameType, level: level),
+                        );
+                      },
+                      onQuit: () => Navigator.of(context).pop(),
+                    );
+                  },
+                  onBriefing: () => GameBriefingScope.show(context),
                   onHint: () {
                     context.read<ReadingBloc>().add(const ReadingHintUsed());
                     onHint();

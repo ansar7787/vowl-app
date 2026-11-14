@@ -125,7 +125,7 @@ final class WeeklyLeagueRewardHelper {
       'titleKey': 'coin_history.weekly_league_reward',
       'amount': coins,
       'isEarned': true,
-      'timestamp': Timestamp.now(),
+      'date': DateTime.now().toIso8601String(),
     };
 
     try {

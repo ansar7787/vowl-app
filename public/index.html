@@ -51,6 +51,158 @@
             --text-sub: #64748B;
         }
 
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) {
+                --dark-bg: #F8FAFC;
+                --dark-surface: #FFFFFF;
+                --card-surface: #FFFFFF;
+                --card-border: rgba(226, 232, 240, 0.9);
+                --card-hover-border: rgba(99, 102, 241, 0.45);
+                --text-main: #0F172A;
+                --text-muted: #475569;
+                --text-sub: #64748B;
+            }
+        }
+
+        [data-theme="light"] {
+            --dark-bg: #F8FAFC;
+            --dark-surface: #FFFFFF;
+            --card-surface: #FFFFFF;
+            --card-border: rgba(226, 232, 240, 0.9);
+            --card-hover-border: rgba(99, 102, 241, 0.45);
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --text-sub: #64748B;
+        }
+
+        /* Light Theme Overrides */
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) body { background-color: var(--dark-bg); color: var(--text-main); }
+            :root:not([data-theme="dark"]) .ambient-mesh { opacity: 0.35; }
+            :root:not([data-theme="dark"]) .ambient-mesh-2 { opacity: 0.3; }
+            :root:not([data-theme="dark"]) .hero h1 { color: #0F172A; }
+            :root:not([data-theme="dark"]) .section-title { color: #0F172A; }
+            :root:not([data-theme="dark"]) .brand-logo { color: #0F172A; }
+            :root:not([data-theme="dark"]) .nav-links a { color: #475569; }
+            :root:not([data-theme="dark"]) .nav-links a:hover { color: var(--primary); }
+            :root:not([data-theme="dark"]) nav { border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+            :root:not([data-theme="dark"]) .stats-bar { background: rgba(255, 255, 255, 0.92); border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
+            :root:not([data-theme="dark"]) .stat-label { color: #64748B; }
+            :root:not([data-theme="dark"]) .realm-card { background: #FFFFFF; border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03); }
+            :root:not([data-theme="dark"]) .realm-card:hover { border-color: var(--primary); box-shadow: 0 12px 28px rgba(99, 102, 241, 0.12); }
+            :root:not([data-theme="dark"]) .realm-card h3 { color: #0F172A; }
+            :root:not([data-theme="dark"]) .realm-card p { color: #475569; }
+            :root:not([data-theme="dark"]) .pillar-card-large { background: #FFFFFF; border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
+            :root:not([data-theme="dark"]) .pillar-card-large h3 { color: #0F172A; }
+            :root:not([data-theme="dark"]) .pillar-card-large p { color: #475569; }
+            :root:not([data-theme="dark"]) .feature-bullets li { color: #334155; }
+            :root:not([data-theme="dark"]) .mockup-display { background: #F8FAFC; border-color: #E2E8F0; }
+            :root:not([data-theme="dark"]) .pricing-card { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); }
+            :root:not([data-theme="dark"]) .pricing-card.featured { background: #FFFFFF; border-color: var(--primary); box-shadow: 0 16px 36px rgba(99, 102, 241, 0.14); }
+            :root:not([data-theme="dark"]) .plan-name { color: #0F172A; }
+            :root:not([data-theme="dark"]) .plan-subtitle { color: #64748B; }
+            :root:not([data-theme="dark"]) .plan-price span:first-child { color: #0F172A; }
+            :root:not([data-theme="dark"]) .plan-features li { color: #334155; }
+            :root:not([data-theme="dark"]) .plan-btn.outline { border-color: #CBD5E1; color: #0F172A; background: #F8FAFC; }
+            :root:not([data-theme="dark"]) .plan-btn.outline:hover { background: #E2E8F0; }
+            :root:not([data-theme="dark"]) footer { background: #F1F5F9; border-top: 1px solid #E2E8F0; }
+            :root:not([data-theme="dark"]) .footer-col h4 { color: #0F172A; }
+            :root:not([data-theme="dark"]) .footer-col ul a { color: #475569; }
+            :root:not([data-theme="dark"]) .footer-col ul a:hover { color: var(--primary); }
+            :root:not([data-theme="dark"]) .footer-desc { color: #64748B; }
+            :root:not([data-theme="dark"]) .footer-bottom { border-top: 1px solid #E2E8F0; color: #64748B; }
+            :root:not([data-theme="dark"]) .currency-toggle-wrapper { background: #E2E8F0; }
+            :root:not([data-theme="dark"]) .currency-btn { color: #475569; }
+            :root:not([data-theme="dark"]) .currency-btn.active { background: #FFFFFF; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+            :root:not([data-theme="dark"]) .btn-secondary { background: #FFFFFF; border-color: #CBD5E1; color: #0F172A; }
+            :root:not([data-theme="dark"]) .btn-secondary:hover { background: #F1F5F9; }
+        }
+
+        [data-theme="light"] body { background-color: var(--dark-bg); color: var(--text-main); }
+        [data-theme="light"] .ambient-mesh { opacity: 0.35; }
+        [data-theme="light"] .ambient-mesh-2 { opacity: 0.3; }
+        [data-theme="light"] .hero h1 { color: #0F172A; }
+        [data-theme="light"] .section-title { color: #0F172A; }
+        [data-theme="light"] .brand-logo { color: #0F172A; }
+        [data-theme="light"] .nav-links a { color: #475569; }
+        [data-theme="light"] .nav-links a:hover { color: var(--primary); }
+        [data-theme="light"] nav { border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+        [data-theme="light"] .stats-bar { background: rgba(255, 255, 255, 0.92); border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
+        [data-theme="light"] .stat-label { color: #64748B; }
+        [data-theme="light"] .realm-card { background: #FFFFFF; border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03); }
+        [data-theme="light"] .realm-card:hover { border-color: var(--primary); box-shadow: 0 12px 28px rgba(99, 102, 241, 0.12); }
+        [data-theme="light"] .realm-card h3 { color: #0F172A; }
+        [data-theme="light"] .realm-card p { color: #475569; }
+        [data-theme="light"] .pillar-card-large { background: #FFFFFF; border-color: rgba(226, 232, 240, 0.9); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
+        [data-theme="light"] .pillar-card-large h3 { color: #0F172A; }
+        [data-theme="light"] .pillar-card-large p { color: #475569; }
+        [data-theme="light"] .feature-bullets li { color: #334155; }
+        [data-theme="light"] .mockup-display { background: #F8FAFC; border-color: #E2E8F0; }
+        [data-theme="light"] .pricing-card { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); }
+        [data-theme="light"] .pricing-card.featured { background: #FFFFFF; border-color: var(--primary); box-shadow: 0 16px 36px rgba(99, 102, 241, 0.14); }
+        [data-theme="light"] .plan-name { color: #0F172A; }
+        [data-theme="light"] .plan-subtitle { color: #64748B; }
+        [data-theme="light"] .plan-price span:first-child { color: #0F172A; }
+        [data-theme="light"] .plan-features li { color: #334155; }
+        [data-theme="light"] .plan-btn.outline { border-color: #CBD5E1; color: #0F172A; background: #F8FAFC; }
+        [data-theme="light"] .plan-btn.outline:hover { background: #E2E8F0; }
+        [data-theme="light"] footer { background: #F1F5F9; border-top: 1px solid #E2E8F0; }
+        [data-theme="light"] .footer-col h4 { color: #0F172A; }
+        [data-theme="light"] .footer-col ul a { color: #475569; }
+        [data-theme="light"] .footer-col ul a:hover { color: var(--primary); }
+        [data-theme="light"] .footer-desc { color: #64748B; }
+        [data-theme="light"] .footer-bottom { border-top: 1px solid #E2E8F0; color: #64748B; }
+        [data-theme="light"] .currency-toggle-wrapper { background: #E2E8F0; }
+        [data-theme="light"] .currency-btn { color: #475569; }
+        [data-theme="light"] .currency-btn.active { background: #FFFFFF; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        [data-theme="light"] .btn-secondary { background: #FFFFFF; border-color: #CBD5E1; color: #0F172A; }
+        [data-theme="light"] .btn-secondary:hover { background: #F1F5F9; }
+
+        /* Theme Toggle Button Style */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-main);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.08);
+            border-color: var(--primary);
+        }
+        [data-theme="light"] .theme-toggle {
+            background: #E2E8F0;
+            border-color: #CBD5E1;
+            color: #0F172A;
+        }
+
+        /* Play Store Pill Badge */
+        .play-store-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #000000;
+            color: #FFFFFF !important;
+            padding: 8px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            margin-top: 16px;
+            transition: all 0.2s ease;
+        }
+        .play-store-badge-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -832,7 +984,7 @@
         <!-- Top Navigation with Authentic App Icon -->
         <nav>
             <a href="/" class="brand-logo">
-                <img src="/icon-192.png" alt="Vowl App Icon" class="brand-app-icon">
+                <img src="/assets/images/vowl_logo.png" alt="Vowl Official Logo" class="brand-app-icon">
                 <span>VOWL.</span>
             </a>
             <div class="nav-links">
@@ -840,6 +992,9 @@
                 <a href="#features">1v1 Arenas</a>
                 <a href="#pricing">Pricing</a>
                 <a href="privacy.html">Privacy</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+                    <span id="themeIcon">☀️</span>
+                </button>
                 <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="btn-nav">
                     Get App 📱
                 </a>
@@ -885,8 +1040,8 @@
                     <div class="stat-label">Speech Phonetics</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number gold">Offline</div>
-                    <div class="stat-label">Handwriting Lab</div>
+                    <div class="stat-number gold">Daily</div>
+                    <div class="stat-label">Streaks &amp; Chests</div>
                 </div>
             </div>
         </section>
@@ -1004,8 +1159,8 @@
                     <div class="duel-badge-live">● LIVE MATCHMAKING ACTIVE</div>
                     <div class="duel-preview-match">
                         <div class="duel-player">
-                            <div class="avatar-circle">
-                                <img src="/assets/mascot/vowly_happy.webp" alt="Vowly Avatar">
+                            <div class="avatar-circle" style="background: linear-gradient(135deg, #4F46E5, #6366F1); color: white; font-weight: 900; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);">
+                                VP
                             </div>
                             <strong style="font-size: 0.95rem;">You (Challenger)</strong>
                             <span style="font-size: 0.8rem; color: #FBBF24;">⭐ Gold Tier</span>
@@ -1026,28 +1181,30 @@
                 </div>
             </div>
 
-            <!-- Pillar 2: Digital Ink Handwriting & AI Tools -->
+            <!-- Pillar 2: Real-time Speaking Lab & Pronunciation Coaching -->
             <div class="pillar-card-large reverse">
                 <div class="pillar-content">
-                    <span class="badge-pill" style="color: #34D399; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">✍️ DIGITAL INK LAB</span>
-                    <h3>On-Device Handwriting & Stroke Recognition</h3>
+                    <span class="badge-pill" style="color: #34D399; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">🎙️ REAL-TIME SPEAKING LAB</span>
+                    <h3>Voice Recognition &amp; Pronunciation Coaching</h3>
                     <p>
-                        Practice handwriting cursive, print, and phonetics directly on your screen. Powered by Google ML Kit Digital Ink Recognition, strokes are recognized entirely on-device with zero latency and complete privacy.
+                        Speak English aloud with genuine confidence. Vowl evaluates your spoken sentences in real time, scoring clarity, syllable emphasis, and cadence so you master native conversational flow.
                     </p>
                     <ul class="feature-bullets">
-                        <li><span class="bullet-check">✓</span> 100% On-device ML recognition — no cloud upload needed</li>
-                        <li><span class="bullet-check">✓</span> Real-time stroke feedback, character grading, and canvas guides</li>
-                        <li><span class="bullet-check">✓</span> Seamless integration with all 9 vocabulary and phonetic realms</li>
+                        <li><span class="bullet-check">✓</span> Instant voice speech recognition with real-time accuracy scoring</li>
+                        <li><span class="bullet-check">✓</span> High-fidelity native speech playback for every sentence and word</li>
+                        <li><span class="bullet-check">✓</span> Interactive speaking challenges and accent calibration across all 9 realms</li>
                     </ul>
                 </div>
-                <div class="mockup-display" style="border-color: rgba(16, 185, 129, 0.2);">
-                    <img src="/assets/mascot/vowly_thinking.webp" alt="Vowly Learning Assistant" style="width: 100px; height: auto; margin-bottom: 8px; filter: drop-shadow(0 10px 20px rgba(16,185,129,0.3));">
-                    <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; color: #6EE7B7;">Digital Ink AI Active</h4>
+                <div class="mockup-display" style="border-color: rgba(16, 185, 129, 0.25);">
+                    <div style="width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #10B981, #059669); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35); font-size: 2rem;">
+                        🎙️
+                    </div>
+                    <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; color: #34D399;">Speech Feedback Active</h4>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-                        Draw strokes smoothly with real-time neural score evaluation!
+                        "The quick brown fox jumps over the lazy dog"
                     </p>
-                    <div style="display: inline-block; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #A7F3D0; padding: 6px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: 700;">
-                        100% Offline & Private AI
+                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #34D399; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 700;">
+                        <span>✓</span> 98% Pronunciation Accuracy
                     </div>
                 </div>
             </div>
@@ -1145,24 +1302,30 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="/" class="brand-logo" style="margin-bottom: 8px;">
-                        <img src="/icon-192.png" alt="Vowl Icon" class="brand-app-icon" style="width: 32px; height: 32px;">
+                        <img src="/assets/images/vowl_logo.png" alt="Vowl Official Logo" class="brand-app-icon" style="width: 32px; height: 32px;">
                         <span>VOWL.</span>
                     </a>
                     <p class="footer-desc">
                         An elite interactive language learning mobile app designed to make English fluency rewarding, accessible, and thrilling through gamified quests and live 1v1 arenas.
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
-                        <img src="/assets/images/play_store.png" alt="Get it on Google Play" class="play-store-badge-img">
+                    <a href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener" class="play-store-badge-pill" title="Get Vowl on Google Play">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3.609 1.814L13.793 12 3.61 22.186c-.234-.236-.379-.57-.379-.942V2.756c0-.372.145-.706.378-.942zm11.24 11.24l2.094 2.094-11.83 6.83 9.736-8.924zm0-2.108L5.113 2.022l11.83 6.83-2.094 2.094zm1.485 1.054l3.774 2.18c.65.376.65.989 0 1.365l-3.774 2.18-2.37-2.37 2.37-2.355z"/>
+                        </svg>
+                        <div>
+                            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; line-height: 1;">GET IT ON</div>
+                            <div style="font-size: 0.95rem; font-weight: 700; line-height: 1.2;">Google Play</div>
+                        </div>
                     </a>
                 </div>
                 <div class="footer-col">
                     <h4>Learning Arenas</h4>
                     <ul>
-                        <li><a href="#realms">Speaking & Fluency</a></li>
-                        <li><a href="#realms">Accent & Phonetics</a></li>
+                        <li><a href="#realms">Speaking &amp; Fluency</a></li>
+                        <li><a href="#realms">Accent &amp; Phonetics</a></li>
                         <li><a href="#realms">Grammar Mechanics</a></li>
                         <li><a href="#realms">1v1 PvP Arenas</a></li>
-                        <li><a href="#features">Handwriting Lab</a></li>
+                        <li><a href="#features">Speaking &amp; Voice Lab</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1231,6 +1394,31 @@
                 setCurrency('INR');
             }
         } catch (_) {}
+
+        // Theme Toggle (Light / Dark mode)
+        function getSavedTheme() {
+            const saved = localStorage.getItem('vowl-theme');
+            if (saved) return saved;
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.textContent = theme === 'light' ? '🌙' : '☀️';
+            }
+            try { localStorage.setItem('vowl-theme', theme); } catch (_) {}
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || getSavedTheme();
+            const next = current === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+        }
+
+        // Initialize theme on load
+        applyTheme(getSavedTheme());
     </script>
 </body>
 </html>

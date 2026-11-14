@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
@@ -468,25 +469,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
     }
   }
 
-  static List<Map<String, dynamic>> _recordCoinHistory(
-    List<Map<String, dynamic>> existing, {
-    required String titleKey,
-    required int amount,
-    required bool isEarned,
-  }) {
-    final updated = List<Map<String, dynamic>>.from(existing)
-      ..insert(0, {
-        'titleKey': titleKey,
-        'amount': amount,
-        'isEarned': isEarned,
-        'date': DateTime.now().toIso8601String(),
-      });
-    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
-      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
-    }
-    return updated;
-  }
-
   @override
   Future<void> completeMatch({
     required String roomCode,
@@ -524,12 +506,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
           .doc(currentUser.id)
           .get()
           .timeout(_kNetworkTimeout);
-      final rawHistory =
-          (userDoc.data()?['coinHistory'] as List<dynamic>?)
-              ?.map((e) => Map<String, dynamic>.from(e as Map))
-              .toList() ??
-          [];
-      final updatedHistory = _recordCoinHistory(
+      final rawHistory = CoinLedgerHelper.parseMapList(
+        userDoc.data()?['coinHistory'],
+      );
+      final updatedHistory = CoinLedgerHelper.recordEntry(
         rawHistory,
         titleKey: titleKey,
         amount: payout,
@@ -670,12 +650,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
             if (currentCoins < _kStakeCoins) {
               throw Exception('Insufficient coins for duel stake.');
             }
-            final rawHistory =
-                (userDoc.data()?['coinHistory'] as List<dynamic>?)
-                    ?.map((e) => Map<String, dynamic>.from(e as Map))
-                    .toList() ??
-                [];
-            final updatedHistory = _recordCoinHistory(
+            final rawHistory = CoinLedgerHelper.parseMapList(
+              userDoc.data()?['coinHistory'],
+            );
+            final updatedHistory = CoinLedgerHelper.recordEntry(
               rawHistory,
               titleKey: 'coin_history.arena_duel_stake',
               amount: -_kStakeCoins,
@@ -705,12 +683,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
           .doc(userId)
           .get()
           .timeout(_kNetworkTimeout);
-      final rawHistory =
-          (userDoc.data()?['coinHistory'] as List<dynamic>?)
-              ?.map((e) => Map<String, dynamic>.from(e as Map))
-              .toList() ??
-          [];
-      final updatedHistory = _recordCoinHistory(
+      final rawHistory = CoinLedgerHelper.parseMapList(
+        userDoc.data()?['coinHistory'],
+      );
+      final updatedHistory = CoinLedgerHelper.recordEntry(
         rawHistory,
         titleKey: 'coin_history.arena_duel_refund',
         amount: _kStakeCoins,

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -74,6 +75,37 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     if (!isAnsweredNotifier.value) {
       timerKey?.currentState?.resume();
     }
+  }
+
+  /// Displays the universal pause menu, freezing speed challenge timers and providing
+  /// Resume, Restart, and Quit actions.
+  void showPauseMenu(
+    BuildContext context, {
+    VoidCallback? onRestart,
+    VoidCallback? onQuit,
+    String? category,
+  }) {
+    onGamePaused();
+    VowlPauseBottomSheet.show(
+      context,
+      category: category,
+      onResume: onGameResumed,
+      onRestart: () {
+        onQuestionReset();
+        if (onRestart != null) {
+          onRestart();
+        } else {
+          onGameResumed();
+        }
+      },
+      onQuit: () {
+        if (onQuit != null) {
+          onQuit();
+        } else {
+          Navigator.of(context).pop();
+        }
+      },
+    );
   }
 
   void disposeGame() {

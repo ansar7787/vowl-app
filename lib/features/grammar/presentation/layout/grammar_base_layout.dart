@@ -3,18 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_mascot.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 /// Scaffold shell providing background styling, header HUD, peeking mascot, and feedback drawers for grammar subgames.
@@ -95,26 +93,37 @@ class GrammarBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () => context.read<GrammarBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
-        final theme = LevelThemeHelper.of(context, 'grammar', level: level);
-        final currentQuest = state is GrammarLoaded
-            ? state.currentQuestOrNull
-            : null;
-        return GrammarGameHeader(
-          state: state,
+        final isLoaded = state is GrammarLoaded;
+        final currentQuest = isLoaded ? state.currentQuestOrNull : null;
+        final hintShouldBeEnabled = currentQuest != null && !isAnswered;
+        final isHintUsed = isLoaded ? state.hintUsed : false;
+
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'grammar',
           progress: progress,
           lives: lives,
-          theme: theme,
-          quest: currentQuest,
-          isAnswered: isAnswered,
-          isFinalFailure: isFinalFailure,
-          soundService: di.sl<SoundService>(),
-          onShowBriefing: () => GameBriefingScope.show(context),
-          onBack: () => GameDialogHelper.showExitConfirmation(
-            context,
-            onQuit: () => Navigator.of(context).pop(),
-          ),
-          onHint: onHint,
+          hintText: currentQuest?.hint,
+          isHintUsedOnCurrentQuest: isHintUsed,
+          isHintEnabled: hintShouldBeEnabled,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'grammar',
+              onResume: () {},
+              onRestart: () {
+                context.read<GrammarBloc>().add(
+                  FetchGrammarQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.of(context).pop(),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
+          onHint: () {
+            context.read<GrammarBloc>().add(const GrammarHintUsed());
+            onHint();
+          },
         );
       },
       mascotBuilder: (context, state, lives) {

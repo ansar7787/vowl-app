@@ -11,7 +11,7 @@ abstract final class UserGameConstants {
   // ---------------------------------------------------------------------------
 
   /// Maximum number of entries retained in both [coinHistory] and [recentActivities].
-  static const int kActivityHistoryLimit = 10;
+  static const int kActivityHistoryLimit = 20;
 
   /// Maximum number of days retained in [dailyXpHistory].
   static const int kDailyXpHistoryLimit = 30;

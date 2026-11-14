@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -16,7 +15,8 @@ import 'package:vowl/features/listening/presentation/widgets/listening_audio_pla
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout_config.dart';
 import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
@@ -255,22 +255,32 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               context.read<ListeningBloc>().add(const RestoreLife()),
           headerBuilder: (context, s, progress, lvs) {
             final currentQuest = s is ListeningLoaded ? s.currentQuest : null;
-            return ListeningHeader(
+            return VowlUniversalGameHeader(
               level: widget.level,
+              category: 'listening',
               progress: progress,
               lives: lvs,
-              state: s,
-              quest: currentQuest,
-              theme: theme,
-              isDark: isDark,
-              isAnswered: widget.isAnswered,
-              soundService: _soundService,
+              hintText: currentQuest?.hint,
+              isHintUsedOnCurrentQuest: s is ListeningLoaded ? s.hintUsed : false,
+              isHintEnabled: currentQuest != null && !widget.isAnswered,
+              onPause: () {
+                VowlPauseBottomSheet.show(
+                  context,
+                  category: 'listening',
+                  onResume: () {},
+                  onRestart: () {
+                    context.read<ListeningBloc>().add(
+                      FetchListeningQuests(
+                        gameType: widget.gameType,
+                        level: widget.level,
+                      ),
+                    );
+                  },
+                  onQuit: () => Navigator.of(context).pop(),
+                );
+              },
+              onBriefing: () => GameBriefingScope.show(context),
               onHint: () => _dispatchHint(context, currentQuest?.hint),
-              onShowBriefing: () => GameBriefingScope.show(context),
-              onBack: () => GameDialogHelper.showExitConfirmation(
-                context,
-                onQuit: () => Navigator.of(context).pop(),
-              ),
             );
           },
           feedbackBuilder: (context, s) {

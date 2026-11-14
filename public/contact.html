@@ -25,12 +25,22 @@
         p { margin-bottom: 16px; font-size: 1rem; }
         a { color: #4F46E5; text-decoration: none; font-weight: 600; }
         a:hover { text-decoration: underline; }
-        .back-nav { display: inline-block; margin-bottom: 20px; font-weight: 600; color: #4F46E5; }
+        .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #E2E8F0; }
+        .brand-logo { font-size: 1.4rem; font-weight: 900; color: #4F46E5; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .brand-app-icon { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2); object-fit: cover; }
+        .back-nav { font-weight: 600; color: #4F46E5; text-decoration: none; }
+        .back-nav:hover { text-decoration: underline; }
         .contact-box { background: #EEF2FF; border-left: 4px solid #4F46E5; padding: 16px; border-radius: 8px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-nav">&larr; Back to VOWL</a>
+    <div class="top-nav">
+        <a href="/" class="brand-logo" title="Vowl Home">
+            <img src="/assets/images/vowl_logo.png" alt="Vowl Official Logo" class="brand-app-icon">
+            <span>VOWL<span style="color: #F59E0B;">.</span></span>
+        </a>
+        <a href="index.html" class="back-nav">&larr; Back to Home</a>
+    </div>
     <div class="card">
         <h1>CONTACT US</h1>
         <p style="text-align: center; color: #64748B; margin-bottom: 24px;">We are here to support your English learning journey.</p>

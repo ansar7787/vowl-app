@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -1060,80 +1059,78 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     ],
                     SizedBox(width: 16.w),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            state.cycle > 1
-                                ? 'Cycle ${state.cycle} · Lesson ${state.effectiveDay}'
-                                : context.tr(
-                                    'home.level_label_short',
-                                    args: [state.currentDay.toString()],
-                                    fallback: 'Lesson ${state.currentDay}',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : AppColors.slate900,
-                            ),
-                          ),
-                          if (state.wordSet != null)
-                            AutoSizeText(
-                              state.wordSet!.theme,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.indigo500,
+                      child: Text(
+                        state.cycle > 1
+                            ? 'Cycle ${state.cycle} · Lesson ${state.effectiveDay}'
+                            : context.tr(
+                                'home.level_label_short',
+                                args: [state.currentDay.toString()],
+                                fallback: 'Lesson ${state.currentDay}',
                               ),
-                              maxLines: 2,
-                              minFontSize: 10,
-                            ),
-                        ],
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          letterSpacing: -0.3,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Builder(
                       builder: (context) {
                         final authUser = context.watch<AuthBloc>().state.user;
-                        final streak = state.streak > 0
-                            ? state.streak
-                            : (authUser?.currentStreak ?? 0);
+                        final userStreak = authUser?.currentStreak ?? 0;
+                        final streak =
+                            userStreak > 0 ? userStreak : state.streak;
                         if (streak == 0) return const SizedBox.shrink();
-                        return Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 6.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(
-                              0xFFF59E0B,
-                            ).withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: const Color(
-                                0xFFF59E0B,
-                              ).withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.local_fire_department_rounded,
-                                color: AppColors.amber500,
-                                size: 16.r,
+                        return Semantics(
+                          label:
+                              '$streak-day streak. Double tap to view streak details.',
+                          button: true,
+                          child: GestureDetector(
+                            onTap: () {
+                              di.sl<HapticService>().selection();
+                              context.push(AppRouter.streakRoute);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 6.h,
                               ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                '$streak',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.amber500,
+                              decoration: BoxDecoration(
+                                color: const Color(
+                                  0xFFF59E0B,
+                                ).withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: const Color(
+                                    0xFFF59E0B,
+                                  ).withValues(alpha: 0.3),
                                 ),
                               ),
-                            ],
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.local_fire_department_rounded,
+                                    color: AppColors.amber500,
+                                    size: 16.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    '$streak',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.amber500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         );
                       },

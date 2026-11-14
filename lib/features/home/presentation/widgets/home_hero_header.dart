@@ -32,8 +32,12 @@ class HomeHeroHeader extends StatelessWidget {
   /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Optional [coinsKey] attached to the Coins segment inside the Trio HUD,
+  /// used for calculating target offset for flying coin animations.
+  final Key? coinsKey;
+
   /// Creates a [HomeHeroHeader] for [user].
-  const HomeHeroHeader({super.key, required this.user});
+  const HomeHeroHeader({super.key, required this.user, this.coinsKey});
 
   /// Dynamic rank descriptor based on the user's level.
   static ({String label, Color color, IconData icon}) rankForLevel(int level) {
@@ -532,6 +536,7 @@ class HomeHeroHeader extends StatelessWidget {
                 args: [user.coins.toString()],
               ),
               child: ScaleButton(
+                key: coinsKey,
                 onTap: () {
                   _triggerHaptic();
                   context.push(AppRouter.questCoinsRoute);
@@ -547,14 +552,22 @@ class HomeHeroHeader extends StatelessWidget {
                         color: isDark ? AppColors.gold : AppColors.amber600,
                       ),
                       SizedBox(width: 4.w),
-                      Text(
-                        _formatNumber(user.coins),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? AppColors.gold : AppColors.amber600,
-                          height: 1,
+                      AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder: (child, animation) => ScaleTransition(
+                          scale: animation,
+                          child: child,
+                        ),
+                        child: Text(
+                          _formatNumber(user.coins),
+                          key: ValueKey<int>(user.coins),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? AppColors.gold : AppColors.amber600,
+                            height: 1,
+                          ),
                         ),
                       ),
                     ],

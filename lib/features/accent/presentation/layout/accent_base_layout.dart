@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_content_body.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_peeking_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
@@ -111,22 +108,30 @@ class AccentBaseLayout extends StatelessWidget {
       onRestoreLife: () => context.read<AccentBloc>().add(const RestoreLife()),
 
       headerBuilder: (context, state, progress, lives) {
-        return AccentHeader(
+        final currentQuest = state is AccentLoaded ? state.currentQuestOrNull : null;
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'accent',
           progress: progress,
           lives: lives,
-          streak: state is AccentLoaded ? state.currentIndex : 0,
-          isDark: isDark,
-          quest: state is AccentLoaded ? state.currentQuestOrNull : null,
-          isAnswered: isAnswered,
-          hintUsed: state is AccentLoaded ? state.hintUsed : false,
-          soundService: di.sl<SoundService>(),
-          onBack: () => GameDialogHelper.showExitConfirmation(
-            context,
-            onQuit: () => Navigator.pop(context),
-          ),
-          onShowBriefing: () => GameBriefingScope.show(context),
-          onHintTap: () {
+          hintText: currentQuest?.hint,
+          isHintUsedOnCurrentQuest: state is AccentLoaded ? state.hintUsed : false,
+          isHintEnabled: currentQuest != null && !isAnswered,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'accent',
+              onResume: () {},
+              onRestart: () {
+                context.read<AccentBloc>().add(
+                  FetchAccentQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.pop(context),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
+          onHint: () {
             context.read<AccentBloc>().add(const AccentHintUsed());
             onHint();
           },

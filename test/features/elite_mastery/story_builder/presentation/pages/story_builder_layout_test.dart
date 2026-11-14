@@ -36,7 +36,7 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_screen.dart';
 import 'package:vowl/features/elite_mastery/story_builder/presentation/widgets/story_builder_narrative_tile.dart';
@@ -403,12 +403,12 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   group('StoryBuilderScreen - 1. Initial Rendering & Layout Hierarchy', () {
     testWidgets(
-      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView, and instruction banner',
+      'renders EliteBaseLayout, VowlUniversalGameHeader, CustomScrollView, and instruction banner',
       (tester) async {
         await pumpScreen(tester);
 
         expect(find.byType(EliteBaseLayout), findsOneWidget);
-        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(find.byType(VowlUniversalGameHeader), findsOneWidget);
         expect(
           find.byKey(const Key('story_builder_scroll_view')),
           findsOneWidget,
@@ -1050,9 +1050,18 @@ void main() {
       testWidgets(
         'hint button triggers ShowEliteHint and MarkEliteHintUsed when hint exists',
         (tester) async {
+          when(() => mockAuthBloc.state).thenReturn(
+            AuthState.authenticated(
+              const UserEntity(
+                id: 'test_user_story',
+                email: 'narrative@vowl.app',
+                hintCount: 2,
+              ),
+            ),
+          );
           await pumpScreen(tester);
 
-          final hintButton = find.byType(QuestHintButton);
+          final hintButton = find.byIcon(Icons.lightbulb_rounded);
           expect(hintButton, findsOneWidget);
 
           await tester.tap(hintButton);
@@ -1120,7 +1129,7 @@ void main() {
 
         await pumpScreen(tester, state: noHintState);
 
-        expect(find.byType(QuestHintButton), findsNothing);
+        expect(find.byIcon(Icons.lightbulb_rounded), findsNothing);
       });
 
       testWidgets('renders EliteMasteryGameOver dimmed layout with 0 lives', (

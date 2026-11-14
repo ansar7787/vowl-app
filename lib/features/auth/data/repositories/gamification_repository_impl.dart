@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
@@ -502,7 +503,7 @@ class GamificationRepositoryImpl
                 ? 'coin_history.daily_chest'
                 : 'coin_history.ad_reward')
           : 'coin_history.quest_reward';
-      coinHistoryList = _recordCoinHistory(
+      coinHistoryList = CoinLedgerHelper.recordEntry(
         coinHistoryList,
         titleKey: coinTitle,
         amount: finalCoinIncrease,
@@ -522,7 +523,7 @@ class GamificationRepositoryImpl
 
     if (activatesReferral) {
       referralBonusCoins = 100;
-      coinHistoryList = _recordCoinHistory(
+      coinHistoryList = CoinLedgerHelper.recordEntry(
         coinHistoryList,
         titleKey: 'coin_history.referral_welcome',
         amount: 100,
@@ -731,8 +732,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.repaired_streak',
           amount: -cost,
           isEarned: false,
@@ -855,8 +856,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_streak_freeze',
           amount: -cost,
           isEarned: false,
@@ -903,8 +904,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_double_xp',
           amount: -actualCost,
           isEarned: false,
@@ -957,8 +958,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_permanent_xp_boost',
           amount: -cost,
           isEarned: false,
@@ -1048,8 +1049,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_golden_key',
           amount: -cost,
           isEarned: false,
@@ -1154,8 +1155,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('milestone-already-claimed'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.streak_milestone_reward',
           amount: reward,
           isEarned: true,
@@ -1215,8 +1216,8 @@ class GamificationRepositoryImpl
           return Left(AuthFailure('milestone-not-yet-reached'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.level_milestone_reward',
           amount: reward,
           isEarned: true,
@@ -1287,8 +1288,8 @@ class GamificationRepositoryImpl
         final coinReward = trophy.coinReward;
 
         // 1. Audit log in coinHistory with localized titleKey & params
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.trophy_reward',
           amount: coinReward,
           isEarned: true,
@@ -1378,15 +1379,6 @@ class GamificationRepositoryImpl
         .toList();
   }
 
-  /// Parses a Firestore list of history/activity entries defensively.
-  static List<Map<String, dynamic>> _parseMapList(dynamic raw) {
-    if (raw == null) return <Map<String, dynamic>>[];
-    return (raw as List<dynamic>)
-        .whereType<Map<Object?, Object?>>()
-        .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
-        .toList();
-  }
-
   /// Parses a Firestore list of strings defensively.
   static List<String> _parseStringList(dynamic raw) {
     if (raw == null || raw is! List) return const [];
@@ -1394,35 +1386,6 @@ class GamificationRepositoryImpl
         .map((e) => e?.toString() ?? '')
         .where((s) => s.isNotEmpty)
         .toList();
-  }
-
-  /// Prepends a coin-history entry and trims to the configured retention
-  /// limit. Shared by every purchase/spend method that logs to coinHistory.
-  ///
-  /// [titleKey] is a stable lookup key (e.g. into ARB files), never English
-  /// display text — see the class doc's localization note. [params] carries
-  /// any values the presentation layer needs to interpolate into the
-  /// localized string (e.g. a game type or milestone number); omit it for
-  /// keys that need no interpolation.
-  static List<Map<String, dynamic>> _recordCoinHistory(
-    List<Map<String, dynamic>> existing, {
-    required String titleKey,
-    required int amount,
-    required bool isEarned,
-    Map<String, dynamic>? params,
-  }) {
-    final updated = List<Map<String, dynamic>>.from(existing)
-      ..insert(0, {
-        'titleKey': titleKey,
-        'params': ?params,
-        'amount': amount,
-        'isEarned': isEarned,
-        'date': DateTime.now().toIso8601String(),
-      });
-    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
-      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
-    }
-    return updated;
   }
 
   /// Formats a `YYYY-MM-DD` key for [dailyXpHistory] bucketing.

@@ -39,7 +39,7 @@ import 'package:vowl/features/elite_mastery/idiom_match/presentation/widgets/idi
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 
 class MockEliteMasteryBloc
@@ -433,12 +433,12 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   group('IdiomMatchScreen - 1. Initial Rendering & Layout Hierarchy', () {
     testWidgets(
-      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner',
+      'renders EliteBaseLayout, VowlUniversalGameHeader, CustomScrollView and instruction banner',
       (tester) async {
         await pumpScreen(tester);
 
         expect(find.byType(EliteBaseLayout), findsOneWidget);
-        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(find.byType(VowlUniversalGameHeader), findsOneWidget);
         expect(
           find.byKey(const Key('idiom_match_scroll_view')),
           findsOneWidget,
@@ -922,9 +922,18 @@ void main() {
     testWidgets(
       'tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint',
       (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'test_user_idiom',
+              email: 'idiom@vowl.app',
+              hintCount: 2,
+            ),
+          ),
+        );
         await pumpScreen(tester);
 
-        final hintButton = find.byType(QuestHintButton);
+        final hintButton = find.byIcon(Icons.lightbulb_rounded);
         expect(hintButton, findsOneWidget);
 
         await tester.tap(hintButton);
@@ -959,7 +968,7 @@ void main() {
     });
 
     testWidgets(
-      'tapping hint button when quest hint is empty/null triggers hint ad dialog',
+      'omits hint button when quest hint is empty/null',
       (tester) async {
         final noHintQuest = createSampleIdiomQuest(
           id: 'quest_no_hint',
@@ -975,10 +984,7 @@ void main() {
 
         await pumpScreen(tester, state: noHintState);
 
-        await tester.tap(find.byType(QuestHintButton));
-        await tester.pumpAndSettle();
-
-        expect(find.text('NEED A HINT?'), findsOneWidget);
+        expect(find.byIcon(Icons.lightbulb_rounded), findsNothing);
       },
     );
 

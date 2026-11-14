@@ -1,7 +1,10 @@
+import 'dart:async';
+import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart'; // ignore: unused_import — false positive: used 10+ times in handlers below
 import 'package:vowl/core/usecases/usecase.dart';
@@ -78,7 +81,10 @@ class EconomyTripleUpRewardsRequested extends EconomyEvent {
 
 class EconomyClaimDailyChestRequested extends EconomyEvent {
   final int amount;
-  const EconomyClaimDailyChestRequested(this.amount);
+  final Completer<Either<Failure, void>>? completer;
+
+  const EconomyClaimDailyChestRequested(this.amount, {this.completer});
+
   @override
   List<Object?> get props => [amount];
 }
@@ -536,11 +542,10 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimDailyChestRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    // Eagerly lock claim state locally on disk and memory so rapid app restart
-    // can never trigger a second claim or show the overlay again.
-    await _markDailyMysteryClaimedToday(event.amount);
-
-    if (state.isLoading) return;
+    if (state.isLoading) {
+      event.completer?.complete(Left(ServerFailure('operation-in-progress')));
+      return;
+    }
     if (!(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
@@ -549,36 +554,42 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
+      event.completer?.complete(Left(NetworkFailure('network-unreachable')));
       return;
     }
     emit(state.copyWith(isLoading: true));
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
+      event.completer?.complete(Left(AuthFailure('user-not-logged-in')));
       return;
     }
     _log('EconomyBloc: Claiming daily chest (${event.amount} coins)…');
     final result = await claimDailyChest(event.amount);
-    result.fold(
+    await result.fold(
       (failure) async {
         _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
         if (failure.message == 'daily-chest-already-claimed') {
           emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
           await _markDailyMysteryClaimedToday(0);
+          event.completer?.complete(Left(failure));
           return;
         }
+        // Transient error (network blip, timeout): do NOT mark reward unavailable
+        // so the user can retry claiming once their connection stabilizes.
         emit(
           state.copyWith(
             isLoading: false,
-            isDailyRewardAvailable: false,
             message: () => AuthErrorHandler.getKey(failure.message),
           ),
         );
+        event.completer?.complete(Left(failure));
       },
       (_) async {
         _log('EconomyBloc: Daily chest SUCCESS');
         emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
         await _markDailyMysteryClaimedToday(event.amount);
         authBloc.add(const AuthRefreshUser());
+        event.completer?.complete(const Right(null));
       },
     );
   }

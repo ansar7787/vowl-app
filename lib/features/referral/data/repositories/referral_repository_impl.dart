@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/referral/domain/entities/referral_info.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
@@ -116,25 +117,6 @@ class ReferralRepositoryImpl implements ReferralRepository {
     }
   }
 
-  List<Map<String, dynamic>> _recordCoinHistory(
-    List<Map<String, dynamic>> existingHistory, {
-    required String titleKey,
-    required int amount,
-    required bool isEarned,
-  }) {
-    final updated = List<Map<String, dynamic>>.from(existingHistory);
-    updated.insert(0, {
-      'amount': amount,
-      'isEarned': isEarned,
-      'titleKey': titleKey,
-      'date': DateTime.now().toIso8601String(),
-    });
-    if (updated.length > 50) {
-      return updated.sublist(0, 50);
-    }
-    return updated;
-  }
-
   @override
   Future<ReferralClaimResult> claimReferralCode({
     required String code,
@@ -206,12 +188,10 @@ class ReferralRepositoryImpl implements ReferralRepository {
             .doc(user.id)
             .get()
             .timeout(_kNetworkTimeout);
-        final rawHistory =
-            (userDoc.data()?['coinHistory'] as List<dynamic>?)
-                ?.map((e) => Map<String, dynamic>.from(e as Map))
-                .toList() ??
-            [];
-        final updatedHistory = _recordCoinHistory(
+        final rawHistory = CoinLedgerHelper.parseMapList(
+          userDoc.data()?['coinHistory'],
+        );
+        final updatedHistory = CoinLedgerHelper.recordEntry(
           rawHistory,
           titleKey: 'coin_history.referral_welcome',
           amount: 100,
@@ -356,15 +336,13 @@ class ReferralRepositoryImpl implements ReferralRepository {
           .doc(user.id)
           .get()
           .timeout(_kNetworkTimeout);
-      var rawHistory =
-          (userDoc.data()?['coinHistory'] as List<dynamic>?)
-              ?.map((e) => Map<String, dynamic>.from(e as Map))
-              .toList() ??
-          [];
+      var rawHistory = CoinLedgerHelper.parseMapList(
+        userDoc.data()?['coinHistory'],
+      );
 
       final coinsEarned = pendingDiff * 100;
       for (var i = 0; i < pendingDiff; i++) {
-        rawHistory = _recordCoinHistory(
+        rawHistory = CoinLedgerHelper.recordEntry(
           rawHistory,
           titleKey: 'coin_history.referral_reward',
           amount: 100,
@@ -509,12 +487,10 @@ class ReferralRepositoryImpl implements ReferralRepository {
             .doc(user.id)
             .get()
             .timeout(_kNetworkTimeout);
-        final rawHistory =
-            (userDoc.data()?['coinHistory'] as List<dynamic>?)
-                ?.map((e) => Map<String, dynamic>.from(e as Map))
-                .toList() ??
-            [];
-        updates['coinHistory'] = _recordCoinHistory(
+        final rawHistory = CoinLedgerHelper.parseMapList(
+          userDoc.data()?['coinHistory'],
+        );
+        updates['coinHistory'] = CoinLedgerHelper.recordEntry(
           rawHistory,
           titleKey: 'coin_history.ambassador_cup_reward',
           amount: tier.coins,

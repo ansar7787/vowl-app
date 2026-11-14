@@ -33,7 +33,7 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_screen.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/widgets/speed_spelling_character_deck.dart';
@@ -338,12 +338,12 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   group('SpeedSpellingScreen - 1. Initial Rendering & Layout Hierarchy', () {
     testWidgets(
-      'renders EliteBaseLayout, EliteGameHeader, CustomScrollView and instruction banner',
+      'renders EliteBaseLayout, VowlUniversalGameHeader, CustomScrollView and instruction banner',
       (tester) async {
         await pumpScreen(tester);
 
         expect(find.byType(EliteBaseLayout), findsOneWidget);
-        expect(find.byType(EliteGameHeader), findsOneWidget);
+        expect(find.byType(VowlUniversalGameHeader), findsOneWidget);
         expect(
           find.byKey(const Key('speed_spelling_scroll_view')),
           findsOneWidget,
@@ -850,9 +850,18 @@ void main() {
     testWidgets(
       'tapping hint button dispatches MarkEliteHintUsed and ShowEliteHint',
       (tester) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'test_user_spelling',
+              email: 'spelling@vowl.app',
+              hintCount: 2,
+            ),
+          ),
+        );
         await pumpScreen(tester);
 
-        final hintBtn = find.byType(QuestHintButton);
+        final hintBtn = find.byIcon(Icons.lightbulb_rounded);
         expect(hintBtn, findsOneWidget);
 
         await tester.tap(hintBtn);
@@ -901,7 +910,7 @@ void main() {
 
       await pumpScreen(tester, state: noHintState);
 
-      expect(find.byType(QuestHintButton), findsNothing);
+      expect(find.byIcon(Icons.lightbulb_rounded), findsNothing);
     });
 
     testWidgets(
@@ -977,7 +986,7 @@ void main() {
 
       await pumpScreen(tester, state: gameOverState);
 
-      expect(find.text('0'), findsOneWidget);
+      expect(find.bySemanticsLabel('0 lives remaining'), findsOneWidget);
     });
 
     testWidgets('gracefully handles empty quests list without throwing', (

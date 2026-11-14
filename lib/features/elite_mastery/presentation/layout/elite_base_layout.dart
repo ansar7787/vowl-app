@@ -5,13 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_peeking_mascot.dart';
 
 import '../bloc/elite_mastery_bloc.dart';
@@ -102,8 +102,6 @@ class EliteBaseLayout extends StatelessWidget {
       isDark: isDark,
       isMidnight: isMidnight,
     );
-    final s = state;
-    final quest = s is EliteMasteryLoaded ? s.currentQuestOrNull : null;
 
     final wrappedChild = fullScreenContent
         ? child
@@ -153,49 +151,44 @@ class EliteBaseLayout extends StatelessWidget {
           context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
 
       headerBuilder: (context, dynamicState, progress, lives) {
-        return EliteGameHeader(
+        final isLoaded = dynamicState is EliteMasteryLoaded;
+        final currentQuest = isLoaded ? dynamicState.currentQuestOrNull : null;
+        final hasHint = currentQuest?.hint != null && currentQuest!.hint!.trim().isNotEmpty;
+
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'elitemastery',
           progress: progress,
           lives: lives,
-          streak: dynamicState is EliteMasteryLoaded
-              ? dynamicState.currentIndex
-              : 0,
-          isAnswered: isAnswered,
-          isHintUsed: dynamicState is EliteMasteryLoaded
-              ? dynamicState.isHintUsed
-              : false,
-          hintText: quest?.hint,
-          theme: theme,
-          isDark: isDark,
-          onBack: () => GameDialogHelper.showExitConfirmation(
-            context,
-            onQuit: () => Navigator.pop(context),
-          ),
+          showHint: hasHint,
+          hintText: currentQuest?.hint,
+          isHintUsedOnCurrentQuest: isLoaded ? dynamicState.isHintUsed : false,
+          isHintEnabled: !isAnswered,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'elitemastery',
+              onResume: () {},
+              onRestart: () {
+                context.read<EliteMasteryBloc>().add(
+                  FetchEliteMasteryQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.pop(context),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
           onHint: () {
             final bloc = context.read<EliteMasteryBloc>();
             final s = bloc.state;
             if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null &&
-                  s.currentQuest.hint!.isNotEmpty) {
-                if (!s.isHintUsed) {
-                  bloc.add(const MarkEliteHintUsed());
-                }
-                bloc.add(const ShowEliteHint());
-              } else {
-                GameDialogHelper.showHintAdDialog(
-                  context,
-                  onHintEarned: () {
-                    if (!s.isHintUsed) {
-                      bloc.add(const MarkEliteHintUsed());
-                    }
-                    bloc.add(const ShowEliteHint());
-                  },
-                );
+              if (!s.isHintUsed) {
+                bloc.add(const MarkEliteHintUsed());
               }
+              bloc.add(const ShowEliteHint());
             }
             onHint();
           },
-          onBriefing: () => GameBriefingScope.show(context),
         );
       },
       mascotBuilder: (context, dynamicState, lives) {

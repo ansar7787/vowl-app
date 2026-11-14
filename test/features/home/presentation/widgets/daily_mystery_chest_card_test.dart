@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,11 +30,14 @@ class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
 
 class FakeEconomyEvent extends Fake implements EconomyEvent {}
 
+class FakeAuthEvent extends Fake implements AuthEvent {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() {
     registerFallbackValue(FakeEconomyEvent());
+    registerFallbackValue(FakeAuthEvent());
   });
 
   late MockHapticService mockHapticService;
@@ -64,6 +68,14 @@ void main() {
     mockLocaleService = MockLocaleService();
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
+
+    when(() => mockEconomyBloc.add(any())).thenAnswer((inv) {
+      final event = inv.positionalArguments.first;
+      if (event is EconomyClaimDailyChestRequested) {
+        event.completer?.complete(const Right(null));
+      }
+    });
+    when(() => mockAuthBloc.add(any())).thenReturn(null);
 
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.selection()).thenAnswer((_) async {});

@@ -10,6 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
 import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
@@ -80,6 +81,52 @@ class AuthLevelCompletedOptimistic extends AuthEvent {
 
   @override
   List<Object?> get props => [gameType, level];
+}
+
+/// Optimistically increments user coins and adds an entry to [coinHistory]
+/// in local memory before or while the backend Firestore transaction executes.
+/// Guarantees that HUD coin counters react instantly with 0ms visual delay.
+class AuthCoinsAwardedOptimistic extends AuthEvent {
+  final int amount;
+  final String titleKey;
+  final Map<String, dynamic>? params;
+
+  const AuthCoinsAwardedOptimistic({
+    required this.amount,
+    required this.titleKey,
+    this.params,
+  });
+
+  @override
+  List<Object?> get props => [amount, titleKey, params];
+}
+
+/// Rolls back an optimistic coin grant if the backend transaction fails.
+class AuthCoinsRollback extends AuthEvent {
+  final int amount;
+
+  const AuthCoinsRollback(this.amount);
+
+  @override
+  List<Object?> get props => [amount];
+}
+
+/// Optimistically decrements user hints in local memory and cache
+/// before or while the backend Firestore transaction executes.
+/// Guarantees 0ms UI responsiveness and zero loophole upon refresh.
+class AuthHintConsumedOptimistic extends AuthEvent {
+  const AuthHintConsumedOptimistic();
+
+  @override
+  List<Object?> get props => [];
+}
+
+/// Rolls back an optimistic hint consumption if the backend transaction fails.
+class AuthHintRollback extends AuthEvent {
+  const AuthHintRollback();
+
+  @override
+  List<Object?> get props => [];
 }
 
 /// Permanently deletes the authenticated user's account, Firestore document,
@@ -235,6 +282,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthReloadUser>(_onReloadUser);
     on<AuthRefreshUser>(_onRefreshUser);
     on<AuthLevelCompletedOptimistic>(_onLevelCompletedOptimistic);
+    on<AuthCoinsAwardedOptimistic>(_onCoinsAwardedOptimistic);
+    on<AuthCoinsRollback>(_onCoinsRollback);
+    on<AuthHintConsumedOptimistic>(_onHintConsumedOptimistic);
+    on<AuthHintRollback>(_onHintRollback);
     on<AuthDeleteAccountRequested>(_onDeleteAccountRequested);
     on<AuthPasswordResetRequested>(_onPasswordResetRequested);
     on<AuthSendEmailVerificationRequested>(_onSendEmailVerification);
@@ -731,6 +782,86 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final updatedUser = currentUser.copyWith(
       completedLevels: completedLevels,
       unlockedLevels: unlockedLevels,
+    );
+
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
+    emit(AuthState.authenticated(updatedUser));
+  }
+
+  void _onCoinsAwardedOptimistic(
+    AuthCoinsAwardedOptimistic event,
+    Emitter<AuthState> emit,
+  ) {
+    if (state.status == AuthStatus.loggingOut) return;
+    final currentUser = state.user;
+    if (currentUser == null) return;
+
+    final updatedHistory = CoinLedgerHelper.recordEntry(
+      currentUser.coinHistory,
+      titleKey: event.titleKey,
+      amount: event.amount,
+      isEarned: event.amount > 0,
+      params: event.params,
+    );
+
+    final updatedUser = currentUser.copyWith(
+      coins: math.max(0, currentUser.coins + event.amount),
+      coinHistory: updatedHistory,
+    );
+
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
+    emit(AuthState.authenticated(updatedUser));
+  }
+
+  void _onCoinsRollback(
+    AuthCoinsRollback event,
+    Emitter<AuthState> emit,
+  ) {
+    if (state.status == AuthStatus.loggingOut) return;
+    final currentUser = state.user;
+    if (currentUser == null) return;
+
+    final rolledBackHistory = currentUser.coinHistory.isNotEmpty
+        ? currentUser.coinHistory.sublist(1)
+        : currentUser.coinHistory;
+
+    final updatedUser = currentUser.copyWith(
+      coins: math.max(0, currentUser.coins - event.amount),
+      coinHistory: rolledBackHistory,
+    );
+
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
+    emit(AuthState.authenticated(updatedUser));
+  }
+
+  void _onHintConsumedOptimistic(
+    AuthHintConsumedOptimistic event,
+    Emitter<AuthState> emit,
+  ) {
+    if (state.status == AuthStatus.loggingOut) return;
+    final currentUser = state.user;
+    if (currentUser == null) return;
+    if (currentUser.isPremium) return; // Premium accounts enjoy unlimited hints
+
+    final updatedUser = currentUser.copyWith(
+      hintCount: math.max(0, currentUser.hintCount - 1),
+    );
+
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
+    emit(AuthState.authenticated(updatedUser));
+  }
+
+  void _onHintRollback(
+    AuthHintRollback event,
+    Emitter<AuthState> emit,
+  ) {
+    if (state.status == AuthStatus.loggingOut) return;
+    final currentUser = state.user;
+    if (currentUser == null) return;
+    if (currentUser.isPremium) return;
+
+    final updatedUser = currentUser.copyWith(
+      hintCount: currentUser.hintCount + 1,
     );
 
     _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));

@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -750,16 +751,11 @@ class VowlCoinsScreen extends StatelessWidget {
     final weekAgo = now.subtract(const Duration(days: 7));
     int weeklyEarned = 0;
     for (final txn in user.coinHistory) {
-      final dateStr = txn['date'] as String?;
       final isEarned = txn['isEarned'] == true;
-      if (dateStr == null || !isEarned) continue;
-      try {
-        final date = DateTime.parse(dateStr);
-        if (date.isAfter(weekAgo)) {
-          weeklyEarned += ((txn['amount'] as num?)?.toInt() ?? 0).abs();
-        }
-      } catch (_) {
-        continue;
+      if (!isEarned) continue;
+      final date = CoinLedgerHelper.parseTransactionDate(txn);
+      if (date != null && date.isAfter(weekAgo)) {
+        weeklyEarned += ((txn['amount'] as num?)?.toInt() ?? 0).abs();
       }
     }
 
@@ -1060,12 +1056,9 @@ class VowlCoinsScreen extends StatelessWidget {
   // ── Coin History Ledger (Vision 2026) ──
   Widget _buildCoinHistory(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // Take the 10 most recent transactions, but display them with the newest at the bottom
-    final recentHistory = user.coinHistory.reversed
-        .take(10)
-        .toList()
-        .reversed
-        .toList();
+    // user.coinHistory is chronologically ordered with index 0 as the newest transaction.
+    // Display the most recent 15 transactions in true descending order (newest at the top).
+    final recentHistory = user.coinHistory.take(15).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1176,19 +1169,11 @@ class VowlCoinsScreen extends StatelessWidget {
                 (txn['title'] as String?) ??
                 'Transaction';
             final title = _localizeTransactionKey(context, rawKey, txn);
-            final dateStr = txn['date'] as String?;
-
+            final parsedDate = CoinLedgerHelper.parseTransactionDate(txn);
             final color = isEarned ? AppColors.emerald500 : AppColors.red500;
-
-            String formattedDate = '';
-            if (dateStr != null) {
-              try {
-                final date = DateTime.parse(dateStr);
-                formattedDate = _relativeTime(context, date);
-              } catch (_) {
-                formattedDate = '';
-              }
-            }
+            final formattedDate = parsedDate != null
+                ? _relativeTime(context, parsedDate)
+                : '';
 
             final tile = GlassTile(
               blur: 0, // PERFORMANCE FIX: Disabled blur for list items

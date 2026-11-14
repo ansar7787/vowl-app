@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_header.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking_mascot.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
@@ -106,22 +106,38 @@ class VocabularyBaseLayout extends StatelessWidget {
       onRestoreLife: () =>
           context.read<VocabularyBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
-        return VocabularyHeader(
-          state: state,
+        final isLoaded = state is VocabularyLoaded;
+        final currentQuest = isLoaded ? state.currentQuestOrNull : null;
+        final hintShouldBeEnabled = currentQuest != null && !isAnswered;
+        final isHintUsed = isLoaded ? state.hintUsed : false;
+        final effectiveHint = customHintText ?? currentQuest?.hint;
+
+        return VowlUniversalGameHeader(
           level: level,
+          category: 'vocabulary',
           progress: progress,
           lives: lives,
-          theme: theme,
-          isDark: isDark,
-          isAnswered: isAnswered,
-          gameType: gameType,
-          onExit: () => GameDialogHelper.showExitConfirmation(
-            context,
-            onQuit: () => Navigator.of(context).pop(),
-          ),
-          onBriefingShow: () => GameBriefingScope.show(context),
-          onHint: onHint,
-          customHintText: customHintText,
+          hintText: effectiveHint,
+          isHintUsedOnCurrentQuest: isHintUsed,
+          isHintEnabled: hintShouldBeEnabled,
+          onPause: () {
+            VowlPauseBottomSheet.show(
+              context,
+              category: 'vocabulary',
+              onResume: () {},
+              onRestart: () {
+                context.read<VocabularyBloc>().add(
+                  FetchVocabularyQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () => Navigator.of(context).pop(),
+            );
+          },
+          onBriefing: () => GameBriefingScope.show(context),
+          onHint: () {
+            context.read<VocabularyBloc>().add(const VocabularyHintUsed());
+            onHint?.call();
+          },
         );
       },
       mascotBuilder: (context, state, lives) {

@@ -59,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier(
     [],
   );
+  final GlobalKey _coinsHudKey = GlobalKey();
 
   static const List<Color> _celebrationConfettiColors = [
     Color(0xFFFFD700), // Brilliant Gold
@@ -175,10 +176,21 @@ class _HomeScreenState extends State<HomeScreen> {
       _confettiController.play();
     }
 
-    final screenWidth = MediaQuery.of(context).size.width;
-    final topPadding = MediaQuery.of(context).padding.top;
-    // Target is the Coins pill inside HomeHeroHeader's top right dual-metric HUD
-    final targetOffset = Offset(screenWidth - 48.w, topPadding + 28.h);
+    Offset targetOffset;
+    final renderBox =
+        _coinsHudKey.currentContext?.findRenderObject() as RenderBox?;
+    if (renderBox != null && renderBox.hasSize && renderBox.attached) {
+      final position = renderBox.localToGlobal(Offset.zero);
+      targetOffset = Offset(
+        position.dx + (renderBox.size.width / 2),
+        position.dy + (renderBox.size.height / 2),
+      );
+    } else {
+      final screenWidth = MediaQuery.of(context).size.width;
+      final topPadding = MediaQuery.of(context).padding.top;
+      // Fallback: Trio HUD is [Streak | Coins | Translate]. Coins center is around screenWidth - 105.w
+      targetOffset = Offset(screenWidth - 105.w, topPadding + 28.h);
+    }
 
     final count = math.min(15, math.max(8, coins ~/ 3));
     final newCoins = <Map<String, dynamic>>[];
@@ -326,7 +338,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           horizontal: AppSpacing.screen,
                         ),
                         sliver: SliverToBoxAdapter(
-                          child: HomeHeroHeader(user: user),
+                          child: HomeHeroHeader(
+                            user: user,
+                            coinsKey: _coinsHudKey,
+                          ),
                         ),
                       ),
 
@@ -670,6 +685,35 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
+      child: Container(
+        width: 26.r,
+        height: 26.r,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFFDF00), Color(0xFFF59E0B)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.amber500.withValues(alpha: 0.45),
+              blurRadius: 8.r,
+            ),
+          ],
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.9),
+            width: 1.5.r,
+          ),
+        ),
+        child: Center(
+          child: Icon(
+            Icons.paid_rounded,
+            color: Colors.white,
+            size: 15.r,
+          ),
+        ),
+      ),
       builder: (context, child) {
         return Positioned(
           left: _animX.value - 13.r,
@@ -678,35 +722,7 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
             opacity: _animOpacity.value,
             child: Transform.scale(
               scale: _animScale.value,
-              child: Container(
-                width: 26.r,
-                height: 26.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFFFDF00), Color(0xFFF59E0B)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.amber500.withValues(alpha: 0.45),
-                      blurRadius: 8.r,
-                    ),
-                  ],
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.9),
-                    width: 1.5.r,
-                  ),
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.paid_rounded,
-                    color: Colors.white,
-                    size: 15.r,
-                  ),
-                ),
-              ),
+              child: child,
             ),
           ),
         );

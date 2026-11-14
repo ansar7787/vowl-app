@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -7,11 +9,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -118,6 +123,28 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
 
   Future<void> _handleClaim() async {
     if (_isClaiming || _isClaimedLocally) return;
+
+    // Fast connectivity check: do NOT celebrate or lock claim if device is offline!
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      final isOnline = await di.sl<NetworkInfo>().hasRealConnection;
+      if (!isOnline) {
+        if (mounted) {
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'common.network_offline_banner',
+              fallback:
+                  'No internet connection. Please check your network and try again.',
+            ),
+            type: CustomSnackBarType.warning,
+          );
+        }
+        return;
+      }
+    }
+
+    if (!mounted) return;
+
     setState(() => _isClaiming = true);
 
     // 1. Roll rewards
@@ -156,35 +183,69 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       widget.onClaimed!(originOffset: origin, coins: totalCoins);
     }
 
-    // 4. Dispatch claim to Firestore via EconomyBloc
-    final currentUser = context.read<AuthBloc>().state.user;
-    final userId = currentUser?.id;
-    context.read<EconomyBloc>().add(
-      EconomyClaimDailyChestRequested(totalCoins),
+    // 4. Optimistically increment user coins in AuthBloc so HUD responds in real-time
+    context.read<AuthBloc>().add(
+      AuthCoinsAwardedOptimistic(
+        amount: totalCoins,
+        titleKey: 'coin_history.daily_chest',
+      ),
     );
 
-    // 5. Persist claim date locally
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final nowLocal = DateTime.now().toLocal();
-      final todayStr =
-          '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
-      if (userId != null && userId.isNotEmpty) {
-        await prefs.setString(
-          'last_daily_mystery_claimed_date_$userId',
-          todayStr,
+    // 5. Dispatch claim to Firestore via EconomyBloc with Completer synchronization
+    final currentUser = context.read<AuthBloc>().state.user;
+    final userId = currentUser?.id;
+    final completer = Completer<Either<Failure, void>>();
+    context.read<EconomyBloc>().add(
+      EconomyClaimDailyChestRequested(totalCoins, completer: completer),
+    );
+
+    final result = await completer.future.timeout(
+      const Duration(seconds: 8),
+      onTimeout: () => Left(ServerFailure('timeout')),
+    );
+
+    if (result.isRight()) {
+      // 6. Confirmed success: persist claim date locally
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        final nowLocal = DateTime.now().toLocal();
+        final todayStr =
+            '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
+        if (userId != null && userId.isNotEmpty) {
+          await prefs.setString(
+            'last_daily_mystery_claimed_date_$userId',
+            todayStr,
+          );
+        }
+        await prefs.setString('last_daily_mystery_claimed_date', todayStr);
+      } catch (_) {}
+
+      // Hold victory state while coins arrive at top bar, then execute smooth collapse
+      await Future.delayed(const Duration(milliseconds: 1150));
+      if (!mounted) return;
+
+      await _collapseController.forward();
+      if (mounted) {
+        setState(() => _isClaimedLocally = true);
+      }
+    } else {
+      // 7. Backend failure / timeout: rollback optimistic coins & restore card
+      if (mounted) {
+        context.read<AuthBloc>().add(AuthCoinsRollback(totalCoins));
+        setState(() {
+          _isClaiming = false;
+          _awardedCoins = null;
+        });
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.reward_failed_desc',
+            fallback:
+                "We couldn't grant your reward. Please check your connection and try again.",
+          ),
+          type: CustomSnackBarType.error,
         );
       }
-      await prefs.setString('last_daily_mystery_claimed_date', todayStr);
-    } catch (_) {}
-
-    // 6. Hold victory state while coins arrive at top bar, then execute smooth collapse
-    await Future.delayed(const Duration(milliseconds: 1150));
-    if (!mounted) return;
-
-    await _collapseController.forward();
-    if (mounted) {
-      setState(() => _isClaimedLocally = true);
     }
   }
 

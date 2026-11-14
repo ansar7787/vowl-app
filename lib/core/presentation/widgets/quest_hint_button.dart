@@ -1,68 +1,81 @@
-import 'package:vowl/core/utils/hint_utility.dart';
-import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/hint_utility.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
-/// Clean, stateless interactive hint button providing TTS-enabled hints,
-/// ad-backed rewarded hints, and visual status badges.
+/// Cohesive, unified horizontal hint capsule providing zero-latency (0ms)
+/// hint deduction, rewarded ads for free users with 0 hints, and unlimited
+/// hint access for premium users.
 ///
-/// Features:
-/// - Re-reviewable: Tapping an already-used hint button replays the hint
-///   (sound, TTS, and snackbar) without deducting extra hints.
-/// - Premium-ready: Premium users receive instant hint access without ad paywalls.
-/// - Race-condition safe: Debounced via [ScaleButton] and synchronized with Firestore.
+/// Designed to eliminate visual disharmony (no overlapping badges) and
+/// transaction race conditions across all 100 mini-games in VOWL.
 class QuestHintButton extends StatelessWidget {
+  /// Whether the current question's hint has already been revealed.
   final bool used;
+
+  /// Primary color token for the active hint state (defaults to amber).
   final Color primaryColor;
+
+  /// Optional pedagogical hint text for the current quest.
   final String? hintText;
+
+  /// Callback executed when tapping the hint action.
   final VoidCallback onTap;
-  final SoundService soundService;
+
+  /// Optional sound service instance (defaults to dependency injection).
+  final SoundService? soundService;
+
+  /// Whether the hint action is currently interactive.
+  final bool isHintEnabled;
 
   const QuestHintButton({
     super.key,
     required this.used,
-    required this.primaryColor,
+    this.primaryColor = AppColors.amber500,
     this.hintText,
     required this.onTap,
-    required this.soundService,
+    this.soundService,
+    this.isHintEnabled = true,
   });
 
-  static void _showHintFeedback({
-    required BuildContext context,
-    required String? hintText,
-    required SoundService soundService,
-  }) {
-    soundService.playHint();
+  SoundService? get _sound {
+    if (soundService != null) return soundService!;
+    try {
+      return di.sl<SoundService>();
+    } catch (_) {
+      return null;
+    }
+  }
 
-    if (hintText != null && hintText.trim().isNotEmpty) {
-      final isDynamic = HintUtility.isGenericHint(hintText);
+  void _showHintFeedback(BuildContext context) {
+    try {
+      _sound?.playHint();
+    } catch (_) {}
+
+    if (hintText != null && hintText!.trim().isNotEmpty) {
+      final isDynamic = HintUtility.isGenericHint(hintText!);
       final displayText = isDynamic
           ? context.tr(
               'hint.pro_tip_generic',
               fallback: 'Look for context clues to help find the right answer.',
             )
-          : hintText.trim();
+          : hintText!.trim();
 
       try {
         di.sl<TtsService>().stop();
         di.sl<TtsService>().speak(
           isDynamic
-              ? context.tr(
-                  'hint.pro_tip_tts',
-                  fallback: 'Look for context clues.',
-                )
-              : hintText.trim(),
+              ? context.tr('hint.pro_tip_tts', fallback: 'Look for context clues.')
+              : hintText!.trim(),
         );
       } catch (_) {}
 
@@ -81,34 +94,42 @@ class QuestHintButton extends StatelessWidget {
     required bool isPremium,
   }) {
     if (used) {
-      // Re-review the hint for the current question without consuming any hint
-      _showHintFeedback(
-        context: context,
-        hintText: hintText,
-        soundService: soundService,
-      );
+      // Free review for the current question without spending extra hints
+      _showHintFeedback(context);
+      onTap();
       return;
     }
 
-    final canUseHint = hintCount > 0 || isPremium;
-    if (canUseHint) {
+    if (isPremium) {
+      // Premium users have unlimited hints - no deduction
+      _showHintFeedback(context);
       onTap();
-      _showHintFeedback(
-        context: context,
-        hintText: hintText,
-        soundService: soundService,
-      );
+      return;
+    }
+
+    if (hintCount > 0) {
+      // 1. Optimistic instant deduction (0ms latency, local SharedPreferences update)
+      try {
+        context.read<AuthBloc>().add(const AuthHintConsumedOptimistic());
+      } catch (_) {}
+
+      // 2. Transaction-safe Cloud Firestore deduction
+      try {
+        context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
+      } catch (_) {}
+
+      // 3. Audio, TTS, and CustomSnackBar pedagogical feedback
+      _showHintFeedback(context);
+
+      // 4. Trigger in-game quest callback
+      onTap();
     } else {
+      // 0 hints remaining: Prompt Rewarded Ad dialog
       GameDialogHelper.showHintAdDialog(
         context,
         onHintEarned: () {
-          if (!context.mounted) return;
+          _showHintFeedback(context);
           onTap();
-          _showHintFeedback(
-            context: context,
-            hintText: hintText,
-            soundService: soundService,
-          );
         },
       );
     }
@@ -116,140 +137,90 @@ class QuestHintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final hintCount = state.user?.hintCount ?? 0;
-        final isPremium = state.user?.isPremium ?? false;
+      builder: (context, authState) {
+        final hintCount = authState.user?.hintCount ?? 0;
+        final isPremium = authState.user?.isPremium ?? false;
         final canUseHint = hintCount > 0 || isPremium;
 
         return Semantics(
           button: true,
-          enabled: true,
-          label: used
-              ? context.tr('hint.review_hint_semantic', fallback: 'Review hint')
-              : canUseHint
-              ? (isPremium
-                    ? context.tr(
-                        'hint.use_hint_premium_semantic',
-                        fallback: 'Use hint',
-                      )
-                    : context.tr(
-                        'hint.use_hint_semantic',
-                        args: ['$hintCount'],
-                        fallback: 'Use hint ($hintCount remaining)',
-                      ))
-              : context.tr(
-                  'hint.watch_ad_semantic',
-                  fallback: 'Watch video to unlock a hint',
+          label: isPremium
+              ? context.tr('hint.use_hint_premium_semantic', fallback: 'Use hint (Unlimited)')
+              : (hintCount > 0
+                  ? context.tr(
+                      'hint.use_hint_semantic',
+                      args: ['$hintCount'],
+                      fallback: 'Use hint ($hintCount remaining)',
+                    )
+                  : context.tr('hint.watch_ad_semantic', fallback: 'Watch video to unlock a hint')),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: !isHintEnabled
+                  ? null
+                  : () => _handleTap(context, hintCount: hintCount, isPremium: isPremium),
+              borderRadius: BorderRadius.circular(12.r),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                height: 36.h,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isPremium ? 10.w : 8.w,
                 ),
-          child: ScaleButton(
-            debounceDuration: const Duration(milliseconds: 1000),
-            onTap: () =>
-                _handleTap(context, hintCount: hintCount, isPremium: isPremium),
-            child: RepaintBoundary(
-              child: Container(
-                width: 48.r,
-                height: 48.r,
                 decoration: BoxDecoration(
-                  color: used
-                      ? Colors.grey.withValues(alpha: 0.08)
-                      : canUseHint
-                      ? primaryColor.withValues(alpha: 0.1)
-                      : Colors.grey.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(14.r),
+                  color: !isHintEnabled
+                      ? (isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03))
+                      : (canUseHint
+                          ? AppColors.amber500.withValues(alpha: isDark ? 0.16 : 0.10)
+                          : (isDark ? Colors.white.withValues(alpha: 0.06) : Colors.black.withValues(alpha: 0.03))),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: used
-                        ? Colors.grey.withValues(alpha: 0.3)
-                        : canUseHint
-                        ? primaryColor.withValues(alpha: 0.4)
-                        : Colors.grey.withValues(alpha: 0.2),
-                    width: 2,
+                    color: !isHintEnabled
+                        ? (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.06))
+                        : (canUseHint
+                            ? AppColors.amber500.withValues(alpha: isDark ? 0.45 : 0.35)
+                            : AppColors.amber500.withValues(alpha: isDark ? 0.35 : 0.25)),
+                    width: 1.2,
                   ),
                   boxShadow: [
-                    if (!used && canUseHint)
+                    if (isHintEnabled)
                       BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.2),
-                        blurRadius: 10,
-                        spreadRadius: 1,
+                        color: AppColors.amber500.withValues(alpha: isDark ? 0.20 : 0.08),
+                        blurRadius: 4,
+                        offset: const Offset(0, 1.5),
                       ),
                   ],
                 ),
-                child: Stack(
-                  alignment: Alignment.center,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Main icon
+                    // Icon State: Lightbulb for available hints, Video Camera for rewarded ad
                     Icon(
-                          used
-                              ? Icons.psychology_outlined
-                              : (canUseHint
-                                    ? Icons.lightbulb_rounded
-                                    : Icons.video_collection_rounded),
-                          color: used
-                              ? Colors.grey
-                              : (canUseHint ? primaryColor : Colors.amber[700]),
-                          size: 26.r,
-                        )
-                        .animate(
-                          target: VowlMotion.shouldReduceMotion(context) || used
-                              ? 0
-                              : 1,
-                          onPlay: (c) =>
-                              used ? c.stop() : c.repeat(reverse: true),
-                        )
-                        .shimmer(
-                          duration: 2.seconds,
-                          color: primaryColor.withValues(alpha: 0.3),
-                        ),
+                      canUseHint ? Icons.lightbulb_rounded : Icons.videocam_rounded,
+                      color: !isHintEnabled
+                          ? (isDark ? AppColors.slate600 : AppColors.slate400)
+                          : AppColors.amber500,
+                      size: canUseHint ? 18.r : 17.r,
+                    ),
 
-                    // Hint count badge (when hints available and not yet used)
-                    if (!used && !isPremium && hintCount > 0)
-                      Positioned(
-                        top: 2.r,
-                        right: 2.r,
-                        child: Container(
-                          padding: EdgeInsets.all(4.r),
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white, width: 1),
-                          ),
-                          constraints: BoxConstraints(
-                            minWidth: 16.r,
-                            minHeight: 16.r,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '$hintCount',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
+                    // Counter Pill or Rewarded Ad Text (+1)
+                    if (!isPremium && isHintEnabled) ...[
+                      SizedBox(width: 4.w),
+                      Text(
+                        canUseHint ? '$hintCount' : '+1',
+                        textScaler: const TextScaler.linear(1.0),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.amber500,
+                          letterSpacing: 0.2,
                         ),
                       ),
-
-                    // Ad badge (when 0 hints and free user)
-                    if (!used && hintCount == 0 && !isPremium)
-                      Positioned(
-                        bottom: 4.r,
-                        right: 4.r,
-                        child: Container(
-                          padding: EdgeInsets.all(2.r),
-                          decoration: BoxDecoration(
-                            color: AppColors.amber500,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white, width: 1),
-                          ),
-                          child: Icon(
-                            Icons.play_arrow_rounded,
-                            color: Colors.white,
-                            size: 10.r,
-                          ),
-                        ),
-                      ),
+                    ],
                   ],
                 ),
               ),

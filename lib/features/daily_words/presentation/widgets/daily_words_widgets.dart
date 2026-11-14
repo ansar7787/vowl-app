@@ -60,23 +60,29 @@ class WordCardFront extends StatelessWidget {
                   spacing: 8.w,
                   runSpacing: 6.h,
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 5.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(20.r),
-                      ),
-                      child: Text(
-                        word.partOfSpeech.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.indigo500,
-                          letterSpacing: 0.8,
+                    Semantics(
+                      label: 'Part of speech: ${word.partOfSpeech}',
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: AppColors.indigo500.withValues(alpha: 0.25),
+                          ),
+                        ),
+                        child: Text(
+                          word.partOfSpeech.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.indigo500,
+                            letterSpacing: 0.5,
+                          ),
                         ),
                       ),
                     ),
@@ -85,33 +91,6 @@ class WordCardFront extends StatelessWidget {
                       _FrequencyRankBadge(frequencyRank: word.frequencyRank),
                   ],
                 ),
-                // Theme context tag
-                if (theme != null && theme!.isNotEmpty) ...[
-                  SizedBox(height: 12.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.amber500.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: AppColors.amber500.withValues(alpha: 0.15),
-                      ),
-                    ),
-                    child: Text(
-                      theme!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.amber500,
-                      ),
-                    ),
-                  ),
-                ],
                 SizedBox(height: 24.h),
                 // Word text with 2-line safety (never truncated)
                 AutoSizeText(

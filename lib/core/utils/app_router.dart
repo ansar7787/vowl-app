@@ -17,7 +17,6 @@ import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
 import 'package:vowl/features/daily_words/daily_words_routes.dart';
 import 'package:vowl/features/translation/translation_routes.dart';
-import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
 
 /// Central declarative application router configuring all modular feature routes,
 /// navigation redirects (auth gates, age gates), deep-linking, and analytics observers.
@@ -95,35 +94,103 @@ class AppRouter {
       ...HomeRoutes.routes,
       ...DailyWordsRoutes.routes,
       ...translationRoutes,
-
-      GoRoute(
-        path: duelRoute,
-        builder: (context, state) {
-          final roomCode = state.pathParameters['roomCode'] ?? '';
-          return ArenaDeepLinkResolverScreen(roomCode: roomCode);
-        },
-      ),
-      GoRoute(
-        path: '/invite/:roomCode',
-        builder: (context, state) {
-          final roomCode = state.pathParameters['roomCode'] ?? '';
-          return ArenaDeepLinkResolverScreen(roomCode: roomCode);
-        },
-      ),
     ],
     // FIX (HIGH-6): Replace bare Text with an actionable error page that
     // gives the user a path back to safety instead of a dead-end screen.
     errorBuilder: (context, state) => _RouterErrorPage(path: state.uri.path),
   );
 
+  // ── Deep-link normalization ───────────────────────────────────────────────
+
+  /// Normalizes incoming deep links across custom schemes (e.g. `vowl://invite/CODE`,
+  /// `vowl://vowl.in/invite/CODE`, `vowl:///invite/CODE`) and HTTPS App Links
+  /// (`https://vowl.in/invite/CODE`) into canonical internal route paths.
+  static String? normalizeDeepLink(Uri uri) {
+    if (uri.scheme == 'vowl') {
+      final host = uri.host.toLowerCase();
+      // Handle custom scheme format where path segments are parsed as host:
+      // e.g. vowl://invite/CODE or vowl://invite?code=CODE
+      if (host == 'invite') {
+        final queryCode = uri.queryParameters['code']?.trim();
+        final pathCode = uri.path.replaceAll('/', '').trim();
+        final code = (queryCode != null && queryCode.isNotEmpty)
+            ? queryCode
+            : pathCode;
+        return code.isNotEmpty ? '/invite/$code' : referralRoute;
+      }
+      // e.g. vowl://duel/ROOM123 or vowl://duel?code=ROOM123
+      if (host == 'duel' || host == 'arena') {
+        final queryCode = uri.queryParameters['roomCode']?.trim() ??
+            uri.queryParameters['code']?.trim();
+        final pathCode = uri.path.replaceAll('/', '').trim();
+        final room = (queryCode != null && queryCode.isNotEmpty)
+            ? queryCode
+            : pathCode;
+        return room.isNotEmpty ? '/duel/$room' : arenaRoute;
+      }
+      // e.g. vowl://verify-email
+      if (host == 'verify-email') {
+        return verifyEmailRoute;
+      }
+      // e.g. vowl://login
+      if (host == 'login') {
+        return loginRoute;
+      }
+      // e.g. vowl://referral
+      if (host == 'referral') {
+        return referralRoute;
+      }
+      // Standard authority format: vowl://vowl.in/invite?code=CODE
+      if (uri.path == '/invite' && uri.queryParameters.containsKey('code')) {
+        final code = uri.queryParameters['code']!.trim();
+        if (code.isNotEmpty) return '/invite/$code';
+      }
+      // Standard authority format: vowl://vowl.in/duel?code=ROOM
+      if (uri.path == '/duel' &&
+          (uri.queryParameters.containsKey('code') ||
+              uri.queryParameters.containsKey('roomCode'))) {
+        final room = (uri.queryParameters['roomCode'] ??
+                uri.queryParameters['code'])!
+            .trim();
+        if (room.isNotEmpty) return '/duel/$room';
+      }
+      // Standard authority format: vowl://vowl.in/invite/CODE or vowl:///invite/CODE
+      if (uri.path.isNotEmpty && uri.path != '/') {
+        return uri.path;
+      }
+    } else if (uri.scheme == 'https' || uri.scheme == 'http') {
+      // e.g. https://vowl.in/invite?code=CODE
+      if (uri.path == '/invite' && uri.queryParameters.containsKey('code')) {
+        final code = uri.queryParameters['code']!.trim();
+        if (code.isNotEmpty) return '/invite/$code';
+      }
+      // e.g. https://vowl.in/duel?code=ROOM
+      if (uri.path == '/duel' &&
+          (uri.queryParameters.containsKey('code') ||
+              uri.queryParameters.containsKey('roomCode'))) {
+        final room = (uri.queryParameters['roomCode'] ??
+                uri.queryParameters['code'])!
+            .trim();
+        if (room.isNotEmpty) return '/duel/$room';
+      }
+      if (uri.path.isNotEmpty && uri.path != '/') {
+        return uri.path;
+      }
+    }
+    return null;
+  }
+
   // ── Redirect logic ────────────────────────────────────────────────────────
 
   static String? _redirect(BuildContext context, GoRouterState state) {
+    // 0. Normalize incoming deep link if present
+    final normalized = normalizeDeepLink(state.uri);
+    final path = normalized ?? state.uri.path;
+
     final authState = di.sl<AuthBloc>().state;
     final isAuthenticated = authState.status == AuthStatus.authenticated;
     final isVerified = authState.user?.isEmailVerified ?? false;
 
-    final path = state.uri.path;
     final isOnboardingRoute = path == onboardingRoute;
     final isLoginRoute = path == loginRoute;
     final isSignupRoute = path == signupRoute;
@@ -145,7 +212,7 @@ class AppRouter {
     // 3. Unauthenticated — capture duel/invite deep links before forcing onboarding/login.
     if (!isAuthenticated) {
       if (path.startsWith('/duel/') || path.startsWith('/invite/')) {
-        AppRouter.pendingDeepLink = state.uri.toString();
+        AppRouter.pendingDeepLink = path;
       }
       if (!OnboardingService.isCompletedCached) {
         return isOnboardingRoute ? null : onboardingRoute;
@@ -159,11 +226,16 @@ class AppRouter {
       return null;
     }
 
-    // Process pending deep link if app cold-started from notification
+    // Process pending deep link if app cold-started from notification or unauth state
     if (AppRouter.pendingDeepLink != null) {
       final link = AppRouter.pendingDeepLink!;
       AppRouter.pendingDeepLink = null;
       return link;
+    }
+
+    // Redirect to canonical path if an external deep link arrived with non-canonical URI
+    if (normalized != null && normalized != state.uri.path) {
+      return normalized;
     }
 
     // 5. Authenticated and verified — redirect away from auth/verify/root.

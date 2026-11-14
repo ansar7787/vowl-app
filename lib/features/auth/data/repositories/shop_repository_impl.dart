@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
@@ -77,8 +78,8 @@ class ShopRepositoryImpl
         }
 
         if (title != null) {
-          final history = _recordCoinHistory(
-            _parseMapList(data['coinHistory']),
+          final history = CoinLedgerHelper.recordEntry(
+            CoinLedgerHelper.parseMapList(data['coinHistory']),
             titleKey: title,
             amount: amountChange,
             isEarned: isEarned ?? (amountChange > 0),
@@ -132,8 +133,8 @@ class ShopRepositoryImpl
             UserGameConstants.kDailyGiftBaseReward +
             (now.day % 5) * UserGameConstants.kDailyGiftCycleIncrement;
 
-        final history = _recordCoinHistory(
-          _parseMapList(doc.data()!['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(doc.data()!['coinHistory']),
           titleKey: 'coin_history.daily_gift',
           amount: reward,
           isEarned: true,
@@ -199,8 +200,8 @@ class ShopRepositoryImpl
           }
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(doc.data()!['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(doc.data()!['coinHistory']),
           titleKey: 'coin_history.daily_chest',
           amount: amount,
           isEarned: true,
@@ -286,8 +287,8 @@ class ShopRepositoryImpl
           return Left(AuthFailure('insufficient-coins'));
         }
 
-        final history = _recordCoinHistory(
-          _parseMapList(data['coinHistory']),
+        final history = CoinLedgerHelper.recordEntry(
+          CoinLedgerHelper.parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_hint_pack',
           amount: -cost,
           isEarned: false,
@@ -344,8 +345,8 @@ class ShopRepositoryImpl
         if (!alreadyOwned) {
           updates['coins'] = currentCoins - cost;
           updates['vowlOwnedMascots'] = FieldValue.arrayUnion([mascotId]);
-          updates['coinHistory'] = _recordCoinHistory(
-            _parseMapList(data['coinHistory']),
+          updates['coinHistory'] = CoinLedgerHelper.recordEntry(
+            CoinLedgerHelper.parseMapList(data['coinHistory']),
             titleKey: 'coin_history.purchased_mascot',
             amount: -cost,
             isEarned: false,
@@ -402,8 +403,8 @@ class ShopRepositoryImpl
           updates['vowlOwnedAccessories'] = FieldValue.arrayUnion([
             accessoryId,
           ]);
-          updates['coinHistory'] = _recordCoinHistory(
-            _parseMapList(data['coinHistory']),
+          updates['coinHistory'] = CoinLedgerHelper.recordEntry(
+            CoinLedgerHelper.parseMapList(data['coinHistory']),
             titleKey: 'coin_history.purchased_accessory',
             amount: -cost,
             isEarned: false,
@@ -421,45 +422,6 @@ class ShopRepositoryImpl
   // ---------------------------------------------------------------------------
   // Private helpers
   // ---------------------------------------------------------------------------
-
-  /// Parses a Firestore list of coin-history entries defensively. Local
-  /// counterpart to the equivalent helper in GamificationRepositoryImpl —
-  /// Dart's per-file privacy means neither can import the other's.
-  static List<Map<String, dynamic>> _parseMapList(dynamic raw) {
-    if (raw == null) return <Map<String, dynamic>>[];
-    return (raw as List<dynamic>)
-        .whereType<Map<Object?, Object?>>()
-        .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
-        .toList();
-  }
-
-  /// Prepends a coin-history entry and trims to the configured retention
-  /// limit. Shared by [updateUserCoins] and [purchaseHint].
-  ///
-  /// [titleKey] is a stable lookup key, never English display text — see
-  /// [GamificationRepositoryImpl]'s class doc for the localization rationale
-  /// (the same fix was applied there for the identical reason). [params]
-  /// carries any values the presentation layer needs to interpolate.
-  static List<Map<String, dynamic>> _recordCoinHistory(
-    List<Map<String, dynamic>> existing, {
-    required String titleKey,
-    required int amount,
-    required bool isEarned,
-    Map<String, dynamic>? params,
-  }) {
-    final updated = List<Map<String, dynamic>>.from(existing)
-      ..insert(0, {
-        'titleKey': titleKey,
-        'params': ?params,
-        'amount': amount,
-        'isEarned': isEarned,
-        'date': DateTime.now().toIso8601String(),
-      });
-    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
-      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
-    }
-    return updated;
-  }
 
   /// True if [a] and [b] fall on the same calendar day (year/month/day) in
   /// local time. Normalizes both instances with `.toLocal()` to prevent
