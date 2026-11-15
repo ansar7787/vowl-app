@@ -1,34 +1,28 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/theme/category_colors.dart';
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/category_colors.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Universal, 120 FPS-optimized game HUD shared across all 100 mini-games in VOWL.
 ///
-/// Features a two-tier layout:
-/// - **Tier 1 (Tactile Controls & Metrics):**
-///   - Left: Tactile 3D Pause Squircle Button with dual embossed rounded pill bars.
-///   - Center-Left: Solid level badge tinted with official [CategoryColors].
-///   - Center-Right: 3 vector hearts cluster with micro-scale animations on hit.
-///   - Right: Briefing (ℹ️) Squircle Tile and Unified Cohesive Hint (💡 / 🎬) Capsule.
-/// - **Tier 2 (Progress Tracker):**
-///   - Full-width, 6dp solid progress indicator rendered without multi-color gradients.
-///
-/// Smart Hint System & Global Economy:
-/// - Connects to global [AuthBloc] and [EconomyBloc].
-/// - 0ms Optimistic UI deduction + SharedPreferences caching ([AuthHintConsumedOptimistic]).
-/// - Transaction-safe Firestore deduction ([EconomyConsumeHintRequested]) to eliminate refresh loopholes.
-/// - Free re-review of hints already unlocked on the current question.
-/// - **Premium User:** Unlimited hints in a clean tactile amber tile ([ 💡 ]).
-/// - **Free User with Hints:** Unified pill displaying icon + count side-by-side ([ 💡 2 ]).
-/// - **Free User with 0 Hints:** Seamless Rewarded Ad Capsule ([ 🎬 +1 ]),
-///   tapping opens [GameDialogHelper.showHintAdDialog].
+/// Features a real-world AAA 3-Zone Anchor layout:
+/// - **Zone 1 (Left Navigation Anchor):**
+///   - Tactile 3D Pause Squircle Button with dual embossed rounded pill bars (36x36dp, 12r radius).
+/// - **Zone 2 (Center Progression Anchor - Fluid Expanded):**
+///   - Fluid, centered progress track taking up the exact remaining width without lopsided mass.
+///   - Top meta row: Category-colored level indicator ("LEVEL 14") + live percentage ("65%").
+///   - Bottom bar: High-precision 6dp solid progress indicator.
+/// - **Zone 3 (Right Player Status & Actions Anchor):**
+///   - Unified Vector Hearts Capsule (36dp height, 12r radius) with live remaining life pips.
+///   - Cohesive Smart Hint Capsule (36dp height, 12r radius) with 0ms optimistic deduction.
+///   - Tactile Briefing Squircle Tile (36x36dp, 12r radius, ℹ️ icon) for instant on-screen rule access.
 ///
 /// Theme Adaptability:
-/// - Full contrast support for Light Mode, Dark Mode, and Midnight AMOLED mode.
+/// - High contrast across Light Mode, Dark Mode, and Midnight AMOLED mode.
 class VowlUniversalGameHeader extends StatelessWidget {
   /// The active level number (1-based).
   final int level;
@@ -58,11 +52,11 @@ class VowlUniversalGameHeader extends StatelessWidget {
   final VoidCallback onPause;
 
   /// Whether the briefing (ℹ️) button should be displayed in the top row.
-  /// Defaults to false to provide an uncluttered 4-control header (Pause, Level, Hearts, Hint).
-  /// Briefing is readily accessible in the Pause bottom sheet.
+  /// Defaults to true for instant on-screen access to level rules and objectives.
   final bool showBriefing;
 
   /// Optional callback executed when tapping the Briefing (ℹ️) button.
+  /// If omitted, automatically resolves from [GameBriefingScope] if present in context.
   final VoidCallback? onBriefing;
 
   /// Callback executed when activating the Hint (💡) action.
@@ -88,7 +82,7 @@ class VowlUniversalGameHeader extends StatelessWidget {
     this.onBriefing,
     required this.onHint,
     this.showHint = true,
-    this.showBriefing = false,
+    this.showBriefing = true,
     this.isHintEnabled = true,
   });
 
@@ -97,108 +91,83 @@ class VowlUniversalGameHeader extends StatelessWidget {
     final solidColor = CategoryColors.forCategory(category);
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final effectiveBriefing = onBriefing ??
+        (GameBriefingScope.of(context) != null
+            ? () => GameBriefingScope.show(context)
+            : null);
 
     return RepaintBoundary(
       child: SafeArea(
         bottom: false,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // ── TIER 1: Standardized Controls, Metrics, and Lives ──────────
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // 1. Tactile Pause Button (Standard 36x36dp Squircle with Embossed Pill Bars)
-                  _buildTactilePauseButton(context, isDark),
+              // ── ZONE 1: Left Navigation Anchor (36x36dp Squircle) ─────────
+              _buildTactilePauseButton(context, isDark),
 
-                  // 2. Solid Level Badge (Standard 36dp Height, Official Category Color)
-                  Container(
-                    height: 36.h,
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: solidColor,
-                      borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.15),
-                          blurRadius: 4,
-                          offset: const Offset(0, 1.5),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      context.tr(
-                        'game_progress.level_label',
-                        fallback: 'LEVEL $level',
-                        args: ['$level'],
-                      ),
-                      textScaler: const TextScaler.linear(1.0),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 0.8,
-                      ),
-                    ),
-                  ),
-
-                  // 3. Vector Hearts Cluster (Standard 36dp Height, 3 Lives)
-                  _buildLivesCluster(context, isDark),
-
-                  // 4. Utility Actions: Optional Briefing (ℹ️) & Smart Hint (💡)
-                  Row(
+              // ── ZONE 2: Center Progression Anchor (Fluid Expanded) ───────
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: Column(
                     mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      // Tactile Briefing Squircle Tile (Standard 36x36dp, shown only when showBriefing: true)
-                      if (showBriefing && onBriefing != null) ...[
-                        Semantics(
-                          button: true,
-                          label: context.tr('games.briefing_tooltip', fallback: 'Level Briefing'),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: onBriefing,
-                              borderRadius: BorderRadius.circular(12.r),
-                              child: Container(
-                                width: 36.w,
-                                height: 36.h,
-                                decoration: BoxDecoration(
-                                  color: solidColor.withValues(alpha: isDark ? 0.15 : 0.08),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(
-                                    color: solidColor.withValues(alpha: isDark ? 0.35 : 0.25),
-                                    width: 1.2,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.info_outline_rounded,
-                                    color: solidColor,
-                                    size: 18.r,
-                                  ),
-                                ),
-                              ),
+                      // Level Label & Dynamic Percentage
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            context.tr(
+                              'game_progress.level_label',
+                              fallback: 'LEVEL $level',
+                              args: ['$level'],
+                            ),
+                            textScaler: const TextScaler.linear(1.0),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark ? Colors.white : AppColors.slate900,
+                              letterSpacing: 0.8,
                             ),
                           ),
-                        ),
-                        if (showHint) SizedBox(width: 5.w),
-                      ],
-                      // Cohesive Unified Smart Hint Capsule (Standard 36dp Height)
-                      if (showHint) _buildUnifiedHintCapsule(context, isDark),
+                          _buildProgressPercentage(context, isDark, solidColor),
+                        ],
+                      ),
+                      SizedBox(height: 4.h),
+                      // Smooth High-Precision Solid Progress Bar
+                      _buildProgressBar(context, solidColor, isDark, isRtl),
                     ],
                   ),
-                ],
+                ),
               ),
 
-              SizedBox(height: 6.h),
+              // ── ZONE 3: Right Player Status & Actions Anchor ─────────────
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // 1. Vector Hearts Capsule (36dp Height, 12r Radius, Pips)
+                  _buildLivesCluster(context, isDark),
 
-              // ── TIER 2: Full-Width Solid Progress Bar ───────────────────
-              _buildProgressBar(context, solidColor, isDark, isRtl),
+                  // 2. Cohesive Smart Hint Capsule (36dp Height, 12r Radius)
+                  if (showHint) ...[
+                    SizedBox(width: 5.w),
+                    _buildUnifiedHintCapsule(context, isDark),
+                  ],
+
+                  // 3. Tactile Briefing Squircle Tile (36x36dp, 12r Radius)
+                  if (showBriefing && effectiveBriefing != null) ...[
+                    SizedBox(width: 5.w),
+                    _buildTactileBriefingTile(context, effectiveBriefing, solidColor, isDark),
+                  ],
+                ],
+              ),
             ],
           ),
         ),
@@ -230,13 +199,13 @@ class VowlUniversalGameHeader extends StatelessWidget {
               border: Border.all(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.14)
-                    : AppColors.slate300.withValues(alpha: 0.7),
+                    : Colors.black.withValues(alpha: 0.12),
                 width: 1.2,
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.08),
-                  blurRadius: 3,
+                  blurRadius: 4,
                   offset: const Offset(0, 1.5),
                 ),
               ],
@@ -286,6 +255,78 @@ class VowlUniversalGameHeader extends StatelessWidget {
     );
   }
 
+  /// Builds the dynamic progress percentage indicator.
+  Widget _buildProgressPercentage(BuildContext context, bool isDark, Color solidColor) {
+    final style = TextStyle(
+      fontFamily: 'Outfit',
+      fontSize: 10.sp,
+      fontWeight: FontWeight.w800,
+      color: isDark ? AppColors.slate400 : AppColors.slate600,
+    );
+
+    if (progressNotifier != null) {
+      return ValueListenableBuilder<double>(
+        valueListenable: progressNotifier!,
+        builder: (context, p, _) => Text(
+          '${(p.clamp(0.0, 1.0) * 100).toInt()}%',
+          style: style,
+          textScaler: const TextScaler.linear(1.0),
+        ),
+      );
+    }
+    return Text(
+      '${(progress.clamp(0.0, 1.0) * 100).toInt()}%',
+      style: style,
+      textScaler: const TextScaler.linear(1.0),
+    );
+  }
+
+  /// Builds the tactile squircle briefing (ℹ️) button.
+  Widget _buildTactileBriefingTile(
+    BuildContext context,
+    VoidCallback onTap,
+    Color solidColor,
+    bool isDark,
+  ) {
+    return Semantics(
+      button: true,
+      label: context.tr('games.briefing_tooltip', fallback: 'Level Briefing'),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12.r),
+          child: Container(
+            width: 36.w,
+            height: 36.h,
+            decoration: BoxDecoration(
+              color: solidColor.withValues(alpha: isDark ? 0.15 : 0.08),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: solidColor.withValues(alpha: isDark ? 0.35 : 0.25),
+                width: 1.2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.08),
+                  blurRadius: 3,
+                  offset: const Offset(0, 1.5),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Icon(
+                Icons.info_outline_rounded,
+                color: solidColor,
+                size: 18.r,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   /// Builds the unified hint capsule with zero visual clutter and transaction-safe global deduction.
   Widget _buildUnifiedHintCapsule(BuildContext context, bool isDark) {
     return QuestHintButton(
@@ -308,6 +349,9 @@ class VowlUniversalGameHeader extends StatelessWidget {
   }
 
   Widget _renderHearts(BuildContext context, int count, bool isDark) {
+    final clampedCount = count.clamp(0, 3);
+    final hasLives = clampedCount > 0;
+
     return Semantics(
       label: context.tr(
         'game_progress.lives_label',
@@ -316,39 +360,62 @@ class VowlUniversalGameHeader extends StatelessWidget {
       ),
       child: Container(
         height: 36.h,
-        padding: EdgeInsets.symmetric(horizontal: 8.w),
+        padding: EdgeInsets.symmetric(horizontal: 7.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.red.withValues(alpha: isDark ? 0.12 : 0.08),
+          color: hasLives
+              ? AppColors.rose500.withValues(alpha: isDark ? 0.16 : 0.10)
+              : (isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03)),
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
-            color: Colors.red.withValues(alpha: isDark ? 0.25 : 0.2),
-            width: 1,
+            color: hasLives
+                ? AppColors.rose500.withValues(alpha: isDark ? 0.40 : 0.28)
+                : (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.06)),
+            width: 1.2,
           ),
+          boxShadow: [
+            if (hasLives)
+              BoxShadow(
+                color: AppColors.rose500.withValues(alpha: isDark ? 0.15 : 0.06),
+                blurRadius: 4,
+                offset: const Offset(0, 1.5),
+              ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: List.generate(3, (index) {
-            final isAlive = index < count;
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.w),
-              child: AnimatedScale(
-                scale: isAlive ? 1.0 : 0.85,
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeOutBack,
-                child: Icon(
-                  Icons.favorite_rounded,
-                  size: 16.r,
-                  color: isAlive
-                      ? AppColors.rose500
-                      : (isDark
-                          ? AppColors.slate600.withValues(alpha: 0.4)
-                          : AppColors.slate400.withValues(alpha: 0.4)),
-                ),
-              ),
-            );
-          }),
+          children: [
+            Icon(
+              Icons.favorite_rounded,
+              size: 17.r,
+              color: hasLives ? AppColors.rose500 : (isDark ? AppColors.slate600 : AppColors.slate400),
+            ),
+            SizedBox(width: 4.w),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(3, (index) {
+                final isAlive = index < clampedCount;
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 1.5.w),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.easeOut,
+                    width: 5.w,
+                    height: 5.w,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isAlive
+                          ? AppColors.rose500
+                          : (isDark
+                              ? AppColors.slate600.withValues(alpha: 0.35)
+                              : AppColors.slate400.withValues(alpha: 0.35)),
+                    ),
+                  ),
+                );
+              }),
+            ),
+          ],
         ),
       ),
     );
@@ -367,17 +434,17 @@ class VowlUniversalGameHeader extends StatelessWidget {
   Widget _renderProgressBarTrack(double currentProgress, Color solidColor, bool isDark, bool isRtl) {
     final clamped = currentProgress.clamp(0.0, 1.0);
     return ClipRRect(
-      borderRadius: BorderRadius.circular(2.5.r),
+      borderRadius: BorderRadius.circular(3.r),
       child: SizedBox(
         width: double.infinity,
-        height: 5.h,
+        height: 6.h,
         child: Stack(
           children: [
             Container(
               width: double.infinity,
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : Colors.black.withValues(alpha: 0.08),
+                  ? Colors.white.withValues(alpha: 0.10)
+                  : Colors.black.withValues(alpha: 0.06),
             ),
             AnimatedFractionallySizedBox(
               duration: const Duration(milliseconds: 250),
@@ -385,7 +452,10 @@ class VowlUniversalGameHeader extends StatelessWidget {
               widthFactor: clamped,
               alignment: isRtl ? Alignment.centerRight : Alignment.centerLeft,
               child: Container(
-                color: solidColor,
+                decoration: BoxDecoration(
+                  color: solidColor,
+                  borderRadius: BorderRadius.circular(3.r),
+                ),
               ),
             ),
           ],
