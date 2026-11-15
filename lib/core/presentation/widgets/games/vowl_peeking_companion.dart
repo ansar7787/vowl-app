@@ -120,7 +120,9 @@ class VowlPeekingCompanion extends StatelessWidget {
         liveRegion: true,
         label: message,
         excludeSemantics: true,
-        child: row,
+        child: IgnorePointer(
+          child: row,
+        ),
       ),
     );
   }
