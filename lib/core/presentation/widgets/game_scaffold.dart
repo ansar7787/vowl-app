@@ -149,9 +149,7 @@ class GameScaffold<S> extends StatelessWidget {
                             top: 4.h,
                             right:
                                 config.horizontalPadding ?? AppSpacing.screen,
-                            child: IgnorePointer(
-                              child: mascotBuilder!(context, state, _lives),
-                            ),
+                            child: mascotBuilder!(context, state, _lives),
                           ),
                       ],
                     ),

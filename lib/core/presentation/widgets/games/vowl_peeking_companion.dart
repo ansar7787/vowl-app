@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
@@ -16,9 +17,10 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 /// Production Ergonomics:
 /// - The speech bubble auto-fades and collapses after 3 seconds so it never permanently
 ///   blocks or covers question instructions, prompts, or clues.
-/// - Tapping the mascot re-activates the speech bubble for 3 seconds.
+/// - Tapping the mascot toggles/re-activates the speech bubble with crisp haptic feedback.
+/// - Generous 46x46dp thumb touch target ensures effortless tapping on all mobile devices.
 /// - Whenever the message or emotional state changes, the speech bubble reactivates.
-/// - When collapsed, the companion consumes only 38dp on the right margin, freeing 100%
+/// - When collapsed, the companion consumes only the avatar margin, freeing 100%
 ///   of the horizontal width for question reading.
 class VowlPeekingCompanion extends StatefulWidget {
   /// Spoken message from the companion (without duplicate mascot emojis).
@@ -104,7 +106,19 @@ class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
   }
 
   void _onTapMascot() {
-    _showBubbleTemporarily();
+    try {
+      HapticFeedback.selectionClick();
+    } catch (_) {}
+
+    setState(() {
+      _isBubbleVisible = !_isBubbleVisible;
+    });
+
+    if (_isBubbleVisible) {
+      _startDismissTimer();
+    } else {
+      _dismissTimer?.cancel();
+    }
   }
 
   @override
@@ -119,45 +133,49 @@ class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
 
     Widget bubble = AnimatedOpacity(
       opacity: _isBubbleVisible ? 1.0 : 0.0,
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 250),
       curve: Curves.easeInOut,
       child: AnimatedSize(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 280),
         curve: Curves.easeInOutCubic,
         child: _isBubbleVisible
-            ? Container(
-                constraints: BoxConstraints(maxWidth: 145.w),
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                margin: EdgeInsets.only(right: 5.w),
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.12)
-                        : AppColors.slate200,
-                    width: 1.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(
-                        alpha: isDark ? 0.3 : 0.06,
-                      ),
-                      blurRadius: 6,
-                      offset: const Offset(0, 2),
+            ? GestureDetector(
+                onTap: _onTapMascot,
+                behavior: HitTestBehavior.opaque,
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 145.w),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                  margin: EdgeInsets.only(right: 4.w),
+                  decoration: BoxDecoration(
+                    color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                    borderRadius: BorderRadius.circular(10.r),
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : AppColors.slate200,
+                      width: 1.0,
                     ),
-                  ],
-                ),
-                child: Text(
-                  widget.message,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    color: resolvedTextColor,
-                    height: 1.25,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(
+                          alpha: isDark ? 0.3 : 0.06,
+                        ),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    widget.message,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w700,
+                      color: resolvedTextColor,
+                      height: 1.25,
+                    ),
                   ),
                 ),
               )
@@ -177,17 +195,27 @@ class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
           .moveY(begin: 0, end: 4, duration: 1500.ms, curve: Curves.easeInOut);
     }
 
-    Widget row = GestureDetector(
+    // Touch target for mascot avatar with generous 46x46dp hit area
+    Widget mascotButton = GestureDetector(
       onTap: _onTapMascot,
       behavior: HitTestBehavior.opaque,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          bubble,
-          mascot,
-        ],
+      child: Container(
+        constraints: BoxConstraints(
+          minWidth: 44.r,
+          minHeight: 44.r,
+        ),
+        alignment: Alignment.center,
+        child: mascot,
       ),
+    );
+
+    Widget row = Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        bubble,
+        mascotButton,
+      ],
     );
 
     if (!reduceMotion) {

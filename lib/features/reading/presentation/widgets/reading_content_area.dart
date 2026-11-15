@@ -108,9 +108,8 @@ class ReadingContentArea extends StatelessWidget {
         Positioned(
           top: 4.h,
           right: 20.w,
-          child: IgnorePointer(
-            child: RepaintBoundary(
-              child: ReadingPeekingMascot(
+          child: RepaintBoundary(
+            child: ReadingPeekingMascot(
                 lives: lives,
                 isCorrect: isCorrect,
                 isAnswered: isAnswered,
@@ -121,7 +120,6 @@ class ReadingContentArea extends StatelessWidget {
               ),
             ),
           ),
-        ),
       ],
     );
   }
