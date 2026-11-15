@@ -11,7 +11,6 @@ import '../../../../features/auth/domain/usecases/update_category_stats.dart';
 import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/award_badge.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
-import '../../../../core/usecases/usecase.dart';
 import '../../domain/usecases/get_listening_quests.dart';
 import 'listening_event.dart';
 import 'listening_state.dart';
@@ -267,24 +266,10 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
 
-    final result = await useHint(NoParams());
-    result.fold(
-      (failure) {
-        if (state is ListeningLoaded) {
-          emit((state as ListeningLoaded).copyWith(hintUsed: false));
-        }
-        hapticService.error();
-        if (kDebugMode) {
-          debugPrint('[ListeningBloc] UseHint failed: ${failure.message}');
-        }
-      },
-      (_) {
-        analytics.onHintUsed(
-          gameType: _currentGameType ?? '',
-          level: _currentLevel ?? 0,
-          questionIndex: s.currentIndex,
-        );
-      },
+    analytics.onHintUsed(
+      gameType: _currentGameType ?? '',
+      level: _currentLevel ?? 0,
+      questionIndex: s.currentIndex,
     );
   }
 

@@ -362,14 +362,6 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       // Optimistic latch: prevent duplicate deductions from concurrent calls
       emit(s.copyWith(hintUsed: true));
       hapticService.selection();
-
-      final result = await useHint(NoParams());
-      if (result.isLeft()) {
-        if (state is AccentLoaded) {
-          emit((state as AccentLoaded).copyWith(hintUsed: false));
-        }
-        hapticService.error();
-      }
     }
   }
 

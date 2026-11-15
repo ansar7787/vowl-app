@@ -2,7 +2,6 @@ import 'dart:developer' as dev;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import '../../domain/entities/elite_mastery_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/error/failures.dart';
@@ -380,42 +379,33 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     emit(currentState.copyWith(isHintUsed: true));
     hapticService.selection();
 
-    final result = await useHint(NoParams());
-    if (result.isRight()) {
-      List<int> removedIndices = [];
-      bool isLetterRevealed = false;
-      final quest = currentState.currentQuest;
+    List<int> removedIndices = [];
+    bool isLetterRevealed = false;
+    final quest = currentState.currentQuest;
 
-      // If it's a generic hint, trigger dynamic 50/50 lifeline or letter reveal
-      if (HintUtility.isGenericHint(quest.hint)) {
-        if (quest.options != null && quest.options!.length > 2) {
-          final correctIdx = quest.correctAnswerIndex ?? 0;
-          final wrongIndices = <int>[];
-          for (var i = 0; i < quest.options!.length; i++) {
-            if (i != correctIdx) wrongIndices.add(i);
-          }
-          wrongIndices.shuffle();
-          final removeCount = (wrongIndices.length / 2).ceil();
-          removedIndices = wrongIndices.take(removeCount).toList();
-        } else if (quest.word != null) {
-          isLetterRevealed = true;
+    // If it's a generic hint, trigger dynamic 50/50 lifeline or letter reveal
+    if (HintUtility.isGenericHint(quest.hint)) {
+      if (quest.options != null && quest.options!.length > 2) {
+        final correctIdx = quest.correctAnswerIndex ?? 0;
+        final wrongIndices = <int>[];
+        for (var i = 0; i < quest.options!.length; i++) {
+          if (i != correctIdx) wrongIndices.add(i);
         }
+        wrongIndices.shuffle();
+        final removeCount = (wrongIndices.length / 2).ceil();
+        removedIndices = wrongIndices.take(removeCount).toList();
+      } else if (quest.word != null) {
+        isLetterRevealed = true;
       }
-
-      emit(
-        currentState.copyWith(
-          isHintUsed: true,
-          removedIndices: removedIndices,
-          isLetterRevealed: isLetterRevealed,
-        ),
-      );
-    } else {
-      // Rollback on failure
-      if (state is EliteMasteryLoaded) {
-        emit((state as EliteMasteryLoaded).copyWith(isHintUsed: false));
-      }
-      hapticService.error();
     }
+
+    emit(
+      currentState.copyWith(
+        isHintUsed: true,
+        removedIndices: removedIndices,
+        isLetterRevealed: isLetterRevealed,
+      ),
+    );
   }
 
   void _onAddLifeFromAd(AddLifeFromAd event, Emitter<EliteMasteryState> emit) {

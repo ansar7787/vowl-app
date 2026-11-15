@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 
 import 'package:vowl/core/utils/sound_service.dart';
@@ -379,46 +378,34 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     emit(s.copyWith(hintUsed: true));
     unawaited(hapticService.selection());
 
-    final result = await useHint(NoParams());
-    if (isClosed) return;
+    List<int> removedIndices = [];
+    bool isLetterRevealed = false;
+    final quest = s.currentQuest;
 
-    final latest = state;
-    if (latest is SpeakingLoaded) {
-      if (result.isRight()) {
-        List<int> removedIndices = [];
-        bool isLetterRevealed = false;
-        final quest = latest.currentQuest;
-
-        if (HintUtility.isGenericHint(quest.hint)) {
-          if (quest.options != null && quest.options!.length > 2) {
-            // 50/50 Lifeline
-            final correctIdx = quest.correctAnswerIndex ?? 0;
-            final wrongIndices = <int>[];
-            for (var i = 0; i < quest.options!.length; i++) {
-              if (i != correctIdx) wrongIndices.add(i);
-            }
-            wrongIndices.shuffle();
-            final removeCount = (wrongIndices.length / 2).ceil();
-            removedIndices = wrongIndices.take(removeCount).toList();
-          } else if (quest.missingWord != null) {
-            // Letter Reveal for text input games
-            isLetterRevealed = true;
-          }
+    if (HintUtility.isGenericHint(quest.hint)) {
+      if (quest.options != null && quest.options!.length > 2) {
+        // 50/50 Lifeline
+        final correctIdx = quest.correctAnswerIndex ?? 0;
+        final wrongIndices = <int>[];
+        for (var i = 0; i < quest.options!.length; i++) {
+          if (i != correctIdx) wrongIndices.add(i);
         }
-
-        emit(
-          latest.copyWith(
-            hintUsed: true,
-            removedIndices: removedIndices,
-            isLetterRevealed: isLetterRevealed,
-          ),
-        );
-      } else {
-        // Rollback on failure
-        emit(latest.copyWith(hintUsed: false));
-        unawaited(hapticService.error());
+        wrongIndices.shuffle();
+        final removeCount = (wrongIndices.length / 2).ceil();
+        removedIndices = wrongIndices.take(removeCount).toList();
+      } else if (quest.missingWord != null) {
+        // Letter Reveal for text input games
+        isLetterRevealed = true;
       }
     }
+
+    emit(
+      s.copyWith(
+        hintUsed: true,
+        removedIndices: removedIndices,
+        isLetterRevealed: isLetterRevealed,
+      ),
+    );
   }
 
   // ---------------------------------------------------------------------------

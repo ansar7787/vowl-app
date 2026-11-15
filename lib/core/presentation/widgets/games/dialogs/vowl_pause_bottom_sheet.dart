@@ -71,13 +71,19 @@ class VowlPauseBottomSheet extends StatelessWidget {
         : AppColors.indigo500;
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
+    final bottomPadding = bottomInset > 0
+        ? (bottomInset + 16.h)
+        : (isLandscape ? 16.h : 36.h);
 
     final sheetContent = Container(
       padding: EdgeInsets.fromLTRB(
         24.w,
         isLandscape ? 12.h : 16.h,
         24.w,
-        isLandscape ? 16.h : 36.h,
+        bottomPadding,
       ),
       decoration: BoxDecoration(
         color: sheetBg,

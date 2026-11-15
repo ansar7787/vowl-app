@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/usecases/get_grammar_quest.dart';
 import '../../domain/usecases/preload_grammar_quest.dart';
@@ -329,16 +328,6 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     if (currentState.hintUsed) return;
     emit(currentState.copyWith(hintUsed: true));
     hapticService.selection();
-
-    final result = await useHint(NoParams());
-
-    // Re-read state after the async boundary to avoid applying a stale snapshot.
-    result.fold((_) {
-      if (state is GrammarLoaded) {
-        emit((state as GrammarLoaded).copyWith(hintUsed: false));
-      }
-      hapticService.error();
-    }, (_) {});
   }
 
   void _onRestoreLife(RestoreLife event, Emitter<GrammarState> emit) {

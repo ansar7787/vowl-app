@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,11 +13,14 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 /// - Left: Compact speech bubble with rounded glass/card surface and category-accented typography.
 /// - Right: Animated companion avatar (38dp standard), anchored on the right edge.
 ///
-/// Ergonomics:
-/// - Total height is restricted to 38dp (instead of bloated 85dp vertical columns),
-///   completely preventing collisions with question cards and instruction banners below.
-/// - Speech bubble contains only clean dialogue text without duplicate mascot emojis.
-class VowlPeekingCompanion extends StatelessWidget {
+/// Production Ergonomics:
+/// - The speech bubble auto-fades and collapses after 3 seconds so it never permanently
+///   blocks or covers question instructions, prompts, or clues.
+/// - Tapping the mascot re-activates the speech bubble for 3 seconds.
+/// - Whenever the message or emotional state changes, the speech bubble reactivates.
+/// - When collapsed, the companion consumes only 38dp on the right margin, freeing 100%
+///   of the horizontal width for question reading.
+class VowlPeekingCompanion extends StatefulWidget {
   /// Spoken message from the companion (without duplicate mascot emojis).
   final String message;
 
@@ -35,6 +39,10 @@ class VowlPeekingCompanion extends StatelessWidget {
   /// Optional override for the speech bubble text color.
   final Color? textColorOverride;
 
+  /// Auto-dismiss duration for the speech bubble so it never permanently blocks question text.
+  /// Defaults to 3 seconds. Set to null to keep speech bubble visible indefinitely.
+  final Duration? autoDismissDuration;
+
   const VowlPeekingCompanion({
     super.key,
     required this.message,
@@ -43,56 +51,124 @@ class VowlPeekingCompanion extends StatelessWidget {
     required this.category,
     this.mascotSize = 38.0,
     this.textColorOverride,
+    this.autoDismissDuration = const Duration(seconds: 3),
   });
+
+  @override
+  State<VowlPeekingCompanion> createState() => _VowlPeekingCompanionState();
+}
+
+class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
+    with SingleTickerProviderStateMixin {
+  Timer? _dismissTimer;
+  bool _isBubbleVisible = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _startDismissTimer();
+  }
+
+  @override
+  void didUpdateWidget(covariant VowlPeekingCompanion oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.message != widget.message ||
+        oldWidget.mascotState != widget.mascotState) {
+      _showBubbleTemporarily();
+    }
+  }
+
+  @override
+  void dispose() {
+    _dismissTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startDismissTimer() {
+    if (widget.autoDismissDuration == null) return;
+    _dismissTimer?.cancel();
+    _dismissTimer = Timer(widget.autoDismissDuration!, () {
+      if (mounted) {
+        setState(() {
+          _isBubbleVisible = false;
+        });
+      }
+    });
+  }
+
+  void _showBubbleTemporarily() {
+    setState(() {
+      _isBubbleVisible = true;
+    });
+    _startDismissTimer();
+  }
+
+  void _onTapMascot() {
+    _showBubbleTemporarily();
+  }
 
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final catColor = CategoryColors.forCategory(category);
-    final resolvedTextColor = textColorOverride ??
+    final catColor = CategoryColors.forCategory(widget.category);
+    final resolvedTextColor = widget.textColorOverride ??
         (isDark
             ? (Color.lerp(catColor, Colors.white, 0.35) ?? Colors.white)
             : catColor);
 
-    Widget bubble = Container(
-      constraints: BoxConstraints(maxWidth: 155.w),
-      padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 5.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.12)
-              : AppColors.slate200,
-          width: 1.0,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.06),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 10.5.sp,
-          fontWeight: FontWeight.w700,
-          color: resolvedTextColor,
-          height: 1.25,
-        ),
+    Widget bubble = AnimatedOpacity(
+      opacity: _isBubbleVisible ? 1.0 : 0.0,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      child: AnimatedSize(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOutCubic,
+        child: _isBubbleVisible
+            ? Container(
+                constraints: BoxConstraints(maxWidth: 145.w),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                margin: EdgeInsets.only(right: 5.w),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : AppColors.slate200,
+                    width: 1.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.3 : 0.06,
+                      ),
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  widget.message,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: resolvedTextColor,
+                    height: 1.25,
+                  ),
+                ),
+              )
+            : const SizedBox.shrink(),
       ),
     );
 
     Widget mascot = VowlMascot(
-      state: mascotState,
-      size: mascotSize.r,
-      mascotId: mascotId,
+      state: widget.mascotState,
+      size: widget.mascotSize.r,
+      mascotId: widget.mascotId,
     );
 
     if (!reduceMotion) {
@@ -101,14 +177,17 @@ class VowlPeekingCompanion extends StatelessWidget {
           .moveY(begin: 0, end: 4, duration: 1500.ms, curve: Curves.easeInOut);
     }
 
-    Widget row = Row(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        bubble,
-        SizedBox(width: 5.w),
-        mascot,
-      ],
+    Widget row = GestureDetector(
+      onTap: _onTapMascot,
+      behavior: HitTestBehavior.opaque,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          bubble,
+          mascot,
+        ],
+      ),
     );
 
     if (!reduceMotion) {
@@ -118,11 +197,9 @@ class VowlPeekingCompanion extends StatelessWidget {
     return RepaintBoundary(
       child: Semantics(
         liveRegion: true,
-        label: message,
+        label: widget.message,
         excludeSemantics: true,
-        child: IgnorePointer(
-          child: row,
-        ),
+        child: row,
       ),
     );
   }

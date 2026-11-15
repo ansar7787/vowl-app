@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
@@ -370,14 +369,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     // Optimistic latch: prevent duplicate deductions from concurrent calls
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
-
-    (await useHint(NoParams())).fold((_) {
-      // Rollback on failure
-      if (state is VocabularyLoaded) {
-        emit((state as VocabularyLoaded).copyWith(hintUsed: false));
-      }
-      hapticService.error();
-    }, (_) {});
   }
 
   // ── Restore life — O(1) ───────────────────────────────────────────────────

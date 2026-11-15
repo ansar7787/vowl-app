@@ -56,10 +56,12 @@ class QuestHintButton extends StatelessWidget {
     }
   }
 
-  void _showHintFeedback(BuildContext context) {
-    try {
-      _sound?.playHint();
-    } catch (_) {}
+  void _showHintFeedback(BuildContext context, {bool isReview = false}) {
+    if (!isReview) {
+      try {
+        _sound?.playHint();
+      } catch (_) {}
+    }
 
     if (hintText != null && hintText!.trim().isNotEmpty) {
       final isDynamic = HintUtility.isGenericHint(hintText!);
@@ -94,15 +96,14 @@ class QuestHintButton extends StatelessWidget {
     required bool isPremium,
   }) {
     if (used) {
-      // Free review for the current question without spending extra hints
-      _showHintFeedback(context);
-      onTap();
+      // Free review for current question - no charge, no duplicate BLoC dispatch
+      _showHintFeedback(context, isReview: true);
       return;
     }
 
     if (isPremium) {
       // Premium users have unlimited hints - no deduction
-      _showHintFeedback(context);
+      _showHintFeedback(context, isReview: false);
       onTap();
       return;
     }
@@ -115,7 +116,7 @@ class QuestHintButton extends StatelessWidget {
       } catch (_) {}
 
       // 2. Audio, TTS, and CustomSnackBar pedagogical feedback
-      _showHintFeedback(context);
+      _showHintFeedback(context, isReview: false);
 
       // 3. Trigger in-game quest callback
       onTap();
@@ -124,7 +125,7 @@ class QuestHintButton extends StatelessWidget {
       GameDialogHelper.showHintAdDialog(
         context,
         onHintEarned: () {
-          _showHintFeedback(context);
+          _showHintFeedback(context, isReview: false);
           onTap();
         },
       );
@@ -141,17 +142,79 @@ class QuestHintButton extends StatelessWidget {
         final isPremium = authState.user?.isPremium ?? false;
         final canUseHint = hintCount > 0 || isPremium;
 
+        // Visual State Resolution
+        final bool isRevealed = used;
+        final bool showAdState = !isRevealed && !canUseHint;
+        final bool isInteractive = isHintEnabled;
+
+        final Color capsuleColor;
+        final Color borderColor;
+        final Color iconColor;
+        final IconData iconData;
+        final List<BoxShadow> shadows;
+
+        if (!isInteractive) {
+          capsuleColor = isDark
+              ? Colors.white.withValues(alpha: 0.04)
+              : Colors.black.withValues(alpha: 0.03);
+          borderColor = isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.black.withValues(alpha: 0.06);
+          iconColor = isDark ? AppColors.slate600 : AppColors.slate400;
+          iconData = Icons.lightbulb_rounded;
+          shadows = const [];
+        } else if (isRevealed) {
+          // ── Revealed / Already Used State (Subtle, no bright glow) ──
+          capsuleColor = isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : Colors.black.withValues(alpha: 0.03);
+          borderColor = isDark
+              ? Colors.white.withValues(alpha: 0.14)
+              : Colors.black.withValues(alpha: 0.10);
+          iconColor = isDark ? AppColors.slate300 : AppColors.slate700;
+          iconData = Icons.psychology_outlined;
+          shadows = const [];
+        } else if (showAdState) {
+          // ── 0 Hints Remaining: Rewarded Video Ad State (Clean Reel Icon) ──
+          capsuleColor = AppColors.amber500.withValues(alpha: isDark ? 0.12 : 0.08);
+          borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.35 : 0.25);
+          iconColor = AppColors.amber500;
+          iconData = Icons.video_collection_rounded;
+          shadows = [
+            BoxShadow(
+              color: AppColors.amber500.withValues(alpha: isDark ? 0.15 : 0.06),
+              blurRadius: 3,
+              offset: const Offset(0, 1),
+            ),
+          ];
+        } else {
+          // ── Active Hint Available ──
+          capsuleColor = AppColors.amber500.withValues(alpha: isDark ? 0.16 : 0.10);
+          borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.45 : 0.35);
+          iconColor = AppColors.amber500;
+          iconData = Icons.lightbulb_rounded;
+          shadows = [
+            BoxShadow(
+              color: AppColors.amber500.withValues(alpha: isDark ? 0.20 : 0.08),
+              blurRadius: 4,
+              offset: const Offset(0, 1.5),
+            ),
+          ];
+        }
+
         return Semantics(
           button: true,
-          label: isPremium
-              ? context.tr('hint.use_hint_premium_semantic', fallback: 'Use hint (Unlimited)')
-              : (hintCount > 0
-                  ? context.tr(
-                      'hint.use_hint_semantic',
-                      args: ['$hintCount'],
-                      fallback: 'Use hint ($hintCount remaining)',
-                    )
-                  : context.tr('hint.watch_ad_semantic', fallback: 'Watch video to unlock a hint')),
+          label: isRevealed
+              ? context.tr('hint.review_hint_semantic', fallback: 'Review hint (Unlocked)')
+              : (isPremium
+                  ? context.tr('hint.use_hint_premium_semantic', fallback: 'Use hint (Unlimited)')
+                  : (hintCount > 0
+                      ? context.tr(
+                          'hint.use_hint_semantic',
+                          args: ['$hintCount'],
+                          fallback: 'Use hint ($hintCount remaining)',
+                        )
+                      : context.tr('hint.watch_ad_semantic', fallback: 'Watch video to unlock a hint'))),
           child: Material(
             color: Colors.transparent,
             child: InkWell(
@@ -163,47 +226,29 @@ class QuestHintButton extends StatelessWidget {
                 duration: const Duration(milliseconds: 200),
                 height: 36.h,
                 padding: EdgeInsets.symmetric(
-                  horizontal: isPremium ? 10.w : 8.w,
+                  horizontal: isRevealed || isPremium ? 10.w : 8.w,
                 ),
                 decoration: BoxDecoration(
-                  color: !isHintEnabled
-                      ? (isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03))
-                      : (canUseHint
-                          ? AppColors.amber500.withValues(alpha: isDark ? 0.16 : 0.10)
-                          : (isDark ? Colors.white.withValues(alpha: 0.06) : Colors.black.withValues(alpha: 0.03))),
+                  color: capsuleColor,
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: !isHintEnabled
-                        ? (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.06))
-                        : (canUseHint
-                            ? AppColors.amber500.withValues(alpha: isDark ? 0.45 : 0.35)
-                            : AppColors.amber500.withValues(alpha: isDark ? 0.35 : 0.25)),
+                    color: borderColor,
                     width: 1.2,
                   ),
-                  boxShadow: [
-                    if (isHintEnabled)
-                      BoxShadow(
-                        color: AppColors.amber500.withValues(alpha: isDark ? 0.20 : 0.08),
-                        blurRadius: 4,
-                        offset: const Offset(0, 1.5),
-                      ),
-                  ],
+                  boxShadow: shadows,
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Icon State: Lightbulb for available hints, Video Camera for rewarded ad
                     Icon(
-                      canUseHint ? Icons.lightbulb_rounded : Icons.videocam_rounded,
-                      color: !isHintEnabled
-                          ? (isDark ? AppColors.slate600 : AppColors.slate400)
-                          : AppColors.amber500,
-                      size: canUseHint ? 18.r : 17.r,
+                      iconData,
+                      color: iconColor,
+                      size: isRevealed ? 19.r : (showAdState ? 17.r : 18.r),
                     ),
 
                     // Counter Pill or Rewarded Ad Text (+1)
-                    if (!isPremium && isHintEnabled) ...[
+                    if (isInteractive && !isRevealed && !isPremium) ...[
                       SizedBox(width: 4.w),
                       Text(
                         canUseHint ? '$hintCount' : '+1',
@@ -212,7 +257,7 @@ class QuestHintButton extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
-                          color: AppColors.amber500,
+                          color: iconColor,
                           letterSpacing: 0.2,
                         ),
                       ),

@@ -133,7 +133,7 @@ void main() {
         ),
       );
 
-      expect(find.byIcon(Icons.videocam_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.video_collection_rounded), findsOneWidget);
       expect(find.text('+1'), findsOneWidget);
     });
 
@@ -162,6 +162,32 @@ void main() {
       // No count or +1 label should be visible for premium
       expect(find.text('+1'), findsNothing);
       expect(find.text('0'), findsNothing);
+    });
+
+    testWidgets('Revealed/used hint renders psychology icon without counter', (tester) async {
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(
+          UserEntity(id: '1', email: 'test@vowl.com', hintCount: 3, isPremium: false),
+        ),
+      );
+
+      await tester.pumpWidget(
+        _buildTestableWidget(
+          authBloc: mockAuthBloc,
+          economyBloc: mockEconomyBloc,
+          child: VowlUniversalGameHeader(
+            level: 1,
+            category: 'grammar',
+            isHintUsedOnCurrentQuest: true,
+            onPause: () {},
+            onBriefing: () {},
+            onHint: () {},
+          ),
+        ),
+      );
+
+      expect(find.byIcon(Icons.psychology_outlined), findsOneWidget);
+      expect(find.text('3'), findsNothing);
     });
 
     testWidgets('showBriefing is false by default, maintaining clean 4-pill header', (tester) async {

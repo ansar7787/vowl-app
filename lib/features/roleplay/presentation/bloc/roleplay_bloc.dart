@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
 import '../../../../core/network/network_info.dart';
-import '../../../../core/usecases/usecase.dart';
 import '../../../../core/utils/haptic_service.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../features/auth/domain/usecases/award_badge.dart';
@@ -347,20 +346,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
 
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
-
-    final result = await useHint(NoParams());
-    result.fold(
-      (failure) {
-        // Revert the latch so the player keeps their hint token.
-        if (state is RoleplayLoaded) {
-          emit((state as RoleplayLoaded).copyWith(hintUsed: false));
-        }
-        if (kDebugMode) debugPrint('[RoleplayBloc] UseHint failed: $failure');
-      },
-      (_) {
-        /* debit confirmed */
-      },
-    );
   }
 
   // ── ─────────────────────────────────────────────────────────────────────

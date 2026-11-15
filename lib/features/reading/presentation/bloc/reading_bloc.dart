@@ -8,7 +8,6 @@ import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/network/network_info.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../core/utils/haptic_service.dart';
-import '../../../../core/usecases/usecase.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
 import '../../../../features/auth/domain/usecases/update_category_stats.dart';
@@ -293,15 +292,6 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     // Optimistic latch: prevent duplicate deductions from concurrent calls
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
-
-    final result = await useHint(NoParams());
-    if (result.isLeft()) {
-      // Rollback on failure
-      if (state is ReadingLoaded) {
-        emit((state as ReadingLoaded).copyWith(hintUsed: false));
-      }
-      hapticService.error();
-    }
   }
 
   void _onRestoreLife(RestoreLife event, Emitter<ReadingState> emit) {

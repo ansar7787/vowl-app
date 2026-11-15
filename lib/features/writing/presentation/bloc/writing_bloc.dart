@@ -7,7 +7,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import '../../domain/entities/writing_quest.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
@@ -270,14 +269,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     // Optimistic latch: prevent duplicate deductions from concurrent calls
     emit(s.copyWith(hintUsed: true));
     hapticService.selection();
-
-    final result = await useHint(NoParams());
-    if (result.isLeft()) {
-      if (state is WritingLoaded) {
-        emit((state as WritingLoaded).copyWith(hintUsed: false));
-      }
-      hapticService.error();
-    }
   }
 
   void _onRestoreLife(RestoreLife event, Emitter<WritingState> emit) {
