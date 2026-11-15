@@ -115,43 +115,46 @@ class MascotMessageHelper {
     int maxLives = 3,
   }) {
     final lowerCat = category.toLowerCase();
-    final mascotEmoji = VowlAssets.getMascotEmoji(mascotId);
     final mascotName = VowlAssets.getMascotName(mascotId);
+    final mascotEmoji = VowlAssets.getMascotEmoji(mascotId);
 
     // Normalise the category key: handle 'elitemastery' → 'elite_mastery'.
     final catKey = _normaliseCategoryKey(lowerCat);
 
+    String raw;
     if (isComplete) {
-      return context.tr(
+      raw = context.tr(
         _completeKeys[catKey] ?? _completeKeys['']!,
-        args: [mascotEmoji],
+        args: [''],
       );
-    }
-
-    if (isCorrect == true) {
-      return context.tr(
+    } else if (isCorrect == true) {
+      raw = context.tr(
         _correctKeys[catKey] ?? _correctKeys['']!,
-        args: [mascotEmoji],
+        args: [''],
       );
-    }
-
-    if (isCorrect == false) {
-      return context.tr(
+    } else if (isCorrect == false) {
+      raw = context.tr(
         _incorrectKeys[catKey] ?? _incorrectKeys['']!,
-        args: [mascotEmoji],
+        args: [''],
       );
-    }
-
-    if (lives < maxLives && !isAnswered) {
+    } else if (lives < maxLives && !isAnswered) {
       // Use category-specific hint key only where one is defined.
       final hintKey = _hintKeys.containsKey(catKey) ? catKey : '';
-      return context.tr(_hintKeys[hintKey]!, args: [mascotEmoji]);
+      raw = context.tr(_hintKeys[hintKey]!, args: ['']);
+    } else {
+      raw = context.tr(
+        _idleKeys[catKey] ?? _idleKeys['']!,
+        args: [mascotName, ''],
+      );
     }
 
-    return context.tr(
-      _idleKeys[catKey] ?? _idleKeys['']!,
-      args: [mascotName, mascotEmoji],
-    );
+    // Strip duplicate mascot emojis, leftover empty placeholders, and trim extra whitespace.
+    // The buddy avatar is already visually rendered; repeating the emoji inside speech bubble is redundant.
+    return raw
+        .replaceAll(mascotEmoji, '')
+        .replaceAll('{}', '')
+        .replaceAll('  ', ' ')
+        .trim();
   }
 
   // ─── Helpers ─────────────────────────────────────────────────────────────

@@ -227,7 +227,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
             "Looking good! Let's play! ✨",
             "On a roll! Keep it up! 🏃",
             "Level {0}, here we go! 🌟",
-            "{1} is ready when you are! 🦉",
+            "{1} is ready when you are! ⚡",
             "Great job! Next one's waiting! 🔥",
             "Time for Level {0}! 🎈",
           ];

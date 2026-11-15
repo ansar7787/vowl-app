@@ -146,7 +146,7 @@ class GameScaffold<S> extends StatelessWidget {
                         ),
                         if (mascotBuilder != null)
                           Positioned(
-                            top: -10.h,
+                            top: 4.h,
                             right:
                                 config.horizontalPadding ?? AppSpacing.screen,
                             child: mascotBuilder!(context, state, _lives),

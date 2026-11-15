@@ -1,39 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_peeking_companion.dart';
 
-/// The small mascot that peeks from the top-left of the content area,
-/// with an animated speech bubble showing context-sensitive messages.
-///
-/// All animations respect the system "reduce motion" accessibility setting.
-/// The speech bubble is a live ARIA region — screen readers announce its
-/// content whenever [message] changes.
+/// Animated mascot companion peeking into the reading screen.
 class ReadingPeekingMascot extends StatelessWidget {
-  /// Remaining player lives.
   final int lives;
-
-  /// Whether the evaluated answer was correct.
   final bool? isCorrect;
-
-  /// Whether the quest has been evaluated.
   final bool isAnswered;
-
-  /// Whether all quests in the level are complete.
   final bool isGameComplete;
-
-  /// Whether the level ended in defeat.
   final bool isGameOver;
-
-  /// Identifier of the mascot.
   final String mascotId;
-
-  /// Display name of the companion mascot.
   final String mascotName;
 
-  /// Creates a [ReadingPeekingMascot] widget.
   const ReadingPeekingMascot({
     super.key,
     required this.lives,
@@ -57,7 +35,7 @@ class ReadingPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    final mascotState = MascotMessageHelper.getMascotState(
+    final mascotVisualState = MascotMessageHelper.getMascotState(
       isComplete: isGameComplete,
       isGameOver: isGameOver,
       isAnswered: isAnswered,
@@ -65,76 +43,11 @@ class ReadingPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    Widget bubble = Container(
-      constraints: BoxConstraints(maxWidth: 220.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 3,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: isDark ? const Color(0xFFA7F3D0) : const Color(0xFF059669),
-        ),
-      ),
-    );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    Widget mascot = VowlMascot(
-      state: mascotState,
-      size: 45.r,
+    return VowlPeekingCompanion(
+      message: message,
+      mascotState: mascotVisualState,
       mascotId: mascotId,
-    );
-
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
-    }
-
-    Widget column = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [bubble, mascot],
-    );
-
-    if (!reduceMotion) {
-      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
-    }
-
-    return Semantics(
-      // liveRegion causes screen readers to announce the message whenever
-      // it changes — the player hears feedback without touching the phone.
-      liveRegion: true,
-      label: message,
-      // excludeSemantics prevents the child sub-tree from producing
-      // additional (redundant) screen reader announcements.
-      excludeSemantics: true,
-      child: column,
+      category: 'reading',
     );
   }
 }

@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_peeking_companion.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
-/// Floating mascot + speech bubble in the top-left of the body area.
-///
-/// Reacts to game state: happy on correct / completion, worried on low lives,
-/// thinking on wrong answers, neutral otherwise.
+/// Animated mascot companion peeking into the vocabulary screen.
 class VocabularyPeekingMascot extends StatelessWidget {
   /// Current state of the vocabulary bloc.
   final VocabularyState state;
@@ -34,14 +28,8 @@ class VocabularyPeekingMascot extends StatelessWidget {
     required this.isAnswered,
   });
 
-  // ── Build ─────────────────────────────────────────────────────────────────
-
   @override
   Widget build(BuildContext context) {
-    final reduceMotion =
-        MediaQuery.disableAnimationsOf(context) ||
-        VowlMotion.lowAnimationModeOverride.value;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final mascotId =
         context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
 
@@ -63,72 +51,11 @@ class VocabularyPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    // Speech bubble — maxWidth clamps on tablets and landscape.
-    // FIX: Semantics label added so screen readers announce the mascot's
-    // current game message (was previously invisible to assistive tech).
-    Widget bubble = Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      constraints: BoxConstraints(maxWidth: 220.w),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 3,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: isDark ? const Color(0xFF818CF8) : const Color(0xFF4F46E5),
-        ),
-      ),
-    );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    Widget mascot = VowlMascot(
-      state: mascotState,
-      size: 45.r,
+    return VowlPeekingCompanion(
+      message: message,
+      mascotState: mascotState,
       mascotId: mascotId,
-    );
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 8, duration: 1200.ms, curve: Curves.easeInOut)
-          .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
-    }
-
-    Widget column = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisSize: MainAxisSize.min,
-      children: [bubble, mascot],
-    );
-
-    if (!reduceMotion) {
-      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
-    }
-
-    return Semantics(
-      liveRegion: true,
-      label: message,
-      excludeSemantics: true,
-      child: column,
+      category: 'vocabulary',
     );
   }
 }

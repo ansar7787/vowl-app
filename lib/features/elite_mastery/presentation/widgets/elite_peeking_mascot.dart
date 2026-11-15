@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_peeking_companion.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import '../bloc/elite_mastery_bloc.dart';
 
-/// Floating mascot widget that peeks from the top-left of the game area.
-///
-/// Extracted from [EliteBaseLayout] to:
-///  - Isolate the `AuthBloc` read to a single, small widget.
-///  - Allow `RepaintBoundary` to contain the continuous float/scale animations
-///    without propagating repaints up to the parent Stack.
-///  - Exclude the decorative mascot from the accessibility tree — the
-///    TTS service already delivers motivational nudges through audio.
-///
-/// The mascot reads [AuthBloc] via [BlocSelector] so it only rebuilds when
-/// the player's mascot identifier changes (account switch), not on every
-/// auth-state update.
+/// Animated mascot companion peeking into the elite mastery screen.
 class ElitePeekingMascot extends StatelessWidget {
   /// Current state of the elite mastery game.
   final EliteMasteryState state;
@@ -43,19 +30,9 @@ class ElitePeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // BlocSelector: only rebuilds when the mascot ID changes (account switch).
-    // Auth-state changes unrelated to mascot selection are filtered out.
     return BlocSelector<AuthBloc, AuthState, String>(
       selector: (authState) => authState.user?.vowlMascot ?? 'vowl_prime',
       builder: (context, mascotId) {
-        final reduceMotion = MediaQuery.disableAnimationsOf(context);
-        final mascotState = MascotMessageHelper.getMascotState(
-          isComplete: state is EliteMasteryGameComplete,
-          isGameOver: state is EliteMasteryGameOver,
-          isAnswered: isAnswered,
-          isCorrect: isCorrect,
-          lives: lives,
-        );
         final message = MascotMessageHelper.getMessage(
           context,
           category: 'elite_mastery',
@@ -66,110 +43,21 @@ class ElitePeekingMascot extends StatelessWidget {
           lives: lives,
         );
 
-        Widget column = Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            _SpeechBubble(message: message),
-            _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
-          ],
+        final mascotState = MascotMessageHelper.getMascotState(
+          isComplete: state is EliteMasteryGameComplete,
+          isGameOver: state is EliteMasteryGameOver,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          lives: lives,
         );
 
-        if (!reduceMotion) {
-          column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
-        }
-
-        // Semantics: the mascot bubble is motivational / decorative.
-        // The TTS service already speaks nudges at the right moment; having a
-        // screen reader additionally read "Vowl Prime is watching! 🦉" on
-        // every state change would be noisy and unhelpful, so we use liveRegion.
-        return Semantics(
-          liveRegion: true,
-          label: message,
-          excludeSemantics: true,
-          // RepaintBoundary: the bobbing float and pulse-scale animations run
-          // on a continuous loop. Isolating them prevents every animation frame
-          // from propagating a repaint up through the full parent Stack tree.
-          child: RepaintBoundary(child: column),
+        return VowlPeekingCompanion(
+          message: message,
+          mascotState: mascotState,
+          mascotId: mascotId,
+          category: 'elite_mastery',
         );
       },
     );
-  }
-}
-
-// ── Private sub-widgets ─────────────────────────────────────────────────────
-
-class _SpeechBubble extends StatelessWidget {
-  final String message;
-
-  const _SpeechBubble({required this.message});
-
-  @override
-  Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    Widget bubble = Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      constraints: BoxConstraints(maxWidth: 220.w),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 3,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: isDark ? const Color(0xFFFDE68A) : const Color(0xFFD97706),
-        ),
-      ),
-    );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    return bubble;
-  }
-}
-
-class _MascotAvatar extends StatelessWidget {
-  final String mascotId;
-  final VowlMascotState mascotState;
-
-  const _MascotAvatar({required this.mascotId, required this.mascotState});
-
-  @override
-  Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    Widget mascot = VowlMascot(
-      state: mascotState,
-      size: 45.r,
-      mascotId: mascotId,
-    );
-
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
-    }
-
-    return mascot;
   }
 }

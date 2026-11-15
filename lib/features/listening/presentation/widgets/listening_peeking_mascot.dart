@@ -1,29 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_peeking_companion.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 
-/// Animated mascot widget that peeks in from the top-left with a contextual
-/// speech bubble.
-///
-/// [mascotId] is passed explicitly from [ListeningBaseLayout], removing the
-/// direct [AuthBloc] read that previously created a cross-feature dependency.
-/// The entire widget is wrapped in [ExcludeSemantics] because it is purely
-/// decorative — a separate header Semantics node describes lives + level for
-/// screen readers.
+/// Animated mascot companion peeking into the listening screen.
 class ListeningPeekingMascot extends StatelessWidget {
   final ListeningState state;
   final int lives;
   final bool? isCorrect;
   final bool isAnswered;
   final ThemeResult theme;
-
-  /// Resolved mascot identifier — e.g. `'vowl_prime'`.
-  /// Callers are responsible for providing a valid, non-empty string.
   final String mascotId;
 
   const ListeningPeekingMascot({
@@ -38,7 +25,6 @@ class ListeningPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is ListeningGameComplete,
       isGameOver: state is ListeningGameOver,
@@ -57,108 +43,11 @@ class ListeningPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    Widget column = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        _SpeechBubble(message: message, color: theme.primaryColor),
-        _MascotSprite(mascotId: mascotId, mascotState: mascotState),
-      ],
-    );
-
-    if (!reduceMotion) {
-      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
-    }
-
-    // The entire peeking mascot is decorative; the game header Semantics node
-    // already communicates lives and level to screen readers.
-    return Semantics(
-      liveRegion: true,
-      label: message,
-      excludeSemantics: true,
-      child: column,
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// _SpeechBubble
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _SpeechBubble extends StatelessWidget {
-  final String message;
-  final Color color;
-  const _SpeechBubble({required this.message, required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    Widget bubble = Container(
-      constraints: BoxConstraints(maxWidth: 220.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 3,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: isDark ? const Color(0xFF7DD3FC) : color,
-        ),
-      ),
-    );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    return bubble;
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// _MascotSprite
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _MascotSprite extends StatelessWidget {
-  final String mascotId;
-  final VowlMascotState mascotState;
-  const _MascotSprite({required this.mascotId, required this.mascotState});
-
-  @override
-  Widget build(BuildContext context) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    Widget mascot = VowlMascot(
-      state: mascotState,
-      size: 45.r,
+    return VowlPeekingCompanion(
+      message: message,
+      mascotState: mascotState,
       mascotId: mascotId,
+      category: 'listening',
     );
-
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 8, duration: 1200.ms, curve: Curves.easeInOut)
-          .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
-    }
-
-    return mascot;
   }
 }

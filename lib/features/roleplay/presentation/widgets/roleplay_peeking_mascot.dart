@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_peeking_companion.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 
-/// Decorative mascot shown peeking from the top-right corner of the content area.
-///
-/// The mascot and its speech bubble are purely decorative — they are excluded
-/// from the accessibility tree via [ExcludeSemantics].
-///
-/// [mascotId] is passed in by the screen layer (which reads [AuthBloc]),
-/// keeping this widget free of cross-feature coupling.
-///
-/// Wrapped in [RepaintBoundary] to isolate the continuous float + scale
-/// animations from parent layer repaints.
+/// Animated mascot companion peeking into the roleplay screen.
 class RoleplayPeekingMascot extends StatelessWidget {
-  /// Creates a [RoleplayPeekingMascot] widget.
   const RoleplayPeekingMascot({
     super.key,
     required this.state,
@@ -26,25 +14,14 @@ class RoleplayPeekingMascot extends StatelessWidget {
     required this.mascotId,
   });
 
-  /// Current roleplay game state.
   final RoleplayState state;
-
-  /// Remaining life count.
   final int lives;
-
-  /// Whether the last submitted answer was correct.
   final bool? isCorrect;
-
-  /// Whether the current question has been answered.
   final bool isAnswered;
-
-  /// Mascot asset identifier, e.g. `'vowl_prime'`.
-  /// Provided by the parent screen — not read internally.
   final String mascotId;
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final message = MascotMessageHelper.getMessage(
       context,
       category: 'roleplay',
@@ -55,7 +32,7 @@ class RoleplayPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    final mascotState = MascotMessageHelper.getMascotState(
+    final mascotVisualState = MascotMessageHelper.getMascotState(
       isComplete: state is RoleplayGameComplete,
       isGameOver: state is RoleplayGameOver,
       isAnswered: isAnswered,
@@ -63,90 +40,11 @@ class RoleplayPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    Widget mascot = VowlMascot(
-      state: mascotState,
-      size: 45.r,
+    return VowlPeekingCompanion(
+      message: message,
+      mascotState: mascotVisualState,
       mascotId: mascotId,
+      category: 'roleplay',
     );
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
-    }
-
-    Widget column = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        _SpeechBubble(message: message),
-        SizedBox(height: 4.h),
-        mascot,
-      ],
-    );
-
-    if (!reduceMotion) {
-      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
-    }
-
-    return RepaintBoundary(
-      child: Semantics(
-        liveRegion: true,
-        label: message,
-        excludeSemantics: true,
-        child: column,
-      ),
-    );
-  }
-}
-
-// ── Private sub-widget ─────────────────────────────────────────────────────
-
-class _SpeechBubble extends StatelessWidget {
-  const _SpeechBubble({required this.message});
-
-  final String message;
-
-  @override
-  Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    Widget bubble = Container(
-      constraints: BoxConstraints(maxWidth: 220.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        message,
-        maxLines: 3,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: isDark ? const Color(0xFFDDD6FE) : const Color(0xFF7C3AED),
-        ),
-      ),
-    );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    return bubble;
   }
 }
