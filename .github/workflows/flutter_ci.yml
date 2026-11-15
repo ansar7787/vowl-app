@@ -43,7 +43,7 @@ jobs:
         run: flutter analyze
         # While you clean old issues you can use: flutter analyze --no-fatal-infos
 
-      # Runs only if you have test files (*_test.dart). Add real tests soon.
-      # - name: Test
-      #   if: ${{ !cancelled() && hashFiles('test/**/*_test.dart') != '' }}
-      #   run: flutter test
+      # Enforces test suite on every PR and push to master/portfolio
+      - name: Run Automated Tests
+        if: ${{ !cancelled() }}
+        run: flutter test --concurrency=4
