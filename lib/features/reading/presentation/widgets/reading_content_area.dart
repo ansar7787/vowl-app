@@ -106,7 +106,7 @@ class ReadingContentArea extends StatelessWidget {
         // Peeking mascot — isolated repaint boundary so its looping
         // animation never invalidates the question content layer.
         Positioned(
-          top: -20.h,
+          top: 4.h,
           right: 20.w,
           child: IgnorePointer(
             child: RepaintBoundary(

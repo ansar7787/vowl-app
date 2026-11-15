@@ -152,7 +152,7 @@ class VowlUniversalGameHeader extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // 1. Vector Hearts Capsule (36dp Height, 12r Radius, Pips)
+                  // 1. Vector Hearts Trio Capsule (36dp Height, 12r Radius)
                   _buildLivesCluster(context, isDark),
 
                   // 2. Cohesive Smart Hint Capsule (36dp Height, 12r Radius)
