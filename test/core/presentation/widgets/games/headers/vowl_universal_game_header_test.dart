@@ -112,7 +112,7 @@ void main() {
       expect(find.text('2'), findsOneWidget);
     });
 
-    testWidgets('Free user with 0 hints renders video collection icon and play badge for rewarded ad', (tester) async {
+    testWidgets('Free user with 0 hints renders single clean play icon for rewarded ad', (tester) async {
       when(() => mockAuthBloc.state).thenReturn(
         AuthState.authenticated(
           UserEntity(id: '1', email: 'test@vowl.com', hintCount: 0, isPremium: false),
@@ -133,8 +133,8 @@ void main() {
         ),
       );
 
-      expect(find.byIcon(Icons.video_collection_rounded), findsOneWidget);
       expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.video_collection_rounded), findsNothing);
       expect(find.text('+1'), findsNothing);
     });
 
