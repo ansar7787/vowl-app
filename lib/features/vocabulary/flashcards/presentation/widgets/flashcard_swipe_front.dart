@@ -94,18 +94,27 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
           borderRadius: BorderRadius.circular(24.r),
           child: Builder(
             builder: (context) {
+              final isUltraCompact = widget.height < 220;
               final compactHeight = widget.height < 260;
               final compactWidth = widget.width < 290;
 
               final emojiBox = Container(
-                padding: EdgeInsets.all(compactHeight ? 12.r : 16.r),
+                padding: EdgeInsets.all(
+                  isUltraCompact
+                      ? 6.r
+                      : (compactHeight ? 10.r : 16.r),
+                ),
                 decoration: BoxDecoration(
                   color: widget.color.withValues(alpha: 0.08),
                   shape: BoxShape.circle,
                 ),
                 child: Text(
                   widget.quest.topicEmoji ?? '🏷️',
-                  style: TextStyle(fontSize: compactHeight ? 38.sp : 48.sp),
+                  style: TextStyle(
+                    fontSize: isUltraCompact
+                        ? 22.sp
+                        : (compactHeight ? 32.sp : 48.sp),
+                  ),
                 ),
               );
 
@@ -123,22 +132,29 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
               return Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: compactWidth ? 16.w : 22.w,
-                  vertical: compactHeight ? 14.h : 20.h,
+                  vertical: isUltraCompact
+                      ? 6.h
+                      : (compactHeight ? 10.h : 20.h),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Spacer(),
+                    if (!isUltraCompact) const Spacer(),
                     reduceMotion
                         ? emojiBox
                         : emojiBox.animate().scale(
                             duration: 500.ms,
                             curve: Curves.elasticOut,
                           ),
-                    SizedBox(height: compactHeight ? 10.h : 16.h),
+                    SizedBox(
+                      height: isUltraCompact
+                          ? 4.h
+                          : (compactHeight ? 8.h : 16.h),
+                    ),
                     Container(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 3.h,
+                        horizontal: isUltraCompact ? 8.w : 10.w,
+                        vertical: isUltraCompact ? 1.5.h : 3.h,
                       ),
                       decoration: BoxDecoration(
                         color: widget.color.withValues(alpha: 0.08),
@@ -148,14 +164,18 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                         'Clue',
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 11.sp,
+                          fontSize: isUltraCompact ? 10.sp : 11.sp,
                           fontWeight: FontWeight.w600,
                           color: widget.color,
                           letterSpacing: 0.5,
                         ),
                       ),
                     ),
-                    SizedBox(height: compactHeight ? 8.h : 12.h),
+                    SizedBox(
+                      height: isUltraCompact
+                          ? 4.h
+                          : (compactHeight ? 6.h : 12.h),
+                    ),
                     Flexible(
                       flex: 8,
                       child: RawScrollbar(
@@ -194,7 +214,9 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                             child: Container(
                               alignment: Alignment.center,
                               constraints: BoxConstraints(
-                                minHeight: compactHeight ? 60.h : 90.h,
+                                minHeight: isUltraCompact
+                                    ? 0.0
+                                    : (compactHeight ? 40.h : 90.h),
                               ),
                               child: Text(
                                 displayHint,
@@ -202,12 +224,14 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                                 softWrap: true,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: compactWidth ? 16.sp : 19.sp,
+                                  fontSize: isUltraCompact
+                                      ? 13.5.sp
+                                      : (compactWidth ? 16.sp : 19.sp),
                                   fontWeight: FontWeight.w500,
                                   color: widget.isDark
                                       ? Colors.white
                                       : AppColors.slate900,
-                                  height: 1.45,
+                                  height: 1.35,
                                 ),
                               ),
                             ),
@@ -215,7 +239,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                         ),
                       ),
                     ),
-                    const Spacer(),
+                    if (!isUltraCompact) const Spacer(),
                   ],
                 ),
               );

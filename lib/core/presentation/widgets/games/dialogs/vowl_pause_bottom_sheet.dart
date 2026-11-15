@@ -69,9 +69,16 @@ class VowlPauseBottomSheet extends StatelessWidget {
     final accentColor = category != null
         ? CategoryColors.forCategory(category!)
         : AppColors.indigo500;
+    final mediaQuery = MediaQuery.of(context);
+    final isLandscape = mediaQuery.orientation == Orientation.landscape;
 
-    return Container(
-      padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 36.h),
+    final sheetContent = Container(
+      padding: EdgeInsets.fromLTRB(
+        24.w,
+        isLandscape ? 12.h : 16.h,
+        24.w,
+        isLandscape ? 16.h : 36.h,
+      ),
       decoration: BoxDecoration(
         color: sheetBg,
         borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
@@ -86,49 +93,51 @@ class VowlPauseBottomSheet extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // ── Handle Pill ──────────────────────────────────────────────
-          Container(
-            width: 40.w,
-            height: 4.h,
-            margin: EdgeInsets.only(bottom: 20.h),
-            decoration: BoxDecoration(
-              color: isDark ? Colors.white.withValues(alpha: 0.2) : Colors.black.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(2.r),
-            ),
-          ),
-
-          // ── Title & Status ───────────────────────────────────────────
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.pause_circle_filled_rounded, color: accentColor, size: 28.r),
-              SizedBox(width: 8.w),
-              Text(
-                context.tr('games.game_paused', fallback: 'GAME PAUSED'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                  letterSpacing: 1.2,
-                ),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // ── Handle Pill ──────────────────────────────────────────────
+            Container(
+              width: 40.w,
+              height: 4.h,
+              margin: EdgeInsets.only(bottom: isLandscape ? 12.h : 20.h),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.2) : Colors.black.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(2.r),
               ),
-            ],
-          ),
-          SizedBox(height: 6.h),
-          Text(
-            context.tr('games.pause_subtitle', fallback: 'Timer is frozen. Your current score is safe.'),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 13.sp,
-              color: isDark ? AppColors.slate400 : AppColors.slate600,
             ),
-          ),
 
-          SizedBox(height: 24.h),
+            // ── Title & Status ───────────────────────────────────────────
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.pause_circle_filled_rounded, color: accentColor, size: 28.r),
+                SizedBox(width: 8.w),
+                Text(
+                  context.tr('games.game_paused', fallback: 'GAME PAUSED'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 6.h),
+            Text(
+              context.tr('games.pause_subtitle', fallback: 'Timer is frozen. Your current score is safe.'),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 13.sp,
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
+              ),
+            ),
+
+            SizedBox(height: isLandscape ? 16.h : 24.h),
 
           // ── Action 1: Resume Playing ──────────────────────────────────
           SizedBox(
@@ -263,6 +272,20 @@ class VowlPauseBottomSheet extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    ),
+  );
+
+    return SafeArea(
+      top: false,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: isLandscape ? 480.w : double.infinity,
+            maxHeight: mediaQuery.size.height * 0.90,
+          ),
+          child: sheetContent,
+        ),
       ),
     );
   }
