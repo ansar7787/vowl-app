@@ -124,9 +124,12 @@ class QuestHintButton extends StatelessWidget {
       // 3. Trigger in-game quest callback
       onTap();
     } else {
-      // 0 hints remaining: Prompt Rewarded Ad dialog
+      // 0 hints remaining: Prompt Rewarded Ad dialog.
+      // In-game rewarded ads unlock the hint directly for the active question
+      // without depositing an unconsumed surplus hint into the persistent wallet.
       GameDialogHelper.showHintAdDialog(
         context,
+        persistToAccount: false,
         onHintEarned: () {
           _showHintFeedback(context, isReview: false);
           onTap();
