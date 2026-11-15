@@ -360,7 +360,7 @@ class VowlUniversalGameHeader extends StatelessWidget {
       ),
       child: Container(
         height: 36.h,
-        padding: EdgeInsets.symmetric(horizontal: 7.w),
+        padding: EdgeInsets.symmetric(horizontal: 6.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: hasLives
@@ -385,37 +385,30 @@ class VowlUniversalGameHeader extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.favorite_rounded,
-              size: 17.r,
-              color: hasLives ? AppColors.rose500 : (isDark ? AppColors.slate600 : AppColors.slate400),
-            ),
-            SizedBox(width: 4.w),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: List.generate(3, (index) {
-                final isAlive = index < clampedCount;
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 1.5.w),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    curve: Curves.easeOut,
-                    width: 5.w,
-                    height: 5.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isAlive
-                          ? AppColors.rose500
-                          : (isDark
-                              ? AppColors.slate600.withValues(alpha: 0.35)
-                              : AppColors.slate400.withValues(alpha: 0.35)),
-                    ),
+          children: List.generate(3, (index) {
+            final isAlive = index < clampedCount;
+            return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 2.w),
+              child: AnimatedScale(
+                scale: isAlive ? 1.0 : 0.82,
+                duration: const Duration(milliseconds: 220),
+                curve: Curves.easeOutBack,
+                child: AnimatedOpacity(
+                  opacity: isAlive ? 1.0 : 0.35,
+                  duration: const Duration(milliseconds: 200),
+                  child: Icon(
+                    Icons.favorite_rounded,
+                    size: 15.5.r,
+                    color: isAlive
+                        ? AppColors.rose500
+                        : (isDark
+                            ? AppColors.slate600.withValues(alpha: 0.6)
+                            : AppColors.slate400.withValues(alpha: 0.6)),
                   ),
-                );
-              }),
-            ),
-          ],
+                ),
+              ),
+            );
+          }),
         ),
       ),
     );
