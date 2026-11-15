@@ -131,18 +131,16 @@ class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
             ? (Color.lerp(catColor, Colors.white, 0.35) ?? Colors.white)
             : catColor);
 
-    Widget bubble = AnimatedOpacity(
-      opacity: _isBubbleVisible ? 1.0 : 0.0,
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.easeInOut,
-      child: AnimatedSize(
-        duration: const Duration(milliseconds: 280),
-        curve: Curves.easeInOutCubic,
-        child: _isBubbleVisible
-            ? GestureDetector(
-                onTap: _onTapMascot,
-                behavior: HitTestBehavior.opaque,
-                child: Container(
+    Widget bubble = IgnorePointer(
+      child: AnimatedOpacity(
+        opacity: _isBubbleVisible ? 1.0 : 0.0,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOut,
+        child: AnimatedSize(
+          duration: const Duration(milliseconds: 280),
+          curve: Curves.easeInOutCubic,
+          child: _isBubbleVisible
+              ? Container(
                   constraints: BoxConstraints(maxWidth: 145.w),
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   margin: EdgeInsets.only(right: 4.w),
@@ -177,9 +175,9 @@ class _VowlPeekingCompanionState extends State<VowlPeekingCompanion>
                       height: 1.25,
                     ),
                   ),
-                ),
-              )
-            : const SizedBox.shrink(),
+                )
+              : const SizedBox.shrink(),
+        ),
       ),
     );
 
