@@ -68,7 +68,13 @@ class GameDialogHelper {
     if (gameType != null && level != null) {
       try {
         context.read<AuthBloc>().add(
-          AuthLevelCompletedOptimistic(gameType: gameType, level: level),
+          AuthLevelCompletedOptimistic(
+            gameType: gameType,
+            level: level,
+            xp: xp,
+            coins: coins,
+            stars: GamificationRepositoryImpl.lastEarnedStars.value,
+          ),
         );
       } catch (_) {}
     }

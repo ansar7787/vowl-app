@@ -38,6 +38,7 @@ import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.da
 // FIX (HIGH-3): AppLogger imported so it can be registered in the DI graph.
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
+import 'package:vowl/core/utils/offline_reward_sync_service.dart';
 
 /// Initialises core systems, platform boundaries, and base infrastructure.
 Future<void> initExternalAndCore(GetIt sl) async {
@@ -170,6 +171,9 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());
   sl.registerLazySingleton<DailyWordsService>(() => DailyWordsService());
+  sl.registerLazySingleton<OfflineRewardSyncService>(
+    () => OfflineRewardSyncService.instance,
+  );
   sl.registerLazySingleton<TranslationService>(
     () => TranslationService(),
     dispose: (service) => service.dispose(),

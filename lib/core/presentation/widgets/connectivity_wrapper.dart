@@ -1,27 +1,27 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/pages/offline_quota_exhausted_page.dart';
 import 'package:vowl/core/presentation/widgets/offline_banner.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
+import 'package:vowl/core/utils/offline_reward_sync_service.dart';
+import 'package:vowl/features/games/game_routes.dart';
 
 /// Wraps the app's primary widget tree and intercepts connectivity changes.
 ///
 /// ### Behaviour (Smart Hybrid Model with Offline Quota)
 ///
-///  - **Online:** renders [child] normally. If a reconnect-ad is pending,
-///    shows an interstitial ad and then resets the offline quota.
+///  - **Online:** renders [child] normally.
 ///  - **Offline + gameplay, quota remaining:** [OfflineBanner] (soft, non-blocking pill).
 ///  - **Offline + gameplay, quota exhausted:** [OfflineQuotaExhaustedPage]
 ///    with "Watch Ad" / "Reconnect" / "Go Premium" options.
-///  - **Offline + non-gameplay routes:** no blocking overlay; the underlying
-///    screen handles its own error/skeleton states (e.g. login, settings).
-///  - **Premium users:** never see offline restrictions because
-///    [NetworkInfo.setPremiumOverride] forces the stream to always emit online.
+///  - **Offline + non-gameplay routes:** no blocking overlay; screens handle their
+///    own error/cached states without obstructing navigation.
+///  - **Premium users:** never see offline restrictions.
 class ConnectivityWrapper extends StatefulWidget {
   final Widget child;
 
@@ -35,7 +35,6 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   final ValueNotifier<String> _currentLocation = ValueNotifier('');
   final ValueNotifier<int> _refreshTrigger = ValueNotifier(0);
   bool _wasOffline = false;
-  bool _isShowingReconnectAd = false;
 
   /// Routes where the soft offline banner should be suppressed.
   static const _offlineSilentRoutes = <String>{
@@ -47,40 +46,12 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.verifyEmailRoute,
   };
 
-  /// Routes that should never trigger the Quota Exhausted block.
-  /// This ensures users are never locked out of logging in or accessing settings.
-  static const _nonGameplayRoutes = <String>{
-    AppRouter.loginRoute,
-    AppRouter.signupRoute,
-    AppRouter.forgotPasswordRoute,
-    AppRouter.verifyEmailRoute,
-    AppRouter.splashRoute,
-    AppRouter.premiumRoute,
-    AppRouter.settingsRoute,
-    AppRouter.profileRoute,
-    AppRouter.leaderboardRoute,
-    AppRouter.ranksRoute,
-    AppRouter.homeRoute,
-    AppRouter.gamesRoute,
-    AppRouter.categoryGamesRoute,
-    AppRouter.levelsRoute,
-    AppRouter.libraryRoute,
-    AppRouter.trophyRoomRoute,
-    AppRouter.streakRoute,
-    AppRouter.levelRoute,
-  };
-
-  /// Evaluates whether [path] is a non-gameplay screen where offline gameplay
-  /// quota blocking should never be displayed (e.g. login, settings, profile).
-  static bool _isNonGameplayRoute(String path) {
-    if (path.isEmpty ||
-        path == '/' ||
-        path == AppRouter.initialRoute ||
-        path == AppRouter.splashRoute) {
-      return true;
-    }
-    if (_nonGameplayRoutes.contains(path)) return true;
-    return false;
+  /// Positive whitelist of active gameplay routes where the offline quota blocker applies.
+  /// All other screens (maps, home, settings, profile, etc.) are never blocked.
+  static bool _isGameplayRoute(String path) {
+    if (path.isEmpty) return false;
+    return path.startsWith('/game') ||
+        path.startsWith(GameRoutes.questSequenceRoute);
   }
 
   @override
@@ -124,40 +95,11 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
   /// Triggers an active connectivity check after a short UX delay.
   Future<void> _handleRetry() async {
-    await Future<void>.delayed(const Duration(milliseconds: 800));
+    await Future<void>.delayed(const Duration(milliseconds: 600));
     try {
       await di.sl<NetworkInfo>().isConnected;
     } catch (_) {
       // Ignore
-    }
-  }
-
-  /// Called when the user comes back online after being offline.
-  /// Shows an interstitial ad and then resets the offline quota.
-  void _handleReconnectWithAd() {
-    if (_isShowingReconnectAd) return;
-
-    final gate = OfflinePlayGateService.instance;
-    if (!gate.hasPendingReconnectReset) return;
-
-    _isShowingReconnectAd = true;
-
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-    final adService = di.sl<AdService>();
-    try {
-      adService.showInterstitialAd(
-        isPremium: isPremium,
-        force: true, // Bypass frequency/cooldown gates on reconnect
-        onDismissed: () {
-          _isShowingReconnectAd = false;
-          gate.resetQuotaAfterAd();
-          if (mounted) _refreshTrigger.value++;
-        },
-      );
-    } catch (_) {
-      _isShowingReconnectAd = false;
-      gate.resetQuotaAfterAd();
-      if (mounted) _refreshTrigger.value++;
     }
   }
 
@@ -178,18 +120,19 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         final isNetworkOffline =
             snapshot.hasData && snapshot.data == AppNetworkStatus.offline;
 
-        // Ensure premium users are NEVER considered offline
+        // Ensure premium users are never blocked by offline restrictions
         final isOffline = isNetworkOffline && !isPremium;
-
         final gate = OfflinePlayGateService.instance;
 
-        // â”€â”€ Handle online transition â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // Online transition: online play is always free and unlimited.
+        // We intentionally do NOT reset the daily offline quota on reconnect;
+        // this eliminates the "toggle airplane mode" loophole.
         if (!isOffline && _wasOffline) {
-          // User came back online
-          gate.markReconnected();
-          // Schedule ad show after this build frame
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) _handleReconnectWithAd();
+            if (mounted) _refreshTrigger.value++;
+            if (di.sl.isRegistered<OfflineRewardSyncService>()) {
+              unawaited(di.sl<OfflineRewardSyncService>().syncPendingRewards());
+            }
           });
         }
         _wasOffline = isOffline;
@@ -203,16 +146,15 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                 return ValueListenableBuilder<String>(
                   valueListenable: _currentLocation,
                   builder: (context, currentLocation, child) {
-                    // 1. Check if offline quota is exhausted
                     final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
-                    // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
+                    // Positive whitelist: quota block only applies on gameplay routes
                     final bool shouldShowQuotaBlock =
                         isOffline &&
                         isQuotaExhausted &&
-                        !_isNonGameplayRoute(currentLocation);
+                        _isGameplayRoute(currentLocation);
 
-                    // 3. Soft banner: offline but within grace period, not on silent route
+                    // Soft banner: offline with plays remaining, suppressed on silent routes
                     final bool shouldShowBanner =
                         isOffline &&
                         !shouldShowQuotaBlock &&
@@ -224,16 +166,16 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                         widget.child,
                         Positioned.fill(
                           child: AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 400),
-                            switchInCurve: Curves.easeInOut,
-                            switchOutCurve: Curves.easeInOut,
+                            duration: const Duration(milliseconds: 300),
+                            switchInCurve: Curves.easeOut,
+                            switchOutCurve: Curves.easeIn,
                             transitionBuilder:
                                 (Widget child, Animation<double> animation) {
-                                  return FadeTransition(
-                                    opacity: animation,
-                                    child: child,
-                                  );
-                                },
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
                             child: shouldShowQuotaBlock
                                 ? OfflineQuotaExhaustedPage(
                                     key: const ValueKey(

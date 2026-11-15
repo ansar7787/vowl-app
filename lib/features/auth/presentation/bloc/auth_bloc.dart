@@ -28,6 +28,8 @@ import 'package:firebase_auth/firebase_auth.dart' as fb_auth;
 import 'package:flutter/painting.dart' show imageCache;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
+import 'package:vowl/core/utils/offline_reward_sync_service.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 
 // ============================================================================
 // EVENTS
@@ -67,20 +69,28 @@ class AuthRefreshUser extends AuthEvent {
   const AuthRefreshUser();
 }
 
-/// Optimistically marks a level as completed and unlocks the next level
-/// in local memory before or while the backend Firestore transaction executes.
-/// Guarantees that map navigation never suffers from network ping or transaction latency.
+/// Optimistically marks a level as completed, unlocks the next level,
+/// awards XP, coins, and stars in local memory before or while the backend
+/// Firestore transaction executes.
+/// Guarantees that map navigation, HUD currency, and profile stats react
+/// with 0ms visual delay, 100% offline-compatible.
 class AuthLevelCompletedOptimistic extends AuthEvent {
   final String gameType;
   final int level;
+  final int xp;
+  final int coins;
+  final int stars;
 
   const AuthLevelCompletedOptimistic({
     required this.gameType,
     required this.level,
+    this.xp = 0,
+    this.coins = 0,
+    this.stars = 0,
   });
 
   @override
-  List<Object?> get props => [gameType, level];
+  List<Object?> get props => [gameType, level, xp, coins, stars];
 }
 
 /// Optimistically increments user coins and adds an entry to [coinHistory]
@@ -253,6 +263,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final SendEmailVerification _sendEmailVerification;
   final NetworkInfo _networkInfo;
   final AuthLocalDataSource _localDataSource;
+  String? _lastCompletedOptimisticKey;
+  DateTime? _lastCompletedOptimisticTime;
 
   StreamSubscription<UserEntity?>? _userSubscription;
 
@@ -721,13 +733,24 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       currentUser.totalExp,
     );
 
-    // Note: Currency balance ([coins]) is a spendable account,
-    // NOT monotonic progression metrics. When a user spends coins (e.g. buying
-    // Golden Keys, streak repairs, streak freezes, or hints), [remoteUser.coins]
-    // is intentionally lower than [currentUser.coins]. Taking math.max() here
-    // was a critical bug that prevented coins from ever being spent in-memory.
-    // [remoteUser.coins] from Firestore transactions
-    // is the authoritative source of truth and is preserved directly.
+    // Currency balance ([coins]):
+    // If there are un-synced offline rewards in the queue, protect the offline-earned
+    // coins from being wiped by an older server snapshot.
+    // When no offline rewards are pending (normal online operation), [remoteUser.coins]
+    // is authoritative so coin purchases/spending deduct accurately.
+    final pendingCoins = di.sl.isRegistered<OfflineRewardSyncService>()
+        ? di.sl<OfflineRewardSyncService>().totalPendingCoins
+        : 0;
+
+    final int reconciledCoins;
+    if (pendingCoins > 0) {
+      reconciledCoins = math.max(
+        currentUser.coins,
+        remoteUser.coins + pendingCoins,
+      );
+    } else {
+      reconciledCoins = remoteUser.coins;
+    }
 
     // ---- Identity (Name & Photo): Never let a minimal/stale snapshot wipe them ----
     final reconciledDisplayName =
@@ -747,6 +770,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       unlockedLevels: mergedUnlocked,
       starRatings: mergedStarRatings,
       totalExp: reconciledTotalExp,
+      coins: reconciledCoins,
     );
   }
 
@@ -764,7 +788,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final categoryCompleted = List<int>.from(
       completedLevels[event.gameType] ?? <int>[],
     );
-    if (!categoryCompleted.contains(event.level)) {
+    final bool isReplay = categoryCompleted.contains(event.level);
+    if (!isReplay) {
       categoryCompleted.add(event.level);
       categoryCompleted.sort();
       completedLevels[event.gameType] = categoryCompleted;
@@ -779,9 +804,87 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     }
 
+    // Deduplication check: Avoid double-crediting if called multiple times in rapid succession
+    final key = '${event.gameType}_${event.level}';
+    final now = DateTime.now();
+    final bool isDuplicate = _lastCompletedOptimisticKey == key &&
+        _lastCompletedOptimisticTime != null &&
+        now.difference(_lastCompletedOptimisticTime!) < const Duration(seconds: 2);
+
+    // Star ratings
+    final starRatings = currentUser.starRatings.map(
+      (k, v) => MapEntry(k, Map<String, int>.from(v)),
+    );
+    if (event.stars > 0) {
+      final categoryStars = Map<String, int>.from(
+        starRatings[event.gameType] ?? <String, int>{},
+      );
+      final currentStars = categoryStars[event.level.toString()] ?? 0;
+      if (event.stars > currentStars) {
+        categoryStars[event.level.toString()] = event.stars;
+        starRatings[event.gameType] = categoryStars;
+      }
+    }
+
+    // XP calculation
+    var finalXp = 0;
+    if (event.xp > 0 && !isDuplicate) {
+      var xpMultiplier = 1.0;
+      if (currentUser.hasPermanentXPBoost) {
+        xpMultiplier *= UserGameConstants.kPermanentXpBoostMultiplier;
+      }
+      if (currentUser.isDoubleXPActive) {
+        xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
+      }
+      final baseXp = isReplay
+          ? (event.xp * UserGameConstants.kReplayXpFraction)
+          : event.xp.toDouble();
+      finalXp = (baseXp * xpMultiplier).round();
+    }
+
+    // Coin calculation
+    var finalCoins = 0;
+    if (event.coins > 0 && !isDuplicate && !isReplay) {
+      if (currentUser.isPremium) {
+        finalCoins = event.coins * 3;
+      } else if (currentUser.level >= 100) {
+        finalCoins = event.coins * 2;
+      } else {
+        finalCoins = event.coins;
+      }
+    }
+
+    // Coin ledger history
+    var updatedCoinHistory = currentUser.coinHistory;
+    if (finalCoins > 0) {
+      updatedCoinHistory = CoinLedgerHelper.recordEntry(
+        currentUser.coinHistory,
+        titleKey: 'coin_history.quest_reward',
+        amount: finalCoins,
+        isEarned: true,
+        params: {'gameType': event.gameType},
+      );
+    }
+
+    // Daily XP history
+    final dailyHistory = Map<String, int>.from(currentUser.dailyXpHistory);
+    if (finalXp > 0) {
+      final todayKey =
+          "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+      dailyHistory[todayKey] = (dailyHistory[todayKey] ?? 0) + finalXp;
+    }
+
+    _lastCompletedOptimisticKey = key;
+    _lastCompletedOptimisticTime = now;
+
     final updatedUser = currentUser.copyWith(
       completedLevels: completedLevels,
       unlockedLevels: unlockedLevels,
+      starRatings: starRatings,
+      totalExp: currentUser.totalExp + finalXp,
+      coins: currentUser.coins + finalCoins,
+      coinHistory: updatedCoinHistory,
+      dailyXpHistory: dailyHistory,
     );
 
     _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));

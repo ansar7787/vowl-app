@@ -7,8 +7,10 @@ import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/coin_ledger_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/offline_reward_sync_service.dart';
 import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
@@ -109,9 +111,27 @@ class GamificationRepositoryImpl
         lastEarnedStars.value = finalStarsEarned;
       }
 
-      final result = await _firestore.runTransaction<Either<Failure, void>>((
-        transaction,
-      ) async {
+      // Fast offline bypass: Cloud Firestore transactions strictly require network
+      // connectivity to establish an ACID lock. If offline, bypass immediately (0ms lag)
+      // to the persistent offline fallback without waiting for a transaction timeout.
+      if (di.sl.isRegistered<NetworkInfo>() &&
+          di.sl<NetworkInfo>().isCurrentlyOffline) {
+        return _offlineFallbackUpdateUserRewards(
+          docRef: docRef,
+          gameType: gameType,
+          level: level,
+          xpIncrease: xpIncrease,
+          coinIncrease: coinIncrease,
+          isDoubleReward: isDoubleReward,
+          isVaultReward: isVaultReward,
+          finalStarsEarned: finalStarsEarned,
+          addMagicStars: addMagicStars,
+          claimChestTier: claimChestTier,
+        );
+      }
+
+      final result = await _firestore
+          .runTransaction<Either<Failure, void>>((transaction) async {
         final doc = await transaction.get(docRef);
         final bool isSelfHealingCreate = !doc.exists || doc.data() == null;
 
@@ -173,30 +193,26 @@ class GamificationRepositoryImpl
         }
 
         return const Right<Failure, void>(null);
-      });
+      }).timeout(const Duration(seconds: 4));
 
       return result;
     } catch (e) {
-      if (e is FirebaseException &&
-          (e.code == 'unavailable' ||
-              e.code == 'network-request-failed' ||
-              e.code == 'failed-precondition')) {
-        return _offlineFallbackUpdateUserRewards(
-          docRef: _firestore
-              .collection('users')
-              .doc(_firebaseAuth.currentUser!.uid),
-          gameType: gameType,
-          level: level,
-          xpIncrease: xpIncrease,
-          coinIncrease: coinIncrease,
-          isDoubleReward: isDoubleReward,
-          isVaultReward: isVaultReward,
-          finalStarsEarned: starsEarned ?? (isVaultReward ? 0 : 3),
-          addMagicStars: addMagicStars,
-          claimChestTier: claimChestTier,
-        );
-      }
-      return Left(handleFirebaseException(e));
+      // On ANY failure (network dip, timeout, unavailable, deadline-exceeded, etc.),
+      // gracefully invoke the offline fallback queue so progress is NEVER dropped.
+      return _offlineFallbackUpdateUserRewards(
+        docRef: _firestore
+            .collection('users')
+            .doc(_firebaseAuth.currentUser!.uid),
+        gameType: gameType,
+        level: level,
+        xpIncrease: xpIncrease,
+        coinIncrease: coinIncrease,
+        isDoubleReward: isDoubleReward,
+        isVaultReward: isVaultReward,
+        finalStarsEarned: starsEarned ?? (isVaultReward ? 0 : 3),
+        addMagicStars: addMagicStars,
+        claimChestTier: claimChestTier,
+      );
     }
   }
 
@@ -268,7 +284,46 @@ class GamificationRepositoryImpl
         lastEarnedStars.value = finalStarsEarned;
       }
 
-      // Atomic update (Queued offline)
+      // 1. Update local disk cache immediately so the user's progress is saved on-device
+      try {
+        final updatedModel = userData.copyWith(
+          completedLevels:
+              updates['completedLevels'] as Map<String, List<int>>?,
+          unlockedLevels: updates['unlockedLevels'] as Map<String, int>?,
+          starRatings:
+              updates['starRatings'] as Map<String, Map<String, int>>?,
+          totalExp: updates['totalExp'] as int?,
+          dailyXpHistory: updates['dailyXpHistory'] as Map<String, int>?,
+          recentActivities:
+              updates['recentActivities'] as List<Map<String, dynamic>>?,
+          coinHistory: updates['coinHistory'] as List<Map<String, dynamic>>?,
+        );
+        await _localDataSource.cacheUser(updatedModel);
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint(
+            '[GamificationRepositoryImpl] Error caching offline user model: $e',
+          );
+        }
+      }
+
+      // 2. Queue in OfflineRewardSyncService for guaranteed synchronization upon reconnection
+      if (di.sl.isRegistered<OfflineRewardSyncService>()) {
+        unawaited(
+          di.sl<OfflineRewardSyncService>().recordPendingReward(
+            gameType: gameType,
+            level: level,
+            xp: xpIncrease,
+            coins: coinIncrease,
+            stars: finalStarsEarned,
+            isVaultReward: isVaultReward,
+            claimChestTier: claimChestTier,
+            addMagicStars: addMagicStars,
+          ),
+        );
+      }
+
+      // 3. Atomic update (Queued offline)
       // Fire-and-forget: do NOT await. In the Firebase SDK, awaiting an update
       // while offline hangs the Future indefinitely until the internet returns.
       if (isDocInCache) {
@@ -609,6 +664,25 @@ class GamificationRepositoryImpl
       if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
+
+      if (di.sl.isRegistered<NetworkInfo>() &&
+          di.sl<NetworkInfo>().isCurrentlyOffline) {
+        try {
+          final doc = await docRef.get(const GetOptions(source: Source.cache));
+          final unlockedLevels = (doc.exists && doc.data() != null)
+              ? _parseIntMap(doc.data()!['unlockedLevels'])
+              : <String, int>{};
+
+          final currentUnlocked = unlockedLevels[categoryId] ?? 1;
+          if (newLevel > currentUnlocked) {
+            final maxLevels = CurriculumManifest.getLevels(categoryId);
+            unlockedLevels[categoryId] = math.min(maxLevels, newLevel);
+            docRef.update({'unlockedLevels': unlockedLevels}).catchError((_) {});
+          }
+        } catch (_) {}
+        return const Right(null);
+      }
+
       await _firestore.runTransaction((transaction) async {
         final doc = await transaction.get(docRef);
         final unlockedLevels = (doc.exists && doc.data() != null)
@@ -627,7 +701,7 @@ class GamificationRepositoryImpl
             transaction.update(docRef, {'unlockedLevels': unlockedLevels});
           }
         }
-      });
+      }).timeout(const Duration(seconds: 4));
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -648,6 +722,33 @@ class GamificationRepositoryImpl
       if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
+
+      if (di.sl.isRegistered<NetworkInfo>() &&
+          di.sl<NetworkInfo>().isCurrentlyOffline) {
+        try {
+          final doc = await docRef.get(const GetOptions(source: Source.cache));
+          final currentStats = (doc.exists && doc.data() != null)
+              ? _parseIntMap(doc.data()!['categoryStats'])
+              : <String, int>{};
+
+          final currentScore =
+              currentStats[categoryId] ?? UserGameConstants.kCategoryStatDefault;
+          final delta = isCorrect
+              ? UserGameConstants.kCategoryStatStep
+              : -UserGameConstants.kCategoryStatStep;
+          final newScore = (currentScore + delta)
+              .clamp(
+                UserGameConstants.kCategoryStatMin,
+                UserGameConstants.kCategoryStatMax,
+              )
+              .toInt();
+
+          currentStats[categoryId] = newScore;
+          docRef.update({'categoryStats': currentStats}).catchError((_) {});
+        } catch (_) {}
+        return const Right(null);
+      }
+
       await _firestore.runTransaction((transaction) async {
         final doc = await transaction.get(docRef);
         final currentStats = (doc.exists && doc.data() != null)
@@ -659,10 +760,6 @@ class GamificationRepositoryImpl
         final delta = isCorrect
             ? UserGameConstants.kCategoryStatStep
             : -UserGameConstants.kCategoryStatStep;
-        // num.clamp(num, num) returns num even when called on an int with
-        // int bounds — assigning it straight back to an int-typed map value
-        // (as the original code did) is a static type error. .toInt() makes
-        // the narrowing explicit.
         final newScore = (currentScore + delta)
             .clamp(
               UserGameConstants.kCategoryStatMin,
@@ -678,7 +775,7 @@ class GamificationRepositoryImpl
         } else {
           transaction.update(docRef, {'categoryStats': currentStats});
         }
-      });
+      }).timeout(const Duration(seconds: 4));
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -695,9 +792,17 @@ class GamificationRepositoryImpl
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
+      if (di.sl.isRegistered<NetworkInfo>() &&
+          di.sl<NetworkInfo>().isCurrentlyOffline) {
+        _firestore.collection('users').doc(user.uid).set({
+          'badges': FieldValue.arrayUnion([badgeId]),
+        }, SetOptions(merge: true)).catchError((_) {});
+        return const Right(null);
+      }
+
       await _firestore.collection('users').doc(user.uid).set({
         'badges': FieldValue.arrayUnion([badgeId]),
-      }, SetOptions(merge: true));
+      }, SetOptions(merge: true)).timeout(const Duration(seconds: 4));
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));

@@ -17,40 +17,43 @@ class VowlButtonSpinner extends StatelessWidget {
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(3, (index) {
-        final dot = Container(
-          margin: EdgeInsets.symmetric(horizontal: size * 0.05),
-          width: size * 0.2,
-          height: size * 0.2,
-          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        );
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(3, (index) {
+          final dot = Container(
+            margin: EdgeInsets.symmetric(horizontal: size * 0.05),
+            width: size * 0.2,
+            height: size * 0.2,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          );
 
-        if (reduceMotion) {
-          return dot;
-        }
+          if (reduceMotion) {
+            return dot;
+          }
 
-        return dot
-            .animate(
-              onPlay: (controller) => controller.repeat(),
-              delay: (index * 150).ms,
-            )
-            .scale(
-              begin: const Offset(0.6, 0.6),
-              end: const Offset(1.2, 1.2),
-              duration: 500.ms,
-              curve: Curves.easeInOut,
-            )
-            .then()
-            .scale(
-              begin: const Offset(1.2, 1.2),
-              end: const Offset(0.6, 0.6),
-              duration: 500.ms,
-              curve: Curves.easeInOut,
-            );
-      }),
+          return dot
+              .animate(
+                onPlay: (controller) => controller.repeat(),
+                delay: (index * 150).ms,
+              )
+              .scale(
+                begin: const Offset(0.6, 0.6),
+                end: const Offset(1.2, 1.2),
+                duration: 500.ms,
+                curve: Curves.easeInOut,
+              )
+              .then()
+              .scale(
+                begin: const Offset(1.2, 1.2),
+                end: const Offset(0.6, 0.6),
+                duration: 500.ms,
+                curve: Curves.easeInOut,
+              );
+        }),
+      ),
     );
   }
 }

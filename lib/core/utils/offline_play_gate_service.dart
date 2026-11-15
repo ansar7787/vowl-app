@@ -4,31 +4,25 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// Tracks and limits offline gameplay for free (non-premium) users.
 ///
-/// ### Business Logic
-/// Free users are granted a small offline grace period ([maxOfflineLevels])
-/// to handle real-world scenarios like slow/rain networks without freezing
-/// the game. Once the quota is exhausted, the user must either:
+/// ### Business Logic (Daily Offline Allowance Model)
+/// Free users are granted a daily allowance ([maxOfflineLevels] = 3) of offline
+/// levels to handle real-world connectivity dips (e.g. subways, spotty signals)
+/// without interrupting gameplay.
 ///
-///  1. **Reconnect** — an interstitial ad is shown on reconnection, then
-///     the quota resets.
-///  2. **Watch a cached rewarded ad** — grants [maxOfflineLevels] more
-///     offline plays without needing to reconnect.
-///  3. **Go Premium** — unlimited offline play, no ads.
+/// Once the daily quota is exhausted, the user can:
+///  1. **Connect to Internet** — online play is always 100% free and unlimited
+///     (monetized with standard in-game ads). Reconnecting does NOT reset the
+///     daily offline quota, closing the "airplane mode toggle" exploit.
+///  2. **Watch a Cached Rewarded Ad** — grants bonus offline plays (+3 plays)
+///     without needing an internet connection.
+///  3. **Go Premium** — unlimited offline play everywhere with zero ads.
 ///
-/// Premium users bypass this limiter entirely via [NetworkInfo.setPremiumOverride],
-/// which makes their connectivity stream always emit [AppNetworkStatus.online].
-///
-/// ### Quota Reset Rules
-/// - Resets ONLY when an ad is successfully shown (interstitial on reconnect
-///   OR rewarded ad while offline). This prevents the "toggle WiFi for 1 sec"
-///   loophole where a user could reset the counter without ever seeing an ad.
-/// - [resetQuotaAfterAd] is the sole reset method. There is intentionally
-///   no "free" reset.
-///
-/// ### Persistence
-/// The counter and timestamp are persisted to [SharedPreferences] so that
-/// force-killing the app does not reset the quota. If the stored timestamp
-/// is older than 24 hours the quota auto-resets on [init].
+/// ### Quota Expiration & Reset
+/// - The daily offline allowance rolls over every **24 hours** from when the
+///   first offline level was recorded.
+/// - Watching a rewarded ad grants bonus plays immediately via [grantBonusOfflinePlays].
+/// - Reconnecting to Wi-Fi does NOT grant free offline resets, protecting ad
+///   revenue and premium subscriptions.
 class OfflinePlayGateService extends ChangeNotifier {
   OfflinePlayGateService._();
   static final OfflinePlayGateService instance = OfflinePlayGateService._();
@@ -36,38 +30,66 @@ class OfflinePlayGateService extends ChangeNotifier {
   /// SharedPreferences key for the offline levels played counter.
   static const String _kOfflineLevelsKey = 'offline_levels_played';
 
-  /// SharedPreferences key for the timestamp when offline play started.
+  /// SharedPreferences key for the timestamp when the current offline window began.
   static const String _kOfflineTimestampKey = 'offline_levels_timestamp';
 
-  /// Maximum number of levels a free user can complete while offline
-  /// before being required to reconnect or watch an ad.
+  /// Maximum number of daily free offline levels allowed before requiring
+  /// online connectivity, a rewarded ad, or Premium.
   static const int maxOfflineLevels = 3;
 
-  /// Number of levels played during the current offline window.
+  /// Number of levels played during the current daily offline window.
   int _offlineLevelsPlayed = 0;
 
-  /// Flag: set to true when user reconnects. The quota only resets
-  /// once an ad has been shown after reconnection.
+  /// Timestamp in milliseconds when the current daily offline window started.
+  int? _offlineWindowTimestamp;
+
+  /// Flag: set to true when user reconnects with pending offline play stats.
   bool _pendingReconnectAdReset = false;
 
   final StreamController<int> _remainingPlaysController =
       StreamController<int>.broadcast();
 
-  /// Reactive stream emitting the current number of remaining offline plays
-  /// whenever the quota updates in real time.
+  /// Reactive stream emitting the current number of remaining offline plays.
   Stream<int> get onRemainingPlaysChange => _remainingPlaysController.stream;
 
-  /// Whether the offline grace quota has been exhausted.
-  bool get isOfflineQuotaExhausted => _offlineLevelsPlayed >= maxOfflineLevels;
+  /// Checks if 24 hours have elapsed since the current daily window began.
+  /// If expired, automatically rolls over the quota to a fresh 3 plays.
+  bool _checkAndApplyDailyReset() {
+    if (_offlineWindowTimestamp != null) {
+      final storedTime =
+          DateTime.fromMillisecondsSinceEpoch(_offlineWindowTimestamp!);
+      final elapsed = DateTime.now().difference(storedTime);
 
-  /// Current count of levels played offline.
-  int get offlineLevelsPlayed => _offlineLevelsPlayed;
+      if (elapsed.inHours >= 24) {
+        _offlineLevelsPlayed = 0;
+        _offlineWindowTimestamp = null;
+        _pendingReconnectAdReset = false;
+        _persist(clear: true);
+        return true;
+      }
+    }
+    return false;
+  }
 
-  /// Remaining offline plays before the gate closes.
-  int get remainingOfflinePlays =>
-      (maxOfflineLevels - _offlineLevelsPlayed).clamp(0, maxOfflineLevels);
+  /// Whether the daily offline quota has been completely exhausted.
+  bool get isOfflineQuotaExhausted {
+    _checkAndApplyDailyReset();
+    return _offlineLevelsPlayed >= maxOfflineLevels;
+  }
 
-  /// Whether a reconnect-triggered ad reset is pending.
+  /// Current count of levels played in the active daily window.
+  int get offlineLevelsPlayed {
+    _checkAndApplyDailyReset();
+    return _offlineLevelsPlayed;
+  }
+
+  /// Remaining free offline plays before the offline gate blocks further play.
+  int get remainingOfflinePlays {
+    _checkAndApplyDailyReset();
+    return (maxOfflineLevels - _offlineLevelsPlayed).clamp(0, maxOfflineLevels);
+  }
+
+  /// Whether a reconnect state flag is active.
   bool get hasPendingReconnectReset => _pendingReconnectAdReset;
 
   void _notify() {
@@ -77,75 +99,60 @@ class OfflinePlayGateService extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Loads the persisted counter from [SharedPreferences].
+  /// Loads the persisted counter and daily window timestamp from [SharedPreferences].
   ///
-  /// If the stored timestamp is older than 24 hours the quota is
-  /// automatically reset to 0 — this prevents stale counters from
-  /// blocking users who haven't played in a long time.
-  ///
-  /// Should be called once during app startup (e.g. in `main()`).
+  /// If the stored timestamp is older than 24 hours, the daily quota is
+  /// automatically reset.
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
     final storedCount = prefs.getInt(_kOfflineLevelsKey) ?? 0;
     final storedTimestamp = prefs.getInt(_kOfflineTimestampKey);
 
-    if (storedTimestamp != null) {
-      final storedTime = DateTime.fromMillisecondsSinceEpoch(storedTimestamp);
-      final elapsed = DateTime.now().difference(storedTime);
+    _offlineWindowTimestamp = storedTimestamp;
+    _offlineLevelsPlayed = storedCount;
 
-      if (elapsed.inHours >= 24) {
-        // Quota expired — auto-reset.
-        _offlineLevelsPlayed = 0;
-        await prefs.remove(_kOfflineLevelsKey);
-        await prefs.remove(_kOfflineTimestampKey);
-        _notify();
-        return;
-      }
+    if (_checkAndApplyDailyReset()) {
+      _notify();
+      return;
     }
 
-    _offlineLevelsPlayed = storedCount;
     _notify();
   }
 
   /// Records that a level was completed while offline.
   /// If [isPremium] is true, this is a no-op because premium users have
-  /// unlimited offline gameplay without internet.
-  /// Returns `true` if the quota is now exhausted (should block further play).
+  /// unlimited offline gameplay.
+  /// Returns `true` if the quota is now exhausted (should block further offline play).
   bool recordOfflineLevel({bool isPremium = false}) {
     if (isPremium) return false;
+    _checkAndApplyDailyReset();
+
+    // Start daily window clock on first offline level
+    _offlineWindowTimestamp ??= DateTime.now().millisecondsSinceEpoch;
+
     _offlineLevelsPlayed++;
     _persist();
     _notify();
     return isOfflineQuotaExhausted;
   }
 
-  /// Called when the device comes back online. Marks that an ad should be
-  /// shown before resetting the quota. Does NOT reset the counter itself —
-  /// [resetQuotaAfterAd] does that after the ad completes.
+  /// Marks that the device has reconnected to the internet.
   void markReconnected() {
     if (_offlineLevelsPlayed > 0) {
       _pendingReconnectAdReset = true;
     }
   }
 
-  /// Resets the offline counter after an ad has been successfully shown.
-  /// This is the ONLY way to reset the quota — ensuring the developer
-  /// always earns ad revenue before granting more offline plays.
-  ///
-  /// Called from:
-  ///  - Interstitial ad dismissed callback (on reconnect)
-  ///  - Rewarded ad earned callback (offline "watch ad for +3 levels")
+  /// Explicitly resets the offline counter (e.g. manual admin or test cleanup).
   void resetQuotaAfterAd() {
     _offlineLevelsPlayed = 0;
+    _offlineWindowTimestamp = null;
     _pendingReconnectAdReset = false;
     _persist(clear: true);
     _notify();
   }
 
   /// Grants additional offline plays after watching a rewarded ad.
-  /// Unlike [resetQuotaAfterAd], this extends the current count
-  /// by [maxOfflineLevels] rather than resetting to zero, so the
-  /// total session offline plays are still tracked.
   void grantBonusOfflinePlays() {
     _offlineLevelsPlayed = (_offlineLevelsPlayed - maxOfflineLevels).clamp(
       0,
@@ -157,11 +164,6 @@ class OfflinePlayGateService extends ChangeNotifier {
   }
 
   /// Persists the current counter and timestamp to [SharedPreferences].
-  ///
-  /// When [clear] is `true` the stored values are removed instead
-  /// (used after a full quota reset).
-  ///
-  /// Fire-and-forget — callers do not await this.
   void _persist({bool clear = false}) {
     SharedPreferences.getInstance().then((prefs) {
       if (clear) {
@@ -169,10 +171,9 @@ class OfflinePlayGateService extends ChangeNotifier {
         prefs.remove(_kOfflineTimestampKey);
       } else {
         prefs.setInt(_kOfflineLevelsKey, _offlineLevelsPlayed);
-        prefs.setInt(
-          _kOfflineTimestampKey,
-          DateTime.now().millisecondsSinceEpoch,
-        );
+        if (_offlineWindowTimestamp != null) {
+          prefs.setInt(_kOfflineTimestampKey, _offlineWindowTimestamp!);
+        }
       }
     });
   }

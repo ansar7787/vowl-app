@@ -161,5 +161,22 @@ void main() {
         expect(service.isOfflineQuotaExhausted, isFalse);
       },
     );
+
+    test(
+      'daily quota is preserved across reconnection to prevent airplane mode exploit',
+      () {
+        // User plays 1 level offline
+        service.recordOfflineLevel();
+        expect(service.remainingOfflinePlays, equals(2));
+        expect(service.offlineLevelsPlayed, equals(1));
+
+        // User connects to internet (markReconnected)
+        service.markReconnected();
+
+        // Daily quota must NOT reset to 3 on reconnect
+        expect(service.remainingOfflinePlays, equals(2));
+        expect(service.offlineLevelsPlayed, equals(1));
+      },
+    );
   });
 }

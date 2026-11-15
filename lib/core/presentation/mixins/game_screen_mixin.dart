@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/praise_service.dart';
 import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Shared stateful screen mixin coordinating game lifecycle, answer evaluation,
@@ -129,11 +130,17 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   }) {
     showConfettiNotifier.value = true;
 
-    // Optimistically unlock the next level in AuthBloc so map state reflects
-    // the completion immediately upon navigation, before or while Firestore transactions run.
+    // Optimistically unlock the next level and credit earned XP and coins in AuthBloc
+    // so map state, top bar HUD, and profile reflect the completion immediately upon navigation.
     try {
       context.read<AuthBloc>().add(
-        AuthLevelCompletedOptimistic(gameType: gameType.name, level: level),
+        AuthLevelCompletedOptimistic(
+          gameType: gameType.name,
+          level: level,
+          xp: xpEarned,
+          coins: coinsEarned,
+          stars: GamificationRepositoryImpl.lastEarnedStars.value,
+        ),
       );
     } catch (_) {
       // Defensive fallback in case AuthBloc is not provided in isolated widget tests

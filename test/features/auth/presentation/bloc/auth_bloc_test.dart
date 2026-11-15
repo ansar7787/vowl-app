@@ -411,6 +411,39 @@ void main() {
             ),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'should optimistically increment totalExp and coins when provided',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(
+        const AuthLevelCompletedOptimistic(
+          gameType: 'speedChallenge',
+          level: 1,
+          xp: 15,
+          coins: 10,
+          stars: 3,
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.completedLevels['speedChallenge'],
+              'completedLevels',
+              [1],
+            )
+            .having(
+              (s) => s.user?.totalExp,
+              'totalExp',
+              tUser.totalExp + 15,
+            )
+            .having(
+              (s) => s.user?.coins,
+              'coins',
+              tUser.coins + 10,
+            ),
+      ],
+    );
   });
 
   group('AuthRefreshUser', () {

@@ -476,7 +476,17 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
           ),
         );
         if (di.sl.isRegistered<AuthBloc>()) {
-          di.sl<AuthBloc>().add(const AuthRefreshUser());
+          final levelNumber = _service.completedDay > 0
+              ? _service.completedDay
+              : _service.currentDay;
+          di.sl<AuthBloc>().add(
+            AuthLevelCompletedOptimistic(
+              gameType: 'daily_words',
+              level: levelNumber,
+              xp: 5,
+              coins: 10,
+            ),
+          );
         }
       } catch (e) {
         if (kDebugMode) {
