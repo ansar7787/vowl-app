@@ -178,11 +178,11 @@ class QuestHintButton extends StatelessWidget {
           iconData = Icons.psychology_outlined;
           shadows = const [];
         } else if (showAdState) {
-          // ── 0 Hints Remaining: Rewarded Video Ad State (Single Clean Play Icon) ──
+          // ── 0 Hints Remaining: Rewarded Video Ad State (Classic Video Collection Reel Icon) ──
           tileColor = AppColors.amber500.withValues(alpha: isDark ? 0.14 : 0.09);
           borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.38 : 0.28);
           iconColor = AppColors.amber500;
-          iconData = Icons.play_arrow_rounded;
+          iconData = Icons.video_collection_rounded;
           shadows = [
             BoxShadow(
               color: AppColors.amber500.withValues(alpha: isDark ? 0.18 : 0.08),
@@ -246,7 +246,7 @@ class QuestHintButton extends StatelessWidget {
                     Icon(
                       iconData,
                       color: iconColor,
-                      size: isRevealed ? 20.r : (showAdState ? 21.r : 19.r),
+                      size: isRevealed ? 20.r : (showAdState ? 19.r : 19.r),
                     ),
 
                     // Hint Count Badge (when hints available and not yet used on current quest)

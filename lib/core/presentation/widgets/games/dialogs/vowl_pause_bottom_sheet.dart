@@ -284,7 +284,9 @@ class VowlPauseBottomSheet extends StatelessWidget {
 
     return SafeArea(
       top: false,
-      child: Center(
+      bottom: false,
+      child: Align(
+        alignment: Alignment.bottomCenter,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxWidth: isLandscape ? 480.w : double.infinity,
