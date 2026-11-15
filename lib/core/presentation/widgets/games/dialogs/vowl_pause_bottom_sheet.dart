@@ -160,48 +160,9 @@ class VowlPauseBottomSheet extends StatelessWidget {
             ),
           ),
 
-          // ── Action 2: View Rules & Briefing (when available) ─────────
-          if (onBriefing != null) ...[
-            SizedBox(height: 12.h),
-            SizedBox(
-              width: double.infinity,
-              height: 48.h,
-              child: OutlinedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  onBriefing!();
-                },
-                icon: Icon(
-                  Icons.info_outline_rounded,
-                  size: 20.r,
-                  color: accentColor,
-                ),
-                label: Text(
-                  context.tr('games.view_briefing', fallback: 'LEVEL RULES & BRIEFING'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
-                    color: accentColor,
-                  ),
-                ),
-                style: OutlinedButton.styleFrom(
-                  side: BorderSide(
-                    color: accentColor.withValues(alpha: isDark ? 0.45 : 0.35),
-                    width: 1.2,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                ),
-              ),
-            ),
-          ],
-
           SizedBox(height: 12.h),
 
-          // ── Action 3: Restart Level ──────────────────────────────────
+          // ── Action 2: Restart Level ──────────────────────────────────
           SizedBox(
             width: double.infinity,
             height: 48.h,
@@ -263,6 +224,44 @@ class VowlPauseBottomSheet extends StatelessWidget {
               ),
             ),
           ),
+
+          // ── Optional Quiet Footer: Level Rules Reference ─────────────
+          // The primary way to access rules is the [ ℹ️ ] button in the top HUD.
+          // This subtle link serves as a quiet escape hatch without cluttering the action stack.
+          if (onBriefing != null) ...[
+            SizedBox(height: 14.h),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+                onBriefing!();
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.info_outline_rounded,
+                      size: 15.r,
+                      color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    ),
+                    SizedBox(width: 5.w),
+                    Text(
+                      context.tr('games.view_briefing', fallback: 'Level Rules & Objectives'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? AppColors.slate400 : AppColors.slate500,
+                        decoration: TextDecoration.underline,
+                        decorationColor: isDark ? AppColors.slate500 : AppColors.slate400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );
