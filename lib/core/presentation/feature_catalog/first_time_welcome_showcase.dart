@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -99,15 +98,16 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final bottomInset = MediaQuery.of(context).padding.bottom;
+    final mediaQuery = MediaQuery.of(context);
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
     final slide = _slides[_currentPage];
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-        child: Container(
-          width: double.infinity,
+      child: Container(
+        width: double.infinity,
           constraints: BoxConstraints(
             maxWidth: 540.w,
             maxHeight: MediaQuery.of(context).size.height * 0.88,
@@ -611,7 +611,6 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

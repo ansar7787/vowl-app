@@ -91,10 +91,10 @@ void main() {
         expect(tester.takeException(), isNull);
 
         // Search for specific feature
-        await tester.enterText(find.byType(TextField), 'photo');
+        await tester.enterText(find.byType(TextField), 'flashcard');
         await tester.pumpAndSettle();
 
-        expect(find.text('Photo Vocab'), findsOneWidget);
+        expect(find.text('Vocabulary & 3D Flashcards'), findsOneWidget);
         expect(find.text('100+ Games Hub'), findsNothing);
         expect(tester.takeException(), isNull);
 
@@ -103,7 +103,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.text('50+ Languages Offline Translator'), findsOneWidget);
-        expect(find.text('Photo Vocab'), findsNothing);
+        expect(find.text('Vocabulary & 3D Flashcards'), findsNothing);
         expect(tester.takeException(), isNull);
       },
     );
@@ -126,7 +126,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Accent & Intonation Training'), findsOneWidget);
-      expect(find.text('Photo Vocab'), findsNothing);
+      expect(find.text('100+ Games Hub'), findsNothing);
 
       // Clear search via clear icon
       await tester.tap(find.byIcon(Icons.close_rounded).last);

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -620,10 +619,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                   return;
                 }
               },
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.85,
                   decoration: BoxDecoration(
                     color: isMidnight
                         ? Colors.black
@@ -818,7 +815,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                 SizedBox(
                                   height:
                                       36.h +
-                                      MediaQuery.paddingOf(context).bottom,
+                                      (MediaQuery.of(context).viewPadding.bottom > 0
+                                          ? MediaQuery.of(context).viewPadding.bottom
+                                          : MediaQuery.paddingOf(context).bottom),
                                 ),
                               ],
                             ),
@@ -852,8 +851,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                     ],
                   ),
                 ),
-              ),
-            )
+              )
             .animate()
             .fadeIn(duration: 300.ms)
             .moveY(begin: 40, end: 0, curve: Curves.easeOutCubic);

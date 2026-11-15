@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -126,16 +125,16 @@ class _FeatureDirectoryBottomSheetState
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final mediaQuery = MediaQuery.of(context);
-    final bottomInset = mediaQuery.padding.bottom;
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
     final viewInsetsBottom = mediaQuery.viewInsets.bottom;
     final features = _filteredFeatures;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-        child: Container(
-          width: double.infinity,
+      child: Container(
+        width: double.infinity,
           constraints: BoxConstraints(
             maxWidth: 540.w,
             maxHeight: mediaQuery.size.height * 0.90,
@@ -546,8 +545,7 @@ class _FeatureDirectoryBottomSheetState
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildFilterChip({

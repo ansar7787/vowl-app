@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -408,10 +407,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                           ),
                         ),
                       ),
-                      child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -1145,17 +1142,18 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).padding.bottom +
-                                    24.h,
+                                    ((MediaQuery.of(context).viewPadding.bottom > 0
+                                            ? MediaQuery.of(context).viewPadding.bottom
+                                            : MediaQuery.of(context).padding.bottom)) +
+                                        24.h,
                               ),
                             ],
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              );
+                    ],
+                  ),
+                );
             },
           ),
         );
