@@ -12,12 +12,15 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
-/// Cohesive, unified horizontal hint capsule providing zero-latency (0ms)
+/// Tactile, modern hint action tile providing zero-latency (0ms)
 /// hint deduction, rewarded ads for free users with 0 hints, and unlimited
 /// hint access for premium users.
 ///
-/// Designed to eliminate visual disharmony (no overlapping badges) and
-/// transaction race conditions across all 100 mini-games in VOWL.
+/// Features a badged squircle design (36x36dp) matching the game header HUD:
+/// - Available hints: Golden lightbulb with top-right count badge.
+/// - 0 hints (Free user): Video collection reel icon with bottom-right play badge (no cheap "+1" text).
+/// - Revealed hint (Already used): Subtle, muted psychology icon (free re-review, no deduction).
+/// - Premium user: Golden lightbulb without badges (unlimited access).
 class QuestHintButton extends StatelessWidget {
   /// Whether the current question's hint has already been revealed.
   final bool used;
@@ -147,14 +150,14 @@ class QuestHintButton extends StatelessWidget {
         final bool showAdState = !isRevealed && !canUseHint;
         final bool isInteractive = isHintEnabled;
 
-        final Color capsuleColor;
+        final Color tileColor;
         final Color borderColor;
         final Color iconColor;
         final IconData iconData;
         final List<BoxShadow> shadows;
 
         if (!isInteractive) {
-          capsuleColor = isDark
+          tileColor = isDark
               ? Colors.white.withValues(alpha: 0.04)
               : Colors.black.withValues(alpha: 0.03);
           borderColor = isDark
@@ -164,8 +167,8 @@ class QuestHintButton extends StatelessWidget {
           iconData = Icons.lightbulb_rounded;
           shadows = const [];
         } else if (isRevealed) {
-          // ── Revealed / Already Used State (Subtle, no bright glow) ──
-          capsuleColor = isDark
+          // ── Revealed / Already Used State (Subtle muted tile, free re-review) ──
+          tileColor = isDark
               ? Colors.white.withValues(alpha: 0.05)
               : Colors.black.withValues(alpha: 0.03);
           borderColor = isDark
@@ -175,27 +178,27 @@ class QuestHintButton extends StatelessWidget {
           iconData = Icons.psychology_outlined;
           shadows = const [];
         } else if (showAdState) {
-          // ── 0 Hints Remaining: Rewarded Video Ad State (Clean Reel Icon) ──
-          capsuleColor = AppColors.amber500.withValues(alpha: isDark ? 0.12 : 0.08);
-          borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.35 : 0.25);
+          // ── 0 Hints Remaining: Rewarded Video Ad State (Classic Video Collection Icon) ──
+          tileColor = AppColors.amber500.withValues(alpha: isDark ? 0.14 : 0.09);
+          borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.38 : 0.28);
           iconColor = AppColors.amber500;
           iconData = Icons.video_collection_rounded;
           shadows = [
             BoxShadow(
-              color: AppColors.amber500.withValues(alpha: isDark ? 0.15 : 0.06),
+              color: AppColors.amber500.withValues(alpha: isDark ? 0.18 : 0.08),
               blurRadius: 3,
-              offset: const Offset(0, 1),
+              offset: const Offset(0, 1.5),
             ),
           ];
         } else {
           // ── Active Hint Available ──
-          capsuleColor = AppColors.amber500.withValues(alpha: isDark ? 0.16 : 0.10);
+          tileColor = AppColors.amber500.withValues(alpha: isDark ? 0.16 : 0.10);
           borderColor = AppColors.amber500.withValues(alpha: isDark ? 0.45 : 0.35);
           iconColor = AppColors.amber500;
           iconData = Icons.lightbulb_rounded;
           shadows = [
             BoxShadow(
-              color: AppColors.amber500.withValues(alpha: isDark ? 0.20 : 0.08),
+              color: AppColors.amber500.withValues(alpha: isDark ? 0.22 : 0.10),
               blurRadius: 4,
               offset: const Offset(0, 1.5),
             ),
@@ -224,12 +227,10 @@ class QuestHintButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.r),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
+                width: 36.w,
                 height: 36.h,
-                padding: EdgeInsets.symmetric(
-                  horizontal: isRevealed || isPremium ? 10.w : 8.w,
-                ),
                 decoration: BoxDecoration(
-                  color: capsuleColor,
+                  color: tileColor,
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
                     color: borderColor,
@@ -237,31 +238,72 @@ class QuestHintButton extends StatelessWidget {
                   ),
                   boxShadow: shadows,
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: Alignment.center,
                   children: [
+                    // Main Action Icon
                     Icon(
                       iconData,
                       color: iconColor,
-                      size: isRevealed ? 19.r : (showAdState ? 17.r : 18.r),
+                      size: isRevealed ? 20.r : (showAdState ? 18.r : 19.r),
                     ),
 
-                    // Counter Pill or Rewarded Ad Text (+1)
-                    if (isInteractive && !isRevealed && !isPremium) ...[
-                      SizedBox(width: 4.w),
-                      Text(
-                        canUseHint ? '$hintCount' : '+1',
-                        textScaler: const TextScaler.linear(1.0),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          color: iconColor,
-                          letterSpacing: 0.2,
+                    // Hint Count Badge (when hints available and not yet used on current quest)
+                    if (isInteractive && !isRevealed && !isPremium && hintCount > 0)
+                      Positioned(
+                        top: -3.r,
+                        right: -3.r,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+                          decoration: BoxDecoration(
+                            color: AppColors.amber500,
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(
+                              color: isDark ? const Color(0xFF131B2B) : Colors.white,
+                              width: 1.5,
+                            ),
+                          ),
+                          constraints: BoxConstraints(
+                            minWidth: 15.r,
+                            minHeight: 15.r,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            '$hintCount',
+                            textScaler: const TextScaler.linear(1.0),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 8.5.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
-                    ],
+
+                    // Rewarded Ad Play Badge (when 0 hints for free user)
+                    if (isInteractive && showAdState)
+                      Positioned(
+                        bottom: -2.r,
+                        right: -2.r,
+                        child: Container(
+                          padding: EdgeInsets.all(2.r),
+                          decoration: BoxDecoration(
+                            color: AppColors.amber500,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: isDark ? const Color(0xFF131B2B) : Colors.white,
+                              width: 1.5,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 9.r,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
