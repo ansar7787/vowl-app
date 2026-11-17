@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
@@ -102,6 +103,12 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
   }
 
   void _finishLearnPhase() {
+    PhaseProgressRecorder.recordPhaseCompleted(
+      context,
+      gameType: 'synonymSearch',
+      level: widget.level,
+      phase: 'learn',
+    );
     final target =
         '/practice?category=vocabulary&gameType=synonymSearch&level=${widget.level}';
     context.pushReplacement(target);

@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -156,6 +157,12 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
   }
 
   void _navigateToPractice() {
+    PhaseProgressRecorder.recordPhaseCompleted(
+      context,
+      gameType: 'prefixSuffix',
+      level: widget.level,
+      phase: 'learn',
+    );
     context.pushReplacement(
       '/practice?category=vocabulary&gameType=prefixSuffix&level=${widget.level}',
     );

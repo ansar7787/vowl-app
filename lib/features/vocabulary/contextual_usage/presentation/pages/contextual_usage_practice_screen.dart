@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -180,6 +181,12 @@ class _ContextualUsagePracticeScreenState
         _isRegisterCorrect = null;
       });
     } else {
+      PhaseProgressRecorder.recordPhaseCompleted(
+        context,
+        gameType: 'contextualUsage',
+        level: widget.level,
+        phase: 'practice',
+      );
       context.pushReplacement(
         '/game?category=vocabulary&gameType=contextualUsage&level=${widget.level}',
       );

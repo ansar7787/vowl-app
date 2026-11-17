@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -107,6 +108,12 @@ class _PhrasalVerbsLearnScreenState extends State<PhrasalVerbsLearnScreen> {
   }
 
   void _finishLearnPhase() {
+    PhaseProgressRecorder.recordPhaseCompleted(
+      context,
+      gameType: 'phrasalVerbs',
+      level: widget.level,
+      phase: 'learn',
+    );
     final target =
         '/practice?category=vocabulary&gameType=phrasalVerbs&level=${widget.level}';
     context.pushReplacement(target);

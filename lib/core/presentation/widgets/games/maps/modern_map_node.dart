@@ -440,7 +440,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             builder: (context) {
                               final earnedStars =
                                   context
-                                      .read<AuthBloc>()
+                                      .watch<AuthBloc>()
                                       .state
                                       .user
                                       ?.starRatings[widget.gameType]?[widget
@@ -465,7 +465,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                         ],
                         Builder(
                           builder: (context) {
-                            final user = context.read<AuthBloc>().state.user;
+                            final user = context.watch<AuthBloc>().state.user;
                             final completedPhases = user?.getCompletedPhases(
                                   widget.gameType,
                                   widget.levelNumber,

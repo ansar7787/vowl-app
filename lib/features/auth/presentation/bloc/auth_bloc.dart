@@ -93,6 +93,23 @@ class AuthLevelCompletedOptimistic extends AuthEvent {
   List<Object?> get props => [gameType, level, xp, coins, stars];
 }
 
+/// Optimistically marks a game phase ('learn', 'practice', 'mastery') completed
+/// in local memory and cache so that map phase dots and phase routing update instantly.
+class AuthPhaseCompleted extends AuthEvent {
+  final String gameType;
+  final int level;
+  final String phase;
+
+  const AuthPhaseCompleted({
+    required this.gameType,
+    required this.level,
+    required this.phase,
+  });
+
+  @override
+  List<Object?> get props => [gameType, level, phase];
+}
+
 /// Optimistically increments user coins and adds an entry to [coinHistory]
 /// in local memory before or while the backend Firestore transaction executes.
 /// Guarantees that HUD coin counters react instantly with 0ms visual delay.
@@ -294,6 +311,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthReloadUser>(_onReloadUser);
     on<AuthRefreshUser>(_onRefreshUser);
     on<AuthLevelCompletedOptimistic>(_onLevelCompletedOptimistic);
+    on<AuthPhaseCompleted>(_onPhaseCompleted);
     on<AuthCoinsAwardedOptimistic>(_onCoinsAwardedOptimistic);
     on<AuthCoinsRollback>(_onCoinsRollback);
     on<AuthHintConsumedOptimistic>(_onHintConsumedOptimistic);
@@ -877,6 +895,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _lastCompletedOptimisticKey = key;
     _lastCompletedOptimisticTime = now;
 
+    // Phase progress: Mark all 3 phases complete when the level is conquered
+    final updatedPhaseProgress = Map<String, Map<String, Set<String>>>.from(
+      currentUser.phaseProgress.map(
+        (k, v) => MapEntry(
+          k,
+          Map<String, Set<String>>.from(
+            v.map((lk, lv) => MapEntry(lk, Set<String>.from(lv))),
+          ),
+        ),
+      ),
+    );
+    final gamePhases = Map<String, Set<String>>.from(
+      updatedPhaseProgress[event.gameType] ?? {},
+    );
+    final levelPhases = Set<String>.from(
+      gamePhases[event.level.toString()] ?? {},
+    );
+    levelPhases.addAll({'learn', 'practice', 'mastery'});
+    gamePhases[event.level.toString()] = levelPhases;
+    updatedPhaseProgress[event.gameType] = gamePhases;
+
     final updatedUser = currentUser.copyWith(
       completedLevels: completedLevels,
       unlockedLevels: unlockedLevels,
@@ -885,6 +924,45 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       coins: currentUser.coins + finalCoins,
       coinHistory: updatedCoinHistory,
       dailyXpHistory: dailyHistory,
+      phaseProgress: updatedPhaseProgress,
+    );
+
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
+    emit(AuthState.authenticated(updatedUser));
+  }
+
+  void _onPhaseCompleted(
+    AuthPhaseCompleted event,
+    Emitter<AuthState> emit,
+  ) {
+    if (state.status == AuthStatus.loggingOut) return;
+    final currentUser = state.user;
+    if (currentUser == null) return;
+
+    final updatedPhaseProgress = Map<String, Map<String, Set<String>>>.from(
+      currentUser.phaseProgress.map(
+        (k, v) => MapEntry(
+          k,
+          Map<String, Set<String>>.from(
+            v.map((lk, lv) => MapEntry(lk, Set<String>.from(lv))),
+          ),
+        ),
+      ),
+    );
+
+    final gamePhases = Map<String, Set<String>>.from(
+      updatedPhaseProgress[event.gameType] ?? {},
+    );
+    final levelPhases = Set<String>.from(
+      gamePhases[event.level.toString()] ?? {},
+    );
+
+    levelPhases.add(event.phase);
+    gamePhases[event.level.toString()] = levelPhases;
+    updatedPhaseProgress[event.gameType] = gamePhases;
+
+    final updatedUser = currentUser.copyWith(
+      phaseProgress: updatedPhaseProgress,
     );
 
     _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));

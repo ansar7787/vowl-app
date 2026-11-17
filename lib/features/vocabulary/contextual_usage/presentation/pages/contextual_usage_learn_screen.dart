@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -192,6 +193,12 @@ class _ContextualUsageLearnScreenState
         _isOptionCorrect = null;
       });
     } else {
+      PhaseProgressRecorder.recordPhaseCompleted(
+        context,
+        gameType: 'contextualUsage',
+        level: widget.level,
+        phase: 'learn',
+      );
       context.pushReplacement(
         '/practice?category=vocabulary&gameType=contextualUsage&level=${widget.level}',
       );

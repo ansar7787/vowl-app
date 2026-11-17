@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -184,6 +185,12 @@ class _AntonymSearchPracticeScreenState
   }
 
   void _finishPracticePhase() {
+    PhaseProgressRecorder.recordPhaseCompleted(
+      context,
+      gameType: 'antonymSearch',
+      level: widget.level,
+      phase: 'practice',
+    );
     // Navigate to Test Phase (existing screen via /game route)
     final target =
         '/game?category=vocabulary&gameType=antonymSearch&level=${widget.level}';

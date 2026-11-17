@@ -569,5 +569,46 @@ void main() {
             .having((s) => s.user?.hintCount, 'hintCount', 3),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthPhaseCompleted records completed phase into phaseProgress',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(
+        const AuthPhaseCompleted(
+          gameType: 'flashcards',
+          level: 1,
+          phase: 'learn',
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.getCompletedPhases('flashcards', 1),
+              'completedPhases',
+              {'learn'},
+            ),
+      ],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthLevelCompletedOptimistic automatically marks all 3 phases completed',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(
+        const AuthLevelCompletedOptimistic(
+          gameType: 'flashcards',
+          level: 1,
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.getCompletedPhases('flashcards', 1),
+              'completedPhases',
+              {'learn', 'practice', 'mastery'},
+            ),
+      ],
+    );
   });
 }

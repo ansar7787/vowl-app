@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -162,6 +163,12 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   }
 
   void _finishPracticePhase() {
+    PhaseProgressRecorder.recordPhaseCompleted(
+      context,
+      gameType: 'flashcards',
+      level: widget.level,
+      phase: 'practice',
+    );
     // Navigate into the Test phase (/game)
     final target =
         '/game?category=vocabulary&gameType=flashcards&level=${widget.level}';
