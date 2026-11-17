@@ -27,11 +27,15 @@ class PrefixSuffixScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether this session is running as a mastery bonus stage.
+  final bool isBonusStage;
+
   /// Creates a [PrefixSuffixScreen] instance.
   const PrefixSuffixScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.prefixSuffix,
+    this.isBonusStage = false,
   });
 
   @override
@@ -88,6 +92,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
       ttsService: di.sl<TtsService>(),
+      isBonusStage: widget.isBonusStage,
       onSubmitAnswer: (bool isCorrect, {quest, userAnswer}) {
         if (mounted) {
           if (isCorrect) {
@@ -255,24 +260,117 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                             context,
                                           ).bottom,
                                     ),
-                                    child: TypeToConfirmOverlay(
-                                      isPositioned: false,
-                                      expectedText: _controller.getTargetWord(
-                                        quest,
-                                      ),
-                                      displayText: _controller
-                                          .getTargetWord(quest)
-                                          .toUpperCase(),
-                                      displayFontSize: 22.sp,
-                                      displayFontWeight: FontWeight.w700,
-                                      hintText: 'Type the full word',
-                                      primaryColor: theme.primaryColor,
-                                      onConfirmed: () => _controller
-                                          .submitFinalAnswer(true, quest),
-                                      onBypassed: () => _controller
-                                          .submitFinalAnswer(true, quest),
-                                      onSkipped: () => _controller
-                                          .submitFinalAnswer(false, quest),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        if (widget.isBonusStage) ...[
+                                          Container(
+                                            margin: EdgeInsets.only(bottom: 12.h),
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 14.w,
+                                              vertical: 10.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: Colors.amber.withValues(
+                                                alpha: isDark ? 0.15 : 0.1,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                              border: Border.all(
+                                                color: Colors.amber
+                                                    .withValues(alpha: 0.3),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                const Icon(
+                                                  Icons.stars_rounded,
+                                                  color: Colors.amber,
+                                                  size: 20,
+                                                ),
+                                                SizedBox(width: 8.w),
+                                                Flexible(
+                                                  child: Text(
+                                                    '⚡ BONUS XP ARENA: Affix Fusion Successful (+50 XP)! Type to confirm or bank your win.',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      color: isDark
+                                                          ? Colors.amber.shade200
+                                                          : Colors.amber.shade900,
+                                                      fontWeight: FontWeight.w700,
+                                                      fontSize: 12.sp,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                        TypeToConfirmOverlay(
+                                          isPositioned: false,
+                                          expectedText: _controller.getTargetWord(
+                                            quest,
+                                          ),
+                                          displayText: _controller
+                                              .getTargetWord(quest)
+                                              .toUpperCase(),
+                                          displayFontSize: 22.sp,
+                                          displayFontWeight: FontWeight.w700,
+                                          hintText: 'Type the full word',
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _controller
+                                              .submitFinalAnswer(true, quest),
+                                          onBypassed: () => _controller
+                                              .submitFinalAnswer(true, quest),
+                                          onSkipped: () => widget.isBonusStage
+                                              ? _controller
+                                                  .submitFinalBonusVictory(true)
+                                              : _controller
+                                                  .submitFinalAnswer(false, quest),
+                                        ),
+                                        if (widget.isBonusStage) ...[
+                                          SizedBox(height: 12.h),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            height: 44.h,
+                                            child: OutlinedButton.icon(
+                                              key: const Key(
+                                                'prefix_suffix_bonus_bank_button',
+                                              ),
+                                              onPressed: () => _controller
+                                                  .submitFinalBonusVictory(true),
+                                              icon: const Icon(
+                                                Icons.check_circle_outline_rounded,
+                                                color: Colors.amber,
+                                                size: 18,
+                                              ),
+                                              label: Text(
+                                                'Bank Victory (+50 XP)',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: isDark
+                                                      ? Colors.amber.shade200
+                                                      : Colors.amber.shade800,
+                                                ),
+                                              ),
+                                              style: OutlinedButton.styleFrom(
+                                                side: BorderSide(
+                                                  color: Colors.amber.withValues(
+                                                    alpha: 0.5,
+                                                  ),
+                                                  width: 1.5,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12.r),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ],
                                     ),
                                   ),
                                 ),

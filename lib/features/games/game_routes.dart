@@ -32,6 +32,8 @@ import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vo
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_practice_screen.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_learn_screen.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_practice_screen.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_learn_screen.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -333,6 +335,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'prefixsuffix') {
+          return fadeTransitionPage(
+            child: PrefixSuffixLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -413,6 +421,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'wordformation') {
           return fadeTransitionPage(
             child: WordFormationPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'prefixsuffix') {
+          return fadeTransitionPage(
+            child: PrefixSuffixPracticeScreen(level: level),
             state: state,
           );
         }

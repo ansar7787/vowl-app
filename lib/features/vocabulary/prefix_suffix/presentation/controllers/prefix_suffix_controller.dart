@@ -46,12 +46,16 @@ class PrefixSuffixController extends ChangeNotifier {
   /// The active vocabulary quest item.
   VocabularyQuest? lastQuest;
 
+  /// Whether this session is running as a mastery bonus stage.
+  final bool isBonusStage;
+
   /// Creates a [PrefixSuffixController] with required audio, haptic, and submission services.
   PrefixSuffixController({
     required HapticService hapticService,
     required SoundService soundService,
     required TtsService ttsService,
     required this.onSubmitAnswer,
+    this.isBonusStage = false,
   }) : _hapticService = hapticService,
        _soundService = soundService,
        _ttsService = ttsService;
@@ -388,6 +392,11 @@ class PrefixSuffixController extends ChangeNotifier {
       _soundService.playWrong();
       onSubmitAnswer(false, quest: quest, userAnswer: wrongWord);
     }
+  }
+
+  /// Submits bonus stage victory banking (+50 XP bonus, 0 hearts deducted).
+  void submitFinalBonusVictory([bool nailedIt = true]) {
+    submitFinalAnswer(nailedIt, lastQuest);
   }
 
   /// Triggers an audio and visual hint highlighting the correct affix option.

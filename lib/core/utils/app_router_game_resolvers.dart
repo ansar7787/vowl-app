@@ -237,7 +237,7 @@ import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vo
     as v_tv_game;
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_mastery_screen.dart'
     as v_wf_game;
-import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_screen.dart'
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_mastery_screen.dart'
     as v_ps_game;
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/contextual_usage_screen.dart'
     as v_cu_game;
@@ -760,7 +760,7 @@ class AppRouterGameResolvers {
       case GameSubtype.wordFormation:
         return v_wf_game.WordFormationMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.prefixSuffix:
-        return v_ps_game.PrefixSuffixScreen(level: level, gameType: gameType);
+        return v_ps_game.PrefixSuffixMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.contextualUsage:
         return v_cu_game.ContextualUsageScreen(
           level: level,
