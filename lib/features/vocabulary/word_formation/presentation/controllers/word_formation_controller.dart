@@ -40,11 +40,15 @@ class WordFormationController extends ChangeNotifier {
   /// The active vocabulary quest item.
   VocabularyQuest? lastQuest;
 
+  /// Whether this session is running as a mastery bonus stage.
+  final bool isBonusStage;
+
   /// Creates a [WordFormationController] instance.
   WordFormationController({
     required HapticService hapticService,
     required SoundService soundService,
     required this.onSubmitAnswer,
+    this.isBonusStage = false,
   }) : _hapticService = hapticService,
        _soundService = soundService;
 
@@ -126,6 +130,11 @@ class WordFormationController extends ChangeNotifier {
       return;
     }
     notifyListeners();
+  }
+
+  /// Submits bonus stage victory banking (+50 XP bonus, 0 hearts deducted).
+  void submitFinalBonusVictory([bool nailedIt = true]) {
+    submitFinalAnswer(nailedIt);
   }
 
   /// Submits the final stage spelling confirmation attempt.

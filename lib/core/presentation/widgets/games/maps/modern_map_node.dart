@@ -714,7 +714,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                               ) ??
                               const {};
 
-                          const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab'};
+                          const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation'};
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
                           String targetRoute;

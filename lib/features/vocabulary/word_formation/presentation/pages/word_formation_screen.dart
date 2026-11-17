@@ -30,11 +30,15 @@ class WordFormationScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether this session is running as a mastery bonus stage.
+  final bool isBonusStage;
+
   /// Creates a [WordFormationScreen] instance.
   const WordFormationScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.wordFormation,
+    this.isBonusStage = false,
   });
 
   @override
@@ -89,6 +93,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     _controller = WordFormationController(
       hapticService: hapticService,
       soundService: soundService,
+      isBonusStage: widget.isBonusStage,
       onSubmitAnswer: (isCorrect, {quest, userAnswer}) {
         if (mounted) {
           if (isCorrect) {
@@ -346,20 +351,125 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                             context,
                                           ).bottom,
                                     ),
-                                    child: TypeToConfirmOverlay(
-                                      expectedText: quest.correctAnswer ?? '',
-                                      displayText: quest.correctAnswer
-                                          ?.toUpperCase(),
-                                      primaryColor: theme.primaryColor,
-                                      displayFontSize: 22.sp,
-                                      displayFontWeight: FontWeight.w700,
-                                      onConfirmed: () =>
-                                          _controller.submitFinalAnswer(true),
-                                      onSkipped: () =>
-                                          _controller.submitFinalAnswer(false),
-                                      onBypassed: () =>
-                                          _controller.submitFinalAnswer(true),
-                                      isPositioned: false,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        if (widget.isBonusStage) ...[
+                                          Container(
+                                            margin: EdgeInsets.only(bottom: 12.h),
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 14.w,
+                                              vertical: 10.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: Colors.amber.withValues(
+                                                alpha: isDark ? 0.15 : 0.1,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                              border: Border.all(
+                                                color: Colors.amber
+                                                    .withValues(alpha: 0.3),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                const Icon(
+                                                  Icons.stars_rounded,
+                                                  color: Colors.amber,
+                                                  size: 20,
+                                                ),
+                                                SizedBox(width: 8.w),
+                                                Flexible(
+                                                  child: Text(
+                                                    '⚡ BONUS XP ARENA: Affix Fusion Successful (+50 XP)! Type to confirm or bank your win.',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      color: isDark
+                                                          ? Colors.amber.shade200
+                                                          : Colors.amber.shade900,
+                                                      fontWeight: FontWeight.w700,
+                                                      fontSize: 12.sp,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                        TypeToConfirmOverlay(
+                                          expectedText: quest.correctAnswer ?? '',
+                                          displayText: quest.correctAnswer
+                                              ?.toUpperCase(),
+                                          primaryColor: theme.primaryColor,
+                                          displayFontSize: 22.sp,
+                                          displayFontWeight: FontWeight.w700,
+                                          onConfirmed: () =>
+                                              _controller.submitFinalAnswer(true),
+                                          onSkipped: () => widget.isBonusStage
+                                              ? _controller.submitFinalBonusVictory(true)
+                                              : _controller.submitFinalAnswer(false),
+                                          onBypassed: () =>
+                                              _controller.submitFinalAnswer(true),
+                                          isPositioned: false,
+                                        ),
+                                        if (widget.isBonusStage) ...[
+                                          SizedBox(height: 12.h),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: ElevatedButton(
+                                                  key: const Key(
+                                                    'word_formation_bonus_confirm_button',
+                                                  ),
+                                                  onPressed: () => _controller
+                                                      .submitFinalBonusVictory(true),
+                                                  style: ElevatedButton.styleFrom(
+                                                    backgroundColor:
+                                                        theme.primaryColor,
+                                                    foregroundColor: Colors.white,
+                                                    padding: EdgeInsets.symmetric(
+                                                      vertical: 12.h,
+                                                    ),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.r),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Confirm & Claim (+50 XP)',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 13.sp,
+                                                      fontWeight: FontWeight.w700,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 8.w),
+                                              TextButton(
+                                                key: const Key(
+                                                  'word_formation_bonus_bank_button',
+                                                ),
+                                                onPressed: () => _controller
+                                                    .submitFinalBonusVictory(true),
+                                                child: Text(
+                                                  'Bank Win',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 13.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: isDark
+                                                        ? Colors.white70
+                                                        : Colors.black54,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ],
                                     ),
                                   ),
                                 ),

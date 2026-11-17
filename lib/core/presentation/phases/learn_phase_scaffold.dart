@@ -74,22 +74,25 @@ class LearnPhaseScaffold extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('🧠', style: TextStyle(fontSize: 11.sp)),
-                  SizedBox(width: 4.w),
-                  Text(
-                    'LEARN PHASE • LEVEL $level',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: AppColors.indigo500,
-                      letterSpacing: 1.2,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('🧠', style: TextStyle(fontSize: 11.sp)),
+                    SizedBox(width: 4.w),
+                    Text(
+                      'LEARN PHASE • LEVEL $level',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.indigo500,
+                        letterSpacing: 1.0,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 2.h),
