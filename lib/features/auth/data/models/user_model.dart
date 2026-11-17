@@ -50,6 +50,7 @@ class UserModel extends UserEntity {
     super.unlockedLevels,
     super.completedLevels,
     super.starRatings,
+    super.phaseProgress,
     super.badges,
     super.streakFreezes,
     super.hintCount,
@@ -130,6 +131,7 @@ class UserModel extends UserEntity {
           : UserGameConstants.kDefaultUnlockedLevels,
       completedLevels: _parseCompletedLevels(map['completedLevels']),
       starRatings: _parseStarRatings(map['starRatings']),
+      phaseProgress: _parsePhaseProgress(map['phaseProgress']),
       badges: _parseStringList(map['badges']),
       streakFreezes: (map['streakFreezes'] as num?)?.toInt() ?? 0,
       hintCount: (map['hintCount'] as num?)?.toInt() ?? 0,
@@ -212,6 +214,7 @@ class UserModel extends UserEntity {
       unlockedLevels: entity.unlockedLevels,
       completedLevels: entity.completedLevels,
       starRatings: entity.starRatings,
+      phaseProgress: entity.phaseProgress,
       badges: entity.badges,
       streakFreezes: entity.streakFreezes,
       hintCount: entity.hintCount,
@@ -288,6 +291,7 @@ class UserModel extends UserEntity {
       'unlockedLevels': unlockedLevels,
       'completedLevels': completedLevels,
       'starRatings': starRatings,
+      'phaseProgress': phaseProgress.map((k, v) => MapEntry(k, v.map((lk, lv) => MapEntry(lk, lv.toList())))),
       'badges': badges,
       'streakFreezes': streakFreezes,
       'hintCount': hintCount,
@@ -367,6 +371,7 @@ class UserModel extends UserEntity {
     int? coins,
     Map<String, List<int>>? completedLevels,
     Map<String, Map<String, int>>? starRatings,
+    Map<String, Map<String, Set<String>>>? phaseProgress,
     int? currentStreak,
     int? previousStreak,
     Map<String, int>? dailyXpHistory,
@@ -426,6 +431,7 @@ class UserModel extends UserEntity {
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
       starRatings: starRatings ?? this.starRatings,
+      phaseProgress: phaseProgress ?? this.phaseProgress,
       currentStreak: currentStreak ?? this.currentStreak,
       previousStreak: previousStreak ?? this.previousStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
@@ -625,6 +631,28 @@ class UserModel extends UserEntity {
         return MapEntry(levelKey.toString(), (starsRaw as num?)?.toInt() ?? 0);
       });
       return MapEntry(categoryKey.toString(), parsedInner);
+    });
+  }
+
+  /// Parses the nested [phaseProgress] map: `{String → {String → Set<String>}}`.
+  static Map<String, Map<String, Set<String>>> _parsePhaseProgress(dynamic raw) {
+    if (raw is! Map) return const {};
+    final outer = raw as Map<Object?, Object?>;
+    return outer.map((gameKey, levelMapRaw) {
+      if (levelMapRaw is! Map) {
+        return MapEntry(gameKey.toString(), const {});
+      }
+      final inner = levelMapRaw as Map<Object?, Object?>;
+      final parsedInner = inner.map((levelKey, phasesRaw) {
+        if (phasesRaw is! List) {
+          return MapEntry(levelKey.toString(), const <String>{});
+        }
+        final phases = phasesRaw
+            .map((e) => e.toString())
+            .toSet();
+        return MapEntry(levelKey.toString(), phases);
+      });
+      return MapEntry(gameKey.toString(), parsedInner);
     });
   }
 }

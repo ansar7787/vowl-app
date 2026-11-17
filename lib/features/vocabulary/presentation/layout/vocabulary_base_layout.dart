@@ -119,6 +119,7 @@ class VocabularyBaseLayout extends StatelessWidget {
           hintText: effectiveHint,
           isHintUsedOnCurrentQuest: isHintUsed,
           isHintEnabled: hintShouldBeEnabled,
+          showHint: !isAnswered,
           onPause: () {
             VowlPauseBottomSheet.show(
               context,

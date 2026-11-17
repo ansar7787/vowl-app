@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/tts_text_cleaner.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/phases/phase_progress_indicator.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -462,6 +463,21 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             },
                           ),
                         ],
+                        Builder(
+                          builder: (context) {
+                            final user = context.read<AuthBloc>().state.user;
+                            final completedPhases = user?.getCompletedPhases(
+                                  widget.gameType,
+                                  widget.levelNumber,
+                                ) ??
+                                const {};
+                            return PhaseProgressIndicator(
+                              completedPhases: completedPhases,
+                              hideIfEmpty: true,
+                              activeColor: tierColor,
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ),
@@ -691,9 +707,29 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             return;
                           }
 
-                          await context.push(
-                            '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}',
-                          );
+                          final user = context.read<AuthBloc>().state.user;
+                          final completedPhases = user?.getCompletedPhases(
+                                widget.gameType,
+                                widget.levelNumber,
+                              ) ??
+                              const {};
+
+                          const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues'};
+                          final isPhasedGame = phasedGames.contains(widget.gameType);
+
+                          String targetRoute;
+                          if (isPhasedGame && !completedPhases.contains('learn')) {
+                            targetRoute =
+                                '/learn?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}';
+                          } else if (isPhasedGame && !completedPhases.contains('practice')) {
+                            targetRoute =
+                                '/practice?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}';
+                          } else {
+                            targetRoute =
+                                '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}';
+                          }
+
+                          await context.push(targetRoute);
                           if (context.mounted) {
                             context.read<AuthBloc>().add(
                               const AuthRefreshUser(),

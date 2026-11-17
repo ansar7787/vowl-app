@@ -237,12 +237,21 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                     ),
                                     SizedBox(height: compact ? 6.h : 8.h),
                                     Text(
-                                      widget.quest.definition ?? '',
+                                      (widget.quest.options != null &&
+                                              widget.quest.options!.isNotEmpty &&
+                                              !widget.isHintActive)
+                                          ? '??? (Select matching definition below)'
+                                          : (widget.quest.definition ?? ''),
                                       textAlign: TextAlign.center,
                                       softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: compact ? 15.sp : 17.sp,
+                                        fontStyle: (widget.quest.options != null &&
+                                                widget.quest.options!.isNotEmpty &&
+                                                !widget.isHintActive)
+                                            ? FontStyle.italic
+                                            : FontStyle.normal,
                                         color: widget.isHintActive
                                             ? widget.color
                                             : (widget.isDark

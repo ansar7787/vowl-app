@@ -1,0 +1,656 @@
+{
+    "gameType": "contextClues",
+    "phase": "mastery",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "word": "RELUCTANT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L21_Q1",
+            "sentence": "Ben was [TARGET] and unwilling to try the spicy noodles, even after everyone at the table promised they weren't that hot.",
+            "hint": "This word describes hesitating to do something you'd rather not do.",
+            "options": [
+                "Unwilling",
+                "Eager",
+                "Willing",
+                "Enthusiastic"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'unwilling,' and hesitating despite reassurance confirms it, so [TARGET] means UNWILLING.",
+            "correctAnswer": "Unwilling",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and unwilling",
+                "promised"
+            ]
+        },
+        {
+            "word": "PUNCTUAL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L21_Q2",
+            "sentence": "Unlike her brother, who always shows up late, Priya is [TARGET], arriving at every meeting five minutes before it starts.",
+            "hint": "This word describes someone who is always on time.",
+            "options": [
+                "Tardy",
+                "On-time",
+                "Late",
+                "Delayed"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with the brother 'who always shows up late,' so it must mean the opposite, which is ON-TIME.",
+            "correctAnswer": "On-time",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "shows up late",
+                "five minutes before"
+            ]
+        },
+        {
+            "word": "ANXIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L21_Q3",
+            "sentence": "Before stepping on stage for the spelling bee, Marco felt [TARGET], meaning a nervous, uneasy feeling filled his stomach.",
+            "hint": "This word describes a worried, uneasy feeling before something stressful.",
+            "options": [
+                "Calm",
+                "Relaxed",
+                "Nervous",
+                "Confident"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'a nervous, uneasy feeling,' so [TARGET] means NERVOUS.",
+            "correctAnswer": "Nervous",
+            "clueType": "definition",
+            "evidenceWords": [
+                "meaning",
+                "nervous, uneasy feeling"
+            ]
+        },
+        {
+            "word": "CONFIDENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L22_Q1",
+            "sentence": "Walking into the interview, she was [TARGET]: she made steady eye contact, answered every question without hesitating, and shook the interviewer's hand firmly.",
+            "hint": "This word describes someone who believes in their own abilities.",
+            "options": [
+                "Timid",
+                "Insecure",
+                "Hesitant",
+                "Self-assured"
+            ],
+            "explanation": "Steady eye contact, quick answers, and a firm handshake are all examples of believing in oneself, so [TARGET] means SELF-ASSURED.",
+            "correctAnswer": "Self-assured",
+            "clueType": "example",
+            "evidenceWords": [
+                "steady eye contact",
+                "without hesitating",
+                "firmly"
+            ]
+        },
+        {
+            "word": "AMBITIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L22_Q2",
+            "sentence": "By twenty-five, she had already started two companies, earned a master's degree at night, and was setting her sights on running for city council — everyone described her as [TARGET].",
+            "hint": "This word describes someone with a strong ambition to achieve great things.",
+            "options": [
+                "Driven",
+                "Lazy",
+                "Unmotivated",
+                "Complacent"
+            ],
+            "explanation": "Starting two companies, earning a degree at night, and aiming for city council all show a strong drive to achieve, even without a direct clue word, so [TARGET] means DRIVEN.",
+            "correctAnswer": "Driven",
+            "clueType": "inference",
+            "evidenceWords": [
+                "started two companies",
+                "master's degree at night",
+                "city council"
+            ]
+        },
+        {
+            "word": "GENUINE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L22_Q3",
+            "sentence": "His apology sounded [TARGET] and sincere, not like something he was saying just to end the argument.",
+            "hint": "This word describes something real and honestly meant, not fake.",
+            "options": [
+                "Fake",
+                "Sincere",
+                "Hollow",
+                "Insincere"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'sincere,' so [TARGET] means SINCERE.",
+            "correctAnswer": "Sincere",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and sincere",
+                "just to end"
+            ]
+        },
+        {
+            "word": "CONSIDERATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L23_Q1",
+            "sentence": "Unlike his roommate, who blasted music at midnight without a second thought, Sam was [TARGET], always checking whether the noise might bother anyone.",
+            "hint": "This word describes someone who thinks about how their actions affect others.",
+            "options": [
+                "Selfish",
+                "Careless",
+                "Thoughtful",
+                "Inconsiderate"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a roommate who acted 'without a second thought,' so it must mean the opposite, which is THOUGHTFUL.",
+            "correctAnswer": "Thoughtful",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "without a second thought",
+                "checking"
+            ]
+        },
+        {
+            "word": "SUSPICIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L23_Q2",
+            "sentence": "The security guard grew [TARGET] of the man circling the parking lot three times, which means he began to doubt the man's honest intentions.",
+            "hint": "This word describes the feeling of distrust toward someone or something.",
+            "options": [
+                "Trusting",
+                "Confident",
+                "Assured",
+                "Distrustful"
+            ],
+            "explanation": "The sentence defines [TARGET] as beginning 'to doubt the man's honest intentions,' so [TARGET] means DISTRUSTFUL.",
+            "correctAnswer": "Distrustful",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "doubt"
+            ]
+        },
+        {
+            "word": "DISAPPOINTED",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L23_Q3",
+            "sentence": "When the camping trip got canceled, the kids were [TARGET]: they slumped on the couch, stopped talking about their plans, and refused to unpack their bags for days.",
+            "hint": "This word describes the letdown feeling when something hoped for doesn't happen.",
+            "options": [
+                "Let down",
+                "Thrilled",
+                "Relieved",
+                "Excited"
+            ],
+            "explanation": "Slumping on the couch, going quiet, and refusing to unpack are all examples of feeling let down, so [TARGET] means LET DOWN.",
+            "correctAnswer": "Let down",
+            "clueType": "example",
+            "evidenceWords": [
+                "slumped on the couch",
+                "stopped talking",
+                "refused to unpack"
+            ]
+        },
+        {
+            "word": "CLUMSY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L24_Q1",
+            "sentence": "Every time Leo carried a tray at the diner, glasses tipped over, plates slid to the floor, and syrup somehow ended up on the ceiling — his manager finally admitted he was simply too [TARGET] for the job.",
+            "hint": "This word describes someone who often drops things or moves without grace.",
+            "options": [
+                "Graceful",
+                "Uncoordinated",
+                "Precise",
+                "Skillful"
+            ],
+            "explanation": "Tipped glasses, sliding plates, and syrup on the ceiling all point to a lack of coordination, even without a direct clue word, so [TARGET] means UNCOORDINATED.",
+            "correctAnswer": "Uncoordinated",
+            "clueType": "inference",
+            "evidenceWords": [
+                "tipped over",
+                "slid to the floor",
+                "ceiling"
+            ]
+        },
+        {
+            "word": "HUMBLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L24_Q2",
+            "sentence": "Despite winning the championship, the captain stayed [TARGET] and modest, crediting the whole team instead of himself.",
+            "hint": "This word describes someone who doesn't brag about their achievements.",
+            "options": [
+                "Boastful",
+                "Arrogant",
+                "Modest",
+                "Conceited"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'modest,' and crediting the team confirms it, so [TARGET] means MODEST.",
+            "correctAnswer": "Modest",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and modest",
+                "crediting the whole team"
+            ]
+        },
+        {
+            "word": "FRANK",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L24_Q3",
+            "sentence": "Unlike her manager, who softened every piece of feedback until it barely made sense, Dana was [TARGET], telling coworkers exactly what she thought.",
+            "hint": "This word describes someone who speaks plainly and honestly, even if it's blunt.",
+            "options": [
+                "Evasive",
+                "Vague",
+                "Indirect",
+                "Direct"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a manager who 'softened every piece of feedback,' so it must mean the opposite, which is DIRECT.",
+            "correctAnswer": "Direct",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "softened",
+                "exactly what she thought"
+            ]
+        },
+        {
+            "word": "CAUTIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L25_Q1",
+            "sentence": "The hikers were [TARGET] near the cliff's edge, meaning they moved carefully and checked every foothold before taking a step.",
+            "hint": "This word describes someone taking extra care to avoid danger.",
+            "options": [
+                "Careful",
+                "Reckless",
+                "Careless",
+                "Bold"
+            ],
+            "explanation": "The sentence defines [TARGET] as moving 'carefully' and checking 'every foothold,' so [TARGET] means CAREFUL.",
+            "correctAnswer": "Careful",
+            "clueType": "definition",
+            "evidenceWords": [
+                "meaning",
+                "carefully",
+                "every foothold"
+            ]
+        },
+        {
+            "word": "OPTIMISTIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L25_Q2",
+            "sentence": "Even after losing the first three games of the season, the coach stayed [TARGET]: he reminded the team of their strengths, planned new drills, and promised better results ahead.",
+            "hint": "This word describes expecting good things to happen.",
+            "options": [
+                "Hopeless",
+                "Hopeful",
+                "Defeated",
+                "Discouraged"
+            ],
+            "explanation": "Reminding the team of strengths, planning new drills, and promising better results are all examples of expecting good outcomes, so [TARGET] means HOPEFUL.",
+            "correctAnswer": "Hopeful",
+            "clueType": "example",
+            "evidenceWords": [
+                "reminded the team",
+                "planned new drills",
+                "promised better results"
+            ]
+        },
+        {
+            "word": "PESSIMISTIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L25_Q3",
+            "sentence": "Before every test, Owen predicted he would fail, assumed the questions would be impossible, and packed his bag early, sure he'd be sent home in disgrace — his friends called him [TARGET].",
+            "hint": "This word describes expecting the worst outcome in most situations.",
+            "options": [
+                "Cheerful",
+                "Upbeat",
+                "Gloomy",
+                "Hopeful"
+            ],
+            "explanation": "Predicting failure, assuming the worst, and expecting disgrace all show a habit of expecting bad outcomes, even without a direct clue word, so [TARGET] means GLOOMY.",
+            "correctAnswer": "Gloomy",
+            "clueType": "inference",
+            "evidenceWords": [
+                "predicted he would fail",
+                "assumed",
+                "sure he'd be sent home"
+            ]
+        },
+        {
+            "word": "DILIGENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L26_Q1",
+            "sentence": "The research assistant was [TARGET] and hardworking, double-checking every data point before submitting the report.",
+            "hint": "This word describes someone who works carefully and steadily at a task.",
+            "options": [
+                "Lazy",
+                "Careless",
+                "Sloppy",
+                "Hardworking"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'hardworking,' and double-checking every data point confirms it, so [TARGET] means HARDWORKING.",
+            "correctAnswer": "Hardworking",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and hardworking",
+                "double-checking"
+            ]
+        },
+        {
+            "word": "EFFICIENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L26_Q2",
+            "sentence": "Unlike the old assembly line, which wasted materials and took twice as long, the new system was [TARGET], finishing the same job with half the resources.",
+            "hint": "This word describes getting a task done without wasting time or resources.",
+            "options": [
+                "Streamlined",
+                "Wasteful",
+                "Sluggish",
+                "Inefficient"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with the old line that 'wasted materials,' so it must mean the opposite, which is STREAMLINED.",
+            "correctAnswer": "Streamlined",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "wasted materials",
+                "half the resources"
+            ]
+        },
+        {
+            "word": "ARROGANT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L26_Q3",
+            "sentence": "The new player was [TARGET], which means he acted as if he were better than everyone else on the team, even before playing a single game.",
+            "hint": "This word describes someone with an inflated sense of their own importance.",
+            "options": [
+                "Humble",
+                "Conceited",
+                "Modest",
+                "Gracious"
+            ],
+            "explanation": "The sentence defines [TARGET] as acting 'as if he were better than everyone else,' so [TARGET] means CONCEITED.",
+            "correctAnswer": "Conceited",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "better than everyone else"
+            ]
+        },
+        {
+            "word": "NAIVE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L27_Q1",
+            "sentence": "It was [TARGET] of him to believe the stranger's promise of easy money, hand over his savings without asking a single question, and expect to get rich by Friday.",
+            "hint": "This word describes trusting too easily, without enough experience or caution.",
+            "options": [
+                "Skeptical",
+                "Cautious",
+                "Overly trusting",
+                "Wary"
+            ],
+            "explanation": "Believing a stranger's promise, handing over savings without questions, and expecting instant riches are all examples of trusting too easily, so [TARGET] means OVERLY TRUSTING.",
+            "correctAnswer": "Overly trusting",
+            "clueType": "example",
+            "evidenceWords": [
+                "without asking a single question",
+                "expect to get rich"
+            ]
+        },
+        {
+            "word": "SKEPTICAL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L27_Q2",
+            "sentence": "When the salesman claimed the vitamins could cure any illness overnight, she crossed her arms, raised an eyebrow, and asked him to show her actual research — clearly [TARGET] of his claims.",
+            "hint": "This word describes doubting a claim until there's real proof.",
+            "options": [
+                "Convinced",
+                "Trusting",
+                "Certain",
+                "Doubtful"
+            ],
+            "explanation": "Crossing her arms, raising an eyebrow, and demanding proof all suggest doubt, even without a direct clue word, so [TARGET] means DOUBTFUL.",
+            "correctAnswer": "Doubtful",
+            "clueType": "inference",
+            "evidenceWords": [
+                "crossed her arms",
+                "raised an eyebrow",
+                "show her actual research"
+            ]
+        },
+        {
+            "word": "STARVING",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L27_Q3",
+            "sentence": "By the time the delayed flight finally landed, the passengers were [TARGET] and famished, having eaten nothing since breakfast.",
+            "hint": "This word describes feeling extremely hungry.",
+            "options": [
+                "Famished",
+                "Full",
+                "Satisfied",
+                "Stuffed"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'famished,' and not eating since breakfast confirms it, so [TARGET] means FAMISHED.",
+            "correctAnswer": "Famished",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and famished",
+                "nothing since breakfast"
+            ]
+        },
+        {
+            "word": "PERSISTENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L28_Q1",
+            "sentence": "Unlike his older brother, who gave up on the puzzle after five minutes, Theo stayed [TARGET], working on it for three days until he found the last piece.",
+            "hint": "This word describes continuing to try despite difficulty.",
+            "options": [
+                "Quitting",
+                "Determined",
+                "Defeated",
+                "Discouraged"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a brother who 'gave up... after five minutes,' so it must mean the opposite, which is DETERMINED.",
+            "correctAnswer": "Determined",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "gave up",
+                "three days"
+            ]
+        },
+        {
+            "word": "INDIFFERENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L28_Q2",
+            "sentence": "No matter which restaurant they picked, Kyle stayed [TARGET], which means he genuinely did not care either way and had no preference at all.",
+            "hint": "This word describes having no strong feelings or opinion about something.",
+            "options": [
+                "Passionate",
+                "Eager",
+                "Unconcerned",
+                "Enthusiastic"
+            ],
+            "explanation": "The sentence defines [TARGET] as not caring 'either way' with 'no preference at all,' so [TARGET] means UNCONCERNED.",
+            "correctAnswer": "Unconcerned",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "did not care either way"
+            ]
+        },
+        {
+            "word": "RESOURCEFUL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L28_Q3",
+            "sentence": "Stranded with a flat tire and no phone signal, she used her shoelace to patch the leak temporarily, flagged down a passing farmer, and borrowed his tools to finish the job — proving just how [TARGET] she could be.",
+            "hint": "This word describes someone who finds clever solutions with whatever is on hand.",
+            "options": [
+                "Helpless",
+                "Unprepared",
+                "Dependent",
+                "Inventive"
+            ],
+            "explanation": "Patching a tire with a shoelace and improvising a solution with a stranger's tools are examples of clever problem-solving, so [TARGET] means INVENTIVE.",
+            "correctAnswer": "Inventive",
+            "clueType": "example",
+            "evidenceWords": [
+                "shoelace to patch",
+                "flagged down",
+                "borrowed his tools"
+            ]
+        },
+        {
+            "word": "TACTLESS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L29_Q1",
+            "sentence": "At the funeral, he loudly asked the widow how much money she'd inherit, then complained that the food wasn't good enough while other guests were still crying — everyone agreed his comments were painfully [TARGET].",
+            "hint": "This word describes saying things without any sensitivity for others' feelings.",
+            "options": [
+                "Insensitive",
+                "Thoughtful",
+                "Sensitive",
+                "Diplomatic"
+            ],
+            "explanation": "Asking about money and complaining about food at a funeral, while others grieve, shows a lack of sensitivity, even without a direct clue word, so [TARGET] means INSENSITIVE.",
+            "correctAnswer": "Insensitive",
+            "clueType": "inference",
+            "evidenceWords": [
+                "loudly asked",
+                "complained",
+                "still crying"
+            ]
+        },
+        {
+            "word": "VERSATILE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L29_Q2",
+            "sentence": "The kitchen tool was [TARGET] and adaptable, able to chop, blend, whisk, and juice with just a few attachment swaps.",
+            "hint": "This word describes something able to do many different things well.",
+            "options": [
+                "Limited",
+                "Adaptable",
+                "Specialized",
+                "Restricted"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'adaptable,' and chopping, blending, whisking, and juicing all confirm it, so [TARGET] means ADAPTABLE.",
+            "correctAnswer": "Adaptable",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and adaptable",
+                "chop, blend, whisk"
+            ]
+        },
+        {
+            "word": "OBSTINATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L29_Q3",
+            "sentence": "Unlike his sister, who happily changed her vacation plans when the weather forecast shifted, Dean stayed [TARGET], refusing to consider any other dates.",
+            "hint": "This word describes someone unwilling to change their mind, no matter what.",
+            "options": [
+                "Flexible",
+                "Agreeable",
+                "Unyielding",
+                "Accommodating"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a sister who 'happily changed her... plans,' so it must mean the opposite, which is UNYIELDING.",
+            "correctAnswer": "Unyielding",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "happily changed",
+                "refusing to consider"
+            ]
+        },
+        {
+            "word": "COURTEOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L30_Q1",
+            "sentence": "The hotel staff were [TARGET], which means they treated every guest with politeness and respect, even during the busiest check-in rush.",
+            "hint": "This word describes behaving with good manners toward others.",
+            "options": [
+                "Rude",
+                "Dismissive",
+                "Disrespectful",
+                "Polite"
+            ],
+            "explanation": "The sentence defines [TARGET] as treating guests 'with politeness and respect,' so [TARGET] means POLITE.",
+            "correctAnswer": "Polite",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "politeness and respect"
+            ]
+        },
+        {
+            "word": "IMPULSIVE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L30_Q2",
+            "sentence": "Marissa was [TARGET]: she booked a one-way flight to Peru the same afternoon she saw a photo of Machu Picchu, without checking her budget or telling her boss.",
+            "hint": "This word describes acting on sudden urges without thinking things through.",
+            "options": [
+                "Spontaneous",
+                "Cautious",
+                "Deliberate",
+                "Methodical"
+            ],
+            "explanation": "Booking a flight the same afternoon, without checking a budget or telling her boss, is an example of acting without thinking it through, so [TARGET] means SPONTANEOUS.",
+            "correctAnswer": "Spontaneous",
+            "clueType": "example",
+            "evidenceWords": [
+                "same afternoon",
+                "without checking her budget",
+                "telling her boss"
+            ]
+        },
+        {
+            "word": "VIGILANT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L30_Q3",
+            "sentence": "The night guard walked the perimeter every twenty minutes, checked each locked door twice, and kept his eyes on the security monitors even during his coffee break, always staying [TARGET].",
+            "hint": "This word describes staying alert for danger, always on guard.",
+            "options": [
+                "Careless",
+                "Watchful",
+                "Distracted",
+                "Inattentive"
+            ],
+            "explanation": "Walking the perimeter often, double-checking locks, and watching monitors during breaks all show constant alertness, even without a direct clue word, so [TARGET] means WATCHFUL.",
+            "correctAnswer": "Watchful",
+            "clueType": "inference",
+            "evidenceWords": [
+                "every twenty minutes",
+                "checked each locked door twice",
+                "coffee break"
+            ]
+        }
+    ]
+}

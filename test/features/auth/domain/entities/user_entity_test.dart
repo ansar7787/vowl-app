@@ -192,5 +192,32 @@ void main() {
       );
       expect(streakTodayUser.hasCompletedDailyGoal, true);
     });
+
+    test('supports phaseProgress tracking and phase query helpers', () {
+      const user = UserEntity(
+        id: 'phase_user',
+        email: 'phase@vowl.app',
+        phaseProgress: {
+          'flashcards': {
+            '1': {'learn', 'practice'},
+          },
+        },
+      );
+
+      expect(user.getCompletedPhases('flashcards', 1), equals({'learn', 'practice'}));
+      expect(user.isPhaseCompleted('flashcards', 1, 'learn'), isTrue);
+      expect(user.isPhaseCompleted('flashcards', 1, 'practice'), isTrue);
+      expect(user.isPhaseCompleted('flashcards', 1, 'test'), isFalse);
+      expect(user.getCompletedPhases('flashcards', 2), isEmpty);
+
+      final updated = user.copyWith(
+        phaseProgress: {
+          'flashcards': {
+            '1': {'learn', 'practice', 'test'},
+          },
+        },
+      );
+      expect(updated.isPhaseCompleted('flashcards', 1, 'test'), isTrue);
+    });
   });
 }

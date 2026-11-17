@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L101_Q1",
+            "word": "WARM",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Search for a word that captures the idea of being neither warm nor very cold.",
+            "explanation": "To be warm is to be having or producing a comfortable and agreeable degree of heat or imparting or maintaining heat. Cool means neither warm nor very cold, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "COOL",
+            "options": [
+                "TENDER",
+                "STRONG",
+                "ARDENT",
+                "COOL"
+            ],
+            "gradientScale": [
+                "WARM",
+                "truly WARM",
+                "moderate",
+                "somewhat COOL",
+                "COOL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L101_Q2",
+            "word": "BOTTOM",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning located on a side.",
+            "explanation": "Bottom means situated at the bottom or lowest position — the reverse idea is located on a side, which is what side means.",
+            "interactionType": "search",
+            "correctAnswer": "SIDE",
+            "options": [
+                "SIDE",
+                "PAINTING",
+                "WITHDRAW",
+                "MANDATORY"
+            ],
+            "gradientScale": [
+                "BOTTOM",
+                "highly BOTTOM",
+                "average",
+                "mildly SIDE",
+                "SIDE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L101_Q3",
+            "word": "HEAVY",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Search for a word that captures the idea of being of comparatively little physical weight or density.",
+            "explanation": "Heavy refers to of comparatively great physical weight or density. Light, by contrast, means of comparatively little physical weight or density.",
+            "interactionType": "search",
+            "correctAnswer": "LIGHT",
+            "options": [
+                "EXPECTANT",
+                "LEADEN",
+                "LIGHT",
+                "CLOGGY"
+            ],
+            "gradientScale": [
+                "HEAVY",
+                "truly HEAVY",
+                "average",
+                "somewhat LIGHT",
+                "LIGHT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L102_Q1",
+            "word": "BEGINNING",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Look for a word meaning an intermediate part or section.",
+            "explanation": "Beginning means the first part or section of something, so its opposite, middle, means an intermediate part or section.",
+            "interactionType": "search",
+            "correctAnswer": "MIDDLE",
+            "options": [
+                "SOURCE",
+                "MIDDLE",
+                "KICKOFF",
+                "ROOTAGE"
+            ],
+            "gradientScale": [
+                "BEGINNING",
+                "strong BEGINNING",
+                "balanced",
+                "a trace of middle",
+                "MIDDLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L102_Q2",
+            "word": "LARGE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Look for a word meaning limited or below average in number or quantity or magnitude or extent.",
+            "explanation": "Large means above average in size or number or quantity or magnitude or extent, so its opposite, small, means limited or below average in number or quantity or magnitude or extent.",
+            "interactionType": "search",
+            "correctAnswer": "SMALL",
+            "options": [
+                "GRAVID",
+                "MAGNANIMOUS",
+                "HEAVY",
+                "SMALL"
+            ],
+            "gradientScale": [
+                "LARGE",
+                "highly LARGE",
+                "average",
+                "somewhat SMALL",
+                "SMALL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L102_Q3",
+            "word": "WELL",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Imagine describing something as affected by an impairment of normal physical or mental function.",
+            "explanation": "Well refers to in good health especially after having suffered illness or injury. Ill, by contrast, means affected by an impairment of normal physical or mental function.",
+            "interactionType": "search",
+            "correctAnswer": "ILL",
+            "options": [
+                "GOOD",
+                "ILL",
+                "RUG",
+                "PUSSY"
+            ],
+            "gradientScale": [
+                "WELL",
+                "quite WELL",
+                "balanced",
+                "a little ILL",
+                "ILL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L103_Q1",
+            "word": "LOCAL",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Imagine describing something as affecting the entire body.",
+            "explanation": "While local means affecting only a restricted part or area of the body, general means the opposite: affecting the entire body.",
+            "interactionType": "search",
+            "correctAnswer": "GENERAL",
+            "options": [
+                "GENERAL",
+                "CIVIC",
+                "ATTENTIVE",
+                "SPOON"
+            ],
+            "gradientScale": [
+                "LOCAL",
+                "very LOCAL",
+                "balanced",
+                "slightly GENERAL",
+                "GENERAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L103_Q2",
+            "word": "HARD",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "The opposite idea here relates to being yielding readily to pressure or weight.",
+            "explanation": "Hard means resisting weight or pressure; soft means yielding readily to pressure or weight.",
+            "interactionType": "search",
+            "correctAnswer": "SOFT",
+            "options": [
+                "LABORIOUS",
+                "SOFT",
+                "INTEMPERATE",
+                "HEAVY"
+            ],
+            "gradientScale": [
+                "HARD",
+                "extremely HARD",
+                "moderate",
+                "a little SOFT",
+                "SOFT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L103_Q3",
+            "word": "EVEN",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "The opposite idea here relates to being not divisible by two.",
+            "explanation": "Even means divisible by two; odd means not divisible by two.",
+            "interactionType": "search",
+            "correctAnswer": "ODD",
+            "options": [
+                "ODD",
+                "REGULAR",
+                "LEVEL",
+                "TIED"
+            ],
+            "gradientScale": [
+                "EVEN",
+                "highly EVEN",
+                "in between",
+                "a little ODD",
+                "ODD"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L104_Q1",
+            "word": "SWEET",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Imagine describing something as having little sugar or sweetness, as of a wine.",
+            "explanation": "Sweet refers to having a high residual sugar content. Dry, by contrast, means having little sugar or sweetness, as of a wine.",
+            "interactionType": "search",
+            "correctAnswer": "DRY",
+            "options": [
+                "CHERUBIC",
+                "DRY",
+                "SCENTED",
+                "PERFUMED"
+            ],
+            "gradientScale": [
+                "SWEET",
+                "very SWEET",
+                "average",
+                "a little DRY",
+                "DRY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L104_Q2",
+            "word": "SOUND",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Search for a word that means the absence of sound.",
+            "explanation": "Sound means the particular auditory effect produced by a given cause — the reverse idea is the absence of sound, which is what silence means.",
+            "interactionType": "search",
+            "correctAnswer": "SILENCE",
+            "options": [
+                "STRAIT",
+                "PHONE",
+                "AUDIO",
+                "SILENCE"
+            ],
+            "gradientScale": [
+                "SOUND",
+                "total SOUND",
+                "mixed",
+                "a hint of silence",
+                "SILENCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L104_Q3",
+            "word": "RISE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Try to recall a word that means to disappear beyond the horizon.",
+            "explanation": "Rise means move upward above the horizon, as the sun or moon — the reverse idea is disappear beyond the horizon, which is what set means.",
+            "interactionType": "search",
+            "correctAnswer": "SET",
+            "options": [
+                "ASCEND",
+                "UPRISE",
+                "SET",
+                "REBEL"
+            ],
+            "gradientScale": [
+                "RISE",
+                "RISE clearly",
+                "in between",
+                "starting to set",
+                "SET"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L105_Q1",
+            "word": "HAVE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "This word means to be without.",
+            "explanation": "To have means to have as a feature. To lack means the opposite: to be without.",
+            "interactionType": "search",
+            "correctAnswer": "LACK",
+            "options": [
+                "FEATURE",
+                "POSSESS",
+                "MAKE",
+                "LACK"
+            ],
+            "gradientScale": [
+                "HAVE",
+                "HAVE actively",
+                "neither",
+                "beginning to lack",
+                "LACK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L105_Q2",
+            "word": "STRANGE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Consider a word that means within normal everyday experience.",
+            "explanation": "While strange means being definitely out of the ordinary and unexpected, familiar means the opposite: within normal everyday experience.",
+            "interactionType": "search",
+            "correctAnswer": "FAMILIAR",
+            "options": [
+                "UNUSUAL",
+                "FOREIGN",
+                "FAMILIAR",
+                "UNKNOWN"
+            ],
+            "gradientScale": [
+                "STRANGE",
+                "extremely STRANGE",
+                "balanced",
+                "slightly FAMILIAR",
+                "FAMILIAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L105_Q3",
+            "word": "KNOW",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Look for a word meaning to be ignorant of or in the dark about.",
+            "explanation": "Know refers to be cognizant or aware of a fact or a specific piece of information. Ignore, by contrast, means be ignorant of or in the dark about.",
+            "interactionType": "search",
+            "correctAnswer": "IGNORE",
+            "options": [
+                "COGNIZE",
+                "BONK",
+                "BANG",
+                "IGNORE"
+            ],
+            "gradientScale": [
+                "KNOW",
+                "KNOW clearly",
+                "undecided",
+                "starting to ignore",
+                "IGNORE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L106_Q1",
+            "word": "ADVANCE",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Search for a word meaning to cause to travel backward.",
+            "explanation": "Advance means cause to move forward; back means cause to travel backward.",
+            "interactionType": "search",
+            "correctAnswer": "BACK",
+            "options": [
+                "ELEVATE",
+                "GAIN",
+                "BACK",
+                "SUPERCHARGE"
+            ],
+            "gradientScale": [
+                "ADVANCE",
+                "ADVANCE actively",
+                "neither",
+                "partly back",
+                "BACK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L106_Q2",
+            "word": "EMPTY",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Look for a word meaning to become full.",
+            "explanation": "Empty refers to become empty or void of its content. Fill, by contrast, means become full.",
+            "interactionType": "search",
+            "correctAnswer": "FILL",
+            "options": [
+                "FILL",
+                "DISCHARGE",
+                "EVACUATE",
+                "VOID"
+            ],
+            "gradientScale": [
+                "EMPTY",
+                "EMPTY clearly",
+                "in between",
+                "beginning to fill",
+                "FILL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L106_Q3",
+            "word": "HEAD",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Try to recall a word that means the reverse side of a coin that does not bear the representation of a person's head.",
+            "explanation": "While head means the obverse side of a coin that usually bears the representation of a person's head, tail means the opposite: the reverse side of a coin that does not bear the representation of a person's head.",
+            "interactionType": "search",
+            "correctAnswer": "TAIL",
+            "options": [
+                "HEADWAY",
+                "CHIEF",
+                "TAIL",
+                "POINT"
+            ],
+            "gradientScale": [
+                "HEAD",
+                "pure HEAD",
+                "mixed",
+                "a trace of tail",
+                "TAIL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L107_Q1",
+            "word": "TALL",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Consider a word that means low in stature.",
+            "explanation": "Tall means great in vertical dimension — the reverse idea is low in stature, which is what short means.",
+            "interactionType": "search",
+            "correctAnswer": "SHORT",
+            "options": [
+                "SHORT",
+                "MARVELOUS",
+                "GRANDILOQUENT",
+                "MAGNILOQUENT"
+            ],
+            "gradientScale": [
+                "TALL",
+                "very TALL",
+                "average",
+                "fairly SHORT",
+                "SHORT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L107_Q2",
+            "word": "LOOSE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Try to recall a word that means closely constrained or constricted or constricting.",
+            "explanation": "To be loose is to be not tight. Tight means closely constrained or constricted or constricting, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "TIGHT",
+            "options": [
+                "INFORMAL",
+                "PROMISCUOUS",
+                "TIGHT",
+                "LAX"
+            ],
+            "gradientScale": [
+                "LOOSE",
+                "extremely LOOSE",
+                "balanced",
+                "fairly TIGHT",
+                "TIGHT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L107_Q3",
+            "word": "LOWER",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "This word means to raise from a lower to a higher position.",
+            "explanation": "Lower means move something or somebody to a lower position, so its opposite, raise, means raise from a lower to a higher position.",
+            "interactionType": "search",
+            "correctAnswer": "RAISE",
+            "options": [
+                "DEPRESS",
+                "LOUR",
+                "GLOWER",
+                "RAISE"
+            ],
+            "gradientScale": [
+                "LOWER",
+                "LOWER completely",
+                "in between",
+                "starting to raise",
+                "RAISE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L108_Q1",
+            "word": "FREE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means tied down or restricted by duty or obligation.",
+            "explanation": "Free means not restricted or held down by anything, so its opposite, bound, means tied down or restricted by duty or obligation.",
+            "interactionType": "search",
+            "correctAnswer": "BOUND",
+            "options": [
+                "SPARE",
+                "GRATUITOUS",
+                "BOUND",
+                "DESTITUTE"
+            ],
+            "gradientScale": [
+                "FREE",
+                "extremely FREE",
+                "neutral",
+                "fairly BOUND",
+                "BOUND"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L108_Q2",
+            "word": "REFUSE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Look for a word meaning to give an affirmative reply to.",
+            "explanation": "Refuse means show unwillingness towards — the reverse idea is give an affirmative reply to, which is what accept means.",
+            "interactionType": "search",
+            "correctAnswer": "ACCEPT",
+            "options": [
+                "DECLINE",
+                "DEFY",
+                "RESIST",
+                "ACCEPT"
+            ],
+            "gradientScale": [
+                "REFUSE",
+                "REFUSE fully",
+                "in between",
+                "starting to accept",
+                "ACCEPT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L108_Q3",
+            "word": "LIKE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Consider a word that means marked by dissimilarity.",
+            "explanation": "Like describes resembling or similar, while unlike describes marked by dissimilarity.",
+            "interactionType": "search",
+            "correctAnswer": "UNLIKE",
+            "options": [
+                "UNLIKE",
+                "SIMILAR",
+                "SAME",
+                "ALIKE"
+            ],
+            "gradientScale": [
+                "LIKE",
+                "extremely LIKE",
+                "neutral",
+                "a little UNLIKE",
+                "UNLIKE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L109_Q1",
+            "word": "DISTANT",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Consider a word that means at or within a short distance in space or time or having elements near each other.",
+            "explanation": "Distant describes separated in space or coming from or going to a distance, while close describes at or within a short distance in space or time or having elements near each other.",
+            "interactionType": "search",
+            "correctAnswer": "CLOSE",
+            "options": [
+                "ALOOF",
+                "CLOSE",
+                "REMOVED",
+                "UPSTAGE"
+            ],
+            "gradientScale": [
+                "DISTANT",
+                "extremely DISTANT",
+                "average",
+                "fairly CLOSE",
+                "CLOSE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L109_Q2",
+            "word": "SPOKEN",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "What word fits the idea of being set down in writing in any of various ways?",
+            "explanation": "Spoken refers to uttered through the medium of speech or characterized by speech. Written, by contrast, means set down in writing in any of various ways.",
+            "interactionType": "search",
+            "correctAnswer": "WRITTEN",
+            "options": [
+                "WRITTEN",
+                "NEUROTIC",
+                "JEWELER",
+                "SKATER"
+            ],
+            "gradientScale": [
+                "SPOKEN",
+                "truly SPOKEN",
+                "neutral",
+                "a little WRITTEN",
+                "WRITTEN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L109_Q3",
+            "word": "FAT",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Think about a word meaning lacking excess flesh.",
+            "explanation": "Fat means having an (over)abundance of flesh; thin means lacking excess flesh.",
+            "interactionType": "search",
+            "correctAnswer": "THIN",
+            "options": [
+                "FERTILE",
+                "PRODUCTIVE",
+                "THIN",
+                "JUICY"
+            ],
+            "gradientScale": [
+                "FAT",
+                "highly FAT",
+                "moderate",
+                "mildly THIN",
+                "THIN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L110_Q1",
+            "word": "DENY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Look for a word meaning to let have.",
+            "explanation": "Deny refers to refuse to let have. Allow, by contrast, means let have.",
+            "interactionType": "search",
+            "correctAnswer": "ALLOW",
+            "options": [
+                "REFUSE",
+                "ALLOW",
+                "ABNEGATE",
+                "TRAVERSE"
+            ],
+            "gradientScale": [
+                "DENY",
+                "DENY actively",
+                "in between",
+                "beginning to allow",
+                "ALLOW"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L110_Q2",
+            "word": "NATURAL",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Consider a word that means raised in pitch by one chromatic semitone.",
+            "explanation": "Natural refers to being neither raised nor lowered by one chromatic semitone. Sharp, by contrast, means raised in pitch by one chromatic semitone.",
+            "interactionType": "search",
+            "correctAnswer": "SHARP",
+            "options": [
+                "LIFELIKE",
+                "INNATE",
+                "BORN",
+                "SHARP"
+            ],
+            "gradientScale": [
+                "NATURAL",
+                "highly NATURAL",
+                "in between",
+                "slightly SHARP",
+                "SHARP"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L110_Q3",
+            "word": "NATIONAL",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Think about a word meaning concerning or belonging to all or at least two or more nations.",
+            "explanation": "To be national is to be limited to or in the interests of a particular nation. International means concerning or belonging to all or at least two or more nations, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "INTERNATIONAL",
+            "options": [
+                "INTERNATIONAL",
+                "INTERIOR",
+                "INTERNAL",
+                "HOME"
+            ],
+            "gradientScale": [
+                "NATIONAL",
+                "truly NATIONAL",
+                "moderate",
+                "fairly INTERNATIONAL",
+                "INTERNATIONAL"
+            ]
+        }
+    ]
+}

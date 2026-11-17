@@ -20,6 +20,7 @@ class QuestBriefingOverlay extends StatefulWidget {
   final IconData icon;
   final Color primaryColor;
   final VoidCallback onStart;
+  final String? phaseBadge;
 
   const QuestBriefingOverlay({
     super.key,
@@ -31,6 +32,7 @@ class QuestBriefingOverlay extends StatefulWidget {
     required this.icon,
     required this.primaryColor,
     required this.onStart,
+    this.phaseBadge,
   });
 
   @override
@@ -199,6 +201,40 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                   ),
 
                                   SizedBox(height: 24.h),
+
+                                  if (widget.phaseBadge != null) ...[
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 3.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          12.r,
+                                        ),
+                                        border: Border.all(
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        widget.phaseBadge!,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: widget.primaryColor,
+                                          letterSpacing: 1.2,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 8.h),
+                                  ],
 
                                   // Category label
                                   Text(

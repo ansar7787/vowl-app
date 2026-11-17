@@ -1,0 +1,654 @@
+{
+    "gameType": "contextClues",
+    "phase": "mastery",
+    "batchIndex": 13,
+    "levels": "121-130",
+    "quests": [
+        {
+            "word": "OBFUSCATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L121_Q1",
+            "sentence": "The company's lawyers seemed to [TARGET], or obscure, the actual terms of the contract by burying them in twenty pages of dense legal jargon.",
+            "hint": "This word means to make something deliberately unclear or hard to understand.",
+            "options": [
+                "Obscure",
+                "Clarify",
+                "Simplify",
+                "Explain"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'obscure,' so [TARGET] means OBSCURE.",
+            "correctAnswer": "Obscure",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or obscure",
+                "twenty pages of dense legal jargon"
+            ]
+        },
+        {
+            "word": "PERSPICACIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L121_Q2",
+            "sentence": "Unlike the other investors who missed every warning sign, the [TARGET] analyst noticed the tiny inconsistency in the earnings report months before the company collapsed.",
+            "hint": "This word describes having keen insight and the ability to notice what others miss.",
+            "options": [
+                "Oblivious",
+                "Perceptive",
+                "Clueless",
+                "Unobservant"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with investors 'who missed every warning sign,' so it must mean the opposite, which is PERCEPTIVE.",
+            "correctAnswer": "Perceptive",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "missed every warning sign",
+                "months before the company collapsed"
+            ]
+        },
+        {
+            "word": "OBSTREPEROUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L121_Q3",
+            "sentence": "The toddler grew [TARGET] in the checkout line, which means he became loudly unruly, screaming and kicking his legs against the cart.",
+            "hint": "This word describes being noisily and stubbornly difficult to control.",
+            "options": [
+                "Calm",
+                "Well-behaved",
+                "Unruly",
+                "Obedient"
+            ],
+            "explanation": "The sentence defines [TARGET] as becoming 'loudly unruly, screaming and kicking,' so [TARGET] means UNRULY.",
+            "correctAnswer": "Unruly",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "loudly unruly, screaming and kicking"
+            ]
+        },
+        {
+            "word": "PUSILLANIMOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L122_Q1",
+            "sentence": "The knight in the story was [TARGET]: he hid behind a rock during the battle, let his companions face the dragon alone, and ran at the first sign of danger.",
+            "hint": "This word describes someone lacking courage.",
+            "options": [
+                "Brave",
+                "Courageous",
+                "Fearless",
+                "Cowardly"
+            ],
+            "explanation": "Hiding behind a rock, letting companions face danger alone, and running at the first sign of trouble are all examples of cowardice, so [TARGET] means COWARDLY.",
+            "correctAnswer": "Cowardly",
+            "clueType": "example",
+            "evidenceWords": [
+                "hid behind a rock",
+                "let his companions face the dragon alone",
+                "ran at the first sign of danger"
+            ]
+        },
+        {
+            "word": "VORACIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L122_Q2",
+            "sentence": "She finished three novels in a single weekend, then immediately started a fourth, and kept a stack of at least ten unread books by her bed at all times — a truly [TARGET] reader.",
+            "hint": "This word describes having an extremely eager and seemingly endless appetite for something.",
+            "options": [
+                "Insatiable",
+                "Reluctant",
+                "Occasional",
+                "Unwilling"
+            ],
+            "explanation": "Finishing three novels in a weekend, starting a fourth immediately, and keeping ten unread books ready all show an endless appetite for reading, even without a direct clue word, so [TARGET] means INSATIABLE.",
+            "correctAnswer": "Insatiable",
+            "clueType": "inference",
+            "evidenceWords": [
+                "finished three novels in a single weekend",
+                "immediately started a fourth",
+                "stack of at least ten unread books"
+            ]
+        },
+        {
+            "word": "SURREPTITIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L122_Q3",
+            "sentence": "He took a [TARGET] and secretive glance at his phone under the table, hoping the teacher wouldn't notice.",
+            "hint": "This word describes doing something secretly, trying not to be seen or noticed.",
+            "options": [
+                "Open",
+                "Secretive",
+                "Obvious",
+                "Public"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'secretive,' and hoping the teacher wouldn't notice confirms it, so [TARGET] means SECRETIVE.",
+            "correctAnswer": "Secretive",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and secretive glance",
+                "hoping the teacher wouldn't notice"
+            ]
+        },
+        {
+            "word": "INCORRIGIBLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L123_Q1",
+            "sentence": "Unlike his classmates, who changed their behavior after just one warning, the [TARGET] troublemaker had been sent to the principal's office eleven times and showed no sign of ever changing.",
+            "hint": "This word describes being impossible to correct or reform, no matter how many times someone tries.",
+            "options": [
+                "Reformed",
+                "Well-behaved",
+                "Unreformable",
+                "Obedient"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with classmates who 'changed their behavior after just one warning,' so it must mean the opposite, which is UNREFORMABLE.",
+            "correctAnswer": "Unreformable",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "changed their behavior after just one warning",
+                "showed no sign of ever changing"
+            ]
+        },
+        {
+            "word": "PROPITIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L123_Q2",
+            "sentence": "The fortune teller declared the timing [TARGET] for starting a new business, which means the conditions were especially favorable and likely to lead to success.",
+            "hint": "This word describes conditions that work in your favor, especially for a particular purpose.",
+            "options": [
+                "Unfavorable",
+                "Disastrous",
+                "Doomed",
+                "Favorable"
+            ],
+            "explanation": "The sentence defines [TARGET] as conditions 'especially favorable and likely to lead to success,' so [TARGET] means FAVORABLE.",
+            "correctAnswer": "Favorable",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "especially favorable"
+            ]
+        },
+        {
+            "word": "INEXORABLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L123_Q3",
+            "sentence": "The glacier's advance was [TARGET]: no wall could stop it, no amount of pleading changed its course, and it had crushed three villages already without slowing down once.",
+            "hint": "This word describes something that cannot be stopped or persuaded to change course.",
+            "options": [
+                "Unstoppable",
+                "Reversible",
+                "Stoppable",
+                "Preventable"
+            ],
+            "explanation": "No wall stopping it, no pleading changing its course, and crushing three villages without slowing are all examples of something unstoppable, so [TARGET] means UNSTOPPABLE.",
+            "correctAnswer": "Unstoppable",
+            "clueType": "example",
+            "evidenceWords": [
+                "no wall could stop it",
+                "no amount of pleading changed its course",
+                "crushed three villages already"
+            ]
+        },
+        {
+            "word": "INTRANSIGENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L124_Q1",
+            "sentence": "Both sides brought new offers to every single meeting for six months, but one negotiator repeated the exact same demand word for word each time, never moving an inch — utterly [TARGET] on every point.",
+            "hint": "This word describes refusing to compromise or change one's position at all.",
+            "options": [
+                "Flexible",
+                "Uncompromising",
+                "Agreeable",
+                "Accommodating"
+            ],
+            "explanation": "Repeating the exact same demand for six months without moving an inch, despite new offers, shows a total refusal to compromise, even without a direct clue word, so [TARGET] means UNCOMPROMISING.",
+            "correctAnswer": "Uncompromising",
+            "clueType": "inference",
+            "evidenceWords": [
+                "repeated the exact same demand word for word",
+                "never moving an inch"
+            ]
+        },
+        {
+            "word": "PARAGON",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L124_Q2",
+            "sentence": "The old librarian was considered a [TARGET], or model, of patience, never once raising her voice in forty years of working with rowdy schoolchildren.",
+            "hint": "This word describes a perfect example of a particular quality.",
+            "options": [
+                "Failure",
+                "Opposite",
+                "Model",
+                "Disgrace"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'model,' so [TARGET] means MODEL.",
+            "correctAnswer": "Model",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or model",
+                "forty years of working with rowdy schoolchildren"
+            ]
+        },
+        {
+            "word": "PERIPATETIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L124_Q3",
+            "sentence": "Unlike her sister, who had lived in the same house her entire life, Elena was [TARGET], moving to a new country every year or two and never staying anywhere long.",
+            "hint": "This word describes traveling from place to place, not settled in one location.",
+            "options": [
+                "Settled",
+                "Stationary",
+                "Rooted",
+                "Wandering"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a sister who 'lived in the same house her entire life,' so it must mean the opposite, which is WANDERING.",
+            "correctAnswer": "Wandering",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "lived in the same house her entire life",
+                "moving to a new country every year or two"
+            ]
+        },
+        {
+            "word": "PRECOCIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L125_Q1",
+            "sentence": "The [TARGET] six-year-old was already reading chapter books and solving basic algebra, which means she was developing far more advanced skills than usual for her age.",
+            "hint": "This word describes a child developing abilities much earlier than typical for their age.",
+            "options": [
+                "Advanced for her age",
+                "Behind for her age",
+                "Delayed",
+                "Slow to develop"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'developing far more advanced skills than usual for her age,' so [TARGET] means ADVANCED FOR HER AGE.",
+            "correctAnswer": "Advanced for her age",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "far more advanced skills than usual for her age"
+            ]
+        },
+        {
+            "word": "PROSAIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L125_Q2",
+            "sentence": "His description of the sunset was [TARGET]: 'The sky turned orange, then it got dark.' Nothing more, nothing poetic, just the plain facts.",
+            "hint": "This word describes writing or speech that is unimaginative, lacking poetic flair.",
+            "options": [
+                "Poetic",
+                "Plain",
+                "Vivid",
+                "Lyrical"
+            ],
+            "explanation": "A description with no imagery beyond 'the sky turned orange, then it got dark' is an example of plain, unimaginative language, so [TARGET] means PLAIN.",
+            "correctAnswer": "Plain",
+            "clueType": "example",
+            "evidenceWords": [
+                "The sky turned orange, then it got dark",
+                "Nothing more, nothing poetic"
+            ]
+        },
+        {
+            "word": "RECONDITE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L125_Q3",
+            "sentence": "Even the other professors in the department needed a dictionary of specialized terms to follow his lecture on quantum field theory, and half the room admitted afterward they hadn't understood a single slide — the material was simply too [TARGET] for most listeners.",
+            "hint": "This word describes something so specialized it's difficult for most people to understand.",
+            "options": [
+                "Basic",
+                "Accessible",
+                "Obscure",
+                "Simple"
+            ],
+            "explanation": "Even professors needing a specialized dictionary and half the room not understanding a single slide show material that is extremely difficult to grasp, even without a direct clue word, so [TARGET] means OBSCURE.",
+            "correctAnswer": "Obscure",
+            "clueType": "inference",
+            "evidenceWords": [
+                "needed a dictionary of specialized terms",
+                "hadn't understood a single slide"
+            ]
+        },
+        {
+            "word": "SALUBRIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L126_Q1",
+            "sentence": "The mountain air was [TARGET] and healthful, said to cure everything from headaches to poor sleep, according to the resort's brochure.",
+            "hint": "This word describes something that is good for your health.",
+            "options": [
+                "Toxic",
+                "Harmful",
+                "Unhealthy",
+                "Healthful"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'healthful,' and curing headaches and poor sleep confirms it, so [TARGET] means HEALTHFUL.",
+            "correctAnswer": "Healthful",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and healthful",
+                "cure everything from headaches"
+            ]
+        },
+        {
+            "word": "SOPORIFIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L126_Q2",
+            "sentence": "Unlike the upbeat pop song that had everyone dancing, the slow droning lecture was [TARGET], putting half the room to sleep within ten minutes.",
+            "hint": "This word describes something that makes you feel drowsy or induces sleep.",
+            "options": [
+                "Sleep-inducing",
+                "Energizing",
+                "Invigorating",
+                "Stimulating"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with an 'upbeat pop song that had everyone dancing,' so it must mean the opposite, which is SLEEP-INDUCING.",
+            "correctAnswer": "Sleep-inducing",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "upbeat pop song that had everyone dancing",
+                "putting half the room to sleep"
+            ]
+        },
+        {
+            "word": "TEMERITY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L126_Q3",
+            "sentence": "He had the [TARGET] to correct his boss's math in front of the entire board meeting, which means he showed reckless boldness in a situation that called for caution.",
+            "hint": "This word describes excessive boldness or a reckless disregard for danger or consequences.",
+            "options": [
+                "Careful caution",
+                "Reckless boldness",
+                "Timidity",
+                "Hesitation"
+            ],
+            "explanation": "The sentence defines [TARGET] as showing 'reckless boldness in a situation that called for caution,' so [TARGET] means RECKLESS BOLDNESS.",
+            "correctAnswer": "Reckless boldness",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "reckless boldness"
+            ]
+        },
+        {
+            "word": "TORPID",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L127_Q1",
+            "sentence": "After the enormous Thanksgiving dinner, the whole family was [TARGET]: sprawled across the couches, eyes half-closed, no one able to summon the energy to clear a single plate.",
+            "hint": "This word describes being inactive, lacking the energy to move.",
+            "options": [
+                "Energetic",
+                "Lively",
+                "Sluggish",
+                "Active"
+            ],
+            "explanation": "Sprawling across couches, half-closed eyes, and not clearing plates are all examples of a lack of energy, so [TARGET] means SLUGGISH.",
+            "correctAnswer": "Sluggish",
+            "clueType": "example",
+            "evidenceWords": [
+                "sprawled across the couches",
+                "eyes half-closed",
+                "no one able to summon the energy"
+            ]
+        },
+        {
+            "word": "BRAZEN",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L127_Q2",
+            "sentence": "The thief walked into the store in broad daylight, filled a cart with electronics in full view of three security cameras, and strolled out the front door waving at the cashier — an almost unbelievably [TARGET] act.",
+            "hint": "This word describes being shockingly bold, without any fear of consequences.",
+            "options": [
+                "Timid",
+                "Cautious",
+                "Discreet",
+                "Shameless"
+            ],
+            "explanation": "Stealing in broad daylight in front of cameras and waving at the cashier on the way out shows shocking boldness without shame, even without a direct clue word, so [TARGET] means SHAMELESS.",
+            "correctAnswer": "Shameless",
+            "clueType": "inference",
+            "evidenceWords": [
+                "in broad daylight",
+                "in full view of three security cameras",
+                "waving at the cashier"
+            ]
+        },
+        {
+            "word": "VACILLATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L127_Q3",
+            "sentence": "For weeks she would [TARGET], or waver, between accepting the new job and staying at her current one, changing her mind almost daily.",
+            "hint": "This word means to go back and forth between different opinions or decisions, unable to settle.",
+            "options": [
+                "Waver",
+                "Commit",
+                "Decide firmly",
+                "Settle"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'waver,' so [TARGET] means WAVER.",
+            "correctAnswer": "Waver",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or waver",
+                "changing her mind almost daily"
+            ]
+        },
+        {
+            "word": "VERACITY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L128_Q1",
+            "sentence": "Unlike the tabloid's history of fabricated stories, the newspaper's [TARGET] was well established, with every fact checked and every source verified before publication.",
+            "hint": "This word describes accuracy and honesty, especially a reputation for telling the truth.",
+            "options": [
+                "Dishonesty",
+                "Truthfulness",
+                "Falseness",
+                "Deceit"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a tabloid's 'history of fabricated stories,' so it must mean the opposite, which is TRUTHFULNESS.",
+            "correctAnswer": "Truthfulness",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "fabricated stories",
+                "every fact checked and every source verified"
+            ]
+        },
+        {
+            "word": "VITRIOLIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L128_Q2",
+            "sentence": "The critic's [TARGET] review tore the film apart, which means it was bitterly harsh and cruel, using language designed to wound rather than simply critique.",
+            "hint": "This word describes something extremely bitter and full of hatred, especially in speech or writing.",
+            "options": [
+                "Gentle",
+                "Kind",
+                "Harsh",
+                "Complimentary"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'bitterly harsh and cruel... designed to wound,' so [TARGET] means HARSH.",
+            "correctAnswer": "Harsh",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "bitterly harsh and cruel"
+            ]
+        },
+        {
+            "word": "WHEEDLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L128_Q3",
+            "sentence": "The little boy managed to [TARGET] a second cookie out of his grandmother: he complimented her baking, gave her his best puppy-dog eyes, and promised to clean his room without being asked.",
+            "hint": "This word means to persuade someone through flattery and gentle pressure.",
+            "options": [
+                "Demand",
+                "Order",
+                "Threaten",
+                "Coax"
+            ],
+            "explanation": "Complimenting her baking, using puppy-dog eyes, and making a promise are all examples of persuading through flattery, so [TARGET] means COAX.",
+            "correctAnswer": "Coax",
+            "clueType": "example",
+            "evidenceWords": [
+                "complimented her baking",
+                "puppy-dog eyes",
+                "promised to clean his room"
+            ]
+        },
+        {
+            "word": "ACRIMONIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L129_Q1",
+            "sentence": "By the end of the divorce proceedings, the two former partners were no longer speaking directly to each other, communicating only through lawyers, and each accused the other of lying under oath — the split had become deeply [TARGET].",
+            "hint": "This word describes hostility and anger, especially in a dispute or argument.",
+            "options": [
+                "Bitter",
+                "Friendly",
+                "Amicable",
+                "Cordial"
+            ],
+            "explanation": "Refusing to speak directly, communicating only through lawyers, and accusing each other of lying all show a bitter, angry dispute, even without a direct clue word, so [TARGET] means BITTER.",
+            "correctAnswer": "Bitter",
+            "clueType": "inference",
+            "evidenceWords": [
+                "no longer speaking directly to each other",
+                "communicating only through lawyers",
+                "accused the other of lying under oath"
+            ]
+        },
+        {
+            "word": "BREVITY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L129_Q2",
+            "sentence": "The editor praised the article's [TARGET] and shortness, noting that it made every single point in under three hundred words.",
+            "hint": "This word describes the quality of being brief and to the point.",
+            "options": [
+                "Length",
+                "Shortness",
+                "Wordiness",
+                "Excess"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'shortness,' and making every point in under three hundred words confirms it, so [TARGET] means SHORTNESS.",
+            "correctAnswer": "Shortness",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and shortness",
+                "under three hundred words"
+            ]
+        },
+        {
+            "word": "CIRCUMSPECT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L129_Q3",
+            "sentence": "Unlike the reckless investor who put his entire savings into a single unproven stock, she was [TARGET], researching every option for months and never risking more than she could afford to lose.",
+            "hint": "This word describes being careful, thinking through all possible consequences before acting.",
+            "options": [
+                "Reckless",
+                "Careless",
+                "Cautious",
+                "Impulsive"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'reckless investor,' so it must mean the opposite, which is CAUTIOUS.",
+            "correctAnswer": "Cautious",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "reckless investor",
+                "researching every option for months"
+            ]
+        },
+        {
+            "word": "DERIVATIVE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L130_Q1",
+            "sentence": "Critics called the new film [TARGET], which means it borrowed so heavily from other movies that it felt unoriginal, like a copy rather than something new.",
+            "hint": "This word describes something that isn't original because it copies or is based on other existing work.",
+            "options": [
+                "Groundbreaking",
+                "Innovative",
+                "Original",
+                "Unoriginal"
+            ],
+            "explanation": "The sentence defines [TARGET] as borrowing 'heavily from other movies' and feeling 'unoriginal,' so [TARGET] means UNORIGINAL.",
+            "correctAnswer": "Unoriginal",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "borrowed so heavily",
+                "unoriginal, like a copy"
+            ]
+        },
+        {
+            "word": "EPHEMERAL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L130_Q2",
+            "sentence": "The mayfly's life was [TARGET]: it hatched at dawn, flew and mated through the afternoon, and was dead again by nightfall, all within a single day.",
+            "hint": "This word describes something that lasts for only a very short time.",
+            "options": [
+                "Short-lived",
+                "Everlasting",
+                "Permanent",
+                "Enduring"
+            ],
+            "explanation": "Hatching at dawn and dying by nightfall, all within a single day, is an example of something lasting a very short time, so [TARGET] means SHORT-LIVED.",
+            "correctAnswer": "Short-lived",
+            "clueType": "example",
+            "evidenceWords": [
+                "hatched at dawn",
+                "dead again by nightfall",
+                "within a single day"
+            ]
+        },
+        {
+            "word": "FORBEARANCE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L130_Q3",
+            "sentence": "Even after her toddler spilled juice on the new carpet, drew on the wall with crayon, and woke her up four times that night, she took a breath, hugged him, and calmly cleaned up without raising her voice once — a remarkable show of [TARGET].",
+            "hint": "This word describes patient self-control and restraint, especially when provoked.",
+            "options": [
+                "Rage",
+                "Patience",
+                "Impatience",
+                "Outburst"
+            ],
+            "explanation": "Staying calm and not raising her voice despite spilled juice, crayon on the wall, and interrupted sleep all show patient restraint, even without a direct clue word, so [TARGET] means PATIENCE.",
+            "correctAnswer": "Patience",
+            "clueType": "inference",
+            "evidenceWords": [
+                "spilled juice on the new carpet",
+                "drew on the wall with crayon",
+                "calmly cleaned up without raising her voice"
+            ]
+        }
+    ]
+}

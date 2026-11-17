@@ -136,7 +136,8 @@ abstract class QuestRegistry {
   ///
   /// Batch size is 10 levels (30 questions) per file.
   /// Uses a constant O(1) mathematical index mapping to locate boundaries instantly.
-  static String getAssetPath(String gameType, int level) {
+  /// Optional [phase] specifies 'learn', 'practice', or 'test'. If null, returns the base batch path.
+  static String getAssetPath(String gameType, int level, {String? phase}) {
     final category = gameToCategory[gameType];
     if (category == null) {
       throw ValidationException(
@@ -149,6 +150,10 @@ abstract class QuestRegistry {
     final batchIndex = ((level - 1) ~/ 10) + 1;
     final startLevel = (batchIndex - 1) * 10 + 1;
     final endLevel = batchIndex * 10;
+
+    if (phase != null) {
+      return 'assets/curriculum/$category/${gameType}_${phase}_${startLevel}_$endLevel.json';
+    }
 
     return 'assets/curriculum/$category/${gameType}_${startLevel}_$endLevel.json';
   }

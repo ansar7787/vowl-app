@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
@@ -29,11 +30,15 @@ class SynonymSearchScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 functions as an optional Bonus XP Arena (skipping does not lose lives).
+  final bool isBonusStage;
+
   /// Creates a [SynonymSearchScreen] instance.
   const SynonymSearchScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.synonymSearch,
+    this.isBonusStage = false,
   });
 
   @override
@@ -803,27 +808,72 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 right: 16.w,
                                                 bottom: 24.h,
                                               ),
-                                              child: ContextSentenceBuilder(
-                                                targetKeyword:
-                                                    quest.correctAnswer ?? "",
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                acceptedKeywordForms:
-                                                    quest.synonyms ??
-                                                    [quest.correctAnswer ?? ""],
-                                                onConfirmed: () =>
-                                                    _submitVerbalEvaluation(
-                                                      true,
-                                                      quest,
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  if (widget.isBonusStage)
+                                                    Container(
+                                                      margin: EdgeInsets.only(bottom: 12.h),
+                                                      padding: EdgeInsets.symmetric(
+                                                        horizontal: 16.w,
+                                                        vertical: 8.h,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        color: AppColors.amber400.withValues(alpha: 0.15),
+                                                        borderRadius: BorderRadius.circular(16.r),
+                                                        border: Border.all(
+                                                          color: AppColors.amber400.withValues(alpha: 0.5),
+                                                          width: 1.2,
+                                                        ),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize: MainAxisSize.min,
+                                                        children: [
+                                                          Icon(
+                                                            Icons.bolt_rounded,
+                                                            color: AppColors.amber400,
+                                                            size: 20.r,
+                                                          ),
+                                                          SizedBox(width: 8.w),
+                                                          Flexible(
+                                                            child: Text(
+                                                              '⚡ BONUS XP ARENA: Compose a sentence for +25 XP, or tap Skip to bank your win!',
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                color: isDark
+                                                                    ? AppColors.amber200
+                                                                    : AppColors.amber900,
+                                                                fontWeight: FontWeight.w700,
+                                                                fontSize: 12.sp,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                onSkipped: () =>
-                                                    _submitVerbalEvaluation(
-                                                      false,
-                                                      quest,
-                                                    ),
-                                                isPositioned: false,
-                                                exampleSentence:
-                                                    quest.contextSentence,
+                                                  ContextSentenceBuilder(
+                                                    targetKeyword:
+                                                        quest.correctAnswer ?? "",
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    acceptedKeywordForms:
+                                                        quest.synonyms ??
+                                                        [quest.correctAnswer ?? ""],
+                                                    onConfirmed: () =>
+                                                        _submitVerbalEvaluation(
+                                                          true,
+                                                          quest,
+                                                        ),
+                                                    onSkipped: () =>
+                                                        _submitVerbalEvaluation(
+                                                          widget.isBonusStage,
+                                                          quest,
+                                                        ),
+                                                    isPositioned: false,
+                                                    exampleSentence:
+                                                        quest.contextSentence,
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),

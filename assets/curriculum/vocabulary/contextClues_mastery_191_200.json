@@ -1,0 +1,657 @@
+{
+    "gameType": "contextClues",
+    "phase": "mastery",
+    "batchIndex": 20,
+    "levels": "191-200",
+    "quests": [
+        {
+            "word": "OBLIVIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L191_Q1",
+            "sentence": "He was [TARGET] and unaware that his shoelace had been untied for the entire walk across campus, not noticing until a stranger pointed it out.",
+            "hint": "This word describes not noticing or being aware of something happening around you.",
+            "options": [
+                "Unaware",
+                "Alert",
+                "Watchful",
+                "Observant"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'unaware,' and not noticing the untied shoelace confirms it, so [TARGET] means UNAWARE.",
+            "correctAnswer": "Unaware",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and unaware",
+                "not noticing until a stranger pointed it out"
+            ]
+        },
+        {
+            "word": "PRESUMPTUOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L191_Q2",
+            "sentence": "Unlike her cautious coworker who always asked permission before touching anyone's desk, the new hire was [TARGET], rearranging the entire break room furniture without asking a single person first.",
+            "hint": "This word describes going beyond what is appropriate, acting with unearned confidence or entitlement.",
+            "options": [
+                "Cautious",
+                "Overstepping",
+                "Deferential",
+                "Respectful of boundaries"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a coworker who 'always asked permission,' so it must mean the opposite, which is OVERSTEPPING.",
+            "correctAnswer": "Overstepping",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "always asked permission before touching anyone's desk",
+                "without asking a single person first"
+            ]
+        },
+        {
+            "word": "SARDONIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L191_Q3",
+            "sentence": "His [TARGET] reply to the bad news, which means a mocking, dryly sarcastic comment meant to point out the absurdity of the situation, made even the manager crack a small smile.",
+            "hint": "This word describes a grimly mocking, sarcastic tone.",
+            "options": [
+                "Warmly sincere",
+                "Genuinely sympathetic",
+                "Mockingly sarcastic",
+                "Openly supportive"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'a mocking, dryly sarcastic comment,' so [TARGET] means MOCKINGLY SARCASTIC.",
+            "correctAnswer": "Mockingly sarcastic",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "mocking, dryly sarcastic comment"
+            ]
+        },
+        {
+            "word": "INDEFATIGABLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L192_Q1",
+            "sentence": "The marathon volunteer was [TARGET]: she had been handing out water cups for six straight hours in the heat, refused every offer to take a break, and was still smiling at mile twenty-five.",
+            "hint": "This word describes someone who never seems to tire, persisting endlessly.",
+            "options": [
+                "Exhausted",
+                "Worn out",
+                "Easily fatigued",
+                "Tireless"
+            ],
+            "explanation": "Handing out cups for six hours in the heat, refusing breaks, and still smiling at mile twenty-five are all examples of never tiring, so [TARGET] means TIRELESS.",
+            "correctAnswer": "Tireless",
+            "clueType": "example",
+            "evidenceWords": [
+                "handing out water cups for six straight hours",
+                "refused every offer to take a break",
+                "still smiling at mile twenty-five"
+            ]
+        },
+        {
+            "word": "INEFFABLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L192_Q2",
+            "sentence": "Standing at the rim of the canyon at sunrise, she tried three different times to describe the feeling to her friends back home, and each time the words came out flat and small compared to what she'd actually felt — it was simply [TARGET].",
+            "hint": "This word describes something too powerful or overwhelming to be expressed in words.",
+            "options": [
+                "Indescribable",
+                "Easily explained",
+                "Simple to describe",
+                "Ordinary"
+            ],
+            "explanation": "Trying three times to describe the feeling and each time falling short shows something beyond words, even without a direct clue word, so [TARGET] means INDESCRIBABLE.",
+            "correctAnswer": "Indescribable",
+            "clueType": "inference",
+            "evidenceWords": [
+                "tried three different times to describe the feeling",
+                "words came out flat and small compared to what she'd actually felt"
+            ]
+        },
+        {
+            "word": "SURFEIT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L192_Q3",
+            "sentence": "After the harvest, the farm had a [TARGET], or overabundance, of zucchini, so much that neighbors started leaving bags of it on each other's porches uninvited.",
+            "hint": "This word describes an excessive amount of something, more than is needed.",
+            "options": [
+                "Shortage",
+                "Overabundance",
+                "Scarcity",
+                "Deficiency"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'overabundance,' so [TARGET] means OVERABUNDANCE.",
+            "correctAnswer": "Overabundance",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or overabundance",
+                "bags of it on each other's porches uninvited"
+            ]
+        },
+        {
+            "word": "IMBROGLIO",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L193_Q1",
+            "sentence": "Unlike the simple, easily resolved scheduling mix-up from last month, the lawsuit turned into a full-blown [TARGET], with three companies, two law firms, and a dozen unresolved contracts all tangled together.",
+            "hint": "This word describes an extremely confused, complicated, and difficult situation.",
+            "options": [
+                "Simple matter",
+                "Easily resolved issue",
+                "Complicated mess",
+                "Minor mix-up"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'simple, easily resolved' mix-up, so it must mean the opposite, which is COMPLICATED MESS.",
+            "correctAnswer": "Complicated mess",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "simple, easily resolved scheduling mix-up",
+                "three companies, two law firms, and a dozen unresolved contracts"
+            ]
+        },
+        {
+            "word": "CATALYST",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L193_Q2",
+            "sentence": "The viral video became the [TARGET] for the movement, which means it was the specific spark that triggered a wave of change that might not have happened otherwise.",
+            "hint": "This word describes something that sets off a significant change or event.",
+            "options": [
+                "Obstacle",
+                "Delay",
+                "Conclusion",
+                "Trigger"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'the specific spark that triggered a wave of change,' so [TARGET] means TRIGGER.",
+            "correctAnswer": "Trigger",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "specific spark that triggered a wave of change"
+            ]
+        },
+        {
+            "word": "ABSTRUSE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L193_Q3",
+            "sentence": "The physics paper was [TARGET]: it used symbols that appeared in no other paper the reviewers had read, assumed knowledge of three separate advanced subfields at once, and took even the department head two full days to work through a single page.",
+            "hint": "This word describes something so complicated it's very hard to understand.",
+            "options": [
+                "Obscure and complex",
+                "Simple and clear",
+                "Easy to follow",
+                "Accessible"
+            ],
+            "explanation": "Unfamiliar symbols, assuming three advanced subfields at once, and taking the department head two days for one page are all examples of extreme difficulty, so [TARGET] means OBSCURE AND COMPLEX.",
+            "correctAnswer": "Obscure and complex",
+            "clueType": "example",
+            "evidenceWords": [
+                "symbols that appeared in no other paper",
+                "three separate advanced subfields at once",
+                "two full days to work through a single page"
+            ]
+        },
+        {
+            "word": "BELEAGUER",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L194_Q1",
+            "sentence": "For three straight weeks, the small business owner fielded a lawsuit, a burst pipe that flooded the storeroom, a key employee quitting without notice, and a health inspection that found five violations, all at the same time — problems seemed to [TARGET] her from every direction.",
+            "hint": "This word means to persistently trouble or harass someone with difficulties.",
+            "options": [
+                "Leave in peace",
+                "Besiege with problems",
+                "Protect from harm",
+                "Shield entirely"
+            ],
+            "explanation": "A lawsuit, a flood, a resignation, and a failed inspection all hitting at once over three weeks show being persistently troubled, even without a direct clue word, so [TARGET] means BESIEGE WITH PROBLEMS.",
+            "correctAnswer": "Besiege with problems",
+            "clueType": "inference",
+            "evidenceWords": [
+                "fielded a lawsuit",
+                "burst pipe that flooded the storeroom",
+                "key employee quitting without notice"
+            ]
+        },
+        {
+            "word": "CONTUMELY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L194_Q2",
+            "sentence": "The referee endured [TARGET] and scornful abuse from the crowd the entire game, with insults hurled at him from every section of the stadium.",
+            "hint": "This word describes scornful, insulting language or treatment.",
+            "options": [
+                "Warm applause",
+                "Genuine respect",
+                "Scornful abuse",
+                "Friendly encouragement"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'scornful abuse,' and insults hurled from every section confirm it, so [TARGET] means SCORNFUL ABUSE.",
+            "correctAnswer": "Scornful abuse",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and scornful abuse",
+                "insults hurled at him from every section"
+            ]
+        },
+        {
+            "word": "ELUCIDATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L194_Q3",
+            "sentence": "Unlike his first explanation, which left the class more confused than before, the teacher's second attempt managed to [TARGET] the concept, making every student in the room finally understand.",
+            "hint": "This word means to make something clear, to explain in a way that removes confusion.",
+            "options": [
+                "Obscure",
+                "Confuse further",
+                "Muddle",
+                "Clarify"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with an explanation that 'left the class more confused,' so it must mean the opposite, which is CLARIFY.",
+            "correctAnswer": "Clarify",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "left the class more confused than before",
+                "every student in the room finally understand"
+            ]
+        },
+        {
+            "word": "PERUSE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L195_Q1",
+            "sentence": "She sat down to [TARGET] the contract, which means she read through every clause slowly and carefully before signing anything.",
+            "hint": "This word means to read something thoroughly and carefully.",
+            "options": [
+                "Read carefully",
+                "Ignore completely",
+                "Throw away",
+                "Skip entirely"
+            ],
+            "explanation": "The sentence defines [TARGET] as reading 'through every clause slowly and carefully,' so [TARGET] means READ CAREFULLY.",
+            "correctAnswer": "Read carefully",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "read through every clause slowly and carefully"
+            ]
+        },
+        {
+            "word": "ADMONISH",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L195_Q2",
+            "sentence": "The coach chose to [TARGET] the player after practice: he pulled him aside privately, calmly explained exactly what he'd done wrong, and firmly reminded him of the team's rules.",
+            "hint": "This word means to firmly warn or correct someone, usually about their behavior.",
+            "options": [
+                "Congratulate",
+                "Reprimand",
+                "Reward",
+                "Praise"
+            ],
+            "explanation": "Pulling him aside, explaining what he did wrong, and firmly reminding him of the rules are all examples of a firm correction, so [TARGET] means REPRIMAND.",
+            "correctAnswer": "Reprimand",
+            "clueType": "example",
+            "evidenceWords": [
+                "pulled him aside privately",
+                "calmly explained exactly what he'd done wrong",
+                "firmly reminded him of the team's rules"
+            ]
+        },
+        {
+            "word": "SAPIENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L195_Q3",
+            "sentence": "The old judge listened to both sides without interrupting, asked exactly three questions that got straight to the heart of the dispute, and delivered a ruling so balanced that both lawyers nodded in respect — a truly [TARGET] decision.",
+            "hint": "This word describes showing great wisdom and sound judgment.",
+            "options": [
+                "Foolish",
+                "Reckless",
+                "Wise",
+                "Careless"
+            ],
+            "explanation": "Listening without interrupting, asking sharp questions, and delivering a balanced ruling that earned respect from both sides all show wisdom, even without a direct clue word, so [TARGET] means WISE.",
+            "correctAnswer": "Wise",
+            "clueType": "inference",
+            "evidenceWords": [
+                "listened to both sides without interrupting",
+                "asked exactly three questions that got straight to the heart of the dispute",
+                "both lawyers nodded in respect"
+            ]
+        },
+        {
+            "word": "EQUIVOCAL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L196_Q1",
+            "sentence": "His answer to the reporter's question was [TARGET] and ambiguous, worded so carefully that it could be interpreted as either a yes or a no.",
+            "hint": "This word describes language open to more than one interpretation, deliberately unclear.",
+            "options": [
+                "Direct",
+                "Unambiguous",
+                "Clear-cut",
+                "Ambiguous"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'ambiguous,' and the answer being interpretable as yes or no confirms it, so [TARGET] means AMBIGUOUS.",
+            "correctAnswer": "Ambiguous",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and ambiguous",
+                "could be interpreted as either a yes or a no"
+            ]
+        },
+        {
+            "word": "IRREVOCABLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L196_Q2",
+            "sentence": "Unlike the refundable ticket she'd bought for the earlier flight, this decision to sign the adoption papers was [TARGET], with absolutely no way to undo it once her signature was on the page.",
+            "hint": "This word describes something impossible to reverse or undo.",
+            "options": [
+                "Final",
+                "Refundable",
+                "Reversible",
+                "Undoable"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'refundable' ticket, so it must mean the opposite, which is FINAL.",
+            "correctAnswer": "Final",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "refundable ticket",
+                "absolutely no way to undo it"
+            ]
+        },
+        {
+            "word": "VACUOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L196_Q3",
+            "sentence": "The influencer's speech was [TARGET], which means it was completely empty of real substance, full of trendy buzzwords but saying nothing meaningful at all.",
+            "hint": "This word describes something lacking substance or genuine thought, empty-headed.",
+            "options": [
+                "Thoughtful",
+                "Empty of substance",
+                "Insightful",
+                "Substantive"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'completely empty of real substance... saying nothing meaningful,' so [TARGET] means EMPTY OF SUBSTANCE.",
+            "correctAnswer": "Empty of substance",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "completely empty of real substance",
+                "saying nothing meaningful at all"
+            ]
+        },
+        {
+            "word": "INSOUCIANT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L197_Q1",
+            "sentence": "Told that his flight had been canceled and he'd need to wait eight hours for the next one, he simply shrugged, ordered a coffee, and opened a book without a hint of frustration — remarkably [TARGET] about the whole situation.",
+            "hint": "This word describes a casual, easygoing lack of concern or worry.",
+            "options": [
+                "Panicked",
+                "Stressed",
+                "Carefree",
+                "Anxious"
+            ],
+            "explanation": "Shrugging, ordering coffee, and calmly opening a book after a canceled flight are all examples of a carefree lack of worry, so [TARGET] means CAREFREE.",
+            "correctAnswer": "Carefree",
+            "clueType": "example",
+            "evidenceWords": [
+                "simply shrugged",
+                "ordered a coffee, and opened a book",
+                "without a hint of frustration"
+            ]
+        },
+        {
+            "word": "VAPID",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L197_Q2",
+            "sentence": "Every line of the movie's dialogue seemed to be some version of 'life is what you make it' or 'just believe in yourself,' repeated with different actors saying the same hollow phrases for two hours — a script that felt utterly [TARGET].",
+            "hint": "This word describes something dull and offering nothing genuinely interesting or thoughtful.",
+            "options": [
+                "Thought-provoking",
+                "Original",
+                "Fresh",
+                "Insipid"
+            ],
+            "explanation": "Repeating the same hollow, generic phrases for two hours without anything genuinely thoughtful shows dull, empty content, even without a direct clue word, so [TARGET] means INSIPID.",
+            "correctAnswer": "Insipid",
+            "clueType": "inference",
+            "evidenceWords": [
+                "life is what you make it",
+                "just believe in yourself",
+                "same hollow phrases for two hours"
+            ]
+        },
+        {
+            "word": "INCONGRUOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L197_Q3",
+            "sentence": "The bright pink flamingo statue looked [TARGET] and out of place next to the somber gray gravestones in the historic cemetery.",
+            "hint": "This word describes something that clashes with its surroundings.",
+            "options": [
+                "Out of place",
+                "Fitting",
+                "Matching",
+                "Harmonious"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'out of place,' and the pink flamingo next to gray gravestones confirms it, so [TARGET] means OUT OF PLACE.",
+            "correctAnswer": "Out of place",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and out of place",
+                "next to the somber gray gravestones"
+            ]
+        },
+        {
+            "word": "IMPERTURBABLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L198_Q1",
+            "sentence": "Unlike his assistant, who was visibly shaking and sweating as the deadline approached, the CEO remained [TARGET], calmly sipping his coffee as if nothing unusual were happening at all.",
+            "hint": "This word describes staying calm and unbothered, especially under pressure.",
+            "options": [
+                "Shaking",
+                "Unshakable",
+                "Sweating with nerves",
+                "Visibly panicked"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with an assistant 'visibly shaking and sweating,' so it must mean the opposite, which is UNSHAKABLE.",
+            "correctAnswer": "Unshakable",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "visibly shaking and sweating",
+                "calmly sipping his coffee"
+            ]
+        },
+        {
+            "word": "OFFICIOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L198_Q2",
+            "sentence": "The new volunteer was [TARGET], which means he inserted himself into decisions that weren't his to make, bossily telling the actual staff how to do jobs he'd never done himself.",
+            "hint": "This word describes being annoyingly eager to assert authority you don't actually have.",
+            "options": [
+                "Appropriately deferential",
+                "Quietly helpful",
+                "Bossily meddlesome",
+                "Respectful of roles"
+            ],
+            "explanation": "The sentence defines [TARGET] as inserting himself into decisions 'that weren't his to make,' bossily telling staff what to do, so [TARGET] means BOSSILY MEDDLESOME.",
+            "correctAnswer": "Bossily meddlesome",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "inserted himself into decisions that weren't his to make",
+                "bossily telling the actual staff how to do jobs"
+            ]
+        },
+        {
+            "word": "PHILANTHROPIC",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L198_Q3",
+            "sentence": "The billionaire's [TARGET] efforts included funding a new children's hospital wing, donating scholarships to two hundred students a year, and building three libraries in underserved neighborhoods.",
+            "hint": "This word describes generous actions aimed at helping others.",
+            "options": [
+                "Self-serving",
+                "Profit-driven",
+                "Greedy",
+                "Charitable"
+            ],
+            "explanation": "Funding a hospital wing, donating scholarships, and building libraries are all examples of generous, charitable actions, so [TARGET] means CHARITABLE.",
+            "correctAnswer": "Charitable",
+            "clueType": "example",
+            "evidenceWords": [
+                "funding a new children's hospital wing",
+                "donating scholarships to two hundred students a year",
+                "building three libraries in underserved neighborhoods"
+            ]
+        },
+        {
+            "word": "PUERILE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L199_Q1",
+            "sentence": "During the important budget meeting, the two executives spent ten minutes arguing over whose stapler was better, made fart noises to interrupt each other, and eventually started throwing balled-up paper across the table — a shockingly [TARGET] display from two grown adults.",
+            "hint": "This word describes behavior that is silly and immature.",
+            "options": [
+                "Childish",
+                "Mature",
+                "Dignified",
+                "Professional"
+            ],
+            "explanation": "Arguing over staplers, making noises, and throwing paper during an important meeting are all examples of childishly silly behavior, even without a direct clue word, so [TARGET] means CHILDISH.",
+            "correctAnswer": "Childish",
+            "clueType": "inference",
+            "evidenceWords": [
+                "arguing over whose stapler was better",
+                "made fart noises to interrupt each other",
+                "throwing balled-up paper across the table"
+            ]
+        },
+        {
+            "word": "COSMOPOLITAN",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L199_Q2",
+            "sentence": "The city felt [TARGET] and worldly, with restaurants representing forty different countries, six languages spoken on a single subway car, and festivals celebrating cultures from every continent.",
+            "hint": "This word describes being familiar with and comfortable among many different cultures, sophisticated and international.",
+            "options": [
+                "Provincial",
+                "Worldly",
+                "Insular",
+                "Isolated"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'worldly,' and restaurants from forty countries and festivals from every continent confirm it, so [TARGET] means WORLDLY.",
+            "correctAnswer": "Worldly",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and worldly",
+                "festivals celebrating cultures from every continent"
+            ]
+        },
+        {
+            "word": "CONTRITE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L199_Q3",
+            "sentence": "Unlike the defendant who showed no remorse and smirked throughout the hearing, the second defendant was genuinely [TARGET], apologizing repeatedly and offering to pay for every dollar of the damage himself.",
+            "hint": "This word describes feeling and showing sincere regret for wrongdoing.",
+            "options": [
+                "Unrepentant",
+                "Smug",
+                "Remorseful",
+                "Indifferent"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a defendant who 'showed no remorse and smirked,' so it must mean the opposite, which is REMORSEFUL.",
+            "correctAnswer": "Remorseful",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "showed no remorse and smirked throughout the hearing",
+                "apologizing repeatedly"
+            ]
+        },
+        {
+            "word": "BENIGHTED",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L200_Q1",
+            "sentence": "The historian described the era as [TARGET], which means it was a time of widespread ignorance, before scientific understanding had reached most of the population.",
+            "hint": "This word describes a state of ignorance, lacking enlightenment or knowledge.",
+            "options": [
+                "Enlightened",
+                "Informed",
+                "Knowledgeable",
+                "Ignorant"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'a time of widespread ignorance,' so [TARGET] means IGNORANT.",
+            "correctAnswer": "Ignorant",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "time of widespread ignorance"
+            ]
+        },
+        {
+            "word": "INCULCATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L200_Q2",
+            "sentence": "The grandmother worked to [TARGET] good manners in her grandchildren: she reminded them to say please and thank you at every meal, corrected their table manners daily, and modeled polite behavior herself for years.",
+            "hint": "This word means to plant a value or habit in someone through repeated, persistent teaching.",
+            "options": [
+                "Instill",
+                "Erase",
+                "Discourage",
+                "Remove"
+            ],
+            "explanation": "Reminding them daily, correcting table manners, and modeling behavior for years are all examples of instilling a value through persistent teaching, so [TARGET] means INSTILL.",
+            "correctAnswer": "Instill",
+            "clueType": "example",
+            "evidenceWords": [
+                "reminded them to say please and thank you at every meal",
+                "corrected their table manners daily",
+                "modeled polite behavior herself for years"
+            ]
+        },
+        {
+            "word": "DISSEMBLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L200_Q3",
+            "sentence": "When asked directly if he'd eaten the last slice of cake, he suddenly became very interested in his shoes, mumbled something about 'maybe seeing someone near the fridge,' and changed the subject to the weather — clearly trying to [TARGET].",
+            "hint": "This word means to conceal your true feelings or intentions, often by being misleading.",
+            "options": [
+                "Confess openly",
+                "Hide the truth",
+                "Admit honestly",
+                "State plainly"
+            ],
+            "explanation": "Avoiding eye contact, vaguely blaming someone else, and changing the subject all show concealing the truth, even without a direct clue word, so [TARGET] means HIDE THE TRUTH.",
+            "correctAnswer": "Hide the truth",
+            "clueType": "inference",
+            "evidenceWords": [
+                "became very interested in his shoes",
+                "mumbled something about",
+                "changed the subject to the weather"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,998 @@
+{
+    "gameType": "contextClues",
+    "phase": "practice",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "VOC_CONTEXTCLUES_L1_PRAC_Q1",
+            "level": 1,
+            "word": "AMAZING",
+            "targetMeaning": "Wonderful",
+            "clueType": "definition",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'AMAZING' in this sentence?\n\n\"The magician's final trick was AMAZING — meaning it was truly wonderful — and the whole audience jumped up to cheer.\"",
+                    "options": [
+                        "Example Clue",
+                        "Definition Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'AMAZING' to other details.",
+                        "Correct! The sentence uses a definition clue to clarify 'AMAZING'.",
+                        "Not quite. Look closer at how the sentence connects 'AMAZING' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'AMAZING' precisely means _____.",
+                    "correctAnswer": "wonderful",
+                    "hint": "Recall the core deduced meaning (9 letters, starts with 'W').",
+                    "feedbackIfWrong": "The deduced meaning of 'AMAZING' in this context is 'Wonderful'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L1_PRAC_Q2",
+            "level": 1,
+            "word": "ENORMOUS",
+            "targetMeaning": "Huge",
+            "clueType": "synonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'ENORMOUS' in this sentence?\n\n\"The blue whale gliding past our boat was ENORMOUS; it was easily huge enough to be mistaken for a small island.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Synonym Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'ENORMOUS' to other details.",
+                        "Correct! The sentence uses a synonym clue to clarify 'ENORMOUS'.",
+                        "Not quite. Look closer at how the sentence connects 'ENORMOUS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'ENORMOUS' precisely means _____.",
+                    "correctAnswer": "huge",
+                    "hint": "Recall the core deduced meaning (4 letters, starts with 'H').",
+                    "feedbackIfWrong": "The deduced meaning of 'ENORMOUS' in this context is 'Huge'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L1_PRAC_Q3",
+            "level": 1,
+            "word": "DELICIOUS",
+            "targetMeaning": "Tasty",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'DELICIOUS' in this sentence?\n\n\"My grandmother's cooking is so DELICIOUS that people ask for her recipes, beg for extra helpings, and lick their plates clean.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Example Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'DELICIOUS' to other details.",
+                        "Correct! The sentence uses a example clue to clarify 'DELICIOUS'.",
+                        "Not quite. Look closer at how the sentence connects 'DELICIOUS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'DELICIOUS' precisely means _____.",
+                    "correctAnswer": "tasty",
+                    "hint": "Recall the core deduced meaning (5 letters, starts with 'T').",
+                    "feedbackIfWrong": "The deduced meaning of 'DELICIOUS' in this context is 'Tasty'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L2_PRAC_Q1",
+            "level": 2,
+            "word": "EXHAUSTED",
+            "targetMeaning": "Tired",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'EXHAUSTED' in this sentence?\n\n\"Before the race she felt full of energy, but by the finish line she was completely EXHAUSTED.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Synonym Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a antonym clue to clarify 'EXHAUSTED'.",
+                        "Not quite. Look closer at how the sentence connects 'EXHAUSTED' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'EXHAUSTED' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'EXHAUSTED' precisely means _____.",
+                    "correctAnswer": "tired",
+                    "hint": "Recall the core deduced meaning (5 letters, starts with 'T').",
+                    "feedbackIfWrong": "The deduced meaning of 'EXHAUSTED' in this context is 'Tired'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L2_PRAC_Q2",
+            "level": 2,
+            "word": "FURIOUS",
+            "targetMeaning": "Angry",
+            "clueType": "synonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'FURIOUS' in this sentence?\n\n\"Dad was FURIOUS and angry when he saw the dent in his brand-new car.\"",
+                    "options": [
+                        "Definition Clue",
+                        "Antonym Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'FURIOUS' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'FURIOUS' to other details.",
+                        "Correct! The sentence uses a synonym clue to clarify 'FURIOUS'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'FURIOUS' precisely means _____.",
+                    "correctAnswer": "angry",
+                    "hint": "Recall the core deduced meaning (5 letters, starts with 'A').",
+                    "feedbackIfWrong": "The deduced meaning of 'FURIOUS' in this context is 'Angry'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L2_PRAC_Q3",
+            "level": 2,
+            "word": "SPOTLESS",
+            "targetMeaning": "Clean",
+            "clueType": "definition",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'SPOTLESS' in this sentence?\n\n\"Before the guests arrived, she scrubbed every room until it was SPOTLESS, which means completely clean with not one speck of dirt.\"",
+                    "options": [
+                        "Definition Clue",
+                        "Inference Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a definition clue to clarify 'SPOTLESS'.",
+                        "Not quite. Look closer at how the sentence connects 'SPOTLESS' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'SPOTLESS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'SPOTLESS' precisely means _____.",
+                    "correctAnswer": "clean",
+                    "hint": "Recall the core deduced meaning (5 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'SPOTLESS' in this context is 'Clean'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L3_PRAC_Q1",
+            "level": 3,
+            "word": "ANCIENT",
+            "targetMeaning": "Old",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'ANCIENT' in this sentence?\n\n\"The museum case held ANCIENT treasures: a three-thousand-year-old vase, a crumbling stone tablet, and coins minted before written history began.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Inference Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'ANCIENT' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'ANCIENT' to other details.",
+                        "Correct! The sentence uses a example clue to clarify 'ANCIENT'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'ANCIENT' precisely means _____.",
+                    "correctAnswer": "old",
+                    "hint": "Recall the core deduced meaning (3 letters, starts with 'O').",
+                    "feedbackIfWrong": "The deduced meaning of 'ANCIENT' in this context is 'Old'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L3_PRAC_Q2",
+            "level": 3,
+            "word": "GENEROUS",
+            "targetMeaning": "Giving",
+            "clueType": "definition",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'GENEROUS' in this sentence?\n\n\"My uncle is GENEROUS, which means he is always willing to give and share what he has with others.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Definition Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'GENEROUS' to other details.",
+                        "Correct! The sentence uses a definition clue to clarify 'GENEROUS'.",
+                        "Not quite. Look closer at how the sentence connects 'GENEROUS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'GENEROUS' precisely means _____.",
+                    "correctAnswer": "giving",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'G').",
+                    "feedbackIfWrong": "The deduced meaning of 'GENEROUS' in this context is 'Giving'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L3_PRAC_Q3",
+            "level": 3,
+            "word": "POLITE",
+            "targetMeaning": "Respectful",
+            "clueType": "synonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'POLITE' in this sentence?\n\n\"The new student was POLITE and respectful, thanking the teacher and holding the door for classmates.\"",
+                    "options": [
+                        "Definition Clue",
+                        "Example Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'POLITE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'POLITE' to other details.",
+                        "Correct! The sentence uses a synonym clue to clarify 'POLITE'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'POLITE' precisely means _____.",
+                    "correctAnswer": "respectful",
+                    "hint": "Recall the core deduced meaning (10 letters, starts with 'R').",
+                    "feedbackIfWrong": "The deduced meaning of 'POLITE' in this context is 'Respectful'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L4_PRAC_Q1",
+            "level": 4,
+            "word": "CAREFUL",
+            "targetMeaning": "Cautious",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'CAREFUL' in this sentence?\n\n\"Most workers rush through their tasks, but the electrician stayed CAREFUL the entire time he worked near the live wires.\"",
+                    "options": [
+                        "Inference Clue",
+                        "Example Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'CAREFUL' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'CAREFUL' to other details.",
+                        "Correct! The sentence uses a antonym clue to clarify 'CAREFUL'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'CAREFUL' precisely means _____.",
+                    "correctAnswer": "cautious",
+                    "hint": "Recall the core deduced meaning (8 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'CAREFUL' in this context is 'Cautious'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L4_PRAC_Q2",
+            "level": 4,
+            "word": "BRAVE",
+            "targetMeaning": "Courageous",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'BRAVE' in this sentence?\n\n\"The firefighter proved how BRAVE he was: he ran into the burning building, carried out two trapped dogs, and went back a third time for the cat.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Inference Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'BRAVE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'BRAVE' to other details.",
+                        "Correct! The sentence uses a example clue to clarify 'BRAVE'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'BRAVE' precisely means _____.",
+                    "correctAnswer": "courageous",
+                    "hint": "Recall the core deduced meaning (10 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'BRAVE' in this context is 'Courageous'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L4_PRAC_Q3",
+            "level": 4,
+            "word": "HONEST",
+            "targetMeaning": "Truthful",
+            "clueType": "definition",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'HONEST' in this sentence?\n\n\"Even though he broke the lamp, my little brother was HONEST, meaning he told the truth right away instead of hiding what happened.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Inference Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'HONEST' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'HONEST' to other details.",
+                        "Correct! The sentence uses a definition clue to clarify 'HONEST'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'HONEST' precisely means _____.",
+                    "correctAnswer": "truthful",
+                    "hint": "Recall the core deduced meaning (8 letters, starts with 'T').",
+                    "feedbackIfWrong": "The deduced meaning of 'HONEST' in this context is 'Truthful'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L5_PRAC_Q1",
+            "level": 5,
+            "word": "NERVOUS",
+            "targetMeaning": "Anxious",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'NERVOUS' in this sentence?\n\n\"She felt NERVOUS in the minutes before her driving test, checking her mirrors again and again, wiping her sweaty palms on her jeans, and forgetting what she meant to say.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Inference Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'NERVOUS' to other details.",
+                        "Correct! The sentence uses a inference clue to clarify 'NERVOUS'.",
+                        "Not quite. Look closer at how the sentence connects 'NERVOUS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'NERVOUS' precisely means _____.",
+                    "correctAnswer": "anxious",
+                    "hint": "Recall the core deduced meaning (7 letters, starts with 'A').",
+                    "feedbackIfWrong": "The deduced meaning of 'NERVOUS' in this context is 'Anxious'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L5_PRAC_Q2",
+            "level": 5,
+            "word": "CROWDED",
+            "targetMeaning": "Packed",
+            "clueType": "synonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'CROWDED' in this sentence?\n\n\"The train station was CROWDED and packed during rush hour, so we could barely move through the crowd.\"",
+                    "options": [
+                        "Definition Clue",
+                        "Inference Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'CROWDED' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'CROWDED' to other details.",
+                        "Correct! The sentence uses a synonym clue to clarify 'CROWDED'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'CROWDED' precisely means _____.",
+                    "correctAnswer": "packed",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'P').",
+                    "feedbackIfWrong": "The deduced meaning of 'CROWDED' in this context is 'Packed'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L5_PRAC_Q3",
+            "level": 5,
+            "word": "EXPENSIVE",
+            "targetMeaning": "Costly",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'EXPENSIVE' in this sentence?\n\n\"The handbag was so EXPENSIVE that she had to save for six months, skip her vacation, and sell her old bike just to afford it.\"",
+                    "options": [
+                        "Example Clue",
+                        "Definition Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a example clue to clarify 'EXPENSIVE'.",
+                        "Not quite. Look closer at how the sentence connects 'EXPENSIVE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'EXPENSIVE' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'EXPENSIVE' precisely means _____.",
+                    "correctAnswer": "costly",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'EXPENSIVE' in this context is 'Costly'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L6_PRAC_Q1",
+            "level": 6,
+            "word": "RISKY",
+            "targetMeaning": "Dangerous",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'RISKY' in this sentence?\n\n\"The old bridge used to be perfectly safe to cross, but after the flood damaged its supports it became RISKY.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Definition Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a antonym clue to clarify 'RISKY'.",
+                        "Not quite. Look closer at how the sentence connects 'RISKY' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'RISKY' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'RISKY' precisely means _____.",
+                    "correctAnswer": "dangerous",
+                    "hint": "Recall the core deduced meaning (9 letters, starts with 'D').",
+                    "feedbackIfWrong": "The deduced meaning of 'RISKY' in this context is 'Dangerous'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L6_PRAC_Q2",
+            "level": 6,
+            "word": "COZY",
+            "targetMeaning": "Comfortable",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'COZY' in this sentence?\n\n\"On rainy evenings, we pile on blankets, light a candle, and curl up in our COZY living room with mugs of hot chocolate.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Inference Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'COZY' to other details.",
+                        "Correct! The sentence uses a inference clue to clarify 'COZY'.",
+                        "Not quite. Look closer at how the sentence connects 'COZY' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'COZY' precisely means _____.",
+                    "correctAnswer": "comfortable",
+                    "hint": "Recall the core deduced meaning (11 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'COZY' in this context is 'Comfortable'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L6_PRAC_Q3",
+            "level": 6,
+            "word": "THRILLING",
+            "targetMeaning": "Exciting",
+            "clueType": "definition",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'THRILLING' in this sentence?\n\n\"The roller coaster's first drop was THRILLING, which means it was so exciting that everyone on board screamed with joy.\"",
+                    "options": [
+                        "Inference Clue",
+                        "Example Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'THRILLING' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'THRILLING' to other details.",
+                        "Correct! The sentence uses a definition clue to clarify 'THRILLING'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'THRILLING' precisely means _____.",
+                    "correctAnswer": "exciting",
+                    "hint": "Recall the core deduced meaning (8 letters, starts with 'E').",
+                    "feedbackIfWrong": "The deduced meaning of 'THRILLING' in this context is 'Exciting'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L7_PRAC_Q1",
+            "level": 7,
+            "word": "DULL",
+            "targetMeaning": "Boring",
+            "clueType": "synonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'DULL' in this sentence?\n\n\"The lecture was DULL, or boring, and two students in the back row actually fell asleep.\"",
+                    "options": [
+                        "Inference Clue",
+                        "Antonym Clue",
+                        "Synonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'DULL' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'DULL' to other details.",
+                        "Correct! The sentence uses a synonym clue to clarify 'DULL'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'DULL' precisely means _____.",
+                    "correctAnswer": "boring",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'B').",
+                    "feedbackIfWrong": "The deduced meaning of 'DULL' in this context is 'Boring'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L7_PRAC_Q2",
+            "level": 7,
+            "word": "STALE",
+            "targetMeaning": "Old",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'STALE' in this sentence?\n\n\"Yesterday the bread was soft and fresh, but today it had gone STALE and crumbled apart in my hands.\"",
+                    "options": [
+                        "Antonym Clue",
+                        "Definition Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a antonym clue to clarify 'STALE'.",
+                        "Not quite. Look closer at how the sentence connects 'STALE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'STALE' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'STALE' precisely means _____.",
+                    "correctAnswer": "old",
+                    "hint": "Recall the core deduced meaning (3 letters, starts with 'O').",
+                    "feedbackIfWrong": "The deduced meaning of 'STALE' in this context is 'Old'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L7_PRAC_Q3",
+            "level": 7,
+            "word": "CONTEMPORARY",
+            "targetMeaning": "Modern",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'CONTEMPORARY' in this sentence?\n\n\"The new shopping mall has floor-to-ceiling glass walls, motion-sensor lighting, and furniture that looks like it belongs in next year's design magazines — everything about it feels CONTEMPORARY.\"",
+                    "options": [
+                        "Inference Clue",
+                        "Antonym Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a inference clue to clarify 'CONTEMPORARY'.",
+                        "Not quite. Look closer at how the sentence connects 'CONTEMPORARY' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'CONTEMPORARY' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'CONTEMPORARY' precisely means _____.",
+                    "correctAnswer": "modern",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'M').",
+                    "feedbackIfWrong": "The deduced meaning of 'CONTEMPORARY' in this context is 'Modern'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L8_PRAC_Q1",
+            "level": 8,
+            "word": "AWKWARD",
+            "targetMeaning": "Clumsy",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'AWKWARD' in this sentence?\n\n\"His AWKWARD greeting included tripping over the doormat, knocking over a vase, and calling the host by the wrong name.\"",
+                    "options": [
+                        "Example Clue",
+                        "Inference Clue",
+                        "Definition Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a example clue to clarify 'AWKWARD'.",
+                        "Not quite. Look closer at how the sentence connects 'AWKWARD' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'AWKWARD' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'AWKWARD' precisely means _____.",
+                    "correctAnswer": "clumsy",
+                    "hint": "Recall the core deduced meaning (6 letters, starts with 'C').",
+                    "feedbackIfWrong": "The deduced meaning of 'AWKWARD' in this context is 'Clumsy'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L8_PRAC_Q2",
+            "level": 8,
+            "word": "GENTLE",
+            "targetMeaning": "Soft",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'GENTLE' in this sentence?\n\n\"As she bandaged the toddler's scraped knee, the nurse moved slowly and spoke in a hushed, soothing voice so nothing would startle him — her GENTLE touch never made him cry.\"",
+                    "options": [
+                        "Inference Clue",
+                        "Synonym Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Correct! The sentence uses a inference clue to clarify 'GENTLE'.",
+                        "Not quite. Look closer at how the sentence connects 'GENTLE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'GENTLE' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'GENTLE' precisely means _____.",
+                    "correctAnswer": "soft",
+                    "hint": "Recall the core deduced meaning (4 letters, starts with 'S').",
+                    "feedbackIfWrong": "The deduced meaning of 'GENTLE' in this context is 'Soft'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L8_PRAC_Q3",
+            "level": 8,
+            "word": "STRICT",
+            "targetMeaning": "Firm",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'STRICT' in this sentence?\n\n\"Unlike our easygoing art teacher, our math teacher is STRICT about homework and never accepts a single late assignment.\"",
+                    "options": [
+                        "Example Clue",
+                        "Synonym Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'STRICT' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'STRICT' to other details.",
+                        "Correct! The sentence uses a antonym clue to clarify 'STRICT'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'STRICT' precisely means _____.",
+                    "correctAnswer": "firm",
+                    "hint": "Recall the core deduced meaning (4 letters, starts with 'F').",
+                    "feedbackIfWrong": "The deduced meaning of 'STRICT' in this context is 'Firm'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L9_PRAC_Q1",
+            "level": 9,
+            "word": "ENTHUSIASTIC",
+            "targetMeaning": "Eager",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'ENTHUSIASTIC' in this sentence?\n\n\"The new intern arrived twenty minutes early on her first day, volunteered for every project, and stayed late just to learn more — everyone could tell how ENTHUSIASTIC she was.\"",
+                    "options": [
+                        "Example Clue",
+                        "Definition Clue",
+                        "Inference Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'ENTHUSIASTIC' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'ENTHUSIASTIC' to other details.",
+                        "Correct! The sentence uses a inference clue to clarify 'ENTHUSIASTIC'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'ENTHUSIASTIC' precisely means _____.",
+                    "correctAnswer": "eager",
+                    "hint": "Recall the core deduced meaning (5 letters, starts with 'E').",
+                    "feedbackIfWrong": "The deduced meaning of 'ENTHUSIASTIC' in this context is 'Eager'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L9_PRAC_Q2",
+            "level": 9,
+            "word": "RUDE",
+            "targetMeaning": "Impolite",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'RUDE' in this sentence?\n\n\"While the other customers waited patiently and spoke kindly to the waiter, he was RUDE, interrupting and snapping his fingers for service.\"",
+                    "options": [
+                        "Example Clue",
+                        "Definition Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'RUDE' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'RUDE' to other details.",
+                        "Correct! The sentence uses a antonym clue to clarify 'RUDE'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'RUDE' precisely means _____.",
+                    "correctAnswer": "impolite",
+                    "hint": "Recall the core deduced meaning (8 letters, starts with 'I').",
+                    "feedbackIfWrong": "The deduced meaning of 'RUDE' in this context is 'Impolite'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L9_PRAC_Q3",
+            "level": 9,
+            "word": "FIT",
+            "targetMeaning": "Healthy",
+            "clueType": "example",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'FIT' in this sentence?\n\n\"After months of training, the runner could sprint five miles without stopping, climb stairs without getting winded, and lift twice what she used to — she had never felt more FIT.\"",
+                    "options": [
+                        "Definition Clue",
+                        "Inference Clue",
+                        "Example Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'FIT' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'FIT' to other details.",
+                        "Correct! The sentence uses a example clue to clarify 'FIT'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'FIT' precisely means _____.",
+                    "correctAnswer": "healthy",
+                    "hint": "Recall the core deduced meaning (7 letters, starts with 'H').",
+                    "feedbackIfWrong": "The deduced meaning of 'FIT' in this context is 'Healthy'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L10_PRAC_Q1",
+            "level": 10,
+            "word": "WEALTHY",
+            "targetMeaning": "Rich",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'WEALTHY' in this sentence?\n\n\"The businessman owned three houses, a private jet, and a yacht docked in Monaco — everyone agreed he was WEALTHY.\"",
+                    "options": [
+                        "Synonym Clue",
+                        "Antonym Clue",
+                        "Inference Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'WEALTHY' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'WEALTHY' to other details.",
+                        "Correct! The sentence uses a inference clue to clarify 'WEALTHY'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'WEALTHY' precisely means _____.",
+                    "correctAnswer": "rich",
+                    "hint": "Recall the core deduced meaning (4 letters, starts with 'R').",
+                    "feedbackIfWrong": "The deduced meaning of 'WEALTHY' in this context is 'Rich'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L10_PRAC_Q2",
+            "level": 10,
+            "word": "FAMOUS",
+            "targetMeaning": "Well-known",
+            "clueType": "inference",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'FAMOUS' in this sentence?\n\n\"After her video was shared millions of times overnight, strangers began recognizing the singer on the street and asking for photos wherever she went — she had suddenly become FAMOUS.\"",
+                    "options": [
+                        "Example Clue",
+                        "Inference Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 1,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'FAMOUS' to other details.",
+                        "Correct! The sentence uses a inference clue to clarify 'FAMOUS'.",
+                        "Not quite. Look closer at how the sentence connects 'FAMOUS' to other details."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'FAMOUS' precisely means _____.",
+                    "correctAnswer": "well-known",
+                    "hint": "Recall the core deduced meaning (10 letters, starts with 'W').",
+                    "feedbackIfWrong": "The deduced meaning of 'FAMOUS' in this context is 'Well-known'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_CONTEXTCLUES_L10_PRAC_Q3",
+            "level": 10,
+            "word": "NOISY",
+            "targetMeaning": "Loud",
+            "clueType": "antonym",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which type of context clue unlocks the meaning of 'NOISY' in this sentence?\n\n\"Unlike the quiet library we visited yesterday, the airport terminal was NOISY: announcements blared, suitcases rolled, and babies cried.\"",
+                    "options": [
+                        "Example Clue",
+                        "Inference Clue",
+                        "Antonym Clue"
+                    ],
+                    "correctAnswerIndex": 2,
+                    "feedbackPerOption": [
+                        "Not quite. Look closer at how the sentence connects 'NOISY' to other details.",
+                        "Not quite. Look closer at how the sentence connects 'NOISY' to other details.",
+                        "Correct! The sentence uses a antonym clue to clarify 'NOISY'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Deduce the meaning: In the clue sentence, 'NOISY' precisely means _____.",
+                    "correctAnswer": "loud",
+                    "hint": "Recall the core deduced meaning (4 letters, starts with 'L').",
+                    "feedbackIfWrong": "The deduced meaning of 'NOISY' in this context is 'Loud'."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 20,
+    "levels": "191-200",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L191_Q1",
+            "word": "GRAVITATION",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "This word refers to movement upward in virtue of lightness.",
+            "explanation": "Gravitation refers to movement downward resulting from gravitational attraction. Levitation, by contrast, means movement upward in virtue of lightness.",
+            "interactionType": "search",
+            "correctAnswer": "LEVITATION",
+            "options": [
+                "GRAVITY",
+                "VAUDEVILLE",
+                "POX",
+                "LEVITATION"
+            ],
+            "gradientScale": [
+                "GRAVITATION",
+                "total GRAVITATION",
+                "mixed",
+                "some levitation",
+                "LEVITATION"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L191_Q2",
+            "word": "INNATE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning gained or developed through experience rather than present from birth.",
+            "explanation": "Innate refers to present in a person from birth, as a natural quality. Acquired, by contrast, means gained or developed through experience rather than present from birth.",
+            "interactionType": "search",
+            "correctAnswer": "ACQUIRED",
+            "options": [
+                "INHERENT",
+                "INBORN",
+                "ACQUIRED",
+                "CONGENITAL"
+            ],
+            "gradientScale": [
+                "INNATE",
+                "truly INNATE",
+                "average",
+                "slightly ACQUIRED",
+                "ACQUIRED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L191_Q3",
+            "word": "COVERTLY",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Search for a word that captures the idea of in an overt manner.",
+            "explanation": "Covertly means in a covert manner — the reverse idea is in an overt manner, which is what overtly means.",
+            "interactionType": "search",
+            "correctAnswer": "OVERTLY",
+            "options": [
+                "OVERTLY",
+                "BANDAGE",
+                "AMUSING",
+                "FOGHORN"
+            ],
+            "gradientScale": [
+                "COVERTLY",
+                "very COVERTLY",
+                "moderate",
+                "slightly OVERTLY",
+                "OVERTLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L192_Q1",
+            "word": "ACUTELY",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Think about a word meaning in a slowly developing and long lasting manner.",
+            "explanation": "Acutely means having a rapid onset — the reverse idea is in a slowly developing and long lasting manner, which is what chronically means.",
+            "interactionType": "search",
+            "correctAnswer": "CHRONICALLY",
+            "options": [
+                "SHARP",
+                "ASTUTELY",
+                "CHRONICALLY",
+                "SAGACIOUSLY"
+            ],
+            "gradientScale": [
+                "ACUTELY",
+                "highly ACUTELY",
+                "average",
+                "fairly CHRONICALLY",
+                "CHRONICALLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L192_Q2",
+            "word": "NICENESS",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "This word refers to the quality of being unpleasant.",
+            "explanation": "Niceness means the quality of nice, so its opposite, nastiness, means the quality of being unpleasant.",
+            "interactionType": "search",
+            "correctAnswer": "NASTINESS",
+            "options": [
+                "POLITENESS",
+                "NASTINESS",
+                "SUBTLETY",
+                "INSURED"
+            ],
+            "gradientScale": [
+                "NICENESS",
+                "complete NICENESS",
+                "mixed",
+                "some nastiness",
+                "NASTINESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L192_Q3",
+            "word": "POTENT",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Picture something described as lacking power or ability.",
+            "explanation": "Potent means having a strong physiological or chemical effect, so its opposite, impotent, means lacking power or ability.",
+            "interactionType": "search",
+            "correctAnswer": "IMPOTENT",
+            "options": [
+                "STIFF",
+                "STRONG",
+                "IMPOTENT",
+                "POWERFUL"
+            ],
+            "gradientScale": [
+                "POTENT",
+                "extremely POTENT",
+                "balanced",
+                "fairly IMPOTENT",
+                "IMPOTENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L193_Q1",
+            "word": "CONSISTENT",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Try to recall a word that means displaying a lack of consistency.",
+            "explanation": "While consistent means in agreement or consistent or reliable, inconsistent means the opposite: displaying a lack of consistency.",
+            "interactionType": "search",
+            "correctAnswer": "INCONSISTENT",
+            "options": [
+                "ORDERED",
+                "COHERENT",
+                "REPRODUCIBLE",
+                "INCONSISTENT"
+            ],
+            "gradientScale": [
+                "CONSISTENT",
+                "extremely CONSISTENT",
+                "balanced",
+                "fairly INCONSISTENT",
+                "INCONSISTENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L193_Q2",
+            "word": "LOGICAL",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Consider a word that means lacking in correct logical relation.",
+            "explanation": "Logical describes capable of or reflecting the capability for correct and valid reasoning, while illogical describes lacking in correct logical relation.",
+            "interactionType": "search",
+            "correctAnswer": "ILLOGICAL",
+            "options": [
+                "ORDERED",
+                "LEGITIMATE",
+                "ILLOGICAL",
+                "LUCID"
+            ],
+            "gradientScale": [
+                "LOGICAL",
+                "very LOGICAL",
+                "moderate",
+                "slightly ILLOGICAL",
+                "ILLOGICAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L193_Q3",
+            "word": "BROKEN",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Think about a word meaning not broken.",
+            "explanation": "Broken means physically and forcibly separated into pieces or cracked or split; unbroken means not broken.",
+            "interactionType": "search",
+            "correctAnswer": "UNBROKEN",
+            "options": [
+                "BUSTED",
+                "UNBROKEN",
+                "UNKEPT",
+                "CONFUSED"
+            ],
+            "gradientScale": [
+                "BROKEN",
+                "quite BROKEN",
+                "average",
+                "mildly UNBROKEN",
+                "UNBROKEN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L194_Q1",
+            "word": "ENGAGE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Consider a word that means to become free.",
+            "explanation": "Engage means get caught; disengage means become free.",
+            "interactionType": "search",
+            "correctAnswer": "DISENGAGE",
+            "options": [
+                "PLIGHT",
+                "ENLIST",
+                "PURSUE",
+                "DISENGAGE"
+            ],
+            "gradientScale": [
+                "ENGAGE",
+                "ENGAGE clearly",
+                "in between",
+                "beginning to disengage",
+                "DISENGAGE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L194_Q2",
+            "word": "SETTLED",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "What word fits the idea of being not settled or established?",
+            "explanation": "While settled means established in a desired position or place, unsettled means the opposite: not settled or established.",
+            "interactionType": "search",
+            "correctAnswer": "UNSETTLED",
+            "options": [
+                "JORDAN",
+                "UNSETTLED",
+                "CENSORSHIP",
+                "FRAGILE"
+            ],
+            "gradientScale": [
+                "SETTLED",
+                "truly SETTLED",
+                "moderate",
+                "slightly UNSETTLED",
+                "UNSETTLED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L194_Q3",
+            "word": "ETHICAL",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "This word describes something that is not conforming to approved standards of social or professional behavior.",
+            "explanation": "To be ethical is to be conforming to accepted standards of social or professional behavior. Unethical means not conforming to approved standards of social or professional behavior, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "UNETHICAL",
+            "options": [
+                "UNETHICAL",
+                "HONORABLE",
+                "SURGICALLY",
+                "BACKWARD"
+            ],
+            "gradientScale": [
+                "ETHICAL",
+                "highly ETHICAL",
+                "average",
+                "a little UNETHICAL",
+                "UNETHICAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L195_Q1",
+            "word": "PERSONAL",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "What word fits the idea of being not relating to or responsive to individual persons?",
+            "explanation": "Personal means concerning or affecting a particular person or his or her private life and personality; impersonal means not relating to or responsive to individual persons.",
+            "interactionType": "search",
+            "correctAnswer": "IMPERSONAL",
+            "options": [
+                "ADMIT",
+                "GENETICS",
+                "SHIV",
+                "IMPERSONAL"
+            ],
+            "gradientScale": [
+                "PERSONAL",
+                "truly PERSONAL",
+                "average",
+                "a little IMPERSONAL",
+                "IMPERSONAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L195_Q2",
+            "word": "PATIENCE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Search for a word that means a dislike of anything that causes delay.",
+            "explanation": "Patience refers to good-natured tolerance of delay or incompetence. Impatience, by contrast, means a dislike of anything that causes delay.",
+            "interactionType": "search",
+            "correctAnswer": "IMPATIENCE",
+            "options": [
+                "FORBEARANCE",
+                "LONGANIMITY",
+                "IMPATIENCE",
+                "SOLITAIRE"
+            ],
+            "gradientScale": [
+                "PATIENCE",
+                "pure PATIENCE",
+                "neutral",
+                "some impatience",
+                "IMPATIENCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L195_Q3",
+            "word": "CUT",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Imagine describing something as not cut.",
+            "explanation": "Cut means separated into parts or laid open or penetrated with a sharp edge or instrument, so its opposite, uncut, means not cut.",
+            "interactionType": "search",
+            "correctAnswer": "UNCUT",
+            "options": [
+                "SLASHED",
+                "MOWN",
+                "SNAPSHOT",
+                "UNCUT"
+            ],
+            "gradientScale": [
+                "CUT",
+                "very CUT",
+                "average",
+                "mildly UNCUT",
+                "UNCUT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L196_Q1",
+            "word": "DUE",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "The opposite idea here relates to being not yet payable.",
+            "explanation": "Due means owed and payable immediately or on demand — the reverse idea is not yet payable, which is what undue means.",
+            "interactionType": "search",
+            "correctAnswer": "UNDUE",
+            "options": [
+                "ASCRIBABLE",
+                "IMPUTABLE",
+                "UNDUE",
+                "REFERABLE"
+            ],
+            "gradientScale": [
+                "DUE",
+                "highly DUE",
+                "balanced",
+                "fairly UNDUE",
+                "UNDUE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L196_Q2",
+            "word": "MATERIAL",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Picture something described as not consisting of matter.",
+            "explanation": "While material means derived from or composed of matter, immaterial means the opposite: not consisting of matter.",
+            "interactionType": "search",
+            "correctAnswer": "IMMATERIAL",
+            "options": [
+                "REAL",
+                "IMMATERIAL",
+                "CORPOREAL",
+                "SUBSTANTIAL"
+            ],
+            "gradientScale": [
+                "MATERIAL",
+                "quite MATERIAL",
+                "in between",
+                "mildly IMMATERIAL",
+                "IMMATERIAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L196_Q3",
+            "word": "EFFECTIVE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Try to recall a word that means not producing an intended effect.",
+            "explanation": "While effective means producing or capable of producing an intended result or having a striking effect, ineffective means the opposite: not producing an intended effect.",
+            "interactionType": "search",
+            "correctAnswer": "INEFFECTIVE",
+            "options": [
+                "EFFICACIOUS",
+                "EFFECTUAL",
+                "GOOD",
+                "INEFFECTIVE"
+            ],
+            "gradientScale": [
+                "EFFECTIVE",
+                "quite EFFECTIVE",
+                "balanced",
+                "slightly INEFFECTIVE",
+                "INEFFECTIVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L197_Q1",
+            "word": "TURNED",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Search for a word that captures the idea of being not turned.",
+            "explanation": "Turned describes moved around an axis or center, while unturned describes not turned.",
+            "interactionType": "search",
+            "correctAnswer": "UNTURNED",
+            "options": [
+                "SOUR",
+                "OFF",
+                "UNTURNED",
+                "REWARDING"
+            ],
+            "gradientScale": [
+                "TURNED",
+                "very TURNED",
+                "average",
+                "a little UNTURNED",
+                "UNTURNED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L197_Q2",
+            "word": "FAIRLY",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Search for a word that captures the idea of in an unfair manner.",
+            "explanation": "Fairly means in conformity with the rules or laws and without fraud or cheating; unfairly means in an unfair manner.",
+            "interactionType": "search",
+            "correctAnswer": "UNFAIRLY",
+            "options": [
+                "FAIR",
+                "CLEAN",
+                "MIDDLING",
+                "UNFAIRLY"
+            ],
+            "gradientScale": [
+                "FAIRLY",
+                "extremely FAIRLY",
+                "average",
+                "fairly UNFAIRLY",
+                "UNFAIRLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L197_Q3",
+            "word": "CONVENTIONAL",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "What word fits the idea of being not conforming to accepted rules or standards?",
+            "explanation": "Conventional means following accepted customs and proprieties; unconventional means not conforming to accepted rules or standards.",
+            "interactionType": "search",
+            "correctAnswer": "UNCONVENTIONAL",
+            "options": [
+                "FORMAL",
+                "SCHEMATIC",
+                "UNCONVENTIONAL",
+                "CEREMONIOUS"
+            ],
+            "gradientScale": [
+                "CONVENTIONAL",
+                "truly CONVENTIONAL",
+                "moderate",
+                "somewhat UNCONVENTIONAL",
+                "UNCONVENTIONAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L198_Q1",
+            "word": "ADEQUATE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Look for a word meaning lacking the requisite qualities or resources to meet a task.",
+            "explanation": "Adequate means having the requisite qualities or resources to meet a task — the reverse idea is lacking the requisite qualities or resources to meet a task, which is what inadequate means.",
+            "interactionType": "search",
+            "correctAnswer": "INADEQUATE",
+            "options": [
+                "EQUAL",
+                "INADEQUATE",
+                "DECENT",
+                "TOLERABLE"
+            ],
+            "gradientScale": [
+                "ADEQUATE",
+                "extremely ADEQUATE",
+                "moderate",
+                "fairly INADEQUATE",
+                "INADEQUATE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L198_Q2",
+            "word": "AFRAID",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Picture something described as oblivious of dangers or perils or calmly resolute in facing them.",
+            "explanation": "To be afraid is to be filled with fear or apprehension. Unafraid means oblivious of dangers or perils or calmly resolute in facing them, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "UNAFRAID",
+            "options": [
+                "MAXIMUM",
+                "BUDDHA",
+                "TUCKER",
+                "UNAFRAID"
+            ],
+            "gradientScale": [
+                "AFRAID",
+                "highly AFRAID",
+                "average",
+                "fairly UNAFRAID",
+                "UNAFRAID"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L198_Q3",
+            "word": "ORDERLY",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Think about a word meaning undisciplined and unruly.",
+            "explanation": "Orderly means devoid of violence or disruption; disorderly means undisciplined and unruly.",
+            "interactionType": "search",
+            "correctAnswer": "DISORDERLY",
+            "options": [
+                "NEAT",
+                "DISORDERLY",
+                "CALLOUS",
+                "MASSIVELY"
+            ],
+            "gradientScale": [
+                "ORDERLY",
+                "very ORDERLY",
+                "in between",
+                "a little DISORDERLY",
+                "DISORDERLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L199_Q1",
+            "word": "CONTENT",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "This word means to make dissatisfied.",
+            "explanation": "Content means to make content; discontent means to make dissatisfied.",
+            "interactionType": "search",
+            "correctAnswer": "DISCONTENT",
+            "options": [
+                "GRANDFATHER",
+                "FILING",
+                "DISCONTENT",
+                "SURROUNDINGS"
+            ],
+            "gradientScale": [
+                "CONTENT",
+                "CONTENT clearly",
+                "neither",
+                "starting to discontent",
+                "DISCONTENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L199_Q2",
+            "word": "HOOK",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Consider a word that means to take off a hook.",
+            "explanation": "While hook means fasten with a hook, unhook means the opposite: take off a hook.",
+            "interactionType": "search",
+            "correctAnswer": "UNHOOK",
+            "options": [
+                "OVERCHARGE",
+                "UNHOOK",
+                "SNEAK",
+                "SNITCH"
+            ],
+            "gradientScale": [
+                "HOOK",
+                "HOOK fully",
+                "neither",
+                "starting to unhook",
+                "UNHOOK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L199_Q3",
+            "word": "ACCURATE",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "What word fits the idea of being not exact?",
+            "explanation": "While accurate means conforming exactly or almost exactly to fact or to a standard or performing with total accuracy, inaccurate means the opposite: not exact.",
+            "interactionType": "search",
+            "correctAnswer": "INACCURATE",
+            "options": [
+                "PRECISE",
+                "EXACT",
+                "INACCURATE",
+                "COUNTER"
+            ],
+            "gradientScale": [
+                "ACCURATE",
+                "truly ACCURATE",
+                "balanced",
+                "mildly INACCURATE",
+                "INACCURATE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L200_Q1",
+            "word": "POSSIBILITY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning incapability of existing or occurring.",
+            "explanation": "Possibility means capability of existing or happening or being true — the reverse idea is incapability of existing or occurring, which is what impossibility means.",
+            "interactionType": "search",
+            "correctAnswer": "IMPOSSIBILITY",
+            "options": [
+                "POSSIBLENESS",
+                "OPENING",
+                "THEORY",
+                "IMPOSSIBILITY"
+            ],
+            "gradientScale": [
+                "POSSIBILITY",
+                "strong POSSIBILITY",
+                "neutral",
+                "some impossibility",
+                "IMPOSSIBILITY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L200_Q2",
+            "word": "CONFIRMED",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Try to recall a word that means not finally established or settled.",
+            "explanation": "Confirmed means having been established or made firm or received the rite of confirmation, so its opposite, unconfirmed, means not finally established or settled.",
+            "interactionType": "search",
+            "correctAnswer": "UNCONFIRMED",
+            "options": [
+                "MANE",
+                "UNCONFIRMED",
+                "COD",
+                "CORNY"
+            ],
+            "gradientScale": [
+                "CONFIRMED",
+                "very CONFIRMED",
+                "in between",
+                "mildly UNCONFIRMED",
+                "UNCONFIRMED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L200_Q3",
+            "word": "PROVE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Search for a word meaning to prove to be false.",
+            "explanation": "Prove means establish the validity of something, as by an example, explanation or experiment; disprove means prove to be false.",
+            "interactionType": "search",
+            "correctAnswer": "DISPROVE",
+            "options": [
+                "DEMONSTRATE",
+                "SHOW",
+                "ESTABLISH",
+                "DISPROVE"
+            ],
+            "gradientScale": [
+                "PROVE",
+                "PROVE clearly",
+                "in between",
+                "starting to disprove",
+                "DISPROVE"
+            ]
+        }
+    ]
+}

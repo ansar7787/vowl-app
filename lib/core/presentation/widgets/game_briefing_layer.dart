@@ -20,6 +20,9 @@ class GameBriefingLayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues'};
+    final isPhased = phasedGames.contains(gameType.name);
+
     final briefing = GameInstructionService.getBriefing(
       context,
       gameType,
@@ -27,6 +30,7 @@ class GameBriefingLayer extends StatelessWidget {
       level: level,
     );
     return QuestBriefingOverlay(
+      phaseBadge: isPhased ? '🏆 MASTERY PHASE • LEVEL $level' : null,
       title: briefing.title,
       objective: briefing.objective,
       rules: briefing.rules,

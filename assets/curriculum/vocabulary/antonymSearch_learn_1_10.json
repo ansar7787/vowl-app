@@ -1,0 +1,608 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "learn",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_LEARN_Q1",
+            "level": 1,
+            "conceptTitle": "Polar Opposite: Here ↔ There",
+            "word": "Here ↔ There",
+            "pronunciation": "/hɪər/ ↔ /ðeər/",
+            "definition": "Location contrast: 'Here' indicates proximity to the speaker; 'There' marks distance away from the speaker.",
+            "example": "Please come over here and sit next to me.",
+            "usageExample": "Put the delivery boxes over there near the garage.",
+            "nativeTip": "'Here' is anchored to the speaker's current spot. 'There' always points outward to another location.",
+            "visualAnchor": "📍 HERE = Right with speaker | 🗺️ THERE = Away at a distance",
+            "familyWords": ["Near", "Far", "Nearby", "Distant"],
+            "commonMistake": "Don't confuse 'there' (location) with 'their' (possessive) or 'they're' (they are).",
+            "rawExtra": {
+                "baseWord": "HERE",
+                "antonym": "THERE",
+                "contrastDimension": "Spatial Proximity",
+                "gradientScale": ["HERE", "strong HERE", "neutral", "a trace of there", "THERE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_LEARN_Q2",
+            "level": 1,
+            "conceptTitle": "Polar Opposite: Give ↔ Take",
+            "word": "Give ↔ Take",
+            "pronunciation": "/ɡɪv/ ↔ /teɪk/",
+            "definition": "Action direction: 'Give' transfers an item outward to another; 'Take' brings an item inward into your own possession.",
+            "example": "She wants to give you a birthday present.",
+            "usageExample": "Take an umbrella with you in case it rains.",
+            "nativeTip": "'Give' is generous and outward; 'Take' is acquiring and inward. In social settings, 'give and take' denotes compromise.",
+            "visualAnchor": "🎁 GIVE = Outward to others | 🤲 TAKE = Inward to self",
+            "familyWords": ["Offer", "Receive", "Donate", "Accept"],
+            "commonMistake": "Don't say 'give a picture' when you capture one on camera — say 'take a picture'.",
+            "rawExtra": {
+                "baseWord": "GIVE",
+                "antonym": "TAKE",
+                "contrastDimension": "Direction of Possession",
+                "gradientScale": ["GIVE", "GIVE fully", "undecided", "starting to take", "TAKE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_LEARN_Q3",
+            "level": 1,
+            "conceptTitle": "Polar Opposite: Right ↔ Left",
+            "word": "Right ↔ Left",
+            "pronunciation": "/raɪt/ ↔ /lɛft/",
+            "definition": "Spatial orientation: 'Right' is the side of most people's dominant writing hand; 'Left' is the opposite side toward the heart.",
+            "example": "Turn right at the traffic lights.",
+            "usageExample": "He wears his watch on his left wrist.",
+            "nativeTip": "'Right' also means correct or just in other contexts, but spatially its absolute opposite is 'left'.",
+            "visualAnchor": "➡️ RIGHT = Eastward / Clockwise | ⬅️ LEFT = Westward / Counterclockwise",
+            "familyWords": ["Rightward", "Leftward", "Clockwise", "Counterclockwise"],
+            "commonMistake": "'Left' is also the past tense of 'leave', but as a direction it strictly opposes 'right'.",
+            "rawExtra": {
+                "baseWord": "RIGHT",
+                "antonym": "LEFT",
+                "contrastDimension": "Lateral Direction",
+                "gradientScale": ["RIGHT", "strong RIGHT", "neutral", "a hint of left", "LEFT"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_LEARN_Q1",
+            "level": 2,
+            "conceptTitle": "Polar Opposite: Good ↔ Bad",
+            "word": "Good ↔ Bad",
+            "pronunciation": "/ɡʊd/ ↔ /bæd/",
+            "definition": "Quality & Ethics: 'Good' signifies desirable, beneficial, or high standard; 'Bad' marks undesirable, harmful, or inferior quality.",
+            "example": "Eating fresh fruit is good for your health.",
+            "usageExample": "Spoiled milk has a very bad smell.",
+            "nativeTip": "English uses 'well' for health and manner ('I feel well'), but 'good' for inherent quality ('This soup is good').",
+            "visualAnchor": "⭐ GOOD = Positive & Desirable | ❌ BAD = Negative & Harmful",
+            "familyWords": ["Great", "Poor", "Virtuous", "Evil"],
+            "commonMistake": "Don't say 'I did good on the test' in formal English — say 'I did well on the test'.",
+            "rawExtra": {
+                "baseWord": "GOOD",
+                "antonym": "BAD",
+                "contrastDimension": "Quality & Standard",
+                "gradientScale": ["GOOD", "truly GOOD", "moderate", "fairly BAD", "BAD"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_LEARN_Q2",
+            "level": 2,
+            "conceptTitle": "Polar Opposite: Ever ↔ Never",
+            "word": "Ever ↔ Never",
+            "pronunciation": "/ˈɛvər/ ↔ /ˈnɛvər/",
+            "definition": "Frequency of occurrence: 'Ever' means at any point in time; 'Never' means at zero points in time (not ever).",
+            "example": "Have you ever seen the northern lights?",
+            "usageExample": "I have never tasted caviar in my life.",
+            "nativeTip": "'Never' is already negative ('not + ever'). Never use a double negative like 'I don't never go'.",
+            "visualAnchor": "⏳ EVER = Any point in time | 🚫 NEVER = Zero points in time",
+            "familyWords": ["Always", "Sometimes", "Rarely", "Seldom"],
+            "commonMistake": "Don't say 'I haven't never' — always say 'I have never' or 'I haven't ever'.",
+            "rawExtra": {
+                "baseWord": "EVER",
+                "antonym": "NEVER",
+                "contrastDimension": "Temporal Frequency",
+                "gradientScale": ["EVER", "extremely EVER", "balanced", "a little NEVER", "NEVER"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_LEARN_Q3",
+            "level": 2,
+            "conceptTitle": "Polar Opposite: First ↔ Last",
+            "word": "First ↔ Last",
+            "pronunciation": "/fɜːrst/ ↔ /læst/",
+            "definition": "Ordinal sequence: 'First' precedes all others in a series; 'Last' concludes all others with none remaining behind.",
+            "example": "She crossed the finish line in first place.",
+            "usageExample": "He was the last student to leave the classroom.",
+            "nativeTip": "'At first' means initially; 'at last' means finally after waiting. Notice how the opposites produce opposite idioms!",
+            "visualAnchor": "🥇 FIRST = Head of the line | 🏁 LAST = Tail of the line",
+            "familyWords": ["Initial", "Final", "Beginning", "Concluding"],
+            "commonMistake": "Don't confuse 'last' (final) with 'latest' (most recent, with more expected to come).",
+            "rawExtra": {
+                "baseWord": "FIRST",
+                "antonym": "LAST",
+                "contrastDimension": "Sequential Position",
+                "gradientScale": ["FIRST", "quite FIRST", "moderate", "somewhat LAST", "LAST"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_LEARN_Q1",
+            "level": 3,
+            "conceptTitle": "Polar Opposite: Day ↔ Night",
+            "word": "Day ↔ Night",
+            "pronunciation": "/deɪ/ ↔ /naɪt/",
+            "definition": "Solar rhythm: 'Day' is the illuminated period between sunrise and sunset; 'Night' is the dark period under moonlight.",
+            "example": "The sun shines brightly throughout the day.",
+            "usageExample": "The stars are clearly visible at night.",
+            "nativeTip": "Native speakers say 'by day' and 'at night' (notice the preposition shift!). Also, 'day and night' signifies nonstop effort.",
+            "visualAnchor": "☀️ DAY = Sunlight & Activity | 🌙 NIGHT = Darkness & Rest",
+            "familyWords": ["Daytime", "Nighttime", "Dawn", "Dusk"],
+            "commonMistake": "Say 'in the morning' or 'in the daytime', but always 'at night' (not 'in the night' for general habits).",
+            "rawExtra": {
+                "baseWord": "DAY",
+                "antonym": "NIGHT",
+                "contrastDimension": "Diurnal Illumination",
+                "gradientScale": ["DAY", "complete DAY", "mixed", "a hint of night", "NIGHT"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_LEARN_Q2",
+            "level": 3,
+            "conceptTitle": "Polar Opposite: Big ↔ Little",
+            "word": "Big ↔ Little",
+            "pronunciation": "/bɪɡ/ ↔ /ˈlɪtəl/",
+            "definition": "Magnitude of physical scale: 'Big' exceeds average size or impact; 'Little' is limited or below average in size or count.",
+            "example": "They bought a big house with a huge garden.",
+            "usageExample": "A little bird landed right on the windowsill.",
+            "nativeTip": "'Little' often carries an affectionate tone ('my little brother', 'a little gift'), while 'small' is purely factual.",
+            "visualAnchor": "🐘 BIG = Immense size | 🐥 LITTLE = Tiny & endearing",
+            "familyWords": ["Large", "Small", "Giant", "Miniature"],
+            "commonMistake": "Don't say 'a few water' — use 'a little water' for uncountable nouns.",
+            "rawExtra": {
+                "baseWord": "BIG",
+                "antonym": "LITTLE",
+                "contrastDimension": "Physical Magnitude",
+                "gradientScale": ["BIG", "quite BIG", "in between", "fairly LITTLE", "LITTLE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_LEARN_Q3",
+            "level": 3,
+            "conceptTitle": "Polar Opposite: Home ↔ Away",
+            "word": "Home ↔ Away",
+            "pronunciation": "/hoʊm/ ↔ /əˈweɪ/",
+            "definition": "Territorial presence: 'Home' is your own residence or home stadium; 'Away' is off your ground, in distant territory.",
+            "example": "After a long trip, it feels wonderful to be home.",
+            "usageExample": "Our soccer team played an away game in Chicago.",
+            "nativeTip": "In sports and travel, 'home and away' defines where matches happen. 'Away' requires movement or distance from home base.",
+            "visualAnchor": "🏡 HOME = Native territory | ✈️ AWAY = Distant / Foreign ground",
+            "familyWords": ["Domestic", "Foreign", "Local", "Remote"],
+            "commonMistake": "Don't say 'I go to home' — say 'I go home' (no preposition needed with home as adverb).",
+            "rawExtra": {
+                "baseWord": "HOME",
+                "antonym": "AWAY",
+                "contrastDimension": "Territorial Ground",
+                "gradientScale": ["HOME", "extremely HOME", "balanced", "fairly AWAY", "AWAY"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_LEARN_Q1",
+            "level": 4,
+            "conceptTitle": "Polar Opposite: Man ↔ Woman",
+            "word": "Man ↔ Woman",
+            "pronunciation": "/mæn/ ↔ /ˈwʊmən/",
+            "definition": "Gender contrast: 'Man' denotes an adult human male; 'Woman' denotes an adult human female.",
+            "example": "The tall man held the door open for the guests.",
+            "usageExample": "The woman was elected mayor of the city.",
+            "nativeTip": "Notice the irregular plurals: one man / two men (/mɛn/), one woman / two women (/ˈwɪmɪn/). Pronunciation changes drastically!",
+            "visualAnchor": "👨 MAN = Adult male | 👩 WOMAN = Adult female",
+            "familyWords": ["Gentleman", "Lady", "Boy", "Girl"],
+            "commonMistake": "Watch the plural spelling and vowel: 'women' is pronounced 'WIM-in', never 'WOM-en'.",
+            "rawExtra": {
+                "baseWord": "MAN",
+                "antonym": "WOMAN",
+                "contrastDimension": "Adult Human Gender",
+                "gradientScale": ["MAN", "strong MAN", "mixed", "a hint of woman", "WOMAN"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_LEARN_Q2",
+            "level": 4,
+            "conceptTitle": "Polar Opposite: Same ↔ Other",
+            "word": "Same ↔ Other",
+            "pronunciation": "/seɪm/ ↔ /ˈʌðər/",
+            "definition": "Identity & uniqueness: 'Same' means identical or unchanged; 'Other' denotes different, distinct, or alternative.",
+            "example": "We both ordered the exact same coffee.",
+            "usageExample": "If that table is taken, let us choose the other one.",
+            "nativeTip": "'Same' almost always takes the definite article ('the same'). 'Other' points to the alternative item.",
+            "visualAnchor": "🪞 SAME = Identical twin | 🔀 OTHER = Distinct alternative",
+            "familyWords": ["Identical", "Different", "Equal", "Alternative"],
+            "commonMistake": "Always say 'the same as' (never 'the same than' or 'the same with').",
+            "rawExtra": {
+                "baseWord": "SAME",
+                "antonym": "OTHER",
+                "contrastDimension": "Identity & Distinctness",
+                "gradientScale": ["SAME", "quite SAME", "average", "mildly OTHER", "OTHER"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_LEARN_Q3",
+            "level": 4,
+            "conceptTitle": "Polar Opposite: Father ↔ Mother",
+            "word": "Father ↔ Mother",
+            "pronunciation": "/ˈfɑːðər/ ↔ /ˈmʌðər/",
+            "definition": "Parental lineage: 'Father' is a male parent; 'Mother' is a female parent.",
+            "example": "His father taught him how to play guitar.",
+            "usageExample": "Her mother works as a pediatric surgeon.",
+            "nativeTip": "Informal pairs follow parallel symmetry: Dad ↔ Mom, Papa ↔ Mama. In idioms, 'necessity is the mother of invention'.",
+            "visualAnchor": "👨‍👧 FATHER = Paternal parent | 👩‍👧 MOTHER = Maternal parent",
+            "familyWords": ["Paternal", "Maternal", "Dad", "Mom"],
+            "commonMistake": "Capitalize Father and Mother only when using them directly as proper names: 'Ask Mother' vs 'my mother'.",
+            "rawExtra": {
+                "baseWord": "FATHER",
+                "antonym": "MOTHER",
+                "contrastDimension": "Parental Lineage",
+                "gradientScale": ["FATHER", "pure FATHER", "neutral", "a hint of mother", "MOTHER"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_LEARN_Q1",
+            "level": 5,
+            "conceptTitle": "Polar Opposite: Start ↔ Stop",
+            "word": "Start ↔ Stop",
+            "pronunciation": "/stɑːrt/ ↔ /stɑːp/",
+            "definition": "Process dynamic: 'Start' initiates motion or an activity; 'Stop' brings movement or action to an end.",
+            "example": "The race will start as soon as the whistle blows.",
+            "usageExample": "Please stop the car before reaching the crosswalk.",
+            "nativeTip": "Both words can be followed by verbs with -ing: 'start running', 'stop running'. But 'stop to run' means halting in order to run!",
+            "visualAnchor": "🟢 START = Green light / Initiate | 🔴 STOP = Red light / Cease",
+            "familyWords": ["Begin", "Halt", "Commence", "Terminate"],
+            "commonMistake": "Remember: 'stop doing' = quit the action; 'stop to do' = pause what you are doing in order to do something else.",
+            "rawExtra": {
+                "baseWord": "START",
+                "antonym": "STOP",
+                "contrastDimension": "Process State",
+                "gradientScale": ["START", "START completely", "undecided", "partly stop", "STOP"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_LEARN_Q2",
+            "level": 5,
+            "conceptTitle": "Polar Opposite: Girl ↔ Boy",
+            "word": "Girl ↔ Boy",
+            "pronunciation": "/ɡɜːrl/ ↔ /bɔɪ/",
+            "definition": "Youth gender: 'Girl' is a female child or adolescent; 'Boy' is a male child or adolescent.",
+            "example": "The little girl wore a bright yellow raincoat.",
+            "usageExample": "The boy rode his bicycle across the park.",
+            "nativeTip": "Used informally by adults among peers ('girls' night out', 'the boys'), but in professional settings use 'women' and 'men'.",
+            "visualAnchor": "👧 GIRL = Young female | 👦 BOY = Young male",
+            "familyWords": ["Daughter", "Son", "Lass", "Lad"],
+            "commonMistake": "Refer to adult professionals as women and men, reserving girl and boy for young children.",
+            "rawExtra": {
+                "baseWord": "GIRL",
+                "antonym": "BOY",
+                "contrastDimension": "Youth Gender",
+                "gradientScale": ["GIRL", "strong GIRL", "neutral", "some boy", "BOY"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_LEARN_Q3",
+            "level": 5,
+            "conceptTitle": "Polar Opposite: Move ↔ Stay",
+            "word": "Move ↔ Stay",
+            "pronunciation": "/muːv/ ↔ /steɪ/",
+            "definition": "Kinetic state: 'Move' means changing position, travelling, or relocating; 'Stay' means remaining rooted in one place.",
+            "example": "Do not move while the doctor takes the X-ray.",
+            "usageExample": "You should stay indoors during the heavy snowstorm.",
+            "nativeTip": "'Stay' can mean temporary lodging ('stay at a hotel') as well as physical stillness ('stay still').",
+            "visualAnchor": "🏃 MOVE = Kinetic motion | 🧘 STAY = Stillness & rootedness",
+            "familyWords": ["Travel", "Remain", "Shift", "Pause"],
+            "commonMistake": "Don't confuse 'stay' (remain) with 'live' (permanent residence).",
+            "rawExtra": {
+                "baseWord": "MOVE",
+                "antonym": "STAY",
+                "contrastDimension": "Mobility vs Stability",
+                "gradientScale": ["MOVE", "MOVE fully", "in between", "beginning to stay", "STAY"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_LEARN_Q1",
+            "level": 6,
+            "conceptTitle": "Polar Opposite: Lost ↔ Won",
+            "word": "Lost ↔ Won",
+            "pronunciation": "/lɔːst/ ↔ /wʌn/",
+            "definition": "Outcome of competition: 'Lost' indicates defeat or forfeiture; 'Won' denotes victory, triumph, or securing a prize.",
+            "example": "Our team lost the final match by just one goal.",
+            "usageExample": "She won the championship trophy after months of training.",
+            "nativeTip": "Pronunciation tip: 'Won' is pronounced exactly like the number 'one' (/wʌn/), never with an 'o' sound.",
+            "visualAnchor": "🥈 LOST = Defeated | 🏆 WON = Victorious champion",
+            "familyWords": ["Defeat", "Victory", "Beaten", "Triumphant"],
+            "commonMistake": "Never pronounce 'won' with the sound of 'on' — it sounds identical to 'one' (/wʌn/).",
+            "rawExtra": {
+                "baseWord": "LOST",
+                "antonym": "WON",
+                "contrastDimension": "Competitive Outcome",
+                "gradientScale": ["LOST", "very LOST", "balanced", "slightly WON", "WON"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_LEARN_Q2",
+            "level": 6,
+            "conceptTitle": "Polar Opposite: Live ↔ Dead",
+            "word": "Live ↔ Dead",
+            "pronunciation": "/lɪv/ or /laɪv/ ↔ /dɛd/",
+            "definition": "Biological vitality: 'Live' (/laɪv/ as adj) possesses organic life or active energy; 'Dead' is completely devoid of life.",
+            "example": "We watched the concert on live television.",
+            "usageExample": "The winter cold left the garden plants completely dead.",
+            "nativeTip": "Pay attention to part of speech: 'live' /laɪv/ is the adjective (opposing 'dead'), while 'alive' /əˈlaɪv/ is also its opposite.",
+            "visualAnchor": "🌱 LIVE = Vibrant vitality | 🍂 DEAD = Inanimate / Depleted",
+            "familyWords": ["Alive", "Lifeless", "Living", "Extinct"],
+            "commonMistake": "Don't confuse the verb 'to live' /lɪv/ with the adjective 'live' /laɪv/.",
+            "rawExtra": {
+                "baseWord": "LIVE",
+                "antonym": "DEAD",
+                "contrastDimension": "Vitality & Organic State",
+                "gradientScale": ["LIVE", "extremely LIVE", "moderate", "somewhat DEAD", "DEAD"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_LEARN_Q3",
+            "level": 6,
+            "conceptTitle": "Polar Opposite: Many ↔ Few",
+            "word": "Many ↔ Few",
+            "pronunciation": "/ˈmɛni/ ↔ /fjuː/",
+            "definition": "Countable quantity: 'Many' specifies a large number of discrete items; 'Few' marks a small, scarce number of countable items.",
+            "example": "There are many historical monuments in Rome.",
+            "usageExample": "Very few people attended the morning lecture.",
+            "nativeTip": "'Many' and 'few' are STRICTLY for countable nouns (books, people). For uncountable nouns (water, money), use 'much' and 'little'.",
+            "visualAnchor": "👥 MANY = Crowded abundance | 👤 FEW = Scarce countable number",
+            "familyWords": ["Numerous", "Scarce", "Plentiful", "Sparse"],
+            "commonMistake": "Don't say 'few water' or 'many time' — use 'little water' and 'much time' for uncountable things.",
+            "rawExtra": {
+                "baseWord": "MANY",
+                "antonym": "FEW",
+                "contrastDimension": "Countable Quantifier",
+                "gradientScale": ["MANY", "highly MANY", "neutral", "slightly FEW", "FEW"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_LEARN_Q1",
+            "level": 7,
+            "conceptTitle": "Polar Opposite: Safe ↔ Out",
+            "word": "Safe ↔ Out",
+            "pronunciation": "/seɪf/ ↔ /aʊt/",
+            "definition": "Status in sports/rules: 'Safe' means reaching a base without being tagged; 'Out' means retired or eliminated from play.",
+            "example": "The umpire raised his arms and yelled, 'Safe!'",
+            "usageExample": "Three strikes and the batter is out.",
+            "nativeTip": "While 'safe' generally opposes 'dangerous', in baseball and gaming rulebooks, 'safe' directly opposes 'out'!",
+            "visualAnchor": "🛡️ SAFE = Secured base | ❌ OUT = Eliminated from play",
+            "familyWords": ["Secure", "Retired", "Protected", "Disqualified"],
+            "commonMistake": "In sports terminology, 'out' means disqualified from active turn, while 'safe' protects your score.",
+            "rawExtra": {
+                "baseWord": "SAFE",
+                "antonym": "OUT",
+                "contrastDimension": "Rule & Status Security",
+                "gradientScale": ["SAFE", "highly SAFE", "in between", "a little OUT", "OUT"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_LEARN_Q2",
+            "level": 7,
+            "conceptTitle": "Polar Opposite: Remember ↔ Forget",
+            "word": "Remember ↔ Forget",
+            "pronunciation": "/rɪˈmɛmbər/ ↔ /fərˈɡɛt/",
+            "definition": "Cognitive retention: 'Remember' retains or retrieves facts from memory; 'Forget' fails to retain or recall them.",
+            "example": "Always remember to lock the front door.",
+            "usageExample": "I often forget where I placed my car keys.",
+            "nativeTip": "'Remember to do' looks to future duty; 'remember doing' recalls a past event. 'Forget' behaves identically!",
+            "visualAnchor": "💡 REMEMBER = Recalled to mind | 🌫️ FORGET = Slipped from mind",
+            "familyWords": ["Recall", "Overlook", "Recollect", "Neglect"],
+            "commonMistake": "Don't say 'I remind where I parked' — say 'I remember where I parked' ('remind' needs an object: 'remind me').",
+            "rawExtra": {
+                "baseWord": "REMEMBER",
+                "antonym": "FORGET",
+                "contrastDimension": "Cognitive Memory Access",
+                "gradientScale": ["REMEMBER", "REMEMBER actively", "undecided", "starting to forget", "FORGET"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_LEARN_Q3",
+            "level": 7,
+            "conceptTitle": "Polar Opposite: Love ↔ Hate",
+            "word": "Love ↔ Hate",
+            "pronunciation": "/lʌv/ ↔ /heɪt/",
+            "definition": "Emotional polarity: 'Love' is profound affection, adoration, and care; 'Hate' is intense hostility, detestation, and aversion.",
+            "example": "I absolutely love spending time with my family.",
+            "usageExample": "He hates waking up before sunrise on cold mornings.",
+            "nativeTip": "In everyday English, native speakers exaggerate with both: 'I'd love some tea' (keen preference) vs 'I hate traffic' (strong annoyance).",
+            "visualAnchor": "❤️ LOVE = Deep affection & care | 💔 HATE = Intense aversion & dislike",
+            "familyWords": ["Adore", "Detest", "Cherish", "Loathe"],
+            "commonMistake": "Be cautious when using 'hate' with people in formal speech — native speakers soften it with 'I don't particularly enjoy'.",
+            "rawExtra": {
+                "baseWord": "LOVE",
+                "antonym": "HATE",
+                "contrastDimension": "Emotional Regard",
+                "gradientScale": ["LOVE", "strong LOVE", "mixed", "some hate", "HATE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_LEARN_Q1",
+            "level": 8,
+            "conceptTitle": "Polar Opposite: Hit ↔ Miss",
+            "word": "Hit ↔ Miss",
+            "pronunciation": "/hɪt/ ↔ /mɪs/",
+            "definition": "Target contact: 'Hit' strikes the intended target with accuracy; 'Miss' fails to reach, strike, or catch the target.",
+            "example": "The archer managed to hit the exact center of the bullseye.",
+            "usageExample": "If you drive too slowly, you will miss the morning train.",
+            "nativeTip": "Idiom alert: 'hit or miss' means unpredictable or variable in quality ('The restaurant food is hit or miss').",
+            "visualAnchor": "🎯 HIT = Bullseye contact | 💨 MISS = Passed by without contact",
+            "familyWords": ["Strike", "Bypass", "Catch", "Fail"],
+            "commonMistake": "'Miss' also means feeling longing for someone ('I miss you'), but in targeting it directly opposes 'hit'.",
+            "rawExtra": {
+                "baseWord": "HIT",
+                "antonym": "MISS",
+                "contrastDimension": "Target Precision",
+                "gradientScale": ["HIT", "HIT actively", "neither", "partly miss", "MISS"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_LEARN_Q2",
+            "level": 8,
+            "conceptTitle": "Polar Opposite: Daughter ↔ Son",
+            "word": "Daughter ↔ Son",
+            "pronunciation": "/ˈdɔːtər/ ↔ /sʌn/",
+            "definition": "Offspring gender: 'Daughter' is a female human child; 'Son' is a male human child.",
+            "example": "Their oldest daughter just graduated from medical school.",
+            "usageExample": "He took his son to his first professional baseball game.",
+            "nativeTip": "'Son' is pronounced identically to 'sun' (/sʌn/). In legal or formal records, children are listed as 'sons and daughters'.",
+            "visualAnchor": "👧 DAUGHTER = Female child | 👦 SON = Male child",
+            "familyWords": ["Girl", "Boy", "Children", "Offspring"],
+            "commonMistake": "Don't confuse the spelling of 'son' with 'sun' (in the sky), although they sound 100% identical.",
+            "rawExtra": {
+                "baseWord": "DAUGHTER",
+                "antonym": "SON",
+                "contrastDimension": "Offspring Gender",
+                "gradientScale": ["DAUGHTER", "total DAUGHTER", "mixed", "a trace of son", "SON"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_LEARN_Q3",
+            "level": 8,
+            "conceptTitle": "Polar Opposite: Find ↔ Lose",
+            "word": "Find ↔ Lose",
+            "pronunciation": "/faɪnd/ ↔ /luːz/",
+            "definition": "Possession status: 'Find' discovers or recovers an object; 'Lose' misplaces, forfeits, or fails to retain an item.",
+            "example": "Did you find your missing house keys under the couch?",
+            "usageExample": "Be very careful not to lose your passport at the airport.",
+            "nativeTip": "Remember the spelling: 'lose' (/luːz/ with one 'o' = misplace) vs 'loose' (/luːs/ with two 'o's = not tight).",
+            "visualAnchor": "🔍 FIND = Recover & discover | ❓ LOSE = Misplace & forfeit",
+            "familyWords": ["Discover", "Misplace", "Locate", "Forfeit"],
+            "commonMistake": "Never write 'I don't want to loose my keys' — it is always 'lose' with one 'o'.",
+            "rawExtra": {
+                "baseWord": "FIND",
+                "antonym": "LOSE",
+                "contrastDimension": "Item Retention",
+                "gradientScale": ["FIND", "FIND actively", "undecided", "partly lose", "LOSE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_LEARN_Q1",
+            "level": 9,
+            "conceptTitle": "Polar Opposite: Open ↔ Shut",
+            "word": "Open ↔ Shut",
+            "pronunciation": "/ˈoʊpən/ ↔ /ʃʌt/",
+            "definition": "Access state: 'Open' allows entry, exit, or airflow; 'Shut' is completely closed, preventing passage.",
+            "example": "Please leave the window open to let in fresh morning air.",
+            "usageExample": "He shut the heavy iron gate behind him.",
+            "nativeTip": "'Shut' is more abrupt and complete than 'close'. 'Shut your mouth' is blunt, while 'keep eyes shut' emphasizes tight closure.",
+            "visualAnchor": "🚪 OPEN = Unobstructed access | 🔒 SHUT = Blocked & sealed",
+            "familyWords": ["Ajar", "Closed", "Sealed", "Unlocked"],
+            "commonMistake": "'Shut' has the same form in past tense: 'He shut the door yesterday' (never 'shutted').",
+            "rawExtra": {
+                "baseWord": "OPEN",
+                "antonym": "SHUT",
+                "contrastDimension": "Enclosure Access",
+                "gradientScale": ["OPEN", "highly OPEN", "balanced", "slightly SHUT", "SHUT"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_LEARN_Q2",
+            "level": 9,
+            "conceptTitle": "Polar Opposite: Husband ↔ Wife",
+            "word": "Husband ↔ Wife",
+            "pronunciation": "/ˈhʌzbənd/ ↔ /waɪf/",
+            "definition": "Matrimonial role: 'Husband' denotes a married man; 'Wife' denotes a married woman.",
+            "example": "She and her husband have been married for twenty years.",
+            "usageExample": "His wife is an accomplished concert violinist.",
+            "nativeTip": "Plural of 'wife' follows the f -> ves rule: one wife, two wives (/waɪvz/). The gender-neutral term is 'spouse'.",
+            "visualAnchor": "🤵 HUSBAND = Married man | 👰 WIFE = Married woman",
+            "familyWords": ["Spouse", "Partner", "Bride", "Groom"],
+            "commonMistake": "Always spell the plural of wife as 'wives', never 'wifes'.",
+            "rawExtra": {
+                "baseWord": "HUSBAND",
+                "antonym": "WIFE",
+                "contrastDimension": "Matrimonial Gender",
+                "gradientScale": ["HUSBAND", "pure HUSBAND", "neutral", "a trace of wife", "WIFE"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_LEARN_Q3",
+            "level": 9,
+            "conceptTitle": "Polar Opposite: Brother ↔ Sister",
+            "word": "Brother ↔ Sister",
+            "pronunciation": "/ˈbrʌðər/ ↔ /ˈsɪstər/",
+            "definition": "Sibling relation: 'Brother' is a male sibling sharing parents; 'Sister' is a female sibling sharing parents.",
+            "example": "My brother is two years older than I am.",
+            "usageExample": "She called her sister to share the exciting news.",
+            "nativeTip": "The umbrella term for brothers and sisters is 'siblings' ('Do you have any siblings?').",
+            "visualAnchor": "👦 BROTHER = Male sibling | 👧 SISTER = Female sibling",
+            "familyWords": ["Sibling", "Kin", "Bro", "Sis"],
+            "commonMistake": "Don't ask 'How many brothers and sisters you have?' — ask 'How many siblings do you have?' for natural fluency.",
+            "rawExtra": {
+                "baseWord": "BROTHER",
+                "antonym": "SISTER",
+                "contrastDimension": "Sibling Gender",
+                "gradientScale": ["BROTHER", "strong BROTHER", "balanced", "a hint of sister", "SISTER"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_LEARN_Q1",
+            "level": 10,
+            "conceptTitle": "Polar Opposite: Whole ↔ Half",
+            "word": "Whole ↔ Half",
+            "pronunciation": "/hoʊl/ ↔ /hæf/",
+            "definition": "Completeness & parentage: 'Whole' is 100% complete or sharing both parents; 'Half' is a 50% partition or sharing one parent.",
+            "example": "He ate the whole pizza by himself.",
+            "usageExample": "Cut the sandwich in half so we can share it.",
+            "nativeTip": "In family relations: a 'whole brother' shares both mother and father; a 'half brother' shares only one parent.",
+            "visualAnchor": "🌕 WHOLE = 100% Undivided | 🌗 HALF = 50% Partition",
+            "familyWords": ["Entire", "Partial", "Fraction", "Complete"],
+            "commonMistake": "The 'l' in 'half' is completely silent (/hæf/, rhyming with 'laugh'). Never pronounce the 'l'.",
+            "rawExtra": {
+                "baseWord": "WHOLE",
+                "antonym": "HALF",
+                "contrastDimension": "Completeness & Lineage",
+                "gradientScale": ["WHOLE", "extremely WHOLE", "average", "somewhat HALF", "HALF"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_LEARN_Q2",
+            "level": 10,
+            "conceptTitle": "Polar Opposite: Sit ↔ Stand",
+            "word": "Sit ↔ Stand",
+            "pronunciation": "/sɪt/ ↔ /stænd/",
+            "definition": "Body posture: 'Sit' rests body weight on a seat with hips bent; 'Stand' maintains an upright posture supported by one's feet.",
+            "example": "Please sit down and make yourself comfortable.",
+            "usageExample": "The audience had to stand during the national anthem.",
+            "nativeTip": "Particles transform both: 'sit down', 'sit up' (erect spine), 'stand up', 'stand by' (wait / support).",
+            "visualAnchor": "🪑 SIT = Seated resting posture | 🧍 STAND = Upright posture",
+            "familyWords": ["Rest", "Rise", "Perch", "Erect"],
+            "commonMistake": "Notice past forms: sit -> sat, stand -> stood. Both are irregular verbs.",
+            "rawExtra": {
+                "baseWord": "SIT",
+                "antonym": "STAND",
+                "contrastDimension": "Physical Posture",
+                "gradientScale": ["SIT", "SIT fully", "neither", "starting to stand", "STAND"]
+            }
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_LEARN_Q3",
+            "level": 10,
+            "conceptTitle": "Polar Opposite: Inside ↔ Outside",
+            "word": "Inside ↔ Outside",
+            "pronunciation": "/ɪnˈsaɪd/ ↔ /ˌaʊtˈsaɪd/",
+            "definition": "Spatial boundary: 'Inside' refers to the interior enclosed perimeter; 'Outside' refers to the external exterior environment.",
+            "example": "It began raining heavily, so we went inside the house.",
+            "usageExample": "The children are playing outside in the fresh sunshine.",
+            "nativeTip": "In compound adjectives: 'an inside job' (secret internal collusion) vs 'outside help' (external independent support).",
+            "visualAnchor": "🏠 INSIDE = Enclosed interior | 🌳 OUTSIDE = Open exterior",
+            "familyWords": ["Interior", "Exterior", "Indoors", "Outdoors"],
+            "commonMistake": "You don't need 'to' with inside/outside as adverbs: say 'go outside', not 'go to outside'.",
+            "rawExtra": {
+                "baseWord": "INSIDE",
+                "antonym": "OUTSIDE",
+                "contrastDimension": "Spatial Enclosure",
+                "gradientScale": ["INSIDE", "complete INSIDE", "balanced", "a hint of outside", "OUTSIDE"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L21_Q1",
+            "word": "EAST",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "This word describes something that is situated in or facing or moving toward the west.",
+            "explanation": "While east means situated in or facing or moving toward the east, west means the opposite: situated in or facing or moving toward the west.",
+            "interactionType": "search",
+            "correctAnswer": "WEST",
+            "options": [
+                "WATERFRONT",
+                "COLLINS",
+                "IDEALLY",
+                "WEST"
+            ],
+            "gradientScale": [
+                "EAST",
+                "extremely EAST",
+                "moderate",
+                "fairly WEST",
+                "WEST"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L21_Q2",
+            "word": "TRUE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning not in accordance with the fact or reality or actuality.",
+            "explanation": "True means consistent with fact or reality; false means not in accordance with the fact or reality or actuality.",
+            "interactionType": "search",
+            "correctAnswer": "FALSE",
+            "options": [
+                "FALSE",
+                "RIGHTFUL",
+                "RELIABLE",
+                "STRAIGHT"
+            ],
+            "gradientScale": [
+                "TRUE",
+                "very TRUE",
+                "in between",
+                "mildly FALSE",
+                "FALSE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L21_Q3",
+            "word": "ROUND",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Picture something described as having four equal sides and four right angles or forming a right angle.",
+            "explanation": "Round means having a circular shape — the reverse idea is having four equal sides and four right angles or forming a right angle, which is what square means.",
+            "interactionType": "search",
+            "correctAnswer": "SQUARE",
+            "options": [
+                "CIRCULAR",
+                "SQUARE",
+                "OROTUND",
+                "ROTUND"
+            ],
+            "gradientScale": [
+                "ROUND",
+                "extremely ROUND",
+                "average",
+                "fairly SQUARE",
+                "SQUARE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L22_Q1",
+            "word": "SUFFER",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Consider a word that means to have for one's benefit.",
+            "explanation": "Suffer means undergo or be subjected to, so its opposite, enjoy, means have for one's benefit.",
+            "interactionType": "search",
+            "correctAnswer": "ENJOY",
+            "options": [
+                "ENJOY",
+                "ENDURE",
+                "LOSE",
+                "STOMACH"
+            ],
+            "gradientScale": [
+                "SUFFER",
+                "SUFFER actively",
+                "undecided",
+                "starting to enjoy",
+                "ENJOY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L22_Q2",
+            "word": "FIRE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Consider a word that means to engage or hire for work.",
+            "explanation": "While fire means terminate the employment of, hire means the opposite: engage or hire for work.",
+            "interactionType": "search",
+            "correctAnswer": "HIRE",
+            "options": [
+                "CAN",
+                "TERMINATE",
+                "SACK",
+                "HIRE"
+            ],
+            "gradientScale": [
+                "FIRE",
+                "FIRE clearly",
+                "undecided",
+                "beginning to hire",
+                "HIRE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L22_Q3",
+            "word": "SAFETY",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Try to recall a word that means the condition of being susceptible to harm or injury.",
+            "explanation": "Safety means the state of being certain that adverse effects will not be caused by some agent under defined conditions, so its opposite, danger, means the condition of being susceptible to harm or injury.",
+            "interactionType": "search",
+            "correctAnswer": "DANGER",
+            "options": [
+                "GUARD",
+                "DANGER",
+                "PROPHYLACTIC",
+                "REFUGE"
+            ],
+            "gradientScale": [
+                "SAFETY",
+                "total SAFETY",
+                "balanced",
+                "a trace of danger",
+                "DANGER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L23_Q1",
+            "word": "UPSTAIRS",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Consider a word that means on or of lower floors of a building.",
+            "explanation": "While upstairs means on or of upper floors of a building, downstairs means the opposite: on or of lower floors of a building.",
+            "interactionType": "search",
+            "correctAnswer": "DOWNSTAIRS",
+            "options": [
+                "UPSTAIR",
+                "THRILL",
+                "CHEROKEE",
+                "DOWNSTAIRS"
+            ],
+            "gradientScale": [
+                "UPSTAIRS",
+                "quite UPSTAIRS",
+                "average",
+                "fairly DOWNSTAIRS",
+                "DOWNSTAIRS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L23_Q2",
+            "word": "FEMALE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "This word refers to an animal that produces gametes (spermatozoa) that can fertilize female gametes (ova).",
+            "explanation": "Female means an animal that produces gametes (ova) that can be fertilized by male gametes (spermatozoa); male means an animal that produces gametes (spermatozoa) that can fertilize female gametes (ova).",
+            "interactionType": "search",
+            "correctAnswer": "MALE",
+            "options": [
+                "MALE",
+                "MANN",
+                "DROP",
+                "LULU"
+            ],
+            "gradientScale": [
+                "FEMALE",
+                "total FEMALE",
+                "mixed",
+                "a trace of male",
+                "MALE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L23_Q3",
+            "word": "BELOW",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "This word describes an action or manner that is at an earlier place.",
+            "explanation": "Below means at a later place, so its opposite, above, means at an earlier place.",
+            "interactionType": "search",
+            "correctAnswer": "ABOVE",
+            "options": [
+                "INFRA",
+                "BENEATH",
+                "ABOVE",
+                "UNDER"
+            ],
+            "gradientScale": [
+                "BELOW",
+                "truly BELOW",
+                "moderate",
+                "mildly ABOVE",
+                "ABOVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L24_Q1",
+            "word": "LET",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Look for a word meaning to stop (someone or something) from doing something or being in a certain state.",
+            "explanation": "To let means to make it possible through a specific action or lack of action for something to happen. To prevent means the opposite: to stop (someone or something) from doing something or being in a certain state.",
+            "interactionType": "search",
+            "correctAnswer": "PREVENT",
+            "options": [
+                "ALLOW",
+                "PERMIT",
+                "RENT",
+                "PREVENT"
+            ],
+            "gradientScale": [
+                "LET",
+                "LET completely",
+                "undecided",
+                "beginning to prevent",
+                "PREVENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L24_Q2",
+            "word": "KNOWN",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "The opposite idea here relates to being not known.",
+            "explanation": "Known means apprehended with certainty, so its opposite, unknown, means not known.",
+            "interactionType": "search",
+            "correctAnswer": "UNKNOWN",
+            "options": [
+                "UNKNOWN",
+                "SAILBOAT",
+                "WROTE",
+                "TRIUMPHANT"
+            ],
+            "gradientScale": [
+                "KNOWN",
+                "extremely KNOWN",
+                "in between",
+                "fairly UNKNOWN",
+                "UNKNOWN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L24_Q3",
+            "word": "AWAKE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning in a state of sleep.",
+            "explanation": "Awake describes not in a state of sleep, while asleep describes in a state of sleep.",
+            "interactionType": "search",
+            "correctAnswer": "ASLEEP",
+            "options": [
+                "ALERT",
+                "ALIVE",
+                "ASLEEP",
+                "PECKER"
+            ],
+            "gradientScale": [
+                "AWAKE",
+                "extremely AWAKE",
+                "moderate",
+                "fairly ASLEEP",
+                "ASLEEP"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L25_Q1",
+            "word": "BEAR",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "What word refers to an investor with an optimistic market outlook?",
+            "explanation": "Bear means an investor with a pessimistic market outlook — the reverse idea is an investor with an optimistic market outlook, which is what bull means.",
+            "interactionType": "search",
+            "correctAnswer": "BULL",
+            "options": [
+                "GEISHA",
+                "BULL",
+                "TAILING",
+                "PLAYFUL"
+            ],
+            "gradientScale": [
+                "BEAR",
+                "total BEAR",
+                "mixed",
+                "a trace of bull",
+                "BULL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L25_Q2",
+            "word": "LEADING",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word describes something that is going or proceeding or coming after in the same direction.",
+            "explanation": "While leading means going or proceeding or going in advance, following means the opposite: going or proceeding or coming after in the same direction.",
+            "interactionType": "search",
+            "correctAnswer": "FOLLOWING",
+            "options": [
+                "STELLAR",
+                "PRIMA",
+                "FOLLOWING",
+                "STARRING"
+            ],
+            "gradientScale": [
+                "LEADING",
+                "extremely LEADING",
+                "moderate",
+                "mildly FOLLOWING",
+                "FOLLOWING"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L25_Q3",
+            "word": "EXPENSIVE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Search for a word that captures the idea of being relatively low in price or charging low prices.",
+            "explanation": "Expensive means high in price or charging high prices — the reverse idea is relatively low in price or charging low prices, which is what cheap means.",
+            "interactionType": "search",
+            "correctAnswer": "CHEAP",
+            "options": [
+                "ANNEX",
+                "TRUE",
+                "SAFE",
+                "CHEAP"
+            ],
+            "gradientScale": [
+                "EXPENSIVE",
+                "very EXPENSIVE",
+                "moderate",
+                "mildly CHEAP",
+                "CHEAP"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L26_Q1",
+            "word": "USUAL",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "This word describes something that is not usual or common or ordinary.",
+            "explanation": "Usual means occurring or encountered or experienced or observed frequently or in accordance with regular practice or procedure — the reverse idea is not usual or common or ordinary, which is what unusual means.",
+            "interactionType": "search",
+            "correctAnswer": "UNUSUAL",
+            "options": [
+                "COMMON",
+                "HELICOPTER",
+                "UNUSUAL",
+                "PERISCOPE"
+            ],
+            "gradientScale": [
+                "USUAL",
+                "extremely USUAL",
+                "average",
+                "mildly UNUSUAL",
+                "UNUSUAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L26_Q2",
+            "word": "LEGAL",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Look for a word meaning prohibited by law or by official or accepted rules.",
+            "explanation": "Legal means established by or founded upon law or official or accepted rules, so its opposite, illegal, means prohibited by law or by official or accepted rules.",
+            "interactionType": "search",
+            "correctAnswer": "ILLEGAL",
+            "options": [
+                "ILLEGAL",
+                "SOUND",
+                "EFFECTUAL",
+                "FLEX"
+            ],
+            "gradientScale": [
+                "LEGAL",
+                "very LEGAL",
+                "moderate",
+                "somewhat ILLEGAL",
+                "ILLEGAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L26_Q3",
+            "word": "CHILD",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Consider a word that means a father or mother.",
+            "explanation": "Child refers to a human offspring (son or daughter) of any age, while parent refers to a father or mother.",
+            "interactionType": "search",
+            "correctAnswer": "PARENT",
+            "options": [
+                "TYKE",
+                "SHAVER",
+                "PARENT",
+                "FRY"
+            ],
+            "gradientScale": [
+                "CHILD",
+                "pure CHILD",
+                "mixed",
+                "a hint of parent",
+                "PARENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L27_Q1",
+            "word": "LOCATION",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "The opposite idea here is workplace consisting of a room or building where movies or television shows or radio programs are produced and recorded.",
+            "explanation": "While location means a workplace away from a studio at which some or all of a movie may be made, studio means the opposite: workplace consisting of a room or building where movies or television shows or radio programs are produced and recorded.",
+            "interactionType": "search",
+            "correctAnswer": "STUDIO",
+            "options": [
+                "FIX",
+                "STUDIO",
+                "LOCALIZATION",
+                "EMPLACEMENT"
+            ],
+            "gradientScale": [
+                "LOCATION",
+                "strong LOCATION",
+                "balanced",
+                "some studio",
+                "STUDIO"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L27_Q2",
+            "word": "APPEAR",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Try to recall a word that means to get lost, as without warning or explanation.",
+            "explanation": "Appear refers to come into sight or view. Disappear, by contrast, means get lost, as without warning or explanation.",
+            "interactionType": "search",
+            "correctAnswer": "DISAPPEAR",
+            "options": [
+                "SEEM",
+                "LOOK",
+                "PIRANHA",
+                "DISAPPEAR"
+            ],
+            "gradientScale": [
+                "APPEAR",
+                "APPEAR actively",
+                "undecided",
+                "partly disappear",
+                "DISAPPEAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L27_Q3",
+            "word": "FAILURE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning an event that accomplishes its intended purpose.",
+            "explanation": "Failure means an event that does not accomplish its intended purpose; success means an event that accomplishes its intended purpose.",
+            "interactionType": "search",
+            "correctAnswer": "SUCCESS",
+            "options": [
+                "LOSER",
+                "SUCCESS",
+                "NONSTARTER",
+                "BANKRUPTCY"
+            ],
+            "gradientScale": [
+                "FAILURE",
+                "pure FAILURE",
+                "balanced",
+                "some success",
+                "SUCCESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L28_Q1",
+            "word": "MAJOR",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Search for a word that captures the idea of being inferior in number or size or amount.",
+            "explanation": "While major means greater in number or size or amount, minor means the opposite: inferior in number or size or amount.",
+            "interactionType": "search",
+            "correctAnswer": "MINOR",
+            "options": [
+                "BLACKBIRD",
+                "BURDEN",
+                "MINOR",
+                "AMBULANCE"
+            ],
+            "gradientScale": [
+                "MAJOR",
+                "very MAJOR",
+                "moderate",
+                "slightly MINOR",
+                "MINOR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L28_Q2",
+            "word": "CURSE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Look for a word meaning to give a benediction to.",
+            "explanation": "Curse refers to wish harm upon. Bless, by contrast, means give a benediction to.",
+            "interactionType": "search",
+            "correctAnswer": "BLESS",
+            "options": [
+                "IMPRECATE",
+                "BESHREW",
+                "BEDAMN",
+                "BLESS"
+            ],
+            "gradientScale": [
+                "CURSE",
+                "CURSE actively",
+                "neither",
+                "beginning to bless",
+                "BLESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L28_Q3",
+            "word": "ISSUE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word means to make unavailable.",
+            "explanation": "Issue means circulate or distribute or equip with; recall means make unavailable.",
+            "interactionType": "search",
+            "correctAnswer": "RECALL",
+            "options": [
+                "SUPPLY",
+                "PUBLISH",
+                "RECALL",
+                "EMERGE"
+            ],
+            "gradientScale": [
+                "ISSUE",
+                "ISSUE fully",
+                "neither",
+                "partly recall",
+                "RECALL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L29_Q1",
+            "word": "HUNGRY",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Imagine describing something as feeling a need or desire to drink.",
+            "explanation": "Hungry refers to feeling hunger. Thirsty, by contrast, means feeling a need or desire to drink.",
+            "interactionType": "search",
+            "correctAnswer": "THIRSTY",
+            "options": [
+                "ATHIRST",
+                "THIRSTY",
+                "CARTRIDGE",
+                "LEARNED"
+            ],
+            "gradientScale": [
+                "HUNGRY",
+                "very HUNGRY",
+                "balanced",
+                "somewhat THIRSTY",
+                "THIRSTY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L29_Q2",
+            "word": "USEFUL",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Think about a word meaning having no beneficial use or incapable of functioning usefully.",
+            "explanation": "Useful means being of use or service; useless means having no beneficial use or incapable of functioning usefully.",
+            "interactionType": "search",
+            "correctAnswer": "USELESS",
+            "options": [
+                "UTILE",
+                "UTILITARIAN",
+                "USELESS",
+                "DUCT"
+            ],
+            "gradientScale": [
+                "USEFUL",
+                "very USEFUL",
+                "average",
+                "somewhat USELESS",
+                "USELESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L29_Q3",
+            "word": "PHYSICAL",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "What word fits the idea of being involving the mind or an intellectual process?",
+            "explanation": "Physical means involving the body as distinguished from the mind or spirit, so its opposite, mental, means involving the mind or an intellectual process.",
+            "interactionType": "search",
+            "correctAnswer": "MENTAL",
+            "options": [
+                "FORCIBLE",
+                "GRAVES",
+                "TIMES",
+                "MENTAL"
+            ],
+            "gradientScale": [
+                "PHYSICAL",
+                "truly PHYSICAL",
+                "in between",
+                "mildly MENTAL",
+                "MENTAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L30_Q1",
+            "word": "SENIOR",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "This word describes something that is younger.",
+            "explanation": "Senior means older, so its opposite, junior, means younger.",
+            "interactionType": "search",
+            "correctAnswer": "JUNIOR",
+            "options": [
+                "AGED",
+                "OLDER",
+                "JUNIOR",
+                "ELDERLY"
+            ],
+            "gradientScale": [
+                "SENIOR",
+                "truly SENIOR",
+                "average",
+                "slightly JUNIOR",
+                "JUNIOR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L30_Q2",
+            "word": "EXIT",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "This word means to to come or go into.",
+            "explanation": "To exit means to move out of or depart from. To enter means the opposite: to to come or go into.",
+            "interactionType": "search",
+            "correctAnswer": "ENTER",
+            "options": [
+                "LEAVE",
+                "ENTER",
+                "CROAK",
+                "DECEASE"
+            ],
+            "gradientScale": [
+                "EXIT",
+                "EXIT fully",
+                "in between",
+                "starting to enter",
+                "ENTER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L30_Q3",
+            "word": "DEAF",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Search for a word that captures the idea of being able to perceive sound.",
+            "explanation": "Deaf means lacking or deprived of the sense of hearing wholly or in part, so its opposite, hearing, means able to perceive sound.",
+            "interactionType": "search",
+            "correctAnswer": "HEARING",
+            "options": [
+                "HEARING",
+                "INDIFFERENT",
+                "MICROSCOPE",
+                "PUNCTURED"
+            ],
+            "gradientScale": [
+                "DEAF",
+                "quite DEAF",
+                "moderate",
+                "slightly HEARING",
+                "HEARING"
+            ]
+        }
+    ]
+}

@@ -22,6 +22,15 @@ class FlashcardActionButtons extends StatelessWidget {
   /// Callback executed when the user taps "Got It" (mastered).
   final VoidCallback onGotIt;
 
+  /// Optional multiple-choice options for objective testing (Mastery phase).
+  final List<String>? options;
+
+  /// The correct answer string when options are provided.
+  final String? correctAnswer;
+
+  /// Callback when a specific option is chosen.
+  final ValueChanged<bool>? onOptionSelected;
+
   /// Creates a [FlashcardActionButtons] widget.
   const FlashcardActionButtons({
     super.key,
@@ -30,6 +39,9 @@ class FlashcardActionButtons extends StatelessWidget {
     required this.isDark,
     required this.onAgain,
     required this.onGotIt,
+    this.options,
+    this.correctAnswer,
+    this.onOptionSelected,
   });
 
   @override
@@ -83,6 +95,57 @@ class FlashcardActionButtons extends StatelessWidget {
       );
     }
 
+    if (options != null && options!.isNotEmpty) {
+      final optionsCol = Padding(
+        padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 16.w),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.h),
+              child: Text(
+                context.tr(
+                  'instructions.flashcards.select_meaning',
+                  fallback: 'SELECT THE CORRECT MEANING',
+                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? AppColors.slate300 : AppColors.slate700,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12.sp,
+                  letterSpacing: 0.8,
+                ),
+              ),
+            ),
+            for (int i = 0; i < options!.length; i++) ...[
+              if (i > 0) SizedBox(height: 6.h),
+              _OptionCard(
+                text: options![i],
+                isCorrect: options![i].trim().toLowerCase() ==
+                    (correctAnswer ?? '').trim().toLowerCase(),
+                isDark: isDark,
+                disabled: isTransitioning,
+                onSelected: (correct) {
+                  if (onOptionSelected != null) {
+                    onOptionSelected!(correct);
+                  } else if (correct) {
+                    onGotIt();
+                  } else {
+                    onAgain();
+                  }
+                },
+              ),
+            ],
+          ],
+        ),
+      );
+
+      if (reduceMotion) return optionsCol;
+      return optionsCol.animate().fadeIn(duration: 350.ms).slideY(begin: 0.15);
+    }
+
     final buttonsRow = Padding(
       padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 20.w),
       child: Row(
@@ -114,6 +177,101 @@ class FlashcardActionButtons extends StatelessWidget {
 
     if (reduceMotion) return buttonsRow;
     return buttonsRow.animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
+  }
+}
+
+class _OptionCard extends StatefulWidget {
+  final String text;
+  final bool isCorrect;
+  final bool isDark;
+  final bool disabled;
+  final ValueChanged<bool> onSelected;
+
+  const _OptionCard({
+    required this.text,
+    required this.isCorrect,
+    required this.isDark,
+    required this.disabled,
+    required this.onSelected,
+  });
+
+  @override
+  State<_OptionCard> createState() => _OptionCardState();
+}
+
+class _OptionCardState extends State<_OptionCard> {
+  bool? _wasTappedCorrect;
+
+  @override
+  Widget build(BuildContext context) {
+    Color bgColor;
+    Color borderColor;
+    Color textColor;
+
+    if (_wasTappedCorrect != null) {
+      if (_wasTappedCorrect!) {
+        bgColor = AppColors.emerald500.withValues(alpha: 0.2);
+        borderColor = AppColors.emerald500;
+        textColor = widget.isDark ? AppColors.emerald400 : AppColors.emerald600;
+      } else {
+        bgColor = AppColors.red500.withValues(alpha: 0.2);
+        borderColor = AppColors.red500;
+        textColor = widget.isDark ? AppColors.rose500 : AppColors.rose700;
+      }
+    } else {
+      bgColor = widget.isDark ? AppColors.midnightSurface : Colors.white;
+      borderColor = widget.isDark
+          ? Colors.white.withValues(alpha: 0.12)
+          : AppColors.slate200;
+      textColor = widget.isDark ? Colors.white : AppColors.slate800;
+    }
+
+    return Material(
+      color: bgColor,
+      borderRadius: BorderRadius.circular(14.r),
+      child: InkWell(
+        onTap: widget.disabled
+            ? null
+            : () {
+                setState(() {
+                  _wasTappedCorrect = widget.isCorrect;
+                });
+                widget.onSelected(widget.isCorrect);
+              },
+        borderRadius: BorderRadius.circular(14.r),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14.r),
+            border: Border.all(color: borderColor, width: 1.2),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  widget.text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    color: textColor,
+                    height: 1.3,
+                  ),
+                ),
+              ),
+              if (_wasTappedCorrect != null)
+                Icon(
+                  _wasTappedCorrect!
+                      ? Icons.check_circle_rounded
+                      : Icons.cancel_rounded,
+                  color: borderColor,
+                  size: 18.r,
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

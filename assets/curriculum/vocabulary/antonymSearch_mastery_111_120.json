@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L111_Q1",
+            "word": "MANAGE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "The opposite action here is to be unable.",
+            "explanation": "Manage means to be successful; fail means to be unable.",
+            "interactionType": "search",
+            "correctAnswer": "FAIL",
+            "options": [
+                "SUPERVISE",
+                "FINAGLE",
+                "FAIL",
+                "WANGLE"
+            ],
+            "gradientScale": [
+                "MANAGE",
+                "MANAGE actively",
+                "neither",
+                "beginning to fail",
+                "FAIL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L111_Q2",
+            "word": "SIMPLE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Search for a word that captures the idea of being complicated in structure.",
+            "explanation": "Simple means having few parts — the reverse idea is complicated in structure, which is what complex means.",
+            "interactionType": "search",
+            "correctAnswer": "COMPLEX",
+            "options": [
+                "COMPLEX",
+                "UNCOMPLICATED",
+                "MERE",
+                "UNSUBDIVIDED"
+            ],
+            "gradientScale": [
+                "SIMPLE",
+                "highly SIMPLE",
+                "moderate",
+                "mildly COMPLEX",
+                "COMPLEX"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L111_Q3",
+            "word": "ALERT",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Think about a word meaning half asleep and sluggish from lack of activity.",
+            "explanation": "Alert means watchful and quick to notice things, so its opposite, drowsy, means half asleep and sluggish from lack of activity.",
+            "interactionType": "search",
+            "correctAnswer": "DROWSY",
+            "options": [
+                "WATCHFUL",
+                "VIGILANT",
+                "AWAKE",
+                "DROWSY"
+            ],
+            "gradientScale": [
+                "ALERT",
+                "extremely ALERT",
+                "moderate",
+                "fairly DROWSY",
+                "DROWSY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L112_Q1",
+            "word": "WORN",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Imagine describing something as unaffected by use or exposure.",
+            "explanation": "Worn means affected by wear; new means unaffected by use or exposure.",
+            "interactionType": "search",
+            "correctAnswer": "NEW",
+            "options": [
+                "NEW",
+                "HAGGARD",
+                "DRAWN",
+                "CAREWORN"
+            ],
+            "gradientScale": [
+                "WORN",
+                "extremely WORN",
+                "average",
+                "somewhat NEW",
+                "NEW"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L112_Q2",
+            "word": "POSITIVE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "This word describes something that is characterized by or displaying negation or denial or opposition or resistance.",
+            "explanation": "Positive means characterized by or displaying affirmation or acceptance or certainty etc.; negative means characterized by or displaying negation or denial or opposition or resistance.",
+            "interactionType": "search",
+            "correctAnswer": "NEGATIVE",
+            "options": [
+                "IRREFUTABLE",
+                "PLUS",
+                "POSITIVISTIC",
+                "NEGATIVE"
+            ],
+            "gradientScale": [
+                "POSITIVE",
+                "very POSITIVE",
+                "neutral",
+                "a little NEGATIVE",
+                "NEGATIVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L112_Q3",
+            "word": "LOSER",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Search for a word that means a gambler who wins a bet.",
+            "explanation": "Loser means a gambler who loses a bet — the reverse idea is a gambler who wins a bet, which is what winner means.",
+            "interactionType": "search",
+            "correctAnswer": "WINNER",
+            "options": [
+                "WINNER",
+                "FAILURE",
+                "NONSTARTER",
+                "TIDINGS"
+            ],
+            "gradientScale": [
+                "LOSER",
+                "strong LOSER",
+                "balanced",
+                "a hint of winner",
+                "WINNER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L113_Q1",
+            "word": "REPAIR",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Look for a word meaning to ruin completely.",
+            "explanation": "Repair means restore by replacing a part or putting together what is torn or broken, so its opposite, break, means ruin completely.",
+            "interactionType": "search",
+            "correctAnswer": "BREAK",
+            "options": [
+                "MEND",
+                "BUSHEL",
+                "RESTORE",
+                "BREAK"
+            ],
+            "gradientScale": [
+                "REPAIR",
+                "REPAIR completely",
+                "in between",
+                "partly break",
+                "BREAK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L113_Q2",
+            "word": "TENSE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Look for a word meaning to cause to feel relaxed.",
+            "explanation": "Tense means to cause to be tense and uneasy or nervous or anxious; relax means to cause to feel relaxed.",
+            "interactionType": "search",
+            "correctAnswer": "RELAX",
+            "options": [
+                "STRAIN",
+                "SECONDLY",
+                "RELAX",
+                "GRAPHICS"
+            ],
+            "gradientScale": [
+                "TENSE",
+                "TENSE completely",
+                "neither",
+                "beginning to relax",
+                "RELAX"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L113_Q3",
+            "word": "PLAIN",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "What word fits the idea of being not plain?",
+            "explanation": "Plain means not elaborate or elaborated, so its opposite, fancy, means not plain.",
+            "interactionType": "search",
+            "correctAnswer": "FANCY",
+            "options": [
+                "EVIDENT",
+                "SHEER",
+                "UNEMBELLISHED",
+                "FANCY"
+            ],
+            "gradientScale": [
+                "PLAIN",
+                "very PLAIN",
+                "in between",
+                "a little FANCY",
+                "FANCY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L114_Q1",
+            "word": "FAIR",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Consider a word that means not fair.",
+            "explanation": "Fair refers to free from favoritism or self-interest or bias or deception. Unfair, by contrast, means not fair.",
+            "interactionType": "search",
+            "correctAnswer": "UNFAIR",
+            "options": [
+                "JUST",
+                "MEDIOCRE",
+                "UNFAIR",
+                "AVERAGE"
+            ],
+            "gradientScale": [
+                "FAIR",
+                "quite FAIR",
+                "moderate",
+                "slightly UNFAIR",
+                "UNFAIR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L114_Q2",
+            "word": "FRONT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Look for a word meaning the side that goes last or is not normally seen.",
+            "explanation": "Front refers to the side that is seen or that goes first. Rear, by contrast, means the side that goes last or is not normally seen.",
+            "interactionType": "search",
+            "correctAnswer": "REAR",
+            "options": [
+                "FOREPART",
+                "FIGUREHEAD",
+                "STRAWMAN",
+                "REAR"
+            ],
+            "gradientScale": [
+                "FRONT",
+                "pure FRONT",
+                "balanced",
+                "a trace of rear",
+                "REAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L114_Q3",
+            "word": "SMOOTH",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Look for a word meaning having or caused by an irregular surface.",
+            "explanation": "Smooth means having a surface free from roughness or bumps or ridges or irregularities, so its opposite, rough, means having or caused by an irregular surface.",
+            "interactionType": "search",
+            "correctAnswer": "ROUGH",
+            "options": [
+                "ROUGH",
+                "SUAVE",
+                "PLACID",
+                "TRANQUIL"
+            ],
+            "gradientScale": [
+                "SMOOTH",
+                "quite SMOOTH",
+                "in between",
+                "slightly ROUGH",
+                "ROUGH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L115_Q1",
+            "word": "OFFENSE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Try to recall a word that means the team that is trying to prevent the other team from scoring.",
+            "explanation": "While offense means the team that has the ball (or puck) and is trying to score, defense means the opposite: the team that is trying to prevent the other team from scoring.",
+            "interactionType": "search",
+            "correctAnswer": "DEFENSE",
+            "options": [
+                "DISCOURTESY",
+                "OFFENSIVE",
+                "UMBRAGE",
+                "DEFENSE"
+            ],
+            "gradientScale": [
+                "OFFENSE",
+                "complete OFFENSE",
+                "mixed",
+                "some defense",
+                "DEFENSE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L115_Q2",
+            "word": "RICH",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "What word fits the idea of being lacking in mineral content or combustible material?",
+            "explanation": "Rich means having an abundant supply of nutrients, minerals, or fuel; lean means lacking in mineral content or combustible material.",
+            "interactionType": "search",
+            "correctAnswer": "LEAN",
+            "options": [
+                "PLENTEOUS",
+                "LEAN",
+                "ROBUST",
+                "FERTILE"
+            ],
+            "gradientScale": [
+                "RICH",
+                "quite RICH",
+                "in between",
+                "a little LEAN",
+                "LEAN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L115_Q3",
+            "word": "FOREIGN",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Imagine describing something as characteristic of or existing by virtue of geographic origin.",
+            "explanation": "Foreign refers to relating to or originating in or characteristic of another place or part of the world. Native, by contrast, means characteristic of or existing by virtue of geographic origin.",
+            "interactionType": "search",
+            "correctAnswer": "NATIVE",
+            "options": [
+                "STRANGE",
+                "ALIEN",
+                "EXTRANEOUS",
+                "NATIVE"
+            ],
+            "gradientScale": [
+                "FOREIGN",
+                "extremely FOREIGN",
+                "average",
+                "a little NATIVE",
+                "NATIVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L116_Q1",
+            "word": "RUSH",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "The opposite action here is to cause to be slowed down or delayed.",
+            "explanation": "To rush means to urge to an unnatural speed. To delay means the opposite: to cause to be slowed down or delayed.",
+            "interactionType": "search",
+            "correctAnswer": "DELAY",
+            "options": [
+                "HURRY",
+                "DELAY",
+                "HIE",
+                "HASTEN"
+            ],
+            "gradientScale": [
+                "RUSH",
+                "RUSH fully",
+                "in between",
+                "beginning to delay",
+                "DELAY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L116_Q2",
+            "word": "BRIGHT",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Consider a word that means emitting or reflecting very little light.",
+            "explanation": "Bright means emitting or reflecting light readily or in large amounts; dull means emitting or reflecting very little light.",
+            "interactionType": "search",
+            "correctAnswer": "DULL",
+            "options": [
+                "SMART",
+                "VIVID",
+                "LUSTROUS",
+                "DULL"
+            ],
+            "gradientScale": [
+                "BRIGHT",
+                "very BRIGHT",
+                "moderate",
+                "somewhat DULL",
+                "DULL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L116_Q3",
+            "word": "STANDING",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "This word describes something that is having the torso erect and legs bent with the body supported on the buttocks.",
+            "explanation": "To be standing is to be on the feet. Seated means having the torso erect and legs bent with the body supported on the buttocks, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "SEATED",
+            "options": [
+                "UNDERWAY",
+                "SEATED",
+                "COMPARISON",
+                "ANTICHRIST"
+            ],
+            "gradientScale": [
+                "STANDING",
+                "extremely STANDING",
+                "in between",
+                "slightly SEATED",
+                "SEATED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L117_Q1",
+            "word": "WIDE",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "This word describes something that is not wide.",
+            "explanation": "To be wide is to be having great (or a certain) extent from one side to the other. Narrow means not wide, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "NARROW",
+            "options": [
+                "BROAD",
+                "FULL",
+                "SPACIOUS",
+                "NARROW"
+            ],
+            "gradientScale": [
+                "WIDE",
+                "quite WIDE",
+                "moderate",
+                "a little NARROW",
+                "NARROW"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L117_Q2",
+            "word": "SOLID",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Consider a word that means existing as or having characteristics of a liquid.",
+            "explanation": "Solid refers to of definite shape and volume. Liquid, by contrast, means existing as or having characteristics of a liquid.",
+            "interactionType": "search",
+            "correctAnswer": "LIQUID",
+            "options": [
+                "SATISFYING",
+                "LIQUID",
+                "UPSTANDING",
+                "SUBSTANTIAL"
+            ],
+            "gradientScale": [
+                "SOLID",
+                "quite SOLID",
+                "balanced",
+                "mildly LIQUID",
+                "LIQUID"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L117_Q3",
+            "word": "HAPPINESS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Try to recall a word that means emotions experienced when not in a state of well-being.",
+            "explanation": "Happiness means emotions experienced when in a state of well-being; sadness means emotions experienced when not in a state of well-being.",
+            "interactionType": "search",
+            "correctAnswer": "SADNESS",
+            "options": [
+                "FELICITY",
+                "SUMNER",
+                "SADNESS",
+                "HICKEY"
+            ],
+            "gradientScale": [
+                "HAPPINESS",
+                "complete HAPPINESS",
+                "neutral",
+                "a trace of sadness",
+                "SADNESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L118_Q1",
+            "word": "AGED",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means young people collectively.",
+            "explanation": "Aged refers to people who are old collectively, while young refers to young people collectively.",
+            "interactionType": "search",
+            "correctAnswer": "YOUNG",
+            "options": [
+                "ELDERLY",
+                "LIBERTY",
+                "LOOKER",
+                "YOUNG"
+            ],
+            "gradientScale": [
+                "AGED",
+                "strong AGED",
+                "neutral",
+                "a hint of young",
+                "YOUNG"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L118_Q2",
+            "word": "AMATEUR",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Consider a word that means an athlete who plays for pay.",
+            "explanation": "Amateur means an athlete who does not play for pay — the reverse idea is an athlete who plays for pay, which is what professional means.",
+            "interactionType": "search",
+            "correctAnswer": "PROFESSIONAL",
+            "options": [
+                "PROFESSIONAL",
+                "COLOR",
+                "RELIABLE",
+                "APART"
+            ],
+            "gradientScale": [
+                "AMATEUR",
+                "strong AMATEUR",
+                "mixed",
+                "a trace of professional",
+                "PROFESSIONAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L118_Q3",
+            "word": "PRO",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word refers to an argument opposed to a proposal.",
+            "explanation": "Pro means an argument in favor of a proposal, so its opposite, con, means an argument opposed to a proposal.",
+            "interactionType": "search",
+            "correctAnswer": "CON",
+            "options": [
+                "PROFESSIONAL",
+                "CON",
+                "KNOWING",
+                "MISDEMEANOR"
+            ],
+            "gradientScale": [
+                "PRO",
+                "strong PRO",
+                "neutral",
+                "a hint of con",
+                "CON"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L119_Q1",
+            "word": "ADMIT",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Think about a word meaning to refuse entrance or membership.",
+            "explanation": "Admit means allow to enter; reject means refuse entrance or membership.",
+            "interactionType": "search",
+            "correctAnswer": "REJECT",
+            "options": [
+                "INTROMIT",
+                "ACKNOWLEDGE",
+                "HOLD",
+                "REJECT"
+            ],
+            "gradientScale": [
+                "ADMIT",
+                "ADMIT fully",
+                "in between",
+                "starting to reject",
+                "REJECT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L119_Q2",
+            "word": "STRAIGHT",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Search for a word that captures the idea of being having or marked by bends or angles.",
+            "explanation": "Straight describes having no deviations, while crooked describes having or marked by bends or angles.",
+            "interactionType": "search",
+            "correctAnswer": "CROOKED",
+            "options": [
+                "CROOKED",
+                "NEAT",
+                "UNCOILED",
+                "SQUARE"
+            ],
+            "gradientScale": [
+                "STRAIGHT",
+                "quite STRAIGHT",
+                "moderate",
+                "a little CROOKED",
+                "CROOKED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L119_Q3",
+            "word": "FRIENDLY",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "What word refers to troops belonging to the enemy's military forces?",
+            "explanation": "Friendly means troops belonging to or allied with your own military forces; hostile means troops belonging to the enemy's military forces.",
+            "interactionType": "search",
+            "correctAnswer": "HOSTILE",
+            "options": [
+                "CYCLONE",
+                "DEBRIEF",
+                "DETERMINED",
+                "HOSTILE"
+            ],
+            "gradientScale": [
+                "FRIENDLY",
+                "complete FRIENDLY",
+                "mixed",
+                "some hostile",
+                "HOSTILE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L120_Q1",
+            "word": "CHARGE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Consider a word that means to remove the charge from.",
+            "explanation": "Charge means to fill or load to capacity; discharge means to remove the charge from.",
+            "interactionType": "search",
+            "correctAnswer": "DISCHARGE",
+            "options": [
+                "DISCHARGE",
+                "COMMIT",
+                "SEND",
+                "BLAME"
+            ],
+            "gradientScale": [
+                "CHARGE",
+                "CHARGE fully",
+                "undecided",
+                "starting to discharge",
+                "DISCHARGE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L120_Q2",
+            "word": "MEDICAL",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "What word fits the idea of being relating to or requiring or amenable to treatment by surgery especially as opposed to medicine?",
+            "explanation": "Medical means requiring or amenable to treatment by medicine especially as opposed to surgery, so its opposite, surgical, means relating to or requiring or amenable to treatment by surgery especially as opposed to medicine.",
+            "interactionType": "search",
+            "correctAnswer": "SURGICAL",
+            "options": [
+                "AESCULAPIAN",
+                "DISCIPLINE",
+                "SURGICAL",
+                "DRY"
+            ],
+            "gradientScale": [
+                "MEDICAL",
+                "truly MEDICAL",
+                "in between",
+                "slightly SURGICAL",
+                "SURGICAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L120_Q3",
+            "word": "WORK",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Consider a word that means to be idle.",
+            "explanation": "Work means exert oneself by doing mental or physical work for a purpose or out of necessity — the reverse idea is be idle, which is what idle means.",
+            "interactionType": "search",
+            "correctAnswer": "IDLE",
+            "options": [
+                "IDLE",
+                "LICK",
+                "FORM",
+                "MAKE"
+            ],
+            "gradientScale": [
+                "WORK",
+                "WORK clearly",
+                "neither",
+                "partly idle",
+                "IDLE"
+            ]
+        }
+    ]
+}

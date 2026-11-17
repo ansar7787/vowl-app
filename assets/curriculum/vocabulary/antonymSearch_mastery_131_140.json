@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 14,
+    "levels": "131-140",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L131_Q1",
+            "word": "PROPER",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "What word fits the idea of being not suitable or right or appropriate?",
+            "explanation": "Proper describes marked by suitability or rightness or appropriateness, while improper describes not suitable or right or appropriate.",
+            "interactionType": "search",
+            "correctAnswer": "IMPROPER",
+            "options": [
+                "RIGHT",
+                "IMPROPER",
+                "GLACIER",
+                "INTUBATE"
+            ],
+            "gradientScale": [
+                "PROPER",
+                "truly PROPER",
+                "neutral",
+                "somewhat IMPROPER",
+                "IMPROPER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L131_Q2",
+            "word": "ABILITY",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Search for a word that means lacking the power to perform.",
+            "explanation": "Ability refers to the quality of being able to perform, while inability refers to lacking the power to perform.",
+            "interactionType": "search",
+            "correctAnswer": "INABILITY",
+            "options": [
+                "INABILITY",
+                "POWER",
+                "CONCEAL",
+                "FUN"
+            ],
+            "gradientScale": [
+                "ABILITY",
+                "pure ABILITY",
+                "neutral",
+                "a hint of inability",
+                "INABILITY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L131_Q3",
+            "word": "CONVENIENCE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "The opposite idea here is the quality of not being useful or convenient.",
+            "explanation": "While convenience means the quality of being useful and convenient, inconvenience means the opposite: the quality of not being useful or convenient.",
+            "interactionType": "search",
+            "correctAnswer": "INCONVENIENCE",
+            "options": [
+                "APPLIANCE",
+                "INCONVENIENCE",
+                "GADGET",
+                "CONTRAPTION"
+            ],
+            "gradientScale": [
+                "CONVENIENCE",
+                "pure CONVENIENCE",
+                "mixed",
+                "some inconvenience",
+                "INCONVENIENCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L132_Q1",
+            "word": "RELIABLE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word describes something that is not worthy of reliance or trust.",
+            "explanation": "Reliable describes worthy of reliance or trust, while unreliable describes not worthy of reliance or trust.",
+            "interactionType": "search",
+            "correctAnswer": "UNRELIABLE",
+            "options": [
+                "DEPENDABLE",
+                "HONEST",
+                "UNRELIABLE",
+                "TRUE"
+            ],
+            "gradientScale": [
+                "RELIABLE",
+                "very RELIABLE",
+                "balanced",
+                "a little UNRELIABLE",
+                "UNRELIABLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L132_Q2",
+            "word": "RELATED",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "What word fits the idea of being not connected by kinship?",
+            "explanation": "Related means connected by kinship, common origin, or marriage; unrelated means not connected by kinship.",
+            "interactionType": "search",
+            "correctAnswer": "UNRELATED",
+            "options": [
+                "LUNG",
+                "SHINDIG",
+                "STOWAWAY",
+                "UNRELATED"
+            ],
+            "gradientScale": [
+                "RELATED",
+                "truly RELATED",
+                "neutral",
+                "a little UNRELATED",
+                "UNRELATED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L132_Q3",
+            "word": "WIND",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Look for a word meaning to reverse the winding or twisting of.",
+            "explanation": "Wind means arrange or or coil around, so its opposite, unwind, means reverse the winding or twisting of.",
+            "interactionType": "search",
+            "correctAnswer": "UNWIND",
+            "options": [
+                "TWINE",
+                "UNWIND",
+                "ROLL",
+                "WRAP"
+            ],
+            "gradientScale": [
+                "WIND",
+                "WIND completely",
+                "neither",
+                "starting to unwind",
+                "UNWIND"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L133_Q1",
+            "word": "RATIONAL",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Imagine describing something as real but not expressible as the quotient of two integers.",
+            "explanation": "Rational describes capable of being expressed as a quotient of integers, while irrational describes real but not expressible as the quotient of two integers.",
+            "interactionType": "search",
+            "correctAnswer": "IRRATIONAL",
+            "options": [
+                "INTELLECTUAL",
+                "NOETIC",
+                "EFFICIENT",
+                "IRRATIONAL"
+            ],
+            "gradientScale": [
+                "RATIONAL",
+                "truly RATIONAL",
+                "in between",
+                "slightly IRRATIONAL",
+                "IRRATIONAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L133_Q2",
+            "word": "PERFECT",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning not perfect.",
+            "explanation": "Perfect means being complete of its kind and without defect or blemish, so its opposite, imperfect, means not perfect.",
+            "interactionType": "search",
+            "correctAnswer": "IMPERFECT",
+            "options": [
+                "SODDING",
+                "IMPERFECT",
+                "THOROUGHGOING",
+                "UNADULTERATED"
+            ],
+            "gradientScale": [
+                "PERFECT",
+                "truly PERFECT",
+                "average",
+                "mildly IMPERFECT",
+                "IMPERFECT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L133_Q3",
+            "word": "HONOR",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "This word refers to lacking honor or integrity.",
+            "explanation": "Honor means the quality of being honorable and having a good name — the reverse idea is lacking honor or integrity, which is what dishonor means.",
+            "interactionType": "search",
+            "correctAnswer": "DISHONOR",
+            "options": [
+                "PURITY",
+                "AWARD",
+                "ACCOLADE",
+                "DISHONOR"
+            ],
+            "gradientScale": [
+                "HONOR",
+                "complete HONOR",
+                "neutral",
+                "a trace of dishonor",
+                "DISHONOR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L134_Q1",
+            "word": "OFFICIAL",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Picture something described as not having official authority or sanction.",
+            "explanation": "Official means having official authority or sanction; unofficial means not having official authority or sanction.",
+            "interactionType": "search",
+            "correctAnswer": "UNOFFICIAL",
+            "options": [
+                "UNOFFICIAL",
+                "ALTO",
+                "HOLLY",
+                "PARTLY"
+            ],
+            "gradientScale": [
+                "OFFICIAL",
+                "truly OFFICIAL",
+                "neutral",
+                "somewhat UNOFFICIAL",
+                "UNOFFICIAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L134_Q2",
+            "word": "SUCCESSFUL",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Picture something described as not successful.",
+            "explanation": "To be successful is to be having succeeded or being marked by a favorable outcome. Unsuccessful means not successful, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "UNSUCCESSFUL",
+            "options": [
+                "TRIGGERED",
+                "ODIN",
+                "COLOSSAL",
+                "UNSUCCESSFUL"
+            ],
+            "gradientScale": [
+                "SUCCESSFUL",
+                "truly SUCCESSFUL",
+                "balanced",
+                "a little UNSUCCESSFUL",
+                "UNSUCCESSFUL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L134_Q3",
+            "word": "FORMAL",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means relaxed and casual, without strict rules or ceremony.",
+            "explanation": "Formal describes following established rules, conventions, or ceremony, while informal describes relaxed and casual, without strict rules or ceremony.",
+            "interactionType": "search",
+            "correctAnswer": "INFORMAL",
+            "options": [
+                "STATELY",
+                "CONVENTIONAL",
+                "INFORMAL",
+                "SCHEMATIC"
+            ],
+            "gradientScale": [
+                "FORMAL",
+                "truly FORMAL",
+                "balanced",
+                "a little INFORMAL",
+                "INFORMAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L135_Q1",
+            "word": "COMPETENT",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Imagine describing something as not qualified or suited for a purpose.",
+            "explanation": "To be competent is to be properly or sufficiently qualified or capable or efficient. Incompetent means not qualified or suited for a purpose, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "INCOMPETENT",
+            "options": [
+                "COMMISSAR",
+                "INCOMPETENT",
+                "WITHDRAW",
+                "WEAKEN"
+            ],
+            "gradientScale": [
+                "COMPETENT",
+                "highly COMPETENT",
+                "neutral",
+                "somewhat INCOMPETENT",
+                "INCOMPETENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L135_Q2",
+            "word": "SANITY",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Try to recall a word that means relatively permanent disorder of the mind.",
+            "explanation": "Sanity refers to normal or sound powers of mind. Insanity, by contrast, means relatively permanent disorder of the mind.",
+            "interactionType": "search",
+            "correctAnswer": "INSANITY",
+            "options": [
+                "SANENESS",
+                "DYNAMITE",
+                "INSANITY",
+                "ABDOMEN"
+            ],
+            "gradientScale": [
+                "SANITY",
+                "total SANITY",
+                "mixed",
+                "a hint of insanity",
+                "INSANITY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L135_Q3",
+            "word": "SECURITY",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "This word refers to the state of being subject to danger or injury.",
+            "explanation": "While security means the state of being free from danger or injury, insecurity means the opposite: the state of being subject to danger or injury.",
+            "interactionType": "search",
+            "correctAnswer": "INSECURITY",
+            "options": [
+                "CERTIFICATE",
+                "INSECURITY",
+                "PROTECTION",
+                "SURETY"
+            ],
+            "gradientScale": [
+                "SECURITY",
+                "pure SECURITY",
+                "balanced",
+                "a hint of insecurity",
+                "INSECURITY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L136_Q1",
+            "word": "PREPARED",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Consider a word that means without preparation.",
+            "explanation": "Prepared means made ready or fit or suitable beforehand — the reverse idea is without preparation, which is what unprepared means.",
+            "interactionType": "search",
+            "correctAnswer": "UNPREPARED",
+            "options": [
+                "FAIN",
+                "DISPOSED",
+                "SHARPLY",
+                "UNPREPARED"
+            ],
+            "gradientScale": [
+                "PREPARED",
+                "extremely PREPARED",
+                "in between",
+                "mildly UNPREPARED",
+                "UNPREPARED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L136_Q2",
+            "word": "LEGITIMATE",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Search for a word that captures the idea of being of marriages and offspring.",
+            "explanation": "Legitimate means of marriages and offspring; illegitimate means of marriages and offspring.",
+            "interactionType": "search",
+            "correctAnswer": "ILLEGITIMATE",
+            "options": [
+                "LAWFUL",
+                "ILLEGITIMATE",
+                "LICIT",
+                "LOGICAL"
+            ],
+            "gradientScale": [
+                "LEGITIMATE",
+                "truly LEGITIMATE",
+                "moderate",
+                "mildly ILLEGITIMATE",
+                "ILLEGITIMATE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L136_Q3",
+            "word": "VALID",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word fits the idea of being having no cogency or legal force?",
+            "explanation": "Valid means well grounded in logic or truth or having legal force; invalid means having no cogency or legal force.",
+            "interactionType": "search",
+            "correctAnswer": "INVALID",
+            "options": [
+                "UNDERWORLD",
+                "SQUAWKING",
+                "INVALID",
+                "COMMENDABLE"
+            ],
+            "gradientScale": [
+                "VALID",
+                "truly VALID",
+                "average",
+                "slightly INVALID",
+                "INVALID"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L137_Q1",
+            "word": "LOADED",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Imagine describing something as not charged with ammunition.",
+            "explanation": "Loaded refers to charged with ammunition. Unloaded, by contrast, means not charged with ammunition.",
+            "interactionType": "search",
+            "correctAnswer": "UNLOADED",
+            "options": [
+                "PIXILATED",
+                "UNLOADED",
+                "MONEYED",
+                "SQUIFFY"
+            ],
+            "gradientScale": [
+                "LOADED",
+                "truly LOADED",
+                "balanced",
+                "slightly UNLOADED",
+                "UNLOADED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L137_Q2",
+            "word": "POPULAR",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Imagine describing something as regarded with disfavor or lacking general approval.",
+            "explanation": "Popular means regarded with great favor, approval, or affection especially by the general public, so its opposite, unpopular, means regarded with disfavor or lacking general approval.",
+            "interactionType": "search",
+            "correctAnswer": "UNPOPULAR",
+            "options": [
+                "DEMOCRATIC",
+                "POP",
+                "BOOKIE",
+                "UNPOPULAR"
+            ],
+            "gradientScale": [
+                "POPULAR",
+                "truly POPULAR",
+                "neutral",
+                "fairly UNPOPULAR",
+                "UNPOPULAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L137_Q3",
+            "word": "FOLD",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Consider a word that means to spread out or open from a closed or folded state.",
+            "explanation": "Fold means bend or lay so that one part covers the other, so its opposite, unfold, means spread out or open from a closed or folded state.",
+            "interactionType": "search",
+            "correctAnswer": "UNFOLD",
+            "options": [
+                "CLOSE",
+                "UNFOLD",
+                "CRAFTY",
+                "GOURD"
+            ],
+            "gradientScale": [
+                "FOLD",
+                "FOLD completely",
+                "in between",
+                "starting to unfold",
+                "UNFOLD"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L138_Q1",
+            "word": "AUTHORIZED",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Try to recall a word that means not endowed with authority.",
+            "explanation": "Authorized means endowed with authority; unauthorized means not endowed with authority.",
+            "interactionType": "search",
+            "correctAnswer": "UNAUTHORIZED",
+            "options": [
+                "AUTHORITATIVE",
+                "EARN",
+                "UNAUTHORIZED",
+                "LEATHER"
+            ],
+            "gradientScale": [
+                "AUTHORIZED",
+                "truly AUTHORIZED",
+                "balanced",
+                "somewhat UNAUTHORIZED",
+                "UNAUTHORIZED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L138_Q2",
+            "word": "RESPECTFUL",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Think about a word meaning exhibiting lack of respect.",
+            "explanation": "Respectful refers to full of or exhibiting respect. Disrespectful, by contrast, means exhibiting lack of respect.",
+            "interactionType": "search",
+            "correctAnswer": "DISRESPECTFUL",
+            "options": [
+                "REVERENTIAL",
+                "PESTILENCE",
+                "RIG",
+                "DISRESPECTFUL"
+            ],
+            "gradientScale": [
+                "RESPECTFUL",
+                "highly RESPECTFUL",
+                "in between",
+                "fairly DISRESPECTFUL",
+                "DISRESPECTFUL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L138_Q3",
+            "word": "POLITE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word describes something that is not polite.",
+            "explanation": "Polite describes showing regard for others in manners, speech, behavior, etc., while impolite describes not polite.",
+            "interactionType": "search",
+            "correctAnswer": "IMPOLITE",
+            "options": [
+                "CIVIL",
+                "IMPOLITE",
+                "CULTIVATED",
+                "CULTURED"
+            ],
+            "gradientScale": [
+                "POLITE",
+                "very POLITE",
+                "average",
+                "a little IMPOLITE",
+                "IMPOLITE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L139_Q1",
+            "word": "MARKED",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Look for a word meaning not having an identifying mark.",
+            "explanation": "Marked describes having or as if having an identifying mark or a mark as specified, while unmarked describes not having an identifying mark.",
+            "interactionType": "search",
+            "correctAnswer": "UNMARKED",
+            "options": [
+                "UNMARKED",
+                "PRONOUNCED",
+                "STAYS",
+                "ARCHITECT"
+            ],
+            "gradientScale": [
+                "MARKED",
+                "truly MARKED",
+                "moderate",
+                "a little UNMARKED",
+                "UNMARKED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L139_Q2",
+            "word": "APPROVE",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Search for a word meaning to consider bad or wrong.",
+            "explanation": "Approve means to judge to be right or commendable; disapprove means to consider bad or wrong.",
+            "interactionType": "search",
+            "correctAnswer": "DISAPPROVE",
+            "options": [
+                "SANCTION",
+                "DISAPPROVE",
+                "PLOY",
+                "SCRATCHY"
+            ],
+            "gradientScale": [
+                "APPROVE",
+                "APPROVE fully",
+                "undecided",
+                "starting to disapprove",
+                "DISAPPROVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L139_Q3",
+            "word": "SUFFICIENT",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Try to recall a word that means of a quantity not able to fulfill a need or requirement.",
+            "explanation": "Sufficient means of a quantity that can fulfill a need or requirement but without being abundant — the reverse idea is of a quantity not able to fulfill a need or requirement, which is what insufficient means.",
+            "interactionType": "search",
+            "correctAnswer": "INSUFFICIENT",
+            "options": [
+                "FRESHEN",
+                "ADVERTISING",
+                "LANDSLIDE",
+                "INSUFFICIENT"
+            ],
+            "gradientScale": [
+                "SUFFICIENT",
+                "extremely SUFFICIENT",
+                "neutral",
+                "slightly INSUFFICIENT",
+                "INSUFFICIENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L140_Q1",
+            "word": "CERTAINTY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word refers to being unsettled or in doubt or dependent on chance?",
+            "explanation": "Certainty means something that is certain, so its opposite, uncertainty, means being unsettled or in doubt or dependent on chance.",
+            "interactionType": "search",
+            "correctAnswer": "UNCERTAINTY",
+            "options": [
+                "UNCERTAINTY",
+                "NINTH",
+                "SANE",
+                "COMPLEX"
+            ],
+            "gradientScale": [
+                "CERTAINTY",
+                "total CERTAINTY",
+                "balanced",
+                "a hint of uncertainty",
+                "UNCERTAINTY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L140_Q2",
+            "word": "TIED",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Search for a word that captures the idea of being not tied.",
+            "explanation": "Tied refers to fastened with strings or cords. Untied, by contrast, means not tied.",
+            "interactionType": "search",
+            "correctAnswer": "UNTIED",
+            "options": [
+                "LACED",
+                "EVEN",
+                "UNTIED",
+                "LEVEL"
+            ],
+            "gradientScale": [
+                "TIED",
+                "very TIED",
+                "average",
+                "mildly UNTIED",
+                "UNTIED"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L140_Q3",
+            "word": "LOYAL",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Try to recall a word that means deserting your allegiance or duty to leader or cause or principle.",
+            "explanation": "Loyal describes steadfast in allegiance or duty, while disloyal describes deserting your allegiance or duty to leader or cause or principle.",
+            "interactionType": "search",
+            "correctAnswer": "DISLOYAL",
+            "options": [
+                "DISLOYAL",
+                "FAST",
+                "TRUEHEARTED",
+                "PATRIOTIC"
+            ],
+            "gradientScale": [
+                "LOYAL",
+                "very LOYAL",
+                "moderate",
+                "mildly DISLOYAL",
+                "DISLOYAL"
+            ]
+        }
+    ]
+}

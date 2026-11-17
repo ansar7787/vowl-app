@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 2,
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q1",
+            "word": "QUESTION",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning the speech act of replying to a question.",
+            "explanation": "Question means an instance of questioning, so its opposite, answer, means the speech act of replying to a question.",
+            "interactionType": "search",
+            "correctAnswer": "ANSWER",
+            "options": [
+                "ENQUIRY",
+                "ANSWER",
+                "INTERROGATION",
+                "INQUIRY"
+            ],
+            "gradientScale": [
+                "QUESTION",
+                "pure QUESTION",
+                "balanced",
+                "a hint of answer",
+                "ANSWER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q2",
+            "word": "EARLY",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means being or occurring at an advanced period of time or after a usual or expected time.",
+            "explanation": "Early describes at or near the beginning of a period of time or course of events or before the usual or expected time, while late describes being or occurring at an advanced period of time or after a usual or expected time.",
+            "interactionType": "search",
+            "correctAnswer": "LATE",
+            "options": [
+                "FORMER",
+                "OTHER",
+                "LATE",
+                "ATROPINE"
+            ],
+            "gradientScale": [
+                "EARLY",
+                "truly EARLY",
+                "moderate",
+                "fairly LATE",
+                "LATE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q3",
+            "word": "BLACK",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Think about a word meaning the achromatic color of greatest lightness, resembling snow or milk.",
+            "explanation": "Black means the achromatic color of least lightness, resembling coal or ink — the reverse idea is the achromatic color of greatest lightness, resembling snow or milk, which is what white means.",
+            "interactionType": "search",
+            "correctAnswer": "WHITE",
+            "options": [
+                "NEGRO",
+                "INKINESS",
+                "LIGHTLESSNESS",
+                "WHITE"
+            ],
+            "gradientScale": [
+                "BLACK",
+                "total BLACK",
+                "neutral",
+                "a hint of white",
+                "WHITE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q1",
+            "word": "SHOW",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Look for a word meaning to prevent from being seen or discovered.",
+            "explanation": "Show means make visible or noticeable — the reverse idea is prevent from being seen or discovered, which is what hide means.",
+            "interactionType": "search",
+            "correctAnswer": "HIDE",
+            "options": [
+                "PRESENT",
+                "HIDE",
+                "DEMONSTRATE",
+                "EXPRESS"
+            ],
+            "gradientScale": [
+                "SHOW",
+                "SHOW actively",
+                "in between",
+                "starting to hide",
+                "HIDE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q2",
+            "word": "SLEEP",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "The opposite action here is to be awake, be alert, be there.",
+            "explanation": "Sleep refers to be asleep. Wake, by contrast, means be awake, be alert, be there.",
+            "interactionType": "search",
+            "correctAnswer": "WAKE",
+            "options": [
+                "SLUMBER",
+                "KIP",
+                "WAKE",
+                "OFFERING"
+            ],
+            "gradientScale": [
+                "SLEEP",
+                "SLEEP actively",
+                "undecided",
+                "partly wake",
+                "WAKE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q3",
+            "word": "FAR",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Look for a word meaning not far distant in time or space or degree or circumstances.",
+            "explanation": "Far means located at a great distance in time or space or degree, so its opposite, near, means not far distant in time or space or degree or circumstances.",
+            "interactionType": "search",
+            "correctAnswer": "NEAR",
+            "options": [
+                "VIKING",
+                "NEAR",
+                "SUSPENSEFUL",
+                "CREEP"
+            ],
+            "gradientScale": [
+                "FAR",
+                "quite FAR",
+                "balanced",
+                "somewhat NEAR",
+                "NEAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q1",
+            "word": "WALK",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "What word means to be carried or travel on or in a vehicle?",
+            "explanation": "To walk means to use one's feet to advance. To ride means the opposite: to be carried or travel on or in a vehicle.",
+            "interactionType": "search",
+            "correctAnswer": "RIDE",
+            "options": [
+                "KNUCKLE",
+                "WITHIN",
+                "RIDE",
+                "MATADOR"
+            ],
+            "gradientScale": [
+                "WALK",
+                "WALK fully",
+                "neither",
+                "beginning to ride",
+                "RIDE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q2",
+            "word": "BUY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning to exchange or deliver for money or its equivalent.",
+            "explanation": "To buy means to obtain by purchase. To sell means the opposite: to exchange or deliver for money or its equivalent.",
+            "interactionType": "search",
+            "correctAnswer": "SELL",
+            "options": [
+                "SELL",
+                "PURCHASE",
+                "CORRUPT",
+                "BRIBE"
+            ],
+            "gradientScale": [
+                "BUY",
+                "BUY completely",
+                "neither",
+                "beginning to sell",
+                "SELL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q3",
+            "word": "PAST",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Search for a word that means the time yet to come.",
+            "explanation": "Past means the time that has elapsed, so its opposite, future, means the time yet to come.",
+            "interactionType": "search",
+            "correctAnswer": "FUTURE",
+            "options": [
+                "YESTERYEAR",
+                "FUTURE",
+                "PRIMARILY",
+                "ATROCITY"
+            ],
+            "gradientScale": [
+                "PAST",
+                "strong PAST",
+                "balanced",
+                "a trace of future",
+                "FUTURE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q1",
+            "word": "PEACE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "What word refers to a legal state created by a declaration of war and ended by official declaration during which the international rules of war apply?",
+            "explanation": "Peace means the state prevailing during the absence of war; war means a legal state created by a declaration of war and ended by official declaration during which the international rules of war apply.",
+            "interactionType": "search",
+            "correctAnswer": "WAR",
+            "options": [
+                "WAR",
+                "HEARTSEASE",
+                "PACIFICATION",
+                "REPOSE"
+            ],
+            "gradientScale": [
+                "PEACE",
+                "strong PEACE",
+                "balanced",
+                "a trace of war",
+                "WAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q2",
+            "word": "SMART",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Picture something described as lacking or marked by lack of intellectual acuity.",
+            "explanation": "Smart means showing mental alertness and calculation and resourcefulness; stupid means lacking or marked by lack of intellectual acuity.",
+            "interactionType": "search",
+            "correctAnswer": "STUPID",
+            "options": [
+                "BRIGHT",
+                "CHIC",
+                "SAUCY",
+                "STUPID"
+            ],
+            "gradientScale": [
+                "SMART",
+                "quite SMART",
+                "average",
+                "slightly STUPID",
+                "STUPID"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q3",
+            "word": "BEGIN",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "This word means to bring to an end or halt.",
+            "explanation": "Begin means take the first step or steps in carrying out an action — the reverse idea is bring to an end or halt, which is what end means.",
+            "interactionType": "search",
+            "correctAnswer": "END",
+            "options": [
+                "END",
+                "GET",
+                "START",
+                "COMMENCE"
+            ],
+            "gradientScale": [
+                "BEGIN",
+                "BEGIN clearly",
+                "neither",
+                "beginning to end",
+                "END"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q1",
+            "word": "KING",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "What word refers to a female sovereign ruler?",
+            "explanation": "While king means a male sovereign, queen means the opposite: a female sovereign ruler.",
+            "interactionType": "search",
+            "correctAnswer": "QUEEN",
+            "options": [
+                "REX",
+                "POWER",
+                "QUEEN",
+                "TYCOON"
+            ],
+            "gradientScale": [
+                "KING",
+                "complete KING",
+                "balanced",
+                "a trace of queen",
+                "QUEEN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q2",
+            "word": "ENLARGE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Think about a word meaning to make something smaller in size or amount.",
+            "explanation": "Enlarge means make something bigger in size; reduce means make something smaller in size or amount.",
+            "interactionType": "search",
+            "correctAnswer": "REDUCE",
+            "options": [
+                "MAGNIFY",
+                "REDUCE",
+                "EXPAND",
+                "EXPATIATE"
+            ],
+            "gradientScale": [
+                "ENLARGE",
+                "ENLARGE fully",
+                "neither",
+                "starting to reduce",
+                "REDUCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q3",
+            "word": "POSSIBLE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Consider a word that means not capable of occurring or being accomplished or dealt with.",
+            "explanation": "Possible means capable of happening or existing; impossible means not capable of occurring or being accomplished or dealt with.",
+            "interactionType": "search",
+            "correctAnswer": "IMPOSSIBLE",
+            "options": [
+                "POTENTIAL",
+                "CONJUNCTION",
+                "IMPOSSIBLE",
+                "VETERAN"
+            ],
+            "gradientScale": [
+                "POSSIBLE",
+                "very POSSIBLE",
+                "average",
+                "slightly IMPOSSIBLE",
+                "IMPOSSIBLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q1",
+            "word": "FAST",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Look for a word meaning not moving quickly.",
+            "explanation": "Fast means acting or moving or capable of acting or moving quickly, so its opposite, slow, means not moving quickly.",
+            "interactionType": "search",
+            "correctAnswer": "SLOW",
+            "options": [
+                "FIRM",
+                "SLOW",
+                "DEBAUCHED",
+                "PROFLIGATE"
+            ],
+            "gradientScale": [
+                "FAST",
+                "very FAST",
+                "moderate",
+                "slightly SLOW",
+                "SLOW"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q2",
+            "word": "AUNT",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Think about a word meaning the brother of your father or mother.",
+            "explanation": "Aunt means the sister of your father or mother — the reverse idea is the brother of your father or mother, which is what uncle means.",
+            "interactionType": "search",
+            "correctAnswer": "UNCLE",
+            "options": [
+                "AUNTIE",
+                "STARFISH",
+                "UNCLE",
+                "NIGHTMARE"
+            ],
+            "gradientScale": [
+                "AUNT",
+                "strong AUNT",
+                "neutral",
+                "a trace of uncle",
+                "UNCLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q3",
+            "word": "HIGH",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Look for a word meaning a low level or position or degree.",
+            "explanation": "High refers to a lofty level or position or degree, while low refers to a low level or position or degree.",
+            "interactionType": "search",
+            "correctAnswer": "LOW",
+            "options": [
+                "INTERSECT",
+                "LOW",
+                "REGARDING",
+                "INNER"
+            ],
+            "gradientScale": [
+                "HIGH",
+                "total HIGH",
+                "neutral",
+                "a hint of low",
+                "LOW"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q1",
+            "word": "PULL",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Think about a word meaning to move something forcefully away from oneself.",
+            "explanation": "Pull refers to cause to move by pulling. Push, by contrast, means move something forcefully away from oneself.",
+            "interactionType": "search",
+            "correctAnswer": "PUSH",
+            "options": [
+                "FORCE",
+                "DRAW",
+                "PUSH",
+                "EXTRACT"
+            ],
+            "gradientScale": [
+                "PULL",
+                "PULL clearly",
+                "undecided",
+                "beginning to push",
+                "PUSH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q2",
+            "word": "PLEASURE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Look for a word meaning emotional distress.",
+            "explanation": "Pleasure means a fundamental feeling that is hard to define but that people desire to experience; pain means emotional distress.",
+            "interactionType": "search",
+            "correctAnswer": "PAIN",
+            "options": [
+                "PLEASANCE",
+                "JOY",
+                "DELIGHT",
+                "PAIN"
+            ],
+            "gradientScale": [
+                "PLEASURE",
+                "complete PLEASURE",
+                "mixed",
+                "a hint of pain",
+                "PAIN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q3",
+            "word": "CLEAN",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "The opposite action here is to make soiled, filthy, or dirty.",
+            "explanation": "Clean means make clean by removing dirt, filth, or unwanted substances from — the reverse idea is make soiled, filthy, or dirty, which is what dirty means.",
+            "interactionType": "search",
+            "correctAnswer": "DIRTY",
+            "options": [
+                "PICK",
+                "DIRTY",
+                "SCAVENGE",
+                "CLEANSE"
+            ],
+            "gradientScale": [
+                "CLEAN",
+                "CLEAN completely",
+                "undecided",
+                "starting to dirty",
+                "DIRTY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q1",
+            "word": "PRIVATE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means not private.",
+            "explanation": "Private means confined to particular persons or groups or providing privacy, so its opposite, public, means not private.",
+            "interactionType": "search",
+            "correctAnswer": "PUBLIC",
+            "options": [
+                "INDIVIDUAL",
+                "SECRET",
+                "PUBLIC",
+                "CLUB"
+            ],
+            "gradientScale": [
+                "PRIVATE",
+                "highly PRIVATE",
+                "average",
+                "a little PUBLIC",
+                "PUBLIC"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q2",
+            "word": "LAUGH",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Consider a word that means to shed tears because of sadness, rage, or pain.",
+            "explanation": "Laugh means produce laughter; cry means shed tears because of sadness, rage, or pain.",
+            "interactionType": "search",
+            "correctAnswer": "CRY",
+            "options": [
+                "CAROLINA",
+                "CRY",
+                "AFAR",
+                "BOTHER"
+            ],
+            "gradientScale": [
+                "LAUGH",
+                "LAUGH clearly",
+                "undecided",
+                "partly cry",
+                "CRY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q3",
+            "word": "BIRTH",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Search for a word that means the event of dying or departure from life.",
+            "explanation": "While birth means the event of being born, death means the opposite: the event of dying or departure from life.",
+            "interactionType": "search",
+            "correctAnswer": "DEATH",
+            "options": [
+                "NASCENCE",
+                "NASCENCY",
+                "NATIVITY",
+                "DEATH"
+            ],
+            "gradientScale": [
+                "BIRTH",
+                "pure BIRTH",
+                "balanced",
+                "some death",
+                "DEATH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q1",
+            "word": "NORTH",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Search for a word that captures the idea of being situated in or facing or moving toward or coming from the south.",
+            "explanation": "North means situated in or facing or moving toward or coming from the north, so its opposite, south, means situated in or facing or moving toward or coming from the south.",
+            "interactionType": "search",
+            "correctAnswer": "SOUTH",
+            "options": [
+                "KRYPTON",
+                "SOUTH",
+                "GHOSTLY",
+                "PUFF"
+            ],
+            "gradientScale": [
+                "NORTH",
+                "quite NORTH",
+                "moderate",
+                "somewhat SOUTH",
+                "SOUTH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q2",
+            "word": "INNOCENT",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "This word describes something that is responsible for or chargeable with a reprehensible act.",
+            "explanation": "To be innocent is to be free from evil or guilt. Guilty means responsible for or chargeable with a reprehensible act, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "GUILTY",
+            "options": [
+                "GUILTY",
+                "GUILTLESS",
+                "UNACQUAINTED",
+                "INGENUOUS"
+            ],
+            "gradientScale": [
+                "INNOCENT",
+                "extremely INNOCENT",
+                "in between",
+                "somewhat GUILTY",
+                "GUILTY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q3",
+            "word": "STRONG",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Look for a word meaning wanting in physical strength.",
+            "explanation": "To be strong is to be having strength or power greater than average or expected. Weak means wanting in physical strength, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "WEAK",
+            "options": [
+                "UNATTACKABLE",
+                "INVIOLABLE",
+                "STIFF",
+                "WEAK"
+            ],
+            "gradientScale": [
+                "STRONG",
+                "very STRONG",
+                "moderate",
+                "somewhat WEAK",
+                "WEAK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q1",
+            "word": "ARRIVE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning to go away from a place.",
+            "explanation": "While arrive means reach a destination, leave means the opposite: go away from a place.",
+            "interactionType": "search",
+            "correctAnswer": "LEAVE",
+            "options": [
+                "LEAVE",
+                "COME",
+                "GET",
+                "ELIAS"
+            ],
+            "gradientScale": [
+                "ARRIVE",
+                "ARRIVE actively",
+                "in between",
+                "starting to leave",
+                "LEAVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q2",
+            "word": "QUICKLY",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "What word fits the idea of without speed (`slow' is sometimes used informally for `slowly')?",
+            "explanation": "Quickly means with rapid movements — the reverse idea is without speed (`slow' is sometimes used informally for `slowly'), which is what slowly means.",
+            "interactionType": "search",
+            "correctAnswer": "SLOWLY",
+            "options": [
+                "SPEEDILY",
+                "SLOWLY",
+                "APACE",
+                "RAPIDLY"
+            ],
+            "gradientScale": [
+                "QUICKLY",
+                "quite QUICKLY",
+                "in between",
+                "fairly SLOWLY",
+                "SLOWLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q3",
+            "word": "CREDIT",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Look for a word meaning prompt payment for goods or services in currency or by check.",
+            "explanation": "While credit means arrangement for deferred payment for goods and services, cash means the opposite: prompt payment for goods or services in currency or by check.",
+            "interactionType": "search",
+            "correctAnswer": "CASH",
+            "options": [
+                "CASH",
+                "RECOGNITION",
+                "MENTION",
+                "CITATION"
+            ],
+            "gradientScale": [
+                "CREDIT",
+                "complete CREDIT",
+                "neutral",
+                "a trace of cash",
+                "CASH"
+            ]
+        }
+    ]
+}

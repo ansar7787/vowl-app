@@ -219,13 +219,13 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergenc
 
 // ── Vocabulary screens ────────────────────────────────────────────────────────
 
-import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_screen.dart'
+import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_mastery_screen.dart'
     as v_fc_game;
-import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_screen.dart'
+import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_mastery_screen.dart'
     as v_ss_game;
-import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/antonym_search_screen.dart'
+import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/antonym_search_mastery_screen.dart'
     as v_as_game;
-import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_screen.dart'
+import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_mastery_screen.dart'
     as v_cc_game;
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_screen.dart'
     as v_pv_game;
@@ -742,13 +742,13 @@ class AppRouterGameResolvers {
   static Widget _getVocabularyScreenContent(GameSubtype gameType, int level) {
     switch (gameType) {
       case GameSubtype.flashcards:
-        return v_fc_game.FlashcardsScreen(level: level, gameType: gameType);
+        return v_fc_game.FlashcardsMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.synonymSearch:
-        return v_ss_game.SynonymSearchScreen(level: level, gameType: gameType);
+        return v_ss_game.SynonymSearchMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.antonymSearch:
-        return v_as_game.AntonymSearchScreen(level: level, gameType: gameType);
+        return v_as_game.AntonymSearchMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.contextClues:
-        return v_cc_game.ContextCluesScreen(level: level, gameType: gameType);
+        return v_cc_game.ContextCluesMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.idioms:
         return v_id_game.IdiomsScreen(level: level, gameType: gameType);
       case GameSubtype.phrasalVerbs:

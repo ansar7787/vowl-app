@@ -97,9 +97,11 @@ void main() {
       expect(GameRoutes.adventureXPRoute, equals('/xp-details'));
       expect(GameRoutes.questCoinsRoute, equals('/coins-details'));
       expect(GameRoutes.questSequenceRoute, equals('/quest-sequence'));
+      expect(GameRoutes.learnRoute, equals('/learn'));
+      expect(GameRoutes.practiceRoute, equals('/practice'));
     });
 
-    test('declares all 7 required game route paths', () {
+    test('declares all required game route paths including learn and practice', () {
       final paths = GameRoutes.routes
           .whereType<GoRoute>()
           .map((r) => r.path)
@@ -112,7 +114,9 @@ void main() {
       expect(paths, contains('/xp-details'));
       expect(paths, contains('/coins-details'));
       expect(paths, contains('/quest-sequence'));
-      expect(paths.length, equals(7));
+      expect(paths, contains('/learn'));
+      expect(paths, contains('/practice'));
+      expect(paths.length, equals(9));
     });
   });
 
@@ -519,6 +523,24 @@ void main() {
       final redirect = gameRoute.redirect!(mockContext, state);
 
       expect(redirect, isNull);
+    });
+  });
+
+  group('GameRoutes - /learn and /practice Route Resolution', () {
+    test('resolves /learn route with LearnPhaseScaffold', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=vocabulary&gameType=flashcards&level=2');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<Widget>());
+    });
+
+    test('resolves /practice route with PracticePhaseScaffold', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=vocabulary&gameType=flashcards&level=3');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<Widget>());
     });
   });
 }

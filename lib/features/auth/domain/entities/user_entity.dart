@@ -103,6 +103,10 @@ class UserEntity {
   /// Star ratings earned keyed by game type and level string.
   final Map<String, Map<String, int>> starRatings;
 
+  /// Phase completion status for Learn→Practice→Test per game per level.
+  /// Keys: gameType name -> level string -> completed phase set.
+  final Map<String, Map<String, Set<String>>> phaseProgress;
+
   /// Identifiers of all badges unlocked by the user.
   final List<String> badges;
 
@@ -236,6 +240,7 @@ class UserEntity {
     this.unlockedLevels = UserGameConstants.kDefaultUnlockedLevels,
     this.completedLevels = const {},
     this.starRatings = const {},
+    this.phaseProgress = const {},
     this.badges = const [],
     this.streakFreezes = 0,
     this.hintCount = 0,
@@ -436,6 +441,17 @@ class UserEntity {
     return 150 + ((level - 201) % 50);
   }
 
+  /// Returns the set of completed phase names (e.g. {'learn', 'practice', 'test'})
+  /// for a specific game subtype and level.
+  Set<String> getCompletedPhases(String gameType, int level) {
+    return phaseProgress[gameType]?[level.toString()] ?? const {};
+  }
+
+  /// Whether a specific phase is completed for a game subtype and level.
+  bool isPhaseCompleted(String gameType, int level, String phase) {
+    return getCompletedPhases(gameType, level).contains(phase);
+  }
+
   /// Returns a clean, production-grade display name.
   /// If [displayName] is null, empty, or a legacy sentinel like "Unknown User",
   /// it gracefully derives a formatted name from [email] (capitalized) or returns [fallback].
@@ -511,6 +527,7 @@ class UserEntity {
     int? coins,
     Map<String, List<int>>? completedLevels,
     Map<String, Map<String, int>>? starRatings,
+    Map<String, Map<String, Set<String>>>? phaseProgress,
     int? currentStreak,
     int? previousStreak,
     Map<String, int>? dailyXpHistory,
@@ -573,6 +590,7 @@ class UserEntity {
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
       starRatings: starRatings ?? this.starRatings,
+      phaseProgress: phaseProgress ?? this.phaseProgress,
       currentStreak: currentStreak ?? this.currentStreak,
       previousStreak: previousStreak ?? this.previousStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
@@ -685,6 +703,7 @@ class UserEntity {
         _mapEq.equals(other.unlockedLevels, unlockedLevels) &&
         _deepEq.equals(other.completedLevels, completedLevels) &&
         _deepEq.equals(other.starRatings, starRatings) &&
+        _deepEq.equals(other.phaseProgress, phaseProgress) &&
         _listEq.equals(other.badges, badges) &&
         other.streakFreezes == streakFreezes &&
         other.hintCount == hintCount &&
@@ -757,6 +776,7 @@ class UserEntity {
       _mapEq.hash(unlockedLevels),
       _deepEq.hash(completedLevels),
       _deepEq.hash(starRatings),
+      _deepEq.hash(phaseProgress),
       _listEq.hash(badges),
       streakFreezes,
       hintCount,

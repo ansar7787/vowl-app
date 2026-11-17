@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
@@ -30,11 +31,15 @@ class ContextCluesScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena.
+  final bool isBonusStage;
+
   /// Creates a [ContextCluesScreen] instance.
   const ContextCluesScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.contextClues,
+    this.isBonusStage = false,
   });
 
   @override
@@ -175,6 +180,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: (context, state) {
@@ -293,22 +299,92 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                         padding: EdgeInsets.symmetric(
                                           vertical: 8.h,
                                         ),
-                                        child: EvidenceHighlightWrapper(
-                                          passage:
-                                              quest.sentence?.replaceAll(
-                                                '[TARGET]',
-                                                quest.correctAnswer ?? '',
-                                              ) ??
-                                              "",
-                                          evidenceWords:
-                                              quest.evidenceWords ?? [],
-                                          primaryColor: theme.primaryColor,
-                                          instruction:
-                                              "Tap the clue words in the sentence that support your answer",
-                                          onCorrectHighlight: () =>
-                                              _submitFinalAnswer(true, quest),
-                                          onWrongHighlight: () => {},
-                                          isPositioned: false,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            if (widget.isBonusStage)
+                                              Container(
+                                                margin: EdgeInsets.only(bottom: 12.h),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: 8.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: AppColors.amber400.withValues(alpha: 0.15),
+                                                  borderRadius: BorderRadius.circular(16.r),
+                                                  border: Border.all(
+                                                    color: AppColors.amber400.withValues(alpha: 0.5),
+                                                    width: 1.2,
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.bolt_rounded,
+                                                      color: AppColors.amber400,
+                                                      size: 20.r,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Flexible(
+                                                      child: Text(
+                                                        '⚡ BONUS XP ARENA: Highlight clue words for +25 XP, or tap Skip to bank your win!',
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          color: isDark
+                                                              ? AppColors.amber200
+                                                              : AppColors.amber900,
+                                                          fontWeight: FontWeight.w700,
+                                                          fontSize: 12.sp,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            EvidenceHighlightWrapper(
+                                              passage:
+                                                  quest.sentence?.replaceAll(
+                                                    '[TARGET]',
+                                                    quest.correctAnswer ?? '',
+                                                  ) ??
+                                                  "",
+                                              evidenceWords:
+                                                  quest.evidenceWords ?? [],
+                                              primaryColor: theme.primaryColor,
+                                              instruction:
+                                                  "Tap the clue words in the sentence that support your answer",
+                                              onCorrectHighlight: () =>
+                                                  _submitFinalAnswer(true, quest),
+                                              onWrongHighlight: () => {},
+                                              isPositioned: false,
+                                            ),
+                                            if (widget.isBonusStage) ...[
+                                              SizedBox(height: 12.h),
+                                              TextButton.icon(
+                                                onPressed: () =>
+                                                    _submitFinalAnswer(true, quest),
+                                                icon: Icon(
+                                                  Icons.skip_next_rounded,
+                                                  color: isDark
+                                                      ? AppColors.slate400
+                                                      : AppColors.slate600,
+                                                  size: 20.r,
+                                                ),
+                                                label: Text(
+                                                  'Skip Clue Highlighting & Bank Win',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 13.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: isDark
+                                                        ? AppColors.slate400
+                                                        : AppColors.slate600,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ],
                                         ),
                                       ),
                                     SizedBox(height: 60.h),

@@ -68,10 +68,18 @@ class VowlUniversalGameHeader extends StatelessWidget {
   /// Whether the hint action is currently enabled.
   final bool isHintEnabled;
 
+  /// Optional phase badge label (e.g. '⚔️ TEST' or 'PRACTICE').
+  final String? phaseBadge;
+
+  /// Optional custom color for the phase badge. Defaults to rose.
+  final Color? phaseBadgeColor;
+
   const VowlUniversalGameHeader({
     super.key,
     required this.level,
     required this.category,
+    this.phaseBadge,
+    this.phaseBadgeColor,
     this.progress = 0.0,
     this.lives = 3,
     this.progressNotifier,
@@ -118,23 +126,57 @@ class VowlUniversalGameHeader extends StatelessWidget {
                       // Level Label & Dynamic Percentage
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.baseline,
-                        textBaseline: TextBaseline.alphabetic,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            context.tr(
-                              'game_progress.level_label',
-                              fallback: 'LEVEL $level',
-                              args: ['$level'],
-                            ),
-                            textScaler: const TextScaler.linear(1.0),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : AppColors.slate900,
-                              letterSpacing: 0.8,
-                            ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                context.tr(
+                                  'game_progress.level_label',
+                                  fallback: 'LEVEL $level',
+                                  args: ['$level'],
+                                ),
+                                textScaler: const TextScaler.linear(1.0),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isDark ? Colors.white : AppColors.slate900,
+                                  letterSpacing: 0.8,
+                                ),
+                              ),
+                              if (phaseBadge != null) ...[
+                                SizedBox(width: 5.w),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 6.w,
+                                    vertical: 1.5.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: (phaseBadgeColor ?? AppColors.rose500)
+                                        .withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(6.r),
+                                    border: Border.all(
+                                      color: (phaseBadgeColor ?? AppColors.rose500)
+                                          .withValues(alpha: 0.35),
+                                      width: 0.8,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    phaseBadge!,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 8.5.sp,
+                                      fontWeight: FontWeight.w900,
+                                      letterSpacing: 0.6,
+                                      color: phaseBadgeColor ?? AppColors.rose500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                           _buildProgressPercentage(context, isDark, solidColor),
                         ],

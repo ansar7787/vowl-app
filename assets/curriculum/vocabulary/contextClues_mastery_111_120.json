@@ -1,0 +1,654 @@
+{
+    "gameType": "contextClues",
+    "phase": "mastery",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "word": "GRATUITOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L111_Q1",
+            "sentence": "The movie's [TARGET] and unnecessary violence added nothing to the plot, showing three separate ten-minute fight scenes that served no purpose.",
+            "hint": "This word describes something done without good reason, often more than what's needed.",
+            "options": [
+                "Unnecessary",
+                "Essential",
+                "Necessary",
+                "Required"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'unnecessary,' and three purposeless fight scenes confirm it, so [TARGET] means UNNECESSARY.",
+            "correctAnswer": "Unnecessary",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and unnecessary",
+                "served no purpose"
+            ]
+        },
+        {
+            "word": "HACKNEYED",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L111_Q2",
+            "sentence": "Unlike the fresh, original plot twist in the first act, the ending relied on a [TARGET] trope: the hero waking up to reveal it was all just a dream.",
+            "hint": "This word describes an idea so worn out it has become boring and predictable.",
+            "options": [
+                "Fresh",
+                "Overused",
+                "Original",
+                "Novel"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'fresh, original plot twist,' so it must mean the opposite, which is OVERUSED.",
+            "correctAnswer": "Overused",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "fresh, original plot twist",
+                "all just a dream"
+            ]
+        },
+        {
+            "word": "IMPLICIT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L111_Q3",
+            "sentence": "There was an [TARGET] agreement between the roommates, which means it was never actually spoken aloud but understood by both of them without needing to be said.",
+            "hint": "This word describes something understood without being directly stated.",
+            "options": [
+                "Explicit",
+                "Stated",
+                "Unspoken",
+                "Announced"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'never actually spoken aloud but understood,' so [TARGET] means UNSPOKEN.",
+            "correctAnswer": "Unspoken",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "never actually spoken aloud but understood"
+            ]
+        },
+        {
+            "word": "INNATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L112_Q1",
+            "sentence": "From the moment she could walk, she balanced on the porch railing, cartwheeled across the yard, and did handstands without any lessons at all — a clearly [TARGET] sense of balance.",
+            "hint": "This word describes a quality someone is born with, not learned.",
+            "options": [
+                "Learned",
+                "Trained",
+                "Acquired",
+                "Natural"
+            ],
+            "explanation": "Balancing on a railing, cartwheeling, and doing handstands without any lessons are all examples of an ability present from birth, so [TARGET] means NATURAL.",
+            "correctAnswer": "Natural",
+            "clueType": "example",
+            "evidenceWords": [
+                "without any lessons at all",
+                "From the moment she could walk"
+            ]
+        },
+        {
+            "word": "LATENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L112_Q2",
+            "sentence": "No one at the small-town talent show had ever seen him sing before, but the moment he opened his mouth, the whole room fell silent, stunned by a voice that seemed to come from nowhere — a [TARGET] talent finally revealed.",
+            "hint": "This word describes something present but not yet developed or revealed.",
+            "options": [
+                "Hidden",
+                "Obvious",
+                "Visible",
+                "Apparent"
+            ],
+            "explanation": "A voice no one had ever seen or heard before, suddenly revealed, shows a talent that was present but hidden, even without a direct clue word, so [TARGET] means HIDDEN.",
+            "correctAnswer": "Hidden",
+            "clueType": "inference",
+            "evidenceWords": [
+                "No one",
+                "had ever seen him sing before",
+                "stunned by a voice that seemed to come from nowhere"
+            ]
+        },
+        {
+            "word": "MUNDANE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L112_Q3",
+            "sentence": "Washing dishes and folding laundry felt [TARGET] and ordinary, the same routine she'd repeated every single day for years.",
+            "hint": "This word describes something unexciting, part of everyday routine.",
+            "options": [
+                "Extraordinary",
+                "Ordinary",
+                "Thrilling",
+                "Remarkable"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'ordinary,' and repeating the same routine every day confirms it, so [TARGET] means ORDINARY.",
+            "correctAnswer": "Ordinary",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and ordinary",
+                "every single day for years"
+            ]
+        },
+        {
+            "word": "OSTENSIBLE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L113_Q1",
+            "sentence": "Unlike his true motive of wanting to skip the meeting, his [TARGET] reason for staying home was a headache, which he mentioned to the whole office.",
+            "hint": "This word describes something that appears true on the surface, but may not actually be so.",
+            "options": [
+                "Hidden",
+                "True",
+                "Stated",
+                "Real"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with his 'true motive,' so it must mean the opposite of the real reason, which is STATED.",
+            "correctAnswer": "Stated",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "true motive",
+                "mentioned to the whole office"
+            ]
+        },
+        {
+            "word": "PERFUNCTORY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L113_Q2",
+            "sentence": "The security guard's [TARGET] check of the bags was over in two seconds, which means it was done quickly and carelessly, more out of habit than actual attention.",
+            "hint": "This word describes doing something quickly with minimal effort or care.",
+            "options": [
+                "Thorough",
+                "Careful",
+                "Attentive",
+                "Careless"
+            ],
+            "explanation": "The sentence defines [TARGET] as being 'done quickly and carelessly... out of habit,' so [TARGET] means CARELESS.",
+            "correctAnswer": "Careless",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "quickly and carelessly",
+                "out of habit"
+            ]
+        },
+        {
+            "word": "QUERY",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L113_Q3",
+            "sentence": "Her [TARGET] to customer support was simple: 'Why was I charged twice for the same order?'",
+            "hint": "This word describes an inquiry made to get information or clear up confusion.",
+            "options": [
+                "Question",
+                "Answer",
+                "Statement",
+                "Complaint form"
+            ],
+            "explanation": "Asking 'Why was I charged twice' is an example of a question seeking information, so [TARGET] means QUESTION.",
+            "correctAnswer": "Question",
+            "clueType": "example",
+            "evidenceWords": [
+                "Why was I charged twice"
+            ]
+        },
+        {
+            "word": "RAVENOUS",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L114_Q1",
+            "sentence": "After hiking twelve miles with nothing but a granola bar since breakfast, the group practically inhaled the entire pizza the moment it arrived at the table, [TARGET] after the long trail.",
+            "hint": "This word describes being extremely, almost uncontrollably hungry.",
+            "options": [
+                "Full",
+                "Famished",
+                "Satisfied",
+                "Stuffed"
+            ],
+            "explanation": "Hiking twelve miles on almost no food and inhaling an entire pizza the second it arrives shows extreme hunger, even without a direct clue word, so [TARGET] means FAMISHED.",
+            "correctAnswer": "Famished",
+            "clueType": "inference",
+            "evidenceWords": [
+                "twelve miles",
+                "nothing but a granola bar",
+                "practically inhaled the entire pizza"
+            ]
+        },
+        {
+            "word": "SALIENT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L114_Q2",
+            "sentence": "The lawyer focused only on the [TARGET] and most important facts of the case, ignoring every minor detail that didn't matter to the verdict.",
+            "hint": "This word describes the most noticeable or important point of something.",
+            "options": [
+                "Least important",
+                "Trivial",
+                "Most important",
+                "Irrelevant"
+            ],
+            "explanation": "The word 'and' links [TARGET] to 'most important,' and ignoring minor details confirms it, so [TARGET] means MOST IMPORTANT.",
+            "correctAnswer": "Most important",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "and most important facts",
+                "ignoring every minor detail"
+            ]
+        },
+        {
+            "word": "TANGENTIAL",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L114_Q3",
+            "sentence": "Unlike the central argument that directly addressed the budget crisis, his comment about the office coffee machine was completely [TARGET], barely connected to the discussion at hand.",
+            "hint": "This word describes something only loosely related to the main topic.",
+            "options": [
+                "Central",
+                "Relevant",
+                "Directly related",
+                "Off-topic"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'central argument,' so it must mean the opposite, which is OFF-TOPIC.",
+            "correctAnswer": "Off-topic",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "central argument",
+                "barely connected to the discussion"
+            ]
+        },
+        {
+            "word": "UNDERMINE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L115_Q1",
+            "sentence": "Spreading rumors about her coworker's abilities began to [TARGET] his reputation, which means it slowly weakened and damaged the trust others had in him.",
+            "hint": "This word means to gradually erode or damage something, often secretly.",
+            "options": [
+                "Weaken",
+                "Strengthen",
+                "Support",
+                "Boost"
+            ],
+            "explanation": "The sentence defines [TARGET] as 'slowly weakened and damaged the trust,' so [TARGET] means WEAKEN.",
+            "correctAnswer": "Weaken",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "slowly weakened and damaged"
+            ]
+        },
+        {
+            "word": "VINDICATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L115_Q2",
+            "sentence": "New DNA evidence finally helped to [TARGET] him: the case was reopened, the original conviction was overturned, and he walked out of prison a free man after twenty years.",
+            "hint": "This word means to prove someone innocent or right after doubt.",
+            "options": [
+                "Convict",
+                "Clear",
+                "Blame",
+                "Condemn"
+            ],
+            "explanation": "Reopening the case, overturning the conviction, and walking free are all examples of being cleared of blame, so [TARGET] means CLEAR.",
+            "correctAnswer": "Clear",
+            "clueType": "example",
+            "evidenceWords": [
+                "case was reopened",
+                "original conviction was overturned",
+                "walked out of prison a free man"
+            ]
+        },
+        {
+            "word": "WANE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L115_Q3",
+            "sentence": "The moon grew thinner each night, shrinking from a full bright circle to a slim curve, and would keep shrinking until nothing was left but darkness — slowly beginning to [TARGET].",
+            "hint": "This word means to gradually decrease in size, strength, or intensity.",
+            "options": [
+                "Grow",
+                "Expand",
+                "Shrink",
+                "Increase"
+            ],
+            "explanation": "The moon growing thinner each night and shrinking toward darkness shows a gradual decrease, even without a direct clue word, so [TARGET] means SHRINK.",
+            "correctAnswer": "Shrink",
+            "clueType": "inference",
+            "evidenceWords": [
+                "grew thinner each night",
+                "shrinking from a full bright circle to a slim curve"
+            ]
+        },
+        {
+            "word": "YEARN",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L116_Q1",
+            "sentence": "Living in the crowded city, she would [TARGET], or long, for the quiet mountain cabin where she grew up.",
+            "hint": "This word means to have a deep, persistent desire for something.",
+            "options": [
+                "Dislike",
+                "Reject",
+                "Avoid",
+                "Long"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'long,' so [TARGET] means LONG.",
+            "correctAnswer": "Long",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or long",
+                "quiet mountain cabin where she grew up"
+            ]
+        },
+        {
+            "word": "CONNOISSEUR",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L116_Q2",
+            "sentence": "Unlike casual diners who just wanted something filling, the [TARGET] at the table could describe the exact region a wine came from just by smelling it.",
+            "hint": "This word describes someone with deep knowledge and refined taste in a particular subject, often food, art, or wine.",
+            "options": [
+                "Expert",
+                "Novice",
+                "Beginner",
+                "Amateur"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'casual diners' who just wanted food, so it must mean the opposite, which is EXPERT.",
+            "correctAnswer": "Expert",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "casual diners who just wanted something filling",
+                "describe the exact region a wine came from"
+            ]
+        },
+        {
+            "word": "ABASH",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L116_Q3",
+            "sentence": "The teacher's public correction seemed to [TARGET] the student, which means it made him feel embarrassed and self-conscious in front of the whole class.",
+            "hint": "This word means to make someone feel self-conscious or ashamed.",
+            "options": [
+                "Encourage",
+                "Embarrass",
+                "Praise",
+                "Honor"
+            ],
+            "explanation": "The sentence defines [TARGET] as making him 'feel embarrassed and self-conscious,' so [TARGET] means EMBARRASS.",
+            "correctAnswer": "Embarrass",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "feel embarrassed and self-conscious"
+            ]
+        },
+        {
+            "word": "BESTOW",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L117_Q1",
+            "sentence": "The university chose to [TARGET] its highest honor on the retiring professor: an honorary degree, a portrait in the main hall, and a scholarship fund named after her.",
+            "hint": "This word means to formally grant something, often as an honor.",
+            "options": [
+                "Withhold",
+                "Deny",
+                "Give",
+                "Refuse"
+            ],
+            "explanation": "An honorary degree, a portrait, and a scholarship fund named after her are all examples of formally giving an honor, so [TARGET] means GIVE.",
+            "correctAnswer": "Give",
+            "clueType": "example",
+            "evidenceWords": [
+                "honorary degree",
+                "portrait in the main hall",
+                "scholarship fund named after her"
+            ]
+        },
+        {
+            "word": "CONJECTURE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L117_Q2",
+            "sentence": "No one actually knew why the ancient city had been abandoned, but historians offered a dozen different theories, each one a guess pieced together from broken pottery and half-erased inscriptions — pure [TARGET], not proven fact.",
+            "hint": "This word describes an educated guess formed without complete evidence.",
+            "options": [
+                "Proof",
+                "Fact",
+                "Certainty",
+                "Speculation"
+            ],
+            "explanation": "A dozen different theories pieced together from broken pottery and unclear inscriptions, without anyone actually knowing, shows guessing rather than proven fact, even without a direct clue word, so [TARGET] means SPECULATION.",
+            "correctAnswer": "Speculation",
+            "clueType": "inference",
+            "evidenceWords": [
+                "No one actually knew why",
+                "a dozen different theories",
+                "a guess pieced together"
+            ]
+        },
+        {
+            "word": "DERIDE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L117_Q3",
+            "sentence": "The critics would [TARGET], or mock, the young painter's early work, calling it childish and amateurish in every review.",
+            "hint": "This word means to make fun of someone or something in a scornful way.",
+            "options": [
+                "Mock",
+                "Praise",
+                "Admire",
+                "Celebrate"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'mock,' so [TARGET] means MOCK.",
+            "correctAnswer": "Mock",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or mock",
+                "childish and amateurish"
+            ]
+        },
+        {
+            "word": "EMBELLISH",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L118_Q1",
+            "sentence": "Unlike the plain, bare-bones police report that listed only the facts, the witness's retelling of the chase seemed to [TARGET] it with dramatic details, adding a car explosion that never actually happened.",
+            "hint": "This word means to add extra, often overblown, details to make something more interesting.",
+            "options": [
+                "Simplify",
+                "Exaggerate",
+                "Strip down",
+                "Understate"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with a report that 'listed only the facts,' so it must mean the opposite, which is EXAGGERATE.",
+            "correctAnswer": "Exaggerate",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "listed only the facts",
+                "car explosion that never actually happened"
+            ]
+        },
+        {
+            "word": "FATHOM",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L118_Q2",
+            "sentence": "She couldn't [TARGET] how anyone could betray a close friend like that, which means she was completely unable to understand or make sense of such an action.",
+            "hint": "This word means to fully grasp something complex or hard to make sense of.",
+            "options": [
+                "Ignore",
+                "Ridicule",
+                "Understand",
+                "Dismiss"
+            ],
+            "explanation": "The sentence defines [TARGET] as being 'unable to understand or make sense of' the action, so [TARGET] means UNDERSTAND.",
+            "correctAnswer": "Understand",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "unable to understand or make sense"
+            ]
+        },
+        {
+            "word": "GLEAN",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L118_Q3",
+            "sentence": "From three old letters, a faded photograph, and a single entry in a ship's logbook, the historian managed to [TARGET] enough details to reconstruct the sailor's entire final voyage.",
+            "hint": "This word means to collect information gradually, bit by bit from limited sources.",
+            "options": [
+                "Discard",
+                "Ignore",
+                "Lose",
+                "Gather"
+            ],
+            "explanation": "Three old letters, a faded photograph, and one logbook entry are all limited sources from which small pieces of information were gathered, so [TARGET] means GATHER.",
+            "correctAnswer": "Gather",
+            "clueType": "example",
+            "evidenceWords": [
+                "three old letters",
+                "faded photograph",
+                "single entry in a ship's logbook"
+            ]
+        },
+        {
+            "word": "HOVER",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L119_Q1",
+            "sentence": "The drone stayed at the exact same spot in the air, neither rising nor falling, its rotors humming steadily as it held perfectly still above the field, continuing to [TARGET] there for several minutes.",
+            "hint": "This word means to remain suspended in one place in the air.",
+            "options": [
+                "Float in place",
+                "Crash down",
+                "Fly away",
+                "Land"
+            ],
+            "explanation": "Staying at the exact same spot, neither rising nor falling, and holding perfectly still all show remaining suspended in the air, even without a direct clue word, so [TARGET] means FLOAT IN PLACE.",
+            "correctAnswer": "Float in place",
+            "clueType": "inference",
+            "evidenceWords": [
+                "stayed at the exact same spot",
+                "neither rising nor falling",
+                "held perfectly still"
+            ]
+        },
+        {
+            "word": "INSTIGATE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L119_Q2",
+            "sentence": "Investigators believed one angry email was enough to [TARGET], or trigger, the chain of events that led to the factory strike.",
+            "hint": "This word means to bring about or start an action, often something disruptive.",
+            "options": [
+                "Prevent",
+                "Trigger",
+                "Stop",
+                "Halt"
+            ],
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'trigger,' so [TARGET] means TRIGGER.",
+            "correctAnswer": "Trigger",
+            "clueType": "synonym",
+            "evidenceWords": [
+                "or trigger",
+                "chain of events"
+            ]
+        },
+        {
+            "word": "JEOPARDIZE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L119_Q3",
+            "sentence": "Unlike the careful safety checks that protected the whole crew, skipping the pre-flight inspection would [TARGET] everyone on board.",
+            "hint": "This word means to put something, often safety or success, at serious risk.",
+            "options": [
+                "Protect",
+                "Secure",
+                "Endanger",
+                "Safeguard"
+            ],
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'careful safety checks that protected the whole crew,' so it must mean the opposite, which is ENDANGER.",
+            "correctAnswer": "Endanger",
+            "clueType": "antonym",
+            "evidenceWords": [
+                "Unlike",
+                "careful safety checks that protected the whole crew",
+                "skipping the pre-flight inspection"
+            ]
+        },
+        {
+            "word": "KEEN",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L120_Q1",
+            "sentence": "She had a [TARGET] eye for detail, which means she noticed the smallest inconsistencies that everyone else in the room had completely missed.",
+            "hint": "This word describes having an especially perceptive eye for noticing details.",
+            "options": [
+                "Dull",
+                "Careless",
+                "Oblivious",
+                "Sharp"
+            ],
+            "explanation": "The sentence defines [TARGET] as noticing 'the smallest inconsistencies... everyone else... missed,' so [TARGET] means SHARP.",
+            "correctAnswer": "Sharp",
+            "clueType": "definition",
+            "evidenceWords": [
+                "which means",
+                "smallest inconsistencies",
+                "completely missed"
+            ]
+        },
+        {
+            "word": "LOATHE",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L120_Q2",
+            "sentence": "She would [TARGET] Mondays: she'd hit snooze six times, drag herself out of bed with a groan, and spend the entire commute dreading the day ahead.",
+            "hint": "This word means to feel intense dislike or hatred for something.",
+            "options": [
+                "Despise",
+                "Adore",
+                "Cherish",
+                "Love"
+            ],
+            "explanation": "Hitting snooze six times, groaning out of bed, and dreading the whole commute are all examples of intense dislike, so [TARGET] means DESPISE.",
+            "correctAnswer": "Despise",
+            "clueType": "example",
+            "evidenceWords": [
+                "hit snooze six times",
+                "drag herself out of bed with a groan",
+                "dreading the day ahead"
+            ]
+        },
+        {
+            "word": "MERIT",
+            "interactionType": "choice",
+            "instruction": "Analyze the sentence to deduce the hidden word.",
+            "id": "VOC_CONTEXTCLUES_L120_Q3",
+            "sentence": "She earned the scholarship not through connections or luck, but by scoring highest on every exam, publishing two research papers before graduation, and volunteering more hours than any other applicant — she won it entirely on her own [TARGET].",
+            "hint": "This word describes deserving reward or praise because of one's own qualities or achievements.",
+            "options": [
+                "Luck",
+                "Deserved qualities",
+                "Connections",
+                "Chance"
+            ],
+            "explanation": "Scoring highest, publishing research, and volunteering the most all show earning something through one's own achievements, even without a direct clue word, so [TARGET] means DESERVED QUALITIES.",
+            "correctAnswer": "Deserved qualities",
+            "clueType": "inference",
+            "evidenceWords": [
+                "not through connections or luck",
+                "scoring highest on every exam",
+                "publishing two research papers"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,938 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "practice",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_PRAC_Q1",
+            "level": 1,
+            "word": "Here ↔ There",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence pair correctly uses 'here' and 'there'?",
+                    "options": [
+                        "I am standing right here, but my brother is waiting over there by the car.",
+                        "I am standing right there, but my brother is waiting over there by the car.",
+                        "The dog ran away to here while staying here."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Perfect! 'Here' anchors directly to the speaker's spot, while 'there' points away to the car.",
+                        "Incorrect: 'Here' and 'there' express opposite locations relative to the speaker.",
+                        "Incorrect: 'Here' denotes the speaker's immediate location, not an outward distance."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The delivery package was left over _____ on the distant front porch.",
+                    "correctAnswer": "there",
+                    "hint": "Opposite of 'here' indicating a distant location away from the speaker.",
+                    "feedbackIfWrong": "The opposite of 'here' for a distant spot is 'there'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_PRAC_Q2",
+            "level": 1,
+            "word": "Give ↔ Take",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence best captures the contrast between 'give' and 'take'?",
+                    "options": [
+                        "It is generous to give help to others, but greedy to only take without sharing.",
+                        "It is generous to take help to others, but greedy to only give without sharing.",
+                        "Please give an umbrella with you in case it rains."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Give' transfers outward to others; 'take' acquires inward for oneself.",
+                        "Incorrect: You 'give' outward and 'take' inward.",
+                        "Incorrect: With umbrellas or cameras, native speakers say 'take an umbrella' or 'take a picture'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "She decided to _____ her favorite book to her younger cousin as a gift.",
+                    "correctAnswer": "give",
+                    "hint": "Opposite of 'take' meaning to transfer possession outward.",
+                    "feedbackIfWrong": "The opposite of 'take' when offering a gift is 'give'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L1_PRAC_Q3",
+            "level": 1,
+            "word": "Right ↔ Left",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly contrasts 'left' and 'right'?",
+                    "options": [
+                        "In Britain cars drive on the left, but in America they drive on the right.",
+                        "In Britain cars drive on the right, but in America they drive on the right.",
+                        "Turn right to head leftward toward the ocean."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Excellent! 'Left' and 'right' represent mutually exclusive directional orientations.",
+                        "Incorrect: The two countries drive on opposite sides of the road.",
+                        "Incorrect: Turning right moves rightward, never leftward."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Most people write with their right hand, but ten percent write with their _____ hand.",
+                    "correctAnswer": "left",
+                    "hint": "Directional opposite of 'right'.",
+                    "feedbackIfWrong": "The spatial opposite of 'right' is 'left'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_PRAC_Q1",
+            "level": 2,
+            "word": "Good ↔ Bad",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence demonstrates the standard contrast of 'good' and 'bad'?",
+                    "options": [
+                        "Regular exercise is good for your heart, while smoking is very bad for your lungs.",
+                        "Regular exercise is bad for your heart, while smoking is good for your lungs.",
+                        "Eating spoiled fish tastes very good and fresh."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Good' denotes beneficial quality; 'bad' denotes harmful quality.",
+                        "Incorrect: Exercise is beneficial (good) and smoking is harmful (bad).",
+                        "Incorrect: Spoiled food tastes bad, never good."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The stormy weather was so _____ that all airport flights were grounded.",
+                    "correctAnswer": "bad",
+                    "hint": "Opposite of 'good' describing severe, unfavorable conditions.",
+                    "feedbackIfWrong": "The opposite of 'good' for unfavorable conditions is 'bad'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_PRAC_Q2",
+            "level": 2,
+            "word": "Ever ↔ Never",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which question and response pair uses 'ever' and 'never' correctly?",
+                    "options": [
+                        "'Have you ever eaten sushi?' 'No, I have never tried it.'",
+                        "'Have you never eaten sushi?' 'No, I don't never try it.'",
+                        "'Have you ever eaten sushi?' 'Yes, I never eat it every weekend.'"
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Perfect! 'Ever' queries any occurrence; 'never' negates all occurrences without double negatives.",
+                        "Incorrect: Avoid double negatives like 'don't never'.",
+                        "Incorrect: Eating sushi every weekend means you 'always' or 'often' eat it, not 'never'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "He gave his word of honor that he would _____ break his promise.",
+                    "correctAnswer": "never",
+                    "hint": "Opposite of 'ever' meaning at zero points in time.",
+                    "feedbackIfWrong": "The opposite of 'ever' meaning at no time is 'never'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L2_PRAC_Q3",
+            "level": 2,
+            "word": "First ↔ Last",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence pair highlights 'first' and 'last' in sequence?",
+                    "options": [
+                        "She was the first athlete to start the race, and the last one to finish it.",
+                        "She was the latest athlete to start the race, and the first one to finish it.",
+                        "January is the last month and December is the first month."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'First' marks the series origin; 'last' marks the final conclusion.",
+                        "Incorrect: 'Latest' means most recent; ordinal rank uses 'first' and 'last'.",
+                        "Incorrect: January is first; December is last."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "December is the _____ month of the calendar year.",
+                    "correctAnswer": "last",
+                    "hint": "Opposite of 'first' meaning concluding all others in a series.",
+                    "feedbackIfWrong": "The opposite of 'first' in a sequence is 'last'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_PRAC_Q1",
+            "level": 3,
+            "word": "Day ↔ Night",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence captures the natural cycle of 'day' and 'night'?",
+                    "options": [
+                        "Solar panels absorb energy during the day, while streetlamps light the roads at night.",
+                        "Solar panels absorb energy during the night, while streetlamps light the roads at day.",
+                        "Owls sleep all through the night and hunt during the day."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Excellent! 'Day' is sunlight and solar energy; 'night' is nocturnal darkness.",
+                        "Incorrect: The sun shines during the day, not at night.",
+                        "Incorrect: Nocturnal owls hunt at night and sleep during the day."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The stars and the moon shine brightly in the sky at _____.",
+                    "correctAnswer": "night",
+                    "hint": "Opposite of 'day' representing the dark period after sunset.",
+                    "feedbackIfWrong": "The opposite of 'day' is 'night'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_PRAC_Q2",
+            "level": 3,
+            "word": "Big ↔ Little",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence naturally contrasts 'big' and 'little'?",
+                    "options": [
+                        "The mother elephant is remarkably big, but her newborn calf is relatively little.",
+                        "The mother elephant is remarkably little, but her newborn calf is relatively big.",
+                        "We sailed across a little ocean into a big puddle."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Big' denotes substantial magnitude; 'little' denotes small, endearing scale.",
+                        "Incorrect: Adult elephants are big; calves are smaller (little).",
+                        "Incorrect: Oceans are vast and big; puddles are small and little."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Would you like a _____ bit of honey added to your hot tea?",
+                    "correctAnswer": "little",
+                    "hint": "Opposite of 'big' meaning a small, delicate portion.",
+                    "feedbackIfWrong": "The opposite of 'big' for a small portion is 'little'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L3_PRAC_Q3",
+            "level": 3,
+            "word": "Home ↔ Away",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly uses 'home' and 'away' in sports or travel?",
+                    "options": [
+                        "Our club won the match on home turf, but lost the following game while playing away.",
+                        "Our club won the match on away turf, but lost the following game while playing away.",
+                        "I am travelling away to sleep in my own home bed right now."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Home' is native ground; 'away' is distant, visitor territory.",
+                        "Incorrect: Both clauses should contrast home versus away.",
+                        "Incorrect: Sleeping in your own bed means being home, not away."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "After three exhausting weeks abroad, he was delighted to finally return _____.",
+                    "correctAnswer": "home",
+                    "hint": "Opposite of 'away' signifying one's own domicile.",
+                    "feedbackIfWrong": "The opposite of 'away' when returning to your domicile is 'home'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_PRAC_Q1",
+            "level": 4,
+            "word": "Man ↔ Woman",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly pairs 'man' and 'woman' as adult counterparts?",
+                    "options": [
+                        "The committee was co-chaired by an experienced man and a talented woman.",
+                        "The committee was co-chaired by an experienced girl and a talented boy.",
+                        "A woman is an adult male while a man is an adult female."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Perfect! 'Man' and 'woman' refer to adult male and female professionals.",
+                        "Incorrect: In professional contexts, adults are called women and men.",
+                        "Incorrect: A man is an adult male; a woman is an adult female."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Marie Curie was the first _____ in history to win a Nobel Prize.",
+                    "correctAnswer": "woman",
+                    "hint": "Opposite of 'man' referring to an adult female.",
+                    "feedbackIfWrong": "The female counterpart of 'man' is 'woman'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_PRAC_Q2",
+            "level": 4,
+            "word": "Same ↔ Other",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence highlights the difference between 'same' and 'other'?",
+                    "options": [
+                        "We both bought tickets for the same flight, but we were assigned to other seats.",
+                        "We both bought tickets for the same flight, but we were assigned to the same seats.",
+                        "The twins wore identical other shirts."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Same' marks identical shared flight; 'other' marks distinct, separate seats.",
+                        "Incorrect: Two passengers cannot occupy the identical same seat.",
+                        "Incorrect: Identical shirts are the 'same', not 'other'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "If this shoe does not fit your foot, please try on the _____ one.",
+                    "correctAnswer": "other",
+                    "hint": "Opposite of 'same' referring to the alternative item.",
+                    "feedbackIfWrong": "The opposite of 'same' when offering an alternative is 'other'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L4_PRAC_Q3",
+            "level": 4,
+            "word": "Father ↔ Mother",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence demonstrates the parental symmetry of 'father' and 'mother'?",
+                    "options": [
+                        "His father taught him carpentry, while his mother taught him mathematics.",
+                        "His father taught him carpentry, while his father taught him carpentry.",
+                        "A mother is a male parent who guides the children."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Father' is the paternal parent and 'mother' is the maternal parent.",
+                        "Incorrect: This fails to demonstrate the parental pair.",
+                        "Incorrect: A mother is a female parent."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Every May, families celebrate Mother's Day to honor each loving _____.",
+                    "correctAnswer": "mother",
+                    "hint": "Opposite of 'father' meaning a female parent.",
+                    "feedbackIfWrong": "The maternal opposite of 'father' is 'mother'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_PRAC_Q1",
+            "level": 5,
+            "word": "Start ↔ Stop",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which instruction clearly uses 'start' and 'stop'?",
+                    "options": [
+                        "Press the green pedal to start moving, and press the brake to stop the vehicle.",
+                        "Press the green pedal to stop moving, and press the brake to start the vehicle.",
+                        "The race will stop when the opening horn blows."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Excellent! 'Start' initiates process motion; 'stop' halts movement completely.",
+                        "Incorrect: Green pedal accelerates (starts); brake halts (stops).",
+                        "Incorrect: Races start at the opening horn."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The police officer signaled the driver to _____ the car at the roadside.",
+                    "correctAnswer": "stop",
+                    "hint": "Opposite of 'start' meaning to bring motion to a halt.",
+                    "feedbackIfWrong": "The opposite of 'start' when halting motion is 'stop'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_PRAC_Q2",
+            "level": 5,
+            "word": "Girl ↔ Boy",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence pair correctly uses 'girl' and 'boy' for young children?",
+                    "options": [
+                        "The little girl wore a pink ribbon, and her twin brother was a cheerful boy.",
+                        "The little girl was a seventy-year-old grandmother.",
+                        "The boy wore a mustache and retired from the army after forty years."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Perfect! 'Girl' and 'boy' refer accurately to young female and male youth.",
+                        "Incorrect: Grandmothers are elderly women, not little girls.",
+                        "Incorrect: Retired soldiers are adult men, not young boys."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The little _____ played catch with his puppy in the front yard.",
+                    "correctAnswer": "boy",
+                    "hint": "Male child counterpart of 'girl'.",
+                    "feedbackIfWrong": "The male youth counterpart of 'girl' is 'boy'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L5_PRAC_Q3",
+            "level": 5,
+            "word": "Move ↔ Stay",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which command contrasts 'move' and 'stay'?",
+                    "options": [
+                        "Do not move an inch while the artist paints; stay completely still.",
+                        "Move completely still while the artist paints; do not stay.",
+                        "The statue moved in the museum garden for two centuries."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Move' implies kinetic displacement; 'stay' enforces remaining in place.",
+                        "Incorrect: 'Move completely still' is an oxymoron.",
+                        "Incorrect: Inanimate statues stay in place, they do not move."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "During the torrential storm, all residents were advised to _____ indoors.",
+                    "correctAnswer": "stay",
+                    "hint": "Opposite of 'move' meaning to remain in one secure place.",
+                    "feedbackIfWrong": "The opposite of 'move' when remaining in place is 'stay'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_PRAC_Q1",
+            "level": 6,
+            "word": "Lost ↔ Won",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence accurately demonstrates 'lost' and 'won'?",
+                    "options": [
+                        "Although our football team lost the first game, they won the championship trophy.",
+                        "Our football team won the first game by losing all four quarters.",
+                        "The champion lost the gold medal by defeating every contender."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Lost' means suffered defeat; 'won' means secured victory.",
+                        "Incorrect: Winning comes from outscoring, not losing quarters.",
+                        "Incorrect: Defeating contenders results in winning, not losing."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "After intense preparation, the grandmaster _____ the final match.",
+                    "correctAnswer": "won",
+                    "hint": "Past tense opposite of 'lost' meaning triumphed in competition.",
+                    "feedbackIfWrong": "The victorious opposite of 'lost' is 'won'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_PRAC_Q2",
+            "level": 6,
+            "word": "Live ↔ Dead",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence contrasts 'live' and 'dead' in nature or electronics?",
+                    "options": [
+                        "The live electrical wire gave off sparks, while the disconnected dead wire was safe to touch.",
+                        "The dead electrical wire gave off sparks, while the live wire was safe to touch.",
+                        "The dead rose garden blossomed with vibrant fragrant petals."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Live' possesses active electrical current or vitality; 'dead' has zero current or life.",
+                        "Incorrect: Live wires carry voltage and sparks; dead wires carry no current.",
+                        "Incorrect: Dead plants do not blossom."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Without sunlight and fresh water, houseplants will quickly wither and become _____.",
+                    "correctAnswer": "dead",
+                    "hint": "Opposite of 'live' or 'alive' meaning lacking biological life.",
+                    "feedbackIfWrong": "The opposite of 'live' or 'alive' is 'dead'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L6_PRAC_Q3",
+            "level": 6,
+            "word": "Many ↔ Few",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly contrasts countable quantifiers 'many' and 'few'?",
+                    "options": [
+                        "Many tourists visited the historic cathedral, but only a few attended the quiet evening service.",
+                        "Much tourists visited the cathedral, but only a little attended the service.",
+                        "Few thousands of spectators cheered loudly in the crowded stadium."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Excellent! 'Many' and 'few' are used strictly with countable plural nouns like tourists and people.",
+                        "Incorrect: 'Much' and 'little' are for uncountable nouns, not people.",
+                        "Incorrect: Crowded stadiums have many spectators, not few."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Very _____ people understand the complex mathematical formula.",
+                    "correctAnswer": "few",
+                    "hint": "Countable opposite of 'many' meaning a scarce or small number.",
+                    "feedbackIfWrong": "The countable opposite of 'many' is 'few'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_PRAC_Q1",
+            "level": 7,
+            "word": "Safe ↔ Out",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which umpire call uses 'safe' and 'out' in game rules?",
+                    "options": [
+                        "The sliding runner was called safe at second base, but the next batter struck out.",
+                        "The batter struck out and was declared safe by the umpire.",
+                        "The runner who crossed home plate before the tag was called out."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! In game rules, 'safe' means secured against penalty; 'out' means eliminated from play.",
+                        "Incorrect: Striking out results in being 'out', not 'safe'.",
+                        "Incorrect: Reaching home before the tag is called 'safe'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The baseball player swung and missed the third pitch, so the referee called him _____.",
+                    "correctAnswer": "out",
+                    "hint": "Rulebook opposite of 'safe' meaning retired from active play.",
+                    "feedbackIfWrong": "The baseball rule opposite of 'safe' is 'out'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_PRAC_Q2",
+            "level": 7,
+            "word": "Remember ↔ Forget",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which reminder shows the contrast between 'remember' and 'forget'?",
+                    "options": [
+                        "Please remember to pack your passport so you don't forget it in your desk drawer.",
+                        "Please forget to pack your passport so you don't remember it at home.",
+                        "I always remind where I parked my car yesterday."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Remember' retains in cognitive memory; 'forget' loses access to memory.",
+                        "Incorrect: You want to remember important items, not forget them.",
+                        "Incorrect: Use 'remember', not 'remind' without an object."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "I will never _____ the kindness she showed me when I was stranded in the storm.",
+                    "correctAnswer": "forget",
+                    "hint": "Opposite of 'remember' meaning to lose from memory.",
+                    "feedbackIfWrong": "The opposite of 'remember' is 'forget'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L7_PRAC_Q3",
+            "level": 7,
+            "word": "Love ↔ Hate",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence pair contrasts 'love' and 'hate'?",
+                    "options": [
+                        "Most children love eating ice cream, but hate taking bitter medicine.",
+                        "Most children hate eating sweet ice cream, but love taking bitter medicine.",
+                        "She loves her puppy so much that she treats it with cruel hate."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Love' expresses intense affection and preference; 'hate' expresses intense aversion.",
+                        "Incorrect: Children prefer ice cream (love) over medicine (hate).",
+                        "Incorrect: Loving someone means treating them with care, not hate."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Commuters generally _____ getting stuck in bumper-to-bumper morning traffic.",
+                    "correctAnswer": "hate",
+                    "hint": "Opposite of 'love' expressing intense dislike or annoyance.",
+                    "feedbackIfWrong": "The opposite of 'love' expressing strong aversion is 'hate'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_PRAC_Q1",
+            "level": 8,
+            "word": "Hit ↔ Miss",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence highlights target precision using 'hit' and 'miss'?",
+                    "options": [
+                        "The expert archer can hit the center circle, while a novice is likely to miss the target.",
+                        "The expert archer can miss the center circle, while a novice is likely to hit nothing.",
+                        "Wake up late so you can hit the morning train."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Hit' strikes the target accurately; 'miss' fails to make contact.",
+                        "Incorrect: Experts hit; novices miss.",
+                        "Incorrect: Waking up late causes you to 'miss' the train."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Hurry to the departure gate or you will _____ your scheduled boarding time.",
+                    "correctAnswer": "miss",
+                    "hint": "Opposite of 'hit' or 'catch' meaning to fail to reach.",
+                    "feedbackIfWrong": "The opposite of 'hit' or 'catch' in travel is 'miss'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_PRAC_Q2",
+            "level": 8,
+            "word": "Daughter ↔ Son",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly pairs 'daughter' and 'son'?",
+                    "options": [
+                        "They are proud parents of two children: a talented daughter and an athletic son.",
+                        "Their daughter is an energetic male prince who likes hockey.",
+                        "Their son is a lovely female ballerina."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Daughter' is a female child; 'son' is a male child.",
+                        "Incorrect: A daughter is female, not male.",
+                        "Incorrect: A son is male, not female."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The king celebrated the birth of his firstborn _____, the prince and heir to the throne.",
+                    "correctAnswer": "son",
+                    "hint": "Male child counterpart of 'daughter'.",
+                    "feedbackIfWrong": "The male offspring counterpart of 'daughter' is 'son'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L8_PRAC_Q3",
+            "level": 8,
+            "word": "Find ↔ Lose",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence contrasts 'find' and 'lose' regarding possessions?",
+                    "options": [
+                        "It is joyful to find your wedding ring after fearing you might lose it forever.",
+                        "It is joyful to lose your wedding ring after fearing you might find it forever.",
+                        "Be careful not to loose your passport at the border."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Find' recovers possession; 'lose' forfeits or misplaces an item.",
+                        "Incorrect: Finding lost jewelry brings joy; losing it brings distress.",
+                        "Incorrect: 'Loose' means not tight; the verb meaning misplace is spelled 'lose'."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "Keep your ticket inside your wallet so you do not _____ it in the crowd.",
+                    "correctAnswer": "lose",
+                    "hint": "Opposite of 'find' meaning to misplace or forfeit.",
+                    "feedbackIfWrong": "The opposite of 'find' is 'lose' (spelled with a single 'o')."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_PRAC_Q1",
+            "level": 9,
+            "word": "Open ↔ Shut",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence properly uses 'open' and 'shut' for security?",
+                    "options": [
+                        "Keep the window open for breeze, but be sure to shut the heavy door when you leave.",
+                        "Keep the window shut for breeze, but be sure to open the heavy door to prevent thieves.",
+                        "The bank vault was open and locked securely."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Open' allows breeze and entrance; 'shut' blocks entry securely.",
+                        "Incorrect: Windows are opened for breeze; doors are shut for security.",
+                        "Incorrect: Open and locked shut are opposites."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The store owner pulled down the metal gate and locked it firmly _____ for the evening.",
+                    "correctAnswer": "shut",
+                    "hint": "Opposite of 'open' meaning closed tight.",
+                    "feedbackIfWrong": "The opposite of 'open' meaning securely closed is 'shut'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_PRAC_Q2",
+            "level": 9,
+            "word": "Husband ↔ Wife",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence shows the marital balance of 'husband' and 'wife'?",
+                    "options": [
+                        "The husband surprised his wife with flowers on their wedding anniversary.",
+                        "The husband surprised his wife on his own bachelorette party.",
+                        "A wife is a married man who takes care of his spouse."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Husband' is the married male spouse; 'wife' is the married female spouse.",
+                        "Incorrect: Bachelorette parties are for brides, not husbands.",
+                        "Incorrect: A wife is a married woman."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "He gave a heartfelt speech thanking his supportive _____ on their anniversary.",
+                    "correctAnswer": "wife",
+                    "hint": "Female marital counterpart of 'husband'.",
+                    "feedbackIfWrong": "The female marital counterpart of 'husband' is 'wife'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L9_PRAC_Q3",
+            "level": 9,
+            "word": "Brother ↔ Sister",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence illustrates the sibling pair 'brother' and 'sister'?",
+                    "options": [
+                        "Her older brother helped her paint the house, while her younger sister designed the logo.",
+                        "Her older brother was an only child with no family relatives.",
+                        "A sister is a male sibling who shares your biological parents."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Brother' is a male sibling; 'sister' is a female sibling.",
+                        "Incorrect: An only child has no brothers or sisters.",
+                        "Incorrect: A sister is a female sibling."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "She borrowed a warm jacket from her older _____ before going out in the snow.",
+                    "correctAnswer": "sister",
+                    "hint": "Female sibling counterpart of 'brother'.",
+                    "feedbackIfWrong": "The female sibling counterpart of 'brother' is 'sister'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_PRAC_Q1",
+            "level": 10,
+            "word": "Whole ↔ Half",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence highlights the division between 'whole' and 'half'?",
+                    "options": [
+                        "Instead of eating the whole pie alone, she sliced it in half to share with her friend.",
+                        "Instead of eating half the pie alone, she sliced it in whole to share with nobody.",
+                        "Two halves joined together make a quarter pie."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Whole' is the undivided 100% total; 'half' is a 50% divided partition.",
+                        "Incorrect: Slicing creates halves from a whole.",
+                        "Incorrect: Two halves make a whole, not a quarter."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "If we divide the restaurant bill equally between the two of us, each pays _____.",
+                    "correctAnswer": "half",
+                    "hint": "Partition opposite of 'whole' meaning fifty percent (silent 'l').",
+                    "feedbackIfWrong": "The partition opposite of 'whole' is 'half'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_PRAC_Q2",
+            "level": 10,
+            "word": "Sit ↔ Stand",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence correctly contrasts body postures 'sit' and 'stand'?",
+                    "options": [
+                        "Passengers may sit in the comfortable armchairs or stand by the observation window.",
+                        "Passengers may sit upright on their feet or stand resting on the sofa cushion.",
+                        "The choir sat at attention on their feet during the performance."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Sit' rests body weight on a seat; 'stand' supports body upright on feet.",
+                        "Incorrect: Standing supports on feet; sitting rests on cushions.",
+                        "Incorrect: Being upright on one's feet is standing, not sitting."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The courtroom bailiff announced, 'All please _____ for the honorable judge.'",
+                    "correctAnswer": "stand",
+                    "hint": "Postural opposite of 'sit' meaning rise upright onto one's feet.",
+                    "feedbackIfWrong": "The postural opposite of 'sit' is 'stand'."
+                }
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L10_PRAC_Q3",
+            "level": 10,
+            "word": "Inside ↔ Outside",
+            "exercises": [
+                {
+                    "exerciseType": "contextPick",
+                    "interactionType": "choice",
+                    "question": "Which sentence shows spatial contrast between 'inside' and 'outside'?",
+                    "options": [
+                        "When rain started falling, the children came inside the house from outside the garden.",
+                        "When rain started falling, the children went outside the house to dry off inside the rain.",
+                        "The living room furniture was placed outside in the middle of the hallway inside."
+                    ],
+                    "correctAnswerIndex": 0,
+                    "feedbackPerOption": [
+                        "Spot on! 'Inside' represents shelter in the interior; 'outside' is the open exterior.",
+                        "Incorrect: Rain falls outside, so you seek shelter inside.",
+                        "Incorrect: Living room furniture belongs inside the house, not mixed confusingly."
+                    ]
+                },
+                {
+                    "exerciseType": "fillGap",
+                    "interactionType": "typing",
+                    "sentence": "The summer afternoon was so warm and sunny that we enjoyed eating lunch _____ on the patio.",
+                    "correctAnswer": "outside",
+                    "hint": "Opposite of 'inside' meaning out in the open air.",
+                    "feedbackIfWrong": "The open-air opposite of 'inside' is 'outside'."
+                }
+            ]
+        }
+    ]
+}

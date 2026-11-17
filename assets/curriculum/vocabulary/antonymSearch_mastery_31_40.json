@@ -1,0 +1,668 @@
+{
+    "gameType": "antonymSearch",
+    "phase": "mastery",
+    "batchIndex": 4,
+    "levels": "31-40",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L31_Q1",
+            "word": "COMFORTABLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "What word fits the idea of being providing or experiencing physical discomfort?",
+            "explanation": "Comfortable means providing or experiencing physical well-being or relief (`comfy' is informal); uncomfortable means providing or experiencing physical discomfort.",
+            "interactionType": "search",
+            "correctAnswer": "UNCOMFORTABLE",
+            "options": [
+                "COMFY",
+                "EASY",
+                "UNCOMFORTABLE",
+                "PROSPEROUS"
+            ],
+            "gradientScale": [
+                "COMFORTABLE",
+                "extremely COMFORTABLE",
+                "average",
+                "slightly UNCOMFORTABLE",
+                "UNCOMFORTABLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L31_Q2",
+            "word": "ORDINARY",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning beyond what is ordinary or usual.",
+            "explanation": "Ordinary means not exceptional in any way especially in quality or ability or size or degree — the reverse idea is beyond what is ordinary or usual, which is what extraordinary means.",
+            "interactionType": "search",
+            "correctAnswer": "EXTRAORDINARY",
+            "options": [
+                "AVERAGE",
+                "HUNTER",
+                "LEND",
+                "EXTRAORDINARY"
+            ],
+            "gradientScale": [
+                "ORDINARY",
+                "quite ORDINARY",
+                "neutral",
+                "somewhat EXTRAORDINARY",
+                "EXTRAORDINARY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L31_Q3",
+            "word": "VICTORY",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "The opposite idea here is an unsuccessful ending to a struggle or contest.",
+            "explanation": "While victory means a successful ending of a struggle or contest, defeat means the opposite: an unsuccessful ending to a struggle or contest.",
+            "interactionType": "search",
+            "correctAnswer": "DEFEAT",
+            "options": [
+                "TRIUMPH",
+                "MAYAN",
+                "DEFEAT",
+                "PART"
+            ],
+            "gradientScale": [
+                "VICTORY",
+                "strong VICTORY",
+                "neutral",
+                "a trace of defeat",
+                "DEFEAT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L32_Q1",
+            "word": "SEPARATE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "What word fits the idea of being united or combined?",
+            "explanation": "Separate refers to independent. Joint, by contrast, means united or combined.",
+            "interactionType": "search",
+            "correctAnswer": "JOINT",
+            "options": [
+                "JOINT",
+                "FREESTANDING",
+                "BLINDNESS",
+                "WALLET"
+            ],
+            "gradientScale": [
+                "SEPARATE",
+                "extremely SEPARATE",
+                "balanced",
+                "slightly JOINT",
+                "JOINT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L32_Q2",
+            "word": "ACTUAL",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Think about a word meaning existing in possibility.",
+            "explanation": "To be actual is to be presently existing in fact and not merely potential or possible. Potential means existing in possibility, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "POTENTIAL",
+            "options": [
+                "EXISTENT",
+                "FACTUAL",
+                "POTENTIAL",
+                "REAL"
+            ],
+            "gradientScale": [
+                "ACTUAL",
+                "highly ACTUAL",
+                "neutral",
+                "a little POTENTIAL",
+                "POTENTIAL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L32_Q3",
+            "word": "WISE",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "What word fits the idea of being devoid of good sense or judgment?",
+            "explanation": "To be wise is to be having or prompted by wisdom or discernment. Foolish means devoid of good sense or judgment, the reverse quality.",
+            "interactionType": "search",
+            "correctAnswer": "FOOLISH",
+            "options": [
+                "SAUCY",
+                "SMART",
+                "IMPUDENT",
+                "FOOLISH"
+            ],
+            "gradientScale": [
+                "WISE",
+                "quite WISE",
+                "average",
+                "slightly FOOLISH",
+                "FOOLISH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L33_Q1",
+            "word": "DEMAND",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "This word refers to offering goods and services for sale.",
+            "explanation": "Demand means the ability and desire to purchase goods and services, so its opposite, supply, means offering goods and services for sale.",
+            "interactionType": "search",
+            "correctAnswer": "SUPPLY",
+            "options": [
+                "REQUIREMENT",
+                "NEED",
+                "SUPPLY",
+                "SCRUTINY"
+            ],
+            "gradientScale": [
+                "DEMAND",
+                "total DEMAND",
+                "mixed",
+                "a trace of supply",
+                "SUPPLY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L33_Q2",
+            "word": "BORROW",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word means to give temporarily?",
+            "explanation": "Borrow means get temporarily; lend means give temporarily.",
+            "interactionType": "search",
+            "correctAnswer": "LEND",
+            "options": [
+                "ADOPT",
+                "SIMILAR",
+                "GOTH",
+                "LEND"
+            ],
+            "gradientScale": [
+                "BORROW",
+                "BORROW fully",
+                "undecided",
+                "starting to lend",
+                "LEND"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L33_Q3",
+            "word": "STRENGTH",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Think about a word meaning the property of lacking physical or mental strength.",
+            "explanation": "Strength means the property of being physically or mentally strong, so its opposite, weakness, means the property of lacking physical or mental strength.",
+            "interactionType": "search",
+            "correctAnswer": "WEAKNESS",
+            "options": [
+                "FORCE",
+                "PERSUASIVENESS",
+                "WEAKNESS",
+                "DURABILITY"
+            ],
+            "gradientScale": [
+                "STRENGTH",
+                "pure STRENGTH",
+                "mixed",
+                "a hint of weakness",
+                "WEAKNESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L34_Q1",
+            "word": "TOUGH",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Picture something described as easy to cut or chew.",
+            "explanation": "Tough means resistant to cutting or chewing, so its opposite, tender, means easy to cut or chew.",
+            "interactionType": "search",
+            "correctAnswer": "TENDER",
+            "options": [
+                "TENDER",
+                "HARD",
+                "RUFFIANLY",
+                "RUGGED"
+            ],
+            "gradientScale": [
+                "TOUGH",
+                "very TOUGH",
+                "moderate",
+                "slightly TENDER",
+                "TENDER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L34_Q2",
+            "word": "DISAGREE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Look for a word meaning to be in accord.",
+            "explanation": "Disagree means to be of different opinions; agree means to be in accord.",
+            "interactionType": "search",
+            "correctAnswer": "AGREE",
+            "options": [
+                "DIFFER",
+                "DISSENT",
+                "AGREE",
+                "DISACCORD"
+            ],
+            "gradientScale": [
+                "DISAGREE",
+                "DISAGREE fully",
+                "undecided",
+                "partly agree",
+                "AGREE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L34_Q3",
+            "word": "WAKING",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Think about a word meaning the state of being asleep.",
+            "explanation": "Waking refers to the state of remaining awake, while sleeping refers to the state of being asleep.",
+            "interactionType": "search",
+            "correctAnswer": "SLEEPING",
+            "options": [
+                "SLEEPING",
+                "SAWDUST",
+                "INTERVENTION",
+                "RING"
+            ],
+            "gradientScale": [
+                "WAKING",
+                "strong WAKING",
+                "neutral",
+                "a hint of sleeping",
+                "SLEEPING"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L35_Q1",
+            "word": "BOUNCE",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "This word means to be debited and credited to the proper bank accounts.",
+            "explanation": "Bounce means to come back after being refused; clear means to be debited and credited to the proper bank accounts.",
+            "interactionType": "search",
+            "correctAnswer": "CLEAR",
+            "options": [
+                "REVERBERATE",
+                "JOUNCE",
+                "CLEAR",
+                "REBOUND"
+            ],
+            "gradientScale": [
+                "BOUNCE",
+                "BOUNCE clearly",
+                "undecided",
+                "starting to clear",
+                "CLEAR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L35_Q2",
+            "word": "REJOICE",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "This word means to express deep sadness or regret about something.",
+            "explanation": "While rejoice means feel or show great joy or delight, lament means the opposite: express deep sadness or regret about something.",
+            "interactionType": "search",
+            "correctAnswer": "LAMENT",
+            "options": [
+                "CELEBRATE",
+                "LAMENT",
+                "TRIUMPH",
+                "JUBILATE"
+            ],
+            "gradientScale": [
+                "REJOICE",
+                "REJOICE completely",
+                "undecided",
+                "starting to lament",
+                "LAMENT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L35_Q3",
+            "word": "HOPE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "Search for a word that means the feeling that everything is wrong and nothing will turn out well.",
+            "explanation": "Hope refers to the general feeling that some desire will be fulfilled, while despair refers to the feeling that everything is wrong and nothing will turn out well.",
+            "interactionType": "search",
+            "correctAnswer": "DESPAIR",
+            "options": [
+                "PROMISE",
+                "TWAT",
+                "DESPAIR",
+                "BREWERY"
+            ],
+            "gradientScale": [
+                "HOPE",
+                "pure HOPE",
+                "neutral",
+                "a trace of despair",
+                "DESPAIR"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L36_Q1",
+            "word": "SURRENDER",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Look for a word meaning to stand up or offer resistance to somebody or something.",
+            "explanation": "While surrender means give up or agree to forgo to the power or possession of another, resist means the opposite: stand up or offer resistance to somebody or something.",
+            "interactionType": "search",
+            "correctAnswer": "RESIST",
+            "options": [
+                "CEDE",
+                "RESIST",
+                "DELIVER",
+                "MICROWAVE"
+            ],
+            "gradientScale": [
+                "SURRENDER",
+                "SURRENDER actively",
+                "neither",
+                "starting to resist",
+                "RESIST"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L36_Q2",
+            "word": "OFTEN",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "What word fits the idea of not often?",
+            "explanation": "Often means many times at short intervals; rarely means not often.",
+            "interactionType": "search",
+            "correctAnswer": "RARELY",
+            "options": [
+                "OFT",
+                "FREQUENTLY",
+                "OFTTIMES",
+                "RARELY"
+            ],
+            "gradientScale": [
+                "OFTEN",
+                "truly OFTEN",
+                "moderate",
+                "a little RARELY",
+                "RARELY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L36_Q3",
+            "word": "ORDER",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning a disturbance of the peace or of public order.",
+            "explanation": "While order means established customary state (especially of society), disorder means the opposite: a disturbance of the peace or of public order.",
+            "interactionType": "search",
+            "correctAnswer": "DISORDER",
+            "options": [
+                "DISORDER",
+                "SOCIETY",
+                "RESCRIPT",
+                "GILD"
+            ],
+            "gradientScale": [
+                "ORDER",
+                "pure ORDER",
+                "mixed",
+                "a hint of disorder",
+                "DISORDER"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L37_Q1",
+            "word": "INTEREST",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Look for a word meaning to cause to be bored.",
+            "explanation": "Interest means excite the curiosity of — the reverse idea is cause to be bored, which is what bore means.",
+            "interactionType": "search",
+            "correctAnswer": "BORE",
+            "options": [
+                "CONCERN",
+                "BORE",
+                "WORRY",
+                "OCCUPY"
+            ],
+            "gradientScale": [
+                "INTEREST",
+                "INTEREST fully",
+                "undecided",
+                "beginning to bore",
+                "BORE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L37_Q2",
+            "word": "FORTUNATELY",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Search for a word that captures the idea of by bad luck.",
+            "explanation": "Fortunately means by good fortune; unfortunately means by bad luck.",
+            "interactionType": "search",
+            "correctAnswer": "UNFORTUNATELY",
+            "options": [
+                "FORTUITOUSLY",
+                "LUCKILY",
+                "UNFORTUNATELY",
+                "AUDITORIUM"
+            ],
+            "gradientScale": [
+                "FORTUNATELY",
+                "highly FORTUNATELY",
+                "in between",
+                "somewhat UNFORTUNATELY",
+                "UNFORTUNATELY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L37_Q3",
+            "word": "COVERED",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Search for a word that captures the idea of being lacking its natural or customary covering.",
+            "explanation": "While covered means overlaid or spread or topped with or enclosed within something, bare means the opposite: lacking its natural or customary covering.",
+            "interactionType": "search",
+            "correctAnswer": "BARE",
+            "options": [
+                "EXTERMINATOR",
+                "BARE",
+                "ILLITERATE",
+                "MEMENTO"
+            ],
+            "gradientScale": [
+                "COVERED",
+                "quite COVERED",
+                "average",
+                "mildly BARE",
+                "BARE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L38_Q1",
+            "word": "NET",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means before any deductions.",
+            "explanation": "Net means remaining after all deductions — the reverse idea is before any deductions, which is what gross means.",
+            "interactionType": "search",
+            "correctAnswer": "GROSS",
+            "options": [
+                "GROSS",
+                "LAST",
+                "FINAL",
+                "INPUT"
+            ],
+            "gradientScale": [
+                "NET",
+                "very NET",
+                "balanced",
+                "a little GROSS",
+                "GROSS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L38_Q2",
+            "word": "PLUS",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Search for a word that captures the idea of being on the negative side or lower end of a scale.",
+            "explanation": "Plus means on the positive side or higher end of a scale — the reverse idea is on the negative side or lower end of a scale, which is what minus means.",
+            "interactionType": "search",
+            "correctAnswer": "MINUS",
+            "options": [
+                "POSITIVE",
+                "IDENTICAL",
+                "ROMANIAN",
+                "MINUS"
+            ],
+            "gradientScale": [
+                "PLUS",
+                "extremely PLUS",
+                "in between",
+                "slightly MINUS",
+                "MINUS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L38_Q3",
+            "word": "RECORD",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Look for a word meaning to wipe out digitally or magnetically recorded information.",
+            "explanation": "Record means register electronically, so its opposite, erase, means wipe out digitally or magnetically recorded information.",
+            "interactionType": "search",
+            "correctAnswer": "ERASE",
+            "options": [
+                "ERASE",
+                "TAPE",
+                "ENTER",
+                "REGISTER"
+            ],
+            "gradientScale": [
+                "RECORD",
+                "RECORD clearly",
+                "in between",
+                "starting to erase",
+                "ERASE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L39_Q1",
+            "word": "REWARD",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "What word refers to the disadvantage or painful consequences of an action or condition?",
+            "explanation": "Reward refers to benefit resulting from some event or action, while penalty refers to the disadvantage or painful consequences of an action or condition.",
+            "interactionType": "search",
+            "correctAnswer": "PENALTY",
+            "options": [
+                "ADVANTAGE",
+                "REINFORCEMENT",
+                "PENALTY",
+                "PAYOFF"
+            ],
+            "gradientScale": [
+                "REWARD",
+                "pure REWARD",
+                "balanced",
+                "some penalty",
+                "PENALTY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L39_Q2",
+            "word": "NEPHEW",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Try to recall a word that means a daughter of your brother or sister.",
+            "explanation": "Nephew refers to a son of your brother or sister, while niece refers to a daughter of your brother or sister.",
+            "interactionType": "search",
+            "correctAnswer": "NIECE",
+            "options": [
+                "BREATHLESS",
+                "NIECE",
+                "BIND",
+                "HAMMER"
+            ],
+            "gradientScale": [
+                "NEPHEW",
+                "pure NEPHEW",
+                "neutral",
+                "some niece",
+                "NIECE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L39_Q3",
+            "word": "PRESENCE",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Think about a word meaning failure to be present.",
+            "explanation": "Presence refers to the act of being present, while absence refers to failure to be present.",
+            "interactionType": "search",
+            "correctAnswer": "ABSENCE",
+            "options": [
+                "COMPORTMENT",
+                "FRONT",
+                "BEARING",
+                "ABSENCE"
+            ],
+            "gradientScale": [
+                "PRESENCE",
+                "total PRESENCE",
+                "neutral",
+                "a hint of absence",
+                "ABSENCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L40_Q1",
+            "word": "LIKELY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word fits the idea of being has little chance of being the case or coming about?",
+            "explanation": "Likely refers to has a good chance of being the case or of coming about. Unlikely, by contrast, means has little chance of being the case or coming about.",
+            "interactionType": "search",
+            "correctAnswer": "UNLIKELY",
+            "options": [
+                "POTENTIAL",
+                "UNLIKELY",
+                "PROBABLE",
+                "RESPIRATORY"
+            ],
+            "gradientScale": [
+                "LIKELY",
+                "quite LIKELY",
+                "in between",
+                "slightly UNLIKELY",
+                "UNLIKELY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L40_Q2",
+            "word": "FEED",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "What word means to deprive of food?",
+            "explanation": "Feed refers to give food to. Starve, by contrast, means deprive of food.",
+            "interactionType": "search",
+            "correctAnswer": "STARVE",
+            "options": [
+                "GIVE",
+                "FERTILIZE",
+                "PREY",
+                "STARVE"
+            ],
+            "gradientScale": [
+                "FEED",
+                "FEED completely",
+                "undecided",
+                "partly starve",
+                "STARVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L40_Q3",
+            "word": "NECESSARY",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "The opposite idea here relates to being not necessary.",
+            "explanation": "Necessary means absolutely essential; unnecessary means not necessary.",
+            "interactionType": "search",
+            "correctAnswer": "UNNECESSARY",
+            "options": [
+                "UNNECESSARY",
+                "FROZE",
+                "STUMP",
+                "CRAMP"
+            ],
+            "gradientScale": [
+                "NECESSARY",
+                "extremely NECESSARY",
+                "moderate",
+                "slightly UNNECESSARY",
+                "UNNECESSARY"
+            ]
+        }
+    ]
+}

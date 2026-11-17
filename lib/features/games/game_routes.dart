@@ -12,6 +12,16 @@ import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/quest_coins_screen.dart';
 import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
+import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
+import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_learn_screen.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_practice_screen.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_learn_screen.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_practice_screen.dart';
+import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/antonym_search_learn_screen.dart';
+import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/antonym_search_practice_screen.dart';
+import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_learn_screen.dart';
+import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -56,6 +66,12 @@ class GameRoutes {
 
   /// Route path for multi-step quest sequence runners.
   static const String questSequenceRoute = '/quest-sequence';
+
+  /// Route path for the Learn phase.
+  static const String learnRoute = '/learn';
+
+  /// Route path for the Practice phase.
+  static const String practiceRoute = '/practice';
 
   // ---------------------------------------------------------------------------
   // Category → (default GameSubtype, screen factory) mapping.
@@ -241,6 +257,114 @@ class GameRoutes {
 
         return fadeTransitionPage(
           child: QuestSequencePage(sequenceId: sequenceId, quests: quests),
+          state: state,
+        );
+      },
+    ),
+
+    GoRoute(
+      path: learnRoute,
+      pageBuilder: (context, state) {
+        final category = state.uri.queryParameters['category'] ?? 'vocabulary';
+        final gameType = state.uri.queryParameters['gameType'] ?? 'flashcards';
+        final level = int.tryParse(state.uri.queryParameters['level'] ?? '1') ?? 1;
+
+        if (gameType.toLowerCase() == 'flashcards') {
+          return fadeTransitionPage(
+            child: FlashcardsLearnScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'synonymsearch') {
+          return fadeTransitionPage(
+            child: SynonymSearchLearnScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'antonymsearch') {
+          return fadeTransitionPage(
+            child: AntonymSearchLearnScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'contextclues') {
+          return fadeTransitionPage(
+            child: ContextCluesLearnScreen(level: level),
+            state: state,
+          );
+        }
+
+        return fadeTransitionPage(
+          child: LearnPhaseScaffold(
+            title: '$gameType Discovery',
+            gameType: gameType,
+            level: level,
+            onComplete: () {
+              final targetPractice = '$practiceRoute?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(gameType)}&level=$level';
+              context.pushReplacement(targetPractice);
+            },
+            child: Center(
+              child: Text(
+                'Learn Phase: $category / $gameType (Level $level)',
+                style: const TextStyle(fontFamily: 'Outfit'),
+              ),
+            ),
+          ),
+          state: state,
+        );
+      },
+    ),
+
+    GoRoute(
+      path: practiceRoute,
+      pageBuilder: (context, state) {
+        final category = state.uri.queryParameters['category'] ?? 'vocabulary';
+        final gameType = state.uri.queryParameters['gameType'] ?? 'flashcards';
+        final level = int.tryParse(state.uri.queryParameters['level'] ?? '1') ?? 1;
+
+        if (gameType.toLowerCase() == 'flashcards') {
+          return fadeTransitionPage(
+            child: FlashcardsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'synonymsearch') {
+          return fadeTransitionPage(
+            child: SynonymSearchPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'antonymsearch') {
+          return fadeTransitionPage(
+            child: AntonymSearchPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'contextclues') {
+          return fadeTransitionPage(
+            child: ContextCluesPracticeScreen(level: level),
+            state: state,
+          );
+        }
+
+        return fadeTransitionPage(
+          child: PracticePhaseScaffold(
+            title: '$gameType Gym',
+            gameType: gameType,
+            level: level,
+            currentExerciseIndex: 0,
+            totalExercises: 1,
+            onComplete: () {
+              final targetTest = '/game?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(gameType)}&level=$level';
+              context.pushReplacement(targetTest);
+            },
+            child: Center(
+              child: Text(
+                'Practice Phase: $category / $gameType (Level $level)',
+                style: const TextStyle(fontFamily: 'Outfit'),
+              ),
+            ),
+          ),
           state: state,
         );
       },
