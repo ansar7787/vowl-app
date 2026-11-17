@@ -43,7 +43,18 @@ jobs:
         run: flutter analyze
         # While you clean old issues you can use: flutter analyze --no-fatal-infos
 
-      # Enforces test suite across verified architectural components and completed categories
-      - name: Run Automated Tests
+      - name: Run Core Tests
         if: ${{ !cancelled() }}
-        run: flutter test test/core/ test/features/auth/ test/features/arena/ test/features/games/ test/features/vocabulary/ --concurrency=4
+        run: flutter test test/core/
+
+      - name: Run Auth & Games Tests
+        if: ${{ !cancelled() }}
+        run: flutter test test/features/auth/ test/features/games/
+
+      - name: Run Arena Tests
+        if: ${{ !cancelled() }}
+        run: flutter test test/features/arena/
+
+      - name: Run Vocabulary Tests
+        if: ${{ !cancelled() }}
+        run: flutter test test/features/vocabulary/
