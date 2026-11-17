@@ -36,6 +36,8 @@ import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_practice_screen.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_learn_screen.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_practice_screen.dart';
+import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/contextual_usage_learn_screen.dart';
+import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/contextual_usage_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -349,6 +351,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'contextualusage') {
+          return fadeTransitionPage(
+            child: ContextualUsageLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -441,6 +449,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'collocations') {
           return fadeTransitionPage(
             child: CollocationsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'contextualusage') {
+          return fadeTransitionPage(
+            child: ContextualUsagePracticeScreen(level: level),
             state: state,
           );
         }

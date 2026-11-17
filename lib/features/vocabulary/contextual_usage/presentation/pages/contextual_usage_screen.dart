@@ -26,11 +26,15 @@ class ContextualUsageScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 is an optional Bonus XP Arena with victory banking.
+  final bool isBonusStage;
+
   /// Creates a [ContextualUsageScreen] instance.
   const ContextualUsageScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.contextualUsage,
+    this.isBonusStage = false,
   });
 
   @override
@@ -127,6 +131,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
         submitWrongAnswer(quest: quest!, userAnswer: '');
       }
     }
+  }
+
+  void _submitFinalBonusVictory(bool nailedIt, GameQuest quest) {
+    _submitFinalAnswer(nailedIt, quest: quest);
   }
 
   @override
@@ -328,6 +336,49 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                         ),
                                         child: Column(
                                           children: [
+                                            if (widget.isBonusStage) ...[
+                                              Container(
+                                                margin: EdgeInsets.only(bottom: 12.h),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 14.w,
+                                                  vertical: 10.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.amber.withValues(
+                                                    alpha: isDarkMode ? 0.15 : 0.1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(12.r),
+                                                  border: Border.all(
+                                                    color: Colors.amber
+                                                        .withValues(alpha: 0.3),
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.stars_rounded,
+                                                      color: Colors.amber,
+                                                      size: 20,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Flexible(
+                                                      child: Text(
+                                                        '⚡ BONUS XP ARENA: Context & Register Calibrated (+50 XP)! Speak the completed sentence aloud or bank your win.',
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          color: isDarkMode
+                                                              ? Colors.amber.shade200
+                                                              : Colors.amber.shade900,
+                                                          fontWeight: FontWeight.w700,
+                                                          fontSize: 12.sp,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                             SpeakToConfirmOverlay(
                                               expectedText: (quest.prompt ?? "")
                                                   .replaceAll(
@@ -340,13 +391,69 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                                     true,
                                                     quest: quest,
                                                   ),
-                                              onSkipped: () =>
-                                                  _submitFinalAnswer(
-                                                    false,
-                                                    quest: quest,
-                                                  ),
+                                              onSkipped: () => widget.isBonusStage
+                                                  ? _submitFinalBonusVictory(
+                                                      true,
+                                                      quest,
+                                                    )
+                                                  : _submitFinalAnswer(
+                                                      false,
+                                                      quest: quest,
+                                                    ),
                                               isPositioned: false,
                                             ),
+                                            if (widget.isBonusStage) ...[
+                                              SizedBox(height: 12.h),
+                                              SizedBox(
+                                                width: double.infinity,
+                                                height: 44.h,
+                                                child: OutlinedButton.icon(
+                                                  key: const Key(
+                                                    'contextual_usage_bonus_bank_button',
+                                                  ),
+                                                  onPressed: () =>
+                                                      _submitFinalBonusVictory(
+                                                        true,
+                                                        quest,
+                                                      ),
+                                                  icon: const Icon(
+                                                    Icons.check_circle_outline_rounded,
+                                                    color: Colors.amber,
+                                                    size: 20,
+                                                  ),
+                                                  label: Text(
+                                                    'Bank Mastery Victory (+50 XP)',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 14.sp,
+                                                      color: isDarkMode
+                                                          ? Colors.amber.shade200
+                                                          : Colors.amber.shade900,
+                                                    ),
+                                                  ),
+                                                  style: OutlinedButton.styleFrom(
+                                                    side: BorderSide(
+                                                      color: Colors.amber
+                                                          .withValues(alpha: 0.5),
+                                                      width: 1.5,
+                                                    ),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                        12.r,
+                                                      ),
+                                                    ),
+                                                    backgroundColor: Colors.amber
+                                                        .withValues(
+                                                      alpha: isDarkMode
+                                                          ? 0.1
+                                                          : 0.05,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                             SizedBox(height: 60.h),
                                           ],
                                         ),
