@@ -227,7 +227,7 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/anton
     as v_as_game;
 import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_mastery_screen.dart'
     as v_cc_game;
-import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_screen.dart'
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_mastery_screen.dart'
     as v_pv_game;
 import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_screen.dart'
     as v_id_game;
@@ -752,7 +752,7 @@ class AppRouterGameResolvers {
       case GameSubtype.idioms:
         return v_id_game.IdiomsScreen(level: level, gameType: gameType);
       case GameSubtype.phrasalVerbs:
-        return v_pv_game.PhrasalVerbsScreen(level: level, gameType: gameType);
+        return v_pv_game.PhrasalVerbsMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.academicWord:
         return v_aw_game.AcademicWordScreen(level: level, gameType: gameType);
       case GameSubtype.topicVocab:

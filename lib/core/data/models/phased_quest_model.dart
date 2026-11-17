@@ -145,7 +145,7 @@ class PhasedQuest {
     word: json['word'] as String?,
     definition: json['definition'] as String?,
     pronunciation: json['pronunciation'] as String?,
-    example: json['example'] as String?,
+    example: (json['example'] ?? json['exampleSentence']) as String?,
     usageExample: json['usageExample'] as String?,
     nativeTip: json['nativeTip'] as String?,
     familyWords:

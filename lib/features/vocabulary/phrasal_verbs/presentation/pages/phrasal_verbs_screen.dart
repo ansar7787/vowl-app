@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -26,11 +27,15 @@ class PhrasalVerbsScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena.
+  final bool isBonusStage;
+
   /// Creates a [PhrasalVerbsScreen] instance.
   const PhrasalVerbsScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.phrasalVerbs,
+    this.isBonusStage = false,
   });
 
   @override
@@ -236,6 +241,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                           _submitChoice(selected, correct, quest),
                       onFinalSubmit: (nailedIt) =>
                           _submitFinalAnswer(nailedIt, quest),
+                      isBonusStage: widget.isBonusStage,
                       formattedExampleSentence: _getFormattedExampleSentence(
                         quest,
                       ),
@@ -263,6 +269,7 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
   final bool hintUsed;
   final void Function(String, String) onChoiceSubmit;
   final void Function(bool) onFinalSubmit;
+  final bool isBonusStage;
   final String? formattedExampleSentence;
 
   const _PhrasalVerbsStageLayout({
@@ -280,6 +287,7 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
     required this.hintUsed,
     required this.onChoiceSubmit,
     required this.onFinalSubmit,
+    this.isBonusStage = false,
     required this.formattedExampleSentence,
   });
 
@@ -463,15 +471,82 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Column(
                           children: [
+                            if (isBonusStage) ...[
+                              Container(
+                                margin: EdgeInsets.only(bottom: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w,
+                                  vertical: 10.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: AppColors.amber500.withValues(
+                                    alpha: isDark ? 0.15 : 0.1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: AppColors.amber500.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.stars_rounded,
+                                      color: AppColors.amber400,
+                                      size: 20.r,
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Flexible(
+                                      child: Text(
+                                        '⚡ BONUS XP ARENA: Assemble the context sentence for +50 XP, or tap Skip to bank your win!',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: isDark
+                                              ? AppColors.amber200
+                                              : AppColors.amber900,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12.sp,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                             ContextSentenceBuilder(
                               targetKeyword:
                                   "${quest.word} ${quest.correctAnswer}".trim(),
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => onFinalSubmit(true),
-                              onSkipped: () => onFinalSubmit(false),
+                              onSkipped: () => onFinalSubmit(isBonusStage),
                               isPositioned: false,
                               exampleSentence: formattedExampleSentence,
                             ),
+                            if (isBonusStage) ...[
+                              SizedBox(height: 12.h),
+                              TextButton.icon(
+                                onPressed: () => onFinalSubmit(true),
+                                icon: Icon(
+                                  Icons.skip_next_rounded,
+                                  color: isDark
+                                      ? AppColors.slate400
+                                      : AppColors.slate600,
+                                  size: 20.r,
+                                ),
+                                label: Text(
+                                  'Skip Sentence Builder & Bank Win',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? AppColors.slate400
+                                        : AppColors.slate600,
+                                  ),
+                                ),
+                              ),
+                            ],
                             SizedBox(height: 60.h),
                           ],
                         ),

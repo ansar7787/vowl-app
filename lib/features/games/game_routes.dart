@@ -22,6 +22,8 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/anton
 import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/antonym_search_practice_screen.dart';
 import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_learn_screen.dart';
 import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_practice_screen.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_learn_screen.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -293,6 +295,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'phrasalverbs') {
+          return fadeTransitionPage(
+            child: PhrasalVerbsLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -343,6 +351,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'contextclues') {
           return fadeTransitionPage(
             child: ContextCluesPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'phrasalverbs') {
+          return fadeTransitionPage(
+            child: PhrasalVerbsPracticeScreen(level: level),
             state: state,
           );
         }
