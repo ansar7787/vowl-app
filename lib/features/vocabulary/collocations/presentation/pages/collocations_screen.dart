@@ -26,11 +26,15 @@ class CollocationsScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether this session is running as a mastery bonus stage.
+  final bool isBonusStage;
+
   /// Creates a [CollocationsScreen] instance.
   const CollocationsScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.collocations,
+    this.isBonusStage = false,
   });
 
   @override
@@ -128,6 +132,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     } else {
       submitWrongAnswer(quest: quest);
     }
+  }
+
+  void _submitFinalBonusVictory(bool nailedIt, GameQuest quest) {
+    _submitFinalAnswer(nailedIt, quest);
   }
 
   @override
@@ -489,19 +497,110 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                           horizontal: 20.w,
                                           vertical: 16.h,
                                         ),
-                                        child: ContextSentenceBuilder(
-                                          targetKeyword:
-                                              '${quest.word} ${quest.correctAnswer}',
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () =>
-                                              _submitFinalAnswer(true, quest),
-                                          onSkipped: () =>
-                                              _submitFinalAnswer(false, quest),
-                                          isPositioned: false,
-                                          exampleSentence:
-                                              _getFormattedExampleSentence(
-                                                quest,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            if (widget.isBonusStage) ...[
+                                              Container(
+                                                margin: EdgeInsets.only(bottom: 12.h),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 14.w,
+                                                  vertical: 10.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.amber.withValues(
+                                                    alpha: isDark ? 0.15 : 0.1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(12.r),
+                                                  border: Border.all(
+                                                    color: Colors.amber
+                                                        .withValues(alpha: 0.3),
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.stars_rounded,
+                                                      color: Colors.amber,
+                                                      size: 20,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Flexible(
+                                                      child: Text(
+                                                        '⚡ BONUS XP ARENA: Lexical Pairing Successful (+50 XP)! Build the sentence or bank your win.',
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          color: isDark
+                                                              ? Colors.amber.shade200
+                                                              : Colors.amber.shade900,
+                                                          fontWeight: FontWeight.w700,
+                                                          fontSize: 12.sp,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
+                                            ],
+                                            ContextSentenceBuilder(
+                                              targetKeyword:
+                                                  '${quest.word} ${quest.correctAnswer}',
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () =>
+                                                  _submitFinalAnswer(true, quest),
+                                              onSkipped: () => widget.isBonusStage
+                                                  ? _submitFinalBonusVictory(true, quest)
+                                                  : _submitFinalAnswer(false, quest),
+                                              isPositioned: false,
+                                              exampleSentence:
+                                                  _getFormattedExampleSentence(
+                                                    quest,
+                                                  ),
+                                            ),
+                                            if (widget.isBonusStage) ...[
+                                              SizedBox(height: 12.h),
+                                              SizedBox(
+                                                width: double.infinity,
+                                                height: 44.h,
+                                                child: OutlinedButton.icon(
+                                                  key: const Key(
+                                                    'collocations_bonus_bank_button',
+                                                  ),
+                                                  onPressed: () =>
+                                                      _submitFinalBonusVictory(true, quest),
+                                                  icon: const Icon(
+                                                    Icons.check_circle_outline_rounded,
+                                                    color: Colors.amber,
+                                                    size: 18,
+                                                  ),
+                                                  label: Text(
+                                                    'Bank Victory (+50 XP)',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 14.sp,
+                                                      fontWeight: FontWeight.w700,
+                                                      color: isDark
+                                                          ? Colors.amber.shade200
+                                                          : Colors.amber.shade800,
+                                                    ),
+                                                  ),
+                                                  style: OutlinedButton.styleFrom(
+                                                    side: BorderSide(
+                                                      color: Colors.amber.withValues(
+                                                        alpha: 0.5,
+                                                      ),
+                                                      width: 1.5,
+                                                    ),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(12.r),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ],
                                         ),
                                       ),
                                     ),

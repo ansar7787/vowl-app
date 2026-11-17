@@ -20,7 +20,7 @@ class GameBriefingLayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation', 'prefixSuffix'};
+    const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation', 'prefixSuffix', 'collocations'};
     final isPhased = phasedGames.contains(gameType.name);
 
     final briefing = GameInstructionService.getBriefing(

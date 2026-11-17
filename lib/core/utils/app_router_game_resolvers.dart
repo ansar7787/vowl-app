@@ -241,7 +241,7 @@ import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix
     as v_ps_game;
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/contextual_usage_screen.dart'
     as v_cu_game;
-import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_screen.dart'
+import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_mastery_screen.dart'
     as v_co_game;
 
 /// Maps [GameSubtype] values to game screens wrapped in their required BlocProvider.
@@ -767,7 +767,7 @@ class AppRouterGameResolvers {
           gameType: gameType,
         );
       case GameSubtype.collocations:
-        return v_co_game.CollocationsScreen(level: level, gameType: gameType);
+        return v_co_game.CollocationsMasteryScreen(level: level, gameType: gameType);
       default:
         return _unhandledSubtype(
           gameType,
