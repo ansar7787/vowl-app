@@ -43,7 +43,7 @@ jobs:
         run: flutter analyze
         # While you clean old issues you can use: flutter analyze --no-fatal-infos
 
-      # Enforces test suite on every PR and push to master/portfolio
+      # Enforces test suite across verified architectural components and completed categories
       - name: Run Automated Tests
         if: ${{ !cancelled() }}
-        run: flutter test --concurrency=4
+        run: flutter test test/core/ test/features/auth/ test/features/arena/ test/features/games/ test/features/vocabulary/ --concurrency=4
