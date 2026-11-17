@@ -151,8 +151,10 @@ abstract class QuestRegistry {
     final startLevel = (batchIndex - 1) * 10 + 1;
     final endLevel = batchIndex * 10;
 
-    if (phase != null) {
-      return 'assets/curriculum/$category/${gameType}_${phase}_${startLevel}_$endLevel.json';
+    final resolvedPhase = phase ?? (category == 'vocabulary' ? 'mastery' : null);
+
+    if (resolvedPhase != null) {
+      return 'assets/curriculum/$category/${gameType}_${resolvedPhase}_${startLevel}_$endLevel.json';
     }
 
     return 'assets/curriculum/$category/${gameType}_${startLevel}_$endLevel.json';
