@@ -28,6 +28,8 @@ import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_learn_
 import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_practice_screen.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/pages/academic_word_learn_screen.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/pages/academic_word_practice_screen.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_learn_screen.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -317,6 +319,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'topicvocab') {
+          return fadeTransitionPage(
+            child: TopicVocabLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -385,6 +393,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'academicword') {
           return fadeTransitionPage(
             child: AcademicWordPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'topicvocab') {
+          return fadeTransitionPage(
+            child: TopicVocabPracticeScreen(level: level),
             state: state,
           );
         }

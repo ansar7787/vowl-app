@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
@@ -20,6 +21,7 @@ import '../widgets/topic_machine_head.dart';
 import '../widgets/topic_containment_bin.dart';
 import '../widgets/topic_batch_counter.dart';
 import '../widgets/topic_draggable_core.dart';
+import '../widgets/topic_vocab_mind_map.dart';
 import '../controllers/topic_vocab_controller.dart';
 
 /// Interactive topic categorization game screen where learners flick words into matching categorical containment bins.
@@ -30,11 +32,15 @@ class TopicVocabScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena with penalty-free victory banking.
+  final bool isBonusStage;
+
   /// Creates a [TopicVocabScreen] instance.
   const TopicVocabScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.topicVocab,
+    this.isBonusStage = false,
   });
 
   @override
@@ -64,6 +70,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     _controller = TopicVocabController(
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
+      isBonusStage: widget.isBonusStage,
       onSubmitAnswer: (nailedIt, {quest, userAnswer}) {
         if (nailedIt) {
           submitCorrectAnswer();
@@ -512,6 +519,128 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                               duration: 250.ms,
                                             );
                                       },
+                                    ),
+                                  ),
+                                if (_controller.isFirstStagePassed &&
+                                    !_controller.isAnswered &&
+                                    widget.isBonusStage)
+                                  Positioned.fill(
+                                    child: Container(
+                                      color: (isDark ? Colors.black : Colors.white)
+                                          .withValues(alpha: 0.94),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                        vertical: 16.h,
+                                      ),
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox(height: 12.h),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 14.w,
+                                                vertical: 10.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: AppColors.amber500.withValues(
+                                                  alpha: isDark ? 0.15 : 0.1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.r),
+                                                border: Border.all(
+                                                  color: AppColors.amber500
+                                                      .withValues(alpha: 0.3),
+                                                ),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.stars_rounded,
+                                                    color: AppColors.amber400,
+                                                    size: 20.r,
+                                                  ),
+                                                  SizedBox(width: 8.w),
+                                                  Flexible(
+                                                    child: Text(
+                                                      '⚡ BONUS XP ARENA: Topic Categorization Complete (+50 XP)! Review the semantic mind map or bank your win.',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        color: isDark
+                                                            ? AppColors.amber200
+                                                            : AppColors.amber900,
+                                                        fontWeight: FontWeight.w700,
+                                                        fontSize: 12.sp,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(height: 16.h),
+                                            TopicVocabMindMap(
+                                              relatedWords:
+                                                  quest?.relatedWords ?? [],
+                                              color: theme.primaryColor,
+                                            ),
+                                            SizedBox(height: 20.h),
+                                            ElevatedButton(
+                                              key: const Key(
+                                                'topic_vocab_bonus_confirm_button',
+                                              ),
+                                              onPressed: () => _controller
+                                                  .submitFinalBonusVictory(true),
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor:
+                                                    theme.primaryColor,
+                                                foregroundColor: Colors.white,
+                                                minimumSize: Size(
+                                                  double.infinity,
+                                                  48.h,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12.r),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                'Solidify Mastery & Claim Bonus XP (+50 XP) 🏆',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 10.h),
+                                            TextButton.icon(
+                                              key: const Key(
+                                                'topic_vocab_bonus_bank_button',
+                                              ),
+                                              onPressed: () => _controller
+                                                  .submitFinalBonusVictory(true),
+                                              icon: Icon(
+                                                Icons.skip_next_rounded,
+                                                color: isDark
+                                                    ? AppColors.slate400
+                                                    : AppColors.slate600,
+                                                size: 18.r,
+                                              ),
+                                              label: Text(
+                                                'Skip Bonus & Bank Win',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: isDark
+                                                      ? AppColors.slate400
+                                                      : AppColors.slate600,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ),
                               ],

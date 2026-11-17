@@ -233,7 +233,7 @@ import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_master
     as v_id_game;
 import 'package:vowl/features/vocabulary/academic_word/presentation/pages/academic_word_mastery_screen.dart'
     as v_aw_game;
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_screen.dart'
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_mastery_screen.dart'
     as v_tv_game;
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_screen.dart'
     as v_wf_game;
@@ -756,7 +756,7 @@ class AppRouterGameResolvers {
       case GameSubtype.academicWord:
         return v_aw_game.AcademicWordMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.topicVocab:
-        return v_tv_game.TopicVocabScreen(level: level, gameType: gameType);
+        return v_tv_game.TopicVocabMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.wordFormation:
         return v_wf_game.WordFormationScreen(level: level, gameType: gameType);
       case GameSubtype.prefixSuffix:

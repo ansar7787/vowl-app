@@ -56,11 +56,15 @@ class TopicVocabController extends ChangeNotifier {
   bool _isDisposed = false;
   Timer? _flickTimer;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena with penalty-free victory banking.
+  final bool isBonusStage;
+
   /// Creates a [TopicVocabController] instance with [hapticService] and [soundService].
   TopicVocabController({
     required HapticService hapticService,
     required SoundService soundService,
     required this.onSubmitAnswer,
+    this.isBonusStage = false,
   }) : _hapticService = hapticService,
        _soundService = soundService;
 
@@ -167,10 +171,19 @@ class TopicVocabController extends ChangeNotifier {
       } else {
         _hapticService.success();
         isFirstStagePassed = true;
-        _submitFinalAnswer(true);
+        if (isBonusStage) {
+          notifyListeners();
+        } else {
+          _submitFinalAnswer(true);
+        }
       }
       notifyListeners();
     });
+  }
+
+  /// Submits the final bonus victory with penalty-free victory banking.
+  void submitFinalBonusVictory([bool nailedIt = true]) {
+    _submitFinalAnswer(nailedIt);
   }
 
   void _submitFinalAnswer(bool nailedIt, {String? word}) {

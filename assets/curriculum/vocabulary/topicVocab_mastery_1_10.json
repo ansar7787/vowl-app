@@ -1,0 +1,818 @@
+{
+  "gameType": "topicVocab",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "VOC_TOPICVOCAB_L1_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Hot or Cold, based on temperature.",
+      "topicBuckets": [
+        "Hot",
+        "Cold"
+      ],
+      "hint": "Think about what happens to your skin near each one — a burn, or a shiver.",
+      "explanation": "Boiling and steaming both describe heat strong enough to make liquid bubble or produce vapor. Scorching describes intense, dry heat, like sun on skin. Freezing is the exact point water turns to ice, while icy describes a surface covered in it.",
+      "options": [
+        "Boiling",
+        "Freezing",
+        "Steaming",
+        "Icy",
+        "Scorching"
+      ],
+      "correctAnswer": "Hot:Boiling, Cold:Freezing, Hot:Steaming, Cold:Icy, Hot:Scorching",
+      "relatedWords": [
+        "Boiling: heated until it bubbles rapidly, 100°C for water",
+        "Freezing: cold enough for water to turn to ice, 0°C",
+        "Steaming: giving off visible hot vapor",
+        "Icy: covered in ice, or very cold to the touch",
+        "Scorching: extremely hot, especially from the sun"
+      ],
+      "level": 1
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L1_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "These words describe hot and cold in weather or at home. Sort them into Hot or Cold.",
+      "topicBuckets": [
+        "Hot",
+        "Cold"
+      ],
+      "hint": "Notice which ones you'd use for a cozy blanket, and which for a summer afternoon.",
+      "explanation": "Toasty and sweltering both describe heat, but toasty is pleasant warmth, while sweltering is uncomfortable, oppressive heat. Chilly and frosty both describe cold, but frosty suggests visible ice or frost outside.",
+      "options": [
+        "Sweltering",
+        "Chilly",
+        "Cool",
+        "Toasty",
+        "Frosty"
+      ],
+      "correctAnswer": "Hot:Sweltering, Cold:Chilly, Cold:Cool, Hot:Toasty, Cold:Frosty",
+      "relatedWords": [
+        "Sweltering: unpleasantly hot, often humid",
+        "Chilly: uncomfortably cool, but not freezing",
+        "Cool: mildly cold, often refreshing",
+        "Toasty: pleasantly warm",
+        "Frosty: cold enough for frost to form"
+      ],
+      "level": 1
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L1_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "A weather reporter is choosing words for a desert afternoon and a polar night. Sort them into Hot or Cold.",
+      "topicBuckets": [
+        "Hot",
+        "Cold"
+      ],
+      "hint": "One cold word describes the effect on your body, not just the temperature itself.",
+      "explanation": "Blazing and sizzling both describe intense, active heat — sunlight or a hot pan. Simmering is a lower, steady heat, just below boiling. Arctic describes extreme cold from a polar climate, while numbing describes cold strong enough that you lose feeling.",
+      "options": [
+        "Blazing",
+        "Simmering",
+        "Sizzling",
+        "Arctic",
+        "Numbing"
+      ],
+      "correctAnswer": "Hot:Blazing, Hot:Simmering, Hot:Sizzling, Cold:Arctic, Cold:Numbing",
+      "relatedWords": [
+        "Blazing: burning intensely, very hot",
+        "Simmering: cooking gently just below boiling point",
+        "Sizzling: hot enough to make a sharp hissing sound",
+        "Arctic: extremely cold, like the polar regions",
+        "Numbing: so cold it makes you lose feeling"
+      ],
+      "level": 1
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L2_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Small or Big, based on size.",
+      "topicBuckets": [
+        "Small",
+        "Big"
+      ],
+      "hint": "Picture an elephant next to an ant.",
+      "explanation": "Huge, giant, and massive all describe great size, but massive also suggests weight or solidity, not just dimension. Mini often describes something deliberately made small, like a mini car, while tiny is simply a very small natural size.",
+      "options": [
+        "Giant",
+        "Huge",
+        "Mini",
+        "Massive",
+        "Tiny"
+      ],
+      "correctAnswer": "Big:Giant, Big:Huge, Small:Mini, Big:Massive, Small:Tiny",
+      "relatedWords": [
+        "Giant: much larger than usual",
+        "Huge: very large in size",
+        "Mini: a smaller version, often made that way on purpose",
+        "Massive: large and heavy or solid",
+        "Tiny: extremely small"
+      ],
+      "level": 2
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L2_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "These words describe the size of people, spaces, and vehicles. Sort them into Big or Small.",
+      "topicBuckets": [
+        "Big",
+        "Small"
+      ],
+      "hint": "One small word usually describes a person's build, not an object.",
+      "explanation": "Petite usually describes a person's slim, small build. Compact describes something efficiently designed to take up little space, like a car. Vast suggests wide open space, while colossal suggests overwhelming, almost impossible size.",
+      "options": [
+        "Petite",
+        "Colossal",
+        "Compact",
+        "Vast",
+        "Enormous"
+      ],
+      "correctAnswer": "Small:Petite, Big:Colossal, Small:Compact, Big:Vast, Big:Enormous",
+      "relatedWords": [
+        "Petite: small and slim, usually describing a person",
+        "Colossal: extremely, almost overwhelmingly large",
+        "Compact: small and efficiently arranged",
+        "Vast: covering a huge area or amount",
+        "Enormous: very great in size"
+      ],
+      "level": 2
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L2_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "One of these words describes an amount rather than a physical size. Sort all five into Big or Small.",
+      "topicBuckets": [
+        "Big",
+        "Small"
+      ],
+      "hint": "Think about degree, not just physical size — one word could describe a thin build or a small amount.",
+      "explanation": "Microscopic means too small to see without a microscope — an extreme version of small. Slight can describe a small amount or a thin build, a more abstract use of 'small' than the others here. Immense adds a sense of being almost overwhelming, beyond simply large.",
+      "options": [
+        "Microscopic",
+        "Slight",
+        "Large",
+        "Little",
+        "Immense"
+      ],
+      "correctAnswer": "Small:Microscopic, Small:Slight, Big:Large, Small:Little, Big:Immense",
+      "relatedWords": [
+        "Microscopic: too small to see without a microscope",
+        "Slight: small in degree or build",
+        "Large: noticeably above average in size",
+        "Little: small in size or amount",
+        "Immense: extremely large, often overwhelming"
+      ],
+      "level": 2
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L3_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Fast or Slow, based on speed.",
+      "topicBuckets": [
+        "Fast",
+        "Slow"
+      ],
+      "hint": "Picture a sprinter bursting off the blocks versus traffic barely moving.",
+      "explanation": "Quick and speedy are everyday words for fast, while rapid often describes processes as much as movement, like rapid growth. Sluggish describes slowness from a lack of energy, while gradual describes slow, steady change over time.",
+      "options": [
+        "Rapid",
+        "Sluggish",
+        "Quick",
+        "Gradual",
+        "Speedy"
+      ],
+      "correctAnswer": "Fast:Rapid, Slow:Sluggish, Fast:Quick, Slow:Gradual, Fast:Speedy",
+      "relatedWords": [
+        "Rapid: happening very fast, often used for processes",
+        "Sluggish: slow-moving, lacking energy",
+        "Quick: moving or happening fast",
+        "Gradual: happening slowly and steadily over time",
+        "Speedy: fast, often approvingly"
+      ],
+      "level": 3
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L3_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "These words carry a feeling as well as a speed. Sort them into Fast or Slow.",
+      "topicBuckets": [
+        "Fast",
+        "Slow"
+      ],
+      "hint": "Notice which fast word suggests careless rushing, not just quickness.",
+      "explanation": "Swift suggests smooth, graceful speed, while hasty suggests speed that's careless or rushed. Lazy describes an unwillingness to move quickly, while crawling describes movement so slow it resembles an insect creeping.",
+      "options": [
+        "Crawling",
+        "Lazy",
+        "Hasty",
+        "Swift",
+        "Brisk"
+      ],
+      "correctAnswer": "Slow:Crawling, Slow:Lazy, Fast:Hasty, Fast:Swift, Fast:Brisk",
+      "relatedWords": [
+        "Crawling: moving extremely slowly",
+        "Lazy: unwilling to move quickly or work",
+        "Hasty: done too quickly, often carelessly",
+        "Swift: fast and smooth",
+        "Brisk: quick and energetic, especially walking"
+      ],
+      "level": 3
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L3_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "Picture a Sunday stroll versus a car racing down a highway. Sort these strong versions of fast and slow.",
+      "topicBuckets": [
+        "Fast",
+        "Slow"
+      ],
+      "hint": "Two of the slow words suggest a relaxed choice, while one suggests heavy, effortful movement.",
+      "explanation": "Breakneck and blistering both describe dangerously or impressively fast speed, often for vehicles or sports. Leisurely and unhurried both suggest a relaxed pace chosen on purpose, while plodding describes slow, heavy, effortful movement.",
+      "options": [
+        "Breakneck",
+        "Plodding",
+        "Blistering",
+        "Unhurried",
+        "Leisurely"
+      ],
+      "correctAnswer": "Fast:Breakneck, Slow:Plodding, Fast:Blistering, Slow:Unhurried, Slow:Leisurely",
+      "relatedWords": [
+        "Breakneck: dangerously fast",
+        "Plodding: moving slowly and heavily, with effort",
+        "Blistering: impressively or intensely fast",
+        "Unhurried: calm and not rushed",
+        "Leisurely: relaxed and unhurried, by choice"
+      ],
+      "level": 3
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L4_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Sad or Happy, based on the feeling it describes.",
+      "topicBuckets": [
+        "Sad",
+        "Happy"
+      ],
+      "hint": "Think about someone's face — smiling, or drooping.",
+      "explanation": "Cheerful and joyful both describe a light, positive mood, while delighted suggests a stronger reaction to good news. Gloomy often matches dull weather, while miserable is a stronger, more uncomfortable form of sadness.",
+      "options": [
+        "Cheerful",
+        "Delighted",
+        "Joyful",
+        "Miserable",
+        "Gloomy"
+      ],
+      "correctAnswer": "Happy:Cheerful, Happy:Delighted, Happy:Joyful, Sad:Miserable, Sad:Gloomy",
+      "relatedWords": [
+        "Cheerful: noticeably happy and positive",
+        "Delighted: very pleased about something specific",
+        "Joyful: full of happiness",
+        "Miserable: very unhappy or uncomfortable",
+        "Gloomy: sad and without hope, often like dull weather"
+      ],
+      "level": 4
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L4_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "One of these words describes far deeper pain than the others. Sort them into Happy or Sad.",
+      "topicBuckets": [
+        "Happy",
+        "Sad"
+      ],
+      "hint": "Rank these by intensity before you sort — some are quiet, one is severe.",
+      "explanation": "Content is a quieter kind of happiness — satisfaction rather than excitement. Heartbroken is far stronger than downcast or glum; it describes intense emotional pain, usually after a loss.",
+      "options": [
+        "Content",
+        "Glum",
+        "Downcast",
+        "Upbeat",
+        "Heartbroken"
+      ],
+      "correctAnswer": "Happy:Content, Sad:Glum, Sad:Downcast, Happy:Upbeat, Sad:Heartbroken",
+      "relatedWords": [
+        "Content: satisfied and at ease",
+        "Glum: quietly sad or gloomy",
+        "Downcast: sad and discouraged",
+        "Upbeat: positive and optimistic",
+        "Heartbroken: overwhelmed with grief, usually from loss"
+      ],
+      "level": 4
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L4_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "Rank these by intensity in your head before sorting them into Happy or Sad.",
+      "topicBuckets": [
+        "Happy",
+        "Sad"
+      ],
+      "hint": "Two words here are extreme versions of happy or sad, not just mild feelings.",
+      "explanation": "Elated and ecstatic both describe intense joy, with ecstatic being the stronger of the two. Satisfied is milder, about meeting expectations. Devastated is an extreme sadness usually linked to shocking news, while somber describes a serious, subdued sadness.",
+      "options": [
+        "Devastated",
+        "Elated",
+        "Ecstatic",
+        "Somber",
+        "Satisfied"
+      ],
+      "correctAnswer": "Sad:Devastated, Happy:Elated, Happy:Ecstatic, Sad:Somber, Happy:Satisfied",
+      "relatedWords": [
+        "Devastated: overwhelmed with shock and sadness",
+        "Elated: extremely happy and excited",
+        "Ecstatic: overwhelmed with intense happiness",
+        "Somber: serious and gloomy in mood",
+        "Satisfied: pleased because expectations were met"
+      ],
+      "level": 4
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L5_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Day or Night, based on when it happens.",
+      "topicBuckets": [
+        "Day",
+        "Night"
+      ],
+      "hint": "Think about what the sky looks like at each time.",
+      "explanation": "Daylight and dawn both relate to the sun being up, though dawn marks its first appearance specifically. Noon is the exact middle of the day. Darkness and midnight both relate to night, with midnight marking its exact center.",
+      "options": [
+        "Daylight",
+        "Darkness",
+        "Noon",
+        "Dawn",
+        "Midnight"
+      ],
+      "correctAnswer": "Day:Daylight, Night:Darkness, Day:Noon, Day:Dawn, Night:Midnight",
+      "relatedWords": [
+        "Daylight: natural light during the day",
+        "Darkness: the absence of light, typical of night",
+        "Noon: exactly midday, 12 p.m.",
+        "Dawn: the first light of morning",
+        "Midnight: exactly 12 a.m., the middle of the night"
+      ],
+      "level": 5
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L5_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "Some of these words mark the transition between day and night. Sort them into Day or Night.",
+      "topicBuckets": [
+        "Day",
+        "Night"
+      ],
+      "hint": "Notice which words describe a moment of change, not the middle of a time period.",
+      "explanation": "Dusk, twilight, and nightfall all describe the transition into night, though dusk is the specific moment just after sunset. 'Broad daylight' is a fixed phrase meaning clearly in the daytime, often used to emphasize something happened openly.",
+      "options": [
+        "Broad daylight",
+        "Sunrise",
+        "Nightfall",
+        "Twilight",
+        "Dusk"
+      ],
+      "correctAnswer": "Day:Broad daylight, Day:Sunrise, Night:Nightfall, Night:Twilight, Night:Dusk",
+      "relatedWords": [
+        "Broad daylight: clearly during the day, in full light",
+        "Sunrise: the moment the sun appears in the morning",
+        "Nightfall: the point when night begins",
+        "Twilight: the soft light after sunset or before sunrise",
+        "Dusk: the darkening period just after sunset"
+      ],
+      "level": 5
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L5_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "Think about routines and habits linked to each time, not just the sky. Sort into Day or Night.",
+      "topicBuckets": [
+        "Day",
+        "Night"
+      ],
+      "hint": "One word is an informal name for overnight work, and one describes animals active after dark.",
+      "explanation": "'Graveyard shift' is an informal term for overnight work, and 'nocturnal' describes animals or people active at night. 'Rush hour' and 'siesta' both relate to daytime routines — commuting and an afternoon rest.",
+      "options": [
+        "Nocturnal",
+        "Rush hour",
+        "Graveyard shift",
+        "Siesta",
+        "Insomnia"
+      ],
+      "correctAnswer": "Night:Nocturnal, Day:Rush hour, Night:Graveyard shift, Day:Siesta, Night:Insomnia",
+      "relatedWords": [
+        "Nocturnal: active mainly at night",
+        "Rush hour: the busy time when people commute to or from work",
+        "Graveyard shift: an informal term for an overnight work shift",
+        "Siesta: a short rest taken in the afternoon",
+        "Insomnia: difficulty sleeping at night"
+      ],
+      "level": 5
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L6_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Up or Down, based on direction.",
+      "topicBuckets": [
+        "Up",
+        "Down"
+      ],
+      "hint": "Picture an elevator — is it heading to a higher or lower floor?",
+      "explanation": "Ascend and climb both mean to go up, though climb often involves effort, like climbing stairs, while ascend can describe smoother movement, like a plane ascending. Sink suggests going down into something, while descend is a more general word for moving downward.",
+      "options": [
+        "Sink",
+        "Climb",
+        "Rise",
+        "Descend",
+        "Ascend"
+      ],
+      "correctAnswer": "Down:Sink, Up:Climb, Up:Rise, Down:Descend, Up:Ascend",
+      "relatedWords": [
+        "Sink: to go down, often into water or the ground",
+        "Climb: to go up, usually with effort",
+        "Rise: to move upward from a lower position",
+        "Descend: to move downward",
+        "Ascend: to climb steadily to a higher point"
+      ],
+      "level": 6
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L6_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "These describe fast, dramatic movement. Sort them into Up or Down.",
+      "topicBuckets": [
+        "Up",
+        "Down"
+      ],
+      "hint": "Notice which ones suggest control, and which suggest losing it.",
+      "explanation": "Soar suggests smooth, controlled upward flight, while elevate means to deliberately raise something. Plunge and drop both describe sudden downward movement, but collapse specifically means falling apart or giving way, like a building.",
+      "options": [
+        "Plunge",
+        "Collapse",
+        "Drop",
+        "Soar",
+        "Elevate"
+      ],
+      "correctAnswer": "Down:Plunge, Down:Collapse, Down:Drop, Up:Soar, Up:Elevate",
+      "relatedWords": [
+        "Plunge: to fall a long way, fast and steeply",
+        "Collapse: to give way and fall in on itself",
+        "Drop: to fall a short distance, often by accident",
+        "Soar: to rise quickly and smoothly, often through the air",
+        "Elevate: to raise something to a higher position"
+      ],
+      "level": 6
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L6_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "These describe direction relative to a fixed point. Sort them into Up or Down.",
+      "topicBuckets": [
+        "Up",
+        "Down"
+      ],
+      "hint": "Think about where your feet or head would be for each word.",
+      "explanation": "Skyward and overhead both describe something above you, though overhead is more about position, like a light overhead, while skyward describes direction of movement. Underfoot means directly below your feet.",
+      "options": [
+        "Skyward",
+        "Underfoot",
+        "Uphill",
+        "Downhill",
+        "Overhead"
+      ],
+      "correctAnswer": "Up:Skyward, Down:Underfoot, Up:Uphill, Down:Downhill, Up:Overhead",
+      "relatedWords": [
+        "Skyward: moving toward the sky",
+        "Underfoot: directly below your feet",
+        "Uphill: in a direction that goes upward, like a slope",
+        "Downhill: in a direction that goes downward, like a slope",
+        "Overhead: directly above, in the air"
+      ],
+      "level": 6
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L7_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Old or New, based on age.",
+      "topicBuckets": [
+        "Old",
+        "New"
+      ],
+      "hint": "Think about how much time has passed since something was made or happened.",
+      "explanation": "Modern and recent both mean new, but modern often describes a style or era, while recent simply means it happened not long ago. Ancient describes something historically very old, while outdated means something has stopped being useful, even if it isn't literally ancient.",
+      "options": [
+        "Recent",
+        "Outdated",
+        "Fresh",
+        "Ancient",
+        "Modern"
+      ],
+      "correctAnswer": "New:Recent, Old:Outdated, New:Fresh, Old:Ancient, New:Modern",
+      "relatedWords": [
+        "Recent: happening not long ago",
+        "Outdated: no longer useful or fashionable",
+        "Fresh: newly made or arrived",
+        "Ancient: belonging to a time long past",
+        "Modern: relating to the present or a recent era"
+      ],
+      "level": 7
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L7_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "One of these words is a compliment about age, and one is almost an insult. Sort into New or Old.",
+      "topicBuckets": [
+        "New",
+        "Old"
+      ],
+      "hint": "Notice the tone each word carries, not just its age.",
+      "explanation": "Vintage and antique both describe old items, but vintage often has a positive, stylish tone, like vintage clothing, while antique emphasizes historical age and value. Obsolete means something is no longer used because something better replaced it. Innovative describes something new because it introduces fresh ideas.",
+      "options": [
+        "Vintage",
+        "Obsolete",
+        "Contemporary",
+        "Antique",
+        "Innovative"
+      ],
+      "correctAnswer": "Old:Vintage, Old:Obsolete, New:Contemporary, Old:Antique, New:Innovative",
+      "relatedWords": [
+        "Vintage: old in a stylish, valued way",
+        "Obsolete: no longer used because something better exists",
+        "Contemporary: belonging to the present time",
+        "Antique: old and often valuable because of its age",
+        "Innovative: introducing new ideas or methods"
+      ],
+      "level": 7
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L7_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "These words are often used for technology and trends. Sort them into New or Old.",
+      "topicBuckets": [
+        "New",
+        "Old"
+      ],
+      "hint": "Think about where you'd actually read these words — a tech review, or a history book.",
+      "explanation": "'State-of-the-art' and 'cutting-edge' both describe the newest, most advanced technology available. 'Emerging' describes something new that is still developing. Archaic describes language or customs so old they sound strange today, while timeworn describes something old and worn from long use.",
+      "options": [
+        "Cutting-edge",
+        "State-of-the-art",
+        "Archaic",
+        "Timeworn",
+        "Emerging"
+      ],
+      "correctAnswer": "New:Cutting-edge, New:State-of-the-art, Old:Archaic, Old:Timeworn, New:Emerging",
+      "relatedWords": [
+        "Cutting-edge: the most advanced stage of development",
+        "State-of-the-art: using the most advanced methods or technology available",
+        "Archaic: old-fashioned to the point of sounding strange today",
+        "Timeworn: worn out or faded from long use",
+        "Emerging: newly forming or starting to be noticed"
+      ],
+      "level": 7
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L8_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under In or Out, based on position.",
+      "topicBuckets": [
+        "In",
+        "Out"
+      ],
+      "hint": "Think about walking through a doorway — which direction are you moving?",
+      "explanation": "Enter and interior both relate to being or going inside, though interior is the inside space itself, while enter is the action of going in. Exit is the direct opposite of enter — the act of leaving.",
+      "options": [
+        "Enter",
+        "Exit",
+        "Outside",
+        "Inside",
+        "Interior"
+      ],
+      "correctAnswer": "In:Enter, Out:Exit, Out:Outside, In:Inside, In:Interior",
+      "relatedWords": [
+        "Enter: to go into a place",
+        "Exit: to go out of a place",
+        "Outside: not within a place or space",
+        "Inside: within a place or space",
+        "Interior: the inside part of something"
+      ],
+      "level": 8
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L8_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "These describe direction of movement, not just fixed location. Sort into In or Out.",
+      "topicBuckets": [
+        "In",
+        "Out"
+      ],
+      "hint": "Two words here are often used for flights and travel — think about arriving versus leaving.",
+      "explanation": "Inbound describes something arriving or heading toward a place, while outbound describes something leaving. Included means being part of a group, an extension of 'in' beyond physical space.",
+      "options": [
+        "Indoors",
+        "Included",
+        "Outdoors",
+        "Outbound",
+        "Inbound"
+      ],
+      "correctAnswer": "In:Indoors, In:Included, Out:Outdoors, Out:Outbound, In:Inbound",
+      "relatedWords": [
+        "Indoors: inside a building",
+        "Included: made part of a group or total",
+        "Outdoors: outside, in the open air",
+        "Outbound: traveling away from a place",
+        "Inbound: traveling toward a place"
+      ],
+      "level": 8
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L8_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "These words are about social groups, not physical space. Sort into In or Out.",
+      "topicBuckets": [
+        "In",
+        "Out"
+      ],
+      "hint": "Think about who's accepted into a group, and who's pushed away from it.",
+      "explanation": "Insider and membership both describe being part of a group with access others don't have. Outcast and excluded both describe being pushed away from a group, though outcast is a stronger, more lasting rejection than excluded.",
+      "options": [
+        "Outcast",
+        "Belong",
+        "Membership",
+        "Insider",
+        "Excluded"
+      ],
+      "correctAnswer": "Out:Outcast, In:Belong, In:Membership, In:Insider, Out:Excluded",
+      "relatedWords": [
+        "Outcast: someone rejected by a social group",
+        "Belong: to be an accepted part of a group",
+        "Membership: official belonging to a group or organization",
+        "Insider: someone with special access or knowledge within a group",
+        "Excluded: kept out of a group or activity"
+      ],
+      "level": 8
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L9_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Wet or Dry, based on moisture.",
+      "topicBuckets": [
+        "Wet",
+        "Dry"
+      ],
+      "hint": "Think about a sponge — is it soaked with water or completely dried out?",
+      "explanation": "Damp and moist both describe a small amount of wetness, while soggy describes something so wet it's become soft, like soggy bread. Arid describes a climate with very little rainfall, while parched describes something that badly needs water.",
+      "options": [
+        "Damp",
+        "Soggy",
+        "Parched",
+        "Arid",
+        "Moist"
+      ],
+      "correctAnswer": "Wet:Damp, Wet:Soggy, Dry:Parched, Dry:Arid, Wet:Moist",
+      "relatedWords": [
+        "Damp: slightly wet in a way that is usually unwanted",
+        "Soggy: so wet it has become soft",
+        "Parched: dried out and badly needing water",
+        "Arid: very dry, with little or no rainfall",
+        "Moist: slightly wet in a way that is usually desirable"
+      ],
+      "level": 9
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L9_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "One of these words describes air, not a surface. Sort into Wet or Dry.",
+      "topicBuckets": [
+        "Wet",
+        "Dry"
+      ],
+      "hint": "Think about what 'wet' means for weather versus for an object.",
+      "explanation": "Humid describes air that holds a lot of moisture, even if nothing feels wet to the touch. Drenched and soaked both mean completely wet, stronger than damp. Dusty describes a dry surface covered in fine particles, and crisp describes something pleasantly dry and firm.",
+      "options": [
+        "Crisp",
+        "Drenched",
+        "Humid",
+        "Dusty",
+        "Soaked"
+      ],
+      "correctAnswer": "Dry:Crisp, Wet:Drenched, Wet:Humid, Dry:Dusty, Wet:Soaked",
+      "relatedWords": [
+        "Crisp: pleasantly dry and firm",
+        "Drenched: completely soaked with water",
+        "Humid: having a high level of moisture in the air",
+        "Dusty: covered with fine dry particles",
+        "Soaked: thoroughly wet"
+      ],
+      "level": 9
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L9_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "These are more technical versions of wet and dry, often used for soil and the body. Sort into Wet or Dry.",
+      "topicBuckets": [
+        "Wet",
+        "Dry"
+      ],
+      "hint": "Two of these describe ground that's absorbed too much water, and one describes something too dry to bend.",
+      "explanation": "Waterlogged and saturated both describe something, like soil, that has absorbed as much water as it can hold. Dehydrated describes a lack of water, often in the body, while brittle describes something so dry it has become fragile and easily broken.",
+      "options": [
+        "Brittle",
+        "Sodden",
+        "Saturated",
+        "Waterlogged",
+        "Dehydrated"
+      ],
+      "correctAnswer": "Dry:Brittle, Wet:Sodden, Wet:Saturated, Wet:Waterlogged, Dry:Dehydrated",
+      "relatedWords": [
+        "Brittle: hard but easily broken, often from dryness",
+        "Sodden: thoroughly soaked, heavy with water",
+        "Saturated: completely soaked or filled with moisture",
+        "Waterlogged: so full of water it can't absorb more",
+        "Dehydrated: lacking necessary water"
+      ],
+      "level": 9
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L10_MASTERY_Q1",
+      "interactionType": "choice",
+      "instruction": "Sort each word under Quiet or Loud, based on volume.",
+      "topicBuckets": [
+        "Quiet",
+        "Loud"
+      ],
+      "hint": "Imagine a rock concert versus a library.",
+      "explanation": "Booming and deafening both describe intense loudness, with deafening being strong enough to hurt your ears. Hushed describes a quiet that's deliberately kept low, like a hushed conversation, while silent means no sound at all.",
+      "options": [
+        "Deafening",
+        "Silent",
+        "Noisy",
+        "Booming",
+        "Hushed"
+      ],
+      "correctAnswer": "Loud:Deafening, Quiet:Silent, Loud:Noisy, Loud:Booming, Quiet:Hushed",
+      "relatedWords": [
+        "Deafening: so loud it's almost painful to hear",
+        "Silent: completely without sound",
+        "Noisy: making a lot of sound",
+        "Booming: deep and loud",
+        "Hushed: made quiet on purpose"
+      ],
+      "level": 10
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L10_MASTERY_Q2",
+      "interactionType": "choice",
+      "instruction": "One of these quiet words describes a sound that's barely there. Sort into Quiet or Loud.",
+      "topicBuckets": [
+        "Quiet",
+        "Loud"
+      ],
+      "hint": "Notice which loud words describe an unpleasant, hard-to-ignore sound.",
+      "explanation": "Blaring and piercing both describe loud sounds that are unpleasant or hard to ignore, like a blaring alarm. Thunderous suggests a loud rumbling sound, like applause. Muted describes sound deliberately lowered, while faint describes sound so quiet it's hard to hear.",
+      "options": [
+        "Faint",
+        "Piercing",
+        "Blaring",
+        "Muted",
+        "Thunderous"
+      ],
+      "correctAnswer": "Quiet:Faint, Loud:Piercing, Loud:Blaring, Quiet:Muted, Loud:Thunderous",
+      "relatedWords": [
+        "Faint: very quiet, hard to hear",
+        "Piercing: sharp and loud enough to be uncomfortable",
+        "Blaring: loud and harsh, hard to ignore",
+        "Muted: deliberately made quieter",
+        "Thunderous: extremely loud, like thunder"
+      ],
+      "level": 10
+    },
+    {
+      "id": "VOC_TOPICVOCAB_L10_MASTERY_Q3",
+      "interactionType": "choice",
+      "instruction": "One of these words describes a peaceful feeling more than a specific sound. Sort into Loud or Quiet.",
+      "topicBuckets": [
+        "Loud",
+        "Quiet"
+      ],
+      "hint": "Think beyond just volume for one of the quiet words.",
+      "explanation": "Clamor and uproar both describe loud, chaotic noise from a crowd. Whisper and murmur both describe very quiet speech, with murmur often describing a low, continuous sound. Serenity describes a peaceful state or atmosphere, not just quiet sound.",
+      "options": [
+        "Serenity",
+        "Murmur",
+        "Whisper",
+        "Clamor",
+        "Uproar"
+      ],
+      "correctAnswer": "Quiet:Serenity, Quiet:Murmur, Quiet:Whisper, Loud:Clamor, Loud:Uproar",
+      "relatedWords": [
+        "Serenity: a calm, peaceful state",
+        "Murmur: a low, continuous, quiet sound",
+        "Whisper: very quiet speech, using breath rather than the voice",
+        "Clamor: a loud confused noise, often from a crowd",
+        "Uproar: a loud, excited outbreak of noise or protest"
+      ],
+      "level": 10
+    }
+  ]
+}
