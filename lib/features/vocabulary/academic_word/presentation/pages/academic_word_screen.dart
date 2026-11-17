@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,11 +34,15 @@ class AcademicWordScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena.
+  final bool isBonusStage;
+
   /// Creates an [AcademicWordScreen] instance.
   const AcademicWordScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.academicWord,
+    this.isBonusStage = false,
   });
   @override
   State<AcademicWordScreen> createState() => _AcademicWordScreenState();
@@ -325,6 +330,47 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                 child: Column(
                                                   children: [
                                                     SizedBox(height: 24.h),
+                                                    if (widget.isBonusStage) ...[
+                                                      Container(
+                                                        margin: EdgeInsets.only(bottom: 12.h),
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 14.w,
+                                                          vertical: 10.h,
+                                                        ),
+                                                        decoration: BoxDecoration(
+                                                          color: AppColors.amber500.withValues(
+                                                            alpha: Theme.of(context).brightness == Brightness.dark ? 0.15 : 0.1,
+                                                          ),
+                                                          borderRadius: BorderRadius.circular(12.r),
+                                                          border: Border.all(
+                                                            color: AppColors.amber500.withValues(alpha: 0.3),
+                                                          ),
+                                                        ),
+                                                        child: Row(
+                                                          children: [
+                                                            Icon(
+                                                              Icons.stars_rounded,
+                                                              color: AppColors.amber400,
+                                                              size: 20.r,
+                                                            ),
+                                                            SizedBox(width: 8.w),
+                                                            Flexible(
+                                                              child: Text(
+                                                                '⚡ BONUS XP ARENA: Type the academic word to confirm for +50 XP, or tap Skip to bank your win!',
+                                                                style: TextStyle(
+                                                                  fontFamily: 'Outfit',
+                                                                  color: Theme.of(context).brightness == Brightness.dark
+                                                                      ? AppColors.amber200
+                                                                      : AppColors.amber900,
+                                                                  fontWeight: FontWeight.w700,
+                                                                  fontSize: 12.sp,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
                                                     TypeToConfirmOverlay(
                                                       key: const Key(
                                                         'academic_word_type_confirm_overlay',
@@ -341,7 +387,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                           ),
                                                       onSkipped: () =>
                                                           _submitFinalAnswer(
-                                                            false,
+                                                            widget.isBonusStage,
                                                             quest: quest,
                                                           ),
                                                       onBypassed: () =>
@@ -351,6 +397,34 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                           ),
                                                       isPositioned: false,
                                                     ),
+                                                    if (widget.isBonusStage) ...[
+                                                      SizedBox(height: 12.h),
+                                                      TextButton.icon(
+                                                        key: const Key('academic_word_bonus_skip_button'),
+                                                        onPressed: () => _submitFinalAnswer(
+                                                          true,
+                                                          quest: quest,
+                                                        ),
+                                                        icon: Icon(
+                                                          Icons.skip_next_rounded,
+                                                          color: Theme.of(context).brightness == Brightness.dark
+                                                              ? AppColors.slate400
+                                                              : AppColors.slate600,
+                                                          size: 20.r,
+                                                        ),
+                                                        label: Text(
+                                                          'Skip Typing Arena & Bank Win',
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: 13.sp,
+                                                            fontWeight: FontWeight.w600,
+                                                            color: Theme.of(context).brightness == Brightness.dark
+                                                                ? AppColors.slate400
+                                                                : AppColors.slate600,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ],
                                                 ),
                                               ),

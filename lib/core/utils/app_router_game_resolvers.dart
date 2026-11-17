@@ -231,7 +231,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasa
     as v_pv_game;
 import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_mastery_screen.dart'
     as v_id_game;
-import 'package:vowl/features/vocabulary/academic_word/presentation/pages/academic_word_screen.dart'
+import 'package:vowl/features/vocabulary/academic_word/presentation/pages/academic_word_mastery_screen.dart'
     as v_aw_game;
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_screen.dart'
     as v_tv_game;
@@ -754,7 +754,7 @@ class AppRouterGameResolvers {
       case GameSubtype.phrasalVerbs:
         return v_pv_game.PhrasalVerbsMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.academicWord:
-        return v_aw_game.AcademicWordScreen(level: level, gameType: gameType);
+        return v_aw_game.AcademicWordMasteryScreen(level: level, gameType: gameType);
       case GameSubtype.topicVocab:
         return v_tv_game.TopicVocabScreen(level: level, gameType: gameType);
       case GameSubtype.wordFormation:
