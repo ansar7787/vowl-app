@@ -24,6 +24,8 @@ import 'package:vowl/features/vocabulary/context_clues/presentation/pages/contex
 import 'package:vowl/features/vocabulary/context_clues/presentation/pages/context_clues_practice_screen.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_learn_screen.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_practice_screen.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_learn_screen.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/pages/idioms_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -301,6 +303,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'idioms') {
+          return fadeTransitionPage(
+            child: IdiomsLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -357,6 +365,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'phrasalverbs') {
           return fadeTransitionPage(
             child: PhrasalVerbsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'idioms') {
+          return fadeTransitionPage(
+            child: IdiomsPracticeScreen(level: level),
             state: state,
           );
         }

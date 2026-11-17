@@ -28,11 +28,15 @@ class IdiomsScreen extends StatefulWidget {
   /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Whether Stage 2 acts as an optional Bonus XP Arena.
+  final bool isBonusStage;
+
   /// Creates an [IdiomsScreen] instance.
   const IdiomsScreen({
     super.key,
     required this.level,
     this.gameType = GameSubtype.idioms,
+    this.isBonusStage = false,
   });
 
   @override
@@ -327,6 +331,49 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                             ),
                                             child: Column(
                                               children: [
+                                                if (widget.isBonusStage) ...[
+                                                  Container(
+                                                    margin: EdgeInsets.only(bottom: 12.h),
+                                                    padding: EdgeInsets.symmetric(
+                                                      horizontal: 14.w,
+                                                      vertical: 10.h,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.amber500.withValues(
+                                                        alpha: isDarkMode ? 0.15 : 0.1,
+                                                      ),
+                                                      borderRadius: BorderRadius.circular(12.r),
+                                                      border: Border.all(
+                                                        color: AppColors.amber500.withValues(
+                                                          alpha: 0.3,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.stars_rounded,
+                                                          color: AppColors.amber400,
+                                                          size: 20.r,
+                                                        ),
+                                                        SizedBox(width: 8.w),
+                                                        Flexible(
+                                                          child: Text(
+                                                            '⚡ BONUS XP ARENA: Speak the idiom to confirm for +50 XP, or tap Skip to bank your win!',
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              color: isDarkMode
+                                                                  ? AppColors.amber200
+                                                                  : AppColors.amber900,
+                                                              fontWeight: FontWeight.w700,
+                                                              fontSize: 12.sp,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
                                                 SpeakToConfirmOverlay(
                                                   expectedText:
                                                       quest.correctAnswer ?? '',
@@ -339,11 +386,39 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                                       ),
                                                   onSkipped: () =>
                                                       _submitFinalAnswer(
-                                                        false,
+                                                        widget.isBonusStage,
                                                         quest: quest,
                                                       ),
                                                   isPositioned: false,
                                                 ),
+                                                if (widget.isBonusStage) ...[
+                                                  SizedBox(height: 12.h),
+                                                  TextButton.icon(
+                                                    onPressed: () =>
+                                                        _submitFinalAnswer(
+                                                          true,
+                                                          quest: quest,
+                                                        ),
+                                                    icon: Icon(
+                                                      Icons.skip_next_rounded,
+                                                      color: isDarkMode
+                                                          ? AppColors.slate400
+                                                          : AppColors.slate600,
+                                                      size: 20.r,
+                                                    ),
+                                                    label: Text(
+                                                      'Skip Verbal Arena & Bank Win',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 13.sp,
+                                                        fontWeight: FontWeight.w600,
+                                                        color: isDarkMode
+                                                            ? AppColors.slate400
+                                                            : AppColors.slate600,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
                                                 SizedBox(height: 60.h),
                                               ],
                                             ),

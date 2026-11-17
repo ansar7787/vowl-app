@@ -137,6 +137,18 @@ class PhasedQuest {
     this.rawExtra = const {},
   });
 
+  String? get origin => rawExtra['origin'] as String?;
+  String? get topicEmoji => rawExtra['topicEmoji'] as String?;
+  String? get literalVsFigurative => rawExtra['literalVsFigurative'] as String?;
+  String? get contextSentence =>
+      (rawExtra['contextSentence'] ?? example) as String?;
+  String? get instruction => rawExtra['instruction'] as String?;
+  String? get hint => rawExtra['hint'] as String?;
+  List<String>? get options =>
+      (rawExtra['options'] as List<dynamic>?)?.map((e) => e.toString()).toList();
+  String? get correctAnswer => rawExtra['correctAnswer'] as String?;
+  String? get explanation => rawExtra['explanation'] as String?;
+
   factory PhasedQuest.fromJson(Map<String, dynamic> json) => PhasedQuest(
     id: json['id'] as String? ?? '',
     level: json['level'] as int? ?? 1,
