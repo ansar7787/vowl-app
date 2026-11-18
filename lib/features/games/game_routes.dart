@@ -72,6 +72,8 @@ import 'package:vowl/features/grammar/relative_clauses/presentation/pages/relati
 import 'package:vowl/features/grammar/relative_clauses/presentation/pages/relative_clauses_practice_screen.dart';
 import 'package:vowl/features/grammar/conditionals/presentation/pages/conditionals_learn_screen.dart';
 import 'package:vowl/features/grammar/conditionals/presentation/pages/conditionals_practice_screen.dart';
+import 'package:vowl/features/grammar/conjunctions/presentation/pages/conjunctions_learn_screen.dart';
+import 'package:vowl/features/grammar/conjunctions/presentation/pages/conjunctions_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -493,6 +495,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'conjunctions') {
+          return fadeTransitionPage(
+            child: ConjunctionsLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -693,6 +701,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'conditionals') {
           return fadeTransitionPage(
             child: ConditionalsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'conjunctions') {
+          return fadeTransitionPage(
+            child: ConjunctionsPracticeScreen(level: level),
             state: state,
           );
         }
