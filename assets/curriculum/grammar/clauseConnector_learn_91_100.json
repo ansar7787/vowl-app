@@ -1,0 +1,608 @@
+{
+  "gameType": "clauseConnector",
+  "phase": "learn",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "cc_l91_learn_q1",
+      "level": 91,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ you arrive before noon, the hotel will hold your room without an extra charge.",
+      "completedSentence": "if you arrive before noon, the hotel will hold your room without an extra charge.",
+      "options": [
+        "when",
+        "because",
+        "if",
+        "unless"
+      ],
+      "grammarRule": "Condition - if (uncertain)",
+      "ruleExplanation": "'If' introduces this uncertain condition about your arrival time. 'When' would incorrectly suggest arriving before noon is already a sure thing.",
+      "nativeTip": "This is a possible situation, not something guaranteed to happen.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if you arrive before noon, the hotel will hold your room without an extra charge."
+    },
+    {
+      "id": "cc_l91_learn_q2",
+      "level": 91,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "____ the seasons change, the store rotates its window displays to match.",
+      "completedSentence": "when the seasons change, the store rotates its window displays to match.",
+      "options": [
+        "if",
+        "because",
+        "unless",
+        "when"
+      ],
+      "grammarRule": "Time - when (certain, routine)",
+      "ruleExplanation": "'When' fits this certain, routine cycle. 'If' would incorrectly suggest there's doubt about whether the seasons will change.",
+      "nativeTip": "The seasons changing is a certain, recurring event, not something in doubt.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "when the seasons change, the store rotates its window displays to match."
+    },
+    {
+      "id": "cc_l91_learn_q3",
+      "level": 91,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "The construction crew will keep working ____ the bridge is fully reopened to traffic.",
+      "completedSentence": "The construction crew will keep working until the bridge is fully reopened to traffic.",
+      "options": [
+        "until",
+        "if",
+        "because",
+        "when"
+      ],
+      "grammarRule": "Time - until",
+      "ruleExplanation": "'Until' shows the ongoing work stops exactly when the bridge reopens. 'When' would only mark a single moment, missing the sense of continuing duration.",
+      "nativeTip": "The work continues right up to that point, not simply at a single moment.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "The construction crew will keep working until the bridge is fully reopened to traffic."
+    },
+    {
+      "id": "cc_l92_learn_q1",
+      "level": 92,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ the storm actually reaches the coast, residents are advised to stock up on supplies now.",
+      "completedSentence": "if the storm actually reaches the coast, residents are advised to stock up on supplies now.",
+      "options": [
+        "when",
+        "if",
+        "because",
+        "unless"
+      ],
+      "grammarRule": "Condition - if (uncertain forecast)",
+      "ruleExplanation": "'If' captures the genuine uncertainty about whether the storm will actually reach the coast. 'When' would incorrectly suggest this is already a sure thing.",
+      "nativeTip": "Forecasts are never certain - this describes a possibility, not something guaranteed.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if the storm actually reaches the coast, residents are advised to stock up on supplies now."
+    },
+    {
+      "id": "cc_l92_learn_q2",
+      "level": 92,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "____ the tide comes in each evening, the fishing boats return to the harbor.",
+      "completedSentence": "when the tide comes in each evening, the fishing boats return to the harbor.",
+      "options": [
+        "if",
+        "because",
+        "unless",
+        "when"
+      ],
+      "grammarRule": "Time - when (certain, routine)",
+      "ruleExplanation": "'When' fits this reliable, recurring natural pattern. 'If' would incorrectly suggest doubt about whether the tide will come in.",
+      "nativeTip": "The tide coming in every evening is a predictable, certain event.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "when the tide comes in each evening, the fishing boats return to the harbor."
+    },
+    {
+      "id": "cc_l92_learn_q3",
+      "level": 92,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ Sam gets the promotion, he's planning to take the whole team out to celebrate - though nothing is confirmed yet.",
+      "completedSentence": "if Sam gets the promotion, he's planning to take the whole team out to celebrate - though nothing is confirmed yet.",
+      "options": [
+        "when",
+        "because",
+        "if",
+        "unless"
+      ],
+      "grammarRule": "Condition - if (uncertain)",
+      "ruleExplanation": "'If' matches the explicit uncertainty mentioned. 'When' would wrongly suggest the promotion is already a certainty.",
+      "nativeTip": "The phrase 'nothing is confirmed yet' tells you this isn't a sure thing.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if Sam gets the promotion, he's planning to take the whole team out to celebrate - though nothing is confirmed yet."
+    },
+    {
+      "id": "cc_l93_learn_q1",
+      "level": 93,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "The overdue fine keeps increasing ____ you return the book.",
+      "completedSentence": "The overdue fine keeps increasing until you return the book.",
+      "options": [
+        "until",
+        "unless",
+        "if",
+        "because"
+      ],
+      "grammarRule": "Time vs Condition - until, not unless",
+      "ruleExplanation": "'Until' shows the fine increases continuously up to that point. 'Unless' would instead frame returning the book as a requirement to avoid a fine altogether, which isn't quite this ongoing-increase situation.",
+      "nativeTip": "The fine keeps growing continuously, right up to the moment of return - this is about duration, not a requirement.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "The overdue fine keeps increasing until you return the book."
+    },
+    {
+      "id": "cc_l93_learn_q2",
+      "level": 93,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "You won't get your security deposit back ____ you leave the apartment in good condition.",
+      "completedSentence": "You won't get your security deposit back unless you leave the apartment in good condition.",
+      "options": [
+        "until",
+        "unless",
+        "because",
+        "so"
+      ],
+      "grammarRule": "Condition vs Time - unless, not until",
+      "ruleExplanation": "'Unless' shows the deposit is withheld specifically when the apartment isn't left in good condition. 'Until' would incorrectly suggest the deposit is just delayed rather than genuinely dependent on this condition.",
+      "nativeTip": "Getting the deposit back depends on a requirement being met, not simply on time passing.",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "You won't get your security deposit back unless you leave the apartment in good condition."
+    },
+    {
+      "id": "cc_l93_learn_q3",
+      "level": 93,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "The free trial continues ____ you decide to cancel it yourself.",
+      "completedSentence": "The free trial continues until you decide to cancel it yourself.",
+      "options": [
+        "because",
+        "unless",
+        "until",
+        "if"
+      ],
+      "grammarRule": "Time - until",
+      "ruleExplanation": "'Until' captures this ongoing continuation that ends only when you cancel. 'Unless' would instead frame cancellation as a requirement to prevent something, which doesn't match this simple duration.",
+      "nativeTip": "The trial keeps going continuously, right up to the moment you choose to stop it.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "The free trial continues until you decide to cancel it yourself."
+    },
+    {
+      "id": "cc_l94_learn_q1",
+      "level": 94,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ she finishes her final training hours, Priya can officially start practicing as a therapist.",
+      "completedSentence": "once she finishes her final training hours, Priya can officially start practicing as a therapist.",
+      "options": [
+        "once",
+        "if",
+        "unless",
+        "when"
+      ],
+      "grammarRule": "Time - once (completion trigger)",
+      "ruleExplanation": "'Once' shows that completing her training directly triggers the next step. 'When' would also describe this reasonably well, but 'if' would incorrectly suggest doubt about whether she'll finish, when really it's just a matter of time.",
+      "nativeTip": "Finishing her training hours is essentially guaranteed to happen - it's a matter of when, not whether.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once she finishes her final training hours, Priya can officially start practicing as a therapist."
+    },
+    {
+      "id": "cc_l94_learn_q2",
+      "level": 94,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ the pilot program succeeds, the company plans to roll it out nationwide next year.",
+      "completedSentence": "if the pilot program succeeds, the company plans to roll it out nationwide next year.",
+      "options": [
+        "once",
+        "when",
+        "unless",
+        "if"
+      ],
+      "grammarRule": "Condition - if (uncertain outcome)",
+      "ruleExplanation": "'If' captures the real uncertainty about whether the pilot program will succeed. 'Once' would incorrectly suggest success is already assured and just a matter of timing.",
+      "nativeTip": "Success here is genuinely uncertain - this isn't a guaranteed outcome.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if the pilot program succeeds, the company plans to roll it out nationwide next year."
+    },
+    {
+      "id": "cc_l94_learn_q3",
+      "level": 94,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ the permits are approved, construction can begin immediately - it's really just a matter of paperwork at this point.",
+      "completedSentence": "once the permits are approved, construction can begin immediately - it's really just a matter of paperwork at this point.",
+      "options": [
+        "if",
+        "once",
+        "unless",
+        "when"
+      ],
+      "grammarRule": "Time - once (near-certain trigger)",
+      "ruleExplanation": "'Once' fits this near-certain situation, where approval is expected and construction is triggered by its completion. 'When' would also work reasonably here, but 'if' would incorrectly suggest genuine doubt about whether the permits will be approved.",
+      "nativeTip": "The phrase 'just a matter of paperwork' tells you approval is basically assured - this is about timing, not real doubt.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once the permits are approved, construction can begin immediately - it's really just a matter of paperwork at this point."
+    },
+    {
+      "id": "cc_l95_learn_q1",
+      "level": 95,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "Wash your hands thoroughly ____ you start preparing the meal.",
+      "completedSentence": "Wash your hands thoroughly before you start preparing the meal.",
+      "options": [
+        "before",
+        "if",
+        "unless",
+        "after"
+      ],
+      "grammarRule": "Time - before (vs condition)",
+      "ruleExplanation": "'Before' shows the hand-washing happens earlier in a fixed sequence of steps. 'If' would incorrectly turn this into a conditional possibility rather than a straightforward instruction.",
+      "nativeTip": "This is simply about the order of two steps, not a condition or possibility.",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "Wash your hands thoroughly before you start preparing the meal."
+    },
+    {
+      "id": "cc_l95_learn_q2",
+      "level": 95,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ the client approves the final draft, we can move forward with printing.",
+      "completedSentence": "if the client approves the final draft, we can move forward with printing.",
+      "options": [
+        "before",
+        "after",
+        "if",
+        "once"
+      ],
+      "grammarRule": "Condition - if (vs time sequencing)",
+      "ruleExplanation": "'If' captures the genuine uncertainty about whether the client will approve. 'Before' or 'after' would only describe timing, missing this sense of a real condition that might not be met.",
+      "nativeTip": "Approval isn't guaranteed here - this describes a real possibility, not just a sequence of steps.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if the client approves the final draft, we can move forward with printing."
+    },
+    {
+      "id": "cc_l95_learn_q3",
+      "level": 95,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "The refund will be processed automatically ____ the airline receives your cancellation request.",
+      "completedSentence": "The refund will be processed automatically after the airline receives your cancellation request.",
+      "options": [
+        "unless",
+        "after",
+        "if",
+        "before"
+      ],
+      "grammarRule": "Time - after (vs condition)",
+      "ruleExplanation": "'After' shows the refund reliably follows receipt of the request, as a simple sequence. 'Unless' would incorrectly frame this as a requirement to prevent something, which isn't the relationship here.",
+      "nativeTip": "This describes a reliable next step triggered by receiving the request, not a real possibility that might not happen.",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "The refund will be processed automatically after the airline receives your cancellation request."
+    },
+    {
+      "id": "cc_l96_learn_q1",
+      "level": 96,
+      "conceptTitle": "Clause Bridge: Reason (because)",
+      "connectorCategory": "Reason",
+      "correctConnector": "because",
+      "sentenceWithBlank": "The delivery driver couldn't find the address ____ the house numbers on the street were poorly marked.",
+      "completedSentence": "The delivery driver couldn't find the address because the house numbers on the street were poorly marked.",
+      "options": [
+        "if",
+        "unless",
+        "when",
+        "because"
+      ],
+      "grammarRule": "Reason - because (cumulative review)",
+      "ruleExplanation": "'Because' gives the direct reason for the driver's difficulty. 'When' would only mark timing, missing the explanation of why it happened.",
+      "nativeTip": "This explains the actual reason for the trouble, not a possibility or a moment in time.",
+      "visualAnchor": "🌉 Clause A ──[ because ]── Clause B",
+      "example": "The delivery driver couldn't find the address because the house numbers on the street were poorly marked."
+    },
+    {
+      "id": "cc_l96_learn_q2",
+      "level": 96,
+      "conceptTitle": "Clause Bridge: Purpose (so that)",
+      "connectorCategory": "Purpose",
+      "correctConnector": "so that",
+      "sentenceWithBlank": "____ passengers could board more quickly, the airline introduced a new priority lane at security.",
+      "completedSentence": "so that passengers could board more quickly, the airline introduced a new priority lane at security.",
+      "options": [
+        "so that",
+        "because",
+        "if",
+        "unless"
+      ],
+      "grammarRule": "Purpose - so that (cumulative review)",
+      "ruleExplanation": "'So that' introduces this intentional purpose, with 'could' expressing the enabled benefit. 'Because' would incorrectly frame faster boarding as an existing reason rather than a goal.",
+      "nativeTip": "This new lane was created with a specific future goal in mind, not to explain something that already happened.",
+      "visualAnchor": "🌉 Clause A ──[ so that ]── Clause B",
+      "example": "so that passengers could board more quickly, the airline introduced a new priority lane at security."
+    },
+    {
+      "id": "cc_l96_learn_q3",
+      "level": 96,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The greenhouse plants will wilt within days ____ someone waters them regularly.",
+      "completedSentence": "The greenhouse plants will wilt within days unless someone waters them regularly.",
+      "options": [
+        "if",
+        "before",
+        "after",
+        "unless"
+      ],
+      "grammarRule": "Condition - unless",
+      "ruleExplanation": "'Unless' shows the wilting depends on watering failing to happen. 'If' would need 'doesn't water' added to express the same meaning.",
+      "nativeTip": "Wilting happens specifically when watering does NOT occur - which connector already includes that 'not'?",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The greenhouse plants will wilt within days unless someone waters them regularly."
+    },
+    {
+      "id": "cc_l97_learn_q1",
+      "level": 97,
+      "conceptTitle": "Clause Bridge: Condition (even if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "even if",
+      "sentenceWithBlank": "____ ticket prices double, loyal fans say they'll still attend every home game.",
+      "completedSentence": "even if ticket prices double, loyal fans say they'll still attend every home game.",
+      "options": [
+        "unless",
+        "if",
+        "even if",
+        "because"
+      ],
+      "grammarRule": "Condition - even if (regardless of outcome)",
+      "ruleExplanation": "'Even if' shows their commitment holds regardless of a possible price increase. 'Unless' would incorrectly suggest a price increase could actually stop them from attending.",
+      "nativeTip": "Their attendance stays the same no matter what happens with prices - stronger than a simple condition.",
+      "visualAnchor": "🌉 Clause A ──[ even if ]── Clause B",
+      "example": "even if ticket prices double, loyal fans say they'll still attend every home game."
+    },
+    {
+      "id": "cc_l97_learn_q2",
+      "level": 97,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The team will miss the playoffs ____ they win all three remaining games.",
+      "completedSentence": "The team will miss the playoffs unless they win all three remaining games.",
+      "options": [
+        "even if",
+        "unless",
+        "because",
+        "if"
+      ],
+      "grammarRule": "Condition - unless (built-in negative) vs even if (regardless)",
+      "ruleExplanation": "'Unless' shows the outcome depends on failing to win all three games. 'Even if' would incorrectly suggest the outcome stays the same regardless of how many games they win, which isn't true here.",
+      "nativeTip": "Missing the playoffs happens specifically when winning all three does NOT occur - which connector already includes that 'not'?",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The team will miss the playoffs unless they win all three remaining games."
+    },
+    {
+      "id": "cc_l97_learn_q3",
+      "level": 97,
+      "conceptTitle": "Clause Bridge: Condition (even if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "even if",
+      "sentenceWithBlank": "____ nobody else shows up to help, Marcus is determined to finish cleaning the park by himself.",
+      "completedSentence": "even if nobody else shows up to help, Marcus is determined to finish cleaning the park by himself.",
+      "options": [
+        "unless",
+        "if",
+        "because",
+        "even if"
+      ],
+      "grammarRule": "Condition - even if",
+      "ruleExplanation": "'Even if' emphasizes that his commitment doesn't depend on others' participation at all. 'Unless' would incorrectly suggest he'd stop if nobody showed up, which contradicts his determination.",
+      "nativeTip": "His determination holds true no matter how many people show up - or don't.",
+      "visualAnchor": "🌉 Clause A ──[ even if ]── Clause B",
+      "example": "even if nobody else shows up to help, Marcus is determined to finish cleaning the park by himself."
+    },
+    {
+      "id": "cc_l98_learn_q1",
+      "level": 98,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ the annual inspection is complete, the factory can resume full production.",
+      "completedSentence": "once the annual inspection is complete, the factory can resume full production.",
+      "options": [
+        "when",
+        "if",
+        "once",
+        "until"
+      ],
+      "grammarRule": "Time - once vs when",
+      "ruleExplanation": "'Once' emphasizes that finishing the inspection directly triggers production resuming. 'When' could describe simple timing but doesn't capture this completion-triggers-next-step relationship as clearly.",
+      "nativeTip": "Completing the inspection is the specific trigger for resuming production, not just a general point in time.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once the annual inspection is complete, the factory can resume full production."
+    },
+    {
+      "id": "cc_l98_learn_q2",
+      "level": 98,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The elevator will remain out of service ____ a licensed technician inspects it and signs off on the repair.",
+      "completedSentence": "The elevator will remain out of service unless a licensed technician inspects it and signs off on the repair.",
+      "options": [
+        "before",
+        "unless",
+        "after",
+        "once"
+      ],
+      "grammarRule": "Condition - unless",
+      "ruleExplanation": "'Unless' shows the service depends on this required inspection happening first. 'Before' would only describe timing, missing the sense of a genuine requirement that must be met.",
+      "nativeTip": "Being out of service happens specifically when this required inspection does NOT occur yet.",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The elevator will remain out of service unless a licensed technician inspects it and signs off on the repair."
+    },
+    {
+      "id": "cc_l98_learn_q3",
+      "level": 98,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "Interest continues to accumulate on the balance ____ the full amount is paid off.",
+      "completedSentence": "Interest continues to accumulate on the balance until the full amount is paid off.",
+      "options": [
+        "unless",
+        "because",
+        "until",
+        "if"
+      ],
+      "grammarRule": "Time vs Condition - until, not unless",
+      "ruleExplanation": "'Until' captures this continuous accumulation that stops exactly at full payment. 'Unless' would instead frame payment as a one-time requirement to avoid interest altogether, rather than describing this ongoing buildup.",
+      "nativeTip": "The interest keeps building continuously, right up to the moment of full payment - this is about ongoing duration.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "Interest continues to accumulate on the balance until the full amount is paid off."
+    },
+    {
+      "id": "cc_l99_learn_q1",
+      "level": 99,
+      "conceptTitle": "Clause Bridge: Concession (although)",
+      "connectorCategory": "Concession",
+      "correctConnector": "although",
+      "sentenceWithBlank": "____ the trail was steep and rocky the whole way up, the view from the summit made every step worth it.",
+      "completedSentence": "although the trail was steep and rocky the whole way up, the view from the summit made every step worth it.",
+      "options": [
+        "although",
+        "because",
+        "if",
+        "unless"
+      ],
+      "grammarRule": "Concession - although (cumulative review)",
+      "ruleExplanation": "'Although' shows the concession between the tough climb and the rewarding view. 'Because' would incorrectly suggest the difficulty was the reason the view was good.",
+      "nativeTip": "The worthwhile view despite the difficult trail is the unexpected twist here.",
+      "visualAnchor": "🌉 Clause A ──[ although ]── Clause B",
+      "example": "although the trail was steep and rocky the whole way up, the view from the summit made every step worth it."
+    },
+    {
+      "id": "cc_l99_learn_q2",
+      "level": 99,
+      "conceptTitle": "Clause Bridge: Contrast (whereas)",
+      "connectorCategory": "Contrast",
+      "correctConnector": "whereas",
+      "sentenceWithBlank": "The north side of the building gets very little natural light, ____ the south-facing rooms are bright all day.",
+      "completedSentence": "The north side of the building gets very little natural light, whereas the south-facing rooms are bright all day.",
+      "options": [
+        "although",
+        "because",
+        "if",
+        "whereas"
+      ],
+      "grammarRule": "Contrast - whereas (cumulative review)",
+      "ruleExplanation": "'Whereas' compares these two contrasting conditions. 'Although' would suggest one side is bright despite some obstacle, which isn't the relationship being described.",
+      "nativeTip": "Two different sides of the building are simply being compared here, with neither happening despite the other.",
+      "visualAnchor": "🌉 Clause A ──[ whereas ]── Clause B",
+      "example": "The north side of the building gets very little natural light, whereas the south-facing rooms are bright all day."
+    },
+    {
+      "id": "cc_l99_learn_q3",
+      "level": 99,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "Employees receive a small bonus ____ they complete five years with the company.",
+      "completedSentence": "Employees receive a small bonus when they complete five years with the company.",
+      "options": [
+        "if",
+        "when",
+        "unless",
+        "before"
+      ],
+      "grammarRule": "Time - when (certain milestone)",
+      "ruleExplanation": "'When' fits this certain, expected milestone. 'If' would incorrectly suggest doubt about whether employees will ever reach five years, when it's simply a matter of time.",
+      "nativeTip": "Reaching five years is a certain milestone that will eventually happen, not something in doubt.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "Employees receive a small bonus when they complete five years with the company."
+    },
+    {
+      "id": "cc_l100_learn_q1",
+      "level": 100,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ the renovation stays on schedule despite the recent delays, the new wing should open to the public by early spring.",
+      "completedSentence": "if the renovation stays on schedule despite the recent delays, the new wing should open to the public by early spring.",
+      "options": [
+        "if",
+        "when",
+        "unless",
+        "once"
+      ],
+      "grammarRule": "Condition - if (uncertain, capstone)",
+      "ruleExplanation": "'If' captures the genuine uncertainty here, especially given the delays already mentioned. 'When' would incorrectly suggest staying on schedule is already a sure thing.",
+      "nativeTip": "The phrase 'despite the recent delays' signals real uncertainty about staying on schedule.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if the renovation stays on schedule despite the recent delays, the new wing should open to the public by early spring."
+    },
+    {
+      "id": "cc_l100_learn_q2",
+      "level": 100,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The community garden project will lose its city funding entirely ____ organizers submit a revised proposal within thirty days.",
+      "completedSentence": "The community garden project will lose its city funding entirely unless organizers submit a revised proposal within thirty days.",
+      "options": [
+        "if",
+        "because",
+        "so",
+        "unless"
+      ],
+      "grammarRule": "Condition - unless (capstone)",
+      "ruleExplanation": "'Unless' shows the funding loss depends on the proposal failing to be submitted in time. 'If' would need 'don't submit' added to express the same meaning.",
+      "nativeTip": "Losing funding happens specifically when the revised proposal does NOT get submitted in time - which connector already includes that 'not'?",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The community garden project will lose its city funding entirely unless organizers submit a revised proposal within thirty days."
+    },
+    {
+      "id": "cc_l100_learn_q3",
+      "level": 100,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ the final inspection report comes back clean, residents can begin moving back into the building after months away.",
+      "completedSentence": "once the final inspection report comes back clean, residents can begin moving back into the building after months away.",
+      "options": [
+        "once",
+        "if",
+        "unless",
+        "when"
+      ],
+      "grammarRule": "Time - once (capstone)",
+      "ruleExplanation": "'Once' captures the idea that the clean report directly triggers residents moving back. 'If' would incorrectly suggest real doubt about whether the report will come back clean.",
+      "nativeTip": "The clean report is the specific trigger that allows the next step, and it's expected to happen - this is about timing, not real doubt.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once the final inspection report comes back clean, residents can begin moving back into the building after months away."
+    }
+  ]
+}

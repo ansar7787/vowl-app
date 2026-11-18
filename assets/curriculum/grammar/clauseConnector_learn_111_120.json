@@ -1,0 +1,608 @@
+{
+  "gameType": "clauseConnector",
+  "phase": "learn",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "cc_l111_learn_q1",
+      "level": 111,
+      "conceptTitle": "Clause Bridge: Addition (and)",
+      "connectorCategory": "Addition",
+      "correctConnector": "and",
+      "sentenceWithBlank": "Elena mowed the lawn ____ trimmed the hedges before the guests arrived.",
+      "completedSentence": "Elena mowed the lawn and trimmed the hedges before the guests arrived.",
+      "options": [
+        "so",
+        "and",
+        "but",
+        "or"
+      ],
+      "grammarRule": "Addition - and",
+      "ruleExplanation": "'And' links these two related tasks Elena completed before the guests arrived. 'But' would incorrectly suggest some contrast between mowing and trimming, which isn't present here.",
+      "nativeTip": "Both tasks are simply part of the same yard work, without any surprise or choice between them.",
+      "visualAnchor": "🌉 Clause A ──[ and ]── Clause B",
+      "example": "Elena mowed the lawn and trimmed the hedges before the guests arrived."
+    },
+    {
+      "id": "cc_l111_learn_q2",
+      "level": 111,
+      "conceptTitle": "Clause Bridge: Contrast (but)",
+      "connectorCategory": "Contrast",
+      "correctConnector": "but",
+      "sentenceWithBlank": "The store was completely out of the shoes in her size, ____ she found an identical pair online instead.",
+      "completedSentence": "The store was completely out of the shoes in her size, but she found an identical pair online instead.",
+      "options": [
+        "so",
+        "and",
+        "but",
+        "because"
+      ],
+      "grammarRule": "Contrast - but",
+      "ruleExplanation": "'But' shows the shift from disappointment - no shoes in store - to a solution found online. 'And' would just list the two facts without capturing this contrast.",
+      "nativeTip": "Finding an alternative online despite the in-store shortage is a contrast, not simply an added fact.",
+      "visualAnchor": "🌉 Clause A ──[ but ]── Clause B",
+      "example": "The store was completely out of the shoes in her size, but she found an identical pair online instead."
+    },
+    {
+      "id": "cc_l111_learn_q3",
+      "level": 111,
+      "conceptTitle": "Clause Bridge: Alternative (or)",
+      "connectorCategory": "Alternative",
+      "correctConnector": "or",
+      "sentenceWithBlank": "For dessert, you can choose the chocolate cake ____ the fruit tart - both are included in the price.",
+      "completedSentence": "For dessert, you can choose the chocolate cake or the fruit tart - both are included in the price.",
+      "options": [
+        "or",
+        "and",
+        "so",
+        "because"
+      ],
+      "grammarRule": "Alternative - or",
+      "ruleExplanation": "'Or' presents the cake and tart as alternative choices for dessert. 'And' would incorrectly suggest ordering both together as one dessert.",
+      "nativeTip": "The phrase 'both are included' still means you'd pick just one for your dessert.",
+      "visualAnchor": "🌉 Clause A ──[ or ]── Clause B",
+      "example": "For dessert, you can choose the chocolate cake or the fruit tart - both are included in the price."
+    },
+    {
+      "id": "cc_l112_learn_q1",
+      "level": 112,
+      "conceptTitle": "Clause Bridge: Result (so)",
+      "connectorCategory": "Result",
+      "correctConnector": "so",
+      "sentenceWithBlank": "The server crashed twice during the demo, ____ the sales team had to reschedule the client call.",
+      "completedSentence": "The server crashed twice during the demo, so the sales team had to reschedule the client call.",
+      "options": [
+        "because",
+        "although",
+        "or",
+        "so"
+      ],
+      "grammarRule": "Result - so",
+      "ruleExplanation": "'So' shows the crash directly caused the rescheduling. 'Because' would only fit if the reason came after the outcome, which isn't the order here.",
+      "nativeTip": "The rescheduling is a direct consequence of the crash, not an explanation or a choice.",
+      "visualAnchor": "🌉 Clause A ──[ so ]── Clause B",
+      "example": "The server crashed twice during the demo, so the sales team had to reschedule the client call."
+    },
+    {
+      "id": "cc_l112_learn_q2",
+      "level": 112,
+      "conceptTitle": "Clause Bridge: Reason (because)",
+      "connectorCategory": "Reason",
+      "correctConnector": "because",
+      "sentenceWithBlank": "The doctor recommended physical therapy ____ the X-ray showed early signs of joint strain.",
+      "completedSentence": "The doctor recommended physical therapy because the X-ray showed early signs of joint strain.",
+      "options": [
+        "so",
+        "because",
+        "so that",
+        "although"
+      ],
+      "grammarRule": "Reason - because",
+      "ruleExplanation": "'Because' gives the direct reason behind the recommendation. 'So that' would incorrectly frame the joint strain as a future goal rather than an existing finding.",
+      "nativeTip": "This explains the reason for the recommendation, which already happened, not a future goal.",
+      "visualAnchor": "🌉 Clause A ──[ because ]── Clause B",
+      "example": "The doctor recommended physical therapy because the X-ray showed early signs of joint strain."
+    },
+    {
+      "id": "cc_l112_learn_q3",
+      "level": 112,
+      "conceptTitle": "Clause Bridge: Purpose (so that)",
+      "connectorCategory": "Purpose",
+      "correctConnector": "so that",
+      "sentenceWithBlank": "The school installed extra water fountains ____ students wouldn't need to leave the building during breaks.",
+      "completedSentence": "The school installed extra water fountains so that students wouldn't need to leave the building during breaks.",
+      "options": [
+        "because",
+        "so",
+        "so that",
+        "although"
+      ],
+      "grammarRule": "Purpose - so that",
+      "ruleExplanation": "'So that' introduces this intentional purpose, with 'wouldn't' expressing the intended benefit. 'Because' would incorrectly frame this as an explanation rather than a forward-looking goal.",
+      "nativeTip": "This was a deliberate step taken with a specific goal - avoiding a future inconvenience.",
+      "visualAnchor": "🌉 Clause A ──[ so that ]── Clause B",
+      "example": "The school installed extra water fountains so that students wouldn't need to leave the building during breaks."
+    },
+    {
+      "id": "cc_l113_learn_q1",
+      "level": 113,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "____ the coffee shop opens at six, the same group of regulars is always waiting outside.",
+      "completedSentence": "when the coffee shop opens at six, the same group of regulars is always waiting outside.",
+      "options": [
+        "when",
+        "if",
+        "although",
+        "because"
+      ],
+      "grammarRule": "Time - when (certain, routine)",
+      "ruleExplanation": "'When' fits this reliable, everyday routine. 'If' would incorrectly suggest doubt about whether the shop opens at six.",
+      "nativeTip": "The coffee shop opening at six is a certain, routine event, not something in doubt.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "when the coffee shop opens at six, the same group of regulars is always waiting outside."
+    },
+    {
+      "id": "cc_l113_learn_q2",
+      "level": 113,
+      "conceptTitle": "Clause Bridge: Condition (if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "if",
+      "sentenceWithBlank": "____ the venue falls through at the last minute, we already have a backup location in mind.",
+      "completedSentence": "if the venue falls through at the last minute, we already have a backup location in mind.",
+      "options": [
+        "when",
+        "although",
+        "because",
+        "if"
+      ],
+      "grammarRule": "Condition - if (uncertain)",
+      "ruleExplanation": "'If' introduces this uncertain, hypothetical scenario about the venue. 'When' would incorrectly suggest the venue falling through is already expected.",
+      "nativeTip": "This describes a possible situation, not something guaranteed to happen.",
+      "visualAnchor": "🌉 Clause A ──[ if ]── Clause B",
+      "example": "if the venue falls through at the last minute, we already have a backup location in mind."
+    },
+    {
+      "id": "cc_l113_learn_q3",
+      "level": 113,
+      "conceptTitle": "Clause Bridge: Concession (although)",
+      "connectorCategory": "Concession",
+      "correctConnector": "although",
+      "sentenceWithBlank": "____ the stadium lights flickered twice during the game, officials decided not to delay the match.",
+      "completedSentence": "although the stadium lights flickered twice during the game, officials decided not to delay the match.",
+      "options": [
+        "because",
+        "although",
+        "so",
+        "if"
+      ],
+      "grammarRule": "Concession - although",
+      "ruleExplanation": "'Although' shows the concession between the lighting issue and officials' decision not to delay. 'Because' would incorrectly suggest the flickering caused them to continue, which reverses the logic.",
+      "nativeTip": "Not delaying the match despite the flickering lights is the unexpected twist here.",
+      "visualAnchor": "🌉 Clause A ──[ although ]── Clause B",
+      "example": "although the stadium lights flickered twice during the game, officials decided not to delay the match."
+    },
+    {
+      "id": "cc_l114_learn_q1",
+      "level": 114,
+      "conceptTitle": "Clause Bridge: Negative Addition (nor)",
+      "connectorCategory": "Negative Addition",
+      "correctConnector": "nor",
+      "sentenceWithBlank": "The company never responded to her email, ____ did it acknowledge the phone messages she left.",
+      "completedSentence": "The company never responded to her email, nor did it acknowledge the phone messages she left.",
+      "options": [
+        "and",
+        "because",
+        "nor",
+        "so"
+      ],
+      "grammarRule": "Negative Addition - nor + inversion",
+      "ruleExplanation": "'Nor' continues the negative statement with the required inversion - 'did it acknowledge.' 'And' would need normal word order and wouldn't match this sentence as written.",
+      "nativeTip": "Watch the inverted verb order after the blank - it signals which connector continues this negative statement.",
+      "visualAnchor": "🌉 Clause A ──[ nor ]── Clause B",
+      "example": "The company never responded to her email, nor did it acknowledge the phone messages she left."
+    },
+    {
+      "id": "cc_l114_learn_q2",
+      "level": 114,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "The toddler refused to eat his vegetables ____ his sister started eating hers too.",
+      "completedSentence": "The toddler refused to eat his vegetables until his sister started eating hers too.",
+      "options": [
+        "until",
+        "unless",
+        "because",
+        "so"
+      ],
+      "grammarRule": "Time - until",
+      "ruleExplanation": "'Until' shows the refusal lasted continuously up to that point. 'Unless' would instead frame his sister eating as a requirement to prevent his refusal altogether, which isn't quite this simple sequence.",
+      "nativeTip": "The refusal continued right up to the moment his sister started eating - this is about duration, not a strict requirement.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "The toddler refused to eat his vegetables until his sister started eating hers too."
+    },
+    {
+      "id": "cc_l114_learn_q3",
+      "level": 114,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The proposal won't move forward ____ legal signs off on the revised contract language.",
+      "completedSentence": "The proposal won't move forward unless legal signs off on the revised contract language.",
+      "options": [
+        "because",
+        "until",
+        "so",
+        "unless"
+      ],
+      "grammarRule": "Condition - unless",
+      "ruleExplanation": "'Unless' shows the proposal is stuck specifically without legal approval. 'Until' would instead suggest the proposal is just delayed rather than genuinely dependent on this requirement.",
+      "nativeTip": "Moving forward happens specifically when legal does NOT sign off - which connector already includes that 'not'?",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The proposal won't move forward unless legal signs off on the revised contract language."
+    },
+    {
+      "id": "cc_l115_learn_q1",
+      "level": 115,
+      "conceptTitle": "Clause Bridge: Contrast (whereas)",
+      "connectorCategory": "Contrast",
+      "correctConnector": "whereas",
+      "sentenceWithBlank": "Renewable energy costs have dropped steadily over the past decade, ____ fossil fuel prices remain highly volatile.",
+      "completedSentence": "Renewable energy costs have dropped steadily over the past decade, whereas fossil fuel prices remain highly volatile.",
+      "options": [
+        "because",
+        "whereas",
+        "so",
+        "although"
+      ],
+      "grammarRule": "Contrast - whereas",
+      "ruleExplanation": "'Whereas' compares these two contrasting cost trends. 'Although' would suggest one trend happened despite some obstacle, which isn't the relationship here.",
+      "nativeTip": "Two different cost trends are simply being compared here, with neither happening despite the other.",
+      "visualAnchor": "🌉 Clause A ──[ whereas ]── Clause B",
+      "example": "Renewable energy costs have dropped steadily over the past decade, whereas fossil fuel prices remain highly volatile."
+    },
+    {
+      "id": "cc_l115_learn_q2",
+      "level": 115,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ the certification process is complete, Diego can finally apply for senior engineering roles.",
+      "completedSentence": "once the certification process is complete, Diego can finally apply for senior engineering roles.",
+      "options": [
+        "if",
+        "when",
+        "once",
+        "until"
+      ],
+      "grammarRule": "Time - once (completion trigger)",
+      "ruleExplanation": "'Once' captures the idea that finishing the certification directly triggers his ability to apply. 'If' would incorrectly suggest doubt about whether he'll complete it.",
+      "nativeTip": "Completing the certification is the specific trigger for the next step - a matter of when, not whether.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once the certification process is complete, Diego can finally apply for senior engineering roles."
+    },
+    {
+      "id": "cc_l115_learn_q3",
+      "level": 115,
+      "conceptTitle": "Clause Bridge: Purpose (in order that)",
+      "connectorCategory": "Purpose",
+      "correctConnector": "in order that",
+      "sentenceWithBlank": "The agency extended the application deadline ____ rural applicants without reliable internet access could still submit their forms.",
+      "completedSentence": "The agency extended the application deadline in order that rural applicants without reliable internet access could still submit their forms.",
+      "options": [
+        "in order that",
+        "because",
+        "so",
+        "although"
+      ],
+      "grammarRule": "Purpose - in order that",
+      "ruleExplanation": "'In order that' matches this formal, official tone. 'Because' would incorrectly frame the extended deadline as an explanation rather than a deliberate accommodation.",
+      "nativeTip": "This is formal policy language - the more formal purpose phrase fits this register.",
+      "visualAnchor": "🌉 Clause A ──[ in order that ]── Clause B",
+      "example": "The agency extended the application deadline in order that rural applicants without reliable internet access could still submit their forms."
+    },
+    {
+      "id": "cc_l116_learn_q1",
+      "level": 116,
+      "conceptTitle": "Clause Bridge: Concession (even though)",
+      "connectorCategory": "Concession",
+      "correctConnector": "even though",
+      "sentenceWithBlank": "____ the flight had been delayed for nearly five hours, the children stayed remarkably calm the entire time.",
+      "completedSentence": "even though the flight had been delayed for nearly five hours, the children stayed remarkably calm the entire time.",
+      "options": [
+        "although",
+        "because",
+        "so",
+        "even though"
+      ],
+      "grammarRule": "Concession - even though (emphasis)",
+      "ruleExplanation": "'Even though' emphasizes the significant hardship of such a long delay. 'Although' would also technically work, but doesn't carry quite the same weight given how extreme the delay was.",
+      "nativeTip": "Nearly five hours is a long, difficult delay - this deserves the stronger of the near-identical concession connectors.",
+      "visualAnchor": "🌉 Clause A ──[ even though ]── Clause B",
+      "example": "even though the flight had been delayed for nearly five hours, the children stayed remarkably calm the entire time."
+    },
+    {
+      "id": "cc_l116_learn_q2",
+      "level": 116,
+      "conceptTitle": "Clause Bridge: Condition (even if)",
+      "connectorCategory": "Condition",
+      "correctConnector": "even if",
+      "sentenceWithBlank": "The board plans to approve the budget ____ the quarterly projections come in slightly lower than expected.",
+      "completedSentence": "The board plans to approve the budget even if the quarterly projections come in slightly lower than expected.",
+      "options": [
+        "unless",
+        "even if",
+        "because",
+        "although"
+      ],
+      "grammarRule": "Condition - even if",
+      "ruleExplanation": "'Even if' shows the board's plan holds regardless of a possible shortfall. 'Unless' would incorrectly suggest a lower projection could actually stop the approval.",
+      "nativeTip": "The approval holds true no matter what happens with the projections - stronger than a simple condition.",
+      "visualAnchor": "🌉 Clause A ──[ even if ]── Clause B",
+      "example": "The board plans to approve the budget even if the quarterly projections come in slightly lower than expected."
+    },
+    {
+      "id": "cc_l116_learn_q3",
+      "level": 116,
+      "conceptTitle": "Clause Bridge: Reason (since)",
+      "connectorCategory": "Reason",
+      "correctConnector": "since",
+      "sentenceWithBlank": "____ the library's late fees had become a source of constant complaints, the university eliminated them entirely.",
+      "completedSentence": "since the library's late fees had become a source of constant complaints, the university eliminated them entirely.",
+      "options": [
+        "because",
+        "so",
+        "since",
+        "although"
+      ],
+      "grammarRule": "Reason - since",
+      "ruleExplanation": "'Since' introduces this established reason behind eliminating the fees. 'So' would reverse the logic, making the elimination the cause of the complaints.",
+      "nativeTip": "This clause states an already-established fact used as the basis for the university's decision.",
+      "visualAnchor": "🌉 Clause A ──[ since ]── Clause B",
+      "example": "since the library's late fees had become a source of constant complaints, the university eliminated them entirely."
+    },
+    {
+      "id": "cc_l117_learn_q1",
+      "level": 117,
+      "conceptTitle": "Clause Bridge: Alternative (or)",
+      "connectorCategory": "Alternative",
+      "correctConnector": "or",
+      "sentenceWithBlank": "Travelers can check in online ____ use the self-service kiosks at the airport.",
+      "completedSentence": "Travelers can check in online or use the self-service kiosks at the airport.",
+      "options": [
+        "or",
+        "and",
+        "so",
+        "because"
+      ],
+      "grammarRule": "Alternative - or",
+      "ruleExplanation": "'Or' presents online check-in and the kiosks as alternative options. 'And' would incorrectly suggest travelers need to do both.",
+      "nativeTip": "These are two separate check-in methods - travelers would use one, not both.",
+      "visualAnchor": "🌉 Clause A ──[ or ]── Clause B",
+      "example": "Travelers can check in online or use the self-service kiosks at the airport."
+    },
+    {
+      "id": "cc_l117_learn_q2",
+      "level": 117,
+      "conceptTitle": "Clause Bridge: Addition (and)",
+      "connectorCategory": "Addition",
+      "correctConnector": "and",
+      "sentenceWithBlank": "Nina weeded the flower beds ____ mulched around the rose bushes before the heat set in.",
+      "completedSentence": "Nina weeded the flower beds and mulched around the rose bushes before the heat set in.",
+      "options": [
+        "but",
+        "so",
+        "or",
+        "and"
+      ],
+      "grammarRule": "Addition - and",
+      "ruleExplanation": "'And' links these two related tasks Nina completed before the heat set in. 'Or' would incorrectly suggest she only did one of the two.",
+      "nativeTip": "Both gardening tasks are simply part of the same afternoon's work, without any surprise or choice.",
+      "visualAnchor": "🌉 Clause A ──[ and ]── Clause B",
+      "example": "Nina weeded the flower beds and mulched around the rose bushes before the heat set in."
+    },
+    {
+      "id": "cc_l117_learn_q3",
+      "level": 117,
+      "conceptTitle": "Clause Bridge: Time (as soon as)",
+      "connectorCategory": "Time",
+      "correctConnector": "as soon as",
+      "sentenceWithBlank": "____ the replacement part arrives at the warehouse, we'll ship it directly to your address.",
+      "completedSentence": "as soon as the replacement part arrives at the warehouse, we'll ship it directly to your address.",
+      "options": [
+        "until",
+        "as soon as",
+        "before",
+        "if"
+      ],
+      "grammarRule": "Time - as soon as",
+      "ruleExplanation": "'As soon as' emphasizes this immediate sequence with no delay. 'Until' would incorrectly suggest something continues up to that point rather than starting right after it.",
+      "nativeTip": "There's essentially no gap between the part arriving and it being shipped out again.",
+      "visualAnchor": "🌉 Clause A ──[ as soon as ]── Clause B",
+      "example": "as soon as the replacement part arrives at the warehouse, we'll ship it directly to your address."
+    },
+    {
+      "id": "cc_l118_learn_q1",
+      "level": 118,
+      "conceptTitle": "Clause Bridge: Condition (as long as)",
+      "connectorCategory": "Condition",
+      "correctConnector": "as long as",
+      "sentenceWithBlank": "Guests may bring small pets to the cabin ____ they remain leashed in all common areas.",
+      "completedSentence": "Guests may bring small pets to the cabin as long as they remain leashed in all common areas.",
+      "options": [
+        "because",
+        "if",
+        "as long as",
+        "unless"
+      ],
+      "grammarRule": "Condition - as long as",
+      "ruleExplanation": "'As long as' fits this ongoing requirement well. 'If' would also technically work but doesn't carry quite the same sense of a continuing condition that must keep holding true.",
+      "nativeTip": "Staying leashed is presented as a clear, ongoing requirement for bringing pets.",
+      "visualAnchor": "🌉 Clause A ──[ as long as ]── Clause B",
+      "example": "Guests may bring small pets to the cabin as long as they remain leashed in all common areas."
+    },
+    {
+      "id": "cc_l118_learn_q2",
+      "level": 118,
+      "conceptTitle": "Clause Bridge: Contrast (yet)",
+      "connectorCategory": "Contrast",
+      "correctConnector": "yet",
+      "sentenceWithBlank": "The old house had stood empty for twenty years, ____ the garden somehow remained perfectly tended.",
+      "completedSentence": "The old house had stood empty for twenty years, yet the garden somehow remained perfectly tended.",
+      "options": [
+        "yet",
+        "so",
+        "because",
+        "although"
+      ],
+      "grammarRule": "Contrast - yet (formal alternative to but)",
+      "ruleExplanation": "'Yet' suits this reflective register well, expressing contrast much like 'but' would. 'So' would incorrectly suggest the empty house caused the well-tended garden.",
+      "nativeTip": "This reads like a reflective, literary description - the more formal contrast word fits this tone.",
+      "visualAnchor": "🌉 Clause A ──[ yet ]── Clause B",
+      "example": "The old house had stood empty for twenty years, yet the garden somehow remained perfectly tended."
+    },
+    {
+      "id": "cc_l118_learn_q3",
+      "level": 118,
+      "conceptTitle": "Clause Bridge: Reason (for)",
+      "connectorCategory": "Reason",
+      "correctConnector": "for",
+      "sentenceWithBlank": "The committee rejected the initial budget proposal, ____ it failed to account for rising material costs.",
+      "completedSentence": "The committee rejected the initial budget proposal, for it failed to account for rising material costs.",
+      "options": [
+        "because",
+        "so",
+        "although",
+        "for"
+      ],
+      "grammarRule": "Reason - for (formal)",
+      "ruleExplanation": "'For' introduces the reason in this formal register. 'Because' would also give a reason but sounds more conversational than this written explanation.",
+      "nativeTip": "This reads like a formal, written explanation - the reason follows a comma in that literary style.",
+      "visualAnchor": "🌉 Clause A ──[ for ]── Clause B",
+      "example": "The committee rejected the initial budget proposal, for it failed to account for rising material costs."
+    },
+    {
+      "id": "cc_l119_learn_q1",
+      "level": 119,
+      "conceptTitle": "Clause Bridge: Purpose (so that)",
+      "connectorCategory": "Purpose",
+      "correctConnector": "so that",
+      "sentenceWithBlank": "The app now saves drafts automatically every thirty seconds ____ users wouldn't lose their work during a crash.",
+      "completedSentence": "The app now saves drafts automatically every thirty seconds so that users wouldn't lose their work during a crash.",
+      "options": [
+        "because",
+        "so that",
+        "so",
+        "although"
+      ],
+      "grammarRule": "Purpose - so that",
+      "ruleExplanation": "'So that' introduces this intentional purpose, with 'wouldn't' expressing the intended prevention. 'Because' would incorrectly frame this as an explanation rather than a forward-looking goal.",
+      "nativeTip": "This new feature was built with a specific goal in mind - preventing lost work.",
+      "visualAnchor": "🌉 Clause A ──[ so that ]── Clause B",
+      "example": "The app now saves drafts automatically every thirty seconds so that users wouldn't lose their work during a crash."
+    },
+    {
+      "id": "cc_l119_learn_q2",
+      "level": 119,
+      "conceptTitle": "Clause Bridge: Concession (though)",
+      "connectorCategory": "Concession",
+      "correctConnector": "though",
+      "sentenceWithBlank": "The line at the bakery was pretty long this morning ____ it moved faster than I expected.",
+      "completedSentence": "The line at the bakery was pretty long this morning though it moved faster than I expected.",
+      "options": [
+        "although",
+        "because",
+        "though",
+        "so"
+      ],
+      "grammarRule": "Concession - though (casual)",
+      "ruleExplanation": "'Though' feels natural in this casual tone. 'Because' would incorrectly frame the second clause as the reason the line was long.",
+      "nativeTip": "This is a relaxed, spoken-style observation - the more casual of the near-identical concession connectors fits better here.",
+      "visualAnchor": "🌉 Clause A ──[ though ]── Clause B",
+      "example": "The line at the bakery was pretty long this morning though it moved faster than I expected."
+    },
+    {
+      "id": "cc_l119_learn_q3",
+      "level": 119,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "Let the dough rest in the refrigerator for an hour ____ you shape it into rolls.",
+      "completedSentence": "Let the dough rest in the refrigerator for an hour after you shape it into rolls.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "if"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the shaping happens once the resting time is complete. 'Before' would reverse the order, suggesting you shape the dough first.",
+      "nativeTip": "This describes the order of two baking steps, not a condition or possibility.",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "Let the dough rest in the refrigerator for an hour after you shape it into rolls."
+    },
+    {
+      "id": "cc_l120_learn_q1",
+      "level": 120,
+      "conceptTitle": "Clause Bridge: Reason (because)",
+      "connectorCategory": "Reason",
+      "correctConnector": "because",
+      "sentenceWithBlank": "The city council delayed the vote on the new transit line ____ several residents raised concerns about construction noise near the hospital.",
+      "completedSentence": "The city council delayed the vote on the new transit line because several residents raised concerns about construction noise near the hospital.",
+      "options": [
+        "although",
+        "so",
+        "unless",
+        "because"
+      ],
+      "grammarRule": "Reason - because (capstone)",
+      "ruleExplanation": "'Because' gives the direct reason for the delayed vote - residents' concerns. 'So' would reverse the logic, making the delay the cause of the concerns.",
+      "nativeTip": "This explains the actual reason for the delay, not a contrast, condition, or result.",
+      "visualAnchor": "🌉 Clause A ──[ because ]── Clause B",
+      "example": "The city council delayed the vote on the new transit line because several residents raised concerns about construction noise near the hospital."
+    },
+    {
+      "id": "cc_l120_learn_q2",
+      "level": 120,
+      "conceptTitle": "Clause Bridge: Concession (although)",
+      "connectorCategory": "Concession",
+      "correctConnector": "although",
+      "sentenceWithBlank": "____ the restaurant had received glowing reviews from every major food critic in the city, the owners decided to completely redesign the menu just six months after opening.",
+      "completedSentence": "although the restaurant had received glowing reviews from every major food critic in the city, the owners decided to completely redesign the menu just six months after opening.",
+      "options": [
+        "because",
+        "although",
+        "whereas",
+        "so"
+      ],
+      "grammarRule": "Concession - although (capstone)",
+      "ruleExplanation": "'Although' captures this concession between the positive reviews and the surprising decision to redesign. 'Whereas' would only fit for comparing two separate, parallel facts, not this kind of surprising choice.",
+      "nativeTip": "Redesigning the menu despite glowing reviews is the unexpected twist here, not a simple comparison.",
+      "visualAnchor": "🌉 Clause A ──[ although ]── Clause B",
+      "example": "although the restaurant had received glowing reviews from every major food critic in the city, the owners decided to completely redesign the menu just six months after opening."
+    },
+    {
+      "id": "cc_l120_learn_q3",
+      "level": 120,
+      "conceptTitle": "Clause Bridge: Condition (unless)",
+      "connectorCategory": "Condition",
+      "correctConnector": "unless",
+      "sentenceWithBlank": "The scholarship committee will withdraw its offer entirely ____ the student maintains a minimum GPA throughout the first year.",
+      "completedSentence": "The scholarship committee will withdraw its offer entirely unless the student maintains a minimum GPA throughout the first year.",
+      "options": [
+        "because",
+        "if",
+        "unless",
+        "so"
+      ],
+      "grammarRule": "Condition - unless (capstone)",
+      "ruleExplanation": "'Unless' shows the withdrawal depends on the student failing to maintain the GPA. 'If' would need 'doesn't maintain' added to express the same meaning.",
+      "nativeTip": "Withdrawing the offer happens specifically when the GPA requirement does NOT get maintained - which connector already includes that 'not'?",
+      "visualAnchor": "🌉 Clause A ──[ unless ]── Clause B",
+      "example": "The scholarship committee will withdraw its offer entirely unless the student maintains a minimum GPA throughout the first year."
+    }
+  ]
+}

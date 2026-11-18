@@ -1,0 +1,608 @@
+{
+  "gameType": "clauseConnector",
+  "phase": "learn",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "cc_l31_learn_q1",
+      "level": 31,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "____ the alarm went off, Maria jumped out of bed immediately.",
+      "completedSentence": "when the alarm went off, Maria jumped out of bed immediately.",
+      "options": [
+        "when",
+        "while",
+        "before",
+        "after"
+      ],
+      "grammarRule": "Time - when (specific moment)",
+      "ruleExplanation": "'When' marks the specific moment the alarm rang, immediately followed by her reaction. 'While' would suggest an ongoing action happening at the same time, which doesn't fit this instant trigger.",
+      "nativeTip": "This describes one specific moment triggering the next action, not an ongoing period.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "when the alarm went off, Maria jumped out of bed immediately."
+    },
+    {
+      "id": "cc_l31_learn_q2",
+      "level": 31,
+      "conceptTitle": "Clause Bridge: Time (while)",
+      "connectorCategory": "Time",
+      "correctConnector": "while",
+      "sentenceWithBlank": "____ the soup was simmering on the stove, Tom chopped the vegetables for the salad.",
+      "completedSentence": "while the soup was simmering on the stove, Tom chopped the vegetables for the salad.",
+      "options": [
+        "when",
+        "while",
+        "before",
+        "after"
+      ],
+      "grammarRule": "Time - while (ongoing duration)",
+      "ruleExplanation": "'While' fits because the simmering was an ongoing action happening at the same time as the chopping. 'When' usually marks a single moment, not a stretch of time like this.",
+      "nativeTip": "The soup was simmering continuously - which connector fits an ongoing action happening alongside another?",
+      "visualAnchor": "🌉 Clause A ──[ while ]── Clause B",
+      "example": "while the soup was simmering on the stove, Tom chopped the vegetables for the salad."
+    },
+    {
+      "id": "cc_l31_learn_q3",
+      "level": 31,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "The power went out for a moment ____ Priya saved her report.",
+      "completedSentence": "The power went out for a moment when Priya saved her report.",
+      "options": [
+        "because",
+        "so",
+        "when",
+        "while"
+      ],
+      "grammarRule": "Time - when (specific moment)",
+      "ruleExplanation": "'When' marks the specific moment the power went out, coinciding with her single action of saving. 'While' would need an ongoing action in a continuous tense, which isn't the case here.",
+      "nativeTip": "Think about whether this describes one specific moment coinciding with a quick action, or an ongoing stretch of time.",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "The power went out for a moment when Priya saved her report."
+    },
+    {
+      "id": "cc_l32_learn_q1",
+      "level": 32,
+      "conceptTitle": "Clause Bridge: Time (while)",
+      "connectorCategory": "Time",
+      "correctConnector": "while",
+      "sentenceWithBlank": "____ Jason was warming up before the race, his coach reviewed the course map one final time.",
+      "completedSentence": "while Jason was warming up before the race, his coach reviewed the course map one final time.",
+      "options": [
+        "when",
+        "before",
+        "while",
+        "after"
+      ],
+      "grammarRule": "Time - while (simultaneous actions)",
+      "ruleExplanation": "'While' shows two ongoing actions happening simultaneously. 'When' would suggest a single specific moment rather than two parallel activities.",
+      "nativeTip": "Both actions - warming up and reviewing the map - were happening over the same stretch of time.",
+      "visualAnchor": "🌉 Clause A ──[ while ]── Clause B",
+      "example": "while Jason was warming up before the race, his coach reviewed the course map one final time."
+    },
+    {
+      "id": "cc_l32_learn_q2",
+      "level": 32,
+      "conceptTitle": "Clause Bridge: Time (when)",
+      "connectorCategory": "Time",
+      "correctConnector": "when",
+      "sentenceWithBlank": "____ the doorbell rang, Elena was in the shower and couldn't answer.",
+      "completedSentence": "when the doorbell rang, Elena was in the shower and couldn't answer.",
+      "options": [
+        "while",
+        "when",
+        "before",
+        "after"
+      ],
+      "grammarRule": "Time - when introduces the punctual event",
+      "ruleExplanation": "'When' introduces the sudden, punctual event - the doorbell ringing - regardless of the tense used elsewhere in the sentence. 'While' would need the ongoing action to come right after it, which isn't the case here.",
+      "nativeTip": "The action right after the blank is the sudden, one-time event - which connector introduces a specific moment like that, even alongside an ongoing state?",
+      "visualAnchor": "🌉 Clause A ──[ when ]── Clause B",
+      "example": "when the doorbell rang, Elena was in the shower and couldn't answer."
+    },
+    {
+      "id": "cc_l32_learn_q3",
+      "level": 32,
+      "conceptTitle": "Clause Bridge: Time (while)",
+      "connectorCategory": "Time",
+      "correctConnector": "while",
+      "sentenceWithBlank": "____ Sam was presenting the quarterly results, the fire alarm suddenly went off.",
+      "completedSentence": "while Sam was presenting the quarterly results, the fire alarm suddenly went off.",
+      "options": [
+        "while",
+        "when",
+        "before",
+        "after"
+      ],
+      "grammarRule": "Time - while (ongoing action interrupted)",
+      "ruleExplanation": "'While' introduces the ongoing presentation, interrupted by the sudden alarm. 'When' would need the sudden event to come right after it instead.",
+      "nativeTip": "The ongoing action - presenting - comes right after the blank this time.",
+      "visualAnchor": "🌉 Clause A ──[ while ]── Clause B",
+      "example": "while Sam was presenting the quarterly results, the fire alarm suddenly went off."
+    },
+    {
+      "id": "cc_l33_learn_q1",
+      "level": 33,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "Double-check your passport and tickets ____ you leave for the airport.",
+      "completedSentence": "Double-check your passport and tickets before you leave for the airport.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "once"
+      ],
+      "grammarRule": "Time - before",
+      "ruleExplanation": "'Before' shows the checking happens earlier than the departure. 'After' would reverse the order, suggesting you check once you've already left.",
+      "nativeTip": "This check needs to happen prior to leaving, not after.",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "Double-check your passport and tickets before you leave for the airport."
+    },
+    {
+      "id": "cc_l33_learn_q2",
+      "level": 33,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "Let the cake cool completely ____ you add the frosting.",
+      "completedSentence": "Let the cake cool completely before you add the frosting.",
+      "options": [
+        "after",
+        "until",
+        "before",
+        "once"
+      ],
+      "grammarRule": "Time - before",
+      "ruleExplanation": "'Before' places the frosting step after the cooling is done. 'After' would incorrectly reverse the order, suggesting the cake cools once frosted.",
+      "nativeTip": "The cooling needs to finish first, and only then does the frosting go on - which word puts the frosting step second?",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "Let the cake cool completely before you add the frosting."
+    },
+    {
+      "id": "cc_l33_learn_q3",
+      "level": 33,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "Review the formula sheet one more time ____ you walk into the exam hall.",
+      "completedSentence": "Review the formula sheet one more time before you walk into the exam hall.",
+      "options": [
+        "until",
+        "before",
+        "once",
+        "after"
+      ],
+      "grammarRule": "Time - before",
+      "ruleExplanation": "'Before' marks the review as happening prior to entering the hall. 'Once' or 'after' would incorrectly suggest the review happens after entering, which reverses the intended order.",
+      "nativeTip": "This review should happen right up to that final moment, not span the same period as something else.",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "Review the formula sheet one more time before you walk into the exam hall."
+    },
+    {
+      "id": "cc_l34_learn_q1",
+      "level": 34,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "The team celebrated with lunch ____ they closed the big client deal.",
+      "completedSentence": "The team celebrated with lunch after they closed the big client deal.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "once"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the celebration followed the completed deal. 'Before' would reverse this, suggesting they celebrated first.",
+      "nativeTip": "The celebration happened once the deal was already done, not beforehand.",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "The team celebrated with lunch after they closed the big client deal."
+    },
+    {
+      "id": "cc_l34_learn_q2",
+      "level": 34,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "____ the frost had passed, Nina finally planted her tomato seedlings outside.",
+      "completedSentence": "after the frost had passed, Nina finally planted her tomato seedlings outside.",
+      "options": [
+        "before",
+        "after",
+        "until",
+        "once"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the planting happened once the frost period had ended. 'Before' would incorrectly suggest she planted while frost was still a risk.",
+      "nativeTip": "She waited for the frost danger to be completely over first - which connector shows the planting came later?",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "after the frost had passed, Nina finally planted her tomato seedlings outside."
+    },
+    {
+      "id": "cc_l34_learn_q3",
+      "level": 34,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "Ben always stretches for ten minutes ____ he finishes a long run.",
+      "completedSentence": "Ben always stretches for ten minutes after he finishes a long run.",
+      "options": [
+        "while",
+        "before",
+        "after",
+        "until"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the stretching routine follows the completed run. 'Before' would reverse this, suggesting he stretches first, and 'while' would incorrectly suggest stretching happens during the run.",
+      "nativeTip": "Think about the order of events: does the stretching happen once the run is completely finished, or during it, or beforehand?",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "Ben always stretches for ten minutes after he finishes a long run."
+    },
+    {
+      "id": "cc_l35_learn_q1",
+      "level": 35,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "Sofia backed up all her files ____ she reformatted the hard drive.",
+      "completedSentence": "Sofia backed up all her files before she reformatted the hard drive.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "once"
+      ],
+      "grammarRule": "Time - before",
+      "ruleExplanation": "'Before' shows the backup came first, protecting her data ahead of the reformat. 'After' would defeat the purpose, since the files would already be lost by the time she backed them up.",
+      "nativeTip": "This precaution needs to happen prior to the risky action, not after it.",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "Sofia backed up all her files before she reformatted the hard drive."
+    },
+    {
+      "id": "cc_l35_learn_q2",
+      "level": 35,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "The company updated its privacy policy ____ regulators flagged several concerns during the audit.",
+      "completedSentence": "The company updated its privacy policy after regulators flagged several concerns during the audit.",
+      "options": [
+        "until",
+        "before",
+        "once",
+        "after"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the policy update followed the regulators' concerns as a response. 'Before' would incorrectly suggest the update happened first, which wouldn't make sense as a response to feedback that hadn't occurred yet.",
+      "nativeTip": "The update was a response to something that had already happened - which connector shows the update came second?",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "The company updated its privacy policy after regulators flagged several concerns during the audit."
+    },
+    {
+      "id": "cc_l35_learn_q3",
+      "level": 35,
+      "conceptTitle": "Clause Bridge: Reason (because)",
+      "connectorCategory": "Reason",
+      "correctConnector": "because",
+      "sentenceWithBlank": "The toddler refused to nap ____ his older sister kept peeking into the room to check on him.",
+      "completedSentence": "The toddler refused to nap because his older sister kept peeking into the room to check on him.",
+      "options": [
+        "because",
+        "so",
+        "while",
+        "when"
+      ],
+      "grammarRule": "Reason - because (cumulative review)",
+      "ruleExplanation": "'Because' gives the reason for his refusal - his sister's interruptions. 'While' or 'when' would only mark timing, not explain the cause behind his behavior.",
+      "nativeTip": "This clause explains WHY he wouldn't nap, not simply when it happened.",
+      "visualAnchor": "🌉 Clause A ──[ because ]── Clause B",
+      "example": "The toddler refused to nap because his older sister kept peeking into the room to check on him."
+    },
+    {
+      "id": "cc_l36_learn_q1",
+      "level": 36,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "Please don't leave the office ____ the client's final approval comes through.",
+      "completedSentence": "Please don't leave the office until the client's final approval comes through.",
+      "options": [
+        "before",
+        "after",
+        "once",
+        "until"
+      ],
+      "grammarRule": "Time - until (continuation up to a point)",
+      "ruleExplanation": "'Until' shows the action - staying - continues up to the point when approval arrives. 'Before' would only mark that staying happens earlier, without capturing the ongoing waiting.",
+      "nativeTip": "The waiting continues right up to that exact moment - not before, not after.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "Please don't leave the office until the client's final approval comes through."
+    },
+    {
+      "id": "cc_l36_learn_q2",
+      "level": 36,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "The babysitter stayed with the kids ____ their parents got home from the concert.",
+      "completedSentence": "The babysitter stayed with the kids until their parents got home from the concert.",
+      "options": [
+        "before",
+        "once",
+        "after",
+        "until"
+      ],
+      "grammarRule": "Time - until (continuation up to a point)",
+      "ruleExplanation": "'Until' captures the continuous staying that stops exactly when the parents arrive. 'Before' wouldn't show this ongoing duration - it would only mark an earlier point.",
+      "nativeTip": "She kept staying continuously, right up to the moment they arrived - not simply at some earlier point.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "The babysitter stayed with the kids until their parents got home from the concert."
+    },
+    {
+      "id": "cc_l36_learn_q3",
+      "level": 36,
+      "conceptTitle": "Clause Bridge: Time (until)",
+      "connectorCategory": "Time",
+      "correctConnector": "until",
+      "sentenceWithBlank": "Marcus won't be able to eat solid food again ____ the dentist removes the wire from his jaw.",
+      "completedSentence": "Marcus won't be able to eat solid food again until the dentist removes the wire from his jaw.",
+      "options": [
+        "before",
+        "after",
+        "until",
+        "once"
+      ],
+      "grammarRule": "Time - until",
+      "ruleExplanation": "'Until' shows the restriction lasts up to the moment the wire is removed. 'Once' would instead suggest the restriction begins after the removal, which reverses the meaning.",
+      "nativeTip": "The restriction lasts continuously up to that future moment, and then it ends.",
+      "visualAnchor": "🌉 Clause A ──[ until ]── Clause B",
+      "example": "Marcus won't be able to eat solid food again until the dentist removes the wire from his jaw."
+    },
+    {
+      "id": "cc_l37_learn_q1",
+      "level": 37,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ Grace finishes her certification, she plans to apply for senior positions.",
+      "completedSentence": "once Grace finishes her certification, she plans to apply for senior positions.",
+      "options": [
+        "once",
+        "when",
+        "until",
+        "before"
+      ],
+      "grammarRule": "Time - once (after completion)",
+      "ruleExplanation": "'Once' highlights that her application plans begin right after the certification is complete. 'Until' would incorrectly suggest something continues up to that point instead of starting after it.",
+      "nativeTip": "This emphasizes the moment right after something is fully completed, setting up what comes next.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once Grace finishes her certification, she plans to apply for senior positions."
+    },
+    {
+      "id": "cc_l37_learn_q2",
+      "level": 37,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ the software update finishes installing, the computer will restart automatically.",
+      "completedSentence": "once the software update finishes installing, the computer will restart automatically.",
+      "options": [
+        "while",
+        "once",
+        "when",
+        "until"
+      ],
+      "grammarRule": "Time - once",
+      "ruleExplanation": "'Once' emphasizes that finishing the installation triggers the restart. 'While' would incorrectly suggest the restart happens during installation, and 'until' would wrongly suggest the restart itself lasts up to that point.",
+      "nativeTip": "The restart is triggered specifically by the update being fully done, not just happening at some general point in time.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once the software update finishes installing, the computer will restart automatically."
+    },
+    {
+      "id": "cc_l37_learn_q3",
+      "level": 37,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ they'd saved enough for a down payment, Maria and her husband began seriously house-hunting.",
+      "completedSentence": "once they'd saved enough for a down payment, Maria and her husband began seriously house-hunting.",
+      "options": [
+        "while",
+        "when",
+        "once",
+        "until"
+      ],
+      "grammarRule": "Time - once",
+      "ruleExplanation": "'Once' captures the idea that reaching their savings goal directly triggered the house search. 'When' could describe simple timing but doesn't emphasize this completion-triggers-next-step relationship as clearly.",
+      "nativeTip": "Reaching the savings goal is the trigger that starts the house-hunting - which word best signals 'as soon as that's achieved'?",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once they'd saved enough for a down payment, Maria and her husband began seriously house-hunting."
+    },
+    {
+      "id": "cc_l38_learn_q1",
+      "level": 38,
+      "conceptTitle": "Clause Bridge: Time (as soon as)",
+      "connectorCategory": "Time",
+      "correctConnector": "as soon as",
+      "sentenceWithBlank": "I'll send you the tracking number ____ the package ships from our warehouse.",
+      "completedSentence": "I'll send you the tracking number as soon as the package ships from our warehouse.",
+      "options": [
+        "until",
+        "before",
+        "when",
+        "as soon as"
+      ],
+      "grammarRule": "Time - as soon as (immediate sequence)",
+      "ruleExplanation": "'As soon as' emphasizes there's no gap between the package shipping and the tracking number being sent. 'When' would also mark the timing but without the same emphasis on immediate action.",
+      "nativeTip": "There's no delay at all between the shipping and the message being sent - which phrase best captures that immediacy?",
+      "visualAnchor": "🌉 Clause A ──[ as soon as ]── Clause B",
+      "example": "I'll send you the tracking number as soon as the package ships from our warehouse."
+    },
+    {
+      "id": "cc_l38_learn_q2",
+      "level": 38,
+      "conceptTitle": "Clause Bridge: Time (as soon as)",
+      "connectorCategory": "Time",
+      "correctConnector": "as soon as",
+      "sentenceWithBlank": "The paramedics began treatment ____ they arrived at the scene, without a single second of delay.",
+      "completedSentence": "The paramedics began treatment as soon as they arrived at the scene, without a single second of delay.",
+      "options": [
+        "when",
+        "as soon as",
+        "while",
+        "until"
+      ],
+      "grammarRule": "Time - as soon as vs when (immediacy)",
+      "ruleExplanation": "'As soon as' matches the emphasis on immediate action with no delay. 'When' would still be roughly correct but doesn't carry the same strong sense of instant response.",
+      "nativeTip": "The phrase 'without a single second of delay' is your strongest clue here.",
+      "visualAnchor": "🌉 Clause A ──[ as soon as ]── Clause B",
+      "example": "The paramedics began treatment as soon as they arrived at the scene, without a single second of delay."
+    },
+    {
+      "id": "cc_l38_learn_q3",
+      "level": 38,
+      "conceptTitle": "Clause Bridge: Time (as soon as)",
+      "connectorCategory": "Time",
+      "correctConnector": "as soon as",
+      "sentenceWithBlank": "____ the bell rang, students rushed out of the classroom into the hallway.",
+      "completedSentence": "as soon as the bell rang, students rushed out of the classroom into the hallway.",
+      "options": [
+        "as soon as",
+        "until",
+        "when",
+        "while"
+      ],
+      "grammarRule": "Time - as soon as",
+      "ruleExplanation": "'As soon as' captures this immediate reaction with virtually no gap in time. 'Until' would incorrectly suggest continued waiting rather than instant action.",
+      "nativeTip": "The rushing began the instant the bell sounded, with essentially no gap between the two events.",
+      "visualAnchor": "🌉 Clause A ──[ as soon as ]── Clause B",
+      "example": "as soon as the bell rang, students rushed out of the classroom into the hallway."
+    },
+    {
+      "id": "cc_l39_learn_q1",
+      "level": 39,
+      "conceptTitle": "Clause Bridge: Time (while)",
+      "connectorCategory": "Time",
+      "correctConnector": "while",
+      "sentenceWithBlank": "The library stays open late ____ final exams are happening on campus.",
+      "completedSentence": "The library stays open late while final exams are happening on campus.",
+      "options": [
+        "once",
+        "before",
+        "while",
+        "until"
+      ],
+      "grammarRule": "Time - while",
+      "ruleExplanation": "'While' shows the extended hours apply throughout the ongoing exam period. 'Once' would incorrectly suggest hours change only after exams finish.",
+      "nativeTip": "The extended hours last throughout the whole exam period, not just at one moment.",
+      "visualAnchor": "🌉 Clause A ──[ while ]── Clause B",
+      "example": "The library stays open late while final exams are happening on campus."
+    },
+    {
+      "id": "cc_l39_learn_q2",
+      "level": 39,
+      "conceptTitle": "Clause Bridge: Contrast (but)",
+      "connectorCategory": "Contrast",
+      "correctConnector": "but",
+      "sentenceWithBlank": "The apartment looked perfect in the photos ____ it turned out to be much smaller in person.",
+      "completedSentence": "The apartment looked perfect in the photos but it turned out to be much smaller in person.",
+      "options": [
+        "so",
+        "because",
+        "when",
+        "but"
+      ],
+      "grammarRule": "Contrast - but (cumulative review)",
+      "ruleExplanation": "'But' shows the contrast between the photos and reality. 'When' would only mark timing, missing the sense of disappointment or contradiction.",
+      "nativeTip": "Reality not matching the photos is a contrast, not a matter of timing or cause.",
+      "visualAnchor": "🌉 Clause A ──[ but ]── Clause B",
+      "example": "The apartment looked perfect in the photos but it turned out to be much smaller in person."
+    },
+    {
+      "id": "cc_l39_learn_q3",
+      "level": 39,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "____ she'd proven herself on smaller projects, her manager finally trusted her with the flagship account.",
+      "completedSentence": "once she'd proven herself on smaller projects, her manager finally trusted her with the flagship account.",
+      "options": [
+        "once",
+        "until",
+        "while",
+        "before"
+      ],
+      "grammarRule": "Time - once",
+      "ruleExplanation": "'Once' shows that completing the smaller projects directly triggered her manager's trust. 'Until' would incorrectly suggest something continued up to that point rather than being triggered by its completion.",
+      "nativeTip": "Proving herself was the trigger that unlocked this new responsibility - not something that merely happened earlier or continued up to a point.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "once she'd proven herself on smaller projects, her manager finally trusted her with the flagship account."
+    },
+    {
+      "id": "cc_l40_learn_q1",
+      "level": 40,
+      "conceptTitle": "Clause Bridge: Time (before)",
+      "connectorCategory": "Time",
+      "correctConnector": "before",
+      "sentenceWithBlank": "The airline recommends arriving at least three hours early ____ your international flight departs, especially during holiday travel.",
+      "completedSentence": "The airline recommends arriving at least three hours early before your international flight departs, especially during holiday travel.",
+      "options": [
+        "until",
+        "once",
+        "after",
+        "before"
+      ],
+      "grammarRule": "Time - before",
+      "ruleExplanation": "'Before' marks the arrival as happening earlier than the departure. 'Until' would incorrectly suggest arriving continues up to the departure time, which isn't the intended meaning.",
+      "nativeTip": "The three-hour cushion refers to a single point of comparison - your arrival time relative to departure - not an ongoing wait.",
+      "visualAnchor": "🌉 Clause A ──[ before ]── Clause B",
+      "example": "The airline recommends arriving at least three hours early before your international flight departs, especially during holiday travel."
+    },
+    {
+      "id": "cc_l40_learn_q2",
+      "level": 40,
+      "conceptTitle": "Clause Bridge: Time (once)",
+      "connectorCategory": "Time",
+      "correctConnector": "once",
+      "sentenceWithBlank": "The clinic will call you with your results ____ the lab has finished processing your blood work.",
+      "completedSentence": "The clinic will call you with your results once the lab has finished processing your blood work.",
+      "options": [
+        "when",
+        "until",
+        "once",
+        "while"
+      ],
+      "grammarRule": "Time - once",
+      "ruleExplanation": "'Once' emphasizes that finishing the processing is what triggers the call. 'Until' would incorrectly suggest waiting continues up to that point instead of the call happening right after.",
+      "nativeTip": "The call is triggered by the processing being fully complete, not simply timed to when something happens in general.",
+      "visualAnchor": "🌉 Clause A ──[ once ]── Clause B",
+      "example": "The clinic will call you with your results once the lab has finished processing your blood work."
+    },
+    {
+      "id": "cc_l40_learn_q3",
+      "level": 40,
+      "conceptTitle": "Clause Bridge: Time (after)",
+      "connectorCategory": "Time",
+      "correctConnector": "after",
+      "sentenceWithBlank": "____ the volunteers had unloaded every box from the truck, they finally sat down for a well-earned break.",
+      "completedSentence": "after the volunteers had unloaded every box from the truck, they finally sat down for a well-earned break.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "while"
+      ],
+      "grammarRule": "Time - after",
+      "ruleExplanation": "'After' shows the break followed the completed task. 'Before' would incorrectly reverse the order, suggesting they rested first.",
+      "nativeTip": "The break happened only once the unloading was completely finished - which connector shows this clear sequence, earlier action first?",
+      "visualAnchor": "🌉 Clause A ──[ after ]── Clause B",
+      "example": "after the volunteers had unloaded every box from the truck, they finally sat down for a well-earned break."
+    }
+  ]
+}

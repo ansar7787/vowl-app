@@ -735,6 +735,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'subjectVerbAgreement',
                             'articleInsertion',
                             'questionFormatter',
+                            'clauseConnector',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

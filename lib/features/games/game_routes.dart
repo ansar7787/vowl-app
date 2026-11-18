@@ -54,6 +54,8 @@ import 'package:vowl/features/grammar/article_insertion/presentation/pages/artic
 import 'package:vowl/features/grammar/article_insertion/presentation/pages/article_insertion_practice_screen.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/pages/question_formatter_learn_screen.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/pages/question_formatter_practice_screen.dart';
+import 'package:vowl/features/grammar/clause_connector/presentation/pages/clause_connector_learn_screen.dart';
+import 'package:vowl/features/grammar/clause_connector/presentation/pages/clause_connector_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -421,6 +423,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'clauseconnector') {
+          return fadeTransitionPage(
+            child: ClauseConnectorLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -567,6 +575,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'questionformatter') {
           return fadeTransitionPage(
             child: QuestionFormatterPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'clauseconnector') {
+          return fadeTransitionPage(
+            child: ClauseConnectorPracticeScreen(level: level),
             state: state,
           );
         }
