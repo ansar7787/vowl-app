@@ -406,7 +406,7 @@ void main() {
     if (submitButton.evaluate().isNotEmpty) {
       await tester.tap(submitButton, warnIfMissed: false);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+      await tester.pump(const Duration(milliseconds: 600));
     }
   }
 

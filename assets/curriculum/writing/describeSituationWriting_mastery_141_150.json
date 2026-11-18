@@ -1,0 +1,1208 @@
+{
+  "gameType": "describeSituationWriting",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q1",
+      "instruction": "COMPARE THE TWO COFFEE SHOPS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You regularly visit two different coffee shops near your home, each with its own character. Compare the two, describing their similarities and differences.",
+      "emojis": [
+        "☕",
+        "🏪",
+        "📖",
+        "🎶"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTSHOP",
+          "COZY",
+          "QUIET"
+        ],
+        "1": [
+          "SECONDSHOP",
+          "BUSY",
+          "LIVELY"
+        ],
+        "2": [
+          "BOTH",
+          "GOODCOFFEE",
+          "SIMILAR"
+        ],
+        "3": [
+          "DIFFER",
+          "ATMOSPHERE",
+          "CONTRAST"
+        ]
+      },
+      "minWords": 50,
+      "hint": "Describe one clear similarity between the two shops, then at least one clear difference, using words like both and whereas.",
+      "explanation": "A basic comparison balances similarity and difference, since focusing only on one or the other gives an incomplete picture of how two things actually relate to each other.",
+      "modelAnswer": "Both coffee shops serve genuinely excellent espresso, and each one fills up predictably during the morning rush hour before quieting down by midday. Where they differ most is atmosphere: the shop near my apartment stays cozy and quiet, perfect for reading, whereas the one closer to the office buzzes with lively conversation and the constant clatter of laptops.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q2",
+      "instruction": "COMPARE THE TWO COMMUTE ROUTES",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You have two different routes you can take to work each morning, one by car and one by public transport. Compare the two, describing their similarities and differences.",
+      "emojis": [
+        "🚗",
+        "🚆",
+        "⏱️",
+        "🛣️"
+      ],
+      "keywords": {
+        "0": [
+          "CARROUTE",
+          "TRAFFIC",
+          "UNPREDICTABLE"
+        ],
+        "1": [
+          "TRAINROUTE",
+          "RELIABLE",
+          "SCHEDULE"
+        ],
+        "2": [
+          "BOTH",
+          "TIME",
+          "SIMILAR"
+        ],
+        "3": [
+          "DIFFER",
+          "COMFORT",
+          "CONTRAST"
+        ]
+      },
+      "minWords": 50,
+      "hint": "Point out one similarity, such as similar overall time, then focus on the key difference between the two routes.",
+      "explanation": "Comparisons involving practical choices, like a commute, are strengthened when the similarity acknowledged is genuinely meaningful, such as similar total time, rather than a trivial detail that adds little to the comparison.",
+      "modelAnswer": "Both routes take almost exactly forty minutes on an average day, so time alone rarely decides which one I choose. The car route depends heavily on unpredictable traffic and leaves me stressed some mornings, whereas the train, though occasionally crowded, runs on a reliable schedule that lets me relax and read for most of the journey.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q3",
+      "instruction": "COMPARE THE TWO GYMS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You tried two different gyms before deciding where to become a member. Compare the two, describing their similarities and differences.",
+      "emojis": [
+        "🏋️",
+        "💪",
+        "🏢",
+        "💰"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTGYM",
+          "EQUIPMENT",
+          "MODERN"
+        ],
+        "1": [
+          "SECONDGYM",
+          "AFFORDABLE",
+          "BASIC"
+        ],
+        "2": [
+          "BOTH",
+          "CLEAN",
+          "STAFF"
+        ],
+        "3": [
+          "DIFFER",
+          "PRICE",
+          "CONTRAST"
+        ]
+      },
+      "minWords": 50,
+      "hint": "Identify a shared quality, such as cleanliness, before contrasting the two gyms on price or equipment.",
+      "explanation": "Even a simple comparison benefits from organizing the similarity and the difference into separate, clearly connected sentences, rather than blending every detail together without a clear structure.",
+      "modelAnswer": "Both gyms keep their facilities impressively clean and employ genuinely friendly staff, which made the decision harder than I expected. The first gym offers newer, more advanced machines but charges nearly double the monthly fee, whereas the second gym, though more basic in its equipment, remains affordable enough for me to attend without worrying about the cost every month.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q1",
+      "instruction": "CONTRAST A QUIET WEEKDAY MORNING WITH A CHAOTIC WEEKEND MORNING",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "At home, weekday mornings feel calm and predictable, while weekend mornings often feel chaotic and unpredictable. Contrast the two kinds of mornings clearly.",
+      "emojis": [
+        "☕",
+        "😌",
+        "😵",
+        "🧺"
+      ],
+      "keywords": {
+        "0": [
+          "WEEKDAY",
+          "QUIET",
+          "ROUTINE"
+        ],
+        "1": [
+          "WEEKEND",
+          "CHAOS",
+          "UNPREDICTABLE"
+        ],
+        "2": [
+          "CONTRAST",
+          "OPPOSITE",
+          "STRIKING"
+        ],
+        "3": [
+          "EXPLAIN",
+          "REASON",
+          "DIFFERENCE"
+        ]
+      },
+      "minWords": 50,
+      "hint": "Describe the weekday morning first, then use in contrast or on the other hand to introduce the very different weekend morning.",
+      "explanation": "Contrast writing works best when the two situations are described with roughly equal detail, since giving one side far more attention than the other unbalances the comparison.",
+      "modelAnswer": "On a typical weekday, my morning follows the same quiet rhythm, coffee, a short walk, and a calm commute, with barely a sound in the apartment before seven. On the other hand, Saturday mornings erupt into chaos almost immediately, with children running between rooms, laundry piling up, and three separate conversations happening at once before anyone has even had breakfast.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q2",
+      "instruction": "CONTRAST YOUR FIRST DAY AT A JOB WITH A RECENT ORDINARY DAY",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Your first day at your current job felt completely different from how an ordinary day feels now, months later. Contrast the two experiences clearly.",
+      "emojis": [
+        "🆕",
+        "😬",
+        "😊",
+        "📋"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTDAY",
+          "NERVOUS",
+          "UNFAMILIAR"
+        ],
+        "1": [
+          "RECENT",
+          "COMFORTABLE",
+          "ROUTINE"
+        ],
+        "2": [
+          "CONTRAST",
+          "SHIFT",
+          "TRANSFORM"
+        ],
+        "3": [
+          "EXPLAIN",
+          "GROWTH",
+          "ADJUST"
+        ]
+      },
+      "minWords": 50,
+      "hint": "Describe your first day's nervous unfamiliarity, then contrast it clearly with how comfortable and routine the job feels now.",
+      "explanation": "Contrasting an earlier experience with a current one over time shows genuine change, and this kind of before-and-after contrast reads more convincingly when specific feelings, nervous versus comfortable, are named directly.",
+      "modelAnswer": "On my first day, every hallway felt unfamiliar, and I spent most of the morning nervously double-checking simple instructions I was too embarrassed to ask about twice. Now, months later, I move through the same building without a second thought, chatting easily with colleagues whose names I once struggled desperately to remember, the whole job having become almost second nature.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q3",
+      "instruction": "CONTRAST A CALM FLIGHT WITH A TURBULENT FLIGHT",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You have experienced both a perfectly calm flight and a genuinely turbulent one. Contrast the two experiences clearly.",
+      "emojis": [
+        "✈️",
+        "😌",
+        "😨",
+        "🌪️"
+      ],
+      "keywords": {
+        "0": [
+          "CALM",
+          "SMOOTH",
+          "RELAX"
+        ],
+        "1": [
+          "TURBULENT",
+          "SHAKE",
+          "ANXIOUS"
+        ],
+        "2": [
+          "CONTRAST",
+          "OPPOSITE",
+          "EXTREME"
+        ],
+        "3": [
+          "EXPLAIN",
+          "FEELING",
+          "DIFFERENCE"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Describe the calm flight's relaxed atmosphere, then contrast it sharply with the tense, physical experience of the turbulent one.",
+      "explanation": "Physical, sensory contrast, a relaxed body versus a gripped armrest, makes an emotional difference concrete and believable, rather than simply stating that one flight felt calm and the other felt scary.",
+      "modelAnswer": "During my calmest flight, I barely noticed we were airborne at all, comfortably reading a book while the plane glided smoothly through clear skies without a single bump. In stark contrast, a flight through a storm last year left me gripping the armrest tightly through nearly twenty minutes of violent shaking, my stomach lurching with every sudden drop the plane made.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q1",
+      "instruction": "DESCRIBE THE SIMILARITIES BETWEEN STUDYING FOR EXAMS AND PREPARING A PRESENTATION",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Studying for exams and preparing an important work presentation might seem like very different tasks, but they actually share several similarities. Describe those similarities.",
+      "emojis": [
+        "📚",
+        "📊",
+        "⏰",
+        "😰"
+      ],
+      "keywords": {
+        "0": [
+          "STUDY",
+          "REVIEW",
+          "MATERIAL"
+        ],
+        "1": [
+          "PRESENTATION",
+          "PREPARE",
+          "SLIDES"
+        ],
+        "2": [
+          "BOTH",
+          "PRESSURE",
+          "DEADLINE"
+        ],
+        "3": [
+          "SIMILAR",
+          "STRATEGY",
+          "OVERLAP"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Identify at least two genuine similarities between the two tasks, using both and similarly to connect them clearly.",
+      "explanation": "Finding real similarities between seemingly unrelated situations requires looking past the surface difference, such as school versus work, to the underlying structure both tasks actually share.",
+      "modelAnswer": "Both tasks demand breaking a large amount of information into smaller, manageable pieces well before any deadline, since leaving either one until the last moment almost guarantees a poor result. Similarly, both benefit enormously from a practice run, whether that means quizzing yourself on flashcards or rehearsing slides out loud, since actively producing the material beats passively reviewing it either time.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q2",
+      "instruction": "DESCRIBE THE SIMILARITIES BETWEEN RAISING A PUPPY AND TRAINING A NEW EMPLOYEE",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Raising a puppy and training a brand-new employee might seem completely unrelated, but they actually share several surprising similarities. Describe those similarities.",
+      "emojis": [
+        "🐶",
+        "🧑‍💼",
+        "📋",
+        "🎯"
+      ],
+      "keywords": {
+        "0": [
+          "PUPPY",
+          "CONSISTENT",
+          "REPEAT"
+        ],
+        "1": [
+          "EMPLOYEE",
+          "GUIDE",
+          "PATIENT"
+        ],
+        "2": [
+          "BOTH",
+          "PATIENCE",
+          "REQUIRE"
+        ],
+        "3": [
+          "SIMILAR",
+          "REPETITION",
+          "EFFECTIVE"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Focus on the shared need for patience and consistent repetition, using both to connect the two seemingly different situations.",
+      "explanation": "Comparisons across very different domains, like animals and workplaces, are convincing when the shared underlying principle, such as consistent repetition, is stated clearly rather than left for the reader to guess.",
+      "modelAnswer": "Both a young puppy and a brand-new employee need the same instructions repeated patiently, often many times, before the behavior or process truly sinks in without constant reminders. Consistency matters equally in both cases too, since correcting a puppy one way today and a different way tomorrow confuses it just as much as vague, inconsistent feedback confuses a new hire trying to learn the job properly.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q3",
+      "instruction": "DESCRIBE THE SIMILARITIES BETWEEN COOKING A BIG MEAL AND ORGANIZING A BIG EVENT",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Cooking an elaborate meal for guests and organizing a large event might seem like very different challenges, but they actually share several important similarities. Describe those similarities.",
+      "emojis": [
+        "🍽️",
+        "🎉",
+        "⏰",
+        "📋"
+      ],
+      "keywords": {
+        "0": [
+          "COOK",
+          "TIMING",
+          "COORDINATE"
+        ],
+        "1": [
+          "EVENT",
+          "PLAN",
+          "LOGISTICS"
+        ],
+        "2": [
+          "BOTH",
+          "TIMING",
+          "CRITICAL"
+        ],
+        "3": [
+          "SIMILAR",
+          "MULTITASK",
+          "OVERLAP"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Focus on the shared challenge of timing and multitasking, giving a specific example from each situation.",
+      "explanation": "The strongest similarity comparisons include a specific example from each side, since abstract statements about shared challenges become far more convincing once grounded in something concrete from both situations.",
+      "modelAnswer": "Both require juggling several moving parts at once, timing a roast to finish exactly when the side dishes are ready is remarkably similar to coordinating caterers, music, and guest arrivals to align at the right moment. In both situations, a single delayed element, an overcooked dish or a late delivery, can throw the entire carefully planned sequence into visible disarray within minutes.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q1",
+      "instruction": "EXPLAIN HOW THE VACATION DIFFERED FROM YOUR EXPECTATIONS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before visiting a highly recommended vacation destination, you had certain expectations, but the reality turned out somewhat different. Explain how the actual experience differed from what you expected.",
+      "emojis": [
+        "🏖️",
+        "😍",
+        "😐",
+        "🤔"
+      ],
+      "keywords": {
+        "0": [
+          "EXPECT",
+          "PARADISE",
+          "IMAGINE"
+        ],
+        "1": [
+          "REALITY",
+          "CROWDED",
+          "DIFFERENT"
+        ],
+        "2": [
+          "DIFFER",
+          "CONTRAST",
+          "SURPRISE"
+        ],
+        "3": [
+          "EXPLAIN",
+          "REASON",
+          "UNDERSTAND"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Describe your original expectation clearly first, then explain specifically how the actual experience differed and why.",
+      "explanation": "Expectation-versus-reality writing works best when the original expectation is stated as clearly as the actual outcome, since the contrast only makes sense if both sides are described with equal specificity.",
+      "modelAnswer": "Based on the glowing photos I had seen online, I expected the beach to be a nearly empty stretch of pristine white sand, perfect for quiet, peaceful mornings. In reality, the beach turned out to be considerably more crowded than expected, packed with vendors and loud music by mid-morning, likely because the photos I had seen were taken during a much quieter off-season month than the one I chose to visit.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q2",
+      "instruction": "EXPLAIN HOW YOUR FIRST YEAR AT UNIVERSITY DIFFERED FROM YOUR EXPECTATIONS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before starting university, you had certain expectations about what the experience would be like, but your actual first year turned out somewhat different. Explain how it differed and why.",
+      "emojis": [
+        "🎓",
+        "😍",
+        "😌",
+        "🤔"
+      ],
+      "keywords": {
+        "0": [
+          "EXPECT",
+          "EXCITING",
+          "SOCIAL"
+        ],
+        "1": [
+          "REALITY",
+          "WORKLOAD",
+          "OVERWHELM"
+        ],
+        "2": [
+          "MISCALCULATE",
+          "ASSUME",
+          "OVERESTIMATE"
+        ],
+        "3": [
+          "EXPLAIN",
+          "REASON",
+          "ADAPT"
+        ]
+      },
+      "minWords": 52,
+      "hint": "State your original expectation about university life first, then explain specifically how the reality differed and why you had misjudged it.",
+      "explanation": "Explaining why a difference occurred, rather than just noting that it exists, adds real depth, since identifying the cause of a mistaken expectation, such as underestimating workload, teaches a genuinely useful lesson.",
+      "modelAnswer": "I expected university to feel mostly like an extension of high school socially, with plenty of free time for making friends and exploring the city between classes. Instead, the sheer volume of independent reading and assignments left far less free time than I had anticipated, largely because I had underestimated how much responsibility for managing my own schedule the transition would actually demand.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q3",
+      "instruction": "EXPLAIN HOW WORKING FROM HOME DIFFERED FROM YOUR EXPECTATIONS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before switching to working from home, you had certain expectations about what it would be like compared to working in an office, but the reality turned out somewhat different. Explain how it differed and why.",
+      "emojis": [
+        "🏠",
+        "😍",
+        "😓",
+        "🤔"
+      ],
+      "keywords": {
+        "0": [
+          "EXPECT",
+          "FLEXIBLE",
+          "RELAX"
+        ],
+        "1": [
+          "REALITY",
+          "ISOLATE",
+          "DISCIPLINE"
+        ],
+        "2": [
+          "DIFFER",
+          "CONTRAST",
+          "UNDERESTIMATE"
+        ],
+        "3": [
+          "EXPLAIN",
+          "REASON",
+          "STRUCTURE"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Explain your original expectation about flexibility, then the specific reason the reality of isolation or discipline turned out differently.",
+      "explanation": "Modern work-related expectation-versus-reality comparisons benefit from naming a specific, underlying cause, such as underestimating the need for self-discipline, since this gives the contrast genuine explanatory power rather than simple description.",
+      "modelAnswer": "I imagined working from home would feel wonderfully relaxed, with the flexibility to structure my day however I pleased and far less stress than the office ever caused. In practice, I found myself surprisingly isolated and struggling with self-discipline without the natural structure colleagues once provided, largely because I had underestimated how much of my old routine actually depended on other people simply being around me.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q1",
+      "instruction": "DESCRIBE HOW YOU WEIGHED THE FACTORS BETWEEN TWO APARTMENTS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before choosing where to live, you compared two available apartments based on several different factors. Describe the factors you weighed and how they compared.",
+      "emojis": [
+        "🏢",
+        "💰",
+        "📍",
+        "🔍"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTAPT",
+          "CHEAP",
+          "FARTHER"
+        ],
+        "1": [
+          "SECONDAPT",
+          "EXPENSIVE",
+          "CLOSER"
+        ],
+        "2": [
+          "CONSIDER",
+          "EVALUATE",
+          "BALANCE"
+        ],
+        "3": [
+          "FACTOR",
+          "LOCATION",
+          "PRICE"
+        ]
+      },
+      "minWords": 51,
+      "hint": "Name at least two specific factors, such as price and location, and show how each apartment scored differently on them.",
+      "explanation": "Weighing observable factors means comparing specific, measurable qualities side by side, such as price and commute time, rather than a vague overall impression of which option feels better.",
+      "modelAnswer": "The first apartment costs nearly two hundred dollars less per month, but it sits a full forty-minute commute from my office, while the second, considerably more expensive, is close enough to walk to work in under ten minutes. Weighing the extra monthly cost against the hours saved commuting, and the money saved on transportation, ultimately became the deciding factor in comparing the two.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q2",
+      "instruction": "DESCRIBE HOW YOU WEIGHED THE FACTORS BETWEEN TWO JOB OFFERS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before accepting a new position, you compared two job offers based on several different factors. Describe the factors you weighed and how they compared.",
+      "emojis": [
+        "💼",
+        "💰",
+        "⏰",
+        "📈"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTJOB",
+          "HIGHERSALARY",
+          "LONGHOURS"
+        ],
+        "1": [
+          "SECONDJOB",
+          "LOWERSALARY",
+          "BALANCE"
+        ],
+        "2": [
+          "ASSESS",
+          "TRADEOFF",
+          "BALANCE"
+        ],
+        "3": [
+          "FACTOR",
+          "GROWTH",
+          "SATISFACTION"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Compare the two offers on at least two clear factors, such as salary and work-life balance, showing genuine trade-offs.",
+      "explanation": "Career decisions described through weighed factors show genuine trade-offs, since a strong comparison acknowledges that neither option is simply better in every way, which is closer to how real decisions actually work.",
+      "modelAnswer": "The first offer comes with a notably higher salary, but the role expects consistently long hours and frequent weekend work, whereas the second offer pays less yet promises a far more predictable schedule and better long-term growth opportunities within the company. After weighing the immediate financial benefit against the value of a healthier work-life balance, I ultimately leaned toward the second, less lucrative option.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q3",
+      "instruction": "DESCRIBE HOW A FAMILY WEIGHED THE FACTORS BETWEEN TWO SCHOOLS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before enrolling their child, a family compared two schools based on several different factors. Describe the factors they weighed and how the schools compared.",
+      "emojis": [
+        "🏫",
+        "📚",
+        "🚌",
+        "💰"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTSCHOOL",
+          "ACADEMIC",
+          "STRONG"
+        ],
+        "1": [
+          "SECONDSCHOOL",
+          "CLOSER",
+          "AFFORDABLE"
+        ],
+        "2": [
+          "PONDER",
+          "EVALUATE",
+          "WEIGH"
+        ],
+        "3": [
+          "FACTOR",
+          "DISTANCE",
+          "REPUTATION"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Compare the two schools on at least two factors, such as academic reputation and distance, showing the family's genuine trade-off.",
+      "explanation": "Family decisions weighed through comparison are described convincingly when the factors chosen, such as commute distance versus academic reputation, reflect the kind of practical concerns a real family would actually consider.",
+      "modelAnswer": "The first school has a stronger academic reputation and excellent extracurricular programs, but it sits nearly an hour away by bus, requiring an exhausting daily commute for a young child. The second school, closer to home and considerably more affordable, lacks quite the same academic prestige, and after weighing the daily strain of the commute against the difference in reputation, the family ultimately chose the closer school.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q1",
+      "instruction": "DESCRIBE HOW YOU CHOSE YOUR LAPTOP AFTER COMPARING TWO MODELS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before buying a new laptop, you compared two specific models based on their features. Describe the comparison and explain the evidence-based decision you finally made.",
+      "emojis": [
+        "💻",
+        "🔋",
+        "💰",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTLAPTOP",
+          "LIGHTWEIGHT",
+          "BATTERY"
+        ],
+        "1": [
+          "SECONDLAPTOP",
+          "POWERFUL",
+          "HEAVY"
+        ],
+        "2": [
+          "COMPARE",
+          "REVIEW",
+          "SPEC"
+        ],
+        "3": [
+          "SETTLE",
+          "OPT",
+          "FINAL"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Compare the specific features of both laptops, then explain exactly which pieces of evidence led to your final decision.",
+      "explanation": "Decisions grounded in evidence are described convincingly when the specific deciding factor, such as battery life for someone who travels often, is named clearly rather than the decision appearing arbitrary.",
+      "modelAnswer": "The first laptop weighs noticeably less and boasts an impressive twelve-hour battery life, while the second offers considerably more processing power but weighs almost twice as much and barely lasts five hours away from a charger. Since I travel frequently for work and rarely need heavy processing power outside the office, the battery life and portability of the first laptop ultimately made it the clear, evidence-based choice.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q2",
+      "instruction": "DESCRIBE HOW YOU CHOSE YOUR NEIGHBORHOOD AFTER COMPARING TWO OPTIONS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before moving, you compared two different neighborhoods based on several factors. Describe the comparison and explain the evidence-based decision you finally made.",
+      "emojis": [
+        "🏘️",
+        "🌳",
+        "🚇",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTAREA",
+          "QUIET",
+          "RESIDENTIAL"
+        ],
+        "1": [
+          "SECONDAREA",
+          "LIVELY",
+          "CENTRAL"
+        ],
+        "2": [
+          "COMPARE",
+          "VISIT",
+          "EXPLORE"
+        ],
+        "3": [
+          "CONCLUDE",
+          "SELECT",
+          "FINAL"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Compare the two neighborhoods on specific qualities you actually observed while visiting, then explain the reasoning behind your final choice.",
+      "explanation": "Grounding a neighborhood decision in things actually observed during a visit, rather than assumptions, makes the final choice feel earned through genuine research rather than a guess.",
+      "modelAnswer": "Walking through the first neighborhood on a Saturday afternoon, I noticed tree-lined streets and a peaceful quiet that made it feel ideal for relaxing after work, while the second neighborhood buzzed with restaurants and a subway station just steps from every corner. Since my job keeps me out late most evenings and I value convenience over quiet, the easy access to transportation in the second neighborhood ultimately became the deciding piece of evidence.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q3",
+      "instruction": "DESCRIBE HOW YOU CHOSE YOUR COLLEGE MAJOR AFTER COMPARING TWO PATHS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before declaring your college major, you compared two different academic paths based on several factors. Describe the comparison and explain the evidence-based decision you finally made.",
+      "emojis": [
+        "🎓",
+        "📊",
+        "🎨",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTMAJOR",
+          "STABLE",
+          "PRACTICAL"
+        ],
+        "1": [
+          "SECONDMAJOR",
+          "CREATIVE",
+          "UNCERTAIN"
+        ],
+        "2": [
+          "COMPARE",
+          "RESEARCH",
+          "EXPLORE"
+        ],
+        "3": [
+          "DECIDE",
+          "CHOOSE",
+          "FINAL"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Compare the two majors on specific evidence, such as job prospects or personal enjoyment, then clearly explain which factor ultimately decided your choice.",
+      "explanation": "Academic decisions described through evidence, rather than a vague statement like it felt right, allow the reader to genuinely understand the specific reasoning process behind a major life choice.",
+      "modelAnswer": "Researching both paths carefully, I found that the more practical major offered clearer, more stable job prospects immediately after graduation, while the creative major, though far more personally engaging, came with genuinely uncertain career outcomes according to most alumni surveys I read. Since financial stability mattered more to me at this stage of my life than pure enjoyment, the stronger job prospects of the practical major ultimately guided my final decision.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q1",
+      "instruction": "COMPARE THE TWO COWORKERS' APPROACHES TO A DEADLINE",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Two coworkers facing the same tight deadline take noticeably different approaches to managing it. Compare their two approaches.",
+      "emojis": [
+        "🧑‍💼",
+        "👩‍💼",
+        "⏰",
+        "📋"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTCOWORKER",
+          "EARLY",
+          "STEADY"
+        ],
+        "1": [
+          "SECONDCOWORKER",
+          "LASTMINUTE",
+          "INTENSE"
+        ],
+        "2": [
+          "STRATEGY",
+          "METHOD",
+          "MANNER"
+        ],
+        "3": [
+          "RESULT",
+          "BOTH",
+          "EVENTUALLY"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Describe each coworker's specific working style clearly, then briefly note the outcome each approach led to.",
+      "explanation": "Comparing two people's different approaches to the same task highlights that there is often more than one valid way to reach a similar result, which is a nuanced, useful observation for the reader.",
+      "modelAnswer": "One coworker begins immediately, breaking the project into small daily tasks and steadily chipping away at it well before the deadline arrives. The other prefers to wait until the pressure builds, working in a single intense, focused burst during the final two days, and while their methods could not be more different, both somehow manage to submit equally polished work by the final deadline.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q2",
+      "instruction": "COMPARE THE TWO TEACHERS' APPROACHES TO CLASSROOM DISCIPLINE",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Two teachers at the same school take noticeably different approaches to managing classroom discipline. Compare their two approaches.",
+      "emojis": [
+        "👩‍🏫",
+        "🧑‍🏫",
+        "📏",
+        "🤝"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTTEACHER",
+          "STRICT",
+          "STRUCTURE"
+        ],
+        "1": [
+          "SECONDTEACHER",
+          "RELAXED",
+          "RAPPORT"
+        ],
+        "2": [
+          "TECHNIQUE",
+          "METHOD",
+          "STYLE"
+        ],
+        "3": [
+          "RESULT",
+          "EFFECTIVE",
+          "DIFFERENT"
+        ]
+      },
+      "minWords": 52,
+      "hint": "Describe each teacher's specific style, then note that both approaches manage to achieve a well-behaved classroom despite being very different.",
+      "explanation": "Comparing contrasting teaching styles teaches the reader that effectiveness can come from very different methods, avoiding the trap of presenting one obviously correct approach and one obviously wrong one.",
+      "modelAnswer": "The first teacher maintains discipline through clear, firmly enforced rules, rarely raising her voice but expecting immediate compliance with the class's established structure. The second builds a much more relaxed rapport with students, relying on genuine personal connection rather than strict rules, and though their classrooms feel entirely different in tone, both teachers manage to keep their students focused and respectful in their own particular way.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q3",
+      "instruction": "COMPARE THE TWO COACHES' APPROACHES TO MOTIVATING A TEAM",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Two sports coaches use noticeably different approaches to motivating their teams before an important match. Compare their two approaches.",
+      "emojis": [
+        "🏆",
+        "📢",
+        "🤝",
+        "💪"
+      ],
+      "keywords": {
+        "0": [
+          "FIRSTCOACH",
+          "INTENSE",
+          "SHOUT"
+        ],
+        "1": [
+          "SECONDCOACH",
+          "CALM",
+          "ENCOURAGE"
+        ],
+        "2": [
+          "APPROACH",
+          "METHOD",
+          "STYLE"
+        ],
+        "3": [
+          "RESULT",
+          "MOTIVATE",
+          "EFFECTIVE"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Describe each coach's motivational style with specific behavior, then note that both styles genuinely motivate their players despite being opposites.",
+      "explanation": "This comparison practices describing two opposite emotional registers, intensity versus calm, and showing that both can genuinely succeed avoids the simplistic assumption that only one motivational style actually works.",
+      "modelAnswer": "The first coach delivers passionate, loud pre-match speeches, pacing energetically and pounding his fist for emphasis, clearly hoping to fire up his players through sheer intensity. The second coach speaks quietly and calmly, offering steady encouragement and specific individual praise rather than dramatic gestures, and remarkably, both teams consistently perform well under pressure, suggesting that motivation genuinely works differently for different groups of players.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q1",
+      "instruction": "COMPARE YOUR CHILDHOOD NEIGHBORHOOD THEN AND NOW",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Your childhood neighborhood has changed considerably since you were young. Compare how it looked and felt then with how it looks and feels now.",
+      "emojis": [
+        "🏘️",
+        "🌳",
+        "🏗️",
+        "🕰️"
+      ],
+      "keywords": {
+        "0": [
+          "THEN",
+          "QUIET",
+          "FAMILIAR"
+        ],
+        "1": [
+          "NOW",
+          "DEVELOP",
+          "UNFAMILIAR"
+        ],
+        "2": [
+          "COMPARE",
+          "CHANGE",
+          "NOTICE"
+        ],
+        "3": [
+          "FEEL",
+          "NOSTALGIC",
+          "DIFFERENT"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Describe the neighborhood as you remember it clearly, then compare it point by point with how it looks today.",
+      "explanation": "Comparisons across time benefit from specific, matched details, comparing the same landmark then and now, rather than two entirely separate descriptions that never directly connect to each other.",
+      "modelAnswer": "As a child, I remember the neighborhood as a quiet stretch of modest houses with wide, tree-lined sidewalks where every neighbor seemed to know each other by name. Returning now, the same streets feel almost unrecognizable, lined instead with tall new apartment buildings and unfamiliar faces, and though the change has clearly brought more convenience and activity to the area, I cannot help feeling a small pang of nostalgia for how much quieter it used to be.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q2",
+      "instruction": "COMPARE YOUR HOMETOWN'S DOWNTOWN THEN AND NOW",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Your hometown's downtown area has changed considerably over the past two decades. Compare how it looked then with how it looks now.",
+      "emojis": [
+        "🏙️",
+        "🏪",
+        "📉",
+        "📈"
+      ],
+      "keywords": {
+        "0": [
+          "THEN",
+          "THRIVING",
+          "BUSY"
+        ],
+        "1": [
+          "NOW",
+          "STRUGGLE",
+          "EMPTY"
+        ],
+        "2": [
+          "COMPARE",
+          "DECLINE",
+          "NOTICE"
+        ],
+        "3": [
+          "FEEL",
+          "CONCERN",
+          "ECONOMIC"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Describe the downtown's earlier condition specifically, then compare it directly with its current state, addressing possible reasons for the change.",
+      "explanation": "Economic or civic comparisons over time gain credibility when a possible reason for the change, such as a new shopping mall opening nearby, is briefly mentioned alongside the observed difference itself.",
+      "modelAnswer": "Twenty years ago, the downtown area buzzed with independently owned shops and restaurants, the sidewalks crowded well into the evening on weekends. Today, several storefronts sit empty with faded for-lease signs in the windows, likely a result of the large shopping mall that opened just outside town a decade ago, and while a few newer businesses have tried to fill the gap, the downtown never quite recovered its former liveliness.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q3",
+      "instruction": "COMPARE YOUR COOKING SKILLS AS A BEGINNER VERSUS NOW",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "When you first started cooking, your skills were quite different from how they are today. Compare your abilities as a beginner with your abilities now.",
+      "emojis": [
+        "🍳",
+        "😅",
+        "👨‍🍳",
+        "📈"
+      ],
+      "keywords": {
+        "0": [
+          "BEGINNER",
+          "BURN",
+          "SIMPLE"
+        ],
+        "1": [
+          "NOW",
+          "CONFIDENT",
+          "COMPLEX"
+        ],
+        "2": [
+          "COMPARE",
+          "IMPROVE",
+          "NOTICE"
+        ],
+        "3": [
+          "FEEL",
+          "PROUD",
+          "GROWTH"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Describe a specific early failure clearly, then compare it directly with a specific recent success to show your genuine growth.",
+      "explanation": "Personal skill-growth comparisons are more convincing when a specific early failure and a specific recent success are placed side by side, rather than a general statement that skills improved over time.",
+      "modelAnswer": "As a beginner, I once managed to burn a simple pot of rice while distractedly checking my phone, unable to even follow a basic recipe without constant supervision of every single step. Now, several years later, I can confidently prepare a full three-course meal for guests without a single recipe in front of me, timing every dish to finish together, a level of ease I never imagined possible back when even boiling pasta felt like a genuine challenge.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q1",
+      "instruction": "COMPARE STAYING IN YOUR CURRENT JOB VERSUS TAKING A NEW OFFER",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You are considering whether to stay in your current job or accept a new offer elsewhere. Compare the two possible futures, weighing the relevant factors.",
+      "emojis": [
+        "💼",
+        "🤔",
+        "📈",
+        "⚖️"
+      ],
+      "keywords": {
+        "0": [
+          "STAY",
+          "FAMILIAR",
+          "STABLE"
+        ],
+        "1": [
+          "LEAVE",
+          "OPPORTUNITY",
+          "UNCERTAIN"
+        ],
+        "2": [
+          "ASSESS",
+          "COMPARE",
+          "TRADEOFF"
+        ],
+        "3": [
+          "FACTOR",
+          "RISK",
+          "GROWTH"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Compare the stability of staying against the potential growth of leaving, weighing at least two specific factors for each option.",
+      "explanation": "Comparing two possible futures, rather than a past or present situation, requires the writer to reason carefully about likely outcomes, which is a more speculative but equally structured form of comparison.",
+      "modelAnswer": "Staying in my current role offers genuine stability and the comfort of a team I already know well, though the limited room for advancement here has become increasingly clear over the past year. The new offer promises significantly more responsibility and a meaningful salary increase, but it also means adapting to an unfamiliar company culture with no guarantee the new role will suit me as well as it sounds on paper.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q2",
+      "instruction": "COMPARE STAYING IN YOUR CURRENT CITY VERSUS MOVING ABROAD",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You are considering whether to stay in your current city or move abroad for a fresh start. Compare the two possible futures, weighing the relevant factors.",
+      "emojis": [
+        "🏙️",
+        "✈️",
+        "👨‍👩‍👧",
+        "⚖️"
+      ],
+      "keywords": {
+        "0": [
+          "STAY",
+          "FAMILY",
+          "SUPPORT"
+        ],
+        "1": [
+          "MOVE",
+          "ADVENTURE",
+          "UNKNOWN"
+        ],
+        "2": [
+          "WEIGH",
+          "COMPARE",
+          "BALANCE"
+        ],
+        "3": [
+          "FACTOR",
+          "EMOTIONAL",
+          "PRACTICAL"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Weigh emotional factors, such as being near family, against practical or adventurous factors, such as new opportunities abroad.",
+      "explanation": "Major life comparisons benefit from weighing both emotional and practical factors together, since a decision like moving abroad rarely comes down to logic alone, and acknowledging that honestly makes the comparison feel real.",
+      "modelAnswer": "Remaining in my current city keeps me close to family and a familiar support network I have relied on my entire life, a comfort that becomes clearer every time I imagine facing a hard week completely alone abroad. Moving overseas, however, offers genuine adventure and professional opportunities I likely will not encounter here, and weighing the emotional cost of distance against the excitement of an entirely new chapter remains a genuinely difficult balance to strike.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q3",
+      "instruction": "COMPARE RENTING VERSUS BUYING A HOME",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You are considering whether to continue renting or finally buy a home. Compare the two possible paths, weighing the relevant financial and lifestyle factors.",
+      "emojis": [
+        "🏠",
+        "💰",
+        "🔑",
+        "⚖️"
+      ],
+      "keywords": {
+        "0": [
+          "RENT",
+          "FLEXIBLE",
+          "LOWERCOST"
+        ],
+        "1": [
+          "BUY",
+          "INVEST",
+          "COMMITMENT"
+        ],
+        "2": [
+          "JUDGE",
+          "TRADEOFF",
+          "MEASURE"
+        ],
+        "3": [
+          "FACTOR",
+          "FINANCIAL",
+          "LIFESTYLE"
+        ]
+      },
+      "minWords": 54,
+      "hint": "Weigh at least two financial factors and one lifestyle factor, showing genuine trade-offs between flexibility and long-term investment.",
+      "explanation": "Financial comparisons about the future, like renting versus buying, are strengthened by naming both a financial factor and a lifestyle factor, since the decision genuinely involves more than money alone.",
+      "modelAnswer": "Continuing to rent keeps my monthly costs lower and my situation flexible, letting me move easily if my job or personal circumstances change, which has happened more than once over the past few years. Buying a home would mean building long-term equity instead of paying rent that disappears each month, but it also involves a significant financial commitment and far less flexibility, a trade-off I am still weighing carefully given how uncertain my career path currently feels.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q1",
+      "instruction": "DESCRIBE THE FAMILY'S DECISION BETWEEN TWO VACATION DESTINATIONS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A family weighs several factors while deciding between two very different vacation destinations. Describe the comparison and the reasoning behind their final decision.",
+      "emojis": [
+        "🏖️",
+        "⛰️",
+        "👨‍👩‍👧‍👦",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "BEACHDEST",
+          "RELAX",
+          "CROWDED"
+        ],
+        "1": [
+          "MOUNTAINDEST",
+          "ADVENTURE",
+          "QUIET"
+        ],
+        "2": [
+          "FACTOR",
+          "BUDGET",
+          "AGE"
+        ],
+        "3": [
+          "DECIDE",
+          "COMPROMISE",
+          "FINAL"
+        ]
+      },
+      "minWords": 53,
+      "hint": "Weigh at least three factors, such as budget, the children's ages, and each destination's activities, before explaining the final decision.",
+      "explanation": "A capstone comparison holds several factors together at once, budget, preferences, practical needs, and reaches a clearly reasoned final decision rather than simply listing the options without resolving anything.",
+      "modelAnswer": "The beach destination offers relaxed, easy days perfect for their younger children but comes with noticeably higher prices and crowded resorts during peak season, while the quieter mountain destination provides more affordable lodging and genuine adventure activities, though the hiking trails may prove too demanding for their youngest child. After weighing the budget savings and outdoor opportunities against the practical concern of their child's stamina, the family ultimately chooses a compromise, booking a mountain lodge near an easier, family-friendly trail.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q2",
+      "instruction": "DESCRIBE THE COMPANY'S DECISION BETWEEN TWO VENDOR PROPOSALS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A company weighs several factors while deciding between two competing vendor proposals for an important project. Describe the comparison and the reasoning behind their final decision.",
+      "emojis": [
+        "📊",
+        "💰",
+        "🤝",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "VENDORA",
+          "CHEAPER",
+          "LESSEXPERIENCE"
+        ],
+        "1": [
+          "VENDORB",
+          "EXPENSIVE",
+          "PROVENTRACK"
+        ],
+        "2": [
+          "FACTOR",
+          "BUDGET",
+          "RELIABILITY"
+        ],
+        "3": [
+          "DECIDE",
+          "BALANCE",
+          "FINAL"
+        ]
+      },
+      "minWords": 54,
+      "hint": "Weigh cost against reliability and track record, considering at least three specific factors before explaining the final decision.",
+      "explanation": "Business decisions compared through multiple weighted factors, cost, reliability, past performance, model realistic corporate reasoning better than a simple statement that one vendor was simply chosen because it was cheaper or better.",
+      "modelAnswer": "The first vendor's proposal comes in nearly thirty percent cheaper, but the company is relatively new with limited experience handling projects of this particular scale, raising some concern about missed deadlines. The second vendor, though considerably more expensive, has a proven fifteen-year track record with several comparable clients, and after weighing the immediate budget savings against the significant risk of delays on such an important project, the company ultimately decides the second vendor's reliability justifies the higher cost.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q3",
+      "instruction": "DESCRIBE A PERSON'S DECISION BETWEEN TWO COMPETING JOB OFFERS",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A person weighs several factors while deciding between two competing job offers that differ significantly. Describe the comparison and the reasoning behind their final decision.",
+      "emojis": [
+        "💼",
+        "💰",
+        "🌍",
+        "✅"
+      ],
+      "keywords": {
+        "0": [
+          "OFFERA",
+          "HIGHSALARY",
+          "RELOCATE"
+        ],
+        "1": [
+          "OFFERB",
+          "LOWERSALARY",
+          "REMOTEFLEXIBLE"
+        ],
+        "2": [
+          "FACTOR",
+          "LIFESTYLE",
+          "FAMILY"
+        ],
+        "3": [
+          "DECIDE",
+          "PRIORITIZE",
+          "FINAL"
+        ]
+      },
+      "minWords": 55,
+      "hint": "Weigh salary against lifestyle and family considerations, treating at least three factors as genuinely important before explaining the final choice.",
+      "explanation": "At the highest level, a comparative decision weighs financial, lifestyle, and personal factors together without any single one automatically winning, and clearly naming which factor ultimately tipped the balance gives the reasoning genuine weight.",
+      "modelAnswer": "The first offer comes with a considerably higher salary, but it requires relocating to a new city far from aging parents who increasingly rely on nearby support, a fact that weighs heavily despite the financial appeal. The second offer, though paying noticeably less, allows fully remote work with genuine flexibility to stay close to family, and after carefully weighing the financial advantage against the value of remaining nearby during this particular stage of life, the person ultimately accepts the second, lower-paying offer without much hesitation.",
+      "phase": "mastery"
+    }
+  ],
+  "phase": "mastery"
+}

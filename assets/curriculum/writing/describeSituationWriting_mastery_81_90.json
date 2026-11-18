@@ -1,0 +1,1208 @@
+{
+  "gameType": "describeSituationWriting",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q1",
+      "instruction": "DESCRIBE THE PROBLEM AT CHECK-IN AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "At the airport check-in counter, your suitcase turns out to be several kilograms over the weight limit. Describe the situation and how it was resolved with the airline staff.",
+      "emojis": [
+        "✅",
+        "🧳",
+        "⚖️",
+        "😟"
+      ],
+      "keywords": {
+        "0": [
+          "REPACK",
+          "SHIFT",
+          "BOARDINGPASS"
+        ],
+        "1": [
+          "SUITCASE",
+          "WEIGH",
+          "LIMIT"
+        ],
+        "2": [
+          "OVERWEIGHT",
+          "EXCEED",
+          "KILOGRAMS"
+        ],
+        "3": [
+          "STAFF",
+          "EXPLAIN",
+          "OPTIONS"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Describe the exact problem with a number, then explain the options the staff member offered before the situation was resolved.",
+      "explanation": "Service resolutions are clearer when a specific option, such as paying a fee or repacking, is named, rather than simply saying the problem was solved.",
+      "modelAnswer": "When my suitcase weighs six kilograms over the limit at check-in, the agent calmly explains that I can either pay an extra fee or transfer some items into my carry-on bag. Choosing to save money, I quickly shift a few heavy books into my backpack, and the agent reweighs the bag before finally printing my boarding pass.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q2",
+      "instruction": "DESCRIBE THE PROBLEM AT SECURITY AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "At the airport security checkpoint, you forget to remove a laptop from your bag, causing a delay in the line. Describe the situation and how it was resolved.",
+      "emojis": [
+        "🛂",
+        "😳",
+        "✅",
+        "💻"
+      ],
+      "keywords": {
+        "0": [
+          "SCANNER",
+          "FLAG",
+          "BEEP"
+        ],
+        "1": [
+          "OFFICER",
+          "ASK",
+          "REMOVE"
+        ],
+        "2": [
+          "RESCAN",
+          "PASS",
+          "APOLOGIZE"
+        ],
+        "3": [
+          "FORGET",
+          "LAPTOP",
+          "BAG"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Describe the mistake and the officer's reaction, then how the situation was quickly corrected.",
+      "explanation": "Minor service disruptions, like a security delay, are described well through a short, specific interaction rather than an exaggerated account of the inconvenience.",
+      "modelAnswer": "Rushing through the line, I completely forget to take my laptop out of my bag, and the scanner immediately flags it with a loud beep. The security officer politely asks me to step aside, remove the laptop, and send it through separately, and after a brief apology to the people behind me, I finally clear security without further issues.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q3",
+      "instruction": "DESCRIBE THE SEATING PROBLEM AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "At the gate, an airline employee announces that your flight has been overbooked and your original seat is no longer guaranteed. Describe the situation and how it was resolved.",
+      "emojis": [
+        "✈️",
+        "✅",
+        "😰",
+        "🎫"
+      ],
+      "keywords": {
+        "0": [
+          "OVERBOOK",
+          "ANNOUNCE",
+          "GATE"
+        ],
+        "1": [
+          "ACCEPT",
+          "UPGRADE",
+          "COMPENSATE"
+        ],
+        "2": [
+          "ORIGINAL",
+          "SEAT",
+          "LOSE"
+        ],
+        "3": [
+          "EMPLOYEE",
+          "OFFER",
+          "ALTERNATIVE"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Describe the announcement clearly, then explain the specific alternative or compensation offered to resolve it.",
+      "explanation": "Overbooking situations are common in real travel, and describing the specific compensation offered, such as an upgrade, makes the resolution concrete rather than vague.",
+      "modelAnswer": "Just before boarding, an airline employee announces over the intercom that the flight has been overbooked and asks for volunteers to take a later flight. When I hesitate, she quietly offers me a seat upgrade to business class as compensation, and I happily accept, ending up far more comfortable than my original economy seat would have been.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q1",
+      "instruction": "DESCRIBE THE TICKET PROBLEM AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You accidentally purchase the wrong type of train ticket at a station kiosk, realizing the mistake only after boarding. Describe the situation and how it was resolved.",
+      "emojis": [
+        "😳",
+        "🚆",
+        "✅",
+        "🎫"
+      ],
+      "keywords": {
+        "0": [
+          "EXPLAIN",
+          "MISTAKE",
+          "HONEST"
+        ],
+        "1": [
+          "CONDUCTOR",
+          "CHECK",
+          "NOTICE"
+        ],
+        "2": [
+          "UPGRADE",
+          "FEE",
+          "SMALL"
+        ],
+        "3": [
+          "KIOSK",
+          "PURCHASE",
+          "WRONGTYPE"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Describe how the mistake was discovered, then the conversation with the conductor that led to a resolution.",
+      "explanation": "Transport ticketing problems are resolved realistically through a short, honest conversation with staff, and naming the small consequence, such as a fee, keeps the outcome believable.",
+      "modelAnswer": "After boarding, I realize the ticket I bought at the kiosk is for a regional train, not the faster express service I am actually sitting on. When the conductor checks my ticket, I explain the honest mistake, and she kindly lets me pay a small difference in fare instead of a full penalty.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q2",
+      "instruction": "DESCRIBE THE MISSED STOP AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A bus driver accidentally skips your stop because you did not ring the bell in time. Describe the situation and how it was resolved.",
+      "emojis": [
+        "😩",
+        "🚌",
+        "✅",
+        "🗣️"
+      ],
+      "keywords": {
+        "0": [
+          "STOP",
+          "PASS",
+          "REALIZE"
+        ],
+        "1": [
+          "BELL",
+          "RING",
+          "MISS"
+        ],
+        "2": [
+          "NEXTSTOP",
+          "WALKBACK",
+          "RESOLVE"
+        ],
+        "3": [
+          "DRIVER",
+          "APPROACH",
+          "EXPLAIN"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Explain how you realized the stop was missed, then describe how you handled it with the driver or by walking back.",
+      "explanation": "Small transport mishaps are described clearly through the moment of realization followed by a simple, practical fix, rather than an overly dramatic reaction.",
+      "modelAnswer": "Distracted by my phone, I forget to ring the bell in time, and the bus continues straight past my usual stop. Once I notice, I walk to the front and explain the situation to the driver, who lets me off at the very next stop, leaving me with just a short walk back.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q3",
+      "instruction": "DESCRIBE THE BOOKING ERROR AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "While booking a train ticket online, you accidentally submit the payment twice, resulting in two identical bookings. Describe the situation and how it was resolved when you contacted customer support.",
+      "emojis": [
+        "✅",
+        "🎫",
+        "💻",
+        "😖"
+      ],
+      "keywords": {
+        "0": [
+          "REFUND",
+          "PROCESS",
+          "CONFIRM"
+        ],
+        "1": [
+          "CHARGE",
+          "TWICE",
+          "NOTICE"
+        ],
+        "2": [
+          "ONLINE",
+          "DUPLICATE",
+          "BOOKING"
+        ],
+        "3": [
+          "SUPPORT",
+          "CONTACT",
+          "EXPLAIN"
+        ]
+      },
+      "minWords": 35,
+      "hint": "Describe how you discovered the duplicate charge, then the steps you took with customer support to get it fixed.",
+      "explanation": "Online booking errors are common real-world problems, and describing the exact contact method, such as a chat or phone call, makes the resolution process feel authentic and specific.",
+      "modelAnswer": "Checking my email confirmation, I notice I have somehow been charged twice for the exact same train journey after the website seemed to freeze during payment. I contact customer support through their online chat, explain the situation with both booking numbers, and within two days they confirm a full refund for the duplicate charge.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q1",
+      "instruction": "DESCRIBE THE OVERBOOKING PROBLEM AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You arrive at your hotel to check in, only to be told the hotel is overbooked and your reserved room is unavailable. Describe the situation and how the front desk resolved it.",
+      "emojis": [
+        "✅",
+        "🏨",
+        "😳",
+        "🗝️"
+      ],
+      "keywords": {
+        "0": [
+          "UPGRADE",
+          "NEARBYHOTEL",
+          "COMPENSATE"
+        ],
+        "1": [
+          "RESERVATION",
+          "CONFIRM",
+          "ARRIVE"
+        ],
+        "2": [
+          "OVERBOOK",
+          "UNAVAILABLE",
+          "APOLOGIZE"
+        ],
+        "3": [
+          "RECEPTIONIST",
+          "EXPLAIN",
+          "OPTIONS"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Describe your confusion at hearing the news, then the specific solution the front desk offered to make things right.",
+      "explanation": "Overbooking is one of the most common real hotel problems, and describing a specific compensation, such as a free upgrade, gives the resolution genuine substance.",
+      "modelAnswer": "After a long flight, I arrive at the hotel only to be told, with an awkward apology, that my confirmed room has been given away due to overbooking. Visibly frustrated, I wait while the receptionist makes a few calls, and she eventually offers me a free upgrade to a suite at a partner hotel just two blocks away, along with a voucher for breakfast.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q2",
+      "instruction": "DESCRIBE THE EARLY ARRIVAL AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Your flight lands much earlier than expected, and you arrive at your hotel several hours before the official check-in time. Describe the situation and how it was resolved.",
+      "emojis": [
+        "🕐",
+        "🧳",
+        "✅",
+        "🏨"
+      ],
+      "keywords": {
+        "0": [
+          "CHECKIN",
+          "OFFICIAL",
+          "LATER"
+        ],
+        "1": [
+          "LUGGAGE",
+          "STORE",
+          "LOBBY"
+        ],
+        "2": [
+          "ROOM",
+          "READY",
+          "EARLIER"
+        ],
+        "3": [
+          "ARRIVE",
+          "EARLY",
+          "HOURS"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Explain the time gap clearly, then describe the practical arrangement made while you waited for the room.",
+      "explanation": "Time-based service problems, like an early arrival, are resolved with practical, temporary solutions, such as storing luggage, and naming that detail makes the description feel real.",
+      "modelAnswer": "My flight lands almost four hours before the hotel's official check-in time, leaving me tired and unsure what to do with my luggage. The front desk kindly stores my bags securely behind the counter and suggests a nearby café, and by the time I return two hours later, they are able to get my room ready earlier than expected.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q3",
+      "instruction": "DESCRIBE THE BILLING DISCREPANCY AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "At checkout, you notice your hotel bill includes charges for services you never used. Describe the situation and how it was resolved with the front desk.",
+      "emojis": [
+        "🧾",
+        "✅",
+        "😕",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "BILL",
+          "REVIEW",
+          "CHECKOUT"
+        ],
+        "1": [
+          "REMOVE",
+          "ADJUST",
+          "APOLOGY"
+        ],
+        "2": [
+          "CHARGE",
+          "UNFAMILIAR",
+          "MINIBAR"
+        ],
+        "3": [
+          "QUESTION",
+          "POLITELY",
+          "EXPLAIN"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Point out the specific unfamiliar charge, then describe how the staff investigated and corrected the bill.",
+      "explanation": "Billing disputes are resolved clearly when the specific incorrect charge is named, since this shows the reader exactly what needed correcting, rather than a vague complaint about the total.",
+      "modelAnswer": "While reviewing my final bill at checkout, I notice an unfamiliar charge for minibar snacks I never touched during my stay. I politely point it out to the receptionist, who checks the room's records and quickly realizes the previous guest's charges were mistakenly added to my account, apologizing and removing the amount immediately.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q1",
+      "instruction": "DESCRIBE THE REQUEST AND HOW THE STORE HANDLED IT",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You buy a gift at a store and ask them to wrap it and ship it directly to a relative in another city. Describe your request and how the store handled it.",
+      "emojis": [
+        "📦",
+        "🏬",
+        "✅",
+        "🎁"
+      ],
+      "keywords": {
+        "0": [
+          "ADDRESS",
+          "PROVIDE",
+          "SHIPPING"
+        ],
+        "1": [
+          "WRAP",
+          "REQUEST",
+          "SPECIAL"
+        ],
+        "2": [
+          "CONFIRM",
+          "TRACKING",
+          "EMAIL"
+        ],
+        "3": [
+          "GIFT",
+          "SELECT",
+          "CHOOSE"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Describe your specific request clearly, including the wrapping and the shipping address, then how the store confirmed it.",
+      "explanation": "Service requests involving several steps, wrapping and shipping together, are described clearly when each requirement is stated separately rather than combined vaguely.",
+      "modelAnswer": "After choosing a small ceramic vase as a birthday gift, I ask the sales assistant if they can gift-wrap it and ship it directly to my aunt's address in another city. She happily takes down the shipping details, wraps the vase carefully in front of me, and emails me a tracking number a few hours later to confirm it is on its way.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q2",
+      "instruction": "DESCRIBE THE DEFECTIVE ITEM AND HOW THE RETURN WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You bring a recently purchased electronic device back to the store because it stopped working after only three days. Describe the situation and how the return was resolved.",
+      "emojis": [
+        "😕",
+        "📱",
+        "✅",
+        "🧾"
+      ],
+      "keywords": {
+        "0": [
+          "RECEIPT",
+          "BRING",
+          "PROOF"
+        ],
+        "1": [
+          "DEVICE",
+          "STOPWORKING",
+          "THREEDAYS"
+        ],
+        "2": [
+          "REPLACE",
+          "EXCHANGE",
+          "NEWDEVICE"
+        ],
+        "3": [
+          "STAFF",
+          "TEST",
+          "CONFIRM"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Explain the defect and bring proof of purchase, then describe the store's specific resolution, such as a replacement.",
+      "explanation": "Return and exchange situations are resolved convincingly through a clear sequence: proof of purchase, verification of the defect, and a specific outcome such as a replacement or refund.",
+      "modelAnswer": "Just three days after buying a new pair of wireless headphones, one side suddenly stops producing sound entirely. I bring them back to the store along with my receipt, and after a staff member confirms the defect himself, he offers me a brand new replacement device on the spot, with no further questions asked.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q3",
+      "instruction": "DESCRIBE THE NEGOTIATION AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You notice a small scratch on a floor model television and decide to ask the salesperson for a discount. Describe the negotiation and how it was resolved.",
+      "emojis": [
+        "✅",
+        "💬",
+        "📺",
+        "💰"
+      ],
+      "keywords": {
+        "0": [
+          "AGREE",
+          "REDUCE",
+          "PRICE"
+        ],
+        "1": [
+          "FLOORMODEL",
+          "DISPLAY",
+          "LAST"
+        ],
+        "2": [
+          "SCRATCH",
+          "NOTICE",
+          "MINOR"
+        ],
+        "3": [
+          "REQUEST",
+          "DISCOUNT",
+          "POLITELY"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Point out the specific flaw, then describe the back-and-forth conversation that leads to a final agreed price.",
+      "explanation": "Price negotiations read clearly when a specific flaw justifies the request, and showing at least one exchange of offers gives the reader a sense of the actual back-and-forth conversation.",
+      "modelAnswer": "Noticing a small scratch along the bottom corner of the last floor model television, I politely ask the salesperson if a discount is possible since it is not a new, boxed unit. After a brief back and forth, he agrees to reduce the price by fifteen percent, and I leave the store satisfied with the deal.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q1",
+      "instruction": "DESCRIBE THE RESERVATION REQUEST AND HOW IT WAS HANDLED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You call a popular restaurant to book a table for a special anniversary dinner, mentioning a dietary restriction. Describe your request and how the staff handled it.",
+      "emojis": [
+        "✅",
+        "📞",
+        "🍽️",
+        "🥗"
+      ],
+      "keywords": {
+        "0": [
+          "CONFIRM",
+          "TABLE",
+          "QUIET"
+        ],
+        "1": [
+          "RESERVE",
+          "ANNIVERSARY",
+          "SPECIAL"
+        ],
+        "2": [
+          "DIETARY",
+          "VEGETARIAN",
+          "MENTION"
+        ],
+        "3": [
+          "STAFF",
+          "NOTE",
+          "ACCOMMODATE"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Include both the special occasion and the dietary need clearly, then describe how the staff confirmed the arrangements.",
+      "explanation": "Reservation requests are described clearly when multiple specific needs, an occasion and a dietary restriction, are both stated, showing the reader a realistic, detailed conversation.",
+      "modelAnswer": "When I call to book a table for our tenth anniversary, I mention that my partner follows a strict vegetarian diet and ask if the chef could prepare something special. The host notes everything carefully, confirms a quiet corner table by the window, and promises the kitchen will have a few vegetarian options ready in advance.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q2",
+      "instruction": "DESCRIBE THE LOST RESERVATION AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You arrive at a restaurant for a reservation you made a week in advance, but the staff has no record of it. Describe the situation and how it was resolved.",
+      "emojis": [
+        "😳",
+        "📋",
+        "✅",
+        "🍽️"
+      ],
+      "keywords": {
+        "0": [
+          "RECORD",
+          "MISSING",
+          "SYSTEM"
+        ],
+        "1": [
+          "MANAGER",
+          "APOLOGIZE",
+          "CHECK"
+        ],
+        "2": [
+          "TABLE",
+          "ARRANGE",
+          "SHORTLY"
+        ],
+        "3": [
+          "ARRIVE",
+          "RESERVATION",
+          "CONFIRM"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Describe your confusion at the lost reservation, then how the manager resolved it despite the mistake.",
+      "explanation": "A lost reservation is a realistic service failure, and showing the manager's specific action, checking availability and finding a solution, gives the resolution real substance rather than a vague apology.",
+      "modelAnswer": "Standing at the host stand, I give my name for our reservation, only to be told with an awkward pause that there is no record of it in the system. The manager apologizes sincerely, checks the floor plan carefully, and within ten minutes manages to arrange a table for us near the back, even offering a complimentary drink for the inconvenience.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q3",
+      "instruction": "DESCRIBE THE TABLE REQUEST AND HOW IT WAS HANDLED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Shortly after being seated at a restaurant, you notice a cold draft coming from a nearby door and ask to move tables. Describe your request and how the staff handled it.",
+      "emojis": [
+        "🌬️",
+        "✅",
+        "🍽️",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "DRAFT",
+          "COLD",
+          "NOTICE"
+        ],
+        "1": [
+          "MOVE",
+          "RELOCATE",
+          "WARMER"
+        ],
+        "2": [
+          "UNCOMFORTABLE",
+          "SHIVER",
+          "SEATED"
+        ],
+        "3": [
+          "REQUEST",
+          "POLITELY",
+          "ASK"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Describe the discomfort clearly, then the polite request you made and how quickly the staff responded.",
+      "explanation": "Small in-the-moment service requests, like changing tables, are resolved smoothly when the request is specific and the response is prompt, both of which are worth naming clearly.",
+      "modelAnswer": "Within minutes of sitting down, I notice a steady cold draft coming from the door beside our table every time someone enters. I politely ask a passing waiter if we could move somewhere warmer, and he apologizes for not noticing sooner, quickly finding us a cozy table near the kitchen instead.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q1",
+      "instruction": "DESCRIBE THE SCHEDULING CONFLICT AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "While calling to confirm a doctor's appointment, you realize the scheduled time conflicts with an important work commitment. Describe the situation and how it was resolved.",
+      "emojis": [
+        "📅",
+        "🩺",
+        "✅",
+        "📞"
+      ],
+      "keywords": {
+        "0": [
+          "RECEPTIONIST",
+          "APOLOGIZE",
+          "EXPLAIN"
+        ],
+        "1": [
+          "CONFLICT",
+          "REALIZE",
+          "OVERLAP"
+        ],
+        "2": [
+          "RESCHEDULE",
+          "ALTERNATIVE",
+          "OFFER"
+        ],
+        "3": [
+          "CONFIRM",
+          "CALL",
+          "APPOINTMENT"
+        ]
+      },
+      "minWords": 36,
+      "hint": "Explain the scheduling conflict clearly, then describe how the receptionist helped find a new time.",
+      "explanation": "Appointment rescheduling is a common everyday service situation, and naming the specific reason for the conflict makes the description feel personal rather than generic.",
+      "modelAnswer": "While confirming my appointment over the phone, I suddenly remember that the same afternoon I am scheduled for an important client presentation at work. I explain the conflict apologetically to the receptionist, who checks the calendar and offers me an earlier slot the same week, which fits my schedule far better.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q2",
+      "instruction": "DESCRIBE THE PAPERWORK ISSUE AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You arrive at a new dentist's office for your first appointment and need to fill out unfamiliar insurance paperwork. Describe the situation and how it was resolved.",
+      "emojis": [
+        "📋",
+        "🦷",
+        "✅",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "INSURANCE",
+          "CONFUSED",
+          "UNFAMILIAR"
+        ],
+        "1": [
+          "ARRIVE",
+          "NEWPATIENT",
+          "FORMS"
+        ],
+        "2": [
+          "COMPLETE",
+          "SUBMIT",
+          "CLARIFIED"
+        ],
+        "3": [
+          "RECEPTIONIST",
+          "EXPLAIN",
+          "GUIDE"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe your confusion with the forms, then how the receptionist's help resolved the issue before your appointment started.",
+      "explanation": "New-patient paperwork situations are described clearly when the specific confusion, such as unfamiliar insurance terms, is named alongside the staff member's practical help in resolving it.",
+      "modelAnswer": "Filling out the new-patient forms, I get stuck on a section asking for insurance codes I have never seen before, unsure how to answer correctly. Noticing my hesitation, the receptionist kindly walks me through each unfamiliar term, and within a few minutes I finish the paperwork just as the dentist calls me back for my appointment.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q3",
+      "instruction": "DESCRIBE THE VET VISIT AND HOW THE CONCERN WAS ADDRESSED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You bring your dog to the veterinarian after noticing she has been unusually tired for several days. Describe the appointment and how the vet addressed your concern.",
+      "emojis": [
+        "✅",
+        "🩺",
+        "🐕",
+        "😟"
+      ],
+      "keywords": {
+        "0": [
+          "DIAGNOSIS",
+          "REASSURE",
+          "TREATMENT"
+        ],
+        "1": [
+          "EXPLAIN",
+          "SYMPTOMS",
+          "DESCRIBE"
+        ],
+        "2": [
+          "DOG",
+          "TIRED",
+          "NOTICE"
+        ],
+        "3": [
+          "VET",
+          "EXAMINE",
+          "CAREFULLY"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe your specific concern about your pet's symptoms, then the vet's examination and eventual explanation.",
+      "explanation": "Veterinary visits are described well when the pet owner's specific observation, such as tiredness over several days, leads directly to the vet's examination and explanation, mirroring how real consultations unfold.",
+      "modelAnswer": "Worried that my dog has been unusually sluggish and uninterested in her food for almost a week, I explain the symptoms carefully to the vet as soon as we sit down. After a thorough examination, she reassures me it is likely a minor stomach issue, prescribes a short course of medication, and asks me to call back if there is no improvement within a few days.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q1",
+      "instruction": "DESCRIBE OPENING THE ACCOUNT AND HOW THE PROCESS WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You visit a bank branch to open a new savings account, unsure exactly which documents you need. Describe the situation and how the process was handled.",
+      "emojis": [
+        "✅",
+        "🏦",
+        "📄",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "ACCOUNT",
+          "OPEN",
+          "COMPLETE"
+        ],
+        "1": [
+          "BRANCH",
+          "VISIT",
+          "UNSURE"
+        ],
+        "2": [
+          "DOCUMENTS",
+          "MISSING",
+          "IDENTIFICATION"
+        ],
+        "3": [
+          "ADVISOR",
+          "EXPLAIN",
+          "GUIDE"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe your uncertainty about the documents, then how the bank advisor guided you through what was actually needed.",
+      "explanation": "Financial service situations are described clearly when the customer's initial uncertainty is followed by the specific guidance a staff member provides, rather than assuming the process went smoothly from the start.",
+      "modelAnswer": "Unsure exactly which documents I actually need, I arrive at the bank with only my passport and a recent utility bill. The advisor kindly explains that I also need proof of my current address dated within the last three months, and once I email it to her from my phone, she completes the account setup within twenty minutes.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q2",
+      "instruction": "DESCRIBE THE FRAUDULENT CHARGE AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You notice an unfamiliar charge on your credit card statement that you never made. Describe the situation and how it was resolved after contacting the bank.",
+      "emojis": [
+        "😨",
+        "☎️",
+        "✅",
+        "💳"
+      ],
+      "keywords": {
+        "0": [
+          "CHARGE",
+          "UNFAMILIAR",
+          "SUSPICIOUS"
+        ],
+        "1": [
+          "BANK",
+          "REPORT",
+          "DISPUTE"
+        ],
+        "2": [
+          "REFUND",
+          "CARDREPLACE",
+          "RESOLVE"
+        ],
+        "3": [
+          "STATEMENT",
+          "REVIEW",
+          "NOTICE"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe the moment you noticed the charge, then the steps the bank took to investigate and resolve it.",
+      "explanation": "Fraud disputes are resolved through a clear process, reporting, investigation, and resolution, and naming each stage shows the reader exactly how the bank handled the concern.",
+      "modelAnswer": "While reviewing my monthly statement, I notice an unfamiliar charge from a store I have never shopped at, and my stomach immediately tightens with worry. I call the bank right away to report it, and after a short investigation, they confirm it was fraudulent, refund the amount within a week, and send me a replacement card.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q3",
+      "instruction": "DESCRIBE THE LOAN MEETING AND HOW THE TERMS WERE CLARIFIED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You meet with a bank advisor to discuss taking out a small business loan, but some of the terms in the paperwork are unclear. Describe the meeting and how the terms were clarified.",
+      "emojis": [
+        "🖊️",
+        "✅",
+        "📄",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "MEETING",
+          "ADVISOR",
+          "DISCUSS"
+        ],
+        "1": [
+          "UNDERSTAND",
+          "AGREE",
+          "SIGN"
+        ],
+        "2": [
+          "TERMS",
+          "UNCLEAR",
+          "CONFUSED"
+        ],
+        "3": [
+          "QUESTION",
+          "ASK",
+          "CLARIFY"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Point out the specific term that confused you, then describe how the advisor explained it clearly before you proceeded.",
+      "explanation": "Financial paperwork situations are described convincingly when a specific confusing term is named, since a vague statement like the paperwork was complicated gives the reader nothing concrete to picture.",
+      "modelAnswer": "Sitting across from the bank advisor, I stop him partway through explaining the interest rate structure, admitting I do not fully understand the difference between the two repayment options listed. He patiently draws a simple comparison on paper, and once I finally understand which option saves more money long term, I feel confident enough to sign the agreement.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q1",
+      "instruction": "DESCRIBE THE CANCELLATION CALL AND HOW IT WAS HANDLED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You call a streaming service to cancel your subscription, and the representative offers you a discount to stay. Describe the call and how the situation was resolved.",
+      "emojis": [
+        "💬",
+        "🖥️",
+        "✅",
+        "📞"
+      ],
+      "keywords": {
+        "0": [
+          "CONSIDER",
+          "DECIDE",
+          "POLITELY"
+        ],
+        "1": [
+          "REPRESENTATIVE",
+          "OFFER",
+          "DISCOUNT"
+        ],
+        "2": [
+          "CONFIRM",
+          "FINAL",
+          "DECISION"
+        ],
+        "3": [
+          "CALL",
+          "CANCEL",
+          "SUBSCRIPTION"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe the retention offer clearly, then your final decision, whether you accept it or stick with cancelling.",
+      "explanation": "Customer retention calls are described well when the specific counteroffer is named, since this shows the reader the actual tactic used before revealing the customer's final decision.",
+      "modelAnswer": "When I call to cancel my streaming subscription, the representative immediately offers me a fifty percent discount for the next three months if I decide to stay. After thinking it over for a moment, I politely decline, explaining that I simply do not watch it enough anymore, and she confirms the cancellation without any further pressure.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q2",
+      "instruction": "DESCRIBE THE OUTAGE CALL AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You call your internet provider to report that your connection has been down for hours. Describe the call and the troubleshooting steps that eventually resolved it.",
+      "emojis": [
+        "☎️",
+        "📡",
+        "✅",
+        "🔧"
+      ],
+      "keywords": {
+        "0": [
+          "REPRESENTATIVE",
+          "TROUBLESHOOT",
+          "STEPS"
+        ],
+        "1": [
+          "INTERNET",
+          "DOWN",
+          "HOURS"
+        ],
+        "2": [
+          "RESTORE",
+          "CONNECTION",
+          "RESOLVED"
+        ],
+        "3": [
+          "ROUTER",
+          "RESTART",
+          "UNPLUG"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Describe the specific troubleshooting steps the representative asks you to try, in the order you perform them.",
+      "explanation": "Technical support calls are described clearly through the actual sequence of steps attempted, which mirrors how real troubleshooting works and avoids a vague summary like they fixed it eventually.",
+      "modelAnswer": "After my internet stays down for nearly three hours, I finally call the provider, and the representative first asks me to check if any lights on the router are flashing red. She then walks me through unplugging it for thirty seconds before restarting it, and to my relief, the connection comes back fully within a couple of minutes.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q3",
+      "instruction": "DESCRIBE THE ESCALATED CALL AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A billing error on your phone bill remains unresolved after speaking to two different customer service representatives. Describe the situation and how it was finally resolved after speaking to a supervisor.",
+      "emojis": [
+        "✅",
+        "😤",
+        "📱",
+        "☎️"
+      ],
+      "keywords": {
+        "0": [
+          "RESOLVE",
+          "CREDIT",
+          "APOLOGIZE"
+        ],
+        "1": [
+          "REPRESENTATIVE",
+          "TRANSFER",
+          "SECOND"
+        ],
+        "2": [
+          "BILLING",
+          "ERROR",
+          "UNRESOLVED"
+        ],
+        "3": [
+          "SUPERVISOR",
+          "REQUEST",
+          "ESCALATE"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Show your growing frustration through two failed attempts before describing how the supervisor finally resolved it.",
+      "explanation": "Escalation is described convincingly through repetition, showing two unsuccessful attempts before the final resolution, which proves to the reader that persistence, not luck, solved the problem.",
+      "modelAnswer": "The first representative promises to fix the incorrect charge but never follows up, and the second one seems unable to find any record of my previous call at all. Frustrated, I firmly ask to speak with a supervisor, who finally reviews my full account history, applies a credit to correct the error, and personally apologizes for the earlier confusion.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q1",
+      "instruction": "DESCRIBE THE MEMBERSHIP REQUEST AND HOW IT WAS HANDLED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "Before a long trip abroad, you ask your gym if you can temporarily freeze your membership instead of cancelling it. Describe your request and how the staff handled it.",
+      "emojis": [
+        "✅",
+        "🏋️",
+        "✈️",
+        "💬"
+      ],
+      "keywords": {
+        "0": [
+          "APPROVE",
+          "RESUME",
+          "RETURN"
+        ],
+        "1": [
+          "TRAVEL",
+          "ABROAD",
+          "MONTHS"
+        ],
+        "2": [
+          "FREEZE",
+          "REQUEST",
+          "MEMBERSHIP"
+        ],
+        "3": [
+          "STAFF",
+          "EXPLAIN",
+          "POLICY"
+        ]
+      },
+      "minWords": 37,
+      "hint": "Explain the reason for your request clearly, then describe how the staff member's response addressed it.",
+      "explanation": "Membership and facility requests are described clearly through the specific reason behind them, since a clear reason, such as travel, helps the reader understand why the policy applies here.",
+      "modelAnswer": "Before leaving for a three-month trip abroad, I ask the gym's front desk if I can freeze my membership instead of paying for months I will not use. The staff member explains their freeze policy allows up to ninety days, approves my request on the spot, and confirms my membership will automatically resume the week I return.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q2",
+      "instruction": "DESCRIBE THE LIBRARY REQUEST AND HOW IT WAS HANDLED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "A book you need for a research project is not available at your local library. Describe how you requested an interlibrary loan and how the staff handled it.",
+      "emojis": [
+        "🔍",
+        "💬",
+        "✅",
+        "📚"
+      ],
+      "keywords": {
+        "0": [
+          "LIBRARIAN",
+          "REQUEST",
+          "INTERLIBRARY"
+        ],
+        "1": [
+          "EXPLAIN",
+          "NEEDED",
+          "RESEARCH"
+        ],
+        "2": [
+          "ARRIVE",
+          "NOTIFY",
+          "COLLECT"
+        ],
+        "3": [
+          "SEARCH",
+          "CATALOG",
+          "UNAVAILABLE"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Describe how you discovered the book was unavailable, then the specific process the librarian used to help you.",
+      "explanation": "Library service requests are described well when the specific process, such as an interlibrary loan, is named, since this shows a real system at work rather than a vague solution.",
+      "modelAnswer": "After searching the catalog and finding that the specific book I need for my research project is unavailable anywhere in the local system, I ask the librarian for help. She submits an interlibrary loan request from a university library two hours away, and about ten days later, I receive an email notifying me that the book has arrived for me to collect.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q3",
+      "instruction": "DESCRIBE THE BOOKING CONFLICT AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "You try to book a room at your local community center for a family event, only to discover the date you want is already taken. Describe the situation and how it was resolved.",
+      "emojis": [
+        "🏢",
+        "✅",
+        "📅",
+        "😕"
+      ],
+      "keywords": {
+        "0": [
+          "BOOK",
+          "ROOM",
+          "REQUEST"
+        ],
+        "1": [
+          "AGREE",
+          "NEARBYDATE",
+          "CONFIRM"
+        ],
+        "2": [
+          "UNAVAILABLE",
+          "ALREADYRESERVED",
+          "DATE"
+        ],
+        "3": [
+          "STAFF",
+          "CHECK",
+          "ALTERNATIVE"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Describe your disappointment at the conflict, then how the staff worked with you to find a workable alternative.",
+      "explanation": "Booking conflicts at public facilities are resolved most convincingly through compromise, and describing a specific nearby alternative shows realistic, practical problem-solving rather than the conflict simply disappearing.",
+      "modelAnswer": "Hoping to book the main hall for my mother's retirement party, I discover the exact Saturday I wanted has already been reserved by another family for the whole afternoon. A little disappointed, I ask the staff member what else is available, and she suggests the following Saturday instead, which, after checking with my family, turns out to work just as well.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q1",
+      "instruction": "DESCRIBE THE TRAVEL DAY AND HOW EACH PROBLEM WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "During a single day of travel, your flight is delayed, your original hotel reservation falls through, and you must resolve both issues before finally settling in for the night. Describe the full day and how each problem was resolved.",
+      "emojis": [
+        "😩",
+        "🏨",
+        "✅",
+        "✈️"
+      ],
+      "keywords": {
+        "0": [
+          "REBOOK",
+          "AIRLINE",
+          "ALTERNATIVE"
+        ],
+        "1": [
+          "HOTEL",
+          "RESERVATION",
+          "LOST"
+        ],
+        "2": [
+          "ARRANGE",
+          "NEWHOTEL",
+          "SETTLE"
+        ],
+        "3": [
+          "FLIGHT",
+          "DELAY",
+          "ANNOUNCE"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Handle the two separate service problems one at a time, giving each a clear resolution before moving to the next.",
+      "explanation": "Multi-service situations are managed in writing the same way they are managed in real life, one problem resolved fully before attention moves to the next, which keeps a complex day easy to follow.",
+      "modelAnswer": "My flight is delayed by nearly four hours due to a technical issue, forcing the airline to rebook several passengers, including me, onto a later connecting flight. By the time I finally reach my destination close to midnight, the hotel has already given away my unclaimed reservation, but after a tense phone call, the airline agrees to cover a nearby replacement hotel, and I finally collapse into bed just after one in the morning.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q2",
+      "instruction": "DESCRIBE THE WEDDING DAY CRISIS AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "On the morning of a wedding, the catering company arrives at the wrong venue while the florist delivers flowers an hour late. Describe the situation and how the wedding planner resolved both problems.",
+      "emojis": [
+        "🚚",
+        "💒",
+        "✅",
+        "😰"
+      ],
+      "keywords": {
+        "0": [
+          "FLORIST",
+          "LATE",
+          "DELIVER"
+        ],
+        "1": [
+          "CATERER",
+          "WRONGVENUE",
+          "ARRIVE"
+        ],
+        "2": [
+          "CEREMONY",
+          "BEGIN",
+          "ONTIME"
+        ],
+        "3": [
+          "PLANNER",
+          "CALL",
+          "REDIRECT"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Show the planner handling both crises calmly, one after the other, before revealing the eventual outcome for the ceremony itself.",
+      "explanation": "High-pressure event situations are believable when the person in charge is shown solving problems in sequence rather than everything resolving itself, which reflects how real event coordination works under stress.",
+      "modelAnswer": "Just two hours before the ceremony, the catering van pulls up to entirely the wrong address across town, while the florist calls to say the flower delivery will now be nearly an hour late. The wedding planner calmly redirects the caterer with clear directions over the phone and rearranges the ceremony schedule slightly to buy the florist extra time, and somehow, by the time guests begin arriving, everything looks perfectly in place.",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q3",
+      "instruction": "DESCRIBE THE RENOVATION SCHEDULING CONFLICT AND HOW IT WAS RESOLVED",
+      "subtype": "describeSituationWriting",
+      "interactionType": "writing",
+      "situation": "While coordinating a kitchen renovation, you discover that the plumber and the electrician have both been scheduled for the exact same day, when only one can work in the space at a time. Describe the situation and how it was resolved.",
+      "emojis": [
+        "✅",
+        "🛠️",
+        "🔧",
+        "📅"
+      ],
+      "keywords": {
+        "0": [
+          "SEQUENCE",
+          "AGREE",
+          "PROCEED"
+        ],
+        "1": [
+          "SCHEDULE",
+          "OVERLAP",
+          "SAMEDAY"
+        ],
+        "2": [
+          "PLUMBER",
+          "ELECTRICIAN",
+          "BOTH"
+        ],
+        "3": [
+          "CONTRACTOR",
+          "CALL",
+          "REARRANGE"
+        ]
+      },
+      "minWords": 38,
+      "hint": "Explain the scheduling clash clearly, then describe the specific new order the contractors agreed to follow.",
+      "explanation": "Coordinating several contractors involves managing overlapping schedules, and describing the specific new sequence agreed upon shows the reader a realistic, practical resolution rather than a vague statement about sorting it out.",
+      "modelAnswer": "Reviewing the renovation calendar, I realize with some frustration that both the plumber and the electrician have been booked for Thursday morning, even though the small kitchen space only allows one tradesperson to work safely at a time. After calling both contractors, we agree that the plumber will finish his work by midday, allowing the electrician to begin in the afternoon, and the renovation continues without any further delay.",
+      "phase": "mastery"
+    }
+  ],
+  "phase": "mastery"
+}

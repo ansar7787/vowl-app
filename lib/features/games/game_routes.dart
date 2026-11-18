@@ -104,6 +104,8 @@ import 'package:vowl/features/writing/sentence_builder/presentation/pages/senten
 import 'package:vowl/features/writing/sentence_builder/presentation/pages/sentence_builder_practice_screen.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/pages/complete_sentence_learn_screen.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/pages/complete_sentence_practice_screen.dart';
+import 'package:vowl/features/writing/describe_situation_writing/presentation/pages/describe_situation_writing_learn_screen.dart';
+import 'package:vowl/features/writing/describe_situation_writing/presentation/pages/describe_situation_writing_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -621,6 +623,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'describesituationwriting') {
+          return fadeTransitionPage(
+            child: DescribeSituationWritingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -917,6 +925,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'completesentence') {
           return fadeTransitionPage(
             child: CompleteSentencePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'describesituationwriting') {
+          return fadeTransitionPage(
+            child: DescribeSituationWritingPracticeScreen(level: level),
             state: state,
           );
         }
