@@ -1,3 +1,4 @@
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -30,32 +31,37 @@ void main() {
       WidgetTester tester,
     ) async {
       int tapCount = 0;
-      await tester.pumpWidget(
-        createWidgetForTesting(
-          child: ScaleButton(
-            onTap: () => tapCount++,
-            child: const Text('Debounce'),
+      var currentTime = DateTime(2026, 1, 1, 12, 0, 0);
+
+      await withClock(Clock(() => currentTime), () async {
+        await tester.pumpWidget(
+          createWidgetForTesting(
+            child: ScaleButton(
+              onTap: () => tapCount++,
+              child: const Text('Debounce'),
+            ),
           ),
-        ),
-      );
+        );
 
-      // First tap
-      await tester.tap(find.text('Debounce'));
-      await tester.pumpAndSettle();
-      expect(tapCount, equals(1));
+        // First tap
+        await tester.tap(find.text('Debounce'));
+        await tester.pumpAndSettle();
+        expect(tapCount, equals(1));
 
-      // Second tap immediately - should be debounced
-      await tester.tap(find.text('Debounce'));
-      await tester.pumpAndSettle();
-      expect(tapCount, equals(1));
+        // Second tap immediately - should be debounced
+        await tester.tap(find.text('Debounce'));
+        await tester.pumpAndSettle();
+        expect(tapCount, equals(1));
 
-      // Advance clock by 1 second using virtual time
-      await tester.pump(const Duration(seconds: 1));
+        // Advance clock by 1 second using controlled clock time
+        currentTime = currentTime.add(const Duration(seconds: 1));
+        await tester.pump(const Duration(seconds: 1));
 
-      // Third tap - should trigger
-      await tester.tap(find.text('Debounce'));
-      await tester.pumpAndSettle();
-      expect(tapCount, equals(2));
+        // Third tap - should trigger
+        await tester.tap(find.text('Debounce'));
+        await tester.pumpAndSettle();
+        expect(tapCount, equals(2));
+      });
     });
   });
 }

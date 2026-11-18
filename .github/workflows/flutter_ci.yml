@@ -43,9 +43,13 @@ jobs:
         run: flutter analyze
         # While you clean old issues you can use: flutter analyze --no-fatal-infos
 
-      - name: Run Core Tests
+      - name: Run Core Business Logic Tests
         if: ${{ !cancelled() }}
-        run: flutter test test/core/ --reporter=expanded
+        run: flutter test test/core/data/ test/core/domain/ test/core/services/ test/core/theme/ test/core/utils/
+
+      - name: Run Core Presentation Tests
+        if: ${{ !cancelled() }}
+        run: flutter test test/core/presentation/
 
       - name: Run Auth & Games Tests
         if: ${{ !cancelled() }}
