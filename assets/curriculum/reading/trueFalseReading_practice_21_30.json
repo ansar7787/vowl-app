@@ -1,0 +1,491 @@
+{
+  "gameType": "trueFalseReading",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "RDG_TRUEFALSEREADING_L21_practice_q1",
+      "level": 21,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "At the swimming pool, children under ten must wear a bright orange armband. The lifeguard checks every child before they enter the water.",
+      "sentences": [
+        "At the swimming pool, children under ten must wear a bright orange armband.",
+        "The lifeguard checks every child before they enter the water."
+      ],
+      "statement": "A nine-year-old must wear an armband at the pool.",
+      "correctAnswer": "true",
+      "evidenceLine": "At the swimming pool, children under ten must wear a bright orange armband.",
+      "correctSentenceIndex": 0,
+      "hint": "Think about which ages count as \"under ten.\"",
+      "explanation": "Nine is under ten, so a nine-year-old must wear the armband."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L21_practice_q2",
+      "level": 21,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The old bridge in our town was built in 1890. It was closed for repairs in 2019 and opened again last spring.",
+      "sentences": [
+        "The old bridge in our town was built in 1890.",
+        "It was closed for repairs in 2019 and opened again last spring."
+      ],
+      "statement": "The old bridge is open again after repairs.",
+      "correctAnswer": "true",
+      "evidenceLine": "It was closed for repairs in 2019 and opened again last spring.",
+      "correctSentenceIndex": 1,
+      "hint": "Read what happened after the repairs.",
+      "explanation": "The bridge opened again last spring, so it can be used after being repaired."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L21_practice_q3",
+      "level": 21,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The number 12 bus runs every ten minutes on weekdays. On weekends, it comes only every twenty minutes.",
+      "sentences": [
+        "The number 12 bus runs every ten minutes on weekdays.",
+        "On weekends, it comes only every twenty minutes."
+      ],
+      "statement": "The number 12 bus comes more often on weekends than on weekdays.",
+      "correctAnswer": "false",
+      "evidenceLine": "The number 12 bus runs every ten minutes on weekdays. On weekends, it comes only every twenty minutes.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare weekdays with weekends.",
+      "explanation": "Every twenty minutes on weekends is less often than every ten minutes on weekdays."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L22_practice_q1",
+      "level": 22,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Jana studies at night school two evenings a week. She has a two-hour class on Monday and another two-hour class on Wednesday.",
+      "sentences": [
+        "Jana studies at night school two evenings a week.",
+        "She has a two-hour class on Monday and another two-hour class on Wednesday."
+      ],
+      "statement": "Jana spends four hours in class each week.",
+      "correctAnswer": "true",
+      "evidenceLine": "She has a two-hour class on Monday and another two-hour class on Wednesday.",
+      "correctSentenceIndex": 1,
+      "hint": "Add up the lengths of her classes.",
+      "explanation": "Two classes of two hours each make four hours."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L22_practice_q2",
+      "level": 22,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Mei's brother is three years older than she is. He is fifteen, and he goes to the same school as Mei.",
+      "sentences": [
+        "Mei's brother is three years older than she is.",
+        "He is fifteen, and he goes to the same school as Mei."
+      ],
+      "statement": "Mei is older than her brother.",
+      "correctAnswer": "false",
+      "evidenceLine": "Mei's brother is three years older than she is.",
+      "correctSentenceIndex": 0,
+      "hint": "Who is older, Mei or her brother?",
+      "explanation": "Her brother is three years older, so Mei is the younger one."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L22_practice_q3",
+      "level": 22,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Every night, Paolo puts his keys in a bowl by the door. He has not lost his keys once since he started doing this.",
+      "sentences": [
+        "Every night, Paolo puts his keys in a bowl by the door.",
+        "He has not lost his keys once since he started doing this."
+      ],
+      "statement": "Paolo's keys have stayed safe since he began using the bowl.",
+      "correctAnswer": "true",
+      "evidenceLine": "He has not lost his keys once since he started doing this.",
+      "correctSentenceIndex": 1,
+      "hint": "Read what has happened since the habit started.",
+      "explanation": "He has not lost his keys once since he began the habit, so they have stayed safe."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L23_practice_q1",
+      "level": 23,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Mina's tablet needs to charge for three hours. After that, the battery lasts for about ten hours.",
+      "sentences": [
+        "Mina's tablet needs to charge for three hours.",
+        "After that, the battery lasts for about ten hours."
+      ],
+      "statement": "A full charge gives Mina's tablet about ten hours of use.",
+      "correctAnswer": "true",
+      "evidenceLine": "After that, the battery lasts for about ten hours.",
+      "correctSentenceIndex": 1,
+      "hint": "Look at how long the battery lasts.",
+      "explanation": "The battery lasts about ten hours after the three-hour charge."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L23_practice_q2",
+      "level": 23,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The ferry from Split to the island leaves at 8 a.m. and again at 4 p.m. The trip takes about ninety minutes.",
+      "sentences": [
+        "The ferry from Split to the island leaves at 8 a.m.",
+        "and again at 4 p.m.",
+        "The trip takes about ninety minutes."
+      ],
+      "statement": "There is only one ferry each day.",
+      "correctAnswer": "false",
+      "evidenceLine": "The ferry from Split to the island leaves at 8 a.m. and again at 4 p.m.",
+      "correctSentenceIndex": 0,
+      "hint": "Count the departure times.",
+      "explanation": "Two times are given, 8 a.m. and 4 p.m., so the ferry runs twice."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L23_practice_q3",
+      "level": 23,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Sofia earns $12 an hour at her weekend job in a bookstore. Last Saturday she worked for five hours.",
+      "sentences": [
+        "Sofia earns $12 an hour at her weekend job in a bookstore.",
+        "Last Saturday she worked for five hours."
+      ],
+      "statement": "Sofia earned $60 last Saturday.",
+      "correctAnswer": "true",
+      "evidenceLine": "Sofia earns $12 an hour at her weekend job in a bookstore. Last Saturday she worked for five hours.",
+      "correctSentenceIndex": 0,
+      "hint": "Think about her hourly pay and her hours.",
+      "explanation": "Five hours at $12 an hour comes to $60."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L24_practice_q1",
+      "level": 24,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The Garcias' new house has a small kitchen but a very large living room. They plan to paint the living room yellow next month.",
+      "sentences": [
+        "The Garcias' new house has a small kitchen but a very large living room.",
+        "They plan to paint the living room yellow next month."
+      ],
+      "statement": "The Garcias' kitchen is bigger than their living room.",
+      "correctAnswer": "false",
+      "evidenceLine": "The Garcias' new house has a small kitchen but a very large living room.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare the two rooms.",
+      "explanation": "The kitchen is small and the living room is very large, so it is the other way around."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L24_practice_q2",
+      "level": 24,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "In many countries, people bring a small gift when they visit someone's home. Flowers and sweets are common choices.",
+      "sentences": [
+        "In many countries, people bring a small gift when they visit someone's home.",
+        "Flowers and sweets are common choices."
+      ],
+      "statement": "Guests often bring flowers or sweets to a home.",
+      "correctAnswer": "true",
+      "evidenceLine": "Flowers and sweets are common choices.",
+      "correctSentenceIndex": 1,
+      "hint": "Look at the gifts named in the passage.",
+      "explanation": "Flowers and sweets are named as common gifts for visitors."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L24_practice_q3",
+      "level": 24,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Plastic bags take hundreds of years to break down. Many stores now charge five cents for each bag to encourage people to bring their own.",
+      "sentences": [
+        "Plastic bags take hundreds of years to break down.",
+        "Many stores now charge five cents for each bag to encourage people to bring their own."
+      ],
+      "statement": "Some stores make customers pay for plastic bags.",
+      "correctAnswer": "true",
+      "evidenceLine": "Many stores now charge five cents for each bag to encourage people to bring their own.",
+      "correctSentenceIndex": 1,
+      "hint": "Look at what many stores now do.",
+      "explanation": "Many stores charge five cents a bag, so some stores do ask for payment."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L25_practice_q1",
+      "level": 25,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Basil grows best in warm weather with plenty of sun. Ken keeps his basil plant on a sunny windowsill and waters it twice a week.",
+      "sentences": [
+        "Basil grows best in warm weather with plenty of sun.",
+        "Ken keeps his basil plant on a sunny windowsill and waters it twice a week."
+      ],
+      "statement": "Ken keeps his basil in a dark corner.",
+      "correctAnswer": "false",
+      "evidenceLine": "Ken keeps his basil plant on a sunny windowsill and waters it twice a week.",
+      "correctSentenceIndex": 1,
+      "hint": "Where is the basil plant?",
+      "explanation": "The plant sits on a sunny windowsill, not in a dark corner."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L25_practice_q2",
+      "level": 25,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The local radio station plays news every hour and music in between. Its most popular show is on Saturday mornings.",
+      "sentences": [
+        "The local radio station plays news every hour and music in between.",
+        "Its most popular show is on Saturday mornings."
+      ],
+      "statement": "The station plays the news once a day.",
+      "correctAnswer": "false",
+      "evidenceLine": "The local radio station plays news every hour and music in between.",
+      "correctSentenceIndex": 0,
+      "hint": "How often is the news played?",
+      "explanation": "The news comes every hour, which is far more often than once a day."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L25_practice_q3",
+      "level": 25,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Rana's computer became very slow last month. Her cousin deleted old files and restarted it, and now it works fast again.",
+      "sentences": [
+        "Rana's computer became very slow last month.",
+        "Her cousin deleted old files and restarted it, and now it works fast again."
+      ],
+      "statement": "Rana solved the slowness without help from anyone else.",
+      "correctAnswer": "false",
+      "evidenceLine": "Her cousin deleted old files and restarted it, and now it works fast again.",
+      "correctSentenceIndex": 1,
+      "hint": "Read how the problem was solved.",
+      "explanation": "Her cousin deleted old files and restarted the computer, so she had help."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L26_practice_q1",
+      "level": 26,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Weather forecasters said it would be sunny all week. But on Wednesday afternoon, heavy rain surprised everyone in the park.",
+      "sentences": [
+        "Weather forecasters said it would be sunny all week.",
+        "But on Wednesday afternoon, heavy rain surprised everyone in the park."
+      ],
+      "statement": "The forecast was wrong on Wednesday.",
+      "correctAnswer": "true",
+      "evidenceLine": "Weather forecasters said it would be sunny all week. But on Wednesday afternoon, heavy rain surprised everyone in the park.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare what was predicted with what happened.",
+      "explanation": "Sunny weather was predicted for the whole week, yet heavy rain fell on Wednesday."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L26_practice_q2",
+      "level": 26,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Diego speaks Spanish at home and English at work. He is now learning French because he wants to move to Paris next year.",
+      "sentences": [
+        "Diego speaks Spanish at home and English at work.",
+        "He is now learning French because he wants to move to Paris next year."
+      ],
+      "statement": "Diego plans to move to Paris this month.",
+      "correctAnswer": "false",
+      "evidenceLine": "He is now learning French because he wants to move to Paris next year.",
+      "correctSentenceIndex": 1,
+      "hint": "Find when the move will happen.",
+      "explanation": "The move is planned for next year, not this month."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L26_practice_q3",
+      "level": 26,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The art class at the community center meets on Thursday evenings. Students bring their own paper, but the center gives them paint and brushes.",
+      "sentences": [
+        "The art class at the community center meets on Thursday evenings.",
+        "Students bring their own paper, but the center gives them paint and brushes."
+      ],
+      "statement": "Students have to bring their own paint.",
+      "correctAnswer": "false",
+      "evidenceLine": "Students bring their own paper, but the center gives them paint and brushes.",
+      "correctSentenceIndex": 1,
+      "hint": "Who provides the paint?",
+      "explanation": "The center provides the paint and brushes. Students only bring paper."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L27_practice_q1",
+      "level": 27,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Lucia pays $900 a month in rent for her apartment. Her monthly bills for electricity and internet together are $120.",
+      "sentences": [
+        "Lucia pays $900 a month in rent for her apartment.",
+        "Her monthly bills for electricity and internet together are $120."
+      ],
+      "statement": "Rent and bills together cost Lucia less than $1,000 a month.",
+      "correctAnswer": "false",
+      "evidenceLine": "Lucia pays $900 a month in rent for her apartment. Her monthly bills for electricity and internet together are $120.",
+      "correctSentenceIndex": 0,
+      "hint": "Add the rent and the bills.",
+      "explanation": "$900 plus $120 is $1,020, which is more than $1,000."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L27_practice_q2",
+      "level": 27,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Karl's apartment has one bedroom. He sleeps there, but he works at a desk near the living room window.",
+      "sentences": [
+        "Karl's apartment has one bedroom.",
+        "He sleeps there, but he works at a desk near the living room window."
+      ],
+      "statement": "Karl works in the living room.",
+      "correctAnswer": "true",
+      "evidenceLine": "He sleeps there, but he works at a desk near the living room window.",
+      "correctSentenceIndex": 1,
+      "hint": "Where is Karl's desk?",
+      "explanation": "His desk is near the living room window, so he works in that room."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L27_practice_q3",
+      "level": 27,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Farah opened a bakery three years ago. At first she had two workers, but now she has eight.",
+      "sentences": [
+        "Farah opened a bakery three years ago.",
+        "At first she had two workers, but now she has eight."
+      ],
+      "statement": "Farah's bakery has more workers now than at the start.",
+      "correctAnswer": "true",
+      "evidenceLine": "At first she had two workers, but now she has eight.",
+      "correctSentenceIndex": 1,
+      "hint": "Compare \"at first\" with \"now.\"",
+      "explanation": "Two workers grew to eight, so there are more today."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L28_practice_q1",
+      "level": 28,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The city library is open until 8 p.m. on weekdays. On Saturdays it closes at 4 p.m., and on Sundays it is closed.",
+      "sentences": [
+        "The city library is open until 8 p.m.",
+        "on weekdays.",
+        "On Saturdays it closes at 4 p.m., and on Sundays it is closed."
+      ],
+      "statement": "The library closes earlier on weekdays than on Saturdays.",
+      "correctAnswer": "false",
+      "evidenceLine": "The city library is open until 8 p.m. on weekdays. On Saturdays it closes at 4 p.m., and on Sundays it is closed.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare the closing times.",
+      "explanation": "It closes at 8 p.m. on weekdays but at 4 p.m. on Saturdays, so Saturday is earlier."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L28_practice_q2",
+      "level": 28,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "During the harvest festival, villagers cook a large meal and share it with everyone. Music and dancing begin after dinner and continue until midnight.",
+      "sentences": [
+        "During the harvest festival, villagers cook a large meal and share it with everyone.",
+        "Music and dancing begin after dinner and continue until midnight."
+      ],
+      "statement": "The dancing starts before the meal.",
+      "correctAnswer": "false",
+      "evidenceLine": "Music and dancing begin after dinner and continue until midnight.",
+      "correctSentenceIndex": 1,
+      "hint": "Which comes first, the dinner or the dancing?",
+      "explanation": "Dancing begins after dinner, not before it."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L28_practice_q3",
+      "level": 28,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The train to the coast takes two hours, but the bus takes three. Ali chose the bus because the ticket costs half as much.",
+      "sentences": [
+        "The train to the coast takes two hours, but the bus takes three.",
+        "Ali chose the bus because the ticket costs half as much."
+      ],
+      "statement": "Ali's trip takes longer than it would by train.",
+      "correctAnswer": "true",
+      "evidenceLine": "The train to the coast takes two hours, but the bus takes three. Ali chose the bus because the ticket costs half as much.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare the two travel times.",
+      "explanation": "Ali took the bus, which takes three hours instead of two."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L29_practice_q1",
+      "level": 29,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Solar panels on the school roof provide half of the school's electricity. The school plans to add more panels next year.",
+      "sentences": [
+        "Solar panels on the school roof provide half of the school's electricity.",
+        "The school plans to add more panels next year."
+      ],
+      "statement": "The school gets some of its power from the sun.",
+      "correctAnswer": "true",
+      "evidenceLine": "Solar panels on the school roof provide half of the school's electricity.",
+      "correctSentenceIndex": 0,
+      "hint": "Notice what the panels supply.",
+      "explanation": "Solar panels use sunlight, and they supply half of the school's electricity."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L29_practice_q2",
+      "level": 29,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The first telephone was invented in the 1870s. Cell phones only became common in homes about a hundred years later.",
+      "sentences": [
+        "The first telephone was invented in the 1870s.",
+        "Cell phones only became common in homes about a hundred years later."
+      ],
+      "statement": "Cell phones became common in homes before the year 1900.",
+      "correctAnswer": "false",
+      "evidenceLine": "Cell phones only became common in homes about a hundred years later.",
+      "correctSentenceIndex": 1,
+      "hint": "Add a hundred years to the 1870s.",
+      "explanation": "A hundred years after the 1870s is the 1970s, long after 1900."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L29_practice_q3",
+      "level": 29,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The school soccer team won six games and lost two this season. The coach says the team played better than last year.",
+      "sentences": [
+        "The school soccer team won six games and lost two this season.",
+        "The coach says the team played better than last year."
+      ],
+      "statement": "The team lost more games than it won.",
+      "correctAnswer": "false",
+      "evidenceLine": "The school soccer team won six games and lost two this season.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare the wins and the losses.",
+      "explanation": "Six wins is more than two losses."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L30_practice_q1",
+      "level": 30,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Nadia starts work at 8 a.m. and takes a one-hour lunch break at noon. She goes home at 5 p.m.",
+      "sentences": [
+        "Nadia starts work at 8 a.m.",
+        "and takes a one-hour lunch break at noon.",
+        "She goes home at 5 p.m."
+      ],
+      "statement": "Nadia is at work for nine hours each day.",
+      "correctAnswer": "true",
+      "evidenceLine": "Nadia starts work at 8 a.m. and takes a one-hour lunch break at noon. She goes home at 5 p.m.",
+      "correctSentenceIndex": 0,
+      "hint": "Count from her start time to her finish time.",
+      "explanation": "From 8 a.m. to 5 p.m. is nine hours, including the lunch break."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L30_practice_q2",
+      "level": 30,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Oscar's grandparents live in the country. The family visits them every summer and stays for two weeks.",
+      "sentences": [
+        "Oscar's grandparents live in the country.",
+        "The family visits them every summer and stays for two weeks."
+      ],
+      "statement": "Oscar's family sees his grandparents in the summer.",
+      "correctAnswer": "true",
+      "evidenceLine": "The family visits them every summer and stays for two weeks.",
+      "correctSentenceIndex": 1,
+      "hint": "When does the family go to the country?",
+      "explanation": "They visit every summer, so they see the grandparents then."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L30_practice_q3",
+      "level": 30,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Before leaving the house, Jim checks that the stove is off. Then he locks the door and tests the handle twice.",
+      "sentences": [
+        "Before leaving the house, Jim checks that the stove is off.",
+        "Then he locks the door and tests the handle twice."
+      ],
+      "statement": "Jim locks the door before he checks the stove.",
+      "correctAnswer": "false",
+      "evidenceLine": "Before leaving the house, Jim checks that the stove is off. Then he locks the door and tests the handle twice.",
+      "correctSentenceIndex": 0,
+      "hint": "Think about Jim's first action.",
+      "explanation": "He checks the stove first, and locking the door comes afterward."
+    }
+  ]
+}

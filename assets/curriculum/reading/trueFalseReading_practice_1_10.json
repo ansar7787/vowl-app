@@ -1,0 +1,488 @@
+{
+  "gameType": "trueFalseReading",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_TRUEFALSEREADING_L1_practice_q1",
+      "level": 1,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Mia has a small garden. She grows tomatoes and beans there.",
+      "sentences": [
+        "Mia has a small garden.",
+        "She grows tomatoes and beans there."
+      ],
+      "statement": "Mia grows beans in her garden.",
+      "correctAnswer": "true",
+      "evidenceLine": "She grows tomatoes and beans there.",
+      "correctSentenceIndex": 1,
+      "hint": "Find what Mia grows.",
+      "explanation": "The second sentence says she grows tomatoes and beans, so beans are in her garden."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L1_practice_q2",
+      "level": 1,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Lena wears a helmet when she rides her bike. The helmet is bright yellow.",
+      "sentences": [
+        "Lena wears a helmet when she rides her bike.",
+        "The helmet is bright yellow."
+      ],
+      "statement": "Lena's helmet is red.",
+      "correctAnswer": "false",
+      "evidenceLine": "The helmet is bright yellow.",
+      "correctSentenceIndex": 1,
+      "hint": "Look for the color of the helmet.",
+      "explanation": "The helmet is bright yellow, not red."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L1_practice_q3",
+      "level": 1,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Omar sells fresh bread. His shop opens at 7 a.m.",
+      "sentences": [
+        "Omar sells fresh bread.",
+        "His shop opens at 7 a.m."
+      ],
+      "statement": "Omar's shop opens at seven in the morning.",
+      "correctAnswer": "true",
+      "evidenceLine": "His shop opens at 7 a.m.",
+      "correctSentenceIndex": 1,
+      "hint": "Look for the opening time of the shop.",
+      "explanation": "7 a.m. is seven in the morning, so the statement matches the passage."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L2_practice_q1",
+      "level": 2,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Dev listens to the radio in the kitchen. He likes the morning news.",
+      "sentences": [
+        "Dev listens to the radio in the kitchen.",
+        "He likes the morning news."
+      ],
+      "statement": "Dev enjoys hearing the news in the morning.",
+      "correctAnswer": "true",
+      "evidenceLine": "He likes the morning news.",
+      "correctSentenceIndex": 1,
+      "hint": "Think about what Dev likes to hear.",
+      "explanation": "Dev likes the morning news, so he enjoys news early in the day."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L2_practice_q2",
+      "level": 2,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Sara's apartment has two bedrooms and one bathroom. It is on the third floor.",
+      "sentences": [
+        "Sara's apartment has two bedrooms and one bathroom.",
+        "It is on the third floor."
+      ],
+      "statement": "There are two bedrooms in Sara's home.",
+      "correctAnswer": "true",
+      "evidenceLine": "Sara's apartment has two bedrooms and one bathroom.",
+      "correctSentenceIndex": 0,
+      "hint": "Count the bedrooms.",
+      "explanation": "Sentence one mentions two bedrooms."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L2_practice_q3",
+      "level": 2,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The bus to the airport leaves every thirty minutes. The ride takes one hour.",
+      "sentences": [
+        "The bus to the airport leaves every thirty minutes.",
+        "The ride takes one hour."
+      ],
+      "statement": "The ride to the airport takes two hours.",
+      "correctAnswer": "false",
+      "evidenceLine": "The ride takes one hour.",
+      "correctSentenceIndex": 1,
+      "hint": "Find how long the ride is.",
+      "explanation": "The ride takes one hour, so two hours is wrong."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L3_practice_q1",
+      "level": 3,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Ravi draws pictures of animals. His favorite animal is the horse.",
+      "sentences": [
+        "Ravi draws pictures of animals.",
+        "His favorite animal is the horse."
+      ],
+      "statement": "Ravi's favorite animal is the dog.",
+      "correctAnswer": "false",
+      "evidenceLine": "His favorite animal is the horse.",
+      "correctSentenceIndex": 1,
+      "hint": "Which animal does Ravi like best?",
+      "explanation": "The passage names the horse as his favorite."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L3_practice_q2",
+      "level": 3,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The park is next to the city library. It has a big fountain in the middle.",
+      "sentences": [
+        "The park is next to the city library.",
+        "It has a big fountain in the middle."
+      ],
+      "statement": "The park is beside the library.",
+      "correctAnswer": "true",
+      "evidenceLine": "The park is next to the city library.",
+      "correctSentenceIndex": 0,
+      "hint": "Look at where the park is.",
+      "explanation": "\"Next to\" and \"beside\" mean the same thing."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L3_practice_q3",
+      "level": 3,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Nina makes soup with carrots and onions. She eats it with warm bread.",
+      "sentences": [
+        "Nina makes soup with carrots and onions.",
+        "She eats it with warm bread."
+      ],
+      "statement": "Nina has bread with her soup.",
+      "correctAnswer": "true",
+      "evidenceLine": "She eats it with warm bread.",
+      "correctSentenceIndex": 1,
+      "hint": "Find out what Nina eats with the soup.",
+      "explanation": "She eats the soup with warm bread, so bread goes with it."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L4_practice_q1",
+      "level": 4,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "It rained all day on Monday. On Tuesday the sun came out.",
+      "sentences": [
+        "It rained all day on Monday.",
+        "On Tuesday the sun came out."
+      ],
+      "statement": "It was sunny on Monday.",
+      "correctAnswer": "false",
+      "evidenceLine": "It rained all day on Monday.",
+      "correctSentenceIndex": 0,
+      "hint": "Compare the weather on the two days.",
+      "explanation": "Rain fell on Monday. The sun only appeared on Tuesday."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L4_practice_q2",
+      "level": 4,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Tara's swimming team practices at the town pool. Their coach is a woman named Ines.",
+      "sentences": [
+        "Tara's swimming team practices at the town pool.",
+        "Their coach is a woman named Ines."
+      ],
+      "statement": "Tara's coach is a man.",
+      "correctAnswer": "false",
+      "evidenceLine": "Their coach is a woman named Ines.",
+      "correctSentenceIndex": 1,
+      "hint": "Who is the coach?",
+      "explanation": "The coach is Ines, and the passage calls her a woman."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L4_practice_q3",
+      "level": 4,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Kids at Green School wear blue uniforms. They start class at 8:30.",
+      "sentences": [
+        "Kids at Green School wear blue uniforms.",
+        "They start class at 8:30."
+      ],
+      "statement": "Class at Green School begins at half past eight.",
+      "correctAnswer": "true",
+      "evidenceLine": "They start class at 8:30.",
+      "correctSentenceIndex": 1,
+      "hint": "Read the time carefully.",
+      "explanation": "8:30 is the same as half past eight."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L5_practice_q1",
+      "level": 5,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Alex walks to work every day. He never takes the bus.",
+      "sentences": [
+        "Alex walks to work every day.",
+        "He never takes the bus."
+      ],
+      "statement": "Alex sometimes takes the bus to work.",
+      "correctAnswer": "false",
+      "evidenceLine": "He never takes the bus.",
+      "correctSentenceIndex": 1,
+      "hint": "Notice the word \"never.\"",
+      "explanation": "\"Never\" means not even once, so \"sometimes\" is wrong."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L5_practice_q2",
+      "level": 5,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "A notebook costs $3. Kim buys two of them.",
+      "sentences": [
+        "A notebook costs $3.",
+        "Kim buys two of them."
+      ],
+      "statement": "Kim spends $6 on notebooks.",
+      "correctAnswer": "true",
+      "evidenceLine": "A notebook costs $3. Kim buys two of them.",
+      "correctSentenceIndex": 0,
+      "hint": "Think about the price of one and how many she buys.",
+      "explanation": "Two notebooks at $3 each cost $6 altogether."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L5_practice_q3",
+      "level": 5,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Every spring, the town has a kite festival. Hundreds of people come to fly kites.",
+      "sentences": [
+        "Every spring, the town has a kite festival.",
+        "Hundreds of people come to fly kites."
+      ],
+      "statement": "The kite festival takes place in winter.",
+      "correctAnswer": "false",
+      "evidenceLine": "Every spring, the town has a kite festival.",
+      "correctSentenceIndex": 0,
+      "hint": "Which season is mentioned?",
+      "explanation": "The festival happens every spring, not in winter."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L6_practice_q1",
+      "level": 6,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Ali is learning Spanish. He studies ten words every day.",
+      "sentences": [
+        "Ali is learning Spanish.",
+        "He studies ten words every day."
+      ],
+      "statement": "Ali learns ten Spanish words each day.",
+      "correctAnswer": "true",
+      "evidenceLine": "He studies ten words every day.",
+      "correctSentenceIndex": 1,
+      "hint": "Look at how many words Ali studies.",
+      "explanation": "He studies ten words daily as part of learning Spanish."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L6_practice_q2",
+      "level": 6,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Ella watches TV after dinner. Her favorite show is about cooking.",
+      "sentences": [
+        "Ella watches TV after dinner.",
+        "Her favorite show is about cooking."
+      ],
+      "statement": "Ella's favorite show is about food.",
+      "correctAnswer": "true",
+      "evidenceLine": "Her favorite show is about cooking.",
+      "correctSentenceIndex": 1,
+      "hint": "Find the topic of the show.",
+      "explanation": "Cooking is a food activity, so the statement fits."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L6_practice_q3",
+      "level": 6,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Tom's grandmother lives with his family. She sleeps in the small room upstairs.",
+      "sentences": [
+        "Tom's grandmother lives with his family.",
+        "She sleeps in the small room upstairs."
+      ],
+      "statement": "Tom's grandmother lives in another city.",
+      "correctAnswer": "false",
+      "evidenceLine": "Tom's grandmother lives with his family.",
+      "correctSentenceIndex": 0,
+      "hint": "Where does the grandmother live?",
+      "explanation": "She lives with Tom's family, so she is not in another city."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L7_practice_q1",
+      "level": 7,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Jin has rice and eggs for breakfast. He drinks a glass of milk too.",
+      "sentences": [
+        "Jin has rice and eggs for breakfast.",
+        "He drinks a glass of milk too."
+      ],
+      "statement": "Jin drinks milk with his breakfast.",
+      "correctAnswer": "true",
+      "evidenceLine": "He drinks a glass of milk too.",
+      "correctSentenceIndex": 1,
+      "hint": "Look for the drink.",
+      "explanation": "The second sentence says he also drinks a glass of milk."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L7_practice_q2",
+      "level": 7,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Anna puts old bottles in the blue bin. Paper goes in the green bin.",
+      "sentences": [
+        "Anna puts old bottles in the blue bin.",
+        "Paper goes in the green bin."
+      ],
+      "statement": "Anna puts paper in the blue bin.",
+      "correctAnswer": "false",
+      "evidenceLine": "Paper goes in the green bin.",
+      "correctSentenceIndex": 1,
+      "hint": "Which bin is for paper?",
+      "explanation": "Paper goes in the green bin. The blue bin is for bottles."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L7_practice_q3",
+      "level": 7,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Luis has a sore throat. The doctor tells him to rest and drink warm water.",
+      "sentences": [
+        "Luis has a sore throat.",
+        "The doctor tells him to rest and drink warm water."
+      ],
+      "statement": "The doctor wants Luis to rest.",
+      "correctAnswer": "true",
+      "evidenceLine": "The doctor tells him to rest and drink warm water.",
+      "correctSentenceIndex": 1,
+      "hint": "Read the doctor's advice.",
+      "explanation": "Resting is the first piece of advice the doctor gives."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L8_practice_q1",
+      "level": 8,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Maya plays the violin in a small band. They practice on Thursday nights.",
+      "sentences": [
+        "Maya plays the violin in a small band.",
+        "They practice on Thursday nights."
+      ],
+      "statement": "The band practices in the evening on Thursdays.",
+      "correctAnswer": "true",
+      "evidenceLine": "They practice on Thursday nights.",
+      "correctSentenceIndex": 1,
+      "hint": "Find the day and the time of day.",
+      "explanation": "Thursday nights means Thursday evenings."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L8_practice_q2",
+      "level": 8,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Emma checks the smoke alarm every month. Last week she changed its battery.",
+      "sentences": [
+        "Emma checks the smoke alarm every month.",
+        "Last week she changed its battery."
+      ],
+      "statement": "Emma changed the battery last month.",
+      "correctAnswer": "false",
+      "evidenceLine": "Last week she changed its battery.",
+      "correctSentenceIndex": 1,
+      "hint": "Look at when she changed it.",
+      "explanation": "She changed the battery last week, not last month."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L8_practice_q3",
+      "level": 8,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The moon goes around the Earth. It takes about one month.",
+      "sentences": [
+        "The moon goes around the Earth.",
+        "It takes about one month."
+      ],
+      "statement": "The moon needs one year to go around the Earth.",
+      "correctAnswer": "false",
+      "evidenceLine": "It takes about one month.",
+      "correctSentenceIndex": 1,
+      "hint": "Find how long the trip takes.",
+      "explanation": "The passage says about one month, not one year."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L9_practice_q1",
+      "level": 9,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Paul works in an office downtown. He has lunch at his desk.",
+      "sentences": [
+        "Paul works in an office downtown.",
+        "He has lunch at his desk."
+      ],
+      "statement": "Paul eats lunch in a restaurant.",
+      "correctAnswer": "false",
+      "evidenceLine": "He has lunch at his desk.",
+      "correctSentenceIndex": 1,
+      "hint": "Where does Paul eat lunch?",
+      "explanation": "He eats at his desk, not in a restaurant."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L9_practice_q2",
+      "level": 9,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Zoe has a black cat named Coco. The cat sleeps on the sofa.",
+      "sentences": [
+        "Zoe has a black cat named Coco.",
+        "The cat sleeps on the sofa."
+      ],
+      "statement": "Coco sleeps on the sofa.",
+      "correctAnswer": "true",
+      "evidenceLine": "Zoe has a black cat named Coco. The cat sleeps on the sofa.",
+      "correctSentenceIndex": 0,
+      "hint": "Who is Coco?",
+      "explanation": "Coco is Zoe's cat, and the cat sleeps on the sofa."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L9_practice_q3",
+      "level": 9,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Hana swims at the pool on Mondays and Fridays. Each lesson is forty minutes.",
+      "sentences": [
+        "Hana swims at the pool on Mondays and Fridays.",
+        "Each lesson is forty minutes."
+      ],
+      "statement": "Hana swims two days a week.",
+      "correctAnswer": "true",
+      "evidenceLine": "Hana swims at the pool on Mondays and Fridays.",
+      "correctSentenceIndex": 0,
+      "hint": "Count the days.",
+      "explanation": "Monday and Friday make two days."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L10_practice_q1",
+      "level": 10,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The old castle is now a museum. Visitors can see armor and old paintings.",
+      "sentences": [
+        "The old castle is now a museum.",
+        "Visitors can see armor and old paintings."
+      ],
+      "statement": "The old castle is now a hotel.",
+      "correctAnswer": "false",
+      "evidenceLine": "The old castle is now a museum.",
+      "correctSentenceIndex": 0,
+      "hint": "Check how the castle is used today.",
+      "explanation": "The first sentence says it is a museum."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L10_practice_q2",
+      "level": 10,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "The library is on Main Street. The bank is on Park Street.",
+      "sentences": [
+        "The library is on Main Street.",
+        "The bank is on Park Street."
+      ],
+      "statement": "The bank is on Main Street.",
+      "correctAnswer": "false",
+      "evidenceLine": "The bank is on Park Street.",
+      "correctSentenceIndex": 1,
+      "hint": "Which street is the bank on?",
+      "explanation": "The bank is on Park Street. Main Street is where the library is."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L10_practice_q3",
+      "level": 10,
+      "instruction": "Evaluate the statement and select the supporting evidence sentence:",
+      "passage": "Dan's kitchen is small but bright. It has a white table and four chairs.",
+      "sentences": [
+        "Dan's kitchen is small but bright.",
+        "It has a white table and four chairs."
+      ],
+      "statement": "Dan's kitchen has six chairs.",
+      "correctAnswer": "false",
+      "evidenceLine": "It has a white table and four chairs.",
+      "correctSentenceIndex": 1,
+      "hint": "Count the chairs.",
+      "explanation": "The passage says four chairs, not six."
+    }
+  ]
+}

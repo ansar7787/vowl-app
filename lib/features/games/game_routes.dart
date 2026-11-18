@@ -80,6 +80,8 @@ import 'package:vowl/features/reading/read_and_answer/presentation/pages/read_an
 import 'package:vowl/features/reading/read_and_answer/presentation/pages/read_and_answer_practice_screen.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_learn_screen.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_practice_screen.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/pages/true_false_reading_learn_screen.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/pages/true_false_reading_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -525,6 +527,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'truefalsereading') {
+          return fadeTransitionPage(
+            child: TrueFalseReadingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -749,6 +757,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'findwordmeaning') {
           return fadeTransitionPage(
             child: FindWordMeaningPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'truefalsereading') {
+          return fadeTransitionPage(
+            child: TrueFalseReadingPracticeScreen(level: level),
             state: state,
           );
         }
