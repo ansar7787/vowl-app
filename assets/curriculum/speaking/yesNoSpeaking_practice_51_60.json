@@ -1,0 +1,578 @@
+{
+  "gameType": "yesNoSpeaking",
+  "phase": "practice",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L51_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Excuse me, is there a cash machine near here?",
+      "sampleAnswer": "Excuse me, is there a cash machine near here?",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Nothing changed between text and audio. \"Excuse me\" gets a stranger's attention before you ask for help.",
+      "hint": "A polite opening, then a question about a place. Which service is being asked about?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L51_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'd like to return this shirt because it's too small.",
+      "sampleAnswer": "I'd like to return this shirt because it's too small.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The sentences are the same. In shops, \"I'd like to\" sounds softer and more polite than \"I want to\".",
+      "hint": "Follow the reason. It comes after \"because\".",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L51_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Could I have a receipt for the coffee, please?",
+      "sampleAnswer": "Could I have a refund for the coffee, please?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "A receipt is proof of payment, while a refund gives money back. Confusing them could start an argument with the staff.",
+      "hint": "You ask for this at the till after paying. Listen to which thing is requested.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L52_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The library lets you renew books online for free.",
+      "sampleAnswer": "The library lets you borrow books online for free.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Renewing extends a loan you already have, and borrowing starts a new one. Both work online, but for different reasons.",
+      "hint": "The important action is in the middle. Is it a new loan or an existing one?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L52_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'm calling to confirm my table for Friday night.",
+      "sampleAnswer": "I'm calling to confirm my table for Friday night.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Same words on both sides. \"To confirm\" gives the reason for calling, and it is followed by a reservation.",
+      "hint": "A phone call to a restaurant. Listen for the purpose of the call.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L52_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The pharmacy will have your prescription ready by noon.",
+      "sampleAnswer": "The pharmacy will have your prescription ready by noon.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "They agree. \"By noon\" means at twelve or earlier, so you may collect it sooner.",
+      "hint": "A promise with a deadline. Listen for the time limit.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L53_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Do you take cards, or is it cash only?",
+      "sampleAnswer": "Do you take cash, or is it card only?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "The payment types have swapped places, so the answer to the customer's question would be the opposite.",
+      "hint": "Two payment methods appear in this question. Note which one is named first.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L53_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We ordered twenty minutes ago, but nothing has arrived.",
+      "sampleAnswer": "We ordered twenty minutes ago, but nothing has arrived.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "You heard exactly what was written. \"But\" links what you expected with what happened.",
+      "hint": "A complaint about time. Listen for the length of the wait.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L53_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'd like to open a savings account, please.",
+      "sampleAnswer": "I'd like to close a savings account, please.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Opening and closing an account are opposite requests. Clerks must listen to this word to start the right process.",
+      "hint": "The bank clerk needs to hear the verb in the middle. It sets the whole task.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L54_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Could you tell me which platform the express leaves from?",
+      "sampleAnswer": "Could you tell me which platform the express leaves from?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "In a polite indirect question, the word order after \"which platform\" is like a statement, not a question.",
+      "hint": "An indirect question. The main verb comes late.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L54_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The post office closes at five, so we'd better hurry.",
+      "sampleAnswer": "The post office closes at five, so we'd better hurry.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"We'd better\" is a natural way to say we should do something quickly.",
+      "hint": "There's a time and a consequence. Both matter.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L54_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'm sorry, but we're fully booked this weekend.",
+      "sampleAnswer": "I'm sorry, but we're fully booked this evening.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "\"This weekend\" covers two days and \"this evening\" only a few hours. The customer might be told to come back tomorrow instead.",
+      "hint": "The apology is followed by a time period. Listen to how long it lasts.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L55_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Can I pay for the parking at the machine?",
+      "sampleAnswer": "Can I pay for the parking at the gate?",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "A machine and a gate are different places, and a driver would look for the wrong thing when trying to pay.",
+      "hint": "The sentence names the spot where you can pay. Which one?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L55_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Could you wrap this as a gift, please?",
+      "sampleAnswer": "Could you wrap this as a gift, please?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Nothing was altered in this one. \"As a gift\" is the natural phrase for gift wrapping in a shop.",
+      "hint": "A request that includes a purpose. What is the object being wrapped for?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L55_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The doctor's office called to cancel your appointment.",
+      "sampleAnswer": "The doctor's office called to change your appointment.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "To cancel means it won't happen, and to change means a new time will be offered. You would need to answer differently.",
+      "hint": "The purpose of the call is a verb near the end.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L56_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Sorry, the waiter forgot to bring our drinks.",
+      "sampleAnswer": "Sorry, the waiter forgot to bring our bill.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Drinks and bill are both things you wait for in a restaurant, but not at the same moment of the meal.",
+      "hint": "The apology begins the sentence. What did the waiter forget?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L56_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'm collecting a parcel that was sent to my neighbour.",
+      "sampleAnswer": "I'm collecting a parcel that was sent to my office.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Neighbour and office are two different addresses, so the person at the desk would look somewhere else.",
+      "hint": "The parcel went to someone or somewhere else. Who or where?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L56_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Is the swimming pool open to the public on Sundays?",
+      "sampleAnswer": "Is the swimming pool open to the public on Sundays?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "They're identical. \"Open to the public\" means anyone can come, not only members.",
+      "hint": "A question about opening times has an important limit: who and when.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L57_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The bank asked me to bring a photo ID.",
+      "sampleAnswer": "The bank asked me to bring a photo ID.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Same sentence in both. \"Photo ID\" is spoken as the letters I and D, then said quickly.",
+      "hint": "A requirement in an errand. Listen to what you have to bring.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L57_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Could you fill in this form in capital letters?",
+      "sampleAnswer": "Could you fill in this form in black ink?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Capital letters and black ink are two different rules. Either can cause your form to be rejected if you ignore it.",
+      "hint": "A polite request tells you how to complete a form. Listen to the how.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L57_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We're sorry for the wait, and thank you for your patience.",
+      "sampleAnswer": "We're sorry for the wait, and thank you for your patience.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Businesses use this pair to apologise and appreciate at the same time.",
+      "hint": "Two polite phrases joined by \"and\". Listen to both.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L58_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Which counter do I go to for stamps?",
+      "sampleAnswer": "Which counter do I go to for stamps?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Same question. \"For stamps\" tells us the purpose of the visit to the counter.",
+      "hint": "This question begins with \"Which\" and ends with a service.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L58_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'd like a table by the window, if possible.",
+      "sampleAnswer": "I'd like a table by the window, if possible.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"If possible\" lets the customer ask politely, without demanding.",
+      "hint": "A request with a condition. Notice the condition at the end.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L58_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The lift is out of order, so please use the stairs.",
+      "sampleAnswer": "The escalator is out of order, so please use the stairs.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "A lift and an escalator both move people between floors, but they can't replace each other. The other instruction makes sense only for one.",
+      "hint": "A notice about a broken machine. Listen to which machine is named.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L59_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'd like to speak to someone about my bill.",
+      "sampleAnswer": "I'd like to speak to someone about my order.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "A bill is about money, while an order is about goods. The call would be sent to a different department.",
+      "hint": "A customer call. The reason for the call comes last.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L59_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The dry cleaner can have your jacket ready tomorrow.",
+      "sampleAnswer": "The dry cleaner can have your jacket ready tonight.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Tomorrow is the next day and tonight is only hours away. You might change your plan for the evening.",
+      "hint": "The service promises a time. Which time is it?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L59_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Please take a number and wait until you're called.",
+      "sampleAnswer": "Please take a number and wait until you're called.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The recording follows the text word for word. \"Until\" tells you how long the waiting should last.",
+      "hint": "This is an instruction with two steps. Hear both.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L60_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We're closed on public holidays, but open on weekends.",
+      "sampleAnswer": "We're open on public holidays, but closed on weekends.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "The two halves have swapped meaning. Anyone planning to visit on a Sunday would be disappointed.",
+      "hint": "Opening days contrast with each other. Listen to which is which.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L60_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Do you have this in a larger size?",
+      "sampleAnswer": "Do you have this in a larger size?",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Both are the same. \"Larger\" is the comparative form of \"large\", and it is used when comparing sizes.",
+      "hint": "A shopping question. Listen to the adjective that describes the size.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L60_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Your parcel was left with the caretaker at the front desk.",
+      "sampleAnswer": "Your parcel was left with the receptionist at the front desk.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Caretaker and receptionist are different people with different jobs. You would ask for a different person at the desk.",
+      "hint": "A message about a delivery. Who took it?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    }
+  ]
+}

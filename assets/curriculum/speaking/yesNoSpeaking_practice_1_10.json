@@ -1,0 +1,578 @@
+{
+  "gameType": "yesNoSpeaking",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L1_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My mother cooks rice for dinner.",
+      "sampleAnswer": "My mother cooks pasta for dinner.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Rice and pasta are both normal dinner foods, so nothing sounds strange. Only the food word tells you which meal is on the table.",
+      "hint": "The food at the end of the sentence is worth catching.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L1_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The bus stops near my school.",
+      "sampleAnswer": "The bus stops near my school.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "You heard exactly what was written. \"Near\" tells us the stop is close to the school, not inside it or far away.",
+      "hint": "Listen for the little word that says how close the stop is.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L1_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We eat lunch at twelve.",
+      "sampleAnswer": "We eat lunch at twelve.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Same words, same time. \"At twelve\" is the everyday way to say when a meal happens.",
+      "hint": "A clock time closes this sentence. Keep it in your head.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L2_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The children play in the garden.",
+      "sampleAnswer": "The children play in the kitchen.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "A garden is outside and a kitchen is inside, so the children are in two very different places.",
+      "hint": "Where are they? The place word finishes the sentence.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L2_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "He has a red bag.",
+      "sampleAnswer": "He has a blue bag.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Red and blue paint two different pictures. Colour words are short, so they are easy to miss.",
+      "hint": "A colour word sits right before the noun.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L2_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Anna wants a glass of water.",
+      "sampleAnswer": "Anna wants a glass of water.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Everything matches. \"A glass of water\" is the natural way to name a drink you can hold.",
+      "hint": "Two things matter here: who is asking and what she wants.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L3_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I brush my teeth after breakfast.",
+      "sampleAnswer": "I brush my teeth after breakfast.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The two sentences match. \"After breakfast\" puts the action later in the morning, and many people do exactly that.",
+      "hint": "Does the action come before the meal or after it? Find the word that tells you.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L3_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Our dog sleeps on the sofa.",
+      "sampleAnswer": "Our dog sleeps on the sofa.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"On the sofa\" means the dog rests on top of it, not under it or beside it.",
+      "hint": "The furniture word comes last. Listen to it.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L3_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Tom opens the window.",
+      "sampleAnswer": "Tom closes the window.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Open and close are opposites. If you miss the verb, you understand the opposite of what was said.",
+      "hint": "The action verb is in the middle of a very short sentence.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L4_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "There are three eggs in the fridge.",
+      "sampleAnswer": "There are three eggs in the fridge.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Matching sentences. Because \"eggs\" is plural, English uses \"are\" here, not \"is\".",
+      "hint": "Count the number you hear, then check the container word.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L4_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I don't like hot tea.",
+      "sampleAnswer": "I don't like cold tea.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Hot and cold change the whole meaning. It's a small word, but the speaker's preference is very different.",
+      "hint": "A describing word comes just before the drink.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L4_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The shop closes at six.",
+      "sampleAnswer": "The shop closes at eight.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Six and eight sound close together when spoken quickly. The time changes when you can shop, so the number matters.",
+      "hint": "The time is the last thing you hear.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L5_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Please put the milk on the table.",
+      "sampleAnswer": "Please put the milk on the table.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The sentences are the same. \"Please\" softens the request and \"on the table\" gives a clear place.",
+      "hint": "Requests often start with a polite word. Then follow where the milk goes.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L5_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My sister walks to school.",
+      "sampleAnswer": "My sister runs to school.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Walking and running are different ways of travelling. Only the verb changed, but the picture is different.",
+      "hint": "Listen to how she moves, not who she is.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L5_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Do you want tea or coffee?",
+      "sampleAnswer": "Do you want tea or coffee?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Or\" gives the listener two options to choose from.",
+      "hint": "This is a question with two choices. Listen for both drinks.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L6_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We are at the supermarket.",
+      "sampleAnswer": "We are at the pharmacy.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Both places are on the same street in many towns, but you buy very different things in each one.",
+      "hint": "The place is named at the end of the sentence.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L6_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Yesterday I cleaned my room.",
+      "sampleAnswer": "Yesterday I cleaned my room.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Nothing was altered in this one. \"Yesterday\" and \"cleaned\" both point to the past, so the time and the verb agree.",
+      "hint": "The first word tells you when this happened.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L6_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "He doesn't eat meat.",
+      "sampleAnswer": "He doesn't eat meat.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The two versions are the same. \"Doesn't\" makes the sentence negative, so he never eats meat.",
+      "hint": "Listen for a short negative word near the start.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L7_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Mia and Ben are in the same class.",
+      "sampleAnswer": "Mia and Ben are in the same class.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"The same class\" means they study together, in one room, with one teacher.",
+      "hint": "Two names begin the sentence. Hold on to both.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L7_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I have two brothers and a sister.",
+      "sampleAnswer": "I have two brothers and two sisters.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Only the last count is different, and it changes the size of the family. \"A sister\" means one; \"two sisters\" means more.",
+      "hint": "There are two counts in this sentence. Check each one.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L7_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Turn left at the corner.",
+      "sampleAnswer": "Turn left at the corner.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Left\" is the important word: turning right would send you the wrong way.",
+      "hint": "Directions depend on one small word. Which side is it?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L8_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The baby is sleeping now.",
+      "sampleAnswer": "The baby is smiling now.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Sleeping and smiling both describe the baby right now, but they sound similar and mean different things.",
+      "hint": "The word with -ing tells you what is happening at this moment.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L8_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My phone is in my pocket.",
+      "sampleAnswer": "My phone is in my pocket.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The recording follows the text word for word. \"In my pocket\" tells us the phone is inside, so you can't see it.",
+      "hint": "Two possessive words and one place. Listen to all three.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L8_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Can you help me carry this box?",
+      "sampleAnswer": "Can you help me open this box?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Carrying and opening are different jobs. Helping someone move a box is not the same as helping with what's inside.",
+      "hint": "This is a question. The important verb comes late.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L9_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I usually drink water before bed.",
+      "sampleAnswer": "I usually drink water before bed.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Usually\" means most days, and \"before bed\" says when.",
+      "hint": "A frequency word comes early. It tells you how often.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L9_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My uncle works in a hospital.",
+      "sampleAnswer": "My uncle works in a bakery.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Hospitals and bakeries are very different workplaces, so the sentence describes a very different job.",
+      "hint": "The workplace is at the end of the sentence.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L9_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We'll go to the park tomorrow.",
+      "sampleAnswer": "We'll go to the park today.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Tomorrow is in the future and today is now. The plan is the same, but the day is not.",
+      "hint": "Listen for the time word after the place.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L10_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Is your brother at home today?",
+      "sampleAnswer": "Is your brother at work today?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Home and work are the two places people are most often asked about. The question asks something different in each case.",
+      "hint": "The question ends with a place. Keep it in mind until the end.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L10_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'm going to cook soup tonight.",
+      "sampleAnswer": "I'm going to cook soup tonight.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"I'm going to\" is a common way to talk about a plan, and \"tonight\" gives the time.",
+      "hint": "The contraction I'm starts the sentence. Then check the meal.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L10_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "There isn't any milk left.",
+      "sampleAnswer": "There is some milk left.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "The change is between \"isn't any\" and \"is some\". One says the milk is gone, the other says you still have some.",
+      "hint": "Notice if the sentence is positive or negative.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    }
+  ]
+}

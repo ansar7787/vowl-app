@@ -1,0 +1,578 @@
+{
+  "gameType": "yesNoSpeaking",
+  "phase": "practice",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L131_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I've already sent the documents, but the manager hasn't confirmed receipt.",
+      "sampleAnswer": "I've already sent the documents, but the manager hasn't confirmed receipt.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "You heard exactly what was written. \"Already\" goes with the positive clause, and \"hasn't\" with the negative one.",
+      "hint": "Two clauses in the perfect form: one positive and one negative.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L131_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "By the time we got to the stadium, the concert had just started.",
+      "sampleAnswer": "By the time we got to the stadium, the concert had already started.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Just started means the concert was only beginning, and already started suggests we missed more of it. Both are past, but the feeling changes.",
+      "hint": "Look at the short adverb between \"had\" and the verb.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L131_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "She has been working at the same company since she left university.",
+      "sampleAnswer": "She has been working at the same company since she left university.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Exactly the same. \"Since\" points to a starting moment, and \"has been working\" shows it is continuing.",
+      "hint": "A period of time is measured from a starting point.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L132_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We've been waiting for the plumber since two o'clock, and he still hasn't called.",
+      "sampleAnswer": "We've been waiting for the plumber since ten o'clock, and he still hasn't called.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Ten and two are different clock times. Waiting since ten means a much longer, more annoying delay.",
+      "hint": "The starting point of the wait is given by a time word.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L132_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "By next Friday, I will have finished all three chapters of my thesis.",
+      "sampleAnswer": "By next Friday, I will have finished all three chapters of my thesis.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Will have finished\" shows that the work will be complete at that point in the future.",
+      "hint": "A deadline is described with \"by\" and a future perfect form.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L132_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I started cooking dinner when the power went out, so we ate cold sandwiches.",
+      "sampleAnswer": "I was cooking dinner when the power went out, so we ate cold sandwiches.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Started cooking means the power cut came at the very beginning, while was cooking means it happened in the middle.",
+      "hint": "How is the cooking described: a moment, or an activity in progress?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L133_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Have you finished the report yet, or do you need another day?",
+      "sampleAnswer": "Have you finished the report yet, or do you need another day?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Yet\" is used in questions and negatives to ask whether something has happened.",
+      "hint": "A question with \"yet\" checks for progress.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L133_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "They had already left when I got to the station, so I took a taxi.",
+      "sampleAnswer": "They had already left when I got to the station, so I took a taxi.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Nothing was altered in this one. \"Had already left\" is the earlier event, and \"got\" is the later one.",
+      "hint": "The sentence includes two past events. Which came first?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L133_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I've rarely seen so many people in this shop on a Monday.",
+      "sampleAnswer": "I've never seen so many people in this shop on a Monday.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Never means zero times and rarely means very few times. The speaker's surprise is stronger with one of them.",
+      "hint": "A frequency word appears early. How often?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L134_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "She's been learning the violin for three months, but she still can't read music.",
+      "sampleAnswer": "She's been learning the violin for three years, but she still can't read music.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Three months feels natural for a beginner, and three years feels like a long time. The word \"still\" adds surprise.",
+      "hint": "A duration and a contrast: how long has she been learning?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L134_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "When I called her, she was still sleeping, so I left a message.",
+      "sampleAnswer": "When I called her, she was still sleeping, so I left a message.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Was still sleeping\" shows she hadn't woken up at the time of the call.",
+      "hint": "The sentence includes a time, a state and a consequence.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L134_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "By the time the results are published, we will have interviewed all the candidates.",
+      "sampleAnswer": "By the time the results are published, we will have interviewed all the candidates.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"By the time\" is followed by the present tense even when it refers to the future.",
+      "hint": "A long sentence looks ahead to a completed task.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L135_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I haven't decided yet whether to accept the offer or stay where I am.",
+      "sampleAnswer": "I haven't decided yet whether to accept the offer or stay where I am.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The recording follows the text word for word. \"Yet\" appears at the end of the clause in a negative sentence, and \"whether\" introduces the two options.",
+      "hint": "A decision is not final. A key word signals this.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L135_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The shop was already closing when we got there, so we went home.",
+      "sampleAnswer": "The shop had already closed when we got there, so we went home.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Had closed means the shop was shut, and was closing means it was in the process. Could you still go in? Only one version allows it.",
+      "hint": "A verb form describes the state of the shop when they arrived.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L135_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I've been trying to reach him all morning, but his phone keeps going to voicemail.",
+      "sampleAnswer": "I've been trying to reach him all morning, but his phone keeps going to voicemail.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "They are identical. \"Have been trying\" shows the effort has continued up to now.",
+      "hint": "A situation continues over a long period. Listen for the verb form.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L136_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Ever since she moved, she has been complaining about the noise from the neighbours.",
+      "sampleAnswer": "Ever since she moved, she has been complaining about the noise from the street.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Neighbours and street are different sources of noise, so the solution would be different too.",
+      "hint": "A repeated complaint has a source at the end.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L136_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We'll have finished painting the living room by the time you come back on Sunday.",
+      "sampleAnswer": "We'll have finished painting the kitchen by the time you come back on Sunday.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "The living room and the kitchen are different jobs, and the friend returning would walk into another room.",
+      "hint": "A future task will be finished by a certain time. Which room?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L136_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I was walking home when I realised I'd left my keys at the office.",
+      "sampleAnswer": "I was walking home when I realised I'd left my keys at the office.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"I'd left\" is a contraction of \"I had left\", which shows the keys were forgotten earlier.",
+      "hint": "A moment of realisation happens in the middle of a walk.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L137_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "He hasn't called since Monday, and I'm starting to worry.",
+      "sampleAnswer": "He hasn't called since last week, and I'm starting to worry.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Since Monday might only be a couple of days, but since last week is longer and the worry seems more serious.",
+      "hint": "The worry is linked to how long ago the person called.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L137_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The train had just pulled out of the station when I reached the platform.",
+      "sampleAnswer": "The train had just pulled out of the station when I reached the platform.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Text and audio match. \"Had just pulled out\" happened first, and \"reached\" came right after.",
+      "hint": "Two events are close together. Who was late?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L137_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I've been meaning to text you, but I keep forgetting to do it.",
+      "sampleAnswer": "I've been meaning to call you, but I keep forgetting to do it.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Texting and calling are different ways of contacting someone. The friend would expect a different message.",
+      "hint": "The intention is expressed with a verb in the middle.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L138_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Is the project still on schedule, or has something changed since Monday?",
+      "sampleAnswer": "Is the project still on schedule, or has something changed since Monday?",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Still\" and \"has changed\" show that the speaker is comparing then and now.",
+      "hint": "A question checks the situation now and compares it with an earlier time.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L138_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I was going to email you, but then I heard you were on holiday.",
+      "sampleAnswer": "I was going to email you, but then I heard you were on holiday.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "They are identical. \"Was going to\" shows a plan in the past that didn't happen.",
+      "hint": "An intention is followed by new information.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L138_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "They've lived in this neighbourhood for almost twenty years, and they still love it.",
+      "sampleAnswer": "They've lived in this neighbourhood for over twenty years, and they still love it.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Almost twenty means slightly less than twenty, and over twenty means slightly more. The difference is a matter of accuracy.",
+      "hint": "A period of time is introduced by a small word before the number.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L139_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "By six o'clock tomorrow, the builders will have finished the whole roof.",
+      "sampleAnswer": "By six o'clock tomorrow, the builders will have finished the whole roof.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "This is a straight match. \"By six o'clock\" gives the limit, and \"will have finished\" says the roof will be complete.",
+      "hint": "A deadline is followed by the result that will be achieved.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L139_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I've only told him twice, but he hasn't done anything about it.",
+      "sampleAnswer": "I've already told him twice, but he hasn't done anything about it.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Already suggests the speaker is annoyed that it took so many tries, and only says two isn't many. Both sound natural.",
+      "hint": "A frustrated speaker uses one small adverb near the start.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L139_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We were having lunch outside when it suddenly stopped raining.",
+      "sampleAnswer": "We were having lunch outside when it suddenly started to pour.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Stopped raining is good news and started to pour is bad news for people who are outside.",
+      "hint": "The weather interrupts lunch. Listen to what the weather does.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L140_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I'd been studying all week, so I fell asleep during the exam.",
+      "sampleAnswer": "I'd been studying all night, so I fell asleep during the exam.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "All night is a single, very long night, and all week describes a whole week. The reason for falling asleep sounds different.",
+      "hint": "A time expression explains why the speaker was so tired.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L140_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "She's just told me she has accepted a job in another city.",
+      "sampleAnswer": "She's just told me she has accepted a job in another city.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "No change. \"Has just told\" means very recently, and \"has accepted\" says the decision is made.",
+      "hint": "Two pieces of news are packed together.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L140_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Nobody has seen the manager since the meeting started, and his phone is switched off.",
+      "sampleAnswer": "Nobody has seen the manager since the meeting ended, and his phone is switched off.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Since the meeting started or ended points to a different time of disappearance, which changes the questions people ask.",
+      "hint": "The time is the moment that starts the mystery.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "gameType": "yesNoSpeaking",
+  "phase": "practice",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L121_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Nobody told me the meeting was moved, so I went at the old time.",
+      "sampleAnswer": "Nobody told me the meeting was moved, so I went at the old time.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "You heard exactly what was written. \"Nobody\" is negative by itself, so the verb that follows is positive: \"told\", not \"didn't tell\".",
+      "hint": "The sentence starts with a negative subject. What follows from it?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L121_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Sam and his sister were both away, so I left a message for them.",
+      "sampleAnswer": "Sam and his sister were both away, so I left a message for him.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Them covers Sam and his sister, but him is only Sam. The sister would never receive the message.",
+      "hint": "One pronoun at the end refers back to the people at the start.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L121_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Those shoes are too small for me, but these ones fit perfectly.",
+      "sampleAnswer": "These shoes are too small for me, but those ones fit perfectly.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "This and these point to things nearby, and that and those to things farther away. Swapping them swaps which pair fits.",
+      "hint": "Two pairs of shoes are compared using words for near and far.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L122_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Everyone in the office has signed the card except for the new intern.",
+      "sampleAnswer": "Everyone in the office has signed the card except for the new intern.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The two versions are the same. \"Everyone ... except\" names the single exception at the end.",
+      "hint": "One person is left out of a group. Who?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L122_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My sister lent me her car because hers was in the garage.",
+      "sampleAnswer": "My sister lent me her car because mine was in the garage.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Hers means the sister's car and mine means the speaker's. That is the whole reason the sister lent her car.",
+      "hint": "The end of the sentence has a possessive pronoun. Whose car is being repaired?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L122_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "There are two exits. You can use either one, but this one is closer.",
+      "sampleAnswer": "There are two exits. You can use either one, but this one is closer.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Either one\" means it doesn't matter which, and \"this one\" points to the exit that is close.",
+      "hint": "The speaker gives an option and then compares. Which pronoun is used?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L123_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "If someone calls while I'm out, could you ask him to leave a number?",
+      "sampleAnswer": "If someone calls while I'm out, could you ask them to leave a number?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Him assumes the caller is a man, while them keeps the caller unknown. Native speakers usually say them when the person isn't known.",
+      "hint": "The pronoun at the end refers back to someone unknown.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L123_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "The manager wants to see the two of us in her office after lunch.",
+      "sampleAnswer": "The manager wants to see the two of us in her office after lunch.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"The two of us\" is a natural way to say \"both of us\".",
+      "hint": "Notice who is being invited: how many people, and whose office.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L123_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I can't decide between these two jackets. Do you like either of them?",
+      "sampleAnswer": "I can't decide between these two jackets. Do you like either of them?",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Nothing was altered in this one. \"Either of them\" means one or the other, and it is followed by a plural pronoun.",
+      "hint": "This includes a decision and a question to a friend.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L124_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "They said they'd pick you up at the airport, but we haven't seen them.",
+      "sampleAnswer": "They said they'd pick us up at the airport, but we haven't seen them.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Us includes the speaker and you doesn't. If the speaker isn't being picked up, the story doesn't make sense.",
+      "hint": "Who is being picked up? Focus on the pronoun after \"pick\".",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L124_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Whose bag is this? Someone left it on the train, and nobody has claimed it.",
+      "sampleAnswer": "Whose bag is this? Someone left it on the train, and nobody has claimed it.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "YES — The spoken statement matches the written text exactly.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "They are identical. \"Someone\" and \"nobody\" refer to unknown people, and both take a singular verb.",
+      "hint": "Two sentences, one question and one explanation.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L124_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My parents are coming next month, and I'd like them to see our new flat.",
+      "sampleAnswer": "My parents are coming next month, and I'd like them to see your new flat.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Our means the speaker's home, and your means the listener's. They would visit a different address.",
+      "hint": "A possessive word before \"new flat\" tells you who lives there.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L125_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Could you pass me that folder on the desk, the one next to the printer?",
+      "sampleAnswer": "Could you pass me that folder on the desk, the one next to the printer?",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"The one next to the printer\" identifies the folder among others.",
+      "hint": "A request that uses \"that\" and \"the one\". What is being pointed to?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L125_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "We asked our neighbours to keep their dog quiet, but they said it wasn't theirs.",
+      "sampleAnswer": "We asked our neighbours to keep their dog quiet, but they said it wasn't theirs.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Theirs\" replaces \"their dog\" and shows that the neighbours deny owning it.",
+      "hint": "There's a lot of \"their\" and \"they\" in this sentence. Follow who owns what.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L125_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "She told her sister that she would call him back after the meeting.",
+      "sampleAnswer": "She told her sister that she would call her back after the meeting.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Him is a man the speaker has not named, and her is the sister who was just mentioned. The promise is about a different person's phone call.",
+      "hint": "A phone call is promised. Whom will she call?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L126_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Neither of my roommates likes cooking, so we usually order takeaway.",
+      "sampleAnswer": "Neither of my roommates likes cooking, so we usually order takeaway.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "The recording follows the text word for word. \"Neither of\" is followed by a plural noun, but the verb \"likes\" is singular in careful English.",
+      "hint": "The sentence opens with a negative subject that takes a singular verb.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L126_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Most of the students finished early, but the others needed more time.",
+      "sampleAnswer": "Some of the students finished early, but the others needed more time.",
+      "isMatch": false,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Most means the majority, and some is just a few. A teacher planning the next task would react differently.",
+      "hint": "A group is divided in two parts. How big is the first part?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L126_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I don't know anyone at that party except the host and his brother.",
+      "sampleAnswer": "I don't know anyone at this party except the host and his brother.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "This party means the one the speaker is at, and that party means one somewhere else. You hear whether they are there or not.",
+      "hint": "A demonstrative word before \"party\" shows where the speaker is.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L127_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Each of the candidates has to give a short talk about the company.",
+      "sampleAnswer": "Each of the candidates has to give a short talk about themselves.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "One version is about the firm and the other is about the speakers. A candidate would prepare completely different material.",
+      "hint": "A talk is required from each person. What will it be about?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L127_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I lent my umbrella to a colleague, but I can't remember which one.",
+      "sampleAnswer": "I lent my umbrella to a colleague, but I can't remember which one.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "YES — The spoken statement matches the written text exactly."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Which one\" is used when choosing from a known group, such as your colleagues.",
+      "hint": "A person is not identified. Which pronoun helps to refer back?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L127_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "It's not my problem, it's theirs, and they should be the ones to fix it.",
+      "sampleAnswer": "It's not my problem, it's theirs, and they should be the ones to fix it.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Theirs\" is a possessive pronoun that stands for \"their problem\".",
+      "hint": "Responsibility is passed from the speaker to another group.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L128_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "One of the printers is broken, but the other one works fine.",
+      "sampleAnswer": "One of the printers is broken, but the other one works fine.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "This is a straight match. \"The other one\" refers to the one that has not been mentioned yet.",
+      "hint": "There are two printers. Which is which?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L128_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Did you go to the concert with your sister, or did you go alone?",
+      "sampleAnswer": "Did you go to the concert with your sister, or did you go with friends?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Going alone and going with friends are different answers. The second half of the question is the part the speaker really wants to know.",
+      "hint": "A question offers two alternatives. Listen to the second one.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L128_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Somebody has left their lights on again, and I think it's the black car.",
+      "sampleAnswer": "Somebody has left their lights on again, and I think it's the blue car.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Black and blue are easy to mix up in an announcement. Someone would walk to the wrong car.",
+      "hint": "One detail identifies which car. It's a colour word at the end.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L129_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Please tell everybody that the class has moved to the room next door.",
+      "sampleAnswer": "Please tell everybody that the class has moved to the room next door.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Everybody\" behaves like a singular noun, but the meaning is plural.",
+      "hint": "An instruction includes an announcement to a group.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L129_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "I wanted to invite both of them, but only one could come.",
+      "sampleAnswer": "I wanted to invite both of them, but only one could come.",
+      "isMatch": true,
+      "options": [
+        "NO — The spoken statement contradicts the written text.",
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "\"Both of them\" and \"only one\" contrast two with one.",
+      "hint": "Two people are invited, then one is left out. Follow the numbers.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L129_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "He always blames himself when something goes wrong at work.",
+      "sampleAnswer": "He always blames other people when something goes wrong at work.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "NO — The spoken statement contradicts the written text.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Himself is a reflexive pronoun for the same person, while other people means someone else. They describe opposite characters.",
+      "hint": "Someone is blamed. Is it the speaker's colleague or the man himself?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L130_Q1",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "My phone is almost dead, so could I borrow his for a minute?",
+      "sampleAnswer": "My phone is almost dead, so could I borrow yours for a minute?",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects.",
+        "NO — The spoken statement contradicts the written text."
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "His and yours are two people. Asking a stranger for their phone can lead to an awkward moment.",
+      "hint": "The request ends with a possessive pronoun. Whose phone?",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L130_Q2",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Neither of us had any idea where the other one was parked.",
+      "sampleAnswer": "Neither of us had any idea where the other one was parked.",
+      "isMatch": true,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "YES — The spoken statement matches the written text exactly.",
+      "explanation": "Listening and reading agree here. \"The other one\" refers to the second person and \"neither of us\" means both are ignorant.",
+      "hint": "This includes a negative subject and a pronoun that means the second person.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_PRACTICE_L130_Q3",
+      "phase": "practice",
+      "interactionType": "practice",
+      "prompt": "Everyone thought the mistake was mine, but it turned out to be hers.",
+      "sampleAnswer": "Everyone thought the mistake was mine, but it turned out to be his.",
+      "isMatch": false,
+      "options": [
+        "YES — The spoken statement matches the written text exactly.",
+        "NO — The spoken statement contradicts the written text.",
+        "PARTIAL — Only the grammatical tense is different.",
+        "UNRELATED — The statements discuss entirely different subjects."
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "NO — The spoken statement contradicts the written text.",
+      "explanation": "Hers and his are both possessive pronouns, and mixing them up could put the blame on the wrong colleague.",
+      "hint": "Blame moves from one person to another. Listen to who ends up responsible.",
+      "instruction": "Determine whether the spoken statement and written sentence match."
+    }
+  ]
+}
