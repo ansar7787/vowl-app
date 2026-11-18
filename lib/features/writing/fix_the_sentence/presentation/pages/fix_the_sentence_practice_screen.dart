@@ -520,7 +520,7 @@ class _FixTheSentencePracticeScreenState
     );
   }
 
-  List<TextSpan> _buildPassageSpans(
+  List<InlineSpan> _buildPassageSpans(
     String passage,
     String missingWord,
     bool isDark,
@@ -591,4 +591,3 @@ class _FixTheSentencePracticeScreenState
     ];
   }
 }
-
