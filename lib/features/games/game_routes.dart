@@ -62,6 +62,8 @@ import 'package:vowl/features/grammar/punctuation_mastery/presentation/pages/pun
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/pages/punctuation_mastery_practice_screen.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/pages/modifier_placement_learn_screen.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/pages/modifier_placement_practice_screen.dart';
+import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals_selection_learn_screen.dart';
+import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals_selection_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -453,6 +455,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'modalsselection') {
+          return fadeTransitionPage(
+            child: ModalsSelectionLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -623,6 +631,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'modifierplacement') {
           return fadeTransitionPage(
             child: ModifierPlacementPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'modalsselection') {
+          return fadeTransitionPage(
+            child: ModalsSelectionPracticeScreen(level: level),
             state: state,
           );
         }
