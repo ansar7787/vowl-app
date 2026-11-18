@@ -1,0 +1,278 @@
+{
+  "gameType": "dailyJournal",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L1_Q1",
+      "level": 1,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about the first thing you usually do after you wake up.",
+      "targetTokens": [
+        "alarm",
+        "stretch",
+        "kitchen"
+      ],
+      "options": [
+        "As soon as my alarm goes off, I stretch for a minute before heading to the kitchen.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "As soon as my alarm goes off, I stretch for a minute before heading to the kitchen.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "The simple present tense (\"goes off\", \"stretch\") is used because this happens regularly, not just once.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L2_Q1",
+      "level": 2,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about what you usually do right after you get home in the evening.",
+      "targetTokens": [
+        "bag",
+        "shoes",
+        "couch"
+      ],
+      "options": [
+        "The moment I get home, I drop my bag by the door and collapse on the couch for a few minutes.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "The moment I get home, I drop my bag by the door and collapse on the couch for a few minutes.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Strong verbs like \"drop\" and \"collapse\" show more energy than plain verbs like \"put\" and \"sit\".",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L3_Q1",
+      "level": 3,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence describing someone you see almost every day.",
+      "targetTokens": [
+        "neighbor",
+        "friendly",
+        "greets"
+      ],
+      "options": [
+        "My neighbor across the hall always greets me with a big smile, even early in the morning.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "My neighbor across the hall always greets me with a big smile, even early in the morning.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Focusing on one repeated action (\"always greets me\") tells us more about a person than a general adjective alone.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L4_Q1",
+      "level": 4,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence describing a place you visit often, such as a shop or a park.",
+      "targetTokens": [
+        "corner",
+        "shop",
+        "crowded"
+      ],
+      "options": [
+        "The small shop on the corner is always crowded right after work ends.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "The small shop on the corner is always crowded right after work ends.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Adding a time clue (\"right after work\") explains why the place looks the way it does.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L5_Q1",
+      "level": 5,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about a food you really enjoy and give a short reason why.",
+      "targetTokens": [
+        "spicy",
+        "noodles",
+        "warm"
+      ],
+      "options": [
+        "I really enjoy spicy noodles because they warm me up on cold days.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I really enjoy spicy noodles because they warm me up on cold days.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "A simple reason after \"because\" turns a plain preference into a short explanation.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L6_Q1",
+      "level": 6,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about something small that made you smile today.",
+      "targetTokens": [
+        "message",
+        "friend",
+        "smile"
+      ],
+      "options": [
+        "A funny message from my friend made me smile while I was waiting for the bus.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "A funny message from my friend made me smile while I was waiting for the bus.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Naming the exact moment (\"while I was waiting\") makes the feeling easier to picture than a vague statement.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L7_Q1",
+      "level": 7,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about something you did last weekend for fun.",
+      "targetTokens": [
+        "park",
+        "friends",
+        "afternoon"
+      ],
+      "options": [
+        "Last weekend, I met a few friends at the park and we stayed there all afternoon.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Last weekend, I met a few friends at the park and we stayed there all afternoon.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "The simple past (\"met\", \"stayed\") is correct here because the action is finished and happened at a specific time.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L8_Q1",
+      "level": 8,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write about three small tasks you completed this morning, in the order you did them.",
+      "targetTokens": [
+        "first",
+        "then",
+        "finally"
+      ],
+      "options": [
+        "First, I made my bed. Then I packed my bag, and finally I grabbed a quick snack before leaving.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "First, I made my bed. Then I packed my bag, and finally I grabbed a quick snack before leaving.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Sequencing words guide the reader through the order of events without confusion.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L9_Q1",
+      "level": 9,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write one sentence about an object you use every day and why it's useful to you.",
+      "targetTokens": [
+        "headphones",
+        "commute",
+        "useful"
+      ],
+      "options": [
+        "My headphones are useful because they help me block out noise during my commute.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "My headphones are useful because they help me block out noise during my commute.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Explaining purpose instead of just appearance helps the reader understand why the object matters to you.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_PRAC_L10_Q1",
+      "level": 10,
+      "phase": "practice",
+      "instruction": "Select the most cohesive and reflective journal entry incorporating target vocabulary.",
+      "prompt": "Write a short entry about your day so far, including one thing you did and how it made you feel.",
+      "targetTokens": [
+        "morning",
+        "busy",
+        "satisfied"
+      ],
+      "options": [
+        "My morning was busier than usual, but I finished all my emails early, which left me feeling satisfied.",
+        "I did the task today and then I was done with everything on my list.",
+        "Morning time was happening so things were like that yesterday.",
+        "Because the schedule was crowded, nothing."
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "My morning was busier than usual, but I finished all my emails early, which left me feeling satisfied.",
+      "hint": "Find the entry that weaves the target tokens into a complete thought with clear setting, action, and personal reflection.",
+      "explanation": "Linking an action to a feeling (\"which left me feeling\") shows cause and effect in a single natural sentence.",
+      "distractorFeedback": {
+        "I did the task today and then I was done with everything on my list.": "Too generic: lacks reflective depth, vivid sensory details, and misses the target vocabulary tokens.",
+        "Morning time was happening so things were like that yesterday.": "Vague and grammatically weak phrasing that fails to communicate meaningful personal reflection.",
+        "Because the schedule was crowded, nothing.": "This is an incomplete sentence fragment lacking a main independent clause and predicate."
+      }
+    }
+  ]
+}

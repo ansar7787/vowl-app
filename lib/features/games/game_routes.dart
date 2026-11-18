@@ -112,6 +112,8 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/pages/sh
 import 'package:vowl/features/writing/short_answer_writing/presentation/pages/short_answer_writing_practice_screen.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/pages/opinion_writing_learn_screen.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/pages/opinion_writing_practice_screen.dart';
+import 'package:vowl/features/writing/daily_journal/presentation/pages/daily_journal_learn_screen.dart';
+import 'package:vowl/features/writing/daily_journal/presentation/pages/daily_journal_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -653,6 +655,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'dailyjournal') {
+          return fadeTransitionPage(
+            child: DailyJournalLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -973,6 +981,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'opinionwriting') {
           return fadeTransitionPage(
             child: OpinionWritingPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'dailyjournal') {
+          return fadeTransitionPage(
+            child: DailyJournalPracticeScreen(level: level),
             state: state,
           );
         }

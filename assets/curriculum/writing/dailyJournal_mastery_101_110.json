@@ -1,0 +1,608 @@
+{
+  "gameType": "dailyJournal",
+  "phase": "mastery",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "WRT_DAILYJOURNAL_L101_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a moment at work or school when two urgent things demanded your attention at once, including the context, your reaction, and your reasoning for what you chose.",
+      "options": [
+        "froze for a second",
+        "client call",
+        "fire to put out"
+      ],
+      "sampleAnswer": "Right as I was finishing a client call, a coworker rushed over saying the shared server had gone down, affecting the entire team. For a second I froze, unsure which fire to put out first. I decided to wrap up the call quickly rather than abandon it mid-sentence, reasoning that the server issue would need IT's help anyway and a few extra minutes wouldn't change much.",
+      "hint": "Set the context, describe both demands, then explain the reasoning behind your choice.",
+      "explanation": "Explaining the reasoning behind a choice under competing pressure shows decision-making, not just a report of events.",
+      "promptQuestions": [
+        "What two things demanded your attention at once?",
+        "What was your reasoning for handling them the way you did?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L101_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a day when an unplanned request added to an already full schedule, including how you reacted and adjusted.",
+      "options": [
+        "full schedule",
+        "favor",
+        "save trouble"
+      ],
+      "sampleAnswer": "My schedule was already packed with back-to-back tasks when a colleague asked for urgent help on something unrelated to my own deadlines. My first instinct was mild irritation, since I genuinely didn't have room for anything extra. After a moment, though, I agreed to a shorter version of the favor, reasoning that helping now might save both of us more trouble later in the week.",
+      "hint": "Describe the full schedule, the unplanned request, then how you reacted and adjusted.",
+      "explanation": "Showing both an honest initial reaction and a reasoned adjustment gives a fuller, more human account of managing pressure.",
+      "promptQuestions": [
+        "What was already on your schedule?",
+        "How did you adjust once the unplanned request came in?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L101_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a situation where conflicting instructions from two people created confusion, including the context, what happened, and how you resolved it.",
+      "options": [
+        "two managers",
+        "same email thread",
+        "escalate"
+      ],
+      "sampleAnswer": "My manager asked me to prioritize the client report, while a senior colleague, apparently unaware of that instruction, insisted the internal audit needed to come first. For a while, I genuinely didn't know whose direction to follow, and the confusion started eating into time I could have spent actually working. Eventually, I decided the simplest fix was just to ask both of them directly in the same email thread, which forced a quick, clear decision within minutes. It felt a little awkward to escalate something so small, but the clarity afterward was worth the brief discomfort.",
+      "hint": "Describe both conflicting instructions, the confusion they caused, and the specific step you took to resolve it.",
+      "explanation": "Resolving conflicting instructions by seeking direct clarification, rather than guessing, models a genuinely useful real-world skill.",
+      "promptQuestions": [
+        "What were the two conflicting instructions?",
+        "How did you resolve the confusion?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L102_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a trip where one small delay led to a series of smaller complications, including how you adapted along the way.",
+      "options": [
+        "fifteen minutes",
+        "ripple",
+        "laughed"
+      ],
+      "sampleAnswer": "A fifteen-minute delay at the airport gate seemed harmless enough at first, until it caused me to miss my connecting train by only a few minutes. That missed train pushed my arrival back by nearly two hours, which then meant the friend picking me up had to rearrange her entire evening. By the time I finally arrived, we both laughed about how one small delay had quietly rearranged an entire evening for two people.",
+      "hint": "Trace how one small delay caused a chain of smaller complications, then describe how you adapted.",
+      "explanation": "Tracing a chain of small complications from a single delay shows layered, realistic problem-solving rather than a single isolated event.",
+      "promptQuestions": [
+        "What small delay started the chain of complications?",
+        "How did you adapt as things kept shifting?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L102_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a trip where you had to manage both a practical problem and an emotional reaction to it at the same time.",
+      "options": [
+        "luggage lost",
+        "filed claim",
+        "settled"
+      ],
+      "sampleAnswer": "Realizing my luggage hadn't made the connecting flight left me dealing with two things at once: the practical hassle of filing a claim, and an unexpected wave of anxiety about starting a big trip without any of my things. I focused on the paperwork first, since panicking wouldn't get my bag back any faster. It wasn't until everything was filed and I sat down with a coffee that the anxious feeling finally started to settle.",
+      "hint": "Describe both the practical problem and the emotional reaction, and how you handled each.",
+      "explanation": "Separating a practical problem from an emotional reaction, while handling both, models mature real-world coping.",
+      "promptQuestions": [
+        "What practical problem did you have to solve?",
+        "How did you manage the emotional reaction alongside it?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L102_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a trip where you had to make a real-time decision between two imperfect options, including the context, your reasoning, and how it turned out.",
+      "options": [
+        "ticket counter",
+        "wait it out",
+        "restless"
+      ],
+      "sampleAnswer": "Standing at the ticket counter with my flight already delayed by three hours, I had to choose between waiting it out or booking a much more expensive last-minute alternative. Neither option felt great, one costing time and the other costing money I hadn't planned to spend. I chose to wait, mainly because the meeting I was traveling for wasn't happening until the following morning anyway. It turned out to be the right call, though I spent those three hours more restless than I'd like to admit.",
+      "hint": "Present both imperfect options honestly, explain your reasoning, then reveal how the choice played out.",
+      "explanation": "Presenting two genuinely imperfect options, rather than an obvious right answer, reflects how real decisions usually work.",
+      "promptQuestions": [
+        "What two imperfect options were you choosing between?",
+        "How did your decision turn out?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L103_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a situation where you had to balance a family obligation against something important to you personally.",
+      "options": [
+        "engagement party",
+        "workshop",
+        "slip out early"
+      ],
+      "sampleAnswer": "My cousin's engagement party fell on the exact same weekend as a workshop I'd been looking forward to for months. Choosing between the two felt genuinely difficult, since both mattered to me for very different reasons. In the end, I decided to attend the party for the first half and quietly slip out early to catch the last session of the workshop online instead. It wasn't a perfect compromise, but it let me show up for both things that mattered.",
+      "hint": "Describe both competing obligations honestly, then explain the compromise or choice you made.",
+      "explanation": "Presenting a genuine compromise, rather than a clean either/or choice, reflects how family obligations often actually get navigated.",
+      "promptQuestions": [
+        "What two things were competing for your time?",
+        "How did you balance them?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L103_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a time when a family member's needs unexpectedly changed your plans, and how you adjusted your priorities.",
+      "options": [
+        "mother called",
+        "apartment plan dropped",
+        "loved ones"
+      ],
+      "sampleAnswer": "I had set aside the whole afternoon to finally organize my apartment when my mother called, clearly upset about a problem with her car in the middle of nowhere. Without much hesitation, the apartment plan dropped straight to the bottom of my list, and I spent the next two hours driving out to help her instead. It's strange how quickly priorities can rearrange themselves the moment someone you love actually needs you.",
+      "hint": "Describe your original plan, then how the family member's need reshuffled your priorities.",
+      "explanation": "Showing priorities reshuffle instantly for family need captures a common, deeply relatable real-life pattern.",
+      "promptQuestions": [
+        "What was your original plan?",
+        "How did your priorities change once the family need arose?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L103_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about navigating a situation where different family members wanted different things from you, including the context, how you responded, and how you felt about your response afterward.",
+      "options": [
+        "sister",
+        "parents",
+        "middle"
+      ],
+      "sampleAnswer": "During the holiday planning this year, my sister wanted a big family gathering at her place, while my parents quietly admitted they'd prefer something smaller and closer to home. Caught in the middle, I tried gently suggesting a compromise, a smaller version of my sister's plan hosted somewhere more convenient for everyone. Not everyone was thrilled, but nobody was truly upset either, which felt like a reasonable outcome given the circumstances. Looking back, I think I handled it fairly, even though a small part of me still wishes someone else had been the one stuck in the middle.",
+      "hint": "Describe the competing wishes, your attempt to respond, and an honest reflection on how you feel about it now.",
+      "explanation": "Reflecting honestly on being caught between family members, including lingering ambivalence, avoids an artificially tidy resolution.",
+      "promptQuestions": [
+        "What did different family members each want?",
+        "How do you feel about how you responded, looking back?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L104_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a misunderstanding with a friend recently, including how it started, how it felt, and how it was eventually cleared up.",
+      "options": [
+        "text message",
+        "replaying",
+        "embarrassed"
+      ],
+      "sampleAnswer": "A short, oddly worded text from my friend left me convinced she was upset with me about something, though I had no idea what. I spent an uncomfortable evening replaying our last few conversations, trying to figure out what I might have done wrong. When I finally asked her directly the next day, it turned out she'd simply been distracted while typing and meant nothing by it at all, which left me both relieved and a little embarrassed for overthinking it so much.",
+      "hint": "Describe how the misunderstanding started, your feelings while it lasted, and how it was resolved.",
+      "explanation": "Tracing a misunderstanding from confusion to relief shows how overthinking often outpaces the actual situation.",
+      "promptQuestions": [
+        "What caused the misunderstanding?",
+        "How was it eventually cleared up?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L104_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a moment when you realized you had misunderstood someone else's intentions, and how you corrected your assumption.",
+      "options": [
+        "neighbor",
+        "shy",
+        "hello first"
+      ],
+      "sampleAnswer": "I assumed my new neighbor's silence in the hallway meant she was unfriendly, and I'd quietly decided she just wasn't interested in getting to know anyone. It wasn't until she mentioned, almost in passing, that she was painfully shy around new people that I realized how wrong my assumption had been. Since then, I've made more of an effort to say hello first, and she's turned out to be genuinely warm once that first barrier is crossed.",
+      "hint": "Describe the assumption you made, then the moment and information that corrected it.",
+      "explanation": "Correcting a false assumption about someone's intentions demonstrates real growth in social understanding.",
+      "promptQuestions": [
+        "What assumption did you make about this person?",
+        "What corrected it?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L104_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a misunderstanding within a group of friends that required more than one conversation to fully resolve, including the context and how it unfolded.",
+      "options": [
+        "group chat",
+        "avoiding each other",
+        "privately"
+      ],
+      "sampleAnswer": "A joke that landed badly in our group chat led to two friends quietly avoiding each other for almost a week, and it took a while before anyone even acknowledged that something was wrong. The first attempt to smooth things over, a group message trying to laugh it off, only made things slightly more awkward instead of better. It wasn't until the two of them finally talked privately, away from the rest of the group, that the tension actually started to ease. By the time we all got together again the following weekend, it felt like the whole thing had barely happened at all.",
+      "hint": "Show that the misunderstanding needed more than one attempt to resolve, and describe how it eventually settled.",
+      "explanation": "Showing a misunderstanding require more than one attempt to resolve reflects how group dynamics are often messier than a single clean fix.",
+      "promptQuestions": [
+        "What caused the tension in the group?",
+        "What finally resolved it?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L105_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a financial decision you had to make recently that involved weighing several different factors.",
+      "options": [
+        "washing machine",
+        "repair cost",
+        "replace"
+      ],
+      "sampleAnswer": "Deciding whether to repair my old washing machine or finally replace it meant weighing the repair cost against how much longer the machine might realistically last. The repair was cheaper up front, but a quick search suggested this particular model tended to break down again within a year or two. In the end, I chose to replace it, reasoning that the extra cost now would likely save me more frustration and money later.",
+      "hint": "Name the decision, list the factors you weighed, then explain your final reasoning.",
+      "explanation": "Listing multiple factors before a final decision shows more sophisticated reasoning than a simple one-line choice.",
+      "promptQuestions": [
+        "What financial decision were you weighing?",
+        "What factors influenced your final choice?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L105_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a practical decision involving both cost and convenience, and explain how you balanced the two.",
+      "options": [
+        "grocery store",
+        "trade-off",
+        "convenience"
+      ],
+      "sampleAnswer": "Choosing between the cheaper grocery store across town and the pricier one just down the street came down to a fairly simple trade-off between money saved and time spent. Most weeks, I choose convenience and accept the slightly higher prices, since the time saved usually feels worth more to me right now. On tighter weeks, though, I make the extra trip without much hesitation.",
+      "hint": "Describe the trade-off between cost and convenience, then explain how you typically balance the two.",
+      "explanation": "Explaining a recurring trade-off between cost and convenience, rather than a single decision, reflects how many everyday choices actually work.",
+      "promptQuestions": [
+        "What were you weighing, cost versus convenience?",
+        "How do you usually balance the two?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L105_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a bigger practical decision that involved weighing cost, timing, and personal priorities all at once, including your final reasoning.",
+      "options": [
+        "apartment lease",
+        "rising rent",
+        "revisit"
+      ],
+      "sampleAnswer": "Deciding whether to renew my apartment lease or start looking for somewhere new meant weighing at least three things together: the rising rent, the inconvenience of moving, and how much I genuinely still liked the neighborhood. On paper, the rising cost alone might have pushed me toward moving, but the timing felt wrong given everything else going on at work right now. Ultimately, I decided the neighborhood and the stability mattered more to me this year than saving money would, even though I know that reasoning might not hold forever. It's the kind of decision I suspect I'll revisit again before too long.",
+      "hint": "Name all three factors clearly, then explain how you weighed them against each other to reach a final decision.",
+      "explanation": "Weighing three separate factors together, and acknowledging the decision may not be permanent, models genuinely complex real-world reasoning.",
+      "promptQuestions": [
+        "What three factors did you have to weigh?",
+        "What was your final reasoning?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L106_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a period recently when a change in sleep or diet noticeably affected how you felt, including the chain of cause and effect.",
+      "options": [
+        "coffee",
+        "headache",
+        "sleep easier"
+      ],
+      "sampleAnswer": "Cutting back on coffee this week, mostly out of curiosity, ended up affecting far more than I expected. The first two days brought a dull, persistent headache that made focusing at work nearly impossible. By the fourth day, though, the headaches had faded, and I actually noticed falling asleep more easily than I had in months.",
+      "hint": "Describe the initial change, trace its immediate effect, then its longer-term result.",
+      "explanation": "Tracing a health change through an immediate effect and a later result shows a fuller cause-and-effect chain, not just a single link.",
+      "promptQuestions": [
+        "What change did you make?",
+        "How did its effects unfold over the following days?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L106_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a stressful period recently and how it gradually affected your physical wellbeing, and what you did about it.",
+      "options": [
+        "tight shoulders",
+        "friend pointed out",
+        "stretch"
+      ],
+      "sampleAnswer": "The stress of the past two weeks slowly crept into my body in ways I didn't fully notice at first, tight shoulders, shallow breathing, a general sense of exhaustion that sleep didn't seem to fix. It wasn't until a friend pointed out how tense I looked that I actually paused to address it directly. Since then, I've started taking short breaks to stretch throughout the day, and the physical tightness has noticeably started to ease.",
+      "hint": "Describe how stress gradually affected your body, then the specific action you took in response.",
+      "explanation": "Describing stress's gradual physical effects, rather than a sudden single symptom, reflects how wellbeing changes often really unfold.",
+      "promptQuestions": [
+        "How did stress gradually affect your body?",
+        "What did you do in response?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L106_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a wellbeing habit you changed recently, tracing the full chain from the initial change, through a difficult adjustment period, to the eventual result.",
+      "options": [
+        "walking to work",
+        "sore legs",
+        "calming"
+      ],
+      "sampleAnswer": "I decided to start walking to work instead of driving, mostly to add a little more movement into my day. The first week was rougher than expected, leaving my legs sore and my mornings noticeably longer than I was used to. Around the third week, though, my body seemed to adjust, and the walk started feeling less like effort and more like a genuinely calming part of my routine. A month in, I've noticed better sleep and a clearer head most mornings, which has made the early soreness feel entirely worth it.",
+      "hint": "Trace the full chain: the change itself, the difficult adjustment, and the eventual positive result.",
+      "explanation": "Tracing a complete chain, from initial change through difficulty to eventual result, shows sustained cause-and-effect reasoning over time.",
+      "promptQuestions": [
+        "What habit did you change?",
+        "How did the effects change from the first week to now?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L107_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a skill you've been practicing recently, describing an early failed attempt and what you changed for a later one.",
+      "options": [
+        "bread",
+        "dense",
+        "rising time"
+      ],
+      "sampleAnswer": "My first attempt at making bread from scratch came out dense and barely edible, mostly because I'd rushed through the rising time out of impatience. On my second try, I forced myself to wait the full hour the recipe suggested, even though it felt unnecessarily long at the time. The difference was almost unbelievable, and the second loaf actually looked like something you'd want to eat.",
+      "hint": "Describe the failed attempt honestly, then the specific change that improved the later result.",
+      "explanation": "Naming a specific change between attempts, not just \"I practiced more\", shows precise, useful reflection on skill-building.",
+      "promptQuestions": [
+        "What went wrong in your first attempt?",
+        "What specifically did you change afterward?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L107_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a skill where repeated practice slowly revealed a pattern in your own mistakes.",
+      "options": [
+        "guitar chord",
+        "rushing",
+        "watched hand"
+      ],
+      "sampleAnswer": "After several frustrating attempts at a particular guitar chord change, I finally noticed I was rushing the transition every single time instead of actually looking at my fingers first. Once I slowed down deliberately and watched my hand move, the chord suddenly felt manageable in a way it never had before. It's strange how many failed attempts it took before I actually noticed what I was doing wrong.",
+      "hint": "Describe the repeated mistake, then the moment you finally identified the pattern behind it.",
+      "explanation": "Identifying a recurring pattern behind repeated mistakes shows deeper self-awareness than simply describing one failed attempt.",
+      "promptQuestions": [
+        "What mistake kept repeating?",
+        "What pattern did you eventually notice?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L107_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about learning a skill over several sessions, including an early struggle, a small breakthrough, and how your confidence changed by the end.",
+      "options": [
+        "public speaking",
+        "shaky voice",
+        "breakthrough"
+      ],
+      "sampleAnswer": "My first few attempts at public speaking practice left me stumbling over half my sentences, my voice noticeably shaky the entire time. By the third session, though, something finally clicked when I stopped trying to memorize every word and instead focused on just knowing the main points. That small breakthrough made the following sessions feel dramatically less terrifying. By the end of the month, I still wasn't a natural speaker by any stretch, but the confidence I'd built made even the nervousness feel manageable instead of paralyzing.",
+      "hint": "Trace the skill's development across at least three points: an early struggle, a breakthrough, and your confidence by the end.",
+      "explanation": "Tracing skill development across three distinct points, struggle, breakthrough, and outcome, shows a complete learning arc rather than a single snapshot.",
+      "promptQuestions": [
+        "What was your early struggle with this skill?",
+        "What breakthrough changed things, and how did your confidence shift?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L108_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about an interaction with a neighbor or someone in your local community that involved more context than it first appeared to.",
+      "options": [
+        "dog barking",
+        "shelter",
+        "sympathy"
+      ],
+      "sampleAnswer": "My neighbor's dog barking late at night seemed like a simple annoyance at first, and I almost knocked on his door to complain more than once. It wasn't until I ran into him buying dog food that I learned he'd recently taken in the dog from a shelter after its previous owner passed away, and the barking was mostly anxiety from the sudden change. Knowing that completely shifted my irritation into something closer to sympathy.",
+      "hint": "Describe the situation as it first appeared, then the additional context that changed your view of it.",
+      "explanation": "Revealing hidden context behind an annoying situation shows how community friction often has a story behind it.",
+      "promptQuestions": [
+        "How did the situation first appear to you?",
+        "What additional context changed your perspective?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L108_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a small community issue, such as noise, shared space, or a local change, that involved balancing your own needs with those of others nearby.",
+      "options": [
+        "construction",
+        "patience",
+        "repairs"
+      ],
+      "sampleAnswer": "The ongoing construction two buildings over has been disrupting my usual quiet mornings for weeks now, and my first instinct was pure frustration at the noise. At the same time, I understood the building was long overdue for repairs that likely benefit everyone living there, myself included. I've settled into a kind of uneasy patience about it, reminding myself the short-term noise is probably worth the long-term improvement.",
+      "hint": "Describe the issue, then how you balanced your own needs against the broader benefit or context.",
+      "explanation": "Weighing personal inconvenience against a broader community benefit reflects genuinely mature everyday reasoning.",
+      "promptQuestions": [
+        "What community issue affected you?",
+        "How did you balance your own needs against the bigger picture?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L108_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a situation involving a local community, group, or shared space where your first impression changed after learning more about the full context.",
+      "options": [
+        "garden plots",
+        "waiting list",
+        "logic"
+      ],
+      "sampleAnswer": "The new community garden plot assignments seemed unfair at first glance, with some neighbors apparently getting larger sections than others for no obvious reason. My irritation grew for a few days until I attended the next community meeting and learned the sizes were actually based on how long people had been on the waiting list, something I hadn't known existed. Understanding the full system behind the decision completely changed how I felt about it, even though my own plot size stayed exactly the same. It's a reminder that most systems have more logic behind them than they show on the surface.",
+      "hint": "Describe your initial impression, then the fuller context you learned, and how it changed your view.",
+      "explanation": "Showing an initial impression change after learning the full context behind a decision models fair, open-minded thinking about shared community life.",
+      "promptQuestions": [
+        "What was your first impression of the situation?",
+        "What context changed your understanding of it?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L109_Q1",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a moment when a technology failure threatened an important deadline, including the context, your reaction, and how it was resolved.",
+      "options": [
+        "laptop wouldn't turn on",
+        "cloud folder",
+        "scramble"
+      ],
+      "sampleAnswer": "My laptop refused to turn on the morning my final project was due, and for a few genuinely panicked minutes, I imagined months of work simply gone. Once I calmed down enough to think clearly, I remembered I'd saved a backup copy to a cloud folder weeks earlier, mostly out of habit rather than foresight. Submitting the project from my phone, using that backup, felt like one of the more stressful last-minute scrambles of the year, but it worked.",
+      "hint": "Describe the technology failure and the threat to your deadline, then explain how it was resolved.",
+      "explanation": "Showing a habit like backing up files pay off unexpectedly reinforces the real value of small precautions under pressure.",
+      "promptQuestions": [
+        "What technology failure threatened your deadline?",
+        "How did you resolve it?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L109_Q2",
+      "instruction": "Write three or four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a time when relying on technology for a deadline backfired, and what you learned from it.",
+      "options": [
+        "autosave",
+        "wiped",
+        "draft separately"
+      ],
+      "sampleAnswer": "I trusted an online form to autosave my progress while filling out an important application, right up until the page refreshed unexpectedly and wiped nearly everything I'd written. The frustration of redoing thirty minutes of careful answers was hard to shake off completely. I've since made it a habit to draft anything important in a separate document first, a lesson this experience taught me more effectively than any advice ever could.",
+      "hint": "Describe how relying on technology backfired, then the lesson you took from the experience.",
+      "explanation": "Extracting a concrete lesson from a technology failure shows growth beyond simply venting about the frustration.",
+      "promptQuestions": [
+        "How did relying on technology backfire?",
+        "What did you learn from the experience?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L109_Q3",
+      "instruction": "Write four connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a deadline that involved multiple technology problems in a row, including the context, how each problem compounded the pressure, and how you eventually met the deadline.",
+      "options": [
+        "slow internet",
+        "software crashed",
+        "four minutes"
+      ],
+      "sampleAnswer": "The morning of the client deadline started with a slow internet connection that made uploading files feel painfully sluggish. Just as that finally resolved, the software I needed crashed twice in a row, each time losing a few minutes of unsaved progress. By the third crash, the pressure had built into something close to genuine panic, every minute feeling more critical than the last. In the end, I managed to submit everything with only four minutes to spare, mostly thanks to switching to an older, more stable version of the software that I'd almost forgotten I still had installed.",
+      "hint": "Show each technology problem building on the last, then how the situation was finally resolved under pressure.",
+      "explanation": "Showing several compounding technology problems, rather than a single isolated failure, captures how real deadline stress often escalates.",
+      "promptQuestions": [
+        "What technology problems occurred one after another?",
+        "How did you finally meet the deadline despite them?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L110_Q1",
+      "instruction": "Write five or six connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a complex journal entry about a recent situation, including full context, the problem that arose, the action you took, the result, and a brief reflection on what it revealed about you.",
+      "options": [
+        "tight deadline",
+        "volunteered",
+        "revealed"
+      ],
+      "sampleAnswer": "Our small team had been assigned a project with an unusually tight two-week deadline, already a stretch given everyone's other responsibilities. Halfway through, one of the three team members had to take unexpected leave, leaving the rest of us to absorb a significant amount of extra work with no additional time. I volunteered to take on the most technical part myself, reasoning that my background made me the fastest option, even though it meant several long evenings. We ended up submitting the project only a day late, which our manager accepted without much concern given the circumstances. Looking back, the whole experience revealed that I'm more willing to sacrifice my own time for a team outcome than I ever would have guessed about myself before this happened.",
+      "hint": "Move naturally through all five elements: context, problem, your action, the result, and what it revealed about you.",
+      "explanation": "Weaving context, problem, action, result, and self-revelation into one entry represents a genuinely complex, mature piece of journal writing.",
+      "promptQuestions": [
+        "What was the full context and problem in this situation?",
+        "What did the outcome and your response reveal about you?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L110_Q2",
+      "instruction": "Write five or six connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a complex journal entry about balancing a personal responsibility against an unexpected complication, including the full context, your decision-making, and what you learned from the outcome.",
+      "options": [
+        "moving apartments",
+        "inspection",
+        "flexible"
+      ],
+      "sampleAnswer": "I had committed to helping a friend move apartments on the same Saturday my landlord scheduled an unavoidable inspection at my own place. Both commitments felt genuinely important, one to a friend who had helped me plenty of times before, and one that could affect my own living situation if handled poorly. After a bit of back-and-forth, I arranged for the inspection to happen first thing in the morning, freeing up the rest of the day to help my friend as planned. It meant an early, slightly stressful start, but both things ended up getting handled without either person feeling neglected. In hindsight, the situation taught me that most conflicts between commitments have more flexible solutions than they seem to at first glance, if you're willing to ask around and rearrange a little.",
+      "hint": "Describe both competing commitments fully, your reasoning process, the outcome, and a lesson drawn from the whole situation.",
+      "explanation": "Extracting a broader lesson (flexibility exists more than it seems) from a specific scheduling conflict elevates the entry beyond a simple recount.",
+      "promptQuestions": [
+        "What two commitments were you balancing, and how did you resolve them?",
+        "What broader lesson did the situation teach you?"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L110_Q3",
+      "instruction": "Write six or seven connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a fully independent, complex journal entry about a challenging situation from recent weeks, weaving together context, a developing problem, the actions you took, the eventual result, and a genuine reflection on what it taught you about yourself or your priorities.",
+      "options": [
+        "money owed",
+        "awkward conversation",
+        "early"
+      ],
+      "sampleAnswer": "For most of last month, I'd been quietly avoiding a difficult conversation with a close friend about money she still owed me from a shared trip. What started as a small, manageable amount felt increasingly awkward to bring up the longer I put it off, until it started subtly affecting how relaxed I felt around her. Eventually, the discomfort outweighed my fear of an awkward conversation, and I brought it up over coffee, as casually as I could manage. She apologized immediately, clearly unaware how long it had been weighing on me, and paid me back within the week without any tension at all. Looking back, the hardest part was never really the money itself, but my own reluctance to risk even a moment of discomfort with someone I care about. It's made me realize how much smoother most of my relationships would probably be if I addressed small issues honestly and early, rather than letting silence do the talking instead. That's a lesson I suspect I'll need to actively practice, rather than one that will simply stick after a single experience.",
+      "hint": "Let the full complexity of the situation unfold naturally: context, growing problem, action, result, and honest self-reflection, without rigid labeling.",
+      "explanation": "A fully independent entry blending context, an evolving problem, action, result, and honest self-reflection demonstrates complete command over complex real-life journal writing.",
+      "promptQuestions": [
+        "What situation developed over recent weeks, and how did you handle it?",
+        "What did the outcome teach you about yourself or your priorities?"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

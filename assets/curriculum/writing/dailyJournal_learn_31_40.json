@@ -1,0 +1,358 @@
+{
+  "gameType": "dailyJournal",
+  "phase": "learn",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L31_Q1",
+      "level": 31,
+      "phase": "learn",
+      "prompt": "Write one sentence about two things you did this afternoon, joined with 'and'.",
+      "guidingQuestions": [
+        "What two things did you do?",
+        "Did one action lead naturally to the other?"
+      ],
+      "targetTokens": [
+        "errands",
+        "groceries",
+        "joined"
+      ],
+      "modelEntry": "I ran a few errands and picked up groceries on my way back from work.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"And\" links two related actions into a single flowing sentence instead of two short, choppy ones."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L32_Q1",
+      "level": 32,
+      "phase": "learn",
+      "prompt": "Write one sentence explaining why you felt tired today, using 'because'.",
+      "guidingQuestions": [
+        "Why did you feel this way?",
+        "What caused it?"
+      ],
+      "targetTokens": [
+        "drained",
+        "late night",
+        "cause"
+      ],
+      "modelEntry": "I felt unusually tired today because I stayed up too late finishing a show.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"Because\" directly connects an effect (feeling tired) to its cause, making the sentence more informative."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L33_Q1",
+      "level": 33,
+      "phase": "learn",
+      "prompt": "Write one sentence about a problem and its result, using 'so'.",
+      "guidingQuestions": [
+        "What was the situation?",
+        "What did you do as a result?"
+      ],
+      "targetTokens": [
+        "snag",
+        "outcome",
+        "walked"
+      ],
+      "modelEntry": "The bus was full, so I decided to walk the rest of the way.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"So\" introduces a result or a decision that followed directly from the first part of the sentence."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L34_Q1",
+      "level": 34,
+      "phase": "learn",
+      "prompt": "Write one sentence describing how you felt when something specific happened today.",
+      "guidingQuestions": [
+        "What happened at that moment?",
+        "How did you feel when it happened?"
+      ],
+      "targetTokens": [
+        "when",
+        "relieved",
+        "arrived"
+      ],
+      "modelEntry": "I felt genuinely relieved when the package finally arrived after two weeks of waiting.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"When\" pinpoints the exact moment a feeling or action occurred, adding precision to the sentence."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L35_Q1",
+      "level": 35,
+      "phase": "learn",
+      "prompt": "Write one sentence about two things happening at the same time, using 'while'.",
+      "guidingQuestions": [
+        "What two things were happening at once?",
+        "Which action was your main focus?"
+      ],
+      "targetTokens": [
+        "while",
+        "meanwhile",
+        "cooking"
+      ],
+      "modelEntry": "I listened to a podcast while cooking dinner tonight.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"While\" shows two actions happening simultaneously, which \"and\" alone cannot express as clearly."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L36_Q1",
+      "level": 36,
+      "phase": "learn",
+      "prompt": "Write one sentence about something you did before leaving the house today.",
+      "guidingQuestions": [
+        "What did you do first?",
+        "What happened right after?"
+      ],
+      "targetTokens": [
+        "before",
+        "checked",
+        "left"
+      ],
+      "modelEntry": "I checked the weather twice before finally deciding what to wear.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"Before\" clearly shows which action came first, helping readers follow the order of events."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L37_Q1",
+      "level": 37,
+      "phase": "learn",
+      "prompt": "Write one sentence about something you did right after finishing a task.",
+      "guidingQuestions": [
+        "What task did you finish?",
+        "What did you do right after?"
+      ],
+      "targetTokens": [
+        "after",
+        "finished",
+        "reward"
+      ],
+      "modelEntry": "After finishing my report, I treated myself to a short episode of my favorite show.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"After\" clearly marks the sequence, showing one action followed directly from another."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L38_Q1",
+      "level": 38,
+      "phase": "learn",
+      "prompt": "Write one sentence about something you did today despite a small difficulty, using 'although'.",
+      "guidingQuestions": [
+        "What made things difficult?",
+        "What did you do despite that?"
+      ],
+      "targetTokens": [
+        "heavy rain",
+        "still went",
+        "run"
+      ],
+      "modelEntry": "Although the rain was heavy, I still went for my usual morning run.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"Although\" introduces a contrast at the start of the sentence, showing a difficulty didn't stop the action."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L39_Q1",
+      "level": 39,
+      "phase": "learn",
+      "prompt": "Write one sentence about a strong contrast in your day, using 'even though'.",
+      "guidingQuestions": [
+        "What made the situation difficult?",
+        "What did you do despite the difficulty?"
+      ],
+      "targetTokens": [
+        "even though",
+        "exhausted",
+        "continued"
+      ],
+      "modelEntry": "Even though I was exhausted, I stayed up to finish reading the last chapter of my book.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "\"Even though\" emphasizes a stronger contrast than \"although\", suggesting the difficulty was significant."
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_LEARN_L40_Q1",
+      "level": 40,
+      "phase": "learn",
+      "prompt": "Write a short entry about your day using at least two connectors such as 'because', 'so', 'but', or 'when'.",
+      "guidingQuestions": [
+        "What connectors did you choose to use?",
+        "How did they help link your ideas together?"
+      ],
+      "targetTokens": [
+        "skipped",
+        "scattered",
+        "on time"
+      ],
+      "modelEntry": "I woke up late because my alarm didn't go off, so I had to skip breakfast entirely. I made it to work on time, but I felt scattered for most of the morning.",
+      "structuralFramework": [
+        {
+          "step": "1. The Setup (When & Where)",
+          "guidance": "Set the temporal anchor and context so the event feels real.",
+          "sampleClause": "Early this morning, before the rest of the house was awake..."
+        },
+        {
+          "step": "2. The Action (What Happened)",
+          "guidance": "Describe your direct sensory experience or habit using vivid vocabulary.",
+          "sampleClause": "I opened the window to let in the cool breeze and organized my priorities."
+        },
+        {
+          "step": "3. The Reflection (Why It Matters)",
+          "guidance": "Conclude with a brief personal insight, reaction, or mood takeaway.",
+          "sampleClause": "That small moment of quiet set an intentional tone for the rest of my day."
+        }
+      ],
+      "techniqueTip": "A memorable journal entry weaves concrete sensory details (sounds, sights, specific times) with honest internal reactions rather than just listing tasks.",
+      "explanation": "Mixing connectors within a short entry avoids repetitive sentence patterns and creates natural variety."
+    }
+  ]
+}
