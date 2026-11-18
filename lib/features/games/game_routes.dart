@@ -122,6 +122,8 @@ import 'package:vowl/features/writing/correction_writing/presentation/pages/corr
 import 'package:vowl/features/writing/correction_writing/presentation/pages/correction_writing_practice_screen.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/pages/essay_drafting_learn_screen.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/pages/essay_drafting_practice_screen.dart';
+import 'package:vowl/features/speaking/repeat_sentence/presentation/pages/repeat_sentence_learn_screen.dart';
+import 'package:vowl/features/speaking/repeat_sentence/presentation/pages/repeat_sentence_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -693,6 +695,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'repeatsentence') {
+          return fadeTransitionPage(
+            child: RepeatSentenceLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1043,6 +1051,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'essaydrafting') {
           return fadeTransitionPage(
             child: EssayDraftingPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'repeatsentence') {
+          return fadeTransitionPage(
+            child: RepeatSentencePracticeScreen(level: level),
             state: state,
           );
         }

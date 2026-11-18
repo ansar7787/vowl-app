@@ -758,6 +758,7 @@ void main() {
       ) async {
         await pumpRepeatSentenceScreen(tester);
         await tester.tap(find.byType(QuestHintButton));
+        speakingStreamController.add(testLoadedState.copyWith(hintUsed: true));
         await tester.pump();
         await tester.tap(find.byType(QuestHintButton));
         await tester.pump();
@@ -1151,6 +1152,7 @@ void main() {
           speakingStreamController.add(retryState);
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 600));
+          await tester.pump(const Duration(seconds: 2));
 
           expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
         },
