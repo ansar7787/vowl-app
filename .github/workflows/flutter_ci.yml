@@ -45,7 +45,7 @@ jobs:
 
       - name: Run Core Tests
         if: ${{ !cancelled() }}
-        run: flutter test test/core/
+        run: flutter test test/core/ --reporter=expanded
 
       - name: Run Auth & Games Tests
         if: ${{ !cancelled() }}
