@@ -1,0 +1,698 @@
+{
+  "gameType": "writingEmail",
+  "phase": "mastery",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "WRT_WRITINGEMAIL_L91_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A department head reads emails on her phone between meetings. Frame: Subject: Recommendation: hire Ade Coker / Greeting: Dear Professor Blake, / Sign-off: Kind regards, Jonas. Put together the body so the conclusion comes first.",
+      "options": [
+        "He scored highest in both the teaching demonstration and the panel interview.",
+        "The other two candidates were strong but had less experience with large classes.",
+        "If you agree, I will contact him tomorrow to discuss start dates.",
+        "I recommend that we offer the lecturer post to Ade Coker."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "hint": "Someone reading quickly needs the decision before the reasons. Where does the decision go?",
+      "explanation": "Conclusion-first writing lets a busy reader stop after one line and still know the outcome. The reasons follow for anyone who wants to check, and the last line proposes the next step.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L91_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Your team's project has failed a test. Frame: Subject: Test failed: launch at risk / Greeting: Hi Ingrid, / Sign-off: Thanks, Dev. Assemble the body of the update to your manager.",
+      "options": [
+        "The failure is in the payment module, and two developers are already working on it.",
+        "I'll send another update as soon as we have the retest result.",
+        "The security test failed this morning, and this puts the 24 June launch at risk.",
+        "We should know by Friday whether the launch date can hold."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Impact on the deadline is what the manager cares about most. Explain the cause afterwards.",
+      "explanation": "The manager needs to know what is at risk before hearing how you are handling it. The timeline for the next update reassures her that she doesn't need to chase you.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L91_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A researcher emails a journal editor after the reviewers' decision. Arrange the email in the order the editor will find most useful.",
+      "options": [
+        "Dear Dr Sørensen,",
+        "The most substantial change is a new analysis in Section 4, which addresses Reviewer 2's main concern.\n\nYours sincerely,\nDr Anita Rao",
+        "I have revised the manuscript in line with all three reviewers' comments and attached the new version with a response table.",
+        "Subject: Revised manuscript 2210, ready for resubmission"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "Status first, then the most significant point, then supporting detail.",
+      "explanation": "Editors are looking for whether the reviewers' comments were addressed. The first sentence answers that, and the second directs attention to the most important change.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L92_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Frame: Subject: Action needed: timesheets by Friday, 4 pm / Greeting: Hi everyone, / Sign-off: Thank you, Carla. Piece together the body so that nobody misses the deadline.",
+      "options": [
+        "Please submit your timesheets by 4 pm this Friday.",
+        "You can submit via the portal or send them to me directly.",
+        "Let me know if you have any problems logging in.",
+        "Payroll closes at 5 pm, and late submissions will be paid next month."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "State the deadline immediately, then the consequence, then how, then help.",
+      "explanation": "The deadline is the point of the email, so it opens the body. The consequence explains why it matters, and the practical instructions come after so those who agree can act at once.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L92_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are asking a printer to deliver posters before an event. Set out the email.",
+      "options": [
+        "Please confirm today whether this is possible, or tell me what date you can offer.\n\nKind regards,\nInes Carvalho",
+        "Subject: Urgent: posters needed by 9 am on Friday 13 June",
+        "Dear Mr Lopez,",
+        "I am writing about order 7731 for 200 posters, which we need at the venue by 9 am on Friday 13 June for the opening of our exhibition."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "If the deadline is tight, it should appear in the subject and near the top of the body.",
+      "explanation": "Putting the date in the subject signals urgency before the email is opened. Asking for an answer today allows you to find another supplier if necessary.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L92_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A colleague proposes moving a deadline. Structure the message so that the proposed date and the reason are clear.",
+      "options": [
+        "Hi Bogdan,",
+        "Could we move the audit report deadline from 20 June to 30 June?",
+        "Subject: Proposal to move the audit report to 30 June",
+        "Two of the auditors are still waiting for data from Finance, and rushing it would risk errors.\n\nLet me know what you think.\n\nThanks,\nMarisol"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Propose the new date first. Explain what makes it necessary in the next sentence.",
+      "explanation": "The proposed change is the key information, so it goes first. The reason then shows that the request is about quality, not convenience.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L93_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A manager sends news that needs no action from most of the team, plus one request for one person. Arrange the email.",
+      "options": [
+        "Hi all,",
+        "Subject: Office closed on Monday 2 June (plus one request for Ella)",
+        "For your information, the office will be closed on Monday 2 June because of the bank holiday. No action is needed from most of you.\n\nElla, could you please put an out-of-office notice on the shared inbox by Friday?",
+        "Enjoy the long weekend!\nAmira"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "hint": "Separate the information for everyone from the action for one person.",
+      "explanation": "When only one person needs to act, name them clearly in a separate paragraph. Everyone else can see that no action is needed, which saves them time.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L93_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are forwarding a long report for a director to read. Put together the note that goes on top.",
+      "options": [
+        "Subject: FYI: Q3 customer satisfaction report",
+        "Dear Ms Rahimi,",
+        "Kind regards,\nFrancis Owusu",
+        "The Q3 customer satisfaction report is attached for your information. No action is required, but you may wish to read the summary on page 2, where scores have risen by 8%."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Say clearly that no action is needed, and guide the reader to the best bit.",
+      "explanation": "Making it clear that the email is for information saves senior readers from worrying that they are missing something. Pointing to page 2 respects their time.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L93_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Assemble this email to a colleague which asks for a decision and gives background for reference.",
+      "options": [
+        "For reference, the Harbour Hotel costs £3,200 and seats 120, while the Grand Hall costs £2,700 and seats 90.\n\nThanks,\nHamza",
+        "Subject: Decision needed: venue for the November conference",
+        "Could you choose between the Harbour Hotel and the Grand Hall by Wednesday? I need your decision to confirm the booking.",
+        "Hi Priti,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "The decision needed comes before the comparison details.",
+      "explanation": "The action requested appears first because it is what the reader must do. The comparison acts as reference material for the decision.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L94_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Choose the order for an email whose subject line alone tells the reader what happened and what to do.",
+      "options": [
+        "Please save your work and log off before then. The server should be back by 6 pm.\n\nIT Team",
+        "Hi all,",
+        "The main file server will be shut down for emergency maintenance at 3 pm today.",
+        "Subject: Server down: please save work and log off by 3 pm"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "If a reader only sees the subject, what should it tell them?",
+      "explanation": "The subject contains both the problem and the action. Many people read only the subject preview, so this can prevent lost work.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L94_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A parent emails the school office about a sick child. Arrange the message.",
+      "options": [
+        "Subject: Absence today: Noah Sim, Class 4B",
+        "Yours faithfully,\nLiew Sim",
+        "Noah has a high temperature and will be absent today. I expect he will return on Thursday, and I will confirm if that changes.",
+        "Dear School Office,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "The subject should include name, class and reason so the office can record it immediately.",
+      "explanation": "Front offices process many absence emails. A subject with the child's name and class allows quick sorting, so the body only has to give details.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L94_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Set out the email in which a freelancer asks for payment of an overdue invoice. The subject must give all the information.",
+      "options": [
+        "I am writing about invoice 118 for £900, which was due on 1 June and remains unpaid.",
+        "Could you let me know when I can expect payment?\n\nKind regards,\nEamon Doyle",
+        "Dear Ms Sandoval,",
+        "Subject: Payment reminder: invoice 118, £900, 14 days overdue"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "A payment reminder is easier for the reader to act on if the amount and the delay appear in the subject.",
+      "explanation": "Accounts teams often search by invoice number and amount. Stating how overdue the invoice is signals urgency without sounding aggressive.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L95_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Frame: Subject: Menu options for the retirement dinner / Greeting: Dear Adrian, / Sign-off: Best wishes, Lucille. Structure the body of an email that includes a link and an attachment.",
+      "options": [
+        "Please tell me which you prefer by Thursday.",
+        "The attached spreadsheet compares the menus and prices.",
+        "I've shortlisted three restaurants for Gina's retirement dinner.",
+        "You can view the photos of each venue at the link below."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "Summarise first, then point to each resource, then say what you need.",
+      "explanation": "Readers should know what they are receiving before they open it. Attachments and links are supporting materials, so the request comes after them.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L95_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You forgot to attach a file to an earlier email. Build the follow-up.",
+      "options": [
+        "Hi Bram,",
+        "Subject: Re: Draft schedule, with attachment this time",
+        "It is attached now. The main change is that the site visit has moved to Wednesday.\n\nBest,\nSusanna",
+        "Apologies, I forgot to attach the draft schedule to my last email."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "Own up quickly, provide the file and point out what matters.",
+      "explanation": "A brief apology and immediate correction is the best approach. Highlighting the main change saves the reader from searching through the file.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L95_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A recruiter sends candidates an information pack. Arrange the email so that candidates know what to open first.",
+      "options": [
+        "Subject: Your interview on 18 June: information pack",
+        "Thank you for accepting our invitation to interview on 18 June at 11 am.",
+        "Please read the attached welcome letter first, which contains directions and security details, and then look at the second file for the interview format.\n\nKind regards,\nOlivia Hartmann",
+        "Dear Ms Chowdhury,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "When there are several attachments, tell the reader the order to read them in.",
+      "explanation": "Naming the order in which to open files prevents confusion. The first sentence gives the essential event details before the attachments.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L96_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are presenting two options to your manager and want her to choose quickly. The subject line, greeting and sign-off are already written (Subject: Two options for the training day: recommendation inside / Dear Ms Bailey, / Kind regards, Damola). Arrange the body.",
+      "options": [
+        "It offers a certificate but costs £1,500 more and cannot start until September.",
+        "Could you tell me which you prefer by Friday?",
+        "I recommend Option A, an in-house workshop, because it costs less and can be held next month.",
+        "Option B is an external course."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "Give your recommendation first, then the alternative, then the decision request.",
+      "explanation": "Managers appreciate a recommendation, not just a list of choices. Describing the alternative fairly shows you have considered both options.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L96_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You wish to offer a customer two ways of solving a problem. Lay out the email.",
+      "options": [
+        "I am sorry that your washing machine has stopped working. We can either send an engineer on Thursday or provide a full replacement, which would be delivered on Monday.",
+        "Subject: Your faulty washing machine: two options",
+        "Dear Mr Verma,",
+        "Please reply to tell us which you would prefer.\n\nYours sincerely,\nBianca Lopes, Customer Care"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "Apologise, offer the options simply, then ask for the choice.",
+      "explanation": "Customers appreciate a choice. Presenting both options in one sentence keeps the message short and lets them decide at once.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L96_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A friend needs help choosing between two dates for a party. Piece together your reply.",
+      "options": [
+        "Subject: Re: Which weekend for the party?",
+        "I'd go for the 14th, since the 21st clashes with the half-marathon and lots of people will be away.",
+        "Hi Anouk,",
+        "But either works for me, so it's your call!\n\nXx Lena"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Even between friends, say your preference first and your flexibility second.",
+      "explanation": "Giving your recommendation first with a reason is helpful. Adding that you are flexible leaves the final decision to the friend.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L97_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Actions from today's project meeting / Hi team, / Best, Cornelia). Arrange the body.",
+      "options": [
+        "Please tell me if I have missed anything.",
+        "Thanks for a productive meeting.",
+        "Here are the actions we agreed: Cormac will update the budget by Wednesday.",
+        "Mei will book the venue by Friday; I will send the draft schedule on Monday."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "Each action should have an owner and a date.",
+      "explanation": "Actions without owners are often forgotten. Naming the person and the date makes it easy to check progress and hold people to what they agreed.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L97_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are finishing a call with a client. Structure the follow-up email so that each side's next step is clear.",
+      "options": [
+        "Subject: Next steps following today's call",
+        "Please let me know if I have understood this correctly.\n\nKind regards,\nBrandon Lee",
+        "Dear Ms Whitmore,",
+        "Thank you for the call this afternoon.\n\nTo summarise: we will send the revised proposal by Monday, and you will let us know by the end of next week if you would like to proceed."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hint": "A good summary states both sides' commitments and invites correction.",
+      "explanation": "Summarising agreed steps in writing prevents misunderstandings. Inviting correction gives the client a chance to clarify before anything goes wrong.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L97_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Build the email with which a new employee asks what she should do in the first week.",
+      "options": [
+        "Dear Mr Sinha,",
+        "It would also be very helpful to know if there is anything I should read beforehand.\n\nKind regards,\nAiko Yamamoto",
+        "I'm very excited to start on Monday. Could you let me know what time I should arrive and who I should ask for at reception?",
+        "Subject: Preparing for my first week"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "Put the most immediate, practical question first.",
+      "explanation": "Arrival time and reception are the most urgent needs, so they come first. The optional reading question is lower priority.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L98_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A data analyst reports a finding to her manager. Frame: Subject: Sales fell 12% in the North region / Greeting: Hi Duncan, / Sign-off: Regards, Palesa. Put together the body.",
+      "options": [
+        "Excluding those stores, sales were down by only 2%.",
+        "Most of the drop came from two stores that closed for refurbishment for ten days.",
+        "Sales in the North region fell by 12% in May compared with April.",
+        "I suggest we wait for June's figures before taking any action."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "Finding first, cause second, adjustment third, recommendation last.",
+      "explanation": "Readers should see the headline before the evidence. The adjusted figure puts the headline in context, and the recommendation prevents an overreaction.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L98_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A customer service manager reports on complaint numbers. Arrange the email.",
+      "options": [
+        "Dear Mr Sokolov,",
+        "Subject: Complaints in Q2: overall summary",
+        "Complaints rose by 15% in Q2, and delivery delays account for most of the increase.",
+        "In April, 40 complaints mentioned delays; by June this had increased to 68.\n\nI recommend we review our courier contract, and I would be glad to present the details at the next meeting.\n\nKind regards,\nAlisha Thomas"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "hint": "State the pattern, then the numbers that prove it, then the recommendation.",
+      "explanation": "Numbers support the conclusion rather than replace it. Readers who trust you can stop after the first line, and sceptical readers can check the figures.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L98_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A student summarises a group's survey results to a professor. Lay out the email.",
+      "options": [
+        "Our survey of 120 students found that 70% prefer to submit coursework online.",
+        "Dear Professor Duffy,",
+        "The main reasons were convenience and instant proof of submission. Only 12% preferred paper.\n\nWe would be happy to share the full data.\n\nYours sincerely,\nZahra Sadiq",
+        "Subject: Survey results: 70% of students prefer online submission"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "hint": "Put the result in the subject and the first line.",
+      "explanation": "The subject contains the key result. In the body, the sample size and reasons explain how reliable the finding is.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L99_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "An email contains one urgent request and two routine items. Arrange it so that the urgent request is not missed.",
+      "options": [
+        "First, urgent: could you sign the attached supplier agreement by 3 pm today? The supplier will otherwise withdraw the price.",
+        "Subject: Urgent: signature needed today, plus two routine updates",
+        "The two routine items can wait until next week: the staff survey results are ready, and the parking permits have arrived.\n\nThanks,\nFinn",
+        "Hi Martha,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Separate what is urgent from what can wait, and say so.",
+      "explanation": "Labelling urgent items and putting them first prevents an important request being buried under routine information. Saying the other items can wait helps the reader prioritise.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L99_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You need to report a small error and ask a big favour in the same email. Arrange it so that the favour is not buried.",
+      "options": [
+        "I would be very grateful if you could extend the payment date for invoice 552 by one week, as our finance system is being upgraded.",
+        "Separately, there is a minor typing error in the invoice: my company name is spelled 'Aldous' instead of 'Aldus'.\n\nKind regards,\nRosalie Aldus",
+        "Dear Mr Bello,",
+        "Subject: Small error in the invoice and a request"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Which item should the reader deal with first?",
+      "explanation": "The larger request is the important one, so it comes first. The small correction is handled briefly afterwards.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L99_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Arrange the email with which a receptionist warns staff about two things, one of which is a safety concern.",
+      "options": [
+        "Also, a reminder that visitor parking is only for visitors.\n\nThanks,\nGrace Nkemelu",
+        "Subject: Safety: wet floor in the lobby (plus a parking reminder)",
+        "Please be careful in the lobby today because there is a leak, and the floor is wet. Cones are in place, and maintenance is on the way.",
+        "Hi all,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "Safety comes before reminders. The subject can carry both.",
+      "explanation": "Anything that could hurt someone must come first. Putting a lesser reminder second and in the subject shows that both were considered.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L100_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You've been asked to give a client a quick update on a delayed installation. Build the email so that a busy client sees the main point at once.",
+      "options": [
+        "Subject: Update: installation moved to Thursday 19 June",
+        "Dear Mr Almeida,",
+        "The engineer will arrive between 8 and 10 am, and I will confirm the exact time the day before.\n\nWe apologise for the inconvenience.\n\nYours sincerely,\nSonia Kaur",
+        "Your installation has been moved from Tuesday 17 June to Thursday 19 June because of a delay in delivery of the equipment."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "New date, then the reason, then the practical details, then the apology.",
+      "explanation": "The client wants to know the new date first. The reason is given briefly, and the practical details follow. Apologising at the end keeps the focus on the information.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L100_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A student writes to the head of department to propose a new society. Put together the email.",
+      "options": [
+        "Dear Professor Leung,",
+        "Twenty-three students have already signed up, and we have found a technician willing to act as an adviser.\n\nWould you be free for twenty minutes next week?\n\nYours sincerely,\nRafael Ortiz",
+        "Subject: Proposal for a Robotics Society: request for a meeting",
+        "I would like to propose starting a Robotics Society and ask for a meeting to discuss how to register it."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "The request comes first, the evidence second, the meeting question last.",
+      "explanation": "The proposal and request are made immediately. The supporting evidence (twenty-three students, an adviser) shows that the idea is serious, so the meeting request feels reasonable.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L100_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A team member emails the team about a change of process. Assemble the email so that a reader who reads only the first two lines still knows what to do.",
+      "options": [
+        "Hi all,",
+        "Subject: Change: send all expense claims to Finance from 1 July",
+        "This is because the Finance team is taking over the process, and it should speed up payment. The claim form will not change.\n\nThanks,\nAlbert",
+        "From 1 July, please send expense claims to finance@example.com instead of to me."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "The first two lines should carry the change and the action.",
+      "explanation": "The subject and first line hold the complete instruction. The reason and reassurance appear afterwards for readers who want to understand why.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    }
+  ]
+}

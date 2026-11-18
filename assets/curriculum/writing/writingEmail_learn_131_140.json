@@ -1,0 +1,968 @@
+{
+  "gameType": "writingEmail",
+  "phase": "learn",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L131_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "A customer wrote: 'Do you ship the oak bookcase to Ireland, and how long does it take?' The subject line, greeting and sign-off are already written (Subject: Re: Oak bookcase delivery to Ireland / Dear Mr Byrne, / Kind regards, Mirabel Ferro, Woodhouse Furniture). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Thank you for your interest in the oak bookcase.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Yes, we deliver to Ireland, and delivery normally takes seven to ten working days.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "The shipping charge is €45, and it is shown at checkout once you enter your address.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Please let us know if you have any other questions.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Thank you for your interest in the oak bookcase.\n\nYes, we deliver to Ireland, and delivery normally takes seven to ten working days.\n\nThe shipping charge is €45, and it is shown at checkout once you enter your address.\n\nPlease let us know if you have any other questions.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A good service reply answers the customer's exact question straight away. Extra information (cost) comes second because it is helpful, not central."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L131_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "A customer asked whether a laptop charger is compatible with two models. Lay out the reply, which must be accurate and helpful.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Re: Charger compatibility with Zenbook 14 and Aspire 5",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Ms Pemberton,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for your question. The 65W charger works with the Zenbook 14, but it is not suitable for the Aspire 5, which needs a 90W model.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "We stock the 90W charger for £34.99, and I have included the link below.\n\nBest wishes,\nOwen Pryor, Technical Support",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Re: Charger compatibility with Zenbook 14 and Aspire 5\n\nDear Ms Pemberton,\n\nThank you for your question. The 65W charger works with the Zenbook 14, but it is not suitable for the Aspire 5, which needs a 90W model.\n\nWe stock the 90W charger for £34.99, and I have included the link below.\n\nBest wishes,\nOwen Pryor, Technical Support",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "When the answer is partly no, saying so clearly prevents a wrong purchase. Offering the correct product turns the limitation into service."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L131_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "A customer left a vague message: 'My order is wrong.' The subject line, greeting and sign-off are already written (Subject: Re: Your order: we would like to help / Dear Customer, / Kind regards, Tasha Coleman). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "I am sorry to hear that there is a problem with your order, and I would like to put it right.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Could you tell us your order number and what is different from what you expected?",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "A photo would help if the item is damaged or incorrect.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "We will reply within one working day.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "I am sorry to hear that there is a problem with your order, and I would like to put it right.\n\nCould you tell us your order number and what is different from what you expected?\n\nA photo would help if the item is damaged or incorrect.\n\nWe will reply within one working day.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A specific request for information avoids repeated back-and-forth. Promising a response time reassures the customer."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L132_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Set out the email from a customer whose washing machine failed after fourteen months, when the warranty is two years.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Warranty claim: Hydra 7 washing machine, serial HX-49128",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Customer Service,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I bought a Hydra 7 washing machine from your store on 5 April last year, and it stopped spinning on 2 June.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "It is still within the two-year warranty. I have attached the receipt and a video of the fault, and would like to arrange a repair or replacement.\n\nYours faithfully,\nCynthia Bello",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Warranty claim: Hydra 7 washing machine, serial HX-49128\n\nDear Customer Service,\n\nI bought a Hydra 7 washing machine from your store on 5 April last year, and it stopped spinning on 2 June.\n\nIt is still within the two-year warranty. I have attached the receipt and a video of the fault, and would like to arrange a repair or replacement.\n\nYours faithfully,\nCynthia Bello",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A warranty claim is stronger when it establishes eligibility first. The video and receipt let the company decide without asking more questions."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L132_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Warranty claim HX-49128 / Dear Ms Bello, / Yours sincerely, Nigel Storey). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Thank you for sending the photographs.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Our engineer has reviewed them and concluded that the cracked screen was caused by an impact.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Accidental damage is not covered by the warranty, so we are unable to repair it free of charge.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "We can offer a repair for £89, and I would be happy to arrange this if you would like.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Thank you for sending the photographs.\n\nOur engineer has reviewed them and concluded that the cracked screen was caused by an impact.\n\nAccidental damage is not covered by the warranty, so we are unable to repair it free of charge.\n\nWe can offer a repair for £89, and I would be happy to arrange this if you would like.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Explaining the basis of the decision makes it easier to accept. A paid repair option shows the company is trying to help despite the refusal."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L132_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Build the customer's response asking for a second review of a rejected claim.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Request for a further review of claim HX-49128",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Mr Storey,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for your explanation of the decision on my claim.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I respectfully disagree that the damage was caused by an impact, because the fault appeared while the appliance was in normal use. I would be grateful if a second engineer could examine it, and I can be available at any time next week.\n\nYours sincerely,\nCynthia Bello",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Request for a further review of claim HX-49128\n\nDear Mr Storey,\n\nThank you for your explanation of the decision on my claim.\n\nI respectfully disagree that the damage was caused by an impact, because the fault appeared while the appliance was in normal use. I would be grateful if a second engineer could examine it, and I can be available at any time next week.\n\nYours sincerely,\nCynthia Bello",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Acknowledging the explanation shows you read it. Suggesting a second inspection is a specific, reasonable next step."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L133_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Arrange the email from a company informing a customer that a delivery will be late.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Update on your order 55107: new delivery date",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Mr Nkosi,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I am writing to let you know that your sofa will be delivered on Friday 20 June instead of Tuesday 17 June.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "The manufacturer's lorry broke down, and we are sorry for the inconvenience. If Friday is not suitable, please reply, and we will arrange another date.\n\nYours sincerely,\nPauline Rowe",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Update on your order 55107: new delivery date\n\nDear Mr Nkosi,\n\nI am writing to let you know that your sofa will be delivered on Friday 20 June instead of Tuesday 17 June.\n\nThe manufacturer's lorry broke down, and we are sorry for the inconvenience. If Friday is not suitable, please reply, and we will arrange another date.\n\nYours sincerely,\nPauline Rowe",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The date is the information the customer needs most. Giving a reason briefly and offering flexibility shows respect."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L133_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "A customer asks for compensation for a delayed delivery that spoiled an event. Assemble the email.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Request for compensation: order 63320, delivered two days late",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Sir or Madam,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I ordered a banner for my daughter's graduation party on 14 June, and it was promised for 9 June.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "It arrived on 11 June, after the event had been rescheduled, and I would like to know whether you can offer a partial refund.\n\nYours faithfully,\nGrace Otieno",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Request for compensation: order 63320, delivered two days late\n\nDear Sir or Madam,\n\nI ordered a banner for my daughter's graduation party on 14 June, and it was promised for 9 June.\n\nIt arrived on 11 June, after the event had been rescheduled, and I would like to know whether you can offer a partial refund.\n\nYours faithfully,\nGrace Otieno",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Describing the mismatch and its effect makes the request understandable. Asking for a partial refund is a reasonable proposal."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L133_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Lay out the reply to a customer who has chased a delayed order angrily.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Re: Where is my order?",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Mr Chowdhury,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I understand your frustration, and I am sorry that your order 71234 is late.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "It is now with the courier and will be delivered tomorrow before 6 pm. I have refunded the delivery charge, and you can track it using the link below.\n\nYours sincerely,\nMaria Andersson",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Re: Where is my order?\n\nDear Mr Chowdhury,\n\nI understand your frustration, and I am sorry that your order 71234 is late.\n\nIt is now with the courier and will be delivered tomorrow before 6 pm. I have refunded the delivery charge, and you can track it using the link below.\n\nYours sincerely,\nMaria Andersson",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Recognising frustration calms the tone. Giving a firm time and a refund replaces uncertainty with something concrete."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L134_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Piece together the email asking to change the size of an order that has not shipped yet.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Urgent size change: order 82019, not yet dispatched",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Orders Team,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I placed order 82019 this morning for a pair of boots in size 40, but I need size 42.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Could you change the size before it is dispatched? If it has already left, please tell me how to arrange an exchange.\n\nYours faithfully,\nPilar Herrera",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Urgent size change: order 82019, not yet dispatched\n\nDear Orders Team,\n\nI placed order 82019 this morning for a pair of boots in size 40, but I need size 42.\n\nCould you change the size before it is dispatched? If it has already left, please tell me how to arrange an exchange.\n\nYours faithfully,\nPilar Herrera",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Speed matters here, so the order number and change come first. A fallback question avoids a second email if the order has shipped."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L134_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Size change for order 82019 / Dear Ms Herrera, / Yours sincerely, Otis Bell). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Thank you for contacting us so quickly.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Unfortunately your order had already been dispatched when your message arrived.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "So we cannot change it.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "You can return the boots free of charge within 30 days, and we will send size 42 at no extra cost once the return arrives.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Thank you for contacting us so quickly.\n\nUnfortunately your order had already been dispatched when your message arrived.\n\nSo we cannot change it.\n\nYou can return the boots free of charge within 30 days, and we will send size 42 at no extra cost once the return arrives.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Thanking the customer for acting quickly is polite, and explaining why the change is impossible is honest. The alternative process is the useful part."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L134_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Structure the email that adds a delivery instruction to an existing order.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Delivery instruction for order 91044",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Hello,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Could you please add a note to order 91044 asking the courier to leave the parcel with the concierge if I am not in?",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "The flat is 12B, and the concierge is on duty until 8 pm.\n\nThank you,\nAmina Hassan",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Delivery instruction for order 91044\n\nHello,\n\nCould you please add a note to order 91044 asking the courier to leave the parcel with the concierge if I am not in?\n\nThe flat is 12B, and the concierge is on duty until 8 pm.\n\nThank you,\nAmina Hassan",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A short request with the practical details (flat number, concierge hours) is easy for the company to add."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L135_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Build the email from a customer whose support ticket has had no reply for five days.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: No reply to ticket 2231: still unresolved after five days",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Support Team,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I opened ticket 2231 on 9 June about my account being locked, and I have not had any reply.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I cannot access my invoices, which I need for my accounts on Friday. Could someone update me today?\n\nYours faithfully,\nHarold Mwangi",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: No reply to ticket 2231: still unresolved after five days\n\nDear Support Team,\n\nI opened ticket 2231 on 9 June about my account being locked, and I have not had any reply.\n\nI cannot access my invoices, which I need for my accounts on Friday. Could someone update me today?\n\nYours faithfully,\nHarold Mwangi",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The ticket number and dates show the delay is factual. Explaining the consequence and setting a time makes it easier to prioritise."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L135_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Ticket 2231: your account is now unlocked / Dear Mr Mwangi, / Kind regards, Deborah Rutherford). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "I am sorry for the delay in replying to your ticket.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "We had an unusually high volume of requests.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I have now unlocked your account and reset your password, which was sent to your registered email address.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Please try to log in and tell me if you have any further difficulty.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "I am sorry for the delay in replying to your ticket.\n\nWe had an unusually high volume of requests.\n\nI have now unlocked your account and reset your password, which was sent to your registered email address.\n\nPlease try to log in and tell me if you have any further difficulty.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A short explanation for the delay avoids sounding defensive. The solution is more important than a long apology."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L135_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Arrange the second follow-up to a business that still has not fixed a problem.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Second follow-up on ticket 2231: escalation requested",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Support Manager,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I have written twice about my locked account, on 9 and 14 June, and I have received no response.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I would be grateful if you could escalate this to someone who can help, and confirm by Friday that my account is unlocked.\n\nYours faithfully,\nHarold Mwangi",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Second follow-up on ticket 2231: escalation requested\n\nDear Support Manager,\n\nI have written twice about my locked account, on 9 and 14 June, and I have received no response.\n\nI would be grateful if you could escalate this to someone who can help, and confirm by Friday that my account is unlocked.\n\nYours faithfully,\nHarold Mwangi",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Listing dates shows a clear history. Asking for escalation with a deadline is firmer without being rude."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L136_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Change to your monthly charge from 1 August / Dear Ms Salazar, / Yours sincerely, Daniel Fisher). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "From 1 August, your monthly broadband charge will rise from £28 to £31.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "This is because of an annual price adjustment that appears in your contract.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "You can find the details in section 4 of your agreement.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "If you have any questions, please call us free on 0800 000 0000.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "From 1 August, your monthly broadband charge will rise from £28 to £31.\n\nThis is because of an annual price adjustment that appears in your contract.\n\nYou can find the details in section 4 of your agreement.\n\nIf you have any questions, please call us free on 0800 000 0000.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Customers need the amount and the date before the reason. Pointing to the contract clause shows transparency."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L136_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Piece together the customer's reply questioning the price rise.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Re: Change to my monthly charge",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Mr Fisher,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for the explanation of the price change from £28 to £31.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "However, I read section 4 and it says increases would be limited to £2 a year. Could you please clarify how the £3 rise complies with this?\n\nYours sincerely,\nPriya Salazar",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Re: Change to my monthly charge\n\nDear Mr Fisher,\n\nThank you for the explanation of the price change from £28 to £31.\n\nHowever, I read section 4 and it says increases would be limited to £2 a year. Could you please clarify how the £3 rise complies with this?\n\nYours sincerely,\nPriya Salazar",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Quoting the contract makes the question difficult to ignore. Asking for clarification is firm but non-hostile."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L136_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Set out the company's admission of an error and correction.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Correction to your monthly charge",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Ms Salazar,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for your careful reading of the contract. You are right, and I am sorry that we applied the wrong increase.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Your monthly charge will remain £30 rather than £31, and we will credit the extra £1 for the months already billed.\n\nYours sincerely,\nDaniel Fisher",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Correction to your monthly charge\n\nDear Ms Salazar,\n\nThank you for your careful reading of the contract. You are right, and I am sorry that we applied the wrong increase.\n\nYour monthly charge will remain £30 rather than £31, and we will credit the extra £1 for the months already billed.\n\nYours sincerely,\nDaniel Fisher",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Agreeing plainly builds trust. Saying exactly what will change removes doubt."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L137_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Arrange the email cancelling a subscription and declining a discount offer.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Re: Your offer of 30% off",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Anders,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for offering a discount to keep my membership.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I appreciate it, but I have decided to cancel because I am moving abroad and will not be able to use the service. Please confirm the cancellation date and that no further payments will be taken.\n\nBest wishes,\nMarisol Vega",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Re: Your offer of 30% off\n\nDear Anders,\n\nThank you for offering a discount to keep my membership.\n\nI appreciate it, but I have decided to cancel because I am moving abroad and will not be able to use the service. Please confirm the cancellation date and that no further payments will be taken.\n\nBest wishes,\nMarisol Vega",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Being clear stops the company from making further offers. Asking for confirmation protects you from unwanted charges."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L137_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Your membership has been cancelled / Dear Marisol, / With best wishes for your move, Anders Holm). Arrange the body.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "We are sorry to see you go.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "But I confirm that your membership will end on 30 June.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "No further payments will be taken, and you can use the app until that date.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "If you ever return, your saved progress will still be here.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "We are sorry to see you go.\n\nBut I confirm that your membership will end on 30 June.\n\nNo further payments will be taken, and you can use the app until that date.\n\nIf you ever return, your saved progress will still be here.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The confirmation answers her main concern. A friendly personal ending suits a brand that wants goodwill."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L137_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Put together an email from a customer asking a company to stop marketing messages.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Request to stop marketing emails",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Sir or Madam,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Please remove my email address, isabel.marin@example.com, from all your marketing lists.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I have unsubscribed twice, but I continue to receive weekly offers. Please confirm in writing that this has been done.\n\nYours faithfully,\nIsabel Marin",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Request to stop marketing emails\n\nDear Sir or Madam,\n\nPlease remove my email address, isabel.marin@example.com, from all your marketing lists.\n\nI have unsubscribed twice, but I continue to receive weekly offers. Please confirm in writing that this has been done.\n\nYours faithfully,\nIsabel Marin",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The instruction is unambiguous. Mentioning the failed unsubscribe attempts shows why you have written and supports a request for confirmation."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L138_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Assemble the email requesting an accessible seat at a theatre.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Wheelchair space needed: 'The Tempest', 18 October",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Box Office,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I would like to book two tickets for 'The Tempest' on 18 October, including one wheelchair space and a seat for my companion.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Could you tell me which seats are available and whether there is step-free access from the street?\n\nYours faithfully,\nEvelyn Marsh",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Wheelchair space needed: 'The Tempest', 18 October\n\nDear Box Office,\n\nI would like to book two tickets for 'The Tempest' on 18 October, including one wheelchair space and a seat for my companion.\n\nCould you tell me which seats are available and whether there is step-free access from the street?\n\nYours faithfully,\nEvelyn Marsh",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Specific requirements are easier to meet. Asking about step-free access helps you plan the journey."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L138_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Arrange the email requesting a large-print version of a document.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Request for a large-print copy of the tenancy agreement",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Housing Team,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I am partially sighted and would like to receive the tenancy agreement in large print.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Could you send it by post, or let me know if there is a digital version compatible with a screen reader?\n\nYours faithfully,\nMr A. Okoye",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Request for a large-print copy of the tenancy agreement\n\nDear Housing Team,\n\nI am partially sighted and would like to receive the tenancy agreement in large print.\n\nCould you send it by post, or let me know if there is a digital version compatible with a screen reader?\n\nYours faithfully,\nMr A. Okoye",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "You do not need to give medical details. Offering two possible formats gives the organisation options."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L138_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Piece together the email requesting a quiet room at an exam centre.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Request for a quiet room: exam on 10 June, candidate no. 40771",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Exams Officer,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I would like to ask whether I could sit my exam on 10 June in a separate quiet room.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I have anxiety difficulties, and I have attached a letter from my doctor. I would be grateful to know what further evidence you need.\n\nYours sincerely,\nGideon Ayers",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Request for a quiet room: exam on 10 June, candidate no. 40771\n\nDear Exams Officer,\n\nI would like to ask whether I could sit my exam on 10 June in a separate quiet room.\n\nI have anxiety difficulties, and I have attached a letter from my doctor. I would be grateful to know what further evidence you need.\n\nYours sincerely,\nGideon Ayers",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A short, factual reason with evidence is usually enough. Asking what else you need shows willingness to cooperate."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L139_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Set out the email from a diner who received poor service and wants the manager to know.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Feedback on our visit on Saturday 21 June",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Manager,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "We dined at your restaurant on Saturday at 7:30 pm, and were disappointed that we waited over an hour for our main courses.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "The staff were pleasant, but nobody told us about the delay. We would like you to know, and I would welcome a reply.\n\nYours faithfully,\nElliott James",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Feedback on our visit on Saturday 21 June\n\nDear Manager,\n\nWe dined at your restaurant on Saturday at 7:30 pm, and were disappointed that we waited over an hour for our main courses.\n\nThe staff were pleasant, but nobody told us about the delay. We would like you to know, and I would welcome a reply.\n\nYours faithfully,\nElliott James",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Naming the time and the delay keeps the message factual. Acknowledging pleasant staff shows fairness."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L139_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Feedback on your visit on 21 June / Dear Mr James, / Yours sincerely, Claudia Ferretti, Manager). Arrange the body.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Thank you for taking the time to write to us.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "I am sorry that you waited so long and were not told about the delay.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "The kitchen was short-staffed that evening, but we should have kept you informed.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "I would like to invite you and a guest for dinner, which will be on us.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Thank you for taking the time to write to us.\n\nI am sorry that you waited so long and were not told about the delay.\n\nThe kitchen was short-staffed that evening, but we should have kept you informed.\n\nI would like to invite you and a guest for dinner, which will be on us.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "A sincere reply includes what the business will do. The invitation is a gesture that reopens the relationship."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L139_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Arrange the email from a gym member who reports that equipment has been broken for weeks.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Broken treadmills at the Westgate branch",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Ms Harker,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I have been a member for four years, and I am writing about the treadmills at the Westgate branch.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Three of the five have displayed 'out of order' signs for over a month. Could you tell me when they will be repaired or replaced?\n\nKind regards,\nSamuel Iwu",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Broken treadmills at the Westgate branch\n\nDear Ms Harker,\n\nI have been a member for four years, and I am writing about the treadmills at the Westgate branch.\n\nThree of the five have displayed 'out of order' signs for over a month. Could you tell me when they will be repaired or replaced?\n\nKind regards,\nSamuel Iwu",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Mentioning your membership shows you are a loyal customer. Asking for a timeline invites a practical answer."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L140_Q1",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Put together the email closing a support case and asking for feedback.",
+      "formalityLevel": "Formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: Your case 7714 has been resolved",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Ms Kaur,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "I am glad to confirm that the problem with your invoice has been fixed, and the corrected version is attached.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "We will close case 7714 in seven days unless you tell us there is a problem.\n\nIf you have a moment, we would appreciate your feedback in the short survey below.\n\nKind regards,\nEmilio Vargas",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: Your case 7714 has been resolved\n\nDear Ms Kaur,\n\nI am glad to confirm that the problem with your invoice has been fixed, and the corrected version is attached.\n\nWe will close case 7714 in seven days unless you tell us there is a problem.\n\nIf you have a moment, we would appreciate your feedback in the short survey below.\n\nKind regards,\nEmilio Vargas",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The customer first needs to know that the issue is resolved. The closing timeline and survey are secondary."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L140_Q2",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Thank you for solving my problem / Dear Emilio, / Kind regards, Harpreet Kaur). Arrange the body.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "I wanted to thank you for fixing my invoice so quickly.",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "You explained everything clearly and were patient with my questions.",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "It made a stressful situation much easier.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "Please pass my thanks to your manager.",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "I wanted to thank you for fixing my invoice so quickly.\n\nYou explained everything clearly and were patient with my questions.\n\nIt made a stressful situation much easier.\n\nPlease pass my thanks to your manager.",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "Specific compliments are valuable to service staff. Asking to inform the manager helps the agent get recognition."
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_LEARN_L140_Q3",
+      "phase": "learn",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "prompt": "Lay out the email from a company inviting a customer to a loyalty scheme after a resolved issue.",
+      "formalityLevel": "Semi-formal",
+      "emailComponents": [
+        {
+          "section": "1. Subject Line",
+          "content": "Subject: A thank-you for your patience",
+          "guidance": "Acts as the parcel label; states the specific purpose clearly before the recipient opens the message."
+        },
+        {
+          "section": "2. Greeting / Salutation",
+          "content": "Dear Mr Adebayo,",
+          "guidance": "Use polite, respectful titles like \"Dear Ms/Mr [Name],\" for teachers, supervisors, or officials."
+        },
+        {
+          "section": "3. Message Body",
+          "content": "Thank you for your patience while we resolved the problem with your order.",
+          "guidance": "Conveys the primary purpose, context, and any solution or next steps directly and concisely."
+        },
+        {
+          "section": "4. Sign-off / Valediction",
+          "content": "As a thank-you, we would like to invite you to join our loyalty scheme, which gives 10% off your next purchase.\n\nYou can join using the code below before 31 July.\n\nBest wishes,\nRebecca Hill",
+          "guidance": "Conclude with professional valedictions like \"Kind regards,\" or \"Sincerely,\" followed by your full name."
+        }
+      ],
+      "modelEmail": "Subject: A thank-you for your patience\n\nDear Mr Adebayo,\n\nThank you for your patience while we resolved the problem with your order.\n\nAs a thank-you, we would like to invite you to join our loyalty scheme, which gives 10% off your next purchase.\n\nYou can join using the code below before 31 July.\n\nBest wishes,\nRebecca Hill",
+      "techniqueTip": "An effective email always respects the recipient's relationship through consistent formality and places the subject line first so the recipient knows what to expect.",
+      "explanation": "The thanks is sincere before the offer. Ending with the instruction and date makes it easy to act."
+    }
+  ]
+}

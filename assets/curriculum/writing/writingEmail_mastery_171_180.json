@@ -1,0 +1,698 @@
+{
+  "gameType": "writingEmail",
+  "phase": "mastery",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "WRT_WRITINGEMAIL_L171_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A client believes you agreed to deliver on the 10th; the contract says the 17th. Frame: Subject: Delivery date: clarifying 10 or 17 July / Greeting: Dear Mr Okonkwo, / Sign-off: Kind regards, Freya Lindholm. Lay out the body.",
+      "options": [
+        "Please tell me by Friday whether you would like us to arrange that.",
+        "Thank you for your message, and I can see why the 10th was a natural date to expect.",
+        "Our contract, signed on 3 May, states that delivery is by 17 July, and my email of 12 June, which I have attached, gave the same date.",
+        "I do want to help with your event on the 12th, so I have checked, and we could deliver a partial shipment of 60% on the 10th."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "Acknowledge his view, correct the fact using documents, and then solve the actual problem.",
+      "explanation": "Understanding the assumption avoids blame. Citing the contract and email keeps the correction factual, and the partial shipment addresses the need behind the misunderstanding.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L171_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A supervisor thinks a student missed a submission that was in fact sent. Piece together the student's email.",
+      "options": [
+        "Dear Professor Ng,",
+        "I sent it from my university account on 20 June at 4:12 pm, and I have attached the sent-mail confirmation and the file again. I'm sorry if it went to your spam folder, and I'd be grateful if you could confirm receipt.\n\nYours sincerely,\nNaledi Mokoena",
+        "Subject: Submission of my thesis draft on 20 June, confirmation attached",
+        "Thank you for your email; I understand that you did not receive my thesis draft."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Do not accuse. Provide proof and solve the problem.",
+      "explanation": "Proof is offered as help, not as an attack. The polite suggestion about the spam folder avoids blaming the supervisor.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L171_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A colleague thinks you missed a meeting that was rescheduled without notice. The subject line, greeting and sign-off are already written (Subject: Re: Missed the 3 pm meeting / Hi Vikram, / Thanks, Lucille). Arrange the body.",
+      "options": [
+        "I'm sorry that I wasn't at the meeting; I have just seen that it was moved from 4 pm to 3 pm.",
+        "Could you tell me what was decided?",
+        "The change doesn't appear in my calendar, but I don't want to make this about who was at fault.",
+        "I can act on my part today."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Apologise for the effect, mention the cause once, focus on the next step.",
+      "explanation": "Mentioning the calendar gap explains without blaming, and shifting to action stops the dispute.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L172_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are writing to a partner whose first language is not English. Structure an email that is clear and avoids idioms.",
+      "options": [
+        "Please tell me if this time is not suitable.\n\nKind regards,\nLorcan Dyer",
+        "We will discuss the delivery schedule and the price for the second order. I will send the agenda by Tuesday.",
+        "Subject: Meeting on Thursday 10 July at 3 pm (Tokyo time)",
+        "Dear Mr Sato,\n\nI would like to confirm our meeting on Thursday 10 July at 3 pm Tokyo time."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "Use plain, direct sentences and give the time zone.",
+      "explanation": "For international readers, short sentences and explicit details help. Avoid idioms such as 'touch base' or 'circle back'.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L172_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are declining a request from a colleague in a culture where a direct 'no' may seem rude. The subject line, greeting and sign-off are already written (Subject: Re: Your request for a longer deadline / Dear Mr Nair, / With best regards, Camille Roux). Arrange the body.",
+      "options": [
+        "Thank you for your message and for explaining the situation so clearly.",
+        "Could we look together at which parts of the work could be simplified so that the date can be met?",
+        "So it will be difficult to extend it.",
+        "We are very keen to help, but the deadline is fixed by the client."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "Soften the refusal by focusing on shared problem solving.",
+      "explanation": "Some cultures value indirectness. Focusing on the constraint and inviting a joint solution keeps the relationship intact.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L172_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Put together an email to a senior professor abroad who is used to formal titles.",
+      "options": [
+        "Dear Professor Zhang,\n\nI am writing with great respect for your work on hydrology, which has guided my research.",
+        "I am a Master's student at the University of Nairobi, and I would be honoured to ask whether you might advise me on my application to your department.",
+        "Subject: Request for advice on doctoral applications",
+        "I understand that you are very busy, and I will be grateful for any reply.\n\nYours sincerely,\nOtieno Wekesa"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Formal register and honorific language suit this reader.",
+      "explanation": "Formal titles and respectful phrases matter to some readers. This email stays clear without becoming over-elaborate.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L173_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Arrange the report to a senior manager about a workplace accident. Focus on facts.",
+      "options": [
+        "At 10:40 am on 3 June, a forklift driven by a trainee collided with a racking unit in Aisle 6, and one pallet fell.",
+        "Dear Mr Thornton,",
+        "No one was injured, but the rack has been damaged. The area has been cordoned off, and the incident has been logged in the accident book.\n\nI recommend that we review supervision for trainee drivers, and I will send a full report by Friday.\n\nYours sincerely,\nJoyce Adeniyi",
+        "Subject: Incident report: forklift collision, Warehouse B, 3 June"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "hint": "What happened, what harm, what has been done, what next.",
+      "explanation": "Incident emails need time, place and facts. A recommendation and a date for the full report show control of the situation.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L173_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Lay out an email reporting a cybersecurity concern to the IT department.",
+      "options": [
+        "I received an email at 9:10 this morning claiming to be from HR, asking me to confirm my password through a link.",
+        "Dear IT Security,",
+        "Subject: Possible phishing email: please investigate",
+        "I did not click the link, but I forwarded the email as an attachment. Others may have received it, so please could you warn staff?\n\nThank you,\nPedro Matos"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "What you saw, what you did, what you need.",
+      "explanation": "Saying what you did not do (click the link) helps IT assess the risk. The request for a wider warning helps protect colleagues.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L173_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Piece together the email in which a nurse reports a near-miss to a ward manager.",
+      "options": [
+        "Subject: Near-miss report: medication label, Ward 4, 12 June",
+        "I would like to report a near-miss on Ward 4 at about 6 pm on 12 June.",
+        "Two medications with similar labels were stored side by side, and I noticed the mistake before giving the wrong one to a patient. I suggest separating them and adding a warning sticker.\n\nYours sincerely,\nNurse Halima Halvorsen",
+        "Dear Ms Gutierrez,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "Report the event, the mistake avoided, and the improvement.",
+      "explanation": "A near-miss report is about learning. Being factual and suggesting a fix helps the team.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L174_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Your company caused a client to lose a sale. Frame: Subject: Our apology and what we will do / Greeting: Dear Ms Whitfield, / Sign-off: Yours sincerely, Kieran Boyd, Director. Set out the body.",
+      "options": [
+        "I would welcome a call to hear how else we can put this right.",
+        "We understand that this affected your busiest morning and probably cost you sales.",
+        "We have refunded this month's fee of £1,200, and we would like to offer a further three months' service free of charge.",
+        "I am very sorry that our system failure on 6 June prevented your customers from ordering for four hours."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "Own the failure, show you understand the impact, offer remedy, invite dialogue.",
+      "explanation": "An apology is stronger when it names the impact on the client's business. The remedy is concrete, and the call shows a willingness to listen.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L174_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Arrange the apology from a school to a family after a lost pupil belonging.",
+      "options": [
+        "We are sorry that Idris's coat was lost during the trip on Tuesday, and I know it was a gift.",
+        "Subject: Apology about Idris's missing coat",
+        "We have searched the coach and the museum, and we cannot find it. The school will replace it with a coat of the same type, and Ms Green will contact you to arrange this.\n\nYours sincerely,\nMilan Cole, Deputy Head",
+        "Dear Mr and Mrs Bakr,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Empathy, effort, remedy, contact.",
+      "explanation": "Acknowledging that it was a gift shows understanding. Describing the search and the replacement shows the school took it seriously.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L174_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Apology and correction: your performance review / Dear Ayesha, / Kind regards, Oliver). Arrange the body.",
+      "options": [
+        "I have corrected them, and the new review is attached; I'm sorry for the worry this caused.",
+        "I'd be glad to meet if you want to discuss it.",
+        "I used last year's targets by mistake, and the ratings were therefore unfair.",
+        "I owe you an apology for the performance review I sent on Friday."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Apology first, explanation of the error, correction, offer to meet.",
+      "explanation": "The apology is direct and the cause is simple. A corrected document and an offer to talk repair the damage.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L175_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are coordinating between a venue and a client over a price increase. The subject line, greeting and sign-off are already written (Subject: Venue price increase: options for your 20 September event / Dear Ms Danso, / Kind regards, Helena Skarsgård). Arrange the body.",
+      "options": [
+        "Could you tell me which option you prefer by Thursday?",
+        "I have asked whether the increase can be waived, and they may agree if we confirm by the end of this week.",
+        "The venue has told me that its hire fee will rise from £3,000 to £3,600 for 20 September because of a change in its terms.",
+        "Alternatively, we could move the event to 27 September, when the old price still applies."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "Explain the change, what you have done, the options, and the deadline.",
+      "explanation": "Telling the client you have already asked for a waiver shows you are protecting their interests. Presenting two options with a deadline enables a decision.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L175_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Agreeing a shared date for the new website / Dear Ms Jha and Mr Imhoff, / Best wishes, Mirela Pop). Arrange the body.",
+      "options": [
+        "I suggest that we launch a basic site on 1 October and add the campaign pages by 15 October.",
+        "Both your teams need the new website live.",
+        "But for different reasons: Marketing for the campaign on 15 October and Sales for the trade show on 1 October.",
+        "Would this work for both of you, or do you see a better way?"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "Show that you understand both needs before proposing.",
+      "explanation": "Naming each team's need shows fairness. A phased solution can satisfy both, and the open question invites improvement.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L175_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Repairs at Elm Court: proposal on behalf of residents / Dear Mr Hargrove, / Yours sincerely, Bernadette Ibe). Arrange the body.",
+      "options": [
+        "We understand that the work is costly, so we propose that the roof is done first, by the end of September, and the door in January.",
+        "We would welcome a meeting to discuss this.",
+        "I am writing on behalf of eleven residents of Elm Court about the outstanding repairs to the roof and the entrance door.",
+        "In return, we would agree not to make separate complaints in the meantime."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Say who you represent, propose a phased plan, offer something in exchange.",
+      "explanation": "A united voice is more powerful. Showing understanding of costs and offering something in return makes the proposal more likely to be accepted.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L176_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Piece together the email requesting a copy of your personal data from a company.",
+      "options": [
+        "Subject: Subject access request: personal data held about Rosa Delgado",
+        "Dear Data Protection Officer,",
+        "Please provide a copy of all personal data you hold about me, including account records and customer service notes. My customer number is 10488, and I understand you should reply within one month.\n\nYours faithfully,\nRosa Delgado",
+        "I am writing to make a subject access request under data protection law."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Purpose, precise request, identifier, legal timeline.",
+      "explanation": "A clear reference to the type of request lets the officer handle it correctly. The customer number lets them find you quickly.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L176_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Set out the email requesting removal of an outdated photo from a website.",
+      "options": [
+        "Dear Webmaster,",
+        "A photograph of me taken at your 2018 conference is still shown on your 'Past events' page, at the URL below.",
+        "Subject: Request to remove a photograph of me from your website",
+        "I no longer wish it to be published, and I would be grateful if you could remove it within 14 days and confirm by email.\n\nYours faithfully,\nAmelia Hart"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Identify the item exactly and state your request and deadline.",
+      "explanation": "Giving the URL and a clear deadline makes it easy to act. Asking for confirmation lets you check that it has been done.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L176_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Structure the email requesting information from a public body under freedom of information rules.",
+      "options": [
+        "Dear FOI Officer,",
+        "Subject: Freedom of Information request: council spending on street lighting",
+        "Under the Freedom of Information Act, I would like to request information about the council's spending on street lighting.",
+        "Please provide the annual totals for 2021 to 2024, and, if possible, a breakdown by ward. A spreadsheet would be most helpful.\n\nYours faithfully,\nMalcolm Sanders"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "hint": "Cite the legal basis, be precise about what and how you want it.",
+      "explanation": "Specific years and format prevent a vague reply. The legal reference tells the officer which procedure applies.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L177_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are angry about a colleague's public criticism. Arrange the email you would actually send after you have calmed down.",
+      "options": [
+        "I wanted to talk to you about a comment you made in yesterday's meeting about my report.",
+        "It felt like criticism in front of the team, and I would find it easier to discuss any concerns with you privately first. Could we have a coffee this week to talk about it?\n\nThanks,\nEllie",
+        "Subject: About yesterday's meeting",
+        "Hi Niall,"
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "Describe what happened and how it affected you, then propose a private conversation.",
+      "explanation": "Stating your experience (it felt like criticism) is less confrontational than accusing. Suggesting a private talk gives him a chance to respond.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L177_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Put together the email in which you ask a friend to understand why you were upset.",
+      "options": [
+        "Subject: Thinking about Saturday",
+        "I've been thinking about what happened on Saturday, and I wanted to write because I don't want it to hang between us.",
+        "I was hurt when you cancelled at the last minute, since I'd been looking forward to it for weeks. I'd like to hear how things were for you, too, and I hope we can meet soon.\n\nWith love,\nOluwaseun",
+        "Hi Nkechi,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "Vulnerability, explanation, invitation.",
+      "explanation": "Starting with the wish to preserve the friendship makes the hurt easier to hear. Inviting her side shows that you are not only blaming her.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L177_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Assemble the email from a manager who has to say goodbye to a team member who is being made redundant.",
+      "options": [
+        "Dear Gareth,",
+        "Subject: Your position at Brightwater",
+        "Your role will end on 31 August, as the department is closing, and this is not a reflection on your performance. HR will send details of your notice pay and support, and I am happy to provide a reference.\n\nYours sincerely,\nDiane Farrow",
+        "Following our meeting this morning, I want to confirm in writing what we discussed and to thank you for your work."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "Confirm the facts kindly and clearly, reassure about reasons, describe support.",
+      "explanation": "Difficult news should have been given in person, and this written confirmation gives clear facts. Stating that it is not about performance and offering a reference show respect.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L178_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Lay out the summary email to a director who has not read the full 40-page report.",
+      "options": [
+        "Subject: Summary: customer churn review, action needed on pricing",
+        "I recommend a 6-month price freeze for small accounts, which we estimate would cost £180,000 and save £420,000 in lost revenue.\n\nThe full report is attached; page 5 has the analysis.\n\nKind regards,\nHarvey Munro",
+        "The three main findings are: churn is highest among small accounts, satisfaction has not fallen, and competitors have held prices.",
+        "Dear Ms Alvarez,\n\nOur review found that customer churn rose to 14% this year, and most departures follow the price rise in March."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "Conclusion, key findings, recommendation with numbers, pointer to detail.",
+      "explanation": "A summary should let a director decide without reading the report. The numbers justify the recommendation, and the page reference helps if she wants proof.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L178_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Summary of the Halden contract thread / Hi Shona, / Best, Wesley). Arrange the body.",
+      "options": [
+        "Legal has said this is possible if we add a notice period of 60 days.",
+        "They accept our price, but they asked for a penalty-free exit after month 6.",
+        "The decision needed from you is whether to agree, and Legal needs your answer by Friday.",
+        "Here is a short summary so you don't have to read all 32 messages. Halden wants a 12-month term, and we prefer 24."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "hint": "What the thread is about, the positions, the decision needed.",
+      "explanation": "A summary that ends with the decision needed helps the new person act. It also saves time.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L178_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": " The subject line, greeting and sign-off are already written (Subject: Workshop summary: three changes from 1 September / Dear all, / Best wishes, Noah). Arrange the body.",
+      "options": [
+        "Thank you to everyone who came to the workshop on Tuesday.",
+        "We agreed three changes: team meetings will be shortened to thirty minutes, project updates will be sent every Friday, and all requests will go through one shared inbox.",
+        "Here is a summary for those who could not attend.",
+        "These begin on 1 September, and the slides are attached if you would like more detail."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Thanks, the outcomes, when they begin, where the details are.",
+      "explanation": "People who missed the event want the results and the effective date. The slides are optional.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L179_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You need to ask a busy expert for a favour and tell them exactly what you're asking. Structure the email.",
+      "options": [
+        "I would need your comments by 15 July, but I entirely understand if this is not possible.\n\nYours sincerely,\nBongani Khumalo",
+        "Dear Professor Sallis,\n\nI am a doctoral student at Leeds, and I have read your work on coastal erosion with admiration.",
+        "Would you be willing to read a 600-word abstract of my paper and tell me whether the argument is clear? It would take about fifteen minutes.",
+        "Subject: Request: reading a 600-word abstract by 15 July"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "Define the request precisely in size and time, and make refusal easy.",
+      "explanation": "Telling an expert how much work you are asking for makes it easier to agree. Explicitly allowing them to decline is courteous.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L179_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Build an email that asks for a discount conditional on a large order.",
+      "options": [
+        "If you can offer 8% off the standard price, we will place the order this month and would consider a regular supply agreement.\n\nCould you let us know your response by 10 July?\n\nYours sincerely,\nRachel Beckford",
+        "Subject: Discount for an order of 2,000 units",
+        "Dear Mr Sahin,",
+        "We are considering placing an order for 2,000 units of the ergonomic chair, which is larger than our usual order."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "Volume, conditional request, deadline.",
+      "explanation": "Conditional requests should say exactly what you would do in return. A deadline tells the supplier when the offer ends.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L179_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Arrange the email in which a volunteer asks a charity for extra responsibility.",
+      "options": [
+        "Dear Ms Farouk,",
+        "I could coordinate the new volunteers, and I have experience in training from my previous job. Would you be open to discussing this?\n\nKind regards,\nJoseph Ekong",
+        "I have enjoyed volunteering on Saturdays for the past year, and I would like to do more if it would be helpful.",
+        "Subject: Would I be able to take on more responsibility?"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "Show commitment, offer a specific role, invite a conversation.",
+      "explanation": "Offering a specific role and evidence of skill makes it easier for the charity to say yes. The question at the end invites discussion.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L180_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A customer's complaint is partly unfair. The subject line, greeting and sign-off are already written (Subject: Re: Your complaint about order 88201 / Dear Mr Owens, / Yours sincerely, Kirsten Lowe). Arrange the body.",
+      "options": [
+        "So we are unable to refund the item itself; I have attached our terms in case they are useful.",
+        "However, the damage to the box was reported to us after 30 days.",
+        "Thank you for writing, and I am sorry that you were disappointed with the delivery.",
+        "You are right that the courier arrived late, and we have refunded the delivery fee."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "Agree with what is fair, decline what is not, and explain.",
+      "explanation": "Acknowledging the valid part of the complaint makes the refusal more credible. Sharing the terms makes it transparent.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L180_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Lay out the email in which a team leader asks a struggling employee how to help.",
+      "options": [
+        "Dear Trina,",
+        "Subject: Checking in",
+        "I wanted to check in, as I have noticed that the last two deadlines have been harder than usual.",
+        "I would like to understand what is getting in the way and how I can help. Would you be open to a chat on Thursday, or would you prefer to reply by email first?\n\nKind regards,\nJasper"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "hint": "Show care, state the observation, and offer two ways to respond.",
+      "explanation": "Describing what you have noticed avoids blame. Offering options gives the employee control.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L180_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Piece together the email that accepts a job offer while negotiating the start date.",
+      "options": [
+        "Dear Ms Waweru,",
+        "I would like to ask whether the start date could be 1 September instead of 18 August, as I need to give my current employer four weeks' notice.\n\nI will sign and return the contract as soon as we have agreed the date.\n\nYours sincerely,\nPeter Ochieng",
+        "Subject: Re: Offer of employment: Programme Coordinator",
+        "Thank you very much for the offer, which I am delighted to accept."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Accept, request one change with a reason, state your next step.",
+      "explanation": "Accepting first shows good faith before you make a request. The reason is legitimate, and the promise to sign shows commitment.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    }
+  ]
+}

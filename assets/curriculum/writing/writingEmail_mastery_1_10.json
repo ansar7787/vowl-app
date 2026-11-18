@@ -1,0 +1,698 @@
+{
+  "gameType": "writingEmail",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_WRITINGEMAIL_L1_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You want to thank your friend Meera for lending you her science notes before the test. Build the email.",
+      "options": [
+        "See you tomorrow,\nPriya",
+        "Subject: Thanks for the science notes",
+        "Thank you for lending me your notes. They made revising so much easier!",
+        "Hi Meera,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "An email opens with a label, then a hello to a person, then the message, and finally a sign-off with your name.",
+      "explanation": "Most emails follow the same frame: subject line, greeting, message, sign-off. Readers see the subject first, so it comes first. The friendly tone (Hi, See you tomorrow) fits because Meera is a friend, not a teacher.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L1_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Your cousin Tomás is visiting next week, and you'd like him to come for dinner on Saturday. Put the email together.",
+      "options": [
+        "Subject: Dinner at our place on Saturday?",
+        "See you soon,\nRohan",
+        "We would love to have you for dinner at 7 pm on Saturday. Can you come?",
+        "Hi Tomás,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "Ask yourself which part tells the reader what the email is about before he opens it.",
+      "explanation": "The subject line works like a label on a parcel: it tells the reader what is inside. The greeting then addresses him personally, and only after that does the message give the details he needs, the day and the time.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L1_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You forgot to hand in your homework today. Structure the email that tells your teacher, Ms Adeyemi, you'll bring it tomorrow.",
+      "options": [
+        "Dear Ms Adeyemi,",
+        "Kind regards,\nLina",
+        "I am sorry I forgot my homework today. I will bring it to class tomorrow.",
+        "Subject: Homework for today's lesson"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "This one goes to a teacher. Check which greeting and sign-off suit an adult you respect, then keep the usual frame.",
+      "explanation": "The frame is the same as in a friendly email, but the words change: 'Dear Ms Adeyemi' and 'Kind regards' are polite without being stiff. The body also gives a solution (tomorrow), not just an apology.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L2_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are sending your grandad photos from a school trip. Build the email; notice how the subject line names the topic.",
+      "options": [
+        "Love,\nAmara",
+        "Dear Grandad,",
+        "Subject: Photos from our school trip to the museum",
+        "Here are the photos from our museum trip. The dinosaur room was my favourite!"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "The reader should know what is inside before opening the message. Which line does that job?",
+      "explanation": "A good subject line names the actual topic. 'Photos from our school trip to the museum' tells Grandad exactly what he is about to see, while a subject like 'Hello' would tell him nothing.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L2_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You can't go to football training on Thursday. Put together the message to Coach Bennett.",
+      "options": [
+        "Subject: Can't make training on Thursday",
+        "Hi Coach Bennett,",
+        "Thanks,\nCallum",
+        "I have a dentist appointment on Thursday afternoon, so I won't be at training."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Find the line that already answers 'what is this about?' in just a few words.",
+      "explanation": "Short subject lines are easier to read in a crowded inbox. This one states the news in six words, so the coach understands the situation even before reading the message. 'Hi Coach' is friendly but still respectful.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L2_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You think you left your blue umbrella at the town library on Tuesday. Assemble the email to the library.",
+      "options": [
+        "Dear Library Staff,",
+        "Subject: Lost blue umbrella, left on Tuesday",
+        "Kind regards,\nHiro Tanaka",
+        "I think I left a blue umbrella near the reading tables on Tuesday afternoon. Has anyone handed one in?"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "Details such as colour and day make a subject more useful to staff who read many emails.",
+      "explanation": "When you write to an organisation, the subject helps staff sort messages. Adding 'blue' and 'Tuesday' means whoever reads it can start looking straight away, before even opening the email.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L3_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "It's Nadia's birthday next week, and you are inviting her to a picnic. Lay out the email to your close friend.",
+      "options": [
+        "I'm planning a small picnic for your birthday on Sunday at noon. Please say you'll come!",
+        "Lots of love,\nElena",
+        "Hi Nadia,",
+        "Subject: Birthday picnic in the park"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Think about how you would speak to Nadia in person. Which greeting sounds like that?",
+      "explanation": "A greeting should match your relationship with the reader. 'Hi Nadia' is natural between close friends. A stiff 'Dear Madam' would sound strange for a birthday picnic.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L3_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are asking your headteacher, Mrs Okonkwo, if the chess club can meet in the library. Piece together the email.",
+      "options": [
+        "Subject: Request to use the library for chess club",
+        "Yours sincerely,\nDaniel Osei",
+        "Dear Mrs Okonkwo,",
+        "Could the chess club meet in the library on Fridays after school? We would be very careful with the room."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hint": "The headteacher is a senior person. Choose the greeting you would use with a title and surname.",
+      "explanation": "Titles such as 'Mrs' and the surname show respect for a senior person. When you know the name, use it. 'Yours sincerely' then matches a greeting that includes a name.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L3_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are writing to the Sunrise Swimming Pool and do not know who will read your email. Arrange it.",
+      "options": [
+        "Are lanes reserved for adults on Saturday mornings? I would like to swim before 9 am.",
+        "Dear Reception Team,",
+        "Subject: Question about Saturday lane swimming",
+        "Kind regards,\nMaria Costa"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "You don't know a name, so greet the group of people who will read it, such as a team or department.",
+      "explanation": "If you do not know the person's name, address the team or department ('Dear Reception Team'). It is more natural than guessing a name, and it makes sure the email feels addressed to someone.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L4_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are writing to your grandmother to say you passed your swimming test. Structure the email, noticing the sign-off.",
+      "options": [
+        "Subject: I passed my swimming test!",
+        "I swam 200 metres yesterday and got my badge. I can't wait to show you!",
+        "Dear Grandma,",
+        "Love,\nSana"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Close with words a grandchild would use. Your name goes on the last line.",
+      "explanation": "A sign-off ends the email and shows who wrote it. 'Love' suits family. Your name below it matters because the reader may not see your address clearly, especially if you use a shared account.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L4_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A friend's mother, Mrs Kapoor, invited you to stay for a weekend. Build your thank-you email.",
+      "options": [
+        "Thank you for letting me stay last weekend. The dinner and the board games were the highlight of my week.",
+        "Best wishes,\nDiego",
+        "Subject: Thank you for having me",
+        "Dear Mrs Kapoor,"
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "She is an adult you know, but not a close friend. Pick a closing between 'Love' and 'Yours faithfully'.",
+      "explanation": "Different readers need different sign-offs. 'Best wishes' is warm but polite, which works well for an adult you know socially. Love would be too intimate; a very formal ending would seem cold.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L4_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are replying to Ms Lindqvist at the exam office, whose name you know. Put together the email in its correct order.",
+      "options": [
+        "Subject: Change of exam room for Ravi Menon",
+        "My son's exam has been moved to Room 12, and I would like to confirm this is correct.",
+        "Yours sincerely,\nA. Menon",
+        "Dear Ms Lindqvist,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "In formal British writing, the sign-off depends on whether the greeting used a name.",
+      "explanation": "'Dear Ms Lindqvist' uses a name, so 'Yours sincerely' matches. If you had written 'Dear Sir or Madam', you would use 'Yours faithfully'. Matching the two shows you know formal conventions.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L5_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Your neighbour Mr Fraser looked after your cat while you were away. Arrange the thank-you email.",
+      "options": [
+        "Thank you for feeding Biscuit while we were away. She was very happy when we got home.",
+        "Subject: Thank you for looking after Biscuit",
+        "Dear Mr Fraser,",
+        "Best wishes,\nIngrid Larsen"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "A thank-you email should say what you are thanking someone for, not just 'thanks'.",
+      "explanation": "Naming exactly what the person did (feeding the cat) makes thanks sound genuine. Adding how it helped ('very happy when we got home') gives them the pleasure of knowing their effort mattered.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L5_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "The school librarian found a rare book for your project. Lay out your thank-you email.",
+      "options": [
+        "Thank you for finding the book on the Silk Road. It gave me lots of ideas for my project.",
+        "Dear Mr Bashir,",
+        "Kind regards,\nMei Lin",
+        "Subject: Thank you for finding the book"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "hint": "The subject already thanks him, so decide what the message adds after the greeting.",
+      "explanation": "A thank-you that mentions what the help achieved is more meaningful than one that only says 'thanks'. Mr Bashir now knows his effort was worth it, and this is why he might help again.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L5_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You want to thank your friend's parents after staying for a sleepover. Piece together the email to Mr and Mrs Adams.",
+      "options": [
+        "Dear Mr and Mrs Adams,",
+        "Best wishes,\nLeo",
+        "Subject: Thank you for the sleepover",
+        "Thanks so much for having me last night. The pancakes this morning were amazing!"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "You are writing to two adults at once. Which greeting includes both?",
+      "explanation": "You can greet more than one person in a single greeting: 'Dear Mr and Mrs Adams'. Mentioning one specific detail (the pancakes) turns a general thank-you into a personal one.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L6_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are organising a picnic for classmates on Sunday. Set out the email that invites them.",
+      "options": [
+        "Subject: Picnic at Lakeside Park on Sunday",
+        "See you there,\nFreya",
+        "We're meeting at Lakeside Park at 12 noon this Sunday. Bring a snack and a blanket if you can.",
+        "Hi everyone,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "An invitation should say when and where. Which part of the email carries those details?",
+      "explanation": "Invitations need the essential facts: what, when and where. The subject gives the headline, and the body adds the practical details so that everyone can plan.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L6_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "Your class is performing at the school concert, and you want to invite your teacher, Mr Diaz. Arrange the email.",
+      "options": [
+        "Our class is performing at the school concert on Thursday, 12 June, at 6 pm. We would be very happy if you could come.",
+        "Subject: Invitation to our class concert",
+        "Best wishes,\nGrace",
+        "Dear Mr Diaz,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "The invitation goes to a teacher, so the wording is polite and warm.",
+      "explanation": "When you invite someone you respect, wording like 'we would be very happy if you could come' is more polite than 'Come to our concert'. It leaves the choice with them.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L6_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "A classmate missed a lesson, and you're inviting them to revise with you on Saturday. Build the email.",
+      "options": [
+        "Hi Yusuf,",
+        "Do you want to revise for the maths test together on Saturday at 10? We could meet at the library.",
+        "Subject: Revising together on Saturday?",
+        "Cheers,\nTariq"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Ask a question in the body so the friend knows he can reply yes or no.",
+      "explanation": "An invitation that ends with a question ('Do you want to...?') makes replying easy. Friends can answer 'yes' in one word, so the email works without a long reply.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L7_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You did not understand the last worksheet. Put together the email that asks Ms Ferreira for another explanation.",
+      "options": [
+        "Kind regards,\nOmar",
+        "Dear Ms Ferreira,",
+        "Could you please explain question 4 on the fractions worksheet again? I don't understand the second step.",
+        "Subject: Question about the fractions worksheet"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "A polite request usually begins with a phrase such as 'Could you please'.",
+      "explanation": "Polite requests use 'could you' rather than commands. Naming the exact question (number 4) helps the teacher answer quickly instead of guessing what is confusing you.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L7_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You need a tent for a camping weekend, and your friend Jonas has one. Assemble the email.",
+      "options": [
+        "Could I borrow your tent for the weekend of 20 June? I'll return it on Monday.",
+        "Hi Jonas,",
+        "Subject: Can I borrow your tent?",
+        "Thanks a lot,\nAnjali"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "When you ask for a favour, say what you need and for how long.",
+      "explanation": "Good requests include the dates and when you'll give the item back. This helps the friend decide quickly, and promising to return it shows you respect their belongings.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L7_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You want a copy of your child's timetable and are writing to the school office. Arrange the email.",
+      "options": [
+        "Subject: Request for a copy of the Year 8 timetable",
+        "Dear School Office,",
+        "Kind regards,\nHelen Grant",
+        "Could you please send me a copy of the Year 8 timetable for this term? I could not find it on the website."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Since it's a formal request, make it clear what document you need and why you are asking.",
+      "explanation": "Saying you could not find the timetable online explains why you are asking, so the office won't think you're wasting their time. A specific request (which year, which term) gets a faster reply.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L8_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You've just adopted a puppy and want to tell your pen friend, Kenji. Piece together the email.",
+      "options": [
+        "Guess what? We adopted a puppy called Mango last weekend. I'll send you a photo soon.",
+        "Write soon,\nLucas",
+        "Hi Kenji,",
+        "Subject: I have a puppy!"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Sharing good news starts with the news itself. Which line names it?",
+      "explanation": "Informal emails with news often lead with the big point. The subject line 'I have a puppy!' creates interest, and the body adds details, such as the name and when it happened.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L8_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "The bus was delayed, and you'll be late home. Set out the message to your mum.",
+      "options": [
+        "Subject: Running late",
+        "Love,\nSofia",
+        "Hi Mum,",
+        "My bus was delayed, so I'll be home at 6 instead of 5. Please don't worry."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hint": "Give the important change of time before anything else in the body.",
+      "explanation": "News about a change should include both the new time and the reason. 'Please don't worry' shows you have thought about how she might feel, which is part of good family communication.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L8_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "The football match has moved from Saturday to Sunday. Structure the update to the team's coach.",
+      "options": [
+        "Regards,\nBen",
+        "Subject: Match moved to Sunday",
+        "Hi Coach,",
+        "The referee has confirmed the match will now be on Sunday at 11 am. The venue has not changed."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "An update should state what changed and what stayed the same.",
+      "explanation": "A good update says what changed (the day) and reassures the reader about what did not (the venue). That saves the coach from sending a follow-up question.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L9_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are looking for a specific novel and are asking a bookshop whether it is in stock. Arrange the email.",
+      "options": [
+        "Subject: Do you have 'The Kite Runner' in stock?",
+        "Do you have a paperback copy of 'The Kite Runner' in stock? If not, how long would it take to order one?",
+        "Dear Bookshop Team,",
+        "Kind regards,\nNoor Rahman"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "A clear question helps a shop reply quickly. Notice the two questions and how they connect.",
+      "explanation": "Asking a question and adding a follow-up ('If not...') saves an extra email exchange. The subject repeats the book title, which helps staff find out whether the book is available.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L9_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You want to join a beginners' Spanish class. Put together the email to the language school.",
+      "options": [
+        "Dear Admissions Team,",
+        "Yours faithfully,\nPedro Alves",
+        "Is there a beginners' Spanish class starting in September? I would also like to know the price and the day of the lesson.",
+        "Subject: Beginners' Spanish class starting in September"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "Choose the greeting for a team, then the closing that matches it.",
+      "explanation": "When you have several questions, put them in the same paragraph, but keep them brief. 'Yours faithfully' matches 'Dear Admissions Team', because you do not know who will reply.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L9_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You plan to travel by train with your bicycle. Assemble the enquiry to the train company.",
+      "options": [
+        "Kind regards,\nSamir Khan",
+        "Dear Customer Service,",
+        "Subject: Taking a bicycle on the 9:15 train",
+        "Can I take a bicycle on the 9:15 train from Leeds to York on Saturday? Do I need to reserve a space?"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "The train, the time and the day should be exact so the answer applies to your journey.",
+      "explanation": "Specific details (train time, route, day) let the company give one precise answer. A vague question like 'Can I bring a bike on the train?' could lead to a general reply that doesn't help.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L10_Q1",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You got the highest mark in your history project. Lay out the email in which you tell your best friend.",
+      "options": [
+        "Subject: Guess what I got!",
+        "I got the highest mark in the history project! Mr Hale even read my introduction to the class.",
+        "Talk soon,\nIsabel",
+        "Hey Zainab,"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "This is for a best friend, so choose the warmest, most relaxed options.",
+      "explanation": "In a review, ask 'Who is reading?' A best friend allows relaxed language such as 'Hey' and 'Talk soon'. This is the same frame you've learned, with a tone matched to the person.",
+      "formalityLevel": "Informal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L10_Q2",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You want to know if the homework deadline is Friday or Monday. Arrange the email to your teacher.",
+      "options": [
+        "Is the essay due on Friday or on Monday? I want to be sure before I plan my weekend.",
+        "Subject: Deadline for the essay",
+        "Best wishes,\nIsabel",
+        "Dear Mr Hale,"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Your teacher is not a friend, but this is not a legal letter either. Choose the middle level.",
+      "explanation": "A polite question about a deadline works well in a warm but respectful tone. 'Best wishes' is common in school emails. Giving your reason (planning the weekend) makes the question sound sensible.",
+      "formalityLevel": "Semi-formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_L10_Q3",
+      "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+      "subtype": "writingEmail",
+      "interactionType": "writing",
+      "prompt": "You are asking the local council when the recycling centre opens on public holidays. Set out the email.",
+      "options": [
+        "Dear Sir or Madam,",
+        "Could you tell me whether the recycling centre is open on public holidays? I would like to visit on Monday.",
+        "Subject: Recycling centre opening hours on public holidays",
+        "Yours faithfully,\nDavid Novak"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Nobody is named, so pick the greeting and closing that go together in formal English.",
+      "explanation": "This final review combines what you've learned: a specific subject, a greeting for an unknown reader, a clear question and a matching sign-off. 'Sir or Madam' pairs with 'Yours faithfully'.",
+      "formalityLevel": "Formal",
+      "phase": "mastery"
+    }
+  ]
+}

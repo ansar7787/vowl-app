@@ -1,0 +1,668 @@
+{
+  "gameType": "writingEmail",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L21_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You're going away for a week and would like your neighbour to water your plants. Arrange the email.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Subject: Could you water my plants next week?\n\nDear Mrs Diallo,\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nThank you so much,\nCamille",
+        "Subject: Could you water my plants next week?\n\nThank you so much,\nCamille\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nDear Mrs Diallo,",
+        "Dear Mrs Diallo,\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nThank you so much,\nCamille\n\nSubject: Could you water my plants next week?",
+        "Subject: Could you water my plants next week?\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nDear Mrs Diallo,\n\nThank you so much,\nCamille"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Could you water my plants next week?\n\nDear Mrs Diallo,\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nThank you so much,\nCamille",
+      "hint": "A favour is easier to grant when you say what you need, for how long and what you will do to help.",
+      "explanation": "Requests for favours should be specific about what and when. Offering to leave the key removes a practical obstacle, and the closing thanks the neighbour before she has answered.",
+      "distractorFeedback": {
+        "Subject: Could you water my plants next week?\n\nThank you so much,\nCamille\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nDear Mrs Diallo,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Dear Mrs Diallo,\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nThank you so much,\nCamille\n\nSubject: Could you water my plants next week?": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Could you water my plants next week?\n\nI'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.\n\nDear Mrs Diallo,\n\nThank you so much,\nCamille": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L21_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "Subject: Swapping Thursday's shift / Greeting: Hi Dina, / A colleague is asked to swap shifts at the café. Assemble the body and sign-off.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Would you be able to swap shifts with me on Thursday?\n\nI have a dentist's appointment at 3 pm that I can't move.\n\nI'm happy to take your Saturday morning in return.\n\nThanks,\nAaron",
+        "Would you be able to swap shifts with me on Thursday?\n\nThanks,\nAaron\n\nI'm happy to take your Saturday morning in return.\n\nI have a dentist's appointment at 3 pm that I can't move.",
+        "I have a dentist's appointment at 3 pm that I can't move.\n\nI'm happy to take your Saturday morning in return.\n\nThanks,\nAaron\n\nWould you be able to swap shifts with me on Thursday?",
+        "Would you be able to swap shifts with me on Thursday?\n\nI'm happy to take your Saturday morning in return.\n\nI have a dentist's appointment at 3 pm that I can't move.\n\nThanks,\nAaron"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Would you be able to swap shifts with me on Thursday?\n\nI have a dentist's appointment at 3 pm that I can't move.\n\nI'm happy to take your Saturday morning in return.\n\nThanks,\nAaron",
+      "hint": "Ask first, explain second, and offer something in return last.",
+      "explanation": "Starting with the request lets Dina see immediately what is wanted. The reason makes it understandable, and offering a swap turns a demand into a fair exchange.",
+      "distractorFeedback": {
+        "Would you be able to swap shifts with me on Thursday?\n\nThanks,\nAaron\n\nI'm happy to take your Saturday morning in return.\n\nI have a dentist's appointment at 3 pm that I can't move.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I have a dentist's appointment at 3 pm that I can't move.\n\nI'm happy to take your Saturday morning in return.\n\nThanks,\nAaron\n\nWould you be able to swap shifts with me on Thursday?": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Would you be able to swap shifts with me on Thursday?\n\nI'm happy to take your Saturday morning in return.\n\nI have a dentist's appointment at 3 pm that I can't move.\n\nThanks,\nAaron": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L21_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You want to ask a café owner, Mr Haddad, if you can hold a charity bake sale outside his café. The subject is already written ('Subject: Bake sale outside your café?'). Lay out the rest.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Dear Mr Haddad,\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nKind regards,\nEleni Papas",
+        "Dear Mr Haddad,\n\nKind regards,\nEleni Papas\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.",
+        "I'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nKind regards,\nEleni Papas\n\nDear Mr Haddad,",
+        "Dear Mr Haddad,\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nKind regards,\nEleni Papas"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Dear Mr Haddad,\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nKind regards,\nEleni Papas",
+      "hint": "In a request to a stranger, say who you are and what you want before describing the benefit.",
+      "explanation": "A stranger needs to know quickly who is asking and what they are asking for. Only then is it useful to mention the benefit and the promise to tidy up, which answers his likely concerns.",
+      "distractorFeedback": {
+        "Dear Mr Haddad,\n\nKind regards,\nEleni Papas\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nKind regards,\nEleni Papas\n\nDear Mr Haddad,": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Dear Mr Haddad,\n\nAll the money raised would go to new books, and we would clear everything away by 2 pm.\n\nI'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May.\n\nKind regards,\nEleni Papas": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L22_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You've been asked to confirm you'll attend Saturday's meeting. Subject: Confirming Saturday's meeting / Greeting: Hi Rosa, / Arrange the body and sign-off.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nI can bring the projector, if that's helpful.\n\nLet me know if you need anything else before then.\n\nSee you there,\nMohamed",
+        "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nSee you there,\nMohamed\n\nLet me know if you need anything else before then.\n\nI can bring the projector, if that's helpful.",
+        "I can bring the projector, if that's helpful.\n\nLet me know if you need anything else before then.\n\nSee you there,\nMohamed\n\nJust confirming that I'll be at the community centre on Saturday at 10 am.",
+        "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nLet me know if you need anything else before then.\n\nI can bring the projector, if that's helpful.\n\nSee you there,\nMohamed"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nI can bring the projector, if that's helpful.\n\nLet me know if you need anything else before then.\n\nSee you there,\nMohamed",
+      "hint": "Some emails only need one job. Confirm first, then add the useful extra.",
+      "explanation": "A confirmation should be brief and unambiguous. State the fact with day, time and place, then add anything that helps, such as bringing equipment. Nobody should have to reread it to be sure.",
+      "distractorFeedback": {
+        "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nSee you there,\nMohamed\n\nLet me know if you need anything else before then.\n\nI can bring the projector, if that's helpful.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I can bring the projector, if that's helpful.\n\nLet me know if you need anything else before then.\n\nSee you there,\nMohamed\n\nJust confirming that I'll be at the community centre on Saturday at 10 am.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Just confirming that I'll be at the community centre on Saturday at 10 am.\n\nLet me know if you need anything else before then.\n\nI can bring the projector, if that's helpful.\n\nSee you there,\nMohamed": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L22_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You have received a parcel delivery notice and need to confirm someone will be at home. Arrange the email to the courier company.",
+      "formalityLevel": "Formal",
+      "options": [
+        "Subject: Confirming delivery on Wednesday, ref. 77102\n\nDear Delivery Team,\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nKind regards,\nGabriela Torres",
+        "Subject: Confirming delivery on Wednesday, ref. 77102\n\nKind regards,\nGabriela Torres\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nDear Delivery Team,",
+        "Dear Delivery Team,\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nKind regards,\nGabriela Torres\n\nSubject: Confirming delivery on Wednesday, ref. 77102",
+        "Subject: Confirming delivery on Wednesday, ref. 77102\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nDear Delivery Team,\n\nKind regards,\nGabriela Torres"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Confirming delivery on Wednesday, ref. 77102\n\nDear Delivery Team,\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nKind regards,\nGabriela Torres",
+      "hint": "A good confirmation includes the reference and the practical detail that saves confusion.",
+      "explanation": "Including the reference number in the subject makes it easy for the courier to match your reply. The instruction about which bell to ring prevents a failed delivery, which is exactly the problem a confirmation should avoid.",
+      "distractorFeedback": {
+        "Subject: Confirming delivery on Wednesday, ref. 77102\n\nKind regards,\nGabriela Torres\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nDear Delivery Team,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Dear Delivery Team,\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nKind regards,\nGabriela Torres\n\nSubject: Confirming delivery on Wednesday, ref. 77102": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Confirming delivery on Wednesday, ref. 77102\n\nI am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.\n\nDear Delivery Team,\n\nKind regards,\nGabriela Torres": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L22_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You've received a job offer and want to acknowledge it. Subject: Re: Job offer, Marketing Assistant / Greeting: Dear Ms Reilly, / Arrange the message.",
+      "formalityLevel": "Formal",
+      "options": [
+        "Thank you for the offer of the Marketing Assistant position.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.\n\nI look forward to speaking with you again soon.\n\nYours sincerely,\nKwabena Asante",
+        "Thank you for the offer of the Marketing Assistant position.\n\nYours sincerely,\nKwabena Asante\n\nI look forward to speaking with you again soon.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.",
+        "I am pleased to confirm that I received your letter and will reply formally by Friday.\n\nI look forward to speaking with you again soon.\n\nYours sincerely,\nKwabena Asante\n\nThank you for the offer of the Marketing Assistant position.",
+        "Thank you for the offer of the Marketing Assistant position.\n\nI look forward to speaking with you again soon.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.\n\nYours sincerely,\nKwabena Asante"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Thank you for the offer of the Marketing Assistant position.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.\n\nI look forward to speaking with you again soon.\n\nYours sincerely,\nKwabena Asante",
+      "hint": "First thanks, then say what you are confirming, then a friendly next step.",
+      "explanation": "Confirming receipt is a valid purpose on its own. You are not accepting yet, only telling the employer the message arrived and when they can expect an answer.",
+      "distractorFeedback": {
+        "Thank you for the offer of the Marketing Assistant position.\n\nYours sincerely,\nKwabena Asante\n\nI look forward to speaking with you again soon.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I am pleased to confirm that I received your letter and will reply formally by Friday.\n\nI look forward to speaking with you again soon.\n\nYours sincerely,\nKwabena Asante\n\nThank you for the offer of the Marketing Assistant position.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Thank you for the offer of the Marketing Assistant position.\n\nI look forward to speaking with you again soon.\n\nI am pleased to confirm that I received your letter and will reply formally by Friday.\n\nYours sincerely,\nKwabena Asante": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L23_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You can't make Wednesday's call with your tutor, Dr Wilson. Subject: Moving Wednesday's tutorial / Greeting: Dear Dr Wilson, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nI have been asked to attend a lab session at the same time.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nBest regards,\nAnnika Holm",
+        "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nBest regards,\nAnnika Holm\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nI have been asked to attend a lab session at the same time.",
+        "I have been asked to attend a lab session at the same time.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nBest regards,\nAnnika Holm\n\nI am afraid I need to ask if we could move Wednesday's tutorial.",
+        "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nI have been asked to attend a lab session at the same time.\n\nBest regards,\nAnnika Holm"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nI have been asked to attend a lab session at the same time.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nBest regards,\nAnnika Holm",
+      "hint": "State the problem, give the reason and offer specific alternatives.",
+      "explanation": "Offering two specific alternatives saves a chain of emails. It also shows you respect the other person's time by doing the work of finding solutions.",
+      "distractorFeedback": {
+        "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nBest regards,\nAnnika Holm\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nI have been asked to attend a lab session at the same time.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I have been asked to attend a lab session at the same time.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nBest regards,\nAnnika Holm\n\nI am afraid I need to ask if we could move Wednesday's tutorial.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I am afraid I need to ask if we could move Wednesday's tutorial.\n\nWould Thursday at 11 am or Friday morning suit you instead?\n\nI have been asked to attend a lab session at the same time.\n\nBest regards,\nAnnika Holm": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L23_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You want to move a coffee date with an old friend. Put together the email.",
+      "formalityLevel": "Informal",
+      "options": [
+        "Subject: Can we swap coffee to Sunday?\n\nHi Ingrid,\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nSorry for the hassle,\nBruno",
+        "Subject: Can we swap coffee to Sunday?\n\nSorry for the hassle,\nBruno\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nHi Ingrid,",
+        "Hi Ingrid,\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nSorry for the hassle,\nBruno\n\nSubject: Can we swap coffee to Sunday?",
+        "Subject: Can we swap coffee to Sunday?\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nHi Ingrid,\n\nSorry for the hassle,\nBruno"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Can we swap coffee to Sunday?\n\nHi Ingrid,\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nSorry for the hassle,\nBruno",
+      "hint": "Say what has changed and what stays the same, so the friend has less to decide.",
+      "explanation": "Keeping some details the same ('Same café') reduces the amount your friend must think about. A short apology ('Sorry for the hassle') acknowledges the inconvenience without over-apologising.",
+      "distractorFeedback": {
+        "Subject: Can we swap coffee to Sunday?\n\nSorry for the hassle,\nBruno\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nHi Ingrid,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Hi Ingrid,\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nSorry for the hassle,\nBruno\n\nSubject: Can we swap coffee to Sunday?": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Can we swap coffee to Sunday?\n\nSomething has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.\n\nHi Ingrid,\n\nSorry for the hassle,\nBruno": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L23_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "A plumber needs to move your appointment. Arrange the message from the plumbing company to a customer.",
+      "formalityLevel": "Formal",
+      "options": [
+        "Subject: Change to your appointment on 18 June\n\nDear Mr Kowalski,\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nYours sincerely,\nHome Comfort Plumbing",
+        "Subject: Change to your appointment on 18 June\n\nYours sincerely,\nHome Comfort Plumbing\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nDear Mr Kowalski,",
+        "Dear Mr Kowalski,\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nYours sincerely,\nHome Comfort Plumbing\n\nSubject: Change to your appointment on 18 June",
+        "Subject: Change to your appointment on 18 June\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nDear Mr Kowalski,\n\nYours sincerely,\nHome Comfort Plumbing"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Change to your appointment on 18 June\n\nDear Mr Kowalski,\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nYours sincerely,\nHome Comfort Plumbing",
+      "hint": "For a customer, it helps to lead with the change and then present a replacement to accept.",
+      "explanation": "Businesses that change appointments should be clear about the new date and ask for the customer's agreement. The word 'unfortunately' signals regret before the alternative is offered.",
+      "distractorFeedback": {
+        "Subject: Change to your appointment on 18 June\n\nYours sincerely,\nHome Comfort Plumbing\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nDear Mr Kowalski,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Dear Mr Kowalski,\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nYours sincerely,\nHome Comfort Plumbing\n\nSubject: Change to your appointment on 18 June": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Change to your appointment on 18 June\n\nUnfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.\n\nDear Mr Kowalski,\n\nYours sincerely,\nHome Comfort Plumbing": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L24_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You missed a video call with your team leader because you misread the time. Lay out the apology.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Subject: Sorry I missed today's call\n\nHi Andrea,\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nThanks,\nElias",
+        "Subject: Sorry I missed today's call\n\nThanks,\nElias\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nHi Andrea,",
+        "Hi Andrea,\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nThanks,\nElias\n\nSubject: Sorry I missed today's call",
+        "Subject: Sorry I missed today's call\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nHi Andrea,\n\nThanks,\nElias"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Sorry I missed today's call\n\nHi Andrea,\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nThanks,\nElias",
+      "hint": "In an apology, decide if a reason is helpful or just an excuse before you write it.",
+      "explanation": "One short, honest reason plus a practical request (the notes) works better than a long explanation. It shows responsibility, and it helps the colleague see how to fix the problem.",
+      "distractorFeedback": {
+        "Subject: Sorry I missed today's call\n\nThanks,\nElias\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nHi Andrea,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Hi Andrea,\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nThanks,\nElias\n\nSubject: Sorry I missed today's call": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Sorry I missed today's call\n\nI'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?\n\nHi Andrea,\n\nThanks,\nElias": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L24_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "Subject: Apology for the delay / Greeting: Dear Ms Nowak, / A tutor forgot to return a student's essay. Piece together the body.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I apologise for the delay in returning your essay.\n\nIt should have been with you last Friday.\n\nI have now finished marking it and attached it to this email.\n\nKind regards,\nDr Alan Pryce",
+        "I apologise for the delay in returning your essay.\n\nKind regards,\nDr Alan Pryce\n\nI have now finished marking it and attached it to this email.\n\nIt should have been with you last Friday.",
+        "It should have been with you last Friday.\n\nI have now finished marking it and attached it to this email.\n\nKind regards,\nDr Alan Pryce\n\nI apologise for the delay in returning your essay.",
+        "I apologise for the delay in returning your essay.\n\nI have now finished marking it and attached it to this email.\n\nIt should have been with you last Friday.\n\nKind regards,\nDr Alan Pryce"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I apologise for the delay in returning your essay.\n\nIt should have been with you last Friday.\n\nI have now finished marking it and attached it to this email.\n\nKind regards,\nDr Alan Pryce",
+      "hint": "Apologise, acknowledge the fault, then show the fix.",
+      "explanation": "An apology is stronger when it acknowledges what was promised ('It should have been with you last Friday'), and even stronger when the solution comes immediately.",
+      "distractorFeedback": {
+        "I apologise for the delay in returning your essay.\n\nKind regards,\nDr Alan Pryce\n\nI have now finished marking it and attached it to this email.\n\nIt should have been with you last Friday.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "It should have been with you last Friday.\n\nI have now finished marking it and attached it to this email.\n\nKind regards,\nDr Alan Pryce\n\nI apologise for the delay in returning your essay.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I apologise for the delay in returning your essay.\n\nI have now finished marking it and attached it to this email.\n\nIt should have been with you last Friday.\n\nKind regards,\nDr Alan Pryce": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L24_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You accidentally called a friend by the wrong name in a message. Subject: Oops, sorry! / Greeting: Hi Emily, / Arrange the body and sign-off.",
+      "formalityLevel": "Informal",
+      "options": [
+        "I'm so sorry, I called you Emma in my last message.\n\nI was typing so fast that I didn't notice.\n\nI hope you can forgive me!\n\nBest,\nJoseph",
+        "I'm so sorry, I called you Emma in my last message.\n\nBest,\nJoseph\n\nI hope you can forgive me!\n\nI was typing so fast that I didn't notice.",
+        "I was typing so fast that I didn't notice.\n\nI hope you can forgive me!\n\nBest,\nJoseph\n\nI'm so sorry, I called you Emma in my last message.",
+        "I'm so sorry, I called you Emma in my last message.\n\nI hope you can forgive me!\n\nI was typing so fast that I didn't notice.\n\nBest,\nJoseph"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I'm so sorry, I called you Emma in my last message.\n\nI was typing so fast that I didn't notice.\n\nI hope you can forgive me!\n\nBest,\nJoseph",
+      "hint": "A light mistake calls for a light apology, but it still needs the same steps.",
+      "explanation": "Not every apology needs to be serious. Even here, you name the mistake, give a quick reason and end with warmth. The tone stays proportionate to a small error.",
+      "distractorFeedback": {
+        "I'm so sorry, I called you Emma in my last message.\n\nBest,\nJoseph\n\nI hope you can forgive me!\n\nI was typing so fast that I didn't notice.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I was typing so fast that I didn't notice.\n\nI hope you can forgive me!\n\nBest,\nJoseph\n\nI'm so sorry, I called you Emma in my last message.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I'm so sorry, I called you Emma in my last message.\n\nI hope you can forgive me!\n\nI was typing so fast that I didn't notice.\n\nBest,\nJoseph": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L25_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You're interested in a coding course for teenagers. Subject: Coding course for 14-year-olds / Greeting: Dear Ms Chowdhury, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I found your Saturday coding course on the community centre website.\n\nMy son is fourteen and has never programmed before.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nYours sincerely,\nLatifa Rahman",
+        "I found your Saturday coding course on the community centre website.\n\nYours sincerely,\nLatifa Rahman\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nMy son is fourteen and has never programmed before.",
+        "My son is fourteen and has never programmed before.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nYours sincerely,\nLatifa Rahman\n\nI found your Saturday coding course on the community centre website.",
+        "I found your Saturday coding course on the community centre website.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nMy son is fourteen and has never programmed before.\n\nYours sincerely,\nLatifa Rahman"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I found your Saturday coding course on the community centre website.\n\nMy son is fourteen and has never programmed before.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nYours sincerely,\nLatifa Rahman",
+      "hint": "Where did you hear about it? Who is it for? What do you want to know?",
+      "explanation": "An enquiry works when the reader can see who is asking and why. Giving your son's age and level lets the organiser answer accurately without asking follow-up questions.",
+      "distractorFeedback": {
+        "I found your Saturday coding course on the community centre website.\n\nYours sincerely,\nLatifa Rahman\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nMy son is fourteen and has never programmed before.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "My son is fourteen and has never programmed before.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nYours sincerely,\nLatifa Rahman\n\nI found your Saturday coding course on the community centre website.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I found your Saturday coding course on the community centre website.\n\nCould you tell me whether beginners are welcome and how much the course costs?\n\nMy son is fourteen and has never programmed before.\n\nYours sincerely,\nLatifa Rahman": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L25_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You want to ask a market stall holder if she can make a custom cake. Build the email.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Subject: Custom birthday cake in July?\n\nHello Mrs Achterberg,\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nKind regards,\nLuis Ortega",
+        "Subject: Custom birthday cake in July?\n\nKind regards,\nLuis Ortega\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nHello Mrs Achterberg,",
+        "Hello Mrs Achterberg,\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nKind regards,\nLuis Ortega\n\nSubject: Custom birthday cake in July?",
+        "Subject: Custom birthday cake in July?\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nHello Mrs Achterberg,\n\nKind regards,\nLuis Ortega"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Custom birthday cake in July?\n\nHello Mrs Achterberg,\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nKind regards,\nLuis Ortega",
+      "hint": "A short compliment can explain why you are choosing this seller.",
+      "explanation": "A sentence about your previous experience explains why you are writing to this seller and makes the enquiry warmer. The question about ordering time helps you plan.",
+      "distractorFeedback": {
+        "Subject: Custom birthday cake in July?\n\nKind regards,\nLuis Ortega\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nHello Mrs Achterberg,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Hello Mrs Achterberg,\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nKind regards,\nLuis Ortega\n\nSubject: Custom birthday cake in July?": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Custom birthday cake in July?\n\nI bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?\n\nHello Mrs Achterberg,\n\nKind regards,\nLuis Ortega": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L25_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You're a student asking about accommodation before arriving in a new city. Subject: Student accommodation for September / Greeting: Dear Accommodation Office, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I have accepted a place on the MSc in Data Science starting in September.\n\nCould you let me know what types of rooms are available for postgraduate students?\n\nI would also appreciate information about the application deadline.\n\nYours faithfully,\nPradeep Nair",
+        "I have accepted a place on the MSc in Data Science starting in September.\n\nYours faithfully,\nPradeep Nair\n\nI would also appreciate information about the application deadline.\n\nCould you let me know what types of rooms are available for postgraduate students?",
+        "Could you let me know what types of rooms are available for postgraduate students?\n\nI would also appreciate information about the application deadline.\n\nYours faithfully,\nPradeep Nair\n\nI have accepted a place on the MSc in Data Science starting in September.",
+        "I have accepted a place on the MSc in Data Science starting in September.\n\nI would also appreciate information about the application deadline.\n\nCould you let me know what types of rooms are available for postgraduate students?\n\nYours faithfully,\nPradeep Nair"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I have accepted a place on the MSc in Data Science starting in September.\n\nCould you let me know what types of rooms are available for postgraduate students?\n\nI would also appreciate information about the application deadline.\n\nYours faithfully,\nPradeep Nair",
+      "hint": "Introduce yourself briefly, then ask the more general question before the detail.",
+      "explanation": "An accommodation office needs to know which category of student you are. The broad question comes first and the deadline second because it depends on the room type.",
+      "distractorFeedback": {
+        "I have accepted a place on the MSc in Data Science starting in September.\n\nYours faithfully,\nPradeep Nair\n\nI would also appreciate information about the application deadline.\n\nCould you let me know what types of rooms are available for postgraduate students?": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Could you let me know what types of rooms are available for postgraduate students?\n\nI would also appreciate information about the application deadline.\n\nYours faithfully,\nPradeep Nair\n\nI have accepted a place on the MSc in Data Science starting in September.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I have accepted a place on the MSc in Data Science starting in September.\n\nI would also appreciate information about the application deadline.\n\nCould you let me know what types of rooms are available for postgraduate students?\n\nYours faithfully,\nPradeep Nair": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L26_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You sent a job application ten days ago and have heard nothing. Subject: Following up on my application / Greeting: Dear Mr Sinclair, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nI remain very interested in the role.\n\nCould you let me know whether a decision has been made?\n\nKind regards,\nAmina Yusuf",
+        "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nKind regards,\nAmina Yusuf\n\nCould you let me know whether a decision has been made?\n\nI remain very interested in the role.",
+        "I remain very interested in the role.\n\nCould you let me know whether a decision has been made?\n\nKind regards,\nAmina Yusuf\n\nI am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.",
+        "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nCould you let me know whether a decision has been made?\n\nI remain very interested in the role.\n\nKind regards,\nAmina Yusuf"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nI remain very interested in the role.\n\nCould you let me know whether a decision has been made?\n\nKind regards,\nAmina Yusuf",
+      "hint": "Refer to the earlier message before you ask about progress.",
+      "explanation": "A follow-up should remind the reader of the earlier message with the date. Repeating your interest keeps the tone positive, and the question at the end asks for a specific response.",
+      "distractorFeedback": {
+        "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nKind regards,\nAmina Yusuf\n\nCould you let me know whether a decision has been made?\n\nI remain very interested in the role.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I remain very interested in the role.\n\nCould you let me know whether a decision has been made?\n\nKind regards,\nAmina Yusuf\n\nI am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March.\n\nCould you let me know whether a decision has been made?\n\nI remain very interested in the role.\n\nKind regards,\nAmina Yusuf": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L26_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "A friend hasn't replied about the holiday. Subject: Holiday plans / Greeting: Hi Ravi, / Arrange the message.",
+      "formalityLevel": "Informal",
+      "options": [
+        "I just wanted to check that you saw my message about the trip to Lisbon.\n\nNo pressure at all, but I need to book flights by Friday.\n\nLet me know what you think!\n\nThanks,\nClara",
+        "I just wanted to check that you saw my message about the trip to Lisbon.\n\nThanks,\nClara\n\nLet me know what you think!\n\nNo pressure at all, but I need to book flights by Friday.",
+        "No pressure at all, but I need to book flights by Friday.\n\nLet me know what you think!\n\nThanks,\nClara\n\nI just wanted to check that you saw my message about the trip to Lisbon.",
+        "I just wanted to check that you saw my message about the trip to Lisbon.\n\nLet me know what you think!\n\nNo pressure at all, but I need to book flights by Friday.\n\nThanks,\nClara"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I just wanted to check that you saw my message about the trip to Lisbon.\n\nNo pressure at all, but I need to book flights by Friday.\n\nLet me know what you think!\n\nThanks,\nClara",
+      "hint": "A friendly reminder gives the reason for asking now.",
+      "explanation": "Explaining the deadline ('flights by Friday') tells the friend why you're asking. Writing 'No pressure' softens the nudge, so it doesn't feel like a complaint.",
+      "distractorFeedback": {
+        "I just wanted to check that you saw my message about the trip to Lisbon.\n\nThanks,\nClara\n\nLet me know what you think!\n\nNo pressure at all, but I need to book flights by Friday.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "No pressure at all, but I need to book flights by Friday.\n\nLet me know what you think!\n\nThanks,\nClara\n\nI just wanted to check that you saw my message about the trip to Lisbon.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I just wanted to check that you saw my message about the trip to Lisbon.\n\nLet me know what you think!\n\nNo pressure at all, but I need to book flights by Friday.\n\nThanks,\nClara": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L26_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You emailed your supervisor about a meeting two days ago. Subject: Re: Meeting request / Greeting: Dear Dr Fitzgerald, / Arrange the polite reminder.",
+      "formalityLevel": "Formal",
+      "options": [
+        "I hope you are well.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nBest wishes,\nMina Park",
+        "I hope you are well.\n\nBest wishes,\nMina Park\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.",
+        "I wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nBest wishes,\nMina Park\n\nI hope you are well.",
+        "I hope you are well.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nBest wishes,\nMina Park"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I hope you are well.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nBest wishes,\nMina Park",
+      "hint": "Greet, remind, then soften the request for a busy person.",
+      "explanation": "Acknowledging that the reader is busy lets you press gently. Suggesting only fifteen minutes makes the request smaller and easier to accept.",
+      "distractorFeedback": {
+        "I hope you are well.\n\nBest wishes,\nMina Park\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nBest wishes,\nMina Park\n\nI hope you are well.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I hope you are well.\n\nI know this is a busy time, so even fifteen minutes would be very helpful.\n\nI wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.\n\nBest wishes,\nMina Park": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L27_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You are stuck with a spreadsheet formula and would like to ask a colleague for help. Set out the email.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Subject: Quick question about the budget sheet\n\nHi Jamal,\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nThanks a lot,\nRebecca",
+        "Subject: Quick question about the budget sheet\n\nThanks a lot,\nRebecca\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nHi Jamal,",
+        "Hi Jamal,\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nThanks a lot,\nRebecca\n\nSubject: Quick question about the budget sheet",
+        "Subject: Quick question about the budget sheet\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nHi Jamal,\n\nThanks a lot,\nRebecca"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Quick question about the budget sheet\n\nHi Jamal,\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nThanks a lot,\nRebecca",
+      "hint": "A request for help should describe the problem and the amount of time you need.",
+      "explanation": "Saying exactly what is wrong ('the total does not update') and how long you need makes the request easy to accept. A vague 'I need help' forces the colleague to ask more questions.",
+      "distractorFeedback": {
+        "Subject: Quick question about the budget sheet\n\nThanks a lot,\nRebecca\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nHi Jamal,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Hi Jamal,\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nThanks a lot,\nRebecca\n\nSubject: Quick question about the budget sheet": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Quick question about the budget sheet\n\nI can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?\n\nHi Jamal,\n\nThanks a lot,\nRebecca": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L27_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You are new at university and want help finding a study skills workshop. Subject: Help finding a study skills workshop / Greeting: Dear Ms Osei, / Arrange the body and sign-off.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "I am a first-year student in the History department.\n\nSomeone told me you run workshops on essay writing.\n\nCould you tell me when the next one is and how to sign up?\n\nKind regards,\nHannah Lee",
+        "I am a first-year student in the History department.\n\nKind regards,\nHannah Lee\n\nCould you tell me when the next one is and how to sign up?\n\nSomeone told me you run workshops on essay writing.",
+        "Someone told me you run workshops on essay writing.\n\nCould you tell me when the next one is and how to sign up?\n\nKind regards,\nHannah Lee\n\nI am a first-year student in the History department.",
+        "I am a first-year student in the History department.\n\nCould you tell me when the next one is and how to sign up?\n\nSomeone told me you run workshops on essay writing.\n\nKind regards,\nHannah Lee"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I am a first-year student in the History department.\n\nSomeone told me you run workshops on essay writing.\n\nCould you tell me when the next one is and how to sign up?\n\nKind regards,\nHannah Lee",
+      "hint": "Who you are comes first, then how you found her, and finally the question.",
+      "explanation": "Referring to how you heard about her ('someone told me') explains why you wrote to her in particular. The specific question at the end gives her a clear task.",
+      "distractorFeedback": {
+        "I am a first-year student in the History department.\n\nKind regards,\nHannah Lee\n\nCould you tell me when the next one is and how to sign up?\n\nSomeone told me you run workshops on essay writing.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Someone told me you run workshops on essay writing.\n\nCould you tell me when the next one is and how to sign up?\n\nKind regards,\nHannah Lee\n\nI am a first-year student in the History department.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I am a first-year student in the History department.\n\nCould you tell me when the next one is and how to sign up?\n\nSomeone told me you run workshops on essay writing.\n\nKind regards,\nHannah Lee": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L27_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You are asking a classmate for lesson notes after being ill. Arrange the email.",
+      "formalityLevel": "Informal",
+      "options": [
+        "Subject: Could I see your notes from Tuesday?\n\nHi Abena,\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nThanks so much,\nTomasz",
+        "Subject: Could I see your notes from Tuesday?\n\nThanks so much,\nTomasz\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nHi Abena,",
+        "Hi Abena,\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nThanks so much,\nTomasz\n\nSubject: Could I see your notes from Tuesday?",
+        "Subject: Could I see your notes from Tuesday?\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nHi Abena,\n\nThanks so much,\nTomasz"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Could I see your notes from Tuesday?\n\nHi Abena,\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nThanks so much,\nTomasz",
+      "hint": "Say why you need help and what you can give back.",
+      "explanation": "People are more willing to help when the request is reasonable and reciprocal. Offering your own notes turns a favour into a fair exchange.",
+      "distractorFeedback": {
+        "Subject: Could I see your notes from Tuesday?\n\nThanks so much,\nTomasz\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nHi Abena,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Hi Abena,\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nThanks so much,\nTomasz\n\nSubject: Could I see your notes from Tuesday?": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Could I see your notes from Tuesday?\n\nI was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.\n\nHi Abena,\n\nThanks so much,\nTomasz": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L28_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You need to cancel a table you booked at a restaurant. Put together the email.",
+      "formalityLevel": "Formal",
+      "options": [
+        "Subject: Cancelling booking for Friday at 8 pm\n\nDear Bella Notte,\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nKind regards,\nChidi Okoye",
+        "Subject: Cancelling booking for Friday at 8 pm\n\nKind regards,\nChidi Okoye\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nDear Bella Notte,",
+        "Dear Bella Notte,\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nKind regards,\nChidi Okoye\n\nSubject: Cancelling booking for Friday at 8 pm",
+        "Subject: Cancelling booking for Friday at 8 pm\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nDear Bella Notte,\n\nKind regards,\nChidi Okoye"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Cancelling booking for Friday at 8 pm\n\nDear Bella Notte,\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nKind regards,\nChidi Okoye",
+      "hint": "Give the details they need to find the booking, then apologise if the notice is short.",
+      "explanation": "A cancellation should give enough detail (name, number of people, time) for staff to find the booking. A brief apology for short notice shows consideration.",
+      "distractorFeedback": {
+        "Subject: Cancelling booking for Friday at 8 pm\n\nKind regards,\nChidi Okoye\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nDear Bella Notte,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Dear Bella Notte,\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nKind regards,\nChidi Okoye\n\nSubject: Cancelling booking for Friday at 8 pm": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Cancelling booking for Friday at 8 pm\n\nI am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice.\n\nDear Bella Notte,\n\nKind regards,\nChidi Okoye": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L28_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You no longer use a language-learning app and want to stop paying for it. Subject: Cancel my subscription / Greeting: Dear Support Team, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nI have enjoyed the app, but I no longer have time to use it.\n\nPlease confirm by email that the cancellation is complete.\n\nYours faithfully,\nMarta Silva",
+        "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nYours faithfully,\nMarta Silva\n\nPlease confirm by email that the cancellation is complete.\n\nI have enjoyed the app, but I no longer have time to use it.",
+        "I have enjoyed the app, but I no longer have time to use it.\n\nPlease confirm by email that the cancellation is complete.\n\nYours faithfully,\nMarta Silva\n\nPlease cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.",
+        "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nPlease confirm by email that the cancellation is complete.\n\nI have enjoyed the app, but I no longer have time to use it.\n\nYours faithfully,\nMarta Silva"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nI have enjoyed the app, but I no longer have time to use it.\n\nPlease confirm by email that the cancellation is complete.\n\nYours faithfully,\nMarta Silva",
+      "hint": "Give the instruction, mention timing, and ask for proof at the end.",
+      "explanation": "The action requested comes first so nobody misses it. The date shows when it matters. Asking for confirmation protects you if you are charged later.",
+      "distractorFeedback": {
+        "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nYours faithfully,\nMarta Silva\n\nPlease confirm by email that the cancellation is complete.\n\nI have enjoyed the app, but I no longer have time to use it.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I have enjoyed the app, but I no longer have time to use it.\n\nPlease confirm by email that the cancellation is complete.\n\nYours faithfully,\nMarta Silva\n\nPlease cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.\n\nPlease confirm by email that the cancellation is complete.\n\nI have enjoyed the app, but I no longer have time to use it.\n\nYours faithfully,\nMarta Silva": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L28_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You are declining a friend's party invitation because of a family event. Subject: Re: Your party / Greeting: Hi Tess, / Arrange the body and sign-off.",
+      "formalityLevel": "Informal",
+      "options": [
+        "Thank you so much for inviting me!\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nLove,\nHarry",
+        "Thank you so much for inviting me!\n\nLove,\nHarry\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.",
+        "I'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nLove,\nHarry\n\nThank you so much for inviting me!",
+        "Thank you so much for inviting me!\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nLove,\nHarry"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Thank you so much for inviting me!\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nLove,\nHarry",
+      "hint": "Thank first, decline clearly, then look positively to the future.",
+      "explanation": "Gratitude first softens the refusal, and a short reason shows it is not personal. Suggesting a future meeting keeps the friendship warm.",
+      "distractorFeedback": {
+        "Thank you so much for inviting me!\n\nLove,\nHarry\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nLove,\nHarry\n\nThank you so much for inviting me!": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Thank you so much for inviting me!\n\nI hope you have a wonderful evening, and let's catch up next week.\n\nI'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.\n\nLove,\nHarry": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L29_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "A friend passed her driving test. Subject: Congratulations! / Greeting: Hi Yasmin, / Arrange the message.",
+      "formalityLevel": "Informal",
+      "options": [
+        "I just heard that you passed your driving test. Congratulations!\n\nYou worked so hard for it, and you totally deserve it.\n\nLet's celebrate soon. Dinner is on me!\n\nProud of you,\nMaeve",
+        "I just heard that you passed your driving test. Congratulations!\n\nProud of you,\nMaeve\n\nLet's celebrate soon. Dinner is on me!\n\nYou worked so hard for it, and you totally deserve it.",
+        "You worked so hard for it, and you totally deserve it.\n\nLet's celebrate soon. Dinner is on me!\n\nProud of you,\nMaeve\n\nI just heard that you passed your driving test. Congratulations!",
+        "I just heard that you passed your driving test. Congratulations!\n\nLet's celebrate soon. Dinner is on me!\n\nYou worked so hard for it, and you totally deserve it.\n\nProud of you,\nMaeve"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I just heard that you passed your driving test. Congratulations!\n\nYou worked so hard for it, and you totally deserve it.\n\nLet's celebrate soon. Dinner is on me!\n\nProud of you,\nMaeve",
+      "hint": "Say the good news, say why it's deserved, then suggest something to do together.",
+      "explanation": "A congratulation email is strongest when it names the achievement and recognises the effort. Ending with a plan to celebrate makes it more than a formality.",
+      "distractorFeedback": {
+        "I just heard that you passed your driving test. Congratulations!\n\nProud of you,\nMaeve\n\nLet's celebrate soon. Dinner is on me!\n\nYou worked so hard for it, and you totally deserve it.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "You worked so hard for it, and you totally deserve it.\n\nLet's celebrate soon. Dinner is on me!\n\nProud of you,\nMaeve\n\nI just heard that you passed your driving test. Congratulations!": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I just heard that you passed your driving test. Congratulations!\n\nLet's celebrate soon. Dinner is on me!\n\nYou worked so hard for it, and you totally deserve it.\n\nProud of you,\nMaeve": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L29_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "Welcome a new colleague to the team. Subject: Welcome to the team / Greeting: Dear Suresh, / Arrange the body and sign-off.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Welcome to the team! We are delighted you are joining us on Monday.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nPlease let me know if there is anything you would like to know before you start.\n\nBest wishes,\nMargaret",
+        "Welcome to the team! We are delighted you are joining us on Monday.\n\nBest wishes,\nMargaret\n\nPlease let me know if there is anything you would like to know before you start.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.",
+        "Your desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nPlease let me know if there is anything you would like to know before you start.\n\nBest wishes,\nMargaret\n\nWelcome to the team! We are delighted you are joining us on Monday.",
+        "Welcome to the team! We are delighted you are joining us on Monday.\n\nPlease let me know if there is anything you would like to know before you start.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nBest wishes,\nMargaret"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Welcome to the team! We are delighted you are joining us on Monday.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nPlease let me know if there is anything you would like to know before you start.\n\nBest wishes,\nMargaret",
+      "hint": "A welcome email should be warm and give practical information for day one.",
+      "explanation": "Warmth alone is not enough for a new starter. Telling him where to sit and when to arrive removes first-day anxiety, so he knows what to expect.",
+      "distractorFeedback": {
+        "Welcome to the team! We are delighted you are joining us on Monday.\n\nBest wishes,\nMargaret\n\nPlease let me know if there is anything you would like to know before you start.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Your desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nPlease let me know if there is anything you would like to know before you start.\n\nBest wishes,\nMargaret\n\nWelcome to the team! We are delighted you are joining us on Monday.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Welcome to the team! We are delighted you are joining us on Monday.\n\nPlease let me know if there is anything you would like to know before you start.\n\nYour desk is on the second floor next to mine, and I will give you a tour at 9:30.\n\nBest wishes,\nMargaret": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L29_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "Congratulate a former teacher on her retirement. Subject: Congratulations on your retirement / Greeting: Dear Mrs Whitaker, / Arrange the body and sign-off.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nI hope you enjoy every minute of your well-earned rest.\n\nWith warm wishes,\nSeun Adeyinka",
+        "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nWith warm wishes,\nSeun Adeyinka\n\nI hope you enjoy every minute of your well-earned rest.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.",
+        "You were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nI hope you enjoy every minute of your well-earned rest.\n\nWith warm wishes,\nSeun Adeyinka\n\nI heard that you are retiring at the end of this term, and I wanted to congratulate you.",
+        "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nI hope you enjoy every minute of your well-earned rest.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nWith warm wishes,\nSeun Adeyinka"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nI hope you enjoy every minute of your well-earned rest.\n\nWith warm wishes,\nSeun Adeyinka",
+      "hint": "Congratulate, add a personal memory, then give a good wish for the future.",
+      "explanation": "A personal memory turns generic congratulations into something the teacher will remember. Ending with a wish looks forward, which suits a retirement message.",
+      "distractorFeedback": {
+        "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nWith warm wishes,\nSeun Adeyinka\n\nI hope you enjoy every minute of your well-earned rest.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "You were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nI hope you enjoy every minute of your well-earned rest.\n\nWith warm wishes,\nSeun Adeyinka\n\nI heard that you are retiring at the end of this term, and I wanted to congratulate you.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I heard that you are retiring at the end of this term, and I wanted to congratulate you.\n\nI hope you enjoy every minute of your well-earned rest.\n\nYou were the reason I fell in love with reading, and I have never forgotten your lessons.\n\nWith warm wishes,\nSeun Adeyinka": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L30_Q1",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "After a class trip, you want to tell your teacher what you learned. Build the email.",
+      "formalityLevel": "Semi-formal",
+      "options": [
+        "Subject: Thank you for the trip to the science museum\n\nDear Mr Zhang,\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nBest wishes,\nOlivia",
+        "Subject: Thank you for the trip to the science museum\n\nBest wishes,\nOlivia\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nDear Mr Zhang,",
+        "Dear Mr Zhang,\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nBest wishes,\nOlivia\n\nSubject: Thank you for the trip to the science museum",
+        "Subject: Thank you for the trip to the science museum\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nDear Mr Zhang,\n\nBest wishes,\nOlivia"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Subject: Thank you for the trip to the science museum\n\nDear Mr Zhang,\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nBest wishes,\nOlivia",
+      "hint": "Choose the tone for a teacher who is friendly but still your teacher.",
+      "explanation": "In this review, decide whether the situation calls for casual or formal language. A teacher is best addressed politely, but a warm personal comment (the planetarium) keeps the email sincere.",
+      "distractorFeedback": {
+        "Subject: Thank you for the trip to the science museum\n\nBest wishes,\nOlivia\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nDear Mr Zhang,": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Dear Mr Zhang,\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nBest wishes,\nOlivia\n\nSubject: Thank you for the trip to the science museum": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "Subject: Thank you for the trip to the science museum\n\nThank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space.\n\nDear Mr Zhang,\n\nBest wishes,\nOlivia": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L30_Q2",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "Your flight has been cancelled, and you want to ask the airline to rebook you. Subject: Flight BA412 cancelled: request to rebook / Greeting: Dear Customer Service, / Arrange the body and sign-off.",
+      "formalityLevel": "Formal",
+      "options": [
+        "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nI need to arrive in London by the evening of 7 May for a work event.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nYours faithfully,\nCarla Mendes",
+        "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nYours faithfully,\nCarla Mendes\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nI need to arrive in London by the evening of 7 May for a work event.",
+        "I need to arrive in London by the evening of 7 May for a work event.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nYours faithfully,\nCarla Mendes\n\nMy flight BA412 from Lisbon to London on 6 May was cancelled.",
+        "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nI need to arrive in London by the evening of 7 May for a work event.\n\nYours faithfully,\nCarla Mendes"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nI need to arrive in London by the evening of 7 May for a work event.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nYours faithfully,\nCarla Mendes",
+      "hint": "The problem, the requirement and the action needed should appear in that order.",
+      "explanation": "The airline needs to know what happened, what limits your options and what you want. This shortens the reply and stops them offering a flight that does not help you.",
+      "distractorFeedback": {
+        "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nYours faithfully,\nCarla Mendes\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nI need to arrive in London by the evening of 7 May for a work event.": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "I need to arrive in London by the evening of 7 May for a work event.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nYours faithfully,\nCarla Mendes\n\nMy flight BA412 from Lisbon to London on 6 May was cancelled.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "My flight BA412 from Lisbon to London on 6 May was cancelled.\n\nCould you please rebook me on the earliest available flight and confirm by email?\n\nI need to arrive in London by the evening of 7 May for a work event.\n\nYours faithfully,\nCarla Mendes": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    },
+    {
+      "id": "WRT_WRITINGEMAIL_PRAC_L30_Q3",
+      "phase": "practice",
+      "instruction": "Select the email that follows the correct architectural order (Subject → Greeting → Body → Sign-off).",
+      "prompt": "You and a friend arranged to study together but you found out your exam moved. Subject: Change of plan for Thursday / Greeting: Hi Lena, / Arrange the message.",
+      "formalityLevel": "Informal",
+      "options": [
+        "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?\n\nIf that's not possible, we can study on the phone afterwards.\n\nThanks,\nSamuel",
+        "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nThanks,\nSamuel\n\nIf that's not possible, we can study on the phone afterwards.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?",
+        "Would it be okay if we started our session an hour earlier, at 4 pm?\n\nIf that's not possible, we can study on the phone afterwards.\n\nThanks,\nSamuel\n\nI've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.",
+        "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nIf that's not possible, we can study on the phone afterwards.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?\n\nThanks,\nSamuel"
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?\n\nIf that's not possible, we can study on the phone afterwards.\n\nThanks,\nSamuel",
+      "hint": "The reason, the proposal and the fallback come in a natural sequence.",
+      "explanation": "Offering a fallback shows flexibility. In everyday emails, this small extra sentence often saves a further round of messages.",
+      "distractorFeedback": {
+        "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nThanks,\nSamuel\n\nIf that's not possible, we can study on the phone afterwards.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?": "Inverts the salutation and valediction: the greeting must open the letter and the sign-off must close it.",
+        "Would it be okay if we started our session an hour earlier, at 4 pm?\n\nIf that's not possible, we can study on the phone afterwards.\n\nThanks,\nSamuel\n\nI've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.": "Places the subject line at the end; the subject line must always be the topmost header.",
+        "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday.\n\nIf that's not possible, we can study on the phone afterwards.\n\nWould it be okay if we started our session an hour earlier, at 4 pm?\n\nThanks,\nSamuel": "Places the body text before the greeting; you must address your reader before delivering message details."
+      }
+    }
+  ]
+}
