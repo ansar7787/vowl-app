@@ -1,0 +1,518 @@
+{
+  "gameType": "voiceSwap",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "vs_l91_practice_q1",
+      "level": 91,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Marie Curie discovered two new elements, polonium and radium.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "Marie Curie discovered two new elements, polonium and radium.",
+      "passiveVoice": "Two new elements, polonium and radium, were discovered by Marie Curie.",
+      "hint": "Here the doer is exactly what makes the sentence worth saying. Find her right before discovered.",
+      "explanation": "Marie Curie is the doer of discovered, and active voice is the natural choice here because the whole point of the sentence is to credit her - passive would bury the very information that matters most. A passive version, Two new elements were discovered by Marie Curie, technically works but weakens the focus on her achievement.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l91_practice_q2",
+      "level": 91,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The bridge was designed by a team whose members remain largely unknown today.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "A team whose members remain largely unknown today designed the bridge.",
+      "passiveVoice": "The bridge was designed by a team whose members remain largely unknown today.",
+      "hint": "Here the design matters more than the mostly-unnamed team. Look for was plus a past participle.",
+      "explanation": "The bridge (receiver) was designed - passive voice fits naturally here because the sentence's real interest is the bridge, while the designers are only vaguely known, so naming them upfront in active voice would be awkward. Active form, though weaker: A team whose members remain largely unknown today designed the bridge.",
+      "grammarRule": "Voice Choice - Passive Preferred"
+    },
+    {
+      "id": "vs_l91_practice_q3",
+      "level": 91,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The mechanic diagnosed the engine trouble in under ten minutes.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The mechanic diagnosed the engine trouble in under ten minutes.",
+      "passiveVoice": "The engine trouble was diagnosed in under ten minutes by the mechanic.",
+      "hint": "The mechanic's skill is the point of this sentence. Find the doer right before diagnosed.",
+      "explanation": "The mechanic is the doer of diagnosed, and active voice works best here since the sentence highlights the mechanic's speed and skill - passive voice, The engine trouble was diagnosed in under ten minutes, would shift focus away from the person being praised.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l92_practice_q1",
+      "level": 92,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "My phone was stolen sometime during the concert last night.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "Someone stole my phone sometime during the concert last night.",
+      "passiveVoice": "My phone was stolen sometime during the concert last night.",
+      "hint": "The thief is unknown here, which is exactly why passive fits. Look for was plus a past participle.",
+      "explanation": "My phone (receiver) was stolen - passive voice is the natural choice since the person responsible is genuinely unknown, and naming a vague culprit in active voice, Someone stole my phone, would add little value. This kind of unknown-agent passive is extremely common in everyday speech.",
+      "grammarRule": "Voice Choice - Agent Unknown"
+    },
+    {
+      "id": "vs_l92_practice_q2",
+      "level": 92,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The report was leaked to several news outlets before it was officially released.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "An anonymous insider leaked the report to several news outlets before it was officially released.",
+      "passiveVoice": "The report was leaked to several news outlets before it was officially released.",
+      "hint": "The leaker is deliberately left out here. Look for was plus a past participle.",
+      "explanation": "The report (receiver) was leaked - passive voice lets the sentence avoid naming who was responsible, whether because it's unknown or because the writer is being deliberately vague. Active form, if a source were named: An anonymous insider leaked the report to several news outlets before it was officially released.",
+      "grammarRule": "Voice Choice - Agent Omitted Deliberately"
+    },
+    {
+      "id": "vs_l92_practice_q3",
+      "level": 92,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Someone left the gate open, and the dog wandered into the street.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "Someone left the gate open, and the dog wandered into the street.",
+      "passiveVoice": "The gate was left open, and the dog wandered into the street.",
+      "hint": "Someone is vague, but still performs the action. Find the doer right before left.",
+      "explanation": "Someone is the doer of left, so despite being vague, this stays active - passive would remove the subject entirely: The gate was left open, and the dog wandered into the street, which actually reads more naturally here since the specific person truly doesn't matter.",
+      "grammarRule": "Voice Choice - Active with Vague Subject"
+    },
+    {
+      "id": "vs_l93_practice_q1",
+      "level": 93,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The novel became an instant bestseller after a famous critic praised it on television.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "A famous critic praised the novel on television, and it became an instant bestseller.",
+      "passiveVoice": "The novel became an instant bestseller after a famous critic praised it on television.",
+      "hint": "The novel is the topic being discussed throughout. Ask whether it acts or is acted upon in the second half of the sentence.",
+      "explanation": "The novel (receiver, referred to as it) is praised - keeping the novel as the topic across both halves of the sentence makes the passive choice natural here, since switching to The famous critic praised it would shift focus away from the novel mid-sentence. Active form: A famous critic praised the novel on television, and it became an instant bestseller.",
+      "grammarRule": "Voice Choice - Topic Continuity"
+    },
+    {
+      "id": "vs_l93_practice_q2",
+      "level": 93,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The city council approved the budget, which will fund three new schools.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The city council approved the budget, which will fund three new schools.",
+      "passiveVoice": "The budget, which will fund three new schools, was approved by the city council.",
+      "hint": "The council's decision is the focus here. Find the doer right before approved.",
+      "explanation": "The city council is the doer of approved, and active voice keeps the sentence's momentum going into the next clause, which will fund three new schools - passive here, The budget was approved by the city council, would work but adds no benefit since the council isn't the ongoing topic.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l93_practice_q3",
+      "level": 93,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The bakery closes early on Sundays because the owner attends church.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The bakery closes early on Sundays because the owner attends church.",
+      "passiveVoice": "Sundays are marked by an early closing at the bakery because the owner attends church (technically possible, but noticeably less natural).",
+      "hint": "The bakery is the doer of closes here. Confirm this before deciding voice.",
+      "explanation": "The bakery is the doer of closes, and active voice suits this everyday explanation - there's no reason to hide or de-emphasize the bakery's action, so passive voice would only make the sentence feel unnecessarily formal.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l94_practice_q1",
+      "level": 94,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Applications will be reviewed on a rolling basis throughout the hiring period.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "Our HR team will review applications on a rolling basis throughout the hiring period.",
+      "passiveVoice": "Applications will be reviewed on a rolling basis throughout the hiring period.",
+      "hint": "This sentence has the formal, impersonal tone of an official notice. Look for will be plus a past participle.",
+      "explanation": "Applications (receiver) will be reviewed - passive voice creates the impersonal, official tone expected in formal notices, where naming the specific reviewer, Our HR team will review applications, would feel oddly informal for this context. No reviewer is named.",
+      "grammarRule": "Voice Choice - Formal/Impersonal Style"
+    },
+    {
+      "id": "vs_l94_practice_q2",
+      "level": 94,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Passengers are reminded that all carry-on luggage must fit in the overhead bin.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "We remind passengers that all carry-on luggage must fit in the overhead bin.",
+      "passiveVoice": "Passengers are reminded that all carry-on luggage must fit in the overhead bin.",
+      "hint": "This sounds like an announcement. Look for are reminded, a passive pattern common in formal notices.",
+      "explanation": "Passengers (receiver) are reminded - passive voice fits the formal, slightly distant tone airlines use for announcements, avoiding a more direct and less formal-sounding active version like We remind you that all carry-on luggage must fit in the overhead bin.",
+      "grammarRule": "Voice Choice - Formal/Impersonal Style"
+    },
+    {
+      "id": "vs_l94_practice_q3",
+      "level": 94,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "I really appreciate how quickly you responded to my request.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "I really appreciate how quickly you responded to my request.",
+      "passiveVoice": "How quickly you responded to my request is really appreciated.",
+      "hint": "This sentence is personal and direct, not formal or distant. Find the doer right before appreciate.",
+      "explanation": "I is the doer of appreciate, and active voice fits this warm, personal message perfectly - turning it into passive, How quickly you responded to my request is really appreciated, would strip away the personal warmth the sentence is going for.",
+      "grammarRule": "Voice Choice - Active Preferred (Personal Tone)"
+    },
+    {
+      "id": "vs_l95_practice_q1",
+      "level": 95,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Mistakes were made during the rollout, and the team is now addressing them.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "The team made mistakes during the rollout, and it is now addressing them.",
+      "passiveVoice": "Mistakes were made during the rollout, and the team is now addressing them.",
+      "hint": "Notice no one is blamed directly here. Look for were plus a past participle.",
+      "explanation": "Mistakes (receiver) were made - passive voice here deliberately avoids naming who is responsible, a common tactic in diplomatic or face-saving language. Active form, if blame were assigned: The team made mistakes during the rollout, and it is now addressing them.",
+      "grammarRule": "Voice Choice - Tactful Agent Omission"
+    },
+    {
+      "id": "vs_l95_practice_q2",
+      "level": 95,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The intern accidentally deleted the entire client database yesterday afternoon.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The intern accidentally deleted the entire client database yesterday afternoon.",
+      "passiveVoice": "The entire client database was accidentally deleted yesterday afternoon.",
+      "hint": "Here someone specific is directly named as responsible. Find the doer right before deleted.",
+      "explanation": "The intern is the doer of deleted, and active voice directly assigns responsibility rather than softening it - passive voice here, The entire client database was accidentally deleted yesterday afternoon, would be the more tactful, less blaming option if that were the goal.",
+      "grammarRule": "Voice Choice - Active with Direct Blame"
+    },
+    {
+      "id": "vs_l95_practice_q3",
+      "level": 95,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The refund was processed a bit later than usual due to a system delay.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "We processed the refund a bit later than usual due to a system delay.",
+      "passiveVoice": "The refund was processed a bit later than usual due to a system delay.",
+      "hint": "Notice the focus is on the delay itself, not on blaming a specific employee. Look for was plus a past participle.",
+      "explanation": "The refund (receiver) was processed - passive voice keeps attention on the outcome and the system delay rather than pointing at a specific worker, which softens the message. Active form: We processed the refund a bit later than usual due to a system delay.",
+      "grammarRule": "Voice Choice - Tactful Agent Omission"
+    },
+    {
+      "id": "vs_l96_practice_q1",
+      "level": 96,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "First, the dough is kneaded for ten minutes, and then it is left to rise.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "First, you knead the dough for ten minutes, and then you leave it to rise.",
+      "passiveVoice": "First, the dough is kneaded for ten minutes, and then it is left to rise.",
+      "hint": "This describes a general process, not a specific chef. Look for is plus a past participle, twice.",
+      "explanation": "The dough (receiver) is kneaded, then it is left - passive voice is standard for describing general processes or recipes, since the focus is on the steps themselves rather than on whoever performs them. Active form: First, you knead the dough for ten minutes, and then you leave it to rise.",
+      "grammarRule": "Voice Choice - Process Description"
+    },
+    {
+      "id": "vs_l96_practice_q2",
+      "level": 96,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Raw materials are inspected, sorted, and then sent to the appropriate department.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "Workers inspect, sort, and then send raw materials to the appropriate department.",
+      "passiveVoice": "Raw materials are inspected, sorted, and then sent to the appropriate department.",
+      "hint": "This describes a factory process in general, not one specific worker. Look for are plus past participles across the sentence.",
+      "explanation": "Raw materials (receiver) are inspected, sorted, sent - three passive verbs in a row describing a standard procedure, with no individual worker named since the process itself is the point. Active form: Workers inspect, sort, and then send raw materials to the appropriate department.",
+      "grammarRule": "Voice Choice - Process Description"
+    },
+    {
+      "id": "vs_l96_practice_q3",
+      "level": 96,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "My grandfather always kneads the dough by hand, never with a machine.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "My grandfather always kneads the dough by hand, never with a machine.",
+      "passiveVoice": "The dough is always kneaded by hand by my grandfather, never with a machine.",
+      "hint": "This is about one specific person's habit, not a general process. Find the doer right before kneads.",
+      "explanation": "My grandfather is the doer of kneads, and active voice fits since the sentence is about his personal habit, not a general procedure - passive voice, The dough is always kneaded by hand by my grandfather, would feel unnecessarily distant for such a personal detail.",
+      "grammarRule": "Voice Choice - Active Preferred (Personal Habit)"
+    },
+    {
+      "id": "vs_l97_practice_q1",
+      "level": 97,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The samples were heated to sixty degrees and then observed under a microscope.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "The researchers heated the samples to sixty degrees and then observed them under a microscope.",
+      "passiveVoice": "The samples were heated to sixty degrees and then observed under a microscope.",
+      "hint": "This reads like a lab report describing a procedure, not crediting a specific scientist. Look for were plus past participles.",
+      "explanation": "The samples (receiver) were heated, then observed - passive voice is the convention in scientific writing, keeping focus on the procedure and results rather than on the individual researcher. Active form: The researchers heated the samples to sixty degrees and then observed them under a microscope.",
+      "grammarRule": "Voice Choice - Scientific/Technical Style"
+    },
+    {
+      "id": "vs_l97_practice_q2",
+      "level": 97,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Dr. Alvarez led the research team that first identified the new species.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "Dr. Alvarez led the research team that first identified the new species.",
+      "passiveVoice": "The research team that first identified the new species was led by Dr. Alvarez.",
+      "hint": "Here a specific person's leadership is the point. Find the doer right before led.",
+      "explanation": "Dr. Alvarez is the doer of led, and active voice is the right choice here since crediting her leadership directly is the whole purpose of the sentence - passive voice would blur exactly the detail worth highlighting.",
+      "grammarRule": "Voice Choice - Active Preferred (Credit)"
+    },
+    {
+      "id": "vs_l97_practice_q3",
+      "level": 97,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The mixture is stirred continuously until it reaches a smooth consistency.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "You stir the mixture continuously until it reaches a smooth consistency.",
+      "passiveVoice": "The mixture is stirred continuously until it reaches a smooth consistency.",
+      "hint": "This describes a general lab or cooking step. Look for is plus a past participle.",
+      "explanation": "The mixture (receiver) is stirred - passive voice fits this instructional, process-focused sentence, keeping attention on the mixture rather than on whoever is doing the stirring. Active form: You stir the mixture continuously until it reaches a smooth consistency.",
+      "grammarRule": "Voice Choice - Process Description"
+    },
+    {
+      "id": "vs_l98_practice_q1",
+      "level": 98,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "A committee made up of five long-serving board members reviewed the complaint.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "A committee made up of five long-serving board members reviewed the complaint.",
+      "passiveVoice": "The complaint was reviewed by a committee made up of five long-serving board members.",
+      "hint": "Notice the long subject here. Even so, find the doer right before reviewed.",
+      "explanation": "A committee made up of five long-serving board members is the doer of reviewed, and despite its length, active voice still reads naturally since the subject is a single, clear entity. Passive form, moving that long phrase to the end instead: The complaint was reviewed by a committee made up of five long-serving board members.",
+      "grammarRule": "Voice Choice - Active with Long Subject"
+    },
+    {
+      "id": "vs_l98_practice_q2",
+      "level": 98,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The award was given to a scientist whose decades of tireless research finally paid off.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "A scientist whose decades of tireless research finally paid off received the award.",
+      "passiveVoice": "The award was given to a scientist whose decades of tireless research finally paid off.",
+      "hint": "Notice how long and detailed the agent phrase is here. Look for was plus a past participle.",
+      "explanation": "The award (receiver) was given - passive voice lets the sentence lead with a short, clear subject before unpacking a long, detailed description of the scientist, which would feel clunky as a subject in active voice. Active form: A scientist whose decades of tireless research finally paid off received the award.",
+      "grammarRule": "Voice Choice - Passive to Avoid Awkward Subject"
+    },
+    {
+      "id": "vs_l98_practice_q3",
+      "level": 98,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The volunteers cleaned the entire beach in just under three hours.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The volunteers cleaned the entire beach in just under three hours.",
+      "passiveVoice": "The entire beach was cleaned by the volunteers in just under three hours.",
+      "hint": "This subject is short and clear. Find the doer right before cleaned.",
+      "explanation": "The volunteers is the doer of cleaned, and active voice is simply the more natural, direct option here, since both subject and object are short and the sentence doesn't need passive voice to manage length or focus.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l99_practice_q1",
+      "level": 99,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "The satellite was launched successfully despite last-minute technical concerns.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "The space agency launched the satellite successfully despite last-minute technical concerns.",
+      "passiveVoice": "The satellite was launched successfully despite last-minute technical concerns.",
+      "hint": "The launch itself is the point, not who built the satellite. Look for was plus a past participle.",
+      "explanation": "The satellite (receiver) was launched - passive voice fits naturally since the sentence centers on the event itself, with the space agency left unnamed as an unnecessary detail here. Active form: The space agency launched the satellite successfully despite last-minute technical concerns.",
+      "grammarRule": "Voice Choice - Passive Preferred (Event Focus)"
+    },
+    {
+      "id": "vs_l99_practice_q2",
+      "level": 99,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "A local baker donated all the leftover bread to the community shelter.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "A local baker donated all the leftover bread to the community shelter.",
+      "passiveVoice": "All the leftover bread was donated to the community shelter by a local baker.",
+      "hint": "The baker's generosity is the point being highlighted. Find the doer right before donated.",
+      "explanation": "A local baker is the doer of donated, and active voice is the natural choice here since the sentence exists to credit that specific act of generosity - passive voice would weaken the praise by shifting focus onto the bread instead.",
+      "grammarRule": "Voice Choice - Active Preferred (Credit)"
+    },
+    {
+      "id": "vs_l99_practice_q3",
+      "level": 99,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "Power was restored to the affected neighborhoods just before midnight.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "The utility company restored power to the affected neighborhoods just before midnight.",
+      "passiveVoice": "Power was restored to the affected neighborhoods just before midnight.",
+      "hint": "The outcome matters here more than which specific crew fixed it. Look for was plus a past participle.",
+      "explanation": "Power (receiver) was restored - passive voice fits since residents care about the outcome, restored power, far more than which repair crew handled it. Active form: The utility company restored power to the affected neighborhoods just before midnight.",
+      "grammarRule": "Voice Choice - Passive Preferred (Outcome Focus)"
+    },
+    {
+      "id": "vs_l100_practice_q1",
+      "level": 100,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "This checkpoint reviews voice choice: The head chef personally trains every new cook in the kitchen.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "The head chef personally trains every new cook in the kitchen.",
+      "passiveVoice": "Every new cook in the kitchen is personally trained by the head chef.",
+      "hint": "The chef's personal involvement is the point here. Find the doer right before trains.",
+      "explanation": "This checkpoint reviews active voice chosen for credit and focus: the head chef is the doer of trains, and highlighting this personal commitment is exactly why active voice suits the sentence. Passive version: Every new cook in the kitchen is personally trained by the head chef.",
+      "grammarRule": "Voice Choice - Active Preferred"
+    },
+    {
+      "id": "vs_l100_practice_q2",
+      "level": 100,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "This checkpoint reviews voice choice: The final decision was made after weeks of careful deliberation.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Passive",
+      "correctAnswerIndex": 1,
+      "activeVoice": "The board made the final decision after weeks of careful deliberation.",
+      "passiveVoice": "The final decision was made after weeks of careful deliberation.",
+      "hint": "The deliberation process matters more here than naming who exactly decided. Look for was plus a past participle.",
+      "explanation": "This checkpoint reviews passive voice chosen for process focus: the final decision (receiver) was made, with the decision-makers left unnamed since the emphasis is on the careful process rather than on individuals. Active form: The board made the final decision after weeks of careful deliberation.",
+      "grammarRule": "Voice Choice - Passive Preferred"
+    },
+    {
+      "id": "vs_l100_practice_q3",
+      "level": 100,
+      "instruction": "FLIP THE VOICE TRANSMUTER",
+      "sentence": "This checkpoint reviews voice choice: Somebody spilled coffee all over the conference room table this morning.",
+      "options": [
+        "Active",
+        "Passive"
+      ],
+      "correctAnswer": "Active",
+      "correctAnswerIndex": 0,
+      "activeVoice": "Somebody spilled coffee all over the conference room table this morning.",
+      "passiveVoice": "Coffee was spilled all over the conference room table this morning.",
+      "hint": "Somebody is vague but still performs the action. Find the doer right before spilled.",
+      "explanation": "This checkpoint reviews active voice with a vague subject: somebody is the doer of spilled, and this stays active even though we don't know who exactly - passive voice would remove the subject entirely: Coffee was spilled all over the conference room table this morning, which actually reads more naturally when the person truly doesn't matter.",
+      "grammarRule": "Voice Choice - Active with Vague Subject"
+    }
+  ]
+}
