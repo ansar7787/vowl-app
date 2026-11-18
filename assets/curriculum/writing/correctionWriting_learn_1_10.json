@@ -1,0 +1,758 @@
+{
+  "gameType": "correctionWriting",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L1_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Each of the apartments on this floor [have] its own balcony.",
+      "bracketedError": "have",
+      "correctReplacement": "has",
+      "correctedSentence": "Each of the apartments on this floor has its own balcony.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[have]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Each' is the grammatical subject, and 'each' is always singular, even when it is followed by a plural phrase like 'of the apartments.' So the verb must be singular: 'has.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[have]\" with \"has\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Each' is the grammatical subject, and 'each' is always singular, even when it is followed by a plural phrase like 'of the apartments.' So the verb must be singular: 'has.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L1_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Every player on the team [know] the new coach's rules by now.",
+      "bracketedError": "know",
+      "correctReplacement": "knows",
+      "correctedSentence": "Every player on the team knows the new coach's rules by now.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[know]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Words like 'every' always take a singular verb because they refer to members of a group one at a time. The correct form here is 'knows.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[know]\" with \"knows\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Words like 'every' always take a singular verb because they refer to members of a group one at a time. The correct form here is 'knows.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L1_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Everybody at the meeting [agree] that the new schedule works better.",
+      "bracketedError": "agree",
+      "correctReplacement": "agrees",
+      "correctedSentence": "Everybody at the meeting agrees that the new schedule works better.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[agree]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Indefinite pronouns such as 'everybody,' 'everyone,' and 'everything' are always singular, so they need a singular verb: 'agrees.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[agree]\" with \"agrees\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Indefinite pronouns such as 'everybody,' 'everyone,' and 'everything' are always singular, so they need a singular verb: 'agrees.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L2_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Neither of the two routes [look] faster during rush hour.",
+      "bracketedError": "look",
+      "correctReplacement": "looks",
+      "correctedSentence": "Neither of the two routes looks faster during rush hour.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[look]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Neither' is grammatically singular because it refers to one of two options, not both together. The correct verb is 'looks.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[look]\" with \"looks\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Neither' is grammatically singular because it refers to one of two options, not both together. The correct verb is 'looks.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L2_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Somebody in the waiting room [leave] their umbrella by the front desk.",
+      "bracketedError": "leave",
+      "correctReplacement": "left",
+      "correctedSentence": "Somebody in the waiting room left their umbrella by the front desk.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[leave]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "This sentence describes a completed past action, so the simple past 'left' is required. 'Somebody' is still singular, but the tense — not agreement — is the issue here."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[leave]\" with \"left\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "This sentence describes a completed past action, so the simple past 'left' is required. 'Somebody' is still singular, but the tense — not agreement — is the issue here."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L2_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "No one on the flight [complain] about the delay, surprisingly.",
+      "bracketedError": "complain",
+      "correctReplacement": "complained",
+      "correctedSentence": "No one on the flight complained about the delay, surprisingly.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[complain]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "The context describes a single past event, so the simple past tense 'complained' is correct. Indefinite pronouns like 'no one' still take a singular verb form in every tense."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[complain]\" with \"complained\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "The context describes a single past event, so the simple past tense 'complained' is correct. Indefinite pronouns like 'no one' still take a singular verb form in every tense."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L3_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Our regional manager usually [visit] each branch once a month.",
+      "bracketedError": "visit",
+      "correctReplacement": "visits",
+      "correctedSentence": "Our regional manager usually visits each branch once a month.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[visit]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "With a singular third-person subject like 'manager,' present-tense verbs need an -s ending for habitual actions: 'visits.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[visit]\" with \"visits\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "With a singular third-person subject like 'manager,' present-tense verbs need an -s ending for habitual actions: 'visits.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L3_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "This bakery [close] early on Sundays because of low demand.",
+      "bracketedError": "close",
+      "correctReplacement": "closes",
+      "correctedSentence": "This bakery closes early on Sundays because of low demand.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[close]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Bakery' is singular and takes the third-person -s form in the simple present: 'closes.' Adding '-ing' or dropping the -s breaks subject-verb agreement."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[close]\" with \"closes\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Bakery' is singular and takes the third-person -s form in the simple present: 'closes.' Adding '-ing' or dropping the -s breaks subject-verb agreement."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L3_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The customer support line [answer] calls twenty-four hours a day.",
+      "bracketedError": "answer",
+      "correctReplacement": "answers",
+      "correctedSentence": "The customer support line answers calls twenty-four hours a day.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[answer]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'The customer support line' is singular, so the habitual-fact verb must take -s: 'answers.' This is a general truth about the service, so simple present is correct."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[answer]\" with \"answers\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'The customer support line' is singular, so the habitual-fact verb must take -s: 'answers.' This is a general truth about the service, so simple present is correct."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L4_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "My cousin's bookstore [carry] a small selection of rare first editions.",
+      "bracketedError": "carry",
+      "correctReplacement": "carries",
+      "correctedSentence": "My cousin's bookstore carries a small selection of rare first editions.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[carry]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "For third-person singular subjects, verbs ending in a consonant + 'y' change to '-ies': 'carry' becomes 'carries.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[carry]\" with \"carries\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "For third-person singular subjects, verbs ending in a consonant + 'y' change to '-ies': 'carry' becomes 'carries.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L4_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The night shift supervisor [watch] the security cameras until dawn.",
+      "bracketedError": "watch",
+      "correctReplacement": "watches",
+      "correctedSentence": "The night shift supervisor watches the security cameras until dawn.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[watch]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Verbs ending in 'ch' add '-es' in the third-person singular, so 'watch' becomes 'watches.' Simply adding 's' would be misspelled."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[watch]\" with \"watches\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Verbs ending in 'ch' add '-es' in the third-person singular, so 'watch' becomes 'watches.' Simply adding 's' would be misspelled."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L4_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "That online course [teach] students how to budget their money.",
+      "bracketedError": "teach",
+      "correctReplacement": "teaches",
+      "correctedSentence": "That online course teaches students how to budget their money.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[teach]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Verbs ending in 'ch' take '-es' for third-person singular subjects, so the correct form is 'teaches,' not 'teachs.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[teach]\" with \"teaches\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Verbs ending in 'ch' take '-es' for third-person singular subjects, so the correct form is 'teaches,' not 'teachs.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L5_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The farm down the road keeps several [sheeps] in the back field.",
+      "bracketedError": "sheeps",
+      "correctReplacement": "sheep",
+      "correctedSentence": "The farm down the road keeps several sheep in the back field.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[sheeps]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Sheep' is an irregular noun with an identical singular and plural form, so 'sheeps' is never correct — the plural is simply 'sheep.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[sheeps]\" with \"sheep\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Sheep' is an irregular noun with an identical singular and plural form, so 'sheeps' is never correct — the plural is simply 'sheep.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L5_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Two [mans] from the delivery company dropped off the new couch.",
+      "bracketedError": "mans",
+      "correctReplacement": "men",
+      "correctedSentence": "Two men from the delivery company dropped off the new couch.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[mans]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Man' has an irregular plural formed by changing the vowel: 'man' becomes 'men,' not 'mans.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[mans]\" with \"men\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Man' has an irregular plural formed by changing the vowel: 'man' becomes 'men,' not 'mans.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L5_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "My grandmother keeps her [photoes] from the 1970s in a leather album.",
+      "bracketedError": "photoes",
+      "correctReplacement": "photos",
+      "correctedSentence": "My grandmother keeps her photos from the 1970s in a leather album.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[photoes]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Photo' forms its plural by simply adding 's': 'photos.' Not all nouns ending in -o take '-es' — this depends on the word's origin."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[photoes]\" with \"photos\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Photo' forms its plural by simply adding 's': 'photos.' Not all nouns ending in -o take '-es' — this depends on the word's origin."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L6_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The tailor sharpened both pairs of [scissor] before the fitting.",
+      "bracketedError": "scissor",
+      "correctReplacement": "scissors",
+      "correctedSentence": "The tailor sharpened both pairs of scissors before the fitting.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[scissor]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Scissors' refers to a single tool but is always used in its plural form, similar to 'glasses' or 'pants.' The singular 'scissor' is not standard here."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[scissor]\" with \"scissors\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Scissors' refers to a single tool but is always used in its plural form, similar to 'glasses' or 'pants.' The singular 'scissor' is not standard here."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L6_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The vet examined all three [gooses] before letting them back in the pen.",
+      "bracketedError": "gooses",
+      "correctReplacement": "geese",
+      "correctedSentence": "The vet examined all three geese before letting them back in the pen.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[gooses]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Goose' has an irregular plural, 'geese,' formed by an internal vowel change rather than an added ending."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[gooses]\" with \"geese\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Goose' has an irregular plural, 'geese,' formed by an internal vowel change rather than an added ending."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L6_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "We need three new [loafs] of bread for the weekend barbecue.",
+      "bracketedError": "loafs",
+      "correctReplacement": "loaves",
+      "correctedSentence": "We need three new loaves of bread for the weekend barbecue.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[loafs]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Many nouns ending in 'f' change the 'f' to 'v' and add 'es' in the plural, so 'loaf' becomes 'loaves.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[loafs]\" with \"loaves\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Many nouns ending in 'f' change the 'f' to 'v' and add 'es' in the plural, so 'loaf' becomes 'loaves.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L7_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The intern requested [a hour] off to attend a family event.",
+      "bracketedError": "a hour",
+      "correctReplacement": "an hour",
+      "correctedSentence": "The intern requested an hour off to attend a family event.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a hour]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Hour' begins with a silent 'h,' so it starts with a vowel sound and needs 'an,' not 'a.' Article choice depends on sound, not spelling."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a hour]\" with \"an hour\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Hour' begins with a silent 'h,' so it starts with a vowel sound and needs 'an,' not 'a.' Article choice depends on sound, not spelling."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L7_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "She ordered [a espresso] while she waited for her train.",
+      "bracketedError": "a espresso",
+      "correctReplacement": "an espresso",
+      "correctedSentence": "She ordered an espresso while she waited for her train.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a espresso]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Because 'espresso' begins with a vowel sound, it takes 'an,' not 'a.' The rule is based on pronunciation, not the letter itself."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a espresso]\" with \"an espresso\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Because 'espresso' begins with a vowel sound, it takes 'an,' not 'a.' The rule is based on pronunciation, not the letter itself."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L7_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "He is [a honest] reviewer who never exaggerates his opinions.",
+      "bracketedError": "a honest",
+      "correctReplacement": "an honest",
+      "correctedSentence": "He is an honest reviewer who never exaggerates his opinions.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a honest]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'Honest' starts with a silent 'h,' so the spoken sound is a vowel, which requires 'an honest' rather than 'a honest.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a honest]\" with \"an honest\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'Honest' starts with a silent 'h,' so the spoken sound is a vowel, which requires 'an honest' rather than 'a honest.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L8_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "I finally found [a keys] to the storage locker in my coat pocket.",
+      "bracketedError": "a keys",
+      "correctReplacement": "the keys",
+      "correctedSentence": "I finally found the keys to the storage locker in my coat pocket.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a keys]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'A' and 'an' only pair with singular countable nouns, never with plurals. Because 'the keys' were specific and already known from context, 'the' is the correct choice."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a keys]\" with \"the keys\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'A' and 'an' only pair with singular countable nouns, never with plurals. Because 'the keys' were specific and already known from context, 'the' is the correct choice."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L8_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "We finally reached [a hotel] we had booked online weeks earlier.",
+      "bracketedError": "a hotel",
+      "correctReplacement": "the hotel",
+      "correctedSentence": "We finally reached the hotel we had booked online weeks earlier.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a hotel]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Because the hotel had already been booked and was specific to the speaker, it requires the definite article 'the,' not the indefinite 'a.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a hotel]\" with \"the hotel\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Because the hotel had already been booked and was specific to the speaker, it requires the definite article 'the,' not the indefinite 'a.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L8_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Could you switch off [a printer] in the copy room before you go?",
+      "bracketedError": "a printer",
+      "correctReplacement": "the printer",
+      "correctedSentence": "Could you switch off the printer in the copy room before you go?",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[a printer]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "When both speaker and listener know exactly which item is meant, English uses 'the,' not 'a.' Here, 'the printer' refers to a specific, known object."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[a printer]\" with \"the printer\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "When both speaker and listener know exactly which item is meant, English uses 'the,' not 'a.' Here, 'the printer' refers to a specific, known object."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L9_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The receptionist asked me to wait [on the lobby] until my name was called.",
+      "bracketedError": "on the lobby",
+      "correctReplacement": "in the lobby",
+      "correctedSentence": "The receptionist asked me to wait in the lobby until my name was called.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[on the lobby]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "For enclosed spaces like rooms or buildings, English uses 'in,' not 'on.' 'On' is reserved for surfaces, so 'in the lobby' is correct."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[on the lobby]\" with \"in the lobby\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "For enclosed spaces like rooms or buildings, English uses 'in,' not 'on.' 'On' is reserved for surfaces, so 'in the lobby' is correct."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L9_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "Please sign your name [in the bottom] of the delivery form.",
+      "bracketedError": "in the bottom",
+      "correctReplacement": "at the bottom",
+      "correctedSentence": "Please sign your name at the bottom of the delivery form.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[in the bottom]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'At the bottom' is the standard way to refer to a specific point on a page or document; 'in the bottom' is not natural English in this context."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[in the bottom]\" with \"at the bottom\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'At the bottom' is the standard way to refer to a specific point on a page or document; 'in the bottom' is not natural English in this context."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L9_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "There's a small stain [in the sleeve] of my new jacket.",
+      "bracketedError": "in the sleeve",
+      "correctReplacement": "on the sleeve",
+      "correctedSentence": "There's a small stain on the sleeve of my new jacket.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[in the sleeve]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Because a sleeve is a surface rather than an enclosed area, English uses 'on': 'on the sleeve.'"
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[in the sleeve]\" with \"on the sleeve\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Because a sleeve is a surface rather than an enclosed area, English uses 'on': 'on the sleeve.'"
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L10_Q1",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "I watched the entire ceremony [in my phone] while I was at work.",
+      "bracketedError": "in my phone",
+      "correctReplacement": "on my phone",
+      "correctedSentence": "I watched the entire ceremony on my phone while I was at work.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[in my phone]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "We say 'on' a screen or device (on TV, on my phone) because the image appears on its surface, not inside it."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[in my phone]\" with \"on my phone\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "We say 'on' a screen or device (on TV, on my phone) because the image appears on its surface, not inside it."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L10_Q2",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "The award ceremony took place [on a grand hotel] downtown.",
+      "bracketedError": "on a grand hotel",
+      "correctReplacement": "at a grand hotel",
+      "correctedSentence": "The award ceremony took place at a grand hotel downtown.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[on a grand hotel]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "'At' is used for specific venues or points of activity, so 'at a grand hotel' is correct; 'on a hotel' is not standard usage."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[on a grand hotel]\" with \"at a grand hotel\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "'At' is used for specific venues or points of activity, so 'at a grand hotel' is correct; 'on a hotel' is not standard usage."
+    },
+    {
+      "id": "WRT_CORRECTIONWRITING_LEARN_L10_Q3",
+      "phase": "learn",
+      "instruction": "Correct the grammatical error in the sentence.",
+      "flawedPassage": "She left her umbrella [on the taxi] on her way to the airport.",
+      "bracketedError": "on the taxi",
+      "correctReplacement": "in the taxi",
+      "correctedSentence": "She left her umbrella in the taxi on her way to the airport.",
+      "diagnosticAnalysis": [
+        {
+          "step": "1. Error Spotlight",
+          "detail": "Flawed segment: \"[on the taxi]\" creates a grammatical mismatch with the sentence structure."
+        },
+        {
+          "step": "2. Underlying Rule",
+          "detail": "Enclosed vehicles like cars and taxis take 'in,' while open vehicles like buses or trains can take 'on.' Here, 'in the taxi' is correct."
+        },
+        {
+          "step": "3. Surgical Repair",
+          "detail": "Replacing \"[on the taxi]\" with \"in the taxi\" achieves complete syntactic agreement."
+        }
+      ],
+      "techniqueTip": "Locate the true head of the clause and filter out intervening phrases (like prepositional qualifiers) before choosing verb agreement or tense.",
+      "explanation": "Enclosed vehicles like cars and taxis take 'in,' while open vehicles like buses or trains can take 'on.' Here, 'in the taxi' is correct."
+    }
+  ]
+}

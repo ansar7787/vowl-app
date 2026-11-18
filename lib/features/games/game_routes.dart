@@ -118,6 +118,8 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/pages
 import 'package:vowl/features/writing/summarize_story_writing/presentation/pages/summarize_story_writing_practice_screen.dart';
 import 'package:vowl/features/writing/writing_email/presentation/pages/writing_email_learn_screen.dart';
 import 'package:vowl/features/writing/writing_email/presentation/pages/writing_email_practice_screen.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/pages/correction_writing_learn_screen.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/pages/correction_writing_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -677,6 +679,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'correctionwriting') {
+          return fadeTransitionPage(
+            child: CorrectionWritingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1015,6 +1023,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'writingemail') {
           return fadeTransitionPage(
             child: WritingEmailPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'correctionwriting') {
+          return fadeTransitionPage(
+            child: CorrectionWritingPracticeScreen(level: level),
             state: state,
           );
         }

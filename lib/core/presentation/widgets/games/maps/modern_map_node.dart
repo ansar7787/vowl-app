@@ -767,6 +767,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'dailyJournal',
                             'summarizeStoryWriting',
                             'writingEmail',
+                            'correctionWriting',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
