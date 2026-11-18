@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "gq_l21_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She ___ to the gym every day before work.",
+      "options": [
+        "go",
+        "goed",
+        "goes",
+        "going"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "goes",
+      "hint": "With he/she/it, most present-tense verbs need an extra ending.",
+      "explanation": "Third-person singular subjects (he/she/it) add '-es' to verbs ending in -o: go → goes, do → does. There is no past-tense form like 'goed'.",
+      "grammarRule": "Simple Present: Third-Person Singular -s",
+      "level": 21
+    },
+    {
+      "id": "gq_l21_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He ___ his homework before dinner every evening.",
+      "options": [
+        "finishes",
+        "finish",
+        "finishs",
+        "finishing"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "finishes",
+      "hint": "Verbs ending in -sh need an extra syllable in the he/she/it form.",
+      "explanation": "Verbs ending in -sh, -ch, -ss, or -x add '-es' for third-person singular: finish → finishes, watch → watches. Just adding 's' would be hard to pronounce.",
+      "grammarRule": "Simple Present: Third-Person Singular -es",
+      "level": 21
+    },
+    {
+      "id": "gq_l21_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What does Maria do on weekends?\n— She ___ books at the library, mostly.",
+      "options": [
+        "studys",
+        "studyes",
+        "studying",
+        "studies"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "studies",
+      "hint": "This verb ends in a consonant plus -y. What happens to the -y?",
+      "explanation": "When a verb ends in consonant + y, change the y to i and add -es: study → studies, try → tries. This is different from verbs like 'play', which keep the y.",
+      "grammarRule": "Simple Present: Third-Person Singular with -y Verbs",
+      "level": 21
+    },
+    {
+      "id": "gq_l22_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He ___ eat meat; he's been vegetarian for years.",
+      "options": [
+        "don't",
+        "doesn't",
+        "isn't",
+        "not"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "doesn't",
+      "hint": "The subject is 'he', and 'eat' is an action verb, not 'be'.",
+      "explanation": "Action verbs need do-support for negatives, and 'he' takes 'doesn't': he doesn't eat meat. 'Isn't' would only work with 'be'.",
+      "grammarRule": "Simple Present Negative: Third-Person Singular",
+      "level": 22
+    },
+    {
+      "id": "gq_l22_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Does she like spicy food?\n— No, she ___. It's too much for her.",
+      "options": [
+        "don't",
+        "isn't",
+        "doesn't",
+        "not"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "doesn't",
+      "hint": "Match the same agreement the question already used.",
+      "explanation": "Since the question used 'does', the short negative answer keeps that agreement: No, she doesn't. There's no need to repeat 'like' here.",
+      "grammarRule": "Simple Present Negative: Third-Person Singular",
+      "level": 22
+    },
+    {
+      "id": "gq_l22_q3",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ you often travel for work?",
+      "options": [
+        "Does",
+        "Are",
+        "Is",
+        "Do"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do",
+      "hint": "The subject here is 'you', and 'travel' is an action verb.",
+      "explanation": "Questions with action verbs need 'do' or 'does'. 'You' always pairs with 'do', even in questions: Do you travel...?",
+      "grammarRule": "Simple Present Questions with Do",
+      "level": 22
+    },
+    {
+      "id": "gq_l23_q1",
+      "instruction": "MAKE THE SENTENCE WORK",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ eat breakfast before 7 am; I'm usually still asleep.",
+      "options": [
+        "rarely",
+        "am rarely",
+        "rarely am",
+        "be rarely"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "rarely",
+      "hint": "This is an action verb sentence, so no form of 'be' belongs here.",
+      "explanation": "Frequency adverbs like 'rarely' go directly before an action verb, with no 'am' or 'be' attached: I rarely eat. This is the same pattern as 'always drink' from earlier.",
+      "grammarRule": "Adverb Placement: Frequency Adverbs",
+      "level": 23
+    },
+    {
+      "id": "gq_l23_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She is ___ late for work — she's always early.",
+      "options": [
+        "not never",
+        "no",
+        "not",
+        "never"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "never",
+      "hint": "One single word already means 'not ever' — you don't need two negatives.",
+      "explanation": "'Never' already carries a negative meaning, so it replaces 'not' entirely: she is never late. Saying 'not never' would create a double negative, which isn't standard.",
+      "grammarRule": "Frequency Adverbs with Be",
+      "level": 23
+    },
+    {
+      "id": "gq_l23_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How often do you cook at home?\n— I ___ cook, maybe once a week.",
+      "options": [
+        "do rarely",
+        "am rarely",
+        "rarely am",
+        "rarely"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "rarely",
+      "hint": "Keep the frequency word simple, right before the verb.",
+      "explanation": "'Rarely' sits directly before 'cook' with nothing else needed: I rarely cook. Adding 'do' or 'am' before it is unnecessary and incorrect here.",
+      "grammarRule": "Adverb Placement: Frequency Adverbs",
+      "level": 23
+    },
+    {
+      "id": "gq_l24_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ my homework late last night.",
+      "options": [
+        "finished",
+        "finish",
+        "finishing",
+        "finishs"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "finished",
+      "hint": "This action happened at a specific point in the past.",
+      "explanation": "Regular verbs form the simple past by adding '-ed': finish → finished. This form stays the same for every subject — no extra agreement needed.",
+      "grammarRule": "Simple Past: Regular Verbs",
+      "level": 24
+    },
+    {
+      "id": "gq_l24_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She ___ at the sudden noise outside.",
+      "options": [
+        "stoped",
+        "stopped",
+        "stopeed",
+        "stoping"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "stopped",
+      "hint": "This short verb ends in a single vowel and consonant — that consonant often doubles.",
+      "explanation": "Short verbs ending in one vowel + one consonant double the final letter before '-ed': stop → stopped, plan → planned. Just adding '-ed' to 'stop' would be wrong.",
+      "grammarRule": "Simple Past: Spelling Rules",
+      "level": 24
+    },
+    {
+      "id": "gq_l24_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you enjoy the movie last night?\n— Yes, I ___ it a lot!",
+      "options": [
+        "enjoied",
+        "enjoyied",
+        "enjoying",
+        "enjoyed"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "enjoyed",
+      "hint": "This verb ends in a vowel plus -y — different from 'study' earlier.",
+      "explanation": "When a verb ends in vowel + y, just add '-ed' and keep the y: enjoy → enjoyed, play → played. The y-to-i change only happens after a consonant, as in 'study → studied'.",
+      "grammarRule": "Simple Past: Spelling Rules with -y Verbs",
+      "level": 24
+    },
+    {
+      "id": "gq_l25_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "We ___ to Paris for our anniversary last summer.",
+      "options": [
+        "went",
+        "goed",
+        "gone",
+        "going"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "went",
+      "hint": "This common verb doesn't follow the regular '-ed' pattern at all.",
+      "explanation": "'Go' has an irregular past form: went. There is no such word as 'goed', and 'gone' is a different form used with 'have' (have gone), not alone.",
+      "grammarRule": "Simple Past: Irregular Verbs",
+      "level": 25
+    },
+    {
+      "id": "gq_l25_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She ___ a wonderful cake for the party.",
+      "options": [
+        "maked",
+        "makes",
+        "made",
+        "making"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "made",
+      "hint": "This verb changes its vowel sound in the past, like 'went' did.",
+      "explanation": "'Make' has the irregular past form 'made'. Regular '-ed' endings like 'maked' don't exist for this verb.",
+      "grammarRule": "Simple Past: Irregular Verbs",
+      "level": 25
+    },
+    {
+      "id": "gq_l25_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you have breakfast this morning?\n— Yes, I ___ eggs and toast.",
+      "options": [
+        "haved",
+        "had",
+        "have",
+        "having"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "had",
+      "hint": "'Have' becomes a short, irregular word in the past.",
+      "explanation": "The past tense of 'have' is 'had' for every subject: I had, she had, they had. 'Haved' is not a real word.",
+      "grammarRule": "Simple Past: Irregular Verbs",
+      "level": 25
+    },
+    {
+      "id": "gq_l26_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ go to school yesterday; I was sick.",
+      "options": [
+        "don't",
+        "doesn't",
+        "didn't",
+        "not"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "didn't",
+      "hint": "The time word 'yesterday' tells you which tense the negative helper needs to match.",
+      "explanation": "Past negatives use 'didn't' for every subject, followed by the base form of the verb: didn't go, didn't eat. 'Don't/doesn't' are only for the present.",
+      "grammarRule": "Simple Past Negative",
+      "level": 26
+    },
+    {
+      "id": "gq_l26_q2",
+      "instruction": "FIX THE GRAMMAR",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence is correct?",
+      "options": [
+        "She didn't finish her homework.",
+        "She didn't finished her homework.",
+        "She don't finish her homework.",
+        "She doesn't finished her homework."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She didn't finish her homework.",
+      "hint": "Once 'didn't' appears, the main verb should return to its simplest form.",
+      "explanation": "After 'didn't', the verb stays in its base form: didn't finish, not 'didn't finished'. The past meaning is already carried by 'didn't', so the verb doesn't need '-ed' as well.",
+      "grammarRule": "Simple Past Negative",
+      "level": 26
+    },
+    {
+      "id": "gq_l26_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did he call you back?\n— No, he ___. Maybe he forgot.",
+      "options": [
+        "don't",
+        "didn't",
+        "doesn't",
+        "not"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "didn't",
+      "hint": "Match the tense already set by the question 'Did'.",
+      "explanation": "The question used 'did', so the short negative answer matches it: No, he didn't. Switching to 'doesn't' would wrongly shift the sentence into the present.",
+      "grammarRule": "Simple Past Negative",
+      "level": 26
+    },
+    {
+      "id": "gq_l27_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ you sleep well last night?",
+      "options": [
+        "Do",
+        "Does",
+        "Were",
+        "Did"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Did",
+      "hint": "'Last night' tells you this question is about the past.",
+      "explanation": "Past-tense questions with action verbs use 'did' for every subject: Did you sleep? Did she sleep? The main verb stays in its base form after 'did'.",
+      "grammarRule": "Simple Past Questions",
+      "level": 27
+    },
+    {
+      "id": "gq_l27_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ she enjoy the concert on Friday?",
+      "options": [
+        "Does",
+        "Do",
+        "Did",
+        "Was"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Did",
+      "hint": "This asks about a completed event, not a habit.",
+      "explanation": "'Did' works the same for every subject in past questions, including 'she': Did she enjoy...? There's no need for 'does' since the action already happened.",
+      "grammarRule": "Simple Past Questions",
+      "level": 27
+    },
+    {
+      "id": "gq_l27_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— ___ you see that movie last week?\n— Not yet — is it good?",
+      "options": [
+        "Do",
+        "Are",
+        "Did",
+        "Have"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Did",
+      "hint": "'Last week' is a finished time period.",
+      "explanation": "A finished time expression like 'last week' calls for the simple past question form: Did you see...? 'Have you seen' would be used without a specific finished time.",
+      "grammarRule": "Simple Past Questions",
+      "level": 27
+    },
+    {
+      "id": "gq_l28_q1",
+      "instruction": "MAKE THE SENTENCE WORK",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I saw him ___ , near the supermarket.",
+      "options": [
+        "ago two days",
+        "since two days",
+        "for two days ago",
+        "two days ago"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "two days ago",
+      "hint": "In English, 'ago' always comes after the amount of time, not before it.",
+      "explanation": "'Ago' follows the time period: two days ago, three years ago. It never starts the phrase, unlike some other languages' word order.",
+      "grammarRule": "Time Expressions: Ago",
+      "level": 28
+    },
+    {
+      "id": "gq_l28_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She called me ___ , right after lunch.",
+      "options": [
+        "yesterday's",
+        "yesterday",
+        "the yesterday",
+        "on yesterday"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "yesterday",
+      "hint": "This time word doesn't need 'the' or a preposition in front of it.",
+      "explanation": "'Yesterday' stands alone as a time expression, with no article or preposition needed: called me yesterday, not 'on yesterday' or 'the yesterday'.",
+      "grammarRule": "Time Expressions: Yesterday",
+      "level": 28
+    },
+    {
+      "id": "gq_l28_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— When did you move to this city?\n— I moved here ___ .",
+      "options": [
+        "the last year",
+        "since last year",
+        "last year ago",
+        "last year"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "last year",
+      "hint": "The question uses simple past ('did you move'), so the answer needs a finished-time phrase, not an ongoing one.",
+      "explanation": "'Last year' names a finished point in the past, matching 'did you move'. 'Since last year' would instead suggest an action still continuing now.",
+      "grammarRule": "Time Expressions: Last + Time Period",
+      "level": 28
+    },
+    {
+      "id": "gq_l29_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Look! It ___ outside — grab an umbrella.",
+      "options": [
+        "is raining",
+        "rains",
+        "rain",
+        "raining"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is raining",
+      "hint": "This is happening right now, at this exact moment.",
+      "explanation": "The present continuous (am/is/are + -ing) describes something happening right now: it is raining. 'Rains' would describe a general fact, not this moment.",
+      "grammarRule": "Present Continuous: Form",
+      "level": 29
+    },
+    {
+      "id": "gq_l29_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "They ___ dinner right now; can you call back later?",
+      "options": [
+        "cook",
+        "are cooking",
+        "is cooking",
+        "cooking"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "are cooking",
+      "hint": "The subject 'they' is plural, and this is happening at this moment.",
+      "explanation": "Plural subjects take 'are' in the present continuous: they are cooking. 'Is cooking' would only match a singular subject like 'he' or 'she'.",
+      "grammarRule": "Present Continuous: Form",
+      "level": 29
+    },
+    {
+      "id": "gq_l29_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What ___ you doing?\n— I'm packing for my trip.",
+      "options": [
+        "do",
+        "are",
+        "is",
+        "were"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "are",
+      "hint": "The answer uses 'I'm', which tells you the tense and person of the question.",
+      "explanation": "The reply 'I'm packing' shows this is present continuous, so the question needs 'are': What are you doing? 'Do' would ask about habits, not this moment.",
+      "grammarRule": "Present Continuous: Questions",
+      "level": 29
+    },
+    {
+      "id": "gq_l30_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She ___ English at the university; it's her major.",
+      "options": [
+        "is studying",
+        "study",
+        "studies",
+        "studying"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "studies",
+      "hint": "This describes a general fact about her life, not something happening this second.",
+      "explanation": "Simple present describes ongoing facts, routines, or long-term situations: she studies English. Present continuous would suggest she is doing it at this exact moment.",
+      "grammarRule": "Simple Present vs Present Continuous",
+      "level": 30
+    },
+    {
+      "id": "gq_l30_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She can't come to the phone — she ___ dinner right now.",
+      "options": [
+        "cooks",
+        "is cooking",
+        "cook",
+        "cooking"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "is cooking",
+      "hint": "'Right now' signals an action happening at this very moment.",
+      "explanation": "'Right now' calls for the present continuous: she is cooking. Simple present ('cooks') would describe a habit, not an action happening at this moment.",
+      "grammarRule": "Simple Present vs Present Continuous",
+      "level": 30
+    },
+    {
+      "id": "gq_l30_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Where's Tom?\n— He usually leaves at five, but today he ___ late because of a meeting.",
+      "options": [
+        "is staying",
+        "stays",
+        "stayed",
+        "staying"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is staying",
+      "hint": "'Usually' describes his habit, but 'today' points to something different happening now.",
+      "explanation": "The sentence contrasts a habit ('usually leaves') with a temporary exception happening today, which needs present continuous: he is staying late today. 'Stays' would wrongly suggest this is his normal routine.",
+      "grammarRule": "Simple Present vs Present Continuous",
+      "level": 30
+    }
+  ]
+}

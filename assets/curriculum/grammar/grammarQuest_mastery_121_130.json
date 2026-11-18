@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "gq_l121_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The woman ___ lives next door is a doctor.",
+      "options": [
+        "who",
+        "which",
+        "whose",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "who",
+      "hint": "This relative pronoun refers back to a person.",
+      "explanation": "'Who' introduces a relative clause describing a person: the woman who lives next door. 'Which' would only be used for things, not people.",
+      "grammarRule": "Relative Clauses: Who",
+      "level": 121
+    },
+    {
+      "id": "gq_l121_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The book ___ is on the table belongs to me.",
+      "options": [
+        "who",
+        "whose",
+        "which",
+        "when"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "which",
+      "hint": "This relative pronoun refers back to a thing, not a person.",
+      "explanation": "'Which' introduces a relative clause describing a thing: the book which is on the table. 'Who' would only fit if the sentence were describing a person.",
+      "grammarRule": "Relative Clauses: Which",
+      "level": 121
+    },
+    {
+      "id": "gq_l121_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Which laptop do you want?\n— The one ___ has more storage.",
+      "options": [
+        "who",
+        "whose",
+        "where",
+        "that"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "that",
+      "hint": "This relative pronoun can refer to things, and works well in defining clauses like this one.",
+      "explanation": "'That' can replace 'which' in defining relative clauses about things: the one that has more storage. 'Who' would only fit a person, not a laptop.",
+      "grammarRule": "Relative Clauses: That",
+      "level": 121
+    },
+    {
+      "id": "gq_l122_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "That's the man ___ car was stolen last night.",
+      "options": [
+        "who",
+        "whose",
+        "which",
+        "where"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "whose",
+      "hint": "This relative pronoun shows possession, connecting the man to his car.",
+      "explanation": "'Whose' shows possession in a relative clause: the man whose car was stolen. This is different from 'who', which would refer to the man himself as the subject.",
+      "grammarRule": "Relative Clauses: Whose",
+      "level": 122
+    },
+    {
+      "id": "gq_l122_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "This is the restaurant ___ we had our first date.",
+      "options": [
+        "where",
+        "when",
+        "which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "where",
+      "hint": "This relative pronoun refers to a place.",
+      "explanation": "'Where' introduces a relative clause about a place: the restaurant where we had our first date.",
+      "grammarRule": "Relative Clauses: Where",
+      "level": 122
+    },
+    {
+      "id": "gq_l122_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Do you remember the day ___ we met?\n— Of course, it was raining.",
+      "options": [
+        "where",
+        "which",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "when",
+      "hint": "This relative pronoun refers to a time.",
+      "explanation": "'When' introduces a relative clause about a time: the day when we met. This contrasts with 'where', which is used for places instead.",
+      "grammarRule": "Relative Clauses: When",
+      "level": 122
+    },
+    {
+      "id": "gq_l123_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "My brother, ___ lives in Canada, is visiting next month.",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "hint": "The commas signal extra information about one specific person, not essential identifying information.",
+      "explanation": "This is a non-defining clause, adding extra information set off by commas. 'That' cannot be used in non-defining clauses; only 'who' fits here for a person.",
+      "grammarRule": "Non-Defining Relative Clauses",
+      "level": 123
+    },
+    {
+      "id": "gq_l123_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Students ___ arrive late will not be admitted.",
+      "options": [
+        "who",
+        "where",
+        "which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "who",
+      "hint": "No commas here — this information is essential to identify which students are meant.",
+      "explanation": "This is a defining clause with no commas, since it's essential for identifying exactly which students: students who arrive late.",
+      "grammarRule": "Defining Relative Clauses",
+      "level": 123
+    },
+    {
+      "id": "gq_l123_q3",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence correctly uses a non-defining relative clause?",
+      "options": [
+        "My sister that lives in Spain called me.",
+        "My sister, who lives in Spain, called me.",
+        "My sister who lives in Spain, called me.",
+        "My sister, that lives in Spain called me."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "My sister, who lives in Spain, called me.",
+      "hint": "Non-defining clauses need commas on both sides, and never use 'that'.",
+      "explanation": "A non-defining clause needs commas on both sides and uses 'who' rather than 'that': My sister, who lives in Spain, called me. The other options are missing a comma or incorrectly use 'that'.",
+      "grammarRule": "Non-Defining Relative Clauses",
+      "level": 123
+    },
+    {
+      "id": "gq_l124_q1",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "'The book that I borrowed from you was fantastic.' Which version is also correct?",
+      "options": [
+        "The book I borrowed from you was fantastic.",
+        "The book borrowed I from you was fantastic.",
+        "The book that borrowed I from you was fantastic.",
+        "The I borrowed book from you was fantastic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The book I borrowed from you was fantastic.",
+      "hint": "When the relative pronoun is the object of the clause, it can often be left out entirely.",
+      "explanation": "When the relative pronoun is the object of its clause (I borrowed the book, not the book borrowed something), it can be dropped: the book I borrowed. The word order of the rest of the sentence stays the same.",
+      "grammarRule": "Relative Clauses: Omitting the Object Pronoun",
+      "level": 124
+    },
+    {
+      "id": "gq_l124_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence is correct?",
+      "options": [
+        "The man lives next door is friendly.",
+        "The man who lives next door is friendly.",
+        "The man which lives next door is friendly.",
+        "The man, lives next door, is friendly."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The man who lives next door is friendly.",
+      "hint": "Unlike Question 1, here the relative pronoun is the subject of its own clause — can it still be dropped?",
+      "explanation": "When the relative pronoun is the subject of its clause (the man lives, not something happens to the man), it cannot be omitted: the man who lives next door. Dropping it, as in the first option, creates an incomplete, ungrammatical sentence.",
+      "grammarRule": "Relative Clauses: Subject Pronoun Cannot Be Omitted",
+      "level": 124
+    },
+    {
+      "id": "gq_l124_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Where's the shirt ___ you bought yesterday?\n— It's in the closet.",
+      "options": [
+        "that",
+        "who",
+        "whose",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "hint": "This relative pronoun could actually be dropped here, but it's also correct to keep it.",
+      "explanation": "'That' fits this object relative clause about a thing: the shirt that you bought. As practiced in Question 1, this word could also be omitted entirely without changing the meaning.",
+      "grammarRule": "Relative Clauses: That",
+      "level": 124
+    },
+    {
+      "id": "gq_l125_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He passed the exam, ___ made his parents very proud.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "which",
+      "hint": "This word refers back to the entire idea of passing the exam, not to a single noun.",
+      "explanation": "'Which' can refer to a whole preceding clause or idea, not just one noun: passed the exam, which made them proud (the whole event made them proud).",
+      "grammarRule": "Relative Clauses: Which Referring to a Clause",
+      "level": 125
+    },
+    {
+      "id": "gq_l125_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She apologized, ___ surprised everyone.",
+      "options": [
+        "which",
+        "whose",
+        "where",
+        "who"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "hint": "The surprise comes from the whole act of apologizing, not from one specific noun.",
+      "explanation": "Again, 'which' refers to the entire preceding action: she apologized, which surprised everyone, matching the pattern from Question 1.",
+      "grammarRule": "Relative Clauses: Which Referring to a Clause",
+      "level": 125
+    },
+    {
+      "id": "gq_l125_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— He forgot my birthday, ___ really hurt my feelings.\n— That's not okay.",
+      "options": [
+        "whose",
+        "which",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "which",
+      "hint": "The hurt feelings come from the whole situation of forgetting, not one single noun.",
+      "explanation": "'Which' again refers to the entire event described before it: forgot my birthday, which hurt my feelings, continuing the pattern from Questions 1 and 2.",
+      "grammarRule": "Relative Clauses: Which Referring to a Clause",
+      "level": 125
+    },
+    {
+      "id": "gq_l126_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The house ___ we grew up in has been sold.",
+      "options": [
+        "whose",
+        "where",
+        "who",
+        "that"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "that",
+      "hint": "The sentence already ends in 'in', so the relative pronoun for a place would be redundant here.",
+      "explanation": "Since the sentence already has 'in' at the end, 'that' fits: the house that we grew up in. Using 'where' would be redundant, since 'where' already implies location on its own.",
+      "grammarRule": "Relative Clauses: That vs Where",
+      "level": 126
+    },
+    {
+      "id": "gq_l126_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The man ___ helped us was very kind.",
+      "options": [
+        "which",
+        "whose",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "hint": "This relative pronoun refers to a person, acting as the subject of its clause.",
+      "explanation": "'Who' fits this subject relative clause about a person: the man who helped us. Since it's the subject, it also cannot be omitted, as reviewed in Level 124.",
+      "grammarRule": "Relative Clauses: Who",
+      "level": 126
+    },
+    {
+      "id": "gq_l126_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Is that the restaurant ___ you proposed to her?\n— Yes, it's really special to us.",
+      "options": [
+        "which",
+        "that",
+        "where",
+        "who"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "where",
+      "hint": "This relative pronoun refers to a place, with no extra preposition needed here.",
+      "explanation": "'Where' fits this place-based relative clause, and no extra 'in' is needed after it: the restaurant where you proposed.",
+      "grammarRule": "Relative Clauses: Where",
+      "level": 126
+    },
+    {
+      "id": "gq_l127_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I think ___ she is right about this.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "what"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "hint": "This word introduces the whole idea being thought, functioning as the object of 'think'.",
+      "explanation": "'That' introduces a noun clause acting as the object of verbs like 'think': think that she is right. This whole clause acts like a single noun, the object of thinking.",
+      "grammarRule": "Noun Clauses: That",
+      "level": 127
+    },
+    {
+      "id": "gq_l127_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He said ___ he would call later.",
+      "options": [
+        "which",
+        "that",
+        "who",
+        "what"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "that",
+      "hint": "This introduces the content of what was said.",
+      "explanation": "'That' introduces the reported content after 'said': said that he would call. This is the same noun-clause pattern practiced in Question 1.",
+      "grammarRule": "Noun Clauses: That",
+      "level": 127
+    },
+    {
+      "id": "gq_l127_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Do you believe him?\n— I believe ___ he's telling the truth.",
+      "options": [
+        "who",
+        "which",
+        "that",
+        "what"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "that",
+      "hint": "This introduces the content of what is believed.",
+      "explanation": "'That' introduces the belief itself as a noun clause: believe that he's telling the truth, continuing the same pattern from this level.",
+      "grammarRule": "Noun Clauses: That",
+      "level": 127
+    },
+    {
+      "id": "gq_l128_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I don't know ___ she lives now.",
+      "options": [
+        "what",
+        "that",
+        "which",
+        "where"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "where",
+      "hint": "This introduces an indirect question about a place.",
+      "explanation": "'Where' introduces an indirect question as a noun clause: don't know where she lives. Notice the word order stays statement-like (she lives), not question order (does she live).",
+      "grammarRule": "Noun Clauses: Indirect Questions with Where",
+      "level": 128
+    },
+    {
+      "id": "gq_l128_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Can you tell me ___ the store closes?",
+      "options": [
+        "that",
+        "when",
+        "which",
+        "who"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "when",
+      "hint": "This introduces an indirect question about time.",
+      "explanation": "'When' introduces an indirect time question: tell me when the store closes. Again, the word order stays as a statement (the store closes), not inverted like a direct question.",
+      "grammarRule": "Noun Clauses: Indirect Questions with When",
+      "level": 128
+    },
+    {
+      "id": "gq_l128_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Do you know ___ this belongs to?\n— No idea.",
+      "options": [
+        "what",
+        "that",
+        "which",
+        "who"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "who",
+      "hint": "This introduces an indirect question about a person.",
+      "explanation": "'Who' introduces an indirect question about a person: know who this belongs to, matching the same statement word order practiced in Questions 1 and 2.",
+      "grammarRule": "Noun Clauses: Indirect Questions with Who",
+      "level": 128
+    },
+    {
+      "id": "gq_l129_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I wonder ___ or not it will rain tomorrow.",
+      "options": [
+        "that",
+        "if",
+        "which",
+        "whether"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "whether",
+      "hint": "One of these two similar words fits comfortably before 'or not'; the other one sounds unnatural here.",
+      "explanation": "'Whether' pairs naturally with 'or not': whether or not it rains. 'If or not' isn't standard English, even though 'if' alone can sometimes replace 'whether' in simpler sentences.",
+      "grammarRule": "Noun Clauses: Whether Or Not",
+      "level": 129
+    },
+    {
+      "id": "gq_l129_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She asked ___ I wanted to join her or stay home.",
+      "options": [
+        "if",
+        "whether",
+        "that",
+        "which"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "whether",
+      "hint": "Two clear alternatives are presented, a classic signal for this particular word.",
+      "explanation": "'Whether' fits naturally when presenting two clear alternatives: whether to join or stay home. This works the same way as 'whether or not' from Question 1.",
+      "grammarRule": "Noun Clauses: Whether",
+      "level": 129
+    },
+    {
+      "id": "gq_l129_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you decide?\n— I wasn't sure ___ to accept the job offer.",
+      "options": [
+        "that",
+        "which",
+        "whether",
+        "if"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "whether",
+      "hint": "This word comes directly before 'to' plus a verb — only one of these options can do that.",
+      "explanation": "Before 'to' + a verb, only 'whether' works: whether to accept. 'If to accept' isn't grammatical English, unlike 'whether to accept'.",
+      "grammarRule": "Noun Clauses: Whether To",
+      "level": 129
+    },
+    {
+      "id": "gq_l130_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I need to find out ___ the meeting starts.",
+      "options": [
+        "when",
+        "who",
+        "that",
+        "which"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "when",
+      "hint": "This introduces an indirect question about time, reviewed from Level 128.",
+      "explanation": "'When' introduces this indirect time question: find out when it starts, reviewing the pattern from Level 128.",
+      "grammarRule": "Noun Clauses: Indirect Questions with When",
+      "level": 130
+    },
+    {
+      "id": "gq_l130_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The colleague ___ recommended this book was right; it's excellent.",
+      "options": [
+        "whose",
+        "which",
+        "where",
+        "who"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "who",
+      "hint": "This relative pronoun refers to a person acting as the subject of the clause.",
+      "explanation": "'Who' fits this subject relative clause about a colleague: the colleague who recommended it, reviewing the relative clause skills from earlier in this stage.",
+      "grammarRule": "Relative Clauses: Who",
+      "level": 130
+    },
+    {
+      "id": "gq_l130_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Do you know ___ to submit the application?\n— I think it's due Friday.",
+      "options": [
+        "that",
+        "if",
+        "whether",
+        "which"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "whether",
+      "hint": "This word comes directly before 'to' plus a verb — recall the fixed pattern from Level 129.",
+      "explanation": "Before 'to submit', only 'whether' works, exactly as practiced in Level 129, wrapping up this opening block of Stage 7 that combined relative clauses and noun clauses.",
+      "grammarRule": "Noun Clauses: Whether To",
+      "level": 130
+    }
+  ]
+}

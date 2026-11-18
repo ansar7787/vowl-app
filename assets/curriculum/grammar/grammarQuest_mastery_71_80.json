@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "gq_l71_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I like tea ___ coffee; both wake me up.",
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "and",
+      "hint": "Both drinks are being liked equally here — nothing contrasts.",
+      "explanation": "'And' simply adds one idea to another with no contrast: tea and coffee. 'But' would be needed if the sentence suddenly disliked one of them.",
+      "grammarRule": "Coordinating Conjunctions: And",
+      "level": 71
+    },
+    {
+      "id": "gq_l71_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I like tea, ___ I don't like coffee at all.",
+      "options": [
+        "but",
+        "or",
+        "and",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "The second half of the sentence goes against the first half.",
+      "explanation": "'But' introduces a contrast between two ideas: I like tea, but I don't like coffee. 'And' would only work if both halves agreed with each other.",
+      "grammarRule": "Coordinating Conjunctions: But",
+      "level": 71
+    },
+    {
+      "id": "gq_l71_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you enjoy the trip?\n— Yes, ___ it was very tiring by the end.",
+      "options": [
+        "or",
+        "and",
+        "so",
+        "but"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "but",
+      "hint": "Enjoying something and being tired by it are two slightly opposing ideas.",
+      "explanation": "'But' connects the positive 'enjoyed it' with the less positive 'tiring', showing a contrast within the same experience.",
+      "grammarRule": "Coordinating Conjunctions: But",
+      "level": 71
+    },
+    {
+      "id": "gq_l72_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Would you like tea ___ coffee?",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "so"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "or",
+      "hint": "This question offers a choice between two options.",
+      "explanation": "'Or' presents a choice between alternatives: tea or coffee. 'And' would instead suggest offering both together.",
+      "grammarRule": "Coordinating Conjunctions: Or",
+      "level": 72
+    },
+    {
+      "id": "gq_l72_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "It was raining heavily, ___ we stayed inside all afternoon.",
+      "options": [
+        "and",
+        "so",
+        "but",
+        "or"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "so",
+      "hint": "The second half is the direct result of the first half.",
+      "explanation": "'So' introduces a result or consequence: it rained, so we stayed inside. The staying inside directly happened because of the rain.",
+      "grammarRule": "Coordinating Conjunctions: So",
+      "level": 72
+    },
+    {
+      "id": "gq_l72_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Should I call you or text you?\n— Call me, ___ text me, either is fine.",
+      "options": [
+        "and",
+        "but",
+        "so",
+        "or"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "or",
+      "hint": "The reply offers two equally acceptable options, just like the question did.",
+      "explanation": "'Or' shows that both options are acceptable alternatives, matching the choice already offered in the question.",
+      "grammarRule": "Coordinating Conjunctions: Or",
+      "level": 72
+    },
+    {
+      "id": "gq_l73_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I stayed home ___ I was feeling sick.",
+      "options": [
+        "because",
+        "so",
+        "although",
+        "but"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "because",
+      "hint": "The second half explains the reason for the first half.",
+      "explanation": "'Because' introduces the reason behind an action: stayed home because I was sick. The sickness is the cause, and staying home is the effect.",
+      "grammarRule": "Subordinating Conjunctions: Because",
+      "level": 73
+    },
+    {
+      "id": "gq_l73_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I was feeling sick, ___ I stayed home.",
+      "options": [
+        "because",
+        "although",
+        "so",
+        "but"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "so",
+      "hint": "Notice the order has flipped from the last question — the cause now comes first.",
+      "explanation": "When the cause comes first, 'so' introduces the result: was sick, so stayed home. This expresses the same relationship as Question 1, just in reverse order.",
+      "grammarRule": "Coordinating Conjunctions: So",
+      "level": 73
+    },
+    {
+      "id": "gq_l73_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Why didn't you come to the meeting?\n— ___ I had a family emergency.",
+      "options": [
+        "So",
+        "Because",
+        "Although",
+        "But"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Because",
+      "hint": "The question asked 'why', which calls for a reason.",
+      "explanation": "A question starting with 'why' expects a reason in return, which 'because' introduces directly: Because I had an emergency.",
+      "grammarRule": "Subordinating Conjunctions: Because",
+      "level": 73
+    },
+    {
+      "id": "gq_l74_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ it was raining, we went for a walk anyway.",
+      "options": [
+        "Although",
+        "But",
+        "So",
+        "Because"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Although",
+      "hint": "The second half happens despite the first half, not because of it.",
+      "explanation": "'Although' introduces an unexpected contrast: although it rained, we still walked. 'But' could express a similar idea, but not at the very start of a sentence like this.",
+      "grammarRule": "Subordinating Conjunctions: Although",
+      "level": 74
+    },
+    {
+      "id": "gq_l74_q2",
+      "instruction": "FIX THE GRAMMAR",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence is correct?",
+      "options": [
+        "Although it was raining, but we went for a walk.",
+        "It was raining, but although we went for a walk.",
+        "We went for a walk, so although it was raining.",
+        "Although it was raining, we went for a walk."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Although it was raining, we went for a walk.",
+      "hint": "A sentence usually needs only one connecting word for a single contrast, not two together.",
+      "explanation": "'Although' and 'but' both express contrast, so using them together in one sentence is redundant and incorrect. Only one is needed: Although it was raining, we went for a walk.",
+      "grammarRule": "Subordinating Conjunctions: Although vs But",
+      "level": 74
+    },
+    {
+      "id": "gq_l74_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— The movie was long.\n— Yeah, ___ it was really long, I enjoyed every minute.",
+      "options": [
+        "so",
+        "because",
+        "although",
+        "but"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "although",
+      "hint": "Enjoying it despite the length is a contrast, and this word can start the sentence.",
+      "explanation": "'Although' fits here because it can begin the clause and express the same kind of contrast 'but' would in the middle of a sentence.",
+      "grammarRule": "Subordinating Conjunctions: Although",
+      "level": 74
+    },
+    {
+      "id": "gq_l75_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ I get home, I'll call you right away.",
+      "options": [
+        "If",
+        "When",
+        "Although",
+        "Since"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "When",
+      "hint": "Getting home is certain here — it's just a matter of time.",
+      "explanation": "'When' is used for events that are certain to happen, focusing on timing: when I get home. 'If' would suggest doubt about whether it will happen at all.",
+      "grammarRule": "When vs If: Certainty",
+      "level": 75
+    },
+    {
+      "id": "gq_l75_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ it rains tomorrow, we'll cancel the picnic.",
+      "options": [
+        "If",
+        "Although",
+        "When",
+        "Since"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "If",
+      "hint": "Tomorrow's weather isn't certain — this is a real possibility, not a sure thing.",
+      "explanation": "'If' introduces an uncertain condition: if it rains. This contrasts with 'when', which the last question used for something already expected to happen.",
+      "grammarRule": "When vs If: Uncertainty",
+      "level": 75
+    },
+    {
+      "id": "gq_l75_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are you sure you'll pass the exam?\n— I'm not sure, but ___ I do, I'll celebrate!",
+      "options": [
+        "when",
+        "although",
+        "because",
+        "if"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "if",
+      "hint": "The words 'not sure' show this outcome isn't guaranteed.",
+      "explanation": "Since the speaker admits uncertainty ('not sure'), the condition needs 'if': if I do, I'll celebrate. 'When' would wrongly suggest passing is already certain.",
+      "grammarRule": "When vs If: Uncertainty",
+      "level": 75
+    },
+    {
+      "id": "gq_l76_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ she was cooking, he set the table.",
+      "options": [
+        "When",
+        "Because",
+        "While",
+        "Although"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "While",
+      "hint": "Both actions were happening at the same time.",
+      "explanation": "'While' connects two actions happening simultaneously: while she cooked, he set the table. 'Because' would wrongly suggest one action caused the other.",
+      "grammarRule": "While: Simultaneous Actions",
+      "level": 76
+    },
+    {
+      "id": "gq_l76_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ my brother loves sports, I prefer reading.",
+      "options": [
+        "While",
+        "When",
+        "Because",
+        "If"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "While",
+      "hint": "This isn't about timing here — it's comparing two different preferences.",
+      "explanation": "'While' can also mean 'whereas', highlighting a contrast between two people or ideas: while he loves sports, I prefer reading. This is a different use from the simultaneous-action meaning in Question 1.",
+      "grammarRule": "While: Contrast",
+      "level": 76
+    },
+    {
+      "id": "gq_l76_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What were you doing when I called?\n— I was studying ___ my roommate was watching TV.",
+      "options": [
+        "when",
+        "while",
+        "because",
+        "although"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "while",
+      "hint": "Two actions were happening at the exact same time, like Question 1.",
+      "explanation": "This describes two simultaneous actions, so 'while' fits: studying while someone else watched TV, echoing the pattern from Question 1.",
+      "grammarRule": "While: Simultaneous Actions",
+      "level": 76
+    },
+    {
+      "id": "gq_l77_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I won't go to the party ___ you come with me.",
+      "options": [
+        "if",
+        "although",
+        "because",
+        "unless"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "unless",
+      "hint": "This means 'only if you don't come' — a negative condition.",
+      "explanation": "'Unless' means 'except if' or 'only if not': won't go unless you come, meaning I'll go only on the condition that you come too.",
+      "grammarRule": "Unless: Negative Condition",
+      "level": 77
+    },
+    {
+      "id": "gq_l77_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "'Unless you hurry, you'll miss the bus' means the same as: 'If you ___ hurry, you'll miss the bus.'",
+      "options": [
+        "do",
+        "will",
+        "don't",
+        "won't"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "don't",
+      "hint": "'Unless' already carries a hidden negative meaning inside it.",
+      "explanation": "'Unless' is equivalent to 'if...not': unless you hurry means if you don't hurry. This is a useful way to check your understanding of 'unless' by rewriting it with 'if'.",
+      "grammarRule": "Unless vs If Not",
+      "level": 77
+    },
+    {
+      "id": "gq_l77_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Will you help me move this weekend?\n— Sure, ___ something urgent comes up.",
+      "options": [
+        "unless",
+        "if",
+        "although",
+        "because"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "unless",
+      "hint": "The plan is a 'yes', but with one possible exception.",
+      "explanation": "'Unless' sets up the one exception that could cancel the plan: I'll help unless something urgent comes up, meaning the plan stands except in that one case.",
+      "grammarRule": "Unless: Negative Condition",
+      "level": 77
+    },
+    {
+      "id": "gq_l78_q1",
+      "instruction": "FIX THE GRAMMAR",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence uses punctuation correctly?",
+      "options": [
+        "Because it was late we went home.",
+        "Because it was late, we went home.",
+        "Because, it was late we went home.",
+        "Because it was late; we went home."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Because it was late, we went home.",
+      "hint": "When the reason comes first, it usually needs a comma right before the main statement.",
+      "explanation": "When a subordinate clause like 'because it was late' starts the sentence, a comma separates it from the main clause: Because it was late, we went home.",
+      "grammarRule": "Sentence Connection: Comma with Subordinate Clauses",
+      "level": 78
+    },
+    {
+      "id": "gq_l78_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which sentence uses punctuation correctly?",
+      "options": [
+        "We went home because it was late.",
+        "We went home, because it was late.",
+        "We went home because, it was late.",
+        "We, went home because it was late."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "We went home because it was late.",
+      "hint": "This time the main statement comes first — does the rule from the last question still apply the same way?",
+      "explanation": "When the main clause comes first, no comma is needed before 'because': We went home because it was late. The comma rule from Question 1 only applies when the subordinate clause starts the sentence.",
+      "grammarRule": "Sentence Connection: Comma with Subordinate Clauses",
+      "level": 78
+    },
+    {
+      "id": "gq_l78_q3",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Which version is correctly punctuated?",
+      "options": [
+        "Although he was tired he kept working.",
+        "Although, he was tired he kept working.",
+        "Although he was tired, he kept working.",
+        "Although he was tired he, kept working."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Although he was tired, he kept working.",
+      "hint": "'Although' starts this sentence, so the same comma rule from Question 1 applies here too.",
+      "explanation": "Since the sentence begins with the subordinate clause 'although he was tired', a comma is needed before the main clause: Although he was tired, he kept working.",
+      "grammarRule": "Sentence Connection: Comma with Subordinate Clauses",
+      "level": 78
+    },
+    {
+      "id": "gq_l79_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I wanted to go out, ___ it was raining, so I stayed in.",
+      "options": [
+        "and",
+        "so",
+        "because",
+        "but"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "but",
+      "hint": "This connects a wish with something that got in its way.",
+      "explanation": "'But' shows the contrast between wanting to go out and the rain stopping that plan, right before 'so' introduces the final result.",
+      "grammarRule": "Coordinating Conjunctions: But",
+      "level": 79
+    },
+    {
+      "id": "gq_l79_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She studied hard ___ she wanted to pass the exam.",
+      "options": [
+        "although",
+        "because",
+        "so",
+        "but"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "because",
+      "hint": "Wanting to pass is the motivation behind the studying.",
+      "explanation": "'Because' introduces the reason for studying hard: studied because she wanted to pass, matching the reason-and-result pattern from Level 73.",
+      "grammarRule": "Subordinating Conjunctions: Because",
+      "level": 79
+    },
+    {
+      "id": "gq_l79_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are you coming to the party?\n— I'd love to, ___ I have to work that night.",
+      "options": [
+        "and",
+        "so",
+        "but",
+        "unless"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "but",
+      "hint": "Wanting to come and being unable to are two opposing ideas.",
+      "explanation": "'But' contrasts the wish to attend with the obstacle preventing it: I'd love to, but I have to work. This is a very common everyday pattern for declining politely.",
+      "grammarRule": "Coordinating Conjunctions: But",
+      "level": 79
+    },
+    {
+      "id": "gq_l80_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Thank you for your message. ___ I understand your concerns, I believe we can resolve this quickly.",
+      "options": [
+        "Because",
+        "So",
+        "And",
+        "Although"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Although",
+      "hint": "This professional message acknowledges a concern before offering reassurance despite it.",
+      "explanation": "'Although' softens the message by acknowledging the concern before turning to a positive outcome: although I understand your concerns, we can resolve this. This kind of polite contrast is common in professional writing.",
+      "grammarRule": "Subordinating Conjunctions: Although",
+      "level": 80
+    },
+    {
+      "id": "gq_l80_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I'll send the invoice today ___ you can process payment by Friday.",
+      "options": [
+        "although",
+        "because",
+        "but",
+        "so"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "so",
+      "hint": "Sending the invoice is meant to lead directly to being able to pay by Friday.",
+      "explanation": "'So' connects the action (sending the invoice) with its intended result (payment by Friday), a common structure in workplace messages.",
+      "grammarRule": "Coordinating Conjunctions: So",
+      "level": 80
+    },
+    {
+      "id": "gq_l80_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Can we reschedule the call?\n— Of course! I'm flexible ___ something urgent comes up.",
+      "options": [
+        "if",
+        "unless",
+        "although",
+        "because"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "unless",
+      "hint": "This closes Stage 4 the same way Level 77 practiced this exact exception structure.",
+      "explanation": "'Unless' sets the one possible exception to being flexible, exactly as practiced in Level 77: flexible unless something urgent comes up. This wraps up the full run of conjunctions covered across Levels 71 to 80.",
+      "grammarRule": "Unless: Negative Condition",
+      "level": 80
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "gq_l1_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ from Brazil.",
+      "options": [
+        "am",
+        "is",
+        "are",
+        "be"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "am",
+      "hint": "There is only one form of 'be' that ever goes with 'I'.",
+      "explanation": "'I' always takes 'am'. It never changes, no matter what comes after it: I am from Brazil, I am tired, I am here.",
+      "grammarRule": "Verb 'To Be': Present Tense with I",
+      "level": 1
+    },
+    {
+      "id": "gq_l1_q2",
+      "instruction": "COMPLETE THE THOUGHT",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "My brother ___ a doctor.",
+      "options": [
+        "be",
+        "am",
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "is",
+      "hint": "'My brother' means 'he'. Which form of 'be' matches he/she/it?",
+      "explanation": "'My brother' can be replaced with 'he', and 'he/she/it' always takes 'is'. Compare: My sister is a nurse. The dog is friendly.",
+      "grammarRule": "Verb 'To Be': Third-Person Singular",
+      "level": 1
+    },
+    {
+      "id": "gq_l1_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are your parents home?\n— Yes, they ___ home now.",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "are",
+      "hint": "'They' is plural, like 'we' and 'you'.",
+      "explanation": "Plural subjects such as 'they', 'we', and 'you' all take 'are'. Only 'he/she/it' takes 'is', and only 'I' takes 'am'.",
+      "grammarRule": "Verb 'To Be': Plural Subjects",
+      "level": 1
+    },
+    {
+      "id": "gq_l2_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He ___ a new bicycle.",
+      "options": [
+        "has",
+        "having",
+        "haves",
+        "have"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has",
+      "hint": "'He' needs the special third-person form of 'have'.",
+      "explanation": "With he/she/it, 'have' changes to 'has'. With I/you/we/they, it stays 'have'. There is no such word as 'haves'.",
+      "grammarRule": "Verb 'To Have': Third-Person Singular",
+      "level": 2
+    },
+    {
+      "id": "gq_l2_q2",
+      "instruction": "COMPLETE THE THOUGHT",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ two sisters and one brother.",
+      "options": [
+        "has",
+        "have",
+        "haves",
+        "having"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "have",
+      "hint": "This subject is 'I', not 'he' or 'she'.",
+      "explanation": "'I' takes 'have', not 'has'. Only he/she/it uses 'has'. Compare: I have two sisters. She has one sister.",
+      "grammarRule": "Verb 'To Have': First Person",
+      "level": 2
+    },
+    {
+      "id": "gq_l2_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Does Maria have a car?\n— Yes, she ___ a small car.",
+      "options": [
+        "have",
+        "haves",
+        "has",
+        "having"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "has",
+      "hint": "Even though the question used 'have', the answer talks about 'she'.",
+      "explanation": "The question 'Does Maria have...' uses 'have' because 'does' already carries the third-person change. But in the answer, without 'does', 'she' needs 'has' directly: she has a car.",
+      "grammarRule": "Verb 'To Have': Third-Person Singular",
+      "level": 2
+    },
+    {
+      "id": "gq_l3_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "There are three ___ on the table.",
+      "options": [
+        "books",
+        "book",
+        "bookes",
+        "bookies"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "books",
+      "hint": "Most nouns just add -s to become plural.",
+      "explanation": "Regular plurals simply add '-s': book → books, cup → cups, phone → phones. No extra letters are needed here.",
+      "grammarRule": "Plural Nouns: Regular -s",
+      "level": 3
+    },
+    {
+      "id": "gq_l3_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She bought two ___ for the party.",
+      "options": [
+        "box",
+        "boxs",
+        "boxes",
+        "boxies"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "boxes",
+      "hint": "Words ending in -x usually need an extra syllable in the plural.",
+      "explanation": "Nouns ending in -x, -ch, -sh, or -ss add '-es' instead of just '-s': box → boxes, watch → watches, dish → dishes.",
+      "grammarRule": "Plural Nouns: -es Ending",
+      "level": 3
+    },
+    {
+      "id": "gq_l3_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How many ___ do you own?\n— I own five, all different colors.",
+      "options": [
+        "watch",
+        "watchs",
+        "watchies",
+        "watches"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "watches",
+      "hint": "This noun ends in -ch, so think about the -es rule again.",
+      "explanation": "'Watch' ends in -ch, so its plural is 'watches', following the same pattern as box → boxes and dish → dishes.",
+      "grammarRule": "Plural Nouns: -es Ending",
+      "level": 3
+    },
+    {
+      "id": "gq_l4_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I saw ___ elephant at the zoo.",
+      "options": [
+        "a",
+        "the",
+        "some",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "Listen to the first sound of 'elephant', not just the first letter.",
+      "explanation": "'An' is used before words that start with a vowel sound: an elephant, an apple, an hour. 'A' is for consonant sounds.",
+      "grammarRule": "Articles: A vs An",
+      "level": 4
+    },
+    {
+      "id": "gq_l4_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She is ___ university student.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "some"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "'University' looks like it starts with a vowel, but say it out loud.",
+      "explanation": "'University' starts with a 'y' sound (/juː/), which is a consonant sound, so it takes 'a', not 'an'. The spelling can be misleading — sound is what matters.",
+      "grammarRule": "Articles: A vs An by Sound",
+      "level": 4
+    },
+    {
+      "id": "gq_l4_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What's that on the shelf?\n— It's ___ old photo of my grandmother.",
+      "options": [
+        "a",
+        "an",
+        "some",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Focus on the sound of the word right after the blank.",
+      "explanation": "'Old' begins with a vowel sound, so it needs 'an': an old photo. The article agrees with the word that follows it, not with 'photo'.",
+      "grammarRule": "Articles: A vs An by Sound",
+      "level": 4
+    },
+    {
+      "id": "gq_l5_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ is my best friend. Her name is Lucy.",
+      "options": [
+        "She",
+        "Her",
+        "He",
+        "Hers"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She",
+      "hint": "The blank starts the sentence and acts as the subject.",
+      "explanation": "A sentence needs a subject pronoun to start it: She, He, It, They. 'Her' cannot be a subject — it comes after the verb, as in 'I know her'.",
+      "grammarRule": "Subject Pronouns",
+      "level": 5
+    },
+    {
+      "id": "gq_l5_q2",
+      "instruction": "COMPLETE THE THOUGHT",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ are going to the market this afternoon.",
+      "options": [
+        "Us",
+        "We",
+        "Them",
+        "Their"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We",
+      "hint": "This word does the action, so it must be a subject pronoun.",
+      "explanation": "'We' is the subject pronoun for a group that includes the speaker. 'Us' is only used as an object: They saw us.",
+      "grammarRule": "Subject Pronouns",
+      "level": 5
+    },
+    {
+      "id": "gq_l5_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Where's Tom?\n— ___ is at work until six.",
+      "options": [
+        "Him",
+        "His",
+        "He",
+        "It"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "He",
+      "hint": "Tom is a person and the subject of this new sentence.",
+      "explanation": "Since Tom is male and is doing the action (being at work), the subject pronoun 'He' replaces his name. 'Him' can never start a sentence as its subject.",
+      "grammarRule": "Subject Pronouns",
+      "level": 5
+    },
+    {
+      "id": "gq_l6_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Can you help ___ with this bag? It's heavy.",
+      "options": [
+        "I",
+        "my",
+        "mine",
+        "me"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "me",
+      "hint": "The speaker is receiving the help, so this is an object pronoun.",
+      "explanation": "After a verb like 'help', we use an object pronoun: help me, help him, help them. 'I' is only used as a subject, before the verb.",
+      "grammarRule": "Object Pronouns",
+      "level": 6
+    },
+    {
+      "id": "gq_l6_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I saw John yesterday and gave ___ my new phone number.",
+      "options": [
+        "he",
+        "his",
+        "him",
+        "he's"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "him",
+      "hint": "John is receiving the number — he's the object here, not the subject.",
+      "explanation": "'Him' is the object form used after a verb: gave him, saw him, called him. 'He' would only be correct if John were doing the giving.",
+      "grammarRule": "Object Pronouns",
+      "level": 6
+    },
+    {
+      "id": "gq_l6_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are these your keys?\n— Yes! Please give ___ to me.",
+      "options": [
+        "they",
+        "their",
+        "them",
+        "theirs"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "them",
+      "hint": "'Keys' is plural, and it's the thing being given — the object.",
+      "explanation": "'Them' replaces a plural object noun after a verb: give them, take them, find them. 'They' is only correct as a subject.",
+      "grammarRule": "Object Pronouns",
+      "level": 6
+    },
+    {
+      "id": "gq_l7_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "This is ___ car. I bought it last year.",
+      "options": [
+        "me",
+        "my",
+        "mine",
+        "I"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "my",
+      "hint": "This word sits directly before a noun to show ownership.",
+      "explanation": "A possessive adjective like 'my' always comes right before a noun: my car, my phone. 'Mine' stands alone: This car is mine.",
+      "grammarRule": "Possessive Adjectives",
+      "level": 7
+    },
+    {
+      "id": "gq_l7_q2",
+      "instruction": "COMPLETE THE THOUGHT",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Is that ___ dog outside the shop?",
+      "options": [
+        "you",
+        "yours",
+        "you're",
+        "your"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "your",
+      "hint": "This word describes the dog by telling us who it belongs to.",
+      "explanation": "'Your' modifies the noun 'dog' to show possession. 'You're' means 'you are' and can never come before a noun.",
+      "grammarRule": "Possessive Adjectives",
+      "level": 7
+    },
+    {
+      "id": "gq_l7_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Anna left her bag on the bus.\n— Really? Is this ___ bag, then?",
+      "options": [
+        "she",
+        "hers",
+        "her",
+        "its"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "her",
+      "hint": "The word must sit right before the noun 'bag'.",
+      "explanation": "Before a noun, we use 'her' to show possession: her bag, her phone. 'Hers' would be used alone: This bag is hers.",
+      "grammarRule": "Possessive Adjectives",
+      "level": 7
+    },
+    {
+      "id": "gq_l8_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ is my phone. I'm holding it right now.",
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This",
+      "hint": "The object is close to the speaker and singular.",
+      "explanation": "'This' points to one thing that is near the speaker. 'That' would be for something far away, and 'these/those' are for plural things.",
+      "grammarRule": "Demonstratives",
+      "level": 8
+    },
+    {
+      "id": "gq_l8_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ are my shoes, over there by the door.",
+      "options": [
+        "That",
+        "This",
+        "Those",
+        "These"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Those",
+      "hint": "'Shoes' is plural, and 'over there' means far from the speaker.",
+      "explanation": "'Those' is used for plural things that are far away, matching both the plural noun 'shoes' and the distance 'over there'.",
+      "grammarRule": "Demonstratives",
+      "level": 8
+    },
+    {
+      "id": "gq_l8_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Can I try on ___ jacket, the one on the rack?\n— Sure, let me get it for you.",
+      "options": [
+        "this",
+        "that",
+        "these",
+        "those"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "that",
+      "hint": "The jacket is 'on the rack', not in the speaker's hands.",
+      "explanation": "'That' points to a single item that is at a distance from the speaker, unlike 'this', which would mean the jacket is right next to them.",
+      "grammarRule": "Demonstratives",
+      "level": 8
+    },
+    {
+      "id": "gq_l9_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ a bank near the train station.",
+      "options": [
+        "There is",
+        "There are",
+        "There has",
+        "It is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "There is",
+      "hint": "'A bank' is one thing, so use the singular form.",
+      "explanation": "'There is' introduces one singular thing: there is a bank, there is a problem. 'There are' is only for plural nouns.",
+      "grammarRule": "There Is / There Are",
+      "level": 9
+    },
+    {
+      "id": "gq_l9_q2",
+      "instruction": "COMPLETE THE THOUGHT",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ many students in the classroom today.",
+      "options": [
+        "There is",
+        "It is",
+        "There has",
+        "There are"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "There are",
+      "hint": "'Many students' is plural.",
+      "explanation": "Plural nouns after 'there' need 'are': there are students, there are books. Only singular nouns pair with 'there is'.",
+      "grammarRule": "There Is / There Are",
+      "level": 9
+    },
+    {
+      "id": "gq_l9_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Is there any milk in the fridge?\n— No, ___ isn't any left.",
+      "options": [
+        "it",
+        "there",
+        "this",
+        "that"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "there",
+      "hint": "Match the short answer to the same word the question started with.",
+      "explanation": "A short answer to a 'there is/are' question keeps using 'there': Is there milk? — No, there isn't. We don't switch to 'it' here.",
+      "grammarRule": "There Is / There Are",
+      "level": 9
+    },
+    {
+      "id": "gq_l10_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The keys are ___ the table, next to my wallet.",
+      "options": [
+        "in",
+        "at",
+        "by",
+        "on"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "on",
+      "hint": "Think of a flat surface something can rest on top of.",
+      "explanation": "'On' describes something resting on a surface: on the table, on the shelf. 'In' would mean inside a container, like a drawer.",
+      "grammarRule": "Prepositions of Place",
+      "level": 10
+    },
+    {
+      "id": "gq_l10_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She lives ___ New York, in a small apartment.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "to"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in",
+      "hint": "Cities and countries usually take the same preposition.",
+      "explanation": "We use 'in' for cities, countries, and large areas: in New York, in France. 'At' is reserved for specific points, like at the station.",
+      "grammarRule": "Prepositions of Place",
+      "level": 10
+    },
+    {
+      "id": "gq_l10_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Where are you right now?\n— I ___ at the office, near the elevator.",
+      "options": [
+        "is",
+        "am",
+        "are",
+        "be"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "am",
+      "hint": "This is a quick review — who is the subject of this sentence?",
+      "explanation": "This brings back Level 1: the subject is 'I', so the verb must be 'am', regardless of the preposition phrase that follows it.",
+      "grammarRule": "Verb 'To Be': Present Tense with I",
+      "level": 10
+    }
+  ]
+}

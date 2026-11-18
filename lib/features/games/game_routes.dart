@@ -40,6 +40,8 @@ import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/con
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/contextual_usage_practice_screen.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/pages/parts_of_speech_learn_screen.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/pages/parts_of_speech_practice_screen.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_learn_screen.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -365,6 +367,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'grammarquest') {
+          return fadeTransitionPage(
+            child: GrammarQuestLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -469,6 +477,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'partsofspeech') {
           return fadeTransitionPage(
             child: PartsOfSpeechPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'grammarquest') {
+          return fadeTransitionPage(
+            child: GrammarQuestPracticeScreen(level: level),
             state: state,
           );
         }

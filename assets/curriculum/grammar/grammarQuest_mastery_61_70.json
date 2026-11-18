@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "gq_l61_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The meeting starts ___ 9 o'clock sharp.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "by"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "at",
+      "hint": "This is a specific point on the clock.",
+      "explanation": "'At' is used for exact clock times: at 9 o'clock, at noon. 'On' is for days and dates, and 'in' is for longer periods like months or years.",
+      "grammarRule": "Prepositions of Time: At",
+      "level": 61
+    },
+    {
+      "id": "gq_l61_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Her birthday is ___ March, I think.",
+      "options": [
+        "in",
+        "at",
+        "on",
+        "during"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in",
+      "hint": "Months, like years, take the same preposition.",
+      "explanation": "'In' is used for months, years, and seasons: in March, in 2020, in summer. This is a longer period than the exact points that take 'at'.",
+      "grammarRule": "Prepositions of Time: In",
+      "level": 61
+    },
+    {
+      "id": "gq_l61_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— When's the party?\n— It's ___ Saturday evening.",
+      "options": [
+        "at",
+        "in",
+        "during",
+        "on"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "on",
+      "hint": "Days of the week follow their own rule, different from clock times or months.",
+      "explanation": "'On' is used for specific days and dates: on Saturday, on July 4th. Even 'Saturday evening' as a whole phrase still takes 'on' because the day anchors it.",
+      "grammarRule": "Prepositions of Time: On",
+      "level": 61
+    },
+    {
+      "id": "gq_l62_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've lived in this city ___ five years.",
+      "options": [
+        "since",
+        "for",
+        "during",
+        "by"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "for",
+      "hint": "This word introduces a length of time, not a starting point.",
+      "explanation": "'For' introduces a duration, a length of time: for five years, for two hours. 'Since' would instead point to when the period began.",
+      "grammarRule": "Prepositions of Time: For + Duration",
+      "level": 62
+    },
+    {
+      "id": "gq_l62_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've lived in this city ___ 2019.",
+      "options": [
+        "since",
+        "for",
+        "until",
+        "during"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "since",
+      "hint": "2019 is a starting point, not a length of time.",
+      "explanation": "'Since' introduces a specific starting point in time: since 2019, since last week. This contrasts directly with 'for', which describes duration instead.",
+      "grammarRule": "Prepositions of Time: Since + Starting Point",
+      "level": 62
+    },
+    {
+      "id": "gq_l62_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— When do you need this done?\n— ___ Friday, at the latest.",
+      "options": [
+        "Until",
+        "During",
+        "For",
+        "By"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "By",
+      "hint": "This word marks a deadline — the latest possible moment for something to happen.",
+      "explanation": "'By' marks a deadline: by Friday means no later than Friday. 'Until' would describe something continuing up to that point, not a finishing deadline.",
+      "grammarRule": "Prepositions of Time: By + Deadline",
+      "level": 62
+    },
+    {
+      "id": "gq_l63_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The bakery is ___ the bank, right across the street.",
+      "options": [
+        "between",
+        "opposite",
+        "among",
+        "near"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "opposite",
+      "hint": "Only one other place is mentioned, and it's on the other side of the street.",
+      "explanation": "'Opposite' describes something directly facing another single thing, often across a street: opposite the bank. 'Between' would need two reference points, not just one.",
+      "grammarRule": "Prepositions of Place",
+      "level": 63
+    },
+    {
+      "id": "gq_l63_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She felt nervous ___ so many strangers.",
+      "options": [
+        "between",
+        "near",
+        "among",
+        "opposite"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "among",
+      "hint": "This describes being surrounded by more than two people.",
+      "explanation": "'Among' is used for a position within a larger group of three or more: among strangers, among the crowd. 'Between' is reserved for exactly two people or things.",
+      "grammarRule": "Prepositions of Place: Among",
+      "level": 63
+    },
+    {
+      "id": "gq_l63_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Is the pharmacy far from here?\n— No, it's ___ the corner, very close.",
+      "options": [
+        "near",
+        "opposite",
+        "between",
+        "among"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "near",
+      "hint": "The reply already tells you the distance is short.",
+      "explanation": "'Near' simply describes short distance: near the corner. The answer 'very close' directly confirms this is the right word.",
+      "grammarRule": "Prepositions of Place: Near",
+      "level": 63
+    },
+    {
+      "id": "gq_l64_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She walked ___ the room and sat down quietly.",
+      "options": [
+        "onto",
+        "through",
+        "along",
+        "into"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "into",
+      "hint": "She is entering an enclosed space, ending up inside it.",
+      "explanation": "'Into' describes movement that ends inside an enclosed space: walked into the room. 'Through' would suggest passing all the way across it and out the other side.",
+      "grammarRule": "Prepositions of Movement: Into",
+      "level": 64
+    },
+    {
+      "id": "gq_l64_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "The cat jumped ___ the table and knocked over a cup.",
+      "options": [
+        "into",
+        "onto",
+        "through",
+        "along"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "onto",
+      "hint": "The cat ends up on top of a surface, not inside anything.",
+      "explanation": "'Onto' describes movement ending on top of a surface: jumped onto the table. 'Into' would only fit if the table were a container the cat entered.",
+      "grammarRule": "Prepositions of Movement: Onto",
+      "level": 64
+    },
+    {
+      "id": "gq_l64_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How did you get to the other side of the river?\n— I walked ___ the bridge.",
+      "options": [
+        "into",
+        "onto",
+        "across",
+        "along"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "across",
+      "hint": "This movement goes from one side to the other.",
+      "explanation": "'Across' describes movement from one side of something to the other: walked across the bridge. 'Along' would instead describe moving lengthwise beside the river, not crossing it.",
+      "grammarRule": "Prepositions of Movement: Across",
+      "level": 64
+    },
+    {
+      "id": "gq_l65_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I'm really interested ___ learning Spanish this year.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in",
+      "hint": "This adjective always pairs with the same one preposition, and it must simply be memorized.",
+      "explanation": "'Interested' is always followed by 'in': interested in something. These fixed adjective-preposition pairs don't follow a general rule and need to be learned individually.",
+      "grammarRule": "Dependent Prepositions: Interested In",
+      "level": 65
+    },
+    {
+      "id": "gq_l65_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She's afraid ___ spiders, even small ones.",
+      "options": [
+        "from",
+        "for",
+        "about",
+        "of"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "of",
+      "hint": "This adjective has its own fixed partner preposition too.",
+      "explanation": "'Afraid' always pairs with 'of': afraid of spiders, afraid of the dark. Like 'interested in', this combination simply has to be memorized as a fixed pair.",
+      "grammarRule": "Dependent Prepositions: Afraid Of",
+      "level": 65
+    },
+    {
+      "id": "gq_l65_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are you good ___ math?\n— Not really, I prefer art.",
+      "options": [
+        "for",
+        "on",
+        "at",
+        "in"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "at",
+      "hint": "This describes a skill or ability, which uses its own fixed preposition.",
+      "explanation": "'Good' pairs with 'at' when talking about skill or ability: good at math, good at cooking. This is different from 'good for', which describes something being beneficial.",
+      "grammarRule": "Dependent Prepositions: Good At",
+      "level": 65
+    },
+    {
+      "id": "gq_l66_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "This decision depends ___ the budget we're given.",
+      "options": [
+        "of",
+        "on",
+        "for",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "on",
+      "hint": "This verb always pairs with the same fixed preposition.",
+      "explanation": "'Depend' always takes 'on': depends on the budget. Like adjective-preposition pairs, verb-preposition pairs like this one need to be memorized as whole units.",
+      "grammarRule": "Dependent Prepositions: Depend On",
+      "level": 66
+    },
+    {
+      "id": "gq_l66_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Can you listen ___ me for just a second?",
+      "options": [
+        "to",
+        "at",
+        "for",
+        "on"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to",
+      "hint": "This is one of the most common verb-preposition pairs in everyday English.",
+      "explanation": "'Listen' always pairs with 'to': listen to me, listen to music. This differs from 'look', which pairs with 'at' instead.",
+      "grammarRule": "Dependent Prepositions: Listen To",
+      "level": 66
+    },
+    {
+      "id": "gq_l66_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are you waiting ___ someone?\n— Yes, my sister should be here any minute.",
+      "options": [
+        "to",
+        "on",
+        "for",
+        "at"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "for",
+      "hint": "This verb pairs with the preposition that also introduces a reason or purpose.",
+      "explanation": "'Wait' always pairs with 'for': waiting for someone, waiting for the bus. This is another fixed verb-preposition combination worth memorizing as a set.",
+      "grammarRule": "Dependent Prepositions: Wait For",
+      "level": 66
+    },
+    {
+      "id": "gq_l67_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She sings ___ ; the whole audience was silent.",
+      "options": [
+        "beautiful",
+        "beautifuly",
+        "more beautiful",
+        "beautifully"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "beautifully",
+      "hint": "This word describes how she sings, so it needs the adverb form, not the adjective.",
+      "explanation": "Manner adverbs are usually formed by adding '-ly' to the adjective: beautiful → beautifully. 'Beautiful' alone describes a noun, not the way an action is performed.",
+      "grammarRule": "Manner Adverbs: Formation",
+      "level": 67
+    },
+    {
+      "id": "gq_l67_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He solved the problem ___ , without any help.",
+      "options": [
+        "easyly",
+        "easily",
+        "easyily",
+        "more easy"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "easily",
+      "hint": "This adjective ends in -y, which changes before the ending is added.",
+      "explanation": "Adjectives ending in -y change to -ily for the adverb form: easy → easily, happy → happily. 'Easyly' isn't correct spelling.",
+      "grammarRule": "Manner Adverbs: -y Adjectives",
+      "level": 67
+    },
+    {
+      "id": "gq_l67_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How did she do on the test?\n— She did ___ , actually — top of the class.",
+      "options": [
+        "well",
+        "good",
+        "goodly",
+        "more good"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "well",
+      "hint": "This describes how she performed, and its adverb form is completely irregular.",
+      "explanation": "'Good' has an irregular adverb form: well, not 'goodly'. Since this describes how she did (an action), the adverb 'well' is needed, not the adjective 'good'.",
+      "grammarRule": "Manner Adverbs: Irregular Forms",
+      "level": 67
+    },
+    {
+      "id": "gq_l68_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He is a ___ singer; everyone loves his voice.",
+      "options": [
+        "well",
+        "goodly",
+        "good",
+        "best"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "good",
+      "hint": "This word describes the noun 'singer', not an action.",
+      "explanation": "'Good' is an adjective, used to describe nouns: a good singer. 'Well' would only be used to describe how an action is performed, not to describe a person directly.",
+      "grammarRule": "Good vs Well: Adjective",
+      "level": 68
+    },
+    {
+      "id": "gq_l68_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "He sings ___ ; that's why he joined the choir.",
+      "options": [
+        "good",
+        "well",
+        "goodly",
+        "better"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "well",
+      "hint": "This word describes the action 'sings', not a noun.",
+      "explanation": "'Well' is the adverb form, describing how the action of singing is performed: sings well. This contrasts directly with 'a good singer' from the last question, which described the noun instead.",
+      "grammarRule": "Good vs Well: Adverb",
+      "level": 68
+    },
+    {
+      "id": "gq_l68_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Can you travel tomorrow?\n— Not yet, I'm not ___ enough.",
+      "options": [
+        "good",
+        "goodly",
+        "nicely",
+        "well"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "well",
+      "hint": "This describes a state of health, a special use of this particular word.",
+      "explanation": "'Well' can also function as an adjective describing health: not well enough, feeling well. This is a special exception to the usual good/well adjective-adverb pattern.",
+      "grammarRule": "Good vs Well: Health",
+      "level": 68
+    },
+    {
+      "id": "gq_l69_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "We arrived at the airport just ___ time for the flight.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "during"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in",
+      "hint": "This fixed phrase means 'not too late'.",
+      "explanation": "'In time' is a fixed expression meaning arriving before a deadline, without being late: just in time. Neither 'on time' (arriving exactly when expected) nor 'at time' fits this specific phrase.",
+      "grammarRule": "Prepositions of Time: In Time",
+      "level": 69
+    },
+    {
+      "id": "gq_l69_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She explained the instructions very ___ , so no one was confused.",
+      "options": [
+        "clear",
+        "clearer",
+        "clearly",
+        "more clear"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "clearly",
+      "hint": "This describes how she explained, so it needs the adverb form.",
+      "explanation": "'Clearly' is the adverb form of 'clear', describing how the explaining was done: explained clearly. 'Clear' alone would describe a noun, not an action.",
+      "grammarRule": "Manner Adverbs: Formation",
+      "level": 69
+    },
+    {
+      "id": "gq_l69_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Is the store open ___ Sundays?\n— No, only on weekdays.",
+      "options": [
+        "at",
+        "on",
+        "in",
+        "during"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "on",
+      "hint": "Days of the week keep the same preposition rule from Level 61.",
+      "explanation": "'On' is used for specific days, as reviewed back in Level 61: open on Sundays. The reply confirms this by also using 'on weekdays'.",
+      "grammarRule": "Prepositions of Time: On",
+      "level": 69
+    },
+    {
+      "id": "gq_l70_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Please arrive ___ 8 am sharp; the doors close right after.",
+      "options": [
+        "on",
+        "in",
+        "by",
+        "at"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "at",
+      "hint": "This is an exact clock time, just like Level 61.",
+      "explanation": "Exact clock times take 'at': at 8 am. This is the same rule practiced at the very start of this stage, now appearing in a real workplace instruction.",
+      "grammarRule": "Prepositions of Time: At",
+      "level": 70
+    },
+    {
+      "id": "gq_l70_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Please read the instructions ___ before you begin.",
+      "options": [
+        "carefully",
+        "careful",
+        "more careful",
+        "carefuly"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "carefully",
+      "hint": "This describes how the reading should be done.",
+      "explanation": "Since this describes the manner of reading, the adverb 'carefully' is needed, not the adjective 'careful'. This is common in real instructions and notices.",
+      "grammarRule": "Manner Adverbs: Formation",
+      "level": 70
+    },
+    {
+      "id": "gq_l70_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you finish the report?\n— Yes, and I think I did it pretty ___ .",
+      "options": [
+        "good",
+        "goodly",
+        "well",
+        "nicely"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "well",
+      "hint": "This describes how the report was done, just like Level 68.",
+      "explanation": "This closes Stage 4 by returning to the good/well contrast from Level 68: since this describes how the work was performed, the adverb 'well' is correct, not 'good'.",
+      "grammarRule": "Good vs Well: Adverb",
+      "level": 70
+    }
+  ]
+}

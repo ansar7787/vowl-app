@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "gq_l181_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Subject: Meeting Update\n\nHi team, the meeting ___ moved to 3 pm due to a scheduling conflict.",
+      "options": [
+        "has been",
+        "is being",
+        "was being",
+        "had being"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has been",
+      "hint": "The email is announcing a change that is now in effect.",
+      "explanation": "'Has been moved' is present perfect passive, connecting a recent change to its current effect: the meeting has been moved (and is now at 3 pm).",
+      "grammarRule": "Workplace Email: Present Perfect Passive",
+      "level": 181
+    },
+    {
+      "id": "gq_l181_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Hi Sam, could you let me know ___ you'll be free to review the draft?",
+      "options": [
+        "that",
+        "if that",
+        "when",
+        "what"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "when",
+      "hint": "This introduces an indirect question about time inside a polite request.",
+      "explanation": "'Let me know when' introduces an indirect question as a noun clause, a common structure in workplace messages asking for availability.",
+      "grammarRule": "Workplace Email: Indirect Questions",
+      "level": 181
+    },
+    {
+      "id": "gq_l181_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Thanks for your patience. ___ any issues come up, please don't hesitate to reach out.",
+      "options": [
+        "Would",
+        "Could",
+        "Must",
+        "Should"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Should",
+      "hint": "This is the formal, inverted way of saying 'if any issues come up'.",
+      "explanation": "'Should any issues come up' is a formal inverted conditional, commonly used in professional emails to sound polished and polite.",
+      "grammarRule": "Workplace Email: Inverted Conditional",
+      "level": 181
+    },
+    {
+      "id": "gq_l182_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Traveler at check-in: Excuse me, ___ you tell me which gate is for flight 220?",
+      "options": [
+        "do",
+        "could",
+        "are",
+        "must"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "could",
+      "hint": "This is a polite request to a stranger in a service setting.",
+      "explanation": "'Could you tell me' is a polite, widely used request pattern for asking strangers for information in travel situations.",
+      "grammarRule": "Travel English: Polite Requests",
+      "level": 182
+    },
+    {
+      "id": "gq_l182_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Airline staff: I'm sorry, but this flight ___ overbooked, so we need volunteers.",
+      "options": [
+        "was",
+        "has been",
+        "will",
+        "is"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "is",
+      "hint": "The staff member is describing the current situation at the gate.",
+      "explanation": "Present simple passive describes a current state of affairs: the flight is overbooked, explaining what's happening right now.",
+      "grammarRule": "Travel English: Present Simple Passive",
+      "level": 182
+    },
+    {
+      "id": "gq_l182_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How long have you been waiting at customs?\n— We ___ been standing here for over an hour.",
+      "options": [
+        "has",
+        "have",
+        "had",
+        "was"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "have",
+      "hint": "The subject 'we' needs the matching present perfect continuous helper verb.",
+      "explanation": "'We' takes 'have' in present perfect continuous: have been standing, emphasizing the ongoing wait right up to now.",
+      "grammarRule": "Travel English: Present Perfect Continuous",
+      "level": 182
+    },
+    {
+      "id": "gq_l183_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Customer service chat: I understand your frustration. Your order ___ shipped by tomorrow morning at the latest.",
+      "options": [
+        "will be",
+        "is",
+        "was",
+        "has"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "will be",
+      "hint": "This is a promise about a future action.",
+      "explanation": "Future passive reassures the customer about what will happen next: your order will be shipped, a common structure in customer service responses.",
+      "grammarRule": "Customer Service: Future Passive",
+      "level": 183
+    },
+    {
+      "id": "gq_l183_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Can I get a refund for this item?\n— If the item ___ damaged, we can process a full refund.",
+      "options": [
+        "was",
+        "were",
+        "is",
+        "will be"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "is",
+      "hint": "This describes a real, checkable condition about the present state of the item.",
+      "explanation": "This is a first conditional describing a real, checkable present condition: if the item is damaged, refund is possible. The if-clause stays in present simple.",
+      "grammarRule": "Customer Service: First Conditional",
+      "level": 183
+    },
+    {
+      "id": "gq_l183_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— I never received a confirmation email.\n— I apologize ___ the inconvenience; let me look into that right away.",
+      "options": [
+        "about",
+        "for",
+        "with",
+        "of"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "for",
+      "hint": "This fixed phrase always uses the same preposition.",
+      "explanation": "'Apologize for' is a fixed phrase; the preposition never changes regardless of context, unlike some other verb-preposition pairs.",
+      "grammarRule": "Dependent Prepositions: Apologize For",
+      "level": 183
+    },
+    {
+      "id": "gq_l184_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Interviewer: Tell me about a challenge you ___ overcome in your last role.",
+      "options": [
+        "had",
+        "has",
+        "did",
+        "have"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "have",
+      "hint": "This asks about experience relevant to the interview happening now.",
+      "explanation": "Present perfect fits questions about relevant past experience in interviews: challenges you have overcome, connecting past achievements to the present conversation.",
+      "grammarRule": "Job Interview: Present Perfect",
+      "level": 184
+    },
+    {
+      "id": "gq_l184_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Candidate: If I ___ hired, I would start by reviewing the current workflow.",
+      "options": [
+        "were",
+        "was",
+        "am",
+        "be"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "This is a hypothetical situation about a job offer that hasn't happened yet.",
+      "explanation": "'If I were hired' uses the traditional second conditional form with 'were' for all subjects, common in interview answers about hypothetical scenarios.",
+      "grammarRule": "Job Interview: Second Conditional",
+      "level": 184
+    },
+    {
+      "id": "gq_l184_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Interviewer: Do you have any experience ___ managing remote teams?",
+      "options": [
+        "of",
+        "for",
+        "in",
+        "with"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "in",
+      "hint": "This adjective phrase pairs with a fixed preposition before a gerund.",
+      "explanation": "'Experience in' pairs naturally with a gerund: experience in managing, a standard interview phrase for describing skills.",
+      "grammarRule": "Dependent Prepositions: Experience In",
+      "level": 184
+    },
+    {
+      "id": "gq_l185_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Doctor's office recording: If you ___ experiencing a medical emergency, please hang up and dial emergency services.",
+      "options": [
+        "is",
+        "were",
+        "are",
+        "have"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "are",
+      "hint": "This describes a real, ongoing possibility right now.",
+      "explanation": "First conditional with present continuous describes a real, current possibility: if you are experiencing, call for help immediately.",
+      "grammarRule": "Appointments: First Conditional",
+      "level": 185
+    },
+    {
+      "id": "gq_l185_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Receptionist: Your appointment ___ confirmed for Tuesday at 10 am.",
+      "options": [
+        "has been",
+        "is being",
+        "was",
+        "will"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has been",
+      "hint": "The confirmation already happened and remains true now.",
+      "explanation": "Present perfect passive shows a completed action with present relevance: has been confirmed, meaning the appointment is set right now.",
+      "grammarRule": "Appointments: Present Perfect Passive",
+      "level": 185
+    },
+    {
+      "id": "gq_l185_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Can I reschedule my appointment?\n— Of course, ___ day works better for you?",
+      "options": [
+        "what",
+        "which",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "which",
+      "hint": "This question asks the patient to choose from a limited, implied set of days.",
+      "explanation": "'Which' is often preferred over 'what' when choosing from a somewhat limited set of options, like days of the week.",
+      "grammarRule": "WH-Questions: Which vs What",
+      "level": 185
+    },
+    {
+      "id": "gq_l186_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Notice: All packages ___ be left unattended in the lobby.",
+      "options": [
+        "mustn't have",
+        "don't have to",
+        "shouldn't have",
+        "must not"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "must not",
+      "hint": "This is a strict rule, a clear prohibition.",
+      "explanation": "'Must not' expresses a firm prohibition suited to official notices: packages must not be left unattended, a clear rule with no exceptions.",
+      "grammarRule": "Notices: Must Not (Prohibition)",
+      "level": 186
+    },
+    {
+      "id": "gq_l186_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Notice: Residents ___ requested to keep noise to a minimum after 10 pm.",
+      "options": [
+        "is",
+        "were",
+        "was",
+        "are"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "are",
+      "hint": "This is a general, standing rule addressed to a plural group.",
+      "explanation": "'Are requested' fits this plural subject in a standing rule, a very common passive structure for polite official notices.",
+      "grammarRule": "Notices: Present Simple Passive",
+      "level": 186
+    },
+    {
+      "id": "gq_l186_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Notice: This elevator ___ being serviced and will reopen this afternoon.",
+      "options": [
+        "was",
+        "is",
+        "has",
+        "will"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "is",
+      "hint": "This describes work in progress at this exact moment.",
+      "explanation": "Present continuous passive describes an action happening right now: is being serviced, explaining the elevator's current unavailability.",
+      "grammarRule": "Notices: Present Continuous Passive",
+      "level": 186
+    },
+    {
+      "id": "gq_l187_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Form instructions: Applicants ___ complete every section before submitting.",
+      "options": [
+        "might",
+        "could",
+        "must",
+        "would"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "must",
+      "hint": "This is a strict requirement on an official form.",
+      "explanation": "'Must' expresses a firm requirement typical of form instructions: must complete every section, with no exceptions allowed.",
+      "grammarRule": "Forms: Must (Obligation)",
+      "level": 187
+    },
+    {
+      "id": "gq_l187_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Form instructions: If any information is missing, your application ___ be returned.",
+      "options": [
+        "will",
+        "would",
+        "was",
+        "is being"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "will",
+      "hint": "This describes a real, predictable consequence of a real condition.",
+      "explanation": "First conditional describes the predictable result of missing information: will be returned, a standard structure in form instructions.",
+      "grammarRule": "Forms: First Conditional",
+      "level": 187
+    },
+    {
+      "id": "gq_l187_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Do I need to sign every page?\n— Only the pages ___ marked with an X.",
+      "options": [
+        "who are",
+        "that are",
+        "which is",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "that are",
+      "hint": "This identifies specific pages out of all the pages in the form.",
+      "explanation": "'That are' introduces a defining relative clause identifying exactly which pages: the pages that are marked with an X, essential information for completing the form correctly.",
+      "grammarRule": "Defining Relative Clauses",
+      "level": 187
+    },
+    {
+      "id": "gq_l188_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Text message: Running late, ___ you mind waiting five more minutes?",
+      "options": [
+        "will",
+        "do",
+        "shall",
+        "would"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "would",
+      "hint": "This is the fixed polite phrase for a casual but courteous request.",
+      "explanation": "'Would you mind' is the fixed polite request pattern reviewed from Stage 5, natural even in a quick, casual text message.",
+      "grammarRule": "Everyday Messaging: Would You Mind",
+      "level": 188
+    },
+    {
+      "id": "gq_l188_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Text message: Can't talk now, but I ___ call you back as soon as I'm free.",
+      "options": [
+        "will",
+        "would",
+        "am going",
+        "was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "will",
+      "hint": "This decision to call back is being made spontaneously, right now.",
+      "explanation": "'Will' fits this spontaneous decision made at the moment of texting: will call you back, a natural everyday promise.",
+      "grammarRule": "Everyday Messaging: Will for Spontaneous Decisions",
+      "level": 188
+    },
+    {
+      "id": "gq_l188_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Are we still on for dinner tonight?\n— Yes, ___ change unless something urgent comes up at work.",
+      "options": [
+        "nothing would",
+        "nothing does",
+        "nothing will",
+        "nothing changed"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "nothing will",
+      "hint": "This describes a realistic future plan with one possible exception.",
+      "explanation": "'Nothing will change unless' combines simple future with 'unless' to describe a firm plan with one exception, a natural pattern in everyday confirmations.",
+      "grammarRule": "Everyday Messaging: Unless",
+      "level": 188
+    },
+    {
+      "id": "gq_l189_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Class instructions: Students ___ submit their essays online before midnight.",
+      "options": [
+        "are required to",
+        "require to",
+        "are requiring",
+        "required"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are required to",
+      "hint": "This fixed passive phrase pairs with an infinitive.",
+      "explanation": "'Are required to' takes the infinitive: required to submit, a standard structure for describing academic obligations.",
+      "grammarRule": "Education: Required To",
+      "level": 189
+    },
+    {
+      "id": "gq_l189_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What happens if I miss the deadline?\n— If you ___ the deadline, you'll lose ten percent of your grade.",
+      "options": [
+        "missed",
+        "will miss",
+        "miss",
+        "had missed"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "miss",
+      "hint": "This describes a real, likely future possibility with a clear rule attached.",
+      "explanation": "First conditional describes a real academic consequence: if you miss the deadline, you'll lose points, keeping the if-clause in present simple.",
+      "grammarRule": "Education: First Conditional",
+      "level": 189
+    },
+    {
+      "id": "gq_l189_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you finish the reading before class?\n— No, I hadn't finished it ___ the professor called on me.",
+      "options": [
+        "until",
+        "when",
+        "by the time",
+        "since"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "when",
+      "hint": "This past perfect sentence needs a word introducing the sudden interrupting moment.",
+      "explanation": "'When' introduces the interrupting past event, paired naturally with past perfect: hadn't finished when she called on me, a classic sequencing pattern.",
+      "grammarRule": "Education: Past Perfect with When",
+      "level": 189
+    },
+    {
+      "id": "gq_l190_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Social invitation: A few of us ___ getting together this weekend; want to join?",
+      "options": [
+        "were",
+        "was",
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "are",
+      "hint": "The subject 'a few of us' behaves as a plural group.",
+      "explanation": "'A few of us' is treated as plural, taking 'are': a few of us are getting together, a casual, friendly invitation.",
+      "grammarRule": "Social Conversations: Subject-Verb Agreement",
+      "level": 190
+    },
+    {
+      "id": "gq_l190_q2",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Have you seen the new café downtown?\n— Not yet, but I've heard it ___ amazing coffee.",
+      "options": [
+        "have",
+        "is having",
+        "has",
+        "had"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "has",
+      "hint": "The subject 'it' refers back to the singular café.",
+      "explanation": "'It' takes 'has' for this general fact about the café: it has amazing coffee, describing an ongoing quality rather than a momentary action.",
+      "grammarRule": "Social Conversations: Simple Present",
+      "level": 190
+    },
+    {
+      "id": "gq_l190_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— What would you do if you could live anywhere?\n— Honestly, if money ___ no object, I'd move to the coast.",
+      "options": [
+        "were",
+        "was",
+        "is",
+        "would be"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "This closes Levels 181–190 with the same hypothetical form of 'be' practiced throughout Stage 7.",
+      "explanation": "'If money were no object' uses the traditional second conditional 'were', wrapping up this real-world block by returning to a structure first mastered back in Stage 7.",
+      "grammarRule": "Second Conditional: If I Were",
+      "level": 190
+    }
+  ]
+}

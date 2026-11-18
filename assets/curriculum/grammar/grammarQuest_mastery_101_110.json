@@ -1,0 +1,578 @@
+{
+  "gameType": "grammarQuest",
+  "phase": "mastery",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "gq_l101_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ finished my homework, so I can relax now.",
+      "options": [
+        "had",
+        "have",
+        "has",
+        "having"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "have",
+      "hint": "The subject is 'I', and this connects a past action to the present moment.",
+      "explanation": "Present perfect uses 'have' + past participle for I/you/we/they: I have finished. The result (being able to relax) matters right now, which is the key idea behind this tense.",
+      "grammarRule": "Present Perfect: Form",
+      "level": 101
+    },
+    {
+      "id": "gq_l101_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She ___ lost her keys; she can't find them anywhere.",
+      "options": [
+        "have",
+        "had",
+        "having",
+        "has"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "has",
+      "hint": "The subject 'she' needs the third-person form of 'have'.",
+      "explanation": "With he/she/it, present perfect uses 'has': she has lost her keys. The present result, not being able to find them, is what makes this tense the right choice.",
+      "grammarRule": "Present Perfect: Third-Person Singular",
+      "level": 101
+    },
+    {
+      "id": "gq_l101_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Where's Tom?\n— He ___ already left for the airport.",
+      "options": [
+        "has",
+        "have",
+        "had",
+        "having"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has",
+      "hint": "Match the subject 'he' with the correct present perfect helper verb.",
+      "explanation": "'He' takes 'has' in the present perfect: he has left. The relevant result now is that Tom simply isn't here anymore.",
+      "grammarRule": "Present Perfect: Third-Person Singular",
+      "level": 101
+    },
+    {
+      "id": "gq_l102_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I have never ___ to Japan, but I'd love to go.",
+      "options": [
+        "be",
+        "was",
+        "been",
+        "being"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "been",
+      "hint": "This is the special past participle form of 'be', used after 'have'.",
+      "explanation": "'Be' has the irregular past participle 'been', used with have/has: have been to Japan. 'Was' would be simple past, which doesn't pair with 'have' this way.",
+      "grammarRule": "Present Perfect: Irregular Past Participles",
+      "level": 102
+    },
+    {
+      "id": "gq_l102_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Have you ___ your homework yet?",
+      "options": [
+        "do",
+        "did",
+        "done",
+        "doing"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "done",
+      "hint": "This is the past participle of 'do', different from its simple past form.",
+      "explanation": "'Do' has the past participle 'done': have you done it? This differs from the simple past 'did', which wouldn't fit after 'have'.",
+      "grammarRule": "Present Perfect: Irregular Past Participles",
+      "level": 102
+    },
+    {
+      "id": "gq_l102_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Has she seen the new movie?\n— Yes, she's already ___ it twice.",
+      "options": [
+        "see",
+        "saw",
+        "seeing",
+        "seen"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "seen",
+      "hint": "This is the past participle of 'see', matching the question's own form.",
+      "explanation": "'See' has the past participle 'seen': has seen, has already seen. This matches the form the question itself already used.",
+      "grammarRule": "Present Perfect: Irregular Past Participles",
+      "level": 102
+    },
+    {
+      "id": "gq_l103_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ to Paris last year with my family.",
+      "options": [
+        "went",
+        "have gone",
+        "has gone",
+        "go"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "went",
+      "hint": "'Last year' names a specific, finished point in time.",
+      "explanation": "A specific past time expression like 'last year' calls for simple past: went last year. Present perfect avoids exact time markers like this.",
+      "grammarRule": "Present Perfect vs Simple Past: Specific Time",
+      "level": 103
+    },
+    {
+      "id": "gq_l103_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ to Paris; I absolutely loved it there.",
+      "options": [
+        "went",
+        "have been",
+        "has been",
+        "go"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "have been",
+      "hint": "No specific time is mentioned here — this is just a general life experience.",
+      "explanation": "Without a specific time marker, present perfect fits general life experience: I have been to Paris. This contrasts with 'went last year' from Question 1, which named an exact time.",
+      "grammarRule": "Present Perfect: Life Experience",
+      "level": 103
+    },
+    {
+      "id": "gq_l103_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Did you finish the report yesterday?\n— Yes, I ___ it yesterday afternoon.",
+      "options": [
+        "have finished",
+        "has finished",
+        "finished",
+        "finish"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "finished",
+      "hint": "'Yesterday afternoon' is another specific point already in the past.",
+      "explanation": "Since 'yesterday afternoon' names an exact time, simple past fits: finished it yesterday. This is the same rule from Question 1, applied to a new example.",
+      "grammarRule": "Present Perfect vs Simple Past: Specific Time",
+      "level": 103
+    },
+    {
+      "id": "gq_l104_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've ___ finished my homework, so I can relax now.",
+      "options": [
+        "already",
+        "yet",
+        "just",
+        "never"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "already",
+      "hint": "This word emphasizes that something happened sooner than expected, in a positive sentence.",
+      "explanation": "'Already' appears in affirmative sentences to show something is done, often earlier than expected: already finished. 'Yet' is reserved for questions and negatives.",
+      "grammarRule": "Already vs Yet: Affirmative",
+      "level": 104
+    },
+    {
+      "id": "gq_l104_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Have you finished your homework ___ ?",
+      "options": [
+        "already",
+        "just",
+        "ever",
+        "yet"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "yet",
+      "hint": "This word typically appears at the end of questions, asking if something has happened by now.",
+      "explanation": "'Yet' fits at the end of questions asking whether something has happened by now: finished yet? This is the question counterpart to 'already' in Question 1.",
+      "grammarRule": "Already vs Yet: Questions",
+      "level": 104
+    },
+    {
+      "id": "gq_l104_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Has he called you back?\n— Not ___ , but I'm sure he will soon.",
+      "options": [
+        "already",
+        "just",
+        "yet",
+        "never"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "yet",
+      "hint": "This short negative answer pairs with the same word used in questions.",
+      "explanation": "'Not yet' is a common short answer meaning something hasn't happened, but is still expected: hasn't called yet. This matches the question form practiced in Question 2.",
+      "grammarRule": "Already vs Yet: Negative",
+      "level": 104
+    },
+    {
+      "id": "gq_l105_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've ___ arrived; give me a minute to settle in.",
+      "options": [
+        "just",
+        "yet",
+        "ever",
+        "never"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "just",
+      "hint": "This word shows something happened a very short moment ago.",
+      "explanation": "'Just' shows an action was completed very recently: have just arrived. It highlights how little time has passed since the action happened.",
+      "grammarRule": "Just: Recent Completion",
+      "level": 105
+    },
+    {
+      "id": "gq_l105_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "She's ___ finished her workout, so she's a bit tired.",
+      "options": [
+        "yet",
+        "just",
+        "ever",
+        "never"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "just",
+      "hint": "The tiredness is a direct, immediate result of something that ended only a moment ago.",
+      "explanation": "'Just' fits here because the tiredness is a fresh, immediate result: has just finished, so she's tired now.",
+      "grammarRule": "Just: Recent Completion",
+      "level": 105
+    },
+    {
+      "id": "gq_l105_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Is dinner ready?\n— Yes, I've ___ put it on the table; it's still steaming.",
+      "options": [
+        "yet",
+        "already",
+        "just",
+        "never"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "just",
+      "hint": "The food is still steaming — this happened only moments ago.",
+      "explanation": "The detail 'still steaming' points to something extremely recent, matching 'just': have just put it on the table.",
+      "grammarRule": "Just: Recent Completion",
+      "level": 105
+    },
+    {
+      "id": "gq_l106_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Have you ___ been to Australia?",
+      "options": [
+        "never",
+        "ever",
+        "already",
+        "yet"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ever",
+      "hint": "This word asks about experience at any point in someone's life, in a question.",
+      "explanation": "'Ever' is used in questions asking about experience at any time: have you ever been? 'Never' would only appear in a negative statement, not a question like this.",
+      "grammarRule": "Ever vs Never: Questions",
+      "level": 106
+    },
+    {
+      "id": "gq_l106_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've ___ tried sushi before; I'd like to though.",
+      "options": [
+        "ever",
+        "already",
+        "never",
+        "yet"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "never",
+      "hint": "This is a statement, not a question, saying this has not happened at any time.",
+      "explanation": "'Never' fits statements meaning 'not at any time': have never tried it. This is the statement counterpart to 'ever', which only appears in questions and negatives.",
+      "grammarRule": "Ever vs Never: Statements",
+      "level": 106
+    },
+    {
+      "id": "gq_l106_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Have you ever tried skydiving?\n— No, I've ___ done anything that extreme!",
+      "options": [
+        "ever",
+        "never",
+        "already",
+        "yet"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "never",
+      "hint": "The reply is a statement responding to the question's 'ever'.",
+      "explanation": "The answer switches to 'never' because it's now a statement, not a question: have never done anything that extreme, echoing the pattern from Question 2.",
+      "grammarRule": "Ever vs Never: Statements",
+      "level": 106
+    },
+    {
+      "id": "gq_l107_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've lived here ___ ten years.",
+      "options": [
+        "since",
+        "during",
+        "for",
+        "by"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "for",
+      "hint": "This introduces a length of time, continuing up to now.",
+      "explanation": "'For' introduces duration that continues into the present with present perfect: have lived for ten years. This is the same 'for' rule from Level 62, now paired with present perfect instead of simple past.",
+      "grammarRule": "Present Perfect: For + Duration",
+      "level": 107
+    },
+    {
+      "id": "gq_l107_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've known her ___ we were kids.",
+      "options": [
+        "for",
+        "since",
+        "during",
+        "until"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "since",
+      "hint": "This introduces the starting point of the friendship, not its length.",
+      "explanation": "'Since' introduces the starting point of a situation continuing to now: known her since we were kids. This mirrors the 'since' rule from Level 62, now used with present perfect.",
+      "grammarRule": "Present Perfect: Since + Starting Point",
+      "level": 107
+    },
+    {
+      "id": "gq_l107_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How long have you worked here?\n— ___ 2015.",
+      "options": [
+        "For",
+        "During",
+        "By",
+        "Since"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Since",
+      "hint": "2015 is a starting point in time, not a length of time.",
+      "explanation": "A specific year like 2015 is a starting point, so 'since' fits: since 2015. 'For' would only work with a length of time, like 'for nine years'.",
+      "grammarRule": "Present Perfect: Since + Starting Point",
+      "level": 107
+    },
+    {
+      "id": "gq_l108_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ long have you been studying English?",
+      "options": [
+        "What",
+        "When",
+        "How",
+        "Since"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How",
+      "hint": "This fixed phrase asks specifically about duration.",
+      "explanation": "'How long' is the fixed phrase for asking about duration: how long have you studied? 'What long' isn't a real English question phrase.",
+      "grammarRule": "Present Perfect: How Long Questions",
+      "level": 108
+    },
+    {
+      "id": "gq_l108_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "How long ___ you known each other?",
+      "options": [
+        "have",
+        "did",
+        "do",
+        "has"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have",
+      "hint": "The subject 'you' needs the matching present perfect helper verb.",
+      "explanation": "'You' takes 'have' in present perfect questions: how long have you known? 'Did' would shift this into simple past, losing the ongoing sense.",
+      "grammarRule": "Present Perfect: How Long Questions",
+      "level": 108
+    },
+    {
+      "id": "gq_l108_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— How long has she been waiting?\n— She's been waiting ___ almost an hour.",
+      "options": [
+        "since",
+        "during",
+        "by",
+        "for"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "for",
+      "hint": "'Almost an hour' is a length of time, not a starting point.",
+      "explanation": "'Almost an hour' describes a duration, so 'for' fits: waiting for almost an hour. 'Since' would need a specific starting point instead, like 'since 3 o'clock'.",
+      "grammarRule": "Present Perfect: For + Duration",
+      "level": 108
+    },
+    {
+      "id": "gq_l109_q1",
+      "instruction": "CHOOSE WHAT FITS",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I've ___ finished the report, so I can send it now.",
+      "options": [
+        "already",
+        "for",
+        "yet",
+        "ever"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "already",
+      "hint": "This is an affirmative sentence about something finished sooner than expected.",
+      "explanation": "'Already' fits this affirmative statement about a completed task: have already finished, so it can be sent, reviewing the pattern from Level 104.",
+      "grammarRule": "Already vs Yet: Affirmative",
+      "level": 109
+    },
+    {
+      "id": "gq_l109_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "Have you ___ visited Italy?",
+      "options": [
+        "already",
+        "never",
+        "yet",
+        "ever"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "ever",
+      "hint": "This is a question about experience at any point in life.",
+      "explanation": "'Ever' fits this experience question: have you ever visited? This reviews the pattern from Level 106.",
+      "grammarRule": "Ever vs Never: Questions",
+      "level": 109
+    },
+    {
+      "id": "gq_l109_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Has the package arrived ___ ?\n— No, not yet.",
+      "options": [
+        "already",
+        "just",
+        "yet",
+        "ever"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "yet",
+      "hint": "This question word is answered with 'not yet' in the reply.",
+      "explanation": "'Yet' fits questions asking if something has happened by now: arrived yet? The reply 'not yet' directly confirms this word choice.",
+      "grammarRule": "Already vs Yet: Questions",
+      "level": 109
+    },
+    {
+      "id": "gq_l110_q1",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "I ___ worked in marketing for over five years.",
+      "options": [
+        "have",
+        "has",
+        "had",
+        "having"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have",
+      "hint": "This describes professional experience continuing to the present, a common interview pattern.",
+      "explanation": "Present perfect is the natural choice for describing ongoing professional experience in interviews: I have worked for five years, and I'm still working in the field.",
+      "grammarRule": "Present Perfect: For + Duration",
+      "level": 110
+    },
+    {
+      "id": "gq_l110_q2",
+      "instruction": "SPOT THE RIGHT PATTERN",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "___ you ever managed a team before?",
+      "options": [
+        "Did",
+        "Do",
+        "Has",
+        "Have"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Have",
+      "hint": "This is a life-experience question, matching the subject 'you'.",
+      "explanation": "'Have you ever...?' asks about experience at any point up to now, matching the pattern from Level 106. 'Did' would need a specific past time to sound natural.",
+      "grammarRule": "Ever vs Never: Questions",
+      "level": 110
+    },
+    {
+      "id": "gq_l110_q3",
+      "instruction": "COMPLETE THE MESSAGE",
+      "subtype": "grammarQuest",
+      "interactionType": "choice",
+      "question": "— Tell me about your experience.\n— I haven't ___ worked in this exact industry, but I'm a fast learner.",
+      "options": [
+        "already",
+        "ever",
+        "never",
+        "yet"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ever",
+      "hint": "This honest admission uses the negative form, but still needs the question-style partner word.",
+      "explanation": "'Haven't ever' works the same way as 'never', pairing 'ever' with a negative verb: haven't ever worked here. This closes Stage 6's opening block by combining present perfect with the ever/never distinction from Level 106.",
+      "grammarRule": "Ever vs Never: Negative",
+      "level": 110
+    }
+  ]
+}
