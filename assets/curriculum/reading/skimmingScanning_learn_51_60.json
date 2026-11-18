@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L51_Q1_LEARN",
+      "level": 51,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Real Estate Listing: This renovated three-bedroom home features a brand-new kitchen and updated bathrooms, but its standout feature is the expansive backyard with a built-in pool.",
+      "targetItem": "expansive backyard with a built-in pool",
+      "targetInfo": "Home's standout feature",
+      "correctAnswer": "expansive backyard with a built-in pool",
+      "distractorAnalysis": [
+        {
+          "word": "brand-new kitchen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Home's standout feature\" despite appearing nearby."
+        },
+        {
+          "word": "updated bathrooms",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Home's standout feature\" despite appearing nearby."
+        },
+        {
+          "word": "three-bedroom home",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Home's standout feature\" despite appearing nearby."
+        },
+        {
+          "word": "expansive backyard with a built-in pool",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Home's standout feature\" in the passage."
+        }
+      ],
+      "options": [
+        "brand-new kitchen",
+        "updated bathrooms",
+        "three-bedroom home",
+        "expansive backyard with a built-in pool"
+      ],
+      "explanation": "The standout feature is the backyard and pool; the kitchen and bathrooms are just additional updates.",
+      "hint": "Skim for the word 'standout' and see what follows it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L51_Q2_LEARN",
+      "level": 51,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Show Synopsis: The season introduces several new supporting characters and a new filming location, but its central storyline follows a detective investigating a decades-old cold case. Fans have also praised the show's cinematography.",
+      "targetItem": "detective investigating a decades-old cold case",
+      "targetInfo": "Season's central storyline",
+      "correctAnswer": "detective investigating a decades-old cold case",
+      "distractorAnalysis": [
+        {
+          "word": "detective investigating a decades-old cold case",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Season's central storyline\" in the passage."
+        },
+        {
+          "word": "new supporting characters",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Season's central storyline\" despite appearing nearby."
+        },
+        {
+          "word": "new filming location",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Season's central storyline\" despite appearing nearby."
+        },
+        {
+          "word": "praised the show's cinematography",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Season's central storyline\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "detective investigating a decades-old cold case",
+        "new supporting characters",
+        "new filming location",
+        "praised the show's cinematography"
+      ],
+      "explanation": "The central storyline is the cold case investigation; new characters, locations, and praise are secondary.",
+      "hint": "Skim past the new additions and praise, and find the actual plot."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L51_Q3_LEARN",
+      "level": 51,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Membership Brochure: While the facility offers a rock climbing wall and a juice bar, most members join primarily for its extensive free-weight area.",
+      "targetItem": "extensive free-weight area",
+      "targetInfo": "What draws most members",
+      "correctAnswer": "extensive free-weight area",
+      "distractorAnalysis": [
+        {
+          "word": "rock climbing wall",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What draws most members\" despite appearing nearby."
+        },
+        {
+          "word": "juice bar",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What draws most members\" despite appearing nearby."
+        },
+        {
+          "word": "extensive free-weight area",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What draws most members\" in the passage."
+        },
+        {
+          "word": "most members join",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What draws most members\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "rock climbing wall",
+        "juice bar",
+        "extensive free-weight area",
+        "most members join"
+      ],
+      "explanation": "Most members join for the free-weight area; the climbing wall and juice bar are extra amenities.",
+      "hint": "Skim for the reason members actually join, not the extra amenities."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L52_Q1_LEARN",
+      "level": 52,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Tech Review: The laptop's battery life is only average, but reviewers consistently highlight its remarkably fast processor as the main selling point.",
+      "targetItem": "remarkably fast processor",
+      "targetInfo": "Laptop's main selling point",
+      "correctAnswer": "remarkably fast processor",
+      "distractorAnalysis": [
+        {
+          "word": "battery life",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Laptop's main selling point\" despite appearing nearby."
+        },
+        {
+          "word": "only average",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Laptop's main selling point\" despite appearing nearby."
+        },
+        {
+          "word": "remarkably fast processor",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Laptop's main selling point\" in the passage."
+        },
+        {
+          "word": "main selling point",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Laptop's main selling point\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "battery life",
+        "only average",
+        "remarkably fast processor",
+        "main selling point"
+      ],
+      "explanation": "Reviewers highlight the fast processor as the main strength; battery life is described as only average.",
+      "hint": "Skim past the average battery life and find what reviewers praise most."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L52_Q2_LEARN",
+      "level": 52,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Cooking Blog: Although the recipe suggests fresh basil, most readers report that dried basil works just as well, making the dish easy to prepare year-round.",
+      "targetItem": "dried basil works just as well",
+      "targetInfo": "Readers' actual finding",
+      "correctAnswer": "dried basil works just as well",
+      "distractorAnalysis": [
+        {
+          "word": "fresh basil",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Readers' actual finding\" despite appearing nearby."
+        },
+        {
+          "word": "dried basil works just as well",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Readers' actual finding\" in the passage."
+        },
+        {
+          "word": "easy to prepare",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Readers' actual finding\" despite appearing nearby."
+        },
+        {
+          "word": "year-round",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Readers' actual finding\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fresh basil",
+        "dried basil works just as well",
+        "easy to prepare",
+        "year-round"
+      ],
+      "explanation": "Readers found dried basil works just as well, even though fresh basil was originally suggested.",
+      "hint": "Skim past the original suggestion and find what readers discovered instead."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L52_Q3_LEARN",
+      "level": 52,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Nonprofit Newsletter: Thanks to a record number of volunteers this year, the food bank was able to distribute meals to twice as many families as last year.",
+      "targetItem": "distribute meals to twice as many families",
+      "targetInfo": "Main achievement described",
+      "correctAnswer": "distribute meals to twice as many families",
+      "distractorAnalysis": [
+        {
+          "word": "record number of volunteers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main achievement described\" despite appearing nearby."
+        },
+        {
+          "word": "this year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main achievement described\" despite appearing nearby."
+        },
+        {
+          "word": "distribute meals to twice as many families",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main achievement described\" in the passage."
+        },
+        {
+          "word": "last year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main achievement described\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "record number of volunteers",
+        "this year",
+        "distribute meals to twice as many families",
+        "last year"
+      ],
+      "explanation": "The achievement is doubling the families served; the volunteer increase explains how it happened.",
+      "hint": "Skim past the reason for success and find the actual result."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L53_Q1_LEARN",
+      "level": 53,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Park Notice: Although the playground will remain open, the splash pad will be drained and closed for the remainder of the season due to a mechanical issue.",
+      "targetItem": "splash pad will be drained and closed",
+      "targetInfo": "What is actually closing",
+      "correctAnswer": "splash pad will be drained and closed",
+      "distractorAnalysis": [
+        {
+          "word": "playground will remain open",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What is actually closing\" despite appearing nearby."
+        },
+        {
+          "word": "splash pad will be drained and closed",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What is actually closing\" in the passage."
+        },
+        {
+          "word": "remainder of the season",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What is actually closing\" despite appearing nearby."
+        },
+        {
+          "word": "mechanical issue",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What is actually closing\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "playground will remain open",
+        "splash pad will be drained and closed",
+        "remainder of the season",
+        "mechanical issue"
+      ],
+      "explanation": "The splash pad is closing for the season; the playground stays open as usual.",
+      "hint": "Skim past what stays open and find what's shutting down."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L53_Q2_LEARN",
+      "level": 53,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Policy Summary: Coverage includes water damage from burst pipes and accidental fire damage, but flooding from natural disasters requires a separate policy add-on.",
+      "targetItem": "flooding from natural disasters requires a separate policy add-on",
+      "targetInfo": "What requires extra coverage",
+      "correctAnswer": "flooding from natural disasters requires a separate policy add-on",
+      "distractorAnalysis": [
+        {
+          "word": "flooding from natural disasters requires a separate policy add-on",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What requires extra coverage\" in the passage."
+        },
+        {
+          "word": "water damage from burst pipes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What requires extra coverage\" despite appearing nearby."
+        },
+        {
+          "word": "accidental fire damage",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What requires extra coverage\" despite appearing nearby."
+        },
+        {
+          "word": "Coverage includes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What requires extra coverage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "flooding from natural disasters requires a separate policy add-on",
+        "water damage from burst pipes",
+        "accidental fire damage",
+        "Coverage includes"
+      ],
+      "explanation": "Burst pipes and fire damage are covered; flooding from natural disasters needs a separate add-on.",
+      "hint": "Skim past what's already covered and find what requires an add-on."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L53_Q3_LEARN",
+      "level": 53,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Release Notes: This update fixes several minor bugs and improves loading speed, but the headline change is a completely redesigned settings menu.",
+      "targetItem": "completely redesigned settings menu",
+      "targetInfo": "Headline change in the update",
+      "correctAnswer": "completely redesigned settings menu",
+      "distractorAnalysis": [
+        {
+          "word": "fixes several minor bugs",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Headline change in the update\" despite appearing nearby."
+        },
+        {
+          "word": "completely redesigned settings menu",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Headline change in the update\" in the passage."
+        },
+        {
+          "word": "improves loading speed",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Headline change in the update\" despite appearing nearby."
+        },
+        {
+          "word": "headline change",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Headline change in the update\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fixes several minor bugs",
+        "completely redesigned settings menu",
+        "improves loading speed",
+        "headline change"
+      ],
+      "explanation": "The headline change is the redesigned settings menu; bug fixes and speed improvements are minor updates.",
+      "hint": "Skim past the minor fixes and find the big change."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L54_Q1_LEARN",
+      "level": 54,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Wedding Announcement: Following a small backyard ceremony, the couple will host a larger reception next spring for family and friends who couldn't attend the wedding itself.",
+      "targetItem": "larger reception next spring",
+      "targetInfo": "What's planned next",
+      "correctAnswer": "larger reception next spring",
+      "distractorAnalysis": [
+        {
+          "word": "small backyard ceremony",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's planned next\" despite appearing nearby."
+        },
+        {
+          "word": "larger reception next spring",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What's planned next\" in the passage."
+        },
+        {
+          "word": "family and friends",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's planned next\" despite appearing nearby."
+        },
+        {
+          "word": "couldn't attend",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's planned next\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "small backyard ceremony",
+        "larger reception next spring",
+        "family and friends",
+        "couldn't attend"
+      ],
+      "explanation": "The ceremony already happened; the reception next spring is the upcoming event.",
+      "hint": "Skim past the ceremony already held and find what's coming up."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L54_Q2_LEARN",
+      "level": 54,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Market Newsletter: New vendors this month include a honey producer and a cheese maker, though the biggest crowd draw remains the weekly live music from local bands.",
+      "targetItem": "biggest crowd draw remains the weekly live music",
+      "targetInfo": "Biggest crowd draw",
+      "correctAnswer": "biggest crowd draw remains the weekly live music",
+      "distractorAnalysis": [
+        {
+          "word": "biggest crowd draw remains the weekly live music",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Biggest crowd draw\" in the passage."
+        },
+        {
+          "word": "honey producer",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest crowd draw\" despite appearing nearby."
+        },
+        {
+          "word": "cheese maker",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest crowd draw\" despite appearing nearby."
+        },
+        {
+          "word": "New vendors this month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest crowd draw\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "biggest crowd draw remains the weekly live music",
+        "honey producer",
+        "cheese maker",
+        "New vendors this month"
+      ],
+      "explanation": "Live music remains the biggest draw; the new vendors are simply additions this month.",
+      "hint": "Skim past the new vendors and find what actually draws the biggest crowd."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L54_Q3_LEARN",
+      "level": 54,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Trail Guide: The first mile is a gentle, flat path suitable for beginners, but hikers should be prepared for a steep, rocky climb during the final two miles.",
+      "targetItem": "steep, rocky climb during the final two miles",
+      "targetInfo": "Trail's hardest section",
+      "correctAnswer": "steep, rocky climb during the final two miles",
+      "distractorAnalysis": [
+        {
+          "word": "steep, rocky climb during the final two miles",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Trail's hardest section\" in the passage."
+        },
+        {
+          "word": "gentle, flat path",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Trail's hardest section\" despite appearing nearby."
+        },
+        {
+          "word": "suitable for beginners",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Trail's hardest section\" despite appearing nearby."
+        },
+        {
+          "word": "first mile",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Trail's hardest section\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "steep, rocky climb during the final two miles",
+        "gentle, flat path",
+        "suitable for beginners",
+        "first mile"
+      ],
+      "explanation": "The trail starts easy, but the final two miles bring a steep, rocky climb.",
+      "hint": "Skim past the easy start and find the challenging part."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L55_Q1_LEARN",
+      "level": 55,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Press Release: The university received funding for several small research grants this year, but its biggest news is a $10 million donation to build a new engineering building.",
+      "targetItem": "$10 million donation to build a new engineering building",
+      "targetInfo": "Biggest news in the release",
+      "correctAnswer": "$10 million donation to build a new engineering building",
+      "distractorAnalysis": [
+        {
+          "word": "several small research grants",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest news in the release\" despite appearing nearby."
+        },
+        {
+          "word": "this year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest news in the release\" despite appearing nearby."
+        },
+        {
+          "word": "biggest news",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest news in the release\" despite appearing nearby."
+        },
+        {
+          "word": "$10 million donation to build a new engineering building",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Biggest news in the release\" in the passage."
+        }
+      ],
+      "options": [
+        "several small research grants",
+        "this year",
+        "biggest news",
+        "$10 million donation to build a new engineering building"
+      ],
+      "explanation": "The major news is the $10 million donation; the smaller grants are mentioned only briefly.",
+      "hint": "Skim past the smaller grants and find the major announcement."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L55_Q2_LEARN",
+      "level": 55,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Menu Update: We've added two new seasonal lattes, but customers keep coming back mainly for our classic sourdough breakfast sandwich.",
+      "targetItem": "classic sourdough breakfast sandwich",
+      "targetInfo": "What keeps customers returning",
+      "correctAnswer": "classic sourdough breakfast sandwich",
+      "distractorAnalysis": [
+        {
+          "word": "two new seasonal lattes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What keeps customers returning\" despite appearing nearby."
+        },
+        {
+          "word": "classic sourdough breakfast sandwich",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What keeps customers returning\" in the passage."
+        },
+        {
+          "word": "customers keep coming back",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What keeps customers returning\" despite appearing nearby."
+        },
+        {
+          "word": "Menu Update",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What keeps customers returning\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two new seasonal lattes",
+        "classic sourdough breakfast sandwich",
+        "customers keep coming back",
+        "Menu Update"
+      ],
+      "explanation": "Customers mainly return for the sourdough sandwich; the new lattes are just seasonal additions.",
+      "hint": "Skim past the new items and find the longtime favorite."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L55_Q3_LEARN",
+      "level": 55,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Game Recap: Despite a slow start in the first quarter, the team's real turning point came from a fourth-quarter comeback led by their rookie point guard.",
+      "targetItem": "fourth-quarter comeback led by their rookie point guard",
+      "targetInfo": "Actual turning point of the game",
+      "correctAnswer": "fourth-quarter comeback led by their rookie point guard",
+      "distractorAnalysis": [
+        {
+          "word": "slow start",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual turning point of the game\" despite appearing nearby."
+        },
+        {
+          "word": "first quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual turning point of the game\" despite appearing nearby."
+        },
+        {
+          "word": "real turning point",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual turning point of the game\" despite appearing nearby."
+        },
+        {
+          "word": "fourth-quarter comeback led by their rookie point guard",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Actual turning point of the game\" in the passage."
+        }
+      ],
+      "options": [
+        "slow start",
+        "first quarter",
+        "real turning point",
+        "fourth-quarter comeback led by their rookie point guard"
+      ],
+      "explanation": "The real turning point was the rookie's fourth-quarter comeback, not the slow start.",
+      "hint": "Skim past the slow start and find what changed the game."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L56_Q1_LEARN",
+      "level": 56,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "HOA Notice: The board approved minor landscaping updates for common areas, but the major change residents should note is a new parking permit requirement starting next month.",
+      "targetItem": "new parking permit requirement starting next month",
+      "targetInfo": "Major change for residents",
+      "correctAnswer": "new parking permit requirement starting next month",
+      "distractorAnalysis": [
+        {
+          "word": "minor landscaping updates",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Major change for residents\" despite appearing nearby."
+        },
+        {
+          "word": "common areas",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Major change for residents\" despite appearing nearby."
+        },
+        {
+          "word": "new parking permit requirement starting next month",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Major change for residents\" in the passage."
+        },
+        {
+          "word": "board approved",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Major change for residents\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "minor landscaping updates",
+        "common areas",
+        "new parking permit requirement starting next month",
+        "board approved"
+      ],
+      "explanation": "The major change is the new parking permit rule; landscaping updates are described as minor.",
+      "hint": "Skim past the minor updates and find what residents truly need to know."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L56_Q2_LEARN",
+      "level": 56,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Adoption Listing: This friendly three-year-old dog is house-trained and good with children, and shelter staff say he is especially eager for a home with a yard to run in.",
+      "targetItem": "eager for a home with a yard to run in",
+      "targetInfo": "What the dog especially needs",
+      "correctAnswer": "eager for a home with a yard to run in",
+      "distractorAnalysis": [
+        {
+          "word": "house-trained",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the dog especially needs\" despite appearing nearby."
+        },
+        {
+          "word": "eager for a home with a yard to run in",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the dog especially needs\" in the passage."
+        },
+        {
+          "word": "good with children",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the dog especially needs\" despite appearing nearby."
+        },
+        {
+          "word": "three-year-old",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the dog especially needs\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "house-trained",
+        "eager for a home with a yard to run in",
+        "good with children",
+        "three-year-old"
+      ],
+      "explanation": "The dog especially needs a yard to run in; being house-trained and good with kids are general traits.",
+      "hint": "Skim past his general traits and find what he specifically needs in a home."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L56_Q3_LEARN",
+      "level": 56,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Concert Review: The opening act received polite applause from a mostly quiet crowd, but the headliner's surprise acoustic set was clearly the highlight of the night.",
+      "targetItem": "headliner's surprise acoustic set was clearly the highlight of the night",
+      "targetInfo": "Actual highlight of the night",
+      "correctAnswer": "headliner's surprise acoustic set was clearly the highlight of the night",
+      "distractorAnalysis": [
+        {
+          "word": "opening act",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual highlight of the night\" despite appearing nearby."
+        },
+        {
+          "word": "polite applause",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual highlight of the night\" despite appearing nearby."
+        },
+        {
+          "word": "headliner's surprise acoustic set was clearly the highlight of the night",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Actual highlight of the night\" in the passage."
+        },
+        {
+          "word": "mostly quiet crowd",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual highlight of the night\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "opening act",
+        "polite applause",
+        "headliner's surprise acoustic set was clearly the highlight of the night",
+        "mostly quiet crowd"
+      ],
+      "explanation": "The true highlight was the headliner's acoustic set; the opening act only got polite applause.",
+      "hint": "Skim past the opening act and find what really stood out."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L57_Q1_LEARN",
+      "level": 57,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "News Brief: City crews repaved several potholes downtown this week, but the bigger infrastructure story is the approval of a new bridge connecting the east and west sides of town.",
+      "targetItem": "approval of a new bridge connecting the east and west sides",
+      "targetInfo": "Bigger infrastructure story",
+      "correctAnswer": "approval of a new bridge connecting the east and west sides",
+      "distractorAnalysis": [
+        {
+          "word": "repaved several potholes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger infrastructure story\" despite appearing nearby."
+        },
+        {
+          "word": "approval of a new bridge connecting the east and west sides",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Bigger infrastructure story\" in the passage."
+        },
+        {
+          "word": "downtown this week",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger infrastructure story\" despite appearing nearby."
+        },
+        {
+          "word": "bigger infrastructure story",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger infrastructure story\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "repaved several potholes",
+        "approval of a new bridge connecting the east and west sides",
+        "downtown this week",
+        "bigger infrastructure story"
+      ],
+      "explanation": "The bigger story is the new bridge; the pothole repairs are routine maintenance.",
+      "hint": "Skim past the routine repairs and find the major project."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L57_Q2_LEARN",
+      "level": 57,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Exhibit Preview: Alongside smaller photography displays, the gallery's main attraction this fall is an immersive light installation spanning three rooms.",
+      "targetItem": "immersive light installation spanning three rooms",
+      "targetInfo": "Gallery's main attraction",
+      "correctAnswer": "immersive light installation spanning three rooms",
+      "distractorAnalysis": [
+        {
+          "word": "immersive light installation spanning three rooms",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Gallery's main attraction\" in the passage."
+        },
+        {
+          "word": "smaller photography displays",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gallery's main attraction\" despite appearing nearby."
+        },
+        {
+          "word": "this fall",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gallery's main attraction\" despite appearing nearby."
+        },
+        {
+          "word": "main attraction",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gallery's main attraction\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "immersive light installation spanning three rooms",
+        "smaller photography displays",
+        "this fall",
+        "main attraction"
+      ],
+      "explanation": "The main attraction is the light installation; the photography displays are described as smaller.",
+      "hint": "Skim past the smaller displays and find the centerpiece exhibit."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L57_Q3_LEARN",
+      "level": 57,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Weather Column: Early morning frost is likely across the valley, though the bigger concern for farmers this week is the lack of rainfall affecting young crops.",
+      "targetItem": "lack of rainfall affecting young crops",
+      "targetInfo": "Farmers' main concern",
+      "correctAnswer": "lack of rainfall affecting young crops",
+      "distractorAnalysis": [
+        {
+          "word": "Early morning frost",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Farmers' main concern\" despite appearing nearby."
+        },
+        {
+          "word": "across the valley",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Farmers' main concern\" despite appearing nearby."
+        },
+        {
+          "word": "lack of rainfall affecting young crops",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Farmers' main concern\" in the passage."
+        },
+        {
+          "word": "bigger concern",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Farmers' main concern\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Early morning frost",
+        "across the valley",
+        "lack of rainfall affecting young crops",
+        "bigger concern"
+      ],
+      "explanation": "The main concern is the lack of rainfall; the frost is mentioned only briefly.",
+      "hint": "Skim past the frost warning and find the deeper worry."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L58_Q1_LEARN",
+      "level": 58,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Volunteer Update: Several long-time volunteers were recognized at this month's meeting, but the newsletter's main announcement is a new partnership with the regional food pantry.",
+      "targetItem": "new partnership with the regional food pantry",
+      "targetInfo": "Main announcement",
+      "correctAnswer": "new partnership with the regional food pantry",
+      "distractorAnalysis": [
+        {
+          "word": "long-time volunteers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main announcement\" despite appearing nearby."
+        },
+        {
+          "word": "new partnership with the regional food pantry",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main announcement\" in the passage."
+        },
+        {
+          "word": "this month's meeting",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main announcement\" despite appearing nearby."
+        },
+        {
+          "word": "main announcement",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main announcement\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "long-time volunteers",
+        "new partnership with the regional food pantry",
+        "this month's meeting",
+        "main announcement"
+      ],
+      "explanation": "The main announcement is the new pantry partnership; the volunteer recognitions are a separate note.",
+      "hint": "Skim past the recognitions and find the actual news."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L58_Q2_LEARN",
+      "level": 58,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "App Description: The app includes a built-in calendar and note-taking tool, but its most praised feature by far is the offline map function for travelers.",
+      "targetItem": "offline map function for travelers",
+      "targetInfo": "Most praised app feature",
+      "correctAnswer": "offline map function for travelers",
+      "distractorAnalysis": [
+        {
+          "word": "offline map function for travelers",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Most praised app feature\" in the passage."
+        },
+        {
+          "word": "built-in calendar",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most praised app feature\" despite appearing nearby."
+        },
+        {
+          "word": "note-taking tool",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most praised app feature\" despite appearing nearby."
+        },
+        {
+          "word": "most praised feature",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most praised app feature\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "offline map function for travelers",
+        "built-in calendar",
+        "note-taking tool",
+        "most praised feature"
+      ],
+      "explanation": "The offline map function is most praised; the calendar and notes are just additional tools.",
+      "hint": "Skim past the calendar and notes tools and find what users praise most."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L58_Q3_LEARN",
+      "level": 58,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Vendor Spotlight: While the bakery also sells cookies and muffins, its sourdough bread is the item customers line up early to buy.",
+      "targetItem": "sourdough bread is the item customers line up early to buy",
+      "targetInfo": "What customers line up for",
+      "correctAnswer": "sourdough bread is the item customers line up early to buy",
+      "distractorAnalysis": [
+        {
+          "word": "sells cookies and muffins",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What customers line up for\" despite appearing nearby."
+        },
+        {
+          "word": "bakery also",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What customers line up for\" despite appearing nearby."
+        },
+        {
+          "word": "sourdough bread is the item customers line up early to buy",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What customers line up for\" in the passage."
+        },
+        {
+          "word": "Vendor Spotlight",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What customers line up for\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "sells cookies and muffins",
+        "bakery also",
+        "sourdough bread is the item customers line up early to buy",
+        "Vendor Spotlight"
+      ],
+      "explanation": "Customers line up early for the sourdough bread; cookies and muffins are just other items sold.",
+      "hint": "Skim past the other baked goods and find what draws the early line."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L59_Q1_LEARN",
+      "level": 59,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Handbook Excerpt: While casual dress is allowed on Fridays, the policy's main rule requires closed-toe shoes on the warehouse floor at all times.",
+      "targetItem": "requires closed-toe shoes on the warehouse floor at all times",
+      "targetInfo": "Policy's main rule",
+      "correctAnswer": "requires closed-toe shoes on the warehouse floor at all times",
+      "distractorAnalysis": [
+        {
+          "word": "casual dress",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Policy's main rule\" despite appearing nearby."
+        },
+        {
+          "word": "allowed on Fridays",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Policy's main rule\" despite appearing nearby."
+        },
+        {
+          "word": "requires closed-toe shoes on the warehouse floor at all times",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Policy's main rule\" in the passage."
+        },
+        {
+          "word": "main rule",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Policy's main rule\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "casual dress",
+        "allowed on Fridays",
+        "requires closed-toe shoes on the warehouse floor at all times",
+        "main rule"
+      ],
+      "explanation": "The main rule is closed-toe shoes on the warehouse floor; casual Fridays are a separate, smaller policy.",
+      "hint": "Skim past the Friday dress code and find the safety requirement."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L59_Q2_LEARN",
+      "level": 59,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Transit Report: Ridership on weekday routes held steady this quarter, but the report's key finding is a sharp rise in weekend ridership following the new fare discount.",
+      "targetItem": "sharp rise in weekend ridership following the new fare discount",
+      "targetInfo": "Report's key finding",
+      "correctAnswer": "sharp rise in weekend ridership following the new fare discount",
+      "distractorAnalysis": [
+        {
+          "word": "Ridership on weekday routes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Report's key finding\" despite appearing nearby."
+        },
+        {
+          "word": "held steady",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Report's key finding\" despite appearing nearby."
+        },
+        {
+          "word": "this quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Report's key finding\" despite appearing nearby."
+        },
+        {
+          "word": "sharp rise in weekend ridership following the new fare discount",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Report's key finding\" in the passage."
+        }
+      ],
+      "options": [
+        "Ridership on weekday routes",
+        "held steady",
+        "this quarter",
+        "sharp rise in weekend ridership following the new fare discount"
+      ],
+      "explanation": "The key finding is the rise in weekend ridership; weekday ridership stayed the same.",
+      "hint": "Skim past the steady weekday numbers and find what actually changed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L59_Q3_LEARN",
+      "level": 59,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Book Club Update: Several members enjoyed the novel's setting, but the discussion mostly centered on the complicated relationship between the two main characters.",
+      "targetItem": "complicated relationship between the two main characters",
+      "targetInfo": "What the discussion centered on",
+      "correctAnswer": "complicated relationship between the two main characters",
+      "distractorAnalysis": [
+        {
+          "word": "enjoyed the novel's setting",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the discussion centered on\" despite appearing nearby."
+        },
+        {
+          "word": "complicated relationship between the two main characters",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the discussion centered on\" in the passage."
+        },
+        {
+          "word": "Several members",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the discussion centered on\" despite appearing nearby."
+        },
+        {
+          "word": "discussion mostly",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the discussion centered on\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "enjoyed the novel's setting",
+        "complicated relationship between the two main characters",
+        "Several members",
+        "discussion mostly"
+      ],
+      "explanation": "The discussion centered on the characters' relationship; the setting was only briefly mentioned.",
+      "hint": "Skim past the setting comments and find the main discussion topic."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L60_Q1_LEARN",
+      "level": 60,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Pitch Summary: The startup has a working prototype and early customer interest, but investors were most impressed by the founder's plan to expand into three new markets within a year.",
+      "targetItem": "plan to expand into three new markets within a year",
+      "targetInfo": "What impressed investors most",
+      "correctAnswer": "plan to expand into three new markets within a year",
+      "distractorAnalysis": [
+        {
+          "word": "working prototype",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What impressed investors most\" despite appearing nearby."
+        },
+        {
+          "word": "early customer interest",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What impressed investors most\" despite appearing nearby."
+        },
+        {
+          "word": "most impressed",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What impressed investors most\" despite appearing nearby."
+        },
+        {
+          "word": "plan to expand into three new markets within a year",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What impressed investors most\" in the passage."
+        }
+      ],
+      "options": [
+        "working prototype",
+        "early customer interest",
+        "most impressed",
+        "plan to expand into three new markets within a year"
+      ],
+      "explanation": "Investors were most impressed by the expansion plan; the prototype and interest were already known.",
+      "hint": "Skim past the prototype and interest and find the expansion plan."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L60_Q2_LEARN",
+      "level": 60,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Budget Summary: Spending on road repairs increased slightly this year, but the biggest shift in the budget is a doubling of funds for public housing programs.",
+      "targetItem": "doubling of funds for public housing programs",
+      "targetInfo": "Biggest budget shift",
+      "correctAnswer": "doubling of funds for public housing programs",
+      "distractorAnalysis": [
+        {
+          "word": "doubling of funds for public housing programs",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Biggest budget shift\" in the passage."
+        },
+        {
+          "word": "Spending on road repairs",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest budget shift\" despite appearing nearby."
+        },
+        {
+          "word": "increased slightly",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest budget shift\" despite appearing nearby."
+        },
+        {
+          "word": "biggest shift",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Biggest budget shift\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "doubling of funds for public housing programs",
+        "Spending on road repairs",
+        "increased slightly",
+        "biggest shift"
+      ],
+      "explanation": "The biggest shift is the doubling of public housing funds; road repair spending only rose slightly.",
+      "hint": "Skim past the small road-repair increase and find the major change."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L60_Q3_LEARN",
+      "level": 60,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Loyalty Update: Members will still earn points on every flight, but the program's major change is a new tier that offers free upgrades after twenty flights a year.",
+      "targetItem": "new tier that offers free upgrades after twenty flights a year",
+      "targetInfo": "Program's major change",
+      "correctAnswer": "new tier that offers free upgrades after twenty flights a year",
+      "distractorAnalysis": [
+        {
+          "word": "new tier that offers free upgrades after twenty flights a year",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Program's major change\" in the passage."
+        },
+        {
+          "word": "earn points on every flight",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Program's major change\" despite appearing nearby."
+        },
+        {
+          "word": "Members will still",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Program's major change\" despite appearing nearby."
+        },
+        {
+          "word": "major change",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Program's major change\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "new tier that offers free upgrades after twenty flights a year",
+        "earn points on every flight",
+        "Members will still",
+        "major change"
+      ],
+      "explanation": "The major change is the new upgrade tier; earning points on flights remains the same as before.",
+      "hint": "Skim past what stays the same and find what's actually new."
+    }
+  ]
+}

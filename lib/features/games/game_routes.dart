@@ -98,6 +98,8 @@ import 'package:vowl/features/reading/reading_conclusion/presentation/pages/read
 import 'package:vowl/features/reading/reading_conclusion/presentation/pages/reading_conclusion_practice_screen.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/pages/cloze_test_learn_screen.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/pages/cloze_test_practice_screen.dart';
+import 'package:vowl/features/reading/skimming_scanning/presentation/pages/skimming_scanning_learn_screen.dart';
+import 'package:vowl/features/reading/skimming_scanning/presentation/pages/skimming_scanning_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -597,6 +599,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'skimmingscanning') {
+          return fadeTransitionPage(
+            child: SkimmingScanningLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -875,6 +883,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'clozetest') {
           return fadeTransitionPage(
             child: ClozeTestPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'skimmingscanning') {
+          return fadeTransitionPage(
+            child: SkimmingScanningPracticeScreen(level: level),
             state: state,
           );
         }

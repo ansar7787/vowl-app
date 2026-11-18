@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L171_Q1_LEARN",
+      "level": 171,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Dual Announcement: Starting next quarter, all full-time employees will receive a 3.5 percent salary adjustment to account for cost of living. Separately, the company is also updating its expense reporting software, which will require all receipts to be submitted digitally going forward.",
+      "targetItem": "3.5 percent",
+      "targetInfo": "Salary adjustment amount",
+      "correctAnswer": "3.5 percent",
+      "distractorAnalysis": [
+        {
+          "word": "digitally",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Salary adjustment amount\" despite appearing nearby."
+        },
+        {
+          "word": "expense reporting",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Salary adjustment amount\" despite appearing nearby."
+        },
+        {
+          "word": "3.5 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Salary adjustment amount\" in the passage."
+        },
+        {
+          "word": "next quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Salary adjustment amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "digitally",
+        "expense reporting",
+        "3.5 percent",
+        "next quarter"
+      ],
+      "explanation": "The salary adjustment is 3.5 percent; the software change is a separate, unrelated update.",
+      "hint": "Separate the two unrelated topics in the announcement and find the one this question asks about."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L171_Q2_LEARN",
+      "level": 171,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Investment Prospectus Excerpt: The fund charges a 0.75 percent annual management fee. A separate transaction fee of $15 applies to each trade made within the account, regardless of trade size.",
+      "targetItem": "$15",
+      "targetInfo": "Transaction fee per trade",
+      "correctAnswer": "$15",
+      "distractorAnalysis": [
+        {
+          "word": "0.75 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Transaction fee per trade\" despite appearing nearby."
+        },
+        {
+          "word": "$15",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Transaction fee per trade\" in the passage."
+        },
+        {
+          "word": "annual management fee",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Transaction fee per trade\" despite appearing nearby."
+        },
+        {
+          "word": "regardless of trade size",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Transaction fee per trade\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "0.75 percent",
+        "$15",
+        "annual management fee",
+        "regardless of trade size"
+      ],
+      "explanation": "The transaction fee is $15 per trade; 0.75 percent is the separate annual management fee.",
+      "hint": "Judge which fee applies per trade, not annually."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L171_Q3_LEARN",
+      "level": 171,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Lease Fee Summary: The application fee is $50 and is non-refundable regardless of approval status. A separate move-in fee of $200 is charged only to approved applicants and is due before keys are issued.",
+      "targetItem": "$200",
+      "targetInfo": "Move-in fee amount",
+      "correctAnswer": "$200",
+      "distractorAnalysis": [
+        {
+          "word": "$200",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Move-in fee amount\" in the passage."
+        },
+        {
+          "word": "$50",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Move-in fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "non-refundable",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Move-in fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "approval status",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Move-in fee amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$200",
+        "$50",
+        "non-refundable",
+        "approval status"
+      ],
+      "explanation": "The move-in fee is $200; $50 is the separate, non-refundable application fee.",
+      "hint": "Judge which fee is the move-in fee, not the application fee."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L172_Q1_LEARN",
+      "level": 172,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Conference Pass Comparison: The standard pass includes access to all breakout sessions and the exhibit hall. The VIP pass includes everything in the standard pass plus a reserved seat at the keynote and a private networking dinner.",
+      "targetItem": "private networking dinner",
+      "targetInfo": "Exclusive VIP pass benefit",
+      "correctAnswer": "private networking dinner",
+      "distractorAnalysis": [
+        {
+          "word": "breakout sessions",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive VIP pass benefit\" despite appearing nearby."
+        },
+        {
+          "word": "exhibit hall",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive VIP pass benefit\" despite appearing nearby."
+        },
+        {
+          "word": "private networking dinner",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exclusive VIP pass benefit\" in the passage."
+        },
+        {
+          "word": "reserved seat",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive VIP pass benefit\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "breakout sessions",
+        "exhibit hall",
+        "private networking dinner",
+        "reserved seat"
+      ],
+      "explanation": "The private networking dinner is VIP-only; breakout sessions and the exhibit hall are included in both passes.",
+      "hint": "Judge which benefit is exclusive to VIP, not shared with standard."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L172_Q2_LEARN",
+      "level": 172,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Health Plan Comparison: The bronze plan has a lower monthly premium but a higher annual deductible of $4,500. The gold plan has a higher premium but a lower deductible of $1,200, making it better suited for frequent medical care.",
+      "targetItem": "$1,200",
+      "targetInfo": "Gold plan's annual deductible",
+      "correctAnswer": "$1,200",
+      "distractorAnalysis": [
+        {
+          "word": "$4,500",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gold plan's annual deductible\" despite appearing nearby."
+        },
+        {
+          "word": "lower monthly premium",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gold plan's annual deductible\" despite appearing nearby."
+        },
+        {
+          "word": "frequent medical care",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gold plan's annual deductible\" despite appearing nearby."
+        },
+        {
+          "word": "$1,200",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Gold plan's annual deductible\" in the passage."
+        }
+      ],
+      "options": [
+        "$4,500",
+        "lower monthly premium",
+        "frequent medical care",
+        "$1,200"
+      ],
+      "explanation": "The gold plan's deductible is $1,200; $4,500 belongs to the bronze plan instead.",
+      "hint": "Judge which deductible belongs to the gold plan, not the bronze plan."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L172_Q3_LEARN",
+      "level": 172,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Financial Aid Letter: Your need-based grant award for this year totals $6,200 and does not need to be repaid. You have also been offered a subsidized loan of $3,500, which begins accruing interest after graduation.",
+      "targetItem": "$6,200",
+      "targetInfo": "Need-based grant amount",
+      "correctAnswer": "$6,200",
+      "distractorAnalysis": [
+        {
+          "word": "$6,200",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Need-based grant amount\" in the passage."
+        },
+        {
+          "word": "$3,500",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Need-based grant amount\" despite appearing nearby."
+        },
+        {
+          "word": "subsidized loan",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Need-based grant amount\" despite appearing nearby."
+        },
+        {
+          "word": "after graduation",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Need-based grant amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$6,200",
+        "$3,500",
+        "subsidized loan",
+        "after graduation"
+      ],
+      "explanation": "The grant award is $6,200 and doesn't need repayment; $3,500 is the separate loan offer.",
+      "hint": "Judge which figure is the grant, not the loan."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L173_Q1_LEARN",
+      "level": 173,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Product Version Comparison: The standard edition includes core features and receives updates twice a year. The pro edition includes all standard features plus advanced analytics tools, with updates released monthly instead of twice a year.",
+      "targetItem": "monthly",
+      "targetInfo": "Update frequency for the pro edition",
+      "correctAnswer": "monthly",
+      "distractorAnalysis": [
+        {
+          "word": "twice a year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Update frequency for the pro edition\" despite appearing nearby."
+        },
+        {
+          "word": "monthly",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Update frequency for the pro edition\" in the passage."
+        },
+        {
+          "word": "advanced analytics tools",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Update frequency for the pro edition\" despite appearing nearby."
+        },
+        {
+          "word": "core features",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Update frequency for the pro edition\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "twice a year",
+        "monthly",
+        "advanced analytics tools",
+        "core features"
+      ],
+      "explanation": "The pro edition updates monthly; twice a year is the standard edition's slower update schedule.",
+      "hint": "Judge which update frequency belongs to the pro edition, not the standard edition."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L173_Q2_LEARN",
+      "level": 173,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline Status Tiers: Silver status requires 25,000 miles annually and includes priority boarding. Gold status requires 50,000 miles annually and includes priority boarding plus two free checked bags per flight.",
+      "targetItem": "two free checked bags",
+      "targetInfo": "Exclusive Gold status benefit",
+      "correctAnswer": "two free checked bags",
+      "distractorAnalysis": [
+        {
+          "word": "25,000 miles",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive Gold status benefit\" despite appearing nearby."
+        },
+        {
+          "word": "priority boarding",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive Gold status benefit\" despite appearing nearby."
+        },
+        {
+          "word": "50,000 miles",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive Gold status benefit\" despite appearing nearby."
+        },
+        {
+          "word": "two free checked bags",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exclusive Gold status benefit\" in the passage."
+        }
+      ],
+      "options": [
+        "25,000 miles",
+        "priority boarding",
+        "50,000 miles",
+        "two free checked bags"
+      ],
+      "explanation": "Two free checked bags is Gold-exclusive; priority boarding is included in both tiers.",
+      "hint": "Judge which benefit is exclusive to Gold, not shared with Silver."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L173_Q3_LEARN",
+      "level": 173,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Retail Store Notice: Our flagship location carries the full product catalog and offers personal styling appointments. Our outlet locations carry a limited selection of past-season items at discounted prices, without styling services.",
+      "targetItem": "past-season items",
+      "targetInfo": "What outlet locations carry",
+      "correctAnswer": "past-season items",
+      "distractorAnalysis": [
+        {
+          "word": "full product catalog",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What outlet locations carry\" despite appearing nearby."
+        },
+        {
+          "word": "past-season items",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What outlet locations carry\" in the passage."
+        },
+        {
+          "word": "personal styling",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What outlet locations carry\" despite appearing nearby."
+        },
+        {
+          "word": "discounted prices",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What outlet locations carry\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "full product catalog",
+        "past-season items",
+        "personal styling",
+        "discounted prices"
+      ],
+      "explanation": "Outlets carry past-season items; the full catalog and styling appointments are flagship-only.",
+      "hint": "Judge which items belong to outlet locations, not the flagship store."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L174_Q1_LEARN",
+      "level": 174,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Legal Notice: Creditors must file claims against the estate within ninety days of this notice's publication. Beneficiaries wishing to contest the will have a separate deadline of six months from the date of probate filing.",
+      "targetItem": "six months",
+      "targetInfo": "Deadline for beneficiaries to contest the will",
+      "correctAnswer": "six months",
+      "distractorAnalysis": [
+        {
+          "word": "ninety days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Deadline for beneficiaries to contest the will\" despite appearing nearby."
+        },
+        {
+          "word": "six months",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Deadline for beneficiaries to contest the will\" in the passage."
+        },
+        {
+          "word": "publication",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Deadline for beneficiaries to contest the will\" despite appearing nearby."
+        },
+        {
+          "word": "probate filing",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Deadline for beneficiaries to contest the will\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "ninety days",
+        "six months",
+        "publication",
+        "probate filing"
+      ],
+      "explanation": "Beneficiaries have six months to contest the will; ninety days is the separate deadline for creditors.",
+      "hint": "Judge which deadline applies to beneficiaries, not creditors."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L174_Q2_LEARN",
+      "level": 174,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Warranty Notice: The manufacturer's warranty covers defects in materials for two years from purchase. Extended coverage, purchased separately, extends protection to five years but excludes cosmetic damage.",
+      "targetItem": "five years",
+      "targetInfo": "Length of extended coverage",
+      "correctAnswer": "five years",
+      "distractorAnalysis": [
+        {
+          "word": "five years",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Length of extended coverage\" in the passage."
+        },
+        {
+          "word": "two years",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of extended coverage\" despite appearing nearby."
+        },
+        {
+          "word": "materials",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of extended coverage\" despite appearing nearby."
+        },
+        {
+          "word": "cosmetic damage",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of extended coverage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "five years",
+        "two years",
+        "materials",
+        "cosmetic damage"
+      ],
+      "explanation": "Extended coverage lasts five years; two years is the standard, included warranty period.",
+      "hint": "Judge which length belongs to extended coverage, not the standard warranty."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L174_Q3_LEARN",
+      "level": 174,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "City Notice: Residential parking permits cost $35 annually and allow parking in designated residential zones only. Commercial parking permits cost $120 annually and allow parking in both residential and commercial zones.",
+      "targetItem": "$120",
+      "targetInfo": "Cost of a commercial parking permit",
+      "correctAnswer": "$120",
+      "distractorAnalysis": [
+        {
+          "word": "$35",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a commercial parking permit\" despite appearing nearby."
+        },
+        {
+          "word": "residential zones",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a commercial parking permit\" despite appearing nearby."
+        },
+        {
+          "word": "$120",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of a commercial parking permit\" in the passage."
+        },
+        {
+          "word": "designated",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a commercial parking permit\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$35",
+        "residential zones",
+        "$120",
+        "designated"
+      ],
+      "explanation": "Commercial permits cost $120; $35 is the separate residential permit price.",
+      "hint": "Judge which cost belongs to commercial permits, not residential ones."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L175_Q1_LEARN",
+      "level": 175,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Subscription Box Notice: The monthly plan costs $34.99 and can be canceled anytime without penalty. The annual plan costs $299.99, which works out to a lower monthly rate but requires a full year's commitment.",
+      "targetItem": "$299.99",
+      "targetInfo": "Cost of the annual plan",
+      "correctAnswer": "$299.99",
+      "distractorAnalysis": [
+        {
+          "word": "$34.99",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the annual plan\" despite appearing nearby."
+        },
+        {
+          "word": "$299.99",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of the annual plan\" in the passage."
+        },
+        {
+          "word": "canceled anytime",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the annual plan\" despite appearing nearby."
+        },
+        {
+          "word": "lower monthly rate",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the annual plan\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$34.99",
+        "$299.99",
+        "canceled anytime",
+        "lower monthly rate"
+      ],
+      "explanation": "The annual plan costs $299.99; $34.99 is the separate monthly price.",
+      "hint": "Judge which price belongs to the annual plan, not the monthly plan."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L175_Q2_LEARN",
+      "level": 175,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "University Housing Notice: Traditional dorm rooms cost $4,800 per semester and include a meal plan. Apartment-style housing costs $6,400 per semester and does not include a meal plan, though a kitchen is provided instead.",
+      "targetItem": "$6,400",
+      "targetInfo": "Cost of apartment-style housing",
+      "correctAnswer": "$6,400",
+      "distractorAnalysis": [
+        {
+          "word": "$4,800",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of apartment-style housing\" despite appearing nearby."
+        },
+        {
+          "word": "meal plan",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of apartment-style housing\" despite appearing nearby."
+        },
+        {
+          "word": "$6,400",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of apartment-style housing\" in the passage."
+        },
+        {
+          "word": "kitchen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of apartment-style housing\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$4,800",
+        "meal plan",
+        "$6,400",
+        "kitchen"
+      ],
+      "explanation": "Apartment-style housing costs $6,400; $4,800 is the separate traditional dorm price.",
+      "hint": "Judge which cost belongs to apartment-style housing, not the traditional dorm."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L175_Q3_LEARN",
+      "level": 175,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Wireless Plan Notice: The basic plan includes 10GB of data for $40 monthly. The unlimited plan costs $65 monthly and includes unlimited data along with mobile hotspot access.",
+      "targetItem": "mobile hotspot access",
+      "targetInfo": "Feature exclusive to the unlimited plan",
+      "correctAnswer": "mobile hotspot access",
+      "distractorAnalysis": [
+        {
+          "word": "10GB",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature exclusive to the unlimited plan\" despite appearing nearby."
+        },
+        {
+          "word": "$40",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature exclusive to the unlimited plan\" despite appearing nearby."
+        },
+        {
+          "word": "unlimited data",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature exclusive to the unlimited plan\" despite appearing nearby."
+        },
+        {
+          "word": "mobile hotspot access",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Feature exclusive to the unlimited plan\" in the passage."
+        }
+      ],
+      "options": [
+        "10GB",
+        "$40",
+        "unlimited data",
+        "mobile hotspot access"
+      ],
+      "explanation": "Mobile hotspot access is exclusive to the unlimited plan; 10GB and $40 describe the basic plan.",
+      "hint": "Judge which feature is exclusive to the unlimited plan."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L176_Q1_LEARN",
+      "level": 176,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Car Rental Comparison: The economy car rents for $32 per day and seats up to four passengers. The SUV rents for $58 per day and seats up to seven passengers, making it a better fit for larger groups.",
+      "targetItem": "$58",
+      "targetInfo": "SUV daily rental rate",
+      "correctAnswer": "$58",
+      "distractorAnalysis": [
+        {
+          "word": "$32",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"SUV daily rental rate\" despite appearing nearby."
+        },
+        {
+          "word": "four passengers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"SUV daily rental rate\" despite appearing nearby."
+        },
+        {
+          "word": "$58",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"SUV daily rental rate\" in the passage."
+        },
+        {
+          "word": "seven passengers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"SUV daily rental rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$32",
+        "four passengers",
+        "$58",
+        "seven passengers"
+      ],
+      "explanation": "The SUV rents for $58 per day; $32 is the separate economy car rate.",
+      "hint": "Judge which rate belongs to the SUV, not the economy car."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L176_Q2_LEARN",
+      "level": 176,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Wedding Package Comparison: The basic package includes venue rental and basic catering for $8,000. The premium package includes everything in the basic package plus photography and a live band, for $14,500.",
+      "targetItem": "photography and a live band",
+      "targetInfo": "What the premium package adds",
+      "correctAnswer": "photography and a live band",
+      "distractorAnalysis": [
+        {
+          "word": "venue rental",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the premium package adds\" despite appearing nearby."
+        },
+        {
+          "word": "basic catering",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the premium package adds\" despite appearing nearby."
+        },
+        {
+          "word": "photography and a live band",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the premium package adds\" in the passage."
+        },
+        {
+          "word": "$8,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the premium package adds\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "venue rental",
+        "basic catering",
+        "photography and a live band",
+        "$8,000"
+      ],
+      "explanation": "The premium package adds photography and a live band; venue rental and catering are in both packages.",
+      "hint": "Judge which items are added by the premium package specifically."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L176_Q3_LEARN",
+      "level": 176,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Childcare Program Notice: Part-time enrollment covers three days per week at $650 monthly. Full-time enrollment covers five days per week at $980 monthly, including all meals and snacks.",
+      "targetItem": "$980",
+      "targetInfo": "Cost of full-time enrollment",
+      "correctAnswer": "$980",
+      "distractorAnalysis": [
+        {
+          "word": "$650",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of full-time enrollment\" despite appearing nearby."
+        },
+        {
+          "word": "$980",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of full-time enrollment\" in the passage."
+        },
+        {
+          "word": "three days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of full-time enrollment\" despite appearing nearby."
+        },
+        {
+          "word": "meals and snacks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of full-time enrollment\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$650",
+        "$980",
+        "three days",
+        "meals and snacks"
+      ],
+      "explanation": "Full-time enrollment costs $980; $650 is the separate part-time price.",
+      "hint": "Judge which cost belongs to full-time enrollment, not part-time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L177_Q1_LEARN",
+      "level": 177,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Office Lease Comparison: The smaller suite is 1,200 square feet at $2,400 monthly. The larger suite is 2,000 square feet at $3,600 monthly and includes a private conference room.",
+      "targetItem": "private conference room",
+      "targetInfo": "Feature included only with the larger suite",
+      "correctAnswer": "private conference room",
+      "distractorAnalysis": [
+        {
+          "word": "1,200 square feet",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature included only with the larger suite\" despite appearing nearby."
+        },
+        {
+          "word": "private conference room",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Feature included only with the larger suite\" in the passage."
+        },
+        {
+          "word": "$2,400",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature included only with the larger suite\" despite appearing nearby."
+        },
+        {
+          "word": "2,000 square feet",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Feature included only with the larger suite\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "1,200 square feet",
+        "private conference room",
+        "$2,400",
+        "2,000 square feet"
+      ],
+      "explanation": "The private conference room is exclusive to the larger suite; the smaller suite doesn't include it.",
+      "hint": "Judge which feature is exclusive to the larger suite."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L177_Q2_LEARN",
+      "level": 177,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Credit Card Comparison: The standard card has no annual fee and offers 1 percent cash back on all purchases. The premium card has a $95 annual fee but offers 3 percent cash back on groceries and gas.",
+      "targetItem": "3 percent",
+      "targetInfo": "Cash back rate on groceries and gas with the premium card",
+      "correctAnswer": "3 percent",
+      "distractorAnalysis": [
+        {
+          "word": "3 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cash back rate on groceries and gas with the premium card\" in the passage."
+        },
+        {
+          "word": "1 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cash back rate on groceries and gas with the premium card\" despite appearing nearby."
+        },
+        {
+          "word": "no annual fee",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cash back rate on groceries and gas with the premium card\" despite appearing nearby."
+        },
+        {
+          "word": "$95",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cash back rate on groceries and gas with the premium card\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "3 percent",
+        "1 percent",
+        "no annual fee",
+        "$95"
+      ],
+      "explanation": "The premium card offers 3 percent on groceries and gas; 1 percent is the standard card's general rate.",
+      "hint": "Judge which cash back rate belongs to the premium card, not the standard card."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L177_Q3_LEARN",
+      "level": 177,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Moving Service Comparison: The basic service includes loading and transport only, for $600. The full-service option includes packing, loading, transport, and unpacking, for $1,450.",
+      "targetItem": "packing, loading, transport, and unpacking",
+      "targetInfo": "What the full-service option includes",
+      "correctAnswer": "packing, loading, transport, and unpacking",
+      "distractorAnalysis": [
+        {
+          "word": "packing, loading, transport, and unpacking",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the full-service option includes\" in the passage."
+        },
+        {
+          "word": "loading and transport only",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the full-service option includes\" despite appearing nearby."
+        },
+        {
+          "word": "$600",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the full-service option includes\" despite appearing nearby."
+        },
+        {
+          "word": "basic service",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the full-service option includes\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "packing, loading, transport, and unpacking",
+        "loading and transport only",
+        "$600",
+        "basic service"
+      ],
+      "explanation": "Full-service includes packing, loading, transport, and unpacking; the basic service covers loading and transport only.",
+      "hint": "Judge which list of services belongs to the full-service option."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L178_Q1_LEARN",
+      "level": 178,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Daycare Fee Notice: Infant care costs $1,400 monthly due to a lower staff-to-child ratio required by regulation. Toddler care costs $1,100 monthly, reflecting the less intensive staffing requirement.",
+      "targetItem": "$1,100",
+      "targetInfo": "Cost of toddler care",
+      "correctAnswer": "$1,100",
+      "distractorAnalysis": [
+        {
+          "word": "$1,400",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of toddler care\" despite appearing nearby."
+        },
+        {
+          "word": "staff-to-child ratio",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of toddler care\" despite appearing nearby."
+        },
+        {
+          "word": "regulation",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of toddler care\" despite appearing nearby."
+        },
+        {
+          "word": "$1,100",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of toddler care\" in the passage."
+        }
+      ],
+      "options": [
+        "$1,400",
+        "staff-to-child ratio",
+        "regulation",
+        "$1,100"
+      ],
+      "explanation": "Toddler care costs $1,100; $1,400 is the separate, higher infant care price.",
+      "hint": "Judge which cost belongs to toddler care, not infant care."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L178_Q2_LEARN",
+      "level": 178,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Pet Boarding Rate Notice: Standard boarding costs $45 per night and includes two walks daily. Luxury boarding costs $75 per night and includes four walks daily plus a private suite instead of a shared kennel.",
+      "targetItem": "private suite",
+      "targetInfo": "Exclusive feature of luxury boarding",
+      "correctAnswer": "private suite",
+      "distractorAnalysis": [
+        {
+          "word": "two walks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive feature of luxury boarding\" despite appearing nearby."
+        },
+        {
+          "word": "private suite",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exclusive feature of luxury boarding\" in the passage."
+        },
+        {
+          "word": "$45",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive feature of luxury boarding\" despite appearing nearby."
+        },
+        {
+          "word": "shared kennel",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exclusive feature of luxury boarding\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two walks",
+        "private suite",
+        "$45",
+        "shared kennel"
+      ],
+      "explanation": "The private suite is exclusive to luxury boarding; standard boarding uses a shared kennel instead.",
+      "hint": "Judge which feature is exclusive to luxury boarding."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L178_Q3_LEARN",
+      "level": 178,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Ski Pass Comparison: The weekday pass costs $89 and is valid Monday through Friday only. The full-access pass costs $149 and is valid every day, including weekends and holidays.",
+      "targetItem": "$149",
+      "targetInfo": "Cost of the full-access pass",
+      "correctAnswer": "$149",
+      "distractorAnalysis": [
+        {
+          "word": "$89",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-access pass\" despite appearing nearby."
+        },
+        {
+          "word": "Monday through Friday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-access pass\" despite appearing nearby."
+        },
+        {
+          "word": "weekday pass",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-access pass\" despite appearing nearby."
+        },
+        {
+          "word": "$149",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of the full-access pass\" in the passage."
+        }
+      ],
+      "options": [
+        "$89",
+        "Monday through Friday",
+        "weekday pass",
+        "$149"
+      ],
+      "explanation": "The full-access pass costs $149; $89 is the separate, weekday-only price.",
+      "hint": "Judge which cost belongs to the full-access pass, not the weekday pass."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L179_Q1_LEARN",
+      "level": 179,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Moving Insurance Notice: Basic released-value protection is included at no cost but covers only 60 cents per pound per item. Full-value protection can be purchased separately and covers the item's full replacement cost.",
+      "targetItem": "full replacement cost",
+      "targetInfo": "Coverage under full-value protection",
+      "correctAnswer": "full replacement cost",
+      "distractorAnalysis": [
+        {
+          "word": "60 cents per pound",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Coverage under full-value protection\" despite appearing nearby."
+        },
+        {
+          "word": "no cost",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Coverage under full-value protection\" despite appearing nearby."
+        },
+        {
+          "word": "full replacement cost",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Coverage under full-value protection\" in the passage."
+        },
+        {
+          "word": "released-value",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Coverage under full-value protection\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "60 cents per pound",
+        "no cost",
+        "full replacement cost",
+        "released-value"
+      ],
+      "explanation": "Full-value protection covers full replacement cost; the free default only covers 60 cents per pound.",
+      "hint": "Judge which coverage level applies to full-value protection, not the basic default."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L179_Q2_LEARN",
+      "level": 179,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Summer Camp Fee Notice: The half-day program costs $220 per week and runs from 9 to 1. The full-day program costs $380 per week and runs from 8 to 5, including lunch and an afternoon snack.",
+      "targetItem": "$380",
+      "targetInfo": "Cost of the full-day program",
+      "correctAnswer": "$380",
+      "distractorAnalysis": [
+        {
+          "word": "$220",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-day program\" despite appearing nearby."
+        },
+        {
+          "word": "9 to 1",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-day program\" despite appearing nearby."
+        },
+        {
+          "word": "lunch",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the full-day program\" despite appearing nearby."
+        },
+        {
+          "word": "$380",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of the full-day program\" in the passage."
+        }
+      ],
+      "options": [
+        "$220",
+        "9 to 1",
+        "lunch",
+        "$380"
+      ],
+      "explanation": "The full-day program costs $380; $220 is the separate half-day price.",
+      "hint": "Judge which cost belongs to the full-day program, not the half-day program."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L179_Q3_LEARN",
+      "level": 179,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Software Support Tier Notice: The basic support tier includes email support with a 48-hour response time. The enterprise tier includes phone support with a guaranteed 2-hour response time, available 24/7.",
+      "targetItem": "2-hour",
+      "targetInfo": "Enterprise tier's response time",
+      "correctAnswer": "2-hour",
+      "distractorAnalysis": [
+        {
+          "word": "48-hour",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Enterprise tier's response time\" despite appearing nearby."
+        },
+        {
+          "word": "2-hour",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Enterprise tier's response time\" in the passage."
+        },
+        {
+          "word": "email support",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Enterprise tier's response time\" despite appearing nearby."
+        },
+        {
+          "word": "24/7",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Enterprise tier's response time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "48-hour",
+        "2-hour",
+        "email support",
+        "24/7"
+      ],
+      "explanation": "The enterprise tier guarantees a 2-hour response; 48 hours is the basic tier's slower response time.",
+      "hint": "Judge which response time belongs to the enterprise tier, not the basic tier."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L180_Q1_LEARN",
+      "level": 180,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Corporate Bonus Structure Notice: Employees at the associate level are eligible for a bonus of up to 8 percent of base salary, contingent on individual performance reviews. Employees at the senior level are eligible for up to 15 percent, contingent on both individual and team performance.",
+      "targetItem": "15 percent",
+      "targetInfo": "Maximum bonus percentage for senior-level employees",
+      "correctAnswer": "15 percent",
+      "distractorAnalysis": [
+        {
+          "word": "8 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Maximum bonus percentage for senior-level employees\" despite appearing nearby."
+        },
+        {
+          "word": "individual performance",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Maximum bonus percentage for senior-level employees\" despite appearing nearby."
+        },
+        {
+          "word": "15 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Maximum bonus percentage for senior-level employees\" in the passage."
+        },
+        {
+          "word": "base salary",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Maximum bonus percentage for senior-level employees\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "8 percent",
+        "individual performance",
+        "15 percent",
+        "base salary"
+      ],
+      "explanation": "Senior-level employees can earn up to 15 percent; 8 percent is the separate, lower associate-level cap.",
+      "hint": "Judge which bonus percentage belongs to senior-level employees, not associate-level."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L180_Q2_LEARN",
+      "level": 180,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Theme Park Ticket Comparison: The single-day ticket costs $89 and grants access to one park only. The park-hopper ticket costs $135 and allows unlimited movement between all parks on the same day.",
+      "targetItem": "$135",
+      "targetInfo": "Cost of the park-hopper ticket",
+      "correctAnswer": "$135",
+      "distractorAnalysis": [
+        {
+          "word": "$89",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the park-hopper ticket\" despite appearing nearby."
+        },
+        {
+          "word": "$135",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of the park-hopper ticket\" in the passage."
+        },
+        {
+          "word": "one park only",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the park-hopper ticket\" despite appearing nearby."
+        },
+        {
+          "word": "single-day",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the park-hopper ticket\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$89",
+        "$135",
+        "one park only",
+        "single-day"
+      ],
+      "explanation": "The park-hopper ticket costs $135; $89 is the separate, single-park price.",
+      "hint": "Judge which cost belongs to the park-hopper ticket, not the single-day ticket."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L180_Q3_LEARN",
+      "level": 180,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Data Plan Overage Notice: Customers on the standard plan are charged $10 per additional gigabyte after exceeding their monthly allowance. Customers on the premium plan instead have overage automatically throttled to slower speeds at no extra charge.",
+      "targetItem": "throttled to slower speeds",
+      "targetInfo": "What happens to premium plan users who exceed their allowance",
+      "correctAnswer": "throttled to slower speeds",
+      "distractorAnalysis": [
+        {
+          "word": "$10 per additional gigabyte",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to premium plan users who exceed their allowance\" despite appearing nearby."
+        },
+        {
+          "word": "standard plan",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to premium plan users who exceed their allowance\" despite appearing nearby."
+        },
+        {
+          "word": "no extra charge",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to premium plan users who exceed their allowance\" despite appearing nearby."
+        },
+        {
+          "word": "throttled to slower speeds",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What happens to premium plan users who exceed their allowance\" in the passage."
+        }
+      ],
+      "options": [
+        "$10 per additional gigabyte",
+        "standard plan",
+        "no extra charge",
+        "throttled to slower speeds"
+      ],
+      "explanation": "Premium users are throttled to slower speeds; standard plan users instead pay $10 per extra gigabyte.",
+      "hint": "Judge which consequence applies to premium plan users, not standard plan users."
+    }
+  ]
+}

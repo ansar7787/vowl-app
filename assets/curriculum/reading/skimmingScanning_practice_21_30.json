@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q1_PRACTICE",
+      "level": 21,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the sentence for the exact reservation time.",
+      "passage": "The Thompson family booked a table for six at Bella Roma on Friday at seven thirty. They requested a spot near the window.",
+      "targetItem": "seven thirty",
+      "targetInfo": "Reservation time",
+      "correctAnswer": "seven thirty",
+      "options": [
+        "seven thirty",
+        "six",
+        "Friday",
+        "window"
+      ],
+      "explanation": "The reservation is for seven thirty; six refers to the number of guests, not the time.",
+      "hint": "Look for the precise time, not the party size."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q2_PRACTICE",
+      "level": 21,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan both sentences for when the coat will be ready.",
+      "passage": "The dry cleaner said the suit would be ready Thursday, but the coat needed an extra day and would be ready Friday.",
+      "targetItem": "Friday",
+      "targetInfo": "Day the coat is ready",
+      "correctAnswer": "Friday",
+      "options": [
+        "Thursday",
+        "suit",
+        "extra",
+        "Friday"
+      ],
+      "explanation": "The suit is ready Thursday, but the coat needs an extra day and is ready Friday.",
+      "hint": "Find the day tied to the coat, not the suit."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q3_PRACTICE",
+      "level": 21,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Search the sentence for the length of the cat's treatment.",
+      "passage": "Dr. Alvarez examined the cat's ear infection and prescribed drops twice daily for ten days.",
+      "targetItem": "ten",
+      "targetInfo": "Length of treatment",
+      "correctAnswer": "ten",
+      "options": [
+        "twice",
+        "daily",
+        "ear",
+        "ten"
+      ],
+      "explanation": "The drops are needed for ten days; twice daily describes how often, not the total length.",
+      "hint": "Look for the number of days the drops are needed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q1_PRACTICE",
+      "level": 22,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for the estimated loading time.",
+      "passage": "The moving truck is scheduled to arrive at 8 a.m., but the movers said loading usually takes about three hours.",
+      "targetItem": "three",
+      "targetInfo": "Estimated loading time",
+      "correctAnswer": "three",
+      "options": [
+        "8 a.m.",
+        "movers",
+        "truck",
+        "three"
+      ],
+      "explanation": "The truck arrives at 8 a.m., but loading itself is expected to take three hours.",
+      "hint": "Search for how long loading takes, not the arrival time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q2_PRACTICE",
+      "level": 22,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Search the sentence for which part was already replaced.",
+      "passage": "Car service center called to say the brake pads were replaced, but the oil change will happen at the next visit.",
+      "targetItem": "brake pads",
+      "targetInfo": "Part replaced today",
+      "correctAnswer": "brake pads",
+      "options": [
+        "oil change",
+        "brake pads",
+        "next visit",
+        "service"
+      ],
+      "explanation": "The brake pads are already replaced; the oil change is planned for a future visit.",
+      "hint": "Look for the part that is already finished, not scheduled later."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q3_PRACTICE",
+      "level": 22,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for this year's premium.",
+      "passage": "The insurance renewal notice lists a premium of $340 for six months, up from $310 last year.",
+      "targetItem": "$340",
+      "targetInfo": "New premium amount",
+      "correctAnswer": "$340",
+      "options": [
+        "$310",
+        "six months",
+        "$340",
+        "last year"
+      ],
+      "explanation": "This year's premium is $340; $310 was the amount charged last year.",
+      "hint": "Find the current amount, not last year's."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q1_PRACTICE",
+      "level": 23,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for who teaches geometry.",
+      "passage": "Two tutors are available: Mr. Diaz teaches algebra on Mondays, and Ms. Kwan teaches geometry on Thursdays.",
+      "targetItem": "Ms. Kwan",
+      "targetInfo": "Geometry tutor",
+      "correctAnswer": "Ms. Kwan",
+      "options": [
+        "Mr. Diaz",
+        "Mondays",
+        "Ms. Kwan",
+        "algebra"
+      ],
+      "explanation": "Mr. Diaz teaches algebra; Ms. Kwan is the one who teaches geometry.",
+      "hint": "Look for the tutor paired with the word geometry."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q2_PRACTICE",
+      "level": 23,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Search the sentence for the food trucks' starting time.",
+      "passage": "The festival's main stage opens at noon, while the food trucks begin serving at eleven.",
+      "targetItem": "eleven",
+      "targetInfo": "Food truck start time",
+      "correctAnswer": "eleven",
+      "options": [
+        "eleven",
+        "noon",
+        "festival",
+        "main"
+      ],
+      "explanation": "The main stage opens at noon, but the food trucks start serving earlier, at eleven.",
+      "hint": "Find the time linked to the food trucks, not the main stage."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q3_PRACTICE",
+      "level": 23,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for the correct interview room.",
+      "passage": "The job interview is confirmed for Tuesday at 10 a.m. in Conference Room B, not Room A as first planned.",
+      "targetItem": "Conference Room B",
+      "targetInfo": "Correct interview room",
+      "correctAnswer": "Conference Room B",
+      "options": [
+        "Room A",
+        "Tuesday",
+        "Conference Room B",
+        "10 a.m."
+      ],
+      "explanation": "Room A was the original plan, but the interview is now confirmed in Conference Room B.",
+      "hint": "Look for the room named as the final, correct location."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q1_PRACTICE",
+      "level": 24,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the bill for this month's usage.",
+      "passage": "The utility bill shows 420 kilowatt hours used this month, compared to 380 last month.",
+      "targetItem": "420",
+      "targetInfo": "This month's usage",
+      "correctAnswer": "420",
+      "options": [
+        "420",
+        "380",
+        "kilowatt",
+        "month"
+      ],
+      "explanation": "This month's usage is 420 kilowatt hours; 380 was last month's figure.",
+      "hint": "Find the number tied to this month, not last month."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q2_PRACTICE",
+      "level": 24,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the sentence for the check-out date.",
+      "passage": "The hotel confirmed a king room for two nights, checking in on the 14th and checking out on the 16th.",
+      "targetItem": "16th",
+      "targetInfo": "Check-out date",
+      "correctAnswer": "16th",
+      "options": [
+        "16th",
+        "14th",
+        "king",
+        "two"
+      ],
+      "explanation": "Check-in is on the 14th; check-out, the date being asked for, is the 16th.",
+      "hint": "Look for the date tied to checking out, not checking in."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q3_PRACTICE",
+      "level": 24,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the sentence for the estimated trip cost.",
+      "passage": "The rideshare driver, Priya, said the trip would take fifteen minutes and cost about nine dollars.",
+      "targetItem": "nine",
+      "targetInfo": "Estimated trip cost",
+      "correctAnswer": "nine",
+      "options": [
+        "fifteen",
+        "Priya",
+        "nine",
+        "minutes"
+      ],
+      "explanation": "The trip is expected to cost nine dollars; fifteen minutes refers to travel time.",
+      "hint": "Find the number tied to cost, not travel time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q1_PRACTICE",
+      "level": 25,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence for the refill wait time.",
+      "passage": "The pharmacist said the prescription refill would be ready in two hours, though the original order took only thirty minutes.",
+      "targetItem": "two hours",
+      "targetInfo": "Refill wait time",
+      "correctAnswer": "two hours",
+      "options": [
+        "two hours",
+        "thirty minutes",
+        "original",
+        "pharmacist"
+      ],
+      "explanation": "The original order took thirty minutes, but this refill will take two hours.",
+      "hint": "Look for the wait time tied to the refill, not the original order."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q2_PRACTICE",
+      "level": 25,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Search the sentence for how long labor is covered.",
+      "passage": "The washing machine's warranty covers parts for two years and labor for only one year.",
+      "targetItem": "one year",
+      "targetInfo": "Labor coverage length",
+      "correctAnswer": "one year",
+      "options": [
+        "two years",
+        "one year",
+        "parts",
+        "washing"
+      ],
+      "explanation": "Parts are covered for two years, but labor coverage lasts only one year.",
+      "hint": "Find the coverage length tied to labor, not parts."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q3_PRACTICE",
+      "level": 25,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence for the cancellation deadline.",
+      "passage": "The streaming subscription renews automatically on the 3rd unless canceled by the 1st.",
+      "targetItem": "1st",
+      "targetInfo": "Cancellation deadline",
+      "correctAnswer": "1st",
+      "options": [
+        "3rd",
+        "automatically",
+        "1st",
+        "subscription"
+      ],
+      "explanation": "Renewal happens on the 3rd, but cancellation must occur by the 1st to stop it.",
+      "hint": "Look for the date by which cancellation must happen, not the renewal date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q1_PRACTICE",
+      "level": 26,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the sentence for the badge pickup time.",
+      "passage": "Badge pickup for the conference starts at 7 a.m. in the lobby, while the keynote speech begins at 9 a.m. in Hall C.",
+      "targetItem": "7 a.m.",
+      "targetInfo": "Badge pickup time",
+      "correctAnswer": "7 a.m.",
+      "options": [
+        "9 a.m.",
+        "lobby",
+        "Hall C",
+        "7 a.m."
+      ],
+      "explanation": "Badge pickup starts at 7 a.m.; the keynote, a separate event, begins at 9 a.m.",
+      "hint": "Find the time tied to badge pickup, not the keynote."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q2_PRACTICE",
+      "level": 26,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search the sentence for the third painter listed.",
+      "passage": "The art exhibit features works by three painters: Lena Ostrowski, Marcus Feld, and Ana Duarte.",
+      "targetItem": "Ana Duarte",
+      "targetInfo": "Third painter listed",
+      "correctAnswer": "Ana Duarte",
+      "options": [
+        "Lena Ostrowski",
+        "Ana Duarte",
+        "Marcus Feld",
+        "three"
+      ],
+      "explanation": "The painters are listed in order, and Ana Duarte is named third.",
+      "hint": "Count the names in order and find the last one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q3_PRACTICE",
+      "level": 26,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the sentence for when sauce-making is taught.",
+      "passage": "The cooking class covers knife skills in week one and sauce-making in week three, skipping week two entirely.",
+      "targetItem": "week three",
+      "targetInfo": "When sauce-making is taught",
+      "correctAnswer": "week three",
+      "options": [
+        "week three",
+        "week one",
+        "week two",
+        "knife"
+      ],
+      "explanation": "Knife skills are taught in week one; sauce-making comes later, in week three.",
+      "hint": "Look for the week tied to sauce-making, not knife skills."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q1_PRACTICE",
+      "level": 27,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Search the sentence for how late the plumber might be.",
+      "passage": "The plumber is scheduled to arrive between 1 and 3 p.m., though the office called to say he might be running thirty minutes late.",
+      "targetItem": "thirty minutes",
+      "targetInfo": "Length of possible delay",
+      "correctAnswer": "thirty minutes",
+      "options": [
+        "thirty minutes",
+        "1 and 3 p.m.",
+        "office",
+        "plumber"
+      ],
+      "explanation": "The arrival window is 1 to 3 p.m., but the office warned of a possible thirty-minute delay.",
+      "hint": "Find the length of the possible delay, not the arrival window."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q2_PRACTICE",
+      "level": 27,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the sentence for the open swim hours.",
+      "passage": "The community pool's adult swim hours are six to seven in the morning, and open swim runs from noon to five.",
+      "targetItem": "noon to five",
+      "targetInfo": "Open swim hours",
+      "correctAnswer": "noon to five",
+      "options": [
+        "six to seven",
+        "morning",
+        "pool",
+        "noon to five"
+      ],
+      "explanation": "Adult swim runs six to seven in the morning; open swim is the later noon-to-five block.",
+      "hint": "Look for the hours tied to open swim, not adult swim."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q3_PRACTICE",
+      "level": 27,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Search the sentence for which round uses harder words.",
+      "passage": "The spelling bee has two rounds: round one uses easier words, and round two, held after a short break, uses harder words.",
+      "targetItem": "round two",
+      "targetInfo": "Round with harder words",
+      "correctAnswer": "round two",
+      "options": [
+        "round one",
+        "break",
+        "easier",
+        "round two"
+      ],
+      "explanation": "Round one uses easier words; round two, after the break, uses the harder ones.",
+      "hint": "Find the round described as using harder words."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q1_PRACTICE",
+      "level": 28,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for where the package was mistakenly delivered.",
+      "passage": "The package addressed to Nathan Reyes at 88 Corbin Lane was actually delivered to 88 Corbin Court by mistake.",
+      "targetItem": "88 Corbin Court",
+      "targetInfo": "Where the package was mistakenly delivered",
+      "correctAnswer": "88 Corbin Court",
+      "options": [
+        "88 Corbin Lane",
+        "Nathan Reyes",
+        "mistake",
+        "88 Corbin Court"
+      ],
+      "explanation": "The package was meant for 88 Corbin Lane but was mistakenly sent to 88 Corbin Court.",
+      "hint": "Watch for two similar addresses and find the wrong one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q2_PRACTICE",
+      "level": 28,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Search the sentence for who actually filed the report.",
+      "passage": "Both Officer Reyes and Officer Nguyen responded to the call, but only Officer Nguyen filed the report.",
+      "targetItem": "Officer Nguyen",
+      "targetInfo": "Officer who filed the report",
+      "correctAnswer": "Officer Nguyen",
+      "options": [
+        "Officer Reyes",
+        "Officer Nguyen",
+        "call",
+        "report"
+      ],
+      "explanation": "Both officers responded, but only Officer Nguyen is named as filing the report.",
+      "hint": "Find the officer specifically credited with filing."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q3_PRACTICE",
+      "level": 28,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for the branch that accepts walk-ins.",
+      "passage": "The clinic in Riverdale handles walk-ins, while the Lakeside branch requires appointments only.",
+      "targetItem": "Riverdale",
+      "targetInfo": "Branch that allows walk-ins",
+      "correctAnswer": "Riverdale",
+      "options": [
+        "Lakeside",
+        "appointments",
+        "Riverdale",
+        "clinic"
+      ],
+      "explanation": "Riverdale accepts walk-ins; the Lakeside branch requires an appointment.",
+      "hint": "Look for the branch name tied to walk-ins, not appointments."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q1_PRACTICE",
+      "level": 29,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for how many applicants received offers.",
+      "passage": "Of the fifty applicants, twelve were interviewed, and only three received job offers.",
+      "targetItem": "three",
+      "targetInfo": "Number who received offers",
+      "correctAnswer": "three",
+      "options": [
+        "three",
+        "fifty",
+        "twelve",
+        "applicants"
+      ],
+      "explanation": "Fifty applied and twelve were interviewed, but only three received offers.",
+      "hint": "Find the smallest number, which reflects the final outcome."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q2_PRACTICE",
+      "level": 29,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Search the sentence for how many copies actually sold.",
+      "passage": "The bookstore ordered eighty copies of the novel but sold only fifty-two in the first week.",
+      "targetItem": "fifty-two",
+      "targetInfo": "Copies sold in the first week",
+      "correctAnswer": "fifty-two",
+      "options": [
+        "fifty-two",
+        "eighty",
+        "novel",
+        "week"
+      ],
+      "explanation": "Eighty copies were ordered, but only fifty-two sold in the first week.",
+      "hint": "Find the number describing actual sales, not the order size."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q3_PRACTICE",
+      "level": 29,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for this year's total raised.",
+      "passage": "The charity run raised $2,400 last year and $3,150 this year, an increase organizers were proud of.",
+      "targetItem": "$3,150",
+      "targetInfo": "This year's amount raised",
+      "correctAnswer": "$3,150",
+      "options": [
+        "$3,150",
+        "$2,400",
+        "charity",
+        "organizers"
+      ],
+      "explanation": "Last year's total was $2,400; this year's higher total is $3,150.",
+      "hint": "Find the amount tied to this year, not last year."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q1_PRACTICE",
+      "level": 30,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the sentence for how many seats were actually filled.",
+      "passage": "The lecture hall holds two hundred students, but only one hundred sixty seats were filled for the guest speaker on Tuesday.",
+      "targetItem": "one hundred sixty",
+      "targetInfo": "Number of seats filled",
+      "correctAnswer": "one hundred sixty",
+      "options": [
+        "two hundred",
+        "students",
+        "one hundred sixty",
+        "Tuesday"
+      ],
+      "explanation": "The hall holds two hundred, but only one hundred sixty seats were filled.",
+      "hint": "Find the number describing actual attendance, not total capacity."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q2_PRACTICE",
+      "level": 30,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the sentence for the price of a second checked bag.",
+      "passage": "The airline's baggage policy allows one free checked bag under fifty pounds; a second bag costs thirty-five dollars.",
+      "targetItem": "thirty-five",
+      "targetInfo": "Cost of a second checked bag",
+      "correctAnswer": "thirty-five",
+      "options": [
+        "fifty",
+        "one",
+        "free",
+        "thirty-five"
+      ],
+      "explanation": "The first bag is free under fifty pounds; a second bag costs thirty-five dollars.",
+      "hint": "Find the price tied to the second bag, not the first."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q3_PRACTICE",
+      "level": 30,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the sentence for the price of the two-bedroom.",
+      "passage": "The apartment listing shows a one-bedroom for $1,450 a month and a two-bedroom for $1,890, both including water.",
+      "targetItem": "$1,890",
+      "targetInfo": "Price of the two-bedroom",
+      "correctAnswer": "$1,890",
+      "options": [
+        "$1,450",
+        "water",
+        "month",
+        "$1,890"
+      ],
+      "explanation": "The one-bedroom costs $1,450; the two-bedroom, the unit in question, costs $1,890.",
+      "hint": "Find the price tied to the two-bedroom, not the one-bedroom."
+    }
+  ]
+}

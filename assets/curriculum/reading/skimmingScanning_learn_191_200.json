@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L191_Q1_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Economic Report Summary: Consumer spending grew modestly in the first half of the year before slowing in the third quarter. Business investment showed similar softening during the same period. Despite these headwinds, the labor market remained resilient, with unemployment holding steady at 3.8 percent. Economists note that inflation, which peaked at 6.1 percent last year, has since cooled to 2.9 percent.",
+      "targetItem": "2.9 percent",
+      "targetInfo": "Current inflation rate",
+      "correctAnswer": "2.9 percent",
+      "distractorAnalysis": [
+        {
+          "word": "3.8 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current inflation rate\" despite appearing nearby."
+        },
+        {
+          "word": "6.1 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current inflation rate\" despite appearing nearby."
+        },
+        {
+          "word": "2.9 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current inflation rate\" in the passage."
+        },
+        {
+          "word": "third quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current inflation rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "3.8 percent",
+        "6.1 percent",
+        "2.9 percent",
+        "third quarter"
+      ],
+      "explanation": "Inflation has cooled to 2.9 percent; 6.1 percent was last year's peak, and 3.8 percent describes unemployment instead.",
+      "hint": "Skip the spending, investment, and unemployment figures and find inflation's current level at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L191_Q2_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Hospital Quality Report: Patient satisfaction scores improved across most departments this year. The emergency department saw a notable reduction in average wait times. Readmission rates, a key quality metric, fell from 14.2 percent to 11.6 percent, exceeding the hospital's improvement target.",
+      "targetItem": "11.6 percent",
+      "targetInfo": "Current readmission rate",
+      "correctAnswer": "11.6 percent",
+      "distractorAnalysis": [
+        {
+          "word": "14.2 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current readmission rate\" despite appearing nearby."
+        },
+        {
+          "word": "11.6 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current readmission rate\" in the passage."
+        },
+        {
+          "word": "improvement target",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current readmission rate\" despite appearing nearby."
+        },
+        {
+          "word": "wait times",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current readmission rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "14.2 percent",
+        "11.6 percent",
+        "improvement target",
+        "wait times"
+      ],
+      "explanation": "Readmissions fell to 11.6 percent from 14.2 percent; the earlier figure is the starting point, not the current rate.",
+      "hint": "Skip the satisfaction and wait time notes and find the current readmission rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L191_Q3_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "University Endowment Report: The endowment experienced volatility early in the fiscal year due to broader market conditions. Real estate holdings underperformed relative to public equities. By year's end, the fund's total value reached $2.4 billion, a gain of 7.3 percent despite the rocky start.",
+      "targetItem": "$2.4 billion",
+      "targetInfo": "Endowment's total value at year's end",
+      "correctAnswer": "$2.4 billion",
+      "distractorAnalysis": [
+        {
+          "word": "$2.4 billion",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Endowment's total value at year's end\" in the passage."
+        },
+        {
+          "word": "7.3 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Endowment's total value at year's end\" despite appearing nearby."
+        },
+        {
+          "word": "market conditions",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Endowment's total value at year's end\" despite appearing nearby."
+        },
+        {
+          "word": "Real estate",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Endowment's total value at year's end\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$2.4 billion",
+        "7.3 percent",
+        "market conditions",
+        "Real estate"
+      ],
+      "explanation": "The endowment reached $2.4 billion; 7.3 percent describes the gain rate, a separate figure from the total.",
+      "hint": "Skip the volatility and underperformance notes and find the total value at year's end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L192_Q1_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Climate Research Summary: Researchers collected data from over 200 monitoring stations across the region over a five-year period. Temperature increases were most pronounced in urban areas compared to rural ones. The study's central finding is that average summer temperatures have risen by 1.8 degrees since monitoring began, with the sharpest increase occurring in the final two years.",
+      "targetItem": "1.8 degrees",
+      "targetInfo": "Rise in average summer temperatures",
+      "correctAnswer": "1.8 degrees",
+      "distractorAnalysis": [
+        {
+          "word": "200 monitoring stations",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rise in average summer temperatures\" despite appearing nearby."
+        },
+        {
+          "word": "1.8 degrees",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Rise in average summer temperatures\" in the passage."
+        },
+        {
+          "word": "five-year period",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rise in average summer temperatures\" despite appearing nearby."
+        },
+        {
+          "word": "final two years",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rise in average summer temperatures\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "200 monitoring stations",
+        "1.8 degrees",
+        "five-year period",
+        "final two years"
+      ],
+      "explanation": "Summer temperatures rose 1.8 degrees; the monitoring stations and study period describe methodology, not the result.",
+      "hint": "Skip the methodology and urban comparison and find the actual temperature figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L192_Q2_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Earnings Call Highlights: Revenue from the company's legacy hardware division declined slightly this quarter, continuing a multi-year trend. The cloud services division, by contrast, grew 31 percent year-over-year, now accounting for nearly half of total revenue. Management reiterated full-year guidance despite mixed segment performance.",
+      "targetItem": "31 percent",
+      "targetInfo": "Cloud services division's year-over-year growth",
+      "correctAnswer": "31 percent",
+      "distractorAnalysis": [
+        {
+          "word": "legacy hardware",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cloud services division's year-over-year growth\" despite appearing nearby."
+        },
+        {
+          "word": "31 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cloud services division's year-over-year growth\" in the passage."
+        },
+        {
+          "word": "full-year guidance",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cloud services division's year-over-year growth\" despite appearing nearby."
+        },
+        {
+          "word": "nearly half",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cloud services division's year-over-year growth\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "legacy hardware",
+        "31 percent",
+        "full-year guidance",
+        "nearly half"
+      ],
+      "explanation": "Cloud services grew 31 percent; legacy hardware is the separate, declining division.",
+      "hint": "Skip the hardware division's decline and find the cloud division's growth figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L192_Q3_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Transit Ridership Report: Bus ridership has recovered steadily since the pandemic low, though it remains below prior levels. Rail ridership recovered more slowly at first but has since surged. This year, rail ridership reached 94 percent of pre-pandemic levels, outpacing the bus system's 78 percent recovery.",
+      "targetItem": "94 percent",
+      "targetInfo": "Rail ridership's recovery percentage",
+      "correctAnswer": "94 percent",
+      "distractorAnalysis": [
+        {
+          "word": "78 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rail ridership's recovery percentage\" despite appearing nearby."
+        },
+        {
+          "word": "94 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Rail ridership's recovery percentage\" in the passage."
+        },
+        {
+          "word": "pandemic low",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rail ridership's recovery percentage\" despite appearing nearby."
+        },
+        {
+          "word": "surged",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rail ridership's recovery percentage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "78 percent",
+        "94 percent",
+        "pandemic low",
+        "surged"
+      ],
+      "explanation": "Rail ridership reached 94 percent of pre-pandemic levels; 78 percent belongs to the separate bus system.",
+      "hint": "Skip the bus ridership trend and find rail ridership's actual figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L193_Q1_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Tech Salary Survey: Entry-level compensation rose modestly across most regions this year. Compensation for mid-level engineers grew somewhat faster, reflecting increased demand. The steepest increase was among senior engineering roles, where median total compensation reached $185,000, up 12 percent from last year.",
+      "targetItem": "$185,000",
+      "targetInfo": "Median compensation for senior engineering roles",
+      "correctAnswer": "$185,000",
+      "distractorAnalysis": [
+        {
+          "word": "$185,000",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Median compensation for senior engineering roles\" in the passage."
+        },
+        {
+          "word": "12 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median compensation for senior engineering roles\" despite appearing nearby."
+        },
+        {
+          "word": "Entry-level",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median compensation for senior engineering roles\" despite appearing nearby."
+        },
+        {
+          "word": "mid-level",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median compensation for senior engineering roles\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$185,000",
+        "12 percent",
+        "Entry-level",
+        "mid-level"
+      ],
+      "explanation": "Senior engineers reached $185,000 median compensation; 12 percent describes the rate of increase, not the total.",
+      "hint": "Skip the entry-level and mid-level trends and find the senior-level compensation figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L193_Q2_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Agricultural Export Report: Grain exports remained roughly flat compared to last year due to weaker international demand. Dairy exports grew moderately following new trade agreements. The standout category was specialty produce, which saw exports climb 41 percent, driven largely by demand in Asian markets.",
+      "targetItem": "41 percent",
+      "targetInfo": "Growth in specialty produce exports",
+      "correctAnswer": "41 percent",
+      "distractorAnalysis": [
+        {
+          "word": "Grain exports",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in specialty produce exports\" despite appearing nearby."
+        },
+        {
+          "word": "Dairy exports",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in specialty produce exports\" despite appearing nearby."
+        },
+        {
+          "word": "41 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Growth in specialty produce exports\" in the passage."
+        },
+        {
+          "word": "Asian markets",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in specialty produce exports\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Grain exports",
+        "Dairy exports",
+        "41 percent",
+        "Asian markets"
+      ],
+      "explanation": "Specialty produce exports climbed 41 percent; grain and dairy are separate, less notable categories.",
+      "hint": "Skip the grain and dairy figures and find the specialty produce growth rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L193_Q3_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Vaccination Update: Uptake among adults over 65 remained strong throughout the campaign, consistent with prior years. Uptake among younger adults lagged behind initial projections. Overall, the region reached a vaccination rate of 71 percent, falling short of the 80 percent target set at the start of the campaign.",
+      "targetItem": "71 percent",
+      "targetInfo": "Region's overall vaccination rate reached",
+      "correctAnswer": "71 percent",
+      "distractorAnalysis": [
+        {
+          "word": "71 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Region's overall vaccination rate reached\" in the passage."
+        },
+        {
+          "word": "over 65",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall vaccination rate reached\" despite appearing nearby."
+        },
+        {
+          "word": "80 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall vaccination rate reached\" despite appearing nearby."
+        },
+        {
+          "word": "younger adults",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall vaccination rate reached\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "71 percent",
+        "over 65",
+        "80 percent",
+        "younger adults"
+      ],
+      "explanation": "The overall rate reached was 71 percent; 80 percent was only the original target, not the actual result.",
+      "hint": "Skip the age-group breakdown and find the actual overall rate achieved."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L194_Q1_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Energy Grid Update: Demand remained relatively stable through the spring months. A brief heat wave in early summer pushed usage to a seasonal high. Renewable sources, including solar and wind, supplied 38 percent of total grid demand this year, up from 29 percent the previous year.",
+      "targetItem": "38 percent",
+      "targetInfo": "Renewable sources' share of grid demand this year",
+      "correctAnswer": "38 percent",
+      "distractorAnalysis": [
+        {
+          "word": "29 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Renewable sources' share of grid demand this year\" despite appearing nearby."
+        },
+        {
+          "word": "spring months",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Renewable sources' share of grid demand this year\" despite appearing nearby."
+        },
+        {
+          "word": "seasonal high",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Renewable sources' share of grid demand this year\" despite appearing nearby."
+        },
+        {
+          "word": "38 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Renewable sources' share of grid demand this year\" in the passage."
+        }
+      ],
+      "options": [
+        "29 percent",
+        "spring months",
+        "seasonal high",
+        "38 percent"
+      ],
+      "explanation": "Renewables supplied 38 percent this year, up from 29 percent last year, which is the earlier figure.",
+      "hint": "Skip the demand trends and heat wave note and find this year's renewable share."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L194_Q2_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Banking Regulatory Notice: Several smaller institutions were found to have minor compliance gaps during routine reviews this cycle. Most issues were resolved through standard corrective action plans. One larger institution, however, was fined $4.2 million for failing to report suspicious transactions within the required timeframe.",
+      "targetItem": "$4.2 million",
+      "targetInfo": "Fine issued to the larger institution",
+      "correctAnswer": "$4.2 million",
+      "distractorAnalysis": [
+        {
+          "word": "compliance gaps",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fine issued to the larger institution\" despite appearing nearby."
+        },
+        {
+          "word": "$4.2 million",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Fine issued to the larger institution\" in the passage."
+        },
+        {
+          "word": "corrective action plans",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fine issued to the larger institution\" despite appearing nearby."
+        },
+        {
+          "word": "suspicious transactions",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fine issued to the larger institution\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "compliance gaps",
+        "$4.2 million",
+        "corrective action plans",
+        "suspicious transactions"
+      ],
+      "explanation": "The fine was $4.2 million; the compliance gaps and corrective action plans describe unrelated smaller institutions.",
+      "hint": "Skip the smaller institutions' minor issues and find the actual fine figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L194_Q3_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "League Update: Attendance across most teams remained steady compared to last season. Merchandise sales grew modestly league-wide. The standout trend this season was streaming viewership, which grew 55 percent, now surpassing traditional broadcast viewership for the first time.",
+      "targetItem": "55 percent",
+      "targetInfo": "Growth in streaming viewership",
+      "correctAnswer": "55 percent",
+      "distractorAnalysis": [
+        {
+          "word": "Attendance",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in streaming viewership\" despite appearing nearby."
+        },
+        {
+          "word": "Merchandise sales",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in streaming viewership\" despite appearing nearby."
+        },
+        {
+          "word": "broadcast viewership",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Growth in streaming viewership\" despite appearing nearby."
+        },
+        {
+          "word": "55 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Growth in streaming viewership\" in the passage."
+        }
+      ],
+      "options": [
+        "Attendance",
+        "Merchandise sales",
+        "broadcast viewership",
+        "55 percent"
+      ],
+      "explanation": "Streaming viewership grew 55 percent; attendance and merchandise sales are separate, steadier trends.",
+      "hint": "Skip the attendance and merchandise figures and find the streaming growth rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L195_Q1_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Shipping Index Report: Port congestion eased significantly compared to the previous year across most major hubs. Fuel costs remained a persistent challenge for carriers throughout the year. The index's key figure, average transit time for transpacific routes, fell to 18 days, down from 27 days at the previous year's peak.",
+      "targetItem": "18 days",
+      "targetInfo": "Current average transpacific transit time",
+      "correctAnswer": "18 days",
+      "distractorAnalysis": [
+        {
+          "word": "27 days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average transpacific transit time\" despite appearing nearby."
+        },
+        {
+          "word": "18 days",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current average transpacific transit time\" in the passage."
+        },
+        {
+          "word": "Fuel costs",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average transpacific transit time\" despite appearing nearby."
+        },
+        {
+          "word": "Port congestion",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average transpacific transit time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "27 days",
+        "18 days",
+        "Fuel costs",
+        "Port congestion"
+      ],
+      "explanation": "Transit time fell to 18 days from 27 days, which was the previous year's peak figure.",
+      "hint": "Skip the congestion and fuel cost commentary and find the current transit time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L195_Q2_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Enrollment Demographics Report: Enrollment among traditional-age students remained roughly flat this year. Part-time enrollment saw a modest decline, continuing a longer-term trend. The most significant shift was a 22 percent increase in enrollment among students over 25, reflecting growing interest in career-change programs.",
+      "targetItem": "22 percent",
+      "targetInfo": "Increase in enrollment among students over 25",
+      "correctAnswer": "22 percent",
+      "distractorAnalysis": [
+        {
+          "word": "Part-time enrollment",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in enrollment among students over 25\" despite appearing nearby."
+        },
+        {
+          "word": "traditional-age",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in enrollment among students over 25\" despite appearing nearby."
+        },
+        {
+          "word": "career-change",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in enrollment among students over 25\" despite appearing nearby."
+        },
+        {
+          "word": "22 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Increase in enrollment among students over 25\" in the passage."
+        }
+      ],
+      "options": [
+        "Part-time enrollment",
+        "traditional-age",
+        "career-change",
+        "22 percent"
+      ],
+      "explanation": "Enrollment among students over 25 rose 22 percent; traditional-age enrollment stayed flat, a separate figure.",
+      "hint": "Skip the traditional-age and part-time figures and find the actual increase among older students."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L195_Q3_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Renewable Project Report: Initial construction faced delays due to permitting issues early in the project. Supply chain disruptions added further setbacks during the second phase. Despite these challenges, the completed solar farm now generates 340 megawatts, enough to power roughly 60,000 homes.",
+      "targetItem": "340 megawatts",
+      "targetInfo": "Solar farm's generation capacity",
+      "correctAnswer": "340 megawatts",
+      "distractorAnalysis": [
+        {
+          "word": "permitting issues",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Solar farm's generation capacity\" despite appearing nearby."
+        },
+        {
+          "word": "Supply chain",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Solar farm's generation capacity\" despite appearing nearby."
+        },
+        {
+          "word": "60,000 homes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Solar farm's generation capacity\" despite appearing nearby."
+        },
+        {
+          "word": "340 megawatts",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Solar farm's generation capacity\" in the passage."
+        }
+      ],
+      "options": [
+        "permitting issues",
+        "Supply chain",
+        "60,000 homes",
+        "340 megawatts"
+      ],
+      "explanation": "The solar farm generates 340 megawatts; 60,000 homes describes what that capacity can power, a related but separate figure.",
+      "hint": "Skip the delays and disruptions and find the actual capacity figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L196_Q1_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Housing Affordability Index: Rental affordability improved slightly in several mid-sized cities this year. Homeownership affordability, by contrast, continued to decline nationally. The index's headline figure shows that a median-income household can now afford only 61 percent of homes on the market, down from 68 percent last year.",
+      "targetItem": "61 percent",
+      "targetInfo": "Percentage of homes affordable to a median-income household this year",
+      "correctAnswer": "61 percent",
+      "distractorAnalysis": [
+        {
+          "word": "68 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage of homes affordable to a median-income household this year\" despite appearing nearby."
+        },
+        {
+          "word": "61 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Percentage of homes affordable to a median-income household this year\" in the passage."
+        },
+        {
+          "word": "mid-sized cities",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage of homes affordable to a median-income household this year\" despite appearing nearby."
+        },
+        {
+          "word": "Homeownership",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage of homes affordable to a median-income household this year\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "68 percent",
+        "61 percent",
+        "mid-sized cities",
+        "Homeownership"
+      ],
+      "explanation": "Households can now afford 61 percent of homes, down from 68 percent last year, which is the earlier figure.",
+      "hint": "Skip the rental affordability trend and find the current homeownership affordability figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L196_Q2_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Cybersecurity Incident Report: The initial breach was detected through routine monitoring rather than an external alert. Investigators determined that the intrusion had gone undetected for approximately eleven days before discovery. No financial data was accessed, though the incident affected roughly 40,000 customer records containing contact information.",
+      "targetItem": "40,000 customer records",
+      "targetInfo": "Number of customer records affected",
+      "correctAnswer": "40,000 customer records",
+      "distractorAnalysis": [
+        {
+          "word": "eleven days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of customer records affected\" despite appearing nearby."
+        },
+        {
+          "word": "routine monitoring",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of customer records affected\" despite appearing nearby."
+        },
+        {
+          "word": "financial data",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of customer records affected\" despite appearing nearby."
+        },
+        {
+          "word": "40,000 customer records",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Number of customer records affected\" in the passage."
+        }
+      ],
+      "options": [
+        "eleven days",
+        "routine monitoring",
+        "financial data",
+        "40,000 customer records"
+      ],
+      "explanation": "Roughly 40,000 customer records were affected; eleven days describes how long the intrusion went undetected.",
+      "hint": "Skip the detection method and timeline and find the actual number affected."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L196_Q3_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline On-Time Performance Report: Weather-related delays accounted for a smaller share of disruptions than in previous years. Mechanical delays remained roughly consistent with historical averages. The airline's overall on-time arrival rate reached 82 percent this quarter, its best performance in three years.",
+      "targetItem": "82 percent",
+      "targetInfo": "Airline's on-time arrival rate this quarter",
+      "correctAnswer": "82 percent",
+      "distractorAnalysis": [
+        {
+          "word": "82 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Airline's on-time arrival rate this quarter\" in the passage."
+        },
+        {
+          "word": "Weather-related",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Airline's on-time arrival rate this quarter\" despite appearing nearby."
+        },
+        {
+          "word": "Mechanical delays",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Airline's on-time arrival rate this quarter\" despite appearing nearby."
+        },
+        {
+          "word": "three years",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Airline's on-time arrival rate this quarter\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "82 percent",
+        "Weather-related",
+        "Mechanical delays",
+        "three years"
+      ],
+      "explanation": "The on-time arrival rate reached 82 percent; weather and mechanical delays are separate contributing factors.",
+      "hint": "Skip the weather and mechanical delay commentary and find the actual on-time rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L197_Q1_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Holiday Sales Report: In-store traffic declined slightly compared to last year, continuing a longer shift toward online shopping. Online sales, meanwhile, grew substantially during the same period. Total holiday sales across both channels reached $8.9 billion, a 6 percent increase over last year despite the in-store decline.",
+      "targetItem": "$8.9 billion",
+      "targetInfo": "Total holiday sales across both channels",
+      "correctAnswer": "$8.9 billion",
+      "distractorAnalysis": [
+        {
+          "word": "$8.9 billion",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Total holiday sales across both channels\" in the passage."
+        },
+        {
+          "word": "6 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total holiday sales across both channels\" despite appearing nearby."
+        },
+        {
+          "word": "In-store traffic",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total holiday sales across both channels\" despite appearing nearby."
+        },
+        {
+          "word": "Online sales",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total holiday sales across both channels\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$8.9 billion",
+        "6 percent",
+        "In-store traffic",
+        "Online sales"
+      ],
+      "explanation": "Total holiday sales reached $8.9 billion; 6 percent describes the rate of increase, not the total itself.",
+      "hint": "Skip the in-store and online trends and find the actual combined total."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L197_Q2_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Regional Water Authority Report: Reservoir levels remained near historical averages through the spring. A dry summer led to increased demand across the service area. By fall, reservoir capacity had fallen to 58 percent, prompting the authority to implement voluntary conservation measures.",
+      "targetItem": "58 percent",
+      "targetInfo": "Reservoir capacity by fall",
+      "correctAnswer": "58 percent",
+      "distractorAnalysis": [
+        {
+          "word": "historical averages",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservoir capacity by fall\" despite appearing nearby."
+        },
+        {
+          "word": "58 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reservoir capacity by fall\" in the passage."
+        },
+        {
+          "word": "dry summer",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservoir capacity by fall\" despite appearing nearby."
+        },
+        {
+          "word": "voluntary conservation",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservoir capacity by fall\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "historical averages",
+        "58 percent",
+        "dry summer",
+        "voluntary conservation"
+      ],
+      "explanation": "Reservoir capacity fell to 58 percent by fall; the spring and summer notes describe earlier conditions.",
+      "hint": "Skip the spring and summer conditions and find the actual fall capacity figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L197_Q3_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Manufacturing Employment Report: Overall employment in the sector grew modestly this year, reversing a two-year decline. Automation continued to reshape certain job categories within the sector. The report's key figure shows that wages for skilled technicians rose 5.4 percent, outpacing the sector's overall wage growth of 2.1 percent.",
+      "targetItem": "5.4 percent",
+      "targetInfo": "Wage growth for skilled technicians",
+      "correctAnswer": "5.4 percent",
+      "distractorAnalysis": [
+        {
+          "word": "2.1 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wage growth for skilled technicians\" despite appearing nearby."
+        },
+        {
+          "word": "two-year decline",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wage growth for skilled technicians\" despite appearing nearby."
+        },
+        {
+          "word": "Automation",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wage growth for skilled technicians\" despite appearing nearby."
+        },
+        {
+          "word": "5.4 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Wage growth for skilled technicians\" in the passage."
+        }
+      ],
+      "options": [
+        "2.1 percent",
+        "two-year decline",
+        "Automation",
+        "5.4 percent"
+      ],
+      "explanation": "Skilled technicians' wages rose 5.4 percent, outpacing the sector's overall 2.1 percent wage growth.",
+      "hint": "Skip the overall employment trend and find the skilled technicians' specific figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L198_Q1_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Public Pension Report: Investment returns exceeded expectations in the fund's equity holdings this year. Fixed-income holdings underperformed relative to projections. Despite this, the fund's overall funded ratio improved to 84 percent, up from 79 percent the previous year, narrowing the funding gap.",
+      "targetItem": "84 percent",
+      "targetInfo": "Fund's current funded ratio",
+      "correctAnswer": "84 percent",
+      "distractorAnalysis": [
+        {
+          "word": "79 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fund's current funded ratio\" despite appearing nearby."
+        },
+        {
+          "word": "equity holdings",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fund's current funded ratio\" despite appearing nearby."
+        },
+        {
+          "word": "84 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Fund's current funded ratio\" in the passage."
+        },
+        {
+          "word": "Fixed-income",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Fund's current funded ratio\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "79 percent",
+        "equity holdings",
+        "84 percent",
+        "Fixed-income"
+      ],
+      "explanation": "The funded ratio improved to 84 percent from 79 percent, which is the earlier, lower figure.",
+      "hint": "Skip the equity and fixed-income details and find the current funded ratio."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L198_Q2_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Broadband Access Report: Urban broadband access remained near-universal throughout the reporting period. Suburban access also improved modestly. The report's central finding is that rural broadband access rose to 76 percent this year, up from 64 percent, following completion of several infrastructure grants.",
+      "targetItem": "76 percent",
+      "targetInfo": "Current rural broadband access rate",
+      "correctAnswer": "76 percent",
+      "distractorAnalysis": [
+        {
+          "word": "64 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current rural broadband access rate\" despite appearing nearby."
+        },
+        {
+          "word": "Urban broadband",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current rural broadband access rate\" despite appearing nearby."
+        },
+        {
+          "word": "Suburban access",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current rural broadband access rate\" despite appearing nearby."
+        },
+        {
+          "word": "76 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current rural broadband access rate\" in the passage."
+        }
+      ],
+      "options": [
+        "64 percent",
+        "Urban broadband",
+        "Suburban access",
+        "76 percent"
+      ],
+      "explanation": "Rural broadband access rose to 76 percent from 64 percent, the earlier, lower figure.",
+      "hint": "Skip the urban and suburban figures and find the actual rural access rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L198_Q3_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "State Court Backlog Report: Criminal case backlogs decreased slightly this year following additional judicial appointments. Civil case backlogs, however, continued to grow. The report's most notable figure shows that family court cases now take an average of 14.2 months to resolve, up from 10.8 months two years ago.",
+      "targetItem": "14.2 months",
+      "targetInfo": "Current average resolution time for family court cases",
+      "correctAnswer": "14.2 months",
+      "distractorAnalysis": [
+        {
+          "word": "10.8 months",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average resolution time for family court cases\" despite appearing nearby."
+        },
+        {
+          "word": "14.2 months",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current average resolution time for family court cases\" in the passage."
+        },
+        {
+          "word": "Criminal case",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average resolution time for family court cases\" despite appearing nearby."
+        },
+        {
+          "word": "Civil case",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average resolution time for family court cases\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "10.8 months",
+        "14.2 months",
+        "Criminal case",
+        "Civil case"
+      ],
+      "explanation": "Family court cases now take 14.2 months, up from 10.8 months two years ago, the earlier figure.",
+      "hint": "Skip the criminal and civil case trends and find the current family court figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L199_Q1_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "National Grid Reliability Report: Minor outages affecting fewer than 1,000 customers occurred regularly throughout the year, consistent with historical patterns. One major outage during a summer storm affected a significant portion of the region. Overall system reliability, measured by average customer outage minutes, improved to 62 minutes annually, down from 89 minutes the previous year.",
+      "targetItem": "62 minutes",
+      "targetInfo": "Current average customer outage minutes annually",
+      "correctAnswer": "62 minutes",
+      "distractorAnalysis": [
+        {
+          "word": "89 minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average customer outage minutes annually\" despite appearing nearby."
+        },
+        {
+          "word": "1,000 customers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average customer outage minutes annually\" despite appearing nearby."
+        },
+        {
+          "word": "summer storm",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current average customer outage minutes annually\" despite appearing nearby."
+        },
+        {
+          "word": "62 minutes",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current average customer outage minutes annually\" in the passage."
+        }
+      ],
+      "options": [
+        "89 minutes",
+        "1,000 customers",
+        "summer storm",
+        "62 minutes"
+      ],
+      "explanation": "Average outage minutes improved to 62 from 89 the previous year, which is the earlier, higher figure.",
+      "hint": "Skip the minor and major outage details and find the current reliability figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L199_Q2_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "National Reading Assessment Summary: Scores among fourth graders remained relatively stable compared to the previous assessment cycle. Scores among eighth graders declined slightly nationwide. The most notable shift was among high school seniors, whose proficiency rate rose to 37 percent, up from 31 percent, reversing a decade-long decline.",
+      "targetItem": "37 percent",
+      "targetInfo": "Current proficiency rate among high school seniors",
+      "correctAnswer": "37 percent",
+      "distractorAnalysis": [
+        {
+          "word": "31 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current proficiency rate among high school seniors\" despite appearing nearby."
+        },
+        {
+          "word": "fourth graders",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current proficiency rate among high school seniors\" despite appearing nearby."
+        },
+        {
+          "word": "37 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current proficiency rate among high school seniors\" in the passage."
+        },
+        {
+          "word": "eighth graders",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current proficiency rate among high school seniors\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "31 percent",
+        "fourth graders",
+        "37 percent",
+        "eighth graders"
+      ],
+      "explanation": "Senior proficiency rose to 37 percent from 31 percent, the earlier figure before the reversal.",
+      "hint": "Skip the fourth and eighth grade figures and find the current senior proficiency rate."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L199_Q3_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Corporate Diversity Report: Representation at the entry level has remained roughly consistent with previous years. Representation at the mid-management level improved modestly. The most significant change occurred at the senior leadership level, where representation grew to 34 percent, up from 22 percent over the past three years.",
+      "targetItem": "34 percent",
+      "targetInfo": "Current representation at the senior leadership level",
+      "correctAnswer": "34 percent",
+      "distractorAnalysis": [
+        {
+          "word": "22 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current representation at the senior leadership level\" despite appearing nearby."
+        },
+        {
+          "word": "34 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Current representation at the senior leadership level\" in the passage."
+        },
+        {
+          "word": "entry level",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current representation at the senior leadership level\" despite appearing nearby."
+        },
+        {
+          "word": "mid-management",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Current representation at the senior leadership level\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "22 percent",
+        "34 percent",
+        "entry level",
+        "mid-management"
+      ],
+      "explanation": "Senior leadership representation grew to 34 percent from 22 percent, the earlier, lower figure.",
+      "hint": "Skip the entry-level and mid-management figures and find the current senior leadership figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L200_Q1_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "National Economic Outlook Summary: Manufacturing output contracted slightly during the first quarter amid softer global demand. Services sector growth remained resilient throughout the same period, offsetting some of the manufacturing weakness. Consumer confidence, closely watched by policymakers, climbed to 108.4 this quarter, its highest reading in nearly three years, though economists caution that confidence often outpaces actual spending in the months that follow.",
+      "targetItem": "108.4",
+      "targetInfo": "This quarter's consumer confidence reading",
+      "correctAnswer": "108.4",
+      "distractorAnalysis": [
+        {
+          "word": "first quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This quarter's consumer confidence reading\" despite appearing nearby."
+        },
+        {
+          "word": "three years",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This quarter's consumer confidence reading\" despite appearing nearby."
+        },
+        {
+          "word": "108.4",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"This quarter's consumer confidence reading\" in the passage."
+        },
+        {
+          "word": "Manufacturing output",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This quarter's consumer confidence reading\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "first quarter",
+        "three years",
+        "108.4",
+        "Manufacturing output"
+      ],
+      "explanation": "Consumer confidence climbed to 108.4; the manufacturing contraction and three-year comparison are separate details.",
+      "hint": "Skip the manufacturing and services commentary and find the exact confidence reading, distinct from the caution that follows."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L200_Q2_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Global Health Surveillance Report: Case counts in the region declined steadily through most of the reporting period, consistent with seasonal expectations. A localized cluster emerged late in the period, prompting increased testing in the affected district. Despite this cluster, the region's overall positivity rate settled at 2.3 percent by the report's close, well below the 5 percent threshold that would trigger expanded public health measures.",
+      "targetItem": "2.3 percent",
+      "targetInfo": "Region's overall positivity rate at the report's close",
+      "correctAnswer": "2.3 percent",
+      "distractorAnalysis": [
+        {
+          "word": "5 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall positivity rate at the report's close\" despite appearing nearby."
+        },
+        {
+          "word": "localized cluster",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall positivity rate at the report's close\" despite appearing nearby."
+        },
+        {
+          "word": "2.3 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Region's overall positivity rate at the report's close\" in the passage."
+        },
+        {
+          "word": "seasonal expectations",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Region's overall positivity rate at the report's close\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "5 percent",
+        "localized cluster",
+        "2.3 percent",
+        "seasonal expectations"
+      ],
+      "explanation": "The overall positivity rate settled at 2.3 percent, well below the separate 5 percent trigger threshold.",
+      "hint": "Skip the case count trend and cluster details, and separate the actual rate from the threshold mentioned alongside it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L200_Q3_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "International Trade Balance Summary: Exports of finished goods grew steadily throughout the year, supported by favorable exchange rates. Imports of raw materials also increased, reflecting expanded domestic manufacturing capacity. When combined with a modest surplus in services trade, the country's overall trade deficit narrowed to $42.6 billion for the year, its smallest gap in nearly a decade, even as the goods deficit alone remained above $60 billion.",
+      "targetItem": "$42.6 billion",
+      "targetInfo": "Country's overall trade deficit for the year",
+      "correctAnswer": "$42.6 billion",
+      "distractorAnalysis": [
+        {
+          "word": "$60 billion",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Country's overall trade deficit for the year\" despite appearing nearby."
+        },
+        {
+          "word": "$42.6 billion",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Country's overall trade deficit for the year\" in the passage."
+        },
+        {
+          "word": "finished goods",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Country's overall trade deficit for the year\" despite appearing nearby."
+        },
+        {
+          "word": "raw materials",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Country's overall trade deficit for the year\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$60 billion",
+        "$42.6 billion",
+        "finished goods",
+        "raw materials"
+      ],
+      "explanation": "The overall trade deficit narrowed to $42.6 billion; $60 billion refers only to the separate goods deficit.",
+      "hint": "Skip the exports and imports commentary, and separate the overall deficit from the goods-only deficit mentioned alongside it."
+    }
+  ]
+}

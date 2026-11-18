@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L41_Q1_LEARN",
+      "level": 41,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Community Notice: The annual summer festival returns to Lincoln Park this year with live music, food trucks, and a fireworks show. Parking will be limited near the park entrance.",
+      "targetItem": "annual summer festival",
+      "targetInfo": "Main topic of the notice",
+      "correctAnswer": "annual summer festival",
+      "distractorAnalysis": [
+        {
+          "word": "annual summer festival",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main topic of the notice\" in the passage."
+        },
+        {
+          "word": "live music",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main topic of the notice\" despite appearing nearby."
+        },
+        {
+          "word": "food trucks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main topic of the notice\" despite appearing nearby."
+        },
+        {
+          "word": "Parking will be limited",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main topic of the notice\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "annual summer festival",
+        "live music",
+        "food trucks",
+        "Parking will be limited"
+      ],
+      "explanation": "The notice is mainly about the annual summer festival; music, food trucks, and parking are just details about it.",
+      "hint": "Skim past the event details and find what the whole notice is about."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L41_Q2_LEARN",
+      "level": 41,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Office Update: Starting Monday, the third floor break room will close for renovations. Staff can use the second floor kitchen in the meantime, and vending machines will remain available.",
+      "targetItem": "break room will close for renovations",
+      "targetInfo": "Main reason for the update",
+      "correctAnswer": "break room will close for renovations",
+      "distractorAnalysis": [
+        {
+          "word": "second floor kitchen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main reason for the update\" despite appearing nearby."
+        },
+        {
+          "word": "vending machines",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main reason for the update\" despite appearing nearby."
+        },
+        {
+          "word": "Starting Monday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main reason for the update\" despite appearing nearby."
+        },
+        {
+          "word": "break room will close for renovations",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main reason for the update\" in the passage."
+        }
+      ],
+      "options": [
+        "second floor kitchen",
+        "vending machines",
+        "Starting Monday",
+        "break room will close for renovations"
+      ],
+      "explanation": "The update's real purpose is announcing the break room closing for renovations; the kitchen and vending machines are just alternatives.",
+      "hint": "Skim past the alternatives offered and find the actual reason for the update."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L41_Q3_LEARN",
+      "level": 41,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Restaurant Announcement: Bella Notte will be closed this Tuesday for a private event, but will reopen Wednesday with its regular hours and a new dessert menu.",
+      "targetItem": "closed this Tuesday for a private event",
+      "targetInfo": "Reason for the closure",
+      "correctAnswer": "closed this Tuesday for a private event",
+      "distractorAnalysis": [
+        {
+          "word": "reopen Wednesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the closure\" despite appearing nearby."
+        },
+        {
+          "word": "closed this Tuesday for a private event",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reason for the closure\" in the passage."
+        },
+        {
+          "word": "regular hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the closure\" despite appearing nearby."
+        },
+        {
+          "word": "new dessert menu",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the closure\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "reopen Wednesday",
+        "closed this Tuesday for a private event",
+        "regular hours",
+        "new dessert menu"
+      ],
+      "explanation": "The restaurant is closed because of a private event; the other phrases describe what happens once it reopens.",
+      "hint": "Skim past what happens afterward and find the reason for the closure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L42_Q1_LEARN",
+      "level": 42,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Weather Advisory: A strong storm system is expected to bring heavy rain and gusty winds to the region tonight, with conditions improving by tomorrow afternoon.",
+      "targetItem": "strong storm system",
+      "targetInfo": "Main weather event",
+      "correctAnswer": "strong storm system",
+      "distractorAnalysis": [
+        {
+          "word": "heavy rain",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main weather event\" despite appearing nearby."
+        },
+        {
+          "word": "strong storm system",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main weather event\" in the passage."
+        },
+        {
+          "word": "gusty winds",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main weather event\" despite appearing nearby."
+        },
+        {
+          "word": "improving by tomorrow",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main weather event\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "heavy rain",
+        "strong storm system",
+        "gusty winds",
+        "improving by tomorrow"
+      ],
+      "explanation": "The advisory is mainly about a strong storm system; rain and wind are effects of that storm.",
+      "hint": "Skim past the individual effects and find the overall event being described."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L42_Q2_LEARN",
+      "level": 42,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "School Bulletin: Picture day has been rescheduled from Thursday to the following Monday due to a delivery delay with photography equipment.",
+      "targetItem": "Picture day has been rescheduled",
+      "targetInfo": "Main purpose of the bulletin",
+      "correctAnswer": "Picture day has been rescheduled",
+      "distractorAnalysis": [
+        {
+          "word": "Picture day has been rescheduled",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main purpose of the bulletin\" in the passage."
+        },
+        {
+          "word": "delivery delay",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main purpose of the bulletin\" despite appearing nearby."
+        },
+        {
+          "word": "photography equipment",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main purpose of the bulletin\" despite appearing nearby."
+        },
+        {
+          "word": "following Monday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main purpose of the bulletin\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Picture day has been rescheduled",
+        "delivery delay",
+        "photography equipment",
+        "following Monday"
+      ],
+      "explanation": "The bulletin's purpose is announcing that picture day was rescheduled; the delivery delay is only the reason.",
+      "hint": "Skim past the reason given and find what actually changed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L42_Q3_LEARN",
+      "level": 42,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Product Update: The fitness app now includes a sleep tracker, alongside its existing step counter and calorie log, following months of user requests.",
+      "targetItem": "now includes a sleep tracker",
+      "targetInfo": "New feature announced",
+      "correctAnswer": "now includes a sleep tracker",
+      "distractorAnalysis": [
+        {
+          "word": "step counter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New feature announced\" despite appearing nearby."
+        },
+        {
+          "word": "calorie log",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New feature announced\" despite appearing nearby."
+        },
+        {
+          "word": "now includes a sleep tracker",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New feature announced\" in the passage."
+        },
+        {
+          "word": "user requests",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New feature announced\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "step counter",
+        "calorie log",
+        "now includes a sleep tracker",
+        "user requests"
+      ],
+      "explanation": "The update announces a new sleep tracker; the step counter and calorie log already existed.",
+      "hint": "Skim past the existing features and find what's actually new."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L43_Q1_LEARN",
+      "level": 43,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Job Posting: A local bakery is hiring a part-time cashier for weekend shifts, with experience in customer service preferred but not required.",
+      "targetItem": "hiring a part-time cashier",
+      "targetInfo": "Position being hired",
+      "correctAnswer": "hiring a part-time cashier",
+      "distractorAnalysis": [
+        {
+          "word": "weekend shifts",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Position being hired\" despite appearing nearby."
+        },
+        {
+          "word": "hiring a part-time cashier",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Position being hired\" in the passage."
+        },
+        {
+          "word": "customer service",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Position being hired\" despite appearing nearby."
+        },
+        {
+          "word": "not required",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Position being hired\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "weekend shifts",
+        "hiring a part-time cashier",
+        "customer service",
+        "not required"
+      ],
+      "explanation": "The posting is mainly about hiring a part-time cashier; the shift and experience details come after.",
+      "hint": "Skim past the shift details and find the job itself."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L43_Q2_LEARN",
+      "level": 43,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Travel Alert: Due to track maintenance, the blue line will run on a modified schedule this weekend, with trains arriving every twenty minutes instead of every ten.",
+      "targetItem": "modified schedule this weekend",
+      "targetInfo": "Main change to transit schedule",
+      "correctAnswer": "modified schedule this weekend",
+      "distractorAnalysis": [
+        {
+          "word": "track maintenance",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main change to transit schedule\" despite appearing nearby."
+        },
+        {
+          "word": "every twenty minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main change to transit schedule\" despite appearing nearby."
+        },
+        {
+          "word": "every ten",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main change to transit schedule\" despite appearing nearby."
+        },
+        {
+          "word": "modified schedule this weekend",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main change to transit schedule\" in the passage."
+        }
+      ],
+      "options": [
+        "track maintenance",
+        "every twenty minutes",
+        "every ten",
+        "modified schedule this weekend"
+      ],
+      "explanation": "The alert is about a modified schedule; the maintenance and the minute counts are supporting details.",
+      "hint": "Skim past the exact numbers and find the general change being announced."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L43_Q3_LEARN",
+      "level": 43,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Gym Notice: The pool area will undergo chemical treatment Sunday morning, so lap swimming will be unavailable until noon.",
+      "targetItem": "pool area will undergo chemical treatment",
+      "targetInfo": "Reason for pool closure",
+      "correctAnswer": "pool area will undergo chemical treatment",
+      "distractorAnalysis": [
+        {
+          "word": "lap swimming",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for pool closure\" despite appearing nearby."
+        },
+        {
+          "word": "pool area will undergo chemical treatment",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reason for pool closure\" in the passage."
+        },
+        {
+          "word": "Sunday morning",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for pool closure\" despite appearing nearby."
+        },
+        {
+          "word": "until noon",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for pool closure\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "lap swimming",
+        "pool area will undergo chemical treatment",
+        "Sunday morning",
+        "until noon"
+      ],
+      "explanation": "The pool closes because of chemical treatment; the times just tell when swimming resumes.",
+      "hint": "Skim past the times given and find the actual reason."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L44_Q1_LEARN",
+      "level": 44,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Neighborhood Update: The city approved funding for a new bike lane along Grant Avenue. Construction is expected to begin in the spring and finish before the fall semester starts. Residents can review the full plan at the next town hall.",
+      "targetItem": "new bike lane along Grant Avenue",
+      "targetInfo": "Main project announced",
+      "correctAnswer": "new bike lane along Grant Avenue",
+      "distractorAnalysis": [
+        {
+          "word": "new bike lane along Grant Avenue",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main project announced\" in the passage."
+        },
+        {
+          "word": "begin in the spring",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main project announced\" despite appearing nearby."
+        },
+        {
+          "word": "fall semester",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main project announced\" despite appearing nearby."
+        },
+        {
+          "word": "next town hall",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main project announced\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "new bike lane along Grant Avenue",
+        "begin in the spring",
+        "fall semester",
+        "next town hall"
+      ],
+      "explanation": "The update centers on the new bike lane project; the schedule and meeting are secondary details.",
+      "hint": "Skim past the schedule and meeting details and find what the project actually is."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L44_Q2_LEARN",
+      "level": 44,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Store Announcement: Due to a system upgrade, online orders will be paused this weekend. In-store purchases and returns will continue as normal, and the website should be back by Monday morning.",
+      "targetItem": "online orders will be paused",
+      "targetInfo": "Main disruption announced",
+      "correctAnswer": "online orders will be paused",
+      "distractorAnalysis": [
+        {
+          "word": "system upgrade",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main disruption announced\" despite appearing nearby."
+        },
+        {
+          "word": "In-store purchases",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main disruption announced\" despite appearing nearby."
+        },
+        {
+          "word": "back by Monday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main disruption announced\" despite appearing nearby."
+        },
+        {
+          "word": "online orders will be paused",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main disruption announced\" in the passage."
+        }
+      ],
+      "options": [
+        "system upgrade",
+        "In-store purchases",
+        "back by Monday",
+        "online orders will be paused"
+      ],
+      "explanation": "The announcement is mainly about online orders pausing; in-store service continues as usual.",
+      "hint": "Skim past what continues normally and find what's actually stopping."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L44_Q3_LEARN",
+      "level": 44,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Class Reminder: The chemistry midterm covers chapters four through seven. Bring a calculator and two pencils, and arrive fifteen minutes early to get seated.",
+      "targetItem": "chemistry midterm covers chapters four through seven",
+      "targetInfo": "What the exam covers",
+      "correctAnswer": "chemistry midterm covers chapters four through seven",
+      "distractorAnalysis": [
+        {
+          "word": "Bring a calculator",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the exam covers\" despite appearing nearby."
+        },
+        {
+          "word": "two pencils",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the exam covers\" despite appearing nearby."
+        },
+        {
+          "word": "fifteen minutes early",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the exam covers\" despite appearing nearby."
+        },
+        {
+          "word": "chemistry midterm covers chapters four through seven",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the exam covers\" in the passage."
+        }
+      ],
+      "options": [
+        "Bring a calculator",
+        "two pencils",
+        "fifteen minutes early",
+        "chemistry midterm covers chapters four through seven"
+      ],
+      "explanation": "The core message is which chapters the midterm covers; the other details are logistics for exam day.",
+      "hint": "Skim past the exam-day instructions and find what the test is actually about."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L45_Q1_LEARN",
+      "level": 45,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "HR Memo: Open enrollment for health benefits begins next Monday and runs for three weeks. Employees who miss the deadline must wait until next year to make changes.",
+      "targetItem": "Open enrollment for health benefits begins",
+      "targetInfo": "Main subject of the memo",
+      "correctAnswer": "Open enrollment for health benefits begins",
+      "distractorAnalysis": [
+        {
+          "word": "three weeks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main subject of the memo\" despite appearing nearby."
+        },
+        {
+          "word": "miss the deadline",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main subject of the memo\" despite appearing nearby."
+        },
+        {
+          "word": "Open enrollment for health benefits begins",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main subject of the memo\" in the passage."
+        },
+        {
+          "word": "next year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main subject of the memo\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "three weeks",
+        "miss the deadline",
+        "Open enrollment for health benefits begins",
+        "next year"
+      ],
+      "explanation": "The memo announces the start of open enrollment; the deadline and late-change rules are follow-up details.",
+      "hint": "Skim past the deadline details and find what is actually starting."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L45_Q2_LEARN",
+      "level": 45,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Restaurant Review Summary: Critics praised the new seafood tasting menu for its fresh ingredients, though several noted the slow service during busy hours.",
+      "targetItem": "new seafood tasting menu",
+      "targetInfo": "What was reviewed",
+      "correctAnswer": "new seafood tasting menu",
+      "distractorAnalysis": [
+        {
+          "word": "new seafood tasting menu",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What was reviewed\" in the passage."
+        },
+        {
+          "word": "fresh ingredients",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was reviewed\" despite appearing nearby."
+        },
+        {
+          "word": "slow service",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was reviewed\" despite appearing nearby."
+        },
+        {
+          "word": "busy hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was reviewed\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "new seafood tasting menu",
+        "fresh ingredients",
+        "slow service",
+        "busy hours"
+      ],
+      "explanation": "The review is about the new seafood tasting menu; freshness and service are opinions about it.",
+      "hint": "Skim past the praise and criticism and find what dish or menu is being discussed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L45_Q3_LEARN",
+      "level": 45,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Library Notice: The children's section will host a weekend reading program starting in July, with sign-ups available at the front desk beginning next week.",
+      "targetItem": "weekend reading program",
+      "targetInfo": "New program announced",
+      "correctAnswer": "weekend reading program",
+      "distractorAnalysis": [
+        {
+          "word": "children's section",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New program announced\" despite appearing nearby."
+        },
+        {
+          "word": "weekend reading program",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New program announced\" in the passage."
+        },
+        {
+          "word": "front desk",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New program announced\" despite appearing nearby."
+        },
+        {
+          "word": "next week",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New program announced\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "children's section",
+        "weekend reading program",
+        "front desk",
+        "next week"
+      ],
+      "explanation": "The notice announces a new weekend reading program; the section and sign-up details support that main point.",
+      "hint": "Skim past where and when to sign up and find what's actually being offered."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L46_Q1_LEARN",
+      "level": 46,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "City Council Update: A proposal to extend the downtown bus route to the new hospital complex passed its first reading and will face a final vote next month.",
+      "targetItem": "extend the downtown bus route",
+      "targetInfo": "Main proposal described",
+      "correctAnswer": "extend the downtown bus route",
+      "distractorAnalysis": [
+        {
+          "word": "hospital complex",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main proposal described\" despite appearing nearby."
+        },
+        {
+          "word": "first reading",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main proposal described\" despite appearing nearby."
+        },
+        {
+          "word": "final vote",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main proposal described\" despite appearing nearby."
+        },
+        {
+          "word": "extend the downtown bus route",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main proposal described\" in the passage."
+        }
+      ],
+      "options": [
+        "hospital complex",
+        "first reading",
+        "final vote",
+        "extend the downtown bus route"
+      ],
+      "explanation": "The proposal itself is about extending the bus route; the voting stages are procedural details.",
+      "hint": "Skim past the voting process and find what the proposal actually does."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L46_Q2_LEARN",
+      "level": 46,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Fitness Studio Notice: The 6 a.m. spin class will move permanently to 6:30 starting next week, giving instructors more setup time between sessions.",
+      "targetItem": "spin class will move permanently to 6:30",
+      "targetInfo": "Main schedule change",
+      "correctAnswer": "spin class will move permanently to 6:30",
+      "distractorAnalysis": [
+        {
+          "word": "spin class will move permanently to 6:30",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main schedule change\" in the passage."
+        },
+        {
+          "word": "6 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main schedule change\" despite appearing nearby."
+        },
+        {
+          "word": "next week",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main schedule change\" despite appearing nearby."
+        },
+        {
+          "word": "setup time",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main schedule change\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "spin class will move permanently to 6:30",
+        "6 a.m.",
+        "next week",
+        "setup time"
+      ],
+      "explanation": "The core change is the class moving to 6:30; the setup-time note explains why.",
+      "hint": "Skim past the reason given and find the actual change in time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L46_Q3_LEARN",
+      "level": 46,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline Notice: Due to a crew scheduling issue, flight 482 to Denver will depart from gate 22 instead of gate 14, with boarding still starting at 5:45.",
+      "targetItem": "will depart from gate 22 instead of gate 14",
+      "targetInfo": "Gate change",
+      "correctAnswer": "will depart from gate 22 instead of gate 14",
+      "distractorAnalysis": [
+        {
+          "word": "will depart from gate 22 instead of gate 14",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Gate change\" in the passage."
+        },
+        {
+          "word": "crew scheduling issue",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gate change\" despite appearing nearby."
+        },
+        {
+          "word": "boarding",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gate change\" despite appearing nearby."
+        },
+        {
+          "word": "5:45",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Gate change\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "will depart from gate 22 instead of gate 14",
+        "crew scheduling issue",
+        "boarding",
+        "5:45"
+      ],
+      "explanation": "The real change is the gate switching from 14 to 22; the scheduling issue is just the cause.",
+      "hint": "Skim past the cause and boarding time and find what changed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L47_Q1_LEARN",
+      "level": 47,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Newsletter: This month's highlight is the opening of our new downtown location, though we also want to remind members about updated hours at our original branch.",
+      "targetItem": "opening of our new downtown location",
+      "targetInfo": "Main highlight",
+      "correctAnswer": "opening of our new downtown location",
+      "distractorAnalysis": [
+        {
+          "word": "opening of our new downtown location",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main highlight\" in the passage."
+        },
+        {
+          "word": "updated hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main highlight\" despite appearing nearby."
+        },
+        {
+          "word": "original branch",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main highlight\" despite appearing nearby."
+        },
+        {
+          "word": "remind members",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main highlight\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "opening of our new downtown location",
+        "updated hours",
+        "original branch",
+        "remind members"
+      ],
+      "explanation": "The newsletter's main highlight is the new downtown location; the hours reminder is secondary.",
+      "hint": "Skim for the word 'highlight' and see what it's attached to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L47_Q2_LEARN",
+      "level": 47,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Email: While the marketing team finalizes the new logo, the bigger news this week is that the client contract was officially signed this morning.",
+      "targetItem": "client contract was officially signed",
+      "targetInfo": "Bigger news of the week",
+      "correctAnswer": "client contract was officially signed",
+      "distractorAnalysis": [
+        {
+          "word": "new logo",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger news of the week\" despite appearing nearby."
+        },
+        {
+          "word": "marketing team",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger news of the week\" despite appearing nearby."
+        },
+        {
+          "word": "this morning",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Bigger news of the week\" despite appearing nearby."
+        },
+        {
+          "word": "client contract was officially signed",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Bigger news of the week\" in the passage."
+        }
+      ],
+      "options": [
+        "new logo",
+        "marketing team",
+        "this morning",
+        "client contract was officially signed"
+      ],
+      "explanation": "The bigger news is the signed contract; the logo work is mentioned only as background.",
+      "hint": "Skim for the phrase 'bigger news' and see what follows it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L47_Q3_LEARN",
+      "level": 47,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Podcast Description: Although the episode briefly touches on career advice, its main focus is a deep conversation about balancing family life with entrepreneurship.",
+      "targetItem": "deep conversation about balancing family life",
+      "targetInfo": "Podcast's main focus",
+      "correctAnswer": "deep conversation about balancing family life",
+      "distractorAnalysis": [
+        {
+          "word": "career advice",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Podcast's main focus\" despite appearing nearby."
+        },
+        {
+          "word": "entrepreneurship",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Podcast's main focus\" despite appearing nearby."
+        },
+        {
+          "word": "deep conversation about balancing family life",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Podcast's main focus\" in the passage."
+        },
+        {
+          "word": "episode",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Podcast's main focus\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "career advice",
+        "entrepreneurship",
+        "deep conversation about balancing family life",
+        "episode"
+      ],
+      "explanation": "The main focus is family life and entrepreneurship; career advice is only briefly mentioned.",
+      "hint": "Skim for the phrase 'main focus' and see what topic it points to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L48_Q1_LEARN",
+      "level": 48,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Product Label: This cleaner is formulated mainly for hardwood floors, though it can also be used sparingly on tile and laminate surfaces.",
+      "targetItem": "formulated mainly for hardwood floors",
+      "targetInfo": "Product's main use",
+      "correctAnswer": "formulated mainly for hardwood floors",
+      "distractorAnalysis": [
+        {
+          "word": "tile",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Product's main use\" despite appearing nearby."
+        },
+        {
+          "word": "laminate",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Product's main use\" despite appearing nearby."
+        },
+        {
+          "word": "sparingly",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Product's main use\" despite appearing nearby."
+        },
+        {
+          "word": "formulated mainly for hardwood floors",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Product's main use\" in the passage."
+        }
+      ],
+      "options": [
+        "tile",
+        "laminate",
+        "sparingly",
+        "formulated mainly for hardwood floors"
+      ],
+      "explanation": "The cleaner is mainly for hardwood floors; tile and laminate are only secondary uses.",
+      "hint": "Skim for the word 'mainly' and see what surface it refers to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L48_Q2_LEARN",
+      "level": 48,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Course Description: Though it includes a short unit on public speaking, this class is primarily designed to teach persuasive writing techniques.",
+      "targetItem": "primarily designed to teach persuasive writing",
+      "targetInfo": "Class's main goal",
+      "correctAnswer": "primarily designed to teach persuasive writing",
+      "distractorAnalysis": [
+        {
+          "word": "public speaking",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Class's main goal\" despite appearing nearby."
+        },
+        {
+          "word": "short unit",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Class's main goal\" despite appearing nearby."
+        },
+        {
+          "word": "techniques",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Class's main goal\" despite appearing nearby."
+        },
+        {
+          "word": "primarily designed to teach persuasive writing",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Class's main goal\" in the passage."
+        }
+      ],
+      "options": [
+        "public speaking",
+        "short unit",
+        "techniques",
+        "primarily designed to teach persuasive writing"
+      ],
+      "explanation": "The class is primarily about persuasive writing; public speaking is only a short unit.",
+      "hint": "Skim for the word 'primarily' and see what subject it points to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L48_Q3_LEARN",
+      "level": 48,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Museum Guide: While the second floor houses rotating exhibits, the museum's centerpiece remains the dinosaur skeleton display on the main floor.",
+      "targetItem": "dinosaur skeleton display",
+      "targetInfo": "Museum's centerpiece",
+      "correctAnswer": "dinosaur skeleton display",
+      "distractorAnalysis": [
+        {
+          "word": "second floor",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Museum's centerpiece\" despite appearing nearby."
+        },
+        {
+          "word": "dinosaur skeleton display",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Museum's centerpiece\" in the passage."
+        },
+        {
+          "word": "rotating exhibits",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Museum's centerpiece\" despite appearing nearby."
+        },
+        {
+          "word": "main floor",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Museum's centerpiece\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "second floor",
+        "dinosaur skeleton display",
+        "rotating exhibits",
+        "main floor"
+      ],
+      "explanation": "The centerpiece is the dinosaur skeleton display; the rotating exhibits are on a different floor.",
+      "hint": "Skim for the word 'centerpiece' and see what it names."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L49_Q1_LEARN",
+      "level": 49,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Company Announcement: After reviewing feedback from three employee surveys, leadership has decided to shift the entire office to a hybrid schedule, with staff required in person only on Tuesdays and Thursdays starting next quarter.",
+      "targetItem": "shift the entire office to a hybrid schedule",
+      "targetInfo": "Actual decision made",
+      "correctAnswer": "shift the entire office to a hybrid schedule",
+      "distractorAnalysis": [
+        {
+          "word": "three employee surveys",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual decision made\" despite appearing nearby."
+        },
+        {
+          "word": "Tuesdays and Thursdays",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual decision made\" despite appearing nearby."
+        },
+        {
+          "word": "next quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual decision made\" despite appearing nearby."
+        },
+        {
+          "word": "shift the entire office to a hybrid schedule",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Actual decision made\" in the passage."
+        }
+      ],
+      "options": [
+        "three employee surveys",
+        "Tuesdays and Thursdays",
+        "next quarter",
+        "shift the entire office to a hybrid schedule"
+      ],
+      "explanation": "The decision itself is the shift to a hybrid schedule; the surveys and specific days are supporting details.",
+      "hint": "Skim past how the decision was made and find what was decided."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L49_Q2_LEARN",
+      "level": 49,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Health Notice: Following an increase in reported cases at three nearby schools, the district is recommending, but not requiring, that students wear masks in shared indoor spaces for the next two weeks.",
+      "targetItem": "recommending, but not requiring, that students wear masks",
+      "targetInfo": "Core recommendation",
+      "correctAnswer": "recommending, but not requiring, that students wear masks",
+      "distractorAnalysis": [
+        {
+          "word": "three nearby schools",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Core recommendation\" despite appearing nearby."
+        },
+        {
+          "word": "recommending, but not requiring, that students wear masks",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Core recommendation\" in the passage."
+        },
+        {
+          "word": "shared indoor spaces",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Core recommendation\" despite appearing nearby."
+        },
+        {
+          "word": "next two weeks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Core recommendation\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "three nearby schools",
+        "recommending, but not requiring, that students wear masks",
+        "shared indoor spaces",
+        "next two weeks"
+      ],
+      "explanation": "The core message is the mask recommendation; the case counts and location are context.",
+      "hint": "Skim past the background numbers and find what is being suggested."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L49_Q3_LEARN",
+      "level": 49,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Conference Update: While breakout sessions will cover a wide range of specialized topics, the keynote address will focus entirely on emerging trends in renewable energy.",
+      "targetItem": "keynote address will focus entirely on emerging trends in renewable energy",
+      "targetInfo": "Keynote's focus",
+      "correctAnswer": "keynote address will focus entirely on emerging trends in renewable energy",
+      "distractorAnalysis": [
+        {
+          "word": "breakout sessions",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Keynote's focus\" despite appearing nearby."
+        },
+        {
+          "word": "specialized topics",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Keynote's focus\" despite appearing nearby."
+        },
+        {
+          "word": "wide range",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Keynote's focus\" despite appearing nearby."
+        },
+        {
+          "word": "keynote address will focus entirely on emerging trends in renewable energy",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Keynote's focus\" in the passage."
+        }
+      ],
+      "options": [
+        "breakout sessions",
+        "specialized topics",
+        "wide range",
+        "keynote address will focus entirely on emerging trends in renewable energy"
+      ],
+      "explanation": "The keynote's focus is renewable energy trends; the breakout sessions cover separate topics.",
+      "hint": "Skim past the breakout sessions and find what the keynote itself covers."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L50_Q1_LEARN",
+      "level": 50,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Annual Report Summary: Despite a slight dip in first-quarter sales, the company's overall revenue grew for the fifth consecutive year, driven largely by strong performance in its overseas markets.",
+      "targetItem": "overall revenue grew for the fifth consecutive year",
+      "targetInfo": "Main financial result",
+      "correctAnswer": "overall revenue grew for the fifth consecutive year",
+      "distractorAnalysis": [
+        {
+          "word": "slight dip",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main financial result\" despite appearing nearby."
+        },
+        {
+          "word": "first-quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main financial result\" despite appearing nearby."
+        },
+        {
+          "word": "overall revenue grew for the fifth consecutive year",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main financial result\" in the passage."
+        },
+        {
+          "word": "overseas markets",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main financial result\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "slight dip",
+        "first-quarter",
+        "overall revenue grew for the fifth consecutive year",
+        "overseas markets"
+      ],
+      "explanation": "The main result is five straight years of revenue growth; the dip and overseas detail explain it further.",
+      "hint": "Skim past the one weak quarter and find the overall yearly result."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L50_Q2_LEARN",
+      "level": 50,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Community Survey Results: Although residents raised concerns about parking, the survey's central finding was strong support for building a new public library downtown.",
+      "targetItem": "strong support for building a new public library",
+      "targetInfo": "Survey's central finding",
+      "correctAnswer": "strong support for building a new public library",
+      "distractorAnalysis": [
+        {
+          "word": "parking",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Survey's central finding\" despite appearing nearby."
+        },
+        {
+          "word": "strong support for building a new public library",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Survey's central finding\" in the passage."
+        },
+        {
+          "word": "residents raised concerns",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Survey's central finding\" despite appearing nearby."
+        },
+        {
+          "word": "downtown",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Survey's central finding\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "parking",
+        "strong support for building a new public library",
+        "residents raised concerns",
+        "downtown"
+      ],
+      "explanation": "The central finding is support for the new library; parking concerns are a side issue.",
+      "hint": "Skim past the concerns mentioned and find the survey's main conclusion."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L50_Q3_LEARN",
+      "level": 50,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Research Brief: While the study also examined sleep patterns, its primary conclusion was that regular exercise significantly reduced participants' stress levels over six months.",
+      "targetItem": "regular exercise significantly reduced participants' stress levels",
+      "targetInfo": "Study's primary conclusion",
+      "correctAnswer": "regular exercise significantly reduced participants' stress levels",
+      "distractorAnalysis": [
+        {
+          "word": "sleep patterns",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Study's primary conclusion\" despite appearing nearby."
+        },
+        {
+          "word": "six months",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Study's primary conclusion\" despite appearing nearby."
+        },
+        {
+          "word": "participants",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Study's primary conclusion\" despite appearing nearby."
+        },
+        {
+          "word": "regular exercise significantly reduced participants' stress levels",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Study's primary conclusion\" in the passage."
+        }
+      ],
+      "options": [
+        "sleep patterns",
+        "six months",
+        "participants",
+        "regular exercise significantly reduced participants' stress levels"
+      ],
+      "explanation": "The primary conclusion concerns exercise reducing stress; sleep patterns were only an additional topic examined.",
+      "hint": "Skim past the secondary topic and find the study's main conclusion."
+    }
+  ]
+}

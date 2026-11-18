@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L111_Q1_LEARN",
+      "level": 111,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Weekly Grocery Ad: Apples are $1.29 per pound, pears are $1.49 per pound, and peaches are $1.39 per pound this week only.",
+      "targetItem": "$1.39",
+      "targetInfo": "Price of peaches",
+      "correctAnswer": "$1.39",
+      "distractorAnalysis": [
+        {
+          "word": "$1.29",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of peaches\" despite appearing nearby."
+        },
+        {
+          "word": "$1.49",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of peaches\" despite appearing nearby."
+        },
+        {
+          "word": "this week only",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of peaches\" despite appearing nearby."
+        },
+        {
+          "word": "$1.39",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of peaches\" in the passage."
+        }
+      ],
+      "options": [
+        "$1.29",
+        "$1.49",
+        "this week only",
+        "$1.39"
+      ],
+      "explanation": "Peaches are $1.39 per pound; the close prices $1.29 and $1.49 belong to apples and pears.",
+      "hint": "Search carefully for the price listed right next to peaches."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L111_Q2_LEARN",
+      "level": 111,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Speaker Lineup: Dr. Elena Voss speaks at 9:15, Dr. Elena Marsh speaks at 9:45, and Dr. Elliot Voss speaks at 10:15.",
+      "targetItem": "9:45",
+      "targetInfo": "Dr. Elena Marsh's speaking time",
+      "correctAnswer": "9:45",
+      "distractorAnalysis": [
+        {
+          "word": "9:15",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dr. Elena Marsh's speaking time\" despite appearing nearby."
+        },
+        {
+          "word": "10:15",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dr. Elena Marsh's speaking time\" despite appearing nearby."
+        },
+        {
+          "word": "Dr. Elliot Voss",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dr. Elena Marsh's speaking time\" despite appearing nearby."
+        },
+        {
+          "word": "9:45",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Dr. Elena Marsh's speaking time\" in the passage."
+        }
+      ],
+      "options": [
+        "9:15",
+        "10:15",
+        "Dr. Elliot Voss",
+        "9:45"
+      ],
+      "explanation": "Dr. Elena Marsh speaks at 9:45; the similar names Voss and Elliot belong to different speakers.",
+      "hint": "Watch for the similar names Voss and Marsh, and match the time to Marsh specifically."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L111_Q3_LEARN",
+      "level": 111,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Fitness Challenge Leaderboard: Priya logged 42 miles, Priyanka logged 47 miles, and Priya's teammate logged 44 miles this month.",
+      "targetItem": "47",
+      "targetInfo": "Priyanka's mileage",
+      "correctAnswer": "47",
+      "distractorAnalysis": [
+        {
+          "word": "42",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Priyanka's mileage\" despite appearing nearby."
+        },
+        {
+          "word": "47",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Priyanka's mileage\" in the passage."
+        },
+        {
+          "word": "44",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Priyanka's mileage\" despite appearing nearby."
+        },
+        {
+          "word": "teammate",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Priyanka's mileage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "42",
+        "47",
+        "44",
+        "teammate"
+      ],
+      "explanation": "Priyanka logged 47 miles; 42 and 44 belong to Priya and her teammate.",
+      "hint": "Watch for the similar names Priya and Priyanka, and match the number to Priyanka."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L112_Q1_LEARN",
+      "level": 112,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Apartment Fee Schedule: The application fee is $45, the amenity fee is $48, and the administrative fee is $42, all due before move-in.",
+      "targetItem": "$48",
+      "targetInfo": "Amenity fee amount",
+      "correctAnswer": "$48",
+      "distractorAnalysis": [
+        {
+          "word": "$45",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Amenity fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "$42",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Amenity fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "$48",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Amenity fee amount\" in the passage."
+        },
+        {
+          "word": "move-in",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Amenity fee amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$45",
+        "$42",
+        "$48",
+        "move-in"
+      ],
+      "explanation": "The amenity fee is $48; $45 and $42 belong to the application and administrative fees.",
+      "hint": "Search carefully for the figure tied specifically to the word amenity."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L112_Q2_LEARN",
+      "level": 112,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Carrier Comparison: Carrier A delivers in 3 to 5 days, Carrier B delivers in 2 to 4 days, and Carrier C delivers in 3 to 4 days at a lower cost.",
+      "targetItem": "2 to 4 days",
+      "targetInfo": "Carrier B's delivery window",
+      "correctAnswer": "2 to 4 days",
+      "distractorAnalysis": [
+        {
+          "word": "3 to 5 days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Carrier B's delivery window\" despite appearing nearby."
+        },
+        {
+          "word": "2 to 4 days",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Carrier B's delivery window\" in the passage."
+        },
+        {
+          "word": "3 to 4 days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Carrier B's delivery window\" despite appearing nearby."
+        },
+        {
+          "word": "lower cost",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Carrier B's delivery window\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "3 to 5 days",
+        "2 to 4 days",
+        "3 to 4 days",
+        "lower cost"
+      ],
+      "explanation": "Carrier B delivers in 2 to 4 days; the close ranges 3 to 5 and 3 to 4 belong to Carriers A and C.",
+      "hint": "Watch for the similar ranges and match the one to Carrier B."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L112_Q3_LEARN",
+      "level": 112,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Hotel Rate Comparison: The room costs $189 for Friday, $215 for Saturday, and $179 for Sunday, reflecting weekend demand.",
+      "targetItem": "$215",
+      "targetInfo": "Saturday's room rate",
+      "correctAnswer": "$215",
+      "distractorAnalysis": [
+        {
+          "word": "$215",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Saturday's room rate\" in the passage."
+        },
+        {
+          "word": "$189",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Saturday's room rate\" despite appearing nearby."
+        },
+        {
+          "word": "$179",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Saturday's room rate\" despite appearing nearby."
+        },
+        {
+          "word": "weekend demand",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Saturday's room rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$215",
+        "$189",
+        "$179",
+        "weekend demand"
+      ],
+      "explanation": "Saturday's rate is $215; $189 and $179 belong to Friday and Sunday.",
+      "hint": "Search carefully for the price tied specifically to Saturday."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L113_Q1_LEARN",
+      "level": 113,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Team Roster Stats: Mia Chen has 14 assists, Mia Cohen has 11 assists, and Nia Chen has 16 assists this season.",
+      "targetItem": "11",
+      "targetInfo": "Mia Cohen's assists",
+      "correctAnswer": "11",
+      "distractorAnalysis": [
+        {
+          "word": "14",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Mia Cohen's assists\" despite appearing nearby."
+        },
+        {
+          "word": "16",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Mia Cohen's assists\" despite appearing nearby."
+        },
+        {
+          "word": "11",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Mia Cohen's assists\" in the passage."
+        },
+        {
+          "word": "Nia Chen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Mia Cohen's assists\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "14",
+        "16",
+        "11",
+        "Nia Chen"
+      ],
+      "explanation": "Mia Cohen has 11 assists; 14 and 16 belong to Mia Chen and Nia Chen.",
+      "hint": "Watch for the similar names Chen and Cohen, and match the number to Cohen."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L113_Q2_LEARN",
+      "level": 113,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Pharmacy Price Comparison: Generic ibuprofen costs $6.49, generic acetaminophen costs $5.99, and generic naproxen costs $7.29 for the same quantity.",
+      "targetItem": "$5.99",
+      "targetInfo": "Price of acetaminophen",
+      "correctAnswer": "$5.99",
+      "distractorAnalysis": [
+        {
+          "word": "$5.99",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of acetaminophen\" in the passage."
+        },
+        {
+          "word": "$6.49",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of acetaminophen\" despite appearing nearby."
+        },
+        {
+          "word": "$7.29",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of acetaminophen\" despite appearing nearby."
+        },
+        {
+          "word": "same quantity",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of acetaminophen\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$5.99",
+        "$6.49",
+        "$7.29",
+        "same quantity"
+      ],
+      "explanation": "Acetaminophen costs $5.99; $6.49 and $7.29 belong to ibuprofen and naproxen.",
+      "hint": "Search carefully for the price tied specifically to acetaminophen."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L113_Q3_LEARN",
+      "level": 113,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Real Estate Comparison: 12 Birchwood Lane is listed at $412,000, 14 Birchwood Lane is listed at $398,000, and 12 Birchwood Court is listed at $405,000.",
+      "targetItem": "$398,000",
+      "targetInfo": "Price of 14 Birchwood Lane",
+      "correctAnswer": "$398,000",
+      "distractorAnalysis": [
+        {
+          "word": "$412,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of 14 Birchwood Lane\" despite appearing nearby."
+        },
+        {
+          "word": "$398,000",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of 14 Birchwood Lane\" in the passage."
+        },
+        {
+          "word": "$405,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of 14 Birchwood Lane\" despite appearing nearby."
+        },
+        {
+          "word": "12 Birchwood Court",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of 14 Birchwood Lane\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$412,000",
+        "$398,000",
+        "$405,000",
+        "12 Birchwood Court"
+      ],
+      "explanation": "14 Birchwood Lane is $398,000; the other prices belong to 12 Birchwood Lane and 12 Birchwood Court.",
+      "hint": "Watch for the similar addresses and match the price to 14 Birchwood Lane."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L114_Q1_LEARN",
+      "level": 114,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Utility Rate Tiers: The first 500 kWh cost $0.11 per unit, the next 500 kWh cost $0.13 per unit, and any usage beyond that costs $0.16 per unit.",
+      "targetItem": "$0.13",
+      "targetInfo": "Rate for the second tier",
+      "correctAnswer": "$0.13",
+      "distractorAnalysis": [
+        {
+          "word": "$0.13",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Rate for the second tier\" in the passage."
+        },
+        {
+          "word": "$0.11",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rate for the second tier\" despite appearing nearby."
+        },
+        {
+          "word": "$0.16",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rate for the second tier\" despite appearing nearby."
+        },
+        {
+          "word": "beyond that",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Rate for the second tier\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$0.13",
+        "$0.11",
+        "$0.16",
+        "beyond that"
+      ],
+      "explanation": "The second tier costs $0.13 per unit; $0.11 and $0.16 belong to the first and third tiers.",
+      "hint": "Search carefully for the rate tied to the second tier, not the first or third."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L114_Q2_LEARN",
+      "level": 114,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Exam Score Report: The class average was 78.4, the highest score was 96, and the median score was 81.",
+      "targetItem": "81",
+      "targetInfo": "Median score",
+      "correctAnswer": "81",
+      "distractorAnalysis": [
+        {
+          "word": "78.4",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median score\" despite appearing nearby."
+        },
+        {
+          "word": "96",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median score\" despite appearing nearby."
+        },
+        {
+          "word": "highest score",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Median score\" despite appearing nearby."
+        },
+        {
+          "word": "81",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Median score\" in the passage."
+        }
+      ],
+      "options": [
+        "78.4",
+        "96",
+        "highest score",
+        "81"
+      ],
+      "explanation": "The median score is 81; 78.4 and 96 describe the average and the highest score.",
+      "hint": "Search carefully for the number tied specifically to the word median."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L114_Q3_LEARN",
+      "level": 114,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Volunteer Hours Log: Marcus logged 22 hours in March, 19 hours in April, and 24 hours in May, his busiest month.",
+      "targetItem": "24",
+      "targetInfo": "Marcus's May hours",
+      "correctAnswer": "24",
+      "distractorAnalysis": [
+        {
+          "word": "22",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Marcus's May hours\" despite appearing nearby."
+        },
+        {
+          "word": "19",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Marcus's May hours\" despite appearing nearby."
+        },
+        {
+          "word": "busiest month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Marcus's May hours\" despite appearing nearby."
+        },
+        {
+          "word": "24",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Marcus's May hours\" in the passage."
+        }
+      ],
+      "options": [
+        "22",
+        "19",
+        "busiest month",
+        "24"
+      ],
+      "explanation": "Marcus logged 24 hours in May; 22 and 19 belong to March and April.",
+      "hint": "Search carefully for the number tied specifically to May."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L115_Q1_LEARN",
+      "level": 115,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Survey Results Summary: 62 percent rated the service excellent, 24 percent rated it good, and 14 percent rated it fair or poor combined.",
+      "targetItem": "24 percent",
+      "targetInfo": "Percentage rating service good",
+      "correctAnswer": "24 percent",
+      "distractorAnalysis": [
+        {
+          "word": "62 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage rating service good\" despite appearing nearby."
+        },
+        {
+          "word": "14 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage rating service good\" despite appearing nearby."
+        },
+        {
+          "word": "24 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Percentage rating service good\" in the passage."
+        },
+        {
+          "word": "fair or poor",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Percentage rating service good\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "62 percent",
+        "14 percent",
+        "24 percent",
+        "fair or poor"
+      ],
+      "explanation": "24 percent rated it good; 62 percent rated it excellent, a different rating.",
+      "hint": "Search carefully for the percentage tied specifically to the word good."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L115_Q2_LEARN",
+      "level": 115,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "League Standings: The Falcons have 14 wins, the Hawks have 12 wins, and the Ravens have 15 wins with two games remaining.",
+      "targetItem": "12",
+      "targetInfo": "Hawks' win total",
+      "correctAnswer": "12",
+      "distractorAnalysis": [
+        {
+          "word": "12",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Hawks' win total\" in the passage."
+        },
+        {
+          "word": "14",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Hawks' win total\" despite appearing nearby."
+        },
+        {
+          "word": "15",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Hawks' win total\" despite appearing nearby."
+        },
+        {
+          "word": "two games",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Hawks' win total\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "12",
+        "14",
+        "15",
+        "two games"
+      ],
+      "explanation": "The Hawks have 12 wins; 14 and 15 belong to the Falcons and Ravens.",
+      "hint": "Search carefully for the win total tied specifically to the Hawks."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L115_Q3_LEARN",
+      "level": 115,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline Fare Comparison: The 6 a.m. flight costs $210, the 11 a.m. flight costs $185, and the 4 p.m. flight costs $198, all one-way.",
+      "targetItem": "$185",
+      "targetInfo": "11 a.m. flight fare",
+      "correctAnswer": "$185",
+      "distractorAnalysis": [
+        {
+          "word": "$210",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"11 a.m. flight fare\" despite appearing nearby."
+        },
+        {
+          "word": "$198",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"11 a.m. flight fare\" despite appearing nearby."
+        },
+        {
+          "word": "$185",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"11 a.m. flight fare\" in the passage."
+        },
+        {
+          "word": "one-way",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"11 a.m. flight fare\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$210",
+        "$198",
+        "$185",
+        "one-way"
+      ],
+      "explanation": "The 11 a.m. flight costs $185; $210 and $198 belong to the 6 a.m. and 4 p.m. flights.",
+      "hint": "Search carefully for the fare tied specifically to the 11 a.m. flight."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L116_Q1_LEARN",
+      "level": 116,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Grant Funding Breakdown: The literacy program received $18,500, the after-school program received $22,000, and the summer program received $19,750.",
+      "targetItem": "$19,750",
+      "targetInfo": "Summer program funding",
+      "correctAnswer": "$19,750",
+      "distractorAnalysis": [
+        {
+          "word": "$19,750",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Summer program funding\" in the passage."
+        },
+        {
+          "word": "$18,500",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Summer program funding\" despite appearing nearby."
+        },
+        {
+          "word": "$22,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Summer program funding\" despite appearing nearby."
+        },
+        {
+          "word": "after-school",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Summer program funding\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$19,750",
+        "$18,500",
+        "$22,000",
+        "after-school"
+      ],
+      "explanation": "The summer program received $19,750; the close figure $18,500 belongs to the literacy program.",
+      "hint": "Search carefully for the figure tied specifically to the summer program."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L116_Q2_LEARN",
+      "level": 116,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Classroom Supply List: Notebooks cost $2.25 each, folders cost $1.75 each, and pencil sets cost $2.10 each, all sold in bulk packs.",
+      "targetItem": "$2.10",
+      "targetInfo": "Price of pencil sets",
+      "correctAnswer": "$2.10",
+      "distractorAnalysis": [
+        {
+          "word": "$2.25",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of pencil sets\" despite appearing nearby."
+        },
+        {
+          "word": "$1.75",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of pencil sets\" despite appearing nearby."
+        },
+        {
+          "word": "bulk packs",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of pencil sets\" despite appearing nearby."
+        },
+        {
+          "word": "$2.10",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of pencil sets\" in the passage."
+        }
+      ],
+      "options": [
+        "$2.25",
+        "$1.75",
+        "bulk packs",
+        "$2.10"
+      ],
+      "explanation": "Pencil sets cost $2.10; the close price $2.25 belongs to notebooks instead.",
+      "hint": "Search carefully for the price tied specifically to pencil sets."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L116_Q3_LEARN",
+      "level": 116,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Dosage Chart by Weight: Patients under 50 pounds take 4 mL, patients 50 to 80 pounds take 7.5 mL, and patients over 80 pounds take 10 mL.",
+      "targetItem": "7.5 mL",
+      "targetInfo": "Dosage for 50-80 pound patients",
+      "correctAnswer": "7.5 mL",
+      "distractorAnalysis": [
+        {
+          "word": "4 mL",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dosage for 50-80 pound patients\" despite appearing nearby."
+        },
+        {
+          "word": "7.5 mL",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Dosage for 50-80 pound patients\" in the passage."
+        },
+        {
+          "word": "10 mL",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dosage for 50-80 pound patients\" despite appearing nearby."
+        },
+        {
+          "word": "over 80 pounds",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dosage for 50-80 pound patients\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "4 mL",
+        "7.5 mL",
+        "10 mL",
+        "over 80 pounds"
+      ],
+      "explanation": "Patients 50 to 80 pounds take 7.5 mL; 4 mL and 10 mL apply to the lighter and heavier groups.",
+      "hint": "Search carefully for the dosage tied to the middle weight range."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L117_Q1_LEARN",
+      "level": 117,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Loan Comparison: Lender A offers 5.4 percent, Lender B offers 5.1 percent, and Lender C offers 5.6 percent, all fixed rates.",
+      "targetItem": "5.1 percent",
+      "targetInfo": "Lender B's rate",
+      "correctAnswer": "5.1 percent",
+      "distractorAnalysis": [
+        {
+          "word": "5.4 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Lender B's rate\" despite appearing nearby."
+        },
+        {
+          "word": "5.6 percent",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Lender B's rate\" despite appearing nearby."
+        },
+        {
+          "word": "5.1 percent",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Lender B's rate\" in the passage."
+        },
+        {
+          "word": "fixed rates",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Lender B's rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "5.4 percent",
+        "5.6 percent",
+        "5.1 percent",
+        "fixed rates"
+      ],
+      "explanation": "Lender B offers 5.1 percent; the close rates 5.4 and 5.6 percent belong to Lenders A and C.",
+      "hint": "Search carefully for the rate tied specifically to Lender B."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L117_Q2_LEARN",
+      "level": 117,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Vacation Package Pricing: The 4-night package costs $899, the 5-night package costs $1,050, and the 7-night package costs $1,380.",
+      "targetItem": "$1,050",
+      "targetInfo": "5-night package price",
+      "correctAnswer": "$1,050",
+      "distractorAnalysis": [
+        {
+          "word": "$1,050",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"5-night package price\" in the passage."
+        },
+        {
+          "word": "$899",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"5-night package price\" despite appearing nearby."
+        },
+        {
+          "word": "$1,380",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"5-night package price\" despite appearing nearby."
+        },
+        {
+          "word": "4-night",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"5-night package price\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$1,050",
+        "$899",
+        "$1,380",
+        "4-night"
+      ],
+      "explanation": "The 5-night package costs $1,050; $899 and $1,380 belong to the 4-night and 7-night packages.",
+      "hint": "Search carefully for the price tied specifically to the 5-night package."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L117_Q3_LEARN",
+      "level": 117,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Weather Forecast Comparison: Tuesday's high is 71, Wednesday's high is 74, and Thursday's high is 69, cooling toward the weekend.",
+      "targetItem": "74",
+      "targetInfo": "Wednesday's high temperature",
+      "correctAnswer": "74",
+      "distractorAnalysis": [
+        {
+          "word": "71",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wednesday's high temperature\" despite appearing nearby."
+        },
+        {
+          "word": "69",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wednesday's high temperature\" despite appearing nearby."
+        },
+        {
+          "word": "74",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Wednesday's high temperature\" in the passage."
+        },
+        {
+          "word": "cooling",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wednesday's high temperature\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "71",
+        "69",
+        "74",
+        "cooling"
+      ],
+      "explanation": "Wednesday's high is 74; 71 and 69 belong to Tuesday and Thursday.",
+      "hint": "Search carefully for the number tied specifically to Wednesday."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L118_Q1_LEARN",
+      "level": 118,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Restaurant Table Wait Times: The 2-person table wait is 15 minutes, the 4-person table wait is 35 minutes, and the 6-person table wait is 25 minutes.",
+      "targetItem": "35 minutes",
+      "targetInfo": "Wait time for a 4-person table",
+      "correctAnswer": "35 minutes",
+      "distractorAnalysis": [
+        {
+          "word": "15 minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wait time for a 4-person table\" despite appearing nearby."
+        },
+        {
+          "word": "25 minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wait time for a 4-person table\" despite appearing nearby."
+        },
+        {
+          "word": "6-person",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Wait time for a 4-person table\" despite appearing nearby."
+        },
+        {
+          "word": "35 minutes",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Wait time for a 4-person table\" in the passage."
+        }
+      ],
+      "options": [
+        "15 minutes",
+        "25 minutes",
+        "6-person",
+        "35 minutes"
+      ],
+      "explanation": "The 4-person table waits 35 minutes; 15 and 25 minutes belong to the 2-person and 6-person tables.",
+      "hint": "Search carefully for the wait time tied specifically to the 4-person table."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L118_Q2_LEARN",
+      "level": 118,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Battery Life Comparison: Model X lasts 9 hours, Model Y lasts 11 hours, and Model Z lasts 10.5 hours on a single charge.",
+      "targetItem": "10.5 hours",
+      "targetInfo": "Model Z's battery life",
+      "correctAnswer": "10.5 hours",
+      "distractorAnalysis": [
+        {
+          "word": "9 hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Model Z's battery life\" despite appearing nearby."
+        },
+        {
+          "word": "11 hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Model Z's battery life\" despite appearing nearby."
+        },
+        {
+          "word": "10.5 hours",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Model Z's battery life\" in the passage."
+        },
+        {
+          "word": "single charge",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Model Z's battery life\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "9 hours",
+        "11 hours",
+        "10.5 hours",
+        "single charge"
+      ],
+      "explanation": "Model Z lasts 10.5 hours; 9 and 11 hours belong to Models X and Y.",
+      "hint": "Search carefully for the number tied specifically to Model Z."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L118_Q3_LEARN",
+      "level": 118,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Parking Zone Rates: Zone A costs $2.50 an hour, Zone B costs $3.25 an hour, and Zone C costs $2.75 an hour near the stadium.",
+      "targetItem": "$2.75",
+      "targetInfo": "Zone C's hourly rate",
+      "correctAnswer": "$2.75",
+      "distractorAnalysis": [
+        {
+          "word": "$2.75",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Zone C's hourly rate\" in the passage."
+        },
+        {
+          "word": "$2.50",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Zone C's hourly rate\" despite appearing nearby."
+        },
+        {
+          "word": "$3.25",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Zone C's hourly rate\" despite appearing nearby."
+        },
+        {
+          "word": "stadium",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Zone C's hourly rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$2.75",
+        "$2.50",
+        "$3.25",
+        "stadium"
+      ],
+      "explanation": "Zone C costs $2.75 an hour; the close rate $2.50 belongs to Zone A.",
+      "hint": "Search carefully for the rate tied specifically to Zone C."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L119_Q1_LEARN",
+      "level": 119,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Marathon Split Times: The runner passed mile 10 at 1:12, mile 20 at 2:35, and finished at 3:48.",
+      "targetItem": "2:35",
+      "targetInfo": "Time at mile 20",
+      "correctAnswer": "2:35",
+      "distractorAnalysis": [
+        {
+          "word": "1:12",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time at mile 20\" despite appearing nearby."
+        },
+        {
+          "word": "3:48",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time at mile 20\" despite appearing nearby."
+        },
+        {
+          "word": "2:35",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Time at mile 20\" in the passage."
+        },
+        {
+          "word": "finished",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time at mile 20\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "1:12",
+        "3:48",
+        "2:35",
+        "finished"
+      ],
+      "explanation": "The time at mile 20 is 2:35; 1:12 and 3:48 belong to mile 10 and the finish.",
+      "hint": "Search carefully for the time tied specifically to mile 20."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L119_Q2_LEARN",
+      "level": 119,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Ingredient Cost Comparison: Almond flour costs $8.99 per bag, coconut flour costs $6.49 per bag, and oat flour costs $4.29 per bag.",
+      "targetItem": "$6.49",
+      "targetInfo": "Price of coconut flour",
+      "correctAnswer": "$6.49",
+      "distractorAnalysis": [
+        {
+          "word": "$8.99",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of coconut flour\" despite appearing nearby."
+        },
+        {
+          "word": "$6.49",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of coconut flour\" in the passage."
+        },
+        {
+          "word": "$4.29",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of coconut flour\" despite appearing nearby."
+        },
+        {
+          "word": "per bag",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of coconut flour\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$8.99",
+        "$6.49",
+        "$4.29",
+        "per bag"
+      ],
+      "explanation": "Coconut flour costs $6.49; $8.99 and $4.29 belong to almond and oat flour.",
+      "hint": "Search carefully for the price tied specifically to coconut flour."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L119_Q3_LEARN",
+      "level": 119,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Employee Overtime Log: Devon worked 6 overtime hours, Dana worked 9 overtime hours, and Deja worked 4 overtime hours this pay period.",
+      "targetItem": "9",
+      "targetInfo": "Dana's overtime hours",
+      "correctAnswer": "9",
+      "distractorAnalysis": [
+        {
+          "word": "6",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dana's overtime hours\" despite appearing nearby."
+        },
+        {
+          "word": "4",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dana's overtime hours\" despite appearing nearby."
+        },
+        {
+          "word": "9",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Dana's overtime hours\" in the passage."
+        },
+        {
+          "word": "Deja",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Dana's overtime hours\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "6",
+        "4",
+        "9",
+        "Deja"
+      ],
+      "explanation": "Dana worked 9 overtime hours; 6 and 4 belong to Devon and Deja.",
+      "hint": "Watch for the similar names Devon, Dana, and Deja, and match the number to Dana."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L120_Q1_LEARN",
+      "level": 120,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Quarterly Sales Comparison: Q1 revenue was $412,000, Q2 revenue was $438,500, and Q3 revenue was $429,750, a slight dip from Q2.",
+      "targetItem": "$438,500",
+      "targetInfo": "Q2 revenue",
+      "correctAnswer": "$438,500",
+      "distractorAnalysis": [
+        {
+          "word": "$412,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Q2 revenue\" despite appearing nearby."
+        },
+        {
+          "word": "$429,750",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Q2 revenue\" despite appearing nearby."
+        },
+        {
+          "word": "slight dip",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Q2 revenue\" despite appearing nearby."
+        },
+        {
+          "word": "$438,500",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Q2 revenue\" in the passage."
+        }
+      ],
+      "options": [
+        "$412,000",
+        "$429,750",
+        "slight dip",
+        "$438,500"
+      ],
+      "explanation": "Q2 revenue was $438,500; the close figures $412,000 and $429,750 belong to Q1 and Q3.",
+      "hint": "Search carefully for the figure tied specifically to Q2."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L120_Q2_LEARN",
+      "level": 120,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Water Usage Report: Household A used 62 gallons daily, Household B used 58 gallons daily, and Household C used 65 gallons daily on average.",
+      "targetItem": "58",
+      "targetInfo": "Household B's daily usage",
+      "correctAnswer": "58",
+      "distractorAnalysis": [
+        {
+          "word": "62",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Household B's daily usage\" despite appearing nearby."
+        },
+        {
+          "word": "65",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Household B's daily usage\" despite appearing nearby."
+        },
+        {
+          "word": "58",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Household B's daily usage\" in the passage."
+        },
+        {
+          "word": "on average",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Household B's daily usage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "62",
+        "65",
+        "58",
+        "on average"
+      ],
+      "explanation": "Household B used 58 gallons daily; 62 and 65 belong to Households A and C.",
+      "hint": "Search carefully for the number tied specifically to Household B."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L120_Q3_LEARN",
+      "level": 120,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Interview Panel Schedule: Candidate Reyes meets the panel at 10:20, Candidate Reyna meets at 10:50, and Candidate Reyes meets HR separately at 2.",
+      "targetItem": "10:50",
+      "targetInfo": "Candidate Reyna's panel time",
+      "correctAnswer": "10:50",
+      "distractorAnalysis": [
+        {
+          "word": "10:50",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Candidate Reyna's panel time\" in the passage."
+        },
+        {
+          "word": "10:20",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Candidate Reyna's panel time\" despite appearing nearby."
+        },
+        {
+          "word": "2",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Candidate Reyna's panel time\" despite appearing nearby."
+        },
+        {
+          "word": "Candidate Reyes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Candidate Reyna's panel time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "10:50",
+        "10:20",
+        "2",
+        "Candidate Reyes"
+      ],
+      "explanation": "Candidate Reyna's panel time is 10:50; the other times belong to Candidate Reyes's two separate meetings.",
+      "hint": "Watch for the similar names Reyes and Reyna, and match the time to Reyna."
+    }
+  ]
+}

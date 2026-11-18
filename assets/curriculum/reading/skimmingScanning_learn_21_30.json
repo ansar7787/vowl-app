@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q1_LEARN",
+      "level": 21,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The Thompson family booked a table for six at Bella Roma on Friday at seven thirty. They requested a spot near the window.",
+      "targetItem": "seven thirty",
+      "targetInfo": "Reservation time",
+      "correctAnswer": "seven thirty",
+      "distractorAnalysis": [
+        {
+          "word": "seven thirty",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reservation time\" in the passage."
+        },
+        {
+          "word": "six",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservation time\" despite appearing nearby."
+        },
+        {
+          "word": "Friday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservation time\" despite appearing nearby."
+        },
+        {
+          "word": "window",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reservation time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "seven thirty",
+        "six",
+        "Friday",
+        "window"
+      ],
+      "explanation": "The reservation is for seven thirty; six refers to the number of guests, not the time.",
+      "hint": "Look for the precise time, not the party size."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q2_LEARN",
+      "level": 21,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The dry cleaner said the suit would be ready Thursday, but the coat needed an extra day and would be ready Friday.",
+      "targetItem": "Friday",
+      "targetInfo": "Day the coat is ready",
+      "correctAnswer": "Friday",
+      "distractorAnalysis": [
+        {
+          "word": "Thursday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Day the coat is ready\" despite appearing nearby."
+        },
+        {
+          "word": "suit",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Day the coat is ready\" despite appearing nearby."
+        },
+        {
+          "word": "extra",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Day the coat is ready\" despite appearing nearby."
+        },
+        {
+          "word": "Friday",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Day the coat is ready\" in the passage."
+        }
+      ],
+      "options": [
+        "Thursday",
+        "suit",
+        "extra",
+        "Friday"
+      ],
+      "explanation": "The suit is ready Thursday, but the coat needs an extra day and is ready Friday.",
+      "hint": "Find the day tied to the coat, not the suit."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L21_Q3_LEARN",
+      "level": 21,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Dr. Alvarez examined the cat's ear infection and prescribed drops twice daily for ten days.",
+      "targetItem": "ten",
+      "targetInfo": "Length of treatment",
+      "correctAnswer": "ten",
+      "distractorAnalysis": [
+        {
+          "word": "twice",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of treatment\" despite appearing nearby."
+        },
+        {
+          "word": "daily",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of treatment\" despite appearing nearby."
+        },
+        {
+          "word": "ear",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of treatment\" despite appearing nearby."
+        },
+        {
+          "word": "ten",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Length of treatment\" in the passage."
+        }
+      ],
+      "options": [
+        "twice",
+        "daily",
+        "ear",
+        "ten"
+      ],
+      "explanation": "The drops are needed for ten days; twice daily describes how often, not the total length.",
+      "hint": "Look for the number of days the drops are needed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q1_LEARN",
+      "level": 22,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The moving truck is scheduled to arrive at 8 a.m., but the movers said loading usually takes about three hours.",
+      "targetItem": "three",
+      "targetInfo": "Estimated loading time",
+      "correctAnswer": "three",
+      "distractorAnalysis": [
+        {
+          "word": "8 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated loading time\" despite appearing nearby."
+        },
+        {
+          "word": "movers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated loading time\" despite appearing nearby."
+        },
+        {
+          "word": "truck",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated loading time\" despite appearing nearby."
+        },
+        {
+          "word": "three",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Estimated loading time\" in the passage."
+        }
+      ],
+      "options": [
+        "8 a.m.",
+        "movers",
+        "truck",
+        "three"
+      ],
+      "explanation": "The truck arrives at 8 a.m., but loading itself is expected to take three hours.",
+      "hint": "Search for how long loading takes, not the arrival time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q2_LEARN",
+      "level": 22,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Car service center called to say the brake pads were replaced, but the oil change will happen at the next visit.",
+      "targetItem": "brake pads",
+      "targetInfo": "Part replaced today",
+      "correctAnswer": "brake pads",
+      "distractorAnalysis": [
+        {
+          "word": "oil change",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Part replaced today\" despite appearing nearby."
+        },
+        {
+          "word": "brake pads",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Part replaced today\" in the passage."
+        },
+        {
+          "word": "next visit",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Part replaced today\" despite appearing nearby."
+        },
+        {
+          "word": "service",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Part replaced today\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "oil change",
+        "brake pads",
+        "next visit",
+        "service"
+      ],
+      "explanation": "The brake pads are already replaced; the oil change is planned for a future visit.",
+      "hint": "Look for the part that is already finished, not scheduled later."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L22_Q3_LEARN",
+      "level": 22,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The insurance renewal notice lists a premium of $340 for six months, up from $310 last year.",
+      "targetItem": "$340",
+      "targetInfo": "New premium amount",
+      "correctAnswer": "$340",
+      "distractorAnalysis": [
+        {
+          "word": "$310",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New premium amount\" despite appearing nearby."
+        },
+        {
+          "word": "six months",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New premium amount\" despite appearing nearby."
+        },
+        {
+          "word": "$340",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New premium amount\" in the passage."
+        },
+        {
+          "word": "last year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New premium amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$310",
+        "six months",
+        "$340",
+        "last year"
+      ],
+      "explanation": "This year's premium is $340; $310 was the amount charged last year.",
+      "hint": "Find the current amount, not last year's."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q1_LEARN",
+      "level": 23,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Two tutors are available: Mr. Diaz teaches algebra on Mondays, and Ms. Kwan teaches geometry on Thursdays.",
+      "targetItem": "Ms. Kwan",
+      "targetInfo": "Geometry tutor",
+      "correctAnswer": "Ms. Kwan",
+      "distractorAnalysis": [
+        {
+          "word": "Mr. Diaz",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Geometry tutor\" despite appearing nearby."
+        },
+        {
+          "word": "Mondays",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Geometry tutor\" despite appearing nearby."
+        },
+        {
+          "word": "Ms. Kwan",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Geometry tutor\" in the passage."
+        },
+        {
+          "word": "algebra",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Geometry tutor\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Mr. Diaz",
+        "Mondays",
+        "Ms. Kwan",
+        "algebra"
+      ],
+      "explanation": "Mr. Diaz teaches algebra; Ms. Kwan is the one who teaches geometry.",
+      "hint": "Look for the tutor paired with the word geometry."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q2_LEARN",
+      "level": 23,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The festival's main stage opens at noon, while the food trucks begin serving at eleven.",
+      "targetItem": "eleven",
+      "targetInfo": "Food truck start time",
+      "correctAnswer": "eleven",
+      "distractorAnalysis": [
+        {
+          "word": "eleven",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Food truck start time\" in the passage."
+        },
+        {
+          "word": "noon",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Food truck start time\" despite appearing nearby."
+        },
+        {
+          "word": "festival",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Food truck start time\" despite appearing nearby."
+        },
+        {
+          "word": "main",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Food truck start time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "eleven",
+        "noon",
+        "festival",
+        "main"
+      ],
+      "explanation": "The main stage opens at noon, but the food trucks start serving earlier, at eleven.",
+      "hint": "Find the time linked to the food trucks, not the main stage."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L23_Q3_LEARN",
+      "level": 23,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The job interview is confirmed for Tuesday at 10 a.m. in Conference Room B, not Room A as first planned.",
+      "targetItem": "Conference Room B",
+      "targetInfo": "Correct interview room",
+      "correctAnswer": "Conference Room B",
+      "distractorAnalysis": [
+        {
+          "word": "Room A",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Correct interview room\" despite appearing nearby."
+        },
+        {
+          "word": "Tuesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Correct interview room\" despite appearing nearby."
+        },
+        {
+          "word": "Conference Room B",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Correct interview room\" in the passage."
+        },
+        {
+          "word": "10 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Correct interview room\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Room A",
+        "Tuesday",
+        "Conference Room B",
+        "10 a.m."
+      ],
+      "explanation": "Room A was the original plan, but the interview is now confirmed in Conference Room B.",
+      "hint": "Look for the room named as the final, correct location."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q1_LEARN",
+      "level": 24,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The utility bill shows 420 kilowatt hours used this month, compared to 380 last month.",
+      "targetItem": "420",
+      "targetInfo": "This month's usage",
+      "correctAnswer": "420",
+      "distractorAnalysis": [
+        {
+          "word": "420",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"This month's usage\" in the passage."
+        },
+        {
+          "word": "380",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This month's usage\" despite appearing nearby."
+        },
+        {
+          "word": "kilowatt",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This month's usage\" despite appearing nearby."
+        },
+        {
+          "word": "month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This month's usage\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "420",
+        "380",
+        "kilowatt",
+        "month"
+      ],
+      "explanation": "This month's usage is 420 kilowatt hours; 380 was last month's figure.",
+      "hint": "Find the number tied to this month, not last month."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q2_LEARN",
+      "level": 24,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The hotel confirmed a king room for two nights, checking in on the 14th and checking out on the 16th.",
+      "targetItem": "16th",
+      "targetInfo": "Check-out date",
+      "correctAnswer": "16th",
+      "distractorAnalysis": [
+        {
+          "word": "16th",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Check-out date\" in the passage."
+        },
+        {
+          "word": "14th",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Check-out date\" despite appearing nearby."
+        },
+        {
+          "word": "king",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Check-out date\" despite appearing nearby."
+        },
+        {
+          "word": "two",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Check-out date\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "16th",
+        "14th",
+        "king",
+        "two"
+      ],
+      "explanation": "Check-in is on the 14th; check-out, the date being asked for, is the 16th.",
+      "hint": "Look for the date tied to checking out, not checking in."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L24_Q3_LEARN",
+      "level": 24,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The rideshare driver, Priya, said the trip would take fifteen minutes and cost about nine dollars.",
+      "targetItem": "nine",
+      "targetInfo": "Estimated trip cost",
+      "correctAnswer": "nine",
+      "distractorAnalysis": [
+        {
+          "word": "fifteen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated trip cost\" despite appearing nearby."
+        },
+        {
+          "word": "Priya",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated trip cost\" despite appearing nearby."
+        },
+        {
+          "word": "nine",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Estimated trip cost\" in the passage."
+        },
+        {
+          "word": "minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Estimated trip cost\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fifteen",
+        "Priya",
+        "nine",
+        "minutes"
+      ],
+      "explanation": "The trip is expected to cost nine dollars; fifteen minutes refers to travel time.",
+      "hint": "Find the number tied to cost, not travel time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q1_LEARN",
+      "level": 25,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The pharmacist said the prescription refill would be ready in two hours, though the original order took only thirty minutes.",
+      "targetItem": "two hours",
+      "targetInfo": "Refill wait time",
+      "correctAnswer": "two hours",
+      "distractorAnalysis": [
+        {
+          "word": "two hours",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Refill wait time\" in the passage."
+        },
+        {
+          "word": "thirty minutes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Refill wait time\" despite appearing nearby."
+        },
+        {
+          "word": "original",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Refill wait time\" despite appearing nearby."
+        },
+        {
+          "word": "pharmacist",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Refill wait time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two hours",
+        "thirty minutes",
+        "original",
+        "pharmacist"
+      ],
+      "explanation": "The original order took thirty minutes, but this refill will take two hours.",
+      "hint": "Look for the wait time tied to the refill, not the original order."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q2_LEARN",
+      "level": 25,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The washing machine's warranty covers parts for two years and labor for only one year.",
+      "targetItem": "one year",
+      "targetInfo": "Labor coverage length",
+      "correctAnswer": "one year",
+      "distractorAnalysis": [
+        {
+          "word": "two years",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Labor coverage length\" despite appearing nearby."
+        },
+        {
+          "word": "one year",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Labor coverage length\" in the passage."
+        },
+        {
+          "word": "parts",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Labor coverage length\" despite appearing nearby."
+        },
+        {
+          "word": "washing",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Labor coverage length\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two years",
+        "one year",
+        "parts",
+        "washing"
+      ],
+      "explanation": "Parts are covered for two years, but labor coverage lasts only one year.",
+      "hint": "Find the coverage length tied to labor, not parts."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L25_Q3_LEARN",
+      "level": 25,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The streaming subscription renews automatically on the 3rd unless canceled by the 1st.",
+      "targetItem": "1st",
+      "targetInfo": "Cancellation deadline",
+      "correctAnswer": "1st",
+      "distractorAnalysis": [
+        {
+          "word": "3rd",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation deadline\" despite appearing nearby."
+        },
+        {
+          "word": "automatically",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation deadline\" despite appearing nearby."
+        },
+        {
+          "word": "1st",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cancellation deadline\" in the passage."
+        },
+        {
+          "word": "subscription",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation deadline\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "3rd",
+        "automatically",
+        "1st",
+        "subscription"
+      ],
+      "explanation": "Renewal happens on the 3rd, but cancellation must occur by the 1st to stop it.",
+      "hint": "Look for the date by which cancellation must happen, not the renewal date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q1_LEARN",
+      "level": 26,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Badge pickup for the conference starts at 7 a.m. in the lobby, while the keynote speech begins at 9 a.m. in Hall C.",
+      "targetItem": "7 a.m.",
+      "targetInfo": "Badge pickup time",
+      "correctAnswer": "7 a.m.",
+      "distractorAnalysis": [
+        {
+          "word": "9 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Badge pickup time\" despite appearing nearby."
+        },
+        {
+          "word": "lobby",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Badge pickup time\" despite appearing nearby."
+        },
+        {
+          "word": "Hall C",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Badge pickup time\" despite appearing nearby."
+        },
+        {
+          "word": "7 a.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Badge pickup time\" in the passage."
+        }
+      ],
+      "options": [
+        "9 a.m.",
+        "lobby",
+        "Hall C",
+        "7 a.m."
+      ],
+      "explanation": "Badge pickup starts at 7 a.m.; the keynote, a separate event, begins at 9 a.m.",
+      "hint": "Find the time tied to badge pickup, not the keynote."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q2_LEARN",
+      "level": 26,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The art exhibit features works by three painters: Lena Ostrowski, Marcus Feld, and Ana Duarte.",
+      "targetItem": "Ana Duarte",
+      "targetInfo": "Third painter listed",
+      "correctAnswer": "Ana Duarte",
+      "distractorAnalysis": [
+        {
+          "word": "Lena Ostrowski",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Third painter listed\" despite appearing nearby."
+        },
+        {
+          "word": "Ana Duarte",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Third painter listed\" in the passage."
+        },
+        {
+          "word": "Marcus Feld",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Third painter listed\" despite appearing nearby."
+        },
+        {
+          "word": "three",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Third painter listed\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Lena Ostrowski",
+        "Ana Duarte",
+        "Marcus Feld",
+        "three"
+      ],
+      "explanation": "The painters are listed in order, and Ana Duarte is named third.",
+      "hint": "Count the names in order and find the last one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L26_Q3_LEARN",
+      "level": 26,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The cooking class covers knife skills in week one and sauce-making in week three, skipping week two entirely.",
+      "targetItem": "week three",
+      "targetInfo": "When sauce-making is taught",
+      "correctAnswer": "week three",
+      "distractorAnalysis": [
+        {
+          "word": "week three",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"When sauce-making is taught\" in the passage."
+        },
+        {
+          "word": "week one",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When sauce-making is taught\" despite appearing nearby."
+        },
+        {
+          "word": "week two",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When sauce-making is taught\" despite appearing nearby."
+        },
+        {
+          "word": "knife",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When sauce-making is taught\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "week three",
+        "week one",
+        "week two",
+        "knife"
+      ],
+      "explanation": "Knife skills are taught in week one; sauce-making comes later, in week three.",
+      "hint": "Look for the week tied to sauce-making, not knife skills."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q1_LEARN",
+      "level": 27,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The plumber is scheduled to arrive between 1 and 3 p.m., though the office called to say he might be running thirty minutes late.",
+      "targetItem": "thirty minutes",
+      "targetInfo": "Length of possible delay",
+      "correctAnswer": "thirty minutes",
+      "distractorAnalysis": [
+        {
+          "word": "thirty minutes",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Length of possible delay\" in the passage."
+        },
+        {
+          "word": "1 and 3 p.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of possible delay\" despite appearing nearby."
+        },
+        {
+          "word": "office",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of possible delay\" despite appearing nearby."
+        },
+        {
+          "word": "plumber",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of possible delay\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "thirty minutes",
+        "1 and 3 p.m.",
+        "office",
+        "plumber"
+      ],
+      "explanation": "The arrival window is 1 to 3 p.m., but the office warned of a possible thirty-minute delay.",
+      "hint": "Find the length of the possible delay, not the arrival window."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q2_LEARN",
+      "level": 27,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The community pool's adult swim hours are six to seven in the morning, and open swim runs from noon to five.",
+      "targetItem": "noon to five",
+      "targetInfo": "Open swim hours",
+      "correctAnswer": "noon to five",
+      "distractorAnalysis": [
+        {
+          "word": "six to seven",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Open swim hours\" despite appearing nearby."
+        },
+        {
+          "word": "morning",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Open swim hours\" despite appearing nearby."
+        },
+        {
+          "word": "pool",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Open swim hours\" despite appearing nearby."
+        },
+        {
+          "word": "noon to five",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Open swim hours\" in the passage."
+        }
+      ],
+      "options": [
+        "six to seven",
+        "morning",
+        "pool",
+        "noon to five"
+      ],
+      "explanation": "Adult swim runs six to seven in the morning; open swim is the later noon-to-five block.",
+      "hint": "Look for the hours tied to open swim, not adult swim."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L27_Q3_LEARN",
+      "level": 27,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The spelling bee has two rounds: round one uses easier words, and round two, held after a short break, uses harder words.",
+      "targetItem": "round two",
+      "targetInfo": "Round with harder words",
+      "correctAnswer": "round two",
+      "distractorAnalysis": [
+        {
+          "word": "round one",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Round with harder words\" despite appearing nearby."
+        },
+        {
+          "word": "break",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Round with harder words\" despite appearing nearby."
+        },
+        {
+          "word": "easier",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Round with harder words\" despite appearing nearby."
+        },
+        {
+          "word": "round two",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Round with harder words\" in the passage."
+        }
+      ],
+      "options": [
+        "round one",
+        "break",
+        "easier",
+        "round two"
+      ],
+      "explanation": "Round one uses easier words; round two, after the break, uses the harder ones.",
+      "hint": "Find the round described as using harder words."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q1_LEARN",
+      "level": 28,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The package addressed to Nathan Reyes at 88 Corbin Lane was actually delivered to 88 Corbin Court by mistake.",
+      "targetItem": "88 Corbin Court",
+      "targetInfo": "Where the package was mistakenly delivered",
+      "correctAnswer": "88 Corbin Court",
+      "distractorAnalysis": [
+        {
+          "word": "88 Corbin Lane",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the package was mistakenly delivered\" despite appearing nearby."
+        },
+        {
+          "word": "Nathan Reyes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the package was mistakenly delivered\" despite appearing nearby."
+        },
+        {
+          "word": "mistake",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the package was mistakenly delivered\" despite appearing nearby."
+        },
+        {
+          "word": "88 Corbin Court",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Where the package was mistakenly delivered\" in the passage."
+        }
+      ],
+      "options": [
+        "88 Corbin Lane",
+        "Nathan Reyes",
+        "mistake",
+        "88 Corbin Court"
+      ],
+      "explanation": "The package was meant for 88 Corbin Lane but was mistakenly sent to 88 Corbin Court.",
+      "hint": "Watch for two similar addresses and find the wrong one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q2_LEARN",
+      "level": 28,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Both Officer Reyes and Officer Nguyen responded to the call, but only Officer Nguyen filed the report.",
+      "targetItem": "Officer Nguyen",
+      "targetInfo": "Officer who filed the report",
+      "correctAnswer": "Officer Nguyen",
+      "distractorAnalysis": [
+        {
+          "word": "Officer Reyes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Officer who filed the report\" despite appearing nearby."
+        },
+        {
+          "word": "Officer Nguyen",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Officer who filed the report\" in the passage."
+        },
+        {
+          "word": "call",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Officer who filed the report\" despite appearing nearby."
+        },
+        {
+          "word": "report",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Officer who filed the report\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Officer Reyes",
+        "Officer Nguyen",
+        "call",
+        "report"
+      ],
+      "explanation": "Both officers responded, but only Officer Nguyen is named as filing the report.",
+      "hint": "Find the officer specifically credited with filing."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L28_Q3_LEARN",
+      "level": 28,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The clinic in Riverdale handles walk-ins, while the Lakeside branch requires appointments only.",
+      "targetItem": "Riverdale",
+      "targetInfo": "Branch that allows walk-ins",
+      "correctAnswer": "Riverdale",
+      "distractorAnalysis": [
+        {
+          "word": "Lakeside",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Branch that allows walk-ins\" despite appearing nearby."
+        },
+        {
+          "word": "appointments",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Branch that allows walk-ins\" despite appearing nearby."
+        },
+        {
+          "word": "Riverdale",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Branch that allows walk-ins\" in the passage."
+        },
+        {
+          "word": "clinic",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Branch that allows walk-ins\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Lakeside",
+        "appointments",
+        "Riverdale",
+        "clinic"
+      ],
+      "explanation": "Riverdale accepts walk-ins; the Lakeside branch requires an appointment.",
+      "hint": "Look for the branch name tied to walk-ins, not appointments."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q1_LEARN",
+      "level": 29,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Of the fifty applicants, twelve were interviewed, and only three received job offers.",
+      "targetItem": "three",
+      "targetInfo": "Number who received offers",
+      "correctAnswer": "three",
+      "distractorAnalysis": [
+        {
+          "word": "three",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Number who received offers\" in the passage."
+        },
+        {
+          "word": "fifty",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number who received offers\" despite appearing nearby."
+        },
+        {
+          "word": "twelve",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number who received offers\" despite appearing nearby."
+        },
+        {
+          "word": "applicants",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number who received offers\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "three",
+        "fifty",
+        "twelve",
+        "applicants"
+      ],
+      "explanation": "Fifty applied and twelve were interviewed, but only three received offers.",
+      "hint": "Find the smallest number, which reflects the final outcome."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q2_LEARN",
+      "level": 29,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The bookstore ordered eighty copies of the novel but sold only fifty-two in the first week.",
+      "targetItem": "fifty-two",
+      "targetInfo": "Copies sold in the first week",
+      "correctAnswer": "fifty-two",
+      "distractorAnalysis": [
+        {
+          "word": "fifty-two",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Copies sold in the first week\" in the passage."
+        },
+        {
+          "word": "eighty",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Copies sold in the first week\" despite appearing nearby."
+        },
+        {
+          "word": "novel",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Copies sold in the first week\" despite appearing nearby."
+        },
+        {
+          "word": "week",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Copies sold in the first week\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fifty-two",
+        "eighty",
+        "novel",
+        "week"
+      ],
+      "explanation": "Eighty copies were ordered, but only fifty-two sold in the first week.",
+      "hint": "Find the number describing actual sales, not the order size."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L29_Q3_LEARN",
+      "level": 29,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The charity run raised $2,400 last year and $3,150 this year, an increase organizers were proud of.",
+      "targetItem": "$3,150",
+      "targetInfo": "This year's amount raised",
+      "correctAnswer": "$3,150",
+      "distractorAnalysis": [
+        {
+          "word": "$3,150",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"This year's amount raised\" in the passage."
+        },
+        {
+          "word": "$2,400",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This year's amount raised\" despite appearing nearby."
+        },
+        {
+          "word": "charity",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This year's amount raised\" despite appearing nearby."
+        },
+        {
+          "word": "organizers",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"This year's amount raised\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$3,150",
+        "$2,400",
+        "charity",
+        "organizers"
+      ],
+      "explanation": "Last year's total was $2,400; this year's higher total is $3,150.",
+      "hint": "Find the amount tied to this year, not last year."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q1_LEARN",
+      "level": 30,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The lecture hall holds two hundred students, but only one hundred sixty seats were filled for the guest speaker on Tuesday.",
+      "targetItem": "one hundred sixty",
+      "targetInfo": "Number of seats filled",
+      "correctAnswer": "one hundred sixty",
+      "distractorAnalysis": [
+        {
+          "word": "two hundred",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of seats filled\" despite appearing nearby."
+        },
+        {
+          "word": "students",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of seats filled\" despite appearing nearby."
+        },
+        {
+          "word": "one hundred sixty",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Number of seats filled\" in the passage."
+        },
+        {
+          "word": "Tuesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Number of seats filled\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two hundred",
+        "students",
+        "one hundred sixty",
+        "Tuesday"
+      ],
+      "explanation": "The hall holds two hundred, but only one hundred sixty seats were filled.",
+      "hint": "Find the number describing actual attendance, not total capacity."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q2_LEARN",
+      "level": 30,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The airline's baggage policy allows one free checked bag under fifty pounds; a second bag costs thirty-five dollars.",
+      "targetItem": "thirty-five",
+      "targetInfo": "Cost of a second checked bag",
+      "correctAnswer": "thirty-five",
+      "distractorAnalysis": [
+        {
+          "word": "fifty",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a second checked bag\" despite appearing nearby."
+        },
+        {
+          "word": "one",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a second checked bag\" despite appearing nearby."
+        },
+        {
+          "word": "free",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of a second checked bag\" despite appearing nearby."
+        },
+        {
+          "word": "thirty-five",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of a second checked bag\" in the passage."
+        }
+      ],
+      "options": [
+        "fifty",
+        "one",
+        "free",
+        "thirty-five"
+      ],
+      "explanation": "The first bag is free under fifty pounds; a second bag costs thirty-five dollars.",
+      "hint": "Find the price tied to the second bag, not the first."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L30_Q3_LEARN",
+      "level": 30,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "The apartment listing shows a one-bedroom for $1,450 a month and a two-bedroom for $1,890, both including water.",
+      "targetItem": "$1,890",
+      "targetInfo": "Price of the two-bedroom",
+      "correctAnswer": "$1,890",
+      "distractorAnalysis": [
+        {
+          "word": "$1,450",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of the two-bedroom\" despite appearing nearby."
+        },
+        {
+          "word": "water",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of the two-bedroom\" despite appearing nearby."
+        },
+        {
+          "word": "month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Price of the two-bedroom\" despite appearing nearby."
+        },
+        {
+          "word": "$1,890",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Price of the two-bedroom\" in the passage."
+        }
+      ],
+      "options": [
+        "$1,450",
+        "water",
+        "month",
+        "$1,890"
+      ],
+      "explanation": "The one-bedroom costs $1,450; the two-bedroom, the unit in question, costs $1,890.",
+      "hint": "Find the price tied to the two-bedroom, not the one-bedroom."
+    }
+  ]
+}

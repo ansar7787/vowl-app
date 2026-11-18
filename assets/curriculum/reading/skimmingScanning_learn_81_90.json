@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q1_LEARN",
+      "level": 81,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Booking Confirmation: Your reservation at Cedar Ridge Inn is confirmed for two nights, checking in on October 3rd. Your confirmation number is CR-88421, needed for check-in at the front desk.",
+      "targetItem": "CR-88421",
+      "targetInfo": "Booking confirmation number",
+      "correctAnswer": "CR-88421",
+      "distractorAnalysis": [
+        {
+          "word": "October 3rd",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Booking confirmation number\" despite appearing nearby."
+        },
+        {
+          "word": "CR-88421",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Booking confirmation number\" in the passage."
+        },
+        {
+          "word": "two nights",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Booking confirmation number\" despite appearing nearby."
+        },
+        {
+          "word": "front desk",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Booking confirmation number\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "October 3rd",
+        "CR-88421",
+        "two nights",
+        "front desk"
+      ],
+      "explanation": "The confirmation number is CR-88421; October 3rd is the check-in date, a separate detail.",
+      "hint": "Search for the code needed at check-in, not the date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q2_LEARN",
+      "level": 81,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Order Update: Thank you for your recent purchase. Your item has shipped and should arrive within five to seven business days, and you'll receive a separate email once it's out for delivery.",
+      "targetItem": "item has shipped",
+      "targetInfo": "Main update about the order",
+      "correctAnswer": "item has shipped",
+      "distractorAnalysis": [
+        {
+          "word": "item has shipped",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Main update about the order\" in the passage."
+        },
+        {
+          "word": "five to seven business days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main update about the order\" despite appearing nearby."
+        },
+        {
+          "word": "separate email",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main update about the order\" despite appearing nearby."
+        },
+        {
+          "word": "out for delivery",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Main update about the order\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "item has shipped",
+        "five to seven business days",
+        "separate email",
+        "out for delivery"
+      ],
+      "explanation": "The order has already shipped; the delivery window and email notice are follow-up details.",
+      "hint": "Skim past the delivery estimate and notification details and find what already happened."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q3_LEARN",
+      "level": 81,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Lease Notice: Beginning next month, all tenants must submit maintenance requests through the new online portal instead of calling the office directly.",
+      "targetItem": "submit maintenance requests through the new online portal",
+      "targetInfo": "New maintenance request method",
+      "correctAnswer": "submit maintenance requests through the new online portal",
+      "distractorAnalysis": [
+        {
+          "word": "Beginning next month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New maintenance request method\" despite appearing nearby."
+        },
+        {
+          "word": "calling the office",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New maintenance request method\" despite appearing nearby."
+        },
+        {
+          "word": "submit maintenance requests through the new online portal",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New maintenance request method\" in the passage."
+        },
+        {
+          "word": "all tenants",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New maintenance request method\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Beginning next month",
+        "calling the office",
+        "submit maintenance requests through the new online portal",
+        "all tenants"
+      ],
+      "explanation": "Tenants must now use the online portal for maintenance requests, rather than calling the office.",
+      "hint": "Skim past when it starts and find what tenants must actually do."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q1_LEARN",
+      "level": 82,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "School Reminder: Parent-teacher conferences are scheduled for the week of November 4th, and sign-up slots open online this Friday at 8 a.m.",
+      "targetItem": "8 a.m.",
+      "targetInfo": "Sign-up opening time",
+      "correctAnswer": "8 a.m.",
+      "distractorAnalysis": [
+        {
+          "word": "8 a.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Sign-up opening time\" in the passage."
+        },
+        {
+          "word": "November 4th",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Sign-up opening time\" despite appearing nearby."
+        },
+        {
+          "word": "this Friday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Sign-up opening time\" despite appearing nearby."
+        },
+        {
+          "word": "online",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Sign-up opening time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "8 a.m.",
+        "November 4th",
+        "this Friday",
+        "online"
+      ],
+      "explanation": "Sign-ups open at 8 a.m.; November 4th refers to the conference week itself.",
+      "hint": "Search for the specific hour, not the day or the conference week."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q2_LEARN",
+      "level": 82,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Service Invoice: This invoice covers the replacement of a kitchen faucet and includes a one-year warranty on parts and labor, totaling $215.",
+      "targetItem": "$215",
+      "targetInfo": "Total invoice amount",
+      "correctAnswer": "$215",
+      "distractorAnalysis": [
+        {
+          "word": "$215",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Total invoice amount\" in the passage."
+        },
+        {
+          "word": "one-year warranty",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total invoice amount\" despite appearing nearby."
+        },
+        {
+          "word": "kitchen faucet",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total invoice amount\" despite appearing nearby."
+        },
+        {
+          "word": "parts and labor",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Total invoice amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$215",
+        "one-year warranty",
+        "kitchen faucet",
+        "parts and labor"
+      ],
+      "explanation": "The total charge is $215; the faucet and warranty describe the service, not the price.",
+      "hint": "Search for the dollar figure, not the service description."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q3_LEARN",
+      "level": 82,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Appointment Confirmation: Your dental cleaning is confirmed for Thursday at 2:30 p.m. with Dr. Reyes. Please arrive fifteen minutes early to complete updated paperwork.",
+      "targetItem": "arrive fifteen minutes early",
+      "targetInfo": "Arrival instruction",
+      "correctAnswer": "arrive fifteen minutes early",
+      "distractorAnalysis": [
+        {
+          "word": "arrive fifteen minutes early",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Arrival instruction\" in the passage."
+        },
+        {
+          "word": "Thursday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Arrival instruction\" despite appearing nearby."
+        },
+        {
+          "word": "2:30 p.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Arrival instruction\" despite appearing nearby."
+        },
+        {
+          "word": "updated paperwork",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Arrival instruction\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "arrive fifteen minutes early",
+        "Thursday",
+        "2:30 p.m.",
+        "updated paperwork"
+      ],
+      "explanation": "Patients are asked to arrive fifteen minutes early; Thursday and 2:30 p.m. describe the appointment itself.",
+      "hint": "Skim past the appointment time and find the separate arrival instruction."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q1_LEARN",
+      "level": 83,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline Reminder: Check-in for flight 305 opens twenty-four hours before departure, and boarding passes must be printed or downloaded before arriving at the airport.",
+      "targetItem": "twenty-four hours before departure",
+      "targetInfo": "When check-in opens",
+      "correctAnswer": "twenty-four hours before departure",
+      "distractorAnalysis": [
+        {
+          "word": "flight 305",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When check-in opens\" despite appearing nearby."
+        },
+        {
+          "word": "twenty-four hours before departure",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"When check-in opens\" in the passage."
+        },
+        {
+          "word": "boarding passes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When check-in opens\" despite appearing nearby."
+        },
+        {
+          "word": "before arriving",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When check-in opens\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "flight 305",
+        "twenty-four hours before departure",
+        "boarding passes",
+        "before arriving"
+      ],
+      "explanation": "Check-in opens twenty-four hours before departure; flight 305 only identifies the flight.",
+      "hint": "Search for the timing detail, not the flight number."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q2_LEARN",
+      "level": 83,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Gym Policy: Membership cancellations require thirty days' written notice, submitted either by email or in person at the front desk.",
+      "targetItem": "thirty days' written notice",
+      "targetInfo": "Cancellation notice required",
+      "correctAnswer": "thirty days' written notice",
+      "distractorAnalysis": [
+        {
+          "word": "by email",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation notice required\" despite appearing nearby."
+        },
+        {
+          "word": "thirty days' written notice",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cancellation notice required\" in the passage."
+        },
+        {
+          "word": "in person",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation notice required\" despite appearing nearby."
+        },
+        {
+          "word": "front desk",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cancellation notice required\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "by email",
+        "thirty days' written notice",
+        "in person",
+        "front desk"
+      ],
+      "explanation": "Cancellations require thirty days' written notice; email and in-person are just submission methods.",
+      "hint": "Search for the length of notice required, not how to submit it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q3_LEARN",
+      "level": 83,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Return Policy: Items may be returned within thirty days of purchase with a receipt, though clearance items are final sale and cannot be returned.",
+      "targetItem": "clearance items are final sale",
+      "targetInfo": "Exception to the return policy",
+      "correctAnswer": "clearance items are final sale",
+      "distractorAnalysis": [
+        {
+          "word": "thirty days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exception to the return policy\" despite appearing nearby."
+        },
+        {
+          "word": "with a receipt",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exception to the return policy\" despite appearing nearby."
+        },
+        {
+          "word": "of purchase",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exception to the return policy\" despite appearing nearby."
+        },
+        {
+          "word": "clearance items are final sale",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exception to the return policy\" in the passage."
+        }
+      ],
+      "options": [
+        "thirty days",
+        "with a receipt",
+        "of purchase",
+        "clearance items are final sale"
+      ],
+      "explanation": "Clearance items are the exception, as final sale; the thirty-day rule applies to regular items.",
+      "hint": "Skim past the normal rule and find what it doesn't apply to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q1_LEARN",
+      "level": 84,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Delivery Update: Your package is out for delivery and should arrive by 8 p.m. today. If you're not home, the driver will leave it with your building's front desk.",
+      "targetItem": "8 p.m.",
+      "targetInfo": "Expected delivery time",
+      "correctAnswer": "8 p.m.",
+      "distractorAnalysis": [
+        {
+          "word": "out for delivery",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected delivery time\" despite appearing nearby."
+        },
+        {
+          "word": "today",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected delivery time\" despite appearing nearby."
+        },
+        {
+          "word": "8 p.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Expected delivery time\" in the passage."
+        },
+        {
+          "word": "front desk",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected delivery time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "out for delivery",
+        "today",
+        "8 p.m.",
+        "front desk"
+      ],
+      "explanation": "The package should arrive by 8 p.m.; the other phrases describe its status and backup plan.",
+      "hint": "Search for the specific hour given for arrival."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q2_LEARN",
+      "level": 84,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Customer Service Reply: We're sorry for the trouble with your order. A replacement has been shipped at no charge and should arrive within three days.",
+      "targetItem": "replacement has been shipped at no charge",
+      "targetInfo": "How the issue was resolved",
+      "correctAnswer": "replacement has been shipped at no charge",
+      "distractorAnalysis": [
+        {
+          "word": "replacement has been shipped at no charge",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"How the issue was resolved\" in the passage."
+        },
+        {
+          "word": "sorry for the trouble",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"How the issue was resolved\" despite appearing nearby."
+        },
+        {
+          "word": "three days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"How the issue was resolved\" despite appearing nearby."
+        },
+        {
+          "word": "your order",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"How the issue was resolved\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "replacement has been shipped at no charge",
+        "sorry for the trouble",
+        "three days",
+        "your order"
+      ],
+      "explanation": "The issue was resolved by shipping a free replacement; the apology is just an opening remark.",
+      "hint": "Skim past the apology and find what was actually done to fix it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q3_LEARN",
+      "level": 84,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Rental Car Instructions: Please pick up your vehicle at the airport counter, located on the lower level near baggage claim, and bring the credit card used for booking.",
+      "targetItem": "lower level near baggage claim",
+      "targetInfo": "Exact pickup location",
+      "correctAnswer": "lower level near baggage claim",
+      "distractorAnalysis": [
+        {
+          "word": "airport counter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exact pickup location\" despite appearing nearby."
+        },
+        {
+          "word": "credit card",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exact pickup location\" despite appearing nearby."
+        },
+        {
+          "word": "lower level near baggage claim",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exact pickup location\" in the passage."
+        },
+        {
+          "word": "used for booking",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exact pickup location\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "airport counter",
+        "credit card",
+        "lower level near baggage claim",
+        "used for booking"
+      ],
+      "explanation": "The counter is specifically on the lower level near baggage claim; the credit card note is a separate reminder.",
+      "hint": "Search for the precise location, not the general counter name."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q1_LEARN",
+      "level": 85,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Claim Status: Your insurance claim has been approved, and a check for $1,340 will be mailed within ten business days.",
+      "targetItem": "$1,340",
+      "targetInfo": "Approved claim amount",
+      "correctAnswer": "$1,340",
+      "distractorAnalysis": [
+        {
+          "word": "approved",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved claim amount\" despite appearing nearby."
+        },
+        {
+          "word": "$1,340",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Approved claim amount\" in the passage."
+        },
+        {
+          "word": "ten business days",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved claim amount\" despite appearing nearby."
+        },
+        {
+          "word": "mailed",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved claim amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "approved",
+        "$1,340",
+        "ten business days",
+        "mailed"
+      ],
+      "explanation": "The approved amount is $1,340; ten business days tells when it will be mailed.",
+      "hint": "Search for the dollar figure, not the approval status."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q2_LEARN",
+      "level": 85,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Delivery Attempt Notice: We attempted to deliver your package today but no one was available to sign. It will be held at the local facility for pickup until Friday.",
+      "targetItem": "held at the local facility for pickup until Friday",
+      "targetInfo": "What happens to the package now",
+      "correctAnswer": "held at the local facility for pickup until Friday",
+      "distractorAnalysis": [
+        {
+          "word": "attempted to deliver",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to the package now\" despite appearing nearby."
+        },
+        {
+          "word": "no one was available",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to the package now\" despite appearing nearby."
+        },
+        {
+          "word": "held at the local facility for pickup until Friday",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What happens to the package now\" in the passage."
+        },
+        {
+          "word": "today",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happens to the package now\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "attempted to deliver",
+        "no one was available",
+        "held at the local facility for pickup until Friday",
+        "today"
+      ],
+      "explanation": "The package will be held for pickup until Friday; the first sentence only explains why delivery failed.",
+      "hint": "Skim past the failed attempt and find what happens next."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q3_LEARN",
+      "level": 85,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Cancellation Confirmation: Your subscription has been canceled effective immediately. Any downloaded content will remain available until next Tuesday, after which it will be removed automatically.",
+      "targetItem": "remain available until next Tuesday",
+      "targetInfo": "What still applies after canceling",
+      "correctAnswer": "remain available until next Tuesday",
+      "distractorAnalysis": [
+        {
+          "word": "canceled effective immediately",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What still applies after canceling\" despite appearing nearby."
+        },
+        {
+          "word": "downloaded content",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What still applies after canceling\" despite appearing nearby."
+        },
+        {
+          "word": "removed automatically",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What still applies after canceling\" despite appearing nearby."
+        },
+        {
+          "word": "remain available until next Tuesday",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What still applies after canceling\" in the passage."
+        }
+      ],
+      "options": [
+        "canceled effective immediately",
+        "downloaded content",
+        "removed automatically",
+        "remain available until next Tuesday"
+      ],
+      "explanation": "Downloaded content stays available until next Tuesday, even though the subscription is already canceled.",
+      "hint": "Skim past the cancellation itself and find what temporarily continues."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q1_LEARN",
+      "level": 86,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Ticket Confirmation: Your two tickets for Saturday's 7:30 show are confirmed under order number TCK-5521, which you'll need to present at will-call.",
+      "targetItem": "TCK-5521",
+      "targetInfo": "Ticket order number",
+      "correctAnswer": "TCK-5521",
+      "distractorAnalysis": [
+        {
+          "word": "TCK-5521",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Ticket order number\" in the passage."
+        },
+        {
+          "word": "Saturday's",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Ticket order number\" despite appearing nearby."
+        },
+        {
+          "word": "7:30",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Ticket order number\" despite appearing nearby."
+        },
+        {
+          "word": "will-call",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Ticket order number\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "TCK-5521",
+        "Saturday's",
+        "7:30",
+        "will-call"
+      ],
+      "explanation": "The order number is TCK-5521; Saturday's and 7:30 describe the show itself.",
+      "hint": "Search for the code, not the show's date or time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q2_LEARN",
+      "level": 86,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Doctor's Office Reminder: This is a reminder that your annual physical is coming up. Please fast for eight hours beforehand if bloodwork is scheduled.",
+      "targetItem": "fast for eight hours beforehand",
+      "targetInfo": "Preparation instruction",
+      "correctAnswer": "fast for eight hours beforehand",
+      "distractorAnalysis": [
+        {
+          "word": "annual physical",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Preparation instruction\" despite appearing nearby."
+        },
+        {
+          "word": "bloodwork",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Preparation instruction\" despite appearing nearby."
+        },
+        {
+          "word": "coming up",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Preparation instruction\" despite appearing nearby."
+        },
+        {
+          "word": "fast for eight hours beforehand",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Preparation instruction\" in the passage."
+        }
+      ],
+      "options": [
+        "annual physical",
+        "bloodwork",
+        "coming up",
+        "fast for eight hours beforehand"
+      ],
+      "explanation": "Patients are asked to fast for eight hours beforehand; the physical and bloodwork are what's being prepared for.",
+      "hint": "Skim past the appointment type and find what to do beforehand."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q3_LEARN",
+      "level": 86,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Warranty Update: Your claim for the defective blender has been approved, and a replacement unit will ship directly from the manufacturer within two weeks.",
+      "targetItem": "replacement unit will ship directly from the manufacturer",
+      "targetInfo": "Resolution for the warranty claim",
+      "correctAnswer": "replacement unit will ship directly from the manufacturer",
+      "distractorAnalysis": [
+        {
+          "word": "defective blender",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Resolution for the warranty claim\" despite appearing nearby."
+        },
+        {
+          "word": "approved",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Resolution for the warranty claim\" despite appearing nearby."
+        },
+        {
+          "word": "two weeks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Resolution for the warranty claim\" despite appearing nearby."
+        },
+        {
+          "word": "replacement unit will ship directly from the manufacturer",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Resolution for the warranty claim\" in the passage."
+        }
+      ],
+      "options": [
+        "defective blender",
+        "approved",
+        "two weeks",
+        "replacement unit will ship directly from the manufacturer"
+      ],
+      "explanation": "The claim is resolved by shipping a replacement unit; the blender and approval are earlier details.",
+      "hint": "Skim past the approval and product name and find the actual resolution."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q1_LEARN",
+      "level": 87,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Coworking Pass: Your day pass grants access to shared desks and the printing station from 8 a.m. to 8 p.m., but does not include access to private meeting rooms.",
+      "targetItem": "does not include access to private meeting rooms",
+      "targetInfo": "What the pass excludes",
+      "correctAnswer": "does not include access to private meeting rooms",
+      "distractorAnalysis": [
+        {
+          "word": "does not include access to private meeting rooms",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the pass excludes\" in the passage."
+        },
+        {
+          "word": "shared desks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the pass excludes\" despite appearing nearby."
+        },
+        {
+          "word": "printing station",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the pass excludes\" despite appearing nearby."
+        },
+        {
+          "word": "8 a.m. to 8 p.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the pass excludes\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "does not include access to private meeting rooms",
+        "shared desks",
+        "printing station",
+        "8 a.m. to 8 p.m."
+      ],
+      "explanation": "Private meeting rooms are excluded; shared desks and the printing station are included.",
+      "hint": "Skim past what's included and find what's explicitly excluded."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q2_LEARN",
+      "level": 87,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Moving Confirmation: Your move is scheduled for the 12th, with the crew arriving between 8 and 9 a.m. Please have all boxes packed and labeled before they arrive.",
+      "targetItem": "boxes packed and labeled before they arrive",
+      "targetInfo": "What the customer must do",
+      "correctAnswer": "boxes packed and labeled before they arrive",
+      "distractorAnalysis": [
+        {
+          "word": "scheduled for the 12th",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the customer must do\" despite appearing nearby."
+        },
+        {
+          "word": "8 and 9 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the customer must do\" despite appearing nearby."
+        },
+        {
+          "word": "crew arriving",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the customer must do\" despite appearing nearby."
+        },
+        {
+          "word": "boxes packed and labeled before they arrive",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the customer must do\" in the passage."
+        }
+      ],
+      "options": [
+        "scheduled for the 12th",
+        "8 and 9 a.m.",
+        "crew arriving",
+        "boxes packed and labeled before they arrive"
+      ],
+      "explanation": "Customers are asked to have boxes packed and labeled; the date and arrival window are separate details.",
+      "hint": "Skim past the schedule details and find the customer's task."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q3_LEARN",
+      "level": 87,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Catering Confirmation: Your order for fifty sandwich platters is confirmed for pickup at noon on Saturday; please bring your order number, CTR-2290, to the counter.",
+      "targetItem": "CTR-2290",
+      "targetInfo": "Catering order number",
+      "correctAnswer": "CTR-2290",
+      "distractorAnalysis": [
+        {
+          "word": "fifty sandwich platters",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Catering order number\" despite appearing nearby."
+        },
+        {
+          "word": "noon on Saturday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Catering order number\" despite appearing nearby."
+        },
+        {
+          "word": "CTR-2290",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Catering order number\" in the passage."
+        },
+        {
+          "word": "pickup",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Catering order number\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fifty sandwich platters",
+        "noon on Saturday",
+        "CTR-2290",
+        "pickup"
+      ],
+      "explanation": "The order number is CTR-2290; the platter count and pickup time are separate details.",
+      "hint": "Search for the code, not the order size or pickup time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q1_LEARN",
+      "level": 88,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Library Notice: Your account shows an overdue fine of $4.50 for a book that was due last Tuesday. Fines must be paid before new items can be borrowed.",
+      "targetItem": "$4.50",
+      "targetInfo": "Overdue fine amount",
+      "correctAnswer": "$4.50",
+      "distractorAnalysis": [
+        {
+          "word": "$4.50",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Overdue fine amount\" in the passage."
+        },
+        {
+          "word": "last Tuesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Overdue fine amount\" despite appearing nearby."
+        },
+        {
+          "word": "new items",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Overdue fine amount\" despite appearing nearby."
+        },
+        {
+          "word": "borrowed",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Overdue fine amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$4.50",
+        "last Tuesday",
+        "new items",
+        "borrowed"
+      ],
+      "explanation": "The fine is $4.50; last Tuesday tells when the book was due, not the amount owed.",
+      "hint": "Search for the dollar figure, not the due date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q2_LEARN",
+      "level": 88,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Registration Confirmation: You're registered for the Saturday pottery class, and materials will be provided, though you should wear clothes you don't mind getting messy.",
+      "targetItem": "wear clothes you don't mind getting messy",
+      "targetInfo": "Recommendation for attendees",
+      "correctAnswer": "wear clothes you don't mind getting messy",
+      "distractorAnalysis": [
+        {
+          "word": "Saturday pottery class",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Recommendation for attendees\" despite appearing nearby."
+        },
+        {
+          "word": "materials will be provided",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Recommendation for attendees\" despite appearing nearby."
+        },
+        {
+          "word": "wear clothes you don't mind getting messy",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Recommendation for attendees\" in the passage."
+        },
+        {
+          "word": "registered",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Recommendation for attendees\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Saturday pottery class",
+        "materials will be provided",
+        "wear clothes you don't mind getting messy",
+        "registered"
+      ],
+      "explanation": "Attendees are advised to wear clothes they don't mind getting messy; materials are already provided.",
+      "hint": "Skim past the class details and find the practical advice given."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q3_LEARN",
+      "level": 88,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Repair Status: Your phone's screen replacement is complete, but the technician also found a battery issue that will add one extra day to the repair.",
+      "targetItem": "battery issue that will add one extra day",
+      "targetInfo": "Reason for the delay",
+      "correctAnswer": "battery issue that will add one extra day",
+      "distractorAnalysis": [
+        {
+          "word": "battery issue that will add one extra day",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reason for the delay\" in the passage."
+        },
+        {
+          "word": "phone's screen replacement is complete",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the delay\" despite appearing nearby."
+        },
+        {
+          "word": "technician also found",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the delay\" despite appearing nearby."
+        },
+        {
+          "word": "to the repair",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reason for the delay\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "battery issue that will add one extra day",
+        "phone's screen replacement is complete",
+        "technician also found",
+        "to the repair"
+      ],
+      "explanation": "A battery issue is adding one extra day; the screen replacement itself is already finished.",
+      "hint": "Skim past the completed screen work and find what's causing the delay."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q1_LEARN",
+      "level": 89,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Security Alert: Motion was detected at your back door camera at 11:42 p.m. No entry was recorded, and the system automatically began recording a ten-minute clip.",
+      "targetItem": "11:42 p.m.",
+      "targetInfo": "Time motion was detected",
+      "correctAnswer": "11:42 p.m.",
+      "distractorAnalysis": [
+        {
+          "word": "back door",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time motion was detected\" despite appearing nearby."
+        },
+        {
+          "word": "No entry",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time motion was detected\" despite appearing nearby."
+        },
+        {
+          "word": "ten-minute clip",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Time motion was detected\" despite appearing nearby."
+        },
+        {
+          "word": "11:42 p.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Time motion was detected\" in the passage."
+        }
+      ],
+      "options": [
+        "back door",
+        "No entry",
+        "ten-minute clip",
+        "11:42 p.m."
+      ],
+      "explanation": "Motion was detected at 11:42 p.m.; the back door is only the camera's location.",
+      "hint": "Search for the precise time, not the camera location."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q2_LEARN",
+      "level": 89,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Vet Appointment Confirmation: Bella's annual checkup and vaccinations are confirmed for Thursday at 3 p.m. Please bring her vaccination record from last year if available.",
+      "targetItem": "bring her vaccination record from last year",
+      "targetInfo": "What to bring to the appointment",
+      "correctAnswer": "bring her vaccination record from last year",
+      "distractorAnalysis": [
+        {
+          "word": "bring her vaccination record from last year",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What to bring to the appointment\" in the passage."
+        },
+        {
+          "word": "annual checkup",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What to bring to the appointment\" despite appearing nearby."
+        },
+        {
+          "word": "vaccinations",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What to bring to the appointment\" despite appearing nearby."
+        },
+        {
+          "word": "Thursday at 3 p.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What to bring to the appointment\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "bring her vaccination record from last year",
+        "annual checkup",
+        "vaccinations",
+        "Thursday at 3 p.m."
+      ],
+      "explanation": "Owners are asked to bring last year's vaccination record; the checkup and time are separate details.",
+      "hint": "Skim past the appointment details and find what to bring along."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q3_LEARN",
+      "level": 89,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Contractor Estimate: The estimate for the bathroom remodel totals $8,750, which includes materials but not the cost of a plumber if pipes need to be relocated.",
+      "targetItem": "not the cost of a plumber",
+      "targetInfo": "What the estimate excludes",
+      "correctAnswer": "not the cost of a plumber",
+      "distractorAnalysis": [
+        {
+          "word": "$8,750",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the estimate excludes\" despite appearing nearby."
+        },
+        {
+          "word": "materials",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the estimate excludes\" despite appearing nearby."
+        },
+        {
+          "word": "pipes need to be relocated",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the estimate excludes\" despite appearing nearby."
+        },
+        {
+          "word": "not the cost of a plumber",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the estimate excludes\" in the passage."
+        }
+      ],
+      "options": [
+        "$8,750",
+        "materials",
+        "pipes need to be relocated",
+        "not the cost of a plumber"
+      ],
+      "explanation": "The plumber's cost is excluded from the estimate; $8,750 covers materials only.",
+      "hint": "Skim past the total and find what's excluded from it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q1_LEARN",
+      "level": 90,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Storage Agreement Excerpt: Monthly rent for the 10x10 unit is $95, due on the 1st, with a $25 late fee applied after the 5th.",
+      "targetItem": "$25",
+      "targetInfo": "Late fee amount",
+      "correctAnswer": "$25",
+      "distractorAnalysis": [
+        {
+          "word": "$95",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Late fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "the 1st",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Late fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "the 5th",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Late fee amount\" despite appearing nearby."
+        },
+        {
+          "word": "$25",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Late fee amount\" in the passage."
+        }
+      ],
+      "options": [
+        "$95",
+        "the 1st",
+        "the 5th",
+        "$25"
+      ],
+      "explanation": "The late fee is $25; $95 is the regular monthly rent, a separate figure.",
+      "hint": "Search for the fee tied to late payment, not the regular rent."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q2_LEARN",
+      "level": 90,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Dispute Update: Your credit card dispute for the duplicate charge has been resolved in your favor, and a credit of $62.40 will appear on your next statement.",
+      "targetItem": "$62.40",
+      "targetInfo": "Credit amount issued",
+      "correctAnswer": "$62.40",
+      "distractorAnalysis": [
+        {
+          "word": "duplicate charge",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Credit amount issued\" despite appearing nearby."
+        },
+        {
+          "word": "resolved in your favor",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Credit amount issued\" despite appearing nearby."
+        },
+        {
+          "word": "$62.40",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Credit amount issued\" in the passage."
+        },
+        {
+          "word": "next statement",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Credit amount issued\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "duplicate charge",
+        "resolved in your favor",
+        "$62.40",
+        "next statement"
+      ],
+      "explanation": "The credit amount is $62.40; the dispute's outcome is described separately.",
+      "hint": "Search for the dollar figure, not the outcome description."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q3_LEARN",
+      "level": 90,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Billing Notice: Your streaming subscription will renew at the new rate of $16.99 starting next month, an increase from the current $12.99 rate.",
+      "targetItem": "$16.99",
+      "targetInfo": "New subscription rate",
+      "correctAnswer": "$16.99",
+      "distractorAnalysis": [
+        {
+          "word": "$12.99",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New subscription rate\" despite appearing nearby."
+        },
+        {
+          "word": "$16.99",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New subscription rate\" in the passage."
+        },
+        {
+          "word": "next month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New subscription rate\" despite appearing nearby."
+        },
+        {
+          "word": "current",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New subscription rate\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "$12.99",
+        "$16.99",
+        "next month",
+        "current"
+      ],
+      "explanation": "The new rate is $16.99; $12.99 is the current rate being replaced.",
+      "hint": "Search for the upcoming price, not the one being replaced."
+    }
+  ]
+}

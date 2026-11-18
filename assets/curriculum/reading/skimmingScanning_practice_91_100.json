@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L91_Q1_PRACTICE",
+      "level": 91,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the status for the security deposit amount, not the rent.",
+      "passage": "Application Status: Your apartment application at Maple Court has been approved, pending a security deposit of $500 due within five days, separate from the $1,200 first month's rent.",
+      "targetItem": "$500",
+      "targetInfo": "Required security deposit",
+      "correctAnswer": "$500",
+      "options": [
+        "$1,200",
+        "five days",
+        "$500",
+        "approved"
+      ],
+      "explanation": "The security deposit is $500; $1,200 is the separate first month's rent.",
+      "hint": "Search for the deposit figure, not the monthly rent figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L91_Q2_PRACTICE",
+      "level": 91,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the confirmation for the one-time fee, not the plan change itself.",
+      "passage": "Plan Change Confirmation: Your phone plan has been upgraded to unlimited data, effective on your next billing date, though the upgrade fee of $20 will appear as a one-time charge.",
+      "targetItem": "$20",
+      "targetInfo": "One-time upgrade fee",
+      "correctAnswer": "$20",
+      "options": [
+        "unlimited data",
+        "next billing date",
+        "$20",
+        "one-time charge"
+      ],
+      "explanation": "The upgrade fee is $20; unlimited data describes the plan change, not the charge.",
+      "hint": "Search for the dollar amount, not the plan feature."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L91_Q3_PRACTICE",
+      "level": 91,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the renewal notice for the new premium, not the previous one.",
+      "passage": "Insurance Renewal: Your auto policy renews next month at $128 per month, up from $114, due to a recent claim on file.",
+      "targetItem": "$128",
+      "targetInfo": "New auto insurance premium",
+      "correctAnswer": "$128",
+      "options": [
+        "$114",
+        "recent claim",
+        "next month",
+        "$128"
+      ],
+      "explanation": "The new premium is $128; $114 was the previous, lower rate.",
+      "hint": "Search for the higher, current figure, not the earlier one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L92_Q1_PRACTICE",
+      "level": 92,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the notice for your exact position on the waitlist.",
+      "passage": "Waitlist Notice: You are third on the waitlist for the 6 p.m. spin class; spots typically open up within two class cycles.",
+      "targetItem": "third",
+      "targetInfo": "Waitlist position",
+      "correctAnswer": "third",
+      "options": [
+        "6 p.m.",
+        "two class cycles",
+        "third",
+        "spots"
+      ],
+      "explanation": "Your waitlist position is third; 6 p.m. only names the class time.",
+      "hint": "Search for the ordinal number describing your place in line."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L92_Q2_PRACTICE",
+      "level": 92,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the reminder for what you need to bring for this year, not last year.",
+      "passage": "Tax Appointment Reminder: Your appointment with the accountant is confirmed for the 15th at 10 a.m.; please bring last year's return along with this year's W-2 forms.",
+      "targetItem": "W-2 forms",
+      "targetInfo": "Document required for this year",
+      "correctAnswer": "W-2 forms",
+      "options": [
+        "last year's return",
+        "the 15th",
+        "10 a.m.",
+        "W-2 forms"
+      ],
+      "explanation": "This year's W-2 forms are needed; last year's return is a separate document to bring.",
+      "hint": "Search for the document tied to this year, not last year's return."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L92_Q3_PRACTICE",
+      "level": 92,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the notice for exactly which models are recalled.",
+      "passage": "Product Recall Notice: A specific batch of the blender, model numbers starting with BX-4, is being recalled due to a wiring defect; other models are not affected.",
+      "targetItem": "BX-4",
+      "targetInfo": "Recalled model prefix",
+      "correctAnswer": "BX-4",
+      "options": [
+        "BX-4",
+        "wiring defect",
+        "other models",
+        "not affected"
+      ],
+      "explanation": "Models starting with BX-4 are recalled; the wiring defect is the reason, not the model itself.",
+      "hint": "Search for the model code, not the reason for the recall."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L93_Q1_PRACTICE",
+      "level": 93,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the update for your new departure time, not the original one.",
+      "passage": "Flight Update: Your original flight was canceled, and you've been automatically rebooked on the 4:50 p.m. departure, one hour later than your original 3:50 p.m. flight.",
+      "targetItem": "4:50 p.m.",
+      "targetInfo": "New rebooked departure time",
+      "correctAnswer": "4:50 p.m.",
+      "options": [
+        "3:50 p.m.",
+        "4:50 p.m.",
+        "one hour later",
+        "canceled"
+      ],
+      "explanation": "The new departure is 4:50 p.m.; 3:50 p.m. was the original, canceled flight.",
+      "hint": "Search for the rebooked time, not the canceled one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L93_Q2_PRACTICE",
+      "level": 93,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the receipt for the deposit amount, not the final invoice.",
+      "passage": "Deposit Receipt: Your moving deposit of $150 has been received and will be applied to your final invoice, which is due upon completion of the move.",
+      "targetItem": "$150",
+      "targetInfo": "Deposit amount received",
+      "correctAnswer": "$150",
+      "options": [
+        "final invoice",
+        "applied",
+        "upon completion",
+        "$150"
+      ],
+      "explanation": "The deposit received is $150; the final invoice is a separate amount due later.",
+      "hint": "Search for the dollar figure, not when the balance is due."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L93_Q3_PRACTICE",
+      "level": 93,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the notice for exactly when the technician will arrive.",
+      "passage": "Repair Notice: The landlord has approved the heater repair, and a technician will arrive Wednesday between 1 and 4 p.m.; tenants do not need to be present.",
+      "targetItem": "Wednesday between 1 and 4 p.m.",
+      "targetInfo": "Technician arrival window",
+      "correctAnswer": "Wednesday between 1 and 4 p.m.",
+      "options": [
+        "heater repair",
+        "approved",
+        "do not need to be present",
+        "Wednesday between 1 and 4 p.m."
+      ],
+      "explanation": "The technician arrives Wednesday between 1 and 4 p.m.; the heater repair is what's being fixed.",
+      "hint": "Search for the day and time window, not the repair type."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L94_Q1_PRACTICE",
+      "level": 94,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the reminder for the time of the upcoming appointment, not the past one.",
+      "passage": "Orthodontist Reminder: Your next adjustment is scheduled for the 9th at 4:15, and your previous appointment on the 2nd should have included a retainer check.",
+      "targetItem": "4:15",
+      "targetInfo": "Time of upcoming appointment",
+      "correctAnswer": "4:15",
+      "options": [
+        "9th",
+        "4:15",
+        "2nd",
+        "retainer check"
+      ],
+      "explanation": "The upcoming appointment is at 4:15; the 2nd refers to the past appointment instead.",
+      "hint": "Search for the time tied to the next appointment, not the previous one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L94_Q2_PRACTICE",
+      "level": 94,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for when service will be restored.",
+      "passage": "Utility Notice: Gas service to your address will be shut off Thursday for scheduled maintenance, and is expected to be restored by 6 p.m. the same day.",
+      "targetItem": "6 p.m.",
+      "targetInfo": "Expected restoration time",
+      "correctAnswer": "6 p.m.",
+      "options": [
+        "Thursday",
+        "scheduled maintenance",
+        "6 p.m.",
+        "same day"
+      ],
+      "explanation": "Service is expected back by 6 p.m.; Thursday is when the shutoff itself begins.",
+      "hint": "Search for the restoration time, not the shutoff day."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L94_Q3_PRACTICE",
+      "level": 94,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for the specific reason the package is being held.",
+      "passage": "Customs Notice: Your package is being held at customs due to an incomplete declaration form; it will be released once the corrected form is submitted online.",
+      "targetItem": "incomplete declaration form",
+      "targetInfo": "Reason for the customs hold",
+      "correctAnswer": "incomplete declaration form",
+      "options": [
+        "released",
+        "corrected form",
+        "submitted online",
+        "incomplete declaration form"
+      ],
+      "explanation": "The hold is due to an incomplete declaration form; release happens only once it's corrected.",
+      "hint": "Search for the reason given, not what happens after it's fixed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L95_Q1_PRACTICE",
+      "level": 95,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the update for your new total, not the points just earned.",
+      "passage": "Loyalty Update: Your hotel account has been credited 2,400 points for your recent stay, bringing your total balance to 8,150 points.",
+      "targetItem": "8,150",
+      "targetInfo": "New total point balance",
+      "correctAnswer": "8,150",
+      "options": [
+        "8,150",
+        "2,400",
+        "recent stay",
+        "credited"
+      ],
+      "explanation": "The new total is 8,150 points; 2,400 is only the amount just credited.",
+      "hint": "Search for the final balance, not the amount just added."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L95_Q2_PRACTICE",
+      "level": 95,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the confirmation for the exact weekly deadline.",
+      "passage": "Enrollment Confirmation: You are enrolled in the online marketing course starting the 1st, with weekly assignments due each Sunday by 11:59 p.m.",
+      "targetItem": "11:59 p.m.",
+      "targetInfo": "Weekly assignment deadline",
+      "correctAnswer": "11:59 p.m.",
+      "options": [
+        "11:59 p.m.",
+        "the 1st",
+        "each Sunday",
+        "weekly assignments"
+      ],
+      "explanation": "Assignments are due by 11:59 p.m.; Sunday is the day, but the exact cutoff time is separate.",
+      "hint": "Search for the precise time, not just the day."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L95_Q3_PRACTICE",
+      "level": 95,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the notice for your expected arrival date, not the release date.",
+      "passage": "Preorder Notice: Your preordered book will ship two days before its official release date of the 22nd, so plan for arrival around the 20th.",
+      "targetItem": "20th",
+      "targetInfo": "Expected shipping arrival date",
+      "correctAnswer": "20th",
+      "options": [
+        "22nd",
+        "two days before",
+        "20th",
+        "official release"
+      ],
+      "explanation": "Arrival is expected around the 20th; the 22nd is the official release date.",
+      "hint": "Search for the arrival estimate, not the release date itself."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L96_Q1_PRACTICE",
+      "level": 96,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the invoice for the late fee, not the regular tuition.",
+      "passage": "Tuition Invoice: Monthly daycare tuition is $980, due by the 5th, with a $30 fee added for payments received after the 10th.",
+      "targetItem": "$30",
+      "targetInfo": "Late payment fee",
+      "correctAnswer": "$30",
+      "options": [
+        "$980",
+        "the 5th",
+        "$30",
+        "the 10th"
+      ],
+      "explanation": "The late fee is $30; $980 is the regular monthly tuition, a separate figure.",
+      "hint": "Search for the penalty amount, not the base tuition."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L96_Q2_PRACTICE",
+      "level": 96,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the dispatch notice for when the arrival window begins.",
+      "passage": "Service Dispatch: A home warranty technician has been dispatched for your dishwasher repair and is expected to arrive within a two-hour window starting at 1 p.m.",
+      "targetItem": "1 p.m.",
+      "targetInfo": "Start of the arrival window",
+      "correctAnswer": "1 p.m.",
+      "options": [
+        "1 p.m.",
+        "two-hour window",
+        "dishwasher repair",
+        "dispatched"
+      ],
+      "explanation": "The window starts at 1 p.m.; two hours describes its length, not the start time.",
+      "hint": "Search for the starting time of the window, not its length."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L96_Q3_PRACTICE",
+      "level": 96,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the alert for how long you have to dispute the inquiry.",
+      "passage": "Credit Alert: A new credit inquiry was made on your report on the 8th by a lender you may not recognize; you have thirty days to dispute it if needed.",
+      "targetItem": "thirty days",
+      "targetInfo": "Time allowed to dispute",
+      "correctAnswer": "thirty days",
+      "options": [
+        "thirty days",
+        "the 8th",
+        "new credit inquiry",
+        "may not recognize"
+      ],
+      "explanation": "You have thirty days to dispute it; the 8th is when the inquiry was made.",
+      "hint": "Search for the length of time given to respond."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L97_Q1_PRACTICE",
+      "level": 97,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the notice for the repair date, not when the leak was detected.",
+      "passage": "Leak Notice: A water leak was detected near your meter on the 3rd, and a crew is scheduled to repair it by the 6th, with a brief shutoff expected that morning.",
+      "targetItem": "the 6th",
+      "targetInfo": "Scheduled repair date",
+      "correctAnswer": "the 6th",
+      "options": [
+        "the 3rd",
+        "brief shutoff",
+        "that morning",
+        "the 6th"
+      ],
+      "explanation": "The repair is scheduled by the 6th; the leak was detected earlier, on the 3rd.",
+      "hint": "Search for the repair date, not the detection date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L97_Q2_PRACTICE",
+      "level": 97,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the notice for the citation amount, not the payment deadline.",
+      "passage": "Parking Notice: A $40 citation was issued for expired registration; payment is due within twenty-one days to avoid an additional late penalty.",
+      "targetItem": "$40",
+      "targetInfo": "Citation amount",
+      "correctAnswer": "$40",
+      "options": [
+        "twenty-one days",
+        "expired registration",
+        "$40",
+        "late penalty"
+      ],
+      "explanation": "The citation is $40; twenty-one days is how long you have to pay it.",
+      "hint": "Search for the dollar figure, not the number of days allowed."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L97_Q3_PRACTICE",
+      "level": 97,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the notice for the new dosage, not the previous one.",
+      "passage": "Prescription Notice: Your refill for the 90-day supply is ready for pickup, though your doctor noted the dosage will change from 10 mg to 15 mg starting this cycle.",
+      "targetItem": "15 mg",
+      "targetInfo": "New dosage amount",
+      "correctAnswer": "15 mg",
+      "options": [
+        "15 mg",
+        "10 mg",
+        "90-day supply",
+        "ready for pickup"
+      ],
+      "explanation": "The new dosage is 15 mg; 10 mg was the previous dosage being changed.",
+      "hint": "Search for the updated dosage, not the one being replaced."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L98_Q1_PRACTICE",
+      "level": 98,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the excerpt for the starting salary, not the review timeline.",
+      "passage": "Offer Letter Excerpt: The starting salary is $62,000 annually, with a review and possible increase after your first six months, not at the one-year mark.",
+      "targetItem": "$62,000",
+      "targetInfo": "Starting annual salary",
+      "correctAnswer": "$62,000",
+      "options": [
+        "six months",
+        "one-year mark",
+        "$62,000",
+        "possible increase"
+      ],
+      "explanation": "The starting salary is $62,000; six months and one year describe the review timeline instead.",
+      "hint": "Search for the dollar figure, not the review schedule."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L98_Q2_PRACTICE",
+      "level": 98,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the receipt for the remaining balance, not the deposit already paid.",
+      "passage": "Venue Deposit Receipt: Your $2,000 deposit secures the venue for June 14th, with the remaining balance of $6,500 due thirty days before the event.",
+      "targetItem": "$6,500",
+      "targetInfo": "Remaining balance owed",
+      "correctAnswer": "$6,500",
+      "options": [
+        "$2,000",
+        "June 14th",
+        "thirty days before",
+        "$6,500"
+      ],
+      "explanation": "The remaining balance is $6,500; $2,000 has already been paid as the deposit.",
+      "hint": "Search for the amount still owed, not what's already been paid."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L98_Q3_PRACTICE",
+      "level": 98,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim the notice for what the vet flagged as worth rechecking.",
+      "passage": "Lab Results Notice: Bella's bloodwork came back normal, though the vet flagged slightly elevated white blood cell counts worth rechecking in two weeks.",
+      "targetItem": "elevated white blood cell counts",
+      "targetInfo": "Flagged concern in the results",
+      "correctAnswer": "elevated white blood cell counts",
+      "options": [
+        "elevated white blood cell counts",
+        "came back normal",
+        "two weeks",
+        "rechecking"
+      ],
+      "explanation": "The vet flagged elevated white blood cell counts; the rest of the bloodwork came back normal.",
+      "hint": "Skim past the normal results and find the specific concern raised."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L99_Q1_PRACTICE",
+      "level": 99,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the notice for the new premium amount, not the old one.",
+      "passage": "Premium Notice: Your homeowners insurance premium will increase from $89 to $103 monthly, reflecting updated rebuilding cost estimates for your area.",
+      "targetItem": "$103",
+      "targetInfo": "New monthly premium",
+      "correctAnswer": "$103",
+      "options": [
+        "$89",
+        "rebuilding cost estimates",
+        "monthly",
+        "$103"
+      ],
+      "explanation": "The new premium is $103; $89 is the current amount being replaced.",
+      "hint": "Search for the higher, upcoming figure, not the current one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L99_Q2_PRACTICE",
+      "level": 99,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the confirmation for the exact date charges stop.",
+      "passage": "Cancellation Confirmation: Your gym membership cancellation is confirmed effective the end of this billing cycle; no further charges will be applied after the 30th.",
+      "targetItem": "the 30th",
+      "targetInfo": "Date charges stop after cancellation",
+      "correctAnswer": "the 30th",
+      "options": [
+        "this billing cycle",
+        "the 30th",
+        "no further charges",
+        "confirmed"
+      ],
+      "explanation": "Charges stop after the 30th; 'this billing cycle' is a vaguer reference to the same period.",
+      "hint": "Search for the specific date named, not the general phrase 'billing cycle.'"
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L99_Q3_PRACTICE",
+      "level": 99,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the confirmation for the return time, not the pickup time.",
+      "passage": "Rental Confirmation: Your moving truck reservation is confirmed for pickup at 9 a.m., with a required return time of 6 p.m. the same day to avoid extra fees.",
+      "targetItem": "6 p.m.",
+      "targetInfo": "Required return time",
+      "correctAnswer": "6 p.m.",
+      "options": [
+        "9 a.m.",
+        "6 p.m.",
+        "extra fees",
+        "same day"
+      ],
+      "explanation": "The truck must be returned by 6 p.m.; 9 a.m. is the pickup time instead.",
+      "hint": "Search for the return time, not when the truck is picked up."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L100_Q1_PRACTICE",
+      "level": 100,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the registration for the fee tied to extended coverage, not the standard warranty.",
+      "passage": "Warranty Registration: Your streaming device's one-year warranty is now active, though the extended two-year coverage you selected requires a separate $15 activation fee.",
+      "targetItem": "$15",
+      "targetInfo": "Extended warranty activation fee",
+      "correctAnswer": "$15",
+      "options": [
+        "$15",
+        "one-year",
+        "two-year",
+        "separate"
+      ],
+      "explanation": "The extended coverage requires a $15 activation fee; one-year and two-year describe warranty lengths, not the fee.",
+      "hint": "Search for the dollar figure, not the coverage lengths mentioned."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L100_Q2_PRACTICE",
+      "level": 100,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for the fee not covered by aid, not the tuition amount.",
+      "passage": "Financial Aid Notice: Your aid package covers $4,200 in tuition this semester, though the $600 lab fee for science courses is not included and must be paid separately.",
+      "targetItem": "$600",
+      "targetInfo": "Lab fee not covered",
+      "correctAnswer": "$600",
+      "options": [
+        "$4,200",
+        "this semester",
+        "$600",
+        "paid separately"
+      ],
+      "explanation": "The $600 lab fee is not covered; $4,200 is the tuition amount that is covered.",
+      "hint": "Search for the uncovered fee, not the covered tuition figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L100_Q3_PRACTICE",
+      "level": 100,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for the exact unpaid balance.",
+      "passage": "Final Notice: Despite two previous reminders, your account balance of $214.75 remains unpaid; service will be suspended if payment is not received within five business days.",
+      "targetItem": "$214.75",
+      "targetInfo": "Unpaid account balance",
+      "correctAnswer": "$214.75",
+      "options": [
+        "two previous reminders",
+        "$214.75",
+        "five business days",
+        "suspended"
+      ],
+      "explanation": "The unpaid balance is $214.75; five business days describes the deadline to pay it.",
+      "hint": "Search for the dollar figure, not the deadline or consequence described."
+    }
+  ]
+}

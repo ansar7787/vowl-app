@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q1_PRACTICE",
+      "level": 81,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the confirmation for your booking's confirmation number.",
+      "passage": "Booking Confirmation: Your reservation at Cedar Ridge Inn is confirmed for two nights, checking in on October 3rd. Your confirmation number is CR-88421, needed for check-in at the front desk.",
+      "targetItem": "CR-88421",
+      "targetInfo": "Booking confirmation number",
+      "correctAnswer": "CR-88421",
+      "options": [
+        "October 3rd",
+        "CR-88421",
+        "two nights",
+        "front desk"
+      ],
+      "explanation": "The confirmation number is CR-88421; October 3rd is the check-in date, a separate detail.",
+      "hint": "Search for the code needed at check-in, not the date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q2_PRACTICE",
+      "level": 81,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim the update and find the phrase describing what actually happened to the order.",
+      "passage": "Order Update: Thank you for your recent purchase. Your item has shipped and should arrive within five to seven business days, and you'll receive a separate email once it's out for delivery.",
+      "targetItem": "item has shipped",
+      "targetInfo": "Main update about the order",
+      "correctAnswer": "item has shipped",
+      "options": [
+        "item has shipped",
+        "five to seven business days",
+        "separate email",
+        "out for delivery"
+      ],
+      "explanation": "The order has already shipped; the delivery window and email notice are follow-up details.",
+      "hint": "Skim past the delivery estimate and notification details and find what already happened."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L81_Q3_PRACTICE",
+      "level": 81,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim the notice and find the phrase describing the new required method.",
+      "passage": "Lease Notice: Beginning next month, all tenants must submit maintenance requests through the new online portal instead of calling the office directly.",
+      "targetItem": "submit maintenance requests through the new online portal",
+      "targetInfo": "New maintenance request method",
+      "correctAnswer": "submit maintenance requests through the new online portal",
+      "options": [
+        "Beginning next month",
+        "calling the office",
+        "submit maintenance requests through the new online portal",
+        "all tenants"
+      ],
+      "explanation": "Tenants must now use the online portal for maintenance requests, rather than calling the office.",
+      "hint": "Skim past when it starts and find what tenants must actually do."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q1_PRACTICE",
+      "level": 82,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the reminder for the exact time sign-ups open.",
+      "passage": "School Reminder: Parent-teacher conferences are scheduled for the week of November 4th, and sign-up slots open online this Friday at 8 a.m.",
+      "targetItem": "8 a.m.",
+      "targetInfo": "Sign-up opening time",
+      "correctAnswer": "8 a.m.",
+      "options": [
+        "8 a.m.",
+        "November 4th",
+        "this Friday",
+        "online"
+      ],
+      "explanation": "Sign-ups open at 8 a.m.; November 4th refers to the conference week itself.",
+      "hint": "Search for the specific hour, not the day or the conference week."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q2_PRACTICE",
+      "level": 82,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the invoice for the total amount charged.",
+      "passage": "Service Invoice: This invoice covers the replacement of a kitchen faucet and includes a one-year warranty on parts and labor, totaling $215.",
+      "targetItem": "$215",
+      "targetInfo": "Total invoice amount",
+      "correctAnswer": "$215",
+      "options": [
+        "$215",
+        "one-year warranty",
+        "kitchen faucet",
+        "parts and labor"
+      ],
+      "explanation": "The total charge is $215; the faucet and warranty describe the service, not the price.",
+      "hint": "Search for the dollar figure, not the service description."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L82_Q3_PRACTICE",
+      "level": 82,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim the confirmation and find the instruction about arrival.",
+      "passage": "Appointment Confirmation: Your dental cleaning is confirmed for Thursday at 2:30 p.m. with Dr. Reyes. Please arrive fifteen minutes early to complete updated paperwork.",
+      "targetItem": "arrive fifteen minutes early",
+      "targetInfo": "Arrival instruction",
+      "correctAnswer": "arrive fifteen minutes early",
+      "options": [
+        "arrive fifteen minutes early",
+        "Thursday",
+        "2:30 p.m.",
+        "updated paperwork"
+      ],
+      "explanation": "Patients are asked to arrive fifteen minutes early; Thursday and 2:30 p.m. describe the appointment itself.",
+      "hint": "Skim past the appointment time and find the separate arrival instruction."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q1_PRACTICE",
+      "level": 83,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the reminder for when check-in actually opens.",
+      "passage": "Airline Reminder: Check-in for flight 305 opens twenty-four hours before departure, and boarding passes must be printed or downloaded before arriving at the airport.",
+      "targetItem": "twenty-four hours before departure",
+      "targetInfo": "When check-in opens",
+      "correctAnswer": "twenty-four hours before departure",
+      "options": [
+        "flight 305",
+        "twenty-four hours before departure",
+        "boarding passes",
+        "before arriving"
+      ],
+      "explanation": "Check-in opens twenty-four hours before departure; flight 305 only identifies the flight.",
+      "hint": "Search for the timing detail, not the flight number."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q2_PRACTICE",
+      "level": 83,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the policy for how much notice is required to cancel.",
+      "passage": "Gym Policy: Membership cancellations require thirty days' written notice, submitted either by email or in person at the front desk.",
+      "targetItem": "thirty days' written notice",
+      "targetInfo": "Cancellation notice required",
+      "correctAnswer": "thirty days' written notice",
+      "options": [
+        "by email",
+        "thirty days' written notice",
+        "in person",
+        "front desk"
+      ],
+      "explanation": "Cancellations require thirty days' written notice; email and in-person are just submission methods.",
+      "hint": "Search for the length of notice required, not how to submit it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L83_Q3_PRACTICE",
+      "level": 83,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim the policy and find the exception to normal returns.",
+      "passage": "Return Policy: Items may be returned within thirty days of purchase with a receipt, though clearance items are final sale and cannot be returned.",
+      "targetItem": "clearance items are final sale",
+      "targetInfo": "Exception to the return policy",
+      "correctAnswer": "clearance items are final sale",
+      "options": [
+        "thirty days",
+        "with a receipt",
+        "of purchase",
+        "clearance items are final sale"
+      ],
+      "explanation": "Clearance items are the exception, as final sale; the thirty-day rule applies to regular items.",
+      "hint": "Skim past the normal rule and find what it doesn't apply to."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q1_PRACTICE",
+      "level": 84,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the update for the expected delivery time.",
+      "passage": "Delivery Update: Your package is out for delivery and should arrive by 8 p.m. today. If you're not home, the driver will leave it with your building's front desk.",
+      "targetItem": "8 p.m.",
+      "targetInfo": "Expected delivery time",
+      "correctAnswer": "8 p.m.",
+      "options": [
+        "out for delivery",
+        "today",
+        "8 p.m.",
+        "front desk"
+      ],
+      "explanation": "The package should arrive by 8 p.m.; the other phrases describe its status and backup plan.",
+      "hint": "Search for the specific hour given for arrival."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q2_PRACTICE",
+      "level": 84,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim the reply and find the phrase describing how the issue was resolved.",
+      "passage": "Customer Service Reply: We're sorry for the trouble with your order. A replacement has been shipped at no charge and should arrive within three days.",
+      "targetItem": "replacement has been shipped at no charge",
+      "targetInfo": "How the issue was resolved",
+      "correctAnswer": "replacement has been shipped at no charge",
+      "options": [
+        "replacement has been shipped at no charge",
+        "sorry for the trouble",
+        "three days",
+        "your order"
+      ],
+      "explanation": "The issue was resolved by shipping a free replacement; the apology is just an opening remark.",
+      "hint": "Skim past the apology and find what was actually done to fix it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L84_Q3_PRACTICE",
+      "level": 84,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the instructions for the exact pickup location.",
+      "passage": "Rental Car Instructions: Please pick up your vehicle at the airport counter, located on the lower level near baggage claim, and bring the credit card used for booking.",
+      "targetItem": "lower level near baggage claim",
+      "targetInfo": "Exact pickup location",
+      "correctAnswer": "lower level near baggage claim",
+      "options": [
+        "airport counter",
+        "credit card",
+        "lower level near baggage claim",
+        "used for booking"
+      ],
+      "explanation": "The counter is specifically on the lower level near baggage claim; the credit card note is a separate reminder.",
+      "hint": "Search for the precise location, not the general counter name."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q1_PRACTICE",
+      "level": 85,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the status update for the approved amount.",
+      "passage": "Claim Status: Your insurance claim has been approved, and a check for $1,340 will be mailed within ten business days.",
+      "targetItem": "$1,340",
+      "targetInfo": "Approved claim amount",
+      "correctAnswer": "$1,340",
+      "options": [
+        "approved",
+        "$1,340",
+        "ten business days",
+        "mailed"
+      ],
+      "explanation": "The approved amount is $1,340; ten business days tells when it will be mailed.",
+      "hint": "Search for the dollar figure, not the approval status."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q2_PRACTICE",
+      "level": 85,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Skim the notice and find what will happen to the package now.",
+      "passage": "Delivery Attempt Notice: We attempted to deliver your package today but no one was available to sign. It will be held at the local facility for pickup until Friday.",
+      "targetItem": "held at the local facility for pickup until Friday",
+      "targetInfo": "What happens to the package now",
+      "correctAnswer": "held at the local facility for pickup until Friday",
+      "options": [
+        "attempted to deliver",
+        "no one was available",
+        "held at the local facility for pickup until Friday",
+        "today"
+      ],
+      "explanation": "The package will be held for pickup until Friday; the first sentence only explains why delivery failed.",
+      "hint": "Skim past the failed attempt and find what happens next."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L85_Q3_PRACTICE",
+      "level": 85,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Skim the confirmation and find what still applies after canceling.",
+      "passage": "Cancellation Confirmation: Your subscription has been canceled effective immediately. Any downloaded content will remain available until next Tuesday, after which it will be removed automatically.",
+      "targetItem": "remain available until next Tuesday",
+      "targetInfo": "What still applies after canceling",
+      "correctAnswer": "remain available until next Tuesday",
+      "options": [
+        "canceled effective immediately",
+        "downloaded content",
+        "removed automatically",
+        "remain available until next Tuesday"
+      ],
+      "explanation": "Downloaded content stays available until next Tuesday, even though the subscription is already canceled.",
+      "hint": "Skim past the cancellation itself and find what temporarily continues."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q1_PRACTICE",
+      "level": 86,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the confirmation for the order number.",
+      "passage": "Ticket Confirmation: Your two tickets for Saturday's 7:30 show are confirmed under order number TCK-5521, which you'll need to present at will-call.",
+      "targetItem": "TCK-5521",
+      "targetInfo": "Ticket order number",
+      "correctAnswer": "TCK-5521",
+      "options": [
+        "TCK-5521",
+        "Saturday's",
+        "7:30",
+        "will-call"
+      ],
+      "explanation": "The order number is TCK-5521; Saturday's and 7:30 describe the show itself.",
+      "hint": "Search for the code, not the show's date or time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q2_PRACTICE",
+      "level": 86,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim the reminder for the preparation instruction.",
+      "passage": "Doctor's Office Reminder: This is a reminder that your annual physical is coming up. Please fast for eight hours beforehand if bloodwork is scheduled.",
+      "targetItem": "fast for eight hours beforehand",
+      "targetInfo": "Preparation instruction",
+      "correctAnswer": "fast for eight hours beforehand",
+      "options": [
+        "annual physical",
+        "bloodwork",
+        "coming up",
+        "fast for eight hours beforehand"
+      ],
+      "explanation": "Patients are asked to fast for eight hours beforehand; the physical and bloodwork are what's being prepared for.",
+      "hint": "Skim past the appointment type and find what to do beforehand."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L86_Q3_PRACTICE",
+      "level": 86,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim the update and find how the claim is being resolved.",
+      "passage": "Warranty Update: Your claim for the defective blender has been approved, and a replacement unit will ship directly from the manufacturer within two weeks.",
+      "targetItem": "replacement unit will ship directly from the manufacturer",
+      "targetInfo": "Resolution for the warranty claim",
+      "correctAnswer": "replacement unit will ship directly from the manufacturer",
+      "options": [
+        "defective blender",
+        "approved",
+        "two weeks",
+        "replacement unit will ship directly from the manufacturer"
+      ],
+      "explanation": "The claim is resolved by shipping a replacement unit; the blender and approval are earlier details.",
+      "hint": "Skim past the approval and product name and find the actual resolution."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q1_PRACTICE",
+      "level": 87,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim the pass details and find what is not included.",
+      "passage": "Coworking Pass: Your day pass grants access to shared desks and the printing station from 8 a.m. to 8 p.m., but does not include access to private meeting rooms.",
+      "targetItem": "does not include access to private meeting rooms",
+      "targetInfo": "What the pass excludes",
+      "correctAnswer": "does not include access to private meeting rooms",
+      "options": [
+        "does not include access to private meeting rooms",
+        "shared desks",
+        "printing station",
+        "8 a.m. to 8 p.m."
+      ],
+      "explanation": "Private meeting rooms are excluded; shared desks and the printing station are included.",
+      "hint": "Skim past what's included and find what's explicitly excluded."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q2_PRACTICE",
+      "level": 87,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim the confirmation and find what you're asked to do beforehand.",
+      "passage": "Moving Confirmation: Your move is scheduled for the 12th, with the crew arriving between 8 and 9 a.m. Please have all boxes packed and labeled before they arrive.",
+      "targetItem": "boxes packed and labeled before they arrive",
+      "targetInfo": "What the customer must do",
+      "correctAnswer": "boxes packed and labeled before they arrive",
+      "options": [
+        "scheduled for the 12th",
+        "8 and 9 a.m.",
+        "crew arriving",
+        "boxes packed and labeled before they arrive"
+      ],
+      "explanation": "Customers are asked to have boxes packed and labeled; the date and arrival window are separate details.",
+      "hint": "Skim past the schedule details and find the customer's task."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L87_Q3_PRACTICE",
+      "level": 87,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Search the confirmation for the catering order code.",
+      "passage": "Catering Confirmation: Your order for fifty sandwich platters is confirmed for pickup at noon on Saturday; please bring your order number, CTR-2290, to the counter.",
+      "targetItem": "CTR-2290",
+      "targetInfo": "Catering order number",
+      "correctAnswer": "CTR-2290",
+      "options": [
+        "fifty sandwich platters",
+        "noon on Saturday",
+        "CTR-2290",
+        "pickup"
+      ],
+      "explanation": "The order number is CTR-2290; the platter count and pickup time are separate details.",
+      "hint": "Search for the code, not the order size or pickup time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q1_PRACTICE",
+      "level": 88,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the notice for the exact fine amount.",
+      "passage": "Library Notice: Your account shows an overdue fine of $4.50 for a book that was due last Tuesday. Fines must be paid before new items can be borrowed.",
+      "targetItem": "$4.50",
+      "targetInfo": "Overdue fine amount",
+      "correctAnswer": "$4.50",
+      "options": [
+        "$4.50",
+        "last Tuesday",
+        "new items",
+        "borrowed"
+      ],
+      "explanation": "The fine is $4.50; last Tuesday tells when the book was due, not the amount owed.",
+      "hint": "Search for the dollar figure, not the due date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q2_PRACTICE",
+      "level": 88,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim the confirmation for the recommendation given to attendees.",
+      "passage": "Registration Confirmation: You're registered for the Saturday pottery class, and materials will be provided, though you should wear clothes you don't mind getting messy.",
+      "targetItem": "wear clothes you don't mind getting messy",
+      "targetInfo": "Recommendation for attendees",
+      "correctAnswer": "wear clothes you don't mind getting messy",
+      "options": [
+        "Saturday pottery class",
+        "materials will be provided",
+        "wear clothes you don't mind getting messy",
+        "registered"
+      ],
+      "explanation": "Attendees are advised to wear clothes they don't mind getting messy; materials are already provided.",
+      "hint": "Skim past the class details and find the practical advice given."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L88_Q3_PRACTICE",
+      "level": 88,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim the status and find the reason for the added delay.",
+      "passage": "Repair Status: Your phone's screen replacement is complete, but the technician also found a battery issue that will add one extra day to the repair.",
+      "targetItem": "battery issue that will add one extra day",
+      "targetInfo": "Reason for the delay",
+      "correctAnswer": "battery issue that will add one extra day",
+      "options": [
+        "battery issue that will add one extra day",
+        "phone's screen replacement is complete",
+        "technician also found",
+        "to the repair"
+      ],
+      "explanation": "A battery issue is adding one extra day; the screen replacement itself is already finished.",
+      "hint": "Skim past the completed screen work and find what's causing the delay."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q1_PRACTICE",
+      "level": 89,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the alert for the exact time motion was detected.",
+      "passage": "Security Alert: Motion was detected at your back door camera at 11:42 p.m. No entry was recorded, and the system automatically began recording a ten-minute clip.",
+      "targetItem": "11:42 p.m.",
+      "targetInfo": "Time motion was detected",
+      "correctAnswer": "11:42 p.m.",
+      "options": [
+        "back door",
+        "No entry",
+        "ten-minute clip",
+        "11:42 p.m."
+      ],
+      "explanation": "Motion was detected at 11:42 p.m.; the back door is only the camera's location.",
+      "hint": "Search for the precise time, not the camera location."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q2_PRACTICE",
+      "level": 89,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim the confirmation and find what you're asked to bring.",
+      "passage": "Vet Appointment Confirmation: Bella's annual checkup and vaccinations are confirmed for Thursday at 3 p.m. Please bring her vaccination record from last year if available.",
+      "targetItem": "bring her vaccination record from last year",
+      "targetInfo": "What to bring to the appointment",
+      "correctAnswer": "bring her vaccination record from last year",
+      "options": [
+        "bring her vaccination record from last year",
+        "annual checkup",
+        "vaccinations",
+        "Thursday at 3 p.m."
+      ],
+      "explanation": "Owners are asked to bring last year's vaccination record; the checkup and time are separate details.",
+      "hint": "Skim past the appointment details and find what to bring along."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L89_Q3_PRACTICE",
+      "level": 89,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim the estimate and find what costs are not included.",
+      "passage": "Contractor Estimate: The estimate for the bathroom remodel totals $8,750, which includes materials but not the cost of a plumber if pipes need to be relocated.",
+      "targetItem": "not the cost of a plumber",
+      "targetInfo": "What the estimate excludes",
+      "correctAnswer": "not the cost of a plumber",
+      "options": [
+        "$8,750",
+        "materials",
+        "pipes need to be relocated",
+        "not the cost of a plumber"
+      ],
+      "explanation": "The plumber's cost is excluded from the estimate; $8,750 covers materials only.",
+      "hint": "Skim past the total and find what's excluded from it."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q1_PRACTICE",
+      "level": 90,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the excerpt for the late fee amount, not the monthly rent.",
+      "passage": "Storage Agreement Excerpt: Monthly rent for the 10x10 unit is $95, due on the 1st, with a $25 late fee applied after the 5th.",
+      "targetItem": "$25",
+      "targetInfo": "Late fee amount",
+      "correctAnswer": "$25",
+      "options": [
+        "$95",
+        "the 1st",
+        "the 5th",
+        "$25"
+      ],
+      "explanation": "The late fee is $25; $95 is the regular monthly rent, a separate figure.",
+      "hint": "Search for the fee tied to late payment, not the regular rent."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q2_PRACTICE",
+      "level": 90,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the update for the exact credit amount.",
+      "passage": "Dispute Update: Your credit card dispute for the duplicate charge has been resolved in your favor, and a credit of $62.40 will appear on your next statement.",
+      "targetItem": "$62.40",
+      "targetInfo": "Credit amount issued",
+      "correctAnswer": "$62.40",
+      "options": [
+        "duplicate charge",
+        "resolved in your favor",
+        "$62.40",
+        "next statement"
+      ],
+      "explanation": "The credit amount is $62.40; the dispute's outcome is described separately.",
+      "hint": "Search for the dollar figure, not the outcome description."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L90_Q3_PRACTICE",
+      "level": 90,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the notice for the new rate, not the current one.",
+      "passage": "Billing Notice: Your streaming subscription will renew at the new rate of $16.99 starting next month, an increase from the current $12.99 rate.",
+      "targetItem": "$16.99",
+      "targetInfo": "New subscription rate",
+      "correctAnswer": "$16.99",
+      "options": [
+        "$12.99",
+        "$16.99",
+        "next month",
+        "current"
+      ],
+      "explanation": "The new rate is $16.99; $12.99 is the current rate being replaced.",
+      "hint": "Search for the upcoming price, not the one being replaced."
+    }
+  ]
+}

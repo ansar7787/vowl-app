@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L1_Q1_PRACTICE",
+      "level": 1,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence to find the day mentioned.",
+      "passage": "Maria's book club meets every Thursday evening.",
+      "targetItem": "Thursday",
+      "targetInfo": "Day of the week",
+      "correctAnswer": "Thursday",
+      "options": [
+        "Tuesday",
+        "Thursday",
+        "evening",
+        "book"
+      ],
+      "explanation": "The sentence names Thursday as the meeting day, not Tuesday.",
+      "hint": "Look for the name of a day of the week."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L1_Q2_PRACTICE",
+      "level": 1,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Search the sentence for the closing time.",
+      "passage": "The library closes at six o'clock tonight.",
+      "targetItem": "six",
+      "targetInfo": "Closing time",
+      "correctAnswer": "six",
+      "options": [
+        "seven",
+        "tonight",
+        "six",
+        "library"
+      ],
+      "explanation": "The library's closing time is six; seven does not appear as a time here.",
+      "hint": "Search for the number that tells the time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L1_Q3_PRACTICE",
+      "level": 1,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Look through the sentence to find the pet's name.",
+      "passage": "Tom's dog is named Rex.",
+      "targetItem": "Rex",
+      "targetInfo": "Pet's name",
+      "correctAnswer": "Rex",
+      "options": [
+        "Tom",
+        "Rex",
+        "Max",
+        "dog"
+      ],
+      "explanation": "The dog's name is Rex; Tom is the owner, not the pet.",
+      "hint": "Look for the word that is a name, not an everyday word."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L2_Q1_PRACTICE",
+      "level": 2,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan for the street name in the sentence.",
+      "passage": "The bakery on Elm Street opens at seven every morning.",
+      "targetItem": "Elm",
+      "targetInfo": "Street name",
+      "correctAnswer": "Elm",
+      "options": [
+        "Elm",
+        "Main",
+        "seven",
+        "bakery"
+      ],
+      "explanation": "The bakery is on Elm Street; seven tells the opening time, not the place.",
+      "hint": "Search for the name of the street, not the opening time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L2_Q2_PRACTICE",
+      "level": 2,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Find the exact date given in the sentence.",
+      "passage": "Grandpa's birthday is on the twelfth of May.",
+      "targetItem": "twelfth",
+      "targetInfo": "Day of the month",
+      "correctAnswer": "twelfth",
+      "options": [
+        "May",
+        "birthday",
+        "Grandpa",
+        "twelfth"
+      ],
+      "explanation": "The birthday falls on the twelfth; May only names the month.",
+      "hint": "Find the number that shows the day of the month."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L2_Q3_PRACTICE",
+      "level": 2,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search the sentence for the pizza size.",
+      "passage": "Sara ordered a medium pizza with mushrooms.",
+      "targetItem": "medium",
+      "targetInfo": "Pizza size ordered",
+      "correctAnswer": "medium",
+      "options": [
+        "large",
+        "medium",
+        "mushrooms",
+        "Sara"
+      ],
+      "explanation": "Sara ordered a medium pizza; mushrooms is the topping, not the size.",
+      "hint": "Look for the word describing size, not the topping."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L3_Q1_PRACTICE",
+      "level": 3,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan to find what time the team eats lunch.",
+      "passage": "After the meeting ends, the team will go to lunch at noon.",
+      "targetItem": "noon",
+      "targetInfo": "Lunch time",
+      "correctAnswer": "noon",
+      "options": [
+        "meeting",
+        "team",
+        "morning",
+        "noon"
+      ],
+      "explanation": "Lunch happens at noon; the sentence never gives a time for the meeting itself.",
+      "hint": "Search for the time word placed near the word lunch."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L3_Q2_PRACTICE",
+      "level": 3,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Look for the platform number in the sentence.",
+      "passage": "The train to Boston departs from platform four.",
+      "targetItem": "four",
+      "targetInfo": "Platform number",
+      "correctAnswer": "four",
+      "options": [
+        "four",
+        "Boston",
+        "three",
+        "train"
+      ],
+      "explanation": "The platform number is four; Boston only names the destination city.",
+      "hint": "Search for the number that identifies the platform."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L3_Q3_PRACTICE",
+      "level": 3,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the sentence for the subject Mrs. Alvarez teaches.",
+      "passage": "Mrs. Alvarez teaches math to the ninth-grade class.",
+      "targetItem": "math",
+      "targetInfo": "Subject taught",
+      "correctAnswer": "math",
+      "options": [
+        "science",
+        "math",
+        "ninth-grade",
+        "class"
+      ],
+      "explanation": "Mrs. Alvarez teaches math; ninth-grade only describes the class level.",
+      "hint": "Search for the school subject mentioned in the sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L4_Q1_PRACTICE",
+      "level": 4,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Search for the adult ticket price.",
+      "passage": "The concert tickets cost fifteen dollars for adults and eight dollars for children.",
+      "targetItem": "fifteen",
+      "targetInfo": "Adult ticket price",
+      "correctAnswer": "fifteen",
+      "options": [
+        "fifteen",
+        "eight",
+        "adults",
+        "concert"
+      ],
+      "explanation": "Adult tickets cost fifteen dollars; eight dollars is the price for children.",
+      "hint": "Look for the price listed right before the word adults."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L4_Q2_PRACTICE",
+      "level": 4,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence to find the bus interval.",
+      "passage": "The bus to the airport leaves every twenty minutes.",
+      "targetItem": "twenty",
+      "targetInfo": "Time between buses",
+      "correctAnswer": "twenty",
+      "options": [
+        "ten",
+        "airport",
+        "twenty",
+        "bus"
+      ],
+      "explanation": "The bus leaves every twenty minutes; ten is not mentioned as the interval.",
+      "hint": "Search for the number describing the gap between buses."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L4_Q3_PRACTICE",
+      "level": 4,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Find the second practice day mentioned.",
+      "passage": "Emma's soccer practice is on Monday and Wednesday afternoons.",
+      "targetItem": "Wednesday",
+      "targetInfo": "Second practice day",
+      "correctAnswer": "Wednesday",
+      "options": [
+        "Monday",
+        "afternoons",
+        "soccer",
+        "Wednesday"
+      ],
+      "explanation": "Both days are practice days, but Wednesday is the second one named.",
+      "hint": "Look for the day that comes after Monday in the sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L5_Q1_PRACTICE",
+      "level": 5,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Search for the name of David's brother.",
+      "passage": "David and his brother Carlos both work at the hospital downtown.",
+      "targetItem": "Carlos",
+      "targetInfo": "Brother's name",
+      "correctAnswer": "Carlos",
+      "options": [
+        "David",
+        "hospital",
+        "downtown",
+        "Carlos"
+      ],
+      "explanation": "David is named first, but Carlos is specifically identified as his brother.",
+      "hint": "Look for the name that belongs to the brother, not to David."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L5_Q2_PRACTICE",
+      "level": 5,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for the house number.",
+      "passage": "The package was delivered to 42 Baker Street on Friday.",
+      "targetItem": "42",
+      "targetInfo": "House number",
+      "correctAnswer": "42",
+      "options": [
+        "42",
+        "24",
+        "Friday",
+        "Baker"
+      ],
+      "explanation": "The address number is 42; 24 is a similar-looking number that never appears.",
+      "hint": "Search for the number that comes right before Baker Street."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L5_Q3_PRACTICE",
+      "level": 5,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Look for the time period of the exhibit.",
+      "passage": "The museum's new exhibit features paintings from the 1800s.",
+      "targetItem": "1800s",
+      "targetInfo": "Time period of paintings",
+      "correctAnswer": "1800s",
+      "options": [
+        "1900s",
+        "museum",
+        "exhibit",
+        "1800s"
+      ],
+      "explanation": "The paintings are from the 1800s; the 1900s never appears in the sentence.",
+      "hint": "Search for the number that names the century of the paintings."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L6_Q1_PRACTICE",
+      "level": 6,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search for when the connecting flight leaves.",
+      "passage": "The morning flight lands at ten, but the connecting flight leaves at eleven thirty.",
+      "targetItem": "eleven thirty",
+      "targetInfo": "Connecting flight departure time",
+      "correctAnswer": "eleven thirty",
+      "options": [
+        "ten",
+        "eleven thirty",
+        "morning",
+        "lands"
+      ],
+      "explanation": "Ten is the landing time; eleven thirty is when the connecting flight departs.",
+      "hint": "Search for the second time in the sentence, which is about leaving."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L6_Q2_PRACTICE",
+      "level": 6,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the recipe line for the sugar amount.",
+      "passage": "The recipe needs two cups of flour and one cup of sugar.",
+      "targetItem": "one",
+      "targetInfo": "Amount of sugar",
+      "correctAnswer": "one",
+      "options": [
+        "two",
+        "flour",
+        "one",
+        "cups"
+      ],
+      "explanation": "The recipe needs one cup of sugar; two cups refers to the flour instead.",
+      "hint": "Look for the number placed right before the word sugar."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L6_Q3_PRACTICE",
+      "level": 6,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Find the floor number in the sentence.",
+      "passage": "The manager's office is on the third floor, next to the break room.",
+      "targetItem": "third",
+      "targetInfo": "Floor number",
+      "correctAnswer": "third",
+      "options": [
+        "second",
+        "break",
+        "manager",
+        "third"
+      ],
+      "explanation": "The office is on the third floor; the break room only shows what's nearby.",
+      "hint": "Search for the number that names the floor."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L7_Q1_PRACTICE",
+      "level": 7,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the notice for the closing day.",
+      "passage": "Notice: The pool will be closed for cleaning on Sunday.",
+      "targetItem": "Sunday",
+      "targetInfo": "Day the pool is closed",
+      "correctAnswer": "Sunday",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "pool",
+        "cleaning"
+      ],
+      "explanation": "The notice states the pool closes on Sunday, not Saturday.",
+      "hint": "Look for the day of the week written in the notice."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L7_Q2_PRACTICE",
+      "level": 7,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Search the reminder for the required item.",
+      "passage": "Reminder: Bring your ID card to the exam on Tuesday morning.",
+      "targetItem": "ID card",
+      "targetInfo": "Item to bring",
+      "correctAnswer": "ID card",
+      "options": [
+        "pencil",
+        "exam",
+        "Tuesday",
+        "ID card"
+      ],
+      "explanation": "The reminder asks students to bring an ID card, not a pencil.",
+      "hint": "Search for the item listed right after the word bring."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L7_Q3_PRACTICE",
+      "level": 7,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Look through the message for the wait time.",
+      "passage": "Message: Dinner is ready, please come downstairs in five minutes.",
+      "targetItem": "five",
+      "targetInfo": "Waiting time",
+      "correctAnswer": "five",
+      "options": [
+        "five",
+        "ten",
+        "dinner",
+        "downstairs"
+      ],
+      "explanation": "The message says to come down in five minutes, not ten.",
+      "hint": "Look for the number of minutes mentioned in the message."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L8_Q1_PRACTICE",
+      "level": 8,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan for the workshop's real start time.",
+      "passage": "The workshop begins at nine fifteen and the doors open at nine.",
+      "targetItem": "nine fifteen",
+      "targetInfo": "Workshop start time",
+      "correctAnswer": "nine fifteen",
+      "options": [
+        "nine",
+        "doors",
+        "nine fifteen",
+        "workshop"
+      ],
+      "explanation": "Doors open at nine, but the workshop itself starts at nine fifteen.",
+      "hint": "Search for the more exact time, not when the doors open."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L8_Q2_PRACTICE",
+      "level": 8,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Find how many guests arrived after lunch.",
+      "passage": "Two guests arrived early, but four more came right after lunch.",
+      "targetItem": "four",
+      "targetInfo": "Guests arriving after lunch",
+      "correctAnswer": "four",
+      "options": [
+        "two",
+        "six",
+        "four",
+        "lunch"
+      ],
+      "explanation": "Two guests were early; four more arrived later, after lunch.",
+      "hint": "Look for the number connected to arriving after lunch."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L8_Q3_PRACTICE",
+      "level": 8,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search for the winter watering frequency.",
+      "passage": "The garden needs watering twice a day during summer, but only once in winter.",
+      "targetItem": "once",
+      "targetInfo": "Winter watering frequency",
+      "correctAnswer": "once",
+      "options": [
+        "once",
+        "twice",
+        "summer",
+        "garden"
+      ],
+      "explanation": "In winter the garden is watered once, compared with twice in summer.",
+      "hint": "Search for the frequency word placed near the word winter."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L9_Q1_PRACTICE",
+      "level": 9,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan both sentences for the main office's street.",
+      "passage": "The clinic opened a new branch last month. The main office remains on Fifth Avenue.",
+      "targetItem": "Fifth Avenue",
+      "targetInfo": "Main office location",
+      "correctAnswer": "Fifth Avenue",
+      "options": [
+        "Fifth Avenue",
+        "last month",
+        "new branch",
+        "clinic"
+      ],
+      "explanation": "The first sentence mentions a new branch, but the second names Fifth Avenue as the main office.",
+      "hint": "Look in the second sentence for the address."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L9_Q2_PRACTICE",
+      "level": 9,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Look for the name of Julia's friend.",
+      "passage": "Julia finished her homework before dinner. She then called her friend Wendy for twenty minutes.",
+      "targetItem": "Wendy",
+      "targetInfo": "Friend's name",
+      "correctAnswer": "Wendy",
+      "options": [
+        "Wendy",
+        "Julia",
+        "dinner",
+        "homework"
+      ],
+      "explanation": "Julia is the subject of the passage; Wendy is the friend she called.",
+      "hint": "Search the second sentence for the name of the friend."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L9_Q3_PRACTICE",
+      "level": 9,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Find the Saturday discount percentage.",
+      "passage": "The store restocks shelves every Monday. On Saturdays, it offers a ten percent discount.",
+      "targetItem": "ten percent",
+      "targetInfo": "Saturday discount amount",
+      "correctAnswer": "ten percent",
+      "options": [
+        "Monday",
+        "ten percent",
+        "Saturdays",
+        "shelves"
+      ],
+      "explanation": "Restocking happens on Monday, but the ten percent discount applies on Saturdays.",
+      "hint": "Look in the second sentence for the number linked to discount."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L10_Q1_PRACTICE",
+      "level": 10,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for Room B's capacity.",
+      "passage": "The office has three meeting rooms. Room A seats six people, Room B seats ten, and Room C seats fourteen.",
+      "targetItem": "ten",
+      "targetInfo": "Capacity of Room B",
+      "correctAnswer": "ten",
+      "options": [
+        "six",
+        "fourteen",
+        "ten",
+        "three"
+      ],
+      "explanation": "Room B seats ten people; six and fourteen belong to Rooms A and C instead.",
+      "hint": "Search for the number that comes right after Room B."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L10_Q2_PRACTICE",
+      "level": 10,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Search for Seattle's departure time.",
+      "passage": "Flights depart for Chicago at 8 a.m., for Denver at 11 a.m., and for Seattle at 2 p.m.",
+      "targetItem": "2 p.m.",
+      "targetInfo": "Seattle departure time",
+      "correctAnswer": "2 p.m.",
+      "options": [
+        "2 p.m.",
+        "8 a.m.",
+        "11 a.m.",
+        "Denver"
+      ],
+      "explanation": "The Seattle flight leaves at 2 p.m.; the earlier times belong to Chicago and Denver.",
+      "hint": "Look for the time listed right after the word Seattle."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L10_Q3_PRACTICE",
+      "level": 10,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Find the day set aside for adult patients.",
+      "passage": "The clinic sees children on Mondays, adults on Wednesdays, and seniors on Fridays.",
+      "targetItem": "Wednesdays",
+      "targetInfo": "Day for adult patients",
+      "correctAnswer": "Wednesdays",
+      "options": [
+        "Mondays",
+        "Fridays",
+        "Wednesdays",
+        "seniors"
+      ],
+      "explanation": "Adults are seen on Wednesdays; Mondays and Fridays are set aside for children and seniors.",
+      "hint": "Search for the day that appears next to the word adults."
+    }
+  ]
+}

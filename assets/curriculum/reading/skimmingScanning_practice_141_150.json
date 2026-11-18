@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q1_PRACTICE",
+      "level": 141,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Read past the unrelated expense report note and find the corrected meeting time.",
+      "passage": "Meeting Update: The quarterly review was originally scheduled for 10 a.m. In the meantime, please make sure your expense reports are submitted by Friday. Due to a room conflict, the review has now been moved to 2 p.m.",
+      "targetItem": "2 p.m.",
+      "targetInfo": "Actual meeting time",
+      "correctAnswer": "2 p.m.",
+      "options": [
+        "10 a.m.",
+        "Friday",
+        "room conflict",
+        "2 p.m."
+      ],
+      "explanation": "The review is now at 2 p.m.; 10 a.m. was only the original time before it was moved.",
+      "hint": "Skip the expense report reminder in the middle and connect the first and last sentences."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q2_PRACTICE",
+      "level": 141,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim past the flight and city description and find how long the stay actually was.",
+      "passage": "Travel Blog Post: Our trip to Lisbon began with a delayed flight, which set an unfortunate tone. The city itself turned out to be full of charming tiled streets and incredible pastries. We ended up staying in a small apartment near Alfama for the full eight nights.",
+      "targetItem": "eight nights",
+      "targetInfo": "Length of the stay",
+      "correctAnswer": "eight nights",
+      "options": [
+        "delayed flight",
+        "eight nights",
+        "charming tiled streets",
+        "Alfama"
+      ],
+      "explanation": "The stay lasted eight nights; the flight delay and city charm are earlier, unrelated details.",
+      "hint": "Skip the flight and city descriptions and find the number in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q3_PRACTICE",
+      "level": 141,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim past the family history and find the actual baking time.",
+      "passage": "Recipe Blog: This banana bread recipe has been in my family for three generations. My grandmother used to make it every Sunday. The recipe itself calls for three overripe bananas and takes about an hour to bake.",
+      "targetItem": "an hour",
+      "targetInfo": "Baking time",
+      "correctAnswer": "an hour",
+      "options": [
+        "three generations",
+        "an hour",
+        "every Sunday",
+        "three overripe bananas"
+      ],
+      "explanation": "Baking takes about an hour; the family history and grandmother's tradition are earlier, unrelated details.",
+      "hint": "Skip the family history and find the timing detail in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q1_PRACTICE",
+      "level": 142,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the office closure note and find the approved payout amount.",
+      "passage": "Claim Update: We received your claim on the 3rd and began our initial review shortly after. Please note that our office will be closed for the upcoming holiday. Your claim has since been approved for a payout of $2,150.",
+      "targetItem": "$2,150",
+      "targetInfo": "Approved payout amount",
+      "correctAnswer": "$2,150",
+      "options": [
+        "the 3rd",
+        "holiday",
+        "initial review",
+        "$2,150"
+      ],
+      "explanation": "The claim was approved for $2,150; the 3rd only marks when it was first received.",
+      "hint": "Skip the holiday closure note and connect the first and last sentences."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q2_PRACTICE",
+      "level": 142,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the book fair and picture retake notes and find the science fair's new location.",
+      "passage": "School Newsletter: The fall book fair raised funds for new library shelving. Don't forget that picture retakes are scheduled for next Tuesday. Separately, the fifth-grade science fair has been moved to the gymnasium instead of the cafeteria.",
+      "targetItem": "gymnasium",
+      "targetInfo": "New science fair location",
+      "correctAnswer": "gymnasium",
+      "options": [
+        "library shelving",
+        "next Tuesday",
+        "cafeteria",
+        "gymnasium"
+      ],
+      "explanation": "The science fair moved to the gymnasium; the book fair and picture retakes are unrelated earlier items.",
+      "hint": "Skip the book fair and picture retake notes and find the final, separate item."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q3_PRACTICE",
+      "level": 142,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the packaging and setup comments and find the reviewer's opinion on the motor.",
+      "passage": "Product Review: I was skeptical about this blender at first because of its plastic housing. It arrived quickly and was easy to set up. After using it daily for a month, I can say the motor is surprisingly powerful for the price.",
+      "targetItem": "surprisingly powerful",
+      "targetInfo": "Reviewer's opinion on the motor",
+      "correctAnswer": "surprisingly powerful",
+      "options": [
+        "plastic housing",
+        "arrived quickly",
+        "surprisingly powerful",
+        "easy to set up"
+      ],
+      "explanation": "The reviewer found the motor surprisingly powerful; the housing and setup comments are earlier impressions.",
+      "hint": "Skip the packaging and setup remarks and find the opinion in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q1_PRACTICE",
+      "level": 143,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the general training rule and find the exception for employees on leave.",
+      "passage": "HR Policy Memo: All employees must complete annual compliance training. New hires should also review the employee handbook during onboarding. However, employees on approved leave are exempt from the training deadline until thirty days after their return.",
+      "targetItem": "thirty days after their return",
+      "targetInfo": "Exemption deadline for employees on leave",
+      "correctAnswer": "thirty days after their return",
+      "options": [
+        "annual compliance training",
+        "employee handbook",
+        "onboarding",
+        "thirty days after their return"
+      ],
+      "explanation": "Employees on leave get thirty days after returning; the earlier sentences describe the general rule for everyone else.",
+      "hint": "Skip the general rule and onboarding note and find the exception at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q2_PRACTICE",
+      "level": 143,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the coastal rain forecast and find the inland valley temperature.",
+      "passage": "Weather Report: A cold front is moving through the region this week, bringing lower temperatures statewide. Coastal areas should also expect light rain on Wednesday. Inland valleys, however, are expected to stay dry with highs near 68.",
+      "targetItem": "68",
+      "targetInfo": "Expected high in inland valleys",
+      "correctAnswer": "68",
+      "options": [
+        "cold front",
+        "light rain",
+        "68",
+        "Wednesday"
+      ],
+      "explanation": "Inland valleys should reach highs near 68; the coastal rain forecast is a separate detail.",
+      "hint": "Skip the coastal forecast and find the number tied to inland valleys."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q3_PRACTICE",
+      "level": 143,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the recommendation for sourdough rolls and find the allergen warning.",
+      "passage": "Restaurant Menu Note: Our seasonal squash soup is a customer favorite, made fresh daily with local produce. We also recommend pairing it with our sourdough rolls. Please note the soup contains dairy and is not suitable for vegan guests.",
+      "targetItem": "contains dairy",
+      "targetInfo": "Allergen note about the soup",
+      "correctAnswer": "contains dairy",
+      "options": [
+        "customer favorite",
+        "contains dairy",
+        "local produce",
+        "sourdough rolls"
+      ],
+      "explanation": "The soup contains dairy; the earlier sentences only describe its popularity and pairing.",
+      "hint": "Skip the pairing suggestion and find the warning in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q1_PRACTICE",
+      "level": 144,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the login screen note and find the new password policy.",
+      "passage": "IT Update: We upgraded the email server over the weekend to improve reliability. Some users may notice a new login screen. As a result of the upgrade, passwords must now be reset every ninety days instead of annually.",
+      "targetItem": "ninety days",
+      "targetInfo": "New password reset frequency",
+      "correctAnswer": "ninety days",
+      "options": [
+        "over the weekend",
+        "new login screen",
+        "annually",
+        "ninety days"
+      ],
+      "explanation": "Passwords must now be reset every ninety days; annually was the old, replaced requirement.",
+      "hint": "Skip the login screen note and find the policy change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q2_PRACTICE",
+      "level": 144,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the crowd and vendor details and find next year's new timing.",
+      "passage": "Community Update: The annual street fair drew a record crowd this year. Vendors reported strong sales throughout the day. Organizers have already confirmed that next year's fair will be held two weeks earlier, in early June instead of mid-June.",
+      "targetItem": "early June",
+      "targetInfo": "New month for next year's fair",
+      "correctAnswer": "early June",
+      "options": [
+        "record crowd",
+        "early June",
+        "strong sales",
+        "mid-June"
+      ],
+      "explanation": "Next year's fair moves to early June; mid-June was this year's timing, now being changed.",
+      "hint": "Skip the crowd and sales details and find the new date in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q3_PRACTICE",
+      "level": 144,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the dashboard and color scheme praise and find the new fee.",
+      "passage": "Fitness App Update: The app's new dashboard makes it easier to track daily steps. Users have also praised the redesigned color scheme. One important change: the sleep tracking feature will now require a $4.99 monthly add-on.",
+      "targetItem": "$4.99",
+      "targetInfo": "Cost of the sleep tracking add-on",
+      "correctAnswer": "$4.99",
+      "options": [
+        "daily steps",
+        "$4.99",
+        "color scheme",
+        "monthly add-on"
+      ],
+      "explanation": "The sleep tracking add-on now costs $4.99; the dashboard and color scheme are separate, unrelated updates.",
+      "hint": "Skip the dashboard and design praise and find the price change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q1_PRACTICE",
+      "level": 145,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Skim past the public comment and budget review and find what was actually approved.",
+      "passage": "City Council Summary: Several residents spoke during public comment about noise complaints downtown. The council also reviewed the annual budget report. By a vote of 5 to 2, the council approved funding for two additional crosswalks near the elementary school.",
+      "targetItem": "two additional crosswalks",
+      "targetInfo": "What the council approved funding for",
+      "correctAnswer": "two additional crosswalks",
+      "options": [
+        "two additional crosswalks",
+        "noise complaints",
+        "annual budget report",
+        "5 to 2"
+      ],
+      "explanation": "The council approved two additional crosswalks; the noise complaints and budget review are earlier, separate items.",
+      "hint": "Skip the public comment and budget review and find what the vote actually approved."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q2_PRACTICE",
+      "level": 145,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Skim past the challenges mentioned and find the actual result achieved.",
+      "passage": "Nonprofit Annual Letter: This year brought new challenges as demand for our services grew. Staff turnover was also higher than usual. Despite these hurdles, we're proud to report that we served 40 percent more families than last year.",
+      "targetItem": "40 percent more",
+      "targetInfo": "Increase in families served",
+      "correctAnswer": "40 percent more",
+      "options": [
+        "40 percent more",
+        "new challenges",
+        "Staff turnover",
+        "last year"
+      ],
+      "explanation": "The organization served 40 percent more families; the challenges and turnover are earlier context, not the result.",
+      "hint": "Skip the challenges described and find the actual outcome reported."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q3_PRACTICE",
+      "level": 145,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Skim past the bug fixes and terms update and find the most notable new feature.",
+      "passage": "Software Changelog: This release includes several bug fixes for the mobile app. We also updated the terms of service, effective immediately. Most notably, users can now export their data directly to a spreadsheet, a frequently requested feature.",
+      "targetItem": "export their data directly to a spreadsheet",
+      "targetInfo": "Most notable new feature",
+      "correctAnswer": "export their data directly to a spreadsheet",
+      "options": [
+        "bug fixes",
+        "terms of service",
+        "frequently requested",
+        "export their data directly to a spreadsheet"
+      ],
+      "explanation": "The most notable feature is exporting data to a spreadsheet; the bug fixes and terms update are minor, earlier items.",
+      "hint": "Skip the bug fixes and terms update and find the feature described as most notable."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q1_PRACTICE",
+      "level": 146,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim past the general delay warning and find Flight 402's specific new time.",
+      "passage": "Flight Delay Update: Weather in the Midwest has caused delays across several routes today. Passengers on unaffected flights should still arrive two hours early. Flight 402 specifically has been delayed and is now expected to depart at 6:50 instead of its original time.",
+      "targetItem": "6:50",
+      "targetInfo": "Flight 402's new departure time",
+      "correctAnswer": "6:50",
+      "options": [
+        "two hours",
+        "6:50",
+        "Midwest",
+        "original time"
+      ],
+      "explanation": "Flight 402 now departs at 6:50; the general delay warning and arrival advice apply to other flights.",
+      "hint": "Skip the general delay warning and find the specific time tied to Flight 402."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q2_PRACTICE",
+      "level": 146,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim past the book discussion and snack details and find the new meeting location.",
+      "passage": "Book Club Newsletter: This month's pick sparked a lot of debate among members about the ending. Snacks and drinks will be provided as usual. The location has changed, though, from Maria's house to the community center due to space.",
+      "targetItem": "community center",
+      "targetInfo": "New meeting location",
+      "correctAnswer": "community center",
+      "options": [
+        "community center",
+        "Maria's house",
+        "Snacks and drinks",
+        "space"
+      ],
+      "explanation": "The new meeting spot is the community center; Maria's house was the previous location.",
+      "hint": "Skip the book discussion and snack details and find the location change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q3_PRACTICE",
+      "level": 146,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Skim past the assessments and new equipment mentions and find what happened to the spin class.",
+      "passage": "Gym Newsletter: Our trainers have been busy running new fitness assessments this month. We've also added new equipment to the weight room. One scheduling note: the 6 p.m. spin class has been discontinued due to low attendance.",
+      "targetItem": "discontinued",
+      "targetInfo": "What happened to the 6 p.m. spin class",
+      "correctAnswer": "discontinued",
+      "options": [
+        "fitness assessments",
+        "new equipment",
+        "discontinued",
+        "low attendance"
+      ],
+      "explanation": "The 6 p.m. spin class was discontinued; the assessments and new equipment are separate, unrelated updates.",
+      "hint": "Skip the assessments and equipment updates and find what happened to the class."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q1_PRACTICE",
+      "level": 147,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim past the claims portal update and find the new policy benefit.",
+      "passage": "Insurance Newsletter: We've simplified our online claims portal this quarter. Customers have responded well to the new design. Additionally, starting next month, all auto policies will include roadside assistance at no extra charge.",
+      "targetItem": "roadside assistance",
+      "targetInfo": "New benefit being added",
+      "correctAnswer": "roadside assistance",
+      "options": [
+        "roadside assistance",
+        "online claims portal",
+        "new design",
+        "no extra charge"
+      ],
+      "explanation": "The new benefit is roadside assistance; the claims portal redesign is a separate, earlier update.",
+      "hint": "Skip the claims portal update and find the new benefit at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q2_PRACTICE",
+      "level": 147,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim past last semester's feedback and find this semester's new closing time.",
+      "passage": "University Bulletin: The library extended its hours during midterms last semester with positive feedback. Vending machines were also restocked more frequently. This semester, the library will stay open until 2 a.m. every night through finals week.",
+      "targetItem": "2 a.m.",
+      "targetInfo": "New closing time during finals",
+      "correctAnswer": "2 a.m.",
+      "options": [
+        "last semester",
+        "2 a.m.",
+        "Vending machines",
+        "finals week"
+      ],
+      "explanation": "This semester the library stays open until 2 a.m.; last semester's feedback is earlier, separate context.",
+      "hint": "Skip last semester's feedback and find this semester's new time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q3_PRACTICE",
+      "level": 147,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Skim past the ticket sales and rehearsal notes and find what was actually added.",
+      "passage": "Theater Newsletter: Ticket sales for the spring musical have exceeded expectations this year. The cast has been rehearsing since January. Due to demand, an additional Sunday matinee has been added at 2 p.m.",
+      "targetItem": "Sunday matinee",
+      "targetInfo": "What was added due to demand",
+      "correctAnswer": "Sunday matinee",
+      "options": [
+        "Ticket sales",
+        "Sunday matinee",
+        "January",
+        "2 p.m."
+      ],
+      "explanation": "A Sunday matinee was added; the ticket sales and rehearsal schedule are earlier, separate details.",
+      "hint": "Skip the sales and rehearsal notes and find what was added due to demand."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q1_PRACTICE",
+      "level": 148,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the general repair background and find the specific shutoff location.",
+      "passage": "City Utility Notice: Crews have been repairing aging water lines throughout the district this year. Residents may have noticed occasional low pressure. Starting Monday, a full shutoff will occur on Birch Avenue for scheduled pipe replacement.",
+      "targetItem": "Birch Avenue",
+      "targetInfo": "Where the shutoff will occur",
+      "correctAnswer": "Birch Avenue",
+      "options": [
+        "aging water lines",
+        "Birch Avenue",
+        "low pressure",
+        "pipe replacement"
+      ],
+      "explanation": "The shutoff occurs on Birch Avenue; the earlier sentences describe repairs across the whole district.",
+      "hint": "Skip the general repair background and find the specific street named."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q2_PRACTICE",
+      "level": 148,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the bonus promotions and satisfaction scores and find the new requirement.",
+      "passage": "Airline Loyalty Update: Members have earned points faster this year thanks to bonus promotions. Customer satisfaction scores have also improved. Beginning next quarter, the top loyalty tier will require 75,000 miles instead of 60,000.",
+      "targetItem": "75,000 miles",
+      "targetInfo": "New mileage requirement for top tier",
+      "correctAnswer": "75,000 miles",
+      "options": [
+        "75,000 miles",
+        "bonus promotions",
+        "satisfaction scores",
+        "60,000"
+      ],
+      "explanation": "The top tier will require 75,000 miles; 60,000 was the old, soon-to-change requirement.",
+      "hint": "Skip the bonus promotions and satisfaction scores and find the new mileage figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q3_PRACTICE",
+      "level": 148,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Skim past the new beans and flavor comments and find what's replacing punch cards.",
+      "passage": "Coffee Shop Update: We've been sourcing beans from a new regional roaster this year. Customers have noticed a smoother flavor profile. Also, our loyalty punch cards are being replaced with a digital app starting next month.",
+      "targetItem": "digital app",
+      "targetInfo": "What's replacing the punch cards",
+      "correctAnswer": "digital app",
+      "options": [
+        "regional roaster",
+        "flavor profile",
+        "digital app",
+        "next month"
+      ],
+      "explanation": "Punch cards are being replaced with a digital app; the new roaster and flavor are separate, earlier updates.",
+      "hint": "Skip the new beans and flavor comments and find what's replacing the punch cards."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q1_PRACTICE",
+      "level": 149,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the landscaping update and find the special assessment amount.",
+      "passage": "Condo Newsletter: The landscaping crew completed the spring cleanup ahead of schedule. Residents have praised the improved curb appeal. Separately, the board approved a special assessment of $450 per unit for roof repairs.",
+      "targetItem": "$450",
+      "targetInfo": "Special assessment amount",
+      "correctAnswer": "$450",
+      "options": [
+        "spring cleanup",
+        "$450",
+        "curb appeal",
+        "roof repairs"
+      ],
+      "explanation": "The special assessment is $450 per unit; the landscaping update is a separate, earlier item.",
+      "hint": "Skip the landscaping update and find the dollar figure at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q2_PRACTICE",
+      "level": 149,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the attendance and membership numbers and find the new free admission day.",
+      "passage": "Museum Newsletter: Attendance has grown steadily since the new wing opened last year. Membership renewals are also up. Starting in the fall, the museum will offer free admission on the first Sunday of every month.",
+      "targetItem": "first Sunday",
+      "targetInfo": "New free admission day",
+      "correctAnswer": "first Sunday",
+      "options": [
+        "new wing",
+        "Membership renewals",
+        "first Sunday",
+        "fall"
+      ],
+      "explanation": "Free admission will be offered on the first Sunday of every month; the attendance and membership figures are separate context.",
+      "hint": "Skip the attendance and membership numbers and find the new admission detail."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q3_PRACTICE",
+      "level": 149,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Skim past the food selection and staff training notes and find the discount being offered.",
+      "passage": "Pet Store Newsletter: We've expanded our selection of natural pet food this season. Staff have completed additional training on nutrition counseling. Also, starting this weekend, all dog leashes and collars will be 20 percent off.",
+      "targetItem": "20 percent off",
+      "targetInfo": "Discount on leashes and collars",
+      "correctAnswer": "20 percent off",
+      "options": [
+        "natural pet food",
+        "nutrition counseling",
+        "this weekend",
+        "20 percent off"
+      ],
+      "explanation": "Leashes and collars are 20 percent off; the food selection and staff training are separate, earlier updates.",
+      "hint": "Skip the food selection and staff training notes and find the discount at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q1_PRACTICE",
+      "level": 150,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the review and budget process and find the new booking requirement.",
+      "passage": "Corporate Memo: Travel spending was reviewed company-wide last quarter as part of a cost analysis. Several departments were asked to submit updated budgets. As a result of the review, all domestic flights must now be booked at least fourteen days in advance.",
+      "targetItem": "fourteen days",
+      "targetInfo": "New advance booking requirement",
+      "correctAnswer": "fourteen days",
+      "options": [
+        "last quarter",
+        "updated budgets",
+        "domestic flights",
+        "fourteen days"
+      ],
+      "explanation": "Flights must now be booked fourteen days in advance; the review and budget process are earlier background.",
+      "hint": "Skip the review and budget process and find the specific requirement at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q2_PRACTICE",
+      "level": 150,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the children's section and reading nook updates and find when the reference section reopens.",
+      "passage": "Library Renovation Update: The children's section has been fully repainted and restocked with new titles. The reading nook received new furniture as well. Due to ongoing construction, the second-floor reference section will remain closed until March.",
+      "targetItem": "March",
+      "targetInfo": "When the reference section reopens",
+      "correctAnswer": "March",
+      "options": [
+        "repainted",
+        "new furniture",
+        "March",
+        "construction"
+      ],
+      "explanation": "The reference section reopens in March; the children's section and reading nook updates are separate, earlier items.",
+      "hint": "Skip the children's section and reading nook updates and find the reopening date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q3_PRACTICE",
+      "level": 150,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Skim past the picnic recap and find the actual dues increase amount.",
+      "passage": "Homeowners Association Letter: This year's annual picnic was moved to a larger park to accommodate more families. Feedback from attendees was overwhelmingly positive. Looking ahead, dues will increase by $15 per month starting in January to cover rising maintenance costs.",
+      "targetItem": "$15",
+      "targetInfo": "Monthly dues increase amount",
+      "correctAnswer": "$15",
+      "options": [
+        "larger park",
+        "$15",
+        "overwhelmingly positive",
+        "January"
+      ],
+      "explanation": "Dues will increase by $15 per month; the picnic recap is earlier, unrelated context.",
+      "hint": "Skip the picnic recap and find the dollar figure in the final sentence."
+    }
+  ]
+}

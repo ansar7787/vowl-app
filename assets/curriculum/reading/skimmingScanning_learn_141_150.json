@@ -1,0 +1,1328 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "learn",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q1_LEARN",
+      "level": 141,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Meeting Update: The quarterly review was originally scheduled for 10 a.m. In the meantime, please make sure your expense reports are submitted by Friday. Due to a room conflict, the review has now been moved to 2 p.m.",
+      "targetItem": "2 p.m.",
+      "targetInfo": "Actual meeting time",
+      "correctAnswer": "2 p.m.",
+      "distractorAnalysis": [
+        {
+          "word": "10 a.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual meeting time\" despite appearing nearby."
+        },
+        {
+          "word": "Friday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual meeting time\" despite appearing nearby."
+        },
+        {
+          "word": "room conflict",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Actual meeting time\" despite appearing nearby."
+        },
+        {
+          "word": "2 p.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Actual meeting time\" in the passage."
+        }
+      ],
+      "options": [
+        "10 a.m.",
+        "Friday",
+        "room conflict",
+        "2 p.m."
+      ],
+      "explanation": "The review is now at 2 p.m.; 10 a.m. was only the original time before it was moved.",
+      "hint": "Skip the expense report reminder in the middle and connect the first and last sentences."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q2_LEARN",
+      "level": 141,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Travel Blog Post: Our trip to Lisbon began with a delayed flight, which set an unfortunate tone. The city itself turned out to be full of charming tiled streets and incredible pastries. We ended up staying in a small apartment near Alfama for the full eight nights.",
+      "targetItem": "eight nights",
+      "targetInfo": "Length of the stay",
+      "correctAnswer": "eight nights",
+      "distractorAnalysis": [
+        {
+          "word": "delayed flight",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of the stay\" despite appearing nearby."
+        },
+        {
+          "word": "eight nights",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Length of the stay\" in the passage."
+        },
+        {
+          "word": "charming tiled streets",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of the stay\" despite appearing nearby."
+        },
+        {
+          "word": "Alfama",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Length of the stay\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "delayed flight",
+        "eight nights",
+        "charming tiled streets",
+        "Alfama"
+      ],
+      "explanation": "The stay lasted eight nights; the flight delay and city charm are earlier, unrelated details.",
+      "hint": "Skip the flight and city descriptions and find the number in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L141_Q3_LEARN",
+      "level": 141,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Recipe Blog: This banana bread recipe has been in my family for three generations. My grandmother used to make it every Sunday. The recipe itself calls for three overripe bananas and takes about an hour to bake.",
+      "targetItem": "an hour",
+      "targetInfo": "Baking time",
+      "correctAnswer": "an hour",
+      "distractorAnalysis": [
+        {
+          "word": "three generations",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Baking time\" despite appearing nearby."
+        },
+        {
+          "word": "an hour",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Baking time\" in the passage."
+        },
+        {
+          "word": "every Sunday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Baking time\" despite appearing nearby."
+        },
+        {
+          "word": "three overripe bananas",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Baking time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "three generations",
+        "an hour",
+        "every Sunday",
+        "three overripe bananas"
+      ],
+      "explanation": "Baking takes about an hour; the family history and grandmother's tradition are earlier, unrelated details.",
+      "hint": "Skip the family history and find the timing detail in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q1_LEARN",
+      "level": 142,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Claim Update: We received your claim on the 3rd and began our initial review shortly after. Please note that our office will be closed for the upcoming holiday. Your claim has since been approved for a payout of $2,150.",
+      "targetItem": "$2,150",
+      "targetInfo": "Approved payout amount",
+      "correctAnswer": "$2,150",
+      "distractorAnalysis": [
+        {
+          "word": "the 3rd",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved payout amount\" despite appearing nearby."
+        },
+        {
+          "word": "holiday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved payout amount\" despite appearing nearby."
+        },
+        {
+          "word": "initial review",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Approved payout amount\" despite appearing nearby."
+        },
+        {
+          "word": "$2,150",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Approved payout amount\" in the passage."
+        }
+      ],
+      "options": [
+        "the 3rd",
+        "holiday",
+        "initial review",
+        "$2,150"
+      ],
+      "explanation": "The claim was approved for $2,150; the 3rd only marks when it was first received.",
+      "hint": "Skip the holiday closure note and connect the first and last sentences."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q2_LEARN",
+      "level": 142,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "School Newsletter: The fall book fair raised funds for new library shelving. Don't forget that picture retakes are scheduled for next Tuesday. Separately, the fifth-grade science fair has been moved to the gymnasium instead of the cafeteria.",
+      "targetItem": "gymnasium",
+      "targetInfo": "New science fair location",
+      "correctAnswer": "gymnasium",
+      "distractorAnalysis": [
+        {
+          "word": "library shelving",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New science fair location\" despite appearing nearby."
+        },
+        {
+          "word": "next Tuesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New science fair location\" despite appearing nearby."
+        },
+        {
+          "word": "cafeteria",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New science fair location\" despite appearing nearby."
+        },
+        {
+          "word": "gymnasium",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New science fair location\" in the passage."
+        }
+      ],
+      "options": [
+        "library shelving",
+        "next Tuesday",
+        "cafeteria",
+        "gymnasium"
+      ],
+      "explanation": "The science fair moved to the gymnasium; the book fair and picture retakes are unrelated earlier items.",
+      "hint": "Skip the book fair and picture retake notes and find the final, separate item."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L142_Q3_LEARN",
+      "level": 142,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Product Review: I was skeptical about this blender at first because of its plastic housing. It arrived quickly and was easy to set up. After using it daily for a month, I can say the motor is surprisingly powerful for the price.",
+      "targetItem": "surprisingly powerful",
+      "targetInfo": "Reviewer's opinion on the motor",
+      "correctAnswer": "surprisingly powerful",
+      "distractorAnalysis": [
+        {
+          "word": "plastic housing",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reviewer's opinion on the motor\" despite appearing nearby."
+        },
+        {
+          "word": "arrived quickly",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reviewer's opinion on the motor\" despite appearing nearby."
+        },
+        {
+          "word": "surprisingly powerful",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Reviewer's opinion on the motor\" in the passage."
+        },
+        {
+          "word": "easy to set up",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Reviewer's opinion on the motor\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "plastic housing",
+        "arrived quickly",
+        "surprisingly powerful",
+        "easy to set up"
+      ],
+      "explanation": "The reviewer found the motor surprisingly powerful; the housing and setup comments are earlier impressions.",
+      "hint": "Skip the packaging and setup remarks and find the opinion in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q1_LEARN",
+      "level": 143,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "HR Policy Memo: All employees must complete annual compliance training. New hires should also review the employee handbook during onboarding. However, employees on approved leave are exempt from the training deadline until thirty days after their return.",
+      "targetItem": "thirty days after their return",
+      "targetInfo": "Exemption deadline for employees on leave",
+      "correctAnswer": "thirty days after their return",
+      "distractorAnalysis": [
+        {
+          "word": "annual compliance training",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exemption deadline for employees on leave\" despite appearing nearby."
+        },
+        {
+          "word": "employee handbook",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exemption deadline for employees on leave\" despite appearing nearby."
+        },
+        {
+          "word": "onboarding",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Exemption deadline for employees on leave\" despite appearing nearby."
+        },
+        {
+          "word": "thirty days after their return",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Exemption deadline for employees on leave\" in the passage."
+        }
+      ],
+      "options": [
+        "annual compliance training",
+        "employee handbook",
+        "onboarding",
+        "thirty days after their return"
+      ],
+      "explanation": "Employees on leave get thirty days after returning; the earlier sentences describe the general rule for everyone else.",
+      "hint": "Skip the general rule and onboarding note and find the exception at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q2_LEARN",
+      "level": 143,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Weather Report: A cold front is moving through the region this week, bringing lower temperatures statewide. Coastal areas should also expect light rain on Wednesday. Inland valleys, however, are expected to stay dry with highs near 68.",
+      "targetItem": "68",
+      "targetInfo": "Expected high in inland valleys",
+      "correctAnswer": "68",
+      "distractorAnalysis": [
+        {
+          "word": "cold front",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected high in inland valleys\" despite appearing nearby."
+        },
+        {
+          "word": "light rain",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected high in inland valleys\" despite appearing nearby."
+        },
+        {
+          "word": "68",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Expected high in inland valleys\" in the passage."
+        },
+        {
+          "word": "Wednesday",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Expected high in inland valleys\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "cold front",
+        "light rain",
+        "68",
+        "Wednesday"
+      ],
+      "explanation": "Inland valleys should reach highs near 68; the coastal rain forecast is a separate detail.",
+      "hint": "Skip the coastal forecast and find the number tied to inland valleys."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L143_Q3_LEARN",
+      "level": 143,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Restaurant Menu Note: Our seasonal squash soup is a customer favorite, made fresh daily with local produce. We also recommend pairing it with our sourdough rolls. Please note the soup contains dairy and is not suitable for vegan guests.",
+      "targetItem": "contains dairy",
+      "targetInfo": "Allergen note about the soup",
+      "correctAnswer": "contains dairy",
+      "distractorAnalysis": [
+        {
+          "word": "customer favorite",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Allergen note about the soup\" despite appearing nearby."
+        },
+        {
+          "word": "contains dairy",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Allergen note about the soup\" in the passage."
+        },
+        {
+          "word": "local produce",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Allergen note about the soup\" despite appearing nearby."
+        },
+        {
+          "word": "sourdough rolls",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Allergen note about the soup\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "customer favorite",
+        "contains dairy",
+        "local produce",
+        "sourdough rolls"
+      ],
+      "explanation": "The soup contains dairy; the earlier sentences only describe its popularity and pairing.",
+      "hint": "Skip the pairing suggestion and find the warning in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q1_LEARN",
+      "level": 144,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "IT Update: We upgraded the email server over the weekend to improve reliability. Some users may notice a new login screen. As a result of the upgrade, passwords must now be reset every ninety days instead of annually.",
+      "targetItem": "ninety days",
+      "targetInfo": "New password reset frequency",
+      "correctAnswer": "ninety days",
+      "distractorAnalysis": [
+        {
+          "word": "over the weekend",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New password reset frequency\" despite appearing nearby."
+        },
+        {
+          "word": "new login screen",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New password reset frequency\" despite appearing nearby."
+        },
+        {
+          "word": "annually",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New password reset frequency\" despite appearing nearby."
+        },
+        {
+          "word": "ninety days",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New password reset frequency\" in the passage."
+        }
+      ],
+      "options": [
+        "over the weekend",
+        "new login screen",
+        "annually",
+        "ninety days"
+      ],
+      "explanation": "Passwords must now be reset every ninety days; annually was the old, replaced requirement.",
+      "hint": "Skip the login screen note and find the policy change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q2_LEARN",
+      "level": 144,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Community Update: The annual street fair drew a record crowd this year. Vendors reported strong sales throughout the day. Organizers have already confirmed that next year's fair will be held two weeks earlier, in early June instead of mid-June.",
+      "targetItem": "early June",
+      "targetInfo": "New month for next year's fair",
+      "correctAnswer": "early June",
+      "distractorAnalysis": [
+        {
+          "word": "record crowd",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New month for next year's fair\" despite appearing nearby."
+        },
+        {
+          "word": "early June",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New month for next year's fair\" in the passage."
+        },
+        {
+          "word": "strong sales",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New month for next year's fair\" despite appearing nearby."
+        },
+        {
+          "word": "mid-June",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New month for next year's fair\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "record crowd",
+        "early June",
+        "strong sales",
+        "mid-June"
+      ],
+      "explanation": "Next year's fair moves to early June; mid-June was this year's timing, now being changed.",
+      "hint": "Skip the crowd and sales details and find the new date in the final sentence."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L144_Q3_LEARN",
+      "level": 144,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Fitness App Update: The app's new dashboard makes it easier to track daily steps. Users have also praised the redesigned color scheme. One important change: the sleep tracking feature will now require a $4.99 monthly add-on.",
+      "targetItem": "$4.99",
+      "targetInfo": "Cost of the sleep tracking add-on",
+      "correctAnswer": "$4.99",
+      "distractorAnalysis": [
+        {
+          "word": "daily steps",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the sleep tracking add-on\" despite appearing nearby."
+        },
+        {
+          "word": "$4.99",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Cost of the sleep tracking add-on\" in the passage."
+        },
+        {
+          "word": "color scheme",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the sleep tracking add-on\" despite appearing nearby."
+        },
+        {
+          "word": "monthly add-on",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Cost of the sleep tracking add-on\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "daily steps",
+        "$4.99",
+        "color scheme",
+        "monthly add-on"
+      ],
+      "explanation": "The sleep tracking add-on now costs $4.99; the dashboard and color scheme are separate, unrelated updates.",
+      "hint": "Skip the dashboard and design praise and find the price change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q1_LEARN",
+      "level": 145,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "City Council Summary: Several residents spoke during public comment about noise complaints downtown. The council also reviewed the annual budget report. By a vote of 5 to 2, the council approved funding for two additional crosswalks near the elementary school.",
+      "targetItem": "two additional crosswalks",
+      "targetInfo": "What the council approved funding for",
+      "correctAnswer": "two additional crosswalks",
+      "distractorAnalysis": [
+        {
+          "word": "two additional crosswalks",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What the council approved funding for\" in the passage."
+        },
+        {
+          "word": "noise complaints",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the council approved funding for\" despite appearing nearby."
+        },
+        {
+          "word": "annual budget report",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the council approved funding for\" despite appearing nearby."
+        },
+        {
+          "word": "5 to 2",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What the council approved funding for\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two additional crosswalks",
+        "noise complaints",
+        "annual budget report",
+        "5 to 2"
+      ],
+      "explanation": "The council approved two additional crosswalks; the noise complaints and budget review are earlier, separate items.",
+      "hint": "Skip the public comment and budget review and find what the vote actually approved."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q2_LEARN",
+      "level": 145,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Nonprofit Annual Letter: This year brought new challenges as demand for our services grew. Staff turnover was also higher than usual. Despite these hurdles, we're proud to report that we served 40 percent more families than last year.",
+      "targetItem": "40 percent more",
+      "targetInfo": "Increase in families served",
+      "correctAnswer": "40 percent more",
+      "distractorAnalysis": [
+        {
+          "word": "40 percent more",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Increase in families served\" in the passage."
+        },
+        {
+          "word": "new challenges",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in families served\" despite appearing nearby."
+        },
+        {
+          "word": "Staff turnover",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in families served\" despite appearing nearby."
+        },
+        {
+          "word": "last year",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Increase in families served\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "40 percent more",
+        "new challenges",
+        "Staff turnover",
+        "last year"
+      ],
+      "explanation": "The organization served 40 percent more families; the challenges and turnover are earlier context, not the result.",
+      "hint": "Skip the challenges described and find the actual outcome reported."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L145_Q3_LEARN",
+      "level": 145,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "techniqueTitle": "Spotting Capitalized Proper Nouns and Day Markers at High Speed",
+      "coreRule": "Scan with visual jumps (saccades) looking for shape patterns like capital letters and numerals.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Software Changelog: This release includes several bug fixes for the mobile app. We also updated the terms of service, effective immediately. Most notably, users can now export their data directly to a spreadsheet, a frequently requested feature.",
+      "targetItem": "export their data directly to a spreadsheet",
+      "targetInfo": "Most notable new feature",
+      "correctAnswer": "export their data directly to a spreadsheet",
+      "distractorAnalysis": [
+        {
+          "word": "bug fixes",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most notable new feature\" despite appearing nearby."
+        },
+        {
+          "word": "terms of service",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most notable new feature\" despite appearing nearby."
+        },
+        {
+          "word": "frequently requested",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Most notable new feature\" despite appearing nearby."
+        },
+        {
+          "word": "export their data directly to a spreadsheet",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Most notable new feature\" in the passage."
+        }
+      ],
+      "options": [
+        "bug fixes",
+        "terms of service",
+        "frequently requested",
+        "export their data directly to a spreadsheet"
+      ],
+      "explanation": "The most notable feature is exporting data to a spreadsheet; the bug fixes and terms update are minor, earlier items.",
+      "hint": "Skip the bug fixes and terms update and find the feature described as most notable."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q1_LEARN",
+      "level": 146,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Flight Delay Update: Weather in the Midwest has caused delays across several routes today. Passengers on unaffected flights should still arrive two hours early. Flight 402 specifically has been delayed and is now expected to depart at 6:50 instead of its original time.",
+      "targetItem": "6:50",
+      "targetInfo": "Flight 402's new departure time",
+      "correctAnswer": "6:50",
+      "distractorAnalysis": [
+        {
+          "word": "two hours",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Flight 402's new departure time\" despite appearing nearby."
+        },
+        {
+          "word": "6:50",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Flight 402's new departure time\" in the passage."
+        },
+        {
+          "word": "Midwest",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Flight 402's new departure time\" despite appearing nearby."
+        },
+        {
+          "word": "original time",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Flight 402's new departure time\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "two hours",
+        "6:50",
+        "Midwest",
+        "original time"
+      ],
+      "explanation": "Flight 402 now departs at 6:50; the general delay warning and arrival advice apply to other flights.",
+      "hint": "Skip the general delay warning and find the specific time tied to Flight 402."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q2_LEARN",
+      "level": 146,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Book Club Newsletter: This month's pick sparked a lot of debate among members about the ending. Snacks and drinks will be provided as usual. The location has changed, though, from Maria's house to the community center due to space.",
+      "targetItem": "community center",
+      "targetInfo": "New meeting location",
+      "correctAnswer": "community center",
+      "distractorAnalysis": [
+        {
+          "word": "community center",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New meeting location\" in the passage."
+        },
+        {
+          "word": "Maria's house",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New meeting location\" despite appearing nearby."
+        },
+        {
+          "word": "Snacks and drinks",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New meeting location\" despite appearing nearby."
+        },
+        {
+          "word": "space",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New meeting location\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "community center",
+        "Maria's house",
+        "Snacks and drinks",
+        "space"
+      ],
+      "explanation": "The new meeting spot is the community center; Maria's house was the previous location.",
+      "hint": "Skip the book discussion and snack details and find the location change at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L146_Q3_LEARN",
+      "level": 146,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "techniqueTitle": "Scanning for Digits, Timestamps, and Numerical Anchors",
+      "coreRule": "Do not read every word linearly: let peripheral vision locate category anchors.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Gym Newsletter: Our trainers have been busy running new fitness assessments this month. We've also added new equipment to the weight room. One scheduling note: the 6 p.m. spin class has been discontinued due to low attendance.",
+      "targetItem": "discontinued",
+      "targetInfo": "What happened to the 6 p.m. spin class",
+      "correctAnswer": "discontinued",
+      "distractorAnalysis": [
+        {
+          "word": "fitness assessments",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happened to the 6 p.m. spin class\" despite appearing nearby."
+        },
+        {
+          "word": "new equipment",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happened to the 6 p.m. spin class\" despite appearing nearby."
+        },
+        {
+          "word": "discontinued",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What happened to the 6 p.m. spin class\" in the passage."
+        },
+        {
+          "word": "low attendance",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What happened to the 6 p.m. spin class\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "fitness assessments",
+        "new equipment",
+        "discontinued",
+        "low attendance"
+      ],
+      "explanation": "The 6 p.m. spin class was discontinued; the assessments and new equipment are separate, unrelated updates.",
+      "hint": "Skip the assessments and equipment updates and find what happened to the class."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q1_LEARN",
+      "level": 147,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Insurance Newsletter: We've simplified our online claims portal this quarter. Customers have responded well to the new design. Additionally, starting next month, all auto policies will include roadside assistance at no extra charge.",
+      "targetItem": "roadside assistance",
+      "targetInfo": "New benefit being added",
+      "correctAnswer": "roadside assistance",
+      "distractorAnalysis": [
+        {
+          "word": "roadside assistance",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New benefit being added\" in the passage."
+        },
+        {
+          "word": "online claims portal",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New benefit being added\" despite appearing nearby."
+        },
+        {
+          "word": "new design",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New benefit being added\" despite appearing nearby."
+        },
+        {
+          "word": "no extra charge",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New benefit being added\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "roadside assistance",
+        "online claims portal",
+        "new design",
+        "no extra charge"
+      ],
+      "explanation": "The new benefit is roadside assistance; the claims portal redesign is a separate, earlier update.",
+      "hint": "Skip the claims portal update and find the new benefit at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q2_LEARN",
+      "level": 147,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "University Bulletin: The library extended its hours during midterms last semester with positive feedback. Vending machines were also restocked more frequently. This semester, the library will stay open until 2 a.m. every night through finals week.",
+      "targetItem": "2 a.m.",
+      "targetInfo": "New closing time during finals",
+      "correctAnswer": "2 a.m.",
+      "distractorAnalysis": [
+        {
+          "word": "last semester",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New closing time during finals\" despite appearing nearby."
+        },
+        {
+          "word": "2 a.m.",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New closing time during finals\" in the passage."
+        },
+        {
+          "word": "Vending machines",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New closing time during finals\" despite appearing nearby."
+        },
+        {
+          "word": "finals week",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New closing time during finals\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "last semester",
+        "2 a.m.",
+        "Vending machines",
+        "finals week"
+      ],
+      "explanation": "This semester the library stays open until 2 a.m.; last semester's feedback is earlier, separate context.",
+      "hint": "Skip last semester's feedback and find this semester's new time."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L147_Q3_LEARN",
+      "level": 147,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "techniqueTitle": "Using Saccadic Eye Movements to Isolate Key Terms Without Subvocalization",
+      "coreRule": "Match the query target type to the semantic category before scanning.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Theater Newsletter: Ticket sales for the spring musical have exceeded expectations this year. The cast has been rehearsing since January. Due to demand, an additional Sunday matinee has been added at 2 p.m.",
+      "targetItem": "Sunday matinee",
+      "targetInfo": "What was added due to demand",
+      "correctAnswer": "Sunday matinee",
+      "distractorAnalysis": [
+        {
+          "word": "Ticket sales",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was added due to demand\" despite appearing nearby."
+        },
+        {
+          "word": "Sunday matinee",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What was added due to demand\" in the passage."
+        },
+        {
+          "word": "January",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was added due to demand\" despite appearing nearby."
+        },
+        {
+          "word": "2 p.m.",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What was added due to demand\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "Ticket sales",
+        "Sunday matinee",
+        "January",
+        "2 p.m."
+      ],
+      "explanation": "A Sunday matinee was added; the ticket sales and rehearsal schedule are earlier, separate details.",
+      "hint": "Skip the sales and rehearsal notes and find what was added due to demand."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q1_LEARN",
+      "level": 148,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "City Utility Notice: Crews have been repairing aging water lines throughout the district this year. Residents may have noticed occasional low pressure. Starting Monday, a full shutoff will occur on Birch Avenue for scheduled pipe replacement.",
+      "targetItem": "Birch Avenue",
+      "targetInfo": "Where the shutoff will occur",
+      "correctAnswer": "Birch Avenue",
+      "distractorAnalysis": [
+        {
+          "word": "aging water lines",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the shutoff will occur\" despite appearing nearby."
+        },
+        {
+          "word": "Birch Avenue",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Where the shutoff will occur\" in the passage."
+        },
+        {
+          "word": "low pressure",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the shutoff will occur\" despite appearing nearby."
+        },
+        {
+          "word": "pipe replacement",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Where the shutoff will occur\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "aging water lines",
+        "Birch Avenue",
+        "low pressure",
+        "pipe replacement"
+      ],
+      "explanation": "The shutoff occurs on Birch Avenue; the earlier sentences describe repairs across the whole district.",
+      "hint": "Skip the general repair background and find the specific street named."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q2_LEARN",
+      "level": 148,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Airline Loyalty Update: Members have earned points faster this year thanks to bonus promotions. Customer satisfaction scores have also improved. Beginning next quarter, the top loyalty tier will require 75,000 miles instead of 60,000.",
+      "targetItem": "75,000 miles",
+      "targetInfo": "New mileage requirement for top tier",
+      "correctAnswer": "75,000 miles",
+      "distractorAnalysis": [
+        {
+          "word": "75,000 miles",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New mileage requirement for top tier\" in the passage."
+        },
+        {
+          "word": "bonus promotions",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New mileage requirement for top tier\" despite appearing nearby."
+        },
+        {
+          "word": "satisfaction scores",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New mileage requirement for top tier\" despite appearing nearby."
+        },
+        {
+          "word": "60,000",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New mileage requirement for top tier\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "75,000 miles",
+        "bonus promotions",
+        "satisfaction scores",
+        "60,000"
+      ],
+      "explanation": "The top tier will require 75,000 miles; 60,000 was the old, soon-to-change requirement.",
+      "hint": "Skip the bonus promotions and satisfaction scores and find the new mileage figure."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L148_Q3_LEARN",
+      "level": 148,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "techniqueTitle": "Recognizing Visual Shapes and Keyword Anchors in Short Passages",
+      "coreRule": "Distractors often share categories; verify the target against the exact instruction.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Coffee Shop Update: We've been sourcing beans from a new regional roaster this year. Customers have noticed a smoother flavor profile. Also, our loyalty punch cards are being replaced with a digital app starting next month.",
+      "targetItem": "digital app",
+      "targetInfo": "What's replacing the punch cards",
+      "correctAnswer": "digital app",
+      "distractorAnalysis": [
+        {
+          "word": "regional roaster",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's replacing the punch cards\" despite appearing nearby."
+        },
+        {
+          "word": "flavor profile",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's replacing the punch cards\" despite appearing nearby."
+        },
+        {
+          "word": "digital app",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"What's replacing the punch cards\" in the passage."
+        },
+        {
+          "word": "next month",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"What's replacing the punch cards\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "regional roaster",
+        "flavor profile",
+        "digital app",
+        "next month"
+      ],
+      "explanation": "Punch cards are being replaced with a digital app; the new roaster and flavor are separate, earlier updates.",
+      "hint": "Skip the new beans and flavor comments and find what's replacing the punch cards."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q1_LEARN",
+      "level": 149,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Condo Newsletter: The landscaping crew completed the spring cleanup ahead of schedule. Residents have praised the improved curb appeal. Separately, the board approved a special assessment of $450 per unit for roof repairs.",
+      "targetItem": "$450",
+      "targetInfo": "Special assessment amount",
+      "correctAnswer": "$450",
+      "distractorAnalysis": [
+        {
+          "word": "spring cleanup",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Special assessment amount\" despite appearing nearby."
+        },
+        {
+          "word": "$450",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Special assessment amount\" in the passage."
+        },
+        {
+          "word": "curb appeal",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Special assessment amount\" despite appearing nearby."
+        },
+        {
+          "word": "roof repairs",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Special assessment amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "spring cleanup",
+        "$450",
+        "curb appeal",
+        "roof repairs"
+      ],
+      "explanation": "The special assessment is $450 per unit; the landscaping update is a separate, earlier item.",
+      "hint": "Skip the landscaping update and find the dollar figure at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q2_LEARN",
+      "level": 149,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Museum Newsletter: Attendance has grown steadily since the new wing opened last year. Membership renewals are also up. Starting in the fall, the museum will offer free admission on the first Sunday of every month.",
+      "targetItem": "first Sunday",
+      "targetInfo": "New free admission day",
+      "correctAnswer": "first Sunday",
+      "distractorAnalysis": [
+        {
+          "word": "new wing",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New free admission day\" despite appearing nearby."
+        },
+        {
+          "word": "Membership renewals",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New free admission day\" despite appearing nearby."
+        },
+        {
+          "word": "first Sunday",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New free admission day\" in the passage."
+        },
+        {
+          "word": "fall",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New free admission day\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "new wing",
+        "Membership renewals",
+        "first Sunday",
+        "fall"
+      ],
+      "explanation": "Free admission will be offered on the first Sunday of every month; the attendance and membership figures are separate context.",
+      "hint": "Skip the attendance and membership numbers and find the new admission detail."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L149_Q3_LEARN",
+      "level": 149,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "techniqueTitle": "Skimming First and Last Clauses to Pinpoint Relevant Sentence Sections",
+      "coreRule": "Locate the anchor keyword first, then read the adjacent tokens to verify.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Pet Store Newsletter: We've expanded our selection of natural pet food this season. Staff have completed additional training on nutrition counseling. Also, starting this weekend, all dog leashes and collars will be 20 percent off.",
+      "targetItem": "20 percent off",
+      "targetInfo": "Discount on leashes and collars",
+      "correctAnswer": "20 percent off",
+      "distractorAnalysis": [
+        {
+          "word": "natural pet food",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Discount on leashes and collars\" despite appearing nearby."
+        },
+        {
+          "word": "nutrition counseling",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Discount on leashes and collars\" despite appearing nearby."
+        },
+        {
+          "word": "this weekend",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Discount on leashes and collars\" despite appearing nearby."
+        },
+        {
+          "word": "20 percent off",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Discount on leashes and collars\" in the passage."
+        }
+      ],
+      "options": [
+        "natural pet food",
+        "nutrition counseling",
+        "this weekend",
+        "20 percent off"
+      ],
+      "explanation": "Leashes and collars are 20 percent off; the food selection and staff training are separate, earlier updates.",
+      "hint": "Skip the food selection and staff training notes and find the discount at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q1_LEARN",
+      "level": 150,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Corporate Memo: Travel spending was reviewed company-wide last quarter as part of a cost analysis. Several departments were asked to submit updated budgets. As a result of the review, all domestic flights must now be booked at least fourteen days in advance.",
+      "targetItem": "fourteen days",
+      "targetInfo": "New advance booking requirement",
+      "correctAnswer": "fourteen days",
+      "distractorAnalysis": [
+        {
+          "word": "last quarter",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New advance booking requirement\" despite appearing nearby."
+        },
+        {
+          "word": "updated budgets",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New advance booking requirement\" despite appearing nearby."
+        },
+        {
+          "word": "domestic flights",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"New advance booking requirement\" despite appearing nearby."
+        },
+        {
+          "word": "fourteen days",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"New advance booking requirement\" in the passage."
+        }
+      ],
+      "options": [
+        "last quarter",
+        "updated budgets",
+        "domestic flights",
+        "fourteen days"
+      ],
+      "explanation": "Flights must now be booked fourteen days in advance; the review and budget process are earlier background.",
+      "hint": "Skip the review and budget process and find the specific requirement at the end."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q2_LEARN",
+      "level": 150,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Library Renovation Update: The children's section has been fully repainted and restocked with new titles. The reading nook received new furniture as well. Due to ongoing construction, the second-floor reference section will remain closed until March.",
+      "targetItem": "March",
+      "targetInfo": "When the reference section reopens",
+      "correctAnswer": "March",
+      "distractorAnalysis": [
+        {
+          "word": "repainted",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When the reference section reopens\" despite appearing nearby."
+        },
+        {
+          "word": "new furniture",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When the reference section reopens\" despite appearing nearby."
+        },
+        {
+          "word": "March",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"When the reference section reopens\" in the passage."
+        },
+        {
+          "word": "construction",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"When the reference section reopens\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "repainted",
+        "new furniture",
+        "March",
+        "construction"
+      ],
+      "explanation": "The reference section reopens in March; the children's section and reading nook updates are separate, earlier items.",
+      "hint": "Skip the children's section and reading nook updates and find the reopening date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L150_Q3_LEARN",
+      "level": 150,
+      "phase": "learn",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "techniqueTitle": "Filtering Irrelevant Syntactic Noise to Extract High-Priority Entities",
+      "coreRule": "Maintain relaxed focus: tense subvocalization slows down scanning speed.",
+      "instruction": "Master high-speed scanning by identifying visual anchors and target entities.",
+      "passage": "Homeowners Association Letter: This year's annual picnic was moved to a larger park to accommodate more families. Feedback from attendees was overwhelmingly positive. Looking ahead, dues will increase by $15 per month starting in January to cover rising maintenance costs.",
+      "targetItem": "$15",
+      "targetInfo": "Monthly dues increase amount",
+      "correctAnswer": "$15",
+      "distractorAnalysis": [
+        {
+          "word": "larger park",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Monthly dues increase amount\" despite appearing nearby."
+        },
+        {
+          "word": "$15",
+          "status": "TARGET FOUND",
+          "reason": "Directly matches the scanned prompt for \"Monthly dues increase amount\" in the passage."
+        },
+        {
+          "word": "overwhelmingly positive",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Monthly dues increase amount\" despite appearing nearby."
+        },
+        {
+          "word": "January",
+          "status": "DISTRACTOR",
+          "reason": "Does not answer the specific query for \"Monthly dues increase amount\" despite appearing nearby."
+        }
+      ],
+      "options": [
+        "larger park",
+        "$15",
+        "overwhelmingly positive",
+        "January"
+      ],
+      "explanation": "Dues will increase by $15 per month; the picnic recap is earlier, unrelated context.",
+      "hint": "Skip the picnic recap and find the dollar figure in the final sentence."
+    }
+  ]
+}

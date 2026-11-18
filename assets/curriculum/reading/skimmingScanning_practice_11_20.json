@@ -1,0 +1,608 @@
+{
+  "gameType": "skimmingScanning",
+  "phase": "practice",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "RDG_SKIMMINGSCANNING_L11_Q1_PRACTICE",
+      "level": 11,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for the exact appointment time.",
+      "passage": "The dentist appointment is scheduled for three fifteen on Wednesday afternoon.",
+      "targetItem": "three fifteen",
+      "targetInfo": "Appointment time",
+      "correctAnswer": "three fifteen",
+      "options": [
+        "three",
+        "Wednesday",
+        "afternoon",
+        "three fifteen"
+      ],
+      "explanation": "The appointment is at three fifteen; 'three' alone is not the exact time given.",
+      "hint": "Look for the more precise time, not just the hour."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L11_Q2_PRACTICE",
+      "level": 11,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Search the sentence for the third color listed.",
+      "passage": "The new phone comes in black, silver, and rose gold colors.",
+      "targetItem": "rose gold",
+      "targetInfo": "Third color option",
+      "correctAnswer": "rose gold",
+      "options": [
+        "rose gold",
+        "black",
+        "silver",
+        "phone"
+      ],
+      "explanation": "The colors are listed in order, and rose gold is the third one mentioned.",
+      "hint": "Count the colors in order and find the last one named."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L11_Q3_PRACTICE",
+      "level": 11,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the sentence for the room number.",
+      "passage": "Room 214 is reserved for the finance team's weekly meeting.",
+      "targetItem": "214",
+      "targetInfo": "Reserved room number",
+      "correctAnswer": "214",
+      "options": [
+        "finance",
+        "weekly",
+        "214",
+        "meeting"
+      ],
+      "explanation": "The reserved room is 214; the other words describe the meeting, not the room.",
+      "hint": "Search for the number that names the room."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L12_Q1_PRACTICE",
+      "level": 12,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the sentence for the first-hour parking rate.",
+      "passage": "The parking garage charges four dollars for the first hour and two dollars for each additional hour.",
+      "targetItem": "four",
+      "targetInfo": "First-hour parking rate",
+      "correctAnswer": "four",
+      "options": [
+        "two",
+        "hour",
+        "garage",
+        "four"
+      ],
+      "explanation": "The first hour costs four dollars; two dollars applies only to extra hours.",
+      "hint": "Find the price connected to the first hour, not later hours."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L12_Q2_PRACTICE",
+      "level": 12,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the sentence for where practice moved to.",
+      "passage": "Coach Liu moved practice from the gym to the outdoor field because of a scheduling conflict.",
+      "targetItem": "outdoor field",
+      "targetInfo": "New practice location",
+      "correctAnswer": "outdoor field",
+      "options": [
+        "gym",
+        "Coach Liu",
+        "outdoor field",
+        "scheduling conflict"
+      ],
+      "explanation": "Practice moved to the outdoor field; the gym was only the previous location.",
+      "hint": "Look for the new location, not the old one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L12_Q3_PRACTICE",
+      "level": 12,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan the sentence for the invoice number.",
+      "passage": "The invoice number 7734 must be included on every payment.",
+      "targetItem": "7734",
+      "targetInfo": "Invoice number",
+      "correctAnswer": "7734",
+      "options": [
+        "payment",
+        "7734",
+        "every",
+        "included"
+      ],
+      "explanation": "The invoice number is 7734; the rest of the sentence explains what to do with it.",
+      "hint": "Search for the number that identifies the invoice."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L13_Q1_PRACTICE",
+      "level": 13,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan both sentences to find when bread was no longer available.",
+      "passage": "The bakery sold out of croissants by nine. Bread was still available until noon.",
+      "targetItem": "noon",
+      "targetInfo": "Time bread sold out",
+      "correctAnswer": "noon",
+      "options": [
+        "noon",
+        "nine",
+        "croissants",
+        "bakery"
+      ],
+      "explanation": "Croissants sold out by nine, but bread lasted until noon.",
+      "hint": "Look in the second sentence for the time bread ran out."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L13_Q2_PRACTICE",
+      "level": 13,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Search the sentence for how long the delay lasted.",
+      "passage": "Flight 220 was delayed by forty minutes because of weather.",
+      "targetItem": "forty",
+      "targetInfo": "Length of delay",
+      "correctAnswer": "forty",
+      "options": [
+        "220",
+        "weather",
+        "Flight",
+        "forty"
+      ],
+      "explanation": "The delay lasted forty minutes; 220 only identifies the flight.",
+      "hint": "Find the number of minutes, not the flight number."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L13_Q3_PRACTICE",
+      "level": 13,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence to find the correct aisle number.",
+      "passage": "The hardware store keeps extra nails in aisle six, not aisle three.",
+      "targetItem": "six",
+      "targetInfo": "Aisle with extra nails",
+      "correctAnswer": "six",
+      "options": [
+        "three",
+        "six",
+        "nails",
+        "hardware"
+      ],
+      "explanation": "Extra nails are in aisle six; aisle three is mentioned only to rule it out.",
+      "hint": "Watch for two aisle numbers and pick the one that is correct."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L14_Q1_PRACTICE",
+      "level": 14,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search the sentence for when Pilates starts.",
+      "passage": "Yoga class meets at seven in the morning, while Pilates meets at four in the evening.",
+      "targetItem": "four",
+      "targetInfo": "Pilates start time",
+      "correctAnswer": "four",
+      "options": [
+        "seven",
+        "morning",
+        "four",
+        "Yoga"
+      ],
+      "explanation": "Yoga meets at seven; Pilates, the second class named, meets at four.",
+      "hint": "Look for the time linked to Pilates, not Yoga."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L14_Q2_PRACTICE",
+      "level": 14,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the sentence for the clinic's closing time.",
+      "passage": "The clinic's pharmacy closes at five, though the main clinic stays open until eight.",
+      "targetItem": "eight",
+      "targetInfo": "Main clinic closing time",
+      "correctAnswer": "eight",
+      "options": [
+        "eight",
+        "five",
+        "pharmacy",
+        "main"
+      ],
+      "explanation": "The pharmacy closes at five, but the main clinic stays open until eight.",
+      "hint": "Find the time for the main clinic, not the pharmacy."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L14_Q3_PRACTICE",
+      "level": 14,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search for the ticket price charged at the door.",
+      "passage": "Ticket prices are twelve dollars online and fifteen dollars at the door.",
+      "targetItem": "fifteen",
+      "targetInfo": "Door ticket price",
+      "correctAnswer": "fifteen",
+      "options": [
+        "twelve",
+        "online",
+        "fifteen",
+        "door"
+      ],
+      "explanation": "Online tickets cost twelve dollars; fifteen dollars is the door price.",
+      "hint": "Look for the price connected to buying at the door, not online."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L15_Q1_PRACTICE",
+      "level": 15,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the sentence for the book's due date.",
+      "passage": "The library book is due back on the ninth, but can be renewed once for free.",
+      "targetItem": "ninth",
+      "targetInfo": "Book due date",
+      "correctAnswer": "ninth",
+      "options": [
+        "ninth",
+        "once",
+        "free",
+        "library"
+      ],
+      "explanation": "The due date is the ninth; renewing once is a separate detail.",
+      "hint": "Search for the number that tells the due date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L15_Q2_PRACTICE",
+      "level": 15,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Find the second day of Ms. Patel's office hours.",
+      "passage": "Ms. Patel's office hours are Tuesdays and Thursdays from two to four.",
+      "targetItem": "Thursdays",
+      "targetInfo": "Second office-hour day",
+      "correctAnswer": "Thursdays",
+      "options": [
+        "Tuesdays",
+        "two",
+        "four",
+        "Thursdays"
+      ],
+      "explanation": "Office hours run on both days, but Thursdays is the second day listed.",
+      "hint": "Look for the day named after Tuesdays."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L15_Q3_PRACTICE",
+      "level": 15,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TOPICAL SACCADE EXPEDITION",
+      "instruction": "Scan the recipe for the amount of cinnamon.",
+      "passage": "The recipe calls for half a teaspoon of cinnamon and a full teaspoon of nutmeg.",
+      "targetItem": "half",
+      "targetInfo": "Amount of cinnamon",
+      "correctAnswer": "half",
+      "options": [
+        "full",
+        "half",
+        "cinnamon",
+        "nutmeg"
+      ],
+      "explanation": "Cinnamon needs half a teaspoon; a full teaspoon is for the nutmeg.",
+      "hint": "Search for the amount placed right before cinnamon."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L16_Q1_PRACTICE",
+      "level": 16,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for the more experienced candidate's name.",
+      "passage": "Two candidates applied for the position: Daniela Cruz and Marcus Webb. Daniela has more years of experience.",
+      "targetItem": "Daniela Cruz",
+      "targetInfo": "More experienced candidate",
+      "correctAnswer": "Daniela Cruz",
+      "options": [
+        "Marcus Webb",
+        "position",
+        "years",
+        "Daniela Cruz"
+      ],
+      "explanation": "Both candidates are named, but the second sentence confirms Daniela Cruz has more experience.",
+      "hint": "Search the second sentence for whose experience is greater."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L16_Q2_PRACTICE",
+      "level": 16,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Search the sentence for the cost of Saturday swim lessons.",
+      "passage": "The community center offers free swim lessons on Saturdays and paid yoga classes on Sundays.",
+      "targetItem": "free",
+      "targetInfo": "Cost of Saturday swim lessons",
+      "correctAnswer": "free",
+      "options": [
+        "paid",
+        "Sundays",
+        "free",
+        "yoga"
+      ],
+      "explanation": "Swim lessons on Saturdays are free; the paid classes are yoga on Sundays.",
+      "hint": "Look for the word describing the Saturday activity's cost."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L16_Q3_PRACTICE",
+      "level": 16,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "TARGET PATTERN RECOGNITION",
+      "instruction": "Scan the sentence for the elevator's expected finish day.",
+      "passage": "Repairs to the elevator will begin Monday and are expected to finish by Friday.",
+      "targetItem": "Friday",
+      "targetInfo": "Expected finish day",
+      "correctAnswer": "Friday",
+      "options": [
+        "Friday",
+        "Monday",
+        "elevator",
+        "Repairs"
+      ],
+      "explanation": "Repairs start Monday, but they are expected to finish by Friday.",
+      "hint": "Find the day the repairs are expected to end, not begin."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L17_Q1_PRACTICE",
+      "level": 17,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the weather update for the expected temperature.",
+      "passage": "Weather Update: Rain is expected this morning, clearing by early afternoon. Temperatures will reach seventy degrees.",
+      "targetItem": "seventy",
+      "targetInfo": "Expected temperature",
+      "correctAnswer": "seventy",
+      "options": [
+        "morning",
+        "seventy",
+        "afternoon",
+        "Rain"
+      ],
+      "explanation": "The update gives times for the rain, but seventy is the temperature figure.",
+      "hint": "Search for the number tied to the word degrees."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L17_Q2_PRACTICE",
+      "level": 17,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Search the memo for when the holiday party starts.",
+      "passage": "Staff Memo: The office will close early on Friday for a holiday party starting at three.",
+      "targetItem": "three",
+      "targetInfo": "Party start time",
+      "correctAnswer": "three",
+      "options": [
+        "Friday",
+        "office",
+        "three",
+        "holiday"
+      ],
+      "explanation": "The office closes early on Friday, and the party itself starts at three.",
+      "hint": "Look for the time near the word starting."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L17_Q3_PRACTICE",
+      "level": 17,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "SELECTIVE GIST ATTENTION",
+      "instruction": "Scan the delivery notice for the estimated arrival window.",
+      "passage": "Delivery Notice: Your package left the warehouse and should arrive within two business days.",
+      "targetItem": "two",
+      "targetInfo": "Estimated delivery window",
+      "correctAnswer": "two",
+      "options": [
+        "warehouse",
+        "package",
+        "days",
+        "two"
+      ],
+      "explanation": "The notice estimates arrival within two business days after leaving the warehouse.",
+      "hint": "Search for the number that tells how many days to expect."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L18_Q1_PRACTICE",
+      "level": 18,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Find the new number of treadmills at the gym.",
+      "passage": "The gym added new equipment last week. Members can now use five treadmills instead of the previous two.",
+      "targetItem": "five",
+      "targetInfo": "New number of treadmills",
+      "correctAnswer": "five",
+      "options": [
+        "two",
+        "five",
+        "gym",
+        "week"
+      ],
+      "explanation": "The gym previously had two treadmills; it now has five.",
+      "hint": "Look for the number describing the current total, not the old one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L18_Q2_PRACTICE",
+      "level": 18,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Scan both parts of the sentence for the trip's new month.",
+      "passage": "The school trip was originally planned for April but was moved to May because of the holiday.",
+      "targetItem": "May",
+      "targetInfo": "New trip month",
+      "correctAnswer": "May",
+      "options": [
+        "May",
+        "April",
+        "holiday",
+        "school"
+      ],
+      "explanation": "The trip was first planned for April, then moved to May.",
+      "hint": "Search for the month the trip was changed to, not the original one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L18_Q3_PRACTICE",
+      "level": 18,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "DISTRACTOR EXCLUSION SCAN",
+      "instruction": "Search the sentence for today's sign-up bonus.",
+      "passage": "Customers who join today receive a free tote bag; those who join next month will not.",
+      "targetItem": "free tote bag",
+      "targetInfo": "Today's sign-up bonus",
+      "correctAnswer": "free tote bag",
+      "options": [
+        "next month",
+        "free tote bag",
+        "Customers",
+        "join"
+      ],
+      "explanation": "Joining today comes with a free tote bag; joining next month does not.",
+      "hint": "Look for the reward connected to joining today."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L19_Q1_PRACTICE",
+      "level": 19,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence for the current support number.",
+      "passage": "For support, call 555-0148, not the old number 555-0114.",
+      "targetItem": "555-0148",
+      "targetInfo": "Current support number",
+      "correctAnswer": "555-0148",
+      "options": [
+        "555-0114",
+        "support",
+        "555-0148",
+        "old"
+      ],
+      "explanation": "555-0148 is the current number; 555-0114 is named only as the old one.",
+      "hint": "Watch for two similar numbers and pick the current one."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L19_Q2_PRACTICE",
+      "level": 19,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Search the sentence for the length of the grace period.",
+      "passage": "The rent is due on the first of the month, with a five-day grace period after that.",
+      "targetItem": "five-day",
+      "targetInfo": "Length of grace period",
+      "correctAnswer": "five-day",
+      "options": [
+        "first",
+        "five-day",
+        "month",
+        "rent"
+      ],
+      "explanation": "Rent is due on the first, and tenants get a five-day grace period afterward.",
+      "hint": "Look for the number of days allowed after the due date."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L19_Q3_PRACTICE",
+      "level": 19,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "VISUAL SACCADE & SCANNING RADAR",
+      "instruction": "Scan the sentence for the online order deadline.",
+      "passage": "The bookstore's clearance sale ends Sunday, though online orders are accepted through Tuesday.",
+      "targetItem": "Tuesday",
+      "targetInfo": "Online order deadline",
+      "correctAnswer": "Tuesday",
+      "options": [
+        "Sunday",
+        "bookstore",
+        "Tuesday",
+        "online"
+      ],
+      "explanation": "The in-store sale ends Sunday, but online orders are accepted through Tuesday.",
+      "hint": "Find the day tied specifically to online orders."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L20_Q1_PRACTICE",
+      "level": 20,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the sentence for the Finance session's start time.",
+      "passage": "The conference has three sessions: Marketing at nine, Finance at eleven, and Design at two.",
+      "targetItem": "eleven",
+      "targetInfo": "Finance session time",
+      "correctAnswer": "eleven",
+      "options": [
+        "nine",
+        "two",
+        "eleven",
+        "three"
+      ],
+      "explanation": "Finance starts at eleven; nine and two belong to Marketing and Design.",
+      "hint": "Search for the time listed right after the word Finance."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L20_Q2_PRACTICE",
+      "level": 20,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Search the sentence for the pet-friendly unit.",
+      "passage": "Of the four apartments for rent, only unit 3B allows pets.",
+      "targetItem": "3B",
+      "targetInfo": "Pet-friendly unit",
+      "correctAnswer": "3B",
+      "options": [
+        "3B",
+        "four",
+        "apartments",
+        "rent"
+      ],
+      "explanation": "Unit 3B is the one that allows pets, out of the four available.",
+      "hint": "Look for the unit number connected to allowing pets."
+    },
+    {
+      "id": "RDG_SKIMMINGSCANNING_L20_Q3_PRACTICE",
+      "level": 20,
+      "phase": "practice",
+      "subtype": "skimmingScanning",
+      "strategyBadge": "CAPITALIZATION & NUMERIC ANCHORS",
+      "instruction": "Scan the sentence for the mile marker at City Hall.",
+      "passage": "The marathon route passes Elm Park at mile two, City Hall at mile five, and finishes at mile thirteen near the stadium.",
+      "targetItem": "five",
+      "targetInfo": "Mile marker at City Hall",
+      "correctAnswer": "five",
+      "options": [
+        "two",
+        "thirteen",
+        "stadium",
+        "five"
+      ],
+      "explanation": "City Hall is at mile five; the other numbers mark Elm Park and the finish.",
+      "hint": "Search for the mile number placed next to City Hall."
+    }
+  ]
+}

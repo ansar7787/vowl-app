@@ -600,14 +600,17 @@ class _ClozeTestLearnScreenState extends State<ClozeTestLearnScreen> {
                         children: [
                           Row(
                             children: [
-                              Text(
-                                '"$word"',
-                                style: TextStyle(
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w700,
+                              Flexible(
+                                child: Text(
+                                  '"$word"',
+                                  style: TextStyle(
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               SizedBox(width: 8.w),
