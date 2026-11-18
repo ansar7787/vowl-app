@@ -740,6 +740,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'punctuationMastery',
                             'modifierPlacement',
                             'modalsSelection',
+                            'prepositionChoice',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

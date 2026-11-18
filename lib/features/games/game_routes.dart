@@ -64,6 +64,8 @@ import 'package:vowl/features/grammar/modifier_placement/presentation/pages/modi
 import 'package:vowl/features/grammar/modifier_placement/presentation/pages/modifier_placement_practice_screen.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals_selection_learn_screen.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals_selection_practice_screen.dart';
+import 'package:vowl/features/grammar/preposition_choice/presentation/pages/preposition_choice_learn_screen.dart';
+import 'package:vowl/features/grammar/preposition_choice/presentation/pages/preposition_choice_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -461,6 +463,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'prepositionchoice') {
+          return fadeTransitionPage(
+            child: PrepositionChoiceLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -637,6 +645,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'modalsselection') {
           return fadeTransitionPage(
             child: ModalsSelectionPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'prepositionchoice') {
+          return fadeTransitionPage(
+            child: PrepositionChoicePracticeScreen(level: level),
             state: state,
           );
         }
