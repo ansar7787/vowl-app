@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "ai_l41_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ economy has been struggling lately, according to the news.",
+      "sentence": "___ economy has been struggling lately, according to the news.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This is something everyone already has in mind, without needing to explain which one.",
+      "explanation": "'The economy' refers to something the whole community already shares knowledge of — you don't need to introduce it first, because everyone understands which economy is meant, usually the speaker's own country.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l41_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The company had to lay off workers because of ___ economic downturn no one had predicted.",
+      "sentence": "The company had to lay off workers because of ___ economic downturn no one had predicted.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "This particular downturn hasn't come up before — it's being introduced now.",
+      "explanation": "Unlike 'the economy' as a whole, this specific downturn is new information being introduced for the first time, so it takes 'an' — 'economic' begins with a vowel sound.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l41_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ weather has been unusually warm for this time of year.",
+      "sentence": "___ weather has been unusually warm for this time of year.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Like the economy, this is something everyone nearby already understands without introduction.",
+      "explanation": "'The weather' works the same way as 'the economy' — it's shared, general knowledge in a given place and time, so it takes 'the' even without a prior mention.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l42_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Last month, our team launched a new feature after months of testing. Customer feedback on ___ feature has been overwhelmingly positive so far.",
+      "sentence": "Last month, our team launched a new feature after months of testing. Customer feedback on ___ feature has been overwhelmingly positive so far.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This is the exact feature described earlier, even though a few words separate the two mentions.",
+      "explanation": "'The feature' points back to the one introduced in the first sentence. Anaphoric reference can stretch across more than just the next few words — the reader is still expected to track it.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l42_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Meanwhile, the design team is already sketching out ___ second feature planned for next quarter.",
+      "sentence": "Meanwhile, the design team is already sketching out ___ second feature planned for next quarter.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This is a different, brand-new feature, even though it's related to the one mentioned before.",
+      "explanation": "Even within the same ongoing topic, a genuinely new item still needs to be introduced with 'a' — 'a second feature' hasn't been mentioned yet, unlike the feature discussed earlier.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l42_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The city approved funding for a new bridge two years ago. Construction on ___ bridge finally began this spring.",
+      "sentence": "The city approved funding for a new bridge two years ago. Construction on ___ bridge finally began this spring.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This still refers back to that same bridge, even after a long gap in time.",
+      "explanation": "Even though a lot of time has passed within the story, 'the bridge' still refers back to the one mentioned earlier — anaphoric reference doesn't expire.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l43_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Sales dropped sharply last quarter, so ___ board decided to replace the CEO.",
+      "sentence": "Sales dropped sharply last quarter, so ___ board decided to replace the CEO.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Once you know we're talking about a company, this group is automatically understood, even without being named first.",
+      "explanation": "'The board' wasn't mentioned before, but it's naturally understood once a company's leadership is being discussed — this is definiteness inferred from the situation rather than from an earlier explicit mention.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l43_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "As part of the restructuring, they also brought in ___ outside consultant to review operations.",
+      "sentence": "As part of the restructuring, they also brought in ___ outside consultant to review operations.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "This person hasn't been connected to anything mentioned so far — they're being introduced fresh.",
+      "explanation": "Unlike 'the board', a consultant isn't automatically implied by a restructuring, so this is a genuinely new introduction and takes 'an' — 'outside' begins with a vowel sound.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l43_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We stayed at a small inn on the coast. ___ owner greeted us personally at check-in.",
+      "sentence": "We stayed at a small inn on the coast. ___ owner greeted us personally at check-in.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Once you mention an inn, certain people connected to it are automatically understood.",
+      "explanation": "'The owner' wasn't introduced by name, but once an inn is mentioned, its owner is a naturally expected part of that situation, so 'the' is used, just like 'the board' after mentioning a company.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l44_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I finally got my car serviced this week. ___ mechanic said the brakes needed replacing.",
+      "sentence": "I finally got my car serviced this week. ___ mechanic said the brakes needed replacing.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Once a car is being serviced, the person doing the work is automatically understood.",
+      "explanation": "'The mechanic' is inferred from the situation of getting a car serviced, even though no mechanic was named earlier — the same kind of reasoning as 'the board' and 'the owner' in earlier examples.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l44_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "While I was there, I also asked about ___ extended warranty for future repairs.",
+      "sentence": "While I was there, I also asked about ___ extended warranty for future repairs.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "This option hasn't been connected to anything mentioned yet — it's a fresh topic.",
+      "explanation": "An extended warranty isn't automatically implied just by getting a car serviced, so it's introduced as new information and takes 'an' — 'extended' begins with a vowel sound.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l44_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We checked into our hotel around midnight. ___ front desk clerk upgraded our room for free.",
+      "sentence": "We checked into our hotel around midnight. ___ front desk clerk upgraded our room for free.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Checking into a hotel automatically brings a certain role to mind.",
+      "explanation": "'The front desk clerk' is understood as soon as a hotel check-in is mentioned, even without being introduced by name first — the same reasoning used with 'the mechanic' and 'the owner'.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l45_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ smartphone has completely transformed how people stay connected.",
+      "sentence": "___ smartphone has completely transformed how people stay connected.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This isn't about one particular phone — it's about the invention as a whole category.",
+      "explanation": "When a singular noun represents an entire invention or category in a general statement like this, it takes 'the' — 'the smartphone' means smartphones as a whole, similar to 'the telephone changed communication.'",
+      "grammarRule": "Generic reference with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l45_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I dropped ___ smartphone I just bought last week, and now the screen is cracked.",
+      "sentence": "I dropped ___ smartphone I just bought last week, and now the screen is cracked.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This time, it's one particular device, not the invention as a whole.",
+      "explanation": "Here 'smartphone' refers to one specific, newly introduced device, so it takes 'a' — 'smartphone' begins with a consonant sound. Compare this to the previous question, where the same word referred to the entire category.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l45_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Historians say ___ printing press was one of the most influential inventions in history.",
+      "sentence": "Historians say ___ printing press was one of the most influential inventions in history.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Like the smartphone example, this describes an invention as a whole, not one physical machine.",
+      "explanation": "'The printing press' here represents the invention as a category, following the same generic pattern used with 'the smartphone' earlier.",
+      "grammarRule": "Generic reference with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l46_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We flew into a small regional airport. ___ baggage claim was tiny compared to what we're used to.",
+      "sentence": "We flew into a small regional airport. ___ baggage claim was tiny compared to what we're used to.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Airports come with certain expected parts, even if they're not named first.",
+      "explanation": "'The baggage claim' is inferred as soon as an airport is mentioned, the same kind of reasoning used earlier with hotels, cars, and inns.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l46_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ traffic downtown gets terrible every Friday afternoon.",
+      "sentence": "___ traffic downtown gets terrible every Friday afternoon.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Anyone familiar with this area already knows exactly what this refers to.",
+      "explanation": "'The traffic downtown' is shared, local knowledge — much like 'the economy' or 'the weather' — so it takes 'the' without needing to be introduced first.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l46_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "As we walked through the terminal, we noticed ___ small kiosk selling local souvenirs.",
+      "sentence": "As we walked through the terminal, we noticed ___ small kiosk selling local souvenirs.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "Not everything inside an airport is automatically expected — this one is a surprise.",
+      "explanation": "Unlike the baggage claim, a souvenir kiosk isn't an automatically expected part of an airport, so it's introduced as new information and takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l47_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Even though the meeting ran long, she managed to ask ___ insightful question before it ended.",
+      "sentence": "Even though the meeting ran long, she managed to ask ___ insightful question before it ended.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Focus on the sound right after the gap, even with 'the meeting' nearby.",
+      "explanation": "'Insightful' begins with a vowel sound, so 'an' is correct, regardless of the definite nouns elsewhere in the sentence.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l47_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The professor paused and then posed ___ unexpected challenge to the class.",
+      "sentence": "The professor paused and then posed ___ unexpected challenge to the class.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "Don't let 'the professor' and 'the class' pull you toward 'the' here.",
+      "explanation": "This challenge is new and unspecified, so it takes 'an' based on its own sound and status, no matter how many definite nouns surround it in the sentence.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l47_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After the long negotiation, both sides finally reached ___ honest compromise that satisfied everyone.",
+      "sentence": "After the long negotiation, both sides finally reached ___ honest compromise that satisfied everyone.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "This word hides a silent letter, just like 'hour' did earlier.",
+      "explanation": "'Honest' has a silent 'h', so it's pronounced with a vowel sound and takes 'an', even inside this longer, more complex sentence.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l48_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She has ___ umbrella in her bag just in case.",
+      "sentence": "She has ___ umbrella in her bag just in case.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "an",
+      "hint": "This is one countable item, and it starts with a real vowel sound.",
+      "explanation": "'Umbrella' is a single countable object beginning with a vowel sound, so it takes 'an'.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l48_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Being prepared for ___ bad weather is just common sense when you travel.",
+      "sentence": "Being prepared for ___ bad weather is just common sense when you travel.",
+      "options": [
+        "the",
+        "(no article)",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "Weather itself can't be counted as one thing, unlike the umbrella you'd bring for it.",
+      "explanation": "'Bad weather' is uncountable here, describing conditions in general, so it takes no article — unlike 'an umbrella', which is a single, countable object.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l48_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Before the road trip, he bought ___ extra charger just in case his phone died.",
+      "sentence": "Before the road trip, he bought ___ extra charger just in case his phone died.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "This is a new, single, countable item again, like the umbrella earlier.",
+      "explanation": "'Extra charger' is a new, countable item, and 'extra' begins with a vowel sound, so it takes 'an' — the same reasoning as 'an umbrella', not the zero article used for the uncountable weather in the previous question.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l49_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ dolphin is known for its remarkable intelligence and social behavior.",
+      "sentence": "___ dolphin is known for its remarkable intelligence and social behavior.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This describes the species as a whole, in a fairly formal way.",
+      "explanation": "A singular noun with 'the' can represent an entire species in a general, often more formal statement — 'the dolphin' here means dolphins as a species, not one specific animal.",
+      "grammarRule": "Generic reference with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l49_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ dolphins often work together to catch fish in coordinated groups.",
+      "sentence": "___ dolphins often work together to catch fish in coordinated groups.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This time, the same general idea is expressed in a more everyday way — with a plural noun instead.",
+      "explanation": "This is the same kind of general truth as the previous question, but expressed with a plain plural noun instead, which takes no article. Both 'the dolphin' and 'dolphins' can describe the species in general — they're just different, equally correct patterns.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l49_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "According to biologists, ___ octopus can change color to blend into its surroundings almost instantly.",
+      "sentence": "According to biologists, ___ octopus can change color to blend into its surroundings almost instantly.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This follows the same formal, species-wide pattern as the dolphin example.",
+      "explanation": "'The octopus' here again represents the species as a whole, following the same generic pattern introduced with 'the dolphin'.",
+      "grammarRule": "Generic reference with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l50_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After the merger was announced, ___ employees at both companies were understandably nervous about their jobs.",
+      "sentence": "After the merger was announced, ___ employees at both companies were understandably nervous about their jobs.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Once a merger is mentioned, this group is automatically understood.",
+      "explanation": "'The employees' is inferred from the situation of a merger being announced — a clear case of definiteness built from context rather than an earlier direct mention.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l50_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It only takes ___ instant for a good first impression to form.",
+      "sentence": "It only takes ___ instant for a good first impression to form.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "Recall the vowel sound at the start of this familiar word.",
+      "explanation": "'Instant' begins with a vowel sound, so it takes 'an', just as it did in an earlier level.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l50_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The tour guide explained that ___ cathedral had taken over two hundred years to complete.",
+      "sentence": "The tour guide explained that ___ cathedral had taken over two hundred years to complete.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Once a tour guide and a tour are mentioned, the main site being visited is automatically understood.",
+      "explanation": "'The cathedral' is inferred from the context of a guided tour — it's the specific site the group is visiting, made definite through the situation rather than an earlier direct mention.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    }
+  ],
+  "phase": "mastery"
+}

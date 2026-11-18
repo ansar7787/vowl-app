@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "ai_l161_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Hi team, just a quick note to confirm that ___ meeting has been moved to 3 PM tomorrow.",
+      "sentence": "Hi team, just a quick note to confirm that ___ meeting has been moved to 3 PM tomorrow.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Everyone on the team already knows which meeting this refers to.",
+      "explanation": "'The meeting' is understood from shared team context, even though this is the first line of the email — definiteness from shared context works the same way in written communication as in speech.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l161_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I'll also need someone to bring ___ projector, since the conference room doesn't have one built in.",
+      "sentence": "I'll also need someone to bring ___ projector, since the conference room doesn't have one built in.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This item hasn't been mentioned before, and its owner hasn't been decided yet.",
+      "explanation": "'A projector' is new information being requested for the first time, so it takes 'a' — 'projector' begins with a consonant sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l161_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Please review the attached document and send ___ feedback by end of day.",
+      "sentence": "Please review the attached document and send ___ feedback by end of day.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This is feedback in general, not a countable number of comments.",
+      "explanation": "'Feedback' is uncountable in English, even when it refers to several comments, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l162_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Your flight departs from ___ gate that will be announced about an hour before boarding.",
+      "sentence": "Your flight departs from ___ gate that will be announced about an hour before boarding.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This gate hasn't been identified yet — it's still unknown at this point.",
+      "explanation": "Since the specific gate hasn't been assigned or announced yet, it remains unidentified and takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l162_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We recommend arriving at ___ airport at least two hours before an international flight.",
+      "sentence": "We recommend arriving at ___ airport at least two hours before an international flight.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This refers to your own departure airport for this specific trip.",
+      "explanation": "'The airport' here refers to the traveler's own departure airport for this specific trip, understood from context even in a general piece of advice.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l162_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Don't forget to bring ___ valid ID and your boarding pass to the security checkpoint.",
+      "sentence": "Don't forget to bring ___ valid ID and your boarding pass to the security checkpoint.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Listen to the sound at the start of the word right after the gap.",
+      "explanation": "'Valid' begins with a consonant sound, so it takes 'a' — 'a valid ID'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l163_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Thank you for reaching out. I understand you're having ___ issue with your recent order.",
+      "sentence": "Thank you for reaching out. I understand you're having ___ issue with your recent order.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "This is the first time this problem is being named in the conversation.",
+      "explanation": "'Issue' begins with a vowel sound, so it takes 'an'. This is also the first mention of this specific problem.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l163_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I've looked into ___ issue you mentioned, and it looks like there was a shipping error on our end.",
+      "sentence": "I've looked into ___ issue you mentioned, and it looks like there was a shipping error on our end.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This refers back to the exact issue already raised.",
+      "explanation": "'The issue' refers back to the one already mentioned, so it takes 'the'.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l163_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We'll process your refund within five business days and send confirmation ___ by email.",
+      "sentence": "We'll process your refund within five business days and send confirmation ___ by email.",
+      "options": [
+        "a",
+        "(no article)",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This describes a method of communication.",
+      "explanation": "'By email' is a fixed expression describing a method and takes no article.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l164_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Dear students, please remember that ___ assignment is due by midnight on Friday.",
+      "sentence": "Dear students, please remember that ___ assignment is due by midnight on Friday.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Everyone in the class already knows which assignment this refers to.",
+      "explanation": "'The assignment' is understood from the shared context of the class, even without an earlier explicit mention in this message.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l164_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ students who submit late work without prior approval will lose points.",
+      "sentence": "___ students who submit late work without prior approval will lose points.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This is a general policy statement about students as a category.",
+      "explanation": "Even with the relative clause describing them, this remains a general statement about a category of students, not one specific, identified group, so it takes no article.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l164_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "If you have questions, feel free to stop by my office during ___ office hours on Wednesday.",
+      "sentence": "If you have questions, feel free to stop by my office during ___ office hours on Wednesday.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is a fixed academic expression describing a general time, not one specific hour.",
+      "explanation": "'Office hours' is a fixed expression for a scheduled period of availability and takes no article, similar to other fixed time expressions.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l165_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We're excited to announce ___ major update to our app, rolling out to all users this week.",
+      "sentence": "We're excited to announce ___ major update to our app, rolling out to all users this week.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This update hasn't been mentioned before — it's being introduced here for the first time.",
+      "explanation": "This update is new information being announced for the first time, so it takes 'a' — 'major' begins with a consonant sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l165_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ update includes several bug fixes and a redesigned interface.",
+      "sentence": "___ update includes several bug fixes and a redesigned interface.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This refers back to the exact update just announced.",
+      "explanation": "'The update' refers back to the one just introduced in the previous sentence, so it takes 'the'.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l165_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "You'll need ___ USB cable to connect the device to your computer.",
+      "sentence": "You'll need ___ USB cable to connect the device to your computer.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "Say the name of the first letter out loud, not the letter itself.",
+      "explanation": "'USB' is pronounced letter by letter, and 'U' is said as 'you', a 'y' glide consonant sound, so it takes 'a', not 'an'.",
+      "grammarRule": "Article choice with acronyms by pronunciation",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l166_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I'd like to schedule ___ appointment for a routine checkup sometime next week.",
+      "sentence": "I'd like to schedule ___ appointment for a routine checkup sometime next week.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "This appointment hasn't been booked yet — it's being requested for the first time.",
+      "explanation": "'Appointment' begins with a vowel sound, so it takes 'an'. This is also the first mention of this specific appointment.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l166_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Great, I've booked ___ appointment for Tuesday at 10 AM — does that work for you?",
+      "sentence": "Great, I've booked ___ appointment for Tuesday at 10 AM — does that work for you?",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This refers back to the exact appointment just requested.",
+      "explanation": "'The appointment' refers back to the one just requested in the conversation, so it takes 'the'.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l166_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The doctor said I should avoid strenuous activity for ___ hour after the procedure.",
+      "sentence": "The doctor said I should avoid strenuous activity for ___ hour after the procedure.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "an",
+      "hint": "Remember the silent letter at the start of this word.",
+      "explanation": "'Hour' has a silent 'h', so it's pronounced with a vowel sound and takes 'an'.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l167_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Before you begin, make sure you have ___ clean, dry surface to work on.",
+      "sentence": "Before you begin, make sure you have ___ clean, dry surface to work on.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This surface hasn't been specified yet — any suitable one will do.",
+      "explanation": "This introduces a general, unspecified surface for the first time, so it takes 'a' — 'clean' begins with a consonant sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l167_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Mix ___ flour and sugar together in a large bowl until well combined.",
+      "sentence": "Mix ___ flour and sugar together in a large bowl until well combined.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "These are ingredients in general, not specific, identified portions.",
+      "explanation": "'Flour' and 'sugar' are uncountable materials used generally here, so they take no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l167_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Once you've completed ___ first step, let the mixture rest for ten minutes before continuing.",
+      "sentence": "Once you've completed ___ first step, let the mixture rest for ten minutes before continuing.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This number identifies a specific position in a sequence of steps.",
+      "explanation": "'The first step' identifies a specific position in a known sequence of instructions, so it takes 'the'.",
+      "grammarRule": "Ordinal numbers with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l168_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "\"Did you hear about ___ new restaurant that opened downtown?\" she asked.",
+      "sentence": "\"Did you hear about ___ new restaurant that opened downtown?\" she asked.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This is treated like a specific, locatable piece of news you might already have heard about.",
+      "explanation": "'The new restaurant' is treated as an identifiable, specific place — narrowed down by its location 'downtown' — similar to how news about a specific event is often introduced with 'the'.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l168_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We should try ___ new restaurant sometime, just not sure which one yet.",
+      "sentence": "We should try ___ new restaurant sometime, just not sure which one yet.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This time, no specific restaurant has been identified at all.",
+      "explanation": "Unlike the previous question, no particular restaurant is identified here — 'not sure which one yet' confirms this is a general, unspecified idea, so it takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l168_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "\"I need ___ advice about my car — it's been making a strange noise,\" he said.",
+      "sentence": "\"I need ___ advice about my car — it's been making a strange noise,\" he said.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is advice in general, not one specific countable tip.",
+      "explanation": "'Advice' is uncountable in English, so it takes no article, even in casual spoken conversation.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l169_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you forward me ___ email from the client? I think I missed it.",
+      "sentence": "Could you forward me ___ email from the client? I think I missed it.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This refers to one specific, expected message.",
+      "explanation": "'The email' is understood as one particular, expected message from the client, made definite through shared context.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l169_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We're looking for ___ hotel that's within walking distance of the train station.",
+      "sentence": "We're looking for ___ hotel that's within walking distance of the train station.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This describes a general type of hotel, not one specific one already identified.",
+      "explanation": "This describes a general type of hotel being searched for, not one particular hotel already known, so it takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l169_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Please restart your device after installing ___ update.",
+      "sentence": "Please restart your device after installing ___ update.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This refers to a specific, already-mentioned update, not updates in general.",
+      "explanation": "'The update' refers to one specific, already-established update relevant to this instruction, so it takes 'the'.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l170_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Hi everyone, just a reminder that ___ deadline for submitting your timesheets is this Friday at 5 PM — please don't wait until the last minute.",
+      "sentence": "Hi everyone, just a reminder that ___ deadline for submitting your timesheets is this Friday at 5 PM — please don't wait until the last minute.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Everyone receiving this message already knows which deadline is meant.",
+      "explanation": "'The deadline' is understood from the shared workplace context, even in this longer, more detailed reminder message.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l170_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After weeks of interviews, the company finally hired ___ candidate who impressed everyone with her problem-solving skills.",
+      "sentence": "After weeks of interviews, the company finally hired ___ candidate who impressed everyone with her problem-solving skills.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This is new information about who was hired, not a reference to someone already discussed.",
+      "explanation": "Even though the hiring process took weeks, the person hired is being introduced as new information to the reader here, so it takes 'a' — 'candidate' begins with a consonant sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l170_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Once you've submitted the form, someone from ___ HR department will follow up with you within two business days.",
+      "sentence": "Once you've submitted the form, someone from ___ HR department will follow up with you within two business days.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "There's only one relevant department in this company for this kind of request.",
+      "explanation": "'The HR department' is understood as the one relevant department within this organization, made definite by shared institutional context, closing out this chapter's real-world focus.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    }
+  ],
+  "phase": "mastery"
+}

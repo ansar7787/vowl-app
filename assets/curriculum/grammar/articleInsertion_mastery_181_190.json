@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "ai_l181_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "As soon as we walked into the stadium, ___ roar of the crowd was overwhelming.",
+      "sentence": "As soon as we walked into the stadium, ___ roar of the crowd was overwhelming.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Just because this is the first time something is mentioned doesn't automatically mean it needs 'a' or 'an'.",
+      "explanation": "It's a common misconception that first mentions always take 'a' or 'an'. Here, 'the roar of the crowd' is inferred from the situation of being at a stadium, so it takes 'the' even though it's never been mentioned before.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l181_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "As soon as we walked into the stadium, we noticed ___ vendor selling souvenirs near the entrance.",
+      "sentence": "As soon as we walked into the stadium, we noticed ___ vendor selling souvenirs near the entrance.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "Not everything inside a stadium is automatically expected — this one is a genuine surprise.",
+      "explanation": "Unlike the roar of the crowd, a souvenir vendor isn't an automatically expected part of a stadium, so this is a genuinely new introduction and takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l181_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The morning after the storm, ___ damage to the roof was worse than we expected.",
+      "sentence": "The morning after the storm, ___ damage to the roof was worse than we expected.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This is the first time 'damage' is mentioned, but is it really unexpected information?",
+      "explanation": "Even though 'damage' is mentioned for the first time, it's a natural, expected consequence of a storm, so it's already understood as definite and takes 'the' — first mention doesn't always mean indefinite.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l182_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ reports on my desk need to be filed by Friday.",
+      "sentence": "___ reports on my desk need to be filed by Friday.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Plural nouns can still be specific and identified, not just general.",
+      "explanation": "It's a common misconception that plural nouns never take an article. Here, 'the reports on my desk' is a specific, identified set, made definite by the phrase 'on my desk', so it takes 'the'.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l182_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ reports like this usually take about a week to complete.",
+      "sentence": "___ reports like this usually take about a week to complete.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is a general statement about reports as a category, not one specific set.",
+      "explanation": "Unlike the previous question, this is a general statement about reports as a whole category, so the plural noun takes no article.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l182_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ photos from the wedding finally arrived in the mail this morning.",
+      "sentence": "___ photos from the wedding finally arrived in the mail this morning.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Once again, this plural noun is identified and specific, not general.",
+      "explanation": "'The photos from the wedding' is a specific, identified set, made definite by the phrase that follows, the same pattern as 'the reports on my desk' — plural nouns absolutely can take 'the'.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l183_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Thanks for ___ help you gave me during the move — I couldn't have done it without you.",
+      "sentence": "Thanks for ___ help you gave me during the move — I couldn't have done it without you.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Uncountable nouns can still become specific and definite in the right context.",
+      "explanation": "It's a common misconception that uncountable nouns never take 'the'. Here, 'the help you gave me' refers to one specific, identified instance, so it takes 'the'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l183_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ help is always appreciated, especially during a busy season.",
+      "sentence": "___ help is always appreciated, especially during a busy season.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is help in general, not one specific identified instance.",
+      "explanation": "Unlike the previous question, this is a general statement about help as a concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l183_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I really valued ___ patience my mentor showed me when I was just starting out.",
+      "sentence": "I really valued ___ patience my mentor showed me when I was just starting out.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Once again, this uncountable noun becomes specific and definite in context.",
+      "explanation": "'The patience my mentor showed me' refers to one specific, identified instance, the same pattern as 'the help you gave me' — uncountable nouns absolutely can take 'the'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l184_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She's pursuing ___ union apprenticeship in the construction trade.",
+      "sentence": "She's pursuing ___ union apprenticeship in the construction trade.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "The vowel letter at the start of this word doesn't tell the whole story.",
+      "explanation": "It's a common misconception that a vowel letter always means 'an'. 'Union' starts with a 'y' glide consonant sound, so it takes 'a' despite the vowel letter.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l184_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She's pursuing ___ unusual career path that few people choose.",
+      "sentence": "She's pursuing ___ unusual career path that few people choose.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "This time, the vowel letter does match a genuine vowel sound.",
+      "explanation": "Unlike 'union', 'unusual' begins with a genuine vowel sound, so it takes 'an' — the letter alone was never the real rule.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l184_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He signed up for ___ one-year membership at the gym.",
+      "sentence": "He signed up for ___ one-year membership at the gym.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "Once again, don't be fooled by the vowel letter at the start.",
+      "explanation": "'One' is pronounced with a 'w' sound, so 'one-year' takes 'a', the same lesson as 'union' — spelling never decides the article, only sound does.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l185_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It would take ___ hour to walk there from here.",
+      "sentence": "It would take ___ hour to walk there from here.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "The consonant letter at the start of this word doesn't tell the whole story.",
+      "explanation": "It's a common misconception that a consonant letter always means 'a'. 'Hour' has a silent 'h', so it's pronounced with a vowel sound and takes 'an' despite the consonant letter.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l185_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It would take ___ half hour to walk there from here.",
+      "sentence": "It would take ___ half hour to walk there from here.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "This time, the 'h' really is pronounced.",
+      "explanation": "Unlike 'hour', 'half' has a clearly pronounced 'h', so it takes 'a' — the letter alone was never the real rule, only the sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l185_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She gave ___ honest opinion, even though it wasn't what we wanted to hear.",
+      "sentence": "She gave ___ honest opinion, even though it wasn't what we wanted to hear.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Once again, don't be fooled by the consonant letter at the start.",
+      "explanation": "'Honest' also has a silent 'h', so it takes 'an', the same lesson as 'hour' — spelling never decides the article, only sound does.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l186_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you ask ___ manager if we can get a refund?",
+      "sentence": "Could you ask ___ manager if we can get a refund?",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "'The' doesn't mean this is the only manager in the entire world — just the relevant one here.",
+      "explanation": "It's a common misconception that 'the' always means there's only one of something in existence. 'The manager' here just means the one manager relevant to this particular store, even though countless other managers exist elsewhere.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l186_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Every school has ___ principal who oversees daily operations.",
+      "sentence": "Every school has ___ principal who oversees daily operations.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "This is about schools in general, so no single principal is being pointed to yet.",
+      "explanation": "Unlike 'the manager' in the previous question, this describes schools in general, each with their own unidentified principal, so it takes 'a' — context, not the role's importance, decides the article.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l186_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "When you check in, just tell ___ receptionist that you have an appointment.",
+      "sentence": "When you check in, just tell ___ receptionist that you have an appointment.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Again, this just means the one relevant to this situation, not the only one anywhere.",
+      "explanation": "'The receptionist' means the one relevant to this specific front desk, the same reasoning as 'the manager' — 'the' marks contextual uniqueness, not that only one exists in the whole world.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l187_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We stayed at a cozy inn last weekend, and ___ breakfast they served was incredible.",
+      "sentence": "We stayed at a cozy inn last weekend, and ___ breakfast they served was incredible.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This noun wasn't explicitly named before, yet it's still definite.",
+      "explanation": "It's a common misconception that 'the' always means something was mentioned before. 'The breakfast' is inferred from the situation of staying at an inn, even though breakfast itself was never named earlier.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l187_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ blue whale is the largest animal to have ever lived.",
+      "sentence": "___ blue whale is the largest animal to have ever lived.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This is the very first word of the sentence, yet it's still definite — think about why.",
+      "explanation": "'The blue whale' represents the species in a generic statement, and it takes 'the' even with zero prior mention anywhere — definiteness doesn't always come from earlier text.",
+      "grammarRule": "Generic reference with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l187_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We checked into the hospital late at night, and ___ nurse on duty was incredibly kind.",
+      "sentence": "We checked into the hospital late at night, and ___ nurse on duty was incredibly kind.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This role wasn't named before either, yet it's still definite.",
+      "explanation": "'The nurse' is inferred from the hospital scenario, the same reasoning as 'the breakfast' at the inn — no earlier explicit mention was needed.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l188_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I need to pick up my daughter from ___ school before it closes at three.",
+      "sentence": "I need to pick up my daughter from ___ school before it closes at three.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This time, you're talking about the actual building, not the institutional idea of attending classes.",
+      "explanation": "It's a common misconception that 'school' always takes no article. Here, 'the school' refers to the specific physical building being visited, so it takes 'the'.",
+      "grammarRule": "Institution versus physical building",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l188_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "My daughter is at ___ school right now, so she won't be home until later.",
+      "sentence": "My daughter is at ___ school right now, so she won't be home until later.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This time, it's about her role as a student, not a building.",
+      "explanation": "Here 'at school' returns to the institutional, zero-article sense of attending classes, unlike the physical building in the previous question.",
+      "grammarRule": "Zero article with institutions",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l188_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you help me move ___ bed? It's blocking the doorway.",
+      "sentence": "Could you help me move ___ bed? It's blocking the doorway.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This time, 'bed' means the actual piece of furniture, not the idiom about sleeping.",
+      "explanation": "It's a common misconception that 'bed' always takes no article. Here, 'the bed' refers to a specific physical object being moved, so it takes 'the', unlike the fixed expression 'go to bed'.",
+      "grammarRule": "Institution versus physical building",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l189_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We finally landed after a long flight, and ___ relief on everyone's faces was obvious.",
+      "sentence": "We finally landed after a long flight, and ___ relief on everyone's faces was obvious.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This noun wasn't named earlier, yet it's still definite — think about why.",
+      "explanation": "'The relief' is inferred from the situation of finally landing after a long flight, busting the idea that 'the' always requires an earlier explicit mention.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l189_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ furniture in this store is surprisingly affordable for the quality.",
+      "sentence": "___ furniture in this store is surprisingly affordable for the quality.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This uncountable noun is still specific and identified here.",
+      "explanation": "'The furniture in this store' is made specific by the phrase that follows, busting the idea that uncountable nouns can never take 'the'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l189_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He's studying to become ___ union representative for his workplace.",
+      "sentence": "He's studying to become ___ union representative for his workplace.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "The vowel letter at the start doesn't tell the whole story here.",
+      "explanation": "'Union' begins with a 'y' glide consonant sound, so it takes 'a', busting the idea that a vowel letter always means 'an'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l190_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "By the time we arrived at the venue, ___ band was already setting up their equipment on stage.",
+      "sentence": "By the time we arrived at the venue, ___ band was already setting up their equipment on stage.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This noun wasn't mentioned before, yet the situation already makes it definite.",
+      "explanation": "'The band' is inferred from the situation of arriving at a venue, the same bridging reasoning that busts the 'the always means previously mentioned' misconception.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l190_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ advice she gave me before the interview turned out to be exactly what I needed.",
+      "sentence": "___ advice she gave me before the interview turned out to be exactly what I needed.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This uncountable noun becomes specific and identified through the clause that follows.",
+      "explanation": "'The advice she gave me' is made definite by the clause that follows, closing out this chapter's reminder that uncountable nouns absolutely can take 'the'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l190_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He's taking ___ one-week course to get certified in first aid.",
+      "sentence": "He's taking ___ one-week course to get certified in first aid.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "Remember: it's the sound, never the spelling, that decides the article.",
+      "explanation": "'One' is pronounced with a 'w' sound, so 'one-week' takes 'a', closing out this chapter's central lesson that spelling can always mislead you if you don't listen to the sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    }
+  ],
+  "phase": "mastery"
+}

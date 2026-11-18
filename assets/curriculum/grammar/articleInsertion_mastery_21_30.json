@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "ai_l21_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Excuse me, could I speak to ___ manager, please?",
+      "sentence": "Excuse me, could I speak to ___ manager, please?",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "In this shop, there's only one person who holds that role.",
+      "explanation": "'The manager' is understood from the situation — every branch has just one manager, so the listener knows exactly who you mean even without an earlier mention.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l21_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The company just hired ___ new manager for this branch.",
+      "sentence": "The company just hired ___ new manager for this branch.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This role is being filled for the first time in this sentence.",
+      "explanation": "Even though 'manager' can be a unique role in context, here a manager is being introduced as new and unspecified, so it takes 'a' — 'a new manager'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l21_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "As soon as we sat down, ___ waiter brought us the menu.",
+      "sentence": "As soon as we sat down, ___ waiter brought us the menu.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Only one server is attending your table in this situation.",
+      "explanation": "'The waiter' is clear from the restaurant situation — there's one person serving your table, so 'the' is correct even without a prior mention.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l22_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "If ___ customer calls with a complaint, transfer them to me directly.",
+      "sentence": "If ___ customer calls with a complaint, transfer them to me directly.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "You're talking about any customer in general, not one specific caller.",
+      "explanation": "'A customer' here means any single customer as a general, non-specific example — this describes a hypothetical situation that could involve anyone.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l22_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The customer who called this morning wants a refund. Could you follow up with ___ customer today?",
+      "sentence": "The customer who called this morning wants a refund. Could you follow up with ___ customer today?",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "You already know exactly who this customer is.",
+      "explanation": "Because a specific customer has already been identified — the one who called this morning — the next mention takes 'the'. This is a known, particular person, unlike the general customer in the earlier example.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l22_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Whenever ___ student has a question, they can email their professor anytime.",
+      "sentence": "Whenever ___ student has a question, they can email their professor anytime.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "This describes any student in general, following the same pattern as the earlier customer example.",
+      "explanation": "'A student' here refers to any single student as a general case, not one specific person — the same non-specific pattern used with 'a customer' earlier.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l23_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I'm sorry, she's not available right now — she's on ___ phone with a client.",
+      "sentence": "I'm sorry, she's not available right now — she's on ___ phone with a client.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This is a fixed expression about being mid-conversation.",
+      "explanation": "'On the phone' is a standard fixed expression meaning currently talking by telephone. It always takes 'the', regardless of which phone is actually being used.",
+      "grammarRule": "Fixed expression with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l23_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We'll finalize the details by ___ phone tomorrow.",
+      "sentence": "We'll finalize the details by ___ phone tomorrow.",
+      "options": [
+        "the",
+        "(no article)",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This expression describes a method of communication, not an ongoing call.",
+      "explanation": "'By phone' (like 'by mail' or 'by email') is a fixed expression describing a means of communication and takes no article, unlike 'on the phone', which describes actually being in a call.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l23_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Please let us know ___ moment you arrive at the hotel.",
+      "sentence": "Please let us know ___ moment you arrive at the hotel.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This phrase means 'as soon as' — a common fixed pattern.",
+      "explanation": "'The moment you arrive' is a fixed way of saying 'as soon as you arrive'. This expression always uses 'the moment', not 'a moment', with this meaning.",
+      "grammarRule": "Fixed expression with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l24_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you ask ___ receptionist for a visitor badge when you arrive?",
+      "sentence": "Could you ask ___ receptionist for a visitor badge when you arrive?",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "There's one person at the front desk of that specific office.",
+      "explanation": "'The receptionist' is understood from the office situation — there's one relevant person at the front desk, so 'the' works even without a previous mention.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l24_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Our new office doesn't have ___ receptionist yet, so visitors just call ahead.",
+      "sentence": "Our new office doesn't have ___ receptionist yet, so visitors just call ahead.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This role doesn't exist there at all right now — it isn't about one specific known person.",
+      "explanation": "Here the sentence is about whether such a role exists at all, not about pointing to one already-understood person, so it takes 'a' — 'doesn't have a receptionist'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l24_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Do you know ___ Wi-Fi password for this café?",
+      "sentence": "Do you know ___ Wi-Fi password for this café?",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "There's just one relevant password for this specific place.",
+      "explanation": "'The Wi-Fi password' is definite because there's exactly one relevant password for this café, and the situation makes clear which one is meant.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l25_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The recipe calls for ___ kind of flour that's hard to find in regular grocery stores.",
+      "sentence": "The recipe calls for ___ kind of flour that's hard to find in regular grocery stores.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "The clause describes the flour, but does it identify one specific, known type?",
+      "explanation": "Even though this flour is described in detail by the clause that follows, it still isn't identified as one particular, known type from the reader's perspective, so it takes 'a'. A descriptive clause doesn't automatically make something definite.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l25_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I finally found ___ shirt that I wore to the wedding last year.",
+      "sentence": "I finally found ___ shirt that I wore to the wedding last year.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This time, the speaker already has one exact shirt in mind.",
+      "explanation": "Here the shirt is a specific, identifiable item the speaker already has in mind from personal experience, so it takes 'the' — unlike the flour in the previous question, which remained a general, unidentified type.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l25_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She's looking for ___ job that lets her work from home.",
+      "sentence": "She's looking for ___ job that lets her work from home.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This is about any job with that quality, not one specific position she has in mind.",
+      "explanation": "'A job that lets her work from home' describes a general type of position, not one particular job already identified — the same pattern as the flour example.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l26_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After weeks of searching, they finally signed ___ one-year lease on a small apartment downtown.",
+      "sentence": "After weeks of searching, they finally signed ___ one-year lease on a small apartment downtown.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "'One' doesn't sound like it looks — say it out loud.",
+      "explanation": "Although 'one' begins with the vowel letter 'o', it's pronounced starting with a 'w' sound, so it takes 'a' — 'a one-year lease', just like 'a one-way street'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l26_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It only takes ___ instant to change your mind.",
+      "sentence": "It only takes ___ instant to change your mind.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "Unlike 'one', this word really does start with a vowel sound.",
+      "explanation": "'Instant' begins with a genuine vowel sound, so it takes 'an'. Compare this with 'one', which looks like it should take 'an' but doesn't.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l26_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The interviewer asked her to describe ___ obstacle she had overcome in her career.",
+      "sentence": "The interviewer asked her to describe ___ obstacle she had overcome in her career.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "Listen to the sound right after the gap, even in this longer sentence.",
+      "explanation": "'Obstacle' starts with a vowel sound, so 'an' is correct, regardless of how long or complex the rest of the sentence is.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l27_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The package should arrive by ___ mail sometime next week.",
+      "sentence": "The package should arrive by ___ mail sometime next week.",
+      "options": [
+        "the",
+        "(no article)",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This is a method of delivery, similar to 'by phone' from before.",
+      "explanation": "'By mail' is a fixed expression describing a method, just like 'by phone' or 'by email', and takes no article.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l27_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "In ___ meantime, let's go ahead and start without them.",
+      "sentence": "In ___ meantime, let's go ahead and start without them.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This phrase means 'while we wait' — a fixed expression.",
+      "explanation": "'In the meantime' is a fixed idiom meaning 'during this waiting period' and always includes 'the'.",
+      "grammarRule": "Fixed expression with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l27_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Please try to arrive on time — ideally a few minutes in ___ advance.",
+      "sentence": "Please try to arrive on time — ideally a few minutes in ___ advance.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This expression describes timing and doesn't take an article.",
+      "explanation": "'In advance' is a fixed expression meaning 'before the expected time' and takes no article, similar to 'on time' and 'by mail'.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l28_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Since the printer upstairs is broken, everyone has been using ___ printer on the second floor instead.",
+      "sentence": "Since the printer upstairs is broken, everyone has been using ___ printer on the second floor instead.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "The phrase 'on the second floor' narrows this down to one specific machine.",
+      "explanation": "'The printer on the second floor' is made definite by the prepositional phrase that follows it, which identifies exactly which printer is meant, even though it wasn't mentioned by name before.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l28_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "IT is installing ___ new printer with a faster connection sometime this week.",
+      "sentence": "IT is installing ___ new printer with a faster connection sometime this week.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "Even with extra details attached, this printer hasn't been identified yet.",
+      "explanation": "Despite the descriptive details 'new' and 'with a faster connection', this printer is still being introduced for the first time and isn't yet a known, specific object, so it takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l28_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We ordered a standing desk for the new hire, and ___ desk with adjustable height finally arrived today.",
+      "sentence": "We ordered a standing desk for the new hire, and ___ desk with adjustable height finally arrived today.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This is the exact desk already mentioned, even with an extra detail added.",
+      "explanation": "'The desk' refers back to the standing desk already introduced earlier in the sentence. Adding the detail 'with adjustable height' doesn't change that it's still the same, already-known desk.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l29_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Hi team, just a reminder that ___ deadline for the proposal is this Friday.",
+      "sentence": "Hi team, just a reminder that ___ deadline for the proposal is this Friday.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Everyone on the team already knows about this particular deadline.",
+      "explanation": "'The deadline' is definite because it refers to one specific, already-understood deadline that the whole team is aware of.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l29_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We might need to set ___ new deadline if the client doesn't respond soon.",
+      "sentence": "We might need to set ___ new deadline if the client doesn't respond soon.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This deadline doesn't exist yet — it's a hypothetical possibility.",
+      "explanation": "Here a deadline hasn't been fixed yet; it's a possible new one being proposed, so it takes 'a' rather than 'the'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l29_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Thank you for reaching out — I'll escalate this to ___ right department right away.",
+      "sentence": "Thank you for reaching out — I'll escalate this to ___ right department right away.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Only one department can truly be the correct one here.",
+      "explanation": "'The right department' works like a superlative — there's only one department that's actually correct for this issue, so it takes 'the'.",
+      "grammarRule": "Unique reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l30_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Before you leave, could you please double-check that you've turned off ___ stove?",
+      "sentence": "Before you leave, could you please double-check that you've turned off ___ stove?",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "There's just one stove in this kitchen that you both know about.",
+      "explanation": "'The stove' is definite because of the shared, obvious context of a specific kitchen — the same kind of reasoning used with 'the light' and 'the door' in earlier levels.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l30_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "By the time she noticed the clock, ___ hour had already slipped by without her realizing it.",
+      "sentence": "By the time she noticed the clock, ___ hour had already slipped by without her realizing it.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "Remember which silent letter changes the sound of this word.",
+      "explanation": "'Hour' begins with a silent 'h', so it's pronounced starting with a vowel sound and takes 'an', just as it did in earlier levels.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l30_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After comparing three apartments, we finally chose ___ one that had the best view of the city.",
+      "sentence": "After comparing three apartments, we finally chose ___ one that had the best view of the city.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This choice is being compared against every other option.",
+      "explanation": "'The one that had the best view' uses a superlative, 'best', which always takes 'the' because it singles out one item from the whole group being compared.",
+      "grammarRule": "Superlatives with the",
+      "articleRule": "Definite Article (the)"
+    }
+  ],
+  "phase": "mastery"
+}

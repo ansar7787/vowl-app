@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "ai_l111_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I need ___ chair — the one by the window, if that's alright.",
+      "sentence": "I need ___ chair — the one by the window, if that's alright.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "The clarification after the dash tells you exactly which chair is meant.",
+      "explanation": "Even though the noun comes before the clarifying detail, 'the one by the window' shows this is one specific, identified chair, so it takes 'the'. Sometimes the clue that decides the article comes after the noun, not before it.",
+      "grammarRule": "Definiteness confirmed by trailing clarification",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l111_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I need ___ chair — any extra one will do.",
+      "sentence": "I need ___ chair — any extra one will do.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This time, the clarification after the dash shows that any chair would work.",
+      "explanation": "'Any extra one will do' shows this chair is not identified as one specific item, so it takes 'a', unlike the previous question where the trailing detail pointed to one particular chair.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l111_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you grab ___ folder — the blue one on my desk?",
+      "sentence": "Could you grab ___ folder — the blue one on my desk?",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "Again, the detail after the dash identifies exactly which one is meant.",
+      "explanation": "'The blue one on my desk' identifies one specific, particular folder, so it takes 'the', the same pattern as the chair example.",
+      "grammarRule": "Definiteness confirmed by trailing clarification",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l112_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "A man and a woman walked into the office. ___ man was carrying a large box.",
+      "sentence": "A man and a woman walked into the office. ___ man was carrying a large box.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Two people were just introduced — this refers back to one specific one of them.",
+      "explanation": "'The man' refers back to one of the two people already introduced in the first sentence, so it takes 'the', even though there were two candidates to track.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l112_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "A man and a woman walked into the office. ___ woman asked to speak with the manager.",
+      "sentence": "A man and a woman walked into the office. ___ woman asked to speak with the manager.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This time, you're tracking the other person from the same pair.",
+      "explanation": "'The woman' refers back to the other person from the pair introduced earlier, requiring you to correctly track which of the two is meant.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l112_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Two colleagues and their manager attended the meeting. ___ manager took notes throughout.",
+      "sentence": "Two colleagues and their manager attended the meeting. ___ manager took notes throughout.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Three people were introduced — this refers back to the specific role among them.",
+      "explanation": "'The manager' refers back to one specific person among the three introduced in the first sentence, the same discourse-tracking skill used with the man and woman example.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l113_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Our flight was delayed for six hours due to a mechanical issue. Everyone in ___ waiting area grew increasingly frustrated.",
+      "sentence": "Our flight was delayed for six hours due to a mechanical issue. Everyone in ___ waiting area grew increasingly frustrated.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Think about what naturally exists once a flight delay is mentioned, even across two sentences.",
+      "explanation": "'The waiting area' is inferred from the situation of a delayed flight at an airport, even though it wasn't directly mentioned — the whole preceding sentence, not just the words right before the gap, sets up this expectation.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l113_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Our flight was delayed for six hours due to a mechanical issue. Someone eventually brought out ___ cart with free snacks and drinks.",
+      "sentence": "Our flight was delayed for six hours due to a mechanical issue. Someone eventually brought out ___ cart with free snacks and drinks.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This item isn't automatically expected just because a flight was delayed.",
+      "explanation": "Unlike the waiting area, a snack cart isn't an automatically expected part of every flight delay, so it's introduced as new information and takes 'a'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l113_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The wedding reception went on late into the night. By midnight, ___ band was still playing for the few guests who remained.",
+      "sentence": "The wedding reception went on late into the night. By midnight, ___ band was still playing for the few guests who remained.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Think about what naturally exists once a wedding reception is mentioned.",
+      "explanation": "'The band' is inferred from the situation of a wedding reception, the same kind of reasoning used with the airport waiting area — the whole first sentence sets up this expectation.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l114_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "There was ___ problem with the shipment: three boxes arrived damaged.",
+      "sentence": "There was ___ problem with the shipment: three boxes arrived damaged.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "You don't find out what this actually is until after the colon.",
+      "explanation": "This problem is introduced vaguely, with its identity only becoming clear from the explanation after the colon, so it takes 'a' at the point it's first mentioned.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l114_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We finally found ___ solution to the problem: switching suppliers entirely.",
+      "sentence": "We finally found ___ solution to the problem: switching suppliers entirely.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This is the one specific answer they were searching for, not just any solution.",
+      "explanation": "'The solution' is definite because it's understood as the specific, sought-after answer to an already-established problem, unlike the newly introduced 'a problem' in the previous question.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l114_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "There was ___ surprise waiting for her when she got home: her whole family had gathered for her birthday.",
+      "sentence": "There was ___ surprise waiting for her when she got home: her whole family had gathered for her birthday.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "Just like the shipment problem, you don't learn what this is until after the colon.",
+      "explanation": "This surprise is introduced vaguely at first, with its identity only revealed by the explanation after the colon, so it takes 'a', following the same forward-referencing pattern as the shipment problem.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l115_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Of the five applicants, one seemed clearly overqualified. ___ other four seemed like a good fit for the role.",
+      "sentence": "Of the five applicants, one seemed clearly overqualified. ___ other four seemed like a good fit for the role.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "Once one is separated out, the remaining group becomes a specific, identifiable set.",
+      "explanation": "'The other four' refers to the specific, remaining portion of an already-established group of five, so it takes 'the' — the group becomes identifiable once one member has been singled out.",
+      "grammarRule": "Definite by elimination from a known set",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l115_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We ordered three pizzas. Two were vegetarian, and ___ rest had pepperoni.",
+      "sentence": "We ordered three pizzas. Two were vegetarian, and ___ rest had pepperoni.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This follows the same 'what's left over' pattern as the applicants example.",
+      "explanation": "'The rest' refers to the remaining, now-identifiable portion of the three pizzas already mentioned, the same elimination pattern used with the job applicants.",
+      "grammarRule": "Definite by elimination from a known set",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l115_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She answered most of the questions correctly, but ___ remaining ones tripped her up.",
+      "sentence": "She answered most of the questions correctly, but ___ remaining ones tripped her up.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Again, think about what's left over once most of the group has been accounted for.",
+      "explanation": "'The remaining ones' refers to the identifiable leftover portion of the questions already mentioned, following the same pattern as 'the other four' and 'the rest'.",
+      "grammarRule": "Definite by elimination from a known set",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l116_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ students generally do better when they get enough sleep.",
+      "sentence": "___ students generally do better when they get enough sleep.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "The word 'generally' signals this is a broad statement about students as a whole.",
+      "explanation": "'Generally' signals that this is a broad, general statement about students as a category, so the plural noun takes no article.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l116_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "In this particular case, though, ___ students in that class struggled despite getting plenty of rest.",
+      "sentence": "In this particular case, though, ___ students in that class struggled despite getting plenty of rest.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "The phrase 'in this particular case' signals a shift away from the general statement.",
+      "explanation": "'In this particular case' signals a shift from a general truth to one specific, identified group — the students in that particular class — so it takes 'the'.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l116_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Usually, employees appreciate flexible schedules, but in our office specifically, ___ employees have mixed feelings about it.",
+      "sentence": "Usually, employees appreciate flexible schedules, but in our office specifically, ___ employees have mixed feelings about it.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "The phrase 'in our office specifically' narrows this down from the general idea mentioned first.",
+      "explanation": "'In our office specifically' signals a shift from the general statement about employees to one specific, identified group, so it takes 'the', the same pattern as the previous question.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l117_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The negotiation lasted for hours. In the end, both sides reached ___ agreement everyone could live with.",
+      "sentence": "The negotiation lasted for hours. In the end, both sides reached ___ agreement everyone could live with.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "This agreement is being reached and mentioned for the very first time.",
+      "explanation": "Even though this agreement is the outcome of the whole negotiation, it's still being introduced for the first time in the discourse, so it takes 'an' — 'agreement' begins with a vowel sound.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l117_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The negotiation lasted for hours. In the end, both sides reached an agreement everyone could live with. ___ agreement was signed the following week.",
+      "sentence": "The negotiation lasted for hours. In the end, both sides reached an agreement everyone could live with. ___ agreement was signed the following week.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Now that the agreement has been introduced, you're referring back to that same one.",
+      "explanation": "Once the agreement has been established in the previous sentence, referring to it again takes 'the'.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l117_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After weeks of testing, the team finally identified ___ bug that had been causing the crashes.",
+      "sentence": "After weeks of testing, the team finally identified ___ bug that had been causing the crashes.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This bug was already known to exist — they were specifically looking for it.",
+      "explanation": "'The bug' is understood as the specific, already-implied problem the team had been searching for all along, made definite by the context of 'weeks of testing' and 'causing the crashes', even though it's the first time the word 'bug' appears.",
+      "grammarRule": "Bridging inference from an established scenario",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l118_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "\"I left my keys somewhere in the kitchen,\" she said. \"Can you help me find ___ keys?\"",
+      "sentence": "\"I left my keys somewhere in the kitchen,\" she said. \"Can you help me find ___ keys?\"",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This refers back to the exact keys she just mentioned.",
+      "explanation": "'The keys' refers back to the specific keys already mentioned in the first part of the exchange, so it takes 'the'.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l118_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "\"I can't find my keys,\" she said. \"Try checking ___ coat you wore yesterday,\" he suggested.",
+      "sentence": "\"I can't find my keys,\" she said. \"Try checking ___ coat you wore yesterday,\" he suggested.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This identifies one specific, known coat from a particular occasion.",
+      "explanation": "'The coat you wore yesterday' identifies one specific, known coat through the clause that follows, so it takes 'the', even though the coat itself was never mentioned before this line.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l118_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "\"Someone left a laptop in the conference room,\" Tom said. \"I'll go grab ___ laptop and bring it to lost and found,\" Maria replied.",
+      "sentence": "\"Someone left a laptop in the conference room,\" Tom said. \"I'll go grab ___ laptop and bring it to lost and found,\" Maria replied.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Maria is referring back to the exact laptop Tom just mentioned.",
+      "explanation": "'The laptop' refers back to the one Tom just introduced, even though it's a different speaker continuing the conversation — anaphoric reference works across speakers in a dialogue too.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l119_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "One of ___ interns accidentally deleted an important file yesterday.",
+      "sentence": "One of ___ interns accidentally deleted an important file yesterday.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This fixed pattern always pairs with the same article before the plural noun.",
+      "explanation": "'One of the interns' is a fixed pattern that always uses 'the' before the plural noun, because it selects one member from an already-defined, complete group.",
+      "grammarRule": "Fixed pattern: one of the [plural noun]",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l119_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Only ___ intern noticed the mistake before it caused any real problems.",
+      "sentence": "Only ___ intern noticed the mistake before it caused any real problems.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "This isn't the 'one of the' pattern — it's simply introducing one new, unidentified person.",
+      "explanation": "Unlike 'one of the interns', this sentence simply introduces a single, unidentified intern, so it takes 'an' — 'intern' begins with a vowel sound.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l119_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "One of ___ printers on this floor is completely out of toner.",
+      "sentence": "One of ___ printers on this floor is completely out of toner.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "This is the same fixed pattern as the interns example.",
+      "explanation": "This follows the same fixed 'one of the' pattern as the interns example, selecting one member from an already-defined group, so it takes 'the'.",
+      "grammarRule": "Fixed pattern: one of the [plural noun]",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l120_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The company received dozens of applications for the position. ___ candidate they eventually chose had almost no relevant experience, which surprised everyone.",
+      "sentence": "The company received dozens of applications for the position. ___ candidate they eventually chose had almost no relevant experience, which surprised everyone.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "The relative clause identifies one specific person from the whole pool of applicants.",
+      "explanation": "'The candidate they eventually chose' identifies one specific, particular person from the larger pool already mentioned, so it takes 'the'.",
+      "grammarRule": "Specific versus non-specific reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l120_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "One of ___ senior engineers flagged a critical bug just before the release deadline.",
+      "sentence": "One of ___ senior engineers flagged a critical bug just before the release deadline.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This is the same fixed 'one of the' pattern from earlier in this chapter.",
+      "explanation": "This follows the same fixed 'one of the' pattern taught earlier, selecting one member from an already-defined group, so it takes 'the'.",
+      "grammarRule": "Fixed pattern: one of the [plural noun]",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l120_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The city council debated the proposal for months. In the end, they reached ___ compromise that satisfied almost no one completely.",
+      "sentence": "The city council debated the proposal for months. In the end, they reached ___ compromise that satisfied almost no one completely.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This compromise is being reached and mentioned for the very first time.",
+      "explanation": "Just like the negotiation example earlier in this chapter, this compromise is the outcome of a long process but is still being introduced for the first time, so it takes 'a' — 'compromise' begins with a consonant sound.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    }
+  ],
+  "phase": "mastery"
+}

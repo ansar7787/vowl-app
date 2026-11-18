@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "ai_l151_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "There's not enough ___ room in this suitcase for all my clothes.",
+      "sentence": "There's not enough ___ room in this suitcase for all my clothes.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This is space in general, not a specific chamber.",
+      "explanation": "'Room' here means available space, an uncountable concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l151_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We booked ___ room with a view of the ocean.",
+      "sentence": "We booked ___ room with a view of the ocean.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This time, 'room' means one countable chamber in a hotel.",
+      "explanation": "When 'room' refers to a countable chamber, like a hotel room, it takes 'a' — a completely different meaning from the uncountable 'space' sense.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l151_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After adding the new furniture, there wasn't much ___ room left to walk around.",
+      "sentence": "After adding the new furniture, there wasn't much ___ room left to walk around.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to meaning available space, not a chamber.",
+      "explanation": "'Room' here again means available space in general, the same uncountable sense as the suitcase example.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l152_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Achieving ___ success in this industry takes years of hard work.",
+      "sentence": "Achieving ___ success in this industry takes years of hard work.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is the general concept of achieving something, not one specific triumph.",
+      "explanation": "'Success' here is an uncountable, abstract concept discussed in general, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l152_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The fundraiser was ___ huge success, raising twice what we expected.",
+      "sentence": "The fundraiser was ___ huge success, raising twice what we expected.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "This time, 'success' means one specific, countable achievement.",
+      "explanation": "When 'success' refers to one particular achievement or event, it becomes countable, so it takes 'a' — 'huge' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l152_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ success doesn't happen overnight — it takes consistent effort.",
+      "sentence": "___ success doesn't happen overnight — it takes consistent effort.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to the general, abstract concept.",
+      "explanation": "'Success' here is again the general, abstract concept, the same uncountable sense as the first question.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l153_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She completed the marathon without ___ difficulty at all.",
+      "sentence": "She completed the marathon without ___ difficulty at all.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is difficulty in general, not one specific problem.",
+      "explanation": "'Difficulty' here is an uncountable, abstract concept meaning the general quality of being hard, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l153_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We ran into ___ difficulty when the supplier suddenly raised their prices.",
+      "sentence": "We ran into ___ difficulty when the supplier suddenly raised their prices.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This time, 'difficulty' means one specific, countable problem.",
+      "explanation": "When 'difficulty' refers to one particular problem or obstacle, it becomes countable, so it takes 'a' — 'difficulty' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l153_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Learning a new language takes time, but it doesn't have to involve constant ___ difficulty.",
+      "sentence": "Learning a new language takes time, but it doesn't have to involve constant ___ difficulty.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to the general, abstract sense.",
+      "explanation": "'Difficulty' here is again the general, abstract quality, the same uncountable sense as the marathon example.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l154_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She studied ___ art history in college before switching to graphic design.",
+      "sentence": "She studied ___ art history in college before switching to graphic design.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is the general academic field, not one specific skill.",
+      "explanation": "'Art' here refers to the general field of study, an uncountable concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l154_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Negotiating a fair price is ___ art that takes years to master.",
+      "sentence": "Negotiating a fair price is ___ art that takes years to master.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "This time, 'art' means a skill or craft, not the academic field.",
+      "explanation": "When 'art' means a skill that requires mastery, it becomes countable, so it takes 'an' — 'art' begins with a vowel sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l154_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The museum's new exhibit focuses entirely on modern ___ art from the 1960s.",
+      "sentence": "The museum's new exhibit focuses entirely on modern ___ art from the 1960s.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to the general field, not the 'skill' meaning.",
+      "explanation": "'Art' here again refers to the general field or category of creative work, the same uncountable sense as the art history example.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l155_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The photographs captured the natural ___ beauty of the coastline perfectly.",
+      "sentence": "The photographs captured the natural ___ beauty of the coastline perfectly.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is an abstract quality, not one specific beautiful thing.",
+      "explanation": "'Beauty' here is an uncountable, abstract quality, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l155_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Look at that sunset — it's ___ real beauty tonight.",
+      "sentence": "Look at that sunset — it's ___ real beauty tonight.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This time, 'beauty' means one particularly beautiful example.",
+      "explanation": "When 'beauty' refers to one specific, strikingly beautiful thing, it becomes countable, so it takes 'a' — 'real' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l155_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Critics praised the film for capturing the quiet ___ beauty of everyday life.",
+      "sentence": "Critics praised the film for capturing the quiet ___ beauty of everyday life.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to the abstract quality, not one specific example.",
+      "explanation": "'Beauty' here is again the abstract quality, the same uncountable sense as the coastline example.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l156_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After her husband passed away, she really valued having ___ company in the evenings.",
+      "sentence": "After her husband passed away, she really valued having ___ company in the evenings.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This means companionship, not a business.",
+      "explanation": "'Company' here means companionship, an uncountable concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l156_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He started ___ small company that designs eco-friendly packaging.",
+      "sentence": "He started ___ small company that designs eco-friendly packaging.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "a",
+      "hint": "This time, 'company' means one specific business.",
+      "explanation": "When 'company' refers to a specific business, it becomes countable, so it takes 'a' — 'small' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l156_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Even during the long trip, I appreciated having some ___ company to talk to.",
+      "sentence": "Even during the long trip, I appreciated having some ___ company to talk to.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to meaning companionship, not a business.",
+      "explanation": "'Company' here again means companionship, the same uncountable sense as the first question.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l157_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The manager doesn't have ___ authority to approve refunds over a certain amount.",
+      "sentence": "The manager doesn't have ___ authority to approve refunds over a certain amount.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is general power or permission, not a group of officials.",
+      "explanation": "'Authority' here means general power or permission, an uncountable concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l157_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ authorities closed the bridge after reports of structural damage.",
+      "sentence": "___ authorities closed the bridge after reports of structural damage.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "This time, the word refers to the specific group of officials in charge.",
+      "explanation": "'The authorities' is a fixed plural expression referring to the relevant governing officials, and it always takes 'the'.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l157_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Without ___ authority to make final decisions, the committee could only offer suggestions.",
+      "sentence": "Without ___ authority to make final decisions, the committee could only offer suggestions.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This goes back to meaning general power, not a group of officials.",
+      "explanation": "'Authority' here again means general power or permission, the same uncountable sense as the first question.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l158_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The accident nearly caused him to lose ___ sight in one eye.",
+      "sentence": "The accident nearly caused him to lose ___ sight in one eye.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This means the general ability to see, not an impressive scene.",
+      "explanation": "'Sight' here means the general ability to see, an uncountable concept, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l158_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The northern lights were ___ incredible sight we'll never forget.",
+      "sentence": "The northern lights were ___ incredible sight we'll never forget.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "an",
+      "hint": "This time, 'sight' means one impressive, memorable scene.",
+      "explanation": "When 'sight' refers to a specific, impressive scene, it becomes countable, so it takes 'an' — 'incredible' begins with a vowel sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l158_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "During our trip to Rome, we tried to see as many ___ sights as possible in just three days.",
+      "sentence": "During our trip to Rome, we tried to see as many ___ sights as possible in just three days.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is a general, plural reference to tourist attractions, not one specific ability.",
+      "explanation": "'Sights' here means tourist attractions in general, a plural countable use, and 'as many as possible' keeps it general rather than specific, so it takes no article.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l159_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The team worked through several rounds of testing without major ___ difficulty.",
+      "sentence": "The team worked through several rounds of testing without major ___ difficulty.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is the general, abstract sense, following the pattern from earlier in this chapter.",
+      "explanation": "'Difficulty' here is the general, abstract quality, taking no article, the same pattern taught earlier.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l159_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Their first product launch was ___ major success right out of the gate.",
+      "sentence": "Their first product launch was ___ major success right out of the gate.",
+      "options": [
+        "the",
+        "an",
+        "(no article)",
+        "a"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "a",
+      "hint": "This is one specific, countable achievement.",
+      "explanation": "'Success' here refers to one specific achievement, so it takes 'a' — 'major' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l159_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He runs ___ small company out of his garage that ships handmade furniture nationwide.",
+      "sentence": "He runs ___ small company out of his garage that ships handmade furniture nationwide.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This is one specific business, following the pattern from earlier in this chapter.",
+      "explanation": "'Company' here refers to one specific business, so it takes 'a' — 'small' begins with a consonant sound.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l160_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "There wasn't much ___ room to negotiate once the contract terms were finalized.",
+      "sentence": "There wasn't much ___ room to negotiate once the contract terms were finalized.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This means figurative space for negotiation, not a physical chamber.",
+      "explanation": "'Room' here means figurative space or flexibility, the same uncountable sense taught at the start of this chapter.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l160_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Painting portraits is ___ art that requires both patience and a steady hand.",
+      "sentence": "Painting portraits is ___ art that requires both patience and a steady hand.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "an",
+      "hint": "This means a skill, following the pattern from earlier in this chapter.",
+      "explanation": "'Art' here means a skill requiring mastery, so it takes 'an' — 'art' begins with a vowel sound, the same pattern taught earlier.",
+      "grammarRule": "Countable meaning of a normally uncountable noun",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l160_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ authorities are investigating the cause of the fire that broke out downtown.",
+      "sentence": "___ authorities are investigating the cause of the fire that broke out downtown.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This refers to the specific group of officials, closing this chapter's theme.",
+      "explanation": "'The authorities' remains a fixed plural expression referring to officials in charge, the same pattern taught earlier in this chapter.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    }
+  ],
+  "phase": "mastery"
+}

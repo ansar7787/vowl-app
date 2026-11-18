@@ -50,6 +50,8 @@ import 'package:vowl/features/grammar/tense_mastery/presentation/pages/tense_mas
 import 'package:vowl/features/grammar/tense_mastery/presentation/pages/tense_mastery_practice_screen.dart';
 import 'package:vowl/features/grammar/subject_verb_agreement/presentation/pages/subject_verb_agreement_learn_screen.dart';
 import 'package:vowl/features/grammar/subject_verb_agreement/presentation/pages/subject_verb_agreement_practice_screen.dart';
+import 'package:vowl/features/grammar/article_insertion/presentation/pages/article_insertion_learn_screen.dart';
+import 'package:vowl/features/grammar/article_insertion/presentation/pages/article_insertion_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -405,6 +407,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'articleinsertion') {
+          return fadeTransitionPage(
+            child: ArticleInsertionLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -539,6 +547,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'subjectverbagreement') {
           return fadeTransitionPage(
             child: SubjectVerbAgreementPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'articleinsertion') {
+          return fadeTransitionPage(
+            child: ArticleInsertionPracticeScreen(level: level),
             state: state,
           );
         }

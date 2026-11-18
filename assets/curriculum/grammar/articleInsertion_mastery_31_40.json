@@ -1,0 +1,608 @@
+{
+  "gameType": "articleInsertion",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "ai_l31_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I saw ___ owl sitting on the fence this morning.",
+      "sentence": "I saw ___ owl sitting on the fence this morning.",
+      "options": [
+        "the",
+        "a",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "'Owl' opens with a vowel sound.",
+      "explanation": "'Owl' begins with a vowel sound, so it takes 'an'. This is also the first time the owl is mentioned.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l31_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I saw an owl sitting on the fence this morning. ___ owl didn't move at all.",
+      "sentence": "I saw an owl sitting on the fence this morning. ___ owl didn't move at all.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the",
+      "hint": "You're referring back to that same owl now.",
+      "explanation": "Once the owl has been introduced, the next mention takes 'the' — 'the owl' means that specific one, not just any owl.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l31_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "My neighbor adopted ___ elderly cat from the shelter, and now the cat follows her everywhere.",
+      "sentence": "My neighbor adopted ___ elderly cat from the shelter, and now the cat follows her everywhere.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "an",
+      "hint": "Focus on the sound of the word right after the gap.",
+      "explanation": "'Elderly' begins with a vowel sound, so 'an' is correct — 'an elderly cat'. Notice how the sentence later switches naturally to 'the cat' once the cat has already been introduced.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l32_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "On weekends, my dad likes to play ___ golf with his coworkers.",
+      "sentence": "On weekends, my dad likes to play ___ golf with his coworkers.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "Names of sports usually stand alone.",
+      "explanation": "Sport names like golf, tennis, and soccer take no article when talking about playing them in general. We say 'play golf', not 'play a golf' or 'play the golf'.",
+      "grammarRule": "Zero article with sports",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l32_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Before we started, he lent me ___ extra golf club to use.",
+      "sentence": "Before we started, he lent me ___ extra golf club to use.",
+      "options": [
+        "a",
+        "the",
+        "(no article)",
+        "an"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "an",
+      "hint": "This is a specific, single, countable item, unlike the sport itself.",
+      "explanation": "Unlike the sport name 'golf', a golf club is a countable object, and 'extra' begins with a vowel sound, so it takes 'an' — 'an extra golf club'.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    },
+    {
+      "id": "ai_l32_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She plays ___ basketball every Tuesday evening at the community center.",
+      "sentence": "She plays ___ basketball every Tuesday evening at the community center.",
+      "options": [
+        "a",
+        "(no article)",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This follows the same pattern as sport names in general.",
+      "explanation": "Like golf, 'basketball' is a sport name and takes no article when talking about playing it regularly.",
+      "grammarRule": "Zero article with sports",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l33_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "After a long day, I just want to go ___ home and relax.",
+      "sentence": "After a long day, I just want to go ___ home and relax.",
+      "options": [
+        "(no article)",
+        "the",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This everyday phrase about returning doesn't take an article.",
+      "explanation": "'Go home' is a fixed expression meaning to return to where you live, and it never takes an article — unlike 'go to the store' or 'go to the gym'.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l33_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The house looked so different — ___ home we grew up in had been completely renovated.",
+      "sentence": "The house looked so different — ___ home we grew up in had been completely renovated.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Here 'home' is being described as one particular, identifiable place.",
+      "explanation": "When 'home' refers to one specific, identified house rather than functioning as the fixed expression 'go home', it behaves like an ordinary noun and can take 'the' — 'the home we grew up in'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l33_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It's getting late — we should head ___ home before the roads get icy.",
+      "sentence": "It's getting late — we should head ___ home before the roads get icy.",
+      "options": [
+        "a",
+        "(no article)",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This is the same fixed expression as before, just with a different verb.",
+      "explanation": "'Head home', like 'go home', is a fixed expression and takes no article, regardless of which verb of movement is used.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l34_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ birds migrate south when the weather turns cold.",
+      "sentence": "___ birds migrate south when the weather turns cold.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This is a general truth about birds as a category.",
+      "explanation": "A general statement about an entire category of animals uses the plain plural noun with no article — 'birds migrate' means birds in general.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l34_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Several birds built nests in our backyard this spring. ___ birds come back every morning to feed.",
+      "sentence": "Several birds built nests in our backyard this spring. ___ birds come back every morning to feed.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the",
+      "hint": "These are the exact birds already mentioned.",
+      "explanation": "Once specific birds have been introduced, referring to them again requires 'the' — 'the birds' points back to those particular ones.",
+      "grammarRule": "Second mention / anaphoric reference",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l34_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ smartphones have changed the way people communicate.",
+      "sentence": "___ smartphones have changed the way people communicate.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is another general statement about a whole category.",
+      "explanation": "Like the sentence about birds, this describes smartphones as a category in general, so the plural noun takes no article.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l35_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Listening to ___ music helps me focus while I work.",
+      "sentence": "Listening to ___ music helps me focus while I work.",
+      "options": [
+        "a",
+        "(no article)",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "Music in general can't be counted as one thing.",
+      "explanation": "'Music' is uncountable, and this sentence is a general statement, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l35_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Could you recommend ___ good song for a road trip playlist?",
+      "sentence": "Could you recommend ___ good song for a road trip playlist?",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "A song is a single, countable item, unlike music itself.",
+      "explanation": "Unlike the uncountable noun 'music', a 'song' is countable, and 'good' begins with a consonant sound, so it takes 'a' — 'a good song'.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l35_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Fixing the roof will require ___ specialized equipment we don't currently have.",
+      "sentence": "Fixing the roof will require ___ specialized equipment we don't currently have.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This describes a general category of tools, not one countable item.",
+      "explanation": "'Equipment' is uncountable in English, even when it refers to several tools together. In a general statement like this, it takes no article, regardless of the adjective in front of it.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l36_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "We always watch ___ football together on Sunday afternoons.",
+      "sentence": "We always watch ___ football together on Sunday afternoons.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is a sport name, like golf and basketball earlier.",
+      "explanation": "'Football', like other sport names, takes no article when talking about it in general.",
+      "grammarRule": "Zero article with sports",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l36_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "I usually skip ___ breakfast when I'm running late.",
+      "sentence": "I usually skip ___ breakfast when I'm running late.",
+      "options": [
+        "the",
+        "(no article)",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This is a different kind of zero-article noun — think about meals.",
+      "explanation": "'Breakfast' is a meal name, and meal names take no article in everyday statements like this one, even though the underlying reason is different from why sport names have no article.",
+      "grammarRule": "Zero article with meals",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l36_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "It's usually faster to get downtown by ___ car than by bus during rush hour.",
+      "sentence": "It's usually faster to get downtown by ___ car than by bus during rush hour.",
+      "options": [
+        "(no article)",
+        "a",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This is yet another fixed expression about how you travel — think about the pattern from 'by phone' and 'by mail'.",
+      "explanation": "'By car' is a fixed expression describing a means of transportation, similar to 'by bus' or 'by train', and takes no article.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l37_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "She gets to work by ___ train every day.",
+      "sentence": "She gets to work by ___ train every day.",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no article)",
+      "hint": "This describes her general means of transportation.",
+      "explanation": "'By train' is a fixed expression for a general method of travel and takes no article, just like 'by car' or 'by bus'.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l37_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ train to Boston was delayed by twenty minutes this morning.",
+      "sentence": "___ train to Boston was delayed by twenty minutes this morning.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "This isn't transportation in general — it's one specific train.",
+      "explanation": "Once a specific train is identified — by its destination and time — it becomes a definite, particular object rather than a general means of travel, so it takes 'the'.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l37_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "He prefers to travel by ___ bike whenever the weather is nice.",
+      "sentence": "He prefers to travel by ___ bike whenever the weather is nice.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This follows the same fixed pattern as train, car, and bus.",
+      "explanation": "'By bike' follows the same fixed expression pattern as other general means of transportation and takes no article.",
+      "grammarRule": "Fixed expression with zero article",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l38_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ information travels faster than ever thanks to social media.",
+      "sentence": "___ information travels faster than ever thanks to social media.",
+      "options": [
+        "a",
+        "(no article)",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "(no article)",
+      "hint": "This is a general truth about information as a whole.",
+      "explanation": "'Information' is uncountable, and this is a general statement, so it takes no article.",
+      "grammarRule": "Uncountable nouns used generally",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l38_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Thanks for ___ information you sent over about the new policy — it clarified everything.",
+      "sentence": "Thanks for ___ information you sent over about the new policy — it clarified everything.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "This isn't information in general — it's the exact information that was sent.",
+      "explanation": "Even though 'information' is usually article-free, once it refers to one specific, identified piece of information, it takes 'the' — the same pattern seen earlier with 'advice' and 'homework'.",
+      "grammarRule": "Specific uncountable noun with the",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l38_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "___ rules that apply to one department don't always apply to the rest of the company.",
+      "sentence": "___ rules that apply to one department don't always apply to the rest of the company.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "The descriptive clause doesn't automatically make this specific — think of it as a general truth.",
+      "explanation": "Even with the relative clause 'that apply to one department', this remains a general statement about rules as a category, not one specific, identified set of rules, so no article is needed.",
+      "grammarRule": "Plural nouns in general statements",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l39_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The kids spent the whole afternoon playing ___ hide and seek in the backyard.",
+      "sentence": "The kids spent the whole afternoon playing ___ hide and seek in the backyard.",
+      "options": [
+        "(no article)",
+        "the",
+        "a",
+        "an"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "Names of games follow the same pattern as sports.",
+      "explanation": "Game names like hide and seek, like sport names, take no article when talking about playing them.",
+      "grammarRule": "Zero article with sports",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l39_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "For the trip, don't forget to pack ___ deck of cards in case we get bored.",
+      "sentence": "For the trip, don't forget to pack ___ deck of cards in case we get bored.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "a",
+      "hint": "This is a specific, countable object you're packing, not a game name itself.",
+      "explanation": "'Deck' is a countable object beginning with a consonant sound, so it takes 'a' — 'a deck of cards', even though playing card games themselves would take no article.",
+      "grammarRule": "Indefinite article before a consonant sound",
+      "articleRule": "Indefinite Article (a)"
+    },
+    {
+      "id": "ai_l39_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Even though it was raining, the team still practiced ___ soccer outside for an hour.",
+      "sentence": "Even though it was raining, the team still practiced ___ soccer outside for an hour.",
+      "options": [
+        "a",
+        "an",
+        "(no article)",
+        "the"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "(no article)",
+      "hint": "This is another sport name, following the established pattern.",
+      "explanation": "'Soccer', like the other sports in this level, takes no article when discussing practicing or playing it.",
+      "grammarRule": "Zero article with sports",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l40_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "By the time the ambulance arrived, ___ patient was already stable.",
+      "sentence": "By the time the ambulance arrived, ___ patient was already stable.",
+      "options": [
+        "(no article)",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the",
+      "hint": "Everyone at the scene knows exactly which patient is meant.",
+      "explanation": "'The patient' is definite because of the shared, obvious situation — there's one specific patient everyone at the scene has in mind.",
+      "grammarRule": "Definiteness from shared context",
+      "articleRule": "Definite Article (the)"
+    },
+    {
+      "id": "ai_l40_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "Growing up, we ate ___ dinner together every single night, no matter how busy things got.",
+      "sentence": "Growing up, we ate ___ dinner together every single night, no matter how busy things got.",
+      "options": [
+        "(no article)",
+        "a",
+        "the",
+        "an"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no article)",
+      "hint": "This is a meal name in a general, repeated routine.",
+      "explanation": "'Dinner' as a meal name takes no article, even in a longer sentence describing a repeated routine over many years.",
+      "grammarRule": "Zero article with meals",
+      "articleRule": "Zero Article"
+    },
+    {
+      "id": "ai_l40_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "subtype": "articleInsertion",
+      "interactionType": "choice",
+      "question": "The line outside the stadium was so long that we lost almost ___ hour just waiting to get in.",
+      "sentence": "The line outside the stadium was so long that we lost almost ___ hour just waiting to get in.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "(no article)"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Remember the silent letter that changes this word's sound.",
+      "explanation": "'Hour' begins with a silent 'h', so it's pronounced with a vowel sound and takes 'an', even inside this longer, more complex sentence.",
+      "grammarRule": "Indefinite article before a vowel sound",
+      "articleRule": "Indefinite Article (an)"
+    }
+  ],
+  "phase": "mastery"
+}
