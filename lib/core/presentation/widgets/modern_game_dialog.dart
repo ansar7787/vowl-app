@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -85,10 +86,13 @@ class ModernGameDialog extends StatelessWidget {
                                   color: primaryColor,
                                   size: 48.r,
                                 )),
-                    ).animate().scale(
-                      delay: 200.ms,
-                      duration: 500.ms,
-                      curve: Curves.elasticOut,
+                    ).animateIf(
+                      context,
+                      (w) => w.animate().scale(
+                        delay: 200.ms,
+                        duration: 500.ms,
+                        curve: Curves.elasticOut,
+                      ),
                     ),
               ),
 
@@ -136,28 +140,34 @@ class ModernGameDialog extends StatelessWidget {
                                           Icons.star_rounded,
                                           size: index == 1 ? 50.r : 40.r,
                                           color: AppColors.gold,
-                                        )
-                                        .animate(key: ValueKey(stars))
-                                        .scale(
-                                          begin: const Offset(0, 0),
-                                          end: const Offset(1, 1),
-                                          duration: 400.ms,
-                                          curve: Curves.elasticOut,
-                                          delay: (200 + index * 150).ms,
-                                        )
-                                        .then()
-                                        .shimmer(
-                                          duration: 800.ms,
-                                          color: Colors.white54,
+                                        ).animateIf(
+                                          context,
+                                          (w) => w
+                                              .animate(key: ValueKey(stars))
+                                              .scale(
+                                                begin: const Offset(0, 0),
+                                                end: const Offset(1, 1),
+                                                duration: 400.ms,
+                                                curve: Curves.elasticOut,
+                                                delay: (200 + index * 150).ms,
+                                              )
+                                              .then()
+                                              .shimmer(
+                                                duration: 800.ms,
+                                                color: Colors.white54,
+                                              ),
                                         ),
                                 ],
                               ),
                             );
                           }),
-                        )
-                        .animate()
-                        .fadeIn(delay: 300.ms, duration: 400.ms)
-                        .slideY(begin: 0.2);
+                        ).animateIf(
+                          context,
+                          (w) => w
+                              .animate()
+                              .fadeIn(delay: 300.ms, duration: 400.ms)
+                              .slideY(begin: 0.2),
+                        );
                   },
                 ),
               ],
@@ -254,14 +264,18 @@ class ModernGameDialog extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
-                    .animate(
-                      onPlay: (c) =>
-                          (isRescueLife || isExitConfirmation) ? c : c.repeat(),
-                    )
-                    .shimmer(
-                      duration: 2.seconds,
-                      color: Colors.white.withValues(alpha: 0.4),
+                    ).animateIf(
+                      context,
+                      (w) => w
+                          .animate(
+                            onPlay: (c) => (isRescueLife || isExitConfirmation)
+                                ? c
+                                : c.repeat(),
+                          )
+                          .shimmer(
+                            duration: 2.seconds,
+                            color: Colors.white.withValues(alpha: 0.4),
+                          ),
                     ),
                 SizedBox(height: 16.h),
               ],
@@ -341,7 +355,10 @@ class ModernGameDialog extends StatelessWidget {
             ],
           ),
         ),
-      ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
+      ).animateIf(
+        context,
+        (w) => w.animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
+      ),
     );
   }
 

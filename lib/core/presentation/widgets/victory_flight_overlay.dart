@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 
 // Pre-computed, immutable sparkle data to avoid re-generating random values
@@ -63,6 +64,13 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
 
   @override
   Widget build(BuildContext context) {
+    if (VowlMotion.shouldReduceMotion(context)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) widget.onFinished();
+      });
+      return const SizedBox.shrink();
+    }
+
     return IgnorePointer(
       child: Material(
         color: Colors.transparent,

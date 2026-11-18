@@ -993,6 +993,7 @@ void main() {
         final hintButton = find.byType(QuestHintButton);
 
         await tester.tap(hintButton);
+        speakingStreamController.add(testLoadedState.copyWith(hintUsed: true));
         await tester.pump();
         await tester.tap(hintButton);
         await tester.pump();

@@ -51,7 +51,6 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String targetSound = quest.targetPhoneme ?? "[r]";
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return GlassTile(
       padding: EdgeInsets.all(20.r),
@@ -175,16 +174,17 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                             letterSpacing: 1.0,
                           ),
                         ),
-                      )
-                      .animate(
-                        target: reduceMotion ? 0 : 1,
-                        onPlay: (c) =>
-                            reduceMotion ? c.stop() : c.repeat(reverse: true),
-                      )
-                      .slideY(
-                        begin: -0.04,
-                        end: 0.04,
-                        duration: const Duration(milliseconds: 1500),
+                      ).animateIf(
+                        context,
+                        (w) => w
+                            .animate(
+                              onPlay: (c) => c.repeat(reverse: true),
+                            )
+                            .slideY(
+                              begin: -0.04,
+                              end: 0.04,
+                              duration: const Duration(milliseconds: 1500),
+                            ),
                       ),
             ),
           ),

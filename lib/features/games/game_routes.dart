@@ -126,6 +126,8 @@ import 'package:vowl/features/speaking/repeat_sentence/presentation/pages/repeat
 import 'package:vowl/features/speaking/repeat_sentence/presentation/pages/repeat_sentence_practice_screen.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/pages/speak_missing_word_learn_screen.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/pages/speak_missing_word_practice_screen.dart';
+import 'package:vowl/features/speaking/pronunciation_focus/presentation/pages/pronunciation_focus_learn_screen.dart';
+import 'package:vowl/features/speaking/pronunciation_focus/presentation/pages/pronunciation_focus_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -709,6 +711,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'pronunciationfocus') {
+          return fadeTransitionPage(
+            child: PronunciationFocusLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1071,6 +1079,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'speakmissingword') {
           return fadeTransitionPage(
             child: SpeakMissingWordPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'pronunciationfocus') {
+          return fadeTransitionPage(
+            child: PronunciationFocusPracticeScreen(level: level),
             state: state,
           );
         }
