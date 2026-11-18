@@ -63,7 +63,7 @@ class SecurityServiceImpl implements SecurityService {
       if (jailbroken) return false;
 
       // Prevent automatic botting scripts on mobile emulators (allowing Desktop for testing)
-      if (isEmulator && !Platform.isWindows && !Platform.isMacOS) {
+      if (isEmulator && !Platform.isWindows && !Platform.isMacOS && !Platform.isLinux) {
         return false;
       }
 
