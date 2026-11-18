@@ -1,0 +1,578 @@
+{
+  "gameType": "readingSpeedCheck",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_READINGSPEEDCHECK_L1_practice_q1",
+      "level": 1,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Community pool: open Monday to Friday from 9 a.m. to 6 p.m. The pool is closed on Saturdays and Sundays.",
+      "question": "On which days is the pool closed?",
+      "options": [
+        "Only on Sunday",
+        "Friday and Saturday",
+        "Monday and Friday",
+        "Saturday and Sunday"
+      ],
+      "correctAnswer": "Saturday and Sunday",
+      "timeLimit": 25,
+      "wpmTarget": 90,
+      "passageWordCount": 20,
+      "explanation": "The second sentence gives the closing days. Reading for the word \"closed\" lets you skip the opening hours, which are a different detail.",
+      "hint": "Notice which sentence talks about closing rather than opening."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L1_practice_q2",
+      "level": 1,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Hi Dan, I'm at the bus stop but the bus is late. I'll be ten minutes behind you. Start lunch without me. Rita",
+      "question": "What does Rita want Dan to do?",
+      "options": [
+        "Meet her at the bus stop and walk together",
+        "Order extra food for her",
+        "Begin eating before she arrives",
+        "Call her back right away"
+      ],
+      "correctAnswer": "Begin eating before she arrives",
+      "timeLimit": 33,
+      "wpmTarget": 92,
+      "passageWordCount": 23,
+      "explanation": "\"Start lunch without me\" is a request that Dan should not wait. The answer restates it in different words, so meaning matters more than matching words.",
+      "hint": "Think about what she asks him to do, not where she is."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L1_practice_q3",
+      "level": 1,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Bus 12 runs every ten minutes on weekdays. At weekends it comes only every twenty minutes.",
+      "question": "How often does Bus 12 run at weekends?",
+      "options": [
+        "Every ten minutes",
+        "Every thirty minutes",
+        "Every twenty minutes",
+        "Once an hour"
+      ],
+      "correctAnswer": "Every twenty minutes",
+      "timeLimit": 22,
+      "wpmTarget": 90,
+      "passageWordCount": 16,
+      "explanation": "The ten-minute service is for weekdays. Checking the day word before the number stops you from picking the first time you see.",
+      "hint": "Two timetables appear here. Match the day word in the question first."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L2_practice_q1",
+      "level": 2,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Sale today: all winter coats are half price. Scarves and gloves are twenty percent off.",
+      "question": "Which items are half price?",
+      "options": [
+        "Winter boots",
+        "Scarves",
+        "Gloves",
+        "Winter coats"
+      ],
+      "correctAnswer": "Winter coats",
+      "timeLimit": 17,
+      "wpmTarget": 93,
+      "passageWordCount": 15,
+      "explanation": "Only the coats are half price. Scarves and gloves get the smaller twenty percent discount, which is the mistake a reader makes by stopping early.",
+      "hint": "Two different discounts are given. Connect each one to its item."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L2_practice_q2",
+      "level": 2,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Kofi cycles to work because parking near his office is expensive. On rainy days he takes the bus instead.",
+      "question": "When does Kofi take the bus?",
+      "options": [
+        "When parking is expensive",
+        "When it is raining",
+        "When his office is closed",
+        "When he is late for work"
+      ],
+      "correctAnswer": "When it is raining",
+      "timeLimit": 28,
+      "wpmTarget": 90,
+      "passageWordCount": 19,
+      "explanation": "\"Rainy days\" means the same as \"when it is raining.\" The parking cost explains why he cycles, not why he takes the bus.",
+      "hint": "Watch for the word that signals a change from his usual habit."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L2_practice_q3",
+      "level": 2,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Breakfast is served until 11 a.m. After that, the cafe offers sandwiches, soup and salad.",
+      "question": "Which meal is NOT available at noon?",
+      "options": [
+        "Breakfast",
+        "Soup",
+        "Salad",
+        "Sandwiches"
+      ],
+      "correctAnswer": "Breakfast",
+      "timeLimit": 17,
+      "wpmTarget": 91,
+      "passageWordCount": 15,
+      "explanation": "Noon is after 11 a.m., so breakfast has ended. Three of the choices are on the later menu, which makes this a question about checking times, not finding a word.",
+      "hint": "Compare the time in the question with the time in the first sentence."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L3_practice_q1",
+      "level": 3,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Class 4B has a field trip on Thursday. Students should bring lunch and wear comfortable shoes.",
+      "question": "What should students wear?",
+      "options": [
+        "Rain boots",
+        "A warm hat",
+        "Comfortable shoes",
+        "A clean school uniform"
+      ],
+      "correctAnswer": "Comfortable shoes",
+      "timeLimit": 20,
+      "wpmTarget": 90,
+      "passageWordCount": 16,
+      "explanation": "Students bring lunch but wear shoes. Matching the verb in the question tells you which instruction to use.",
+      "hint": "The passage gives two instructions. Which verb matches the question?"
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L3_practice_q2",
+      "level": 3,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "It will be sunny in the morning, but clouds arrive by two o'clock. Rain is expected after dark.",
+      "question": "When is rain expected?",
+      "options": [
+        "By two o'clock",
+        "In the morning",
+        "After dark",
+        "All day long"
+      ],
+      "correctAnswer": "After dark",
+      "timeLimit": 20,
+      "wpmTarget": 94,
+      "passageWordCount": 18,
+      "explanation": "Clouds arrive by two, but the rain comes later, after dark. Reading in order keeps the two events from blending together.",
+      "hint": "Weather passages often list changes in order. Keep the events separate."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L3_practice_q3",
+      "level": 3,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Lena's phone was almost empty, so she charged it before leaving. Then she found her keys and walked to the station.",
+      "question": "What did Lena do first?",
+      "options": [
+        "She bought a new phone",
+        "She charged her phone",
+        "She found her keys",
+        "She walked to the station"
+      ],
+      "correctAnswer": "She charged her phone",
+      "timeLimit": 28,
+      "wpmTarget": 92,
+      "passageWordCount": 21,
+      "explanation": "The charging happened first because the sentence says \"before leaving.\" \"Then\" marks the next actions.",
+      "hint": "Words like \"then\" and \"before\" show the order of events."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L4_practice_q1",
+      "level": 4,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Reminder: your dentist appointment is on Tuesday, March 4, at 3:30 p.m. Please arrive ten minutes early to fill in a form.",
+      "question": "Why should patients arrive early?",
+      "options": [
+        "To meet the dentist",
+        "To pay the bill",
+        "To complete a form",
+        "To collect a new card"
+      ],
+      "correctAnswer": "To complete a form",
+      "timeLimit": 28,
+      "wpmTarget": 93,
+      "passageWordCount": 22,
+      "explanation": "\"Fill in a form\" is the reason given. \"Complete a form\" says the same thing with different words.",
+      "hint": "Ask what the early arrival is for. The text gives only one purpose."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L4_practice_q2",
+      "level": 4,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "The class is moving. Yoga will now be held in Room 6 instead of the gym, starting next Monday.",
+      "question": "Where will yoga be held from next Monday?",
+      "options": [
+        "In Room 6",
+        "In the gym",
+        "In Room 9",
+        "In the garden"
+      ],
+      "correctAnswer": "In Room 6",
+      "timeLimit": 24,
+      "wpmTarget": 91,
+      "passageWordCount": 19,
+      "explanation": "\"Instead of the gym\" tells you the gym is the old place. The new place is Room 6.",
+      "hint": "Watch for the word that signals something old is being replaced."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L4_practice_q3",
+      "level": 4,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Mina's brother is taller than she is, but her sister is the tallest in the family.",
+      "question": "Who is the tallest?",
+      "options": [
+        "Mina's brother",
+        "Mina's sister",
+        "Mina's father",
+        "Mina"
+      ],
+      "correctAnswer": "Mina's sister",
+      "timeLimit": 19,
+      "wpmTarget": 95,
+      "passageWordCount": 16,
+      "explanation": "The brother is taller than Mina, but the sister is taller than everyone. Words like \"tallest\" mark the final winner.",
+      "hint": "Follow the comparison words one at a time instead of grabbing the first person named."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L5_practice_q1",
+      "level": 5,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "To make tea, boil the water first. Put a tea bag in a cup, add the hot water, and wait three minutes.",
+      "question": "What should you do last?",
+      "options": [
+        "Put in the tea bag",
+        "Wait three minutes",
+        "Pour the hot water",
+        "Boil the water"
+      ],
+      "correctAnswer": "Wait three minutes",
+      "timeLimit": 26,
+      "wpmTarget": 95,
+      "passageWordCount": 22,
+      "explanation": "The steps run boil, tea bag, pour, wait. The final step is the waiting, so a fast reader must track the order.",
+      "hint": "In instructions, the order words matter more than the nouns."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L5_practice_q2",
+      "level": 5,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Please keep your receipt. Items can be returned within fourteen days, but only if they are unused.",
+      "question": "When can a customer return an item?",
+      "options": [
+        "Only after the store sends an email",
+        "Any time, if they have the receipt",
+        "Within fourteen days, even if it is used",
+        "If it is unused and within two weeks"
+      ],
+      "correctAnswer": "If it is unused and within two weeks",
+      "timeLimit": 32,
+      "wpmTarget": 93,
+      "passageWordCount": 17,
+      "explanation": "Fourteen days equals two weeks, and the item must be unused. One wrong answer copies \"fourteen days\" but drops the condition.",
+      "hint": "A return rule usually has a condition. Check whether the text gives more than one."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L5_practice_q3",
+      "level": 5,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "The elevator is out of order today. Please use the stairs next to the front desk.",
+      "question": "What should visitors do today?",
+      "options": [
+        "Come back tomorrow",
+        "Wait for the elevator",
+        "Take the stairs",
+        "Ask at the front desk"
+      ],
+      "correctAnswer": "Take the stairs",
+      "timeLimit": 24,
+      "wpmTarget": 91,
+      "passageWordCount": 16,
+      "explanation": "If the elevator is out of order, it cannot be used, so the stairs are the alternative. The idea is stated through a phrase, not the word \"cannot.\"",
+      "hint": "What does the first sentence tell visitors they cannot do?"
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L6_practice_q1",
+      "level": 6,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "The 7:40 train to Leeds is cancelled. Passengers can take the 8:10 train, which stops at every station.",
+      "question": "What is true about the 8:10 train?",
+      "options": [
+        "It stops at every station",
+        "It is cancelled as well",
+        "It goes directly to Leeds",
+        "It leaves from a different platform"
+      ],
+      "correctAnswer": "It stops at every station",
+      "timeLimit": 28,
+      "wpmTarget": 92,
+      "passageWordCount": 18,
+      "explanation": "Only the 7:40 train is cancelled. The 8:10 is the replacement and stops at every station, so it is slower than a direct train.",
+      "hint": "Test each choice against the passage instead of choosing the first one that sounds familiar."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L6_practice_q2",
+      "level": 6,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Tickets cost four dollars for adults. Children under twelve travel free when they are with an adult.",
+      "question": "Who travels for free?",
+      "options": [
+        "Twelve-year-olds with an adult",
+        "Children of any age travelling alone",
+        "Adults who buy four tickets",
+        "Children under twelve with an adult"
+      ],
+      "correctAnswer": "Children under twelve with an adult",
+      "timeLimit": 25,
+      "wpmTarget": 94,
+      "passageWordCount": 17,
+      "explanation": "Free travel needs two things: being under twelve and being with an adult. Twelve-year-olds are not \"under twelve.\"",
+      "hint": "Pay attention to the age limit and the condition attached to it."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L6_practice_q3",
+      "level": 6,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Ferry to the island: first sailing at 8:00 a.m., last sailing at 6:30 p.m. There are no sailings on Christmas Day.",
+      "question": "What is the latest time you can leave for the island?",
+      "options": [
+        "6:30 p.m.",
+        "8:00 a.m.",
+        "6:00 p.m.",
+        "7:30 p.m."
+      ],
+      "correctAnswer": "6:30 p.m.",
+      "timeLimit": 25,
+      "wpmTarget": 96,
+      "passageWordCount": 21,
+      "explanation": "The latest departure is the last sailing. \"Latest\" and \"last\" mean the same here, and 8:00 is the opposite end.",
+      "hint": "Ask yourself which time is described as the end of the day's service."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L7_practice_q1",
+      "level": 7,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "The chess club meets every Wednesday after school in Room 12. New members are welcome, and no experience is needed.",
+      "question": "Who can join the chess club?",
+      "options": [
+        "Beginners and experienced players",
+        "Only players with tournament experience",
+        "Only teachers and staff",
+        "Only students from Room 12"
+      ],
+      "correctAnswer": "Beginners and experienced players",
+      "timeLimit": 27,
+      "wpmTarget": 95,
+      "passageWordCount": 20,
+      "explanation": "\"No experience is needed\" means beginners can join. Room 12 is just the meeting place, not a rule about members.",
+      "hint": "Look for the phrase that removes a requirement, not one that adds it."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L7_practice_q2",
+      "level": 7,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Ali ran five kilometres on Saturday and three on Sunday. He plans to run only two on Monday to rest.",
+      "question": "On which day did Ali run the farthest?",
+      "options": [
+        "All three days were equal",
+        "Monday",
+        "Sunday",
+        "Saturday"
+      ],
+      "correctAnswer": "Saturday",
+      "timeLimit": 24,
+      "wpmTarget": 97,
+      "passageWordCount": 20,
+      "explanation": "Five is more than three or two, so Saturday was the longest run. Monday is only a plan, not something he has done.",
+      "hint": "Compare all the numbers before deciding. The last one mentioned is not always the biggest."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L7_practice_q3",
+      "level": 7,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Our photography club is showing student photos in the library this month. Entry is free, and the show ends on the 28th.",
+      "question": "What is true about the photo show?",
+      "options": [
+        "It shows teachers' photos",
+        "It is free to enter",
+        "It is open all year",
+        "It is held in a gallery"
+      ],
+      "correctAnswer": "It is free to enter",
+      "timeLimit": 29,
+      "wpmTarget": 93,
+      "passageWordCount": 22,
+      "explanation": "\"Entry is free\" matches the first choice. The show is in the library, features student photos, and ends on the 28th.",
+      "hint": "Check each choice against the text. Some are close but change one detail."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L8_practice_q1",
+      "level": 8,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Breakfast at the Sea View Hotel is served from 7:00 to 10:00. Guests can eat in the restaurant or on the terrace.",
+      "question": "Where can guests have breakfast?",
+      "options": [
+        "In the restaurant or on the terrace",
+        "Only in the restaurant, never outside",
+        "By the swimming pool",
+        "In their rooms"
+      ],
+      "correctAnswer": "In the restaurant or on the terrace",
+      "timeLimit": 27,
+      "wpmTarget": 98,
+      "passageWordCount": 22,
+      "explanation": "The word \"or\" gives two options. A choice that says \"only\" removes one of them, so it cannot be right.",
+      "hint": "Notice whether the text offers one place or a choice of places."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L8_practice_q2",
+      "level": 8,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Check-out time is 11 a.m. If you need more time, ask at the front desk. A late check-out costs fifteen dollars.",
+      "question": "What should guests do to leave later than 11 a.m.?",
+      "options": [
+        "Return the key by 11",
+        "Call a taxi",
+        "Ask at the front desk",
+        "Pay at the restaurant"
+      ],
+      "correctAnswer": "Ask at the front desk",
+      "timeLimit": 30,
+      "wpmTarget": 94,
+      "passageWordCount": 21,
+      "explanation": "\"Need more time\" is answered by \"ask at the front desk.\" The cost is mentioned separately and is not the action itself.",
+      "hint": "Ask what the text tells guests to do if the standard time is not enough."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L8_practice_q3",
+      "level": 8,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Wi-Fi is free in the lobby but costs five dollars a day in the rooms.",
+      "question": "Where is Wi-Fi free?",
+      "options": [
+        "In the restaurant",
+        "At the front desk",
+        "In the rooms",
+        "In the lobby"
+      ],
+      "correctAnswer": "In the lobby",
+      "timeLimit": 19,
+      "wpmTarget": 96,
+      "passageWordCount": 15,
+      "explanation": "Free Wi-Fi belongs to the lobby. The five dollars applies to the rooms, so mixing them up gives the opposite answer.",
+      "hint": "Keep the two places separate; each one has its own price."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L9_practice_q1",
+      "level": 9,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Saturday farmers' market: fresh vegetables, cheese and bread from local producers. Open 8 a.m. to 1 p.m., rain or shine.",
+      "question": "What happens if it rains?",
+      "options": [
+        "Prices go down",
+        "It moves indoors",
+        "The market closes early",
+        "The market stays open"
+      ],
+      "correctAnswer": "The market stays open",
+      "timeLimit": 25,
+      "wpmTarget": 95,
+      "passageWordCount": 20,
+      "explanation": "\"Rain or shine\" means the weather does not change the opening times. No option about closing is stated in the text.",
+      "hint": "One short phrase answers this. Ask what it means for the schedule."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L9_practice_q2",
+      "level": 9,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Bike rental: two dollars per hour or ten dollars for the whole day. Helmets are included in the price.",
+      "question": "How much extra does a helmet cost?",
+      "options": [
+        "Ten dollars a day",
+        "Nothing",
+        "Two dollars an hour",
+        "Five dollars"
+      ],
+      "correctAnswer": "Nothing",
+      "timeLimit": 23,
+      "wpmTarget": 99,
+      "passageWordCount": 19,
+      "explanation": "\"Included in the price\" means no additional payment. The two and ten dollar amounts are for the bike itself.",
+      "hint": "A word in the last sentence tells you whether there is an extra charge."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L9_practice_q3",
+      "level": 9,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Moving sale! Sofa, two chairs and a bookshelf. Everything must go by Friday. Call Petra after six.",
+      "question": "What is Petra doing?",
+      "options": [
+        "Selling her furniture",
+        "Buying a new sofa",
+        "Opening a furniture shop",
+        "Moving a bookshelf for a friend"
+      ],
+      "correctAnswer": "Selling her furniture",
+      "timeLimit": 23,
+      "wpmTarget": 97,
+      "passageWordCount": 17,
+      "explanation": "A moving sale means selling things before you move. Recognizing the general point quickly is a different skill from finding a fact.",
+      "hint": "Read for the overall message rather than for one detail."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L10_practice_q1",
+      "level": 10,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "Last night Nora studied for two hours, then called her mother. She went to bed at ten because her exam starts at eight tomorrow.",
+      "question": "Why did Nora go to bed at ten?",
+      "options": [
+        "She has an early exam",
+        "She was tired of studying",
+        "Her mother told her to",
+        "She finished her homework late"
+      ],
+      "correctAnswer": "She has an early exam",
+      "timeLimit": 32,
+      "wpmTarget": 98,
+      "passageWordCount": 24,
+      "explanation": "\"Because\" links going to bed with the exam. The other choices are events or feelings the passage never gives as the reason.",
+      "hint": "Find the word that introduces a reason, then read what follows it."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L10_practice_q2",
+      "level": 10,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "The museum is free on the first Sunday of every month. On other days tickets cost ten dollars, and students pay half.",
+      "question": "How much does a student pay on a normal weekday?",
+      "options": [
+        "Twenty dollars",
+        "Ten dollars",
+        "Five dollars",
+        "Nothing"
+      ],
+      "correctAnswer": "Five dollars",
+      "timeLimit": 27,
+      "wpmTarget": 96,
+      "passageWordCount": 22,
+      "explanation": "Ten dollars is the normal price, and students pay half of it. The free day is a special case that does not apply on weekdays.",
+      "hint": "Combine two facts from different sentences."
+    },
+    {
+      "id": "RDG_READINGSPEEDCHECK_L10_practice_q3",
+      "level": 10,
+      "instruction": "Read the passage at your target pace, then test your comprehension.",
+      "passage": "A new cafe opened on Park Street last week. It sells only vegetarian food, and most dishes cost less than eight dollars.",
+      "question": "What is this passage mostly telling us about Park Street?",
+      "options": [
+        "Food prices are rising across the city",
+        "A new vegetarian cafe has opened",
+        "A cafe needs more workers",
+        "Park Street is closing soon"
+      ],
+      "correctAnswer": "A new vegetarian cafe has opened",
+      "timeLimit": 31,
+      "wpmTarget": 100,
+      "passageWordCount": 22,
+      "explanation": "Every sentence describes the new cafe. The price and the menu are supporting details, so the main idea is the cafe itself.",
+      "hint": "Ask what the whole passage is about, not what one number says."
+    }
+  ]
+}
